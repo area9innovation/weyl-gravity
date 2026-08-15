@@ -133,6 +133,8 @@ This site does not establish:
 - surjectivity of the smooth-test embedding onto H2
 - uniqueness among arbitrary distributional solutions from energy-image uniqueness
 - a variable-coefficient, curved-spacetime, Weyl, or metric-BV Green operator from the scalar 1+1 benchmark
+- an effective strict 386-row Green solver or serialized distribution-kernel bytes
+- the authoritative twenty-export, seven-hash classical Gate A from the scoped unary-causal snapshot
 - a Hadamard state, causal perturbative AQFT construction, or Lorentzian quantum master equation
 - continuum renormalized products from finite regulated-product closure
 - a Weyl QME or Weyl residual transfer from a finite toy BRST complex

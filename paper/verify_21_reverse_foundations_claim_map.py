@@ -114,6 +114,9 @@ def main() -> int:
     completion_atlas_v13 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v13"]["path"]).read_text())
     strict_386_graph_sdr = json.loads((ROOT / data["authorities"]["strict_386_graph_q1_sdr_component_jets"]["path"]).read_text())
     completion_atlas_v14 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v14"]["path"]).read_text())
+    strict_386_green_name = json.loads((ROOT / data["authorities"]["strict_386_graph_green_action_name"]["path"]).read_text())
+    strict_386_unary_causal = json.loads((ROOT / data["authorities"]["strict_386_unary_causal_common_snapshot"]["path"]).read_text())
+    completion_atlas_v15 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v15"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -407,6 +410,8 @@ def main() -> int:
         (36, "STRICT-WEYL-SPLIT-LOCAL-SDR"),
         (37, "STRICT-WEYL-CANONICAL-SHEAR-COMPONENT-JETS"),
         (38, "STRICT-WEYL-GRAPH-Q1-SDR-COMPONENT-JETS"),
+        (39, "STRICT-WEYL-REPRESENTED-GREEN-ACTION-NAMES"),
+        (40, "STRICT-WEYL-UNARY-CAUSAL-COMMON-SNAPSHOT"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -432,7 +437,10 @@ def main() -> int:
     require(flags["strict_386_unshifted_graph_q1_snapshot_complete"] is True, "strict graph-coordinate q1 snapshot missing")
     require(flags["strict_386_unshifted_graph_sdr_snapshot_complete"] is True, "strict graph-coordinate SDR snapshot missing")
     require(flags["strict_386_graph_suspension_transported"] is True, "strict graph suspension transport missing")
-    require(flags["strict_386_represented_green_actions_serialized"] is False, "strict represented Green actions promoted")
+    require(flags["strict_386_represented_green_actions_serialized"] is True, "strict represented Green actions omitted")
+    require(flags["strict_386_unary_causal_common_snapshot_accepted"] is True, "strict unary-causal common snapshot omitted")
+    require(flags["strict_386_effective_numeric_green_solver"] is False, "strict convergent Green name promoted to an effective solver")
+    require(flags["strict_386_distribution_kernel_bytes_serialized"] is False, "strict convergent Green name promoted to kernel bytes")
     require(flags["strict_386_classical_import_gate_passed"] is False, "strict classical import gate promoted")
     require(flags["strict_386_all_operator_component_adjoints_replayed"] is False, "strict all-operator replay promoted")
     require(flags["strict_386_local_d_certified"] is False, "strict 386 local D promoted")
@@ -557,6 +565,23 @@ def main() -> int:
     require(completion_atlas_v14["claim_flags"]["strict_386_unshifted_graph_q1_snapshot_complete"] is True and completion_atlas_v14["claim_flags"]["strict_386_unshifted_graph_sdr_snapshot_complete"] is True and completion_atlas_v14["claim_flags"]["strict_386_graph_suspension_transported"] is True, "completion atlas V14 graph flags missing")
     require(completion_atlas_v14["claim_flags"]["strict_386_represented_green_actions_serialized"] is False and completion_atlas_v14["claim_flags"]["strict_pure_weyl_classical_gate_passed"] is False and completion_atlas_v14["claim_flags"]["lorentzian_full_theory_certified"] is False, "completion atlas V14 promoted Green/Gate/quantum completion")
     require(len(completion_atlas_v14["route_selection"]) == 8 and completion_atlas_v14["route_selection"][0]["route"] == "STRICT_ENDPOINT_ANALYTIC_GREEN_ACTION", "completion atlas V14 frontier ordering drift")
+    green_flags = strict_386_green_name["claim_flags"]
+    require(strict_386_green_name["carrier"]["graph_rows"] == 386 and strict_386_green_name["carrier"]["tractor_rank"] == 15, "strict Green-name carrier drift")
+    require(len(strict_386_green_name["parent_spectral_name"]["spatial_spectrum"]) == 3 and strict_386_green_name["parent_spectral_name"]["basis_choice"].startswith("none;"), "strict Green-name spectral representation drift")
+    require(strict_386_green_name["analytic_and_exact_replay"]["modal_inverse_jump_checked_exactly"] is True and strict_386_green_name["analytic_and_exact_replay"]["zero_mode_checked_exactly"] is True and strict_386_green_name["analytic_and_exact_replay"]["full_graph_homotopy_identity_exact"] is True, "strict Green-name analytic/exact replay missing")
+    require(green_flags["STRICT_ENDPOINT_GREEN_CONVERGENT_NAME_SERIALIZED"] is True and green_flags["STRICT_FULL_GRAPH_GREEN_CONVERGENT_NAME_SERIALIZED"] is True and green_flags["STRICT_386_REPRESENTED_GREEN_ACTIONS_SERIALIZED"] is True, "strict represented Green-name flags missing")
+    require(green_flags["STRICT_386_RECEIVER_EXECUTABLE_NUMERIC_GREEN_SOLVER"] is False and green_flags["STRICT_386_DISTRIBUTION_KERNEL_BYTES_SERIALIZED"] is False and green_flags["CLASSICAL_IMPORT_GATE_PASSED"] is False, "strict Green name promoted effectivity, kernel bytes, or Gate A")
+    require(strict_386_green_name["foundational_strength"]["weakest_base"] == "NOT_ESTABLISHED" and strict_386_green_name["foundational_strength"]["physics_implies_choice_principle"] is False, "strict Green-name foundational boundary drift")
+    unary_flags = strict_386_unary_causal["claim_flags"]
+    require(strict_386_unary_causal["scope"]["carrier_rows"] == 386 and strict_386_unary_causal["scope"]["accepted_hashes"] == 13 and len(strict_386_unary_causal["accepted_objects"]) == 13, "strict unary-causal snapshot inventory drift")
+    require(strict_386_unary_causal["common_snapshot"]["receiver_status"] == "ACCEPTED_SCOPED" and strict_386_unary_causal["common_snapshot"]["all_objects_share_carrier"] is True and strict_386_unary_causal["common_snapshot"]["both_causal_orientations_present"] is True, "strict unary-causal snapshot acceptance drift")
+    gate_boundary = strict_386_unary_causal["gate_v5_reconciliation"]
+    require((gate_boundary["exports_required"], gate_boundary["top_level_hashes_required"], gate_boundary["freeze_checks_required"], gate_boundary["top_level_hashes_accepted_by_this_scoped_result"]) == (20, 7, 10, 0), "strict unary-causal Gate-A boundary drift")
+    require([item["id"] for item in gate_boundary["missing_bundle"]] == ["M1_COMMON_STRICT_SNAPSHOT", "M2_STRICT_Q2_D", "M3_RESIDUAL_SDR", "M4_FULL_CYCLIC_PAIRING", "M5_RESIDUAL_EXACT_PAYLOAD", "M6_CENTERED_REPRESENTATIVES"], "strict unary-causal missing-bundle ledger drift")
+    require(unary_flags["STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_ACCEPTED"] is True and unary_flags["CLASSICAL_IMPORT_GATE_PASSED"] is False and unary_flags["HADAMARD_STATE_CONSTRUCTED"] is False and unary_flags["QME_RESTORED"] is False, "strict unary-causal snapshot promoted downstream lifecycle")
+    require(completion_atlas_v15["claim_flags"]["strict_386_represented_green_actions_serialized"] is True and completion_atlas_v15["claim_flags"]["strict_386_unary_causal_common_snapshot_accepted"] is True, "completion atlas V15 omitted Green/snapshot successors")
+    require(completion_atlas_v15["claim_flags"]["strict_pure_weyl_classical_gate_passed"] is False and completion_atlas_v15["claim_flags"]["strict_386_local_d_certified"] is False and completion_atlas_v15["claim_flags"]["lorentzian_full_theory_certified"] is False, "completion atlas V15 promoted Gate, D, or quantum theory")
+    require(len(completion_atlas_v15["route_selection"]) == 8 and completion_atlas_v15["route_selection"][0]["route"] == "STRICT_386_FULL_D_ACTION", "completion atlas V15 frontier ordering drift")
     require(flags["static_atlas_appendix_generated"] is True, "static atlas appendix flag is not certified")
     require(flags["complete_evidence_register_generated"] is True, "complete evidence register flag is not certified")
     require(flags["complete_literature_register_generated"] is True, "complete literature register flag is not certified")
@@ -973,6 +998,11 @@ def main() -> int:
         r"FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1",
         r"FOUNDATIONAL_SCALAR_MINKOWSKI_BIWAVE_GREEN_V1",
         r"FOUNDATIONAL_SCALAR_BIWAVE_TO_WEYL_BV_DEPENDENCY_DELTA_V1",
+        r"STRICT_386_GRAPH_GREEN_ACTION_NAME_V1",
+        r"STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1",
+        r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V15",
+        r"Thirteen hashes fix the",
+        r"accepts zero of its seven required top-level hashes",
         r"This is a genuine \rtype{LORENTZIAN-CAUSAL} result",
         r"not a Weyl/BV propagator or quantum causal construction",
         r"Exact finite causality is not continuum causality",

@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-386-graph-green-action-name-v1.schema.json",
+  "title": "Strict 386 graph Green-action convergent name v1",
+  "type": "object",
+  "required": [
+    "$schema", "schema", "schema_path", "result_id", "result_kind", "result_state",
+    "lifecycle", "created", "repository_base_commit", "dependency_tags", "question",
+    "answer", "carrier", "analytic_sources", "represented_spaces", "parent_spectral_name", "operator_names",
+    "transport_contract", "analytic_and_exact_replay", "foundational_strength",
+    "gate_disposition", "claim_flags", "does_not_establish", "next_gate",
+    "canonical_hashes", "provenance", "independent_checker", "human_report"
+  ],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "strict-386-graph-green-action-name-v1"},
+    "result_id": {"const": "STRICT_386_GRAPH_GREEN_ACTION_NAME_V1"},
+    "result_kind": {"const": "REPRESENTED_ANALYTIC_OPERATOR_NAME"},
+    "result_state": {"const": "ENDPOINT_AND_FULL_GRAPH_GREEN_CONVERGENT_NAMES_SERIALIZED_COMMON_IMPORT_SNAPSHOT_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "carrier": {
+      "type": "object",
+      "required": ["spacetime", "parent_bundle", "parent_bundle_ranks", "tracefree_endpoint_ranks", "full_endpoint_ranks", "graph_rows", "tractor_rank"],
+      "properties": {
+        "parent_bundle_ranks": {"const": [15, 60, 60, 15]},
+        "tracefree_endpoint_ranks": {"const": [4, 9, 9, 4]},
+        "full_endpoint_ranks": {"const": [5, 10, 10, 5]},
+        "graph_rows": {"const": 386},
+        "tractor_rank": {"const": 15}
+      },
+      "additionalProperties": true
+    },
+    "analytic_sources": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["id", "citation", "stable_url", "artifact", "supports", "boundary"],
+        "properties": {
+          "id": {"type": "string", "minLength": 3},
+          "citation": {"type": "string", "minLength": 20},
+          "stable_url": {"type": "string", "format": "uri"},
+          "artifact": {
+            "type": "object",
+            "required": ["status", "locator", "sha256"],
+            "properties": {
+              "status": {"const": "CONTENT_PINNED"},
+              "locator": {"type": "string", "format": "uri"},
+              "sha256": {"$ref": "#/$defs/sha256"}
+            },
+            "additionalProperties": false
+          },
+          "supports": {"type": "string", "minLength": 20},
+          "boundary": {"type": "string", "minLength": 20}
+        },
+        "additionalProperties": false
+      }
+    },
+    "represented_spaces": {
+      "type": "object",
+      "required": ["source", "target", "distribution_kernel"],
+      "properties": {
+        "source": {"type": "object", "required": ["space", "topology", "name", "support_index_is_data"]},
+        "target": {"type": "object", "required": ["space", "topology", "name"]},
+        "distribution_kernel": {
+          "type": "object",
+          "required": ["exists_by_continuity_and_Schwartz_kernel_theorem", "kernel_bytes_serialized"],
+          "properties": {
+            "exists_by_continuity_and_Schwartz_kernel_theorem": {"const": true},
+            "kernel_bytes_serialized": {"const": false}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "parent_spectral_name": {
+      "type": "object",
+      "required": ["name_kind", "basis_choice", "spatial_spectrum", "tractor_multiplicity", "wave_operator", "scalar_kernel", "modal_exact_checks", "convergence", "orientation", "uniqueness"],
+      "properties": {
+        "name_kind": {"const": "CANONICAL_HODGE_PROJECTOR_DUHAMEL_SERIES"},
+        "spatial_spectrum": {"type": "array", "minItems": 3, "maxItems": 3},
+        "tractor_multiplicity": {"const": 15},
+        "modal_exact_checks": {
+          "type": "object",
+          "required": ["positive_lambda_kernel", "zero_lambda_kernel", "positive_kernel_value_at_zero", "positive_kernel_first_derivative_at_zero", "positive_kernel_ode_residual", "zero_kernel_value_at_zero", "zero_kernel_first_derivative_at_zero", "zero_kernel_ode_residual", "distributional_jump_gives_delta", "retarded_advanced_transpose_relation"],
+          "properties": {
+            "positive_kernel_value_at_zero": {"const": "0"},
+            "positive_kernel_first_derivative_at_zero": {"const": "1"},
+            "positive_kernel_ode_residual": {"const": "0"},
+            "zero_kernel_value_at_zero": {"const": "0"},
+            "zero_kernel_first_derivative_at_zero": {"const": "1"},
+            "zero_kernel_ode_residual": {"const": "0"},
+            "distributional_jump_gives_delta": {"const": true}
+          },
+          "additionalProperties": true
+        },
+        "convergence": {
+          "type": "object",
+          "required": ["partial_sum", "source_convergence", "operator_continuity", "output_convergence", "effective_uniform_rate_claimed"],
+          "properties": {"effective_uniform_rate_claimed": {"const": false}},
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "operator_names": {
+      "type": "object",
+      "required": ["plus", "minus"],
+      "properties": {
+        "plus": {"allOf": [{"$ref": "#/$defs/action"}, {"properties": {"sign": {"const": "plus"}}}]},
+        "minus": {"allOf": [{"$ref": "#/$defs/action"}, {"properties": {"sign": {"const": "minus"}}}]}
+      },
+      "additionalProperties": false
+    },
+    "analytic_and_exact_replay": {
+      "type": "object",
+      "minProperties": 11,
+      "additionalProperties": {"const": true}
+    },
+    "foundational_strength": {
+      "type": "object",
+      "required": ["imported_theorem_base", "explicit_countable_projector_index", "eigenvector_choice_operation", "basis_selection_avoided_by_projectors", "weakest_base", "Bishop_constructive_proof", "TTE_computability", "physics_implies_choice_principle", "boundary"],
+      "properties": {
+        "explicit_countable_projector_index": {"const": true},
+        "eigenvector_choice_operation": {"const": false},
+        "basis_selection_avoided_by_projectors": {"const": true},
+        "weakest_base": {"const": "NOT_ESTABLISHED"},
+        "Bishop_constructive_proof": {"const": false},
+        "TTE_computability": {"const": false},
+        "physics_implies_choice_principle": {"const": false}
+      },
+      "additionalProperties": true
+    },
+    "gate_disposition": {
+      "type": "object",
+      "required": ["endpoint_green_convergent_name_serialized", "full_graph_green_convergent_name_serialized", "receiver_executable_numeric_solver_serialized", "distribution_kernel_bytes_serialized", "one_common_unary_causal_snapshot_accepted", "classical_import_gate_a_status"],
+      "properties": {
+        "endpoint_green_convergent_name_serialized": {"const": true},
+        "full_graph_green_convergent_name_serialized": {"const": true},
+        "receiver_executable_numeric_solver_serialized": {"const": false},
+        "distribution_kernel_bytes_serialized": {"const": false},
+        "one_common_unary_causal_snapshot_accepted": {"const": false},
+        "classical_import_gate_a_status": {"const": "FAIL_CLOSED"}
+      },
+      "additionalProperties": false
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["STRICT_ENDPOINT_GREEN_CONVERGENT_NAME_SERIALIZED", "STRICT_FULL_GRAPH_GREEN_CONVERGENT_NAME_SERIALIZED", "STRICT_386_REPRESENTED_GREEN_ACTIONS_SERIALIZED", "STRICT_386_RECEIVER_EXECUTABLE_NUMERIC_GREEN_SOLVER", "STRICT_386_DISTRIBUTION_KERNEL_BYTES_SERIALIZED", "CLASSICAL_IMPORT_GATE_PASSED", "STRICT_386_LOCAL_D_CERTIFIED", "STRICT_386_Q2_GREEN_COMPATIBILITY_CERTIFIED", "HADAMARD_STATE_CONSTRUCTED", "RENORMALIZED_LORENTZIAN_PRODUCTS", "QME_RESTORED", "RESIDUAL_TRANSFERRED", "LORENTZIAN_QUANTUM_THEORY"],
+      "properties": {
+        "STRICT_ENDPOINT_GREEN_CONVERGENT_NAME_SERIALIZED": {"const": true},
+        "STRICT_FULL_GRAPH_GREEN_CONVERGENT_NAME_SERIALIZED": {"const": true},
+        "STRICT_386_REPRESENTED_GREEN_ACTIONS_SERIALIZED": {"const": true},
+        "STRICT_386_RECEIVER_EXECUTABLE_NUMERIC_GREEN_SOLVER": {"const": false},
+        "STRICT_386_DISTRIBUTION_KERNEL_BYTES_SERIALIZED": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "STRICT_386_LOCAL_D_CERTIFIED": {"const": false},
+        "STRICT_386_Q2_GREEN_COMPATIBILITY_CERTIFIED": {"const": false},
+        "HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "RENORMALIZED_LORENTZIAN_PRODUCTS": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "RESIDUAL_TRANSFERRED": {"const": false},
+        "LORENTZIAN_QUANTUM_THEORY": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "does_not_establish": {"type": "array", "minItems": 7, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 120},
+    "canonical_hashes": {"type": "object", "minProperties": 5, "additionalProperties": {"$ref": "#/$defs/sha256"}},
+    "provenance": {
+      "type": "object",
+      "required": ["inputs"],
+      "properties": {"inputs": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"$ref": "#/$defs/provenance"}}},
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "provenance": {
+      "type": "object",
+      "required": ["path", "sha256", "role"],
+      "properties": {
+        "path": {"type": "string", "minLength": 3},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "role": {"type": "string", "minLength": 8}
+      },
+      "additionalProperties": false
+    },
+    "action": {
+      "type": "object",
+      "required": ["sign", "parent_green_name", "parent_homotopy_name", "tracefree_endpoint_name", "endpoint_30_name", "full_graph_386_name", "canonical_name_sha256"],
+      "properties": {"canonical_name_sha256": {"$ref": "#/$defs/sha256"}},
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

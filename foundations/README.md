@@ -876,6 +876,22 @@ gate is therefore analytic: represented advanced/retarded endpoint actions on
 declared test and distribution spaces.  Gate A, local `D`, `q2`, Hadamard and
 QME remain fail closed.
 
+The append-only
+[`V15 completion atlas`](reports/lorentzian-weyl-bv-completion-atlas-v15.md)
+closes that representation gap without conflating it with numerical
+effectivity or Gate A.  A canonical Hodge-projector Duhamel series names both
+causal orientations on the endpoint and full 386-row graph.  It uses three
+whole-eigenspace spectral branches, retains the zero mode explicitly, and
+introduces no eigenvector-basis choice.  Thirteen hashes then bind the basis,
+pairing, graph `q1`, local retract, transported suspension, represented spaces,
+transport contract and both Green names into one receiver-accepted unary-
+causal snapshot.  The authoritative classical freeze remains fail closed:
+this scoped object accepts zero of Gate A's seven top-level hashes and leaves
+six bundles open.  The rank-one successor is now the local cylinder-generator
+`D` action on every graph row, followed by `[D,q1]=0` and same-carrier `q2`
+compatibility.  An effective Green solver, kernel bytes, weakest analytic
+base, Hadamard state and QME also remain open.
+
 ```bash
 python3 foundations/build_lorentzian_weyl_bv_completion_atlas.py --check
 python3 foundations/check_lorentzian_weyl_bv_completion_atlas.py
@@ -933,6 +949,14 @@ python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v14.py --check
 python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v14.py
 python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v14.py
 python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v14
+python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v15.py --check
+python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v15.py
+python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v15.py
+python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v15
+python3 quantum-weyl/classical_import/check_strict_386_graph_green_action_name.py
+python3 quantum-weyl/classical_import/verify_strict_386_graph_green_action_name.py
+python3 quantum-weyl/classical_import/check_strict_386_unary_causal_common_snapshot.py
+python3 quantum-weyl/classical_import/verify_strict_386_unary_causal_common_snapshot.py
 ```
 
 ## Lifecycle

@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-386-unary-causal-common-snapshot-v1.schema.json",
+  "title": "Strict 386 unary-causal common snapshot v1",
+  "type": "object",
+  "required": [
+    "$schema", "schema", "schema_path", "result_id", "result_kind", "result_state",
+    "lifecycle", "created", "repository_base_commit", "dependency_tags", "question",
+    "answer", "scope", "accepted_objects", "common_snapshot", "receiver_replay",
+    "gate_v5_reconciliation", "foundational_strength", "claim_flags",
+    "does_not_establish", "next_gate", "provenance", "independent_checker", "human_report"
+  ],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "strict-386-unary-causal-common-snapshot-v1"},
+    "result_id": {"const": "STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1"},
+    "result_kind": {"const": "RECEIVER_ACCEPTED_SCOPED_SNAPSHOT"},
+    "result_state": {"const": "UNARY_CAUSAL_COMMON_SNAPSHOT_ACCEPTED_FULL_CLASSICAL_GATE_A_FAIL_CLOSED"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "scope": {
+      "type": "object",
+      "required": ["carrier_rows", "endpoint_rows", "contracted_rows", "accepted_hashes", "scope_name", "not_scope_name"],
+      "properties": {
+        "carrier_rows": {"const": 386},
+        "endpoint_rows": {"const": 30},
+        "contracted_rows": {"const": 356},
+        "accepted_hashes": {"const": 13},
+        "scope_name": {"const": "STRICT_386_UNARY_CAUSAL_GRAPH"},
+        "not_scope_name": {"const": "CLASSICAL_GATE_A_TWENTY_EXPORT_FREEZE"}
+      },
+      "additionalProperties": false
+    },
+    "accepted_objects": {
+      "type": "object",
+      "minProperties": 13,
+      "maxProperties": 13,
+      "additionalProperties": {"$ref": "#/$defs/sha256"}
+    },
+    "common_snapshot": {
+      "type": "object",
+      "required": ["kind", "sha256", "graph_dependency_sha256", "green_dependency_sha256", "all_objects_share_carrier", "all_objects_share_pairing_and_suspension_convention", "both_causal_orientations_present", "receiver_status"],
+      "properties": {
+        "kind": {"const": "STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "graph_dependency_sha256": {"$ref": "#/$defs/sha256"},
+        "green_dependency_sha256": {"$ref": "#/$defs/sha256"},
+        "all_objects_share_carrier": {"const": true},
+        "all_objects_share_pairing_and_suspension_convention": {"const": true},
+        "both_causal_orientations_present": {"const": true},
+        "receiver_status": {"const": "ACCEPTED_SCOPED"}
+      },
+      "additionalProperties": false
+    },
+    "receiver_replay": {
+      "type": "object",
+      "minProperties": 10,
+      "maxProperties": 10,
+      "additionalProperties": {"const": true}
+    },
+    "gate_v5_reconciliation": {
+      "type": "object",
+      "required": ["authoritative_result_id", "authoritative_sha256", "exports_required", "freeze_checks_required", "top_level_hashes_required", "top_level_hashes_accepted_before", "top_level_hashes_accepted_by_this_scoped_result", "missing_bundle", "gate_a_status", "reason"],
+      "properties": {
+        "authoritative_result_id": {"const": "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION"},
+        "authoritative_sha256": {"$ref": "#/$defs/sha256"},
+        "exports_required": {"const": 20},
+        "freeze_checks_required": {"const": 10},
+        "top_level_hashes_required": {"const": 7},
+        "top_level_hashes_accepted_before": {"const": 0},
+        "top_level_hashes_accepted_by_this_scoped_result": {"const": 0},
+        "missing_bundle": {"type": "array", "minItems": 6, "maxItems": 6},
+        "gate_a_status": {"const": "FAIL_CLOSED"}
+      },
+      "additionalProperties": true
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_ACCEPTED", "STRICT_386_REPRESENTED_GREEN_ACTIONS_SERIALIZED", "STRICT_386_FULL_Q2_D_COMMON_SNAPSHOT", "STRICT_386_RESIDUAL_SDR_COMMON_SNAPSHOT", "CLASSICAL_IMPORT_GATE_PASSED", "PUBLISHABLE_QUANTUM_RESULTS_ALLOWED_BY_GATE_A", "HADAMARD_STATE_CONSTRUCTED", "RENORMALIZED_LORENTZIAN_PRODUCTS", "QME_RESTORED", "RESIDUAL_TRANSFERRED", "LORENTZIAN_QUANTUM_THEORY"],
+      "properties": {
+        "STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_ACCEPTED": {"const": true},
+        "STRICT_386_REPRESENTED_GREEN_ACTIONS_SERIALIZED": {"const": true},
+        "STRICT_386_FULL_Q2_D_COMMON_SNAPSHOT": {"const": false},
+        "STRICT_386_RESIDUAL_SDR_COMMON_SNAPSHOT": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "PUBLISHABLE_QUANTUM_RESULTS_ALLOWED_BY_GATE_A": {"const": false},
+        "HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "RENORMALIZED_LORENTZIAN_PRODUCTS": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "RESIDUAL_TRANSFERRED": {"const": false},
+        "LORENTZIAN_QUANTUM_THEORY": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "does_not_establish": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 160},
+    "provenance": {
+      "type": "object",
+      "required": ["inputs"],
+      "properties": {"inputs": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/provenance"}}},
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "provenance": {
+      "type": "object",
+      "required": ["path", "sha256", "role"],
+      "properties": {
+        "path": {"type": "string", "minLength": 3},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "role": {"type": "string", "minLength": 8}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

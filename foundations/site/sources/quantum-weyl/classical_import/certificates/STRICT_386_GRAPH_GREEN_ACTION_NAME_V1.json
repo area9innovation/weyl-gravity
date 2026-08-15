@@ -1,0 +1,650 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "strict-386-graph-green-action-name-v1",
+  "schema_path": "quantum-weyl/classical_import/schema/strict-386-graph-green-action-name-v1.schema.json",
+  "result_id": "STRICT_386_GRAPH_GREEN_ACTION_NAME_V1",
+  "result_kind": "REPRESENTED_ANALYTIC_OPERATOR_NAME",
+  "result_state": "ENDPOINT_AND_FULL_GRAPH_GREEN_CONVERGENT_NAMES_SERIALIZED_COMMON_IMPORT_SNAPSHOT_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "37b3cac874c0662d09206d9d6a6b5362f7c4bf57",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "Can the theorem-level adjoint-tractor Green homotopy be serialized as a receiver-readable convergent name on declared spaces and composed through the exact graph SDR without pretending that a nonlocal Green map is a finite jet table?",
+  "answer": "Yes. On the unit ultrastatic cylinder, the flat rank-15 adjoint-tractor Hodge wave is named by the canonical S3 Hodge spectral projectors and the exact retarded/advanced oscillator Duhamel kernels, with the scalar zero mode handled by s_0(tau)=tau. Smooth compact sources carry support-indexed LF spectral names; finite projector truncations converge in that topology, and continuity of the unique normally-hyperbolic Green operators makes the displayed partial actions a convergent operator name. The exact support-local curved BGG maps, trace/Weyl shear, and graph SDR then give named actions on all 30 endpoint and 386 graph rows. This serializes a convergent name, not a finite coefficient table or an effective complexity bound. A receiver-accepted common import snapshot, local D, q2, Hadamard and QME remain open.",
+  "analytic_sources": [
+    {
+      "id": "baer-2015",
+      "citation": "Christian Bär, Green-hyperbolic operators on globally hyperbolic spacetimes, Communications in Mathematical Physics 333 (2015), 1585-1615.",
+      "stable_url": "https://arxiv.org/abs/1310.0738",
+      "artifact": {
+        "status": "CONTENT_PINNED",
+        "locator": "https://arxiv.org/pdf/1310.0738",
+        "sha256": "879948318de8b4a5a74b52179f78120d074bc7773734b82495b6db4c363f4c99"
+      },
+      "supports": "Existence, uniqueness, causal support and continuity of advanced/retarded Green operators for normally hyperbolic operators on globally hyperbolic spacetimes.",
+      "boundary": "Classical smooth/distributional theorem; no weakest-base, constructive, computable or Weyl-BV Gate-A conclusion follows."
+    },
+    {
+      "id": "lauret-2018",
+      "citation": "Emilio A. Lauret, The spectrum on p-forms of a lens space, Geometriae Dedicata 197 (2018), 107-122, doi:10.1007/s10711-018-0322-9.",
+      "stable_url": "https://arxiv.org/abs/1604.02471",
+      "artifact": {
+        "status": "CONTENT_PINNED",
+        "locator": "https://arxiv.org/pdf/1604.02471",
+        "sha256": "6b20b886450706d72467121560662fda6f88b319323930f3270ed31741fcb244"
+      },
+      "supports": "Theorem 2.1 gives the two Hodge-Laplacian p-form spectral branches on round odd spheres; its n=2, p=0,1 specialization supplies the S3 scalar/exact/coexact eigenvalue families used here.",
+      "boundary": "The present receiver checks the specialized formulas and multiplicities, but does not independently formalize Lauret's representation-theoretic completeness proof over a weak base."
+    }
+  ],
+  "carrier": {
+    "spacetime": "R x S^3 with unit round S^3 and repository time orientation",
+    "parent_bundle": "Lambda^0/1 T*M tensor flat adjoint tractor A",
+    "parent_bundle_ranks": [
+      15,
+      60,
+      60,
+      15
+    ],
+    "tracefree_endpoint_ranks": [
+      4,
+      9,
+      9,
+      4
+    ],
+    "full_endpoint_ranks": [
+      5,
+      10,
+      10,
+      5
+    ],
+    "graph_rows": 386,
+    "tractor_rank": 15
+  },
+  "represented_spaces": {
+    "source": {
+      "space": "Gamma_c^infinity(M,F)",
+      "topology": "strict LF inductive limit over compact time slabs; S^3 is compact",
+      "name": "support interval plus rapidly convergent canonical Hodge-projector truncations in every compact-slab C-infinity seminorm",
+      "support_index_is_data": true
+    },
+    "target": {
+      "space": "Gamma^infinity(M,F) with sign-oriented future/past support",
+      "topology": "compact-open C-infinity Frechet topology on each output slab",
+      "name": "projector partial sums with a supplied source-tail modulus and the Duhamel continuity bound"
+    },
+    "distribution_kernel": {
+      "exists_by_continuity_and_Schwartz_kernel_theorem": true,
+      "kernel_bytes_serialized": false
+    }
+  },
+  "parent_spectral_name": {
+    "name_kind": "CANONICAL_HODGE_PROJECTOR_DUHAMEL_SERIES",
+    "basis_choice": "none; finite-rank L2-orthogonal spectral projectors are used, not selected eigenvectors",
+    "spatial_spectrum": [
+      {
+        "branch": "SPATIAL_SCALAR",
+        "spacetime_slots": [
+          "Omega0",
+          "Omega1_dt"
+        ],
+        "index": "k>=0",
+        "eigenvalue": "k*(k+2)",
+        "multiplicity_before_tractor_rank": "(k+1)^2",
+        "zero_mode": "k=0"
+      },
+      {
+        "branch": "SPATIAL_EXACT_ONE_FORM",
+        "spacetime_slots": [
+          "Omega1_spatial"
+        ],
+        "index": "k>=1",
+        "eigenvalue": "k*(k+2)",
+        "multiplicity_before_tractor_rank": "(k+1)^2",
+        "zero_mode": "none"
+      },
+      {
+        "branch": "SPATIAL_COEXACT_ONE_FORM",
+        "spacetime_slots": [
+          "Omega1_spatial"
+        ],
+        "index": "k>=1",
+        "eigenvalue": "(k+1)^2",
+        "multiplicity_before_tractor_rank": "2*k*(k+2)",
+        "zero_mode": "none"
+      }
+    ],
+    "tractor_multiplicity": 15,
+    "wave_operator": "partial_t^2+Delta_A,S3 after the intrinsic time/tangential split",
+    "scalar_kernel": {
+      "s_lambda_tau": "tau if lambda=0; sin(sqrt(lambda)*tau)/sqrt(lambda) if lambda>0",
+      "plus": "H(t-r) s_lambda(t-r)",
+      "minus": "-H(r-t) s_lambda(t-r)"
+    },
+    "modal_exact_checks": {
+      "positive_lambda_kernel": "sin(sqrt(lambda)*tau)/sqrt(lambda)",
+      "zero_lambda_kernel": "tau",
+      "positive_kernel_value_at_zero": "0",
+      "positive_kernel_first_derivative_at_zero": "1",
+      "positive_kernel_ode_residual": "0",
+      "zero_kernel_value_at_zero": "0",
+      "zero_kernel_first_derivative_at_zero": "1",
+      "zero_kernel_ode_residual": "0",
+      "distributional_jump_gives_delta": true,
+      "retarded_advanced_transpose_relation": "k_plus(t,s)=k_minus(s,t)"
+    },
+    "convergence": {
+      "partial_sum": "sum over the first N canonical Hodge eigenspace projectors, including whole degeneracy spaces",
+      "source_convergence": "C-infinity spectral convergence on every fixed compact time slab",
+      "operator_continuity": "unique normally-hyperbolic G_plus/minus are continuous LF-to-Frechet",
+      "output_convergence": "G_plus/minus(Pi_<=N f) converges to G_plus/minus(f) in every output compact-open C-infinity seminorm",
+      "effective_uniform_rate_claimed": false
+    },
+    "orientation": {
+      "plus": "future-supported / retarded in repository terminology",
+      "minus": "past-supported / advanced in repository terminology",
+      "support": "supp G_sign f subset J_sign(supp f)"
+    },
+    "uniqueness": "the two inverse identities and sign-oriented causal support uniquely characterize each Green operator"
+  },
+  "operator_names": {
+    "plus": {
+      "sign": "plus",
+      "parent_green_name": {
+        "node": "HODGE_PROJECTOR_DUHAMEL_SERIES",
+        "sign": "plus",
+        "operator": "partial_t^2+Delta_A,S3",
+        "coefficient_kernel": "integral_{-infinity}^t s_lambda(t-r) Pi_lambda f(r) dr",
+        "orientation": "future/retarded"
+      },
+      "parent_homotopy_name": {
+        "node": "COMPOSE",
+        "children": [
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "W_parent"
+          },
+          {
+            "node": "HODGE_PROJECTOR_DUHAMEL_SERIES",
+            "sign": "plus",
+            "operator": "partial_t^2+Delta_A,S3",
+            "coefficient_kernel": "integral_{-infinity}^t s_lambda(t-r) Pi_lambda f(r) dr",
+            "orientation": "future/retarded"
+          }
+        ]
+      },
+      "tracefree_endpoint_name": {
+        "node": "COMPOSE",
+        "children": [
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "p_BGG"
+          },
+          {
+            "node": "COMPOSE",
+            "children": [
+              {
+                "node": "LOCAL_MAP",
+                "map_id": "W_parent"
+              },
+              {
+                "node": "HODGE_PROJECTOR_DUHAMEL_SERIES",
+                "sign": "plus",
+                "operator": "partial_t^2+Delta_A,S3",
+                "coefficient_kernel": "integral_{-infinity}^t s_lambda(t-r) Pi_lambda f(r) dr",
+                "orientation": "future/retarded"
+              }
+            ]
+          },
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "i_BGG"
+          }
+        ]
+      },
+      "endpoint_30_name": {
+        "node": "COMPOSE",
+        "children": [
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "U_trace_Weyl"
+          },
+          {
+            "node": "DIRECT_SUM",
+            "children": [
+              {
+                "node": "COMPOSE",
+                "children": [
+                  {
+                    "node": "LOCAL_MAP",
+                    "map_id": "p_BGG"
+                  },
+                  {
+                    "node": "COMPOSE",
+                    "children": [
+                      {
+                        "node": "LOCAL_MAP",
+                        "map_id": "W_parent"
+                      },
+                      {
+                        "node": "HODGE_PROJECTOR_DUHAMEL_SERIES",
+                        "sign": "plus",
+                        "operator": "partial_t^2+Delta_A,S3",
+                        "coefficient_kernel": "integral_{-infinity}^t s_lambda(t-r) Pi_lambda f(r) dr",
+                        "orientation": "future/retarded"
+                      }
+                    ]
+                  },
+                  {
+                    "node": "LOCAL_MAP",
+                    "map_id": "i_BGG"
+                  }
+                ]
+              },
+              {
+                "node": "LOCAL_MAP",
+                "map_id": "h_trace_pointwise"
+              }
+            ]
+          },
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "U_trace_Weyl_inverse"
+          }
+        ]
+      },
+      "full_graph_386_name": {
+        "node": "SUM",
+        "children": [
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "H_alg_graph"
+          },
+          {
+            "node": "COMPOSE",
+            "children": [
+              {
+                "node": "LOCAL_MAP",
+                "map_id": "i_end_graph"
+              },
+              {
+                "node": "COMPOSE",
+                "children": [
+                  {
+                    "node": "LOCAL_MAP",
+                    "map_id": "U_trace_Weyl"
+                  },
+                  {
+                    "node": "DIRECT_SUM",
+                    "children": [
+                      {
+                        "node": "COMPOSE",
+                        "children": [
+                          {
+                            "node": "LOCAL_MAP",
+                            "map_id": "p_BGG"
+                          },
+                          {
+                            "node": "COMPOSE",
+                            "children": [
+                              {
+                                "node": "LOCAL_MAP",
+                                "map_id": "W_parent"
+                              },
+                              {
+                                "node": "HODGE_PROJECTOR_DUHAMEL_SERIES",
+                                "sign": "plus",
+                                "operator": "partial_t^2+Delta_A,S3",
+                                "coefficient_kernel": "integral_{-infinity}^t s_lambda(t-r) Pi_lambda f(r) dr",
+                                "orientation": "future/retarded"
+                              }
+                            ]
+                          },
+                          {
+                            "node": "LOCAL_MAP",
+                            "map_id": "i_BGG"
+                          }
+                        ]
+                      },
+                      {
+                        "node": "LOCAL_MAP",
+                        "map_id": "h_trace_pointwise"
+                      }
+                    ]
+                  },
+                  {
+                    "node": "LOCAL_MAP",
+                    "map_id": "U_trace_Weyl_inverse"
+                  }
+                ]
+              },
+              {
+                "node": "LOCAL_MAP",
+                "map_id": "p_end_graph"
+              }
+            ]
+          }
+        ]
+      },
+      "canonical_name_sha256": "74ba74bcd7d5ac3134eb9ec4f36c8908f6626c50c463bc22b0df037316807107"
+    },
+    "minus": {
+      "sign": "minus",
+      "parent_green_name": {
+        "node": "HODGE_PROJECTOR_DUHAMEL_SERIES",
+        "sign": "minus",
+        "operator": "partial_t^2+Delta_A,S3",
+        "coefficient_kernel": "-integral_t^{infinity} s_lambda(t-r) Pi_lambda f(r) dr",
+        "orientation": "past/advanced"
+      },
+      "parent_homotopy_name": {
+        "node": "COMPOSE",
+        "children": [
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "W_parent"
+          },
+          {
+            "node": "HODGE_PROJECTOR_DUHAMEL_SERIES",
+            "sign": "minus",
+            "operator": "partial_t^2+Delta_A,S3",
+            "coefficient_kernel": "-integral_t^{infinity} s_lambda(t-r) Pi_lambda f(r) dr",
+            "orientation": "past/advanced"
+          }
+        ]
+      },
+      "tracefree_endpoint_name": {
+        "node": "COMPOSE",
+        "children": [
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "p_BGG"
+          },
+          {
+            "node": "COMPOSE",
+            "children": [
+              {
+                "node": "LOCAL_MAP",
+                "map_id": "W_parent"
+              },
+              {
+                "node": "HODGE_PROJECTOR_DUHAMEL_SERIES",
+                "sign": "minus",
+                "operator": "partial_t^2+Delta_A,S3",
+                "coefficient_kernel": "-integral_t^{infinity} s_lambda(t-r) Pi_lambda f(r) dr",
+                "orientation": "past/advanced"
+              }
+            ]
+          },
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "i_BGG"
+          }
+        ]
+      },
+      "endpoint_30_name": {
+        "node": "COMPOSE",
+        "children": [
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "U_trace_Weyl"
+          },
+          {
+            "node": "DIRECT_SUM",
+            "children": [
+              {
+                "node": "COMPOSE",
+                "children": [
+                  {
+                    "node": "LOCAL_MAP",
+                    "map_id": "p_BGG"
+                  },
+                  {
+                    "node": "COMPOSE",
+                    "children": [
+                      {
+                        "node": "LOCAL_MAP",
+                        "map_id": "W_parent"
+                      },
+                      {
+                        "node": "HODGE_PROJECTOR_DUHAMEL_SERIES",
+                        "sign": "minus",
+                        "operator": "partial_t^2+Delta_A,S3",
+                        "coefficient_kernel": "-integral_t^{infinity} s_lambda(t-r) Pi_lambda f(r) dr",
+                        "orientation": "past/advanced"
+                      }
+                    ]
+                  },
+                  {
+                    "node": "LOCAL_MAP",
+                    "map_id": "i_BGG"
+                  }
+                ]
+              },
+              {
+                "node": "LOCAL_MAP",
+                "map_id": "h_trace_pointwise"
+              }
+            ]
+          },
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "U_trace_Weyl_inverse"
+          }
+        ]
+      },
+      "full_graph_386_name": {
+        "node": "SUM",
+        "children": [
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "H_alg_graph"
+          },
+          {
+            "node": "COMPOSE",
+            "children": [
+              {
+                "node": "LOCAL_MAP",
+                "map_id": "i_end_graph"
+              },
+              {
+                "node": "COMPOSE",
+                "children": [
+                  {
+                    "node": "LOCAL_MAP",
+                    "map_id": "U_trace_Weyl"
+                  },
+                  {
+                    "node": "DIRECT_SUM",
+                    "children": [
+                      {
+                        "node": "COMPOSE",
+                        "children": [
+                          {
+                            "node": "LOCAL_MAP",
+                            "map_id": "p_BGG"
+                          },
+                          {
+                            "node": "COMPOSE",
+                            "children": [
+                              {
+                                "node": "LOCAL_MAP",
+                                "map_id": "W_parent"
+                              },
+                              {
+                                "node": "HODGE_PROJECTOR_DUHAMEL_SERIES",
+                                "sign": "minus",
+                                "operator": "partial_t^2+Delta_A,S3",
+                                "coefficient_kernel": "-integral_t^{infinity} s_lambda(t-r) Pi_lambda f(r) dr",
+                                "orientation": "past/advanced"
+                              }
+                            ]
+                          },
+                          {
+                            "node": "LOCAL_MAP",
+                            "map_id": "i_BGG"
+                          }
+                        ]
+                      },
+                      {
+                        "node": "LOCAL_MAP",
+                        "map_id": "h_trace_pointwise"
+                      }
+                    ]
+                  },
+                  {
+                    "node": "LOCAL_MAP",
+                    "map_id": "U_trace_Weyl_inverse"
+                  }
+                ]
+              },
+              {
+                "node": "LOCAL_MAP",
+                "map_id": "p_end_graph"
+              }
+            ]
+          }
+        ]
+      },
+      "canonical_name_sha256": "698ade6e1e9eddefa13d3824e23e222ef745169ebbbad32ce75f4cd3542e80b6"
+    }
+  },
+  "transport_contract": {
+    "parent": "Lambda_parent,sign=W_parent G_parent,sign",
+    "tracefree_endpoint": "Lambda_TF,sign=p_BGG Lambda_parent,sign i_BGG",
+    "endpoint_30": "Lambda_end,sign=U (Lambda_TF,sign direct-sum h_trace) U^-1",
+    "full_graph_386": "Lambda_graph,sign=H_alg_graph+i_end_graph Lambda_end,sign p_end_graph",
+    "homotopy_identity": "q_graph Lambda_graph,sign+Lambda_graph,sign q_graph=identity_386",
+    "adjoint_relation": "Lambda_graph,plus^sharp=Lambda_graph,minus",
+    "causal_support": "every surrounding map is finite-order support-local; the pointwise H_alg term lies in both causal orientations"
+  },
+  "analytic_and_exact_replay": {
+    "modal_inverse_jump_checked_exactly": true,
+    "zero_mode_checked_exactly": true,
+    "parent_two_sided_inverse_imported": true,
+    "parent_LF_to_Frechet_continuity_imported": true,
+    "parent_causal_support_imported": true,
+    "curved_BGG_chain_maps_exact": true,
+    "graph_SDR_exact": true,
+    "endpoint_homotopy_identity_exact": true,
+    "full_graph_homotopy_identity_exact": true,
+    "advanced_retarded_adjoint_exact": true,
+    "operator_name_digests_distinct": true
+  },
+  "foundational_strength": {
+    "imported_theorem_base": "CLASSICAL_SMOOTH_ANALYSIS_AS_USED_IN_PINNED_SOURCE",
+    "explicit_countable_projector_index": true,
+    "eigenvector_choice_operation": false,
+    "basis_selection_avoided_by_projectors": true,
+    "weakest_base": "NOT_ESTABLISHED",
+    "Bishop_constructive_proof": false,
+    "TTE_computability": false,
+    "physics_implies_choice_principle": false,
+    "spectral_completeness_proof_formalized": false,
+    "boundary": "The serialized series makes the countable analytic data visible. It imports the classical S3 Hodge spectral completeness theorem; it does not independently formalize that proof, reverse the theorem to a choice principle, or supply an effective projector/tail algorithm."
+  },
+  "gate_disposition": {
+    "endpoint_green_convergent_name_serialized": true,
+    "full_graph_green_convergent_name_serialized": true,
+    "receiver_executable_numeric_solver_serialized": false,
+    "distribution_kernel_bytes_serialized": false,
+    "one_common_unary_causal_snapshot_accepted": false,
+    "classical_import_gate_a_status": "FAIL_CLOSED"
+  },
+  "claim_flags": {
+    "STRICT_ENDPOINT_GREEN_CONVERGENT_NAME_SERIALIZED": true,
+    "STRICT_FULL_GRAPH_GREEN_CONVERGENT_NAME_SERIALIZED": true,
+    "STRICT_386_REPRESENTED_GREEN_ACTIONS_SERIALIZED": true,
+    "STRICT_386_RECEIVER_EXECUTABLE_NUMERIC_GREEN_SOLVER": false,
+    "STRICT_386_DISTRIBUTION_KERNEL_BYTES_SERIALIZED": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "STRICT_386_LOCAL_D_CERTIFIED": false,
+    "STRICT_386_Q2_GREEN_COMPATIBILITY_CERTIFIED": false,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "RENORMALIZED_LORENTZIAN_PRODUCTS": false,
+    "QME_RESTORED": false,
+    "RESIDUAL_TRANSFERRED": false,
+    "LORENTZIAN_QUANTUM_THEORY": false
+  },
+  "does_not_establish": [
+    "an effective or complexity-bounded numerical solver for arbitrary source names",
+    "serialized distribution-kernel coordinate bytes",
+    "a choice-free, constructive, reverse-mathematical, or weakest-base proof of the Green theorem",
+    "an independently formalized weak-base proof of completeness for the S3 Hodge spectral branches",
+    "the complete twenty-export, seven-hash classical Gate-A snapshot required by the authoritative V5 reconciliation",
+    "local D or q2 compatibility on that accepted snapshot",
+    "a BRST-compatible Hadamard state, positivity, Ward identity, or renormalized Lorentzian time-ordered products",
+    "QME restoration, residual transfer, or a Lorentzian quantum theory"
+  ],
+  "next_gate": "Bind the fixed graph basis, pairing, q1, SDR, transported suspension and both content-addressed Green operator names into one receiver-accepted unary-causal snapshot. Keep that snapshot distinct from classical Gate A, then reconcile the authoritative V5 twenty-export/seven-hash contract by extending strict q2, local D, residual SDR, residual representation data and centered representatives on common bytes.",
+  "canonical_hashes": {
+    "plus_action_name_sha256": "74ba74bcd7d5ac3134eb9ec4f36c8908f6626c50c463bc22b0df037316807107",
+    "minus_action_name_sha256": "698ade6e1e9eddefa13d3824e23e222ef745169ebbbad32ce75f4cd3542e80b6",
+    "spectral_name_sha256": "ecff2437bb2e88699647d1780352cbc1c650c35a6e4b08a9a9adacbe13443b4f",
+    "represented_spaces_sha256": "923e0843b3ba3e6783563685f5186ecfd02f002872e880ac39ab636333301c83",
+    "transport_contract_sha256": "b9d7f6e3aeef21c53aa392841ee1294aeb1546a75887c0bee42ef949d8e1897f"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1.json",
+        "sha256": "b805bd81b35f13325d938e93be91495e1d46aa5900fd168e55bdcde1afbfa8e2",
+        "role": "fixed graph q1, SDR and suspension"
+      },
+      {
+        "path": "covariant_completion/certificates/adjoint_tractor_green_transfer.json",
+        "sha256": "228e4ffd21fccdac155629342ea75ab590f10b75272dcfe20fdc2fa304edb7d8",
+        "role": "parent Green witness and cyclic BGG transfer"
+      },
+      {
+        "path": "covariant_completion/certificates/adjoint_tractor_bgg_curved_pbw.json",
+        "sha256": "ae8fa2cc43cc655b13a8a120b4479e0c1603270df57555b30a1e81534e688fd4",
+        "role": "exact support-local curved BGG HPL"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_full_prolonged_green_homotopy_assembly.json",
+        "sha256": "1f8aae727a06fb82c70732f7207499d427894247d09fea22f677a0f9b38be0ee",
+        "role": "endpoint and all-row causal assembly theorem"
+      },
+      {
+        "path": "covariant_completion/certificates/adjoint_tractor_bgg_differential_screen_matrices.json",
+        "sha256": "29de74d959eff856ebbdd46be1c2522727ce824e817cb5ab1159857ee843e022",
+        "role": "serialized BGG differential tables"
+      },
+      {
+        "path": "covariant_completion/certificates/adjoint_tractor_kostant_compression_matrices.json",
+        "sha256": "6959cb31fad909b88d92a55689e06d9740f715cf9296fea032f8f387ed768f26",
+        "role": "serialized Kostant compression tables"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_prolonged_metric_endpoint_coefficients.json",
+        "sha256": "2d3e6857e42b38a7f68e0c1ecb90adfa621ffa87038fa44f3e37c14f6938e9f6",
+        "role": "serialized metric endpoint coefficients"
+      },
+      {
+        "path": "foundations/literature-causal-green-atlas-v1.json",
+        "sha256": "3d332cfb759819581dae7ec6a01f2a2776df8f27184723f53688056609024c58",
+        "role": "content-pinned classical Green theorem ledger"
+      }
+    ]
+  },
+  "independent_checker": {
+    "path": "quantum-weyl/classical_import/check_strict_386_graph_green_action_name.py",
+    "checks": [
+      "all eight dependency identities and byte hashes",
+      "content-pinned normally-hyperbolic and round-S3 p-form spectral sources",
+      "unit-S3 scalar/exact/coexact Hodge spectrum",
+      "positive and zero oscillator distributional jump identities",
+      "opposite causal orientations and adjoint reversal",
+      "operator-name DAG structure through BGG, trace/Weyl and graph SDR",
+      "LF/Frechet topology and convergence boundary",
+      "foundational and quantum promotion firewall",
+      "canonical projection digest"
+    ],
+    "expected_digest": "974a4ec42ab808725802e455a4261a15c577ca92a6b0185b59879b0dd69c9bed"
+  },
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_386_GRAPH_GREEN_ACTION_NAME_V1.md"
+}

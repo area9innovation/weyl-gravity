@@ -1,0 +1,77 @@
+{
+  "receipt_id": "STRICT_386_GRAPH_GREEN_ACTION_NAME_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_GRAPH_GREEN_ACTION_NAME_V1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "A content-addressed classical convergent name for both causal Green-homotopy orientations on the strict endpoint and full 386-row graph, composed from the pinned normally-hyperbolic theorem, round-S3 Hodge spectrum, exact BGG maps and exact graph SDR.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.45,
+      "commands": [
+        "python3 -m py_compile <explicit Green-name, unary-snapshot, V15, site and paper Python paths>",
+        "python3 -m json.tool quantum-weyl/classical_import/schema/strict-386-graph-green-action-name-v1.schema.json",
+        "python3 -m json.tool quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_GREEN_ACTION_NAME_V1.json",
+        "deno check foundations/matrix_site_v2_assets/app-v2.js",
+        "git diff --check -- foundations quantum-weyl/classical_import paper"
+      ],
+      "notes": [
+        "The exact staged diff and every content hash are inspected immediately before commit.",
+        "The Lauret arXiv PDF was fetched to a temporary file only; SHA-256 6b20b886450706d72467121560662fda6f88b319323930f3270ed31741fcb244 is pinned in the certificate."
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 0.36,
+      "commands": [
+        "python3 quantum-weyl/classical_import/build_strict_386_graph_green_action_name.py --check",
+        "python3 quantum-weyl/classical_import/check_strict_386_graph_green_action_name.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_graph_green_action_name.py",
+        "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_graph_green_action_name.py"
+      ],
+      "checks": {
+        "carrier_rows": 386,
+        "parent_tractor_rank": 15,
+        "spatial_spectral_branches": 3,
+        "zero_mode_explicit": true,
+        "endpoint_and_full_graph_names": true,
+        "modal_and_homotopy_defects": 0,
+        "content_pinned_analytic_sources": 2,
+        "mutation_tests": "11/11 PASS",
+        "effective_solver": false,
+        "distribution_kernel_bytes": false,
+        "weakest_base": "NOT_ESTABLISHED"
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        "python3 quantum-weyl/classical_import/check_strict_386_unary_causal_common_snapshot.py",
+        "python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v15.py",
+        "python3 foundations/check_matrix_site_v2.py",
+        "python3 paper/verify_21_reverse_foundations_claim_map.py"
+      ],
+      "criterion": "No upstream classical producer changed. All eight upstream artifacts are content-addressed and rechecked by independent hash and identity audits; every direct consumer of the new Green certificate passed after regeneration."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No shared classical operator, freeze tag, release or quantum lifecycle state changed. The result is CLASSIFIED and leaves Gate A, Hadamard, products, QME and residual transfer false."
+    }
+  },
+  "artifact_sha256": {
+    "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_GREEN_ACTION_NAME_V1.json": "8e1fc54c4820310457e22094dae7f6dd1c5a3c56724e6450d455700858f7ad64",
+    "quantum-weyl/classical_import/REPORT_STRICT_386_GRAPH_GREEN_ACTION_NAME_V1.md": "696785bc39233e71bd19fae62989827e67fa6542158a2955479830b645672149"
+  },
+  "advisory_shadow_rail": {
+    "command": "ci/science-forge-shadow.sh",
+    "exit_status": 0,
+    "toolchain": "UNPINNED dev build; cached Forge revision differs from the current stdlib",
+    "bridge_audit": "FAIL_CLOSED: the wrapper audited bp2transformer and its external verifier could not import sympy",
+    "coverage_census": "DRIFT: 1777 certificates observed versus the 2026-07-19 baseline of 976",
+    "disposition": "Advisory findings are recorded and are not treated as independent verification of this result."
+  },
+  "claim_boundary": "This certifies a classical convergent Green-operator name between declared LF and compact-open smooth topologies. It imports, but does not weak-base formalize, S3 Hodge spectral completeness. It does not provide an effective solver, kernel bytes, a Choice reversal, Gate A, local D, q2 compatibility, Hadamard data, renormalized products, QME restoration, residual transfer or a Lorentzian quantum theory."
+}

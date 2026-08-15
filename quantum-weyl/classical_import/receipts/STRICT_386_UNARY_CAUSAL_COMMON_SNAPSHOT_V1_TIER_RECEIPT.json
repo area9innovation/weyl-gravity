@@ -1,0 +1,72 @@
+{
+  "receipt_id": "STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Receiver acceptance of thirteen content hashes binding the fixed basis, pairing, graph q1, local SDR, transported suspension, represented spaces, transport contract and both causal Green names on one strict 386-row unary-causal carrier, explicitly distinct from Gate A.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.45,
+      "commands": [
+        "python3 -m py_compile <explicit Green-name, unary-snapshot, V15, site and paper Python paths>",
+        "python3 -m json.tool quantum-weyl/classical_import/schema/strict-386-unary-causal-common-snapshot-v1.schema.json",
+        "python3 -m json.tool quantum-weyl/classical_import/certificates/STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1.json",
+        "git diff --check -- foundations quantum-weyl/classical_import paper"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 0.39,
+      "commands": [
+        "python3 quantum-weyl/classical_import/build_strict_386_unary_causal_common_snapshot.py --check",
+        "python3 quantum-weyl/classical_import/check_strict_386_unary_causal_common_snapshot.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_unary_causal_common_snapshot.py",
+        "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_unary_causal_common_snapshot.py"
+      ],
+      "checks": {
+        "carrier_rows": 386,
+        "accepted_hashes": 13,
+        "receiver_status": "ACCEPTED_SCOPED",
+        "both_causal_orientations": true,
+        "mutation_tests": "10/10 PASS",
+        "gate_a_exports_required": 20,
+        "gate_a_hashes_required": 7,
+        "gate_a_checks_required": 10,
+        "gate_a_hashes_accepted_by_scoped_result": 0,
+        "missing_bundles": 6
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 2.68,
+      "commands": [
+        "python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v15.py",
+        "python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v15.py",
+        "python3 foundations/check_matrix_site_v2.py",
+        "python3 foundations/verify_matrix_site_v2.py",
+        "python3 paper/verify_21_reverse_foundations_claim_map.py"
+      ],
+      "criterion": "The scoped snapshot changes the completion frontier and is consumed by atlas V15, the website and paper; all direct consumers were regenerated and independently checked."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This is not the classical freeze. It accepts zero of Gate A's seven top-level hashes and promotes no theorem or quantum lifecycle state."
+    }
+  },
+  "artifact_sha256": {
+    "quantum-weyl/classical_import/certificates/STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1.json": "08e4c12adb9183429f018d60574fdf0c1e21db40b25de10648247fdfd17bf6ab",
+    "quantum-weyl/classical_import/REPORT_STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1.md": "0818793cc276c14d2c4c60d22d55fcb7bd7c9c8a6070ff5fcb72dd11b05a350f"
+  },
+  "advisory_shadow_rail": {
+    "command": "ci/science-forge-shadow.sh",
+    "exit_status": 0,
+    "bridge_audit": "FAIL_CLOSED: wrapper repository mismatch and missing sympy in the external bp2transformer verifier",
+    "coverage_census": "DRIFT: 1777 certificates versus baseline 976",
+    "disposition": "Advisory only; no failed advisory is laundered into a pass."
+  },
+  "claim_boundary": "The accepted object is a common unary-causal snapshot, not the authoritative classical Gate A. It does not establish q2/D, the residual SDR, the full cyclic pairing, exact residual action data, centered representatives, an effective Green solver, Hadamard data, renormalized products, QME restoration, residual transfer or a Lorentzian quantum theory."
+}

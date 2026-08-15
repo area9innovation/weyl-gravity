@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/foundational-lorentzian-weyl-bv-completion-atlas-v15.schema.json",
+  "type": "object",
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit", "dependency_tags", "question", "answer", "predecessor", "status_vocabulary", "stages", "branches", "frontier_summary", "classical_import_reconciliation", "strict_gate_a_progress", "strict_causal_sign_transport", "strict_endpoint_q1_content_bridge", "strict_suspended_adjoint_bridge", "strict_component_pairing_serialization", "strict_operator_portability", "strict_full_q1_split_sign_gate", "strict_auxiliary_q_sign_repair", "strict_full_q1_component_jet_table", "strict_local_sdr_component_maps", "strict_canonical_shear_component_jets", "strict_graph_q1_sdr_component_jets", "strict_graph_green_action_name", "strict_unary_causal_common_snapshot", "berger_h26_c26_decision_chain", "route_selection", "research_queue", "provenance", "claim_flags", "does_not_establish", "independent_checker", "human_report"],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v15"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V15"},
+    "result_kind": {"const": "BRANCH_BY_STAGE_COMPLETION_ATLAS"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"type": "array", "minItems": 4, "maxItems": 4, "uniqueItems": true},
+    "question": {"type": "string", "minLength": 150},
+    "answer": {"type": "string", "minLength": 1700},
+    "predecessor": {
+      "type": "object",
+      "required": ["result_id", "path", "sha256", "preserved"],
+      "properties": {
+        "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V14"},
+        "path": {"const": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V14.json"},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "preserved": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "status_vocabulary": {"type": "array", "minItems": 9, "maxItems": 9},
+    "stages": {"type": "array", "minItems": 11, "maxItems": 11},
+    "branches": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "relation_to_target", "scope", "stages", "first_unclosed_gate", "next_decisive_object"],
+        "properties": {"stages": {"type": "array", "minItems": 11, "maxItems": 11}}
+      }
+    },
+    "frontier_summary": {"type": "object", "minProperties": 4},
+    "classical_import_reconciliation": {"type": "object"},
+    "strict_gate_a_progress": {
+      "type": "object",
+      "required": ["status", "graph_q1_sdr_component_jet_control", "graph_green_action_name_control", "unary_causal_common_snapshot_control"],
+      "properties": {
+        "status": {"const": "UNARY_CAUSAL_COMMON_SNAPSHOT_ACCEPTED_FULL_GATE_A_Q2_D_RESIDUAL_BUNDLE_REQUIRED"},
+        "graph_q1_sdr_component_jet_control": {"$ref": "#/$defs/graph"},
+        "graph_green_action_name_control": {"$ref": "#/$defs/green"},
+        "unary_causal_common_snapshot_control": {"$ref": "#/$defs/common"}
+      }
+    },
+    "strict_causal_sign_transport": {"type": "object"},
+    "strict_endpoint_q1_content_bridge": {"type": "object"},
+    "strict_suspended_adjoint_bridge": {"type": "object"},
+    "strict_component_pairing_serialization": {"type": "object"},
+    "strict_operator_portability": {"type": "object"},
+    "strict_full_q1_split_sign_gate": {"type": "object"},
+    "strict_auxiliary_q_sign_repair": {"type": "object"},
+    "strict_full_q1_component_jet_table": {"type": "object"},
+    "strict_local_sdr_component_maps": {"type": "object"},
+    "strict_canonical_shear_component_jets": {"type": "object"},
+    "strict_graph_q1_sdr_component_jets": {"$ref": "#/$defs/graph"},
+    "strict_graph_green_action_name": {"$ref": "#/$defs/green"},
+    "strict_unary_causal_common_snapshot": {"$ref": "#/$defs/common"},
+    "berger_h26_c26_decision_chain": {"type": "array", "minItems": 11, "maxItems": 11},
+    "route_selection": {
+      "type": "array", "minItems": 8, "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["rank", "route", "branch", "scientific_leverage", "tractability", "dependency_depth", "recommendation"],
+        "properties": {"rank": {"type": "integer", "minimum": 1, "maximum": 8}, "recommendation": {"type": "string", "minLength": 100}}
+      }
+    },
+    "research_queue": {"type": "array", "minItems": 8, "maxItems": 8},
+    "provenance": {"type": "object", "required": ["inputs"], "properties": {"inputs": {"type": "array", "minItems": 62, "maxItems": 62}}},
+    "claim_flags": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "does_not_establish": {"type": "array", "minItems": 45, "uniqueItems": true},
+    "independent_checker": {
+      "type": "object",
+      "required": ["path", "checks", "expected_digest"],
+      "properties": {
+        "path": {"const": "foundations/check_lorentzian_weyl_bv_completion_atlas_v15.py"},
+        "checks": {"type": "array", "minItems": 18},
+        "expected_digest": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "human_report": {"const": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v15.md"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "green": {
+      "type": "object",
+      "required": ["result_id", "status", "name_kind", "source_space", "source_topology", "target_space", "target_topology", "spatial_spectral_branches", "tractor_rank", "zero_mode_explicit", "modal_inverse_jump_checked", "endpoint_name_serialized", "full_graph_name_serialized", "plus_name_sha256", "minus_name_sha256", "effective_solver", "kernel_bytes", "weakest_base", "next_gate"],
+      "properties": {
+        "result_id": {"const": "STRICT_386_GRAPH_GREEN_ACTION_NAME_V1"},
+        "status": {"type": "string", "minLength": 20},
+        "name_kind": {"const": "CANONICAL_HODGE_PROJECTOR_DUHAMEL_SERIES"},
+        "source_space": {"const": "Gamma_c^infinity(M,F)"},
+        "source_topology": {"type": "string", "minLength": 20},
+        "target_space": {"type": "string", "minLength": 10},
+        "target_topology": {"type": "string", "minLength": 20},
+        "spatial_spectral_branches": {"const": 3},
+        "tractor_rank": {"const": 15},
+        "zero_mode_explicit": {"const": true},
+        "modal_inverse_jump_checked": {"const": true},
+        "endpoint_name_serialized": {"const": true},
+        "full_graph_name_serialized": {"const": true},
+        "plus_name_sha256": {"$ref": "#/$defs/hash"},
+        "minus_name_sha256": {"$ref": "#/$defs/hash"},
+        "effective_solver": {"const": false},
+        "kernel_bytes": {"const": false},
+        "weakest_base": {"const": "NOT_ESTABLISHED"},
+        "next_gate": {"type": "string", "minLength": 160}
+      },
+      "additionalProperties": false
+    },
+    "common": {
+      "type": "object",
+      "required": ["result_id", "status", "carrier_rows", "accepted_hashes", "snapshot_sha256", "receiver_status", "represented_green_actions_serialized", "classical_gate_a_passed", "gate_a_exports_required", "gate_a_hashes_required", "gate_a_freeze_checks_required", "gate_a_hashes_accepted_by_scoped_result", "missing_bundle_ids", "next_gate"],
+      "properties": {
+        "result_id": {"const": "STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1"},
+        "status": {"type": "string", "minLength": 20},
+        "carrier_rows": {"const": 386},
+        "accepted_hashes": {"const": 13},
+        "snapshot_sha256": {"$ref": "#/$defs/hash"},
+        "receiver_status": {"const": "ACCEPTED_SCOPED"},
+        "represented_green_actions_serialized": {"const": true},
+        "classical_gate_a_passed": {"const": false},
+        "gate_a_exports_required": {"const": 20},
+        "gate_a_hashes_required": {"const": 7},
+        "gate_a_freeze_checks_required": {"const": 10},
+        "gate_a_hashes_accepted_by_scoped_result": {"const": 0},
+        "missing_bundle_ids": {"type": "array", "minItems": 6, "maxItems": 6},
+        "next_gate": {"type": "string", "minLength": 160}
+      },
+      "additionalProperties": false
+    },
+    "graph": {
+      "type": "object",
+      "required": ["result_id", "status", "carrier_dimension", "retained_endpoint_dimension", "contracted_dimension", "operator_tables", "split_operator_tables", "graph_attachment_tables", "combined_derivative_multiindices", "nonzero_rational_coefficients", "maximum_order", "H_alg_nonzero_entries", "inclusion_nonzero_entries", "projection_nonzero_entries", "retained_projector_nonzero_entries", "contracted_projector_nonzero_entries", "homotopy_defects", "retract_defects", "side_condition_defects", "H_cyclicity_defects", "transported_suspension_entries", "transported_suspension_off_diagonal_entries", "transported_suspension_involution_defects", "old_diagonal_suspension_cyclicity_defects", "raw_graph_suspension_cyclicity_residuals", "raw_second_chain_relation_residuals", "PBW_reduced_cyclicity_defects", "graph_snapshot_sha256", "represented_green_actions_serialized", "classical_import_gate_passed", "next_gate"],
+      "properties": {
+        "result_id": {"const": "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1"},
+        "status": {"const": "GRAPH_Q1_SDR_AND_SUSPENSION_SERIALIZED_REPRESENTED_GREEN_ACTIONS_OPEN"},
+        "carrier_dimension": {"const": 386},
+        "retained_endpoint_dimension": {"const": 30},
+        "contracted_dimension": {"const": 356},
+        "operator_tables": {"const": 27},
+        "split_operator_tables": {"const": 18},
+        "graph_attachment_tables": {"const": 9},
+        "combined_derivative_multiindices": {"const": 70},
+        "nonzero_rational_coefficients": {"const": 4374},
+        "maximum_order": {"const": 4},
+        "H_alg_nonzero_entries": {"const": 190},
+        "inclusion_nonzero_entries": {"const": 488},
+        "projection_nonzero_entries": {"const": 488},
+        "retained_projector_nonzero_entries": {"const": 1756},
+        "contracted_projector_nonzero_entries": {"const": 2082},
+        "homotopy_defects": {"const": 0},
+        "retract_defects": {"const": 0},
+        "side_condition_defects": {"const": 0},
+        "H_cyclicity_defects": {"const": 0},
+        "transported_suspension_entries": {"const": 394},
+        "transported_suspension_off_diagonal_entries": {"const": 8},
+        "transported_suspension_involution_defects": {"const": 0},
+        "old_diagonal_suspension_cyclicity_defects": {"const": 8},
+        "raw_graph_suspension_cyclicity_residuals": {"const": 32},
+        "raw_second_chain_relation_residuals": {"const": 16},
+        "PBW_reduced_cyclicity_defects": {"const": 0},
+        "graph_snapshot_sha256": {"$ref": "#/$defs/hash"},
+        "represented_green_actions_serialized": {"const": false},
+        "classical_import_gate_passed": {"const": false},
+        "next_gate": {"type": "string", "minLength": 180}
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -876,7 +876,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "773382e994b7bcab8ba55dba0e177d49481a044c0179fa9db607da23139ef2bc"
+      "sha256": "0950dcc8991c25040636b0595e05b7601c4d40d36c76d922c003c2e799eab600"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -1010,6 +1010,18 @@
       "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V14.json",
       "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V14",
       "sha256": "6e2dc265eab02baa98fee5c87b96b5847c126f3f79afe762458fe2107a1ec3b6"
+    },
+    "lorentzian_weyl_bv_completion_atlas_v15": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V15.json",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V15",
+      "sha256": "daaa483f842e34d8735e518639437077b4f892c8687901f40d3c7e2fbaa7067a"
     },
     "lorentzian_weyl_bv_completion_atlas_v4": {
       "dependency_tags": [
@@ -1177,6 +1189,16 @@
       "result_id": "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1",
       "sha256": "9b0e9da9e8838a0ade6e1f1214e16457e9a94af981d9d020c137d105f9e9c21e"
     },
+    "strict_386_graph_green_action_name": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_GREEN_ACTION_NAME_V1.json",
+      "result_id": "STRICT_386_GRAPH_GREEN_ACTION_NAME_V1",
+      "sha256": "8e1fc54c4820310457e22094dae7f6dd1c5a3c56724e6450d455700858f7ad64"
+    },
     "strict_386_graph_q1_sdr_component_jets": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -1206,6 +1228,16 @@
       "path": "quantum-weyl/classical_import/certificates/STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1.json",
       "result_id": "STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1",
       "sha256": "3c5a954fba4fc174bc995da0d1fc26164c1f2e816bd30a800d0c9e7c525f1cbc"
+    },
+    "strict_386_unary_causal_common_snapshot": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1.json",
+      "result_id": "STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1",
+      "sha256": "08e4c12adb9183429f018d60574fdf0c1e21db40b25de10648247fdfd17bf6ab"
     },
     "strict_local_q1_q2_identity": {
       "dependency_tags": [
@@ -1254,10 +1286,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "98c3abc4229da069891007adb912531ac756c149437bcdbdce6f7395feaeffc0"
+      "sha256": "68a21b4cc29de8cad0cf68ce40819dcbce1867ba944d7a0f663ed2d6ae6ee39f"
     }
   },
-  "canonical_digest": "d177b5f6d2944a4c95bc5f397954f2e06dacc93c648dbc83b323bb95643157e6",
+  "canonical_digest": "81694cd498d6f04832a00981777ded53463362b8f5587701636ce0a758f67894",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -1425,6 +1457,8 @@
     "strict_386_component_basis_serialized": true,
     "strict_386_component_pairing_serialized": true,
     "strict_386_componentwise_t_adjoint_replayed": true,
+    "strict_386_distribution_kernel_bytes_serialized": false,
+    "strict_386_effective_numeric_green_solver": false,
     "strict_386_endpoint_all_700_bach_columns_match": true,
     "strict_386_endpoint_q1_content_identified": true,
     "strict_386_full_q1_component_bytes_serialized": true,
@@ -1437,7 +1471,8 @@
     "strict_386_local_sdr_cyclicity_replayed": true,
     "strict_386_local_sdr_identities_replayed": true,
     "strict_386_pairing_suspension_bridge_certified": true,
-    "strict_386_represented_green_actions_serialized": false,
+    "strict_386_represented_green_actions_serialized": true,
+    "strict_386_unary_causal_common_snapshot_accepted": true,
     "strict_386_unshifted_graph_q1_snapshot_complete": true,
     "strict_386_unshifted_graph_sdr_snapshot_complete": true,
     "strict_minimal_bv_cyclicity_reconciled": true,
@@ -1950,6 +1985,32 @@
       ],
       "statement": "On the fixed 386-row strict pure-Weyl carrier, exact conjugation by the certified T/A/B shear and reduction by the pinned curved chain relations produce a graph-coordinate unary differential with 27 tables, 70 combined derivative multiindices and 4,374 nonzero rational coefficients through order four. The graph inclusion and projection each contain 488 coefficients, the two projectors 1,756 and 2,082, and the unchanged homotopy 190. Direct component replay gives q_graph H+H q_graph=P_alg, p_graph i_graph=I, the projector identities, normalized side conditions and H cyclicity with zero defects. The old diagonal suspension has eight graph-cyclicity defects; the transported 394-entry R_graph is an involution with eight off-diagonal entries. Its 32 raw cyclic residuals reduce to zero only under the pinned exact Ncurv A=B C relation whose raw residual has 16 entries. This closes finite graph-coordinate unary/SDR replay, not represented Green actions, Gate A, local D, q2, Hadamard or QME.",
       "status": "EXACT_GRAPH_Q1_SDR_AND_TRANSPORTED_SUSPENSION_WITH_ANALYTIC_GREEN_GATE_OPEN"
+    },
+    {
+      "authorities": [
+        "strict_386_graph_green_action_name",
+        "lorentzian_weyl_bv_completion_atlas_v15"
+      ],
+      "claim_id": "RF-39-STRICT-WEYL-REPRESENTED-GREEN-ACTION-NAMES",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "On the unit conformal cylinder, the strict endpoint and full 386-row graph now have content-addressed advanced and retarded Green-homotopy names. The parent is a canonical Hodge-projector Duhamel series over the scalar, exact-one-form and coexact-one-form S3 spectral branches, using whole finite-rank eigenspace projectors rather than selected eigenvectors and treating the zero mode explicitly. Local BGG maps, the trace summand, and the exact graph retract compose this parent name into endpoint and full-graph actions. Modal jump, zero-mode, homotopy, support-orientation and adjoint checks pass. This is a classical convergent operator name between declared LF and compact-open smooth topologies; it is not an effective numerical solver, serialized kernel, constructive proof, weakest-base result, Hadamard state or QME.",
+      "status": "REPRESENTED_ENDPOINT_AND_FULL_GRAPH_GREEN_NAMES_CERTIFIED_EFFECTIVITY_OPEN"
+    },
+    {
+      "authorities": [
+        "strict_386_unary_causal_common_snapshot",
+        "lorentzian_weyl_bv_completion_atlas_v15"
+      ],
+      "claim_id": "RF-40-STRICT-WEYL-UNARY-CAUSAL-COMMON-SNAPSHOT",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "Thirteen content hashes bind the fixed 386-row graph basis, pairing, q1, local retract, transported suspension, represented test spaces, transport contract, and both Green orientations into one receiver-accepted unary-causal snapshot. This establishes that those unary causal ingredients inhabit one common carrier. It does not pass the authoritative classical Gate A: the scoped result accepts zero of Gate A's seven top-level hashes and leaves the twenty-export freeze, strict q2 and D, residual SDR, full cyclic pairing, exact residual payload and centered representatives open. No Hadamard, renormalized-product, QME, residual-transfer or Lorentzian-quantum lifecycle state is promoted.",
+      "status": "UNARY_CAUSAL_COMMON_SNAPSHOT_ACCEPTED_FULL_GATE_A_FAIL_CLOSED"
     }
   ],
   "created": "2026-08-15",
@@ -1971,6 +2032,8 @@
     "surjectivity of the smooth-test embedding onto the H2 completion",
     "uniqueness among arbitrary distributional weak solutions",
     "a variable-coefficient, curved-spacetime, Weyl, or metric-BV Green operator from the flat scalar 1+1 benchmark",
+    "an effective strict 386-row Green solver, serialized distribution-kernel bytes, or weakest analytic base from the classical convergent name",
+    "the authoritative twenty-export, seven-hash classical Gate A from the scoped unary-causal snapshot",
     "a complete Lorentzian off-shell BV propagator",
     "a BRST-compatible Hadamard state for the full metric BV complex",
     "renormalized Lorentzian time-ordered products or causal perturbative AQFT",
@@ -2145,19 +2208,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "47bfb919687033f760dc620e3971b0e41f457f464ec4581ab44ecb9a36d237f6",
+      "assembly_source_canonical_digest": "704c3a830564454ab5b25ecdfc17b326667a2a17d28ba0eae87e603661542a64",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "98c3abc4229da069891007adb912531ac756c149437bcdbdce6f7395feaeffc0",
+      "assembly_source_sha256": "68a21b4cc29de8cad0cf68ce40819dcbce1867ba944d7a0f663ed2d6ae6ee39f",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
-      "generator_sha256": "9e2bf5fa8942bc4c683b2911b71a66b000a66688d1ef47978fc07612a30c2b5c",
+      "generator_sha256": "aca0eff6b8175f150f6d69f894d31b882d7793a2e30308f9a12bf36e5bbb3e19",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "b77160a79d354d685c3b1a1f50c922216045a39bffe589134659326560a268bd",
-      "source_canonical_digest": "19641f8f7bcdccc9c527948c7992e0a34da642121bf4efaa8dc75e08e9ebecfc",
+      "sha256": "7cf053507bbb95fba486672de34e8dfed2098fd6341966cd178db7dde242437b",
+      "source_canonical_digest": "6e7791e8aabc2716ee6059ceddba1a6de2333eddf4ba2df9d08c3d94c6559749",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "64a0242804189b8ba3bad511ca8c78134e0ae79d88133348e5126ee03eaee1a6"
+      "source_sha256": "4507162efd56b4b88d3b265330a72d7ccfab01ab7e90f11db7430d247a8d9acc"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "911c1203d90fd20889eefac67829a256d773e73d7f0f99b6f589c66ed384c9c4"
+    "sha256": "cb4698c102cb835e196c3fadb7a35fa11dfaae2dc6eef59b2e7aac8c65332bf7"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",
