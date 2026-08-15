@@ -1,0 +1,189 @@
+{
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_MIXED_HESSIAN_SQUARE_OBSTRUCTION_V1",
+  "schema_version": "reverse-physics-bt-euclidean-mixed-hessian-square-obstruction-v1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "result_kind": "exact method obstruction for a pointwise conditional mixed-Hessian-square estimate",
+  "question": "Can the quotient-site Poincare/Cauchy response bound retain a uniform bilaplacian omega(p)^2 square at every conditional background?",
+  "answer": "No. On every L^4 torus with L a multiple of four and L>=8, repeat the positive axial profile Omega=(1,2,3,4). At the origin the exact action-Hessian applied to k_L(x)=sin(2*pi*x_1/L) is 19*sin(p_L)+(9/16)*sin(2*p_L), hence (161/8)*p_L+O(p_L^3). Along the quotient-site conditional fiber the leading coefficient is analytic and is nonzero at the displayed profile, so its conditional square has a strictly positive p_L^2 limit coefficient. Since omega(p_L)^2 is order p_L^4, no background-uniform pointwise bound of that square by C*omega(p_L)^2 can hold. This retires only the route that takes the conditional square before extracting signed lattice cancellations; it does not obstruct the exact signed covariance response.",
+  "model": {
+    "action": "A(psi)=1/2*sum_x r_x(psi)^2",
+    "residual": "r_x=sum_{y~x} exp(psi_y-psi_x)-8",
+    "scaled_action": "S(phi)=A(lambda*phi)/lambda^2",
+    "hessian_scaling": "Hess_phi S=Hess_psi A",
+    "site_direction": "h_o=delta_o-N^-1*1",
+    "shift_nullity": "Hess A annihilates the constant vector, so Hess S[h_o,k]=(Hess A*k)_o"
+  },
+  "exact_range_two_stencil": {
+    "nearest": "H_xy=-(8+2*r_x)*t_xy-(8+2*r_y)*t_yx for x~y",
+    "axial_distance_two": "H_x,x+2e=t_x+e,x*t_x+e,x+2e",
+    "mixed_distance_two": "H_x,x+e+f=t_x+e,x*t_x+e,x+e+f+t_x+f,x*t_x+f,x+e+f",
+    "diagonal": "H_xx=-sum_{y!=x} H_xy",
+    "transfer": "t_xy=Omega_y/Omega_x"
+  },
+  "periodic_fixture": {
+    "volumes": "L^4 with L>=8 and L divisible by 4",
+    "profile": [
+      {
+        "numerator": 1,
+        "denominator": 1
+      },
+      {
+        "numerator": 2,
+        "denominator": 1
+      },
+      {
+        "numerator": 3,
+        "denominator": 1
+      },
+      {
+        "numerator": 4,
+        "denominator": 1
+      }
+    ],
+    "profile_definition": "Omega_x=(1,2,3,4) indexed by x_1 mod 4 and constant in the transverse coordinates",
+    "origin_residual": {
+      "numerator": 4,
+      "denominator": 1
+    },
+    "origin_row_support": 41,
+    "axial_shell_sums": {
+      "-2": {
+        "numerator": 3,
+        "denominator": 16
+      },
+      "-1": {
+        "numerator": -40,
+        "denominator": 1
+      },
+      "1": {
+        "numerator": -21,
+        "denominator": 1
+      },
+      "2": {
+        "numerator": 3,
+        "denominator": 4
+      }
+    },
+    "signed_unit_sine_coefficient": {
+      "numerator": 19,
+      "denominator": 1
+    },
+    "signed_double_sine_coefficient": {
+      "numerator": 9,
+      "denominator": 16
+    },
+    "first_axial_moment": {
+      "numerator": 161,
+      "denominator": 8
+    },
+    "first_axial_moment_square": {
+      "numerator": 25921,
+      "denominator": 64
+    }
+  },
+  "long_wave_obstruction": {
+    "mode": "k_L(x)=sin(p_L*x_1), p_L=2*pi/L; it is mean zero and k_L(o)=0, hence k_L lies in h_o^perp",
+    "exact_origin_image": "Hess S[h_o,k_L]=19*sin(p_L)+(9/16)*sin(2*p_L) at the displayed fiber point",
+    "pointwise_asymptotic": "Hess S[h_o,k_L]=(161/8)*p_L+O(p_L^3)",
+    "conditional_fiber": "vary phi along h_o, equivalently multiply only Omega_o by exp(lambda*s); additive constants cancel from the normalized one-site law",
+    "positive_limit": "lim_{L->infinity,4|L} E_q[(Hess S[h_o,k_L])^2]/p_L^2=E_q[M(s)^2]>0 for every nonzero lambda because M is analytic, q has positive density, and M(0)=161/8",
+    "dispersion": "omega(p_L)=2*(1-cos(p_L))=p_L^2+O(p_L^4)",
+    "divergence": "E_q[(Hess S[h_o,k_L])^2]/omega(p_L)^2 diverges like a positive constant times p_L^-2",
+    "obstructed_estimate": "E_q[(Hess S[h_o,k_L])^2]<=C*omega(p_L)^2 uniformly in L and conditional backgrounds"
+  },
+  "method_disposition": {
+    "exact_range_two_mixed_hessian": "PROVED",
+    "background_uniform_pointwise_bilaplacian_square_bound": "OBSTRUCTED",
+    "local_poincare_then_cauchy_route": "INSUFFICIENT_FOR_BILAPLACIAN_SCALING",
+    "signed_conditional_covariance_response": "OPEN",
+    "annealed_fourier_or_multiscale_cancellation": "OPEN",
+    "volume_uniform_global_poincare": "OPEN",
+    "volume_uniform_witten_coercivity": "OPEN",
+    "interacting_h_minus_one_bound": "OPEN",
+    "interacting_continuum_measure": "NOT_ESTABLISHED",
+    "born_rule": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED"
+  },
+  "missing_object_ledger": [
+    "an estimate of the signed conditional covariance before squaring or taking absolute values",
+    "an annealed block response identity that restores the omega(p)^2 cancellation",
+    "a volume-uniform global Poincare/Witten or interacting H^-1 theorem"
+  ],
+  "next_gate": "Keep the covariance sign in D_k m_o=-Cov(s,D_k S). Compute the translation-averaged signed response kernel, or condition whole blocks larger than the period-four fluctuation, before applying Cauchy. Test whether its axial symbol has a controlled omega term plus omega^2 term.",
+  "does_not_establish": [
+    "failure of the signed conditional covariance or every heat-bath method",
+    "failure of a block or annealed multiscale estimate",
+    "failure of a global finite-volume or volume-uniform Poincare/Witten theorem",
+    "the normalized lowest-mode or interacting Gibbs H^-1 bound",
+    "an interacting continuum Euclidean measure or ordinary OS reconstruction",
+    "a new physical dimension, Born rule, Krein reconstruction, or anything LORENTZIAN-CAUSAL"
+  ],
+  "provenance": {
+    "repository_base_commit": "dd7d9c131517b3774015f2e871a579b4a3c94588",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_HEAT_BATH_INFLUENCE_SYMBOL_GATE_V1.json",
+        "sha256": "fb61ab32d0e6f0b99e5c7946cbbec501d89e5d73065d320460eda7d86c02682d"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_SINGLE_SITE_UNIFORM_POINCARE_V1.json",
+        "sha256": "9b61efcfd51b210c3ad1ab4ff3df85149567e871655b5b3071f4d148fe715a52"
+      }
+    ],
+    "arithmetic": "Python integer/Fraction arithmetic on the exact local range-two stencil"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_mixed_hessian_square_obstruction.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_mixed_hessian_square_obstruction.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_mixed_hessian_square_obstruction"
+  ],
+  "tier_receipt": {
+    "tier_0": "Python compilation, strict JSON/schema parsing, exact input hashes, scoped diff check, and staged-diff inspection required",
+    "tier_1": "producer replay, independent residual-derivative Hessian verifier, and focused mutation tests required",
+    "tier_2": "the unchanged one-site Poincare and heat-bath response inputs are checked by content hash; no shared operator changed",
+    "tier_3": "not applicable: this is a method obstruction, not an H^-1/reconstruction theorem, freeze, release, or shared-core promotion",
+    "memory_policy": "all Python commands run sequentially under a 500000 KiB virtual-memory ceiling; Go used GOMEMLIMIT=300MiB and GOGC=50",
+    "elapsed_seconds_and_peak_kib": {
+      "producer_check": "0.03 s, 20420 KiB",
+      "independent_verifier": "0.11 s, 30340 KiB",
+      "unit_tests": "0.26 s, 30672 KiB"
+    },
+    "repository_audits": {
+      "planning_import": "PASS: 1694 nodes, 0 invalid items, 0 malformed events; 7.8 s under the declared Go memory policy",
+      "science_forge_shadow": "not rerun after its earlier memory-capped external-indexing abort; this skip is not a pass"
+    }
+  },
+  "checks": {
+    "ok": true,
+    "passed": 16,
+    "total": 16,
+    "failures": [],
+    "details": {
+      "profile_is_positive": true,
+      "origin_residual_is_four": true,
+      "range_two_row_has_forty_off_diagonal_sites": true,
+      "shift_null_row_sum": true,
+      "minus_two_shell_is_three_sixteenths": true,
+      "minus_one_shell_is_minus_forty": true,
+      "plus_one_shell_is_minus_twenty_one": true,
+      "plus_two_shell_is_three_quarters": true,
+      "sine_one_coefficient_is_nineteen": true,
+      "sine_two_coefficient_is_nine_sixteenths": true,
+      "first_moment_is_161_over_8": true,
+      "fiber_square_limit_is_strictly_positive": true,
+      "pointwise_bilaplacian_square_route_is_obstructed": true,
+      "signed_covariance_route_remains_open": true,
+      "interacting_h_minus_one_remains_open": true,
+      "no_born_krein_or_lorentzian_promotion": true
+    }
+  },
+  "report": "reverse_physics/reports/bt-euclidean-mixed-hessian-square-obstruction.md",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-mixed-hessian-square-obstruction-v1.schema.json",
+  "verifier": "reverse_physics/verify_bt_euclidean_mixed_hessian_square_obstruction.py"
+}
