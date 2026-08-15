@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-log-bubble-entropy-soft-score-balance-v1.schema.json",
+  "title": "BT logarithmic-bubble entropy and soft-score balance certificate",
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "optimized_wall", "tuned_entropy_balance", "soft_score_balance",
+    "method_disposition", "checks", "does_not_establish",
+    "missing_object_ledger", "next_gate", "provenance", "schema", "report",
+    "independent_verifier", "verification_commands"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_LOG_BUBBLE_ENTROPY_SOFT_SCORE_BALANCE_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-log-bubble-entropy-soft-score-balance-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "ENERGY_ONLY_BUBBLE_RARITY_OBSTRUCTED_SOFT_SCORE_ROUTE_RETAINED"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "optimized_wall": {
+      "type": "object",
+      "required": [
+        "ambient_profile", "smoothstep", "window", "field_derivative",
+        "amplitude", "each_ramp_log_width", "plateau_log_width",
+        "smoothstep_integrals", "Q", "C", "P", "reduced_action",
+        "reduced_radial_virial", "status"
+      ],
+      "properties": {
+        "ambient_profile": {"type": "string", "minLength": 1},
+        "smoothstep": {"const": "W(z)=10*z^3-15*z^4+6*z^5"},
+        "window": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+        "field_derivative": {"type": "string", "minLength": 1},
+        "amplitude": {"$ref": "#/$defs/rational"},
+        "each_ramp_log_width": {"$ref": "#/$defs/rational"},
+        "plateau_log_width": {"$ref": "#/$defs/rational"},
+        "smoothstep_integrals": {
+          "type": "object",
+          "required": ["integral_W_squared", "integral_W_cubed", "integral_W_fourth", "integral_W_prime_squared"],
+          "properties": {
+            "integral_W_squared": {"$ref": "#/$defs/rational"},
+            "integral_W_cubed": {"$ref": "#/$defs/rational"},
+            "integral_W_fourth": {"$ref": "#/$defs/rational"},
+            "integral_W_prime_squared": {"$ref": "#/$defs/rational"}
+          },
+          "additionalProperties": false
+        },
+        "Q": {"$ref": "#/$defs/rational"},
+        "C": {"$ref": "#/$defs/rational"},
+        "P": {"$ref": "#/$defs/rational"},
+        "reduced_action": {"$ref": "#/$defs/rational"},
+        "reduced_radial_virial": {"$ref": "#/$defs/rational"},
+        "status": {"const": "EXACT_RATIONAL_SUBCRITICAL_NEGATIVE_VIRIAL_WALL"}
+      },
+      "additionalProperties": false
+    },
+    "tuned_entropy_balance": {
+      "type": "object",
+      "required": [
+        "coupling", "full_continuum_action", "reduced_action_threshold",
+        "threshold_derivation", "resolved_scale", "disjoint_placement_count",
+        "single_bubble_activity_exponent", "positional_entropy_exponent",
+        "positive_entropy_gap", "bare_activity_consequence", "status"
+      ],
+      "properties": {
+        "coupling": {"const": "g_L^2*log L -> 8*pi^2/5"},
+        "full_continuum_action": {"const": "A_*=2*pi^2*A_red"},
+        "reduced_action_threshold": {"$ref": "#/$defs/rational"},
+        "threshold_derivation": {"type": "string", "minLength": 1},
+        "resolved_scale": {"type": "string", "minLength": 1},
+        "disjoint_placement_count": {"const": "M_L=L^(4+o(1))"},
+        "single_bubble_activity_exponent": {"$ref": "#/$defs/rational"},
+        "positional_entropy_exponent": {"$ref": "#/$defs/rational"},
+        "positive_entropy_gap": {"$ref": "#/$defs/rational"},
+        "bare_activity_consequence": {"type": "string", "minLength": 1},
+        "status": {"const": "ENERGY_ONLY_PEIERLS_OR_UNION_BOUND_OBSTRUCTED"}
+      },
+      "additionalProperties": false
+    },
+    "soft_score_balance": {
+      "type": "object",
+      "required": [
+        "continuum_variation", "scaled_bubble", "radial_cancellation",
+        "continuum_bound", "discrete_transfer", "phi_score",
+        "score_weighted_scale_balance", "dyadic_scale_sum", "status"
+      ],
+      "properties": {
+        "continuum_variation": {"type": "string", "minLength": 1},
+        "scaled_bubble": {"type": "string", "minLength": 1},
+        "radial_cancellation": {"type": "string", "minLength": 1},
+        "continuum_bound": {"type": "string", "minLength": 1},
+        "discrete_transfer": {"type": "string", "minLength": 1},
+        "phi_score": {"type": "string", "minLength": 1},
+        "score_weighted_scale_balance": {"type": "string", "minLength": 1},
+        "dyadic_scale_sum": {"type": "string", "minLength": 1},
+        "status": {"const": "DILUTE_ONE_BUBBLE_SCORE_ACTIVITY_VANISHES"}
+      },
+      "additionalProperties": false
+    },
+    "method_disposition": {"type": "object", "minProperties": 12, "additionalProperties": {"type": "string"}},
+    "checks": {"type": "object", "minProperties": 20, "additionalProperties": {"const": true}},
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "required": ["repository_base_commit", "inputs", "exact_arithmetic", "analytic_arithmetic", "assumptions"],
+      "properties": {
+        "repository_base_commit": {"const": "74df85a16d09c3a542faa718bf3692c3781a6254"},
+        "inputs": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/input"}},
+        "exact_arithmetic": {"type": "string", "minLength": 1},
+        "analytic_arithmetic": {"type": "string", "minLength": 1},
+        "assumptions": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-log-bubble-entropy-soft-score-balance-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-log-bubble-entropy-soft-score-balance.md"},
+    "independent_verifier": {"const": "reverse_physics/verify_bt_euclidean_log_bubble_entropy_soft_score_balance.py"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "input": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    }
+  }
+}

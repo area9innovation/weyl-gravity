@@ -1,0 +1,194 @@
+{
+  "answer": "The two questions have different answers. An exact reflected smoothstep wall with amplitude 5/3 and two log-width-7/2 ramps has reduced action 1965963925/733296564<16/5 and negative radial virial -2157475/16665831. On the tuned branch g_L^2*log L->8*pi^2/5, its bare Boltzmann exponent is beta=5*A_red/4=9829819625/2933186256<4. For resolved bubbles of lattice radius K_L=ceil(log L), the number of disjoint placements is L^(4+o(1)), so their bare count times single-profile Boltzmann weight grows like L^(4-beta+o(1)); an energy-only Peierls/union-bound architecture cannot prove rarity. However the directional action insertion against the lowest cosine is O((K_L/L)^2): shift invariance removes the constant mode and radial reflection removes the linear Taylor term. Its score square is O((K_L/L)^4/g_L^2), which cancels the four-dimensional placement count. The dilute score-weighted activity is therefore O(g_L^-2*L^(-beta+o(1))) and tends to zero, even after summing logarithmically many scales. Thus the bubbles obstruct probability-only control but do not obstruct the target at dilute observable-weighted power counting. This is not an actual Gibbs or cluster-expansion theorem.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_LOG_BUBBLE_ENTROPY_SOFT_SCORE_BALANCE_V1",
+  "checks": {
+    "C_is_minus_6500_over_297": true,
+    "P_is_11151875_over_680238": true,
+    "Q_is_476450_over_14553": true,
+    "action_is_below_tuned_entropy_threshold": true,
+    "actual_Gibbs_score_bound_remains_open": true,
+    "amplitude_is_five_thirds": true,
+    "bare_activity_exponent_is_9829819625_over_2933186256": true,
+    "dilute_score_weighted_activity_vanishes": true,
+    "lowest_mode_insertion_is_quadratic_in_bubble_radius": true,
+    "no_continuum_born_krein_or_lorentzian_promotion": true,
+    "positional_entropy_gap_is_strictly_positive": true,
+    "radial_reflection_removes_the_linear_soft_term": true,
+    "ramp_width_is_seven_halves": true,
+    "reduced_action_is_closed_rational": true,
+    "reduced_virial_is_strictly_negative": true,
+    "score_square_cancels_four_dimensional_position_count": true,
+    "smoothstep_cube_integral_is_26_over_77": true,
+    "smoothstep_derivative_square_integral_is_10_over_7": true,
+    "smoothstep_fourth_integral_is_2549_over_8398": true,
+    "smoothstep_square_integral_is_181_over_462": true
+  },
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "a lower or upper bound on the normalized probability of a bubble neighborhood",
+    "control of fluctuation determinants, multibubble interactions, or the BT partition function",
+    "boundedness or divergence of the actual annealed zero-fiber score",
+    "the interacting H^-1 estimate or a continuum Euclidean measure",
+    "a Born rule, Krein reconstruction, or Lorentzian causal statement"
+  ],
+  "independent_verifier": "reverse_physics/verify_bt_euclidean_log_bubble_entropy_soft_score_balance.py",
+  "lifecycle_state": "ENERGY_ONLY_BUBBLE_RARITY_OBSTRUCTED_SOFT_SCORE_ROUTE_RETAINED",
+  "method_disposition": {
+    "actual_annealed_zero_fiber_score_bound": "OPEN",
+    "actual_interacting_H_minus_one_second_moment": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "dilute_single_bubble_score_weighted_activity": "VANISHES",
+    "energy_only_bubble_rarity_bound": "OBSTRUCTED",
+    "fluctuation_determinant_or_neighborhood_volume_bound": "OPEN",
+    "interacting_multibubble_cluster_bound": "OPEN",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "probability_union_bound_using_only_profile_action": "OBSTRUCTED",
+    "quadratic_lowest_mode_soft_factor_for_reflected_bubbles": "PROVED"
+  },
+  "missing_object_ledger": [
+    "an observable-weighted polymer or block estimate retaining the quadratic external soft factor",
+    "uniform control of background cross terms when a localized wall is inserted",
+    "a normalized fluctuation-neighborhood comparison rather than a bare profile count",
+    "summation of interacting bubbles and non-bubble backgrounds under the true Gibbs measure",
+    "after the one-mode theorem, a dyadic Fourier-shell H^-1 estimate"
+  ],
+  "next_gate": "Do not try to prove that all logarithmic bubbles are rare using action cost alone. Prove an observable-weighted block or polymer estimate for the zero-fiber score in which each localized reflected block retains its quadratic external-momentum factor before positions and scales are summed. The falsification branch is an interacting multibubble construction whose correlated phases defeat that soft-factor cancellation under the normalized BT measure.",
+  "optimized_wall": {
+    "C": {
+      "denominator": 297,
+      "numerator": -6500
+    },
+    "P": {
+      "denominator": 680238,
+      "numerator": 11151875
+    },
+    "Q": {
+      "denominator": 14553,
+      "numerator": 476450
+    },
+    "ambient_profile": "a radial C3 field, constant inside and outside one logarithmic annulus",
+    "amplitude": {
+      "denominator": 3,
+      "numerator": 5
+    },
+    "each_ramp_log_width": {
+      "denominator": 2,
+      "numerator": 7
+    },
+    "field_derivative": "psi'(r)=-a*w(log(r/r_minus))/r",
+    "plateau_log_width": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "reduced_action": {
+      "denominator": 733296564,
+      "numerator": 1965963925
+    },
+    "reduced_radial_virial": {
+      "denominator": 16665831,
+      "numerator": -2157475
+    },
+    "smoothstep": "W(z)=10*z^3-15*z^4+6*z^5",
+    "smoothstep_integrals": {
+      "integral_W_cubed": {
+        "denominator": 77,
+        "numerator": 26
+      },
+      "integral_W_fourth": {
+        "denominator": 8398,
+        "numerator": 2549
+      },
+      "integral_W_prime_squared": {
+        "denominator": 7,
+        "numerator": 10
+      },
+      "integral_W_squared": {
+        "denominator": 462,
+        "numerator": 181
+      }
+    },
+    "status": "EXACT_RATIONAL_SUBCRITICAL_NEGATIVE_VIRIAL_WALL",
+    "window": [
+      "w(s)=W(s/delta) for 0<=s<=delta",
+      "w(s)=W((2*delta-s)/delta) for delta<=s<=2*delta",
+      "w(s)=0 outside 0<=s<=2*delta"
+    ]
+  },
+  "provenance": {
+    "analytic_arithmetic": "Critical four-dimensional rescaling, the exact zeroth and first discrete moment cancellations, finite-difference consistency of the second absolute moment, and the tuned coupling limit decide the asymptotic exponents. No floating-point value decides a sign or threshold.",
+    "assumptions": [
+      "The coupling and score normalizations are those of the imported RG and center-score certificates.",
+      "The resolved bubble radius K_L tends to infinity more slowly than L; K_L=ceil(log L) is one explicit choice.",
+      "The dilute activity calculation counts separated single-profile placements and is not the normalized interacting Gibbs measure.",
+      "Only LOCAL-ALGEBRAIC and EUCLIDEAN-SPECTRAL conclusions are drawn."
+    ],
+    "exact_arithmetic": "Fraction arithmetic reconstructs all four smoothstep moments, Q,C,P, the wall action and virial, the tuned activity exponent, and the entropy gap.",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LOG_BUBBLE_VIRIAL_NO_GO_V1.json",
+        "sha256": "a181176f3a4a14c7e28405300f76e0733fe23dd0cdaa26f7f492871411e32e3f"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_SCORE_RG_MATCHING_V1.json",
+        "sha256": "4b73733c56953bda240f4d3c55bdf8cf2616ae222fea2c79c197f8feb9fd28a8"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ANNEALED_CENTER_SCORE_REDUCTION_V1.json",
+        "sha256": "16b72c5b3976f5eecea27d3e40b89b7318f08d9116c4d845826a30aa334483e4"
+      }
+    ],
+    "repository_base_commit": "74df85a16d09c3a542faa718bf3692c3781a6254"
+  },
+  "question": "Do the negative-virial logarithmic bubbles become rare by their action alone on the tuned BT refinement branch, and if not do they already obstruct the required lowest-mode score estimate?",
+  "report": "reverse_physics/reports/bt-euclidean-log-bubble-entropy-soft-score-balance.md",
+  "result_kind": "exact subcritical logarithmic wall and rigorous dilute low-mode insertion power balance",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-log-bubble-entropy-soft-score-balance-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-log-bubble-entropy-soft-score-balance-v1",
+  "soft_score_balance": {
+    "continuum_bound": "|D_h A(psi_(R,z))|<=C_(psi_0,h)*R^2",
+    "continuum_variation": "D_h A(psi)=integral R_psi*(Delta h+2*grad psi dot grad h), with R_psi=Delta psi+|grad psi|^2",
+    "discrete_transfer": "write G_x=partial A_L/partial psi_x. Exact shift invariance gives sum G_x=0, reflection gives sum G_x*(x-z)=0, and finite-difference consistency gives sum |G_x|*|x-z|^2=O(K^2). Taylor expansion of h_L therefore gives |D_(h_L) A_L|=O((K/L)^2) uniformly in the center",
+    "dyadic_scale_sum": "multiplication by O(log L) scales still tends to zero because beta>0",
+    "phi_score": "D_(h_L) S_g=(1/g_L)*D_(h_L) A_L",
+    "radial_cancellation": "integral R_0(y)*grad psi_0(y) dy=0 by reflection symmetry; shift invariance removes the constant Taylor term",
+    "scaled_bubble": "psi_(R,z)(x)=psi_0((x-z)/R)",
+    "score_weighted_scale_balance": "M_L*exp[-A_L/g_L^2]*|D_(h_L)S_g|^2=O(g_L^-2*L^(-beta+o(1)))",
+    "status": "DILUTE_ONE_BUBBLE_SCORE_ACTIVITY_VANISHES"
+  },
+  "tuned_entropy_balance": {
+    "bare_activity_consequence": "M_L*exp[-A_L/g_L^2]=L^(4-beta+o(1))->infinity",
+    "coupling": "g_L^2*log L -> 8*pi^2/5",
+    "disjoint_placement_count": "M_L=L^(4+o(1))",
+    "full_continuum_action": "A_*=2*pi^2*A_red",
+    "positional_entropy_exponent": {
+      "denominator": 1,
+      "numerator": 4
+    },
+    "positive_entropy_gap": {
+      "denominator": 2933186256,
+      "numerator": 1902925399
+    },
+    "reduced_action_threshold": {
+      "denominator": 5,
+      "numerator": 16
+    },
+    "resolved_scale": "K_L=ceil(log L), so K_L->infinity and K_L/L->0",
+    "single_bubble_activity_exponent": {
+      "denominator": 2933186256,
+      "numerator": 9829819625
+    },
+    "status": "ENERGY_ONLY_PEIERLS_OR_UNION_BOUND_OBSTRUCTED",
+    "threshold_derivation": "exp[-A_*/g_L^2]=L^[-5*A_red/4+o(1)]; four-dimensional positional entropy has exponent 4, so the energy-only threshold is A_red=16/5"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_log_bubble_entropy_soft_score_balance.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_log_bubble_entropy_soft_score_balance.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_log_bubble_entropy_soft_score_balance"
+  ]
+}

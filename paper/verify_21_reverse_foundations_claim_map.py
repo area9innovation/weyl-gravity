@@ -133,6 +133,7 @@ def main() -> int:
     bt_tuned_remainder = json.loads((ROOT / data["authorities"]["bt_tuned_remainder_compensation"]["path"]).read_text())
     bt_radial_convexity = json.loads((ROOT / data["authorities"]["bt_radial_convexity_obstruction"]["path"]).read_text())
     bt_log_bubble = json.loads((ROOT / data["authorities"]["bt_log_bubble_virial_no_go"]["path"]).read_text())
+    bt_bubble_balance = json.loads((ROOT / data["authorities"]["bt_log_bubble_entropy_soft_score_balance"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -373,6 +374,7 @@ def main() -> int:
         (24, "STRICT-WEYL-LOCAL-Q1-Q2"),
         (25, "STRICT-WEYL-CAUSAL-CONVENTION-STABILITY"),
         (26, "BT-HOMOGENEOUS-VIRIAL-NO-GO"),
+        (27, "BT-BUBBLE-ENTROPY-SOFT-SCORE-BALANCE"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -513,6 +515,10 @@ def main() -> int:
     require(flags["bt_any_nonnegative_homogeneous_virial_obstructed"] is True, "BT complete nonnegative homogeneous virial no-go omitted")
     require(flags["bt_pointwise_nonnegative_radial_virial_obstructed"] is True, "BT pointwise virial sign no-go omitted")
     require(flags["bt_gibbs_weighted_block_estimate_established"] is False, "BT pointwise no-go promoted to Gibbs estimate")
+    require(flags["bt_energy_only_bubble_rarity_obstructed"] is True, "BT energy-only bubble-rarity obstruction omitted")
+    require(flags["bt_quadratic_bubble_score_soft_factor_established"] is True, "BT quadratic bubble soft factor omitted")
+    require(flags["bt_dilute_bubble_score_activity_vanishes"] is True, "BT dilute score activity balance omitted")
+    require(flags["bt_interacting_multibubble_cluster_bound_established"] is False, "BT dilute balance promoted to cluster theorem")
     require(flags["bt_exact_interacting_score_scaling_established"] is False, "BT exact interacting score promoted")
     require(flags["bt_actual_interacting_H_minus_one_established"] is False, "BT interacting H-minus-one promoted")
     require(atlas["bt_g4_zero_loop_limit"] == bt_g4_lower_loops["zero_loop"]["large_volume_limit"] == "lim_(L->infinity) M4_zero(L)=111/(32*pi^4)", "BT zero-loop limit drift")
@@ -528,6 +534,13 @@ def main() -> int:
     require(atlas["bt_gibbs_weighted_block_estimate_status"] == bt_log_bubble["method_disposition"]["nonpointwise_Gibbs_weighted_block_estimate"] == "OPEN", "BT log bubble promoted to Gibbs theorem")
     require(bt_log_bubble["method_disposition"]["actual_interacting_H_minus_one_second_moment"] == "OPEN", "BT log bubble promoted to H-minus-one theorem")
     require(bt_log_bubble["dependency_tags"] == ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], "BT log-bubble dependency boundary drift")
+    require(atlas["bt_bubble_energy_only_rarity_status"] == bt_bubble_balance["method_disposition"]["energy_only_bubble_rarity_bound"] == "OBSTRUCTED", "BT energy-only bubble-rarity status drift")
+    require(atlas["bt_bubble_dilute_score_activity_status"] == bt_bubble_balance["method_disposition"]["dilute_single_bubble_score_weighted_activity"] == "VANISHES", "BT dilute score activity status drift")
+    require(atlas["bt_bubble_multibubble_cluster_status"] == bt_bubble_balance["method_disposition"]["interacting_multibubble_cluster_bound"] == "OPEN", "BT dilute balance promoted to multibubble theorem")
+    require(atlas["bt_bubble_reduced_action"] == bt_bubble_balance["optimized_wall"]["reduced_action"] == {"numerator": 1965963925, "denominator": 733296564}, "BT optimized bubble action drift")
+    require(atlas["bt_bubble_positive_entropy_gap"] == bt_bubble_balance["tuned_entropy_balance"]["positive_entropy_gap"] == {"numerator": 1902925399, "denominator": 2933186256}, "BT bubble entropy gap drift")
+    require(bt_bubble_balance["method_disposition"]["actual_annealed_zero_fiber_score_bound"] == "OPEN", "BT dilute balance promoted to actual score theorem")
+    require(bt_bubble_balance["dependency_tags"] == ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], "BT bubble-balance dependency boundary drift")
     require(atlas["bt_g4_interacting_H_minus_one_status"] == "OPEN", "BT interacting H-minus-one atlas promotion")
     require(flags["bt_complete_order_g_four_explicit_momentum_kernel_established"] is False, "BT expected-Hessian formula promoted to explicit momentum kernel")
     require(flags["bt_complete_order_g_four_effective_kernel_bound_established"] is False, "BT effective second-chaos kernel bound promoted")

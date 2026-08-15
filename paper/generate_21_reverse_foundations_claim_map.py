@@ -62,6 +62,7 @@ AUTHORITY_PATHS = {
     "bt_tuned_remainder_compensation": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TUNED_REMAINDER_COMPENSATION_V1.json",
     "bt_radial_convexity_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RADIAL_CONVEXITY_OBSTRUCTION_V1.json",
     "bt_log_bubble_virial_no_go": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LOG_BUBBLE_VIRIAL_NO_GO_V1.json",
+    "bt_log_bubble_entropy_soft_score_balance": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LOG_BUBBLE_ENTROPY_SOFT_SCORE_BALANCE_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -157,6 +158,7 @@ def build() -> dict:
     bt_tuned_remainder = loaded["bt_tuned_remainder_compensation"]
     bt_radial_convexity = loaded["bt_radial_convexity_obstruction"]
     bt_log_bubble = loaded["bt_log_bubble_virial_no_go"]
+    bt_bubble_balance = loaded["bt_log_bubble_entropy_soft_score_balance"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -450,6 +452,11 @@ def build() -> dict:
             "bt_subunit_positive_virial_status": bt_log_bubble["method_disposition"]["pointwise_D_ge_cA_for_any_c_ge_0"],
             "bt_pointwise_nonnegative_virial_status": bt_log_bubble["method_disposition"]["pointwise_D_ge_0"],
             "bt_gibbs_weighted_block_estimate_status": bt_log_bubble["method_disposition"]["nonpointwise_Gibbs_weighted_block_estimate"],
+            "bt_bubble_energy_only_rarity_status": bt_bubble_balance["method_disposition"]["energy_only_bubble_rarity_bound"],
+            "bt_bubble_dilute_score_activity_status": bt_bubble_balance["method_disposition"]["dilute_single_bubble_score_weighted_activity"],
+            "bt_bubble_multibubble_cluster_status": bt_bubble_balance["method_disposition"]["interacting_multibubble_cluster_bound"],
+            "bt_bubble_reduced_action": bt_bubble_balance["optimized_wall"]["reduced_action"],
+            "bt_bubble_positive_entropy_gap": bt_bubble_balance["tuned_entropy_balance"]["positive_entropy_gap"],
             "bt_g4_interacting_H_minus_one_status": "OPEN",
             "standard_reference_direct_obligations": next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")["coverage"]["direct"],
             "external_calibration_records": len(assembly_data["calibration_controls"][0]["records"]),
@@ -674,6 +681,13 @@ def build() -> dict:
                 "authorities": ["bt_log_bubble_virial_no_go"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
+            {
+                "claim_id": "RF-27-BT-BUBBLE-ENTROPY-SOFT-SCORE-BALANCE",
+                "statement": "An exact negative-virial logarithmic wall has reduced action below the tuned four-dimensional position-entropy threshold, obstructing action-only bubble-rarity proofs. Radial reflection gives its lowest-mode score insertion two powers of the bubble radius, so the squared insertion cancels positional entropy and the dilute score-weighted activity vanishes. Multibubble interactions and the actual Gibbs score remain open.",
+                "status": "EXACT_SUBCRITICAL_ACTIVITY_OBSTRUCTION_WITH_DILUTE_OBSERVABLE_SOFTNESS",
+                "authorities": ["bt_log_bubble_entropy_soft_score_balance"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -814,6 +828,10 @@ def build() -> dict:
             "bt_any_nonnegative_homogeneous_virial_obstructed": True,
             "bt_pointwise_nonnegative_radial_virial_obstructed": True,
             "bt_gibbs_weighted_block_estimate_established": False,
+            "bt_energy_only_bubble_rarity_obstructed": True,
+            "bt_quadratic_bubble_score_soft_factor_established": True,
+            "bt_dilute_bubble_score_activity_vanishes": True,
+            "bt_interacting_multibubble_cluster_bound_established": False,
             "bt_exact_interacting_score_scaling_established": False,
             "bt_actual_interacting_H_minus_one_established": False,
             "bt_complete_order_g_four_explicit_momentum_kernel_established": False,
@@ -886,6 +904,7 @@ def build() -> dict:
             "the common power coefficient of pairs 4 and 7, tuned control of the subleading sector, complete M4, or the actual interacting H^-1 moment from the pair-3 and pair-6 bounds",
             "noncancellation of the explicit pair-4 and pair-7 coefficient normal forms, tuned control, complete M4, or the actual interacting H^-1 moment from existence of the two limits alone",
             "failure of a Gibbs-weighted block estimate, divergence of the interacting moment, or nonexistence of a continuum measure from the logarithmic-bubble pointwise virial obstruction",
+            "an actual bubble probability, interacting cluster expansion, annealed score theorem, or H^-1 estimate from the dilute logarithmic-bubble entropy/soft-score balance",
         ],
         "authorities": authorities,
         "independent_checker": {

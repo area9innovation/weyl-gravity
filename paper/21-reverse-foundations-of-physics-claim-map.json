@@ -25,6 +25,17 @@
     "bt_annealed_center_second_moment_status": "OPEN",
     "bt_annealed_inverse_density_status": "OPEN",
     "bt_annealed_recentered_fiber_status": "OPEN",
+    "bt_bubble_dilute_score_activity_status": "VANISHES",
+    "bt_bubble_energy_only_rarity_status": "OBSTRUCTED",
+    "bt_bubble_multibubble_cluster_status": "OPEN",
+    "bt_bubble_positive_entropy_gap": {
+      "denominator": 2933186256,
+      "numerator": 1902925399
+    },
+    "bt_bubble_reduced_action": {
+      "denominator": 733296564,
+      "numerator": 1965963925
+    },
     "bt_center_score_bound_status": "OPEN",
     "bt_center_score_integrated_moment_status": "OPEN",
     "bt_center_to_score_reduction_status": "PROVED",
@@ -561,6 +572,16 @@
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_LAMBDA04_OS_KERNEL_OBSTRUCTION_V1",
       "sha256": "9872d3d610daf5146fee84e19246319a7bcfa72748be116a2a8caa7b9f57f40b"
     },
+    "bt_log_bubble_entropy_soft_score_balance": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "ENERGY_ONLY_BUBBLE_RARITY_OBSTRUCTED_SOFT_SCORE_ROUTE_RETAINED",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LOG_BUBBLE_ENTROPY_SOFT_SCORE_BALANCE_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_LOG_BUBBLE_ENTROPY_SOFT_SCORE_BALANCE_V1",
+      "sha256": "6e5efc898857d8ebaf8daf25967c5a9e51b2aeea6ea0de12f02c1e02ade66043"
+    },
     "bt_log_bubble_virial_no_go": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -986,7 +1007,7 @@
       "sha256": "23a4316055d38694b937c17bb1e20f81241a4079cc7631420dc1e32e706fc93a"
     }
   },
-  "canonical_digest": "2ee6084dfa4a7db3160e0527cca59fb614816caeccccbb390acd059b5437d4c8",
+  "canonical_digest": "72ef8f44b3e33b9cff6b93a759e5c3fc3e781443db154c85926058de52488d68",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -1052,7 +1073,9 @@
     "bt_complete_order_g_four_whole_lattice_decided": true,
     "bt_complete_order_g_four_zero_loop_limit_established": true,
     "bt_conditional_mass_escape_established": true,
+    "bt_dilute_bubble_score_activity_vanishes": true,
     "bt_direct_action_fiber_bound_established": false,
+    "bt_energy_only_bubble_rarity_obstructed": true,
     "bt_eom_to_zero_fiber_general_transfer_obstructed": true,
     "bt_euclidean_coarse_reproduction_separated": true,
     "bt_euclidean_finite_capabilities_imported": true,
@@ -1065,6 +1088,7 @@
     "bt_global_orthogonal_hessian_block_obstructed": true,
     "bt_half_action_density_candidate_established": false,
     "bt_integrated_lowest_mode_marginal_evenness_established": true,
+    "bt_interacting_multibubble_cluster_bound_established": false,
     "bt_interacting_uniform_h_minus_one_established": false,
     "bt_isolated_quartic_score_square_uniformity_obstructed": true,
     "bt_lambda_0p4_os_status_decided": true,
@@ -1074,6 +1098,7 @@
     "bt_ordinary_eom_score_identity_established": true,
     "bt_pointwise_half_action_curvature_route_obstructed": true,
     "bt_pointwise_nonnegative_radial_virial_obstructed": true,
+    "bt_quadratic_bubble_score_soft_factor_established": true,
     "bt_quartic_power_cancellation_established": false,
     "bt_quartic_score_kernel_established": true,
     "bt_radial_convexity_obstructed": true,
@@ -1488,6 +1513,18 @@
       ],
       "statement": "One fixed smooth logarithmic-annulus profile has positive continuum residual-square action and negative radial virial. Uniform Taylor--Peano transfer gives negative virial on every sufficiently fine finite four-torus, obstructing every homogeneous pointwise inequality D_L>=c*A_L with c>=0. This does not decide a Gibbs-weighted block estimate, the interacting H^-1 moment, or a continuum measure.",
       "status": "EXACT_CONTINUUM_SIGN_WITH_EVENTUAL_FINITE_LATTICE_POINTWISE_METHOD_OBSTRUCTION"
+    },
+    {
+      "authorities": [
+        "bt_log_bubble_entropy_soft_score_balance"
+      ],
+      "claim_id": "RF-27-BT-BUBBLE-ENTROPY-SOFT-SCORE-BALANCE",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "statement": "An exact negative-virial logarithmic wall has reduced action below the tuned four-dimensional position-entropy threshold, obstructing action-only bubble-rarity proofs. Radial reflection gives its lowest-mode score insertion two powers of the bubble radius, so the squared insertion cancels positional entropy and the dilute score-weighted activity vanishes. Multibubble interactions and the actual Gibbs score remain open.",
+      "status": "EXACT_SUBCRITICAL_ACTIVITY_OBSTRUCTION_WITH_DILUTE_OBSERVABLE_SOFTNESS"
     }
   ],
   "created": "2026-08-14",
@@ -1533,7 +1570,8 @@
     "the common power coefficient of pairs 3, 4, 6, and 7, complete M4, or the actual interacting H^-1 moment from the three subpower-pair bounds",
     "the common power coefficient of pairs 4 and 7, tuned control of the subleading sector, complete M4, or the actual interacting H^-1 moment from the pair-3 and pair-6 bounds",
     "noncancellation of the explicit pair-4 and pair-7 coefficient normal forms, tuned control, complete M4, or the actual interacting H^-1 moment from existence of the two limits alone",
-    "failure of a Gibbs-weighted block estimate, divergence of the interacting moment, or nonexistence of a continuum measure from the logarithmic-bubble pointwise virial obstruction"
+    "failure of a Gibbs-weighted block estimate, divergence of the interacting moment, or nonexistence of a continuum measure from the logarithmic-bubble pointwise virial obstruction",
+    "an actual bubble probability, interacting cluster expansion, annealed score theorem, or H^-1 estimate from the dilute logarithmic-bubble entropy/soft-score balance"
   ],
   "formal_object": {
     "coordinates": {
@@ -1692,7 +1730,7 @@
       "source_sha256": "a9941dc6578aa395509968044f0cfb9bcb60486add8a6d8fd7cce2797967ba47"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "bb907f571f4c5387a36b1723c9eb1ba7da47f51a0dc4ffd613e4ec52ed0c5a7b"
+    "sha256": "77eb8b071434eaa6153d35695ef5ddd11b173036bbfd0e106730c7a44ede3554"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",
