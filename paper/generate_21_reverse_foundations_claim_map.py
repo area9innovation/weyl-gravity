@@ -65,6 +65,7 @@ AUTHORITY_PATHS = {
     "bt_log_bubble_entropy_soft_score_balance": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LOG_BUBBLE_ENTROPY_SOFT_SCORE_BALANCE_V1.json",
     "bt_full_phase_current_gate": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_CURRENT_GATE_V1.json",
     "bt_full_phase_weighted_current_gate_v2": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_WEIGHTED_CURRENT_GATE_V2.json",
+    "bt_flux_corrector_pointwise_energy_no_go": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FLUX_CORRECTOR_POINTWISE_ENERGY_NO_GO_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -169,6 +170,7 @@ def build() -> dict:
     bt_bubble_balance = loaded["bt_log_bubble_entropy_soft_score_balance"]
     bt_full_phase_current = loaded["bt_full_phase_current_gate"]
     bt_weighted_current_v2 = loaded["bt_full_phase_weighted_current_gate_v2"]
+    bt_corrector_energy_no_go = loaded["bt_flux_corrector_pointwise_energy_no_go"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -474,6 +476,10 @@ def build() -> dict:
             "bt_full_phase_flux_corrector_status": bt_weighted_current_v2["method_disposition"]["translation_invariant_flux_corrector_bound"],
             "bt_full_phase_current_susceptibility_status": bt_weighted_current_v2["method_disposition"]["translation_invariant_current_susceptibility_bound"],
             "bt_full_phase_fixture_current_zero_mode": bt_weighted_current_v2["slice_valid_fixture"]["full_time_current_zero_mode"],
+            "bt_corrector_pointwise_action_route_status": bt_corrector_energy_no_go["method_disposition"]["pointwise_corrector_bound_by_N_omega_action"],
+            "bt_corrector_pointwise_dirichlet_route_status": bt_corrector_energy_no_go["method_disposition"]["pointwise_corrector_bound_by_N_omega_weighted_dirichlet_energy"],
+            "bt_corrector_Gibbs_hyperuniformity_status": bt_corrector_energy_no_go["method_disposition"]["Gibbs_corrector_hyperuniformity_bound"],
+            "bt_corrector_action_ratio_linear_coefficient": bt_corrector_energy_no_go["diverging_ratios"]["action_ratio_linear_coefficient"],
             "bt_g4_interacting_H_minus_one_status": "OPEN",
             "standard_reference_direct_obligations": next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")["coverage"]["direct"],
             "external_calibration_records": len(assembly_data["calibration_controls"][0]["records"]),
@@ -733,6 +739,13 @@ def build() -> dict:
                 "authorities": ["strict_386_component_pairing_serialization", "lorentzian_weyl_bv_completion_atlas_v7"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
             },
+            {
+                "claim_id": "RF-32-BT-CORRECTOR-POINTWISE-ENERGY-NO-GO",
+                "statement": "An exact E_p-perpendicular localized slab on every L^4 torus with 4 dividing L has action and weighted Dirichlet energy of order L^3, while its lowest-mode conductance corrector has magnitude at least 3L^3/16 for multiples of four L>=300. Consequently the corrector-square ratios to N*omega_p times the action, weighted Dirichlet energy, or their sum diverge at least linearly. This obstructs deterministic pointwise energy proofs even with an extra volume loss; it does not decide the Gibbs hyperuniformity estimate, current susceptibility, interacting H^-1 moment, or continuum limit.",
+                "status": "SLICE_VALID_POINTWISE_CORRECTOR_ENERGY_ROUTE_OBSTRUCTED_STATISTICAL_GATE_OPEN",
+                "authorities": ["bt_flux_corrector_pointwise_energy_no_go"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -890,6 +903,9 @@ def build() -> dict:
             "bt_full_phase_current_divergence_identity_established": True,
             "bt_canonical_current_pointwise_second_factor_obstructed": True,
             "bt_weighted_random_conductance_current_identity_established": True,
+            "bt_corrector_pointwise_action_route_obstructed": True,
+            "bt_corrector_pointwise_dirichlet_route_obstructed": True,
+            "bt_corrector_Gibbs_hyperuniformity_established": False,
             "bt_translation_invariant_flux_corrector_established": False,
             "bt_translation_invariant_current_susceptibility_established": False,
             "bt_exact_interacting_score_scaling_established": False,

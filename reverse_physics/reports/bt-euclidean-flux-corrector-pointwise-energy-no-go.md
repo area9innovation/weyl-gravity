@@ -120,7 +120,9 @@ ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean
   operators are unchanged; its hash is checked by both certificate rails.
 - Tier 3 was not run because this is a method obstruction and working checkpoint,
   not a freeze, release, lifecycle promotion, or shared-core algebra change.
-- Paper 21 integration was deferred from this commit because substantial
-  concurrent foundations edits overlap every Paper 21 source and generated
-  artifact.  Those edits were preserved and not taken over; the paper update
-  remains the next integration step after their scoped commit.
+- Paper 21 integration followed after the overlapping foundations package
+  landed as its own parent commit.  The claim-map generator drift check and
+  independent authority/boundary verifier passed in 0.15 s.  Two `pdflatex`
+  passes completed in 1.48 s and retained a 60-page PDF with no undefined
+  references or overfull boxes.  The pre-existing appendix underfull-box
+  advisories remain non-fatal.

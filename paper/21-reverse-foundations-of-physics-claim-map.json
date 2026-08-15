@@ -55,6 +55,13 @@
     "bt_conditional_escape_m2_tail_exponent": -439021411393052584794547814301,
     "bt_conditional_mass_escape_status": "PROVED",
     "bt_constrained_ward_to_annealed_score_status": "OBSTRUCTED_AS_FORMULATED",
+    "bt_corrector_Gibbs_hyperuniformity_status": "OPEN",
+    "bt_corrector_action_ratio_linear_coefficient": {
+      "denominator": 360096,
+      "numerator": 49
+    },
+    "bt_corrector_pointwise_action_route_status": "OBSTRUCTED",
+    "bt_corrector_pointwise_dirichlet_route_status": "OBSTRUCTED",
     "bt_correlated_spatial_remainder_fixture": {
       "denominator": 262144,
       "numerator": -456623975
@@ -551,6 +558,16 @@
       "path": "foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json",
       "result_id": "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1",
       "sha256": "f8791f9209682cd01b29a5868ea8f353b958f9fb8ce24d77d9b8af6bc92b7f94"
+    },
+    "bt_flux_corrector_pointwise_energy_no_go": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "POINTWISE_CORRECTOR_ENERGY_ROUTE_OBSTRUCTED_STATISTICAL_GATE_OPEN",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FLUX_CORRECTOR_POINTWISE_ENERGY_NO_GO_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_FLUX_CORRECTOR_POINTWISE_ENERGY_NO_GO_V1",
+      "sha256": "4d2a0475038660d93ca9f83da2eb0e69330f1a6b89a22721945a33bef4f3e001"
     },
     "bt_free_reconstruction_obstruction": {
       "dependency_tags": [
@@ -1103,7 +1120,7 @@
       "sha256": "ca8e11e33adb9a40b0e5e2cb05062fa6124dca7b59c16350b268538d42d233c5"
     }
   },
-  "canonical_digest": "d45bf56c0a06ef52f14a37fe3f41487d78b9d7abd50ace9b05c7ce684018c3d9",
+  "canonical_digest": "e3dae6203540b1f3b169a9308b0252327a07c8f28736de144e5c85fdceeaf419",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -1170,6 +1187,9 @@
     "bt_complete_order_g_four_whole_lattice_decided": true,
     "bt_complete_order_g_four_zero_loop_limit_established": true,
     "bt_conditional_mass_escape_established": true,
+    "bt_corrector_Gibbs_hyperuniformity_established": false,
+    "bt_corrector_pointwise_action_route_obstructed": true,
+    "bt_corrector_pointwise_dirichlet_route_obstructed": true,
     "bt_dilute_bubble_score_activity_vanishes": true,
     "bt_direct_action_fiber_bound_established": false,
     "bt_energy_only_bubble_rarity_obstructed": true,
@@ -1687,6 +1707,18 @@
       ],
       "statement": "The strict causal carrier now has an explicit hybrid 386-row component basis: 30 Gate-canonical endpoint rows, 36 generalized-auxiliary rows and 320 mapping-cylinder cone/cotangent rows. Its exact odd pairing has 410 ordered rational nonzero entries and rank 386. The endpoint table has 30 entries after Gate pullback, reconciling the earlier pre-pullback count 54 without changing T^sharp or R. The T, T^sharp_G and R diagonals are serialized and T^T Omega=Omega T^sharp_G replays componentwise. Full q1, H_alg, endpoint inclusion/projection and advanced/retarded Green coefficient tables are not yet serialized, so not every component operator adjoint or homotopy identity has been independently replayed; common Gate-A bytes, local D, q2, Hadamard and QME remain open.",
       "status": "EXACT_FULL_COMPONENT_BASIS_AND_PAIRING_WITH_OPERATOR_SERIALIZATION_BOUNDARY"
+    },
+    {
+      "authorities": [
+        "bt_flux_corrector_pointwise_energy_no_go"
+      ],
+      "claim_id": "RF-32-BT-CORRECTOR-POINTWISE-ENERGY-NO-GO",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "statement": "An exact E_p-perpendicular localized slab on every L^4 torus with 4 dividing L has action and weighted Dirichlet energy of order L^3, while its lowest-mode conductance corrector has magnitude at least 3L^3/16 for multiples of four L>=300. Consequently the corrector-square ratios to N*omega_p times the action, weighted Dirichlet energy, or their sum diverge at least linearly. This obstructs deterministic pointwise energy proofs even with an extra volume loss; it does not decide the Gibbs hyperuniformity estimate, current susceptibility, interacting H^-1 moment, or continuum limit.",
+      "status": "SLICE_VALID_POINTWISE_CORRECTOR_ENERGY_ROUTE_OBSTRUCTED_STATISTICAL_GATE_OPEN"
     }
   ],
   "created": "2026-08-14",
@@ -1894,7 +1926,7 @@
       "source_sha256": "735063c38d7f53964a53631df718bbf09e658e9944b28497a13fba37a0c7ab8c"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "cc99f23e09cb015ce1e30fe856d7ae9c3afd0f515eb4e2d76b86dd170c8d55e8"
+    "sha256": "b22f0e8fd2bc628b1ab5aabb450a4842094e8e0300a48f4f2de08b824aaecb10"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

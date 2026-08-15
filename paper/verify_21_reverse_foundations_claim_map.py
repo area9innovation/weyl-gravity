@@ -142,6 +142,7 @@ def main() -> int:
     bt_bubble_balance = json.loads((ROOT / data["authorities"]["bt_log_bubble_entropy_soft_score_balance"]["path"]).read_text())
     bt_full_phase_current = json.loads((ROOT / data["authorities"]["bt_full_phase_current_gate"]["path"]).read_text())
     bt_weighted_current_v2 = json.loads((ROOT / data["authorities"]["bt_full_phase_weighted_current_gate_v2"]["path"]).read_text())
+    bt_corrector_energy_no_go = json.loads((ROOT / data["authorities"]["bt_flux_corrector_pointwise_energy_no_go"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -387,6 +388,7 @@ def main() -> int:
         (29, "BT-FULL-PHASE-CURRENT-GATE"),
         (30, "STRICT-WEYL-SUSPENDED-ADJOINT-BRIDGE"),
         (31, "STRICT-WEYL-COMPONENT-PAIRING-SERIALIZATION"),
+        (32, "BT-CORRECTOR-POINTWISE-ENERGY-NO-GO"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -578,6 +580,9 @@ def main() -> int:
     require(flags["bt_full_phase_current_divergence_identity_established"] is True, "BT canonical-current identity omitted")
     require(flags["bt_canonical_current_pointwise_second_factor_obstructed"] is True, "BT canonical second-factor obstruction omitted")
     require(flags["bt_weighted_random_conductance_current_identity_established"] is True, "BT weighted-current identity omitted")
+    require(flags["bt_corrector_pointwise_action_route_obstructed"] is True, "BT corrector action-route no-go omitted")
+    require(flags["bt_corrector_pointwise_dirichlet_route_obstructed"] is True, "BT corrector Dirichlet-route no-go omitted")
+    require(flags["bt_corrector_Gibbs_hyperuniformity_established"] is False, "BT pointwise no-go promoted to Gibbs theorem")
     require(flags["bt_translation_invariant_flux_corrector_established"] is False, "BT flux corrector promoted")
     require(flags["bt_translation_invariant_current_susceptibility_established"] is False, "BT current susceptibility promoted")
     require(flags["bt_exact_interacting_score_scaling_established"] is False, "BT exact interacting score promoted")
@@ -612,6 +617,12 @@ def main() -> int:
     require(bt_weighted_current_v2["method_disposition"]["v1_fixture_as_full_phase_slice_witness"] == "WITHDRAWN_SCOPE_ERROR", "BT V1 fixture scope error omitted")
     require(bt_weighted_current_v2["method_disposition"]["actual_interacting_H_minus_one_second_moment"] == "OPEN", "BT weighted-current gate promoted to H-minus-one theorem")
     require(bt_weighted_current_v2["dependency_tags"] == ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], "BT weighted-current dependency boundary drift")
+    require(atlas["bt_corrector_pointwise_action_route_status"] == bt_corrector_energy_no_go["method_disposition"]["pointwise_corrector_bound_by_N_omega_action"] == "OBSTRUCTED", "BT corrector action-route status drift")
+    require(atlas["bt_corrector_pointwise_dirichlet_route_status"] == bt_corrector_energy_no_go["method_disposition"]["pointwise_corrector_bound_by_N_omega_weighted_dirichlet_energy"] == "OBSTRUCTED", "BT corrector Dirichlet-route status drift")
+    require(atlas["bt_corrector_Gibbs_hyperuniformity_status"] == bt_corrector_energy_no_go["method_disposition"]["Gibbs_corrector_hyperuniformity_bound"] == "OPEN", "BT pointwise corrector no-go promoted to Gibbs theorem")
+    require(atlas["bt_corrector_action_ratio_linear_coefficient"] == bt_corrector_energy_no_go["diverging_ratios"]["action_ratio_linear_coefficient"] == {"numerator": 49, "denominator": 360096}, "BT corrector ratio coefficient drift")
+    require(bt_corrector_energy_no_go["method_disposition"]["actual_interacting_H_minus_one_second_moment"] == "OPEN", "BT corrector no-go promoted to H-minus-one theorem")
+    require(bt_corrector_energy_no_go["dependency_tags"] == ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], "BT corrector no-go dependency boundary drift")
     require(bt_full_phase_current["method_disposition"]["actual_interacting_H_minus_one_second_moment"] == "OPEN", "BT full-phase reduction promoted to H-minus-one theorem")
     require(bt_full_phase_current["dependency_tags"] == ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], "BT full-phase dependency boundary drift")
     require(atlas["bt_g4_interacting_H_minus_one_status"] == "OPEN", "BT interacting H-minus-one atlas promotion")
@@ -897,6 +908,9 @@ def main() -> int:
         r"susceptibility estimate",
         r"J_{xy}=\Omega_x\Omega_y(u_x-u_y)",
         r"K_{x,i}=(\Omega_x\Omega_{x+e_i}-1)(u_x-u_{x+e_i})",
+        r"REVERSE_PHYSICS_BT_EUCLIDEAN_FLUX_CORRECTOR_POINTWISE_ENERGY_NO_GO_V1",
+        r"\frac{49}{360096}L",
+        r"Gibbs rarity and correlation",
     ]:
         require(phrase in prose, f"required boundary missing from paper: {phrase}")
     for citation in [
