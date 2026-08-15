@@ -92,7 +92,7 @@ class MatrixSiteTests(unittest.TestCase):
         self.assertIn("The first BV promotion gap is at λ²", app)
         self.assertIn("Field-equation type gate corrected and closed", app)
         self.assertIn("The stronger inverse is impossible", app)
-        self.assertIn("Read the audited V22 report", app)
+        self.assertIn("Read the audited V23 report", app)
         self.assertIn("The quadratic-only λ² source is not closed", app)
         self.assertIn("What the cubic bracket must do", app)
         self.assertIn("Read Gate V7 reconciliation", app)

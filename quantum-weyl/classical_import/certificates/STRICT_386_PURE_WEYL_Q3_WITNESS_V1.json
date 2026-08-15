@@ -1,0 +1,691 @@
+{
+  "$schema": "../schema/strict-386-pure-weyl-q3-witness-v1.schema.json",
+  "schema": "strict-386-pure-weyl-q3-witness-v1",
+  "schema_path": "quantum-weyl/classical_import/schema/strict-386-pure-weyl-q3-witness-v1.schema.json",
+  "result_id": "STRICT_386_PURE_WEYL_Q3_WITNESS_V1",
+  "result_kind": "EXACT_RECEIVER_DERIVED_PURE_WEYL_METRIC_Q3_WITNESS_AND_SOURCE_COMPATIBILITY_INVENTORY",
+  "result_state": "METRIC_Q3_WITNESS_CANCELLATION_CERTIFIED_AUTHORITATIVE_FULL_BV_Q3_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "f6e40e94b18a9efda1dc0aac60efaed0ac4b0789",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "Can the required pure-Weyl q3 cancellation be constructed directly, and can any existing complete q3 be imported into the strict carrier?",
+  "answer": "Yes for the pinned pure-Weyl metric witness, but not yet as a full authoritative import. Exact cubic differentiation of the action-normalized Bach Euler density gives 41 rational terms across all ten metric-equation rows and q1 q3=-75760/9, exactly cancelling three times the certified 75760/27 q2 Jacobiator. The full lambda-squared source is therefore q1-closed on this witness. The repository's complete Berger q3 cannot be directly imported: it belongs to Weyl gravity plus a positive clock at a fixed Berger background on a different 54-row carrier, and no same-theory cyclic carrier map is certified. Arbitrary-input full-BV q3 and its 386-row stabilization remain open.",
+  "scope": {
+    "theory": "strict pure-Weyl metric sector",
+    "carrier": "strict thirty-row endpoint metric equation rows, interpreted inside the 386-row split carrier",
+    "background": "flat four-dimensional Bach-flat metric",
+    "input": "one exact q1-closed pure-diffeomorphism metric jet",
+    "claim_type": "receiver-derived exact witness, not authoritative classical import"
+  },
+  "exact_cubic_fixture": {
+    "fixture_id": "FLAT_PURE_DIFF_GAUGE_SEED_1",
+    "background": "four-dimensional flat metric diag(-1,1,1,1)",
+    "input": "x=q1(c_seed_1)",
+    "input_status": "q1(x)=0 exactly",
+    "operator": "D^3 E_g(x,x,x), E_g=-2 sqrt(abs(g)) B(g)^sharp",
+    "extraction": "6 times the coefficient of t^3 in E(g+t x)",
+    "taylor_convention": "suspended-graded-symmetric-factorial-v1",
+    "coefficient_field": "Q",
+    "metric_output_rows": [
+      {
+        "row_id": "h_star_00",
+        "component": [
+          0,
+          0
+        ],
+        "terms": [
+          {
+            "multiindex": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "coefficient": "10976/3"
+          },
+          {
+            "multiindex": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "coefficient": "976"
+          },
+          {
+            "multiindex": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "coefficient": "2928"
+          },
+          {
+            "multiindex": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "coefficient": "1464"
+          }
+        ]
+      },
+      {
+        "row_id": "h_star_01",
+        "component": [
+          0,
+          1
+        ],
+        "terms": [
+          {
+            "multiindex": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "coefficient": "15488/27"
+          },
+          {
+            "multiindex": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "coefficient": "5900"
+          },
+          {
+            "multiindex": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "coefficient": "244"
+          },
+          {
+            "multiindex": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "coefficient": "564"
+          },
+          {
+            "multiindex": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "coefficient": "10032"
+          }
+        ]
+      },
+      {
+        "row_id": "h_star_02",
+        "component": [
+          0,
+          2
+        ],
+        "terms": [
+          {
+            "multiindex": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "coefficient": "324"
+          },
+          {
+            "multiindex": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "coefficient": "-1200"
+          },
+          {
+            "multiindex": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "coefficient": "2196"
+          },
+          {
+            "multiindex": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "coefficient": "920/3"
+          }
+        ]
+      },
+      {
+        "row_id": "h_star_03",
+        "component": [
+          0,
+          3
+        ],
+        "terms": [
+          {
+            "multiindex": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "coefficient": "-14224/3"
+          },
+          {
+            "multiindex": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "coefficient": "-4224"
+          },
+          {
+            "multiindex": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "coefficient": "976"
+          },
+          {
+            "multiindex": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "coefficient": "-2668"
+          },
+          {
+            "multiindex": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "coefficient": "-5296/3"
+          }
+        ]
+      },
+      {
+        "row_id": "h_star_11",
+        "component": [
+          1,
+          1
+        ],
+        "terms": [
+          {
+            "multiindex": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "coefficient": "15812/3"
+          },
+          {
+            "multiindex": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "coefficient": "-688"
+          },
+          {
+            "multiindex": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "coefficient": "-8448"
+          },
+          {
+            "multiindex": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "coefficient": "-10872"
+          }
+        ]
+      },
+      {
+        "row_id": "h_star_12",
+        "component": [
+          1,
+          2
+        ],
+        "terms": [
+          {
+            "multiindex": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "coefficient": "224"
+          },
+          {
+            "multiindex": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "coefficient": "-4140"
+          },
+          {
+            "multiindex": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "coefficient": "17568"
+          },
+          {
+            "multiindex": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "coefficient": "-104/3"
+          }
+        ]
+      },
+      {
+        "row_id": "h_star_13",
+        "component": [
+          1,
+          3
+        ],
+        "terms": [
+          {
+            "multiindex": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "coefficient": "13216/3"
+          },
+          {
+            "multiindex": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "coefficient": "-19152"
+          },
+          {
+            "multiindex": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "coefficient": "1647"
+          },
+          {
+            "multiindex": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "coefficient": "-376/3"
+          },
+          {
+            "multiindex": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "coefficient": "22011"
+          }
+        ]
+      },
+      {
+        "row_id": "h_star_22",
+        "component": [
+          2,
+          2
+        ],
+        "terms": [
+          {
+            "multiindex": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "coefficient": "-30988/9"
+          },
+          {
+            "multiindex": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "coefficient": "-640/3"
+          },
+          {
+            "multiindex": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "coefficient": "9120"
+          },
+          {
+            "multiindex": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "coefficient": "2928"
+          }
+        ]
+      },
+      {
+        "row_id": "h_star_23",
+        "component": [
+          2,
+          3
+        ],
+        "terms": [
+          {
+            "multiindex": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "coefficient": "-304/3"
+          },
+          {
+            "multiindex": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "coefficient": "-488"
+          },
+          {
+            "multiindex": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "coefficient": "2070"
+          },
+          {
+            "multiindex": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "coefficient": "5088"
+          }
+        ]
+      },
+      {
+        "row_id": "h_star_33",
+        "component": [
+          3,
+          3
+        ],
+        "terms": [
+          {
+            "multiindex": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "coefficient": "-21400/9"
+          },
+          {
+            "multiindex": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "coefficient": "7136/3"
+          }
+        ]
+      }
+    ],
+    "nonzero_metric_output_rows": 10,
+    "metric_output_term_count": 41,
+    "q1_q3_diff_noether": {
+      "0": "0",
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "q1_q3_weyl_noether": "-75760/9",
+    "nonlinear_weyl_identity_t3": "0",
+    "sha256": "6bc7b6d38de156779aecd279db05b407bfcd310718d440899b256b065079fbad"
+  },
+  "arity_three_cancellation": {
+    "q2_jacobiator_weyl_noether": "75760/27",
+    "required_q1_q3": "-75760/9",
+    "computed_q1_q3": "-75760/9",
+    "arity_three_defect": "0",
+    "q2_only_lambda2_source_defect": "37880/27",
+    "full_lambda2_source_q1_defect_on_witness": "0",
+    "witness_source_closure": true,
+    "general_full_source_closure": false,
+    "sha256": "9258c2ae55beb0d725f0d234b95c6e56839b5b31f216feabc425b9b36f8e08c7"
+  },
+  "q3_source_compatibility": {
+    "decision_rule": "A direct import requires the same classical theory, background class, carrier/convention, and a certified cyclic L-infinity map. Matching arity alone is insufficient.",
+    "sources": [
+      {
+        "source_id": "BERGER_SUPPORT_LOCAL_Q3",
+        "theory": "Weyl gravity plus a positive rotating conformal clock",
+        "background": "compact_positive_berger_clock_fixed_coupling_linearized",
+        "carrier": "54-row gauge-fixed Berger BV complex",
+        "coefficient_field": "Q(sqrt(10))",
+        "arity": "complete arbitrary-input q3 on its declared carrier",
+        "strict_386_direct_import": false,
+        "disposition": "NO_CERTIFIED_SAME_THEORY_CARRIER_MAP",
+        "reasons": [
+          "the Berger source includes two clock fields and their Euler rows while the strict endpoint is pure Weyl",
+          "the Berger coefficients are specialized to one positive-clock Berger background rather than arbitrary pure-Weyl metric jets",
+          "the 54-row h_hat/R/Theta basis is not the 30-row pure-Weyl endpoint or its 386-row stabilization",
+          "no content-addressed cyclic L-infinity morphism between these theories and carriers is certified",
+          "the Berger certificate itself leaves the background-independent antifield Koszul-Tate export false"
+        ],
+        "nonexistence_claimed": false
+      },
+      {
+        "source_id": "STRICT_BACH_NATURAL_OPERATOR_AST_V1",
+        "theory": "strict pure Weyl",
+        "background": "arbitrary nondegenerate four-dimensional metric jets",
+        "carrier": "portable metric Euler row",
+        "coefficient_field": "Q",
+        "arity": "bilinear Hessian q2 only",
+        "strict_386_direct_import": false,
+        "disposition": "SAME_THEORY_PORTABLE_Q2_DOES_NOT_EXPORT_Q3",
+        "reasons": [
+          "the portable AST stops at the second Frechet derivative"
+        ],
+        "nonexistence_claimed": false
+      },
+      {
+        "source_id": "STRICT_PURE_WEYL_CUBIC_BACH_RECEIVER_V1",
+        "theory": "strict pure Weyl",
+        "background": "flat metric fixture",
+        "carrier": "ten metric-equation rows of the strict 30-row endpoint",
+        "coefficient_field": "Q",
+        "arity": "diagonal metric-sector q3 on one exact q1-closed input",
+        "strict_386_direct_import": false,
+        "disposition": "RECEIVER_DERIVED_WITNESS_CANCELLATION_CERTIFIED",
+        "reasons": [
+          "the computation realizes the required source cancellation but is not a full arbitrary-input or full-BV classical export"
+        ],
+        "nonexistence_claimed": false
+      }
+    ],
+    "sha256": "7e0803ffa34aceee8ab1735484036165667bdc527dd42bc085f092e2308fb223"
+  },
+  "authoritative_q3_export_contract": {
+    "contract_id": "STRICT_PURE_WEYL_AUTHORITATIVE_Q3_EXPORT_V2",
+    "now_established": [
+      "the exact pure-Weyl metric-sector q3 normalization on the pinned diagonal witness",
+      "the required -75760/9 q1 image and exact cancellation of the q2 Jacobiator",
+      "the incompatibility of the existing Berger-plus-clock q3 as a direct strict pure-Weyl import under the currently certified maps"
+    ],
+    "still_required": [
+      "an authoritative arbitrary-three-input pure-Weyl q3 on the complete classical minimal BV carrier",
+      "all ghost, antifield, and Noether partner rows in the same suspended factorial convention as q1 and q2",
+      "an exact coefficientwise arity-three identity on arbitrary inputs",
+      "a content-addressed cyclic stabilization or L-infinity morphism from the authoritative minimal carrier to the 386-row graph carrier",
+      "support-locality and derivative-order bounds followed by q3/Green support-domain checks"
+    ],
+    "minimum_regression": "the full export must reproduce q1(q3(x,x,x))_omega_star=-75760/9 on FLAT_PURE_DIFF_GAUGE_SEED_1",
+    "authoritative_export_present": false,
+    "sha256": "4400676d2e1c14a54f0240cd7e5c59f5c7f27f1e4c20a5e4f3ed50df65cf362c"
+  },
+  "foundational_strength": {
+    "classification": "FINITE_EXACT_RATIONAL_CUBIC_METRIC_JET_WITNESS",
+    "finite_layer": "The cubic coefficient, ten metric rows, 41 exact rational terms, four Diff-Noether zeros, Weyl-Noether value, and cancellation are finite rational computations.",
+    "choice_operation_added": false,
+    "completion_or_infinite_sum_used": false,
+    "analytic_green_layer_used": false,
+    "weakest_complete_foundational_base": "PRA_UPPER_BOUND_FOR_FIXED_FIXTURE; UNCALIBRATED_FOR_ARBITRARY_INPUT_NATURAL_Q3",
+    "sha256": "98f932dfd499b3b8a9127c715fa8190030aaaf314b52f2982b9d772bf00e1c92"
+  },
+  "claim_flags": {
+    "STRICT_PURE_WEYL_METRIC_Q3_DIAGONAL_WITNESS_DERIVED": true,
+    "STRICT_PURE_WEYL_Q3_WITNESS_CANCELLATION_CERTIFIED": true,
+    "STRICT_386_WITNESS_FULL_SOURCE_CLOSURE_CERTIFIED": true,
+    "BERGER_Q3_DIRECT_STRICT_IMPORT_COMPATIBLE": false,
+    "STRICT_386_AUTHORITATIVE_Q3_IMPORTED": false,
+    "STRICT_386_ARBITRARY_INPUT_Q3_CERTIFIED": false,
+    "STRICT_386_FULL_BV_ARITY_THREE_IDENTITY_CERTIFIED": false,
+    "STRICT_386_GENERAL_FULL_WEYL_LAMBDA2_SOURCE_CLOSURE_CERTIFIED": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "QME_RESTORED": false,
+    "LORENTZIAN_QUANTUM_THEORY": false
+  },
+  "does_not_establish": [
+    "an authoritative arbitrary-input pure-Weyl q3 export",
+    "the ghost, antifield, nonminimal, auxiliary, residual, or full 386-row q3 components",
+    "the general arity-three L-infinity identity beyond the pinned diagonal metric witness",
+    "general lambda-squared or all-order nonlinear source closure",
+    "nonexistence of a future Berger-to-pure-Weyl relation; only the absence of a currently certified same-theory map is asserted",
+    "q3 compatibility with retarded or advanced Green actions",
+    "a passed classical import gate, analytic Moller map, Hadamard state, renormalized products, QME restoration, residual transfer, or Lorentzian quantum theory"
+  ],
+  "next_gate": "Export arbitrary-input action-derived pure-Weyl q3 on the authoritative minimal BV carrier, including every ghost/antifield partner; replay the full arity-three identity and then stabilize it through a content-addressed cyclic map to the 386-row graph carrier. The export must reproduce the pinned -75760/9 witness.",
+  "canonical_hashes": {
+    "exact_cubic_fixture_sha256": "6bc7b6d38de156779aecd279db05b407bfcd310718d440899b256b065079fbad",
+    "arity_three_cancellation_sha256": "9258c2ae55beb0d725f0d234b95c6e56839b5b31f216feabc425b9b36f8e08c7",
+    "q3_source_compatibility_sha256": "7e0803ffa34aceee8ab1735484036165667bdc527dd42bc085f092e2308fb223",
+    "authoritative_q3_export_contract_sha256": "4400676d2e1c14a54f0240cd7e5c59f5c7f27f1e4c20a5e4f3ed50df65cf362c",
+    "foundational_strength_sha256": "98f932dfd499b3b8a9127c715fa8190030aaaf314b52f2982b9d772bf00e1c92"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_QUADRATIC_TRUNCATION_LAMBDA2_SOURCE_OBSTRUCTION_V1.json",
+        "result_or_artifact_id": "STRICT_386_QUADRATIC_TRUNCATION_LAMBDA2_SOURCE_OBSTRUCTION_V1",
+        "sha256": "048bed4c425d89fe6d6999c70c1d408d28a2a00421e545ce9a43ee123c21dd1b",
+        "role": "q2 Jacobiator and required q3 target"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_BACH_NATURAL_OPERATOR_AST_V1.json",
+        "result_or_artifact_id": "STRICT_BACH_NATURAL_OPERATOR_AST_V1",
+        "sha256": "cea2952bc7e91170169c37b31bc102da74bbe956aac995e6565db0eb03a71098",
+        "role": "portable pure-Weyl action-normalized Bach map"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+        "result_or_artifact_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+        "sha256": "3b9d8a2fc5a70d20770452eb0a2a4891f59314c21c83188bfb59de0941cac4b2",
+        "role": "strict 386-row carrier and pairing convention"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1.json",
+        "result_or_artifact_id": "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
+        "sha256": "7dcafc995a0662f610d721d39b3255f5fae6e32105286cc05051e3b658e16032",
+        "role": "strict thirty-row endpoint bridge"
+      },
+      {
+        "path": "d_quotient_classical/minimal_bv_antifield/foundation/action_normalization.json",
+        "result_or_artifact_id": "PURE_WEYL_ACTION_NORMALIZATION_V2",
+        "sha256": "1d0db9cd5a408e4fb9e745856da8a884ea600ab27ab90539d30252b7c226e48f",
+        "role": "authoritative classical action normalization"
+      },
+      {
+        "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q3.json",
+        "result_or_artifact_id": "BERGER_SUPPORT_LOCAL_Q3",
+        "sha256": "f55c145700cd30273e0f16d585bfd0815e5a8451606b0998bc706a8b61798cad",
+        "role": "complete q3 comparison source on a different theory and background"
+      },
+      {
+        "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q3_PAYLOAD.json",
+        "result_or_artifact_id": "pure-weyl-berger-support-local-q3-payload-v1",
+        "sha256": "a0ae9ba202b1f6b35c48c3506417c2251df012324cadbdbea3aa389a4c2d8bfb",
+        "role": "Berger q3 payload shape and coefficient-field comparison"
+      }
+    ],
+    "implementation": {
+      "path": "quantum-weyl/classical_import/cylinder_cubic_bach_evaluator.py",
+      "sha256": "fcfafcf8702bc56deaa1cf746e1969a1da7488dd2c130b43ef7ac60d1d61031a",
+      "role": "exact Q[t]/(t^4) cubic Bach receiver"
+    }
+  },
+  "independent_checker": {
+    "path": "quantum-weyl/classical_import/check_strict_386_pure_weyl_q3_witness.py",
+    "checks": [
+      "dependency identities and hashes",
+      "independent q2 Jacobiator regeneration",
+      "exact cubic Bach receiver regeneration",
+      "four Diff-Noether zeros and nonlinear Weyl trace identity",
+      "-75760/9 arity-three and lambda-squared source cancellation",
+      "Berger theory/background/carrier incompatibility boundary",
+      "authoritative/full-BV/Hadamard/QME firewalls"
+    ]
+  },
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_386_PURE_WEYL_Q3_WITNESS_V1.md"
+}

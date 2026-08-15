@@ -133,6 +133,8 @@ def main() -> int:
     completion_atlas_v21 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v21"]["path"]).read_text())
     strict_386_quadratic_obstruction = json.loads((ROOT / data["authorities"]["strict_386_quadratic_truncation_lambda2_source_obstruction"]["path"]).read_text())
     completion_atlas_v22 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v22"]["path"]).read_text())
+    strict_386_q3_witness = json.loads((ROOT / data["authorities"]["strict_386_pure_weyl_q3_witness"]["path"]).read_text())
+    completion_atlas_v23 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v23"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -437,6 +439,7 @@ def main() -> int:
         (47, "STRICT-WEYL-POLARIZED-FORMAL-COEFFICIENTS-AND-BV-GATE"),
         (48, "STRICT-WEYL-FIELD-EQUATION-GREEN-QUOTIENT-INVERSE"),
         (49, "STRICT-WEYL-QUADRATIC-TRUNCATION-Q3-NECESSITY"),
+        (50, "STRICT-PURE-WEYL-CUBIC-WITNESS-CANCELLATION"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -686,7 +689,20 @@ def main() -> int:
     require(quadratic["quadratic_only_lambda_squared_source_closed"] is False and quadratic["witness_jacobiator_weyl_identity"] == "75760/27" and quadratic["witness_source_closure_defect"] == "37880/27" and quadratic["required_q3_q1_image_on_witness"] == "-75760/9", "quadratic-truncation obstruction drift")
     require(completion_atlas_v22["strict_quadratic_truncation_lambda2_source_obstruction"]["authoritative_q3_required"] is True and completion_atlas_v22["strict_quadratic_truncation_lambda2_source_obstruction"]["authoritative_q3_imported"] is False and completion_atlas_v22["strict_quadratic_truncation_lambda2_source_obstruction"]["not_a_full_weyl_no_go"] is True, "completion atlas V22 q3 boundary drift")
     require([item["route"] for item in completion_atlas_v22["route_selection"][:2]] == ["STRICT_AUTHORITATIVE_Q2_Q3_ARITY_THREE_EXPORT", "STRICT_LAMBDA2_FULL_SOURCE_COCYCLE_CLOSURE"], "completion atlas V22 frontier ordering drift")
+    cubic = strict_386_q3_witness["exact_cubic_fixture"]
+    cancellation = strict_386_q3_witness["arity_three_cancellation"]
+    berger = next(item for item in strict_386_q3_witness["q3_source_compatibility"]["sources"] if item["source_id"] == "BERGER_SUPPORT_LOCAL_Q3")
+    q3_flags = strict_386_q3_witness["claim_flags"]
+    require(cubic["metric_output_term_count"] == 41 and cubic["nonzero_metric_output_rows"] == 10 and cubic["q1_q3_weyl_noether"] == "-75760/9", "pure-Weyl cubic witness census drift")
+    require(all(value == "0" for value in cubic["q1_q3_diff_noether"].values()) and cubic["nonlinear_weyl_identity_t3"] == "0", "pure-Weyl cubic Noether identities drift")
+    require(cancellation["arity_three_defect"] == "0" and cancellation["full_lambda2_source_q1_defect_on_witness"] == "0" and cancellation["witness_source_closure"] is True and cancellation["general_full_source_closure"] is False, "pure-Weyl cubic cancellation boundary drift")
+    require(berger["strict_386_direct_import"] is False and berger["disposition"] == "NO_CERTIFIED_SAME_THEORY_CARRIER_MAP" and berger["nonexistence_claimed"] is False, "Berger q3 compatibility boundary drift")
+    require(q3_flags["STRICT_PURE_WEYL_METRIC_Q3_DIAGONAL_WITNESS_DERIVED"] is True and q3_flags["STRICT_PURE_WEYL_Q3_WITNESS_CANCELLATION_CERTIFIED"] is True and q3_flags["STRICT_386_WITNESS_FULL_SOURCE_CLOSURE_CERTIFIED"] is True and q3_flags["STRICT_386_ARBITRARY_INPUT_Q3_CERTIFIED"] is False and q3_flags["STRICT_386_FULL_BV_ARITY_THREE_IDENTITY_CERTIFIED"] is False and q3_flags["CLASSICAL_IMPORT_GATE_PASSED"] is False and q3_flags["HADAMARD_STATE_CONSTRUCTED"] is False and q3_flags["QME_RESTORED"] is False, "pure-Weyl q3 lifecycle firewall drift")
+    v23_projection = completion_atlas_v23["strict_pure_weyl_q3_witness"]
+    require(v23_projection["metric_q3_term_count"] == 41 and v23_projection["lambda2_witness_source_q1_defect"] == "0" and v23_projection["authoritative_arbitrary_input_q3_imported"] is False and v23_projection["Berger_disposition"] == "NO_CERTIFIED_SAME_THEORY_CARRIER_MAP", "completion atlas V23 q3 projection drift")
+    require([item["route"] for item in completion_atlas_v23["route_selection"][:3]] == ["STRICT_AUTHORITATIVE_ARBITRARY_FULL_BV_Q2_Q3_EXPORT", "STRICT_ARITY_THREE_386_CYCLIC_STABILIZATION", "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE"], "completion atlas V23 frontier ordering drift")
     require(flags["strict_386_field_equation_green_component_typed"] is True and flags["strict_386_field_equation_constrained_right_inverse_certified"] is True and flags["strict_386_field_equation_quotient_left_inverse_certified"] is True and flags["strict_386_ungauge_fixed_full_inverse_obstructed"] is True and flags["strict_386_q2_only_lambda2_source_obstructed"] is True and flags["strict_386_authoritative_q3_cancellation_target_exact"] is True and flags["strict_386_authoritative_q3_imported"] is False and flags["strict_386_full_weyl_lambda2_source_closure_certified"] is False and flags["strict_386_all_order_nonlinear_source_closure_certified"] is False, "typed inverse/nonlinear lifecycle firewall drift")
+    require(flags["strict_pure_weyl_metric_q3_witness_derived"] is True and flags["strict_pure_weyl_q3_witness_cancellation_certified"] is True and flags["strict_386_lambda2_witness_full_source_closed"] is True and flags["strict_386_Berger_q3_direct_import_compatible"] is False and flags["strict_386_arbitrary_input_q3_certified"] is False and flags["strict_386_full_bv_arity_three_identity_certified"] is False, "paper cubic-witness authority firewall drift")
     require(flags["static_atlas_appendix_generated"] is True, "static atlas appendix flag is not certified")
     require(flags["complete_evidence_register_generated"] is True, "complete evidence register flag is not certified")
     require(flags["complete_literature_register_generated"] is True, "complete literature register flag is not certified")
@@ -1127,6 +1143,13 @@ def main() -> int:
         r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V21",
         r"STRICT_386_QUADRATIC_TRUNCATION_LAMBDA2_SOURCE_OBSTRUCTION_V1",
         r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V22",
+        r"STRICT_386_PURE_WEYL_Q3_WITNESS_V1",
+        r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V23",
+        r"41 exact rational",
+        r"NO_CERTIFIED_SAME_THEORY_CARRIER_MAP",
+        r"STRICT_AUTHORITATIVE_ARBITRARY_FULL_BV_Q2_Q3_EXPORT",
+        r"STRICT_ARITY_THREE_386_CYCLIC_STABILIZATION",
+        r"STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE",
         r"140 ordered-component channels",
         r"68 potentially nonzero block triples",
         r"cyclic \(L_\infty\) isomorphism",

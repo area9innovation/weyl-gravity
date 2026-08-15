@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/foundations/foundational-lorentzian-weyl-bv-completion-atlas-v23.schema.json",
+  "title": "Lorentzian Weyl BV completion atlas v23",
+  "type": "object",
+  "required": [
+    "schema_version", "result_id", "predecessor", "branches", "stages",
+    "frontier_summary", "strict_quadratic_truncation_lambda2_source_obstruction",
+    "strict_pure_weyl_q3_witness", "route_selection", "research_queue",
+    "claim_flags", "does_not_establish", "provenance", "independent_checker",
+    "human_report"
+  ],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v23"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V23"},
+    "branches": {"type": "array", "minItems": 7, "maxItems": 7},
+    "strict_pure_weyl_q3_witness": {
+      "type": "object",
+      "required": [
+        "fixture_id", "metric_q3_term_count", "metric_q3_nonzero_rows",
+        "q2_jacobiator_weyl_identity_value", "computed_q1_q3_weyl_identity_value",
+        "arity_three_witness_defect", "lambda2_witness_source_q1_defect",
+        "lambda2_witness_source_closed", "general_full_weyl_lambda2_source_closed",
+        "receiver_derived_metric_sector", "authoritative_arbitrary_input_q3_imported",
+        "Berger_q3_direct_import_compatible", "Berger_disposition"
+      ],
+      "properties": {
+        "fixture_id": {"const": "FLAT_PURE_DIFF_GAUGE_SEED_1"},
+        "metric_q3_term_count": {"const": 41},
+        "metric_q3_nonzero_rows": {"const": 10},
+        "q2_jacobiator_weyl_identity_value": {"const": "75760/27"},
+        "computed_q1_q3_weyl_identity_value": {"const": "-75760/9"},
+        "arity_three_witness_defect": {"const": "0"},
+        "lambda2_witness_source_q1_defect": {"const": "0"},
+        "lambda2_witness_source_closed": {"const": true},
+        "general_full_weyl_lambda2_source_closed": {"const": false},
+        "receiver_derived_metric_sector": {"const": true},
+        "authoritative_arbitrary_input_q3_imported": {"const": false},
+        "Berger_q3_direct_import_compatible": {"const": false},
+        "Berger_disposition": {"const": "NO_CERTIFIED_SAME_THEORY_CARRIER_MAP"}
+      }
+    },
+    "route_selection": {"type": "array", "minItems": 11, "maxItems": 11},
+    "claim_flags": {
+      "type": "object",
+      "properties": {
+        "strict_pure_weyl_q3_witness_cancellation_certified": {"const": true},
+        "strict_386_authoritative_q3_imported": {"const": false},
+        "strict_386_general_full_weyl_lambda2_source_closure_certified": {"const": false},
+        "strict_pure_weyl_classical_gate_passed": {"const": false},
+        "strict_386_full_bv_hadamard_state_constructed": {"const": false},
+        "strict_pure_weyl_qme_restored": {"const": false},
+        "lorentzian_full_theory_certified": {"const": false}
+      }
+    }
+  }
+}

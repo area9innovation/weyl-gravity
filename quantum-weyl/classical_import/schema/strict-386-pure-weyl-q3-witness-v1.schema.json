@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/strict-386-pure-weyl-q3-witness-v1.schema.json",
+  "title": "Strict pure-Weyl q3 metric witness and source inventory",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "result_kind", "result_state", "lifecycle",
+    "dependency_tags", "scope", "exact_cubic_fixture",
+    "arity_three_cancellation", "q3_source_compatibility",
+    "authoritative_q3_export_contract", "foundational_strength",
+    "claim_flags", "does_not_establish", "next_gate", "canonical_hashes",
+    "provenance", "independent_checker", "human_report"
+  ],
+  "properties": {
+    "schema": {"const": "strict-386-pure-weyl-q3-witness-v1"},
+    "result_id": {"const": "STRICT_386_PURE_WEYL_Q3_WITNESS_V1"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "exact_cubic_fixture": {
+      "type": "object",
+      "required": [
+        "fixture_id", "taylor_convention", "coefficient_field",
+        "metric_output_rows", "nonzero_metric_output_rows",
+        "metric_output_term_count", "q1_q3_diff_noether",
+        "q1_q3_weyl_noether", "nonlinear_weyl_identity_t3", "sha256"
+      ],
+      "properties": {
+        "fixture_id": {"const": "FLAT_PURE_DIFF_GAUGE_SEED_1"},
+        "taylor_convention": {"const": "suspended-graded-symmetric-factorial-v1"},
+        "coefficient_field": {"const": "Q"},
+        "nonzero_metric_output_rows": {"const": 10},
+        "metric_output_term_count": {"const": 41},
+        "q1_q3_weyl_noether": {"const": "-75760/9"},
+        "nonlinear_weyl_identity_t3": {"const": "0"}
+      }
+    },
+    "arity_three_cancellation": {
+      "type": "object",
+      "required": [
+        "q2_jacobiator_weyl_noether", "required_q1_q3", "computed_q1_q3",
+        "arity_three_defect", "full_lambda2_source_q1_defect_on_witness",
+        "witness_source_closure", "general_full_source_closure", "sha256"
+      ],
+      "properties": {
+        "q2_jacobiator_weyl_noether": {"const": "75760/27"},
+        "required_q1_q3": {"const": "-75760/9"},
+        "computed_q1_q3": {"const": "-75760/9"},
+        "arity_three_defect": {"const": "0"},
+        "full_lambda2_source_q1_defect_on_witness": {"const": "0"},
+        "witness_source_closure": {"const": true},
+        "general_full_source_closure": {"const": false}
+      }
+    },
+    "q3_source_compatibility": {
+      "type": "object",
+      "required": ["decision_rule", "sources", "sha256"],
+      "properties": {
+        "sources": {"type": "array", "minItems": 3, "maxItems": 3}
+      }
+    },
+    "authoritative_q3_export_contract": {
+      "type": "object",
+      "required": ["contract_id", "now_established", "still_required", "minimum_regression", "authoritative_export_present", "sha256"],
+      "properties": {
+        "contract_id": {"const": "STRICT_PURE_WEYL_AUTHORITATIVE_Q3_EXPORT_V2"},
+        "authoritative_export_present": {"const": false}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "STRICT_PURE_WEYL_METRIC_Q3_DIAGONAL_WITNESS_DERIVED",
+        "STRICT_PURE_WEYL_Q3_WITNESS_CANCELLATION_CERTIFIED",
+        "STRICT_386_WITNESS_FULL_SOURCE_CLOSURE_CERTIFIED",
+        "BERGER_Q3_DIRECT_STRICT_IMPORT_COMPATIBLE",
+        "STRICT_386_AUTHORITATIVE_Q3_IMPORTED",
+        "STRICT_386_ARBITRARY_INPUT_Q3_CERTIFIED",
+        "STRICT_386_FULL_BV_ARITY_THREE_IDENTITY_CERTIFIED",
+        "STRICT_386_GENERAL_FULL_WEYL_LAMBDA2_SOURCE_CLOSURE_CERTIFIED",
+        "CLASSICAL_IMPORT_GATE_PASSED", "HADAMARD_STATE_CONSTRUCTED",
+        "QME_RESTORED", "LORENTZIAN_QUANTUM_THEORY"
+      ],
+      "properties": {
+        "STRICT_PURE_WEYL_METRIC_Q3_DIAGONAL_WITNESS_DERIVED": {"const": true},
+        "STRICT_PURE_WEYL_Q3_WITNESS_CANCELLATION_CERTIFIED": {"const": true},
+        "STRICT_386_WITNESS_FULL_SOURCE_CLOSURE_CERTIFIED": {"const": true},
+        "BERGER_Q3_DIRECT_STRICT_IMPORT_COMPATIBLE": {"const": false},
+        "STRICT_386_AUTHORITATIVE_Q3_IMPORTED": {"const": false},
+        "STRICT_386_ARBITRARY_INPUT_Q3_CERTIFIED": {"const": false},
+        "STRICT_386_FULL_BV_ARITY_THREE_IDENTITY_CERTIFIED": {"const": false},
+        "STRICT_386_GENERAL_FULL_WEYL_LAMBDA2_SOURCE_CLOSURE_CERTIFIED": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "LORENTZIAN_QUANTUM_THEORY": {"const": false}
+      }
+    }
+  }
+}

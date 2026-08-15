@@ -896,7 +896,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "85e42f908fce1ac118629646eef8626614c51fc600af54b936f870edc3a5c837"
+      "sha256": "4fae5c76c93444637e2609fc212461111964b75d6bc384d06768e1664bf09344"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -1127,6 +1127,18 @@
       "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V22",
       "sha256": "761f3d227501912bd8426fb5a4319de2eaa8d96c84fa5f395dfd615204598950"
     },
+    "lorentzian_weyl_bv_completion_atlas_v23": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V23.json",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V23",
+      "sha256": "4dcb52f3787ef3e501cf4a7d34a43a7ded5740b47fe5ad63010e0aaef9f96e76"
+    },
     "lorentzian_weyl_bv_completion_atlas_v4": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -1353,6 +1365,16 @@
       "result_id": "STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1",
       "sha256": "583d8a8965c40fb4b8109520ae586c1bdc81ad4bcaadd23811a21dabb428ee6c"
     },
+    "strict_386_pure_weyl_q3_witness": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_PURE_WEYL_Q3_WITNESS_V1.json",
+      "result_id": "STRICT_386_PURE_WEYL_Q3_WITNESS_V1",
+      "sha256": "d088cf692d8da47f8295cbeffba6ac2a8371f76de3f9314f7f726d4e8162023e"
+    },
     "strict_386_quadratic_truncation_lambda2_source_obstruction": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -1460,10 +1482,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "80f7b9a13a444f47e37ac024b1d9de85d08def2864cfd071bd0d3796f14d3460"
+      "sha256": "5c2624881d7ae3bfcd2527599ffd62d0c9e15d50f4419d9137f300e62f7a4452"
     }
   },
-  "canonical_digest": "3e2b91269b56d939becb52d088c063b2b55f87a1575d1325778ab62061e0e6a3",
+  "canonical_digest": "7cf1b3bfe42b7f6ec5bbf5f6963a7eaaffc4825a4555cc7efb10cc1116b3854d",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -1622,10 +1644,12 @@
     "scalar_minkowski_causal_support_proved": true,
     "scalar_minkowski_green_certified": true,
     "static_atlas_appendix_generated": true,
+    "strict_386_Berger_q3_direct_import_compatible": false,
     "strict_386_all_operator_component_adjoints_replayed": false,
     "strict_386_all_order_nonlinear_source_closure_certified": false,
     "strict_386_analytic_moller_convergence_certified": false,
     "strict_386_arbitrary_causal_difference_trees_certified": false,
+    "strict_386_arbitrary_input_q3_certified": false,
     "strict_386_authoritative_formal_moller_map_certified": false,
     "strict_386_authoritative_full_q2_imported": false,
     "strict_386_authoritative_q2_green_compatibility_certified": false,
@@ -1661,6 +1685,7 @@
     "strict_386_field_equation_green_component_typed": true,
     "strict_386_field_equation_quotient_left_inverse_certified": true,
     "strict_386_first_mixed_sign_domain_nondefinition_at_four_leaves": true,
+    "strict_386_full_bv_arity_three_identity_certified": false,
     "strict_386_full_carrier_q2_certified": false,
     "strict_386_full_local_d_action_certified": true,
     "strict_386_full_q1_component_bytes_serialized": true,
@@ -1670,6 +1695,7 @@
     "strict_386_full_weyl_lambda2_source_closure_certified": false,
     "strict_386_graph_suspension_transported": true,
     "strict_386_infinite_tree_series_convergence_certified": false,
+    "strict_386_lambda2_witness_full_source_closed": true,
     "strict_386_local_d_certified": true,
     "strict_386_local_sdr_component_maps_serialized": true,
     "strict_386_local_sdr_cyclicity_replayed": true,
@@ -1694,6 +1720,8 @@
     "strict_d_gauge_or_charge_decided": false,
     "strict_minimal_bv_cyclicity_reconciled": true,
     "strict_pure_weyl_local_q1_q2_certified": true,
+    "strict_pure_weyl_metric_q3_witness_derived": true,
+    "strict_pure_weyl_q3_witness_cancellation_certified": true,
     "support_indexed_full_lf_topology_reconstructed": false,
     "support_indexed_name_equivalence_certified": true,
     "typed_relations_supplied": true,
@@ -2345,6 +2373,19 @@
       ],
       "statement": "For the exact q1-closed pure-diffeomorphism fixture FLAT_PURE_DIFF_GAUGE_SEED_1, the receiver-constructed q2 Jacobiator has Weyl Noether component 75760/27. Hence the q2-only lambda-squared source has exact closure defect 37880/27 and cannot by itself define a Weyl-BV Moller map. In the suspended factorial convention, the arity-three L-infinity identity requires an authoritative q3 with q1(q3(x,x,x))=-75760/9 on this witness. This certifies a quadratic-truncation obstruction and a concrete q3 export target; it is not a no-go theorem for full Weyl gravity and does not import or certify the authoritative q3.",
       "status": "Q2_ONLY_LAMBDA2_SOURCE_OBSTRUCTED_AUTHORITATIVE_Q3_CANCELLATION_TARGET_EXACT_FULL_WEYL_CLOSURE_OPEN"
+    },
+    {
+      "authorities": [
+        "strict_386_pure_weyl_q3_witness",
+        "lorentzian_weyl_bv_completion_atlas_v23"
+      ],
+      "claim_id": "RF-50-STRICT-PURE-WEYL-CUBIC-WITNESS-CANCELLATION",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "Direct exact cubic differentiation of the action-normalized Bach Euler density on FLAT_PURE_DIFF_GAUGE_SEED_1 gives a receiver-derived pure-Weyl metric q3 witness with 41 rational jet terms across all ten metric-equation rows. Its four Diff-Noether components and nonlinear cubic Weyl trace defect vanish, while q1(q3(x,x,x))=-75760/9 exactly cancels three times the certified 75760/27 q2 Jacobiator. Thus the full lambda-squared source is q1-closed on this pinned diagonal witness. This is not an authoritative arbitrary-input or full-BV q3 export. The repository's complete Berger q3 belongs to Weyl gravity plus a positive clock on a fixed Berger background and a different 54-row carrier; with no certified same-theory cyclic carrier map, its disposition is NO_CERTIFIED_SAME_THEORY_CARRIER_MAP, not a nonexistence theorem. Atlas V23 therefore ranks arbitrary-input full-BV q2/q3 export, 386-row cyclic stabilization, and general source-cocycle closure as the next three strict-theory gates.",
+      "status": "METRIC_Q3_WITNESS_CANCELLATION_CERTIFIED_AUTHORITATIVE_ARBITRARY_INPUT_FULL_BV_Q3_OPEN"
     }
   ],
   "created": "2026-08-15",
@@ -2564,19 +2605,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "427b2529b6772ec4e6a81f85f3c79e5cf34c1b64fe8aff2f1c6766e2d4c82b03",
+      "assembly_source_canonical_digest": "f12ff79d61fc1f6f66e6050098f52f991cbc3477f577e95113fbb8e46a1102f2",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "80f7b9a13a444f47e37ac024b1d9de85d08def2864cfd071bd0d3796f14d3460",
+      "assembly_source_sha256": "5c2624881d7ae3bfcd2527599ffd62d0c9e15d50f4419d9137f300e62f7a4452",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
-      "generator_sha256": "4a6f5fa3cc85fad8eee25ef804c4b6db123f8d368d631c64be35e5f764c498e1",
+      "generator_sha256": "63a2485e95b33741e929edd681479ea1006097865d6c3d57f4fac4fd3b3b150b",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "6d06343c4cd5f46c882f98900e2f266734e239b39d06dc1959831ba564cc972b",
-      "source_canonical_digest": "bf599901898d09ac67b9830ad2703698e673178a3d24ef924c1e5b00f42d5410",
+      "sha256": "26d307e91be5cdab622d2869f9848148f0927b6223a977f49488c4d39b23b389",
+      "source_canonical_digest": "e1cae24e248a3dd3801677e23bcbc321215f2281248273ef9c6dc495125de54c",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "6b01bc8f7e5ede046ea0c99acf4c47d4ea48729fdd4cccd280de26146f21d9e2"
+      "source_sha256": "8d21890b36124cf294bfeb0bc2598585ea091f2a9c192e0fbfd892c886f8e158"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "296f716bf0580e1173d49c3a23ef4eb6196f44477eb935c632df596acb951755"
+    "sha256": "add87974968eadf988c306da5a5ecfd95ab69be6b55915595e06426537bd6972"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

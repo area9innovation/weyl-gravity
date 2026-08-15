@@ -1,0 +1,92 @@
+{
+  "receipt_id": "STRICT_386_PURE_WEYL_Q3_WITNESS_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_PURE_WEYL_Q3_WITNESS_V1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Exact receiver-derived pure-Weyl diagonal metric-sector q3 witness on FLAT_PURE_DIFF_GAUGE_SEED_1, its arity-three and lambda-squared source cancellation, the rejection of direct Berger-plus-clock q3 import without a same-theory cyclic carrier map, Atlas V23, website and working-paper integration.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.67,
+      "commands": [
+        "python3 -m py_compile <explicit changed Python paths>",
+        "python3 -m json.tool <explicit new JSON paths>",
+        "git diff --check -- <explicit scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 20.11,
+      "commands": [
+        "python3 quantum-weyl/classical_import/build_strict_386_pure_weyl_q3_witness.py --check && python3 quantum-weyl/classical_import/check_strict_386_pure_weyl_q3_witness.py && python3 quantum-weyl/classical_import/verify_strict_386_pure_weyl_q3_witness.py && python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_pure_weyl_q3_witness.py",
+        "python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v23.py --check && python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v23.py && python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v23.py && python3 -m unittest foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v23.py",
+        "python3 foundations/build_matrix_site_v2.py --check && python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py && python3 -m unittest foundations/tests/test_matrix_site.py",
+        "python3 paper/generate_21_reverse_foundations_appendices.py --check && python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+        "three-pass pdflatex -interaction=nonstopmode -halt-on-error paper/21-reverse-foundations-of-physics.tex"
+      ],
+      "checks": {
+        "q3_mutation_tests": "6/6 PASS",
+        "atlas_v23_mutation_tests": "7/7 PASS",
+        "site_tests": "10/10 PASS",
+        "paper_pages": 69,
+        "paper_undefined_references": 0,
+        "metric_q3_terms": 41,
+        "metric_equation_rows": 10,
+        "q1_q3_weyl_noether": "-75760/9",
+        "arity_three_defect": "0",
+        "lambda2_witness_source_defect": "0",
+        "authoritative_arbitrary_input_full_bv_q3": "NOT_ESTABLISHED"
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 4.2,
+      "commands": [
+        "python3 quantum-weyl/classical_import/check_strict_386_quadratic_truncation_lambda2_source_obstruction.py && python3 quantum-weyl/classical_import/verify_strict_386_quadratic_truncation_lambda2_source_obstruction.py && python3 quantum-weyl/classical_import/check_strict_386_pure_weyl_q3_witness.py && python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v23.py && python3 foundations/verify_matrix_site_v2.py && python3 paper/verify_21_reverse_foundations_claim_map.py"
+      ],
+      "criterion": "The unchanged q2 obstruction was independently replayed, then every affected q3, atlas, site and paper consumer was checked without counting producer regeneration as independent verification."
+    },
+    "tier_3": {
+      "status": "FAIL",
+      "elapsed_seconds": 1.03,
+      "commands": [
+        "python3 -m unittest discover -s . -p 'test_*.py' -f"
+      ],
+      "finding": "Repository-wide discovery stopped before running tests because the system Python 3.14 environment lacks SymPy while importing analytic_completion.",
+      "claim_effect": "No repository freeze, quantum lifecycle transition or release promotion is claimed; the working-paper result remains a scoped CLASSIFIED witness with the full import gate fail closed."
+    }
+  },
+  "advisory_rails": {
+    "science_forge_shadow": {
+      "command": "bash ci/science-forge-shadow.sh",
+      "elapsed_seconds": 3.0,
+      "status": "ADVISORY_FINDINGS",
+      "findings": [
+        "bridge audit failed closed because its historical bp2transformer target also lacks SymPy",
+        "corpus census reports 1809 certificates against the 976-certificate baseline",
+        "Forge binary and checkout revisions differ"
+      ]
+    },
+    "paper_prose": {
+      "command": "../tango/forge/tools/science-forge/paper_prose_advisory.sh paper/21-reverse-foundations-of-physics.tex",
+      "elapsed_seconds": 0.48,
+      "status": "ADVISORY_FINDINGS",
+      "findings": [
+        "parenthetical density above heuristic budget",
+        "abstract-word density above heuristic budget",
+        "one abstract numeric ledger marker"
+      ]
+    }
+  },
+  "artifact_sha256": {
+    "quantum-weyl/classical_import/certificates/STRICT_386_PURE_WEYL_Q3_WITNESS_V1.json": "d088cf692d8da47f8295cbeffba6ac2a8371f76de3f9314f7f726d4e8162023e",
+    "quantum-weyl/classical_import/REPORT_STRICT_386_PURE_WEYL_Q3_WITNESS_V1.md": "cae92275dbfb33130b9ae7829d1da92addf74a650027f7990843a69d3062bebc",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V23.json": "4dcb52f3787ef3e501cf4a7d34a43a7ded5740b47fe5ad63010e0aaef9f96e76",
+    "foundations/reports/lorentzian-weyl-bv-completion-atlas-v23.md": "0ff044fa7e3e2584b45d4530734a531a4d08f8cdd814a369b79f2ef2d9995c8a",
+    "paper/21-reverse-foundations-of-physics.pdf": "1955d25a63272dd2e6d1d8817dab455f39645e6458ce3e1545c508de5a547af1"
+  },
+  "claim_boundary": "This establishes the exact cubic metric-sector cancellation and full lambda-squared source closure on one pinned diagonal pure-Weyl witness. It does not establish arbitrary-input q3, ghost or antifield components, the full 386-row arity-three identity, direct Berger import, Gate A, an analytic Moller map, a Hadamard state, renormalized Lorentzian products, QME restoration, residual transfer or a Lorentzian quantum theory."
+}
