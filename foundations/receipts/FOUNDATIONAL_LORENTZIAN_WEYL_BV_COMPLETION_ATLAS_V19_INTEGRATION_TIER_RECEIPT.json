@@ -1,0 +1,92 @@
+{
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V19_INTEGRATION_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V19",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Append-only V19 projection of finite polarized candidate q2/Green recursion, the exact 38-of-40 four-leaf mixed-sign boundary, and the finite-combinatorial versus completed-analytic foundation seam into the 77-cell completion atlas, existing static researcher site and reverse-foundations paper.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.7,
+      "commands": [
+        "python3 -m py_compile <explicit V19, site and paper generator/checker/test paths>",
+        "python3 -m json.tool <explicit recursive-domain, V19, site-result, paper-claim-map, event and receipt JSON paths>",
+        "deno check foundations/site/app.js foundations/site/migration-review.js",
+        "git diff --check -- <explicit scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 6.5,
+      "commands": [
+        "python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v19.py --check",
+        "python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v19.py",
+        "python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v19.py",
+        "python3 -m unittest foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v19.py",
+        "python3 foundations/build_matrix_site_v2.py --check",
+        "python3 foundations/check_matrix_site_v2.py",
+        "python3 foundations/verify_matrix_site_v2.py",
+        "python3 -m unittest foundations/tests/test_matrix_site.py",
+        "python3 paper/generate_21_reverse_foundations_appendices.py --check",
+        "python3 paper/generate_21_reverse_foundations_claim_map.py --check",
+        "python3 paper/verify_21_reverse_foundations_claim_map.py",
+        "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (two passes)"
+      ],
+      "checks": {
+        "atlas_cells_preserved": 77,
+        "atlas_mutation_tests": "12/12 PASS",
+        "site_cells": 576,
+        "site_completion_cells": 77,
+        "site_routes": 11,
+        "site_status": "PASS",
+        "site_tests": "10/10 PASS",
+        "paper_claims": 46,
+        "paper_claim_map": "PASS",
+        "paper_pdf_pages": 66,
+        "top_ranked_route": "STRICT_386_AUTHORITATIVE_Q2_IDENTITY",
+        "second_ranked_route": "STRICT_POLARIZED_FORMAL_MOLLER_COEFFICIENTS",
+        "classical_gate_a": "FAIL_CLOSED"
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 1.4,
+      "commands": [
+        "python3 quantum-weyl/classical_import/check_strict_386_stabilized_q2_green_composition_preflight.py",
+        "python3 quantum-weyl/classical_import/check_strict_386_recursive_causal_tree_domains.py",
+        "python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v19.py",
+        "python3 foundations/check_matrix_site_v2.py",
+        "python3 paper/verify_21_reverse_foundations_claim_map.py"
+      ],
+      "criterion": "All changed causal evidence, atlas projection, site links, appendices and paper claims were independently checked while preserving q2-authority, higher-bracket, convergence, Hadamard and QME firewalls."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze, release tag, shared core algebra, paper theorem lifecycle, QME state or Lorentzian completion was promoted."
+    }
+  },
+  "artifact_sha256": {
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V19.json": "85ff97849543e61053f40273a92b3ea3816f4fa94f70110de14a3e44feef2251",
+    "foundations/reports/lorentzian-weyl-bv-completion-atlas-v19.md": "7e7e458fcd9ef81977d19a0da8ca5336108ef5a622aecc8828f391dcdc41a2dc",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "89c08ebedaf17020cb4274becc7a6f874872737dee03e80d6a343830e7b55cca",
+    "foundations/site/manifest.json": "006d64cade26ba8cd4e574148392ebb7dcc0bfa7dfa9ae423dc804d723e7e633",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "36d235c7d0a093e30b99447d6344ec51cf93025ccc83c4ce21eaefbcad655558",
+    "paper/21-reverse-foundations-of-physics-appendices.tex": "11a11086b8dee15c0059c2402edd1b96b67cb73753b4f8a459332ca3036ef3a8",
+    "paper/21-reverse-foundations-of-physics.pdf": "d232b983f7ab6da24adc3736e48719ef6a3f988daaaa60f9d134806fdc08d021",
+    "planning/events/reverse-foundations-lorentzian-weyl-bv-completion-ACTIVE-76b29c33c325fd38.json": "f33a56d7056f5060f694b79d5bd68572d8c4de00dd685ef98bef76c9a712e719"
+  },
+  "advisory_shadow_rail": {
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": 3.0,
+    "exit_status": 0,
+    "bridge_audit": "FAIL_CLOSED: external bp2transformer verifier lacks sympy; Forge binary/stdlib revisions also differ",
+    "coverage_census": "DRIFT: 1797 certificates versus baseline 976",
+    "disposition": "The advisory findings remain visible and do not alter the scoped V19 result or promote its candidate construction."
+  },
+  "claim_boundary": "Atlas V19, the site and paper expose candidate-scoped closure for every finite polarized q2/Green tree and the exact first mixed-sign boundary. They do not claim authoritative q2 identity, q3 or higher brackets, an accepted Gate A, complete residual SDR, an infinite or convergent Moller series, Hadamard state, positivity, renormalized products, QME restoration, residual transfer or a completed Lorentzian quantum theory."
+}

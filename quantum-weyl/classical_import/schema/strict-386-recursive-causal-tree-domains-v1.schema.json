@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-386-recursive-causal-tree-domains-v1.schema.json",
+  "title": "Strict 386-row recursive causal-tree domains v1",
+  "type": "object",
+  "required": [
+    "$schema",
+    "schema",
+    "schema_path",
+    "result_id",
+    "result_kind",
+    "result_state",
+    "lifecycle",
+    "created",
+    "repository_base_commit",
+    "dependency_tags",
+    "question",
+    "answer",
+    "scope",
+    "analytic_extension_import",
+    "support_algebra",
+    "recursive_polarized_tree_theorem",
+    "sign_decoration_census",
+    "mixed_sign_boundary",
+    "zero_mode_mismatch_witness",
+    "foundational_strength",
+    "authority_boundary",
+    "tree_domain_snapshot",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate",
+    "canonical_hashes",
+    "provenance",
+    "independent_checker",
+    "human_report"
+  ],
+  "properties": {
+    "$schema": {"const": "../schema/strict-386-recursive-causal-tree-domains-v1.schema.json"},
+    "schema": {"const": "strict-386-recursive-causal-tree-domains-v1"},
+    "schema_path": {"type": "string", "minLength": 1},
+    "result_id": {"const": "STRICT_386_RECURSIVE_CAUSAL_TREE_DOMAINS_V1"},
+    "result_kind": {"const": "CANDIDATE_POLARIZED_FINITE_CAUSAL_TREE_DOMAIN_THEOREM_AND_MIXED_SIGN_NONDEFINITION"},
+    "result_state": {"const": "POLARIZED_FINITE_TREES_CERTIFIED_UNRESTRICTED_MIXED_AND_INFINITE_SERIES_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"$ref": "#/$defs/git_commit"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "scope": {
+      "type": "object",
+      "required": ["theory", "background", "carrier", "leaves", "trees"],
+      "additionalProperties": {"type": "string"}
+    },
+    "analytic_extension_import": {
+      "type": "object",
+      "required": ["source_id", "source_pdf_sha256", "source_locator", "theorem", "spatial_compactness_lemmas", "retarded_extension", "advanced_extension", "inverse_and_support", "continuity", "cylinder_specialization", "import_status", "sha256"],
+      "properties": {
+        "source_id": {"const": "baer-2015"},
+        "source_pdf_sha256": {"const": "879948318de8b4a5a74b52179f78120d074bc7773734b82495b6db4c363f4c99"},
+        "source_locator": {"type": "string"},
+        "theorem": {"const": "Theorem 3.8"},
+        "spatial_compactness_lemmas": {"const": ["Lemma 1.7", "Remark 1.8"]},
+        "retarded_extension": {"type": "string"},
+        "advanced_extension": {"type": "string"},
+        "inverse_and_support": {"type": "string"},
+        "continuity": {"type": "string"},
+        "cylinder_specialization": {"type": "string"},
+        "import_status": {"const": "CONTENT_PINNED_CLASSICAL_THEOREM_NOT_WEAK_BASE_FORMALIZED"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "support_algebra": {"type": "object", "required": ["classes", "q2_support_rule", "intersection_table_on_RxS3", "green_domain_table", "fixed_support_steps", "local_maps_preserve_every_class", "graph_homotopy_extensions", "stepwise_continuity", "unindexed_global_joint_LF_continuity_claimed", "sha256"]},
+    "recursive_polarized_tree_theorem": {
+      "type": "object",
+      "required": ["tree_grammar", "retarded", "advanced", "induction", "finite_tree_support_domain_defects", "finite_tree_nodewise_homotopy_domain_defects", "continuity_scope", "formal_power_series", "status", "sha256"],
+      "properties": {
+        "tree_grammar": {"type": "string"},
+        "retarded": {"$ref": "#/$defs/polarized_tree"},
+        "advanced": {"$ref": "#/$defs/polarized_tree"},
+        "induction": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string"}},
+        "finite_tree_support_domain_defects": {"const": 0},
+        "finite_tree_nodewise_homotopy_domain_defects": {"const": 0},
+        "continuity_scope": {"type": "string"},
+        "formal_power_series": {"const": "NOT_SUMMED"},
+        "status": {"const": "ALL_FINITE_POLARIZED_TREES_CERTIFIED_FOR_CANDIDATE_Q2"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "sign_decoration_census": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": {
+        "type": "object",
+        "required": ["leaves", "plane_binary_tree_topologies", "all_sign_decorations", "admissible_plus_root", "admissible_minus_root", "admissible_total", "not_uniformly_defined"],
+        "additionalProperties": {"type": "integer", "minimum": 0}
+      }
+    },
+    "mixed_sign_boundary": {"type": "object", "required": ["admissibility_rule", "all_comb_trees_every_sign_decoration_admissible", "first_uniform_failure_leaf_count", "first_failure_topology", "minimal_witnesses", "four_leaf_all_sign_decorations", "four_leaf_admissible", "four_leaf_not_uniformly_defined", "causal_difference_iteration", "scope", "sha256"]},
+    "zero_mode_mismatch_witness": {"type": "object", "required": ["spatial_branch", "kernel", "advanced_on_PC_witness", "retarded_on_FC_witness", "establishes", "does_not_establish", "defects", "sha256"]},
+    "foundational_strength": {"type": "object", "required": ["classification", "finite_exact_layer", "analytic_layer", "infinite_layer", "axiom_of_choice_status", "constructive_status", "weakest_complete_foundational_base", "sha256"]},
+    "authority_boundary": {"type": "object", "required": ["candidate_q2_only", "authoritative_full_q2_imported", "candidate_authoritative_equivalence_certified", "classical_import_gate_a_status", "q3_or_higher_operations_imported", "why", "sha256"]},
+    "tree_domain_snapshot": {"type": "object", "required": ["kind", "first_response_sha256", "theorem_import_sha256", "support_algebra_sha256", "recursive_theorem_sha256", "decoration_census_sha256", "mixed_boundary_sha256", "zero_mode_boundary_sha256", "foundations_sha256", "authority_sha256", "receiver_status", "sha256"]},
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "STRICT_386_CANDIDATE_RETARDED_ALL_FINITE_Q2_TREES_CERTIFIED",
+        "STRICT_386_CANDIDATE_ADVANCED_ALL_FINITE_Q2_TREES_CERTIFIED",
+        "STRICT_386_CANDIDATE_SUPPORT_GRAMMAR_CERTIFIED",
+        "STRICT_386_CANDIDATE_FIXED_STEP_TREE_CONTINUITY_CERTIFIED",
+        "STRICT_386_FIRST_MIXED_SIGN_DOMAIN_NONDEFINITION_AT_FOUR_LEAVES",
+        "STRICT_386_UNRESTRICTED_MIXED_SIGN_TREES_CERTIFIED",
+        "STRICT_386_ARBITRARY_CAUSAL_DIFFERENCE_TREES_CERTIFIED",
+        "STRICT_386_INFINITE_TREE_SERIES_CONVERGENCE_CERTIFIED",
+        "STRICT_386_AUTHORITATIVE_Q2_RECURSIVE_TREES_CERTIFIED",
+        "STRICT_386_Q3_OR_HIGHER_CAUSAL_TREES_CERTIFIED",
+        "CLASSICAL_IMPORT_GATE_PASSED",
+        "HADAMARD_STATE_CONSTRUCTED",
+        "RENORMALIZED_LORENTZIAN_PRODUCTS",
+        "QME_RESTORED",
+        "RESIDUAL_TRANSFERRED",
+        "LORENTZIAN_QUANTUM_THEORY"
+      ],
+      "additionalProperties": {"type": "boolean"}
+    },
+    "does_not_establish": {"type": "array", "minItems": 10, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "canonical_hashes": {"type": "object", "minProperties": 9, "maxProperties": 9, "additionalProperties": {"$ref": "#/$defs/sha256"}},
+    "provenance": {
+      "type": "object",
+      "required": ["inputs"],
+      "properties": {"inputs": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/provenance"}}},
+      "additionalProperties": false
+    },
+    "independent_checker": {"type": "object"},
+    "human_report": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "git_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "polarized_tree": {
+      "type": "object",
+      "required": ["sign", "all_finite_plane_binary_trees", "root_space", "time_bound"],
+      "properties": {
+        "sign": {"enum": ["plus", "minus"]},
+        "all_finite_plane_binary_trees": {"const": true},
+        "root_space": {"type": "string"},
+        "time_bound": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["path", "result_or_artifact_id", "sha256", "role"],
+      "properties": {
+        "path": {"type": "string"},
+        "result_or_artifact_id": {"type": "string"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "role": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  }
+}

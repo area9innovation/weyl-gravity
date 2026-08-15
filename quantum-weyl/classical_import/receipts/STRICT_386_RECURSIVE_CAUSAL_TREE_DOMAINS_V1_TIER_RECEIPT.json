@@ -1,0 +1,66 @@
+{
+  "receipt_id": "STRICT_386_RECURSIVE_CAUSAL_TREE_DOMAINS_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_RECURSIVE_CAUSAL_TREE_DOMAINS_V1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Candidate-scoped exact support-domain certification for every finite all-retarded and every finite all-advanced plane binary q2/Green tree, together with the complete mixed-sign support grammar, its first four-leaf nondefinition boundary, and a zero-mode witness against silently extending either displayed Green name to the whole opposite support class.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.2,
+      "commands": [
+        "python3 -m py_compile quantum-weyl/classical_import/build_strict_386_recursive_causal_tree_domains.py quantum-weyl/classical_import/check_strict_386_recursive_causal_tree_domains.py quantum-weyl/classical_import/verify_strict_386_recursive_causal_tree_domains.py quantum-weyl/classical_import/tests/test_strict_386_recursive_causal_tree_domains.py",
+        "python3 -m json.tool quantum-weyl/classical_import/schema/strict-386-recursive-causal-tree-domains-v1.schema.json quantum-weyl/classical_import/certificates/STRICT_386_RECURSIVE_CAUSAL_TREE_DOMAINS_V1.json quantum-weyl/classical_import/receipts/STRICT_386_RECURSIVE_CAUSAL_TREE_DOMAINS_V1_TIER_RECEIPT.json",
+        "git diff --check -- <explicit recursive-domain paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 0.5,
+      "commands": [
+        "python3 quantum-weyl/classical_import/build_strict_386_recursive_causal_tree_domains.py --check",
+        "python3 quantum-weyl/classical_import/check_strict_386_recursive_causal_tree_domains.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_recursive_causal_tree_domains.py",
+        "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_recursive_causal_tree_domains.py"
+      ],
+      "checks": {
+        "all_retarded_finite_tree_domain": "PAST_COMPACT",
+        "all_advanced_finite_tree_domain": "FUTURE_COMPACT",
+        "polarized_support_domain_defects": 0,
+        "polarized_nodewise_homotopy_domain_defects": 0,
+        "four_leaf_plane_sign_decorations": 40,
+        "four_leaf_admissible_decorations": 38,
+        "four_leaf_undefined_decorations": 2,
+        "mutation_tests": "14/14 PASS",
+        "authoritative_q2_identity": "NOT_ESTABLISHED",
+        "infinite_series_convergence": "NOT_ESTABLISHED"
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 1.0,
+      "commands": [
+        "python3 quantum-weyl/classical_import/check_strict_386_stabilized_q2_green_composition_preflight.py",
+        "python3 quantum-weyl/classical_import/check_strict_386_recursive_causal_tree_domains.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_recursive_causal_tree_domains.py"
+      ],
+      "criterion": "The accepted unary-causal Green certificate and candidate q2/Green first-response certificate were independently replayed before checking the recursive support grammar; producer regeneration was not counted as independent verification."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze, release tag, shared core algebra, lifecycle state, analytic convergence theorem, Hadamard state, QME result or Lorentzian completion was promoted."
+    }
+  },
+  "artifact_sha256": {
+    "quantum-weyl/classical_import/certificates/STRICT_386_RECURSIVE_CAUSAL_TREE_DOMAINS_V1.json": "c209a21499367e6ba52baba20ca9264c8bf2ed1123646e9278e1c938cf9b1ca7",
+    "quantum-weyl/classical_import/REPORT_STRICT_386_RECURSIVE_CAUSAL_TREE_DOMAINS_V1.md": "d2c02270ac825662c0cc3b52094b3ca3b217ca0d6aa3ef799059f85f79f2dd23"
+  },
+  "foundational_boundary": {
+    "finite_combinatorial_layer": "The plane-tree grammar, Catalan recurrence and finite induction are primitive-recursive and require no choice principle.",
+    "analytic_layer": "The past-/future-compact Green extension is imported from classical smooth completed analysis; the weakest constructive or choice-free base sufficient for that extension remains unresolved."
+  },
+  "claim_boundary": "This establishes recursive support-domain closure for every finite polarized candidate q2/Green tree and exactly locates the first unrestricted mixed-sign support-domain failure. It does not establish authoritative q2 identity, q3 or higher brackets, an infinite sum or fixed point, analytic convergence, a Hadamard state, renormalized Lorentzian products, QME restoration, residual transfer or a quantum theory."
+}

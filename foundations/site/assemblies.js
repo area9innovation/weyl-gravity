@@ -6640,6 +6640,6 @@ window.THEORY_ASSEMBLY_DATA = {
     "that the benchmark catalogue is a complete set of physical tests",
     "a complete theory, a new Lorentzian-causal result, or a quantum lifecycle promotion"
   ],
-  "source_atlas_digest": "bd5293a5f3f18041d33260af45680f0cbcb066a65364e4a48d1b321f780097ed",
-  "canonical_digest": "81c317b3729fa310db48576b47646296c035187b65bc18aab4b00582eec49d18"
+  "source_atlas_digest": "af0a176516578571f55742ef96342c222a8b768adb7374ec725a0af9ff5e37ff",
+  "canonical_digest": "a0bee662f707cf432b758102d7aeaeb3d8593b5aff8480a6e49a83be3a6addfd"
 };

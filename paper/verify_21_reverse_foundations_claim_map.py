@@ -125,6 +125,8 @@ def main() -> int:
     completion_atlas_v17 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v17"]["path"]).read_text())
     strict_386_q2_green = json.loads((ROOT / data["authorities"]["strict_386_stabilized_q2_green_composition_preflight"]["path"]).read_text())
     completion_atlas_v18 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v18"]["path"]).read_text())
+    strict_386_recursive_trees = json.loads((ROOT / data["authorities"]["strict_386_recursive_causal_tree_domains"]["path"]).read_text())
+    completion_atlas_v19 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v19"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -425,6 +427,7 @@ def main() -> int:
         (43, "STRICT-WEYL-STABILIZED-Q2-LIFT-PREFLIGHT"),
         (44, "STRICT-WEYL-GATE-V7-THEORY-IDENTITY-FRONTIER"),
         (45, "STRICT-WEYL-CANDIDATE-Q2-GREEN-FIRST-RESPONSE"),
+        (46, "STRICT-WEYL-CANDIDATE-POLARIZED-CAUSAL-TREES"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -470,6 +473,9 @@ def main() -> int:
     require(flags["strict_386_candidate_q2_green_same_carrier_verified"] is True and flags["strict_386_candidate_first_nonlinear_causal_response_certified"] is True, "strict candidate q2/Green first response omitted")
     require(flags["strict_386_candidate_q2_green_causal_support_certified"] is True and flags["strict_386_candidate_q2_green_response_identity_verified"] is True and flags["strict_386_q2_green_foundations_stratified"] is True, "strict candidate q2/Green support, identity, or foundations omitted")
     require(flags["strict_386_authoritative_q2_green_compatibility_certified"] is False and flags["strict_386_recursive_nonlinear_green_trees_certified"] is False, "strict candidate q2/Green promoted to authority or recursive completion")
+    require(flags["strict_386_candidate_retarded_all_finite_q2_trees_certified"] is True and flags["strict_386_candidate_advanced_all_finite_q2_trees_certified"] is True and flags["strict_386_candidate_fixed_step_tree_continuity_certified"] is True, "strict polarized finite-tree theorem omitted")
+    require(flags["strict_386_first_mixed_sign_domain_nondefinition_at_four_leaves"] is True, "strict mixed-sign boundary omitted")
+    require(flags["strict_386_unrestricted_mixed_sign_trees_certified"] is False and flags["strict_386_arbitrary_causal_difference_trees_certified"] is False and flags["strict_386_infinite_tree_series_convergence_certified"] is False and flags["strict_386_authoritative_q2_recursive_trees_certified"] is False and flags["strict_386_q3_or_higher_causal_trees_certified"] is False, "strict recursive-tree result over-promoted")
     require(strict_q1["claim_flags"]["Q1_SQUARED_ZERO_CERTIFIED"] is True, "strict q1 square-zero authority drift")
     require(strict_q1q2["channel_inventory"]["channel_count"] == 18, "strict q1/q2 channel count drift")
     require(strict_q1q2["channel_inventory"]["composable_path_count"] == 51, "strict q1/q2 path count drift")
@@ -641,6 +647,15 @@ def main() -> int:
     require(q2_green_flags["STRICT_386_CANDIDATE_Q2_GREEN_RESPONSE_IDENTITY_VERIFIED"] is True and q2_green_flags["STRICT_386_AUTHORITATIVE_Q2_GREEN_COMPATIBILITY_CERTIFIED"] is False and q2_green_flags["STRICT_386_RECURSIVE_NONLINEAR_GREEN_TREES_CERTIFIED"] is False and q2_green_flags["HADAMARD_STATE_CONSTRUCTED"] is False and q2_green_flags["QME_RESTORED"] is False, "strict q2/Green lifecycle firewall drift")
     require(completion_atlas_v18["strict_q2_green_composition_preflight"]["response_identity_defects"] == 0 and completion_atlas_v18["strict_q2_green_composition_preflight"]["authoritative_q2_green_compatibility"] is False and completion_atlas_v18["strict_q2_green_composition_preflight"]["recursive_nonlinear_green_trees"] is False, "completion atlas V18 q2/Green projection drift")
     require(len(completion_atlas_v18["route_selection"]) == 9 and completion_atlas_v18["route_selection"][0]["route"] == "STRICT_386_AUTHORITATIVE_Q2_IDENTITY" and completion_atlas_v18["route_selection"][1]["route"] == "STRICT_RECURSIVE_CAUSAL_TREE_DOMAINS", "completion atlas V18 frontier ordering drift")
+    tree_flags = strict_386_recursive_trees["claim_flags"]
+    require(strict_386_recursive_trees["analytic_extension_import"]["theorem"] == "Theorem 3.8" and strict_386_recursive_trees["analytic_extension_import"]["source_pdf_sha256"] == "879948318de8b4a5a74b52179f78120d074bc7773734b82495b6db4c363f4c99", "recursive-tree analytic import drift")
+    require(strict_386_recursive_trees["recursive_polarized_tree_theorem"]["retarded"]["all_finite_plane_binary_trees"] is True and strict_386_recursive_trees["recursive_polarized_tree_theorem"]["advanced"]["all_finite_plane_binary_trees"] is True and strict_386_recursive_trees["recursive_polarized_tree_theorem"]["finite_tree_support_domain_defects"] == 0, "recursive-tree polarized theorem drift")
+    four = next(item for item in strict_386_recursive_trees["sign_decoration_census"] if item["leaves"] == 4)
+    require((four["all_sign_decorations"], four["admissible_total"], four["not_uniformly_defined"]) == (40, 38, 2) and strict_386_recursive_trees["mixed_sign_boundary"]["first_uniform_failure_leaf_count"] == 4, "recursive-tree mixed-sign census drift")
+    require(strict_386_recursive_trees["zero_mode_mismatch_witness"]["defects"] == 0 and "diverges quadratically" in strict_386_recursive_trees["zero_mode_mismatch_witness"]["advanced_on_PC_witness"], "recursive-tree zero-mode boundary drift")
+    require(tree_flags["STRICT_386_CANDIDATE_RETARDED_ALL_FINITE_Q2_TREES_CERTIFIED"] is True and tree_flags["STRICT_386_CANDIDATE_ADVANCED_ALL_FINITE_Q2_TREES_CERTIFIED"] is True and tree_flags["STRICT_386_UNRESTRICTED_MIXED_SIGN_TREES_CERTIFIED"] is False and tree_flags["STRICT_386_INFINITE_TREE_SERIES_CONVERGENCE_CERTIFIED"] is False and tree_flags["STRICT_386_AUTHORITATIVE_Q2_RECURSIVE_TREES_CERTIFIED"] is False and tree_flags["HADAMARD_STATE_CONSTRUCTED"] is False and tree_flags["QME_RESTORED"] is False, "recursive-tree lifecycle firewall drift")
+    require(completion_atlas_v19["strict_recursive_causal_tree_domains"]["retarded_all_finite_trees"] is True and completion_atlas_v19["strict_recursive_causal_tree_domains"]["four_leaf_admissible"] == 38 and completion_atlas_v19["strict_recursive_causal_tree_domains"]["four_leaf_not_uniformly_defined"] == 2, "completion atlas V19 recursive-tree projection drift")
+    require(len(completion_atlas_v19["route_selection"]) == 11 and completion_atlas_v19["route_selection"][0]["route"] == "STRICT_386_AUTHORITATIVE_Q2_IDENTITY" and completion_atlas_v19["route_selection"][1]["route"] == "STRICT_POLARIZED_FORMAL_MOLLER_COEFFICIENTS", "completion atlas V19 frontier ordering drift")
     require(flags["static_atlas_appendix_generated"] is True, "static atlas appendix flag is not certified")
     require(flags["complete_evidence_register_generated"] is True, "complete evidence register flag is not certified")
     require(flags["complete_literature_register_generated"] is True, "complete literature register flag is not certified")
@@ -1073,13 +1088,17 @@ def main() -> int:
         r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V17",
         r"STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1",
         r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V18",
+        r"STRICT_386_RECURSIVE_CAUSAL_TREE_DOMAINS_V1",
+        r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V19",
         r"140 ordered-component channels",
         r"68 potentially nonzero block triples",
         r"cyclic \(L_\infty\) isomorphism",
         r"zero of seven authoritative hashes",
         r"STRICT_386_AUTHORITATIVE_Q2_IDENTITY",
-        r"STRICT_RECURSIVE_CAUSAL_TREE_DOMAINS",
+        r"STRICT_POLARIZED_FORMAL_MOLLER_COEFFICIENTS",
         r"first nonlinear causal response",
+        r"Thirty-eight",
+        r"past-compact smooth sources",
         r"completed LF/Fréchet spaces",
         r"This is a genuine \rtype{LORENTZIAN-CAUSAL} result",
         r"not a Weyl/BV propagator or quantum causal construction",

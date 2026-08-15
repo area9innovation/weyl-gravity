@@ -136,7 +136,9 @@ This site does not establish:
 - an effective strict 386-row Green solver or serialized distribution-kernel bytes
 - that the exact stabilized-q2 candidate is the authoritative nonlinear classical Weyl BV extension
 - authoritative q2/Green compatibility from candidate first-response compatibility
-- recursive nonlinear Green trees or closure when causal outputs re-enter q2
+- unrestricted mixed-sign or arbitrary causal-difference trees from the certified polarized finite recursion
+- a formal or convergent infinite tree series
+- q3 or higher causal brackets
 - a weakest-base or choice-free proof of the infinite analytic Green layer
 - a source-certified cyclic L-infinity equivalence or accepted q2 Gate-A hash
 - a D-Cartan homotopy or physical charge classification from the stabilized D/q2 derivation

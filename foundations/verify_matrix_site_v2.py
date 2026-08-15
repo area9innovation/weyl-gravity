@@ -51,7 +51,7 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         "completion_branches": 7,
         "completion_stages": 11,
         "completion_cells": 77,
-        "completion_routes": 9,
+        "completion_routes": 11,
         "completion_decisions": 11,
         "theory_profiles": 36,
         "carrier_envelopes": 6,
@@ -83,12 +83,12 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         errors.append("manifest pin")
     checks.append("content-addressed manifest")
     flags = value.get("claim_flags", {})
-    for key in ("static_site_generated", "all_cartesian_coordinates_visible", "all_cartesian_coordinates_assessed", "zero_not_mapped", "reviewed_gaps_distinguished_from_results", "all_emitted_migrations_reviewed", "coverage_and_migration_separated", "all_used_evidence_resolved", "theory_profiles_generated", "theory_assembly_atlas_generated", "bounded_observable_reconstruction_exposed", "localized_coefficient_weak_wave_exposed", "named_h2_test_completion_exposed", "smooth_to_h2_translator_exposed", "support_indexed_test_comparison_exposed", "scalar_green_choice_audit_exposed", "strict_candidate_q2_green_first_response_exposed", "strict_candidate_q2_green_foundations_exposed", "at_least_one_cross_cell_interface_certified", "composition_and_observation_rails_separated", "new_lorentzian_claim"):
+    for key in ("static_site_generated", "all_cartesian_coordinates_visible", "all_cartesian_coordinates_assessed", "zero_not_mapped", "reviewed_gaps_distinguished_from_results", "all_emitted_migrations_reviewed", "coverage_and_migration_separated", "all_used_evidence_resolved", "theory_profiles_generated", "theory_assembly_atlas_generated", "bounded_observable_reconstruction_exposed", "localized_coefficient_weak_wave_exposed", "named_h2_test_completion_exposed", "smooth_to_h2_translator_exposed", "support_indexed_test_comparison_exposed", "scalar_green_choice_audit_exposed", "strict_candidate_q2_green_first_response_exposed", "strict_candidate_q2_green_foundations_exposed", "strict_candidate_polarized_finite_trees_exposed", "strict_first_mixed_sign_domain_nondefinition_exposed", "at_least_one_cross_cell_interface_certified", "composition_and_observation_rails_separated", "new_lorentzian_claim"):
         if flags.get(key) is not True:
             errors.append("positive flag " + key)
     if flags.get("completion_atlas_exposed") is not True:
         errors.append("positive flag completion_atlas_exposed")
-    for key in ("scientific_claims_duplicated_by_hand", "literature_complete", "unmapped_means_absent", "reviewed_gap_means_absent", "reviewed_no_transfer_means_absent", "priority_score_is_theorem", "complete_observationally_valid_theory_identified", "strict_authoritative_q2_green_compatibility_exposed", "strict_recursive_nonlinear_green_trees_exposed"):
+    for key in ("scientific_claims_duplicated_by_hand", "literature_complete", "unmapped_means_absent", "reviewed_gap_means_absent", "reviewed_no_transfer_means_absent", "priority_score_is_theorem", "complete_observationally_valid_theory_identified", "strict_authoritative_q2_green_compatibility_exposed", "strict_recursive_nonlinear_green_trees_exposed", "strict_unrestricted_mixed_sign_trees_exposed", "strict_arbitrary_causal_difference_trees_exposed", "strict_infinite_tree_series_convergence_exposed"):
         if flags.get(key) is not False:
             errors.append("boundary flag " + key)
     checks.append("fail-closed claim flags")
