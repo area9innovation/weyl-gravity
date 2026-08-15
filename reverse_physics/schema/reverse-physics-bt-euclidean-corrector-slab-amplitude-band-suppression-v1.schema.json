@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-corrector-slab-amplitude-band-suppression-v1.schema.json",
+  "title": "BT Euclidean corrector slab amplitude band suppression V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "created", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "amplitude_interval_certificate", "continuum_amplitude_union", "method_disposition", "does_not_establish", "missing_object_ledger", "next_gate", "checks", "provenance", "schema", "report", "independent_verifier", "verification_commands"],
+  "$defs": {
+    "rational": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "text": {"type": "string", "minLength": 1},
+    "bin": {"type": "object", "additionalProperties": false, "required": ["index", "amplitude_low", "amplitude_high", "square_floor_alpha", "negative_linear_magnitude_beta", "constant_floor", "residual_square_gap", "discarded_coefficient_count", "all_discarded_lower_coefficients_nonnegative"], "properties": {"index": {"type": "integer", "minimum": 0, "maximum": 127}, "amplitude_low": {"$ref": "#/$defs/rational"}, "amplitude_high": {"$ref": "#/$defs/rational"}, "square_floor_alpha": {"$ref": "#/$defs/rational"}, "negative_linear_magnitude_beta": {"$ref": "#/$defs/rational"}, "constant_floor": {"$ref": "#/$defs/rational"}, "residual_square_gap": {"$ref": "#/$defs/rational"}, "discarded_coefficient_count": {"type": "integer", "minimum": 1}, "all_discarded_lower_coefficients_nonnegative": {"const": true}}},
+    "partition": {"type": "object", "additionalProperties": false, "required": ["start", "bin_width", "bin_count", "bin_summary_sha256", "minimum_bin"], "properties": {"start": {"$ref": "#/$defs/rational"}, "bin_width": {"$ref": "#/$defs/rational"}, "bin_count": {"const": 128}, "bin_summary_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "minimum_bin": {"$ref": "#/$defs/bin"}}},
+    "input": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_CORRECTOR_SLAB_AMPLITUDE_BAND_SUPPRESSION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-corrector-slab-amplitude-band-suppression-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "CONTINUUM_AMPLITUDE_SLAB_UNION_GIBBS_SUPPRESSION_PROVED_GLOBAL_CORRECTOR_EXTRACTION_OPEN"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "amplitude_interval_certificate": {"type": "object", "additionalProperties": false, "required": ["slab_family", "amplitude_bands", "individual_cylinder_radius", "edge_multiplier_interval", "positive_band_partition", "inverse_band_partition", "positive_band_worst_bin", "positive_band_minimum_gap", "inverse_band_worst_bin", "inverse_band_minimum_gap", "uniform_residual_square_gap", "completion_rule", "status"], "properties": {"slab_family": {"$ref": "#/$defs/text"}, "amplitude_bands": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/text"}}, "individual_cylinder_radius": {"$ref": "#/$defs/rational"}, "edge_multiplier_interval": {"type": "object", "additionalProperties": false, "required": ["lower", "upper"], "properties": {"lower": {"$ref": "#/$defs/rational"}, "upper": {"$ref": "#/$defs/rational"}}}, "positive_band_partition": {"$ref": "#/$defs/partition"}, "inverse_band_partition": {"$ref": "#/$defs/partition"}, "positive_band_worst_bin": {"const": 0}, "positive_band_minimum_gap": {"$ref": "#/$defs/rational"}, "inverse_band_worst_bin": {"const": 127}, "inverse_band_minimum_gap": {"$ref": "#/$defs/rational"}, "uniform_residual_square_gap": {"$ref": "#/$defs/rational"}, "completion_rule": {"$ref": "#/$defs/text"}, "status": {"const": "EXACT_UNIFORM_POSITIVE_GAP_ON_SIGNED_AMPLITUDE_OCTAVE"}}},
+    "continuum_amplitude_union": {"type": "object", "additionalProperties": false, "required": ["adaptive_event_radius", "magnitude_net", "reciprocal_net", "net_size", "covering_lemma", "action_gap", "action_gap_coefficient", "general_probability_bound", "lambda_point_four_probability_bound", "lambda_point_four_exponent", "status"], "properties": {"adaptive_event_radius": {"$ref": "#/$defs/rational"}, "magnitude_net": {"$ref": "#/$defs/text"}, "reciprocal_net": {"$ref": "#/$defs/text"}, "net_size": {"const": 802}, "covering_lemma": {"$ref": "#/$defs/text"}, "action_gap": {"$ref": "#/$defs/text"}, "action_gap_coefficient": {"$ref": "#/$defs/rational"}, "general_probability_bound": {"$ref": "#/$defs/text"}, "lambda_point_four_probability_bound": {"$ref": "#/$defs/text"}, "lambda_point_four_exponent": {"$ref": "#/$defs/rational"}, "status": {"const": "ACTUAL_GIBBS_BOUND_FOR_CONTINUUM_AMPLITUDE_UNION"}}},
+    "method_disposition": {"type": "object", "minProperties": 14, "additionalProperties": {"type": "string", "minLength": 1}},
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {"type": "object", "minProperties": 22, "additionalProperties": {"const": true}},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["repository_base_commit", "inputs", "exact_arithmetic", "analytic_arithmetic", "assumptions"], "properties": {"repository_base_commit": {"const": "0f219bdbdf5d53bf87170638e910f41c0009dd29"}, "inputs": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/input"}}, "exact_arithmetic": {"$ref": "#/$defs/text"}, "analytic_arithmetic": {"$ref": "#/$defs/text"}, "assumptions": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}}}},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-corrector-slab-amplitude-band-suppression-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-corrector-slab-amplitude-band-suppression.md"},
+    "independent_verifier": {"const": "reverse_physics/verify_bt_euclidean_corrector_slab_amplitude_band_suppression.py"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}}
+  }
+}
