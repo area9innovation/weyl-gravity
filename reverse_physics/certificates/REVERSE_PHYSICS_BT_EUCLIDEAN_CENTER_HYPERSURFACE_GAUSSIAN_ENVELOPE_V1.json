@@ -1,0 +1,200 @@
+{
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_CENTER_HYPERSURFACE_GAUSSIAN_ENVELOPE_V1",
+  "schema_version": "reverse-physics-bt-euclidean-center-hypersurface-gaussian-envelope-v1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "lifecycle_state": "EXACT_CENTER_REDUCTION_AND_POINTWISE_GAUSSIAN_ENVELOPE_PROVED_NORMALIZED_ENTROPY_OPEN",
+  "result_kind": "exact lowest-mode center-hypersurface reduction, integrated-fiber Gaussian envelope, and normalized-entropy logical obstruction",
+  "question": "After combining the certified BT lowest-mode action cost and all-background fiber curvature, does recentering introduce a Jacobian loss, and do the resulting pointwise bounds already imply the normalized lowest-mode moment?",
+  "answer": "The recentering loss is exactly absent and an actual pointwise BT estimate follows. Every lowest-mode line meets the score-zero center hypersurface once, and center plus displacement is a triangular shear with field-dependent determinant one. For every orthogonal background eta, its fully integrated fiber weight obeys Z_eta<=3*sqrt(pi/(N*omega_L^2))*exp[-N*omega_L^2*m(eta)^2/12]. This is not yet a normalized center-moment bound: transverse weighted cross-section entropy can compensate a pointwise Gaussian center cost. An exact positive Gaussian-tube family proves that this implication cannot be obtained from curvature, center cost, symmetry, unique vacuum, unit center shear, and extensive mean action alone. A BT-specific normalized cross-section estimate is still required.",
+  "bt_center_hypersurface_theorem": {
+    "scope": "periodic four-dimensional L^4 lattices, integer L>=4, mean-zero scaled fields, nonzero coupling, any lowest real axial cosine phase",
+    "direction": "h_x=cos(2*pi*x_mu/L+alpha), E=h^perp",
+    "fiber": "V_eta(t)=S_lambda(eta+t*h), eta in E",
+    "curvature": "V_eta''(t)>=kappa_L=(2/9)*N*omega_L^2 for every eta and t",
+    "unique_center": "m(eta) is the unique real solution of V_eta'(m)=0",
+    "hypersurface": "Sigma={phi:D_h S_lambda(phi)=0}",
+    "global_chart": "eta maps to chi(eta)=eta+m(eta)*h; projection Sigma->E is an analytic bijection",
+    "center_derivative": "D m(eta)[k]=-Hess S_lambda(chi)[h,k]/Hess S_lambda(chi)[h,h]",
+    "shear_map": "F(eta,s)=chi(eta)+s*h",
+    "coordinate_jacobian": "in orthogonal coordinates (eta,t), det D(eta,s)->(eta,t)=1",
+    "ambient_measure": "d phi=||h||*d eta*d s",
+    "surface_projection": "d eta=H[h,h]/(||h||*||H h||)*dH_Sigma",
+    "surface_disintegration": "d phi=H[h,h]/||H h||*dH_Sigma*d s",
+    "status": "PROVED_EXACT_FINITE_DIMENSIONAL_REDUCTION"
+  },
+  "bt_integrated_fiber_envelope": {
+    "fiber_weight": "Z_eta=integral_R exp[-V_eta(t)] dt",
+    "centered_factorization": "Z_eta=exp[-S_lambda(chi(eta))]*I(chi(eta))",
+    "centered_width": "I(chi)=integral_R exp[-(S_lambda(chi+s*h)-S_lambda(chi))] ds",
+    "curvature_width_bound": "I(chi)<=sqrt(2*pi/kappa_L)=3*sqrt(pi/(N*omega_L^2))",
+    "center_fourier_relation": "eta perpendicular to h implies Re(exp(-i*alpha)*chi_hat(e_mu))=m/2",
+    "center_action_cost": "S_lambda(chi)>=N*omega_L^2*m(eta)^2/12",
+    "pointwise_envelope": "Z_eta<=3*sqrt(pi/(N*omega_L^2))*exp[-N*omega_L^2*m(eta)^2/12]",
+    "uniformities": [
+      "orthogonal background eta",
+      "integer L>=4",
+      "chosen axis and real phase",
+      "nonzero coupling lambda"
+    ],
+    "status": "PROVED_POINTWISE_NOT_NORMALIZED"
+  },
+  "normalized_entropy_gap": {
+    "normalized_center_law": "the center law is proportional to Z_eta*d eta on E",
+    "remaining_object": "control the weighted volume of eta-level sets of m, including I(chi)*exp[-S_lambda(chi)], relative to their total normalization",
+    "coarea_target": "for regular values u, g_L(u)=integral_(m^-1(u)) I(chi)*exp[-S_lambda(chi)]/|grad_E m| dH; singular values require the corresponding pushforward-measure formulation",
+    "needed_bound": "a volume-uniform normalized second moment of this pushforward, or an actual BT volume sequence on which it diverges",
+    "status": "OPEN_BT_SPECIFIC_NORMALIZED_ESTIMATE"
+  },
+  "exact_gaussian_tube_countermodel": {
+    "family": "for integer R>1 and d=R^2, V_R(t,s,z,w)=(t-s)^2+t^2+(1/2)*exp[-(1-R^-2)*s^2]*z^2+(1/2)*sum_(j=1)^d w_j^2",
+    "positivity_and_origin_cost": "V_R>=t^2>=0",
+    "symmetry": "V_R(-t,-s,-z,-w)=V_R(t,s,z,w)",
+    "vacuum": "the origin is the unique critical point and unique zero",
+    "fiber_completion": "(t-s)^2+t^2=2*(t-s/2)^2+s^2/2",
+    "fiber_center_and_curvature": "m=s/2 and partial_t^2 V_R=4",
+    "center_cost": "V_R(m,s,z,w)>=s^2/2=2*m^2",
+    "fiber_integral": "integral exp[-2*(t-s/2)^2]dt=sqrt(pi/2)",
+    "transverse_cancellation": "integrating z contributes sqrt(2*pi)*exp[(1-R^-2)*s^2/2], leaving s distributed as N(0,R^2)",
+    "variance_family": "Var(m)=R^2/4 and Var(t)=(R^2+1)/4, unbounded as R grows",
+    "mean_action_family": "E[V_R]=R^2+1 in ambient dimension R^2+3",
+    "scope": "positive exact logical countermodel only; it is not the BT action, not local lattice dynamics, and not an actual BT divergence result",
+    "r5_fixture": {
+      "radius": 5,
+      "spectators": 25,
+      "narrowing_exponent": {
+        "numerator": 24,
+        "denominator": 25
+      },
+      "fiber_curvature": 4,
+      "fiber_variance": {
+        "numerator": 1,
+        "denominator": 4
+      },
+      "center_variance": {
+        "numerator": 25,
+        "denominator": 4
+      },
+      "total_t_variance": {
+        "numerator": 13,
+        "denominator": 2
+      },
+      "mean_action": 26,
+      "ambient_dimension": 28,
+      "hessian_h": [
+        4,
+        -2
+      ],
+      "hessian_h_norm_squared": 20,
+      "hessian_hh": 4,
+      "graph_area_squared": {
+        "numerator": 5,
+        "denominator": 4
+      },
+      "projection_factor_squared": {
+        "numerator": 4,
+        "denominator": 5
+      },
+      "jacobian_product": {
+        "numerator": 1,
+        "denominator": 1
+      }
+    },
+    "status": "EXACT_LOGICAL_NONTRANSFER_OBSTRUCTION"
+  },
+  "method_disposition": {
+    "center_hypersurface_global_chart": "PROVED",
+    "field_dependent_center_jacobian": "EXACTLY_ONE",
+    "pointwise_integrated_fiber_gaussian_envelope": "PROVED",
+    "general_transfer_from_pointwise_envelope_to_normalized_moment": "OBSTRUCTED",
+    "bt_specific_normalized_center_second_moment": "OPEN",
+    "normalized_lowest_mode_second_moment": "OPEN",
+    "actual_interacting_h_minus_one_second_moment": "OPEN",
+    "interacting_tightness": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "born_rule": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED"
+  },
+  "missing_object_ledger": [
+    "a BT-specific volume-uniform bound on the normalized pushforward of orthogonal center-hypersurface weight by m",
+    "an actual BT lowest-mode normalized second-moment theorem or controlled diverging-volume sequence",
+    "dyadic-shell estimates deciding the interacting H^-1 moment after the one-mode gate"
+  ],
+  "next_gate": "Estimate the normalized BT coarea/pushforward density of the center map m, using residual-spectrahedral coordinates or a local multiscale entropy inequality. The decisive deliverable is either a volume-uniform bound for N*omega_L^2*E[m^2] or an actual BT volume sequence proving its divergence; only then proceed to dyadic Fourier shells.",
+  "does_not_establish": [
+    "a normalized BT center or lowest-mode moment bound",
+    "divergence of any actual BT Gibbs moment",
+    "the actual interacting H^-1 bound or its divergence",
+    "tightness, a continuum Euclidean BT measure, or limit identification",
+    "a Born rule, Krein reconstruction, gravitational lift, or anything LORENTZIAN-CAUSAL",
+    "a literature-priority claim"
+  ],
+  "provenance": {
+    "repository_base_commit": "dc6a84918fe6b86a6f7ae514245b00ec8876c425",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_AXIAL_SLICE_QUADRATIC_COERCIVITY_V1.json",
+        "sha256": "3c6a165e52efd3ed957f73b81e11ec7b4f705957a7ee6fd6da477333416ea73d"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ALL_BACKGROUND_LOWEST_MODE_CURVATURE_V1.json",
+        "sha256": "49e2d144667818f57e4d994a7e41534e6ded204b52eaa6f35b8923f30907e6d0"
+      }
+    ],
+    "arithmetic": "Exact Fraction arithmetic for the Gaussian-tube constants and Jacobian cancellation; the BT theorem uses the two hash-pinned finite-volume certificates plus exact finite-dimensional implicit-function, graph-area, and Gaussian-integration identities"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_center_hypersurface_gaussian_envelope.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_center_hypersurface_gaussian_envelope.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_center_hypersurface_gaussian_envelope"
+  ],
+  "tier_receipt": {
+    "tier_0": "Python compilation, strict JSON/schema validation, exact input hashes, scoped diff check, and staged-diff inspection required",
+    "tier_1": "producer replay, nonimporting exact Gaussian-tube verifier, and focused adversarial mutation tests required",
+    "tier_2": "the axial-coercivity and all-background-curvature inputs are unchanged and checked by content hash; no shared operator changes",
+    "tier_3": "not applicable: the normalized moment and continuum lifecycle states remain open",
+    "memory_policy": "all Python commands run under ulimit -v 500000",
+    "elapsed_seconds_and_peak_kib": {
+      "producer_check": "0.04 s, 20468 KiB",
+      "independent_verifier": "0.10 s, 30368 KiB",
+      "unit_tests": "0.13 s, 30436 KiB",
+      "python_compile": "0.04 s, 15760 KiB"
+    },
+    "repository_audits": {
+      "planning_import": "PASS: 1667 nodes, 0 invalid items, 0 malformed events; 7.37 s, 201208 KiB",
+      "science_forge_shadow": "not run unless a registered shadow input changes; a skip is not a pass"
+    }
+  },
+  "checks": {
+    "ok": true,
+    "passed": 16,
+    "total": 16,
+    "failures": [],
+    "details": {
+      "radius_fixture_is_five": true,
+      "spectator_count_is_radius_squared": true,
+      "narrowing_exponent_is_twenty_four_twenty_fifths": true,
+      "fiber_curvature_is_four": true,
+      "fiber_variance_is_one_quarter": true,
+      "center_variance_is_twenty_five_quarters": true,
+      "total_variance_is_thirteen_halves": true,
+      "mean_action_is_twenty_six": true,
+      "ambient_dimension_is_twenty_eight": true,
+      "center_graph_area_is_exact": true,
+      "surface_projection_factor_is_exact": true,
+      "surface_factors_cancel": true,
+      "bt_center_shear_has_unit_field_dependent_determinant": true,
+      "bt_integrated_fiber_has_pointwise_gaussian_center_envelope": true,
+      "normalized_bt_center_moment_remains_open": true,
+      "no_h_minus_one_continuum_born_krein_or_lorentzian_promotion": true
+    }
+  },
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-center-hypersurface-gaussian-envelope-v1.schema.json",
+  "report": "reverse_physics/reports/bt-euclidean-center-hypersurface-gaussian-envelope.md",
+  "verifier": "reverse_physics/verify_bt_euclidean_center_hypersurface_gaussian_envelope.py"
+}

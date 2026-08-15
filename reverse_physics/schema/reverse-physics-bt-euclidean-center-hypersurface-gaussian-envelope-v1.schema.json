@@ -1,0 +1,301 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-center-hypersurface-gaussian-envelope-v1.schema.json",
+  "title": "BT center-hypersurface Gaussian-envelope certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "bt_center_hypersurface_theorem", "bt_integrated_fiber_envelope",
+    "normalized_entropy_gap", "exact_gaussian_tube_countermodel",
+    "method_disposition", "missing_object_ledger", "next_gate",
+    "does_not_establish", "provenance", "verification_commands",
+    "tier_receipt", "checks", "schema", "report", "verifier"
+  ],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "textArray": {
+      "type": "array", "minItems": 1,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "textObject": {
+      "type": "object", "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/text"}
+    }
+  },
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EUCLIDEAN_CENTER_HYPERSURFACE_GAUSSIAN_ENVELOPE_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-euclidean-center-hypersurface-gaussian-envelope-v1"
+    },
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"},
+        {"const": "REDUCED-MODE"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {
+      "const": "EXACT_CENTER_REDUCTION_AND_POINTWISE_GAUSSIAN_ENVELOPE_PROVED_NORMALIZED_ENTROPY_OPEN"
+    },
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "bt_center_hypersurface_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope", "direction", "fiber", "curvature", "unique_center",
+        "hypersurface", "global_chart", "center_derivative", "shear_map",
+        "coordinate_jacobian", "ambient_measure", "surface_projection",
+        "surface_disintegration", "status"
+      ],
+      "properties": {
+        "scope": {"$ref": "#/$defs/text"},
+        "direction": {"const": "h_x=cos(2*pi*x_mu/L+alpha), E=h^perp"},
+        "fiber": {"const": "V_eta(t)=S_lambda(eta+t*h), eta in E"},
+        "curvature": {
+          "const": "V_eta''(t)>=kappa_L=(2/9)*N*omega_L^2 for every eta and t"
+        },
+        "unique_center": {"$ref": "#/$defs/text"},
+        "hypersurface": {"const": "Sigma={phi:D_h S_lambda(phi)=0}"},
+        "global_chart": {"$ref": "#/$defs/text"},
+        "center_derivative": {
+          "const": "D m(eta)[k]=-Hess S_lambda(chi)[h,k]/Hess S_lambda(chi)[h,h]"
+        },
+        "shear_map": {"const": "F(eta,s)=chi(eta)+s*h"},
+        "coordinate_jacobian": {
+          "const": "in orthogonal coordinates (eta,t), det D(eta,s)->(eta,t)=1"
+        },
+        "ambient_measure": {"const": "d phi=||h||*d eta*d s"},
+        "surface_projection": {
+          "const": "d eta=H[h,h]/(||h||*||H h||)*dH_Sigma"
+        },
+        "surface_disintegration": {
+          "const": "d phi=H[h,h]/||H h||*dH_Sigma*d s"
+        },
+        "status": {"const": "PROVED_EXACT_FINITE_DIMENSIONAL_REDUCTION"}
+      }
+    },
+    "bt_integrated_fiber_envelope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fiber_weight", "centered_factorization", "centered_width",
+        "curvature_width_bound", "center_fourier_relation",
+        "center_action_cost", "pointwise_envelope", "uniformities", "status"
+      ],
+      "properties": {
+        "fiber_weight": {"const": "Z_eta=integral_R exp[-V_eta(t)] dt"},
+        "centered_factorization": {"$ref": "#/$defs/text"},
+        "centered_width": {"$ref": "#/$defs/text"},
+        "curvature_width_bound": {
+          "const": "I(chi)<=sqrt(2*pi/kappa_L)=3*sqrt(pi/(N*omega_L^2))"
+        },
+        "center_fourier_relation": {
+          "const": "eta perpendicular to h implies Re(exp(-i*alpha)*chi_hat(e_mu))=m/2"
+        },
+        "center_action_cost": {
+          "const": "S_lambda(chi)>=N*omega_L^2*m(eta)^2/12"
+        },
+        "pointwise_envelope": {
+          "const": "Z_eta<=3*sqrt(pi/(N*omega_L^2))*exp[-N*omega_L^2*m(eta)^2/12]"
+        },
+        "uniformities": {"$ref": "#/$defs/textArray"},
+        "status": {"const": "PROVED_POINTWISE_NOT_NORMALIZED"}
+      }
+    },
+    "normalized_entropy_gap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "normalized_center_law", "remaining_object", "coarea_target",
+        "needed_bound", "status"
+      ],
+      "properties": {
+        "normalized_center_law": {"$ref": "#/$defs/text"},
+        "remaining_object": {"$ref": "#/$defs/text"},
+        "coarea_target": {"$ref": "#/$defs/text"},
+        "needed_bound": {"$ref": "#/$defs/text"},
+        "status": {"const": "OPEN_BT_SPECIFIC_NORMALIZED_ESTIMATE"}
+      }
+    },
+    "exact_gaussian_tube_countermodel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "family", "positivity_and_origin_cost", "symmetry", "vacuum",
+        "fiber_completion", "fiber_center_and_curvature", "center_cost",
+        "fiber_integral", "transverse_cancellation", "variance_family",
+        "mean_action_family", "scope", "r5_fixture", "status"
+      ],
+      "properties": {
+        "family": {"$ref": "#/$defs/text"},
+        "positivity_and_origin_cost": {"const": "V_R>=t^2>=0"},
+        "symmetry": {"$ref": "#/$defs/text"},
+        "vacuum": {"$ref": "#/$defs/text"},
+        "fiber_completion": {
+          "const": "(t-s)^2+t^2=2*(t-s/2)^2+s^2/2"
+        },
+        "fiber_center_and_curvature": {
+          "const": "m=s/2 and partial_t^2 V_R=4"
+        },
+        "center_cost": {"const": "V_R(m,s,z,w)>=s^2/2=2*m^2"},
+        "fiber_integral": {"$ref": "#/$defs/text"},
+        "transverse_cancellation": {"$ref": "#/$defs/text"},
+        "variance_family": {
+          "const": "Var(m)=R^2/4 and Var(t)=(R^2+1)/4, unbounded as R grows"
+        },
+        "mean_action_family": {
+          "const": "E[V_R]=R^2+1 in ambient dimension R^2+3"
+        },
+        "scope": {"$ref": "#/$defs/text"},
+        "r5_fixture": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "radius", "spectators", "narrowing_exponent", "fiber_curvature",
+            "fiber_variance", "center_variance", "total_t_variance",
+            "mean_action", "ambient_dimension", "hessian_h",
+            "hessian_h_norm_squared", "hessian_hh", "graph_area_squared",
+            "projection_factor_squared", "jacobian_product"
+          ],
+          "properties": {
+            "radius": {"const": 5},
+            "spectators": {"const": 25},
+            "narrowing_exponent": {"$ref": "#/$defs/fraction"},
+            "fiber_curvature": {"const": 4},
+            "fiber_variance": {"$ref": "#/$defs/fraction"},
+            "center_variance": {"$ref": "#/$defs/fraction"},
+            "total_t_variance": {"$ref": "#/$defs/fraction"},
+            "mean_action": {"const": 26},
+            "ambient_dimension": {"const": 28},
+            "hessian_h": {
+              "type": "array", "prefixItems": [{"const": 4}, {"const": -2}],
+              "items": false
+            },
+            "hessian_h_norm_squared": {"const": 20},
+            "hessian_hh": {"const": 4},
+            "graph_area_squared": {"$ref": "#/$defs/fraction"},
+            "projection_factor_squared": {"$ref": "#/$defs/fraction"},
+            "jacobian_product": {"$ref": "#/$defs/fraction"}
+          }
+        },
+        "status": {"const": "EXACT_LOGICAL_NONTRANSFER_OBSTRUCTION"}
+      }
+    },
+    "method_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "center_hypersurface_global_chart", "field_dependent_center_jacobian",
+        "pointwise_integrated_fiber_gaussian_envelope",
+        "general_transfer_from_pointwise_envelope_to_normalized_moment",
+        "bt_specific_normalized_center_second_moment",
+        "normalized_lowest_mode_second_moment",
+        "actual_interacting_h_minus_one_second_moment", "interacting_tightness",
+        "continuum_limit", "born_rule", "krein_reconstruction",
+        "lorentzian_transfer"
+      ],
+      "properties": {
+        "center_hypersurface_global_chart": {"const": "PROVED"},
+        "field_dependent_center_jacobian": {"const": "EXACTLY_ONE"},
+        "pointwise_integrated_fiber_gaussian_envelope": {"const": "PROVED"},
+        "general_transfer_from_pointwise_envelope_to_normalized_moment": {
+          "const": "OBSTRUCTED"
+        },
+        "bt_specific_normalized_center_second_moment": {"const": "OPEN"},
+        "normalized_lowest_mode_second_moment": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment": {"const": "OPEN"},
+        "interacting_tightness": {"const": "NOT_ESTABLISHED"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"$ref": "#/$defs/textArray"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/textArray"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {
+          "const": "dc6a84918fe6b86a6f7ae514245b00ec8876c425"
+        },
+        "inputs": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"$ref": "#/$defs/textArray"},
+    "tier_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tier_0", "tier_1", "tier_2", "tier_3", "memory_policy",
+        "elapsed_seconds_and_peak_kib", "repository_audits"
+      ],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/text"},
+        "tier_1": {"$ref": "#/$defs/text"},
+        "tier_2": {"$ref": "#/$defs/text"},
+        "tier_3": {"$ref": "#/$defs/text"},
+        "memory_policy": {"$ref": "#/$defs/text"},
+        "elapsed_seconds_and_peak_kib": {"$ref": "#/$defs/textObject"},
+        "repository_audits": {"$ref": "#/$defs/textObject"}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {
+          "type": "object", "minProperties": 1,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-euclidean-center-hypersurface-gaussian-envelope-v1.schema.json"
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-euclidean-center-hypersurface-gaussian-envelope.md"
+    },
+    "verifier": {
+      "const": "reverse_physics/verify_bt_euclidean_center_hypersurface_gaussian_envelope.py"
+    }
+  }
+}
