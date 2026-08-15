@@ -1,0 +1,463 @@
+{
+  "answer": "No. The two-dimensional fiber reduction leaves exactly eight connected Wick families. Exact rational momentum enumeration on the 4^4 torus gives M4_full=-2569186115493259/716934758400000, approximately -3.5835703115. The isolated cubic-current/quartic-score square is positive, 55147376933567/11202105600000, but the complete density, normalization, and cross terms overcancel it. An independent C++17 implementation reconstructs the kernels and topology ledger modulo four 61-bit primes. Its residues agree term by term, and their 244-bit product exceeds twice a rigorous 226-bit cleared-integer difference bound, proving the rational equality. This refutes an exact finite-volume full-phase cancellation identity. It does not decide the large-L scaling, the resummed interacting susceptibility, or H^-1.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_G4_L4_DECISION_V1",
+  "checks": {
+    "M4_full_equals_expected_negative_fraction": true,
+    "M4_full_is_strictly_negative_nonzero": true,
+    "Q_square_covariance_family_vanishes_at_L4": true,
+    "actual_interacting_H_minus_one_remains_open": true,
+    "cubic_current_B_square_is_strictly_positive": true,
+    "eight_connected_families_are_present": true,
+    "four_prime_product_exceeds_twice_difference_bound": true,
+    "large_volume_full_phase_scaling_remains_open": true,
+    "modular_residues_are_recorded_for_every_term": true,
+    "no_continuum_born_krein_or_lorentzian_promotion": true,
+    "nonperturbative_current_susceptibility_remains_open": true,
+    "one_cosine_value_is_not_substituted": true,
+    "term_ledger_sums_to_M4_full": true
+  },
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "the sign, nonzero limit, or power/logarithmic scaling of full-phase M4 as L tends to infinity",
+    "uniformity or validity of the perturbative expansion at fixed nonzero coupling",
+    "divergence or boundedness of the nonperturbative current susceptibility or interacting H^-1 moment",
+    "a continuum measure, Born rule, Krein reconstruction, or anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_L4_decision": {
+    "M4_full": {
+      "denominator": 716934758400000,
+      "numerator": -2569186115493259
+    },
+    "M4_full_decimal": -3.583570311511987,
+    "M4_full_modular_residues": [
+      294869662399462775,
+      157170617597419068,
+      1362537926348095175,
+      24252092994571096
+    ],
+    "lattice": {
+      "excluded_background_momenta": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          0
+        ]
+      ],
+      "external_momentum": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "fiber_component_variance": {
+        "denominator": 512,
+        "numerator": 1
+      },
+      "length": 4,
+      "volume": 256
+    },
+    "status": "PROVED_EXACT_NEGATIVE_NONZERO",
+    "terms": [
+      {
+        "decimal": 4.922947426380894,
+        "labeled_pairings": 15,
+        "loop_sectors": [
+          {
+            "decimal": 4.922947426380894,
+            "loop_rank": 2,
+            "value": {
+              "denominator": 11202105600000,
+              "numerator": 55147376933567
+            }
+          }
+        ],
+        "modular_residues": [
+          2236149580515680226,
+          960358773346366327,
+          613136100334897039,
+          764645475558689244
+        ],
+        "name": "|B|^2",
+        "topology_count": 2,
+        "value": {
+          "denominator": 11202105600000,
+          "numerator": 55147376933567
+        }
+      },
+      {
+        "decimal": 12.308512770761206,
+        "labeled_pairings": 15,
+        "loop_sectors": [
+          {
+            "decimal": 12.308512770761206,
+            "loop_rank": 2,
+            "value": {
+              "denominator": 140492800,
+              "numerator": 1729257423
+            }
+          }
+        ],
+        "modular_residues": [
+          1069291875218813375,
+          1877389464318618150,
+          1071449860981951774,
+          1020178545678969839
+        ],
+        "name": "2*A.C",
+        "topology_count": 2,
+        "value": {
+          "denominator": 140492800,
+          "numerator": 1729257423
+        }
+      },
+      {
+        "decimal": -22.197316886228336,
+        "labeled_pairings": 105,
+        "loop_sectors": [
+          {
+            "decimal": -22.197316886228336,
+            "loop_rank": 2,
+            "value": {
+              "denominator": 3734035200000,
+              "numerator": -82885562598731
+            }
+          }
+        ],
+        "modular_residues": [
+          1173897731023131809,
+          1793886127189151834,
+          424211147615312220,
+          816996370997704158
+        ],
+        "name": "-2*U30*A.B",
+        "topology_count": 6,
+        "value": {
+          "denominator": 3734035200000,
+          "numerator": -82885562598731
+        }
+      },
+      {
+        "decimal": 40.76307720266151,
+        "labeled_pairings": 900,
+        "loop_sectors": [
+          {
+            "decimal": 40.76307720266151,
+            "loop_rank": 2,
+            "value": {
+              "denominator": 5974456320000,
+              "numerator": 243537224216089
+            }
+          }
+        ],
+        "modular_residues": [
+          1426790273024391756,
+          188674630401899631,
+          1128656523496525818,
+          1552716277292007799
+        ],
+        "name": "Cov(|A|^2,U30^2/2)",
+        "topology_count": 21,
+        "value": {
+          "denominator": 5974456320000,
+          "numerator": 243537224216089
+        }
+      },
+      {
+        "decimal": -56.398848652991845,
+        "labeled_pairings": 96,
+        "loop_sectors": [
+          {
+            "decimal": -56.398848652991845,
+            "loop_rank": 2,
+            "value": {
+              "denominator": 212425113600,
+              "numerator": -11980531832021
+            }
+          }
+        ],
+        "modular_residues": [
+          8155242914023248,
+          495456230583157234,
+          1727332293318717900,
+          423622698324951449
+        ],
+        "name": "Cov(|A|^2,-U40)",
+        "topology_count": 4,
+        "value": {
+          "denominator": 212425113600,
+          "numerator": -11980531832021
+        }
+      },
+      {
+        "decimal": -0.8267126125787794,
+        "labeled_pairings": 12,
+        "loop_sectors": [
+          {
+            "decimal": -0.8267126125787794,
+            "loop_rank": 1,
+            "value": {
+              "denominator": 44255232000,
+              "numerator": -36586358467
+            }
+          }
+        ],
+        "modular_residues": [
+          35040101580860623,
+          1132211002129562818,
+          1020342405094649936,
+          1786673442539780580
+        ],
+        "name": "Cov(|A|^2,-v*F42)",
+        "topology_count": 3,
+        "value": {
+          "denominator": 44255232000,
+          "numerator": -36586358467
+        }
+      },
+      {
+        "decimal": 17.844770440483362,
+        "labeled_pairings": 96,
+        "loop_sectors": [
+          {
+            "decimal": 1.1875615435782447,
+            "loop_rank": 1,
+            "value": {
+              "denominator": 4741632000,
+              "numerator": 5630979817
+            }
+          },
+          {
+            "decimal": 16.657208896905118,
+            "loop_rank": 2,
+            "value": {
+              "denominator": 180633600,
+              "numerator": 3008851609
+            }
+          }
+        ],
+        "modular_residues": [
+          1263073885763643591,
+          626723417269744837,
+          2294938623147122209,
+          576948310243549196
+        ],
+        "name": "Cov(|A|^2,v*|A|^2/2)",
+        "topology_count": 13,
+        "value": {
+          "denominator": 18966528000,
+          "numerator": 338453338213
+        }
+      },
+      {
+        "decimal": 0.0,
+        "labeled_pairings": 12,
+        "loop_sectors": [],
+        "modular_residues": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "name": "Cov(|A|^2,E[Q^2]/2)",
+        "topology_count": 4,
+        "value": {
+          "denominator": 1,
+          "numerator": 0
+        }
+      }
+    ]
+  },
+  "independent_modular_verification": {
+    "allowed_covariance_absolute_sum": {
+      "denominator": 313600,
+      "numerator": 2100641
+    },
+    "common_expression_denominator": 118841405593727150020079124480000000000,
+    "expression_absolute_bound": {
+      "denominator": 15495785088000000000,
+      "numerator": 16042445787282906010738811755525577
+    },
+    "integer_difference_bound": 88207276298649916323492054431817834751011783573856761233276928000000,
+    "integer_difference_bound_bits": 226,
+    "integer_difference_bound_denominator": 1,
+    "method": "Independent C++17 fixed-leg fiber ledger, labeled Wick topology enumeration, deleted-mode Z_4^4 momentum-flow solve, and four-prime residue evaluation",
+    "prime_product": 28269553036454145521783675972190872566292745786183585687971407929201188831,
+    "prime_product_bits": 244,
+    "primes": [
+      2305843009213693951,
+      2305843009213693921,
+      2305843009213693907,
+      2305843009213693723
+    ],
+    "source": "reverse_physics/bt_euclidean_full_phase_g4_l4_modular_verify.cpp",
+    "source_sha256": "43f40499ae00364add9cda62df3c7d92699ff74c64dcfdffec727e8bc70a50d9",
+    "status": "EXACT_BY_RESIDUES_PLUS_RIGOROUS_INTEGER_BOUND",
+    "term_bounds": [
+      {
+        "absolute_bound": {
+          "denominator": 368793600000,
+          "numerator": 9269483018813674721
+        },
+        "edge_count": 3,
+        "name": "|B|^2",
+        "pairing_bound": 15
+      },
+      {
+        "absolute_bound": {
+          "denominator": 2409451520000,
+          "numerator": 83425347169323072489
+        },
+        "edge_count": 3,
+        "name": "2*A.C",
+        "pairing_bound": 15
+      },
+      {
+        "absolute_bound": {
+          "denominator": 150590720000000,
+          "numerator": 58415568234371329438788483
+        },
+        "edge_count": 4,
+        "name": "-2*U30*A.B",
+        "pairing_bound": 105
+      },
+      {
+        "absolute_bound": {
+          "denominator": 10330523392000000000,
+          "numerator": 9939521151384859931333712295125843
+        },
+        "edge_count": 5,
+        "name": "Cov(|A|^2,U30^2/2)",
+        "pairing_bound": 945
+      },
+      {
+        "absolute_bound": {
+          "denominator": 1204725760000000,
+          "numerator": 175246704703113988316365449
+        },
+        "edge_count": 4,
+        "name": "Cov(|A|^2,-U40)",
+        "pairing_bound": 105
+      },
+      {
+        "absolute_bound": {
+          "denominator": 26891200000,
+          "numerator": 250276041507969217467
+        },
+        "edge_count": 3,
+        "name": "Cov(|A|^2,-v*F42)",
+        "pairing_bound": 15
+      },
+      {
+        "absolute_bound": {
+          "denominator": 65883440000000,
+          "numerator": 4731661026984077684541867123
+        },
+        "edge_count": 4,
+        "name": "Cov(|A|^2,v*|A|^2/2)",
+        "pairing_bound": 105
+      },
+      {
+        "absolute_bound": {
+          "denominator": 2941225000,
+          "numerator": 2252484373571722957203
+        },
+        "edge_count": 3,
+        "name": "Cov(|A|^2,E[Q^2]/2)",
+        "pairing_bound": 15
+      }
+    ],
+    "uniqueness_inequality": true
+  },
+  "independent_verifier": "reverse_physics/verify_bt_euclidean_full_phase_g4_l4_decision.py",
+  "interpretation": {
+    "fixed_order": "A negative perturbative coefficient is not a negative variance. It diagnoses strong nonuniform cancellation and cannot be promoted through the unbounded series remainder.",
+    "next_decision": "Derive the general-L translation-invariant eight-family kernels and decide whether M4_full is O(N*omega_p), subpower, or cancels at leading order.",
+    "scope": "This value uses the full cosine-sine background and does not import the older one-cosine sign.",
+    "termwise_method": "The positive extensive cubic-current chaos is genuinely canceled by signed terms at this finite volume, confirming that no termwise lower bound can decide the complete susceptibility."
+  },
+  "lifecycle_state": "FULL_PHASE_L4_M4_NEGATIVE_NONZERO_EXACT_LARGE_VOLUME_AND_INTERACTING_OPEN",
+  "method_disposition": {
+    "actual_interacting_H_minus_one_second_moment": "OPEN",
+    "all_volume_exact_full_phase_M4_zero_identity": "OBSTRUCTED_BY_L4_COUNTEREXAMPLE",
+    "born_rule": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "finite_L4_complete_full_phase_M4": "NEGATIVE_NONZERO_EXACT",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "large_volume_full_phase_M4_sign_and_scaling": "OPEN",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "nonperturbative_background_current_susceptibility": "OPEN",
+    "uniform_perturbative_remainder": "OPEN"
+  },
+  "missing_object_ledger": [
+    "a general-L affine momentum-flow atlas for the eight full-phase connected families",
+    "combined large-volume bounds or asymptotic coefficients before absolute values",
+    "a uniform nonperturbative current-susceptibility theorem or obstruction",
+    "the dyadic interacting H^-1 shell theorem or obstruction",
+    "tightness and continuum identification only after the H^-1 gate"
+  ],
+  "next_gate": "Generate the general-L affine atlas for the eight full-phase connected families using the translation-invariant propagator with 0,+p,-p removed. Combine common kernels before absolute values and determine whether the negative L=4 remainder retains an N*omega_p term or becomes subpower. Regardless of that fixed-order result, a uniform nonperturbative bridge remains mandatory before the interacting H^-1 gate.",
+  "provenance": {
+    "assumptions": [
+      "The full-phase vector M4 formula and coupling conventions are imported unchanged by content hash.",
+      "The background Gaussian covariance vanishes exactly at 0,+p,-p and equals omega(k)^(-2) elsewhere.",
+      "The finite-volume coefficient is not promoted to a large-volume, resummed, or nonperturbative theorem.",
+      "Only LOCAL-ALGEBRAIC and EUCLIDEAN-SPECTRAL conclusions are drawn."
+    ],
+    "exact_arithmetic": "Python arbitrary-precision integers, Fraction arithmetic, Gaussian-integer quarter-period kernels, and exact deleted-mode momentum flows; independent four-prime C++ arithmetic with a rational uniqueness bound",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_G6_CURRENT_RECONCILIATION_V1.json",
+        "sha256": "ea80f0772318a0b0a3412cb1262b5ede18cdaca014471ad8c3122cd465220f82"
+      },
+      {
+        "path": "reverse_physics/bt_euclidean_full_phase_g4_l4_exact.py",
+        "sha256": "46f579e837e7f709f978f070a83f96e88f87bd459c8c1205328b157eb896d0d1"
+      },
+      {
+        "path": "reverse_physics/data/bt_euclidean_full_phase_g4_l4_exact_v1.json",
+        "sha256": "94ecf1b0d325e0759f48964355daa862c1e41b3679510538dd149a74e1fff2ec"
+      },
+      {
+        "path": "reverse_physics/bt_euclidean_full_phase_g4_l4_modular_verify.cpp",
+        "sha256": "43f40499ae00364add9cda62df3c7d92699ff74c64dcfdffec727e8bc70a50d9"
+      }
+    ],
+    "repository_base_commit": "d0f09db4d46aa5a8198ef452f68443cf7380009f"
+  },
+  "question": "After integrating both lowest-mode phases and using the translation-invariant background with 0,+p,-p removed, does the complete full-phase M4 coefficient cancel at L=4?",
+  "report": "reverse_physics/reports/bt-euclidean-full-phase-g4-l4-decision.md",
+  "result_kind": "exact finite-volume decision of the complete full-cosine-sine BT order-g4 score coefficient",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-full-phase-g4-l4-decision-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-full-phase-g4-l4-decision-v1",
+  "two_dimensional_fiber_reduction": {
+    "W1": "W1=U30 because balanced U32 requires the removed zero background mode and same-sign U32 has zero isotropic fiber expectation",
+    "W2_modulo_constants": "W2=U40+v*F42-(v/2)*|A|^2-(1/2)*E_fiber[Q^2] modulo background-independent constants",
+    "complex_coordinate": "zeta=t_c-i*t_s with E[zeta^2]=0, E[|zeta|^2]=2v, and E[|zeta|^4]=8v^2",
+    "connected_formula": "M4_full=E[|B|^2+2*A.C-2*U30*A.B]+Cov(|A|^2,U30^2/2-U40-v*F42+v*|A|^2/2+E[Q^2]/2)",
+    "family_count": 8,
+    "status": "EXACT_FULL_PHASE_CONNECTED_LEDGER"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_full_phase_g4_l4_exact.py --check",
+    "g++ -std=c++17 -O3 -Wall -Wextra -Werror reverse_physics/bt_euclidean_full_phase_g4_l4_modular_verify.cpp -o /tmp/bt-full-phase-g4-modverify && ulimit -v 500000; /tmp/bt-full-phase-g4-modverify",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_full_phase_g4_l4_decision.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_full_phase_g4_l4_decision"
+  ]
+}

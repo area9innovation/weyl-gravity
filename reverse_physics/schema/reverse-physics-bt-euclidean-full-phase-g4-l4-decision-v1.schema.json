@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-full-phase-g4-l4-decision-v1.schema.json",
+  "title": "BT Euclidean full-phase g4 L4 decision V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "created", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "two_dimensional_fiber_reduction", "exact_L4_decision", "independent_modular_verification", "interpretation", "method_disposition", "checks", "does_not_establish", "missing_object_ledger", "next_gate", "provenance", "schema", "report", "independent_verifier", "verification_commands"],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "rational": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "input": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "residues": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer", "minimum": 0}}
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_G4_L4_DECISION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-full-phase-g4-l4-decision-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "FULL_PHASE_L4_M4_NEGATIVE_NONZERO_EXACT_LARGE_VOLUME_AND_INTERACTING_OPEN"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "two_dimensional_fiber_reduction": {"type": "object", "additionalProperties": false, "required": ["complex_coordinate", "W1", "W2_modulo_constants", "connected_formula", "family_count", "status"], "properties": {"complex_coordinate": {"$ref": "#/$defs/text"}, "W1": {"$ref": "#/$defs/text"}, "W2_modulo_constants": {"$ref": "#/$defs/text"}, "connected_formula": {"$ref": "#/$defs/text"}, "family_count": {"const": 8}, "status": {"const": "EXACT_FULL_PHASE_CONNECTED_LEDGER"}}},
+    "exact_L4_decision": {"type": "object", "additionalProperties": false, "required": ["lattice", "terms", "M4_full", "M4_full_decimal", "M4_full_modular_residues", "status"], "properties": {"lattice": {"type": "object", "minProperties": 5}, "terms": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"type": "object", "required": ["name", "value", "modular_residues"], "properties": {"name": {"$ref": "#/$defs/text"}, "value": {"$ref": "#/$defs/rational"}, "modular_residues": {"$ref": "#/$defs/residues"}}}}, "M4_full": {"$ref": "#/$defs/rational"}, "M4_full_decimal": {"type": "number"}, "M4_full_modular_residues": {"$ref": "#/$defs/residues"}, "status": {"const": "PROVED_EXACT_NEGATIVE_NONZERO"}}},
+    "independent_modular_verification": {"type": "object", "required": ["source", "source_sha256", "method", "allowed_covariance_absolute_sum", "common_expression_denominator", "expression_absolute_bound", "term_bounds", "integer_difference_bound", "integer_difference_bound_denominator", "integer_difference_bound_bits", "primes", "prime_product", "prime_product_bits", "uniqueness_inequality", "status"], "properties": {"source": {"const": "reverse_physics/bt_euclidean_full_phase_g4_l4_modular_verify.cpp"}, "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "method": {"$ref": "#/$defs/text"}, "allowed_covariance_absolute_sum": {"$ref": "#/$defs/rational"}, "common_expression_denominator": {"type": "integer", "minimum": 1}, "expression_absolute_bound": {"$ref": "#/$defs/rational"}, "term_bounds": {"type": "array", "minItems": 8, "maxItems": 8}, "integer_difference_bound": {"type": "integer", "minimum": 1}, "integer_difference_bound_denominator": {"type": "integer", "minimum": 1}, "integer_difference_bound_bits": {"const": 226}, "primes": {"$ref": "#/$defs/residues"}, "prime_product": {"type": "integer", "minimum": 1}, "prime_product_bits": {"const": 244}, "uniqueness_inequality": {"const": true}, "status": {"const": "EXACT_BY_RESIDUES_PLUS_RIGOROUS_INTEGER_BOUND"}}},
+    "interpretation": {"type": "object", "minProperties": 4, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "method_disposition": {"type": "object", "additionalProperties": false, "required": ["finite_L4_complete_full_phase_M4", "all_volume_exact_full_phase_M4_zero_identity", "large_volume_full_phase_M4_sign_and_scaling", "uniform_perturbative_remainder", "nonperturbative_background_current_susceptibility", "actual_interacting_H_minus_one_second_moment", "continuum_limit", "born_rule", "krein_reconstruction", "lorentzian_transfer"], "properties": {"finite_L4_complete_full_phase_M4": {"const": "NEGATIVE_NONZERO_EXACT"}, "all_volume_exact_full_phase_M4_zero_identity": {"const": "OBSTRUCTED_BY_L4_COUNTEREXAMPLE"}, "large_volume_full_phase_M4_sign_and_scaling": {"const": "OPEN"}, "uniform_perturbative_remainder": {"const": "OPEN"}, "nonperturbative_background_current_susceptibility": {"const": "OPEN"}, "actual_interacting_H_minus_one_second_moment": {"const": "OPEN"}, "continuum_limit": {"const": "NOT_ESTABLISHED"}, "born_rule": {"const": "NOT_ESTABLISHED"}, "krein_reconstruction": {"const": "NOT_ASSESSED"}, "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}}},
+    "checks": {"type": "object", "minProperties": 13, "additionalProperties": {"const": true}},
+    "does_not_establish": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["repository_base_commit", "inputs", "exact_arithmetic", "assumptions"], "properties": {"repository_base_commit": {"const": "d0f09db4d46aa5a8198ef452f68443cf7380009f"}, "inputs": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/input"}}, "exact_arithmetic": {"$ref": "#/$defs/text"}, "assumptions": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/text"}}}},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-full-phase-g4-l4-decision-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-full-phase-g4-l4-decision.md"},
+    "independent_verifier": {"const": "reverse_physics/verify_bt_euclidean_full_phase_g4_l4_decision.py"},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/text"}}
+  }
+}
