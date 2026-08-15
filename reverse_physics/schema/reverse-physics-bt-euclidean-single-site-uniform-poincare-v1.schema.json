@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-single-site-uniform-poincare-v1.schema.json",
+  "title": "BT one-site uniform Poincare certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "centered_fiber", "young_reduction",
+    "exact_scalar_inequalities", "hardy_muckenhoupt_transfer", "literature_interface",
+    "method_disposition", "missing_object_ledger", "next_gate", "does_not_establish",
+    "provenance", "verification_commands", "tier_receipt", "checks", "report", "schema", "verifier"
+  ],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "textArray": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "intArray": {"type": "array", "minItems": 1, "items": {"type": "integer"}},
+    "fraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "closedTextObject": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/text"}}
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_SINGLE_SITE_UNIFORM_POINCARE_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-single-site-uniform-poincare-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}, {"const": "EUCLIDEAN-SPECTRAL"}],
+      "items": false
+    },
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "centered_fiber": {
+      "type": "object", "additionalProperties": false,
+      "required": ["mean_zero_coordinate", "coordinate", "parameters", "constraint", "derivative", "bt_degree"],
+      "properties": {
+        "mean_zero_coordinate": {"$ref": "#/$defs/text"},
+        "coordinate": {"$ref": "#/$defs/text"}, "parameters": {"$ref": "#/$defs/text"},
+        "constraint": {"$ref": "#/$defs/text"}, "derivative": {"$ref": "#/$defs/text"},
+        "bt_degree": {"const": 8}
+      }
+    },
+    "young_reduction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["template", "right_variables", "right_lower_bound", "left_variables", "left_lower_bound"],
+      "properties": {
+        "template": {"$ref": "#/$defs/text"}, "right_variables": {"$ref": "#/$defs/text"},
+        "right_lower_bound": {"$ref": "#/$defs/text"}, "left_variables": {"$ref": "#/$defs/text"},
+        "left_lower_bound": {"$ref": "#/$defs/text"}
+      }
+    },
+    "exact_scalar_inequalities": {
+      "type": "object", "additionalProperties": false,
+      "required": ["right_statement", "right_square_polynomial_power_coefficients", "right_square_polynomial_after_t_equals_1_plus_y", "right_conclusion", "left_statement", "left_square_polynomial_power_coefficients", "left_square_polynomial_after_w_equals_1_plus_y", "left_conclusion", "radial_derivative_theorem", "exact_fixtures"],
+      "properties": {
+        "right_statement": {"$ref": "#/$defs/text"},
+        "right_square_polynomial_power_coefficients": {"$ref": "#/$defs/intArray"},
+        "right_square_polynomial_after_t_equals_1_plus_y": {"$ref": "#/$defs/intArray"},
+        "right_conclusion": {"const": "F'(s)>=8*(exp(s)-1)>=8*s for s>=0"},
+        "left_statement": {"$ref": "#/$defs/text"},
+        "left_square_polynomial_power_coefficients": {"$ref": "#/$defs/intArray"},
+        "left_square_polynomial_after_w_equals_1_plus_y": {"$ref": "#/$defs/intArray"},
+        "left_conclusion": {"const": "-F'(-log r)>=16*(sqrt(r)-1)>=8*log(r)"},
+        "radial_derivative_theorem": {"const": "s*F'(s)>=8*s^2 for every real s"},
+        "exact_fixtures": {
+          "type": "object", "additionalProperties": false,
+          "required": ["parameters", "right_t_2_derivative", "left_t_1_over_2_derivative"],
+          "properties": {
+            "parameters": {"$ref": "#/$defs/text"},
+            "right_t_2_derivative": {"$ref": "#/$defs/fraction"},
+            "left_t_1_over_2_derivative": {"$ref": "#/$defs/fraction"}
+          }
+        }
+      }
+    },
+    "hardy_muckenhoupt_transfer": {
+      "type": "object", "additionalProperties": false,
+      "required": ["conditional_density_log_coordinate", "radial_rate", "tail_bound", "inverse_weight_bound", "muckenhoupt_products", "hardy_factor", "log_coordinate_poincare", "phi_coordinate_poincare", "conditional_variance", "uniformities"],
+      "properties": {
+        "conditional_density_log_coordinate": {"$ref": "#/$defs/text"},
+        "radial_rate": {"const": "rho=8/lambda^2"},
+        "tail_bound": {"$ref": "#/$defs/text"}, "inverse_weight_bound": {"$ref": "#/$defs/text"},
+        "muckenhoupt_products": {"const": "B_+<=1/rho=lambda^2/8 and B_-<=lambda^2/8"},
+        "hardy_factor": {"$ref": "#/$defs/text"},
+        "log_coordinate_poincare": {"const": "C_P,psi<=lambda^2/2"},
+        "phi_coordinate_poincare": {"const": "C_P,phi<=1/2 because psi=lambda*phi"},
+        "conditional_variance": {"$ref": "#/$defs/text"},
+        "uniformities": {"$ref": "#/$defs/textArray"}
+      }
+    },
+    "literature_interface": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source", "doi", "source_url", "imported_result", "novelty_boundary"],
+      "properties": {
+        "source": {"$ref": "#/$defs/text"}, "doi": {"const": "10.4064/sm-44-1-31-38"},
+        "source_url": {"$ref": "#/$defs/text"}, "imported_result": {"$ref": "#/$defs/text"},
+        "novelty_boundary": {"$ref": "#/$defs/text"}
+      }
+    },
+    "method_disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["one_site_double_well", "global_one_site_strong_convexity", "uniform_one_site_poincare", "uniform_one_site_log_sobolev", "uniform_inter_site_influence", "volume_uniform_global_poincare", "volume_uniform_witten_coercivity", "normalized_lowest_mode_second_moment", "interacting_h_minus_one_bound", "interacting_tightness", "continuum_reconstruction", "ordinary_os_at_lambda_0p4", "born_rule", "krein_reconstruction", "lorentzian_transfer"],
+      "properties": {
+        "one_site_double_well": {"const": "RULED_OUT"},
+        "global_one_site_strong_convexity": {"const": "OBSTRUCTED"},
+        "uniform_one_site_poincare": {"const": "PROVED_WITH_CONSTANT_ONE_HALF"},
+        "uniform_one_site_log_sobolev": {"const": "OPEN"},
+        "uniform_inter_site_influence": {"const": "OPEN"},
+        "volume_uniform_global_poincare": {"const": "OPEN"},
+        "volume_uniform_witten_coercivity": {"const": "OPEN"},
+        "normalized_lowest_mode_second_moment": {"const": "OPEN"},
+        "interacting_h_minus_one_bound": {"const": "OPEN"},
+        "interacting_tightness": {"const": "NOT_ESTABLISHED"},
+        "continuum_reconstruction": {"const": "NOT_ESTABLISHED"},
+        "ordinary_os_at_lambda_0p4": {"const": "OBSTRUCTED_ON_DECLARED_L6_FIXTURE"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"$ref": "#/$defs/textArray"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/textArray"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "a47cab380d94c19fdb5ca1ea7b397c66d1d06c83"},
+        "inputs": {
+          "type": "array", "minItems": 1, "maxItems": 1,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"$ref": "#/$defs/textArray"},
+    "tier_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "memory_policy", "elapsed_seconds_and_peak_kib", "repository_audits"],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/text"}, "tier_1": {"$ref": "#/$defs/text"},
+        "tier_2": {"$ref": "#/$defs/text"}, "tier_3": {"$ref": "#/$defs/text"},
+        "memory_policy": {"$ref": "#/$defs/text"},
+        "elapsed_seconds_and_peak_kib": {"$ref": "#/$defs/closedTextObject"},
+        "repository_audits": {"$ref": "#/$defs/closedTextObject"}
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true}, "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1}, "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-single-site-uniform-poincare.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-single-site-uniform-poincare-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_single_site_uniform_poincare.py"}
+  }
+}
