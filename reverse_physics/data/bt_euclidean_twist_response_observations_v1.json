@@ -1,0 +1,231 @@
+{
+  "arithmetic": "IEEE-754 binary64; Python random.Random deterministic seeds",
+  "dependency_tags": [
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a positive thermodynamic twist modulus",
+    "inhomogeneous current-response control or Witten coercivity",
+    "a uniform interacting H^-1 estimate or divergence",
+    "a continuum measure, Born rule, Krein reconstruction, or LORENTZIAN-CAUSAL claim"
+  ],
+  "evidence_type": "NUMERICAL_FINITE_VOLUME_OBSERVED",
+  "runs": [
+    {
+      "acceptance_rate": 0.7073746141975309,
+      "algorithm": "independent local random-scan Metropolis plus exact uniform-twist derivatives",
+      "block_count": 10,
+      "blocks": [
+        {
+          "axis_count": 80,
+          "sample_count": 20,
+          "sum_action_density": 9.814654769470838,
+          "sum_integrated_current": 5.076564682048315,
+          "sum_integrated_current2": 2.9090859093385233,
+          "sum_twist_curvature_density": 7.599114080406983
+        },
+        {
+          "axis_count": 80,
+          "sample_count": 20,
+          "sum_action_density": 9.837115214939882,
+          "sum_integrated_current": -5.301814506644325,
+          "sum_integrated_current2": 4.452594666816826,
+          "sum_twist_curvature_density": 7.732368865237778
+        },
+        {
+          "axis_count": 80,
+          "sample_count": 20,
+          "sum_action_density": 9.88837130810505,
+          "sum_integrated_current": 1.8023055024741514,
+          "sum_integrated_current2": 4.008308237231915,
+          "sum_twist_curvature_density": 7.718358852730527
+        },
+        {
+          "axis_count": 80,
+          "sample_count": 20,
+          "sum_action_density": 9.767712261797485,
+          "sum_integrated_current": -1.8796576047178406,
+          "sum_integrated_current2": 2.8263171116505754,
+          "sum_twist_curvature_density": 7.584502303247102
+        },
+        {
+          "axis_count": 80,
+          "sample_count": 20,
+          "sum_action_density": 9.949016902855737,
+          "sum_integrated_current": 3.0525654994236247,
+          "sum_integrated_current2": 3.6785143099239224,
+          "sum_twist_curvature_density": 7.655579787466195
+        },
+        {
+          "axis_count": 80,
+          "sample_count": 20,
+          "sum_action_density": 9.892374548176374,
+          "sum_integrated_current": 0.11241196932063455,
+          "sum_integrated_current2": 3.4267963796943985,
+          "sum_twist_curvature_density": 7.581001042262446
+        },
+        {
+          "axis_count": 80,
+          "sample_count": 20,
+          "sum_action_density": 10.052123505330213,
+          "sum_integrated_current": -0.3368015383608133,
+          "sum_integrated_current2": 2.913313769521322,
+          "sum_twist_curvature_density": 7.813900058575007
+        },
+        {
+          "axis_count": 80,
+          "sample_count": 20,
+          "sum_action_density": 10.309279807728258,
+          "sum_integrated_current": -4.319984598815119,
+          "sum_integrated_current2": 3.564677345363476,
+          "sum_twist_curvature_density": 8.026150683351517
+        },
+        {
+          "axis_count": 80,
+          "sample_count": 20,
+          "sum_action_density": 10.125535674243235,
+          "sum_integrated_current": -5.981954471886889,
+          "sum_integrated_current2": 4.643819822702336,
+          "sum_twist_curvature_density": 7.855069365085832
+        },
+        {
+          "axis_count": 80,
+          "sample_count": 20,
+          "sum_action_density": 10.20888508190385,
+          "sum_integrated_current": -4.55170704436054,
+          "sum_integrated_current2": 4.23589902712802,
+          "sum_twist_curvature_density": 8.134153593711893
+        }
+      ],
+      "coupling": 0.4,
+      "definitions": {
+        "integrated_current": "I_mu=partial_theta A_theta at zero",
+        "scaled_response": "lambda^2*f_L''(0)=E[D_mu]/N-Var(I_mu)/(N*lambda^2)",
+        "twist_curvature": "D_mu=partial_theta^2 A_theta at zero",
+        "twisted_residual": "r_x(theta)=t_(x,x+e)*exp(theta)+t_(x,x-e)*exp(-theta)+sum_transverse t_xy-2D"
+      },
+      "elapsed_seconds": 10.27663786598714,
+      "final_action_recompute_residual": 2.921751729445532e-11,
+      "lattice": {
+        "boundary": "PERIODIC",
+        "dimensions": 4,
+        "length": 6,
+        "volume": 1296
+      },
+      "proposal_width": 0.18,
+      "recorded_samples": 200,
+      "seed": 270815006,
+      "thinning_sweeps": 3,
+      "warmup_sweeps": 600
+    },
+    {
+      "acceptance_rate": 0.7073515625,
+      "algorithm": "independent local random-scan Metropolis plus exact uniform-twist derivatives",
+      "block_count": 10,
+      "blocks": [
+        {
+          "axis_count": 40,
+          "sample_count": 10,
+          "sum_action_density": 4.831287978051104,
+          "sum_integrated_current": 4.41706758883366,
+          "sum_integrated_current2": 5.501566302893716,
+          "sum_twist_curvature_density": 3.6745086626003136
+        },
+        {
+          "axis_count": 40,
+          "sample_count": 10,
+          "sum_action_density": 4.904598095726972,
+          "sum_integrated_current": -1.3558435834294416,
+          "sum_integrated_current2": 6.199680921647803,
+          "sum_twist_curvature_density": 3.78197926418481
+        },
+        {
+          "axis_count": 40,
+          "sample_count": 10,
+          "sum_action_density": 4.995647797071032,
+          "sum_integrated_current": 1.0669612133389452,
+          "sum_integrated_current2": 4.636080391614425,
+          "sum_twist_curvature_density": 3.869695636292842
+        },
+        {
+          "axis_count": 40,
+          "sample_count": 10,
+          "sum_action_density": 4.8821898812323425,
+          "sum_integrated_current": -0.8366026805141885,
+          "sum_integrated_current2": 5.939053011787489,
+          "sum_twist_curvature_density": 3.7773720982090007
+        },
+        {
+          "axis_count": 40,
+          "sample_count": 10,
+          "sum_action_density": 4.88146402358321,
+          "sum_integrated_current": 0.7580799572524154,
+          "sum_integrated_current2": 5.186894906985297,
+          "sum_twist_curvature_density": 3.766565324310188
+        },
+        {
+          "axis_count": 40,
+          "sample_count": 10,
+          "sum_action_density": 4.913461519025848,
+          "sum_integrated_current": 3.1944360750317413,
+          "sum_integrated_current2": 7.334761955430903,
+          "sum_twist_curvature_density": 3.809692493587396
+        },
+        {
+          "axis_count": 40,
+          "sample_count": 10,
+          "sum_action_density": 5.023288351343878,
+          "sum_integrated_current": -2.5636528539853995,
+          "sum_integrated_current2": 6.381208883784236,
+          "sum_twist_curvature_density": 3.914427337368197
+        },
+        {
+          "axis_count": 40,
+          "sample_count": 10,
+          "sum_action_density": 4.9960004421067845,
+          "sum_integrated_current": 0.9962394905517078,
+          "sum_integrated_current2": 4.5210653676956065,
+          "sum_twist_curvature_density": 3.908702109548634
+        },
+        {
+          "axis_count": 40,
+          "sample_count": 10,
+          "sum_action_density": 4.903157491477731,
+          "sum_integrated_current": 0.9294976656044641,
+          "sum_integrated_current2": 4.514291489168554,
+          "sum_twist_curvature_density": 3.8460344510330153
+        },
+        {
+          "axis_count": 40,
+          "sample_count": 10,
+          "sum_action_density": 4.9266321762150564,
+          "sum_integrated_current": 1.352061988447069,
+          "sum_integrated_current2": 5.667893343862327,
+          "sum_twist_curvature_density": 3.8643469553315244
+        }
+      ],
+      "coupling": 0.4,
+      "definitions": {
+        "integrated_current": "I_mu=partial_theta A_theta at zero",
+        "scaled_response": "lambda^2*f_L''(0)=E[D_mu]/N-Var(I_mu)/(N*lambda^2)",
+        "twist_curvature": "D_mu=partial_theta^2 A_theta at zero",
+        "twisted_residual": "r_x(theta)=t_(x,x+e)*exp(theta)+t_(x,x-e)*exp(-theta)+sum_transverse t_xy-2D"
+      },
+      "elapsed_seconds": 15.163576669001486,
+      "final_action_recompute_residual": 5.502442945726216e-11,
+      "lattice": {
+        "boundary": "PERIODIC",
+        "dimensions": 4,
+        "length": 8,
+        "volume": 4096
+      },
+      "proposal_width": 0.18,
+      "recorded_samples": 100,
+      "seed": 270815008,
+      "thinning_sweeps": 2,
+      "warmup_sweeps": 300
+    }
+  ],
+  "schema_version": "bt-euclidean-twist-response-observations-v1"
+}

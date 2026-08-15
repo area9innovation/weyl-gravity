@@ -1,0 +1,240 @@
+{
+  "answer": "The exact identity is lambda^2*f_L''(0)=alpha_L-Var_mu(I_mu)/(N*lambda^2), where alpha_L is the expected-Hessian coefficient certified previously and I_mu is the integrated weighted current. The subtraction is nonnegative, so alpha alone was not a physical stiffness. In deterministic full-Gibbs observations the subtraction is 0.00021984 at L=6 and 0.00021257 at L=8, versus alpha values 0.09713 and 0.09553. The resulting scaled responses 0.09691 and 0.09532 are positive and volume-stable in these runs; no cancellation is observed. This is not a proof of a positive thermodynamic modulus, and one positive uniform-twist sector does not imply full Witten coercivity or an H^-1 estimate.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_TWIST_RESPONSE_GATE_V1",
+  "checks": {
+    "details": {
+      "both_observed_responses_exceed_nine_hundredths": true,
+      "both_observed_subtractions_are_below_one_four_hundredth": true,
+      "current_subtraction_is_nonnegative": true,
+      "fixture_axis_average_is_three_halves": true,
+      "fixture_axis_currents_vanish": true,
+      "fixture_curvatures_are_seven_thirds_and_two_thirds": true,
+      "free_energy_second_derivative_formula_is_exact": true,
+      "h_minus_one_remains_open": true,
+      "inhomogeneous_response_remains_open": true,
+      "logical_inverse_response_is_one_hundred": true,
+      "logical_witten_small_eigenvalue_is_one_hundredth": true,
+      "no_lorentzian_promotion": true,
+      "observation_action_recomputes_are_small": true,
+      "observed_responses_agree_within_one_hundredth": true,
+      "positive_thermodynamic_modulus_remains_open": true,
+      "reflection_forces_zero_mean_integrated_current": true,
+      "symbolic_orbit_moment_reduction_closes": true,
+      "twist_curvature_matches_imported_alpha_fixture": true,
+      "twist_response_is_at_most_diamagnetic_alpha": true,
+      "witten_coercivity_remains_open": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 20,
+    "total": 20
+  },
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a positive infinite-volume helicity or twist modulus",
+    "decay or summability of integrated-current correlations",
+    "an inhomogeneous response bound or Witten coercivity",
+    "a volume-uniform interacting H^-1 estimate or actual divergence",
+    "tightness, a continuum measure, Born, Krein, or anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_fixture": {
+    "axis_average_curvature": {
+      "denominator": 2,
+      "numerator": 3
+    },
+    "axis_curvature_densities": [
+      {
+        "denominator": 3,
+        "numerator": 7
+      },
+      {
+        "denominator": 3,
+        "numerator": 2
+      }
+    ],
+    "expected_hessian_fixture_alpha": {
+      "denominator": 2,
+      "numerator": 3
+    },
+    "integrated_currents": [
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      }
+    ],
+    "lattice": "C6 x C6",
+    "omega_profile_first_axis": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 2
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      }
+    ]
+  },
+  "exact_uniform_twist_identity": {
+    "alpha_after_relation": "alpha=2U-2V+2R=E[D_mu]/N",
+    "alpha_before_relation": "alpha=2q*E[t_+]+4R-4V-4(D-1)W",
+    "axis_average_identity": "D^(-1)*sum_mu D_mu/N equals alpha_L=-(b_L+4*c_L+2*(D-1)*d_L)",
+    "diamagnetic_curvature": "D_mu=A_theta''(0)=sum_x[(t_plus-t_minus)^2+r_x*(t_plus+t_minus)]",
+    "free_energy_density": "f_L(theta)=-(1/N)*log Z_L(theta)",
+    "integrated_current": "I_mu=A_theta'(0)=sum_x r_x*(t_(x,x+e_mu)-t_(x,x-e_mu))=sum_x J_(x,mu)",
+    "moment_definitions": "U=E[t_+^2], V=E[t_+*t_-], W=E[t_+*t_f] for a distinct oriented axis, R=E[r*t_+]",
+    "one_sided_consequence": "lambda^2*f_L''(0)<=alpha_L; no lower sign follows without controlling chi_L",
+    "orbit_relation": "q*E[t_+]+R=U+V+(2D-2)*W from s=q+r=sum_neighbors t",
+    "partition_function": "Z_L(theta)=integral_H exp[-A_theta(psi)/lambda^2] dpsi",
+    "reflection_ward": "E_mu[I_mu]=0",
+    "response": "lambda^2*f_L''(0)=E_mu[D_mu]/N-E_mu[I_mu^2]/(N*lambda^2)=alpha_L-chi_L",
+    "status": "PROVED_FINITE_VOLUME",
+    "susceptibility": "chi_L=Var_mu(I_mu)/(N*lambda^2)>=0",
+    "twisted_action": "A_theta=(1/2)*sum_x r_x(theta)^2",
+    "twisted_residual": "r_x(theta)=t_(x,x+e_mu)*exp(theta)+t_(x,x-e_mu)*exp(-theta)+sum_(transverse y) t_xy-2D"
+  },
+  "finite_volume_diagnostic": {
+    "evidence_type": "NUMERICAL_FINITE_VOLUME_OBSERVED",
+    "interpretation": "At L=6 and L=8 the paramagnetic subtraction is about 0.22 percent of alpha, and the complete scaled response is near 0.096. Two volumes, finite chains, one sampler, and binary64 arithmetic do not certify the thermodynamic sign.",
+    "observation_path": "reverse_physics/data/bt_euclidean_twist_response_observations_v1.json",
+    "observation_sha256": "84b8d21f5e067463cb62c6d3892c18050f53cd32533836a17faec0b210d7d8b2",
+    "summaries": [
+      {
+        "acceptance_rate": 0.7073746141975309,
+        "action_density": 0.4992253453727546,
+        "action_recompute_residual": 2.921751729445532e-11,
+        "alpha": 0.09712524829009411,
+        "alpha_jackknife_error": 0.0007498748911172719,
+        "free_energy_curvature": 0.6056587817710685,
+        "integrated_current_variance": 0.04558668734610976,
+        "length": 6,
+        "mean_integrated_current": -0.015410090139398501,
+        "response_jackknife_error": 0.0007456515450877175,
+        "sample_count": 200,
+        "scaled_current_susceptibility": 0.0002198432067231373,
+        "scaled_twist_response": 0.09690540508337098,
+        "subtraction_fraction": 0.002263502133518451,
+        "susceptibility_jackknife_error": 1.1479274074138736e-05,
+        "volume": 1296
+      },
+      {
+        "acceptance_rate": 0.7073515625,
+        "action_density": 0.49257727755833963,
+        "action_recompute_residual": 5.502442945726216e-11,
+        "alpha": 0.09553331083116481,
+        "alpha_jackknife_error": 0.0005849554038526118,
+        "free_energy_curvature": 0.5957546251321595,
+        "integrated_current_variance": 0.13931040605424017,
+        "length": 8,
+        "mean_integrated_current": 0.019895612152827435,
+        "response_jackknife_error": 0.0005867087328555594,
+        "sample_count": 100,
+        "scaled_current_susceptibility": 0.00021257081001928733,
+        "scaled_twist_response": 0.09532074002114553,
+        "subtraction_fraction": 0.0022250962326110717,
+        "susceptibility_jackknife_error": 1.124968334100193e-05,
+        "volume": 4096
+      }
+    ]
+  },
+  "lifecycle_state": "TWIST_RESPONSE_IDENTITY_PROVED_FINITE_VOLUME_SIGN_OBSERVED",
+  "method_disposition": {
+    "actual_interacting_h_minus_one_second_moment": "OPEN",
+    "diamagnetic_alpha_identification": "PROVED",
+    "inhomogeneous_low_momentum_response_kernel": "OPEN",
+    "paramagnetic_integrated_current_subtraction": "PROVED",
+    "positive_L6_L8_complete_twist_response": "OBSERVED_NOT_CERTIFIED",
+    "positive_thermodynamic_twist_modulus": "OPEN",
+    "response_to_witten_coercivity_transfer": "OPEN",
+    "uniform_twist_free_energy_identity": "PROVED",
+    "volume_uniform_witten_coercivity": "OPEN"
+  },
+  "missing_object_ledger": [
+    "a volume-uniform bound on the integrated-current susceptibility chi_L strong enough to preserve a positive twist response",
+    "an inhomogeneous twist/current-response kernel controlled uniformly over the lowest Fourier shells",
+    "a theorem transferring that response kernel to the full Witten one-form operator",
+    "an upper bound on actual Fourier-mode variances followed by the H^-1 shell sum"
+  ],
+  "next_gate": "Introduce an inhomogeneous axial edge twist theta_x and derive the full response kernel E[D_xy]/lambda^2-Cov(I_x,I_y)/lambda^4. Determine its exact Ward and longitudinal projections. A uniform low-momentum lower bound plus an explicit response-to-Witten Schur bridge is required before any H^-1 claim.",
+  "provenance": {
+    "arithmetic": "exact rational differentiation and logical fixture; finite-volume Gibbs observation separately typed IEEE-754 binary64",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_EXPECTED_HESSIAN_AXIAL_SYMBOL_V1.json",
+        "sha256": "e1339a07475b3f324f98dcfa99aea548226879b65f1017a47d789d00a91e0c82"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_WEIGHTED_CURRENT_GATE_V2.json",
+        "sha256": "b4888413276ea6572cfc8cbf6456c3927cada9205761cf84629dc46e958d828a"
+      },
+      {
+        "path": "reverse_physics/data/bt_euclidean_twist_response_observations_v1.json",
+        "sha256": "84b8d21f5e067463cb62c6d3892c18050f53cd32533836a17faec0b210d7d8b2"
+      }
+    ],
+    "repository_base_commit": "e81e48040f17013963b03597a5ea8bf650e089e7"
+  },
+  "question": "Does the integrated-current subtraction cancel the interaction-generated p^2 term in the complete finite-volume uniform-twist response?",
+  "report": "reverse_physics/reports/bt-euclidean-twist-response-gate.md",
+  "result_kind": "exact finite-volume uniform-twist free-energy identity, non-transfer obstruction, and binary64 full-Gibbs diagnostic",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-twist-response-gate-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-twist-response-gate-v1",
+  "tier_receipt": {
+    "memory_policy": "Python commands run under ulimit -v 500000; the optional full observation reproduction is separate from the fast rail",
+    "repository_audits": "planning import accepted 1680 nodes with 0 invalid items and 0 malformed events in 1.31 s at 17076 KiB under GOMEMLIMIT=300MiB and GOGC=50. The 3.29 s advisory shadow wrapper exited zero but its bridge audit failed closed because the external bp2transformer verifier lacks sympy; it also reported corpus drift 1827 versus baseline 976. Neither advisory finding is counted as a scientific pass.",
+    "tier_0": "changed Python compiled; schema, certificate, observation, and planning JSON parsed; scoped diff check and exact staged-diff inspection run before commit",
+    "tier_1": "producer 20/20 in 0.04 s at 20708 KiB; independent verifier 8/8 in 0.11 s at 29836 KiB; eleven direct and adversarial tests in 0.13 s at 30536 KiB; observer smoke rail in 0.33 s at 22188 KiB",
+    "tier_2": "not required: expected-Hessian and weighted-current inputs are unchanged and content-hashed",
+    "tier_3": "not run: no H^-1, reconstruction, freeze, release, shared-core, or Lorentzian lifecycle promotion"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_twist_response_gate.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_twist_response_gate.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_twist_response_gate",
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_twist_response_experiment.py --smoke"
+  ],
+  "verifier": "reverse_physics/verify_bt_euclidean_twist_response_gate.py",
+  "witten_nontransfer_obstruction": {
+    "consequence": "The twist Rayleigh quotient stays one while an orthogonal inverse response is arbitrarily large as epsilon tends to zero.",
+    "exact_family": "W_epsilon=diag(1,epsilon) on span{uniform twist, orthogonal one-form}, epsilon>0",
+    "fixture_epsilon": {
+      "denominator": 100,
+      "numerator": 1
+    },
+    "orthogonal_inverse_response": {
+      "denominator": 1,
+      "numerator": 100
+    },
+    "scope": "logical non-transfer witness only; not a BT counterexample",
+    "statement": "A positive response in the finite-dimensional uniform-twist subspace does not logically imply a lower bound for the full Witten one-form operator.",
+    "status": "OBSTRUCTION_TO_INFERENCE",
+    "uniform_twist_rayleigh": {
+      "denominator": 1,
+      "numerator": 1
+    }
+  }
+}
