@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-radial-convexity-obstruction-v1.schema.json",
+  "title": "BT Euclidean radial convexity obstruction certificate",
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "exact_fixture", "strict_comparisons", "method_disposition", "checks",
+    "does_not_establish", "missing_object_ledger", "next_gate", "provenance",
+    "schema", "report", "independent_verifier", "verification_commands"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_RADIAL_CONVEXITY_OBSTRUCTION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-radial-convexity-obstruction-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "POINTWISE_RADIAL_CONVEXITY_AND_UNIT_VIRIAL_OBSTRUCTED"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "exact_fixture": {
+      "type": "object",
+      "required": ["graph", "volume", "degree", "periodic_distance", "shell_exponents", "shell_multiplicities", "field", "edge_weight", "action_A", "virial_log_coefficient_C_D", "radial_curvature_log_squared_coefficient_C_2", "identities", "status"],
+      "properties": {
+        "volume": {"const": 1296},
+        "degree": {"const": 8},
+        "shell_exponents": {"type": "array", "minItems": 13, "maxItems": 13, "items": {"type": "integer"}},
+        "shell_multiplicities": {"type": "object", "minProperties": 13, "additionalProperties": {"type": "integer", "minimum": 1}},
+        "action_A": {"$ref": "#/$defs/rational"},
+        "virial_log_coefficient_C_D": {"$ref": "#/$defs/rational"},
+        "radial_curvature_log_squared_coefficient_C_2": {"$ref": "#/$defs/rational"},
+        "identities": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+        "status": {"const": "EXACT_SITE_ENUMERATION"}
+      },
+      "additionalProperties": {"type": ["string", "integer", "array", "object"]}
+    },
+    "strict_comparisons": {
+      "type": "object",
+      "required": ["log_upper_bound", "log_proof", "unit_virial_integer_witness", "conclusions", "status"],
+      "properties": {
+        "log_upper_bound": {"$ref": "#/$defs/rational"},
+        "unit_virial_integer_witness": {"$ref": "#/$defs/rational"},
+        "conclusions": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+        "status": {"const": "STRICT_EXACT_RATIONAL_INEQUALITIES"}
+      },
+      "additionalProperties": {"type": ["string", "array", "object"]}
+    },
+    "method_disposition": {"type": "object", "minProperties": 13, "additionalProperties": {"type": "string"}},
+    "checks": {"type": "object", "minProperties": 13, "additionalProperties": {"const": true}},
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "required": ["repository_base_commit", "inputs", "exact_arithmetic", "assumptions"],
+      "properties": {
+        "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "inputs": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/input"}},
+        "exact_arithmetic": {"type": "string", "minLength": 1},
+        "assumptions": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-radial-convexity-obstruction-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-radial-convexity-obstruction.md"},
+    "independent_verifier": {"const": "reverse_physics/verify_bt_euclidean_radial_convexity_obstruction.py"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {"type": "object", "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}, "additionalProperties": false},
+    "input": {"type": "object", "required": ["path", "sha256"], "properties": {"path": {"type": "string"}, "sha256": {"$ref": "#/$defs/sha256"}}, "additionalProperties": false}
+  }
+}
