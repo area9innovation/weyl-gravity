@@ -1,0 +1,345 @@
+{
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_TRANSVERSE_RESIDUAL_JACOBIAN_GATE_V1",
+  "schema_version": "reverse-physics-bt-euclidean-transverse-residual-jacobian-gate-v1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "lifecycle_state": "TRANSVERSE_JACOBIAN_NATURAL_CONVEXITY_ROUTES_OBSTRUCTED",
+  "result_kind": "exact centered-residual transverse-Jacobian proof-architecture audit on C6",
+  "question": "Can the complete lowest-phase transverse residual Jacobian be bounded below by its vacuum value using coefficientwise AM-GM or translation averaging plus convexity?",
+  "answer": "Not by either natural route. For the physical centered derivative P_H Dr on C6, the squared transverse Jacobian is an exact 1293-term Laurent polynomial with 951 positive and 342 negative coefficients, so the positive-coefficient AM-GM proof available before output projection does not survive centering. Its log-field Hessian is exactly indefinite at the dyadic profile (1,-1,2,-2,-2,2) log 2, so translation averaging plus convexity of the squared Jacobian also fails. The vacuum is nevertheless a strict local minimum modulo scale, and it is the unique minimum in the exact mean-zero dyadic box [-3,3]^6. A global lower bound or counterexample remains open.",
+  "geometry": {
+    "graph": "six-cycle C6",
+    "mean_zero_space": "H={psi in R^6: sum psi_i=0}",
+    "phase_plane": "span{(2,1,-1,-2,-1,1),(0,1,1,0,-1,-1)}",
+    "transverse_basis_rows": [
+      [
+        -1,
+        -2,
+        -2
+      ],
+      [
+        2,
+        3,
+        2
+      ],
+      [
+        -2,
+        -2,
+        -1
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "basis_gram_determinant": {
+      "numerator": 72,
+      "denominator": 1
+    },
+    "residual": "r_i=Omega_(i-1)/Omega_i+Omega_(i+1)/Omega_i-2",
+    "physical_derivative": "L_psi=P_H Dr(psi)",
+    "squared_jacobian": "det(B^T L_psi^T L_psi B)/det(B^T B)",
+    "vacuum_value": {
+      "numerator": 1296,
+      "denominator": 1
+    }
+  },
+  "laurent_audit": {
+    "unprojected_Dr": {
+      "term_count": 296,
+      "positive_term_count": 296,
+      "negative_term_count": 0,
+      "positive_coefficient_sum": {
+        "numerator": 1296,
+        "denominator": 1
+      },
+      "negative_coefficient_sum": {
+        "numerator": 0,
+        "denominator": 1
+      },
+      "vacuum_value": {
+        "numerator": 1296,
+        "denominator": 1
+      },
+      "coefficient_weighted_exponent_sum": [
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        }
+      ],
+      "canonical_polynomial_sha256": "71db048c2e7ec8b96846c815d0c8d85549ab6c6629aae513c1690382ebfebb0e"
+    },
+    "centered_P_H_Dr": {
+      "term_count": 1293,
+      "positive_term_count": 951,
+      "negative_term_count": 342,
+      "positive_coefficient_sum": {
+        "numerator": 1602,
+        "denominator": 1
+      },
+      "negative_coefficient_sum": {
+        "numerator": -306,
+        "denominator": 1
+      },
+      "vacuum_value": {
+        "numerator": 1296,
+        "denominator": 1
+      },
+      "coefficient_weighted_exponent_sum": [
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        }
+      ],
+      "canonical_polynomial_sha256": "66a2b7d468fa8534a43dda9f982a05d0cee110a1c05e92053ee020447c14151b"
+    },
+    "unprojected_disposition": "ALL_COEFFICIENTS_POSITIVE_SO_WEIGHTED_AMGM_PROVES_ITS_VACUUM_MINIMUM",
+    "centered_disposition": "NEGATIVE_COEFFICIENTS_OBSTRUCT_THAT_COEFFICIENTWISE_AMGM_PROOF"
+  },
+  "local_vacuum_result": {
+    "log_jacobian_hessian_first_row": [
+      {
+        "numerator": 97,
+        "denominator": 72
+      },
+      {
+        "numerator": -35,
+        "denominator": 48
+      },
+      {
+        "numerator": 23,
+        "denominator": 144
+      },
+      {
+        "numerator": -5,
+        "denominator": 24
+      },
+      {
+        "numerator": 23,
+        "denominator": 144
+      },
+      {
+        "numerator": -35,
+        "denominator": 48
+      }
+    ],
+    "fourier_eigenvalues": [
+      {
+        "numerator": 0,
+        "denominator": 1
+      },
+      {
+        "numerator": 2,
+        "denominator": 3
+      },
+      {
+        "numerator": 41,
+        "denominator": 24
+      },
+      {
+        "numerator": 10,
+        "denominator": 3
+      },
+      {
+        "numerator": 41,
+        "denominator": 24
+      },
+      {
+        "numerator": 2,
+        "denominator": 3
+      }
+    ],
+    "status": "STRICT_LOCAL_MINIMUM_MODULO_CONSTANT_SCALE"
+  },
+  "exact_nonconvexity_witness": {
+    "dyadic_log2_exponents": [
+      1,
+      -1,
+      2,
+      -2,
+      -2,
+      2
+    ],
+    "squared_jacobian_log_field_hessian_leading_principal_minors": [
+      {
+        "numerator": 67340339436835,
+        "denominator": 3145728
+      },
+      {
+        "numerator": 2424874801918046635798371587,
+        "denominator": 4947802324992
+      },
+      {
+        "numerator": 29372715013224562080947763357076460923,
+        "denominator": 108086391056891904
+      },
+      {
+        "numerator": 343988060610014850105392292290476970493299375363485,
+        "denominator": 340010386766614455386112
+      },
+      {
+        "numerator": -370265897082480966556198424275431024210364253456527090595872621,
+        "denominator": 133697524242821069689105416192
+      },
+      {
+        "numerator": 0,
+        "denominator": 1
+      }
+    ],
+    "negative_order_five_minor": {
+      "numerator": -370265897082480966556198424275431024210364253456527090595872621,
+      "denominator": 133697524242821069689105416192
+    },
+    "conclusion": "the squared centered transverse Jacobian is not globally convex in log-field coordinates"
+  },
+  "finite_search": {
+    "radius": 3,
+    "point_count": 9331,
+    "minimum": {
+      "numerator": 1296,
+      "denominator": 1
+    },
+    "minimizers": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "status": "EXACT_FINITE_AUDIT_NOT_GLOBAL_PROOF"
+  },
+  "method_disposition": {
+    "unprojected_positive_laurent_amgm": "PROVED_BUT_NOT_THE_PHYSICAL_CENTERED_MAP",
+    "centered_positive_laurent_amgm": "OBSTRUCTED",
+    "centered_squared_jacobian_global_convexity": "OBSTRUCTED",
+    "centered_vacuum_strict_local_minimum": "PROVED",
+    "centered_dyadic_radius_three_vacuum_minimum": "EXACT_FINITE_AUDIT",
+    "centered_global_vacuum_minimum": "OPEN",
+    "normalized_lowest_mode_marginal": "OPEN_EVEN_IF_THE_JACOBIAN_MINIMUM_IS_LATER_PROVED",
+    "interacting_uniform_h_minus_one": "OPEN"
+  },
+  "research_consequence": {
+    "surviving_route": "derive a regrouped forest/effective-resistance inequality for the centered polynomial, or search for an exact positive-field counterexample outside the audited dyadic box",
+    "normalization_boundary": "a pointwise transverse-Jacobian lower bound alone would control one coarea entropy factor, not the normalized level-set area or the annealed center moment",
+    "why_complete_phase_matters": "the domain complement removes both members of the lowest translation-invariant real phase plane"
+  },
+  "missing_object_ledger": [
+    "a proof or counterexample for the global centered transverse-Jacobian minimum on C6 and larger tori",
+    "a theorem connecting any such Jacobian estimate to the normalized lowest-mode marginal",
+    "the actual interacting volume-uniform H^-1 estimate or controlled divergence"
+  ],
+  "next_gate": "Use all-minors matrix-tree or effective-resistance identities to regroup the centered C6 polynomial into sign-definite forest blocks; fail that, conduct a rigorously bounded counterexample search. Do not treat the exact finite box as a global theorem.",
+  "does_not_establish": [
+    "a global centered transverse-Jacobian lower bound",
+    "a normalized lowest-mode marginal bound",
+    "an interacting H^-1 estimate or divergence",
+    "a continuum Euclidean measure or continuum OS theorem",
+    "Born probability, Krein reconstruction, or Lorentzian causal physics"
+  ],
+  "provenance": {
+    "source_commit": "db21ef6a7422a76f9f5bd28060a2307e74666ca2",
+    "input_sha256": {
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_SPECTRAHEDRAL_PUSHFORWARD_V1.json": "31bc26ff9822cdfc663b5fb0fc47e7970f592afbc6526f1aadf2e4447dd324e0",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_WEIGHTED_CURRENT_GATE_V2.json": "b4888413276ea6572cfc8cbf6456c3927cada9205761cf84629dc46e958d828a"
+    },
+    "arithmetic": "exact fractions and integer Laurent exponents; the finite search evaluates powers of two exactly",
+    "external_literature_context": "the all-minors matrix-tree theorem suggests a regrouping route but is not used as evidence for a theorem here"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_transverse_residual_jacobian_gate.py --check",
+    "ulimit -v 500000; mise x python@3.12 -- python3 reverse_physics/verify_bt_euclidean_transverse_residual_jacobian_gate.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_transverse_residual_jacobian_gate"
+  ],
+  "tier_receipt": {
+    "tier_0": "Python compilation and certificate/schema JSON parsing passed under the 500 MB address-space cap; the planning import accepted 1,687 nodes with zero invalid items and zero malformed events in 6.58 s; the first Git status inherited the Python cap and failed on threaded lstat, then the Git-only scoped diff-check passed without that cap; exact staged-diff inspection is required immediately before commit",
+    "tier_1": "producer drift check passed in 14.31 s at 21,600 KB peak RSS; independent SymPy verifier passed in 22.92 s at 81,308 KB after an initial 0.56 s non-import-guard self-match failure was corrected and not counted as a pass; seven unit/mutation tests passed in 15.17 s at 21,676 KB; the 2.98 s advisory Science Forge shadow wrapper exited zero but its bridge audit failed closed because the external bp2transformer Python lacks sympy, and its census reported drift at 1,844 versus 976 certificates",
+    "tier_2": "not run because the imported content-addressed residual and full-phase certificates and their shared operators are unchanged; their hashes are checked independently",
+    "tier_3": "not run because this is a proof-architecture checkpoint with no freeze, lifecycle promotion, release, or shared-core change"
+  },
+  "checks": {
+    "ok": true,
+    "passed": 17,
+    "total": 17,
+    "failures": [],
+    "details": {
+      "basis_is_mean_and_complete_phase_orthogonal": true,
+      "basis_gram_determinant_is_72": true,
+      "unprojected_polynomial_has_296_positive_terms": true,
+      "unprojected_vacuum_value_is_1296": true,
+      "projected_polynomial_has_1293_terms": true,
+      "projected_sign_counts_are_951_and_342": true,
+      "projected_coefficient_sums_are_1602_and_minus_306": true,
+      "projected_vacuum_value_is_1296": true,
+      "projected_exponent_barycenter_is_zero": true,
+      "vacuum_log_jacobian_hessian_first_row_is_exact": true,
+      "vacuum_log_jacobian_hessian_is_positive_mod_scale": true,
+      "projected_coefficientwise_amgm_route_fails": true,
+      "squared_jacobian_log_field_convexity_fails_exactly": true,
+      "dyadic_radius_three_audit_has_unique_vacuum_minimum": true,
+      "global_projected_jacobian_minimum_remains_open": true,
+      "interacting_h_minus_one_remains_open": true,
+      "no_continuum_born_krein_or_lorentzian_promotion": true
+    }
+  },
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-transverse-residual-jacobian-gate-v1.schema.json",
+  "report": "reverse_physics/reports/bt-euclidean-transverse-residual-jacobian-gate.md",
+  "verifier": "reverse_physics/verify_bt_euclidean_transverse_residual_jacobian_gate.py"
+}

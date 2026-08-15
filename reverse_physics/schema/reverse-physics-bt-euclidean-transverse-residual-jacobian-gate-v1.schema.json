@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-transverse-residual-jacobian-gate-v1.schema.json",
+  "title": "BT transverse residual-Jacobian gate certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer", "geometry",
+    "laurent_audit", "local_vacuum_result", "exact_nonconvexity_witness",
+    "finite_search", "method_disposition", "research_consequence",
+    "missing_object_ledger", "next_gate", "does_not_establish",
+    "provenance", "verification_commands", "tier_receipt", "checks",
+    "schema", "report", "verifier"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EUCLIDEAN_TRANSVERSE_RESIDUAL_JACOBIAN_GATE_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-euclidean-transverse-residual-jacobian-gate-v1"
+    },
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {
+      "const": "TRANSVERSE_JACOBIAN_NATURAL_CONVEXITY_ROUTES_OBSTRUCTED"
+    },
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "geometry": {
+      "type": "object",
+      "required": [
+        "graph", "mean_zero_space", "phase_plane", "transverse_basis_rows",
+        "basis_gram_determinant", "residual", "physical_derivative",
+        "squared_jacobian", "vacuum_value"
+      ]
+    },
+    "laurent_audit": {
+      "type": "object",
+      "required": [
+        "unprojected_Dr", "centered_P_H_Dr", "unprojected_disposition",
+        "centered_disposition"
+      ],
+      "properties": {
+        "unprojected_Dr": {"$ref": "#/$defs/polyStats"},
+        "centered_P_H_Dr": {"$ref": "#/$defs/polyStats"},
+        "unprojected_disposition": {"$ref": "#/$defs/text"},
+        "centered_disposition": {"$ref": "#/$defs/text"}
+      },
+      "additionalProperties": false
+    },
+    "local_vacuum_result": {
+      "type": "object",
+      "required": [
+        "log_jacobian_hessian_first_row", "fourier_eigenvalues", "status"
+      ]
+    },
+    "exact_nonconvexity_witness": {
+      "type": "object",
+      "required": [
+        "dyadic_log2_exponents",
+        "squared_jacobian_log_field_hessian_leading_principal_minors",
+        "negative_order_five_minor", "conclusion"
+      ]
+    },
+    "finite_search": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["radius", "point_count", "minimum", "minimizers", "status"],
+      "properties": {
+        "radius": {"const": 3},
+        "point_count": {"const": 9331},
+        "minimum": {"$ref": "#/$defs/rational"},
+        "minimizers": {
+          "const": [[0, 0, 0, 0, 0, 0]]
+        },
+        "status": {"const": "EXACT_FINITE_AUDIT_NOT_GLOBAL_PROOF"}
+      }
+    },
+    "method_disposition": {"type": "object"},
+    "research_consequence": {"type": "object"},
+    "missing_object_ledger": {"$ref": "#/$defs/textArray"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/textArray"},
+    "provenance": {
+      "type": "object",
+      "required": [
+        "source_commit", "input_sha256", "arithmetic",
+        "external_literature_context"
+      ]
+    },
+    "verification_commands": {"$ref": "#/$defs/textArray"},
+    "tier_receipt": {"type": "object"},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 17},
+        "total": {"const": 17},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {
+          "type": "object",
+          "minProperties": 17,
+          "maxProperties": 17,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-euclidean-transverse-residual-jacobian-gate-v1.schema.json"
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-euclidean-transverse-residual-jacobian-gate.md"
+    },
+    "verifier": {
+      "const": "reverse_physics/verify_bt_euclidean_transverse_residual_jacobian_gate.py"
+    }
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "textArray": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "polyStats": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "term_count", "positive_term_count", "negative_term_count",
+        "positive_coefficient_sum", "negative_coefficient_sum",
+        "vacuum_value", "coefficient_weighted_exponent_sum",
+        "canonical_polynomial_sha256"
+      ],
+      "properties": {
+        "term_count": {"type": "integer", "minimum": 1},
+        "positive_term_count": {"type": "integer", "minimum": 0},
+        "negative_term_count": {"type": "integer", "minimum": 0},
+        "positive_coefficient_sum": {"$ref": "#/$defs/rational"},
+        "negative_coefficient_sum": {"$ref": "#/$defs/rational"},
+        "vacuum_value": {"$ref": "#/$defs/rational"},
+        "coefficient_weighted_exponent_sum": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {"$ref": "#/$defs/rational"}
+        },
+        "canonical_polynomial_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    }
+  }
+}
