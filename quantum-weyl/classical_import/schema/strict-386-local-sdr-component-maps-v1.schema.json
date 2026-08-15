@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-386-local-sdr-component-maps-v1.schema.json",
+  "title": "Strict 386-row local SDR component maps v1",
+  "type": "object",
+  "required": [
+    "$schema",
+    "schema",
+    "schema_path",
+    "result_id",
+    "result_kind",
+    "result_state",
+    "lifecycle",
+    "created",
+    "repository_base_commit",
+    "dependency_tags",
+    "question",
+    "answer",
+    "scope",
+    "component_maps",
+    "exact_replay",
+    "local_sdr_snapshot",
+    "coordinate_transport_boundary",
+    "support_and_foundations",
+    "gate_disposition",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate",
+    "canonical_hashes",
+    "provenance",
+    "independent_checker",
+    "human_report"
+  ],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "strict-386-local-sdr-component-maps-v1"},
+    "result_id": {"const": "STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]
+    },
+    "scope": {
+      "type": "object",
+      "required": ["carrier_dimension", "retained_endpoint_dimension", "contracted_dimension", "coordinate_presentation", "arithmetic"],
+      "properties": {
+        "carrier_dimension": {"const": 386},
+        "retained_endpoint_dimension": {"const": 30},
+        "contracted_dimension": {"const": 356}
+      },
+      "additionalProperties": true
+    },
+    "component_maps": {
+      "type": "object",
+      "required": ["H_alg", "P_alg", "P_end", "i_end", "p_end"],
+      "properties": {
+        "H_alg": {"$ref": "#/$defs/map"},
+        "P_alg": {"$ref": "#/$defs/map"},
+        "P_end": {"$ref": "#/$defs/map"},
+        "i_end": {"$ref": "#/$defs/map"},
+        "p_end": {"$ref": "#/$defs/map"}
+      },
+      "additionalProperties": false
+    },
+    "exact_replay": {
+      "type": "object",
+      "required": ["qH_plus_Hq_equals_P_alg", "qH_plus_Hq_defects", "derivative_multiindices_checked", "p_end_i_end_identity", "i_end_p_end_equals_P_end", "projectors_idempotent", "H_alg_squared_zero", "H_alg_cyclicity_defects"],
+      "properties": {
+        "qH_plus_Hq_equals_P_alg": {"const": true},
+        "qH_plus_Hq_defects": {"const": 0},
+        "derivative_multiindices_checked": {"const": 70},
+        "p_end_i_end_identity": {"const": true},
+        "i_end_p_end_equals_P_end": {"const": true},
+        "projectors_idempotent": {"const": true},
+        "H_alg_squared_zero": {"const": true},
+        "H_alg_cyclicity_defects": {"const": 0}
+      },
+      "additionalProperties": true
+    },
+    "local_sdr_snapshot": {
+      "type": "object",
+      "required": ["kind", "basis_sha256", "pairing_sha256", "unary_snapshot_sha256", "map_sha256", "snapshot_sha256"],
+      "properties": {
+        "kind": {"const": "STRICT_386_SPLIT_LOCAL_SDR_SNAPSHOT"},
+        "basis_sha256": {"$ref": "#/$defs/sha256"},
+        "pairing_sha256": {"$ref": "#/$defs/sha256"},
+        "unary_snapshot_sha256": {"$ref": "#/$defs/sha256"},
+        "snapshot_sha256": {"$ref": "#/$defs/sha256"},
+        "map_sha256": {
+          "type": "object",
+          "required": ["H_alg", "P_alg", "P_end", "i_end", "p_end"],
+          "additionalProperties": {"$ref": "#/$defs/sha256"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "coordinate_transport_boundary": {
+      "type": "object",
+      "required": ["split_SDR_complete", "T_A_B_canonical_shear_serialized", "unshifted_curvature_graph_SDR_snapshot_complete", "reason"],
+      "properties": {
+        "split_SDR_complete": {"const": true},
+        "T_A_B_canonical_shear_serialized": {"const": false},
+        "unshifted_curvature_graph_SDR_snapshot_complete": {"const": false}
+      },
+      "additionalProperties": true
+    },
+    "support_and_foundations": {
+      "type": "object",
+      "required": ["maximum_differential_order", "support_local", "finite_exact_upper_bound", "choice_operation_added", "analytic_green_theorem_used"],
+      "properties": {
+        "maximum_differential_order": {"const": 0},
+        "support_local": {"const": true},
+        "finite_exact_upper_bound": {"const": "PRA"},
+        "choice_operation_added": {"const": false},
+        "analytic_green_theorem_used": {"const": false}
+      },
+      "additionalProperties": true
+    },
+    "gate_disposition": {
+      "type": "object",
+      "required": ["split_local_sdr_snapshot_bound", "canonical_shear_snapshot_bound", "represented_advanced_retarded_actions_bound", "one_common_gate_a_snapshot_accepted", "classical_import_gate_a_status"],
+      "properties": {
+        "split_local_sdr_snapshot_bound": {"const": true},
+        "canonical_shear_snapshot_bound": {"const": false},
+        "represented_advanced_retarded_actions_bound": {"const": false},
+        "one_common_gate_a_snapshot_accepted": {"const": false},
+        "classical_import_gate_a_status": {"const": "FAIL_CLOSED"}
+      },
+      "additionalProperties": true
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["STRICT_386_SPLIT_LOCAL_SDR_COMPONENT_MAPS_SERIALIZED", "STRICT_386_LOCAL_SDR_IDENTITIES_REPLAYED", "STRICT_386_LOCAL_SDR_CYCLICITY_REPLAYED", "STRICT_386_CANONICAL_SHEAR_COMPONENT_JET_TABLE_SERIALIZED", "STRICT_386_REPRESENTED_GREEN_ACTIONS_SERIALIZED", "CLASSICAL_IMPORT_GATE_PASSED", "HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED", "LORENTZIAN_QUANTUM_THEORY"],
+      "properties": {
+        "STRICT_386_SPLIT_LOCAL_SDR_COMPONENT_MAPS_SERIALIZED": {"const": true},
+        "STRICT_386_LOCAL_SDR_IDENTITIES_REPLAYED": {"const": true},
+        "STRICT_386_LOCAL_SDR_CYCLICITY_REPLAYED": {"const": true},
+        "STRICT_386_CANONICAL_SHEAR_COMPONENT_JET_TABLE_SERIALIZED": {"const": false},
+        "STRICT_386_REPRESENTED_GREEN_ACTIONS_SERIALIZED": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "LORENTZIAN_QUANTUM_THEORY": {"const": false}
+      },
+      "additionalProperties": {"type": "boolean"}
+    },
+    "does_not_establish": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 40},
+    "canonical_hashes": {
+      "type": "object",
+      "required": ["component_maps_sha256", "exact_replay_sha256", "local_sdr_snapshot_sha256"],
+      "additionalProperties": {"$ref": "#/$defs/sha256"}
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["inputs"],
+      "properties": {
+        "inputs": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/provenance"}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "entry": {
+      "type": "object",
+      "required": ["target", "source", "target_id", "source_id", "coefficient"],
+      "properties": {
+        "target": {"type": "integer", "minimum": 0},
+        "source": {"type": "integer", "minimum": 0},
+        "target_id": {"type": "string"},
+        "source_id": {"type": "string"},
+        "coefficient": {"type": "string", "pattern": "^-?[0-9]+(?:/[1-9][0-9]*)?$"}
+      },
+      "additionalProperties": false
+    },
+    "map": {
+      "type": "object",
+      "required": ["map_id", "shape", "degree", "orientation", "nonzero_entries", "entries", "sha256"],
+      "properties": {
+        "map_id": {"type": "string"},
+        "shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}},
+        "degree": {"type": "integer", "minimum": -1, "maximum": 0},
+        "orientation": {"const": "entry[target,source]"},
+        "nonzero_entries": {"type": "integer", "minimum": 1},
+        "entries": {"type": "array", "minItems": 30, "items": {"$ref": "#/$defs/entry"}},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["path", "result_or_schema_id", "sha256", "role"],
+      "properties": {
+        "path": {"type": "string"},
+        "result_or_schema_id": {"type": "string"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "role": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

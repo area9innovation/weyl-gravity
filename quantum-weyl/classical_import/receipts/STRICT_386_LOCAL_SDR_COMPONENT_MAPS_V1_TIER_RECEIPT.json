@@ -1,0 +1,67 @@
+{
+  "receipt_id": "STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Exact order-zero split local SDR component maps on the fixed strict 386-row unary snapshot, including endpoint inclusion/projection, complementary projectors, normalized side conditions and odd cyclicity.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile quantum-weyl/classical_import/build_strict_386_local_sdr_component_maps.py quantum-weyl/classical_import/check_strict_386_local_sdr_component_maps.py quantum-weyl/classical_import/verify_strict_386_local_sdr_component_maps.py quantum-weyl/classical_import/tests/test_strict_386_local_sdr_component_maps.py",
+        "python3 -m json.tool quantum-weyl/classical_import/schema/strict-386-local-sdr-component-maps-v1.schema.json",
+        "git diff --check -- <explicit local-SDR paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "python3 quantum-weyl/classical_import/build_strict_386_local_sdr_component_maps.py --check",
+        "python3 quantum-weyl/classical_import/check_strict_386_local_sdr_component_maps.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_local_sdr_component_maps.py",
+        "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_local_sdr_component_maps.py -v"
+      ],
+      "checks": {
+        "H_alg_nonzero_entries": 190,
+        "P_alg_nonzero_entries": 356,
+        "P_end_nonzero_entries": 30,
+        "i_end_nonzero_entries": 30,
+        "p_end_nonzero_entries": 30,
+        "derivative_multiindices_checked": 70,
+        "homotopy_identity_defects": 0,
+        "cyclicity_defects": 0,
+        "mutation_tests": "7/7 PASS"
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "command_prefix": "PYTHONPATH=/home/alstrup/area9/weyl-gravity:/tmp/weyl-scipy/root/usr/lib/python3/dist-packages:/tmp/weyl-sympy/root/usr/lib/python3/dist-packages",
+      "commands": [
+        "python3 symbolic/verify_conformal_curvature_mapping_cylinder_kernel.py --guards",
+        "python3 symbolic/verify_conformal_prolonged_hybrid_algebraic_projector.py --guards",
+        "python3 quantum-weyl/classical_import/verify_strict_386_full_q1_component_jet_table.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_local_sdr_component_maps.py"
+      ],
+      "elapsed_seconds": 25.9,
+      "checks": {
+        "mapping_cylinder_guards": "22/22 PASS",
+        "hybrid_projector_verifier": "PASS",
+        "full_q1_verifier": "PASS",
+        "local_sdr_verifier": "PASS"
+      },
+      "criterion": "The new maps consume the split mapping-cylinder contraction, hybrid local projector theorem, component pairing and full unary snapshot, so their direct producer/consumer chain was replayed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No shared classical operator changed and no freeze or lifecycle state was promoted. This result serializes an already certified local contraction on the content-addressed unary snapshot; its direct affected chain passed Tier 2."
+    }
+  },
+  "artifact_sha256": {
+    "quantum-weyl/classical_import/certificates/STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1.json": "f9da17b642571442a5785186ed587a7244e7549b57e3712ca01588381c88017f",
+    "quantum-weyl/classical_import/REPORT_STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1.md": "8b0e100daecc872fdee809797190b0bbdd6141c5cf19e62d723a052f6823fce2"
+  },
+  "claim_boundary": "This certifies the local SDR only in the published split coordinates. The finite-order T/A/B canonical shear and split-to-unshifted graph transport remain separate, represented advanced/retarded Green actions are absent, and Gate A, local D, q2, Hadamard, QME and Lorentzian quantum completion remain fail closed."
+}

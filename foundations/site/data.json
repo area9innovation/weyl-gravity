@@ -18030,24 +18030,24 @@
     ]
   },
   "completion_atlas": {
-    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v11",
-    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V11",
+    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v12",
+    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V12",
     "result_kind": "BRANCH_BY_STAGE_COMPLETION_ATLAS",
     "lifecycle": "CLASSIFIED",
     "created": "2026-08-15",
-    "repository_base_commit": "cfc609324416133a1a0c712e2f706d3bc3fddd88",
+    "repository_base_commit": "da2521d7017e55e001ff1bb868c7ae7bbcdbdbed",
     "dependency_tags": [
       "LOCAL-ALGEBRAIC",
       "EUCLIDEAN-SPECTRAL",
       "REDUCED-MODE",
       "LORENTZIAN-CAUSAL"
     ],
-    "question": "After Atlas V10 repaired the auxiliary cotangent sign, can the entire strict 386-row split unary BV differential now be treated as one receiver-readable exact object, and what is the first remaining boundary before a common Lorentzian classical import snapshot can be accepted?",
-    "answer": "Atlas V11 records the first complete content-addressed unary snapshot on the published strict 386-row carrier. The snapshot binds the 30-row Gate endpoint, repaired 36-row generalized-auxiliary complement and 320-row split curvature mapping cylinder to the rank-386 odd pairing and the certified suspension character. Eighteen operator tables contain 127 symmetrized-covariant jet coefficient tables and 2,193 nonzero rational coefficients: 619 on the endpoint, 30 on the auxiliary summand and 1,544 on the cone and its cotangent dual. The endpoint tables independently reproduce all 80 previously matched gauge, Bach and Noether tables; the cone includes complete lower-order Ecurv and Ncurv tables, their formal adjoints and every incidence arrow. Nilpotency replays in the appropriate exact natural/PBW calculus, including the unit-S3 commutator correction, and all 70 derivative multiindices satisfy the Gate suspended-cyclicity identity with zero exact defects. Crucially, the replay distinguishes the 30-row endpoint's certified suspended adjoint from the ordinary adjoint used on the 356-row complement: erasing that distinction creates spurious endpoint defects even though the underlying causal complex is unchanged. The artifact records the suspension character explicitly, so future consumers cannot accidentally compare operators under incompatible adjoint conventions. This closes the highest-ranked V10 route without converting the degree-zero T/A/B shear into primitive q1 arrows. Gate A nevertheless remains fail closed. The local contraction, endpoint inclusion/projection, canonical shear and represented advanced/retarded Green actions are not yet serialized against the unary snapshot, so the full SDR, causal support and suspended Green-adjoint identities cannot yet be replayed componentwise on one accepted object. Local D, q2 compatibility, Hadamard construction, Ward identities, renormalized Lorentzian products, QME restoration and residual transfer remain downstream and unpromoted.",
+    "question": "After Atlas V11 fixed the complete 386-row unary snapshot, can its local contraction and endpoint retract be serialized and replayed componentwise without conflating the split presentation with the unshifted curvature graph or a nonlocal causal Green action?",
+    "answer": "Atlas V12 closes the first-ranked V11 local-SDR route on the exact split unary snapshot. The retained thirty Gate rows embed and project by thirty identity entries each. The complementary generalized-auxiliary and curvature-cone rows carry a single order-zero H_alg with 190 rational entries; P_end is the rank-thirty endpoint diagonal and P_alg is its rank-356 complement. Across every one of the 70 derivative multiindices in the full q1 snapshot, the receiver obtains q1 H_alg+H_alg q1=P_alg with zero defects. It also replays p_end i_end=I_30, i_end p_end=P_end, both chain-map identities, commuting complementary idempotents, H_alg squared and every normalized side condition, and the exact cyclic identity H_alg^T Omega-D Omega H_alg=0. These maps are finite, support-local and PRA-formalizable, with no choice or infinite selection. The result is deliberately coordinate-scoped. Primitive q1 and the new SDR use the certified split presentation. The finite-order degree-zero T/A/B canonical shear that transports this data to the unshifted curvature graph is not part of q1 and has not yet been emitted as a Gate-basis component-jet table. Atlas V12 therefore splits the next work into two falsifiable finite tasks: serialize the shear and inverse, then conjugate q1 and the SDR and replay the graph-coordinate identities. Only after that should the programme import represented endpoint advanced/retarded actions on declared test and distribution spaces and assemble the full Green homotopy. Gate A still accepts no common snapshot. Local D, same-carrier q2, Hadamard construction, Ward identities, renormalized Lorentzian products, QME restoration and residual transfer remain downstream and unpromoted.",
     "predecessor": {
-      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V10",
-      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V10.json",
-      "sha256": "af06563333cd56c40238341f9d5f7a1bfb2f9e5d959c9dff0d9efdfeef16102e",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V11",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V11.json",
+      "sha256": "c9db8dcf36b201f3d856f042638a88e3ebf842fcc15245a0c9b0cc7531c12a4d",
       "preserved": true
     },
     "status_vocabulary": [
@@ -18155,7 +18155,7 @@
           {
             "stage": "S0_CLASSICAL_AUTHORITY",
             "status": "FAIL_CLOSED",
-            "statement": "The complete 386-row split q1 is now exact receiver-readable data: 18 operator tables, 2,193 rational coefficients, sectorwise nilpotency and zero suspended-cyclicity defects. Gate A remains closed because the SDR, canonical shear and represented Green actions are not yet bound to the unary snapshot.",
+            "statement": "The split 386-row q1, pairing and local SDR are now one exact receiver-readable bundle: H_alg has 190 entries, all five maps are serialized, and the homotopy, chain-map, side-condition and cyclic identities have zero defects. Gate A remains closed pending the canonical shear, graph-coordinate replay and represented Green actions.",
             "evidence": [
               "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
               "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
@@ -18164,9 +18164,10 @@
               "STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1",
               "STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1",
               "STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1",
-              "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1"
+              "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1",
+              "STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1"
             ],
-            "boundary": "A unary snapshot is necessary but not a common Gate-A snapshot. H_alg, endpoint inclusion/projection, T/A/B shear, advanced/retarded Green actions, local D and q2 remain absent from the accepted common object."
+            "boundary": "The split local SDR is not the unshifted graph-coordinate SDR and contains no nonlocal Green action. T/A/B shear bytes, conjugation replay, represented endpoint/full Green actions, local D and q2 remain outside the accepted common object."
           },
           {
             "stage": "S1_OFF_SHELL_BV",
@@ -18255,7 +18256,7 @@
           }
         ],
         "first_unclosed_gate": "S0_CLASSICAL_AUTHORITY",
-        "next_decisive_object": "Serialize H_alg, endpoint inclusion/projection and the canonical T/A/B shear on the unary snapshot, then add represented endpoint/full Green actions and replay the SDR, causal-support and suspended-adjoint identities componentwise."
+        "next_decisive_object": "Serialize the finite-order T/A/B canonical shear and inverse on the fixed Gate basis, then replay the split-to-unshifted graph conjugation before importing represented endpoint Green actions."
       },
       {
         "id": "PURE_WEYL_BACH_FLAT_RANK310",
@@ -18860,8 +18861,8 @@
       "theory_identity_front": {
         "branch": "STRICT_PURE_WEYL_386",
         "first_gate": "S0_CLASSICAL_AUTHORITY",
-        "current_fact": "The full 386-row unary differential, pairing and suspension are one exact snapshot with nilpotency and suspended cyclicity replayed; the remaining Gate-A gap is the local SDR/shear/represented-Green action bundle.",
-        "best_next_object": "Component tables for H_alg, endpoint inclusion/projection and the T/A/B shear, followed by represented advanced/retarded Green actions on the same snapshot."
+        "current_fact": "The full q1 and its split local SDR are content-addressed exact component data with all local identities replayed; the remaining finite coordinate gate is the T/A/B canonical shear and graph-coordinate conjugation.",
+        "best_next_object": "A Gate-basis component-jet table for the T/A/B shear and inverse, followed by an independent conjugation and cyclicity replay."
       },
       "analytic_maturity_front": {
         "branch": "BERGER_POSITIVE_CLOCK_54",
@@ -19003,21 +19004,21 @@
     "route_selection": [
       {
         "rank": 1,
-        "route": "STRICT_386_LOCAL_SDR_COMPONENT_MAPS",
+        "route": "STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "HIGH",
         "dependency_depth": "LOW",
-        "recommendation": "Serialize H_alg and endpoint inclusion/projection from the exact producers and independently replay PI, IP-I=qH+Hq and cyclicity on the fixed unary snapshot."
+        "recommendation": "Emit T, A, B and their BV-forced formal adjoints as finite parallel-coefficient component-jet tables, together with the exact inverse, on the fixed 386-row Gate basis."
       },
       {
         "rank": 2,
-        "route": "STRICT_386_CANONICAL_SHEAR_TABLE",
+        "route": "STRICT_386_SPLIT_TO_GRAPH_SDR_REPLAY",
         "branch": "STRICT_PURE_WEYL_386",
-        "scientific_leverage": "HIGH",
+        "scientific_leverage": "VERY_HIGH",
         "tractability": "HIGH",
         "dependency_depth": "LOW",
-        "recommendation": "Serialize the degree-zero T/A/B canonical shear and inverse separately from q1, preserving the split-coordinate theorem and support locality."
+        "recommendation": "Conjugate q1, H_alg, i_end and p_end by the serialized shear and replay inverse, chain-map, homotopy, pairing-canonical and cyclic identities in unshifted graph coordinates."
       },
       {
         "rank": 3,
@@ -19035,7 +19036,7 @@
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "HIGH",
-        "recommendation": "Compose the represented endpoint Green action with accepted SDR/shear tables and replay full homotopy, causal support and suspended adjointness on the fixed carrier."
+        "recommendation": "Compose the represented endpoint action with the graph-coordinate SDR and replay full homotopy, causal support and suspended adjointness on the fixed carrier."
       },
       {
         "rank": 5,
@@ -19087,14 +19088,14 @@
       {
         "priority": 1,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_386_LOCAL_SDR_COMPONENT_MAPS",
-        "why": "Serialize H_alg and endpoint inclusion/projection from the exact producers and independently replay PI, IP-I=qH+Hq and cyclicity on the fixed unary snapshot."
+        "object": "STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS",
+        "why": "Emit T, A, B and their BV-forced formal adjoints as finite parallel-coefficient component-jet tables, together with the exact inverse, on the fixed 386-row Gate basis."
       },
       {
         "priority": 2,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_386_CANONICAL_SHEAR_TABLE",
-        "why": "Serialize the degree-zero T/A/B canonical shear and inverse separately from q1, preserving the split-coordinate theorem and support locality."
+        "object": "STRICT_386_SPLIT_TO_GRAPH_SDR_REPLAY",
+        "why": "Conjugate q1, H_alg, i_end and p_end by the serialized shear and replay inverse, chain-map, homotopy, pairing-canonical and cyclic identities in unshifted graph coordinates."
       },
       {
         "priority": 3,
@@ -19106,7 +19107,7 @@
         "priority": 4,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_FULL_GREEN_COMPONENT_ACTION_REPLAY",
-        "why": "Compose the represented endpoint Green action with accepted SDR/shear tables and replay full homotopy, causal support and suspended adjointness on the fixed carrier."
+        "why": "Compose the represented endpoint action with the graph-coordinate SDR and replay full homotopy, causal support and suspended adjointness on the fixed carrier."
       },
       {
         "priority": 5,
@@ -19405,6 +19406,16 @@
           "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1.json",
           "sha256": "9b0e9da9e8838a0ade6e1f1214e16457e9a94af981d9d020c137d105f9e9c21e",
           "role": "complete exact 386-row unary snapshot and replay"
+        },
+        {
+          "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V11.json",
+          "sha256": "c9db8dcf36b201f3d856f042638a88e3ebf842fcc15245a0c9b0cc7531c12a4d",
+          "role": "immutable V11 atlas predecessor"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1.json",
+          "sha256": "f9da17b642571442a5785186ed587a7244e7549b57e3712ca01588381c88017f",
+          "role": "exact split local SDR component maps and replay"
         }
       ]
     },
@@ -19464,7 +19475,14 @@
       "strict_386_full_q1_squared_zero_replayed": true,
       "strict_386_full_q1_suspended_cyclicity_replayed": true,
       "strict_386_unary_snapshot_hash_established": true,
-      "strict_386_full_sdr_operator_tables_serialized": false
+      "strict_386_full_sdr_operator_tables_serialized": false,
+      "v11_preserved": true,
+      "strict_386_split_local_sdr_component_maps_serialized": true,
+      "strict_386_split_local_sdr_identities_replayed": true,
+      "strict_386_split_local_sdr_cyclicity_replayed": true,
+      "strict_386_canonical_shear_component_jets_serialized": false,
+      "strict_386_unshifted_graph_sdr_snapshot_complete": false,
+      "strict_386_represented_green_actions_serialized": false
     },
     "does_not_establish": [
       "a passed strict pure-Weyl classical import gate",
@@ -19508,30 +19526,35 @@
       "one accepted common Gate-A snapshot binding q1, q2, D, pairing, SDR and causal Green data",
       "q2 or local D on the same 386-row causal carrier",
       "a weakest-foundation calibration of the imported analytic Green theorem",
-      "a Hadamard state, BRST Ward theorem, positivity result, renormalized Lorentzian products, QME restoration, residual transfer or Lorentzian quantum theory"
+      "a Hadamard state, BRST Ward theorem, positivity result, renormalized Lorentzian products, QME restoration, residual transfer or Lorentzian quantum theory",
+      "a serialized T/A/B canonical shear or its inverse in the 386-row Gate basis",
+      "an unshifted curvature-graph SDR snapshot",
+      "a represented advanced or retarded endpoint/full Green action",
+      "one accepted common Gate-A snapshot or a passed classical import gate",
+      "a Hadamard state, Ward theorem, positivity result, renormalized Lorentzian products, QME restoration, residual transfer or Lorentzian quantum theory"
     ],
     "independent_checker": {
-      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v11.py",
+      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v12.py",
       "checks": [
-        "V10 preservation",
+        "V11 preservation",
         "77-cell closure",
         "strict S0-only mutation",
-        "full-q1 projection",
-        "2,193 coefficient inventory",
-        "zero nilpotency/cyclicity defects",
-        "unary snapshot binding",
-        "SDR/import firewall",
+        "local-SDR projection",
+        "190-entry H_alg inventory",
+        "zero homotopy/cyclicity defects",
+        "split-coordinate boundary",
+        "shear/Green/import firewall",
         "causal theorem preservation",
         "nine-route ranking",
         "append-only provenance",
         "content hashes",
         "canonical digest"
       ],
-      "expected_digest": "cfa052fbbdaf3c7ecbbc76fd4671a15d588037bea4a51b43d8ab5e668a740c0a"
+      "expected_digest": "1f565405725f09090b9669ebee812fb948027f7e42b7d7db941042f32e11cc5a"
     },
-    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v11.md",
+    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v12.md",
     "strict_gate_a_progress": {
-      "status": "FULL_Q1_SERIALIZED_SDR_COMMON_SNAPSHOT_REQUIRED",
+      "status": "FULL_Q1_AND_SPLIT_SDR_SERIALIZED_SHEAR_GREEN_COMMON_SNAPSHOT_REQUIRED",
       "evidence": [
         "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
         "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
@@ -19582,8 +19605,8 @@
           "q2_omegastar_hhstar__reverse"
         ]
       },
-      "remaining_common_carrier": "Serialize H_alg, endpoint inclusion/projection, the degree-zero T/A/B shear and advanced/retarded Green actions against this unary snapshot, independently replay the SDR and suspended Green-adjoint identities componentwise, and only then accept a common Gate-A snapshot hash before binding q2 and local D.",
-      "boundary": "The unary snapshot passes exact q1 tests, but Gate A still requires componentwise SDR/shear/Green actions and one receiver-accepted common snapshot before q2 or D are bound.",
+      "remaining_common_carrier": "Serialize the finite-order degree-zero T/A/B canonical shear and inverse on the same 386-row basis, independently replay inverse, canonical-pairing and q1-conjugation identities, then import represented endpoint Green actions on declared test/distribution spaces.",
+      "boundary": "The unary and split local-SDR snapshots pass exact tests. Gate A still requires canonical-shear bytes, graph-coordinate replay, represented Green actions and one receiver-accepted common snapshot before q2 or D are bound.",
       "endpoint_q1_control": {
         "dimension": 30,
         "arrow_tables_matching": 80,
@@ -19694,6 +19717,29 @@
         "full_sdr_tables_serialized": false,
         "classical_import_gate_passed": false,
         "next_gate": "Serialize H_alg, endpoint inclusion/projection, the degree-zero T/A/B shear and advanced/retarded Green actions against this unary snapshot, independently replay the SDR and suspended Green-adjoint identities componentwise, and only then accept a common Gate-A snapshot hash before binding q2 and local D."
+      },
+      "local_sdr_component_map_control": {
+        "result_id": "STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1",
+        "status": "LOCAL_SDR_SERIALIZED_CANONICAL_SHEAR_AND_REPRESENTED_GREEN_ACTIONS_OPEN",
+        "carrier_dimension": 386,
+        "retained_endpoint_dimension": 30,
+        "contracted_dimension": 356,
+        "map_count": 5,
+        "H_alg_nonzero_entries": 190,
+        "P_alg_nonzero_entries": 356,
+        "P_end_nonzero_entries": 30,
+        "i_end_nonzero_entries": 30,
+        "p_end_nonzero_entries": 30,
+        "maximum_order": 0,
+        "derivative_multiindices_checked": 70,
+        "homotopy_identity_defects": 0,
+        "cyclicity_defects": 0,
+        "local_sdr_snapshot_sha256": "177045b0bf639beda53c76aaf0a3c809c4fe7ba0c5b8ea18397642c8839dd520",
+        "split_SDR_complete": true,
+        "canonical_shear_serialized": false,
+        "represented_green_actions_serialized": false,
+        "classical_import_gate_passed": false,
+        "next_gate": "Serialize the finite-order degree-zero T/A/B canonical shear and inverse on the same 386-row basis, independently replay inverse, canonical-pairing and q1-conjugation identities, then import represented endpoint Green actions on declared test/distribution spaces."
       }
     },
     "strict_causal_sign_transport": {
@@ -19844,6 +19890,29 @@
       "full_sdr_tables_serialized": false,
       "classical_import_gate_passed": false,
       "next_gate": "Serialize H_alg, endpoint inclusion/projection, the degree-zero T/A/B shear and advanced/retarded Green actions against this unary snapshot, independently replay the SDR and suspended Green-adjoint identities componentwise, and only then accept a common Gate-A snapshot hash before binding q2 and local D."
+    },
+    "strict_local_sdr_component_maps": {
+      "result_id": "STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1",
+      "status": "LOCAL_SDR_SERIALIZED_CANONICAL_SHEAR_AND_REPRESENTED_GREEN_ACTIONS_OPEN",
+      "carrier_dimension": 386,
+      "retained_endpoint_dimension": 30,
+      "contracted_dimension": 356,
+      "map_count": 5,
+      "H_alg_nonzero_entries": 190,
+      "P_alg_nonzero_entries": 356,
+      "P_end_nonzero_entries": 30,
+      "i_end_nonzero_entries": 30,
+      "p_end_nonzero_entries": 30,
+      "maximum_order": 0,
+      "derivative_multiindices_checked": 70,
+      "homotopy_identity_defects": 0,
+      "cyclicity_defects": 0,
+      "local_sdr_snapshot_sha256": "177045b0bf639beda53c76aaf0a3c809c4fe7ba0c5b8ea18397642c8839dd520",
+      "split_SDR_complete": true,
+      "canonical_shear_serialized": false,
+      "represented_green_actions_serialized": false,
+      "classical_import_gate_passed": false,
+      "next_gate": "Serialize the finite-order degree-zero T/A/B canonical shear and inverse on the same 386-row basis, independently replay inverse, canonical-pairing and q1-conjugation identities, then import represented endpoint Green actions on declared test/distribution spaces."
     }
   },
   "cross_cell_interfaces": [
@@ -20013,8 +20082,8 @@
     "ground_state_dynamics_interface_report": "sources/foundations/reports/krein-fock-ground-state-dynamics-interface.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md",
-    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V11.json",
-    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v11.md",
+    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V12.json",
+    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v12.md",
     "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V5_RECONCILIATION.json",
     "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V5.md",
     "completion_sdr": "sources/quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json",
@@ -20036,7 +20105,9 @@
     "completion_q1_sign_repair": "sources/quantum-weyl/classical_import/certificates/STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.json",
     "completion_q1_sign_repair_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.md",
     "completion_full_q1": "sources/quantum-weyl/classical_import/certificates/STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1.json",
-    "completion_full_q1_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1.md"
+    "completion_full_q1_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1.md",
+    "completion_local_sdr": "sources/quantum-weyl/classical_import/certificates/STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1.json",
+    "completion_local_sdr_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1.md"
   },
-  "canonical_digest": "2f42644703b4e4935ffe3d540eed5c2bf83c57eb06c2dfff5788a19623ec2ff8"
+  "canonical_digest": "330fe89e44ca78e7bc4c529dcc3b1fcab67af390889949d3f587bc297de621ab"
 }

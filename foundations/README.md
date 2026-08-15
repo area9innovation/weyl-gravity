@@ -834,6 +834,20 @@ must still be bound and replayed on the same unary snapshot before one common
 snapshot may be accepted.  Local `D`, same-carrier `q2`, Hadamard and QME
 remain downstream.
 
+The append-only
+[`V12 completion atlas`](reports/lorentzian-weyl-bv-completion-atlas-v12.md)
+closes the split local-SDR route.  Five exact order-zero rational maps retain
+the 30-row endpoint and contract the 356-row complement.  `H_alg` has 190
+nonzero entries, and the homotopy, chain-map, complementary-projector,
+normalized side-condition and cyclicity identities replay over all 70 unary
+multiindices with zero defects.  This finite support-local object is
+PRA-formalizable and adds neither a choice operation nor an infinite
+selection.  Its scope is the certified split presentation.  The degree-zero
+`T/A/B` canonical shear and inverse must be serialized before the unary
+differential and retract can be replayed in unshifted graph coordinates;
+represented Green actions and the common Gate-A snapshot remain separate
+downstream contracts.
+
 ```bash
 python3 foundations/build_lorentzian_weyl_bv_completion_atlas.py --check
 python3 foundations/check_lorentzian_weyl_bv_completion_atlas.py
@@ -879,6 +893,10 @@ python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v11.py --check
 python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v11.py
 python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v11.py
 python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v11
+python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v12.py --check
+python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v12.py
+python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v12.py
+python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v12
 ```
 
 ## Lifecycle

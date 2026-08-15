@@ -1,0 +1,88 @@
+{
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V12_INTEGRATION_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V12",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Append-only Atlas V12, in-place explorer refresh, and Paper 21 integration of the exact strict split local SDR, with canonical shear, graph-coordinate replay, represented Green actions and Gate A preserved as distinct open contracts.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <explicit local-SDR, Atlas V12, explorer and Paper 21 Python paths>",
+        "python3 -m json.tool quantum-weyl/classical_import/schema/strict-386-local-sdr-component-maps-v1.schema.json",
+        "python3 -m json.tool foundations/schema/foundational-lorentzian-weyl-bv-completion-atlas-v12.schema.json",
+        "git diff --check -- <explicit local-SDR, Atlas V12, site and Paper 21 paths>"
+      ],
+      "notes": [
+        "JavaScript syntax was covered by the generated static-site receiver tests; node is not installed in this environment, so no separate node --check result is claimed.",
+        "The exact staged diff and imported hashes are inspected immediately before commit."
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "python3 quantum-weyl/classical_import/build_strict_386_local_sdr_component_maps.py --check && python3 quantum-weyl/classical_import/check_strict_386_local_sdr_component_maps.py && python3 quantum-weyl/classical_import/verify_strict_386_local_sdr_component_maps.py && python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_local_sdr_component_maps.py -v",
+        "python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v12.py --check && python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v12.py && python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v12.py && python3 -m unittest foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v12.py -v",
+        "python3 foundations/build_matrix_site_v2.py --check && python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py && python3 -m unittest foundations/tests/test_matrix_site.py -v",
+        "python3 paper/generate_21_reverse_foundations_appendices.py --check && python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+        "pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (twice, from paper/)"
+      ],
+      "checks": {
+        "local_sdr_mutation_tests": "7/7 PASS",
+        "atlas_v12_mutation_tests": "7/7 PASS",
+        "site_unit_tests": "10/10 PASS",
+        "site_artifacts": 192,
+        "site_cells": 576,
+        "completion_branches": 7,
+        "completion_cells": 77,
+        "completion_routes": 9,
+        "paper_claims": 36,
+        "paper_pages": 62
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "command_prefix": "PYTHONPATH=/home/alstrup/area9/weyl-gravity:/tmp/weyl-scipy/root/usr/lib/python3/dist-packages:/tmp/weyl-sympy/root/usr/lib/python3/dist-packages",
+      "commands": [
+        "python3 symbolic/verify_conformal_curvature_mapping_cylinder_kernel.py --guards",
+        "python3 symbolic/verify_conformal_prolonged_hybrid_algebraic_projector.py --guards",
+        "python3 quantum-weyl/classical_import/verify_strict_386_full_q1_component_jet_table.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_local_sdr_component_maps.py",
+        "python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v11.py",
+        "python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v12.py",
+        "python3 foundations/verify_matrix_site_v2.py",
+        "python3 paper/verify_21_reverse_foundations_claim_map.py"
+      ],
+      "checks": {
+        "mapping_cylinder_guards": "22/22 PASS",
+        "hybrid_projector_verifier": "PASS",
+        "full_q1_verifier": "PASS",
+        "local_sdr_verifier": "PASS",
+        "atlas_v11_historical_verifier": "PASS",
+        "atlas_v12_verifier": "PASS",
+        "site_verifier": "PASS",
+        "paper_claim_map_verifier": "PASS"
+      },
+      "criterion": "The local SDR consumes the exact mapping-cylinder contraction, hybrid local projector, component pairing and full unary snapshot; Atlas V12, the explorer and Paper 21 are direct generated consumers, so that complete affected certificate chain was replayed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No shared classical operator, freeze tag, release or quantum lifecycle state changed. The new scientific serializer has its own affected-chain receipt, and the integration layer only projects its fail-closed result."
+    }
+  },
+  "artifact_sha256": {
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V12.json": "43539a2c2ecf175263f7cbe12a7210129f5e1946593d2912fe6fa6519c301744",
+    "foundations/reports/lorentzian-weyl-bv-completion-atlas-v12.md": "7943346146de6ea20f7cd9d4bd4b077bb94b325db0865733268d4c84eaea7813",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "d2b810dd2c0e80ea1b41744e4e5d197d9c33ca4bbdec3a29b199ef83ffffb73e",
+    "foundations/site/manifest.json": "4e5789842b7be9e4c94434f6c55789ef07fefd80e77a92890e3d5c2037afb179",
+    "paper/21-reverse-foundations-of-physics-appendices.tex": "4a8623aeebfe2d581c8d8eee0db89f4b40666cdef462780e8cde67998ef55a0b",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "a60187e1caf99a437e2f59462931a879f4b0feb347c5b15243beb3b8b1be3939",
+    "paper/21-reverse-foundations-of-physics.pdf": "b5b61fe05085d97f969588d125e2bc8d1e82f42526ea7dbca313c2ce111b233e"
+  },
+  "claim_boundary": "Atlas V12 and its site/paper projections certify an exact finite split-coordinate local SDR. They do not certify the T/A/B shear or inverse, the unshifted graph-coordinate retract, represented advanced/retarded Green actions, a receiver-accepted Gate-A snapshot, local D, q2 compatibility, Hadamard construction, Ward identities, renormalized Lorentzian products, QME restoration, residual transfer, empirical validity or a complete Lorentzian quantum theory."
+}

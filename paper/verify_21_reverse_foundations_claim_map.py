@@ -108,6 +108,8 @@ def main() -> int:
     completion_atlas_v10 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v10"]["path"]).read_text())
     strict_386_full_q1 = json.loads((ROOT / data["authorities"]["strict_386_full_q1_component_jet_table"]["path"]).read_text())
     completion_atlas_v11 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v11"]["path"]).read_text())
+    strict_386_local_sdr = json.loads((ROOT / data["authorities"]["strict_386_local_sdr_component_maps"]["path"]).read_text())
+    completion_atlas_v12 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v12"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -398,6 +400,7 @@ def main() -> int:
         (33, "BT-CORRECTOR-SLAB-FIBER-STABILITY"),
         (34, "BT-CORRECTOR-SLAB-CYLINDER-SUPPRESSION"),
         (35, "STRICT-WEYL-FULL-Q1-COMPONENT-SNAPSHOT"),
+        (36, "STRICT-WEYL-SPLIT-LOCAL-SDR"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -414,7 +417,12 @@ def main() -> int:
     require(flags["strict_386_full_q1_component_bytes_serialized"] is True, "strict full-q1 component bytes missing")
     require(flags["strict_386_full_q1_squared_zero_replayed"] is True, "strict full-q1 nilpotency replay missing")
     require(flags["strict_386_full_q1_suspended_cyclicity_replayed"] is True, "strict full-q1 suspended cyclicity replay missing")
-    require(flags["strict_386_local_sdr_component_maps_serialized"] is False, "strict local SDR component maps promoted")
+    require(flags["strict_386_local_sdr_component_maps_serialized"] is True, "strict local SDR component maps missing")
+    require(flags["strict_386_local_sdr_identities_replayed"] is True, "strict local SDR identity replay missing")
+    require(flags["strict_386_local_sdr_cyclicity_replayed"] is True, "strict local SDR cyclicity replay missing")
+    require(flags["strict_386_canonical_shear_component_jets_serialized"] is False, "strict canonical shear promoted")
+    require(flags["strict_386_unshifted_graph_sdr_snapshot_complete"] is False, "strict graph-coordinate SDR promoted")
+    require(flags["strict_386_represented_green_actions_serialized"] is False, "strict represented Green actions promoted")
     require(flags["strict_386_classical_import_gate_passed"] is False, "strict classical import gate promoted")
     require(flags["strict_386_all_operator_component_adjoints_replayed"] is False, "strict all-operator replay promoted")
     require(flags["strict_386_local_d_certified"] is False, "strict 386 local D promoted")
@@ -492,6 +500,23 @@ def main() -> int:
     require(strict_386_full_q1["claim_flags"]["STRICT_386_FULL_SDR_OPERATOR_TABLES_SERIALIZED"] is False and strict_386_full_q1["claim_flags"]["CLASSICAL_IMPORT_GATE_PASSED"] is False, "strict full-q1 result promoted SDR or Gate A")
     require(completion_atlas_v11["strict_full_q1_component_jet_table"]["nonzero_rational_coefficients"] == 2193, "completion atlas V11 omitted full q1")
     require(completion_atlas_v11["claim_flags"]["strict_full_386_q1_portable_component_bytes"] is True and completion_atlas_v11["claim_flags"]["strict_pure_weyl_classical_gate_passed"] is False, "completion atlas V11 q1/Gate-A boundary drift")
+    local_maps = strict_386_local_sdr["component_maps"]
+    require(local_maps["H_alg"]["nonzero_entries"] == 190 and local_maps["P_alg"]["nonzero_entries"] == 356, "strict local SDR homotopy/projector inventory drift")
+    require(local_maps["P_end"]["nonzero_entries"] == 30 and local_maps["i_end"]["nonzero_entries"] == 30 and local_maps["p_end"]["nonzero_entries"] == 30, "strict local SDR endpoint map inventory drift")
+    local_replay = strict_386_local_sdr["exact_replay"]
+    require(local_replay["qH_plus_Hq_equals_P_alg"] is True and local_replay["qH_plus_Hq_defects"] == 0 and local_replay["derivative_multiindices_checked"] == 70, "strict local SDR homotopy replay missing")
+    require(local_replay["p_end_i_end_identity"] is True and local_replay["i_end_p_end_equals_P_end"] is True and local_replay["projectors_idempotent"] is True and local_replay["projectors_commute_with_q"] is True, "strict local SDR retract replay missing")
+    require(local_replay["H_alg_squared_zero"] is True and local_replay["H_alg_i_end_zero"] is True and local_replay["p_end_H_alg_zero"] is True and local_replay["H_alg_cyclicity_defects"] == 0, "strict local SDR side-condition/cyclicity replay missing")
+    local_foundations = strict_386_local_sdr["support_and_foundations"]
+    require(local_foundations["maximum_differential_order"] == 0 and local_foundations["support_local"] is True and local_foundations["finite_exact_upper_bound"] == "PRA", "strict local SDR foundational bound drift")
+    require(local_foundations["choice_operation_added"] is False and local_foundations["infinite_selection_added"] is False and local_foundations["analytic_green_theorem_used"] is False, "strict local SDR foundational boundary drift")
+    local_transport = strict_386_local_sdr["coordinate_transport_boundary"]
+    require(local_transport["split_SDR_complete"] is True and local_transport["T_A_B_canonical_shear_serialized"] is False and local_transport["unshifted_curvature_graph_SDR_snapshot_complete"] is False, "strict local SDR coordinate boundary drift")
+    require(strict_386_local_sdr["claim_flags"]["STRICT_386_REPRESENTED_GREEN_ACTIONS_SERIALIZED"] is False and strict_386_local_sdr["claim_flags"]["CLASSICAL_IMPORT_GATE_PASSED"] is False, "strict local SDR promoted Green actions or Gate A")
+    atlas_sdr = completion_atlas_v12["strict_local_sdr_component_maps"]
+    require(atlas_sdr["H_alg_nonzero_entries"] == 190 and atlas_sdr["derivative_multiindices_checked"] == 70 and atlas_sdr["homotopy_identity_defects"] == 0 and atlas_sdr["cyclicity_defects"] == 0, "completion atlas V12 omitted split local SDR")
+    require(completion_atlas_v12["claim_flags"]["strict_386_split_local_sdr_component_maps_serialized"] is True and completion_atlas_v12["claim_flags"]["strict_386_canonical_shear_component_jets_serialized"] is False, "completion atlas V12 split-SDR/shear boundary drift")
+    require(completion_atlas_v12["claim_flags"]["strict_386_represented_green_actions_serialized"] is False and completion_atlas_v12["claim_flags"]["strict_pure_weyl_classical_gate_passed"] is False and completion_atlas_v12["claim_flags"]["lorentzian_full_theory_certified"] is False, "completion atlas V12 Green/Gate/quantum boundary drift")
     require(flags["static_atlas_appendix_generated"] is True, "static atlas appendix flag is not certified")
     require(flags["complete_evidence_register_generated"] is True, "complete evidence register flag is not certified")
     require(flags["complete_literature_register_generated"] is True, "complete literature register flag is not certified")
