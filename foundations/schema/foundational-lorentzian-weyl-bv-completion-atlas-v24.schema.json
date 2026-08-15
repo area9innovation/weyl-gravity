@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/foundations/foundational-lorentzian-weyl-bv-completion-atlas-v24.schema.json",
+  "title": "Lorentzian Weyl BV completion atlas v24",
+  "type": "object",
+  "required": ["schema_version", "result_id", "predecessor", "branches", "stages", "frontier_summary", "strict_pure_weyl_q3_witness", "strict_minimal_q3_completion", "route_selection", "research_queue", "claim_flags", "does_not_establish", "provenance", "independent_checker", "human_report"],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v24"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V24"},
+    "branches": {"type": "array", "minItems": 7, "maxItems": 7},
+    "strict_minimal_q3_completion": {
+      "type": "object",
+      "required": ["classical_export_result_id", "quantum_import_result_id", "arity_three_result_id", "cyclicity_result_id", "minimal_carrier_generators", "minimal_q3_nonzero_components", "minimal_q3_zero_output_rows", "arbitrary_three_metric_inputs", "S3_input_permutations_replayed", "diagonal_witness_terms_reproduced", "diagonal_witness_q1_q3", "arity_three_channels", "arity_three_paths", "arity_three_identity_on_arbitrary_inputs", "quartic_cyclicity_mod_d", "quartic_permutation_group", "strict_386_q3_stabilized", "strict_386_authoritative_nonminimal_equivalence", "strict_386_general_lambda2_source_closed", "classical_import_gate_a_passed", "foundational_classification", "next_gate"],
+      "properties": {
+        "minimal_carrier_generators": {"const": 6}, "minimal_q3_nonzero_components": {"const": 1}, "minimal_q3_zero_output_rows": {"const": 5}, "arbitrary_three_metric_inputs": {"const": true}, "S3_input_permutations_replayed": {"const": 6}, "diagonal_witness_terms_reproduced": {"const": 41}, "diagonal_witness_q1_q3": {"const": "-75760/9"}, "arity_three_channels": {"const": 72}, "arity_three_paths": {"const": 212}, "arity_three_identity_on_arbitrary_inputs": {"const": true}, "quartic_cyclicity_mod_d": {"const": true}, "quartic_permutation_group": {"const": "S4"}, "strict_386_q3_stabilized": {"const": false}, "strict_386_authoritative_nonminimal_equivalence": {"const": false}, "strict_386_general_lambda2_source_closed": {"const": false}, "classical_import_gate_a_passed": {"const": false}
+      }
+    },
+    "route_selection": {"type": "array", "minItems": 11, "maxItems": 11},
+    "human_report": {"const": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v24.md"}
+  }
+}

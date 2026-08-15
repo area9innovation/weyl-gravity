@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/strict-pure-weyl-minimal-bv-q3-import-v1.schema.json",
+  "title": "Strict pure-Weyl minimal-BV q3 import",
+  "type": "object",
+  "required": [
+    "$schema", "schema", "schema_path", "result_id", "result_kind",
+    "result_state", "lifecycle", "created", "repository_base_commit",
+    "dependency_tags", "scope", "import_bridge", "primitive_contracts",
+    "compositional_naturality", "exact_receiver_checks",
+    "gate_advancement", "foundational_strength", "claim_flags",
+    "canonical_hashes", "provenance", "does_not_establish", "next_gate",
+    "independent_checker", "human_report"
+  ],
+  "properties": {
+    "schema": {"const": "strict-pure-weyl-minimal-bv-q3-import-v1"},
+    "result_id": {"const": "STRICT_PURE_WEYL_MINIMAL_BV_Q3_IMPORT_V1"},
+    "result_kind": {"const": "INDEPENDENT_EXACT_IMPORT_AND_EXECUTION_OF_AUTHORITATIVE_MINIMAL_BV_Q3"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {
+      "type": "object",
+      "required": ["theory", "background_class", "input", "output", "coefficient_field", "maximum_metric_jet_order", "taylor_convention", "support_rule"],
+      "properties": {
+        "coefficient_field": {"const": "Q"},
+        "maximum_metric_jet_order": {"const": 4}
+      }
+    },
+    "import_bridge": {
+      "type": "object",
+      "required": ["classical_export", "classical_parent", "accepted_parent_import", "same_carrier_q2", "source_carrier", "imported_nonzero_component", "imported_zero_output_rows", "carrier_or_convention_change", "independent_receiver", "sha256"],
+      "properties": {
+        "classical_export": {"const": "CLASSICAL_MINIMAL_BV_Q3_EXPORT_V1"},
+        "source_carrier": {"const": ["g", "xi", "omega", "g_star", "xi_star", "omega_star"]},
+        "carrier_or_convention_change": {"const": false}
+      }
+    },
+    "primitive_contracts": {"type": "array", "minItems": 10, "maxItems": 10},
+    "compositional_naturality": {
+      "type": "object",
+      "required": ["proof_kind", "domain_category", "source_bundle", "target_bundle", "derivation", "conclusion", "finite_coordinate_test_role", "status"],
+      "properties": {"status": {"const": "CERTIFIED"}}
+    },
+    "exact_receiver_checks": {
+      "type": "object",
+      "required": ["background_crosschecks", "S3_input_permutations_replayed", "S3_exact_symmetry", "seven_diagonal_polarization", "pinned_diagonal_witness", "ppwave_restriction", "signed_coordinate_permutation", "all_arithmetic_exact"],
+      "properties": {
+        "background_crosschecks": {"type": "array", "minItems": 3, "maxItems": 3},
+        "S3_input_permutations_replayed": {"const": 6},
+        "S3_exact_symmetry": {"const": true},
+        "all_arithmetic_exact": {"const": true}
+      }
+    },
+    "gate_advancement": {"type": "array", "minItems": 5, "maxItems": 5},
+    "claim_flags": {
+      "type": "object",
+      "required": ["AUTHORITATIVE_MINIMAL_BV_Q3_IMPORTED", "ARBITRARY_THREE_INPUT_METRIC_Q3_EXECUTED", "ALL_SIX_MINIMAL_Q3_OUTPUT_ROWS_IMPORTED", "GENERAL_DIFF_NATURALITY_COMPOSITIONALLY_CERTIFIED", "S3_SYMMETRY_REPLAYED", "DIAGONAL_Q3_WITNESS_REPRODUCED", "MINIMAL_BV_ARITY_THREE_IDENTITY_CERTIFIED", "MINIMAL_BV_Q3_CYCLICITY_CERTIFIED", "STRICT_386_Q3_STABILIZED", "CLASSICAL_IMPORT_GATE_PASSED", "LORENTZIAN_CAUSAL_CERTIFIED", "HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED"]
+    },
+    "does_not_establish": {"type": "array", "minItems": 6},
+    "schema_path": {"const": "quantum-weyl/classical_import/schema/strict-pure-weyl-minimal-bv-q3-import-v1.schema.json"},
+    "independent_checker": {"const": "quantum-weyl/classical_import/check_strict_pure_weyl_minimal_bv_q3_import.py"},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_PURE_WEYL_MINIMAL_BV_Q3_IMPORT_V1.md"}
+  }
+}

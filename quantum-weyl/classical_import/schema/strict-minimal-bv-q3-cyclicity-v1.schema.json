@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/strict-minimal-bv-q3-cyclicity-v1.schema.json",
+  "title": "Strict minimal-BV q3 cyclicity",
+  "type": "object",
+  "required": ["$schema", "schema", "schema_path", "result_id", "result_kind", "result_state", "lifecycle", "created", "repository_base_commit", "dependency_tags", "scope", "canonical_pairing_projection", "cyclic_four_form", "variational_proof", "convention_bridge", "gate_advancement", "foundational_strength", "claim_flags", "canonical_hashes", "provenance", "does_not_establish", "next_gate", "independent_checker", "human_report"],
+  "properties": {
+    "schema": {"const": "strict-minimal-bv-q3-cyclicity-v1"},
+    "result_id": {"const": "STRICT_MINIMAL_BV_Q3_CYCLICITY_V1"},
+    "result_kind": {"const": "INTEGRATED_LOCAL_FUNCTIONAL_QUARTIC_BV_CYCLICITY"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "canonical_pairing_projection": {"type": "object", "required": ["parent_result_id", "kind", "degree", "component_basis_dimension", "metric_entry_count", "off_diagonal_symmetric_tensor_weight", "metric_entries"]},
+    "cyclic_four_form": {"type": "object", "required": ["form_id", "definition", "component_formula", "metric_component_weights", "pairing_orientation", "variational_identification", "permutation_group", "Koszul_sign_for_all_metric_inputs", "cyclicity_defect_mod_d", "status"], "properties": {"permutation_group": {"const": "S4"}, "Koszul_sign_for_all_metric_inputs": {"const": 1}, "cyclicity_defect_mod_d": {"const": "0"}, "status": {"const": "CERTIFIED"}}},
+    "variational_proof": {"type": "object", "required": ["proof_kind", "argument", "support_domain", "result_kind_boundary", "status"], "properties": {"status": {"const": "CERTIFIED"}}},
+    "gate_advancement": {"type": "array", "minItems": 4, "maxItems": 4},
+    "does_not_establish": {"type": "array", "minItems": 6},
+    "schema_path": {"const": "quantum-weyl/classical_import/schema/strict-minimal-bv-q3-cyclicity-v1.schema.json"},
+    "independent_checker": {"const": "quantum-weyl/classical_import/check_strict_minimal_bv_q3_cyclicity.py"},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_MINIMAL_BV_Q3_CYCLICITY_V1.md"}
+  }
+}

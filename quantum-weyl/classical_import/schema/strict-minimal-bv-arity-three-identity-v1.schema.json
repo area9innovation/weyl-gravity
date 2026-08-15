@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/strict-minimal-bv-arity-three-identity-v1.schema.json",
+  "title": "Strict pure-Weyl minimal-BV arity-three identity",
+  "type": "object",
+  "required": [
+    "$schema", "schema", "schema_path", "result_id", "result_kind",
+    "result_state", "lifecycle", "created", "repository_base_commit",
+    "dependency_tags", "scope", "channel_inventory",
+    "natural_identity_families", "proof_basis", "exact_receiver",
+    "gate_advancement", "foundational_strength", "claim_flags",
+    "canonical_hashes", "provenance", "does_not_establish", "next_gate",
+    "independent_checker", "human_report"
+  ],
+  "properties": {
+    "schema": {"const": "strict-minimal-bv-arity-three-identity-v1"},
+    "result_id": {"const": "STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1"},
+    "result_kind": {"const": "EXHAUSTIVE_NATURAL_AND_EXACT_LOCAL_MINIMAL_BV_ARITY_THREE_IDENTITY"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {
+      "type": "object",
+      "required": ["theory", "background_class", "carrier", "identity", "coefficient_field", "locality", "maximum_metric_fixture_jet_order", "support_rule"],
+      "properties": {
+        "locality": {"const": "SUPPORT_LOCAL_POLYDIFFERENTIAL"},
+        "maximum_metric_fixture_jet_order": {"const": 5}
+      }
+    },
+    "channel_inventory": {
+      "type": "object",
+      "required": ["generator_count", "q1_component_count", "ordered_q2_component_count", "q3_nonzero_component_count", "channel_count", "composable_path_count", "path_kind_counts", "output_channel_counts", "type_compatible_q1_component_count", "all_type_compatible_q1_components_used", "all_ordered_q2_components_used_as_inner_or_outer", "q3_used_in_all_type_compatible_positions", "channels"],
+      "properties": {
+        "generator_count": {"const": 6},
+        "q1_component_count": {"const": 5},
+        "ordered_q2_component_count": {"const": 22},
+        "q3_nonzero_component_count": {"const": 1},
+        "channel_count": {"const": 72},
+        "composable_path_count": {"const": 212},
+        "type_compatible_q1_component_count": {"const": 4},
+        "channels": {"type": "array", "minItems": 72, "maxItems": 72}
+      }
+    },
+    "natural_identity_families": {"type": "array", "minItems": 5, "maxItems": 5},
+    "proof_basis": {
+      "type": "object",
+      "required": ["status", "identity", "argument", "legacy_finite_matrix_helper_used", "independent_receiver_role"],
+      "properties": {"status": {"const": "CERTIFIED"}}
+    },
+    "exact_receiver": {
+      "type": "object",
+      "required": ["implementation", "background", "seeds", "coordinate_jet_order", "fixture_kind", "channel_results", "all_72_channel_defects_zero", "mutation_checks", "all_mutations_detected", "fixture_sha256"],
+      "properties": {
+        "background": {"const": "minkowski"},
+        "seeds": {"const": [1, 2, 3]},
+        "channel_results": {"type": "array", "minItems": 72, "maxItems": 72},
+        "all_72_channel_defects_zero": {"const": true},
+        "mutation_checks": {"type": "array", "minItems": 3, "maxItems": 3},
+        "all_mutations_detected": {"const": true}
+      }
+    },
+    "gate_advancement": {"type": "array", "minItems": 5, "maxItems": 5},
+    "claim_flags": {
+      "type": "object",
+      "required": ["AUTHORITATIVE_MINIMAL_BV_Q3_IMPORTED", "MINIMAL_BV_ARITY_THREE_IDENTITY_CERTIFIED", "ALL_72_TYPED_CHANNELS_EXHAUSTED", "ALL_212_COMPOSABLE_PATHS_REPLAYED", "Q3_SIGN_MUTATIONS_DETECTED", "MINIMAL_BV_Q3_CYCLICITY_CERTIFIED", "STRICT_386_Q3_STABILIZED", "STRICT_386_GENERAL_LAMBDA2_SOURCE_CLOSURE_CERTIFIED", "CLASSICAL_IMPORT_GATE_PASSED", "LORENTZIAN_CAUSAL_CERTIFIED", "HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED"]
+    },
+    "does_not_establish": {"type": "array", "minItems": 6},
+    "schema_path": {"const": "quantum-weyl/classical_import/schema/strict-minimal-bv-arity-three-identity-v1.schema.json"},
+    "independent_checker": {"const": "quantum-weyl/classical_import/check_strict_minimal_bv_arity_three_identity.py"},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1.md"}
+  }
+}

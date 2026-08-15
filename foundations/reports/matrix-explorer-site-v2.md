@@ -39,19 +39,21 @@ eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
-Atlas V23 preserves the field-equation type result.  The degree-one-to-zero
+Atlas V24 preserves the field-equation type result.  The degree-one-to-zero
 Green component is an exact right inverse on Noether-compatible sources and a
 left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
 the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
 inverse route is replaced by the coefficientwise nonlinear-source test `N S_m=0`.
 At lambda squared, an exact pure-diffeomorphism fixture now proves that the
 quadratic-only source is not closed: its Weyl Noether defect is `37880/27`.
-The action-derived cubic Bach receiver now realizes that target exactly:
-`q1 q3=-75760/9`, and the complete lambda-squared source has zero q1 defect on
-the pinned witness.  This closes one exact diagonal metric-sector test, not the
-arbitrary-input full-BV q3 export.  The complete Berger q3 is a different-theory
-Weyl-plus-clock result on a fixed 54-row Berger carrier; no certified same-theory
-cyclic map authorizes its direct import into the strict pure-Weyl carrier.
+The action-derived cubic Bach receiver realizes that target exactly:
+`q1 q3=-75760/9`.  Its authoritative successor now exports the arbitrary-input
+minimal q3, replays all 72 typed arity-three channels and 212 composable paths,
+and proves S4 quartic cyclicity modulo horizontal boundary terms.  These are
+minimal-carrier results.  They do not yet provide the 386-row cyclic stabilization,
+the authoritative nonminimal theory identity, or general nonlinear source closure.
+The complete Berger q3 remains a different-theory Weyl-plus-clock result on a fixed
+54-row carrier; no certified same-theory cyclic map authorizes its direct import.
 
 The strict thirty-row endpoint is no longer a type-only match.  The Gate-V5 and
 causal-endpoint unary operators agree in all 80 multiindex tables, including all
@@ -155,7 +157,7 @@ This site does not establish:
 - unrestricted mixed-sign or arbitrary causal-difference trees from the certified polarized finite recursion
 - a Weyl-BV Maurer-Cartan or Moller map from the candidate formal fixed-point coefficients
 - analytic convergence, a convergence radius, or a nonperturbative Moller inverse from lambda-adic stabilization
-- an authoritative arbitrary-input full-BV q3 or general source closure from the exact diagonal metric witness
+- a 386-row cyclic q3 stabilization or general source closure from the completed minimal q3 package
 - a direct strict pure-Weyl import of the complete Berger-plus-clock q3
 - a no-go theorem for full Weyl gravity from the quadratic-only obstruction
 - all-order nonlinear source-cocycle closure

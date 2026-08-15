@@ -135,6 +135,11 @@ def main() -> int:
     completion_atlas_v22 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v22"]["path"]).read_text())
     strict_386_q3_witness = json.loads((ROOT / data["authorities"]["strict_386_pure_weyl_q3_witness"]["path"]).read_text())
     completion_atlas_v23 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v23"]["path"]).read_text())
+    classical_minimal_q3 = json.loads((ROOT / data["authorities"]["classical_minimal_bv_q3_export"]["path"]).read_text())
+    strict_minimal_q3 = json.loads((ROOT / data["authorities"]["strict_pure_weyl_minimal_bv_q3_import"]["path"]).read_text())
+    strict_minimal_arity3 = json.loads((ROOT / data["authorities"]["strict_minimal_bv_arity_three_identity"]["path"]).read_text())
+    strict_minimal_q3_cyclicity = json.loads((ROOT / data["authorities"]["strict_minimal_bv_q3_cyclicity"]["path"]).read_text())
+    completion_atlas_v24 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v24"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -440,6 +445,7 @@ def main() -> int:
         (48, "STRICT-WEYL-FIELD-EQUATION-GREEN-QUOTIENT-INVERSE"),
         (49, "STRICT-WEYL-QUADRATIC-TRUNCATION-Q3-NECESSITY"),
         (50, "STRICT-PURE-WEYL-CUBIC-WITNESS-CANCELLATION"),
+        (51, "STRICT-PURE-WEYL-MINIMAL-Q3-COMPLETION"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -701,8 +707,20 @@ def main() -> int:
     v23_projection = completion_atlas_v23["strict_pure_weyl_q3_witness"]
     require(v23_projection["metric_q3_term_count"] == 41 and v23_projection["lambda2_witness_source_q1_defect"] == "0" and v23_projection["authoritative_arbitrary_input_q3_imported"] is False and v23_projection["Berger_disposition"] == "NO_CERTIFIED_SAME_THEORY_CARRIER_MAP", "completion atlas V23 q3 projection drift")
     require([item["route"] for item in completion_atlas_v23["route_selection"][:3]] == ["STRICT_AUTHORITATIVE_ARBITRARY_FULL_BV_Q2_Q3_EXPORT", "STRICT_ARITY_THREE_386_CYCLIC_STABILIZATION", "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE"], "completion atlas V23 frontier ordering drift")
+    require(classical_minimal_q3["claim_flags"]["AUTHORITATIVE_MINIMAL_BV_Q3_EXPORTED"] is True and classical_minimal_q3["claim_flags"]["ALL_SIX_MINIMAL_OUTPUT_ROWS_CLASSIFIED"] is True and classical_minimal_q3["claim_flags"]["STRICT_386_NONMINIMAL_Q3_STABILIZED"] is False, "classical minimal-q3 export boundary drift")
+    minimal_checks = strict_minimal_q3["exact_receiver_checks"]
+    require(minimal_checks["S3_input_permutations_replayed"] == 6 and minimal_checks["S3_exact_symmetry"] is True and minimal_checks["seven_diagonal_polarization"]["exact_equality"] is True and minimal_checks["pinned_diagonal_witness"]["metric_output_term_count"] == 41 and minimal_checks["pinned_diagonal_witness"]["q1_q3_weyl_noether"] == "-75760/9", "minimal-q3 independent receiver drift")
+    arity_inventory = strict_minimal_arity3["channel_inventory"]
+    require(arity_inventory["channel_count"] == 72 and arity_inventory["composable_path_count"] == 212 and arity_inventory["path_kind_counts"] == {"q1_q3": 2, "q2_q2": 204, "q3_q1": 6}, "minimal arity-three channel census drift")
+    require(strict_minimal_arity3["claim_flags"]["MINIMAL_BV_ARITY_THREE_IDENTITY_CERTIFIED"] is True and strict_minimal_arity3["claim_flags"]["Q3_SIGN_MUTATIONS_DETECTED"] is True and strict_minimal_arity3["claim_flags"]["STRICT_386_Q3_STABILIZED"] is False, "minimal arity-three lifecycle boundary drift")
+    cyclic_form = strict_minimal_q3_cyclicity["cyclic_four_form"]
+    require(cyclic_form["permutation_group"] == "S4" and cyclic_form["cyclicity_defect_mod_d"] == "0" and strict_minimal_q3_cyclicity["claim_flags"]["QUARTIC_METRIC_VERTEX_S4_SYMMETRIC_MOD_D"] is True and strict_minimal_q3_cyclicity["claim_flags"]["STRICT_386_Q3_STABILIZED"] is False, "minimal q3 cyclicity boundary drift")
+    v24_q3 = completion_atlas_v24["strict_minimal_q3_completion"]
+    require(v24_q3["arbitrary_three_metric_inputs"] is True and v24_q3["arity_three_channels"] == 72 and v24_q3["arity_three_paths"] == 212 and v24_q3["quartic_permutation_group"] == "S4" and v24_q3["strict_386_q3_stabilized"] is False and v24_q3["classical_import_gate_a_passed"] is False, "completion atlas V24 minimal/386 projection drift")
+    require([item["route"] for item in completion_atlas_v24["route_selection"][:3]] == ["STRICT_ARITY_THREE_386_CYCLIC_STABILIZATION", "STRICT_NONMINIMAL_THEORY_IDENTITY", "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE"], "completion atlas V24 frontier ordering drift")
     require(flags["strict_386_field_equation_green_component_typed"] is True and flags["strict_386_field_equation_constrained_right_inverse_certified"] is True and flags["strict_386_field_equation_quotient_left_inverse_certified"] is True and flags["strict_386_ungauge_fixed_full_inverse_obstructed"] is True and flags["strict_386_q2_only_lambda2_source_obstructed"] is True and flags["strict_386_authoritative_q3_cancellation_target_exact"] is True and flags["strict_386_authoritative_q3_imported"] is False and flags["strict_386_full_weyl_lambda2_source_closure_certified"] is False and flags["strict_386_all_order_nonlinear_source_closure_certified"] is False, "typed inverse/nonlinear lifecycle firewall drift")
     require(flags["strict_pure_weyl_metric_q3_witness_derived"] is True and flags["strict_pure_weyl_q3_witness_cancellation_certified"] is True and flags["strict_386_lambda2_witness_full_source_closed"] is True and flags["strict_386_Berger_q3_direct_import_compatible"] is False and flags["strict_386_arbitrary_input_q3_certified"] is False and flags["strict_386_full_bv_arity_three_identity_certified"] is False, "paper cubic-witness authority firewall drift")
+    require(flags["strict_authoritative_minimal_q3_imported"] is True and flags["strict_minimal_full_bv_arity_three_identity_certified"] is True and flags["strict_minimal_q3_cyclicity_certified"] is True and flags["strict_386_q3_stabilized"] is False, "paper minimal-q3/386 firewall drift")
     require(flags["static_atlas_appendix_generated"] is True, "static atlas appendix flag is not certified")
     require(flags["complete_evidence_register_generated"] is True, "complete evidence register flag is not certified")
     require(flags["complete_literature_register_generated"] is True, "complete literature register flag is not certified")
@@ -1145,11 +1163,17 @@ def main() -> int:
         r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V22",
         r"STRICT_386_PURE_WEYL_Q3_WITNESS_V1",
         r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V23",
+        r"CLASSICAL_MINIMAL_BV_Q3_EXPORT_V1",
+        r"STRICT_PURE_WEYL_MINIMAL_BV_Q3_IMPORT_V1",
+        r"STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1",
+        r"STRICT_MINIMAL_BV_Q3_CYCLICITY_V1",
+        r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V24",
         r"41 exact rational",
         r"NO_CERTIFIED_SAME_THEORY_CARRIER_MAP",
-        r"STRICT_AUTHORITATIVE_ARBITRARY_FULL_BV_Q2_Q3_EXPORT",
         r"STRICT_ARITY_THREE_386_CYCLIC_STABILIZATION",
+        r"STRICT_NONMINIMAL_THEORY_IDENTITY",
         r"STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE",
+        r"all 72 typed channels and 212 composable",
         r"140 ordered-component channels",
         r"68 potentially nonzero block triples",
         r"cyclic \(L_\infty\) isomorphism",

@@ -1,0 +1,4982 @@
+{
+  "$schema": "../schema/strict-minimal-bv-arity-three-identity-v1.schema.json",
+  "schema": "strict-minimal-bv-arity-three-identity-v1",
+  "schema_path": "quantum-weyl/classical_import/schema/strict-minimal-bv-arity-three-identity-v1.schema.json",
+  "result_id": "STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1",
+  "result_kind": "EXHAUSTIVE_NATURAL_AND_EXACT_LOCAL_MINIMAL_BV_ARITY_THREE_IDENTITY",
+  "result_state": "MINIMAL_ARITY_THREE_IDENTITY_CERTIFIED_Q3_CYCLICITY_AND_386_STABILIZATION_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "0950df03e512b88436ab12212d0d9a9ac820c681",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "scope": {
+    "theory": "strict pure-Weyl minimal Diff x Weyl BV theory",
+    "background_class": "arbitrary smooth Bach-flat nondegenerate four-dimensional pseudo-Riemannian metrics",
+    "carrier": "compactly supported smooth six-generator minimal BV sections with external graded-commutative coefficients",
+    "identity": "q1 q3 + q3(q1,.,.) + graded slot permutations + sum_(2,1)-unshuffles q2(q2(.,.),.) = 0",
+    "coefficient_field": "Q for exact fixtures; tensor-natural real smooth operator semantics",
+    "locality": "SUPPORT_LOCAL_POLYDIFFERENTIAL",
+    "maximum_metric_fixture_jet_order": 5,
+    "support_rule": "each composed output is supported in the intersection of its three input supports"
+  },
+  "channel_inventory": {
+    "generator_count": 6,
+    "q1_component_count": 5,
+    "ordered_q2_component_count": 22,
+    "q3_nonzero_component_count": 1,
+    "channel_count": 72,
+    "composable_path_count": 212,
+    "path_kind_counts": {
+      "q1_q3": 2,
+      "q2_q2": 204,
+      "q3_q1": 6
+    },
+    "output_channel_counts": {
+      "c": 1,
+      "c_star": 22,
+      "h": 12,
+      "h_star": 18,
+      "omega": 3,
+      "omega_star": 16
+    },
+    "type_compatible_q1_component_count": 4,
+    "all_type_compatible_q1_components_used": true,
+    "all_ordered_q2_components_used_as_inner_or_outer": true,
+    "q3_used_in_all_type_compatible_positions": true,
+    "channels": [
+      {
+        "output": "c",
+        "inputs": [
+          "c",
+          "c",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_c_cc",
+            "inner_q2_component_id": "q2_c_cc",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_c_cc",
+            "inner_q2_component_id": "q2_c_cc",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_c_cc",
+            "inner_q2_component_id": "q2_c_cc",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "c",
+          "c",
+          "c_star"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_ccstar__forward",
+            "inner_q2_component_id": "q2_c_cc",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_ccstar__reverse",
+            "inner_q2_component_id": "q2_cstar_ccstar__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_ccstar__reverse",
+            "inner_q2_component_id": "q2_cstar_ccstar__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "c",
+          "c_star",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_ccstar__forward",
+            "inner_q2_component_id": "q2_c_cc",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_ccstar__reverse",
+            "inner_q2_component_id": "q2_cstar_ccstar__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_ccstar__reverse",
+            "inner_q2_component_id": "q2_cstar_ccstar__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "c",
+          "h",
+          "h_star"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_ch__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_ccstar__reverse",
+            "inner_q2_component_id": "q2_cstar_hhstar__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "c",
+          "h_star",
+          "h"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_ch__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_ccstar__reverse",
+            "inner_q2_component_id": "q2_cstar_hhstar__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "c",
+          "omega",
+          "omega_star"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_ccstar__reverse",
+            "inner_q2_component_id": "q2_cstar_omegaomegastar__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_omegaomegastar__forward",
+            "inner_q2_component_id": "q2_omega_comega__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_omegaomegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_comegastar__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "c",
+          "omega_star",
+          "omega"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_ccstar__reverse",
+            "inner_q2_component_id": "q2_cstar_omegaomegastar__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_omegaomegastar__forward",
+            "inner_q2_component_id": "q2_omega_comega__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_omegaomegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_comegastar__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "c_star",
+          "c",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_ccstar__forward",
+            "inner_q2_component_id": "q2_c_cc",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_ccstar__reverse",
+            "inner_q2_component_id": "q2_cstar_ccstar__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_ccstar__reverse",
+            "inner_q2_component_id": "q2_cstar_ccstar__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "h",
+          "c",
+          "h_star"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_ch__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_ccstar__reverse",
+            "inner_q2_component_id": "q2_cstar_hhstar__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "h",
+          "h",
+          "h"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_hh",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_hh",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_hh",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          },
+          {
+            "kind": "q1_q3",
+            "q1_component_id": "q1_cstar_hstar",
+            "q3_component_id": "q3_hstar_hhh",
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "h",
+          "h_star",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_ch__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_ccstar__reverse",
+            "inner_q2_component_id": "q2_cstar_hhstar__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "h",
+          "h_star",
+          "omega"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_omegah__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_omegaomegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_hhstar__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "h",
+          "omega",
+          "h_star"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_omegah__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_omegaomegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_hhstar__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "h_star",
+          "c",
+          "h"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_ch__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_ccstar__reverse",
+            "inner_q2_component_id": "q2_cstar_hhstar__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "h_star",
+          "h",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_ch__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_ccstar__reverse",
+            "inner_q2_component_id": "q2_cstar_hhstar__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "h_star",
+          "h",
+          "omega"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_omegah__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_omegaomegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_hhstar__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "h_star",
+          "omega",
+          "h"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_omegah__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_omegaomegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_hhstar__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "omega",
+          "c",
+          "omega_star"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_ccstar__reverse",
+            "inner_q2_component_id": "q2_cstar_omegaomegastar__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_omegaomegastar__forward",
+            "inner_q2_component_id": "q2_omega_comega__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_omegaomegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_comegastar__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "omega",
+          "h",
+          "h_star"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_omegah__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_omegaomegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_hhstar__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "omega",
+          "h_star",
+          "h"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_omegah__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_omegaomegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_hhstar__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "omega",
+          "omega_star",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_ccstar__reverse",
+            "inner_q2_component_id": "q2_cstar_omegaomegastar__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_omegaomegastar__forward",
+            "inner_q2_component_id": "q2_omega_comega__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_omegaomegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_comegastar__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "omega_star",
+          "c",
+          "omega"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_ccstar__reverse",
+            "inner_q2_component_id": "q2_cstar_omegaomegastar__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_omegaomegastar__forward",
+            "inner_q2_component_id": "q2_omega_comega__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_omegaomegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_comegastar__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "omega_star",
+          "omega",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_ccstar__reverse",
+            "inner_q2_component_id": "q2_cstar_omegaomegastar__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_omegaomegastar__forward",
+            "inner_q2_component_id": "q2_omega_comega__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_cstar_omegaomegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_comegastar__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "h",
+        "inputs": [
+          "c",
+          "c",
+          "h"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_ch__forward",
+            "inner_q2_component_id": "q2_c_cc",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_ch__reverse",
+            "inner_q2_component_id": "q2_h_ch__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_ch__reverse",
+            "inner_q2_component_id": "q2_h_ch__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "h",
+        "inputs": [
+          "c",
+          "h",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_ch__forward",
+            "inner_q2_component_id": "q2_c_cc",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_ch__reverse",
+            "inner_q2_component_id": "q2_h_ch__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_ch__reverse",
+            "inner_q2_component_id": "q2_h_ch__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "h",
+        "inputs": [
+          "c",
+          "h",
+          "omega"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_ch__reverse",
+            "inner_q2_component_id": "q2_h_omegah__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_omegah__forward",
+            "inner_q2_component_id": "q2_omega_comega__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_omegah__reverse",
+            "inner_q2_component_id": "q2_h_ch__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "h",
+        "inputs": [
+          "c",
+          "omega",
+          "h"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_ch__reverse",
+            "inner_q2_component_id": "q2_h_omegah__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_omegah__forward",
+            "inner_q2_component_id": "q2_omega_comega__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_omegah__reverse",
+            "inner_q2_component_id": "q2_h_ch__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "h",
+        "inputs": [
+          "h",
+          "c",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_ch__forward",
+            "inner_q2_component_id": "q2_c_cc",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_ch__reverse",
+            "inner_q2_component_id": "q2_h_ch__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_ch__reverse",
+            "inner_q2_component_id": "q2_h_ch__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "h",
+        "inputs": [
+          "h",
+          "c",
+          "omega"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_ch__reverse",
+            "inner_q2_component_id": "q2_h_omegah__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_omegah__forward",
+            "inner_q2_component_id": "q2_omega_comega__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_omegah__reverse",
+            "inner_q2_component_id": "q2_h_ch__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "h",
+        "inputs": [
+          "h",
+          "omega",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_ch__reverse",
+            "inner_q2_component_id": "q2_h_omegah__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_omegah__forward",
+            "inner_q2_component_id": "q2_omega_comega__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_omegah__reverse",
+            "inner_q2_component_id": "q2_h_ch__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "h",
+        "inputs": [
+          "h",
+          "omega",
+          "omega"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_omegah__reverse",
+            "inner_q2_component_id": "q2_h_omegah__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_omegah__reverse",
+            "inner_q2_component_id": "q2_h_omegah__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "h",
+        "inputs": [
+          "omega",
+          "c",
+          "h"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_ch__reverse",
+            "inner_q2_component_id": "q2_h_omegah__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_omegah__forward",
+            "inner_q2_component_id": "q2_omega_comega__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_omegah__reverse",
+            "inner_q2_component_id": "q2_h_ch__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "h",
+        "inputs": [
+          "omega",
+          "h",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_ch__reverse",
+            "inner_q2_component_id": "q2_h_omegah__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_omegah__forward",
+            "inner_q2_component_id": "q2_omega_comega__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_omegah__reverse",
+            "inner_q2_component_id": "q2_h_ch__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "h",
+        "inputs": [
+          "omega",
+          "h",
+          "omega"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_omegah__reverse",
+            "inner_q2_component_id": "q2_h_omegah__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_omegah__reverse",
+            "inner_q2_component_id": "q2_h_omegah__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "h",
+        "inputs": [
+          "omega",
+          "omega",
+          "h"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_omegah__reverse",
+            "inner_q2_component_id": "q2_h_omegah__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_h_omegah__reverse",
+            "inner_q2_component_id": "q2_h_omegah__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "h_star",
+        "inputs": [
+          "c",
+          "c",
+          "h_star"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_chstar__forward",
+            "inner_q2_component_id": "q2_c_cc",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "h_star",
+        "inputs": [
+          "c",
+          "h",
+          "h"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_hh",
+            "inner_q2_component_id": "q2_h_ch__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_hh",
+            "inner_q2_component_id": "q2_h_ch__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_q2_component_id": "q2_hstar_hh",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          },
+          {
+            "kind": "q3_q1",
+            "q1_component_id": "q1_h_c",
+            "q3_component_id": "q3_hstar_hhh",
+            "slot": 0,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "h_star",
+        "inputs": [
+          "c",
+          "h_star",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_chstar__forward",
+            "inner_q2_component_id": "q2_c_cc",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "h_star",
+        "inputs": [
+          "c",
+          "h_star",
+          "omega"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_omegahstar__forward",
+            "inner_q2_component_id": "q2_omega_comega__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "h_star",
+        "inputs": [
+          "c",
+          "omega",
+          "h_star"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_omegahstar__forward",
+            "inner_q2_component_id": "q2_omega_comega__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "h_star",
+        "inputs": [
+          "h",
+          "c",
+          "h"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_hh",
+            "inner_q2_component_id": "q2_h_ch__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_hh",
+            "inner_q2_component_id": "q2_h_ch__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_q2_component_id": "q2_hstar_hh",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          },
+          {
+            "kind": "q3_q1",
+            "q1_component_id": "q1_h_c",
+            "q3_component_id": "q3_hstar_hhh",
+            "slot": 1,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "h_star",
+        "inputs": [
+          "h",
+          "h",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_hh",
+            "inner_q2_component_id": "q2_h_ch__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_hh",
+            "inner_q2_component_id": "q2_h_ch__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_q2_component_id": "q2_hstar_hh",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": -1
+          },
+          {
+            "kind": "q3_q1",
+            "q1_component_id": "q1_h_c",
+            "q3_component_id": "q3_hstar_hhh",
+            "slot": 2,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "h_star",
+        "inputs": [
+          "h",
+          "h",
+          "omega"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_hh",
+            "inner_q2_component_id": "q2_h_omegah__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_hh",
+            "inner_q2_component_id": "q2_h_omegah__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_q2_component_id": "q2_hstar_hh",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": -1
+          },
+          {
+            "kind": "q3_q1",
+            "q1_component_id": "q1_h_omega",
+            "q3_component_id": "q3_hstar_hhh",
+            "slot": 2,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "h_star",
+        "inputs": [
+          "h",
+          "omega",
+          "h"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_hh",
+            "inner_q2_component_id": "q2_h_omegah__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_hh",
+            "inner_q2_component_id": "q2_h_omegah__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_q2_component_id": "q2_hstar_hh",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          },
+          {
+            "kind": "q3_q1",
+            "q1_component_id": "q1_h_omega",
+            "q3_component_id": "q3_hstar_hhh",
+            "slot": 1,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "h_star",
+        "inputs": [
+          "h_star",
+          "c",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_chstar__forward",
+            "inner_q2_component_id": "q2_c_cc",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "h_star",
+        "inputs": [
+          "h_star",
+          "c",
+          "omega"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_omegahstar__forward",
+            "inner_q2_component_id": "q2_omega_comega__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "h_star",
+        "inputs": [
+          "h_star",
+          "omega",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_omegahstar__forward",
+            "inner_q2_component_id": "q2_omega_comega__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "h_star",
+        "inputs": [
+          "h_star",
+          "omega",
+          "omega"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "h_star",
+        "inputs": [
+          "omega",
+          "c",
+          "h_star"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_omegahstar__forward",
+            "inner_q2_component_id": "q2_omega_comega__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "h_star",
+        "inputs": [
+          "omega",
+          "h",
+          "h"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_hh",
+            "inner_q2_component_id": "q2_h_omegah__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_hh",
+            "inner_q2_component_id": "q2_h_omegah__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_q2_component_id": "q2_hstar_hh",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          },
+          {
+            "kind": "q3_q1",
+            "q1_component_id": "q1_h_omega",
+            "q3_component_id": "q3_hstar_hhh",
+            "slot": 0,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "h_star",
+        "inputs": [
+          "omega",
+          "h_star",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_omegahstar__forward",
+            "inner_q2_component_id": "q2_omega_comega__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "h_star",
+        "inputs": [
+          "omega",
+          "h_star",
+          "omega"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "h_star",
+        "inputs": [
+          "omega",
+          "omega",
+          "h_star"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "omega",
+        "inputs": [
+          "c",
+          "c",
+          "omega"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omega_comega__forward",
+            "inner_q2_component_id": "q2_c_cc",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omega_comega__reverse",
+            "inner_q2_component_id": "q2_omega_comega__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omega_comega__reverse",
+            "inner_q2_component_id": "q2_omega_comega__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "omega",
+        "inputs": [
+          "c",
+          "omega",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omega_comega__forward",
+            "inner_q2_component_id": "q2_c_cc",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omega_comega__reverse",
+            "inner_q2_component_id": "q2_omega_comega__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omega_comega__reverse",
+            "inner_q2_component_id": "q2_omega_comega__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "omega",
+        "inputs": [
+          "omega",
+          "c",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omega_comega__forward",
+            "inner_q2_component_id": "q2_c_cc",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omega_comega__reverse",
+            "inner_q2_component_id": "q2_omega_comega__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omega_comega__reverse",
+            "inner_q2_component_id": "q2_omega_comega__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "omega_star",
+        "inputs": [
+          "c",
+          "c",
+          "omega_star"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_comegastar__forward",
+            "inner_q2_component_id": "q2_c_cc",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_comegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_comegastar__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_comegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_comegastar__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "omega_star",
+        "inputs": [
+          "c",
+          "h",
+          "h_star"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_ch__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_comegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_hhstar__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "omega_star",
+        "inputs": [
+          "c",
+          "h_star",
+          "h"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_ch__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_comegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_hhstar__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "omega_star",
+        "inputs": [
+          "c",
+          "omega_star",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_comegastar__forward",
+            "inner_q2_component_id": "q2_c_cc",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_comegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_comegastar__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_comegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_comegastar__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "omega_star",
+        "inputs": [
+          "h",
+          "c",
+          "h_star"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_ch__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_comegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_hhstar__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "omega_star",
+        "inputs": [
+          "h",
+          "h",
+          "h"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_hh",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_hh",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_hh",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          },
+          {
+            "kind": "q1_q3",
+            "q1_component_id": "q1_omegastar_hstar",
+            "q3_component_id": "q3_hstar_hhh",
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "omega_star",
+        "inputs": [
+          "h",
+          "h_star",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_ch__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_comegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_hhstar__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "omega_star",
+        "inputs": [
+          "h",
+          "h_star",
+          "omega"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_omegah__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "omega_star",
+        "inputs": [
+          "h",
+          "omega",
+          "h_star"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_omegah__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "omega_star",
+        "inputs": [
+          "h_star",
+          "c",
+          "h"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_ch__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_comegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_hhstar__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "omega_star",
+        "inputs": [
+          "h_star",
+          "h",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_ch__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_chstar__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_comegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_hhstar__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "omega_star",
+        "inputs": [
+          "h_star",
+          "h",
+          "omega"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_omegah__reverse",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "omega_star",
+        "inputs": [
+          "h_star",
+          "omega",
+          "h"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_omegah__forward",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": -1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "omega_star",
+        "inputs": [
+          "omega",
+          "h",
+          "h_star"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_omegah__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "omega_star",
+        "inputs": [
+          "omega",
+          "h_star",
+          "h"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__forward",
+            "inner_q2_component_id": "q2_h_omegah__forward",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_hhstar__reverse",
+            "inner_q2_component_id": "q2_hstar_omegahstar__forward",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "omega_star",
+        "inputs": [
+          "omega_star",
+          "c",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_comegastar__forward",
+            "inner_q2_component_id": "q2_c_cc",
+            "inner_positions": [
+              1,
+              2
+            ],
+            "last_position": 0,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_comegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_comegastar__reverse",
+            "inner_positions": [
+              0,
+              1
+            ],
+            "last_position": 2,
+            "multiplier": 1
+          },
+          {
+            "kind": "q2_q2",
+            "outer_q2_component_id": "q2_omegastar_comegastar__reverse",
+            "inner_q2_component_id": "q2_omegastar_comegastar__reverse",
+            "inner_positions": [
+              0,
+              2
+            ],
+            "last_position": 1,
+            "multiplier": -1
+          }
+        ]
+      }
+    ]
+  },
+  "natural_identity_families": [
+    {
+      "family": "GAUGE_ALGEBRA_AND_REPRESENTATION",
+      "channels": 64,
+      "role": "q2-q2-only Jacobi, semidirect-action and cotangent-lift identities"
+    },
+    {
+      "family": "DIFF_COVARIANCE_OF_BACH_EULER",
+      "channels": 3,
+      "role": "c,h,h permutations in the h_star row"
+    },
+    {
+      "family": "WEYL_COVARIANCE_OF_BACH_EULER",
+      "channels": 3,
+      "role": "omega,h,h permutations in the h_star row"
+    },
+    {
+      "family": "THIRD_DIFF_NOETHER_IDENTITY",
+      "channels": 1,
+      "role": "h,h,h to c_star"
+    },
+    {
+      "family": "THIRD_WEYL_TRACE_IDENTITY",
+      "channels": 1,
+      "role": "h,h,h to omega_star"
+    }
+  ],
+  "proof_basis": {
+    "status": "CERTIFIED",
+    "identity": "q1 q3 + q3(q1,.,.) + graded slot permutations + sum_(2,1)-unshuffles q2(q2(.,.),.) = 0",
+    "argument": [
+      "The authoritative classical minimal-BV vector field Q is nilpotent on its exact derived-atom calculus.",
+      "The imported q1, q2 and q3 are respectively the first, second and third Taylor coefficients of that same Q at a Bach-flat background, on the same six-generator carrier and suspended convention.",
+      "Taking the third derivative of Q(Q(z))=0 gives exactly q1 q3, three graded q3 q1 insertions, and the three (2,1)-unshuffle q2 q2 terms.",
+      "The typed enumeration exhausts all 72 nonempty channels and all 212 composable paths; no incompatible path is assigned a zero by omission.",
+      "The exact local receiver independently checks every serialized orientation, multiplier, Koszul sign, Leibniz propagation and cubic normalization on a derivative-sensitive rational five-jet fixture.",
+      "The finite fixture is a mutation-sensitive implementation regression; generality follows from the differentiated nilpotency theorem for the imported natural operators."
+    ],
+    "legacy_finite_matrix_helper_used": false,
+    "independent_receiver_role": "falsifies serialization and implementation errors but is not substituted for the arbitrary-input natural-operator proof"
+  },
+  "exact_receiver": {
+    "implementation": "quantum-weyl/classical_import/local_q1_q2_q3_receiver.py",
+    "background": "minkowski",
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "coordinate_jet_order": 5,
+    "fixture_kind": "sparse derivative-sensitive exact rational local jets",
+    "channel_results": [
+      {
+        "channel_id": "q1q2q3__c__c__c__c",
+        "output": "c",
+        "inputs": [
+          "c",
+          "c",
+          "c"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__c_star__c__c__c_star",
+        "output": "c_star",
+        "inputs": [
+          "c",
+          "c",
+          "c_star"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__c_star__c__c_star__c",
+        "output": "c_star",
+        "inputs": [
+          "c",
+          "c_star",
+          "c"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__c_star__c__h__h_star",
+        "output": "c_star",
+        "inputs": [
+          "c",
+          "h",
+          "h_star"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__c_star__c__h_star__h",
+        "output": "c_star",
+        "inputs": [
+          "c",
+          "h_star",
+          "h"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__c_star__c__omega__omega_star",
+        "output": "c_star",
+        "inputs": [
+          "c",
+          "omega",
+          "omega_star"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__c_star__c__omega_star__omega",
+        "output": "c_star",
+        "inputs": [
+          "c",
+          "omega_star",
+          "omega"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__c_star__c_star__c__c",
+        "output": "c_star",
+        "inputs": [
+          "c_star",
+          "c",
+          "c"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__c_star__h__c__h_star",
+        "output": "c_star",
+        "inputs": [
+          "h",
+          "c",
+          "h_star"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__c_star__h__h__h",
+        "output": "c_star",
+        "inputs": [
+          "h",
+          "h",
+          "h"
+        ],
+        "path_count": 4,
+        "path_kind_counts": {
+          "q1_q3": 1,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__c_star__h__h_star__c",
+        "output": "c_star",
+        "inputs": [
+          "h",
+          "h_star",
+          "c"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__c_star__h__h_star__omega",
+        "output": "c_star",
+        "inputs": [
+          "h",
+          "h_star",
+          "omega"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__c_star__h__omega__h_star",
+        "output": "c_star",
+        "inputs": [
+          "h",
+          "omega",
+          "h_star"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__c_star__h_star__c__h",
+        "output": "c_star",
+        "inputs": [
+          "h_star",
+          "c",
+          "h"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__c_star__h_star__h__c",
+        "output": "c_star",
+        "inputs": [
+          "h_star",
+          "h",
+          "c"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__c_star__h_star__h__omega",
+        "output": "c_star",
+        "inputs": [
+          "h_star",
+          "h",
+          "omega"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__c_star__h_star__omega__h",
+        "output": "c_star",
+        "inputs": [
+          "h_star",
+          "omega",
+          "h"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__c_star__omega__c__omega_star",
+        "output": "c_star",
+        "inputs": [
+          "omega",
+          "c",
+          "omega_star"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__c_star__omega__h__h_star",
+        "output": "c_star",
+        "inputs": [
+          "omega",
+          "h",
+          "h_star"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__c_star__omega__h_star__h",
+        "output": "c_star",
+        "inputs": [
+          "omega",
+          "h_star",
+          "h"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__c_star__omega__omega_star__c",
+        "output": "c_star",
+        "inputs": [
+          "omega",
+          "omega_star",
+          "c"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__c_star__omega_star__c__omega",
+        "output": "c_star",
+        "inputs": [
+          "omega_star",
+          "c",
+          "omega"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__c_star__omega_star__omega__c",
+        "output": "c_star",
+        "inputs": [
+          "omega_star",
+          "omega",
+          "c"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h__c__c__h",
+        "output": "h",
+        "inputs": [
+          "c",
+          "c",
+          "h"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h__c__h__c",
+        "output": "h",
+        "inputs": [
+          "c",
+          "h",
+          "c"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h__c__h__omega",
+        "output": "h",
+        "inputs": [
+          "c",
+          "h",
+          "omega"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h__c__omega__h",
+        "output": "h",
+        "inputs": [
+          "c",
+          "omega",
+          "h"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h__h__c__c",
+        "output": "h",
+        "inputs": [
+          "h",
+          "c",
+          "c"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h__h__c__omega",
+        "output": "h",
+        "inputs": [
+          "h",
+          "c",
+          "omega"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h__h__omega__c",
+        "output": "h",
+        "inputs": [
+          "h",
+          "omega",
+          "c"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h__h__omega__omega",
+        "output": "h",
+        "inputs": [
+          "h",
+          "omega",
+          "omega"
+        ],
+        "path_count": 2,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 2,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h__omega__c__h",
+        "output": "h",
+        "inputs": [
+          "omega",
+          "c",
+          "h"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h__omega__h__c",
+        "output": "h",
+        "inputs": [
+          "omega",
+          "h",
+          "c"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h__omega__h__omega",
+        "output": "h",
+        "inputs": [
+          "omega",
+          "h",
+          "omega"
+        ],
+        "path_count": 2,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 2,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h__omega__omega__h",
+        "output": "h",
+        "inputs": [
+          "omega",
+          "omega",
+          "h"
+        ],
+        "path_count": 2,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 2,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h_star__c__c__h_star",
+        "output": "h_star",
+        "inputs": [
+          "c",
+          "c",
+          "h_star"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h_star__c__h__h",
+        "output": "h_star",
+        "inputs": [
+          "c",
+          "h",
+          "h"
+        ],
+        "path_count": 4,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 1
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h_star__c__h_star__c",
+        "output": "h_star",
+        "inputs": [
+          "c",
+          "h_star",
+          "c"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h_star__c__h_star__omega",
+        "output": "h_star",
+        "inputs": [
+          "c",
+          "h_star",
+          "omega"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h_star__c__omega__h_star",
+        "output": "h_star",
+        "inputs": [
+          "c",
+          "omega",
+          "h_star"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h_star__h__c__h",
+        "output": "h_star",
+        "inputs": [
+          "h",
+          "c",
+          "h"
+        ],
+        "path_count": 4,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 1
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h_star__h__h__c",
+        "output": "h_star",
+        "inputs": [
+          "h",
+          "h",
+          "c"
+        ],
+        "path_count": 4,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 1
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h_star__h__h__omega",
+        "output": "h_star",
+        "inputs": [
+          "h",
+          "h",
+          "omega"
+        ],
+        "path_count": 4,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 1
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h_star__h__omega__h",
+        "output": "h_star",
+        "inputs": [
+          "h",
+          "omega",
+          "h"
+        ],
+        "path_count": 4,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 1
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h_star__h_star__c__c",
+        "output": "h_star",
+        "inputs": [
+          "h_star",
+          "c",
+          "c"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h_star__h_star__c__omega",
+        "output": "h_star",
+        "inputs": [
+          "h_star",
+          "c",
+          "omega"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h_star__h_star__omega__c",
+        "output": "h_star",
+        "inputs": [
+          "h_star",
+          "omega",
+          "c"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h_star__h_star__omega__omega",
+        "output": "h_star",
+        "inputs": [
+          "h_star",
+          "omega",
+          "omega"
+        ],
+        "path_count": 2,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 2,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h_star__omega__c__h_star",
+        "output": "h_star",
+        "inputs": [
+          "omega",
+          "c",
+          "h_star"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h_star__omega__h__h",
+        "output": "h_star",
+        "inputs": [
+          "omega",
+          "h",
+          "h"
+        ],
+        "path_count": 4,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 1
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h_star__omega__h_star__c",
+        "output": "h_star",
+        "inputs": [
+          "omega",
+          "h_star",
+          "c"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h_star__omega__h_star__omega",
+        "output": "h_star",
+        "inputs": [
+          "omega",
+          "h_star",
+          "omega"
+        ],
+        "path_count": 2,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 2,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__h_star__omega__omega__h_star",
+        "output": "h_star",
+        "inputs": [
+          "omega",
+          "omega",
+          "h_star"
+        ],
+        "path_count": 2,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 2,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__omega__c__c__omega",
+        "output": "omega",
+        "inputs": [
+          "c",
+          "c",
+          "omega"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__omega__c__omega__c",
+        "output": "omega",
+        "inputs": [
+          "c",
+          "omega",
+          "c"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__omega__omega__c__c",
+        "output": "omega",
+        "inputs": [
+          "omega",
+          "c",
+          "c"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__omega_star__c__c__omega_star",
+        "output": "omega_star",
+        "inputs": [
+          "c",
+          "c",
+          "omega_star"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__omega_star__c__h__h_star",
+        "output": "omega_star",
+        "inputs": [
+          "c",
+          "h",
+          "h_star"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__omega_star__c__h_star__h",
+        "output": "omega_star",
+        "inputs": [
+          "c",
+          "h_star",
+          "h"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__omega_star__c__omega_star__c",
+        "output": "omega_star",
+        "inputs": [
+          "c",
+          "omega_star",
+          "c"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__omega_star__h__c__h_star",
+        "output": "omega_star",
+        "inputs": [
+          "h",
+          "c",
+          "h_star"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__omega_star__h__h__h",
+        "output": "omega_star",
+        "inputs": [
+          "h",
+          "h",
+          "h"
+        ],
+        "path_count": 4,
+        "path_kind_counts": {
+          "q1_q3": 1,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__omega_star__h__h_star__c",
+        "output": "omega_star",
+        "inputs": [
+          "h",
+          "h_star",
+          "c"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__omega_star__h__h_star__omega",
+        "output": "omega_star",
+        "inputs": [
+          "h",
+          "h_star",
+          "omega"
+        ],
+        "path_count": 2,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 2,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__omega_star__h__omega__h_star",
+        "output": "omega_star",
+        "inputs": [
+          "h",
+          "omega",
+          "h_star"
+        ],
+        "path_count": 2,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 2,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__omega_star__h_star__c__h",
+        "output": "omega_star",
+        "inputs": [
+          "h_star",
+          "c",
+          "h"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__omega_star__h_star__h__c",
+        "output": "omega_star",
+        "inputs": [
+          "h_star",
+          "h",
+          "c"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__omega_star__h_star__h__omega",
+        "output": "omega_star",
+        "inputs": [
+          "h_star",
+          "h",
+          "omega"
+        ],
+        "path_count": 2,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 2,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__omega_star__h_star__omega__h",
+        "output": "omega_star",
+        "inputs": [
+          "h_star",
+          "omega",
+          "h"
+        ],
+        "path_count": 2,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 2,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__omega_star__omega__h__h_star",
+        "output": "omega_star",
+        "inputs": [
+          "omega",
+          "h",
+          "h_star"
+        ],
+        "path_count": 2,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 2,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__omega_star__omega__h_star__h",
+        "output": "omega_star",
+        "inputs": [
+          "omega",
+          "h_star",
+          "h"
+        ],
+        "path_count": 2,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 2,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0"
+        ],
+        "defect_zero": true
+      },
+      {
+        "channel_id": "q1q2q3__omega_star__omega_star__c__c",
+        "output": "omega_star",
+        "inputs": [
+          "omega_star",
+          "c",
+          "c"
+        ],
+        "path_count": 3,
+        "path_kind_counts": {
+          "q1_q3": 0,
+          "q2_q2": 3,
+          "q3_q1": 0
+        },
+        "defect": [
+          "0"
+        ],
+        "defect_zero": true
+      }
+    ],
+    "all_72_channel_defects_zero": true,
+    "mutation_checks": [
+      {
+        "channel_id": "q1q2q3__omega_star__h__h__h",
+        "mutated_path_kind": "q1_q3",
+        "mutation": "selected multiplier increased by one",
+        "nonzero_defect": [
+          "2921/18"
+        ],
+        "detected": true
+      },
+      {
+        "channel_id": "q1q2q3__h_star__c__h__h",
+        "mutated_path_kind": "q3_q1",
+        "mutation": "selected multiplier increased by one",
+        "nonzero_defect": [
+          "-1559/54",
+          "14237/108",
+          "-467/18",
+          "133/4",
+          "-337/27",
+          "-59/6",
+          "1031/36",
+          "-394/27",
+          "-661/54",
+          "100/27"
+        ],
+        "detected": true
+      },
+      {
+        "channel_id": "q1q2q3__c__c__c__c",
+        "mutated_path_kind": "q2_q2",
+        "mutation": "selected multiplier increased by one",
+        "nonzero_defect": [
+          "-2/3",
+          "0",
+          "0",
+          "0"
+        ],
+        "detected": true
+      }
+    ],
+    "all_mutations_detected": true,
+    "fixture_sha256": "e840a89c04e7c035ca3c76aa0a7453af58925bcb92a87be9ebff9f1ed26e4941"
+  },
+  "gate_advancement": [
+    {
+      "gate": "AUTHORITATIVE_MINIMAL_Q3_IMPORT",
+      "status": "PASS"
+    },
+    {
+      "gate": "MINIMAL_ARITY_THREE_Q_SQUARED",
+      "status": "PASS"
+    },
+    {
+      "gate": "MINIMAL_Q3_CYCLICITY",
+      "status": "OPEN"
+    },
+    {
+      "gate": "STRICT_386_CYCLIC_STABILIZATION",
+      "status": "OPEN"
+    },
+    {
+      "gate": "GENERAL_LAMBDA2_SOURCE_CLOSURE_ON_386",
+      "status": "OPEN"
+    }
+  ],
+  "foundational_strength": {
+    "classification": "FINITE_EXACT_RECEIVER_PLUS_SMOOTH_NATURAL_TAYLOR_THEOREM",
+    "finite_layer": "The carrier types, 72 channels, 212 paths, rational fixture defects and three mutation witnesses are finite exact data.",
+    "general_layer": "The arbitrary-input conclusion uses formal differentiation of a smooth support-local natural BV vector field and its certified nilpotency.",
+    "choice_operation_added": false,
+    "Hilbert_completion_used": false,
+    "Green_operator_used": false,
+    "dependency_boundary": "LOCAL-ALGEBRAIC"
+  },
+  "claim_flags": {
+    "AUTHORITATIVE_MINIMAL_BV_Q3_IMPORTED": true,
+    "MINIMAL_BV_ARITY_THREE_IDENTITY_CERTIFIED": true,
+    "ALL_72_TYPED_CHANNELS_EXHAUSTED": true,
+    "ALL_212_COMPOSABLE_PATHS_REPLAYED": true,
+    "Q3_SIGN_MUTATIONS_DETECTED": true,
+    "MINIMAL_BV_Q3_CYCLICITY_CERTIFIED": false,
+    "STRICT_386_Q3_STABILIZED": false,
+    "STRICT_386_GENERAL_LAMBDA2_SOURCE_CLOSURE_CERTIFIED": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "LORENTZIAN_CAUSAL_CERTIFIED": false,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "QME_RESTORED": false
+  },
+  "canonical_hashes": {
+    "channel_inventory_sha256": "e354260259501f41a2d0c2cdbc953ee162c6e6902d3257d7226526ef2db313f4",
+    "natural_identity_families_sha256": "381707255c444887582318eddf539cb5cd1b931c40937f3831fb599b326ce245",
+    "proof_basis_sha256": "162a3069e683db18b7bf78d6ab72c1c1f8024a4c964c7ec4d9afd5ad6d62583f",
+    "exact_receiver_sha256": "7e0a472bd5ca27b8f2604e558ae6de1c1404016ca297fd19cbd64c8ba1f13f93",
+    "gate_advancement_sha256": "926b41c9dd7ad5b78e73418cf3b2fbd2ba11b84e0f10dcd06a78edf2cf3911f4",
+    "foundational_strength_sha256": "ed7e2b14983fddd2766cee535e94503f788314605139799eba55567979592a73"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_PORTABLE_LOCAL_Q1_AST_V1.json",
+        "result_id": "STRICT_PORTABLE_LOCAL_Q1_AST_V1",
+        "sha256": "bcd78cf73f494517304f1ae5aedffa48036443a9c45566a94b3ed972de83b338",
+        "role": "complete portable local q1"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1.json",
+        "result_id": "STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1",
+        "sha256": "513b43a90a936e1837947078e8f72da772f37461996b0b27b7df938ab355fbb3",
+        "role": "complete ordered six-row q2"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_PURE_WEYL_MINIMAL_BV_Q3_IMPORT_V1.json",
+        "result_id": "STRICT_PURE_WEYL_MINIMAL_BV_Q3_IMPORT_V1",
+        "sha256": "358268300bc11670e24a0dd849b82f482f63f23efa33fcb4a47d11dd5bde7afb",
+        "role": "independently imported arbitrary-input minimal q3"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_MINIMAL_BV_Q3_EXPORT_V1.json",
+        "result_id": "CLASSICAL_MINIMAL_BV_Q3_EXPORT_V1",
+        "sha256": "eb217d49cde1e998bec352bc82cd67b80243d849fcdcacbfb33dabbb7837eda3",
+        "role": "authoritative action-derived q3 source"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2.json",
+        "result_id": "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2",
+        "sha256": "3fa276bd04fce3b0142e910e907cab3ad3e4d39bbd60b966de90fa11860c03dc",
+        "role": "authoritative nilpotent minimal BV vector field"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_LOCAL_Q1_Q2_IDENTITY_V1.json",
+        "result_id": "STRICT_LOCAL_Q1_Q2_IDENTITY_V1",
+        "sha256": "8300dddd6120632958a307e1924f27fb4e24ae6802e3163a825bd1dce54de738",
+        "role": "same-carrier arity-two identity and local receiver conventions"
+      }
+    ],
+    "implementation": {
+      "path": "quantum-weyl/classical_import/local_q1_q2_q3_receiver.py",
+      "sha256": "9c68de3981150aac2eb795d5cb032beed2d054da7f2afd75e0b0b61408fc5465"
+    }
+  },
+  "does_not_establish": [
+    "quartic cyclicity of q3 under the canonical receiver pairing and suspension signs",
+    "a source-certified cyclic stabilization or L-infinity morphism from the six-row minimal carrier to all 386 graph rows",
+    "the complete 386-row arity-three identity or general lambda-squared source closure on that carrier",
+    "compatibility or estimates for q3 under a retarded or advanced Green homotopy",
+    "an analytic Moller map or all-order nonlinear fixed point",
+    "a Hadamard state, renormalized Lorentzian time-ordered products, QME restoration, residual transfer, or a Lorentzian quantum theory"
+  ],
+  "next_gate": "Replay q3 quartic cyclicity with the canonical minimal BV pairing, then transport q1, q2, q3 and the pairing through one explicit cyclic stabilization to all 386 rows before claiming general nonlinear source closure.",
+  "independent_checker": "quantum-weyl/classical_import/check_strict_minimal_bv_arity_three_identity.py",
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1.md"
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/classical-minimal-bv-q3-export-v1.schema.json",
+  "title": "Classical pure-Weyl minimal-BV q3 export",
+  "type": "object",
+  "required": [
+    "$schema", "schema", "result_id", "result_kind", "result_state",
+    "lifecycle", "created", "dependency_tags", "scope",
+    "natural_operator_ast", "master_action_degree_ledger",
+    "minimal_q3_support", "authority_chain", "claim_flags",
+    "canonical_hashes", "provenance", "does_not_establish", "next_gate",
+    "human_report"
+  ],
+  "properties": {
+    "schema": {"const": "classical-minimal-bv-q3-export-v1"},
+    "result_id": {"const": "CLASSICAL_MINIMAL_BV_Q3_EXPORT_V1"},
+    "result_kind": {"const": "AUTHORITATIVE_ACTION_DERIVED_MINIMAL_BV_ARITY_THREE_EXPORT"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {
+      "type": "object",
+      "required": ["theory", "background_class", "carrier_dimension", "coefficient_field", "taylor_convention", "action_normalization"],
+      "properties": {
+        "carrier_dimension": {"const": 6},
+        "coefficient_field": {"const": "Q"}
+      }
+    },
+    "natural_operator_ast": {
+      "type": "object",
+      "required": ["schema", "expression_schema_version", "spacetime_dimension", "coefficient_field", "nodes", "root_node", "canonical_node_sha256"],
+      "properties": {
+        "schema": {"const": "pure-weyl-minimal-bv-q3-natural-operator-ast-v1"},
+        "spacetime_dimension": {"const": 4},
+        "coefficient_field": {"const": "Q"},
+        "nodes": {"type": "array", "minItems": 10, "maxItems": 10},
+        "root_node": {"const": "q3_hstar_hhh"}
+      }
+    },
+    "master_action_degree_ledger": {"type": "array", "minItems": 4, "maxItems": 4},
+    "minimal_q3_support": {
+      "type": "object",
+      "required": ["carrier", "rows", "nonzero_row_count", "nonzero_ordered_component_count", "graded_symmetry", "support_rule", "maximum_metric_jet_order", "sha256"],
+      "properties": {
+        "rows": {"type": "array", "minItems": 6, "maxItems": 6},
+        "nonzero_row_count": {"const": 1},
+        "nonzero_ordered_component_count": {"const": 1},
+        "maximum_metric_jet_order": {"const": 4}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["AUTHORITATIVE_MINIMAL_BV_Q3_EXPORTED", "ARBITRARY_THREE_METRIC_INPUTS_DECLARED", "ALL_SIX_MINIMAL_OUTPUT_ROWS_CLASSIFIED", "SUPPORT_LOCALITY_DECLARED", "EXACT_COMPONENT_RECEIVER_REPLAYED", "ARITY_THREE_Q_SQUARED_IDENTITY_REPLAYED", "CYCLIC_QUARTIC_VERTEX_REPLAYED", "STRICT_386_NONMINIMAL_Q3_STABILIZED", "LORENTZIAN_CAUSAL_CERTIFIED", "QME_RESTORED"]
+    },
+    "does_not_establish": {"type": "array", "minItems": 6},
+    "human_report": {"const": "d_quotient_classical/reports/classical-minimal-bv-q3-export-v1.md"}
+  }
+}

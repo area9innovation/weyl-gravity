@@ -1,0 +1,324 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "classical-minimal-bv-q3-export-v1",
+  "result_id": "CLASSICAL_MINIMAL_BV_Q3_EXPORT_V1",
+  "result_kind": "AUTHORITATIVE_ACTION_DERIVED_MINIMAL_BV_ARITY_THREE_EXPORT",
+  "result_state": "MINIMAL_BV_Q3_EXPORTED_ARITY_THREE_REPLAY_AND_NONMINIMAL_STABILIZATION_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "scope": {
+    "theory": "four-dimensional strict pure-Weyl minimal BV theory",
+    "background_class": "arbitrary smooth Bach-flat nondegenerate pseudo-Riemannian backgrounds for the pointed Taylor complex",
+    "carrier_dimension": 6,
+    "coefficient_field": "Q",
+    "taylor_convention": "suspended graded-symmetric factorial convention; q3 is the third Frechet derivative",
+    "action_normalization": "E_g^{mu nu}:=delta S/delta g_{mu nu}=-2 sqrt(abs(g)) B^{mu nu}"
+  },
+  "natural_operator_ast": {
+    "schema": "pure-weyl-minimal-bv-q3-natural-operator-ast-v1",
+    "expression_schema_version": "canonical-natural-metric-operator-v1",
+    "spacetime_dimension": 4,
+    "coefficient_field": "Q",
+    "nodes": [
+      {
+        "node_id": "g_abc",
+        "operation": "metric_three_parameter_family",
+        "inputs": [],
+        "parameters": {
+          "base": "gbar",
+          "directions": [
+            "h1",
+            "h2",
+            "h3"
+          ],
+          "formal_parameters": [
+            "a",
+            "b",
+            "c"
+          ]
+        },
+        "declared_output_type": "symmetric_covariant_2",
+        "declared_metric_jet_order": 0
+      },
+      {
+        "node_id": "g_inverse",
+        "operation": "inverse_metric",
+        "inputs": [
+          "g_abc"
+        ],
+        "parameters": {},
+        "declared_output_type": "symmetric_contravariant_2",
+        "declared_metric_jet_order": 0
+      },
+      {
+        "node_id": "geometry",
+        "operation": "levi_civita_geometry",
+        "inputs": [
+          "g_abc",
+          "g_inverse"
+        ],
+        "parameters": {
+          "curvature_sign": "R^a_bcd=partial_c Gamma^a_db-partial_d Gamma^a_cb+Gamma^e_db Gamma^a_ce-Gamma^e_cb Gamma^a_de"
+        },
+        "declared_output_type": "levi_civita_geometry_bundle",
+        "declared_metric_jet_order": 2
+      },
+      {
+        "node_id": "P_and_C",
+        "operation": "schouten_and_weyl_4d",
+        "inputs": [
+          "geometry"
+        ],
+        "parameters": {
+          "schouten": "P_ab=(Ric_ab-(R/6)g_ab)/2",
+          "weyl": "C_abcd=R_abcd-(g_ac P_db-g_ad P_cb-g_bc P_da+g_bd P_ca)"
+        },
+        "declared_output_type": "schouten_cov2_and_weyl_cov4_bundle",
+        "declared_metric_jet_order": 2
+      },
+      {
+        "node_id": "Cotton",
+        "operation": "cotton_4d",
+        "inputs": [
+          "geometry",
+          "P_and_C"
+        ],
+        "parameters": {
+          "formula": "A_cab=nabla_c P_ab-nabla_a P_bc"
+        },
+        "declared_output_type": "cotton_covariant_3",
+        "declared_metric_jet_order": 3
+      },
+      {
+        "node_id": "B_lower",
+        "operation": "bach_4d",
+        "inputs": [
+          "geometry",
+          "P_and_C",
+          "Cotton"
+        ],
+        "parameters": {
+          "formula": "B_ab=nabla^c A_cab+P^cd C_acbd"
+        },
+        "declared_output_type": "symmetric_covariant_2",
+        "declared_metric_jet_order": 4
+      },
+      {
+        "node_id": "B_upper",
+        "operation": "raise_symmetric_two_tensor",
+        "inputs": [
+          "g_inverse",
+          "B_lower"
+        ],
+        "parameters": {
+          "formula": "B^ab=g^ac g^bd B_cd"
+        },
+        "declared_output_type": "symmetric_contravariant_2",
+        "declared_metric_jet_order": 4
+      },
+      {
+        "node_id": "volume",
+        "operation": "absolute_metric_volume_density",
+        "inputs": [
+          "g_abc"
+        ],
+        "parameters": {
+          "formula": "sqrt(abs(det(g)))"
+        },
+        "declared_output_type": "absolute_metric_density_weight_plus_1",
+        "declared_metric_jet_order": 0
+      },
+      {
+        "node_id": "E_g",
+        "operation": "densitize_and_scale",
+        "inputs": [
+          "volume",
+          "B_upper"
+        ],
+        "parameters": {
+          "coefficient": -2,
+          "formula": "E^ab=-2 sqrt(abs(g)) B^ab"
+        },
+        "declared_output_type": "symmetric_contravariant_density_weight_plus_1",
+        "declared_metric_jet_order": 4
+      },
+      {
+        "node_id": "q3_hstar_hhh",
+        "operation": "mixed_third_frechet_coefficient",
+        "inputs": [
+          "E_g"
+        ],
+        "parameters": {
+          "coefficient": "[a*b*c]",
+          "directions": [
+            "h1",
+            "h2",
+            "h3"
+          ],
+          "hidden_factorial": false,
+          "diagonal_relation": "D3E(h,h,h)=6*[t^3]E(g+t h)"
+        },
+        "declared_output_type": "symmetric_trilinear_metric_jet_operator_to_symmetric_contravariant_density_weight_plus_1",
+        "declared_metric_jet_order": 4
+      }
+    ],
+    "root_node": "q3_hstar_hhh",
+    "canonical_node_sha256": "7368b30b97b8765eda06a94bd5a60d0a8541f7c6fe10b97e7ac8ba385c455f0e"
+  },
+  "master_action_degree_ledger": [
+    {
+      "master_action_summand": "S=-integral sqrt(abs(g)) C_{mu nu rho sigma} C^{mu nu rho sigma}",
+      "hamiltonian_Q_rows": [
+        "g_star"
+      ],
+      "maximum_Q_taylor_arity": "unbounded",
+      "q3_contribution": "D^3 E_g(h1,h2,h3)",
+      "reason": "the non-polynomial metric Euler map is the metric derivative of the pure-Weyl action"
+    },
+    {
+      "master_action_summand": "integral g_star^{mu nu}(L_xi g_{mu nu}+2 omega g_{mu nu})",
+      "hamiltonian_Q_rows": [
+        "g",
+        "g_star",
+        "xi_star",
+        "omega_star"
+      ],
+      "maximum_Q_taylor_arity": 2,
+      "q3_contribution": "ZERO",
+      "reason": "the summand is cubic in BV coordinates, so one Hamiltonian derivative is at most quadratic"
+    },
+    {
+      "master_action_summand": "integral xi_star_mu xi^nu partial_nu xi^mu",
+      "hamiltonian_Q_rows": [
+        "xi",
+        "xi_star"
+      ],
+      "maximum_Q_taylor_arity": 2,
+      "q3_contribution": "ZERO",
+      "reason": "the summand is cubic in BV coordinates, so one Hamiltonian derivative is at most quadratic"
+    },
+    {
+      "master_action_summand": "integral omega_star xi^nu partial_nu omega",
+      "hamiltonian_Q_rows": [
+        "omega",
+        "xi_star",
+        "omega_star"
+      ],
+      "maximum_Q_taylor_arity": 2,
+      "q3_contribution": "ZERO",
+      "reason": "the summand is cubic in BV coordinates, so one Hamiltonian derivative is at most quadratic"
+    }
+  ],
+  "minimal_q3_support": {
+    "carrier": "six-generator minimal BV carrier",
+    "rows": [
+      {
+        "output_generator": "g",
+        "q3_status": "IDENTICALLY_ZERO_BY_MASTER_ACTION_DEGREE",
+        "accepted_input_generators": [],
+        "operator_root": null
+      },
+      {
+        "output_generator": "xi",
+        "q3_status": "IDENTICALLY_ZERO_BY_MASTER_ACTION_DEGREE",
+        "accepted_input_generators": [],
+        "operator_root": null
+      },
+      {
+        "output_generator": "omega",
+        "q3_status": "IDENTICALLY_ZERO_BY_MASTER_ACTION_DEGREE",
+        "accepted_input_generators": [],
+        "operator_root": null
+      },
+      {
+        "output_generator": "g_star",
+        "q3_status": "NONZERO_NATURAL_OPERATOR",
+        "accepted_input_generators": [
+          "g",
+          "g",
+          "g"
+        ],
+        "operator_root": "q3_hstar_hhh"
+      },
+      {
+        "output_generator": "xi_star",
+        "q3_status": "IDENTICALLY_ZERO_BY_MASTER_ACTION_DEGREE",
+        "accepted_input_generators": [],
+        "operator_root": null
+      },
+      {
+        "output_generator": "omega_star",
+        "q3_status": "IDENTICALLY_ZERO_BY_MASTER_ACTION_DEGREE",
+        "accepted_input_generators": [],
+        "operator_root": null
+      }
+    ],
+    "nonzero_row_count": 1,
+    "nonzero_ordered_component_count": 1,
+    "graded_symmetry": "ordinary S3 symmetry because all three metric inputs are even",
+    "support_rule": "support q3(h1,h2,h3) is contained in support(h1) intersect support(h2) intersect support(h3)",
+    "maximum_metric_jet_order": 4,
+    "sha256": "31ad35670d4ca4f377e52a02c6d1fd332bdb88ae97cee13d25c860d33f798cec"
+  },
+  "authority_chain": {
+    "source_action": "PURE_WEYL_ACTION_NORMALIZATION_V2",
+    "source_minimal_bv_export": "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2",
+    "source_Q_squared_zero_status": "VERIFIED",
+    "derivation": [
+      "Take the BV Hamiltonian vector field of the pinned minimal master action.",
+      "Taylor-expand that same Q at a Bach-flat background without changing carrier or conventions.",
+      "Every master-action term containing antifields is cubic, hence contributes at most q2 after one Hamiltonian derivative.",
+      "The unique q3 component is the third Frechet derivative of the action-normalized metric Euler density."
+    ],
+    "not_a_competing_BV_complex": true
+  },
+  "claim_flags": {
+    "AUTHORITATIVE_MINIMAL_BV_Q3_EXPORTED": true,
+    "ARBITRARY_THREE_METRIC_INPUTS_DECLARED": true,
+    "ALL_SIX_MINIMAL_OUTPUT_ROWS_CLASSIFIED": true,
+    "SUPPORT_LOCALITY_DECLARED": true,
+    "EXACT_COMPONENT_RECEIVER_REPLAYED": false,
+    "ARITY_THREE_Q_SQUARED_IDENTITY_REPLAYED": false,
+    "CYCLIC_QUARTIC_VERTEX_REPLAYED": false,
+    "STRICT_386_NONMINIMAL_Q3_STABILIZED": false,
+    "LORENTZIAN_CAUSAL_CERTIFIED": false,
+    "QME_RESTORED": false
+  },
+  "canonical_hashes": {
+    "natural_operator_ast_sha256": "7f4b0f43d621356cd1c2c0afb486cab29bb8411ef1c3d8b7ec45cbc2deea38e4",
+    "master_action_degree_ledger_sha256": "91becc124de0d4581f98b8077f6057472a47e44855ff69e6f61a8153de70338f",
+    "minimal_q3_support_sha256": "075fbf3a3cfeb55b01e4ce5eaac925ff939bfebab5e40f25446d9a06a6aeccd5",
+    "authority_chain_sha256": "f37d370dd49411e6d0b4ba021acc47a3588d0a67ca7b9de7f920ca4d843638a1"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2.json",
+        "result_id": "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2",
+        "sha256": "3fa276bd04fce3b0142e910e907cab3ad3e4d39bbd60b966de90fa11860c03dc"
+      },
+      {
+        "path": "d_quotient_classical/minimal_bv_antifield/foundation/action_normalization.json",
+        "result_id": "PURE_WEYL_ACTION_NORMALIZATION_V2",
+        "sha256": "1d0db9cd5a408e4fb9e745856da8a884ea600ab27ab90539d30252b7c226e48f"
+      }
+    ],
+    "producer": {
+      "path": "d_quotient_classical/minimal_bv_antifield/classical_minimal_bv_q3_export_v1.py",
+      "sha256": "30fbbca5168a1af607613375f4f2e4d4beff4b13689019d22e8d463e548cacf9"
+    }
+  },
+  "does_not_establish": [
+    "an independent exact component execution of the natural-operator AST",
+    "the coefficientwise arity-three identity q1 q3 plus q2 q2 plus q3 q1 equals zero",
+    "quartic BV cyclicity in the quantum receiver convention",
+    "a cyclic stabilization or L-infinity equivalence on the 386-row nonminimal carrier",
+    "causal compatibility of q3 with a Green homotopy",
+    "a Hadamard state, renormalized time-ordered products, QME restoration, or a Lorentzian quantum theory"
+  ],
+  "next_gate": "Independently execute this AST on arbitrary three-input jets, reproduce the diagonal cubic witness, then replay the complete minimal arity-three identity before stabilizing it to 386 rows.",
+  "human_report": "d_quotient_classical/reports/classical-minimal-bv-q3-export-v1.md"
+}

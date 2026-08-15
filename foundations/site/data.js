@@ -18030,24 +18030,24 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "completion_atlas": {
-    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v23",
-    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V23",
+    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v24",
+    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V24",
     "result_kind": "BRANCH_BY_STAGE_COMPLETION_ATLAS",
     "lifecycle": "CLASSIFIED",
     "created": "2026-08-15",
-    "repository_base_commit": "f6e40e94b18a9efda1dc0aac60efaed0ac4b0789",
+    "repository_base_commit": "0950df03e512b88436ab12212d0d9a9ac820c681",
     "dependency_tags": [
       "LOCAL-ALGEBRAIC",
       "EUCLIDEAN-SPECTRAL",
       "REDUCED-MODE",
       "LORENTZIAN-CAUSAL"
     ],
-    "question": "Can the missing cubic source cancellation be constructed in pure Weyl gravity, and does any existing complete q3 directly fill the strict carrier?",
-    "answer": "Atlas V23 constructs the missing pure-Weyl cubic cancellation on the exact V22 witness. Direct third differentiation of the action-normalized Bach Euler density produces 41 rational coefficients across all ten metric-equation rows and gives q1 q3=-75760/9. This cancels three times the 75760/27 q2 Jacobiator, so the complete lambda-squared source is q1-closed on that witness. The result is deliberately scoped: it is a receiver-derived diagonal metric-sector calculation, not the authoritative arbitrary-input full-BV q3. The repository's complete Berger q3 is not a direct substitute because it belongs to Weyl-plus-clock theory at a fixed Berger background on a different 54-row carrier, with no certified same-theory cyclic map. The leading route is now the full arbitrary-input pure-Weyl q2/q3 export and 386-row stabilization.",
+    "question": "Does the exact cubic witness extend to the authoritative arbitrary-input minimal BV bracket, and does the complete arity-three cyclic L-infinity package close on that carrier?",
+    "answer": "Atlas V24 closes the minimal-carrier cubic gate. The authoritative classical action now exports all six q3 output rows: the unique nonzero component is D^3E_g on three arbitrary metric inputs and the other five rows vanish by master-action degree. An independent exact trivariate receiver reproduces the 41-term diagonal witness, S3 symmetry, polarization, covariance and multi-background checks. The complete arity-three identity is certified on arbitrary inputs through differentiated nilpotency and an exhaustive 72-channel/212-path exact replay; quartic q3 cyclicity follows from the S4-symmetric fourth variation of the same local action modulo boundary terms. The result does not yet identify this minimal cyclic L-infinity algebra with the 386-row nonminimal graph theory. The leading route is now one explicit source-certified cyclic stabilization, followed by general lambda-squared source closure on the causal carrier.",
     "predecessor": {
-      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V22",
-      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V22.json",
-      "sha256": "761f3d227501912bd8426fb5a4319de2eaa8d96c84fa5f395dfd615204598950",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V23",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V23.json",
+      "sha256": "4dcb52f3787ef3e501cf4a7d34a43a7ded5740b47fe5ad63010e0aaef9f96e76",
       "preserved": true
     },
     "status_vocabulary": [
@@ -18202,8 +18202,8 @@ window.MATRIX_EXPLORER_DATA = {
           },
           {
             "stage": "S3_NONLINEAR_CARTAN",
-            "status": "PARTIAL_CERTIFIED_WITH_EXACT_Q3_WITNESS_CANCELLATION",
-            "statement": "The q2-only lambda-squared source fails, but the action-derived pure-Weyl cubic metric source now cancels its exact Weyl-Noether defect on the pinned q1-closed fixture: q1 q3=-75760/9 and q1 S2=0. Arbitrary-input full-BV q3, its authoritative source status, and the 386-row arity-three identity remain open.",
+            "status": "PARTIAL_CERTIFIED_WITH_COMPLETE_MINIMAL_Q3_ARITY_AND_CYCLICITY",
+            "statement": "The authoritative arbitrary-input minimal q3 is imported on all six output rows. Its full arity-three identity holds on 72 typed channels and 212 composable paths, and its quartic metric vertex is S4-cyclic modulo boundary terms. The 386-row cyclic stabilization, authoritative nonminimal theory identity, and general source closure remain open.",
             "evidence": [
               "QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION",
               "STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1",
@@ -18211,9 +18211,13 @@ window.MATRIX_EXPLORER_DATA = {
               "STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1",
               "STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1",
               "STRICT_386_QUADRATIC_TRUNCATION_LAMBDA2_SOURCE_OBSTRUCTION_V1",
-              "STRICT_386_PURE_WEYL_Q3_WITNESS_V1"
+              "STRICT_386_PURE_WEYL_Q3_WITNESS_V1",
+              "CLASSICAL_MINIMAL_BV_Q3_EXPORT_V1",
+              "STRICT_PURE_WEYL_MINIMAL_BV_Q3_IMPORT_V1",
+              "STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1",
+              "STRICT_MINIMAL_BV_Q3_CYCLICITY_V1"
             ],
-            "boundary": "This is a receiver-derived diagonal metric-sector witness. It does not promote the candidate q2, import the Berger-plus-clock q3, certify arbitrary-input full-BV arity three, or prove general source closure."
+            "boundary": "This closes the minimal local cubic L-infinity package only. It does not identify the trivial 356-row stabilization with the authoritative nonminimal classical theory, certify q3/Green compatibility, or pass Gate A."
           },
           {
             "stage": "S4_HADAMARD_CCR",
@@ -18272,7 +18276,7 @@ window.MATRIX_EXPLORER_DATA = {
           }
         ],
         "first_unclosed_gate": "S0_CLASSICAL_AUTHORITY",
-        "next_decisive_object": "Export authoritative arbitrary-input pure-Weyl q2/q3 on one full minimal BV carrier, reproduce the -75760/9 witness, and stabilize the complete arity-three identity to all 386 rows."
+        "next_decisive_object": "Construct and source-certify one cyclic stabilization or L-infinity equivalence carrying the accepted minimal q1/q2/q3 and pairing to all 386 rows, then replay general lambda-squared source closure."
       },
       {
         "id": "PURE_WEYL_BACH_FLAT_RANK310",
@@ -18899,10 +18903,10 @@ window.MATRIX_EXPLORER_DATA = {
       "strict_nonlinear_causal_front": {
         "branch": "STRICT_PURE_WEYL_386",
         "stage": "S3_NONLINEAR_CARTAN",
-        "current_fact": "The exact cubic Bach source realizes the required q3 cancellation and closes the full lambda-squared source on one q1-closed metric witness.",
-        "best_next_object": "Authoritative arbitrary-input full-BV pure-Weyl q2/q3 exports plus a cyclic stabilization map to the 386-row graph carrier.",
-        "falsification_target": "Every full export must reproduce q1(q3(x,x,x))_omega_star=-75760/9 on FLAT_PURE_DIFF_GAUGE_SEED_1 and then pass arbitrary-input q1q3+q3q1+q2q2=0.",
-        "foundational_boundary": "The present witness is finite exact rational jet algebra; arbitrary smooth naturality, carrier stabilization, and later Green actions add separate mathematical commitments."
+        "current_fact": "The complete authoritative minimal q3, arbitrary-input arity-three identity, and quartic cyclicity are certified; the prior diagonal cancellation is now a regression of the general bracket.",
+        "best_next_object": "A content-addressed cyclic stabilization or source-certified L-infinity equivalence from the six-generator minimal complex to the 386-row graph carrier.",
+        "falsification_target": "The transported q3 must preserve the 72-channel/212-path arity-three identity and S4 cyclic form, reproduce -75760/9, and close the general lambda-squared Noether source before any Green action.",
+        "foundational_boundary": "The completed minimal package is LOCAL-ALGEBRAIC: finite exact ledgers plus smooth natural variational calculus. The later Green and Hadamard layers remain distinct analytic commitments."
       }
     },
     "classical_import_reconciliation": {
@@ -19028,21 +19032,21 @@ window.MATRIX_EXPLORER_DATA = {
     "route_selection": [
       {
         "rank": 1,
-        "route": "STRICT_AUTHORITATIVE_ARBITRARY_FULL_BV_Q2_Q3_EXPORT",
-        "branch": "STRICT_PURE_WEYL_386",
-        "scientific_leverage": "VERY_HIGH",
-        "tractability": "MEDIUM",
-        "dependency_depth": "HIGH",
-        "recommendation": "Export arbitrary-input pure-Weyl q2/q3 with all ghost and antifield partners, reproduce the exact witness, and replay the complete arity-three identity."
-      },
-      {
-        "rank": 2,
         "route": "STRICT_ARITY_THREE_386_CYCLIC_STABILIZATION",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "HIGH",
-        "recommendation": "Construct a content-addressed cyclic stabilization or L-infinity morphism from the authoritative minimal BV carrier to all 386 graph rows."
+        "recommendation": "Transport q1, q2, q3 and the canonical pairing through an explicit 386-row BV-canonical stabilization and replay arity three."
+      },
+      {
+        "rank": 2,
+        "route": "STRICT_NONMINIMAL_THEORY_IDENTITY",
+        "branch": "STRICT_PURE_WEYL_386",
+        "scientific_leverage": "VERY_HIGH",
+        "tractability": "LOW",
+        "dependency_depth": "HIGH",
+        "recommendation": "Obtain a source-certified full nonminimal export or cyclic L-infinity equivalence identifying the stabilization with the intended classical theory."
       },
       {
         "rank": 3,
@@ -19051,7 +19055,7 @@ window.MATRIX_EXPLORER_DATA = {
         "scientific_leverage": "VERY_HIGH",
         "tractability": "HIGH",
         "dependency_depth": "HIGH",
-        "recommendation": "After full export and stabilization, replay N S2=0 for arbitrary q1-closed inputs before applying a Green operator."
+        "recommendation": "After stabilization, replay N S2=0 for arbitrary q1-closed inputs before applying a Green operator."
       },
       {
         "rank": 4,
@@ -19069,7 +19073,7 @@ window.MATRIX_EXPLORER_DATA = {
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "HIGH",
-        "recommendation": "Bind the full pairing/sign convention to all nonminimal, auxiliary and residual rows."
+        "recommendation": "Bind the full pairing/sign convention to every nonminimal, auxiliary and residual row."
       },
       {
         "rank": 6,
@@ -19087,7 +19091,7 @@ window.MATRIX_EXPLORER_DATA = {
         "scientific_leverage": "VERY_HIGH",
         "tractability": "LOW",
         "dependency_depth": "MEDIUM",
-        "recommendation": "Keep the analytically mature Berger Hadamard route as a different-theory control, never as the strict pure-Weyl q3 import."
+        "recommendation": "Keep the analytically mature Berger Hadamard route as a different-theory control, not as the strict pure-Weyl carrier map."
       },
       {
         "rank": 8,
@@ -19130,20 +19134,20 @@ window.MATRIX_EXPLORER_DATA = {
       {
         "priority": 1,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_AUTHORITATIVE_ARBITRARY_FULL_BV_Q2_Q3_EXPORT",
-        "why": "Export arbitrary-input pure-Weyl q2/q3 with all ghost and antifield partners, reproduce the exact witness, and replay the complete arity-three identity."
+        "object": "STRICT_ARITY_THREE_386_CYCLIC_STABILIZATION",
+        "why": "Transport q1, q2, q3 and the canonical pairing through an explicit 386-row BV-canonical stabilization and replay arity three."
       },
       {
         "priority": 2,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_ARITY_THREE_386_CYCLIC_STABILIZATION",
-        "why": "Construct a content-addressed cyclic stabilization or L-infinity morphism from the authoritative minimal BV carrier to all 386 graph rows."
+        "object": "STRICT_NONMINIMAL_THEORY_IDENTITY",
+        "why": "Obtain a source-certified full nonminimal export or cyclic L-infinity equivalence identifying the stabilization with the intended classical theory."
       },
       {
         "priority": 3,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE",
-        "why": "After full export and stabilization, replay N S2=0 for arbitrary q1-closed inputs before applying a Green operator."
+        "why": "After stabilization, replay N S2=0 for arbitrary q1-closed inputs before applying a Green operator."
       },
       {
         "priority": 4,
@@ -19155,7 +19159,7 @@ window.MATRIX_EXPLORER_DATA = {
         "priority": 5,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_FULL_CYCLIC_PAIRING",
-        "why": "Bind the full pairing/sign convention to all nonminimal, auxiliary and residual rows."
+        "why": "Bind the full pairing/sign convention to every nonminimal, auxiliary and residual row."
       },
       {
         "priority": 6,
@@ -19167,7 +19171,7 @@ window.MATRIX_EXPLORER_DATA = {
         "priority": 7,
         "branch": "BERGER_POSITIVE_CLOCK_54",
         "object": "DIRECT_SPACETIME_Q26_HADAMARD",
-        "why": "Keep the analytically mature Berger Hadamard route as a different-theory control, never as the strict pure-Weyl q3 import."
+        "why": "Keep the analytically mature Berger Hadamard route as a different-theory control, not as the strict pure-Weyl carrier map."
       },
       {
         "priority": 8,
@@ -19595,6 +19599,31 @@ window.MATRIX_EXPLORER_DATA = {
           "path": "quantum-weyl/classical_import/certificates/STRICT_386_PURE_WEYL_Q3_WITNESS_V1.json",
           "sha256": "d088cf692d8da47f8295cbeffba6ac2a8371f76de3f9314f7f726d4e8162023e",
           "role": "exact pure-Weyl q3 witness cancellation and source compatibility inventory"
+        },
+        {
+          "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V23.json",
+          "sha256": "4dcb52f3787ef3e501cf4a7d34a43a7ded5740b47fe5ad63010e0aaef9f96e76",
+          "role": "immutable V23 atlas predecessor"
+        },
+        {
+          "path": "d_quotient_classical/certificates/CLASSICAL_MINIMAL_BV_Q3_EXPORT_V1.json",
+          "sha256": "eb217d49cde1e998bec352bc82cd67b80243d849fcdcacbfb33dabbb7837eda3",
+          "role": "authoritative action-derived minimal q3 export"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_PURE_WEYL_MINIMAL_BV_Q3_IMPORT_V1.json",
+          "sha256": "358268300bc11670e24a0dd849b82f482f63f23efa33fcb4a47d11dd5bde7afb",
+          "role": "independent arbitrary-input minimal q3 import"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1.json",
+          "sha256": "ec51e447914516164b0caa51cbecbf12f1a4b2c8b7ecfbd1303f56d17cc095b5",
+          "role": "exhaustive minimal arity-three identity"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_Q3_CYCLICITY_V1.json",
+          "sha256": "61af401f4f5664164d93e8e945790708131c7e41d5ec2db9bb9dfad0c9406793",
+          "role": "minimal q3 quartic cyclicity"
         }
       ]
     },
@@ -19740,7 +19769,13 @@ window.MATRIX_EXPLORER_DATA = {
       "strict_386_Berger_q3_direct_import_compatible": false,
       "strict_386_arbitrary_input_q3_certified": false,
       "strict_386_full_bv_arity_three_identity_certified": false,
-      "strict_386_general_full_weyl_lambda2_source_closure_certified": false
+      "strict_386_general_full_weyl_lambda2_source_closure_certified": false,
+      "v23_preserved": true,
+      "strict_authoritative_minimal_q3_imported": true,
+      "strict_minimal_arbitrary_input_q3_certified": true,
+      "strict_minimal_full_bv_arity_three_identity_certified": true,
+      "strict_minimal_q3_cyclicity_certified": true,
+      "strict_386_q3_stabilized": false
     },
     "does_not_establish": [
       "a passed strict pure-Weyl classical import gate",
@@ -19833,25 +19868,28 @@ window.MATRIX_EXPLORER_DATA = {
       "that the q2-only receiver obstruction is a no-go theorem for full Weyl gravity",
       "an authoritative q3 or arity-three carrier bridge",
       "lambda-squared source closure after the full Weyl q3 term is included",
-      "an authoritative arbitrary-input pure-Weyl q3 or complete full-BV arity-three identity",
       "general lambda-squared source closure from one exact diagonal metric witness",
       "a direct import of the Berger-plus-clock q3 into the strict pure-Weyl carrier",
-      "nonexistence of every possible future relation between the Berger and strict theories"
+      "nonexistence of every possible future relation between the Berger and strict theories",
+      "a source-certified cyclic stabilization or L-infinity equivalence from the minimal carrier to all 386 graph rows",
+      "the authoritative nonminimal/auxiliary interaction theory from the mathematically valid trivial stabilization alone",
+      "the 386-row arity-three identity or general lambda-squared source closure from the completed minimal package",
+      "q3 compatibility with a causal Green homotopy, an analytic Moller map, Hadamard data, or QME restoration"
     ],
     "independent_checker": {
-      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v23.py",
+      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v24.py",
       "checks": [
-        "V22 predecessor and all 77 cells preserved",
-        "41-term ten-row pure-Weyl cubic metric witness projection",
-        "-75760/9 q1 q3 and exact arity-three/source cancellation",
-        "witness closure versus general full-BV closure firewall",
-        "Berger different-theory/carrier direct-import firewall",
+        "V23 predecessor and all 77 cells preserved except the strict nonlinear stage",
+        "authoritative six-row arbitrary-input q3 import projection",
+        "72-channel/212-path arity-three identity projection",
+        "S4 quartic cyclicity modulo-boundary result-kind boundary",
+        "minimal completion versus 386-row stabilization firewall",
         "eleven-route deterministic queue",
         "Gate-A/Hadamard/QME lifecycle firewalls"
       ],
-      "expected_digest": "f8b8340f13f5dcdfb0f94a8c15f0e35906b356c07dbf50b4d042a799d3798ca6"
+      "expected_digest": "77cb96c4f88b1819141e71c5821ae10a037199f403f5965952ab913710ec6c44"
     },
-    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v23.md",
+    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v24.md",
     "strict_gate_a_progress": {
       "status": "STABILIZED_Q2_CANDIDATE_CERTIFIED_AUTHORITATIVE_IDENTITY_REQUIRED",
       "evidence": [
@@ -20740,6 +20778,30 @@ window.MATRIX_EXPLORER_DATA = {
       "authoritative_export_contract_id": "STRICT_PURE_WEYL_AUTHORITATIVE_Q3_EXPORT_V2",
       "foundational_classification": "FINITE_EXACT_RATIONAL_CUBIC_METRIC_JET_WITNESS",
       "next_gate": "Export arbitrary-input action-derived pure-Weyl q3 on the authoritative minimal BV carrier, including every ghost/antifield partner; replay the full arity-three identity and then stabilize it through a content-addressed cyclic map to the 386-row graph carrier. The export must reproduce the pinned -75760/9 witness."
+    },
+    "strict_minimal_q3_completion": {
+      "classical_export_result_id": "CLASSICAL_MINIMAL_BV_Q3_EXPORT_V1",
+      "quantum_import_result_id": "STRICT_PURE_WEYL_MINIMAL_BV_Q3_IMPORT_V1",
+      "arity_three_result_id": "STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1",
+      "cyclicity_result_id": "STRICT_MINIMAL_BV_Q3_CYCLICITY_V1",
+      "minimal_carrier_generators": 6,
+      "minimal_q3_nonzero_components": 1,
+      "minimal_q3_zero_output_rows": 5,
+      "arbitrary_three_metric_inputs": true,
+      "S3_input_permutations_replayed": 6,
+      "diagonal_witness_terms_reproduced": 41,
+      "diagonal_witness_q1_q3": "-75760/9",
+      "arity_three_channels": 72,
+      "arity_three_paths": 212,
+      "arity_three_identity_on_arbitrary_inputs": true,
+      "quartic_cyclicity_mod_d": true,
+      "quartic_permutation_group": "S4",
+      "strict_386_q3_stabilized": false,
+      "strict_386_authoritative_nonminimal_equivalence": false,
+      "strict_386_general_lambda2_source_closed": false,
+      "classical_import_gate_a_passed": false,
+      "foundational_classification": "FINITE_EXACT_RECEIVER_PLUS_SMOOTH_NATURAL_TAYLOR_THEOREM",
+      "next_gate": "Transport the accepted q1, q2, q3 and canonical pairing through one explicit linear BV-canonical stabilization to all 386 rows, then replay arity three and general lambda-squared source closure on the stabilized carrier."
     }
   },
   "cross_cell_interfaces": [
@@ -20909,8 +20971,8 @@ window.MATRIX_EXPLORER_DATA = {
     "ground_state_dynamics_interface_report": "sources/foundations/reports/krein-fock-ground-state-dynamics-interface.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md",
-    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V23.json",
-    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v23.md",
+    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V24.json",
+    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v24.md",
     "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V7_RECONCILIATION.json",
     "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V7.md",
     "completion_sdr": "sources/quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json",
@@ -20956,7 +21018,13 @@ window.MATRIX_EXPLORER_DATA = {
     "completion_quadratic_obstruction": "sources/quantum-weyl/classical_import/certificates/STRICT_386_QUADRATIC_TRUNCATION_LAMBDA2_SOURCE_OBSTRUCTION_V1.json",
     "completion_quadratic_obstruction_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_QUADRATIC_TRUNCATION_LAMBDA2_SOURCE_OBSTRUCTION_V1.md",
     "completion_q3_witness": "sources/quantum-weyl/classical_import/certificates/STRICT_386_PURE_WEYL_Q3_WITNESS_V1.json",
-    "completion_q3_witness_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_PURE_WEYL_Q3_WITNESS_V1.md"
+    "completion_q3_witness_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_PURE_WEYL_Q3_WITNESS_V1.md",
+    "completion_minimal_q3": "sources/quantum-weyl/classical_import/certificates/STRICT_PURE_WEYL_MINIMAL_BV_Q3_IMPORT_V1.json",
+    "completion_minimal_q3_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_PURE_WEYL_MINIMAL_BV_Q3_IMPORT_V1.md",
+    "completion_arity3": "sources/quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1.json",
+    "completion_arity3_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1.md",
+    "completion_q3_cyclicity": "sources/quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_Q3_CYCLICITY_V1.json",
+    "completion_q3_cyclicity_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_MINIMAL_BV_Q3_CYCLICITY_V1.md"
   },
-  "canonical_digest": "e1cae24e248a3dd3801677e23bcbc321215f2281248273ef9c6dc495125de54c"
+  "canonical_digest": "cc61371360ec11cdc4903d2a49b3caca5d3e8935da26b509106954fb2fc31a93"
 };

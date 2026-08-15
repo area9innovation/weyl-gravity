@@ -1,0 +1,330 @@
+{
+  "$schema": "../schema/strict-pure-weyl-minimal-bv-q3-import-v1.schema.json",
+  "schema": "strict-pure-weyl-minimal-bv-q3-import-v1",
+  "schema_path": "quantum-weyl/classical_import/schema/strict-pure-weyl-minimal-bv-q3-import-v1.schema.json",
+  "result_id": "STRICT_PURE_WEYL_MINIMAL_BV_Q3_IMPORT_V1",
+  "result_kind": "INDEPENDENT_EXACT_IMPORT_AND_EXECUTION_OF_AUTHORITATIVE_MINIMAL_BV_Q3",
+  "result_state": "ARBITRARY_INPUT_MINIMAL_BV_Q3_IMPORTED_ARITY_THREE_AND_386_STABILIZATION_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "0950df03e512b88436ab12212d0d9a9ac820c681",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "scope": {
+    "theory": "strict pure-Weyl minimal BV theory",
+    "background_class": "arbitrary smooth Bach-flat nondegenerate four-dimensional pseudo-Riemannian backgrounds for the pointed Taylor complex",
+    "input": "three arbitrary compactly supported symmetric covariant metric variations",
+    "output": "the complete six-row minimal-BV q3, with one natural metric-antifield output and five identically zero rows",
+    "coefficient_field": "Q",
+    "maximum_metric_jet_order": 4,
+    "taylor_convention": "coefficient [a*b*c] equals the third Frechet derivative with no hidden factorial",
+    "support_rule": "support q3(h1,h2,h3) is contained in support(h1) intersect support(h2) intersect support(h3)"
+  },
+  "import_bridge": {
+    "classical_export": "CLASSICAL_MINIMAL_BV_Q3_EXPORT_V1",
+    "classical_parent": "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2",
+    "accepted_parent_import": "CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2",
+    "same_carrier_q2": "STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1",
+    "source_carrier": [
+      "g",
+      "xi",
+      "omega",
+      "g_star",
+      "xi_star",
+      "omega_star"
+    ],
+    "imported_nonzero_component": "q3_hstar_hhh=D^3E_g",
+    "imported_zero_output_rows": [
+      "g",
+      "xi",
+      "omega",
+      "xi_star",
+      "omega_star"
+    ],
+    "carrier_or_convention_change": false,
+    "independent_receiver": "quantum-weyl/classical_import/pure_weyl_cubic_natural_operator.py",
+    "sha256": "a382225d14484ba12e7c4a590ad7a560349367907ed70fdad94d9d8defccfd25"
+  },
+  "primitive_contracts": [
+    {
+      "operation": "metric_three_parameter_family",
+      "naturality": "pullback acts simultaneously on the base metric and all three variations",
+      "preserves_locality": true
+    },
+    {
+      "operation": "inverse_metric",
+      "naturality": "metric inversion commutes with pullback on nondegenerate metrics",
+      "preserves_locality": true
+    },
+    {
+      "operation": "levi_civita_geometry",
+      "naturality": "Levi-Civita connection and curvature commute with metric pullback",
+      "preserves_locality": true
+    },
+    {
+      "operation": "schouten_and_weyl_4d",
+      "naturality": "four-dimensional Schouten and Weyl tensors are natural curvature contractions",
+      "preserves_locality": true
+    },
+    {
+      "operation": "cotton_4d",
+      "naturality": "covariant differentiation and alternation preserve naturality",
+      "preserves_locality": true
+    },
+    {
+      "operation": "bach_4d",
+      "naturality": "covariant differentiation, raising and contraction preserve naturality",
+      "preserves_locality": true
+    },
+    {
+      "operation": "raise_symmetric_two_tensor",
+      "naturality": "raising with the inverse metric commutes with pullback",
+      "preserves_locality": true
+    },
+    {
+      "operation": "absolute_metric_volume_density",
+      "naturality": "absolute metric volume is a pullback-natural weight-one density",
+      "preserves_locality": true
+    },
+    {
+      "operation": "densitize_and_scale",
+      "naturality": "tensor product and exact rational scaling preserve naturality",
+      "preserves_locality": true
+    },
+    {
+      "operation": "mixed_third_frechet_coefficient",
+      "naturality": "three derivatives of an equivariant smooth natural map form an equivariant symmetric trilinear natural operator",
+      "preserves_locality": true
+    }
+  ],
+  "compositional_naturality": {
+    "proof_kind": "COMPOSITIONAL_THIRD_FRECHET_NATURAL_OPERATOR_THEOREM_WITH_EXECUTABLE_SEMANTICS",
+    "domain_category": "four-dimensional smooth nondegenerate pseudo-Riemannian metric jets and local diffeomorphisms",
+    "source_bundle": "three symmetric covariant metric variations",
+    "target_bundle": "symmetric contravariant absolute density of weight plus one",
+    "derivation": [
+      "Every node before coefficient extraction is a standard pullback-natural construction in the primitive ledger.",
+      "Composition, covariant differentiation, contraction, tensor product and exact rational scaling preserve pullback naturality and support locality.",
+      "The action-normalized Euler map E(g)=-2 sqrt(abs(g)) B(g)^sharp is therefore a fourth-order natural differential operator.",
+      "Differentiating phi^*E(g)=E(phi^*g) in three independent metric directions proves naturality and S3 symmetry of D^3E."
+    ],
+    "conclusion": "q3_hstar_hhh is a symmetric fourth-order support-local trilinear natural operator on arbitrary metric inputs",
+    "finite_coordinate_test_role": "signed permutations and finite fixtures are implementation regressions; compositional naturality supplies the general proof",
+    "status": "CERTIFIED"
+  },
+  "exact_receiver_checks": {
+    "background_crosschecks": [
+      {
+        "background": "conformal_cylinder",
+        "input_seeds": [
+          1,
+          2,
+          3
+        ],
+        "nonzero_output_count": 10,
+        "output_sha256": "2570776c56ff789d7116d68b4e99ba74c292e5940ee45b98654a5c0067f41eb9",
+        "all_arithmetic_exact": true
+      },
+      {
+        "background": "minkowski",
+        "input_seeds": [
+          2,
+          3,
+          4
+        ],
+        "nonzero_output_count": 10,
+        "output_sha256": "edf47a11248bc201cc41b56b3a68fedd2ee9905f09815b2cae44dac33a544c0e",
+        "all_arithmetic_exact": true
+      },
+      {
+        "background": "flat_brinkmann",
+        "input_seeds": [
+          3,
+          4,
+          5
+        ],
+        "nonzero_output_count": 10,
+        "output_sha256": "37226366f5c029bd7698bf0724f4c65972210b175214a7155d362f4288485da5",
+        "all_arithmetic_exact": true
+      }
+    ],
+    "S3_input_permutations_replayed": 6,
+    "S3_exact_symmetry": true,
+    "seven_diagonal_polarization": {
+      "input_seeds": [
+        4,
+        5,
+        6
+      ],
+      "formula": "T(x,y,z)=(F(x+y+z)-F(x+y)-F(x+z)-F(y+z)+F(x)+F(y)+F(z))/6",
+      "direct_output_sha256": "e52f39e57f88870eb4b27b5977848cd17deba7b8c4973e21fa2a8c5351c06d2e",
+      "polarized_output_sha256": "e52f39e57f88870eb4b27b5977848cd17deba7b8c4973e21fa2a8c5351c06d2e",
+      "exact_equality": true
+    },
+    "pinned_diagonal_witness": {
+      "fixture_id": "FLAT_PURE_DIFF_GAUGE_SEED_1",
+      "metric_output_term_count": 41,
+      "q1_q3_weyl_noether": "-75760/9",
+      "required_value": "-75760/9",
+      "exact_row_equality": true
+    },
+    "ppwave_restriction": {
+      "input_seeds": [
+        1,
+        2,
+        3
+      ],
+      "all_ten_outputs_zero": true
+    },
+    "signed_coordinate_permutation": {
+      "permutation": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "signs": [
+        -1,
+        1,
+        -1,
+        1
+      ],
+      "input_seeds": [
+        5,
+        6,
+        7
+      ],
+      "exact_covariance": true,
+      "output_sha256": "a2e3704eeb230b1dc2f7fc626e9e7d02bce35c5eab33efa7be186ddc0b19b606"
+    },
+    "all_arithmetic_exact": true
+  },
+  "gate_advancement": [
+    {
+      "gate": "AUTHORITATIVE_MINIMAL_Q3_IMPORT",
+      "status": "PASS",
+      "evidence": "all six source rows imported without carrier or convention change"
+    },
+    {
+      "gate": "ARBITRARY_INPUT_COMPONENT_EXECUTION",
+      "status": "PASS",
+      "evidence": "exact trivariate receiver, three backgrounds, S3, polarization, covariance, pp-wave and pinned witness checks"
+    },
+    {
+      "gate": "MINIMAL_ARITY_THREE_Q_SQUARED",
+      "status": "OPEN",
+      "evidence": "the complete q1 q3 plus q2 q2 plus q3 q1 channel replay is the next independent gate"
+    },
+    {
+      "gate": "MINIMAL_Q3_CYCLICITY",
+      "status": "OPEN",
+      "evidence": "quartic BV vertex cyclicity has not yet been replayed in receiver signs"
+    },
+    {
+      "gate": "STRICT_386_CYCLIC_STABILIZATION",
+      "status": "OPEN",
+      "evidence": "no content-addressed extension or L-infinity morphism to all 386 rows is yet accepted"
+    }
+  ],
+  "foundational_strength": {
+    "classification": "FINITE_EXACT_RATIONAL_NATURAL_DIFFERENTIAL_OPERATOR",
+    "finite_receipts": "Every regression is a finite exact rational jet computation.",
+    "general_statement": "Compositional naturality and formal Frechet differentiation quantify over arbitrary smooth metric jets without using a Hilbert completion or Green inverse.",
+    "choice_operation_added": false,
+    "completion_or_infinite_sum_used": false,
+    "analytic_green_layer_used": false,
+    "dependency_boundary": "LOCAL-ALGEBRAIC"
+  },
+  "claim_flags": {
+    "AUTHORITATIVE_MINIMAL_BV_Q3_IMPORTED": true,
+    "ARBITRARY_THREE_INPUT_METRIC_Q3_EXECUTED": true,
+    "ALL_SIX_MINIMAL_Q3_OUTPUT_ROWS_IMPORTED": true,
+    "GENERAL_DIFF_NATURALITY_COMPOSITIONALLY_CERTIFIED": true,
+    "S3_SYMMETRY_REPLAYED": true,
+    "DIAGONAL_Q3_WITNESS_REPRODUCED": true,
+    "MINIMAL_BV_ARITY_THREE_IDENTITY_CERTIFIED": false,
+    "MINIMAL_BV_Q3_CYCLICITY_CERTIFIED": false,
+    "STRICT_386_Q3_STABILIZED": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "LORENTZIAN_CAUSAL_CERTIFIED": false,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "QME_RESTORED": false
+  },
+  "canonical_hashes": {
+    "import_bridge_sha256": "3c1f0bf9cab39f765a6f8d3a10f20e9f9bc3d32779197431d6d2180c8d240837",
+    "primitive_contracts_sha256": "3d7cd4d88b1b06cf1a57bfca5a19ddffc6b93a1d015c91c533d1ad9d6a5e7bbe",
+    "compositional_naturality_sha256": "c709345cabe6447b6712b7fc009870b68d03a717a111c703434587e5293d4dc7",
+    "exact_receiver_checks_sha256": "b5f22415b280f5fcf0e39ddd2550a07db1e41a2fb33d2f5179c276b71a96ab4f",
+    "gate_advancement_sha256": "f7634f53d1412e7b20cbb74d08c56b1103a0d2445e60e056844be05d22a4c8c4",
+    "foundational_strength_sha256": "502b69b5c4cec939f25ade72a950fa1ea26cd05672251e52414d8cd3a3d808a1"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_MINIMAL_BV_Q3_EXPORT_V1.json",
+        "result_or_artifact_id": "CLASSICAL_MINIMAL_BV_Q3_EXPORT_V1",
+        "sha256": "eb217d49cde1e998bec352bc82cd67b80243d849fcdcacbfb33dabbb7837eda3",
+        "role": "authoritative six-row minimal-BV q3 export"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2.json",
+        "result_or_artifact_id": "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2",
+        "sha256": "3fa276bd04fce3b0142e910e907cab3ad3e4d39bbd60b966de90fa11860c03dc",
+        "role": "authoritative minimal-BV carrier and nilpotent Q"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2.json",
+        "result_or_artifact_id": "CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2",
+        "sha256": "7d3bb260a0da31b1d1e3323f9e20b96b43a07e7d54142a04f6975fd26f33c028",
+        "role": "independently accepted classical import gate at minimal scope"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1.json",
+        "result_or_artifact_id": "STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1",
+        "sha256": "513b43a90a936e1837947078e8f72da772f37461996b0b27b7df938ab355fbb3",
+        "role": "same-carrier complete suspended q2"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_PURE_WEYL_Q3_WITNESS_V1.json",
+        "result_or_artifact_id": "STRICT_386_PURE_WEYL_Q3_WITNESS_V1",
+        "sha256": "d088cf692d8da47f8295cbeffba6ac2a8371f76de3f9314f7f726d4e8162023e",
+        "role": "pinned diagonal cubic cancellation witness"
+      },
+      {
+        "path": "d_quotient_classical/minimal_bv_antifield/foundation/action_normalization.json",
+        "result_or_artifact_id": "PURE_WEYL_ACTION_NORMALIZATION_V2",
+        "sha256": "1d0db9cd5a408e4fb9e745856da8a884ea600ab27ab90539d30252b7c226e48f",
+        "role": "action and Euler-density normalization"
+      }
+    ],
+    "implementations": [
+      {
+        "path": "quantum-weyl/classical_import/pure_weyl_cubic_natural_operator.py",
+        "sha256": "32e03278573a9ac0465392b3aa08c1cbc53919da100994416c53b12ec7433111",
+        "role": "independent exact trivariate AST receiver"
+      },
+      {
+        "path": "quantum-weyl/classical_import/cylinder_polarized_bach_evaluator.py",
+        "sha256": "2503bcfdeafbe1dc4fc6146ddfcb1642326e19f449bebba6fd1d7580b2cebc73",
+        "role": "pre-existing exact tensor-geometry kernel"
+      },
+      {
+        "path": "quantum-weyl/classical_import/cylinder_cubic_bach_evaluator.py",
+        "sha256": "fcfafcf8702bc56deaa1cf746e1969a1da7488dd2c130b43ef7ac60d1d61031a",
+        "role": "independent one-parameter cubic polarization oracle"
+      }
+    ]
+  },
+  "does_not_establish": [
+    "the complete minimal-BV arity-three nilpotency identity on all typed input channels",
+    "quartic cyclicity of q3 under the receiver BV pairing and suspension signs",
+    "a source-certified cyclic stabilization or L-infinity morphism to the 386-row carrier",
+    "all-order nonlinear source closure or an analytic Moller map",
+    "compatibility estimates between q3 and any causal Green homotopy",
+    "a Hadamard state, renormalized Lorentzian time-ordered products, QME restoration, residual transfer, or a Lorentzian quantum theory"
+  ],
+  "next_gate": "Enumerate every typed arity-three channel on the six-row carrier and independently replay q1 q3 + q2 q2 + q3 q1 = 0; then transport q3 and the cyclic pairing through an explicit 386-row stabilization map.",
+  "independent_checker": "quantum-weyl/classical_import/check_strict_pure_weyl_minimal_bv_q3_import.py",
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_PURE_WEYL_MINIMAL_BV_Q3_IMPORT_V1.md"
+}

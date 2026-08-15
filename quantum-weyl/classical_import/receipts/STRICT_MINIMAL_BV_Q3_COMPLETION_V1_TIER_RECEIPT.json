@@ -1,0 +1,111 @@
+{
+  "receipt_id": "STRICT_MINIMAL_BV_Q3_COMPLETION_V1_TIER_RECEIPT",
+  "result_ids": [
+    "CLASSICAL_MINIMAL_BV_Q3_EXPORT_V1",
+    "STRICT_PURE_WEYL_MINIMAL_BV_Q3_IMPORT_V1",
+    "STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1",
+    "STRICT_MINIMAL_BV_Q3_CYCLICITY_V1",
+    "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V24"
+  ],
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "scope": "Authoritative six-generator pure-Weyl minimal q3 export and exact arbitrary-input import; exhaustive minimal arity-three identity; quartic cyclicity modulo horizontal boundary; V24 atlas, static-site and Paper 21 integration.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <explicit changed Python paths>",
+        "python3 -m json.tool <explicit changed JSON paths>",
+        "git diff --check -- <explicit scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m unittest d_quotient_classical.minimal_bv_antifield.tests.test_classical_minimal_bv_q3_export_v1 -v",
+        "python3 -m unittest quantum-weyl.classical_import.tests.test_strict_pure_weyl_minimal_bv_q3_import -v",
+        "python3 -m unittest quantum-weyl.classical_import.tests.test_strict_minimal_bv_arity_three_identity -v",
+        "python3 -m unittest quantum-weyl.classical_import.tests.test_strict_minimal_bv_q3_cyclicity -v",
+        "python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v24 -v",
+        "python3 -m unittest foundations.tests.test_matrix_site -v",
+        "python3 paper/verify_21_reverse_foundations_claim_map.py",
+        "two-pass pdflatex -interaction=nonstopmode -halt-on-error paper/21-reverse-foundations-of-physics.tex"
+      ],
+      "elapsed_seconds": {
+        "classical_export_tests": 0.048,
+        "minimal_q3_import_tests_after_fast_rail_split": 23.310,
+        "minimal_arity_three_tests": 52.115,
+        "minimal_q3_cyclicity_tests": 0.048,
+        "atlas_v24_tests": 0.077,
+        "site_tests": 1.975,
+        "paper_pdf_each_pass": 2.1
+      },
+      "performance_receipt": "The first import-suite run took 89.411 seconds because every metadata mutation repeated the exact geometric receiver. The checker now exposes replay_exact=False only for fast mutation rails while the repository-result test retains one full exact replay; the same eight tests now take 23.310 seconds.",
+      "checks": {
+        "minimal_generators": 6,
+        "minimal_q3_nonzero_components": 1,
+        "S3_input_permutations": 6,
+        "diagonal_witness_terms": 41,
+        "diagonal_q1_q3": "-75760/9",
+        "arity_three_channels": 72,
+        "arity_three_paths": 212,
+        "q1_q3_paths": 2,
+        "q2_q2_paths": 204,
+        "q3_q1_paths": 6,
+        "quartic_symmetry": "S4_MOD_HORIZONTAL_BOUNDARY",
+        "paper_pages": 69
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        "python3 quantum-weyl/classical_import/verify_strict_pure_weyl_minimal_bv_q3_import.py && python3 quantum-weyl/classical_import/verify_strict_minimal_bv_arity_three_identity.py && python3 quantum-weyl/classical_import/verify_strict_minimal_bv_q3_cyclicity.py && python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v24.py && python3 foundations/verify_matrix_site_v2.py && python3 paper/verify_21_reverse_foundations_claim_map.py"
+      ],
+      "criterion": "Every transitive consumer of the q3 import hashes was regenerated, then independently checked without counting regeneration as verification."
+    },
+    "tier_3": {
+      "status": "FAIL",
+      "elapsed_seconds": 0.8,
+      "commands": [
+        "python3 -m unittest discover -s . -p 'test_*.py' -f"
+      ],
+      "finding": "Repository-wide discovery stopped before executing the suite because system Python 3.14 lacks SymPy while importing analytic_completion.",
+      "claim_effect": "This is not recorded as a pass. No freeze, Gate-A promotion, Lorentzian-causal promotion, Hadamard construction, QME restoration or residual transfer is claimed."
+    }
+  },
+  "advisory_rails": {
+    "science_forge_shadow": {
+      "status": "ADVISORY_FINDINGS",
+      "command": "bash ci/science-forge-shadow.sh",
+      "elapsed_seconds": 3.2,
+      "findings": [
+        "bridge audit fails closed because its historical bp2transformer target also lacks SymPy",
+        "corpus census reports 1820 certificates against the 976-certificate baseline",
+        "Forge binary revision and checkout revision differ"
+      ]
+    },
+    "paper_prose": {
+      "status": "ADVISORY_FINDINGS",
+      "command": "../tango/forge/tools/science-forge/paper_prose_advisory.sh paper/21-reverse-foundations-of-physics.tex",
+      "elapsed_seconds": 0.5,
+      "findings": [
+        "parenthetical density above heuristic budget",
+        "abstract-word density above heuristic budget",
+        "one abstract numeric ledger marker"
+      ]
+    }
+  },
+  "artifact_sha256": {
+    "d_quotient_classical/certificates/CLASSICAL_MINIMAL_BV_Q3_EXPORT_V1.json": "eb217d49cde1e998bec352bc82cd67b80243d849fcdcacbfb33dabbb7837eda3",
+    "quantum-weyl/classical_import/certificates/STRICT_PURE_WEYL_MINIMAL_BV_Q3_IMPORT_V1.json": "358268300bc11670e24a0dd849b82f482f63f23efa33fcb4a47d11dd5bde7afb",
+    "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1.json": "ec51e447914516164b0caa51cbecbf12f1a4b2c8b7ecfbd1303f56d17cc095b5",
+    "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_Q3_CYCLICITY_V1.json": "61af401f4f5664164d93e8e945790708131c7e41d5ec2db9bb9dfad0c9406793",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V24.json": "106ea516a9edcd838a68ea8fc2a1a696a75f0ae55992c303ae5c40ec8d3d783d",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "1b45491714ef114b99a852748c7104a806e908e609855e269aa8722d5ad1b43f",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "d6da01a3b9632febbc0dfa21235b43345a939da784d35f59d3d66ffddbfd5a3d",
+    "paper/21-reverse-foundations-of-physics.pdf": "d69078b0d82cff8fbef4299506773079bad75d26232377b058bcacfbcab564c8"
+  },
+  "claim_boundary": "This establishes the authoritative arbitrary-input q3, exhaustive arity-three identity and quartic cyclicity on the six-generator minimal local pure-Weyl BV carrier. It does not establish a 386-row q3 stabilization, authoritative nonminimal L-infinity equivalence, general 386-row lambda-squared source closure, Gate A, Lorentzian causality, a Hadamard state, renormalized Lorentzian products, QME restoration, residual transfer or a Lorentzian quantum theory."
+}
