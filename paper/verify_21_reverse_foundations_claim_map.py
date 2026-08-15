@@ -106,6 +106,8 @@ def main() -> int:
     completion_atlas_v7 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v7"]["path"]).read_text())
     strict_386_sign_repair = json.loads((ROOT / data["authorities"]["strict_386_auxiliary_q_sign_repair"]["path"]).read_text())
     completion_atlas_v10 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v10"]["path"]).read_text())
+    strict_386_full_q1 = json.loads((ROOT / data["authorities"]["strict_386_full_q1_component_jet_table"]["path"]).read_text())
+    completion_atlas_v11 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v11"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -395,6 +397,7 @@ def main() -> int:
         (32, "BT-CORRECTOR-POINTWISE-ENERGY-NO-GO"),
         (33, "BT-CORRECTOR-SLAB-FIBER-STABILITY"),
         (34, "BT-CORRECTOR-SLAB-CYLINDER-SUPPRESSION"),
+        (35, "STRICT-WEYL-FULL-Q1-COMPONENT-SNAPSHOT"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -408,6 +411,11 @@ def main() -> int:
     require(flags["strict_386_component_basis_serialized"] is True, "strict 386 component basis missing")
     require(flags["strict_386_component_pairing_serialized"] is True, "strict 386 component pairing missing")
     require(flags["strict_386_componentwise_t_adjoint_replayed"] is True, "strict componentwise T adjoint missing")
+    require(flags["strict_386_full_q1_component_bytes_serialized"] is True, "strict full-q1 component bytes missing")
+    require(flags["strict_386_full_q1_squared_zero_replayed"] is True, "strict full-q1 nilpotency replay missing")
+    require(flags["strict_386_full_q1_suspended_cyclicity_replayed"] is True, "strict full-q1 suspended cyclicity replay missing")
+    require(flags["strict_386_local_sdr_component_maps_serialized"] is False, "strict local SDR component maps promoted")
+    require(flags["strict_386_classical_import_gate_passed"] is False, "strict classical import gate promoted")
     require(flags["strict_386_all_operator_component_adjoints_replayed"] is False, "strict all-operator replay promoted")
     require(flags["strict_386_local_d_certified"] is False, "strict 386 local D promoted")
     require(strict_q1["claim_flags"]["Q1_SQUARED_ZERO_CERTIFIED"] is True, "strict q1 square-zero authority drift")
@@ -475,6 +483,15 @@ def main() -> int:
     require(strict_386_sign_repair["verification"]["tier_3"]["status"] == "PASS" and "82/82 PASS" in strict_386_sign_repair["verification"]["tier_3"]["terminal_guard"], "strict auxiliary-q Tier-3 receipt missing")
     require(completion_atlas_v10["strict_auxiliary_q_sign_repair"]["repair_applied"] is True, "completion atlas V10 omitted sign repair")
     require(completion_atlas_v10["claim_flags"]["strict_full_386_q1_portable_component_bytes"] is False and completion_atlas_v10["claim_flags"]["lorentzian_full_theory_certified"] is False, "completion atlas V10 promoted full q1 or Lorentzian theory")
+    q1_serialization = strict_386_full_q1["q1_serialization"]
+    q1_inventory = q1_serialization["counts"]
+    require(q1_serialization["carrier_dimension"] == 386 and q1_serialization["carrier_split"] == "30+36+320", "strict full-q1 carrier split drift")
+    require(q1_inventory["operator_tables"] == 18 and q1_inventory["coefficient_multiindex_tables"] == 127 and q1_inventory["nonzero_rational_coefficients"] == 2193, "strict full-q1 inventory drift")
+    require(strict_386_full_q1["nilpotency_replay"]["full_q1_squared_zero"] is True and strict_386_full_q1["suspended_cyclicity_replay"]["exact_defects"] == 0 and strict_386_full_q1["suspended_cyclicity_replay"]["coefficientwise_multiindices_checked"] == 70, "strict full-q1 exact replay missing")
+    require(strict_386_full_q1["claim_flags"]["STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_SERIALIZED"] is True, "strict full-q1 portable bytes omitted")
+    require(strict_386_full_q1["claim_flags"]["STRICT_386_FULL_SDR_OPERATOR_TABLES_SERIALIZED"] is False and strict_386_full_q1["claim_flags"]["CLASSICAL_IMPORT_GATE_PASSED"] is False, "strict full-q1 result promoted SDR or Gate A")
+    require(completion_atlas_v11["strict_full_q1_component_jet_table"]["nonzero_rational_coefficients"] == 2193, "completion atlas V11 omitted full q1")
+    require(completion_atlas_v11["claim_flags"]["strict_full_386_q1_portable_component_bytes"] is True and completion_atlas_v11["claim_flags"]["strict_pure_weyl_classical_gate_passed"] is False, "completion atlas V11 q1/Gate-A boundary drift")
     require(flags["static_atlas_appendix_generated"] is True, "static atlas appendix flag is not certified")
     require(flags["complete_evidence_register_generated"] is True, "complete evidence register flag is not certified")
     require(flags["complete_literature_register_generated"] is True, "complete literature register flag is not certified")

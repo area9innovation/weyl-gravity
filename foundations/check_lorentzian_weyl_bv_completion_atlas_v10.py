@@ -12,7 +12,13 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 RESULT = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V10.json"
 PREDECESSOR = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V9.json"
+SUCCESSOR = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V11.json"
 REPAIR = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.json"
+SUPERSEDED_PATHS = {
+    "quantum-weyl/classical_import/certificates/STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1.json",
+    "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+    "quantum-weyl/classical_import/certificates/STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.json",
+}
 STAGES = ["S0_CLASSICAL_AUTHORITY", "S1_OFF_SHELL_BV", "S2_CAUSAL_GREEN", "S3_NONLINEAR_CARTAN", "S4_HADAMARD_CCR", "S5_BRST_WARD", "S6_PHYSICAL_POSITIVITY", "S7_RENORMALIZED_PRODUCTS", "S8_QME", "S9_RESIDUAL_TRANSFER", "S10_LORENTZIAN_CERTIFIED"]
 BRANCHES = ["STRICT_PURE_WEYL_386", "PURE_WEYL_BACH_FLAT_RANK310", "EINSTEIN_NARIAI_KS", "BERGER_POSITIVE_CLOCK_54", "VACUUM_CYLINDER_REDUCED", "TAU_ADIC_COMPENSATOR", "COMPLEX_COMPENSATOR_CHANGED_ACTION"]
 ROUTES = ["STRICT_386_FULL_Q1_JET_TABLE", "STRICT_386_ACCEPTED_COMMON_SNAPSHOT", "STRICT_386_LOCAL_SDR_COMPONENT_MAPS", "STRICT_ENDPOINT_ANALYTIC_GREEN_ACTION", "STRICT_FULL_GREEN_COMPONENT_ACTION_REPLAY", "STRICT_386_LOCAL_D", "STRICT_386_Q2_GREEN_COMPATIBILITY", "DIRECT_SPACETIME_Q26_HADAMARD", "BACH_FLAT_NONLINEAR_CARTAN"]
@@ -31,6 +37,12 @@ def digest(value: dict[str, Any]) -> str:
 def check(value: dict[str, Any] | None = None) -> list[str]:
     value = json.loads(RESULT.read_text()) if value is None else value
     previous, source = json.loads(PREDECESSOR.read_text()), json.loads(REPAIR.read_text())
+    successor = json.loads(SUCCESSOR.read_text()) if SUCCESSOR.is_file() else {}
+    superseded = (
+        successor.get("result_id") == "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V11"
+        and successor.get("predecessor", {}).get("sha256") == sha(RESULT)
+        and successor.get("predecessor", {}).get("preserved") is True
+    )
     errors: list[str] = []
     if value.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V10" or value.get("schema_version") != "foundational-lorentzian-weyl-bv-completion-atlas-v10":
         errors.append("identity")
@@ -78,12 +90,19 @@ def check(value: dict[str, Any] | None = None) -> list[str]:
     expected_predecessor = {"result_id": previous["result_id"], "path": str(PREDECESSOR.relative_to(ROOT)), "sha256": sha(PREDECESSOR), "preserved": True}
     if value.get("predecessor") != expected_predecessor:
         errors.append("predecessor")
-    expected_inputs = [*previous["provenance"]["inputs"], {"path": str(PREDECESSOR.relative_to(ROOT)), "sha256": sha(PREDECESSOR), "role": "immutable V9 atlas predecessor"}, {"path": str(REPAIR.relative_to(ROOT)), "sha256": sha(REPAIR), "role": "exact auxiliary-q sign repair and full classical-suite receipt"}]
+    recorded_inputs = value.get("provenance", {}).get("inputs", [])
+    recorded_repair_hash = recorded_inputs[-1].get("sha256", "") if superseded and recorded_inputs else sha(REPAIR)
+    expected_inputs = [*previous["provenance"]["inputs"], {"path": str(PREDECESSOR.relative_to(ROOT)), "sha256": sha(PREDECESSOR), "role": "immutable V9 atlas predecessor"}, {"path": str(REPAIR.relative_to(ROOT)), "sha256": recorded_repair_hash, "role": "exact auxiliary-q sign repair and full classical-suite receipt"}]
     if value.get("provenance", {}).get("inputs") != expected_inputs:
         errors.append("append-only provenance")
     for item in expected_inputs:
         path = ROOT / item["path"]
-        if not path.is_file() or sha(path) != item["sha256"]:
+        recorded = item.get("sha256", "")
+        historical = superseded and item.get("path") in SUPERSEDED_PATHS
+        if historical:
+            if len(recorded) != 64 or any(character not in "0123456789abcdef" for character in recorded):
+                errors.append("historical provenance " + item["path"])
+        elif not path.is_file() or sha(path) != recorded:
             errors.append("provenance " + item["path"])
     if digest(value) != value.get("independent_checker", {}).get("expected_digest"):
         errors.append("canonical digest")

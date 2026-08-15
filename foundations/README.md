@@ -815,6 +815,25 @@ open.  The causal Green theorem remains valid, while its receiver-executable
 action is not yet serialized.  The explorer now exposes this typed route
 split instead of asking for a mathematically inappropriate finite Green table.
 
+The V9--V10 audit then isolated and repaired an exact four-component sign
+conflict in the generalized-auxiliary cotangent differential.  The executable
+matrix and odd pairing require `v_star -> +eta_star`; the obsolete textual
+minus sign is nilpotent but has eight exact cyclicity defects.  The repaired
+classical source and affected certificate chain passed the complete covariant
+suite and all 82 terminal overclaim guards.
+
+The append-only
+[`V11 completion atlas`](reports/lorentzian-weyl-bv-completion-atlas-v11.md)
+now closes the full-unary serialization route.  The fixed 386-row carrier has
+18 receiver-readable operator tables, 127 symmetrized-covariant multiindex
+tables and 2,193 exact rational coefficients.  Sectorwise `q1^2=0` and
+suspended cyclicity over all 70 derivative multiindices replay with zero
+defects.  Gate A remains fail closed: `H_alg`, endpoint inclusion/projection,
+the degree-zero `T/A/B` shear and represented advanced/retarded Green actions
+must still be bound and replayed on the same unary snapshot before one common
+snapshot may be accepted.  Local `D`, same-carrier `q2`, Hadamard and QME
+remain downstream.
+
 ```bash
 python3 foundations/build_lorentzian_weyl_bv_completion_atlas.py --check
 python3 foundations/check_lorentzian_weyl_bv_completion_atlas.py
@@ -848,6 +867,18 @@ python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v8.py --check
 python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v8.py
 python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v8.py
 python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v8
+python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v9.py --check
+python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v9.py
+python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v9.py
+python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v9
+python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v10.py --check
+python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v10.py
+python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v10.py
+python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v10
+python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v11.py --check
+python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v11.py
+python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v11.py
+python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v11
 ```
 
 ## Lifecycle

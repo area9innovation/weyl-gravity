@@ -17,7 +17,7 @@ VIABILITY = ROOT / "foundations/site/viability.json"
 ASSEMBLIES = ROOT / "foundations/site/assemblies.json"
 CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V15.json"
 LADDER = ROOT / "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
-COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V10.json"
+COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V11.json"
 STATUSES = {"LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "REVIEWED_GAP", "NOT_MAPPED"}
 MIGRATIONS = {"EXACT_PARENT_TRANSFER", "CAPABILITY_QUALIFIED", "REVIEWED_OVERLAY", "REVIEWED_NO_TRANSFER", "REVIEWED_CHILD_GAP", "DIRECT_COORDINATE_REVIEW", "NOT_REVIEWED"}
 
@@ -160,7 +160,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     completion_flags = completion.get("claim_flags", {})
     if completion_flags.get("general_noncone_104_row_no_go") is not False or completion_flags.get("lorentzian_full_theory_certified") is not False:
         errors.append("Lorentzian completion fail-closed boundary")
-    if completion.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V10":
+    if completion.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V11":
         errors.append("Lorentzian completion atlas version")
     transport = completion.get("strict_causal_sign_transport", {})
     if transport.get("full_dimension") != 386 or transport.get("positive_signs") != 381 or transport.get("negative_signs") != 5 or transport.get("causal_stage_preserved") is not True:
@@ -204,8 +204,17 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("historical strict split-q1 diagnosis mutated")
     if (repair.get("repair_applied"), repair.get("source_and_ledgers_consistent"), repair.get("affected_chain_regenerated"), repair.get("plus_cyclicity_defects"), repair.get("minus_regression_cyclicity_defects"), repair.get("tier_3_status"), repair.get("terminal_overclaim_guards")) != (True, True, True, 0, 8, "PASS", 82):
         errors.append("strict split-q1 repair projection")
-    if completion_flags.get("strict_386_auxiliary_q_sign_repair_applied") is not True or completion_flags.get("strict_full_386_q1_portable_component_bytes") is not False or repair.get("full_q1_serialized") is not False or repair.get("classical_import_gate_passed") is not False:
+    if completion_flags.get("strict_386_auxiliary_q_sign_repair_applied") is not True or repair.get("full_q1_serialized") is not False or repair.get("classical_import_gate_passed") is not False:
         errors.append("strict split-q1 repair/full-q1 firewall")
+    full_q1 = completion.get("strict_full_q1_component_jet_table", {})
+    if (full_q1.get("carrier_dimension"), full_q1.get("operator_tables"), full_q1.get("coefficient_multiindex_tables"), full_q1.get("nonzero_rational_coefficients"), full_q1.get("maximum_order")) != (386, 18, 127, 2193, 4):
+        errors.append("strict full-q1 component projection")
+    if full_q1.get("q1_squared_zero") is not True or full_q1.get("suspended_cyclicity_defects") != 0 or full_q1.get("derivative_multiindices_checked") != 70:
+        errors.append("strict full-q1 exact replay")
+    if completion_flags.get("strict_full_386_q1_portable_component_bytes") is not True or completion_flags.get("strict_386_full_q1_squared_zero_replayed") is not True or completion_flags.get("strict_386_full_q1_suspended_cyclicity_replayed") is not True:
+        errors.append("strict full-q1 flags")
+    if full_q1.get("full_sdr_tables_serialized") is not False or full_q1.get("classical_import_gate_passed") is not False or completion_flags.get("strict_pure_weyl_classical_gate_passed") is not False:
+        errors.append("strict full-q1 Gate-A firewall")
     if viability.get("source_atlas_digest") != data.get("canonical_digest") or viability.get("canonical_digest") != result.get("independent_checker", {}).get("expected_viability_digest"):
         errors.append("theory viability source/digest pin")
     if len(viability.get("profiles", [])) != 36 or len(viability.get("carrier_envelopes", [])) != 6:
@@ -274,7 +283,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     for token in ("NGC 3198 head-to-head control", "Scoped winner: GR + NFW", "Why RMS and χ² disagree", "FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1"):
         if token not in app:
             errors.append("common-fit interface token " + token)
-    for token in ("completionView", "Weyl BV routes", "completionExplorer", "77 separately typed cells", "Where effort has the highest expected value", "RANK_ONLY_FEASIBLE", "general non-cone 104-row no-go", "Finite residual control", "Gate A still closed", "Gate V5", "Causal convention crosswalk", "Endpoint search completed", "arrow_tables_matching", "bach_columns_matching", "619", "Suspension question resolved", "54", "30", "376", "10", "Full component pairing serialized", "356=36+320", "410", "Three portability contracts", "FINITE_COMPONENT_JET_TABLE", "FINITE_SPARSE_COMPONENT_MAP", "ANALYTIC_GREEN_ACTION", "STRICT_386_FULL_Q1_JET_TABLE"):
+    for token in ("completionView", "Weyl BV routes", "completionExplorer", "77 separately typed cells", "Where effort has the highest expected value", "RANK_ONLY_FEASIBLE", "general non-cone 104-row no-go", "Finite residual control", "Gate A still closed", "Gate V5", "Causal convention crosswalk", "Endpoint search completed", "arrow_tables_matching", "bach_columns_matching", "619", "Suspension question resolved", "54", "30", "376", "10", "Full component pairing serialized", "356=36+320", "410", "Three portability contracts", "FINITE_COMPONENT_JET_TABLE", "FINITE_SPARSE_COMPONENT_MAP", "ANALYTIC_GREEN_ACTION", "Complete unary snapshot", "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1"):
         if token not in html + app + json.dumps(data):
             errors.append("completion interface token " + token)
 

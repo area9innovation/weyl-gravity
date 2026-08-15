@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-386-full-q1-component-jet-table-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "schema_path", "result_id", "result_kind", "result_state", "lifecycle", "created", "repository_base_commit", "dependency_tags", "question", "answer", "scope", "q1_serialization", "nilpotency_replay", "suspended_cyclicity_replay", "unary_snapshot", "foundational_strength", "gate_disposition", "claim_flags", "does_not_establish", "next_gate", "canonical_hashes", "provenance", "independent_checker", "human_report"],
+  "properties": {
+    "schema": {"const": "strict-386-full-q1-component-jet-table-v1"},
+    "schema_path": {"const": "quantum-weyl/classical_import/schema/strict-386-full-q1-component-jet-table-v1.schema.json"},
+    "result_id": {"const": "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1"},
+    "result_kind": {"const": "SAME_THEORY_FULL_UNARY_COMPONENT_JET_SERIALIZATION"},
+    "result_state": {"const": "FULL_386_Q1_SERIALIZED_NILPOTENT_SUSPENDED_CYCLIC_SDR_AND_COMMON_GATE_SNAPSHOT_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "question": {"type": "string", "minLength": 160},
+    "answer": {"type": "string", "minLength": 700},
+    "scope": {
+      "type": "object",
+      "required": ["theory", "background", "basis", "carrier_dimension", "arithmetic", "coordinate_presentation"],
+      "properties": {"carrier_dimension": {"const": 386}}
+    },
+    "q1_serialization": {
+      "type": "object",
+      "required": ["format", "orientation", "coefficient_field", "carrier_dimension", "carrier_split", "maximum_order", "counts", "tables"],
+      "properties": {
+        "coefficient_field": {"const": "Q"},
+        "carrier_dimension": {"const": 386},
+        "carrier_split": {"const": "30+36+320"},
+        "maximum_order": {"const": 4},
+        "counts": {
+          "type": "object",
+          "required": ["operator_tables", "coefficient_multiindex_tables", "nonzero_rational_coefficients", "by_sector"],
+          "properties": {
+            "operator_tables": {"const": 18},
+            "coefficient_multiindex_tables": {"const": 127},
+            "nonzero_rational_coefficients": {"const": 2193},
+            "by_sector": {"const": {"endpoint_30": 619, "auxiliary_36": 30, "mapping_cone_320": 1544}}
+          }
+        },
+        "tables": {
+          "type": "array",
+          "minItems": 18,
+          "maxItems": 18,
+          "items": {"$ref": "#/$defs/operatorTable"}
+        }
+      }
+    },
+    "nilpotency_replay": {
+      "type": "object",
+      "required": ["full_q1_squared_zero", "cross_sector_arrows", "sector_replays", "warning"],
+      "properties": {
+        "full_q1_squared_zero": {"const": true},
+        "cross_sector_arrows": {"const": 0}
+      }
+    },
+    "suspended_cyclicity_replay": {
+      "type": "object",
+      "required": ["identity", "equivalent_suspended_adjoint_identity", "D_diagonal", "R_diagonal_source", "coefficientwise_multiindices_checked", "exact_defects", "sector_defects", "ordinary_adjoint_used_on_endpoint", "reason"],
+      "properties": {
+        "coefficientwise_multiindices_checked": {"const": 70},
+        "exact_defects": {"const": 0},
+        "sector_defects": {"const": {"endpoint": 0, "auxiliary": 0, "mapping_cone": 0}},
+        "ordinary_adjoint_used_on_endpoint": {"const": false}
+      }
+    },
+    "unary_snapshot": {
+      "type": "object",
+      "required": ["kind", "basis_sha256", "pairing_sha256", "suspension_sha256", "q1_tables_sha256", "primitive_curvature_table_sha256", "snapshot_sha256"],
+      "properties": {
+        "kind": {"const": "STRICT_386_UNARY_OPERATOR_SNAPSHOT"},
+        "basis_sha256": {"$ref": "#/$defs/hash"},
+        "pairing_sha256": {"$ref": "#/$defs/hash"},
+        "suspension_sha256": {"$ref": "#/$defs/hash"},
+        "q1_tables_sha256": {"$ref": "#/$defs/hash"},
+        "snapshot_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "foundational_strength": {"type": "object", "required": ["finite_serialization_and_replay_base", "choice_operation_added", "infinite_selection_added", "analytic_semantics_imported", "weakest_base_for_full_analytic_causal_theorem"]},
+    "gate_disposition": {
+      "type": "object",
+      "required": ["full_386_component_basis_serialized", "full_386_component_pairing_serialized", "full_386_q1_component_jet_tables_serialized", "full_386_q1_squared_zero_replayed", "full_386_q1_suspended_cyclicity_replayed", "unary_snapshot_hash_established", "one_common_gate_a_snapshot_hash_accepted", "classical_import_gate_a_status"],
+      "properties": {
+        "full_386_component_basis_serialized": {"const": true},
+        "full_386_component_pairing_serialized": {"const": true},
+        "full_386_q1_component_jet_tables_serialized": {"const": true},
+        "full_386_q1_squared_zero_replayed": {"const": true},
+        "full_386_q1_suspended_cyclicity_replayed": {"const": true},
+        "unary_snapshot_hash_established": {"const": true},
+        "one_common_gate_a_snapshot_hash_accepted": {"const": false},
+        "classical_import_gate_a_status": {"const": "FAIL_CLOSED"}
+      }
+    },
+    "claim_flags": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "does_not_establish": {"type": "array", "minItems": 5, "maxItems": 5, "uniqueItems": true},
+    "next_gate": {"type": "string", "minLength": 240},
+    "canonical_hashes": {"type": "object", "required": ["q1_serialization_sha256", "nilpotency_replay_sha256", "suspended_cyclicity_replay_sha256", "unary_snapshot_sha256"], "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "provenance": {"type": "object", "required": ["inputs", "implementation"]},
+    "independent_checker": {"type": "object", "required": ["path", "expected_digest"], "properties": {"path": {"const": "quantum-weyl/classical_import/check_strict_386_full_q1_component_jet_table.py"}, "expected_digest": {"$ref": "#/$defs/hash"}}},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1.md"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "operatorTable": {
+      "type": "object",
+      "required": ["table_id", "source_block", "target_block", "source_global_indices", "target_global_indices", "shape", "maximum_order", "coefficient_multiindices", "nonzero_coefficients", "orientation", "role", "origin", "coefficients", "sha256"],
+      "properties": {
+        "table_id": {"type": "string", "minLength": 5},
+        "shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}},
+        "maximum_order": {"type": "integer", "minimum": 0, "maximum": 4},
+        "coefficient_multiindices": {"type": "integer", "minimum": 1},
+        "nonzero_coefficients": {"type": "integer", "minimum": 1},
+        "coefficients": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["multiindex", "entries"],
+            "properties": {
+              "multiindex": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer", "minimum": 0}},
+              "entries": {"type": "array"}
+            }
+          }
+        },
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

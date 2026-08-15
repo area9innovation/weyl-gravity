@@ -876,7 +876,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "11fbfd9589dc8f8205619c1d48ad6cefdf8c23422460fd2247b8bfab13c4c539"
+      "sha256": "17ab18c751557118da58c1c445c1c78d778bbb4221ae9736ec2d03fa9d427b82"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -962,6 +962,18 @@
       "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V10.json",
       "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V10",
       "sha256": "af06563333cd56c40238341f9d5f7a1bfb2f9e5d959c9dff0d9efdfeef16102e"
+    },
+    "lorentzian_weyl_bv_completion_atlas_v11": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V11.json",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V11",
+      "sha256": "c9db8dcf36b201f3d856f042638a88e3ebf842fcc15245a0c9b0cc7531c12a4d"
     },
     "lorentzian_weyl_bv_completion_atlas_v4": {
       "dependency_tags": [
@@ -1077,7 +1089,7 @@
       "lifecycle": "CLASSIFIED",
       "path": "quantum-weyl/classical_import/certificates/STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.json",
       "result_id": "STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1",
-      "sha256": "57c6dd9f5df7ae0e71af6150b154f95fa4f7b2baa849686d7c3cdada5138344f"
+      "sha256": "5e5e7c85d3a6ba190918a95f62159af24688a59bbc859fe7abc4a206b7efcc9e"
     },
     "strict_386_causal_sign_transport": {
       "dependency_tags": [
@@ -1097,7 +1109,7 @@
       "lifecycle": "CLASSIFIED",
       "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
       "result_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
-      "sha256": "e760565a08c4b551551ebff8ec5cdac26beb7715e976fe8612407278ee315303"
+      "sha256": "3b9d8a2fc5a70d20770452eb0a2a4891f59314c21c83188bfb59de0941cac4b2"
     },
     "strict_386_endpoint_q1_content_bridge": {
       "dependency_tags": [
@@ -1109,6 +1121,16 @@
       "result_id": "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
       "sha256": "7dcafc995a0662f610d721d39b3255f5fae6e32105286cc05051e3b658e16032"
     },
+    "strict_386_full_q1_component_jet_table": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1.json",
+      "result_id": "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1",
+      "sha256": "9b0e9da9e8838a0ade6e1f1214e16457e9a94af981d9d020c137d105f9e9c21e"
+    },
     "strict_386_suspended_adjoint_bridge": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -1117,7 +1139,7 @@
       "lifecycle": "CLASSIFIED",
       "path": "quantum-weyl/classical_import/certificates/STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1.json",
       "result_id": "STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1",
-      "sha256": "11e0533823321ca06b22d9ca85e82947b442276b4294f809a683ae5eac2a5a2e"
+      "sha256": "3c5a954fba4fc174bc995da0d1fc26164c1f2e816bd30a800d0c9e7c525f1cbc"
     },
     "strict_local_q1_q2_identity": {
       "dependency_tags": [
@@ -1166,10 +1188,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "e9cba33304b193f7f6c71bc298870d559d0e4e769021a8d457dccb063c840817"
+      "sha256": "ef1b2131443ea5edfb977bb52db8210b2027434128e2916d4aaae2733d4da01b"
     }
   },
-  "canonical_digest": "d523009f39baf78c79d2ed2c70707c432c51c7d07fc4738d7deb140301a7cad5",
+  "canonical_digest": "03208cc4d3ed835d745dc0c6b35506b43d0cb94764052f211a518c07beb78d0a",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -1330,13 +1352,18 @@
     "static_atlas_appendix_generated": true,
     "strict_386_all_operator_component_adjoints_replayed": false,
     "strict_386_causal_convention_stability_certified": true,
+    "strict_386_classical_import_gate_passed": false,
     "strict_386_component_basis_serialized": true,
     "strict_386_component_pairing_serialized": true,
     "strict_386_componentwise_t_adjoint_replayed": true,
     "strict_386_endpoint_all_700_bach_columns_match": true,
     "strict_386_endpoint_q1_content_identified": true,
+    "strict_386_full_q1_component_bytes_serialized": true,
+    "strict_386_full_q1_squared_zero_replayed": true,
+    "strict_386_full_q1_suspended_cyclicity_replayed": true,
     "strict_386_full_suspended_green_adjoint_replayed": true,
     "strict_386_local_d_certified": false,
+    "strict_386_local_sdr_component_maps_serialized": false,
     "strict_386_pairing_suspension_bridge_certified": true,
     "strict_minimal_bv_cyclicity_reconciled": true,
     "strict_pure_weyl_local_q1_q2_certified": true,
@@ -1796,6 +1823,19 @@
       ],
       "statement": "The exact slab point-density comparison upgrades to a genuine positive-radius probability bound. On a six-time-row cylinder of sup-norm radius 1/400 around arbitrary time-row fields, rational interval arithmetic over all eight lattice neighbors proves a uniform action-translation gap (g/8)L^3, where g=403338322161150510073/354498257782024320000. Consequently, at lambda=2/5, the translated slab cylinder has actual normalized Gibbs probability at most exp[-c_cyl L^3], with c_cyl=403338322161150510073/453757769960991129600. Translation avoids a neighborhood-entropy factor. This controls one structured cylinder, not every large-corrector environment, the Gibbs corrector moment, interacting H^-1 estimate, or continuum limit.",
       "status": "POSITIVE_RADIUS_SLAB_CYLINDER_EXPONENTIALLY_SUPPRESSED_GLOBAL_CORRECTOR_GATE_OPEN"
+    },
+    {
+      "authorities": [
+        "strict_386_full_q1_component_jet_table",
+        "lorentzian_weyl_bv_completion_atlas_v11"
+      ],
+      "claim_id": "RF-35-STRICT-WEYL-FULL-Q1-COMPONENT-SNAPSHOT",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "On the fixed 30+36+320 strict pure-Weyl carrier, the complete unary BV differential is receiver-readable exact data: 18 operator tables contain 127 symmetrized-covariant jet tables and 2,193 nonzero rational coefficients. Sectorwise nilpotency replays in the declared natural/PBW calculus and all 70 derivative multiindices have zero suspended-cyclicity defects. This closes the full-q1 serialization route but not the classical import gate: component tables for the local SDR, degree-zero T/A/B shear and represented advanced/retarded Green actions, followed by one accepted common snapshot, remain required before local D, q2 or any Hadamard/QME promotion.",
+      "status": "EXACT_FULL_UNARY_COMPONENT_SNAPSHOT_WITH_SDR_GREEN_GATE_OPEN"
     }
   ],
   "created": "2026-08-14",
@@ -1991,19 +2031,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "f3a4640417406185c0b7b526e994be2c3f69b4b2a5b6f37d32d011abcead2eaf",
+      "assembly_source_canonical_digest": "ef6c3e16b2c7f247e5b7193f08e2544474b7e066b29f45d648ef96474a5aa27e",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "e9cba33304b193f7f6c71bc298870d559d0e4e769021a8d457dccb063c840817",
+      "assembly_source_sha256": "ef1b2131443ea5edfb977bb52db8210b2027434128e2916d4aaae2733d4da01b",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
-      "generator_sha256": "f46fd7cd15f93d83c0f2ec292fa9e0cbae6bdc9f7a503dd39ff61565424db364",
+      "generator_sha256": "b333d2ca95d9d491cded1abd04760ef62ea4e2e8bcfdac5fd2ea1186a4ce418e",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "9f6ec7d2c87c9d42ba81e9b3f1cb5fe214e9d6e2b9e3e6f967d5927936ad0d7a",
-      "source_canonical_digest": "ff4162c82c7c747ec33ae0ac517ed7370e3bf2547eb77e381e099ebe4d4afce1",
+      "sha256": "b02056dbfca0e18c991038212f764cac1277cf8288ad56b3b55fd8afd8c42c31",
+      "source_canonical_digest": "2f42644703b4e4935ffe3d540eed5c2bf83c57eb06c2dfff5788a19623ec2ff8",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "d6a67cc590207310dddab65e0348d866969f4e55c043690139bb232153836eec"
+      "source_sha256": "6982153d9a1d8c8d28c4d7f7fbc73f187d1cef99a17a9df70294e0c0145b0675"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "1f6274de7c4ba087ae343c88202d45109813e22417b4c569154baa5adf577c9c"
+    "sha256": "1d5700a523323652add7eb9dc6b5d0b2fae3252a764281b766973f5525ba4f00"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

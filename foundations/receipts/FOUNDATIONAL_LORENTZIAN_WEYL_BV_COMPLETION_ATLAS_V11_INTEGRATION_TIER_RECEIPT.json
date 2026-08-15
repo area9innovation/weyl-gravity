@@ -1,0 +1,59 @@
+{
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V11_INTEGRATION_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V11",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Append-only Atlas V11, historical V10 successor handling, in-place explorer refresh, and Paper 21 integration of the complete strict 386-row unary snapshot and its remaining SDR/Green boundary.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile foundations/build_lorentzian_weyl_bv_completion_atlas_v11.py foundations/check_lorentzian_weyl_bv_completion_atlas_v11.py foundations/verify_lorentzian_weyl_bv_completion_atlas_v11.py foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py foundations/verify_matrix_site_v2.py paper/generate_21_reverse_foundations_appendices.py paper/generate_21_reverse_foundations_claim_map.py paper/verify_21_reverse_foundations_claim_map.py",
+        "python3 -m json.tool foundations/schema/foundational-lorentzian-weyl-bv-completion-atlas-v11.schema.json",
+        "git diff --check -- <explicit Atlas V11, site and Paper 21 paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v11.py --check && python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v11.py && python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v11.py && python3 -m unittest foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v11.py -v",
+        "python3 foundations/build_matrix_site_v2.py --check && python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py && python3 -m unittest foundations/tests/test_matrix_site.py -v",
+        "python3 paper/generate_21_reverse_foundations_appendices.py --check && python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+        "pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (twice, from paper/)"
+      ],
+      "checks": {
+        "atlas_v11_unit_tests": "6/6 PASS",
+        "site_unit_tests": "10/10 PASS",
+        "site_cells": 576,
+        "completion_branches": 7,
+        "completion_cells": 77,
+        "completion_routes": 9,
+        "paper_claims": 35,
+        "paper_pages": 62
+      }
+    },
+    "tier_2": {
+      "status": "PASS_VIA_DIRECT_CONSUMER_CHAIN",
+      "criterion": "Atlas V11, the explorer and Paper 21 consume the verified full-q1 receipt and preserve the exact Gate-A boundary. Both V10 and V11 historical/current verifiers, the complete site receiver and the paper claim-map receiver passed."
+    },
+    "tier_3": {
+      "status": "NOT_REQUIRED_FOR_PRESENTATION_LAYER",
+      "criterion": "No shared classical algebra, freeze tag or lifecycle state was promoted. The new scientific serializer has its own Tier-2 affected-chain receipt and consumes the previously Tier-3-certified repair."
+    }
+  },
+  "artifact_sha256": {
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V11.json": "c9db8dcf36b201f3d856f042638a88e3ebf842fcc15245a0c9b0cc7531c12a4d",
+    "foundations/reports/lorentzian-weyl-bv-completion-atlas-v11.md": "c19ca55d926dd47fa1d4a3ee4d94c1024fe46ea233920a67b831a9d8818035d9",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "17ab18c751557118da58c1c445c1c78d778bbb4221ae9736ec2d03fa9d427b82",
+    "foundations/site/manifest.json": "fe62a867263b5688d0c1b0eb24a3b813d1dfaf466bbb3902ee80561a242bdd72",
+    "paper/21-reverse-foundations-of-physics-appendices.tex": "b02056dbfca0e18c991038212f764cac1277cf8288ad56b3b55fd8afd8c42c31",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "6dc4fa38883a2da796d6d06be034678e27e21c91e6caa166521c1ee74e928578",
+    "paper/21-reverse-foundations-of-physics.pdf": "0235717e06a33fbfd604455db34fde8a070c777ed7a7826d24d2e84523910202"
+  },
+  "claim_boundary": "Atlas V11 and its site/paper projections certify the complete strict unary snapshot and rank local SDR/shear/represented-Green work first. They do not promote Gate A, local D, q2 compatibility, Hadamard construction, Ward identities, renormalized Lorentzian products, QME restoration, residual transfer, empirical validity, or a complete Lorentzian quantum theory."
+}

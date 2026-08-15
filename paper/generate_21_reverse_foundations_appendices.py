@@ -343,6 +343,39 @@ def build(data: dict, assemblies: dict) -> str:
             r"\end{longtable}",
             r"\endgroup",
             "",
+            r"\subsection{Lorentzian Weyl BV completion routes}",
+            r"\label{app:lorentzian-weyl-completion}",
+            "The completion atlas keeps eleven lifecycle stages separate on seven candidate architectures.  None of the branches is a completed Lorentzian quantum theory.  The strict 386-row branch now has a complete unary snapshot, but its authoritative classical-import stage remains fail closed until the SDR, canonical shear and represented Green actions are replayed on one common accepted object.",
+            "",
+            r"\begingroup",
+            r"\scriptsize",
+            r"\setlength{\tabcolsep}{3pt}",
+            r"\begin{longtable}{@{}rp{0.25\textwidth}p{0.12\textwidth}p{0.12\textwidth}p{0.39\textwidth}@{}}",
+            r"\caption{Ranked next certificates in Lorentzian Weyl BV completion atlas V11.}\label{tab:lorentzian-weyl-completion-routes}\\",
+            r"\toprule",
+            r"Rank & Route & Leverage & Tractability & Decisive deliverable \\",
+            r"\midrule",
+            r"\endfirsthead",
+            r"\toprule",
+            r"Rank & Route & Leverage & Tractability & Decisive deliverable \\",
+            r"\midrule",
+            r"\endhead",
+        ]
+    )
+    completion = data["completion_atlas"]
+    for route in completion["route_selection"]:
+        lines.append(
+            f"{route['rank']} & {cert(route['route'])} & {tex(route['scientific_leverage'])} & "
+            f"{tex(route['tractability'])} & {tex(route['recommendation'])}" + r" \\"
+        )
+    lines.extend(
+        [
+            r"\bottomrule",
+            r"\end{longtable}",
+            r"\endgroup",
+            "",
+            rf"The current unary object contains {completion['strict_full_q1_component_jet_table']['operator_tables']} operator tables and {completion['strict_full_q1_component_jet_table']['nonzero_rational_coefficients']:,} exact nonzero coefficients.  Its first-ranked successor is \cert{{{completion['route_selection'][0]['route']}}}; Hadamard and QME work remain downstream of the classical import gate.",
+            "",
             r"\subsection{Complete evidence and literature registers}",
             r"\label{app:evidence-catalogue}",
         ]

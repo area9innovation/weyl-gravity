@@ -64,8 +64,8 @@ BT_EUCLIDEAN_IMPORT = FOUNDATIONS / "results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_I
 AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json"
 FULL_SURFACE_AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json"
 LADDER = FOUNDATIONS / "results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
-COMPLETION_ATLAS = FOUNDATIONS / "results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V10.json"
-COMPLETION_REPORT = FOUNDATIONS / "reports/lorentzian-weyl-bv-completion-atlas-v10.md"
+COMPLETION_ATLAS = FOUNDATIONS / "results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V11.json"
+COMPLETION_REPORT = FOUNDATIONS / "reports/lorentzian-weyl-bv-completion-atlas-v11.md"
 COMPLETION_GATE = ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V5_RECONCILIATION.json"
 COMPLETION_GATE_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_GATE_V5.md"
 COMPLETION_SDR = ROOT / "quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json"
@@ -86,9 +86,11 @@ COMPLETION_Q1_SIGN_GATE = ROOT / "quantum-weyl/classical_import/certificates/STR
 COMPLETION_Q1_SIGN_GATE_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1.md"
 COMPLETION_Q1_SIGN_REPAIR = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.json"
 COMPLETION_Q1_SIGN_REPAIR_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.md"
+COMPLETION_FULL_Q1 = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1.json"
+COMPLETION_FULL_Q1_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1.md"
 LEDGERS = v1.LEDGERS
 CREATED = "2026-08-15"
-BASE_COMMIT = "2d92392e9840eed7a2da81551a25e33d7f0815d1"
+BASE_COMMIT = "cfc609324416133a1a0c712e2f706d3bc3fddd88"
 
 PLAIN_AXIS_GUIDE = {
     "FOUNDATION": {
@@ -330,6 +332,8 @@ def build_dataset() -> dict[str, Any]:
             "completion_q1_sign_gate_report": site_link(rel(COMPLETION_Q1_SIGN_GATE_REPORT)),
             "completion_q1_sign_repair": site_link(rel(COMPLETION_Q1_SIGN_REPAIR)),
             "completion_q1_sign_repair_report": site_link(rel(COMPLETION_Q1_SIGN_REPAIR_REPORT)),
+            "completion_full_q1": site_link(rel(COMPLETION_FULL_Q1)),
+            "completion_full_q1_report": site_link(rel(COMPLETION_FULL_Q1_REPORT)),
         },
     }
     dataset["canonical_digest"] = canonical_digest(dataset)
@@ -387,11 +391,13 @@ has 54 ordered nonzero entries, while its pullback to the thirty Gate coordinate
 has 30.  The full 386-row hybrid basis and rank-386 pairing are now serialized:
 the 356-row complement splits as 36 auxiliary plus 320 cone rows and the full
 pairing has 410 ordered entries.  The componentwise T adjoint replays exactly.
-The four-row auxiliary cotangent sign conflict is now repaired in source and
-ledgers, replayed against the exact pairing, and propagated through the full
-covariant suite with 82/82 terminal overclaim guards. Full q1, projector and
-Green component tables—and therefore all operator-level component adjoints—
-remain open, as do q2/D, Hadamard and QME.
+The four-row auxiliary cotangent sign conflict is repaired in source and
+ledgers and propagated through the full covariant suite with 82/82 terminal
+overclaim guards. The full q1 is now a content-addressed unary snapshot:
+18 operator tables, 127 jet tables and 2,193 rational coefficients on all
+386 rows, with exact nilpotency and zero suspended-cyclicity defects. Local
+SDR and canonical-shear tables plus represented Green actions remain open,
+as do the accepted common Gate-A snapshot, q2/D, Hadamard and QME.
 
 The new reconstruction import supplies the first explicit weak-arithmetic
 finite-approximant theorem for a declared bounded wave observable. Its rational
@@ -691,7 +697,7 @@ def generated() -> dict[Path, bytes]:
         NGC3198_COMMON_FIT_REPORT,
         COMPLETION_REPORT,
     ]
-    bundled_sources = sorted(set([CUBE, *PREVIOUS_CUBES, FULL_SURFACE_AUDIT, CORNER_BORN_INTERFACE, GROUND_STATE_DYNAMICS_INTERFACE, BT_EUCLIDEAN_IMPORT, GR_CASSINI_RESULT, GR_CASSINI_SCHEMA, MANNHEIM_NGC3198_RESULT, MANNHEIM_NGC3198_SCHEMA, MANNHEIM_NGC3198_PARAMETERS, MANNHEIM_NGC3198_SPARC, MANNHEIM_NGC3198_CPP, NGC3198_COMMON_FIT_RESULT, NGC3198_COMMON_FIT_SCHEMA, NGC3198_COMMON_FIT_PROTOCOL, NGC3198_COMMON_FIT_CPP, AUDIT, LADDER, COMPLETION_ATLAS, COMPLETION_REPORT, COMPLETION_GATE, COMPLETION_GATE_REPORT, COMPLETION_SDR, COMPLETION_SDR_REPORT, COMPLETION_CYCLIC, COMPLETION_CYCLIC_REPORT, COMPLETION_TRANSPORT, COMPLETION_TRANSPORT_REPORT, COMPLETION_ENDPOINT, COMPLETION_ENDPOINT_REPORT, COMPLETION_SUSPENSION, COMPLETION_SUSPENSION_REPORT, COMPLETION_COMPONENT_PAIRING, COMPLETION_COMPONENT_PAIRING_REPORT, COMPLETION_OPERATOR_PORTABILITY, COMPLETION_OPERATOR_PORTABILITY_REPORT, COMPLETION_Q1_SIGN_GATE, COMPLETION_Q1_SIGN_GATE_REPORT, COMPLETION_Q1_SIGN_REPAIR, COMPLETION_Q1_SIGN_REPAIR_REPORT, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
+    bundled_sources = sorted(set([CUBE, *PREVIOUS_CUBES, FULL_SURFACE_AUDIT, CORNER_BORN_INTERFACE, GROUND_STATE_DYNAMICS_INTERFACE, BT_EUCLIDEAN_IMPORT, GR_CASSINI_RESULT, GR_CASSINI_SCHEMA, MANNHEIM_NGC3198_RESULT, MANNHEIM_NGC3198_SCHEMA, MANNHEIM_NGC3198_PARAMETERS, MANNHEIM_NGC3198_SPARC, MANNHEIM_NGC3198_CPP, NGC3198_COMMON_FIT_RESULT, NGC3198_COMMON_FIT_SCHEMA, NGC3198_COMMON_FIT_PROTOCOL, NGC3198_COMMON_FIT_CPP, AUDIT, LADDER, COMPLETION_ATLAS, COMPLETION_REPORT, COMPLETION_GATE, COMPLETION_GATE_REPORT, COMPLETION_SDR, COMPLETION_SDR_REPORT, COMPLETION_CYCLIC, COMPLETION_CYCLIC_REPORT, COMPLETION_TRANSPORT, COMPLETION_TRANSPORT_REPORT, COMPLETION_ENDPOINT, COMPLETION_ENDPOINT_REPORT, COMPLETION_SUSPENSION, COMPLETION_SUSPENSION_REPORT, COMPLETION_COMPONENT_PAIRING, COMPLETION_COMPONENT_PAIRING_REPORT, COMPLETION_OPERATOR_PORTABILITY, COMPLETION_OPERATOR_PORTABILITY_REPORT, COMPLETION_Q1_SIGN_GATE, COMPLETION_Q1_SIGN_GATE_REPORT, COMPLETION_Q1_SIGN_REPAIR, COMPLETION_Q1_SIGN_REPAIR_REPORT, COMPLETION_FULL_Q1, COMPLETION_FULL_Q1_REPORT, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
     bundled_sources = sorted(set([*bundled_sources, *completion_evidence_paths]))
     for source in bundled_sources:
         outputs[SITE / "sources" / source.relative_to(ROOT)] = source.read_bytes()
@@ -716,7 +722,7 @@ def generated() -> dict[Path, bytes]:
         "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "scope": "Deterministic static exploration surface over the migration-reviewed foundations cube, cylinder implication ladder, and Lorentzian Weyl BV completion routes.",
         "counts": dataset["counts"],
-        "features": ["sixteen 6x6 heatmaps", "complete 576-coordinate assessment surface", "reviewed-open-gap state distinct from priority and result", "dual local+literature cell marks", "per-evidence directness roles", "general-audience three-question dimensions guide", "grouped five-stage physical-obligation journey", "progressive-disclosure glossary and reviewer mechanics", "plain-language guide for all 28 axis options", "separate coverage and migration-review states", "migration evidence inspector", "multi-select filters", "full-text search", "cell inspector", "one-axis neighbors", "two-cell comparison", "URL permalinks", "filtered JSON and CSV export", "research-brief export", "three-pathway typed argument map with linked relation ledger", "strength ladder", "evidence catalogue", "theory-profile readiness map", "researcher-selectable obligation gates", "multi-carrier coverage-envelope composer", "non-scalar Pareto navigation", "separate composition, numerical-reproduction, and empirical-agreement rails", "three-way assembly subnavigation for bounded models, research programmes, and interface/calibration ledgers", "nine named research-programme lenses with explicit scope cautions", "first model-scoped GR-to-Cassini bounded prediction assembly", "second bounded Mannheim-to-NGC3198 assembly with a no-refit standardized-residual audit and mixed pass/fail gates", "first explicit uniform finite-approximant reconstruction of a declared bounded wave observable", "finite localized rank-10 chiral test class with coefficient-wise weak wave identities", "named H2 test completion with explicit residual modulus and distributional state map", "fixed-support smooth-name to rational H2 translator", "support-indexed represented test-space comparison with LF boundary", "exact flat scalar 1+1 retarded, advanced, and biwave Green benchmarks", "fail-closed sixteen-gate scalar-biwave-to-Weyl-BV dependency delta", "typed strict-operator portability split for local tables and nonlocal Green actions", "historical auxiliary-q sign diagnosis plus certified source/ledger/pairing repair", "typed applicability mask", "exact field-equation-to-PPN-to-null-delay chain", "typed cross-cell interface ledger", "two certified scoped cross-cell bridges", "one certified scoped carrier non-identity", "independent maturity rails with missing distinct from failure", "empty fail-closed candidate empirical benchmark ledger", "external standard-GR positive control with four primary-source records", "ten-cell exact finite-operator closure", "twenty-cell exact finite-BRST closure"],
+        "features": ["sixteen 6x6 heatmaps", "complete 576-coordinate assessment surface", "reviewed-open-gap state distinct from priority and result", "dual local+literature cell marks", "per-evidence directness roles", "general-audience three-question dimensions guide", "grouped five-stage physical-obligation journey", "progressive-disclosure glossary and reviewer mechanics", "plain-language guide for all 28 axis options", "separate coverage and migration-review states", "migration evidence inspector", "multi-select filters", "full-text search", "cell inspector", "one-axis neighbors", "two-cell comparison", "URL permalinks", "filtered JSON and CSV export", "research-brief export", "three-pathway typed argument map with linked relation ledger", "strength ladder", "evidence catalogue", "theory-profile readiness map", "researcher-selectable obligation gates", "multi-carrier coverage-envelope composer", "non-scalar Pareto navigation", "separate composition, numerical-reproduction, and empirical-agreement rails", "three-way assembly subnavigation for bounded models, research programmes, and interface/calibration ledgers", "nine named research-programme lenses with explicit scope cautions", "first model-scoped GR-to-Cassini bounded prediction assembly", "second bounded Mannheim-to-NGC3198 assembly with a no-refit standardized-residual audit and mixed pass/fail gates", "first explicit uniform finite-approximant reconstruction of a declared bounded wave observable", "finite localized rank-10 chiral test class with coefficient-wise weak wave identities", "named H2 test completion with explicit residual modulus and distributional state map", "fixed-support smooth-name to rational H2 translator", "support-indexed represented test-space comparison with LF boundary", "exact flat scalar 1+1 retarded, advanced, and biwave Green benchmarks", "fail-closed sixteen-gate scalar-biwave-to-Weyl-BV dependency delta", "typed strict-operator portability split for local tables and nonlocal Green actions", "historical auxiliary-q sign diagnosis plus certified source/ledger/pairing repair", "complete content-addressed 386-row unary q1 snapshot with nilpotency and suspended-cyclicity replay", "typed applicability mask", "exact field-equation-to-PPN-to-null-delay chain", "typed cross-cell interface ledger", "two certified scoped cross-cell bridges", "one certified scoped carrier non-identity", "independent maturity rails with missing distinct from failure", "empty fail-closed candidate empirical benchmark ledger", "external standard-GR positive control with four primary-source records", "ten-cell exact finite-operator closure", "twenty-cell exact finite-BRST closure"],
         "provenance": {"manifest": rel(SITE / "manifest.json"), "manifest_sha256": v1.sha_bytes(manifest_bytes), "canonical_data_digest": dataset["canonical_digest"], "viability_digest": viability["canonical_digest"], "assembly_digest": assemblies["canonical_digest"], "completion_atlas_sha256": v1.sha(COMPLETION_ATLAS)},
         "independent_checker": {"path": "foundations/check_matrix_site_v2.py", "expected_cells": 576, "expected_emitted": 576, "expected_synthetic_not_mapped": 0, "expected_total_not_mapped": 0, "expected_reviewed_gaps": 169, "expected_evidence_records": 83, "expected_digest": dataset["canonical_digest"], "expected_viability_digest": viability["canonical_digest"], "expected_assembly_digest": assemblies["canonical_digest"]},
         "claim_flags": {"static_site_generated": True, "all_cartesian_coordinates_visible": True, "all_cartesian_coordinates_assessed": True, "zero_not_mapped": True, "reviewed_gaps_distinguished_from_results": True, "all_emitted_migrations_reviewed": True, "coverage_and_migration_separated": True, "all_used_evidence_resolved": True, "theory_profiles_generated": True, "theory_assembly_atlas_generated": True, "bounded_observable_reconstruction_exposed": True, "localized_coefficient_weak_wave_exposed": True, "named_h2_test_completion_exposed": True, "smooth_to_h2_translator_exposed": True, "support_indexed_test_comparison_exposed": True, "scalar_green_choice_audit_exposed": True, "at_least_one_cross_cell_interface_certified": True, "composition_and_observation_rails_separated": True, "scientific_claims_duplicated_by_hand": False, "literature_complete": False, "unmapped_means_absent": False, "reviewed_gap_means_absent": False, "reviewed_no_transfer_means_absent": False, "priority_score_is_theorem": False, "complete_observationally_valid_theory_identified": False, "new_lorentzian_claim": True},

@@ -1,0 +1,86 @@
+{
+  "receipt_id": "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Complete exact 386-row unary BV component-jet serialization, sectorwise nilpotency replay, suspended-cyclicity replay, post-repair provenance refresh, and affected classical-import verification chain.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile quantum-weyl/classical_import/build_strict_386_full_q1_component_jet_table.py quantum-weyl/classical_import/check_strict_386_full_q1_component_jet_table.py quantum-weyl/classical_import/verify_strict_386_full_q1_component_jet_table.py",
+        "python3 -m json.tool quantum-weyl/classical_import/schema/strict-386-full-q1-component-jet-table-v1.schema.json",
+        "git diff --check -- <explicit full-q1 and refreshed-provenance paths>"
+      ],
+      "dependency_environment": {
+        "system_python_probe": "FAIL_CLOSED: SymPy is not installed in the default Python environment",
+        "certified_overlay": "PASS: repository root plus /tmp/weyl-scipy and /tmp/weyl-sympy dist-packages supplied through PYTHONPATH",
+        "boundary": "The failed bare-system probe was not counted as a pass; every mathematical replay below ran under the declared overlay."
+      }
+    },
+    "tier_1": {
+      "status": "PASS",
+      "command_prefix": "PYTHONPATH=/home/alstrup/area9/weyl-gravity:/tmp/weyl-scipy/root/usr/lib/python3/dist-packages:/tmp/weyl-sympy/root/usr/lib/python3/dist-packages",
+      "commands": [
+        "python3 quantum-weyl/classical_import/build_strict_386_full_q1_component_jet_table.py --check",
+        "python3 quantum-weyl/classical_import/check_strict_386_full_q1_component_jet_table.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_full_q1_component_jet_table.py",
+        "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_full_q1_component_jet_table.py -v",
+        "python3 quantum-weyl/classical_import/verify_strict_386_full_q1_split_sign_gate.py"
+      ],
+      "elapsed_seconds": 20.8,
+      "checks": {
+        "carrier_dimension": 386,
+        "operator_tables": 18,
+        "coefficient_multiindex_tables": 127,
+        "nonzero_rational_coefficients": 2193,
+        "derivative_multiindices_checked": 70,
+        "q1_squared_zero": true,
+        "suspended_cyclicity_defects": 0,
+        "mutation_tests": "6/6 PASS",
+        "historical_sign_gate": "PASS with superseding repair provenance"
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "command_prefix": "PYTHONPATH=/home/alstrup/area9/weyl-gravity:/tmp/weyl-scipy/root/usr/lib/python3/dist-packages:/tmp/weyl-sympy/root/usr/lib/python3/dist-packages",
+      "commands": [
+        "python3 quantum-weyl/classical_import/verify_strict_386_endpoint_q1_content_bridge.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_suspended_adjoint_bridge.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_component_pairing_serialization.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_full_q1_split_sign_gate.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_auxiliary_q_sign_repair.py",
+        "python3 symbolic/verify_conformal_curvature_evolution.py --guards",
+        "python3 symbolic/verify_conformal_rank14_equation_sdr_boundary.py --guards",
+        "python3 symbolic/verify_conformal_curvature_mapping_cylinder_kernel.py --guards",
+        "python3 symbolic/verify_conformal_curvature_mapping_cylinder_substitution.py --guards",
+        "python3 quantum-weyl/classical_import/verify_strict_386_full_q1_component_jet_table.py"
+      ],
+      "elapsed_seconds": 27.6,
+      "criterion": "The unary snapshot consumes the endpoint, pairing, suspension, repaired auxiliary, curvature-evolution, rank-14 boundary and mapping-cylinder certificate chain; every direct dependency and the final receiver passed in order."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No shared classical operator or lifecycle state changed. The authoritative auxiliary source change already passed the complete 1433.50-second Tier-3 covariant suite with 82/82 terminal guards in STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1_TIER_RECEIPT; this milestone serializes and independently replays those content-addressed inputs without promoting Gate A."
+    }
+  },
+  "provenance_refresh": {
+    "reason": "The certified auxiliary cotangent-sign repair changed upstream content hashes. Suspension, component-pairing and repair projections were regenerated in dependency order; immutable historical sign-gate and Atlas V10 artifacts are accepted only through hash-pinned successor records.",
+    "refreshed_artifacts": [
+      "quantum-weyl/classical_import/certificates/STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1.json",
+      "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+      "quantum-weyl/classical_import/certificates/STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.json"
+    ]
+  },
+  "artifact_sha256": {
+    "quantum-weyl/classical_import/certificates/STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1.json": "9b0e9da9e8838a0ade6e1f1214e16457e9a94af981d9d020c137d105f9e9c21e",
+    "quantum-weyl/classical_import/REPORT_STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1.md": "c4c5258c3d19e34de36b460ce03c9ec1ceb5514f651eaefac3cd56c9c1fb9f60",
+    "quantum-weyl/classical_import/certificates/STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1.json": "3c5a954fba4fc174bc995da0d1fc26164c1f2e816bd30a800d0c9e7c525f1cbc",
+    "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json": "3b9d8a2fc5a70d20770452eb0a2a4891f59314c21c83188bfb59de0941cac4b2",
+    "quantum-weyl/classical_import/certificates/STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.json": "5e5e7c85d3a6ba190918a95f62159af24688a59bbc859fe7abc4a206b7efcc9e"
+  },
+  "claim_boundary": "This establishes one exact, content-addressed full-q1 unary snapshot and its nilpotency and suspended-cyclicity replays. It does not serialize the full SDR, canonical shear or represented Green actions, pass the classical import gate, bind local D or q2, construct a Hadamard state, restore the QME, transfer a quantum correction, or certify a Lorentzian quantum theory."
+}

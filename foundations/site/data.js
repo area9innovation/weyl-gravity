@@ -18030,24 +18030,24 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "completion_atlas": {
-    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v10",
-    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V10",
+    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v11",
+    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V11",
     "result_kind": "BRANCH_BY_STAGE_COMPLETION_ATLAS",
     "lifecycle": "CLASSIFIED",
     "created": "2026-08-15",
-    "repository_base_commit": "d0f09db4d46aa5a8198ef452f68443cf7380009f",
+    "repository_base_commit": "cfc609324416133a1a0c712e2f706d3bc3fddd88",
     "dependency_tags": [
       "LOCAL-ALGEBRAIC",
       "EUCLIDEAN-SPECTRAL",
       "REDUCED-MODE",
       "LORENTZIAN-CAUSAL"
     ],
-    "question": "After the exact four-row auxiliary cotangent sign conflict was isolated in atlas V9, has the preferred repair been applied consistently enough to reopen the strict 386-row full-q1 serialization route, and which acceptance boundary remains before the quantum programme may import a common classical snapshot?",
-    "answer": "Atlas V10 certifies the preferred local repair identified by V9. The factorized auxiliary cotangent arrow, generalized and universal split ledgers, vector contraction, current comparison and all regenerated downstream certificates now use v_star to plus eta_star, agreeing with the executable 36-row matrix and the fixed exact odd pairing. Independent rational replay gives zero q-squared and zero cyclicity defects for the repaired plus sign, while the deliberately reconstructed minus-sign regression remains nilpotent but produces the same eight cyclicity defects diagnosed by V9. The scoped retract, vector, current, direct-pairing, dependency and final-transport rails pass, and an uninterrupted full covariant rebuild completed in 1433.50 seconds with all 82 terminal overclaim guards passing. The rebuild also exposed and repaired a deterministic orchestration bug: the canonical runner now regenerates the SHA-bound direct-pairing receipt after its prolonged-current input. This closes the source/ledger inconsistency without rewriting the historical V9 diagnosis. It does not yet close strict Gate A: the full endpoint, repaired auxiliary and curvature-cone q1 blocks have not been emitted as one receiver-readable sparse 386-row table, independently replayed against the rank-386 pairing, and bound into one accepted import snapshot. Full q1 serialization is therefore the highest-leverage next object. Support-local SDR maps, represented endpoint and full Green actions, local D, q2 compatibility, Hadamard construction, Ward identities, renormalized Lorentzian products, QME restoration and residual quantum transfer remain fail closed.",
+    "question": "After Atlas V10 repaired the auxiliary cotangent sign, can the entire strict 386-row split unary BV differential now be treated as one receiver-readable exact object, and what is the first remaining boundary before a common Lorentzian classical import snapshot can be accepted?",
+    "answer": "Atlas V11 records the first complete content-addressed unary snapshot on the published strict 386-row carrier. The snapshot binds the 30-row Gate endpoint, repaired 36-row generalized-auxiliary complement and 320-row split curvature mapping cylinder to the rank-386 odd pairing and the certified suspension character. Eighteen operator tables contain 127 symmetrized-covariant jet coefficient tables and 2,193 nonzero rational coefficients: 619 on the endpoint, 30 on the auxiliary summand and 1,544 on the cone and its cotangent dual. The endpoint tables independently reproduce all 80 previously matched gauge, Bach and Noether tables; the cone includes complete lower-order Ecurv and Ncurv tables, their formal adjoints and every incidence arrow. Nilpotency replays in the appropriate exact natural/PBW calculus, including the unit-S3 commutator correction, and all 70 derivative multiindices satisfy the Gate suspended-cyclicity identity with zero exact defects. Crucially, the replay distinguishes the 30-row endpoint's certified suspended adjoint from the ordinary adjoint used on the 356-row complement: erasing that distinction creates spurious endpoint defects even though the underlying causal complex is unchanged. The artifact records the suspension character explicitly, so future consumers cannot accidentally compare operators under incompatible adjoint conventions. This closes the highest-ranked V10 route without converting the degree-zero T/A/B shear into primitive q1 arrows. Gate A nevertheless remains fail closed. The local contraction, endpoint inclusion/projection, canonical shear and represented advanced/retarded Green actions are not yet serialized against the unary snapshot, so the full SDR, causal support and suspended Green-adjoint identities cannot yet be replayed componentwise on one accepted object. Local D, q2 compatibility, Hadamard construction, Ward identities, renormalized Lorentzian products, QME restoration and residual transfer remain downstream and unpromoted.",
     "predecessor": {
-      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V9",
-      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V9.json",
-      "sha256": "019de2f4bd6864a0028c274b30eeae39265810999bf79c172b90f0abd2cd6f58",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V10",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V10.json",
+      "sha256": "af06563333cd56c40238341f9d5f7a1bfb2f9e5d959c9dff0d9efdfeef16102e",
       "preserved": true
     },
     "status_vocabulary": [
@@ -18155,7 +18155,7 @@ window.MATRIX_EXPLORER_DATA = {
           {
             "stage": "S0_CLASSICAL_AUTHORITY",
             "status": "FAIL_CLOSED",
-            "statement": "The four-row auxiliary q1 sign conflict is repaired: source, ledgers, exact pairing replay and the complete affected classical chain agree on +I4, and the full covariant suite passes. Gate A remains closed only because a receiver-readable full 386-row q1 table and accepted common snapshot hash are not yet emitted.",
+            "statement": "The complete 386-row split q1 is now exact receiver-readable data: 18 operator tables, 2,193 rational coefficients, sectorwise nilpotency and zero suspended-cyclicity defects. Gate A remains closed because the SDR, canonical shear and represented Green actions are not yet bound to the unary snapshot.",
             "evidence": [
               "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
               "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
@@ -18163,9 +18163,10 @@ window.MATRIX_EXPLORER_DATA = {
               "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
               "STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1",
               "STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1",
-              "STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1"
+              "STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1",
+              "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1"
             ],
-            "boundary": "The repair certificate does not itself serialize the endpoint, auxiliary and curvature-cone blocks as one full q1 artifact or accept them into the quantum import manifest. Local SDR maps, Green actions, local D, q2 and quantum lifecycle stages remain open."
+            "boundary": "A unary snapshot is necessary but not a common Gate-A snapshot. H_alg, endpoint inclusion/projection, T/A/B shear, advanced/retarded Green actions, local D and q2 remain absent from the accepted common object."
           },
           {
             "stage": "S1_OFF_SHELL_BV",
@@ -18254,7 +18255,7 @@ window.MATRIX_EXPLORER_DATA = {
           }
         ],
         "first_unclosed_gate": "S0_CLASSICAL_AUTHORITY",
-        "next_decisive_object": "Emit a canonical sparse 386-row q1 table on the published paired carrier, independently replay q1 squared and odd-pairing cyclicity on every block, and bind the accepted bytes into one classical import snapshot."
+        "next_decisive_object": "Serialize H_alg, endpoint inclusion/projection and the canonical T/A/B shear on the unary snapshot, then add represented endpoint/full Green actions and replay the SDR, causal-support and suspended-adjoint identities componentwise."
       },
       {
         "id": "PURE_WEYL_BACH_FLAT_RANK310",
@@ -18859,8 +18860,8 @@ window.MATRIX_EXPLORER_DATA = {
       "theory_identity_front": {
         "branch": "STRICT_PURE_WEYL_386",
         "first_gate": "S0_CLASSICAL_AUTHORITY",
-        "current_fact": "The auxiliary source/ledger inconsistency is repaired and the entire affected classical chain passes; only the combined receiver-readable q1 artifact and accepted snapshot binding remain at Gate A.",
-        "best_next_object": "A canonical sparse full-386 q1 table with independent all-row nilpotency and odd-pairing replay."
+        "current_fact": "The full 386-row unary differential, pairing and suspension are one exact snapshot with nilpotency and suspended cyclicity replayed; the remaining Gate-A gap is the local SDR/shear/represented-Green action bundle.",
+        "best_next_object": "Component tables for H_alg, endpoint inclusion/projection and the T/A/B shear, followed by represented advanced/retarded Green actions on the same snapshot."
       },
       "analytic_maturity_front": {
         "branch": "BERGER_POSITIVE_CLOCK_54",
@@ -19002,48 +19003,48 @@ window.MATRIX_EXPLORER_DATA = {
     "route_selection": [
       {
         "rank": 1,
-        "route": "STRICT_386_FULL_Q1_JET_TABLE",
+        "route": "STRICT_386_LOCAL_SDR_COMPONENT_MAPS",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "HIGH",
         "dependency_depth": "LOW",
-        "recommendation": "Emit endpoint, repaired auxiliary and curvature mapping-cylinder blocks as one canonical sparse 386-row q1 table and independently replay q1 squared and odd-pairing cyclicity."
+        "recommendation": "Serialize H_alg and endpoint inclusion/projection from the exact producers and independently replay PI, IP-I=qH+Hq and cyclicity on the fixed unary snapshot."
       },
       {
         "rank": 2,
-        "route": "STRICT_386_ACCEPTED_COMMON_SNAPSHOT",
-        "branch": "STRICT_PURE_WEYL_386",
-        "scientific_leverage": "VERY_HIGH",
-        "tractability": "HIGH",
-        "dependency_depth": "LOW",
-        "recommendation": "Bind the verified full-q1 bytes, basis, pairing and classical dependency hashes into one receiver-accepted import snapshot without treating regeneration as independent verification."
-      },
-      {
-        "rank": 3,
-        "route": "STRICT_386_LOCAL_SDR_COMPONENT_MAPS",
+        "route": "STRICT_386_CANONICAL_SHEAR_TABLE",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "HIGH",
         "tractability": "HIGH",
         "dependency_depth": "LOW",
-        "recommendation": "Serialize H_alg, P_alg, P_end, i_end and p_end from exact producers and independently replay the support-local SDR and cyclic identities on the accepted carrier."
+        "recommendation": "Serialize the degree-zero T/A/B canonical shear and inverse separately from q1, preserving the split-coordinate theorem and support locality."
       },
       {
-        "rank": 4,
+        "rank": 3,
         "route": "STRICT_ENDPOINT_ANALYTIC_GREEN_ACTION",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "LOW",
         "dependency_depth": "MEDIUM",
-        "recommendation": "Declare represented test and distribution spaces and import an advanced/retarded endpoint action or kernel with topology, continuity, uniqueness, support and adjoint data."
+        "recommendation": "Declare represented test/distribution spaces and import advanced/retarded endpoint actions with topology, continuity, uniqueness, support and adjoint data."
+      },
+      {
+        "rank": 4,
+        "route": "STRICT_FULL_GREEN_COMPONENT_ACTION_REPLAY",
+        "branch": "STRICT_PURE_WEYL_386",
+        "scientific_leverage": "VERY_HIGH",
+        "tractability": "MEDIUM",
+        "dependency_depth": "HIGH",
+        "recommendation": "Compose the represented endpoint Green action with accepted SDR/shear tables and replay full homotopy, causal support and suspended adjointness on the fixed carrier."
       },
       {
         "rank": 5,
-        "route": "STRICT_FULL_GREEN_COMPONENT_ACTION_REPLAY",
+        "route": "STRICT_386_ACCEPTED_COMMON_SNAPSHOT",
         "branch": "STRICT_PURE_WEYL_386",
-        "scientific_leverage": "HIGH",
-        "tractability": "LOW",
-        "dependency_depth": "HIGH",
-        "recommendation": "Compose the represented endpoint Green action with accepted local SDR maps and replay full homotopy, causal support and suspended adjointness on the fixed carrier."
+        "scientific_leverage": "VERY_HIGH",
+        "tractability": "HIGH",
+        "dependency_depth": "LOW",
+        "recommendation": "Bind basis, pairing, q1, SDR, shear and represented Green actions into one receiver-accepted import snapshot without treating producer regeneration as independent verification."
       },
       {
         "rank": 6,
@@ -19052,7 +19053,7 @@ window.MATRIX_EXPLORER_DATA = {
         "scientific_leverage": "VERY_HIGH",
         "tractability": "LOW",
         "dependency_depth": "MEDIUM",
-        "recommendation": "Serialize cylinder-time D on the accepted operator carrier and verify its q1 commutator only after the unary carrier artifacts share one digest."
+        "recommendation": "Serialize cylinder-time D on the accepted common carrier and verify its q1 commutator before any nonlinear promotion."
       },
       {
         "rank": 7,
@@ -19079,45 +19080,45 @@ window.MATRIX_EXPLORER_DATA = {
         "scientific_leverage": "HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "MEDIUM",
-        "recommendation": "Use the broad curved strict causal branch as an independent nonlinear compatibility control while the target-theory portability route advances."
+        "recommendation": "Use the broad curved strict causal branch as an independent nonlinear compatibility control while the target-theory import route advances."
       }
     ],
     "research_queue": [
       {
         "priority": 1,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_386_FULL_Q1_JET_TABLE",
-        "why": "Emit endpoint, repaired auxiliary and curvature mapping-cylinder blocks as one canonical sparse 386-row q1 table and independently replay q1 squared and odd-pairing cyclicity."
+        "object": "STRICT_386_LOCAL_SDR_COMPONENT_MAPS",
+        "why": "Serialize H_alg and endpoint inclusion/projection from the exact producers and independently replay PI, IP-I=qH+Hq and cyclicity on the fixed unary snapshot."
       },
       {
         "priority": 2,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_386_ACCEPTED_COMMON_SNAPSHOT",
-        "why": "Bind the verified full-q1 bytes, basis, pairing and classical dependency hashes into one receiver-accepted import snapshot without treating regeneration as independent verification."
+        "object": "STRICT_386_CANONICAL_SHEAR_TABLE",
+        "why": "Serialize the degree-zero T/A/B canonical shear and inverse separately from q1, preserving the split-coordinate theorem and support locality."
       },
       {
         "priority": 3,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_386_LOCAL_SDR_COMPONENT_MAPS",
-        "why": "Serialize H_alg, P_alg, P_end, i_end and p_end from exact producers and independently replay the support-local SDR and cyclic identities on the accepted carrier."
+        "object": "STRICT_ENDPOINT_ANALYTIC_GREEN_ACTION",
+        "why": "Declare represented test/distribution spaces and import advanced/retarded endpoint actions with topology, continuity, uniqueness, support and adjoint data."
       },
       {
         "priority": 4,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_ENDPOINT_ANALYTIC_GREEN_ACTION",
-        "why": "Declare represented test and distribution spaces and import an advanced/retarded endpoint action or kernel with topology, continuity, uniqueness, support and adjoint data."
+        "object": "STRICT_FULL_GREEN_COMPONENT_ACTION_REPLAY",
+        "why": "Compose the represented endpoint Green action with accepted SDR/shear tables and replay full homotopy, causal support and suspended adjointness on the fixed carrier."
       },
       {
         "priority": 5,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_FULL_GREEN_COMPONENT_ACTION_REPLAY",
-        "why": "Compose the represented endpoint Green action with accepted local SDR maps and replay full homotopy, causal support and suspended adjointness on the fixed carrier."
+        "object": "STRICT_386_ACCEPTED_COMMON_SNAPSHOT",
+        "why": "Bind basis, pairing, q1, SDR, shear and represented Green actions into one receiver-accepted import snapshot without treating producer regeneration as independent verification."
       },
       {
         "priority": 6,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_386_LOCAL_D",
-        "why": "Serialize cylinder-time D on the accepted operator carrier and verify its q1 commutator only after the unary carrier artifacts share one digest."
+        "why": "Serialize cylinder-time D on the accepted common carrier and verify its q1 commutator before any nonlinear promotion."
       },
       {
         "priority": 7,
@@ -19135,7 +19136,7 @@ window.MATRIX_EXPLORER_DATA = {
         "priority": 9,
         "branch": "PURE_WEYL_BACH_FLAT_RANK310",
         "object": "BACH_FLAT_NONLINEAR_CARTAN",
-        "why": "Use the broad curved strict causal branch as an independent nonlinear compatibility control while the target-theory portability route advances."
+        "why": "Use the broad curved strict causal branch as an independent nonlinear compatibility control while the target-theory import route advances."
       }
     ],
     "provenance": {
@@ -19394,6 +19395,16 @@ window.MATRIX_EXPLORER_DATA = {
           "path": "quantum-weyl/classical_import/certificates/STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.json",
           "sha256": "57c6dd9f5df7ae0e71af6150b154f95fa4f7b2baa849686d7c3cdada5138344f",
           "role": "exact auxiliary-q sign repair and full classical-suite receipt"
+        },
+        {
+          "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V10.json",
+          "sha256": "af06563333cd56c40238341f9d5f7a1bfb2f9e5d959c9dff0d9efdfeef16102e",
+          "role": "immutable V10 atlas predecessor"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1.json",
+          "sha256": "9b0e9da9e8838a0ade6e1f1214e16457e9a94af981d9d020c137d105f9e9c21e",
+          "role": "complete exact 386-row unary snapshot and replay"
         }
       ]
     },
@@ -19435,7 +19446,7 @@ window.MATRIX_EXPLORER_DATA = {
       "strict_386_operator_portability_types_classified": true,
       "strict_endpoint_q1_portable_component_bytes": true,
       "strict_causal_green_homotopy_theorem_preserved": true,
-      "strict_full_386_q1_portable_component_bytes": false,
+      "strict_full_386_q1_portable_component_bytes": true,
       "strict_full_386_local_sdr_portable_component_bytes": false,
       "strict_endpoint_green_portable_action_serialized": false,
       "strict_full_green_portable_action_serialized": false,
@@ -19448,7 +19459,12 @@ window.MATRIX_EXPLORER_DATA = {
       "v9_preserved": true,
       "strict_386_auxiliary_q_source_ledger_pairing_consistent": true,
       "strict_386_affected_classical_chain_verified": true,
-      "strict_386_full_classical_covariant_suite_passed": true
+      "strict_386_full_classical_covariant_suite_passed": true,
+      "v10_preserved": true,
+      "strict_386_full_q1_squared_zero_replayed": true,
+      "strict_386_full_q1_suspended_cyclicity_replayed": true,
+      "strict_386_unary_snapshot_hash_established": true,
+      "strict_386_full_sdr_operator_tables_serialized": false
     },
     "does_not_establish": [
       "a passed strict pure-Weyl classical import gate",
@@ -19487,29 +19503,35 @@ window.MATRIX_EXPLORER_DATA = {
       "a Hadamard state, Ward theorem, QME restoration, residual transfer or Lorentzian quantum theory",
       "receiver-readable full 386-row q1 component bytes or an accepted common classical snapshot hash",
       "portable support-local SDR component maps or represented endpoint and full Green actions",
-      "local D, q2 compatibility, a BRST-compatible Hadamard state, renormalized Lorentzian products, QME restoration, residual quantum transfer or a Lorentzian quantum theory"
+      "local D, q2 compatibility, a BRST-compatible Hadamard state, renormalized Lorentzian products, QME restoration, residual quantum transfer or a Lorentzian quantum theory",
+      "component tables for H_alg, endpoint inclusion/projection, the canonical T/A/B shear, or advanced/retarded Green actions",
+      "one accepted common Gate-A snapshot binding q1, q2, D, pairing, SDR and causal Green data",
+      "q2 or local D on the same 386-row causal carrier",
+      "a weakest-foundation calibration of the imported analytic Green theorem",
+      "a Hadamard state, BRST Ward theorem, positivity result, renormalized Lorentzian products, QME restoration, residual transfer or Lorentzian quantum theory"
     ],
     "independent_checker": {
-      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v10.py",
+      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v11.py",
       "checks": [
-        "V9 preservation",
+        "V10 preservation",
         "77-cell closure",
         "strict S0-only mutation",
-        "repair projection",
-        "zero-versus-eight replay",
-        "Tier-3 receipt",
-        "full-q1/import firewall",
+        "full-q1 projection",
+        "2,193 coefficient inventory",
+        "zero nilpotency/cyclicity defects",
+        "unary snapshot binding",
+        "SDR/import firewall",
         "causal theorem preservation",
         "nine-route ranking",
         "append-only provenance",
         "content hashes",
         "canonical digest"
       ],
-      "expected_digest": "ea301acf8a3878b86df297a0e137af6703d5fba1c8f8e70149add90f15c6ac3a"
+      "expected_digest": "cfa052fbbdaf3c7ecbbc76fd4671a15d588037bea4a51b43d8ab5e668a740c0a"
     },
-    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v10.md",
+    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v11.md",
     "strict_gate_a_progress": {
-      "status": "AUXILIARY_Q_SIGN_REPAIRED_FULL_Q1_REQUIRED",
+      "status": "FULL_Q1_SERIALIZED_SDR_COMMON_SNAPSHOT_REQUIRED",
       "evidence": [
         "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
         "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
@@ -19560,8 +19582,8 @@ window.MATRIX_EXPLORER_DATA = {
           "q2_omegastar_hhstar__reverse"
         ]
       },
-      "remaining_common_carrier": "Emit the endpoint, repaired auxiliary and curvature mapping-cylinder blocks as one canonical sparse 386-row q1 table; independently replay q1 squared and odd-pairing cyclicity; then bind the accepted bytes into one classical import snapshot.",
-      "boundary": "The repair and full classical rebuild pass, but Gate A still requires the combined full-q1 bytes and one receiver-accepted content-addressed snapshot.",
+      "remaining_common_carrier": "Serialize H_alg, endpoint inclusion/projection, the degree-zero T/A/B shear and advanced/retarded Green actions against this unary snapshot, independently replay the SDR and suspended Green-adjoint identities componentwise, and only then accept a common Gate-A snapshot hash before binding q2 and local D.",
+      "boundary": "The unary snapshot passes exact q1 tests, but Gate A still requires componentwise SDR/shear/Green actions and one receiver-accepted common snapshot before q2 or D are bound.",
       "endpoint_q1_control": {
         "dimension": 30,
         "arrow_tables_matching": 80,
@@ -19650,6 +19672,28 @@ window.MATRIX_EXPLORER_DATA = {
         "full_q1_serialized": false,
         "classical_import_gate_passed": false,
         "next_gate": "Emit the endpoint, repaired auxiliary and curvature mapping-cylinder blocks as one canonical sparse 386-row q1 table; independently replay q1 squared and odd-pairing cyclicity; then bind the accepted bytes into one classical import snapshot."
+      },
+      "full_q1_component_jet_control": {
+        "result_id": "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1",
+        "status": "FULL_386_Q1_SERIALIZED_NILPOTENT_SUSPENDED_CYCLIC_SDR_AND_COMMON_GATE_SNAPSHOT_OPEN",
+        "carrier_dimension": 386,
+        "carrier_split": "30+36+320",
+        "operator_tables": 18,
+        "coefficient_multiindex_tables": 127,
+        "nonzero_rational_coefficients": 2193,
+        "sector_coefficients": {
+          "endpoint_30": 619,
+          "auxiliary_36": 30,
+          "mapping_cone_320": 1544
+        },
+        "maximum_order": 4,
+        "q1_squared_zero": true,
+        "suspended_cyclicity_defects": 0,
+        "derivative_multiindices_checked": 70,
+        "unary_snapshot_sha256": "34d0a3198d73a99111a1b91d9b642f8d890c4c479de00d056fe592c820f2e39a",
+        "full_sdr_tables_serialized": false,
+        "classical_import_gate_passed": false,
+        "next_gate": "Serialize H_alg, endpoint inclusion/projection, the degree-zero T/A/B shear and advanced/retarded Green actions against this unary snapshot, independently replay the SDR and suspended Green-adjoint identities componentwise, and only then accept a common Gate-A snapshot hash before binding q2 and local D."
       }
     },
     "strict_causal_sign_transport": {
@@ -19778,6 +19822,28 @@ window.MATRIX_EXPLORER_DATA = {
       "full_q1_serialized": false,
       "classical_import_gate_passed": false,
       "next_gate": "Emit the endpoint, repaired auxiliary and curvature mapping-cylinder blocks as one canonical sparse 386-row q1 table; independently replay q1 squared and odd-pairing cyclicity; then bind the accepted bytes into one classical import snapshot."
+    },
+    "strict_full_q1_component_jet_table": {
+      "result_id": "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1",
+      "status": "FULL_386_Q1_SERIALIZED_NILPOTENT_SUSPENDED_CYCLIC_SDR_AND_COMMON_GATE_SNAPSHOT_OPEN",
+      "carrier_dimension": 386,
+      "carrier_split": "30+36+320",
+      "operator_tables": 18,
+      "coefficient_multiindex_tables": 127,
+      "nonzero_rational_coefficients": 2193,
+      "sector_coefficients": {
+        "endpoint_30": 619,
+        "auxiliary_36": 30,
+        "mapping_cone_320": 1544
+      },
+      "maximum_order": 4,
+      "q1_squared_zero": true,
+      "suspended_cyclicity_defects": 0,
+      "derivative_multiindices_checked": 70,
+      "unary_snapshot_sha256": "34d0a3198d73a99111a1b91d9b642f8d890c4c479de00d056fe592c820f2e39a",
+      "full_sdr_tables_serialized": false,
+      "classical_import_gate_passed": false,
+      "next_gate": "Serialize H_alg, endpoint inclusion/projection, the degree-zero T/A/B shear and advanced/retarded Green actions against this unary snapshot, independently replay the SDR and suspended Green-adjoint identities componentwise, and only then accept a common Gate-A snapshot hash before binding q2 and local D."
     }
   },
   "cross_cell_interfaces": [
@@ -19947,8 +20013,8 @@ window.MATRIX_EXPLORER_DATA = {
     "ground_state_dynamics_interface_report": "sources/foundations/reports/krein-fock-ground-state-dynamics-interface.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md",
-    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V10.json",
-    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v10.md",
+    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V11.json",
+    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v11.md",
     "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V5_RECONCILIATION.json",
     "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V5.md",
     "completion_sdr": "sources/quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json",
@@ -19968,7 +20034,9 @@ window.MATRIX_EXPLORER_DATA = {
     "completion_q1_sign_gate": "sources/quantum-weyl/classical_import/certificates/STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1.json",
     "completion_q1_sign_gate_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1.md",
     "completion_q1_sign_repair": "sources/quantum-weyl/classical_import/certificates/STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.json",
-    "completion_q1_sign_repair_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.md"
+    "completion_q1_sign_repair_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.md",
+    "completion_full_q1": "sources/quantum-weyl/classical_import/certificates/STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1.json",
+    "completion_full_q1_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1.md"
   },
-  "canonical_digest": "ff4162c82c7c747ec33ae0ac517ed7370e3bf2547eb77e381e099ebe4d4afce1"
+  "canonical_digest": "2f42644703b4e4935ffe3d540eed5c2bf83c57eb06c2dfff5788a19623ec2ff8"
 };

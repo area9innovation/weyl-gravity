@@ -21,6 +21,7 @@ CURVED = ROOT / "covariant_completion/certificates/curved_auxiliary_canonical_sp
 FACTORIZED_SOURCE = ROOT / "covariant_completion/curved_retract/factorized_q_split.py"
 REPAIR = HERE / "certificates/STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.json"
 SUPERSEDED_PATHS = {
+    "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
     "covariant_completion/certificates/generalized_auxiliary_contraction.json",
     "covariant_completion/certificates/curved_auxiliary_canonical_split.json",
     "covariant_completion/curved_retract/factorized_q_split.py",
