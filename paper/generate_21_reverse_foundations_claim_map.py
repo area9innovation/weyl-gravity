@@ -80,6 +80,7 @@ AUTHORITY_PATHS = {
     "scalar_biwave_to_weyl_bv_delta": "foundations/results/FOUNDATIONAL_SCALAR_BIWAVE_TO_WEYL_BV_DEPENDENCY_DELTA_V1.json",
     "strict_portable_local_q1": "quantum-weyl/classical_import/certificates/STRICT_PORTABLE_LOCAL_Q1_AST_V1.json",
     "strict_local_q1_q2_identity": "quantum-weyl/classical_import/certificates/STRICT_LOCAL_Q1_Q2_IDENTITY_V1.json",
+    "classical_import_gate_v4": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V4_RECONCILIATION.json",
     "finite_graph_causality": "foundations/results/FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1.json",
     "finite_bv": "foundations/results/FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1.json",
 }
@@ -643,7 +644,7 @@ def build() -> dict:
                 "claim_id": "RF-24-STRICT-WEYL-LOCAL-Q1-Q2",
                 "statement": "On the declared Bach-flat strict pure-Weyl minimal BV carrier, the portable unary complex is square zero and the arity-two master identity exhausts 18 typed channels and 51 composable paths using all five q1 and all twenty-two ordered q2 components. Full local D, common BV pairing and cyclicity, Gate A, causal propagation and quantum lifecycle promotions remain open.",
                 "status": "LOCAL_ALGEBRAIC_ARITY_TWO_MASTER_IDENTITY_WITH_GATE_BOUNDARY",
-                "authorities": ["strict_portable_local_q1", "strict_local_q1_q2_identity"],
+                "authorities": ["strict_portable_local_q1", "strict_local_q1_q2_identity", "classical_import_gate_v4"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC"],
             },
         ],

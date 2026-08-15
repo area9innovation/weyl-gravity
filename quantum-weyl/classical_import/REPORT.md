@@ -205,6 +205,11 @@ five-jet background replays; one sign mutation in each family produces a
 nonzero defect. Thus `q1q2=0` is now certified, while the `D` and common BV-
 pairing identities, the seven-proof support-local export contract, Gate A,
 causal propagation and every quantum lifecycle promotion remain fail closed.
+The current aggregate disposition is
+[`CLASSICAL_IMPORT_GATE_V4_RECONCILIATION`](REPORT_GATE_V4.md): it promotes
+only the minimal `q2` export and `q1q2` check to same-theory scoped evidence,
+leaves all seven common snapshot hashes unaccepted, and narrows M2 to local
+`D`, full-carrier extension and the independent M4 pairing/cyclicity layer.
 
 ## Antifield/Koszul--Tate handoff contract
 

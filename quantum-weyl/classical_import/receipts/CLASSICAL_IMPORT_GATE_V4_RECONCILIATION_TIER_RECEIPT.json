@@ -1,0 +1,71 @@
+{
+  "receipt_id": "CLASSICAL_IMPORT_GATE_V4_RECONCILIATION_TIER_RECEIPT",
+  "result_id": "CLASSICAL_IMPORT_GATE_V4_RECONCILIATION",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "base_commit": "909ce138347fc6d34aa2e00129be5d4124980f66",
+  "content_hashes": {
+    "quantum-weyl/classical_import/build_classical_import_gate_v4_reconciliation.py": "71313593b812e64cda3e3054f8113fdcfe44b4a7276cf82155813e65aafa65f6",
+    "quantum-weyl/classical_import/check_classical_import_gate_v4_reconciliation.py": "3a5c5e40e99c0471cc40c9c824f288e5b3c5803ea690bacb07a3817d184a5a21",
+    "quantum-weyl/classical_import/verify_classical_import_gate_v4_reconciliation.py": "da47611d675d4bb837bae81262b0da5ce07883206280bb761fbd4d2e252a5138",
+    "quantum-weyl/classical_import/schema/classical-import-gate-v4-reconciliation-v1.schema.json": "337610dcefcb19decdbde750a3dd46cca37e79edb2fe9395ddbf604b25fbb453",
+    "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V4_RECONCILIATION.json": "a36b3bf8dcc8539a1f40d06a93bf073157bdab3866d16eecdafaa51d93754fca",
+    "quantum-weyl/classical_import/REPORT_GATE_V4.md": "04aa74f11277a345e33b67e538c3a92e5af8892fe11f992c0d5ea0ec1aabfef8",
+    "quantum-weyl/classical_import/tests/test_classical_import_gate_v4_reconciliation.py": "d3902b791923408b28b70bc7a74e1cba852344a7ac8e05e07742fd0474924fce",
+    "quantum-weyl/classical_import/REPORT.md": "3c0fb934bb2aace336680f1b52538cc314c5aa2e5dd11af5eb45cd9bc9b8edca",
+    "paper/21-reverse-foundations-of-physics.tex": "1bce648cbd22eecdde37efca328a6e15249efc74ade095790968e61799382778",
+    "paper/generate_21_reverse_foundations_claim_map.py": "3b0edf05e2c460dd8249389e29150933c66c0b3bdb191101edfd8c229b0f4676",
+    "paper/verify_21_reverse_foundations_claim_map.py": "e51bb16aa62f4545a0113d7a3936f6b0e0ef15f7114d97818c49bd81f6a1c74d",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "245f0473eb68abc69d182117bd185bdbd2fc4d55244259ef4016ff0aba3aea66"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile build/check/verify/test Gate-v4 sources; jq empty v4 schema and certificate; git diff --check on scoped paths",
+          "elapsed_seconds": 0.1,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "build --check; independent checker; schema/determinism verifier; 7 focused unittest cases",
+          "elapsed_seconds": 0.6,
+          "status": "PASS",
+          "independent_rail": "reconstructs the two licensed scoped promotions, all status counts, 19 content pins, 18/51 crosswalk, unchanged D/pairing rows, zero accepted hashes and Gate-A fail-closed flags"
+        },
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+          "elapsed_seconds": 0.4,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "V4 is a reconciliation over unchanged SHA-pinned V3, q1, q2 and q1q2 certificates; their exact producer and independent receiver rails passed in the immediately preceding commit."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "Gate A remains FAIL_CLOSED, no theorem lifecycle is promoted beyond CLASSIFIED, and this is not a freeze/tag, release, or shared algebra change."
+    }
+  },
+  "advisory_science_forge": {
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": 2.23,
+    "status": "ADVISORY_FINDINGS",
+    "findings": [
+      "Forge 0.0.2 stdlib hash mismatch",
+      "bridge audit failed closed at E9118 atomic memory-order literal",
+      "coverage census drift: 1720 certificates versus baseline 976"
+    ]
+  },
+  "claim_boundary": "This reconciliation promotes only the strict minimal support-local q2 export and q1q2 freeze check to RECEIVER_VERIFIED_SCOPED. It accepts zero common snapshot hashes and leaves local D, D identities, common BV pairing/cyclicity, full-carrier extension, M3/M5/M6, Gate A, Lorentzian causal, Hadamard and QME claims fail closed."
+}
