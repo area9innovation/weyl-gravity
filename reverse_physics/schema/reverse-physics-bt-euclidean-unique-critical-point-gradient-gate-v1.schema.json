@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-unique-critical-point-gradient-gate-v1.schema.json",
+  "title": "BT Euclidean unique-critical-point and gradient gate certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "unique_critical_point_theorem", "exact_sharp_gradient_obstruction",
+    "method_disposition", "missing_object_ledger", "next_gate",
+    "does_not_establish", "provenance", "verification_commands",
+    "tier_receipt", "checks", "report", "schema", "verifier"
+  ],
+  "$defs": {
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    }
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_UNIQUE_CRITICAL_POINT_GRADIENT_GATE_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-unique-critical-point-gradient-gate-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "unique_critical_point_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope", "definitions", "jacobian_factorization",
+        "ground_state_identity", "left_kernel", "criticality_reduction",
+        "closure_identity", "conclusion"
+      ],
+      "properties": {
+        "scope": {"const": "every finite connected undirected graph"},
+        "definitions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["positive_field", "graph_laplacian", "residual", "action", "schrodinger_operator"],
+          "properties": {
+            "positive_field": {"type": "string"},
+            "graph_laplacian": {"type": "string"},
+            "residual": {"type": "string"},
+            "action": {"type": "string"},
+            "schrodinger_operator": {"type": "string"}
+          }
+        },
+        "jacobian_factorization": {"const": "Dr=-diag(Omega)^(-1)*K*diag(Omega)"},
+        "ground_state_identity": {"type": "string", "minLength": 1},
+        "left_kernel": {"const": "kernel(Dr^T)=span{Omega^2}"},
+        "criticality_reduction": {"const": "Dr^T*r=0 implies r=c*Omega^2"},
+        "closure_identity": {"type": "string", "minLength": 1},
+        "conclusion": {"type": "string", "minLength": 1}
+      }
+    },
+    "exact_sharp_gradient_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "omega_integer_pattern", "common_denominator",
+        "residual_norm_squared", "gradient_norm_squared",
+        "gradient_quotient", "gradient_sum", "weighted_residual_sum",
+        "free_lowest_laplacian_eigenvalue",
+        "free_sharp_target", "strict_gap_below_free_sharp_target",
+        "four_dimensional_embedding"
+      ],
+      "properties": {
+        "omega_integer_pattern": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {
+            "type": "array", "minItems": 4, "maxItems": 4,
+            "items": {"type": "integer", "minimum": 1}
+          }
+        },
+        "common_denominator": {"const": 1000},
+        "residual_norm_squared": {"$ref": "#/$defs/fraction"},
+        "gradient_norm_squared": {"$ref": "#/$defs/fraction"},
+        "gradient_quotient": {"$ref": "#/$defs/fraction"},
+        "gradient_sum": {"$ref": "#/$defs/fraction"},
+        "weighted_residual_sum": {"$ref": "#/$defs/fraction"},
+        "free_lowest_laplacian_eigenvalue": {"const": 2},
+        "free_sharp_target": {"const": 4},
+        "strict_gap_below_free_sharp_target": {"$ref": "#/$defs/fraction"},
+        "four_dimensional_embedding": {"type": "string", "minLength": 1}
+      }
+    },
+    "method_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "extra_finite_volume_critical_points", "finite_volume_multiwell_explanation",
+        "global_sharp_free_gradient_domination", "weaker_global_gradient_domination",
+        "volume_uniform_witten_coercivity", "interacting_h_minus_one_bound",
+        "continuum_reconstruction", "born_rule", "krein_reconstruction", "lorentzian_transfer"
+      ],
+      "properties": {
+        "extra_finite_volume_critical_points": {"const": "RULED_OUT"},
+        "finite_volume_multiwell_explanation": {"const": "RULED_OUT"},
+        "global_sharp_free_gradient_domination": {"const": "OBSTRUCTED"},
+        "weaker_global_gradient_domination": {"const": "OPEN"},
+        "volume_uniform_witten_coercivity": {"const": "OPEN"},
+        "interacting_h_minus_one_bound": {"const": "OPEN"},
+        "continuum_reconstruction": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "does_not_establish": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "e96260407b1a665de31734018bd6c4cefd41590a"},
+        "inputs": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"type": "string", "minLength": 1}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}},
+    "tier_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "memory_policy"],
+      "properties": {
+        "tier_0": {"type": "string"}, "tier_1": {"type": "string"},
+        "tier_2": {"type": "string"}, "tier_3": {"type": "string"},
+        "memory_policy": {"type": "string"}
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true}, "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-unique-critical-point-gradient-gate.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-unique-critical-point-gradient-gate-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_unique_critical_point_gradient_gate.py"}
+  }
+}

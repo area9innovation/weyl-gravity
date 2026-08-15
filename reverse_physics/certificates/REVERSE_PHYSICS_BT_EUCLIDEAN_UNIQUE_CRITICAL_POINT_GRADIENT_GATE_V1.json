@@ -1,0 +1,159 @@
+{
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_UNIQUE_CRITICAL_POINT_GRADIENT_GATE_V1",
+  "schema_version": "reverse-physics-bt-euclidean-unique-critical-point-gradient-gate-v1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "result_kind": "exact finite-graph critical-point theorem and exact obstruction to the sharp free-scale gradient inequality",
+  "question": "Can hidden finite-volume BT stationary points explain the Witten barrier, and does the free sharp gradient constant survive globally?",
+  "answer": "There are no hidden stationary points: on every finite connected undirected graph the only critical point of the residual-square BT action, modulo constant shifts, is the constant vacuum. However, an exact positive rational field on the 4^4 torus has gradient quotient strictly below the free sharp value omega_4^2=4. Thus the barrier is not finite-volume multiwell metastability, but the sharp free gradient-domination shortcut is also unavailable.",
+  "unique_critical_point_theorem": {
+    "scope": "every finite connected undirected graph",
+    "definitions": {
+      "positive_field": "Omega_x=exp(psi_x)>0",
+      "graph_laplacian": "Delta Omega_x=sum_(y~x)(Omega_y-Omega_x)",
+      "residual": "r_x=(Delta Omega)_x/Omega_x",
+      "action": "A(psi)=(1/2)*sum_x r_x^2",
+      "schrodinger_operator": "K=-Delta+diag(r)"
+    },
+    "jacobian_factorization": "Dr=-diag(Omega)^(-1)*K*diag(Omega)",
+    "ground_state_identity": "K*Omega=0 and f^T*K*f=sum_{undirected edges {x,y}} Omega_x*Omega_y*(f_x/Omega_x-f_y/Omega_y)^2, so K is positive semidefinite with kernel span{Omega}.",
+    "left_kernel": "kernel(Dr^T)=span{Omega^2}",
+    "criticality_reduction": "Dr^T*r=0 implies r=c*Omega^2",
+    "closure_identity": "sum_x Omega_x*r_x=sum_x (Delta Omega)_x=0, hence c*sum_x Omega_x^3=0 and c=0",
+    "conclusion": "r=0, so Delta Omega=0; connectedness makes Omega constant. The mean-log gauge then gives psi=0."
+  },
+  "exact_sharp_gradient_obstruction": {
+    "omega_integer_pattern": [
+      [
+        2021,
+        1265,
+        954,
+        1265
+      ],
+      [
+        1265,
+        954,
+        784,
+        954
+      ],
+      [
+        954,
+        784,
+        676,
+        784
+      ],
+      [
+        1265,
+        954,
+        784,
+        954
+      ]
+    ],
+    "common_denominator": 1000,
+    "residual_norm_squared": {
+      "numerator": 259952580793008230020946387,
+      "denominator": 60432731436057027344497200
+    },
+    "gradient_norm_squared": {
+      "numerator": 1994522814988163335078911851405560366405233608338391351,
+      "denominator": 131476141037613429305460659960135236883776349082240000
+    },
+    "gradient_quotient": {
+      "numerator": 1994522814988163335078911851405560366405233608338391351,
+      "denominator": 565547202042256176363769851231265478188203144178190400
+    },
+    "gradient_sum": {
+      "numerator": 0,
+      "denominator": 1
+    },
+    "weighted_residual_sum": {
+      "numerator": 0,
+      "denominator": 1
+    },
+    "free_lowest_laplacian_eigenvalue": 2,
+    "free_sharp_target": 4,
+    "strict_gap_below_free_sharp_target": {
+      "numerator": 267665993180861370376167553519501546347578968374370249,
+      "denominator": 131476141037613429305460659960135236883776349082240000
+    },
+    "four_dimensional_embedding": "Repeat the pattern constantly in coordinates 3 and 4 of the 4^4 torus. Residual and gradient norms both acquire factor 16, so the quotient is unchanged."
+  },
+  "method_disposition": {
+    "extra_finite_volume_critical_points": "RULED_OUT",
+    "finite_volume_multiwell_explanation": "RULED_OUT",
+    "global_sharp_free_gradient_domination": "OBSTRUCTED",
+    "weaker_global_gradient_domination": "OPEN",
+    "volume_uniform_witten_coercivity": "OPEN",
+    "interacting_h_minus_one_bound": "OPEN",
+    "continuum_reconstruction": "NOT_ESTABLISHED",
+    "born_rule": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED"
+  },
+  "missing_object_ledger": [
+    "a positive L-uniform lower bound for the normalized nonlinear gradient quotient, or a sequence driving it to zero",
+    "a theorem transferring any such deterministic bound to the scalar Witten/Poincare problem",
+    "an L-uniform interacting H^-1 moment estimate"
+  ],
+  "next_gate": "Define gamma_L=inf_{nonconstant psi} ||grad A||^2/(omega_L^2*||r||^2). Prove inf_L gamma_L>0 using the special relation r=Delta Omega/Omega, or construct an exact growing-volume sequence with gamma_L tending to zero.",
+  "does_not_establish": [
+    "a positive volume-uniform gradient-domination constant",
+    "a finite-volume or volume-uniform Poincare inequality",
+    "Witten one-form coercivity",
+    "an interacting H^-1 bound or continuum BT measure",
+    "a Born rule or Krein-space reconstruction",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "provenance": {
+    "repository_base_commit": "e96260407b1a665de31734018bd6c4cefd41590a",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_GAUSS_NEWTON_WITTEN_PARAMETRIX_OBSTRUCTION_V1.json",
+        "sha256": "b4aa3d246ae813eff91da325a327988cd8add08d05b5c3abc1ec8755acf12464"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_WITTEN_ONE_FORM_SCHUR_GATE_V1.json",
+        "sha256": "c594809f535ec73a8e9adceb86c92bd4228d99f042c780ec9b17df1169fe0df1"
+      }
+    ],
+    "arithmetic": "Python Fraction arithmetic for the rational field, residual, log-coordinate gradient, squared norms, quotient, and gap"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_unique_critical_point_gradient_gate.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_unique_critical_point_gradient_gate.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_unique_critical_point_gradient_gate"
+  ],
+  "tier_receipt": {
+    "tier_0": "parse, strict schema, deterministic generation, diff check, and staged-diff inspection",
+    "tier_1": "exact producer, independently oriented-edge verifier, unit tests, and mutation rejection",
+    "tier_2": "predecessor certificates checked by content hash; no shared operator or generated chain changed",
+    "tier_3": "not run: no freeze, theorem promotion in a paper, release, or shared core algebra change",
+    "memory_policy": "all Python commands run sequentially under a 500000 KiB virtual-memory ceiling"
+  },
+  "checks": {
+    "ok": true,
+    "passed": 11,
+    "total": 11,
+    "failures": [],
+    "details": {
+      "fixture_omega_is_strictly_positive": true,
+      "fixture_graph_is_connected": true,
+      "fixture_gradient_has_zero_sum": true,
+      "fixture_weighted_residual_has_zero_sum": true,
+      "fixture_residual_is_nonzero": true,
+      "exact_quotient_is_below_four": true,
+      "exact_sharp_gap_is_positive": true,
+      "four_dimensional_embedding_preserves_quotient": true,
+      "critical_point_argument_closes_on_connected_graphs": true,
+      "weaker_volume_uniform_gradient_constant_remains_open": true,
+      "no_quantum_or_lorentzian_promotion": true
+    }
+  },
+  "report": "reverse_physics/reports/bt-euclidean-unique-critical-point-gradient-gate.md",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-unique-critical-point-gradient-gate-v1.schema.json",
+  "verifier": "reverse_physics/verify_bt_euclidean_unique_critical_point_gradient_gate.py"
+}
