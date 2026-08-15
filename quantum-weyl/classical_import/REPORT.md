@@ -172,6 +172,18 @@ regression, not the proof of the general theorem. The portable kernel must
 still be integrated with the already certified cotangent terms and suspended
 across all six rows before any interaction identity or Gate-A promotion.
 
+That integration and suspension are now recorded in
+[`STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1`](REPORT_STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1.md).
+The twelve diagonal quadratic kernels expand to twenty-two ordered components
+in `suspended-graded-symmetric-factorial-v1`. Every mixed component has its
+exact Koszul partner, the metric self-pair binds the portable Bach root, and
+the odd Diff-ghost self-pair binds the antisymmetric vector bracket. All six
+minimal output ledgers are complete, degree one and support-local, so the
+portable `h_star` and suspension deficits are closed. This is still not the
+complete support-local export: a common executable `q1`, the arity-two master
+identity, full local `D`, its derivation identity and BV cyclicity remain
+fail closed.
+
 ## Antifield/Koszul--Tate handoff contract
 
 The required shape of the local antifield export is now executable rather

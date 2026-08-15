@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-six-row-suspended-q2-ast-v1.json",
+  "title": "Portable six-row suspended strict q2 component ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema", "schema", "result_id", "result_kind", "result_state",
+    "lifecycle", "created", "repository_base_commit", "dependency_tags",
+    "convention", "scope", "generator_ledger", "primary_components",
+    "ordered_components", "row_completeness", "diagonal_crosswalk",
+    "proof_checks", "canonical_hashes", "provenance", "claim_flags",
+    "does_not_establish", "schema_path", "independent_checker", "human_report"
+  ],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "strict-six-row-suspended-q2-ast-v1"},
+    "result_id": {"const": "STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1"},
+    "result_kind": {"const": "PORTABLE_COMPLETE_COMPONENT_LEDGER_FOR_SUSPENDED_STRICT_Q2"},
+    "result_state": {"const": "SIX_ROWS_PORTABLE_AND_KOSZUL_REPLAYED_Q1_D_PAIRING_IDENTITIES_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "convention": {"const": "suspended-graded-symmetric-factorial-v1"},
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["theory", "background_class", "carrier", "locality", "maximum_metric_input_jet_order", "maximum_total_derivative_order", "support_rule"],
+      "properties": {
+        "theory": {"type": "string", "minLength": 1},
+        "background_class": {"type": "string", "minLength": 1},
+        "carrier": {"type": "string", "minLength": 1},
+        "locality": {"const": "SUPPORT_LOCAL_POLYDIFFERENTIAL"},
+        "maximum_metric_input_jet_order": {"const": 4},
+        "maximum_total_derivative_order": {"const": 4},
+        "support_rule": {"type": "string", "minLength": 1}
+      }
+    },
+    "generator_ledger": {
+      "type": "array", "minItems": 6, "maxItems": 6,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["symbol", "local_tangent_degree", "Grassmann_parity"],
+        "properties": {
+          "symbol": {"enum": ["h", "c", "omega", "h_star", "c_star", "omega_star"]},
+          "local_tangent_degree": {"type": "integer"},
+          "Grassmann_parity": {"enum": [0, 1]}
+        }
+      }
+    },
+    "primary_components": {
+      "type": "array", "minItems": 12, "maxItems": 12,
+      "items": {"$ref": "#/$defs/primary"}
+    },
+    "ordered_components": {
+      "type": "array", "minItems": 22, "maxItems": 22,
+      "items": {"$ref": "#/$defs/ordered"}
+    },
+    "row_completeness": {
+      "type": "array", "minItems": 6, "maxItems": 6,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["output", "status", "primary_component_ids", "ordered_component_ids"],
+        "properties": {
+          "output": {"enum": ["h", "c", "omega", "h_star", "c_star", "omega_star"]},
+          "status": {"const": "COMPLETE"},
+          "primary_component_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "ordered_component_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+        }
+      }
+    },
+    "diagonal_crosswalk": {"type": "object", "minProperties": 6},
+    "proof_checks": {
+      "type": "array", "minItems": 8, "maxItems": 8,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["check_id", "status", "evidence"],
+        "properties": {
+          "check_id": {"type": "string", "minLength": 1},
+          "status": {"enum": ["VERIFIED", "NOT_REPLAYED"]},
+          "evidence": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "canonical_hashes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["generator_ledger_sha256", "primary_components_sha256", "ordered_components_sha256", "row_completeness_sha256", "diagonal_crosswalk_sha256", "proof_checks_sha256"],
+      "properties": {
+        "generator_ledger_sha256": {"$ref": "#/$defs/sha256"},
+        "primary_components_sha256": {"$ref": "#/$defs/sha256"},
+        "ordered_components_sha256": {"$ref": "#/$defs/sha256"},
+        "row_completeness_sha256": {"$ref": "#/$defs/sha256"},
+        "diagonal_crosswalk_sha256": {"$ref": "#/$defs/sha256"},
+        "proof_checks_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "provenance": {"type": "object", "minProperties": 1},
+    "claim_flags": {"type": "object", "minProperties": 12},
+    "does_not_establish": {"type": "array", "minItems": 6, "items": {"type": "string", "minLength": 1}},
+    "schema_path": {"const": "quantum-weyl/classical_import/schema/strict-six-row-suspended-q2-ast-v1.schema.json"},
+    "independent_checker": {"const": "quantum-weyl/classical_import/check_strict_six_row_suspended_q2_ast.py"},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1.md"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "primary": {
+      "type": "object",
+      "required": ["primary_id", "output", "inputs", "operator_id", "coefficient", "coordinate_formula", "maximum_input_jet_orders", "maximum_total_derivative_order", "source_atoms", "portable_semantics"],
+      "properties": {
+        "primary_id": {"type": "string", "minLength": 1},
+        "output": {"type": "string", "minLength": 1},
+        "inputs": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}},
+        "operator_id": {"type": "string", "minLength": 1},
+        "coefficient": {"type": "integer"},
+        "coordinate_formula": {"type": "string", "minLength": 1},
+        "maximum_input_jet_orders": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0, "maximum": 4}},
+        "maximum_total_derivative_order": {"type": "integer", "minimum": 0, "maximum": 4},
+        "source_atoms": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "portable_semantics": {},
+        "intrinsic_swap_sign": {"enum": [-1, 1]},
+        "diagonal_recovery": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "ordered": {
+      "type": "object", "additionalProperties": false,
+      "required": ["component_id", "primary_id", "output", "inputs", "coefficient_relative_to_primary", "orientation", "koszul_swap_partner", "koszul_swap_sign"],
+      "properties": {
+        "component_id": {"type": "string", "minLength": 1},
+        "primary_id": {"type": "string", "minLength": 1},
+        "output": {"type": "string", "minLength": 1},
+        "inputs": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}},
+        "coefficient_relative_to_primary": {"enum": [-1, 1]},
+        "orientation": {"enum": ["INTRINSIC_SELF_PAIR", "PRIMARY", "KOSZUL_SWAP"]},
+        "koszul_swap_partner": {"type": "string", "minLength": 1},
+        "koszul_swap_sign": {"enum": [-1, 1]}
+      }
+    }
+  }
+}

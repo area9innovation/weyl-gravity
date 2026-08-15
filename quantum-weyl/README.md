@@ -147,6 +147,12 @@ or quantum-master-equation result.
   and signed-coordinate regression certify the portable fourth-order
   polarized metric kernel. Integration into the complete metric-antifield row,
   suspended six-row `q2`, interaction identities and Gate A remain open.
+- [`classical_import/REPORT_STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1.md`](classical_import/REPORT_STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1.md)
+  integrates that kernel with the two metric-antifield cotangent lifts and
+  expands all twelve diagonal quadratic terms into twenty-two ordered
+  components. All six rows pass exact degree and Koszul-partner checks in the
+  repository suspension convention. The common local `q1`, arity-two master
+  identity, full local `D`, BV cyclicity and Gate A remain fail closed.
 - [`reports/branch-a-local-bv-bootstrap.md`](reports/branch-a-local-bv-bootstrap.md)
   records the exact minimal jet/BRST substrate and its uncomputed quotients.
 - [`reports/local-curvature-canonicalization.md`](reports/local-curvature-canonicalization.md)

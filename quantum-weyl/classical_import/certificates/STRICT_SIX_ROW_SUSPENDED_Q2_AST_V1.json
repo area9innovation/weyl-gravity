@@ -1,0 +1,955 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "strict-six-row-suspended-q2-ast-v1",
+  "result_id": "STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1",
+  "result_kind": "PORTABLE_COMPLETE_COMPONENT_LEDGER_FOR_SUSPENDED_STRICT_Q2",
+  "result_state": "SIX_ROWS_PORTABLE_AND_KOSZUL_REPLAYED_Q1_D_PAIRING_IDENTITIES_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "0dc53a6ba452b0da8ad5a98b13b3d11871906778",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "convention": "suspended-graded-symmetric-factorial-v1",
+  "scope": {
+    "theory": "strict pure-Weyl minimal Diff x Weyl BV theory",
+    "background_class": "arbitrary smooth nondegenerate four-dimensional pseudo-Riemannian metric background",
+    "carrier": "compactly supported smooth minimal BV sections with external graded-commutative coefficients",
+    "locality": "SUPPORT_LOCAL_POLYDIFFERENTIAL",
+    "maximum_metric_input_jet_order": 4,
+    "maximum_total_derivative_order": 4,
+    "support_rule": "each bilinear output support lies in the intersection of its two input supports"
+  },
+  "generator_ledger": [
+    {
+      "symbol": "h",
+      "local_tangent_degree": 0,
+      "Grassmann_parity": 0
+    },
+    {
+      "symbol": "c",
+      "local_tangent_degree": -1,
+      "Grassmann_parity": 1
+    },
+    {
+      "symbol": "omega",
+      "local_tangent_degree": -1,
+      "Grassmann_parity": 1
+    },
+    {
+      "symbol": "h_star",
+      "local_tangent_degree": 1,
+      "Grassmann_parity": 1
+    },
+    {
+      "symbol": "c_star",
+      "local_tangent_degree": 2,
+      "Grassmann_parity": 0
+    },
+    {
+      "symbol": "omega_star",
+      "local_tangent_degree": 2,
+      "Grassmann_parity": 0
+    }
+  ],
+  "primary_components": [
+    {
+      "primary_id": "q2_c_cc",
+      "output": "c",
+      "inputs": [
+        "c",
+        "c"
+      ],
+      "operator_id": "vector_ghost_lie_bracket",
+      "coefficient": 1,
+      "coordinate_formula": "[c_left,c_right]^mu=c_left^rho partial_rho c_right^mu-c_right^rho partial_rho c_left^mu",
+      "maximum_input_jet_orders": [
+        1,
+        1
+      ],
+      "maximum_total_derivative_order": 1,
+      "source_atoms": [
+        "bracket_xi"
+      ],
+      "portable_semantics": "KINEMATIC_TENSOR_NATURAL_COORDINATE_OPERATOR",
+      "intrinsic_swap_sign": -1,
+      "diagonal_recovery": "(1/2)[c,c]^mu=c^rho partial_rho c^mu in the external Grassmann extension"
+    },
+    {
+      "primary_id": "q2_omega_comega",
+      "output": "omega",
+      "inputs": [
+        "c",
+        "omega"
+      ],
+      "operator_id": "scalar_lie_transport",
+      "coefficient": 1,
+      "coordinate_formula": "c^rho partial_rho omega",
+      "maximum_input_jet_orders": [
+        0,
+        1
+      ],
+      "maximum_total_derivative_order": 1,
+      "source_atoms": [
+        "Lie_omega"
+      ],
+      "portable_semantics": "KINEMATIC_TENSOR_NATURAL_COORDINATE_OPERATOR"
+    },
+    {
+      "primary_id": "q2_h_ch",
+      "output": "h",
+      "inputs": [
+        "c",
+        "h"
+      ],
+      "operator_id": "metric_lie_transport",
+      "coefficient": 1,
+      "coordinate_formula": "c^rho partial_rho h_mu_nu + h_rho_nu partial_mu c^rho + h_mu_rho partial_nu c^rho",
+      "maximum_input_jet_orders": [
+        1,
+        1
+      ],
+      "maximum_total_derivative_order": 1,
+      "source_atoms": [
+        "Lie_g"
+      ],
+      "portable_semantics": "KINEMATIC_TENSOR_NATURAL_COORDINATE_OPERATOR"
+    },
+    {
+      "primary_id": "q2_h_omegah",
+      "output": "h",
+      "inputs": [
+        "omega",
+        "h"
+      ],
+      "operator_id": "weyl_metric_product",
+      "coefficient": 2,
+      "coordinate_formula": "omega * h_mu_nu",
+      "maximum_input_jet_orders": [
+        0,
+        0
+      ],
+      "maximum_total_derivative_order": 0,
+      "source_atoms": [
+        "g",
+        "omega"
+      ],
+      "portable_semantics": "KINEMATIC_TENSOR_NATURAL_COORDINATE_OPERATOR"
+    },
+    {
+      "primary_id": "q2_hstar_hh",
+      "output": "h_star",
+      "inputs": [
+        "h",
+        "h"
+      ],
+      "operator_id": "polarized_bach_natural_operator",
+      "coefficient": 1,
+      "coordinate_formula": "K_g(h_left,h_right)=[a*b]E_g(gbar+a h_left+b h_right)",
+      "maximum_input_jet_orders": [
+        4,
+        4
+      ],
+      "maximum_total_derivative_order": 4,
+      "source_atoms": [
+        "E_g"
+      ],
+      "portable_semantics": {
+        "result_id": "STRICT_BACH_NATURAL_OPERATOR_AST_V1",
+        "ast_sha256": "38ec270de6d3cdf2ad4a24c0fffa11e293aebde484204a4e53130e6d61f1f7f8",
+        "root_node": "K_hh"
+      },
+      "intrinsic_swap_sign": 1,
+      "diagonal_recovery": "(1/2)q2(h,h)=(1/2)K_g(h,h)"
+    },
+    {
+      "primary_id": "q2_hstar_chstar",
+      "output": "h_star",
+      "inputs": [
+        "c",
+        "h_star"
+      ],
+      "operator_id": "contravariant_density_lie_transport",
+      "coefficient": 1,
+      "coordinate_formula": "c^rho partial_rho h_star^{mu nu} - h_star^{rho nu} partial_rho c^mu - h_star^{mu rho} partial_rho c^nu + (partial_rho c^rho) h_star^{mu nu}",
+      "maximum_input_jet_orders": [
+        1,
+        1
+      ],
+      "maximum_total_derivative_order": 1,
+      "source_atoms": [
+        "Lie_g_star"
+      ],
+      "portable_semantics": "TENSOR_NATURAL_COTANGENT_LIFT"
+    },
+    {
+      "primary_id": "q2_hstar_omegahstar",
+      "output": "h_star",
+      "inputs": [
+        "omega",
+        "h_star"
+      ],
+      "operator_id": "weyl_metric_antifield_product",
+      "coefficient": -2,
+      "coordinate_formula": "-2 omega h_star^{mu nu}",
+      "maximum_input_jet_orders": [
+        0,
+        0
+      ],
+      "maximum_total_derivative_order": 0,
+      "source_atoms": [
+        "omega*g_star"
+      ],
+      "portable_semantics": "TENSOR_NATURAL_COTANGENT_LIFT"
+    },
+    {
+      "primary_id": "q2_cstar_hhstar",
+      "output": "c_star",
+      "inputs": [
+        "h",
+        "h_star"
+      ],
+      "operator_id": "metric_antifield_diff_noether",
+      "coefficient": 1,
+      "coordinate_formula": "h_star^mu_nu partial_lambda h_mu_nu - 2 partial_mu(h_star^mu_nu h_lambda_nu)",
+      "maximum_input_jet_orders": [
+        1,
+        1
+      ],
+      "maximum_total_derivative_order": 1,
+      "source_atoms": [
+        "N_xi"
+      ],
+      "portable_semantics": "KINEMATIC_TENSOR_NATURAL_COORDINATE_OPERATOR"
+    },
+    {
+      "primary_id": "q2_cstar_ccstar",
+      "output": "c_star",
+      "inputs": [
+        "c",
+        "c_star"
+      ],
+      "operator_id": "covector_density_lie_transport",
+      "coefficient": 1,
+      "coordinate_formula": "c^rho partial_rho c_star_lambda + c_star_rho partial_lambda c^rho + (partial_rho c^rho)c_star_lambda",
+      "maximum_input_jet_orders": [
+        1,
+        1
+      ],
+      "maximum_total_derivative_order": 1,
+      "source_atoms": [
+        "Lie_xi_star"
+      ],
+      "portable_semantics": "KINEMATIC_TENSOR_NATURAL_COORDINATE_OPERATOR"
+    },
+    {
+      "primary_id": "q2_cstar_omegaomegastar",
+      "output": "c_star",
+      "inputs": [
+        "omega",
+        "omega_star"
+      ],
+      "operator_id": "weyl_antifield_gradient",
+      "coefficient": 1,
+      "coordinate_formula": "omega_star partial_lambda omega",
+      "maximum_input_jet_orders": [
+        1,
+        0
+      ],
+      "maximum_total_derivative_order": 1,
+      "source_atoms": [
+        "N_xi"
+      ],
+      "portable_semantics": "KINEMATIC_TENSOR_NATURAL_COORDINATE_OPERATOR"
+    },
+    {
+      "primary_id": "q2_omegastar_hhstar",
+      "output": "omega_star",
+      "inputs": [
+        "h",
+        "h_star"
+      ],
+      "operator_id": "metric_antifield_trace_pair",
+      "coefficient": 2,
+      "coordinate_formula": "h_mu_nu h_star^mu_nu",
+      "maximum_input_jet_orders": [
+        0,
+        0
+      ],
+      "maximum_total_derivative_order": 0,
+      "source_atoms": [
+        "N_omega"
+      ],
+      "portable_semantics": "KINEMATIC_TENSOR_NATURAL_COORDINATE_OPERATOR"
+    },
+    {
+      "primary_id": "q2_omegastar_comegastar",
+      "output": "omega_star",
+      "inputs": [
+        "c",
+        "omega_star"
+      ],
+      "operator_id": "scalar_density_lie_transport",
+      "coefficient": 1,
+      "coordinate_formula": "partial_rho(c^rho omega_star)",
+      "maximum_input_jet_orders": [
+        1,
+        1
+      ],
+      "maximum_total_derivative_order": 1,
+      "source_atoms": [
+        "Lie_omega_star"
+      ],
+      "portable_semantics": "KINEMATIC_TENSOR_NATURAL_COORDINATE_OPERATOR"
+    }
+  ],
+  "ordered_components": [
+    {
+      "component_id": "q2_c_cc",
+      "primary_id": "q2_c_cc",
+      "output": "c",
+      "inputs": [
+        "c",
+        "c"
+      ],
+      "coefficient_relative_to_primary": 1,
+      "orientation": "INTRINSIC_SELF_PAIR",
+      "koszul_swap_partner": "q2_c_cc",
+      "koszul_swap_sign": -1
+    },
+    {
+      "component_id": "q2_omega_comega__forward",
+      "primary_id": "q2_omega_comega",
+      "output": "omega",
+      "inputs": [
+        "c",
+        "omega"
+      ],
+      "coefficient_relative_to_primary": 1,
+      "orientation": "PRIMARY",
+      "koszul_swap_partner": "q2_omega_comega__reverse",
+      "koszul_swap_sign": -1
+    },
+    {
+      "component_id": "q2_omega_comega__reverse",
+      "primary_id": "q2_omega_comega",
+      "output": "omega",
+      "inputs": [
+        "omega",
+        "c"
+      ],
+      "coefficient_relative_to_primary": -1,
+      "orientation": "KOSZUL_SWAP",
+      "koszul_swap_partner": "q2_omega_comega__forward",
+      "koszul_swap_sign": -1
+    },
+    {
+      "component_id": "q2_h_ch__forward",
+      "primary_id": "q2_h_ch",
+      "output": "h",
+      "inputs": [
+        "c",
+        "h"
+      ],
+      "coefficient_relative_to_primary": 1,
+      "orientation": "PRIMARY",
+      "koszul_swap_partner": "q2_h_ch__reverse",
+      "koszul_swap_sign": 1
+    },
+    {
+      "component_id": "q2_h_ch__reverse",
+      "primary_id": "q2_h_ch",
+      "output": "h",
+      "inputs": [
+        "h",
+        "c"
+      ],
+      "coefficient_relative_to_primary": 1,
+      "orientation": "KOSZUL_SWAP",
+      "koszul_swap_partner": "q2_h_ch__forward",
+      "koszul_swap_sign": 1
+    },
+    {
+      "component_id": "q2_h_omegah__forward",
+      "primary_id": "q2_h_omegah",
+      "output": "h",
+      "inputs": [
+        "omega",
+        "h"
+      ],
+      "coefficient_relative_to_primary": 1,
+      "orientation": "PRIMARY",
+      "koszul_swap_partner": "q2_h_omegah__reverse",
+      "koszul_swap_sign": 1
+    },
+    {
+      "component_id": "q2_h_omegah__reverse",
+      "primary_id": "q2_h_omegah",
+      "output": "h",
+      "inputs": [
+        "h",
+        "omega"
+      ],
+      "coefficient_relative_to_primary": 1,
+      "orientation": "KOSZUL_SWAP",
+      "koszul_swap_partner": "q2_h_omegah__forward",
+      "koszul_swap_sign": 1
+    },
+    {
+      "component_id": "q2_hstar_hh",
+      "primary_id": "q2_hstar_hh",
+      "output": "h_star",
+      "inputs": [
+        "h",
+        "h"
+      ],
+      "coefficient_relative_to_primary": 1,
+      "orientation": "INTRINSIC_SELF_PAIR",
+      "koszul_swap_partner": "q2_hstar_hh",
+      "koszul_swap_sign": 1
+    },
+    {
+      "component_id": "q2_hstar_chstar__forward",
+      "primary_id": "q2_hstar_chstar",
+      "output": "h_star",
+      "inputs": [
+        "c",
+        "h_star"
+      ],
+      "coefficient_relative_to_primary": 1,
+      "orientation": "PRIMARY",
+      "koszul_swap_partner": "q2_hstar_chstar__reverse",
+      "koszul_swap_sign": -1
+    },
+    {
+      "component_id": "q2_hstar_chstar__reverse",
+      "primary_id": "q2_hstar_chstar",
+      "output": "h_star",
+      "inputs": [
+        "h_star",
+        "c"
+      ],
+      "coefficient_relative_to_primary": -1,
+      "orientation": "KOSZUL_SWAP",
+      "koszul_swap_partner": "q2_hstar_chstar__forward",
+      "koszul_swap_sign": -1
+    },
+    {
+      "component_id": "q2_hstar_omegahstar__forward",
+      "primary_id": "q2_hstar_omegahstar",
+      "output": "h_star",
+      "inputs": [
+        "omega",
+        "h_star"
+      ],
+      "coefficient_relative_to_primary": 1,
+      "orientation": "PRIMARY",
+      "koszul_swap_partner": "q2_hstar_omegahstar__reverse",
+      "koszul_swap_sign": -1
+    },
+    {
+      "component_id": "q2_hstar_omegahstar__reverse",
+      "primary_id": "q2_hstar_omegahstar",
+      "output": "h_star",
+      "inputs": [
+        "h_star",
+        "omega"
+      ],
+      "coefficient_relative_to_primary": -1,
+      "orientation": "KOSZUL_SWAP",
+      "koszul_swap_partner": "q2_hstar_omegahstar__forward",
+      "koszul_swap_sign": -1
+    },
+    {
+      "component_id": "q2_cstar_hhstar__forward",
+      "primary_id": "q2_cstar_hhstar",
+      "output": "c_star",
+      "inputs": [
+        "h",
+        "h_star"
+      ],
+      "coefficient_relative_to_primary": 1,
+      "orientation": "PRIMARY",
+      "koszul_swap_partner": "q2_cstar_hhstar__reverse",
+      "koszul_swap_sign": 1
+    },
+    {
+      "component_id": "q2_cstar_hhstar__reverse",
+      "primary_id": "q2_cstar_hhstar",
+      "output": "c_star",
+      "inputs": [
+        "h_star",
+        "h"
+      ],
+      "coefficient_relative_to_primary": 1,
+      "orientation": "KOSZUL_SWAP",
+      "koszul_swap_partner": "q2_cstar_hhstar__forward",
+      "koszul_swap_sign": 1
+    },
+    {
+      "component_id": "q2_cstar_ccstar__forward",
+      "primary_id": "q2_cstar_ccstar",
+      "output": "c_star",
+      "inputs": [
+        "c",
+        "c_star"
+      ],
+      "coefficient_relative_to_primary": 1,
+      "orientation": "PRIMARY",
+      "koszul_swap_partner": "q2_cstar_ccstar__reverse",
+      "koszul_swap_sign": 1
+    },
+    {
+      "component_id": "q2_cstar_ccstar__reverse",
+      "primary_id": "q2_cstar_ccstar",
+      "output": "c_star",
+      "inputs": [
+        "c_star",
+        "c"
+      ],
+      "coefficient_relative_to_primary": 1,
+      "orientation": "KOSZUL_SWAP",
+      "koszul_swap_partner": "q2_cstar_ccstar__forward",
+      "koszul_swap_sign": 1
+    },
+    {
+      "component_id": "q2_cstar_omegaomegastar__forward",
+      "primary_id": "q2_cstar_omegaomegastar",
+      "output": "c_star",
+      "inputs": [
+        "omega",
+        "omega_star"
+      ],
+      "coefficient_relative_to_primary": 1,
+      "orientation": "PRIMARY",
+      "koszul_swap_partner": "q2_cstar_omegaomegastar__reverse",
+      "koszul_swap_sign": 1
+    },
+    {
+      "component_id": "q2_cstar_omegaomegastar__reverse",
+      "primary_id": "q2_cstar_omegaomegastar",
+      "output": "c_star",
+      "inputs": [
+        "omega_star",
+        "omega"
+      ],
+      "coefficient_relative_to_primary": 1,
+      "orientation": "KOSZUL_SWAP",
+      "koszul_swap_partner": "q2_cstar_omegaomegastar__forward",
+      "koszul_swap_sign": 1
+    },
+    {
+      "component_id": "q2_omegastar_hhstar__forward",
+      "primary_id": "q2_omegastar_hhstar",
+      "output": "omega_star",
+      "inputs": [
+        "h",
+        "h_star"
+      ],
+      "coefficient_relative_to_primary": 1,
+      "orientation": "PRIMARY",
+      "koszul_swap_partner": "q2_omegastar_hhstar__reverse",
+      "koszul_swap_sign": 1
+    },
+    {
+      "component_id": "q2_omegastar_hhstar__reverse",
+      "primary_id": "q2_omegastar_hhstar",
+      "output": "omega_star",
+      "inputs": [
+        "h_star",
+        "h"
+      ],
+      "coefficient_relative_to_primary": 1,
+      "orientation": "KOSZUL_SWAP",
+      "koszul_swap_partner": "q2_omegastar_hhstar__forward",
+      "koszul_swap_sign": 1
+    },
+    {
+      "component_id": "q2_omegastar_comegastar__forward",
+      "primary_id": "q2_omegastar_comegastar",
+      "output": "omega_star",
+      "inputs": [
+        "c",
+        "omega_star"
+      ],
+      "coefficient_relative_to_primary": 1,
+      "orientation": "PRIMARY",
+      "koszul_swap_partner": "q2_omegastar_comegastar__reverse",
+      "koszul_swap_sign": 1
+    },
+    {
+      "component_id": "q2_omegastar_comegastar__reverse",
+      "primary_id": "q2_omegastar_comegastar",
+      "output": "omega_star",
+      "inputs": [
+        "omega_star",
+        "c"
+      ],
+      "coefficient_relative_to_primary": 1,
+      "orientation": "KOSZUL_SWAP",
+      "koszul_swap_partner": "q2_omegastar_comegastar__forward",
+      "koszul_swap_sign": 1
+    }
+  ],
+  "row_completeness": [
+    {
+      "output": "h",
+      "status": "COMPLETE",
+      "primary_component_ids": [
+        "q2_h_ch",
+        "q2_h_omegah"
+      ],
+      "ordered_component_ids": [
+        "q2_h_ch__forward",
+        "q2_h_ch__reverse",
+        "q2_h_omegah__forward",
+        "q2_h_omegah__reverse"
+      ]
+    },
+    {
+      "output": "c",
+      "status": "COMPLETE",
+      "primary_component_ids": [
+        "q2_c_cc"
+      ],
+      "ordered_component_ids": [
+        "q2_c_cc"
+      ]
+    },
+    {
+      "output": "omega",
+      "status": "COMPLETE",
+      "primary_component_ids": [
+        "q2_omega_comega"
+      ],
+      "ordered_component_ids": [
+        "q2_omega_comega__forward",
+        "q2_omega_comega__reverse"
+      ]
+    },
+    {
+      "output": "h_star",
+      "status": "COMPLETE",
+      "primary_component_ids": [
+        "q2_hstar_hh",
+        "q2_hstar_chstar",
+        "q2_hstar_omegahstar"
+      ],
+      "ordered_component_ids": [
+        "q2_hstar_hh",
+        "q2_hstar_chstar__forward",
+        "q2_hstar_chstar__reverse",
+        "q2_hstar_omegahstar__forward",
+        "q2_hstar_omegahstar__reverse"
+      ]
+    },
+    {
+      "output": "c_star",
+      "status": "COMPLETE",
+      "primary_component_ids": [
+        "q2_cstar_hhstar",
+        "q2_cstar_ccstar",
+        "q2_cstar_omegaomegastar"
+      ],
+      "ordered_component_ids": [
+        "q2_cstar_hhstar__forward",
+        "q2_cstar_hhstar__reverse",
+        "q2_cstar_ccstar__forward",
+        "q2_cstar_ccstar__reverse",
+        "q2_cstar_omegaomegastar__forward",
+        "q2_cstar_omegaomegastar__reverse"
+      ]
+    },
+    {
+      "output": "omega_star",
+      "status": "COMPLETE",
+      "primary_component_ids": [
+        "q2_omegastar_hhstar",
+        "q2_omegastar_comegastar"
+      ],
+      "ordered_component_ids": [
+        "q2_omegastar_hhstar__forward",
+        "q2_omegastar_hhstar__reverse",
+        "q2_omegastar_comegastar__forward",
+        "q2_omegastar_comegastar__reverse"
+      ]
+    }
+  ],
+  "diagonal_crosswalk": {
+    "Taylor_formula": "Q(Phi)=q1(Phi)+(1/2)q2(Phi,Phi)+O(Phi^3)",
+    "external_Grassmann_extension": "Koszul signs are applied to the ordered tensor kernel before the field-coordinate coefficients are multiplied",
+    "same_species_rows": [
+      {
+        "primary_id": "q2_c_cc",
+        "q2_kernel": "[c_left,c_right]",
+        "diagonal_Q_term": "(1/2)[c,c]=c^rho partial_rho c",
+        "swap_sign": -1
+      },
+      {
+        "primary_id": "q2_hstar_hh",
+        "q2_kernel": "K_g(h_left,h_right)",
+        "diagonal_Q_term": "(1/2)K_g(h,h)",
+        "swap_sign": 1
+      }
+    ],
+    "mixed_species_rule": "the two ordered orientations, the Koszul kernel sign and the external-coordinate reordering sign combine to reproduce each displayed diagonal coefficient once",
+    "source_diagonal_component_count": 12,
+    "ordered_suspended_component_count": 22,
+    "external_Grassmann_exact_replay": {
+      "odd_vector_fixture": {
+        "X": [
+          "1",
+          "2",
+          "-1",
+          "3"
+        ],
+        "Y": [
+          "2",
+          "-1",
+          "1",
+          "0"
+        ],
+        "dX": [
+          [
+            "-3",
+            "-1/2",
+            "1/3",
+            "3/4"
+          ],
+          [
+            "0",
+            "1",
+            "-1",
+            "-1/4"
+          ],
+          [
+            "3",
+            "-1",
+            "0",
+            "1/2"
+          ],
+          [
+            "-1",
+            "1/2",
+            "1",
+            "-1/2"
+          ]
+        ],
+        "dY": [
+          [
+            "-2",
+            "-3/2",
+            "-1",
+            "-1/2"
+          ],
+          [
+            "1/3",
+            "2/3",
+            "1",
+            "4/3"
+          ],
+          [
+            "-3/4",
+            "-1/2",
+            "-1/4",
+            "0"
+          ],
+          [
+            "2/5",
+            "3/5",
+            "4/5",
+            "-4/5"
+          ]
+        ],
+        "underlying_bracket_XY": [
+          "-1/3",
+          "20/3",
+          "-17/2",
+          "-1/10"
+        ],
+        "q2_c_c_theta1theta2_coefficient": [
+          "-2/3",
+          "40/3",
+          "-17",
+          "-1/5"
+        ],
+        "half_q2_equals_c_partial_c_theta1theta2": true,
+        "nonzero_component_count": 4
+      },
+      "mixed_species": [
+        {
+          "primary_id": "q2_omega_comega",
+          "kernel_swap_sign": -1,
+          "external_coefficient_reordering_sign": -1,
+          "half_sum_multiplier": "1"
+        },
+        {
+          "primary_id": "q2_h_ch",
+          "kernel_swap_sign": 1,
+          "external_coefficient_reordering_sign": 1,
+          "half_sum_multiplier": "1"
+        },
+        {
+          "primary_id": "q2_h_omegah",
+          "kernel_swap_sign": 1,
+          "external_coefficient_reordering_sign": 1,
+          "half_sum_multiplier": "1"
+        },
+        {
+          "primary_id": "q2_hstar_chstar",
+          "kernel_swap_sign": -1,
+          "external_coefficient_reordering_sign": -1,
+          "half_sum_multiplier": "1"
+        },
+        {
+          "primary_id": "q2_hstar_omegahstar",
+          "kernel_swap_sign": -1,
+          "external_coefficient_reordering_sign": -1,
+          "half_sum_multiplier": "1"
+        },
+        {
+          "primary_id": "q2_cstar_hhstar",
+          "kernel_swap_sign": 1,
+          "external_coefficient_reordering_sign": 1,
+          "half_sum_multiplier": "1"
+        },
+        {
+          "primary_id": "q2_cstar_ccstar",
+          "kernel_swap_sign": 1,
+          "external_coefficient_reordering_sign": 1,
+          "half_sum_multiplier": "1"
+        },
+        {
+          "primary_id": "q2_cstar_omegaomegastar",
+          "kernel_swap_sign": 1,
+          "external_coefficient_reordering_sign": 1,
+          "half_sum_multiplier": "1"
+        },
+        {
+          "primary_id": "q2_omegastar_hhstar",
+          "kernel_swap_sign": 1,
+          "external_coefficient_reordering_sign": 1,
+          "half_sum_multiplier": "1"
+        },
+        {
+          "primary_id": "q2_omegastar_comegastar",
+          "kernel_swap_sign": 1,
+          "external_coefficient_reordering_sign": 1,
+          "half_sum_multiplier": "1"
+        }
+      ],
+      "mixed_species_exact_rule": "(1/2)(1+kernel_swap_sign*external_reordering_sign)=1",
+      "all_ten_mixed_multipliers_equal_one": true,
+      "even_metric_self_pair_half_multiplier": "1/2"
+    }
+  },
+  "proof_checks": [
+    {
+      "check_id": "six_output_rows_complete",
+      "status": "VERIFIED",
+      "evidence": "twelve primary and twenty-two ordered components cover every minimal output"
+    },
+    {
+      "check_id": "cohomological_degree_one",
+      "status": "VERIFIED",
+      "evidence": "all ordered components satisfy degree(output)-degree(left)-degree(right)=1"
+    },
+    {
+      "check_id": "q2_koszul_symmetry",
+      "status": "VERIFIED",
+      "evidence": "every ordered component has an exact swapped partner with sign (-1)^(parity_left parity_right); both self-pairs replay intrinsic signs"
+    },
+    {
+      "check_id": "diagonal_Taylor_recovery",
+      "status": "VERIFIED",
+      "evidence": "an exact two-generator exterior-coefficient fixture replays the odd bracket factor two; the half-Hessian and ten mixed sign products recover every source diagonal term"
+    },
+    {
+      "check_id": "portable_hstar_row",
+      "status": "VERIFIED",
+      "evidence": "the portable Bach root replaces the cylinder table and both source-fixed cotangent lifts remain tensor-natural"
+    },
+    {
+      "check_id": "q1_q2_arity_two_nilpotency",
+      "status": "NOT_REPLAYED",
+      "evidence": "a common executable local q1 receiver is the next gate"
+    },
+    {
+      "check_id": "D_q2_derivation",
+      "status": "NOT_REPLAYED",
+      "evidence": "the full local D action is not serialized"
+    },
+    {
+      "check_id": "BV_cyclicity_q2",
+      "status": "NOT_REPLAYED",
+      "evidence": "the common support-local pairing receiver is not serialized"
+    }
+  ],
+  "canonical_hashes": {
+    "generator_ledger_sha256": "f8e5be3667cba539dfd9bd6dfdb4214c18facb6a8cbd25acdbbcb9105ee4772a",
+    "primary_components_sha256": "acf5b529907561654c10fdc7fcc37d1118b41a2e6b6e657c875f48a822f4c59e",
+    "ordered_components_sha256": "5d11498d8bccccb1fe37c2dc7f53402aa7f994f4facfaaea0a76b560674f7453",
+    "row_completeness_sha256": "a76fd6c2938a5b87d82391de6b46f4e9ab463b86005854b8a5d89e88a6f8c62b",
+    "diagonal_crosswalk_sha256": "9cd44308ef05301b053bf6d884ef218fc4ce6c463b9d43147471b6ea46e7f44d",
+    "proof_checks_sha256": "7feb8304fdf2627e7d0193eed9eee4e980ea4f11410fac517b4f71d1be6b66b6"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_Q2_KINEMATIC_COTANGENT_AST_V1.json",
+        "result_or_artifact_id": "STRICT_Q2_KINEMATIC_COTANGENT_AST_V1",
+        "sha256": "1927a795da01fc5fb06cdbe1ecd3de88f14abaab378f180f6b2ea5d486df81d2",
+        "role": "five diagonal kinematic/cotangent rows"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_BACH_NATURAL_OPERATOR_AST_V1.json",
+        "result_or_artifact_id": "STRICT_BACH_NATURAL_OPERATOR_AST_V1",
+        "sha256": "cea2952bc7e91170169c37b31bc102da74bbe956aac995e6565db0eb03a71098",
+        "role": "portable polarized Bach kernel"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_CYLINDER_HSTAR_BASEPOINT_ROW_V1.json",
+        "result_or_artifact_id": "STRICT_CYLINDER_HSTAR_BASEPOINT_ROW_V1",
+        "sha256": "edc39ae4c7274cc78e04f8c7deb883bf2122fdca1a9e3070419ae1e045f5fb19",
+        "role": "source-fixed h-star coefficients and cotangent formulas"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2.json",
+        "result_or_artifact_id": "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2",
+        "sha256": "3fa276bd04fce3b0142e910e907cab3ad3e4d39bbd60b966de90fa11860c03dc",
+        "role": "authoritative generator gradings and Q rows"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/SUPPORT_LOCAL_Q2_EXPORT_CONTRACT.json",
+        "result_or_artifact_id": "SUPPORT_LOCAL_Q2_EXPORT_CONTRACT",
+        "sha256": "d673ae449910bcfc97f219c35660508a99f33f1eb396a38ee36510a3b1c6995c",
+        "role": "downstream complete-export boundary"
+      }
+    ]
+  },
+  "claim_flags": {
+    "PORTABLE_TENSOR_NATURAL_HSTAR_ROW": true,
+    "SUSPENDED_GRADED_POLARIZATION_REPLAYED": true,
+    "SIX_MINIMAL_Q2_ROW_LEDGERS_COMPLETE": true,
+    "Q2_KOSZUL_SYMMETRY_REPLAYED": true,
+    "Q1_Q2_ARITY_TWO_NILPOTENCY_REPLAYED": false,
+    "STRICT_FULL_LOCAL_D_ACTION_CERTIFIED": false,
+    "D_Q2_DERIVATION_REPLAYED": false,
+    "BV_CYCLICITY_Q2_REPLAYED": false,
+    "STRICT_SUPPORT_LOCAL_Q2_COMPLETE": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "LORENTZIAN_CAUSAL_CERTIFIED": false,
+    "QME_RESTORED": false
+  },
+  "does_not_establish": [
+    "q1q2=0 or any higher arity master identity",
+    "a complete local D action or its derivation identity",
+    "BV cyclicity on a common support-local pairing",
+    "the seven-proof complete SUPPORT_LOCAL_Q2_EXPORT_CONTRACT",
+    "a passed classical import Gate A",
+    "a causal Green homotopy, Hadamard state, Lorentzian QME, or Lorentzian quantum theory"
+  ],
+  "schema_path": "quantum-weyl/classical_import/schema/strict-six-row-suspended-q2-ast-v1.schema.json",
+  "independent_checker": "quantum-weyl/classical_import/check_strict_six_row_suspended_q2_ast.py",
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1.md"
+}

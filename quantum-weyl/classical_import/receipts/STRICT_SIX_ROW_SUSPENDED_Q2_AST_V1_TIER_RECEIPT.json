@@ -1,0 +1,89 @@
+{
+  "receipt_id": "STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1_TIER_RECEIPT",
+  "result_id": "STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "repository_base_commit": "0dc53a6ba452b0da8ad5a98b13b3d11871906778",
+  "changed_artifact_hashes": {
+    "quantum-weyl/README.md": "4ef09452559976415e3a193ab4a3caf9c3789687bd983e5ec3c9077e0d5d392a",
+    "quantum-weyl/classical_import/REPORT.md": "02d2722b050222a3656f9a1b75eda31e6b96da9a9fdebcde68dab5d6edcf14f9",
+    "quantum-weyl/classical_import/REPORT_STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1.md": "5b27e73bb099bf5bab2167d9b1af9d6b50a70bad64106775b32bf8d57f7098e8",
+    "quantum-weyl/classical_import/build_strict_six_row_suspended_q2_ast.py": "c9e838ffcc0c16a2e497ae76f71a99876a9ed97d0d43cbb6b9b6693802326d65",
+    "quantum-weyl/classical_import/certificates/STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1.json": "513b43a90a936e1837947078e8f72da772f37461996b0b27b7df938ab355fbb3",
+    "quantum-weyl/classical_import/check_strict_six_row_suspended_q2_ast.py": "7da17c35bf9622429e979d9727f9051bc6d56f697af94313b14d9e5ef6e47d7b",
+    "quantum-weyl/classical_import/schema/strict-six-row-suspended-q2-ast-v1.schema.json": "1c35207e6e13df03192d1c572461962685af5898eb4f7a79f105fc6d58fc2b80",
+    "quantum-weyl/classical_import/tests/test_strict_six_row_suspended_q2_ast.py": "5568cc955f3805293461b566309ea7d3f5bf562e604897fcb82e721856fcdcef",
+    "quantum-weyl/classical_import/verify_strict_six_row_suspended_q2_ast.py": "73e623d4b2f3a46c0e56e63a53ed4ee8cd04f367de6281b415bb14ef3fec3480"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        {
+          "command": "python3 -m py_compile quantum-weyl/classical_import/build_strict_six_row_suspended_q2_ast.py quantum-weyl/classical_import/check_strict_six_row_suspended_q2_ast.py quantum-weyl/classical_import/verify_strict_six_row_suspended_q2_ast.py quantum-weyl/classical_import/tests/test_strict_six_row_suspended_q2_ast.py",
+          "elapsed_seconds": "0.06",
+          "maximum_resident_kib": 16648,
+          "result": "PASS"
+        },
+        {
+          "command": "jq empty quantum-weyl/classical_import/schema/strict-six-row-suspended-q2-ast-v1.schema.json quantum-weyl/classical_import/certificates/STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1.json",
+          "elapsed_seconds": "0.00",
+          "maximum_resident_kib": 3832,
+          "result": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "checks": [
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 quantum-weyl/classical_import/build_strict_six_row_suspended_q2_ast.py --check",
+          "elapsed_seconds": "0.06",
+          "maximum_resident_kib": 22152,
+          "result": "PASS; generated artifacts current"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 quantum-weyl/classical_import/check_strict_six_row_suspended_q2_ast.py",
+          "elapsed_seconds": "0.04",
+          "maximum_resident_kib": 18852,
+          "result": "PASS; 12 primary and 22 ordered components, six rows, degree one, Koszul partners and portable h-star binding replayed"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 quantum-weyl/classical_import/verify_strict_six_row_suspended_q2_ast.py",
+          "elapsed_seconds": "0.13",
+          "maximum_resident_kib": 29212,
+          "result": "PASS; schema, exactness and fail-closed boundaries verified"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 -m unittest quantum-weyl/classical_import/tests/test_strict_six_row_suspended_q2_ast.py -v",
+          "elapsed_seconds": "0.20",
+          "maximum_resident_kib": 31124,
+          "result": "PASS; 10 tests including mixed/self Koszul, root hash, row omission, grading, float and lifecycle mutations"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The new component ledger is the terminal artifact in its affected chain. It content-addresses the unchanged five-row diagonal, portable Bach, h-star cotangent, antifield grading and downstream contract inputs; the independent receiver replays the complete ordered expansion and all promoted degree/Koszul claims. No upstream producer interface changed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, theorem/lifecycle promotion beyond CLASSIFIED, shared core algebra change, release or tag is made. q1q2, D derivation, BV cyclicity, Gate A and every Lorentzian/QME flag remain false."
+    }
+  },
+  "science_forge_shadow": {
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": "2.10",
+    "maximum_resident_kib": 338912,
+    "process_exit": 0,
+    "certifying_status": "ADVISORY_NON_CERTIFYING",
+    "findings": [
+      "Forge 0.0.2 embedded stdlib hash differs from the current forge/lib tree",
+      "bridge audit fails closed with E9118 at forge/lib/prelude.forge:682",
+      "coverage census reports 1716 certificates versus the 2026-07-19 baseline of 976"
+    ]
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC receipt certifies a portable tensor-natural metric-antifield row and the complete six-output suspended q2 component ledger: twelve primary kernels, twenty-two ordered components, exact cohomological degree one and Koszul symmetry in the repository factorial convention. It does not execute q1q2=0, serialize the full local D or common BV pairing, prove D derivation or cyclicity, satisfy the seven-proof support-local export contract, pass Gate A, construct causal Green or Hadamard data, restore a QME, or establish a Lorentzian quantum theory."
+}
