@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-axial-slice-quadratic-coercivity-v1.schema.json",
+  "title": "BT axial-slice quadratic coercivity certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "slice_jensen_theorem", "positive_part_fourier_lemma",
+    "lowest_mode_corollary", "exact_nonseparable_l4_fixture",
+    "method_disposition", "missing_object_ledger", "next_gate",
+    "does_not_establish", "provenance", "verification_commands",
+    "tier_receipt", "checks", "schema", "report", "verifier"
+  ],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "textArray": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "fractionArray": {"type": "array", "items": {"$ref": "#/$defs/fraction"}},
+    "textObject": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/text"}
+    }
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_AXIAL_SLICE_QUADRATIC_COERCIVITY_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-axial-slice-quadratic-coercivity-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"},
+        {"const": "REDUCED-MODE"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "VOLUME_UNIFORM_DETERMINISTIC_COERCIVITY_PROVED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "slice_jensen_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scope", "slice_mean", "slice_residual_mean", "jensen_bound", "reason", "action_bound", "status"],
+      "properties": {
+        "scope": {"$ref": "#/$defs/text"},
+        "slice_mean": {"$ref": "#/$defs/text"},
+        "slice_residual_mean": {"$ref": "#/$defs/text"},
+        "jensen_bound": {"$ref": "#/$defs/text"},
+        "reason": {"$ref": "#/$defs/text"},
+        "action_bound": {"const": "A(psi)>=L^3/2*sum_t (rbar_t)^2>=L^3/2*||(Delta_1 b)_+||_2^2"},
+        "status": {"const": "PROVED"}
+      }
+    },
+    "positive_part_fourier_lemma": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["hypotheses", "positive_mass", "negative_weighted_phase", "identity", "phase_norm", "conclusion", "status"],
+      "properties": {
+        "hypotheses": {"$ref": "#/$defs/text"},
+        "positive_mass": {"$ref": "#/$defs/text"},
+        "negative_weighted_phase": {"$ref": "#/$defs/text"},
+        "identity": {"$ref": "#/$defs/text"},
+        "phase_norm": {"const": "sum_t (h_t-c_-)^2=L/2+L*c_-^2<=3L/2 for the lowest mode and L>=4"},
+        "conclusion": {"const": "||(a)_+||_2^2>=(2/(3L))*|<a,h>|^2"},
+        "status": {"const": "PROVED"}
+      }
+    },
+    "lowest_mode_corollary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fourier_normalization", "dispersion", "log_field_bound", "scaled_field_bound", "uniformities", "status"],
+      "properties": {
+        "fourier_normalization": {"$ref": "#/$defs/text"},
+        "dispersion": {"const": "omega_L=4*sin(pi/L)^2"},
+        "log_field_bound": {"const": "A(psi)>=(N*omega_L^2/3)*|psi_hat(e_mu)|^2"},
+        "scaled_field_bound": {"const": "for psi=lambda*phi and nonzero lambda, S_lambda(phi)=A(lambda*phi)/lambda^2>=(N*omega_L^2/3)*|phi_hat(e_mu)|^2"},
+        "uniformities": {"$ref": "#/$defs/textArray"},
+        "status": {"const": "PROVED_DETERMINISTIC_NOT_NORMALIZED"}
+      }
+    },
+    "exact_nonseparable_l4_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sites", "spatial_sites_per_slice", "field", "base_exponents",
+        "transverse_exponents", "activation_by_time", "slice_exponent_means",
+        "slice_residual_means", "slice_laplacian_log2_coefficients", "action",
+        "slice_cauchy_lower", "action_minus_slice_cauchy", "lowest_dispersion",
+        "fourier_modulus_squared", "quadratic_lower_bound", "log_bound", "status"
+      ],
+      "properties": {
+        "sites": {"const": 256},
+        "spatial_sites_per_slice": {"const": 64},
+        "field": {"$ref": "#/$defs/text"},
+        "base_exponents": {"type": "array", "prefixItems": [{"const": 0}, {"const": 1}, {"const": 0}, {"const": -1}], "items": false},
+        "transverse_exponents": {"type": "array", "prefixItems": [{"const": 1}, {"const": -1}, {"const": 0}, {"const": 0}], "items": false},
+        "activation_by_time": {"type": "array", "prefixItems": [{"const": 1}, {"const": 0}, {"const": 0}, {"const": 0}], "items": false},
+        "slice_exponent_means": {"$ref": "#/$defs/fractionArray"},
+        "slice_residual_means": {"$ref": "#/$defs/fractionArray"},
+        "slice_laplacian_log2_coefficients": {"$ref": "#/$defs/fractionArray"},
+        "action": {"$ref": "#/$defs/fraction"},
+        "slice_cauchy_lower": {"$ref": "#/$defs/fraction"},
+        "action_minus_slice_cauchy": {"$ref": "#/$defs/fraction"},
+        "lowest_dispersion": {"const": 2},
+        "fourier_modulus_squared": {"const": "(log(2))^2/4"},
+        "quadratic_lower_bound": {"const": "(256/3)*(log(2))^2<3136/75<1361/2"},
+        "log_bound": {"const": "log(2)<7/10"},
+        "status": {"const": "EXACT_RATIONAL_ENUMERATION_WITH_RATIONAL_LOG_BOUND"}
+      }
+    },
+    "method_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "quartic_lowest_mode_action_bound", "all_background_quadratic_lowest_axial_action_bound",
+        "normalized_lowest_mode_second_moment", "orthogonal_cross_section_entropy",
+        "actual_interacting_h_minus_one_second_moment", "interacting_tightness",
+        "continuum_limit", "born_rule", "krein_reconstruction", "lorentzian_transfer"
+      ],
+      "properties": {
+        "quartic_lowest_mode_action_bound": {"const": "IMPROVED_BY_QUADRATIC_BOUND"},
+        "all_background_quadratic_lowest_axial_action_bound": {"const": "PROVED"},
+        "normalized_lowest_mode_second_moment": {"const": "OPEN"},
+        "orthogonal_cross_section_entropy": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment": {"const": "OPEN"},
+        "interacting_tightness": {"const": "NOT_ESTABLISHED"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"$ref": "#/$defs/textArray"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/textArray"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "a10212695438b66626f72a468928320f7f3f2def"},
+        "inputs": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"$ref": "#/$defs/textArray"},
+    "tier_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "memory_policy", "elapsed_seconds_and_peak_kib", "repository_audits"],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/text"},
+        "tier_1": {"$ref": "#/$defs/text"},
+        "tier_2": {"$ref": "#/$defs/text"},
+        "tier_3": {"$ref": "#/$defs/text"},
+        "memory_policy": {"$ref": "#/$defs/text"},
+        "elapsed_seconds_and_peak_kib": {"$ref": "#/$defs/textObject"},
+        "repository_audits": {"$ref": "#/$defs/textObject"}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+      }
+    },
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-axial-slice-quadratic-coercivity-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-axial-slice-quadratic-coercivity.md"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_axial_slice_quadratic_coercivity.py"}
+  }
+}
