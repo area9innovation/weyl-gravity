@@ -1,0 +1,80 @@
+{
+  "receipt_id": "STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Exact fixed-basis component-jet serialization of the three T/A/B type-II shears, their BV-forced cotangent partners, the two genuine ordered-product cross terms, and the full inverse on the certified 386-row unary/split-SDR snapshot.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.19,
+      "commands": [
+        "python3 -m py_compile quantum-weyl/classical_import/build_strict_386_canonical_shear_component_jets.py quantum-weyl/classical_import/check_strict_386_canonical_shear_component_jets.py quantum-weyl/classical_import/verify_strict_386_canonical_shear_component_jets.py quantum-weyl/classical_import/tests/test_strict_386_canonical_shear_component_jets.py",
+        "python3 -m json.tool quantum-weyl/classical_import/schema/strict-386-canonical-shear-component-jets-v1.schema.json",
+        "python3 -m json.tool quantum-weyl/classical_import/certificates/STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1.json",
+        "git diff --check -- <explicit canonical-shear paths>"
+      ],
+      "notes": [
+        "The exact staged diff and imported content hashes are inspected immediately before commit."
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 24.65,
+      "commands": [
+        "python3 quantum-weyl/classical_import/build_strict_386_canonical_shear_component_jets.py --check",
+        "python3 quantum-weyl/classical_import/check_strict_386_canonical_shear_component_jets.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_canonical_shear_component_jets.py",
+        "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_canonical_shear_component_jets.py"
+      ],
+      "checks": {
+        "forward_tables": 7,
+        "inverse_tables": 7,
+        "forward_nonzero_off_diagonal_coefficients": 1321,
+        "inverse_nonzero_off_diagonal_coefficients": 1321,
+        "raw_T_A_B_hash_defects": 0,
+        "generalized_auxiliary_attachment_nonzero_coefficients": 0,
+        "elementary_BV_canonicality_defects": 0,
+        "left_inverse_defects": 0,
+        "right_inverse_defects": 0,
+        "degree_zero_defects": 0,
+        "forbidden_derivative_derivative_products": 0,
+        "forward_cross_terms": 1,
+        "inverse_cross_terms": 1,
+        "mutation_tests": "8/8 PASS"
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 87.51,
+      "command_prefix": "PYTHONPATH=/home/alstrup/area9/weyl-gravity:/tmp/weyl-scipy/root/usr/lib/python3/dist-packages:/tmp/weyl-sympy/root/usr/lib/python3/dist-packages",
+      "commands": [
+        "python3 symbolic/verify_conformal_curvature_mapping_cylinder_kernel.py --guards",
+        "python3 symbolic/verify_conformal_prolonged_hybrid_algebraic_projector.py --guards",
+        "python3 quantum-weyl/classical_import/verify_strict_386_full_q1_component_jet_table.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_local_sdr_component_maps.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_canonical_shear_component_jets.py"
+      ],
+      "checks": {
+        "mapping_cylinder_guards": "22/22 PASS",
+        "hybrid_projector_guards": "12/12 PASS",
+        "full_q1_verifier": "PASS",
+        "local_sdr_verifier": "PASS",
+        "canonical_shear_verifier": "PASS"
+      },
+      "criterion": "The shear reconstructs its attachment data from the exact mapping-cylinder source and binds the fixed component basis, pairing, full unary snapshot and split local SDR. Their direct producer/consumer chain was independently replayed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No shared classical source/operator, freeze tag, release or quantum lifecycle state changed. This result serializes an exact consumer-side coordinate transform on content-addressed inputs and preserves graph q1/SDR, Gate A and every quantum lifecycle state as open."
+    }
+  },
+  "artifact_sha256": {
+    "quantum-weyl/classical_import/certificates/STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1.json": "5f9240a362ce8568f0ac502e25978a4675f9744cc750dee5b1378828033eb301",
+    "quantum-weyl/classical_import/REPORT_STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1.md": "155a1a67ec403c0c21a63b8e8d4110200d0f3dd32a32e1d3199189f90b81e2d9"
+  },
+  "claim_boundary": "This certifies the finite local canonical coordinate transform and its exact inverse. It does not certify graph-coordinate q1, the graph-coordinate SDR, represented advanced/retarded Green actions, a receiver-accepted Gate-A snapshot, local D, q2 compatibility, a Hadamard state, renormalized Lorentzian products, QME restoration, residual transfer or a complete Lorentzian quantum theory."
+}

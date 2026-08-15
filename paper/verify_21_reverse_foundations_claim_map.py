@@ -110,6 +110,8 @@ def main() -> int:
     completion_atlas_v11 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v11"]["path"]).read_text())
     strict_386_local_sdr = json.loads((ROOT / data["authorities"]["strict_386_local_sdr_component_maps"]["path"]).read_text())
     completion_atlas_v12 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v12"]["path"]).read_text())
+    strict_386_canonical_shear = json.loads((ROOT / data["authorities"]["strict_386_canonical_shear_component_jets"]["path"]).read_text())
+    completion_atlas_v13 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v13"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -401,6 +403,7 @@ def main() -> int:
         (34, "BT-CORRECTOR-SLAB-CYLINDER-SUPPRESSION"),
         (35, "STRICT-WEYL-FULL-Q1-COMPONENT-SNAPSHOT"),
         (36, "STRICT-WEYL-SPLIT-LOCAL-SDR"),
+        (37, "STRICT-WEYL-CANONICAL-SHEAR-COMPONENT-JETS"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -420,7 +423,10 @@ def main() -> int:
     require(flags["strict_386_local_sdr_component_maps_serialized"] is True, "strict local SDR component maps missing")
     require(flags["strict_386_local_sdr_identities_replayed"] is True, "strict local SDR identity replay missing")
     require(flags["strict_386_local_sdr_cyclicity_replayed"] is True, "strict local SDR cyclicity replay missing")
-    require(flags["strict_386_canonical_shear_component_jets_serialized"] is False, "strict canonical shear promoted")
+    require(flags["strict_386_canonical_shear_component_jets_serialized"] is True, "strict canonical shear component jets missing")
+    require(flags["strict_386_canonical_shear_inverse_replayed"] is True, "strict canonical shear inverse replay missing")
+    require(flags["strict_386_canonical_shear_bv_canonicality_replayed"] is True, "strict canonical shear BV canonicality replay missing")
+    require(flags["strict_386_unshifted_graph_q1_snapshot_complete"] is False, "strict graph-coordinate q1 promoted")
     require(flags["strict_386_unshifted_graph_sdr_snapshot_complete"] is False, "strict graph-coordinate SDR promoted")
     require(flags["strict_386_represented_green_actions_serialized"] is False, "strict represented Green actions promoted")
     require(flags["strict_386_classical_import_gate_passed"] is False, "strict classical import gate promoted")
@@ -517,6 +523,24 @@ def main() -> int:
     require(atlas_sdr["H_alg_nonzero_entries"] == 190 and atlas_sdr["derivative_multiindices_checked"] == 70 and atlas_sdr["homotopy_identity_defects"] == 0 and atlas_sdr["cyclicity_defects"] == 0, "completion atlas V12 omitted split local SDR")
     require(completion_atlas_v12["claim_flags"]["strict_386_split_local_sdr_component_maps_serialized"] is True and completion_atlas_v12["claim_flags"]["strict_386_canonical_shear_component_jets_serialized"] is False, "completion atlas V12 split-SDR/shear boundary drift")
     require(completion_atlas_v12["claim_flags"]["strict_386_represented_green_actions_serialized"] is False and completion_atlas_v12["claim_flags"]["strict_pure_weyl_classical_gate_passed"] is False and completion_atlas_v12["claim_flags"]["lorentzian_full_theory_certified"] is False, "completion atlas V12 Green/Gate/quantum boundary drift")
+    shear_transform = strict_386_canonical_shear["canonical_transform"]
+    require(shear_transform["forward"]["table_count"] == 7 and shear_transform["inverse"]["table_count"] == 7, "strict canonical shear table inventory drift")
+    require(shear_transform["forward"]["nonzero_off_diagonal_coefficients"] == 1321 and shear_transform["inverse"]["nonzero_off_diagonal_coefficients"] == 1321, "strict canonical shear coefficient inventory drift")
+    shear_replay = strict_386_canonical_shear["exact_replay"]
+    require(shear_replay["raw_T_A_B_hash_defects"] == 0 and shear_replay["generalized_auxiliary_attachment_nonzero_coefficients"] == 0, "strict canonical shear source reconciliation drift")
+    require(shear_replay["elementary_inverse_defects"] == 0 and shear_replay["elementary_BV_canonicality_defects"] == 0, "strict elementary shear replay drift")
+    require(shear_replay["full_left_inverse_defects"] == 0 and shear_replay["full_right_inverse_defects"] == 0 and shear_replay["degree_zero_defects"] == 0, "strict full shear inverse/degree replay drift")
+    require(shear_replay["forbidden_derivative_derivative_products_in_inverse_replay"] == 0 and shear_replay["cross_term_PBW_commutator_required"] is False, "strict canonical shear suppressed a curved-jet composition")
+    require(shear_replay["forward_cross_terms"] == 1 and shear_replay["inverse_cross_terms"] == 1 and shear_replay["full_BV_canonicality"] is True, "strict canonical shear cross-term/canonicality drift")
+    shear_gate = strict_386_canonical_shear["gate_disposition"]
+    require(shear_gate["canonical_shear_snapshot_bound"] is True and shear_gate["graph_coordinate_q1_component_replay_complete"] is False and shear_gate["graph_coordinate_sdr_component_replay_complete"] is False, "strict canonical shear graph boundary drift")
+    require(strict_386_canonical_shear["claim_flags"]["STRICT_386_CANONICAL_SHEAR_COMPONENT_JET_TABLE_SERIALIZED"] is True and strict_386_canonical_shear["claim_flags"]["STRICT_386_CANONICAL_SHEAR_INVERSE_REPLAYED"] is True and strict_386_canonical_shear["claim_flags"]["STRICT_386_CANONICAL_SHEAR_BV_CANONICALITY_REPLAYED"] is True, "strict canonical shear claim flags missing")
+    require(strict_386_canonical_shear["claim_flags"]["STRICT_386_GRAPH_Q1_COMPONENT_JET_TABLE_SERIALIZED"] is False and strict_386_canonical_shear["claim_flags"]["STRICT_386_GRAPH_SDR_COMPONENT_MAPS_SERIALIZED"] is False and strict_386_canonical_shear["claim_flags"]["CLASSICAL_IMPORT_GATE_PASSED"] is False, "strict canonical shear promoted graph replay or Gate A")
+    atlas_shear = completion_atlas_v13["strict_canonical_shear_component_jets"]
+    require(atlas_shear["forward_table_count"] == 7 and atlas_shear["inverse_table_count"] == 7 and atlas_shear["left_inverse_defects"] == 0 and atlas_shear["right_inverse_defects"] == 0, "completion atlas V13 omitted canonical shear replay")
+    require(completion_atlas_v13["claim_flags"]["strict_386_canonical_shear_component_jets_serialized"] is True and completion_atlas_v13["claim_flags"]["strict_386_canonical_shear_inverse_replayed"] is True and completion_atlas_v13["claim_flags"]["strict_386_canonical_shear_bv_canonicality_replayed"] is True, "completion atlas V13 shear boundary drift")
+    require(completion_atlas_v13["claim_flags"]["strict_386_unshifted_graph_q1_snapshot_complete"] is False and completion_atlas_v13["claim_flags"]["strict_386_unshifted_graph_sdr_snapshot_complete"] is False and completion_atlas_v13["claim_flags"]["strict_pure_weyl_classical_gate_passed"] is False and completion_atlas_v13["claim_flags"]["lorentzian_full_theory_certified"] is False, "completion atlas V13 promoted graph/Gate/quantum completion")
+    require(len(completion_atlas_v13["route_selection"]) == 8 and completion_atlas_v13["route_selection"][0]["route"] == "STRICT_386_SPLIT_TO_GRAPH_SDR_REPLAY", "completion atlas V13 frontier ordering drift")
     require(flags["static_atlas_appendix_generated"] is True, "static atlas appendix flag is not certified")
     require(flags["complete_evidence_register_generated"] is True, "complete evidence register flag is not certified")
     require(flags["complete_literature_register_generated"] is True, "complete literature register flag is not certified")

@@ -1,0 +1,262 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-386-canonical-shear-component-jets-v1.schema.json",
+  "title": "Strict 386-row canonical shear component jets v1",
+  "type": "object",
+  "required": [
+    "$schema",
+    "schema",
+    "schema_path",
+    "result_id",
+    "result_kind",
+    "result_state",
+    "lifecycle",
+    "created",
+    "repository_base_commit",
+    "dependency_tags",
+    "question",
+    "answer",
+    "scope",
+    "source_coordinate_reconciliation",
+    "canonical_transform",
+    "exact_replay",
+    "canonical_shear_snapshot",
+    "support_and_foundations",
+    "gate_disposition",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate",
+    "canonical_hashes",
+    "provenance",
+    "independent_checker",
+    "human_report"
+  ],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "strict-386-canonical-shear-component-jets-v1"},
+    "result_id": {"const": "STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1"},
+    "result_state": {"const": "CANONICAL_SHEAR_SERIALIZED_GRAPH_Q1_AND_SDR_REPLAY_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "scope": {
+      "type": "object",
+      "required": ["carrier_dimension", "coordinate_transport", "arithmetic"],
+      "properties": {
+        "carrier_dimension": {"const": 386},
+        "coordinate_transport": {"const": "split coordinates to unshifted curvature graph coordinates"},
+        "arithmetic": {"const": "finite exact rational component-jet tables"}
+      },
+      "additionalProperties": true
+    },
+    "source_coordinate_reconciliation": {
+      "type": "object",
+      "required": ["raw_hashes", "authoritative_hashes", "hash_defects", "Gate_transport"],
+      "properties": {
+        "raw_hashes": {"$ref": "#/$defs/three_hashes"},
+        "authoritative_hashes": {"$ref": "#/$defs/three_hashes"},
+        "hash_defects": {"const": 0}
+      },
+      "additionalProperties": true
+    },
+    "canonical_transform": {
+      "type": "object",
+      "required": ["representation", "carrier_dimension", "ordered_elementary_forward_circuit", "ordered_elementary_inverse_circuit", "elementary_shears", "forward", "inverse"],
+      "properties": {
+        "carrier_dimension": {"const": 386},
+        "ordered_elementary_forward_circuit": {"const": ["S_T", "S_A", "S_B"]},
+        "ordered_elementary_inverse_circuit": {"const": ["S_B^-1", "S_A^-1", "S_T^-1"]},
+        "elementary_shears": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"$ref": "#/$defs/elementary"}
+        },
+        "forward": {"$ref": "#/$defs/flattened_transform"},
+        "inverse": {"$ref": "#/$defs/flattened_transform"}
+      },
+      "additionalProperties": true
+    },
+    "exact_replay": {
+      "type": "object",
+      "required": [
+        "raw_T_A_B_hash_defects",
+        "generalized_auxiliary_attachment_nonzero_coefficients",
+        "elementary_inverse_defects",
+        "elementary_BV_canonicality_defects",
+        "full_left_inverse_defects",
+        "full_right_inverse_defects",
+        "forbidden_derivative_derivative_products_in_inverse_replay",
+        "degree_zero_defects",
+        "forward_cross_terms",
+        "inverse_cross_terms",
+        "cross_term_PBW_commutator_required",
+        "full_BV_canonicality"
+      ],
+      "properties": {
+        "raw_T_A_B_hash_defects": {"const": 0},
+        "generalized_auxiliary_attachment_nonzero_coefficients": {"const": 0},
+        "elementary_inverse_defects": {"const": 0},
+        "elementary_BV_canonicality_defects": {"const": 0},
+        "full_left_inverse_defects": {"const": 0},
+        "full_right_inverse_defects": {"const": 0},
+        "forbidden_derivative_derivative_products_in_inverse_replay": {"const": 0},
+        "degree_zero_defects": {"const": 0},
+        "forward_cross_terms": {"const": 1},
+        "inverse_cross_terms": {"const": 1},
+        "cross_term_PBW_commutator_required": {"const": false},
+        "full_BV_canonicality": {"const": true}
+      },
+      "additionalProperties": true
+    },
+    "canonical_shear_snapshot": {
+      "type": "object",
+      "required": ["kind", "basis_sha256", "pairing_sha256", "unary_snapshot_sha256", "split_local_sdr_snapshot_sha256", "forward_sha256", "inverse_sha256", "snapshot_sha256"],
+      "properties": {
+        "kind": {"const": "STRICT_386_CANONICAL_SHEAR_COMPONENT_JET_SNAPSHOT"}
+      },
+      "additionalProperties": {"$ref": "#/$defs/sha256"}
+    },
+    "support_and_foundations": {
+      "type": "object",
+      "required": ["maximum_differential_order", "finite_differential_orders_only", "support_local", "Green_operator_used", "finite_exact_upper_bound", "choice_operation_added", "analytic_green_theorem_used"],
+      "properties": {
+        "maximum_differential_order": {"const": 3},
+        "finite_differential_orders_only": {"const": true},
+        "support_local": {"const": true},
+        "Green_operator_used": {"const": false},
+        "finite_exact_upper_bound": {"const": "PRA"},
+        "choice_operation_added": {"const": false},
+        "analytic_green_theorem_used": {"const": false}
+      },
+      "additionalProperties": true
+    },
+    "gate_disposition": {
+      "type": "object",
+      "required": ["canonical_shear_snapshot_bound", "graph_coordinate_q1_component_replay_complete", "graph_coordinate_sdr_component_replay_complete", "represented_advanced_retarded_actions_bound", "one_common_gate_a_snapshot_accepted", "classical_import_gate_a_status"],
+      "properties": {
+        "canonical_shear_snapshot_bound": {"const": true},
+        "graph_coordinate_q1_component_replay_complete": {"const": false},
+        "graph_coordinate_sdr_component_replay_complete": {"const": false},
+        "represented_advanced_retarded_actions_bound": {"const": false},
+        "one_common_gate_a_snapshot_accepted": {"const": false},
+        "classical_import_gate_a_status": {"const": "FAIL_CLOSED"}
+      },
+      "additionalProperties": true
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["STRICT_386_CANONICAL_SHEAR_COMPONENT_JET_TABLE_SERIALIZED", "STRICT_386_CANONICAL_SHEAR_INVERSE_REPLAYED", "STRICT_386_CANONICAL_SHEAR_BV_CANONICALITY_REPLAYED", "STRICT_386_GRAPH_Q1_COMPONENT_JET_TABLE_SERIALIZED", "STRICT_386_GRAPH_SDR_COMPONENT_MAPS_SERIALIZED", "STRICT_386_REPRESENTED_GREEN_ACTIONS_SERIALIZED", "CLASSICAL_IMPORT_GATE_PASSED", "HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED", "LORENTZIAN_QUANTUM_THEORY"],
+      "properties": {
+        "STRICT_386_CANONICAL_SHEAR_COMPONENT_JET_TABLE_SERIALIZED": {"const": true},
+        "STRICT_386_CANONICAL_SHEAR_INVERSE_REPLAYED": {"const": true},
+        "STRICT_386_CANONICAL_SHEAR_BV_CANONICALITY_REPLAYED": {"const": true},
+        "STRICT_386_GRAPH_Q1_COMPONENT_JET_TABLE_SERIALIZED": {"const": false},
+        "STRICT_386_GRAPH_SDR_COMPONENT_MAPS_SERIALIZED": {"const": false},
+        "STRICT_386_REPRESENTED_GREEN_ACTIONS_SERIALIZED": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "LORENTZIAN_QUANTUM_THEORY": {"const": false}
+      },
+      "additionalProperties": {"type": "boolean"}
+    },
+    "does_not_establish": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 60},
+    "canonical_hashes": {
+      "type": "object",
+      "required": ["source_coordinate_reconciliation_sha256", "canonical_transform_sha256", "exact_replay_sha256", "canonical_shear_snapshot_sha256"],
+      "additionalProperties": {"$ref": "#/$defs/sha256"}
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["inputs"],
+      "properties": {
+        "inputs": {"type": "array", "minItems": 8, "items": {"$ref": "#/$defs/provenance"}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "three_hashes": {
+      "type": "object",
+      "required": ["T_state", "A_equation", "B_identity"],
+      "additionalProperties": {"$ref": "#/$defs/sha256"}
+    },
+    "coefficient": {
+      "type": "object",
+      "required": ["multiindex", "entries"],
+      "properties": {
+        "multiindex": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer", "minimum": 0}},
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [
+              {"type": "integer", "minimum": 0, "maximum": 385},
+              {"type": "integer", "minimum": 0, "maximum": 385},
+              {"type": "string", "pattern": "^-?[0-9]+(?:/[1-9][0-9]*)?$"}
+            ],
+            "minItems": 3,
+            "maxItems": 3
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "table": {
+      "type": "object",
+      "required": ["table_id", "source_block", "target_block", "source_global_indices", "target_global_indices", "shape", "maximum_order", "coefficient_multiindices", "nonzero_coefficients", "orientation", "role", "origin", "coefficients", "sha256"],
+      "properties": {
+        "table_id": {"type": "string"},
+        "shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}},
+        "maximum_order": {"type": "integer", "minimum": 0, "maximum": 3},
+        "coefficient_multiindices": {"type": "integer", "minimum": 1},
+        "nonzero_coefficients": {"type": "integer", "minimum": 1},
+        "orientation": {"const": "entry[target_global_index,source_global_index]"},
+        "coefficients": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/coefficient"}},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": true
+    },
+    "elementary": {
+      "type": "object",
+      "required": ["element_id", "application_order_forward", "forward_formula", "inverse_formula", "nilpotent_off_diagonal_square", "exact_inverse_defects", "BV_canonicality_defects", "primal_table", "forced_partner_table"],
+      "properties": {
+        "nilpotent_off_diagonal_square": {"const": true},
+        "exact_inverse_defects": {"const": 0},
+        "BV_canonicality_defects": {"const": 0},
+        "primal_table": {"$ref": "#/$defs/table"},
+        "forced_partner_table": {"$ref": "#/$defs/table"}
+      },
+      "additionalProperties": true
+    },
+    "flattened_transform": {
+      "type": "object",
+      "required": ["formula", "identity_diagonal_implicit", "tables", "table_count", "nonzero_off_diagonal_coefficients", "maximum_order", "sha256"],
+      "properties": {
+        "identity_diagonal_implicit": {"const": true},
+        "tables": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/table"}},
+        "table_count": {"const": 7},
+        "nonzero_off_diagonal_coefficients": {"type": "integer", "minimum": 1},
+        "maximum_order": {"const": 3},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": true
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["path", "result_or_schema_id", "sha256", "role"],
+      "properties": {
+        "path": {"type": "string"},
+        "result_or_schema_id": {"type": "string"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "role": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

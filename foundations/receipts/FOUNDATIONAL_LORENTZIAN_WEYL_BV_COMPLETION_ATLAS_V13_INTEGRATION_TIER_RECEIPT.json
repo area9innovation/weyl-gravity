@@ -1,0 +1,106 @@
+{
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V13_INTEGRATION_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V13",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Append-only Atlas V13, in-place explorer refresh, Paper 21 claim RF-37, and the append-only Science Forge ACTIVE event for the exact strict canonical shear, with graph q1/SDR, represented Green actions and Gate A preserved as distinct open contracts.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.19,
+      "commands": [
+        "python3 -m py_compile <explicit canonical-shear, Atlas V13, explorer and Paper 21 Python paths>",
+        "python3 -m json.tool quantum-weyl/classical_import/schema/strict-386-canonical-shear-component-jets-v1.schema.json",
+        "python3 -m json.tool foundations/schema/foundational-lorentzian-weyl-bv-completion-atlas-v13.schema.json",
+        "git diff --check -- <explicit canonical-shear, Atlas V13, site, Paper 21 and planning-event paths>"
+      ],
+      "notes": [
+        "JavaScript syntax is covered by the generated static-site receiver tests; node is not installed in this environment, so no separate node --check result is claimed.",
+        "The exact staged diff and imported content hashes are inspected immediately before commit."
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 30.30,
+      "commands": [
+        "python3 quantum-weyl/classical_import/build_strict_386_canonical_shear_component_jets.py --check && python3 quantum-weyl/classical_import/check_strict_386_canonical_shear_component_jets.py && python3 quantum-weyl/classical_import/verify_strict_386_canonical_shear_component_jets.py && python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_canonical_shear_component_jets.py",
+        "python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v13.py --check && python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v13.py && python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v13.py && python3 -m unittest foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v13.py -v",
+        "python3 foundations/build_matrix_site_v2.py --check && python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py && python3 -m unittest foundations/tests/test_matrix_site.py -v",
+        "python3 paper/generate_21_reverse_foundations_appendices.py --check && python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+        "pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (twice, from paper/)"
+      ],
+      "checks": {
+        "canonical_shear_mutation_tests": "8/8 PASS",
+        "atlas_v13_mutation_tests": "7/7 PASS",
+        "site_unit_tests": "10/10 PASS",
+        "site_artifacts": 195,
+        "site_cells": 576,
+        "completion_branches": 7,
+        "completion_cells": 77,
+        "completion_routes": 8,
+        "paper_claims": 37,
+        "paper_pages": 63,
+        "paper_unresolved_references": 0
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 87.51,
+      "command_prefix": "PYTHONPATH=/home/alstrup/area9/weyl-gravity:/tmp/weyl-scipy/root/usr/lib/python3/dist-packages:/tmp/weyl-sympy/root/usr/lib/python3/dist-packages",
+      "commands": [
+        "python3 symbolic/verify_conformal_curvature_mapping_cylinder_kernel.py --guards",
+        "python3 symbolic/verify_conformal_prolonged_hybrid_algebraic_projector.py --guards",
+        "python3 quantum-weyl/classical_import/verify_strict_386_full_q1_component_jet_table.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_local_sdr_component_maps.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_canonical_shear_component_jets.py",
+        "python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v12.py",
+        "python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v13.py",
+        "python3 foundations/verify_matrix_site_v2.py",
+        "python3 paper/verify_21_reverse_foundations_claim_map.py"
+      ],
+      "checks": {
+        "mapping_cylinder_guards": "22/22 PASS",
+        "hybrid_projector_guards": "12/12 PASS",
+        "full_q1_verifier": "PASS",
+        "local_sdr_verifier": "PASS",
+        "canonical_shear_verifier": "PASS",
+        "atlas_v12_historical_verifier": "PASS",
+        "atlas_v13_verifier": "PASS",
+        "site_verifier": "PASS",
+        "paper_claim_map_verifier": "PASS"
+      },
+      "criterion": "The shear consumes the exact mapping-cylinder contraction, hybrid local projector, component pairing, full unary snapshot and split SDR; Atlas V13, the explorer and Paper 21 are direct generated consumers, so that complete affected certificate chain was replayed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No shared classical source/operator, freeze tag, release or quantum lifecycle state changed. The new consumer-side serializer and its complete affected chain passed Tier 2 without promoting graph q1/SDR or Gate A."
+    }
+  },
+  "science_forge_shadow": {
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": 3.90,
+    "advisory_exit_status": 0,
+    "bridge_audit": "FAIL_CLOSED",
+    "bridge_audit_reason": "The cached Forge 0.0.2 binary reports a stdlib hash mismatch and rejects the current atomic_compare_exchange_i32 memory-order form with E9118 before auditing this tree.",
+    "coverage_census": "DRIFT: 1767 certificates versus the 2026-07-19 baseline of 976",
+    "disposition": "Recorded without promotion. The advisory wrapper passes by design, but neither the bridge audit nor the stale corpus baseline is represented as a scientific PASS."
+  },
+  "artifact_sha256": {
+    "quantum-weyl/classical_import/certificates/STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1.json": "5f9240a362ce8568f0ac502e25978a4675f9744cc750dee5b1378828033eb301",
+    "quantum-weyl/classical_import/REPORT_STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1.md": "155a1a67ec403c0c21a63b8e8d4110200d0f3dd32a32e1d3199189f90b81e2d9",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V13.json": "3411349bde982e864171153cab569df78e205380dbeca14faacd3dd022b78f5b",
+    "foundations/reports/lorentzian-weyl-bv-completion-atlas-v13.md": "760546f50c113dc2fb798d796f06b6e6e25f294b1b22e35316d42c9460bc6f62",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "ecc513e1a670bfcaa3dc8b3ad41286d74cdf0d5efa2c38fa6421ee9a2a53af01",
+    "foundations/site/manifest.json": "8bc06034bc606d117e0a567ea9fd6c64e1a3aefb5f4690aaa5c943bf5a1516da",
+    "paper/21-reverse-foundations-of-physics-appendices.tex": "428c2fd26aa88e62a67b629233b7f0fdb1c08b31bca3abb8495a6ffa0d23ac2d",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "81d9e3920cb04d10e804d92f64eaadd3a3d9b376de730c707737bad222b273a9",
+    "paper/21-reverse-foundations-of-physics.pdf": "83d063cb54fe565021c4bde2c8741b90ef01049f1e73696ee017daff6e498019",
+    "planning/events/reverse-foundations-lorentzian-weyl-bv-completion-ACTIVE-86dd449e6822c895.json": "fad19cc293d3c3d5d1a17ea9f913e3d3532375f67bf8fe9e56d2a8b5f517cace"
+  },
+  "claim_boundary": "Atlas V13 and its site/paper projections certify exact finite canonical coordinate transport on the fixed 386-row carrier. They do not certify graph-coordinate q1 or SDR, represented advanced/retarded Green actions, a receiver-accepted Gate-A snapshot, local D, q2 compatibility, Hadamard construction, Ward identities, renormalized Lorentzian products, QME restoration, residual transfer, empirical validity or a complete Lorentzian quantum theory."
+}

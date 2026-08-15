@@ -848,6 +848,20 @@ differential and retract can be replayed in unshifted graph coordinates;
 represented Green actions and the common Gate-A snapshot remain separate
 downstream contracts.
 
+The append-only
+[`V13 completion atlas`](reports/lorentzian-weyl-bv-completion-atlas-v13.md)
+now closes that canonical-shear route.  The fixed-basis forward and inverse
+transforms each contain seven off-diagonal component-jet tables and 1,321
+nonzero rational coefficients through differential order three.  The exact
+replay reconstructs the authoritative `T/A/B` hashes, finds no attachment to
+the 36 generalized-auxiliary rows, derives all cotangent partners from the
+fixed odd pairing, and verifies both inverse directions and elementary BV
+canonicality with zero defects.  It also retains one genuine cross term in
+each direction rather than suppressing it.  This is a coordinate-transport
+certificate: graph-coordinate `q1` and SDR replay, represented causal Green
+actions, Gate A, local `D`, `q2`, Hadamard and QME remain fail closed.  The
+rank-one successor is therefore the exact graph `q1`/SDR conjugation.
+
 ```bash
 python3 foundations/build_lorentzian_weyl_bv_completion_atlas.py --check
 python3 foundations/check_lorentzian_weyl_bv_completion_atlas.py
@@ -897,6 +911,10 @@ python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v12.py --check
 python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v12.py
 python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v12.py
 python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v12
+python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v13.py --check
+python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v13.py
+python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v13.py
+python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v13
 ```
 
 ## Lifecycle
