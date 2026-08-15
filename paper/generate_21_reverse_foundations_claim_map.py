@@ -58,6 +58,7 @@ AUTHORITY_PATHS = {
     "bt_complete_g4_linear_pair_bounds": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_LINEAR_PAIR_BOUNDS_V1.json",
     "bt_complete_g4_two_pair_coefficient_normal_form": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_TWO_PAIR_COEFFICIENT_NORMAL_FORM_V1.json",
     "bt_complete_g4_two_pair_noncancellation": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_TWO_PAIR_NONCANCELLATION_V1.json",
+    "bt_complete_g4_lower_loop_bounds": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_LOWER_LOOP_BOUNDS_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -143,6 +144,7 @@ def build() -> dict:
     bt_g4_linear = loaded["bt_complete_g4_linear_pair_bounds"]
     bt_g4_two_pair = loaded["bt_complete_g4_two_pair_coefficient_normal_form"]
     bt_g4_two_pair_noncancellation = loaded["bt_complete_g4_two_pair_noncancellation"]
+    bt_g4_lower_loops = loaded["bt_complete_g4_lower_loop_bounds"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -425,6 +427,10 @@ def build() -> dict:
             "bt_g4_two_pair_comparison_status": bt_g4_two_pair["method_disposition"]["combined_pair_4_pair_7_coefficient"],
             "bt_g4_two_pair_noncancellation_status": bt_g4_two_pair_noncancellation["method_disposition"]["combined_pair_4_pair_7_coefficient"],
             "bt_g4_pair_seven_upper_decimal": bt_g4_two_pair_noncancellation["pair_seven_bound"]["c_7_upper_decimal_ceiling"],
+            "bt_g4_zero_loop_limit": bt_g4_lower_loops["zero_loop"]["large_volume_limit"],
+            "bt_g4_one_loop_scaling_status": bt_g4_lower_loops["one_loop_summary"]["asymptotic_status"],
+            "bt_g4_complete_leading_power_status": bt_g4_lower_loops["complete_leading_power"]["status"],
+            "bt_g4_interacting_H_minus_one_status": "OPEN",
             "standard_reference_direct_obligations": next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")["coverage"]["direct"],
             "external_calibration_records": len(assembly_data["calibration_controls"][0]["records"]),
             "external_calibration_benchmark_families": sum(item["status"] == "SUPPORTED_CONTROL" for item in assembly_data["calibration_controls"][0]["benchmark_coverage"]),
@@ -551,6 +557,7 @@ def build() -> dict:
                     "bt_complete_g4_linear_pair_bounds",
                     "bt_complete_g4_two_pair_coefficient_normal_form",
                     "bt_complete_g4_two_pair_noncancellation",
+                    "bt_complete_g4_lower_loop_bounds",
                 ],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
@@ -710,7 +717,7 @@ def build() -> dict:
             "bt_quartic_power_cancellation_established": False,
             "bt_complete_order_g_four_formula_established": True,
             "bt_complete_order_g_four_uv_noncancellation_established": True,
-            "bt_complete_order_g_four_whole_lattice_decided": False,
+            "bt_complete_order_g_four_whole_lattice_decided": True,
             "bt_complete_order_g_four_ir_complement_bounded": False,
             "bt_complete_order_g_four_chaos_decomposition_established": True,
             "bt_complete_order_g_four_signed_gate_reduced_to_second_chaos": True,
@@ -724,21 +731,21 @@ def build() -> dict:
             "bt_complete_order_g_four_conditioned_maximum_loop_rank_two": True,
             "bt_complete_order_g_four_l4_negative_nonzero_established": True,
             "bt_complete_order_g_four_all_volume_zero_identity_obstructed": True,
-            "bt_complete_order_g_four_large_volume_scaling_established": False,
+            "bt_complete_order_g_four_large_volume_scaling_established": True,
             "bt_complete_order_g_four_general_l_two_loop_formula_established": True,
             "bt_complete_order_g_four_power_tadpoles_canceled": True,
             "bt_complete_order_g_four_factorized_conditioning_log_squared_bound_established": True,
             "bt_complete_order_g_four_factorized_tuned_branch_uniformity_established": True,
-            "bt_complete_order_g_four_remaining_fourteen_kernel_bound_established": False,
+            "bt_complete_order_g_four_remaining_fourteen_kernel_bound_established": True,
             "bt_complete_order_g_four_fourteen_to_seven_reduction_established": True,
             "bt_complete_order_g_four_paired_quartic_bound_established": True,
             "bt_complete_order_g_four_negative_nested_L2_carrier_established": True,
             "bt_complete_order_g_four_termwise_tuned_uniformity_obstructed": True,
-            "bt_complete_order_g_four_combined_seven_kernel_scaling_established": False,
+            "bt_complete_order_g_four_combined_seven_kernel_scaling_established": True,
             "bt_complete_order_g_four_pairs_1_2_5_log_squared_established": True,
             "bt_complete_order_g_four_pairs_1_2_5_tuned_uniformity_established": True,
             "bt_complete_order_g_four_power_gate_reduced_to_pairs_3_4_6_7": True,
-            "bt_complete_order_g_four_four_pair_power_coefficient_established": False,
+            "bt_complete_order_g_four_four_pair_power_coefficient_established": True,
             "bt_complete_order_g_four_pair_three_O_L_established": True,
             "bt_complete_order_g_four_pair_six_O_L_log_L_established": True,
             "bt_complete_order_g_four_power_gate_reduced_to_pairs_4_7": True,
@@ -748,9 +755,15 @@ def build() -> dict:
             "bt_complete_order_g_four_pair_7_limit_established": True,
             "bt_complete_order_g_four_pair_7_positive_finite": True,
             "bt_complete_order_g_four_pair_4_7_noncancellation_established": True,
+            "bt_complete_order_g_four_zero_loop_limit_established": True,
+            "bt_complete_order_g_four_one_loop_log_bound_established": True,
+            "bt_complete_order_g_four_lower_loops_subpower_established": True,
+            "bt_complete_order_g_four_complete_leading_coefficient_negative": True,
+            "bt_complete_order_g_four_tuned_perturbative_uniformity_established": False,
+            "bt_actual_interacting_H_minus_one_established": False,
             "bt_complete_order_g_four_explicit_momentum_kernel_established": False,
             "bt_complete_order_g_four_effective_kernel_bound_established": False,
-            "bt_complete_order_g_four_power_survival_established": False,
+            "bt_complete_order_g_four_power_survival_established": True,
             "research_programme_lenses_explained": True,
             "coded_wave_observable_reconstruction_certified": True,
             "coded_local_weak_wave_test_class_certified": True,
@@ -897,10 +910,12 @@ def build() -> dict:
                 "coefficient is reduced to negative pair 4 and positive pair 7. Both "
                 "normalized limits exist: c_4 is an explicit integer sum with "
                 "c_4<-0.01613. A sharp lattice dispersion bound and exact outward "
-                "Green cubature give 0<c_7<0.016103194, so c_4+c_7<0. Tuned control of "
-                "the subleading sector, "
-                "lower-loop recombination, full M4 asymptotics, and the interacting "
-                "H^-1 moment remain open."
+                "Green cubature give 0<c_7<0.016103194, so c_4+c_7<0. Exact "
+                "lower-loop recombination gives a positive zero-loop limit "
+                "111/(32*pi^4) and an O(log L) one-loop bound. Both are "
+                "o(N*omega(p)), so complete perturbative M4 has the same strictly "
+                "negative leading coefficient. Tuned perturbative uniformity and "
+                "the interacting H^-1 moment remain open."
             )
             break
     for claim in payload["claims"]:
@@ -909,7 +924,7 @@ def build() -> dict:
                 "Both normalized limits exist: c_4 has an exact negative integer-sum formula with c_4<-0.01613, while c_7 is one strictly positive finite Brillouin-zone integral with a collapsed numerator. Their noncancellation remains open.",
                 "Both normalized limits exist. A sharp lattice vector-dispersion theorem and exact outward Green-function cubature prove 0<c_7<0.016103194<0.01613, while c_4<-0.01613; hence c_4+c_7<0.",
             )
-            claim["status"] = "EXACT_FINITE_OS_AND_METHOD_OBSTRUCTIONS_WITH_STRICT_NEGATIVE_TWO_LOOP_POWER_COEFFICIENT_COMPLETE_M4_OPEN"
+            claim["status"] = "EXACT_FINITE_OS_AND_METHOD_OBSTRUCTIONS_WITH_STRICT_NEGATIVE_COMPLETE_M4_LEADING_POWER_COEFFICIENT_INTERACTING_H_MINUS_ONE_OPEN"
             break
     payload["canonical_digest"] = canonical_digest(payload)
     return payload

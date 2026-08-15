@@ -1,0 +1,1775 @@
+{
+  "checks": {
+    "actual_interacting_H_minus_one_remains_open": true,
+    "all_collinear_cubics_receive_exact_extra_soft_factor": true,
+    "atlas_checks_all_pass": true,
+    "both_lower_loop_sectors_are_little_o_N_omega_p": true,
+    "complete_M4_leading_coefficient_is_strictly_negative": true,
+    "no_continuum_born_krein_or_lorentzian_promotion": true,
+    "one_loop_is_O_log_L": true,
+    "ten_zero_loop_rows_recombined_exactly": true,
+    "twenty_seven_one_loop_rows_have_nonnegative_shell_power": true,
+    "zero_loop_is_positive_for_every_L_at_least_seven": true,
+    "zero_loop_limit_is_111_over_32_pi_four": true,
+    "zero_loop_rational_identity_cross_multiplies": true
+  },
+  "collinear_cubic_identity": {
+    "bound": "abs(K3)<=2*omega(p)^3/3",
+    "formula": "K3(-2p,p,p)=K3(-p,-p,2p)=-(2/3)*cos(p_1/2)^2*omega(p)^3",
+    "role": "This identity is used for every collinear cubic; its additional omega(p) beyond the generic selectable two-leg bound is decisive for closing the previously power-capable atlas rows 18, 19, 20, and 26."
+  },
+  "complete_leading_power": {
+    "conclusion": "The complete perturbative coefficient M4 has the same strictly negative leading N*omega(p) coefficient as its two-loop sector.",
+    "lower_loop_statement": "M4_zero=O(1) and M4_one=O(log L), hence both are o(N*omega(p)) because N*omega(p) is order L^2.",
+    "status": "COMPLETE_M4_LEADING_POWER_COEFFICIENT_STRICTLY_NEGATIVE",
+    "two_loop_input": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_TWO_PAIR_NONCANCELLATION_V1",
+    "two_loop_statement": "M4_two(L)/(N*omega(p)) has a strictly negative leading coefficient c4+c7."
+  },
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "a volume-uniform bound on g_L^4 times the signed subleading two-loop remainder",
+    "validity or uniformity of the perturbative expansion at tuned nonzero coupling",
+    "the sign or divergence of the nonperturbative Gibbs score",
+    "the actual interacting H^-1 second moment",
+    "a continuum measure, Born rule, Krein reconstruction, or any Lorentzian claim"
+  ],
+  "input_atlas": "reverse_physics/data/bt_euclidean_complete_g4_lower_loop_atlas_v1.json",
+  "next_gate": "Use the now-complete negative M4 leading-power theorem as a perturbative obstruction diagnostic, but attack the actual interacting H^-1 estimate nonperturbatively through a centered conditional score or convexity/shell argument; coefficient growth alone cannot be promoted through a nonuniform perturbation series.",
+  "one_loop_rows": [
+    {
+      "atlas_row_zero_based": 0,
+      "bound_multiplier": {
+        "denominator": 16,
+        "numerator": 1215
+      },
+      "bound_multiplier_uses_pi_squared": true,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": -162
+      },
+      "collinear_cubic_count": 1,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 2
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": 3
+          },
+          "kind": "W",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "W",
+          "shift": 2
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "generic_cubic_selected_argument_pairs": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 3
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    },
+    {
+      "atlas_row_zero_based": 1,
+      "bound_multiplier": {
+        "denominator": 16,
+        "numerator": 1215
+      },
+      "bound_multiplier_uses_pi_squared": true,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": -162
+      },
+      "collinear_cubic_count": 1,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 2
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": 3
+          },
+          "kind": "W",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "W",
+          "shift": 2
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "generic_cubic_selected_argument_pairs": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 3
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    },
+    {
+      "atlas_row_zero_based": 2,
+      "bound_multiplier": {
+        "denominator": 1,
+        "numerator": 405
+      },
+      "bound_multiplier_uses_pi_squared": false,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": -81
+      },
+      "collinear_cubic_count": 2,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 2
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "kind": "W",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -2
+          },
+          "kind": "W",
+          "shift": 2
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "generic_cubic_selected_argument_pairs": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 2
+      }
+    },
+    {
+      "atlas_row_zero_based": 3,
+      "bound_multiplier": {
+        "denominator": 8,
+        "numerator": 8505
+      },
+      "bound_multiplier_uses_pi_squared": true,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 216
+      },
+      "collinear_cubic_count": 0,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -3
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 2
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "kind": "W",
+          "shift": 1
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "generic_cubic_selected_argument_pairs": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 3
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    },
+    {
+      "atlas_row_zero_based": 4,
+      "bound_multiplier": {
+        "denominator": 4,
+        "numerator": 8505
+      },
+      "bound_multiplier_uses_pi_squared": true,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 432
+      },
+      "collinear_cubic_count": 0,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -2
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "kind": "W",
+          "shift": 1
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "generic_cubic_selected_argument_pairs": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 3
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    },
+    {
+      "atlas_row_zero_based": 5,
+      "bound_multiplier": {
+        "denominator": 1,
+        "numerator": 5670
+      },
+      "bound_multiplier_uses_pi_squared": false,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 108
+      },
+      "collinear_cubic_count": 1,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -3
+          },
+          "kind": "Q",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": 5
+          },
+          "kind": "W",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -3
+          },
+          "kind": "W",
+          "shift": 2
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "generic_cubic_selected_argument_pairs": [
+        [
+          1,
+          2
+        ]
+      ],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    },
+    {
+      "atlas_row_zero_based": 6,
+      "bound_multiplier": {
+        "denominator": 8,
+        "numerator": 18225
+      },
+      "bound_multiplier_uses_pi_squared": false,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": -135
+      },
+      "collinear_cubic_count": 0,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -3
+          },
+          "kind": "Q",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "kind": "W",
+          "shift": 1
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 2,
+        "numerator": 1
+      },
+      "generic_cubic_selected_argument_pairs": [
+        [
+          1,
+          2
+        ]
+      ],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "net_shell_power": {
+        "denominator": 2,
+        "numerator": 1
+      }
+    },
+    {
+      "atlas_row_zero_based": 7,
+      "bound_multiplier": {
+        "denominator": 1,
+        "numerator": 5670
+      },
+      "bound_multiplier_uses_pi_squared": false,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 108
+      },
+      "collinear_cubic_count": 1,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -3
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 2
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "kind": "W",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "W",
+          "shift": 2
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "generic_cubic_selected_argument_pairs": [
+        [
+          1,
+          2
+        ]
+      ],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    },
+    {
+      "atlas_row_zero_based": 8,
+      "bound_multiplier": {
+        "denominator": 1,
+        "numerator": 5670
+      },
+      "bound_multiplier_uses_pi_squared": false,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 108
+      },
+      "collinear_cubic_count": 1,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -3
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": 5
+          },
+          "kind": "W",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -3
+          },
+          "kind": "W",
+          "shift": 2
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "generic_cubic_selected_argument_pairs": [
+        [
+          1,
+          2
+        ]
+      ],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    },
+    {
+      "atlas_row_zero_based": 9,
+      "bound_multiplier": {
+        "denominator": 4,
+        "numerator": 8505
+      },
+      "bound_multiplier_uses_pi_squared": true,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 432
+      },
+      "collinear_cubic_count": 0,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": -1
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -2
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "kind": "W",
+          "shift": 1
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "generic_cubic_selected_argument_pairs": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 3
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    },
+    {
+      "atlas_row_zero_based": 10,
+      "bound_multiplier": {
+        "denominator": 16,
+        "numerator": 1215
+      },
+      "bound_multiplier_uses_pi_squared": true,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": -162
+      },
+      "collinear_cubic_count": 1,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": -2
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": -1
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": 3
+          },
+          "kind": "W",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "W",
+          "shift": 2
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "generic_cubic_selected_argument_pairs": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 3
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    },
+    {
+      "atlas_row_zero_based": 11,
+      "bound_multiplier": {
+        "denominator": 8,
+        "numerator": 8505
+      },
+      "bound_multiplier_uses_pi_squared": true,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 216
+      },
+      "collinear_cubic_count": 0,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": -2
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": -1
+        },
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -3
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "kind": "W",
+          "shift": 1
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "generic_cubic_selected_argument_pairs": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 3
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    },
+    {
+      "atlas_row_zero_based": 12,
+      "bound_multiplier": {
+        "denominator": 1,
+        "numerator": 5670
+      },
+      "bound_multiplier_uses_pi_squared": false,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 108
+      },
+      "collinear_cubic_count": 1,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": -1
+        },
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -3
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": 5
+          },
+          "kind": "W",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -3
+          },
+          "kind": "W",
+          "shift": 2
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "generic_cubic_selected_argument_pairs": [
+        [
+          1,
+          2
+        ]
+      ],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    },
+    {
+      "atlas_row_zero_based": 13,
+      "bound_multiplier": {
+        "denominator": 16,
+        "numerator": 1215
+      },
+      "bound_multiplier_uses_pi_squared": true,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": -162
+      },
+      "collinear_cubic_count": 1,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": -2
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": -1
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": 3
+          },
+          "kind": "W",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "W",
+          "shift": 2
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "generic_cubic_selected_argument_pairs": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 3
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    },
+    {
+      "atlas_row_zero_based": 14,
+      "bound_multiplier": {
+        "denominator": 1,
+        "numerator": 405
+      },
+      "bound_multiplier_uses_pi_squared": false,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": -81
+      },
+      "collinear_cubic_count": 2,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": -2
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "kind": "W",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -2
+          },
+          "kind": "W",
+          "shift": 2
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "generic_cubic_selected_argument_pairs": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 2
+      }
+    },
+    {
+      "atlas_row_zero_based": 15,
+      "bound_multiplier": {
+        "denominator": 1,
+        "numerator": 5670
+      },
+      "bound_multiplier_uses_pi_squared": false,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 108
+      },
+      "collinear_cubic_count": 1,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": -2
+        },
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -3
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "kind": "W",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "W",
+          "shift": 2
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "generic_cubic_selected_argument_pairs": [
+        [
+          1,
+          2
+        ]
+      ],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    },
+    {
+      "atlas_row_zero_based": 16,
+      "bound_multiplier": {
+        "denominator": 1,
+        "numerator": 5670
+      },
+      "bound_multiplier_uses_pi_squared": false,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 108
+      },
+      "collinear_cubic_count": 1,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -3
+          },
+          "kind": "Q",
+          "shift": -1
+        },
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": 5
+          },
+          "kind": "W",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -3
+          },
+          "kind": "W",
+          "shift": 2
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "generic_cubic_selected_argument_pairs": [
+        [
+          1,
+          2
+        ]
+      ],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    },
+    {
+      "atlas_row_zero_based": 17,
+      "bound_multiplier": {
+        "denominator": 8,
+        "numerator": 18225
+      },
+      "bound_multiplier_uses_pi_squared": false,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": -135
+      },
+      "collinear_cubic_count": 0,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -3
+          },
+          "kind": "Q",
+          "shift": -1
+        },
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "kind": "W",
+          "shift": 1
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 2,
+        "numerator": 1
+      },
+      "generic_cubic_selected_argument_pairs": [
+        [
+          1,
+          2
+        ]
+      ],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "net_shell_power": {
+        "denominator": 2,
+        "numerator": 1
+      }
+    },
+    {
+      "atlas_row_zero_based": 18,
+      "bound_multiplier": {
+        "denominator": 1,
+        "numerator": 22680
+      },
+      "bound_multiplier_uses_pi_squared": false,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 108
+      },
+      "collinear_cubic_count": 2,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "kind": "W",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -3
+          },
+          "kind": "W",
+          "shift": 2
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "generic_cubic_selected_argument_pairs": [],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    },
+    {
+      "atlas_row_zero_based": 19,
+      "bound_multiplier": {
+        "denominator": 1,
+        "numerator": 6075
+      },
+      "bound_multiplier_uses_pi_squared": false,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": -90
+      },
+      "collinear_cubic_count": 1,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "kind": "W",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -3
+          },
+          "kind": "W",
+          "shift": 2
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 2,
+        "numerator": 1
+      },
+      "generic_cubic_selected_argument_pairs": [],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "net_shell_power": {
+        "denominator": 2,
+        "numerator": 1
+      }
+    },
+    {
+      "atlas_row_zero_based": 20,
+      "bound_multiplier": {
+        "denominator": 1,
+        "numerator": 6075
+      },
+      "bound_multiplier_uses_pi_squared": false,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": -90
+      },
+      "collinear_cubic_count": 1,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "kind": "W",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 2,
+            "numerator": -3
+          },
+          "kind": "W",
+          "shift": 2
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 2,
+        "numerator": 1
+      },
+      "generic_cubic_selected_argument_pairs": [],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "net_shell_power": {
+        "denominator": 2,
+        "numerator": 1
+      }
+    },
+    {
+      "atlas_row_zero_based": 21,
+      "bound_multiplier": {
+        "denominator": 1,
+        "numerator": 19845
+      },
+      "bound_multiplier_uses_pi_squared": false,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": -36
+      },
+      "collinear_cubic_count": 0,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 2
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "generic_cubic_selected_argument_pairs": [],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    },
+    {
+      "atlas_row_zero_based": 22,
+      "bound_multiplier": {
+        "denominator": 1,
+        "numerator": 79380
+      },
+      "bound_multiplier_uses_pi_squared": false,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": -144
+      },
+      "collinear_cubic_count": 0,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -2
+          },
+          "kind": "Q",
+          "shift": 0
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "generic_cubic_selected_argument_pairs": [],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    },
+    {
+      "atlas_row_zero_based": 23,
+      "bound_multiplier": {
+        "denominator": 1,
+        "numerator": 19845
+      },
+      "bound_multiplier_uses_pi_squared": false,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": -36
+      },
+      "collinear_cubic_count": 0,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": -2
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 0
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "generic_cubic_selected_argument_pairs": [],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    },
+    {
+      "atlas_row_zero_based": 24,
+      "bound_multiplier": {
+        "denominator": 1,
+        "numerator": 1215
+      },
+      "bound_multiplier_uses_pi_squared": false,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": -243
+      },
+      "collinear_cubic_count": 2,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "kind": "W",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -2
+          },
+          "kind": "W",
+          "shift": 2
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "generic_cubic_selected_argument_pairs": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 2
+      }
+    },
+    {
+      "atlas_row_zero_based": 25,
+      "bound_multiplier": {
+        "denominator": 1,
+        "numerator": 1215
+      },
+      "bound_multiplier_uses_pi_squared": false,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": -243
+      },
+      "collinear_cubic_count": 2,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": -1
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "kind": "W",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -2
+          },
+          "kind": "W",
+          "shift": 2
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "generic_cubic_selected_argument_pairs": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 2
+      }
+    },
+    {
+      "atlas_row_zero_based": 26,
+      "bound_multiplier": {
+        "denominator": 1,
+        "numerator": 22680
+      },
+      "bound_multiplier_uses_pi_squared": false,
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 108
+      },
+      "collinear_cubic_count": 2,
+      "combined_exponent_ledger": [
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "kind": "Q",
+          "shift": 0
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": 3
+          },
+          "kind": "W",
+          "shift": 1
+        },
+        {
+          "exponent": {
+            "denominator": 1,
+            "numerator": -2
+          },
+          "kind": "W",
+          "shift": 2
+        }
+      ],
+      "external_omega_power": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "generic_cubic_selected_argument_pairs": [],
+      "negative_shifted_weight_sum": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "net_shell_power": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    }
+  ],
+  "one_loop_shell_lemma": {
+    "centered_radius": "rho(k)=max norm of the centered representative; all propagator centers lie in {-2p,-p,0,p,2p}",
+    "dispersion": "omega(k)>=16*rho(k)^2/L^2 for k!=0",
+    "external_compensation": "Every weight-three row retains omega(p), and omega(p)*L^2<=4*pi^2.",
+    "status": "EXACT_COMMON_FIVE_CENTER_SHELL_BOUND",
+    "union_shell_count": "At most 405*m^3 sites have minimum nonzero distance m from the at most five centers.",
+    "weight_one": "N^(-1)*sum product shifted_omega^(-beta)<=405/64 when sum beta=1",
+    "weight_three": "N^(-1)*sum product shifted_omega^(-beta)<=1215*L^2/8192 when sum beta=3",
+    "weight_two": "N^(-1)*sum product shifted_omega^(-beta)<=405*(1+log floor(L/2))/256 when sum beta=2"
+  },
+  "one_loop_summary": {
+    "asymptotic_status": "O_LOG_L_AND_little_o_N_omega_p",
+    "common_bound_multiplier": {
+      "denominator": 4,
+      "numerator": 900315
+    },
+    "explicit_common_bound": "abs(M4_one(L))<=900315/4*pi^2*(1+log floor(L/2))",
+    "weight_sum_counts": {
+      "1": 4,
+      "2": 15,
+      "3": 8
+    }
+  },
+  "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_LOWER_LOOP_BOUNDS_V1",
+  "result_kind": "exact zero-loop recombination and volume-uniform one-loop shell bound completing the leading-power asymptotics of BT M4",
+  "status": "EXACT_LOWER_LOOPS_SUBPOWER_COMPLETE_M4_LEADING_POWER_NEGATIVE",
+  "volume_scope": "every integer L>=7",
+  "zero_loop": {
+    "definition": "M4_zero(L)=L^(-4)*Z(omega(p)), p=(1,0,0,0)",
+    "large_volume_limit": "lim_(L->infinity) M4_zero(L)=111/(32*pi^4)",
+    "positivity": "For L>=7, 0<w<1 and the numerator is at least 63936-57456-840-780-170=4690>0.",
+    "rational_function": "Z(w)=(17*w^7-170*w^6+561*w^5-780*w^4-840*w^3+16128*w^2-57456*w+63936)/(32*w^2*(4-w)*(3-w)^2)",
+    "soft_residue": "lim_(w->0) w^2*Z(w)=111/2",
+    "status": "EXACT_POSITIVE_BOUNDED_NONZERO_LIMIT"
+  }
+}

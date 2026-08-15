@@ -1715,10 +1715,9 @@ Certificate
 then proves pair 3 is \(O(L)\) and pair 6 is \(O(L\log L)\).  They are also
 \(o(N\omega_p)\), without needing a parity cancellation.  Cancellation of
 the common \(N\omega_p\) coefficient is therefore confined to negative pair
-4 and positive pair 7.  Their combination is decided below; tuned control of
-the subleading sector, lower-loop recombination, complete-\(M_4\) large-volume
-asymptotics, the nonperturbative score, and the interacting \(H^{-1}\) moment
-remain open.
+4 and positive pair 7.  Their combination and the lower-loop completion are
+decided below; uniform tuned-coupling control, the nonperturbative score, and
+the interacting \(H^{-1}\) moment remain open.
 The next certificate
 \cert{REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_TWO_PAIR_COEFFICIENT_NORMAL_FORM_V1}
 proves that both surviving normalized limits exist.  Pair 4 becomes an
@@ -1736,9 +1735,39 @@ Axis symmetry reduces \(c_7\) to at most three times a three-Green
 convolution.  A 96-cell-per-axis rational box cover, with a \(16^4\) refinement
 of only the singular origin box and exact outward rounding, gives
 \(c_7<0.016103194<0.01613\).  Therefore \(c_4+c_7<0\): the leading two-loop
-power coefficient does not cancel.  This does not yet determine complete
-\(M_4\) because the subleading remainder and lower-loop recombination remain
-open.
+power coefficient does not cancel.  Certificate
+
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_LOWER_LOOP_BOUNDS_V1}
+
+then closes the omitted conditioned sectors for every \(L\geq7\).  Exact
+affine enumeration leaves ten zero-loop rows and twenty-seven one-loop rows.
+The zero-loop rows combine to \(M_{4,0}(L)=L^{-4}Z(\omega_p)\), with
+
+\[
+ \lim_{L\to\infty}M_{4,0}(L)=\frac{111}{32\pi^4}>0.
+\]
+
+Selectable cubic bounds, all-leg quartic and quintic bounds, and a common
+five-centre lattice-shell estimate give
+
+\[
+ |M_{4,1}(L)|\leq\frac{900315}{4}\pi^2
+ \bigl(1+\log\lfloor L/2\rfloor\bigr).
+\]
+
+The four rows that appear power-capable under the generic bounds close by the
+exact extra-soft identity
+
+\[
+ K_3(-2p,p,p)=-\frac23\cos^2(p_1/2)\omega_p^3.
+\]
+
+Thus both lower-loop sectors are \(o(N\omega_p)\), and the complete
+perturbative coefficient \(M_4\) inherits the strictly negative leading
+\(N\omega_p\) coefficient of its two-loop sector.  This is a fixed-order
+coefficient theorem.  Uniformity of the perturbation series at tuned
+coupling, the nonperturbative score, and the actual interacting \(H^{-1}\)
+moment remain open.
 
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
@@ -2182,9 +2211,14 @@ the common power coefficient of negative pair 4 and positive pair 7 decides
 the leading two-loop scale.  Both normalized limits exist: the negative
 coefficient has an exact integer-sum formula and is less than \(-0.01613\).
 A sharp lattice vector-dispersion inequality and exact outward Green-function
-cubature give \(0<c_7<0.016103194\), so their sum is strictly negative.  Tuned
-control of the subleading sector, the lower-loop recombination, complete
-\(M_4\) asymptotics, and the interacting \(H^{-1}\) estimate remain open.
+cubature give \(0<c_7<0.016103194\), so their sum is strictly negative.  The
+missing lower-loop atlas is now exact for \(L\geq7\): its ten zero-loop rows
+have the positive finite limit \(111/(32\pi^4)\), while a five-centre shell
+bound and the exact collinear cubic soft factor prove that all twenty-seven
+one-loop rows sum to \(O(\log L)\).  They are therefore
+\(o(N\omega_p)\), and complete perturbative \(M_4\) has a strictly negative
+leading \(N\omega_p\) coefficient.  Tuned control of the full perturbative
+remainder and the interacting \(H^{-1}\) estimate remain open.
 The logarithmic coefficient is not evidence that the resummed interacting
 moment diverges.  Only after the normalized marginal closes should the
 programme sum Fourier shells.  Another fixed-origin, pointwise,

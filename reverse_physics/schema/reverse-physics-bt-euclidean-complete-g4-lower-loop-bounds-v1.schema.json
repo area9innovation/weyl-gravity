@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-complete-g4-lower-loop-bounds-v1.schema.json",
+  "title": "BT complete-g4 lower-loop bounds certificate",
+  "type": "object",
+  "required": [
+    "certificate",
+    "schema_version",
+    "created",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "data",
+    "data_sha256",
+    "atlas",
+    "atlas_sha256",
+    "producer",
+    "producer_sha256",
+    "zero_loop",
+    "collinear_cubic_identity",
+    "one_loop_shell_lemma",
+    "one_loop_summary",
+    "complete_leading_power",
+    "checks",
+    "does_not_establish",
+    "missing_object_ledger",
+    "next_gate",
+    "provenance",
+    "schema",
+    "report",
+    "independent_verifier",
+    "verification_commands"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_LOWER_LOOP_BOUNDS_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-complete-g4-lower-loop-bounds-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "COMPLETE_M4_LEADING_POWER_DECIDED_INTERACTING_H_MINUS_ONE_OPEN"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "data": {"const": "reverse_physics/data/bt_euclidean_complete_g4_lower_loop_bounds_v1.json"},
+    "data_sha256": {"$ref": "#/$defs/sha256"},
+    "atlas": {"const": "reverse_physics/data/bt_euclidean_complete_g4_lower_loop_atlas_v1.json"},
+    "atlas_sha256": {"$ref": "#/$defs/sha256"},
+    "producer": {"const": "reverse_physics/bt_euclidean_complete_g4_lower_loop_bounds.py"},
+    "producer_sha256": {"$ref": "#/$defs/sha256"},
+    "zero_loop": {
+      "type": "object",
+      "required": ["definition", "rational_function", "soft_residue", "large_volume_limit", "positivity", "status"],
+      "properties": {"status": {"const": "EXACT_POSITIVE_BOUNDED_NONZERO_LIMIT"}},
+      "additionalProperties": {"type": "string"}
+    },
+    "collinear_cubic_identity": {
+      "type": "object",
+      "required": ["formula", "bound", "role"],
+      "additionalProperties": {"type": "string"}
+    },
+    "one_loop_shell_lemma": {
+      "type": "object",
+      "required": ["centered_radius", "dispersion", "union_shell_count", "weight_one", "weight_two", "weight_three", "external_compensation", "status"],
+      "properties": {"status": {"const": "EXACT_COMMON_FIVE_CENTER_SHELL_BOUND"}},
+      "additionalProperties": {"type": "string"}
+    },
+    "one_loop_summary": {
+      "type": "object",
+      "required": ["weight_sum_counts", "explicit_common_bound", "common_bound_multiplier", "asymptotic_status"],
+      "properties": {
+        "weight_sum_counts": {"const": {"1": 4, "2": 15, "3": 8}},
+        "explicit_common_bound": {"type": "string"},
+        "common_bound_multiplier": {"$ref": "#/$defs/rational"},
+        "asymptotic_status": {"const": "O_LOG_L_AND_little_o_N_omega_p"}
+      },
+      "additionalProperties": false
+    },
+    "complete_leading_power": {
+      "type": "object",
+      "required": ["two_loop_input", "two_loop_statement", "lower_loop_statement", "conclusion", "status"],
+      "properties": {
+        "two_loop_input": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_TWO_PAIR_NONCANCELLATION_V1"},
+        "status": {"const": "COMPLETE_M4_LEADING_POWER_COEFFICIENT_STRICTLY_NEGATIVE"}
+      },
+      "additionalProperties": {"type": "string"}
+    },
+    "checks": {"type": "object", "minProperties": 8, "additionalProperties": {"const": true}},
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "required": ["repository_base_commit", "inputs", "exact_arithmetic", "assumptions"],
+      "properties": {
+        "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "inputs": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/input"}},
+        "exact_arithmetic": {"type": "string"},
+        "assumptions": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-complete-g4-lower-loop-bounds-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-complete-g4-lower-loop-bounds.md"},
+    "independent_verifier": {"const": "reverse_physics/verify_bt_euclidean_complete_g4_lower_loop_bounds.py"},
+    "verification_commands": {"type": "array", "minItems": 5, "items": {"type": "string"}}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}},
+      "additionalProperties": false
+    },
+    "input": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string"}, "sha256": {"$ref": "#/$defs/sha256"}},
+      "additionalProperties": false
+    }
+  }
+}

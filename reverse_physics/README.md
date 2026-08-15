@@ -260,6 +260,14 @@ bt_euclidean_complete_g4_two_pair_noncancellation.py
                                        proves the sharp lattice vector-dispersion
                                        inequality and an exact outward c7 bound,
                                        hence c4+c7 is strictly negative
+bt_euclidean_complete_g4_lower_loop_atlas.py
+                                       exhaustively generates the missing zero-
+                                       and one-loop affine flows for every L>=7
+bt_euclidean_complete_g4_lower_loop_bounds.py
+                                       recombines the zero-loop sector exactly,
+                                       proves the one-loop sector is O(log L),
+                                       and transfers the negative two-loop power
+                                       coefficient to complete perturbative M4
 bt_four_point_bubble_log_jet.py        first virtual coefficient: arbitrary-mass
                                        bubble logarithm and four-leg interference jet
 bt_triangle_box_log_jet.py             complete triangle and box logarithmic jets;

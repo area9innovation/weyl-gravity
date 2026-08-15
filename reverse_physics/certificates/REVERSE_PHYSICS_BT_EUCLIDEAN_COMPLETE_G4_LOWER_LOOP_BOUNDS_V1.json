@@ -1,0 +1,129 @@
+{
+  "answer": "No. Exact affine enumeration leaves ten zero-loop and twenty-seven one-loop rows for every L>=7. The ten zero-loop rows combine to a rational function with positive limit 111/(32*pi^4). Selectable cubic bounds, all-leg quartic/quintic bounds, a five-center torus shell estimate, and the exact collinear cubic identity prove the full one-loop sector is O(log L). Both are little-o of N*omega(p), which is order L^2. Therefore complete perturbative M4 inherits the strictly negative leading coefficient c4+c7 from the two-loop sector. This is a coefficient theorem, not a uniform interacting or nonperturbative H^-1 theorem.",
+  "atlas": "reverse_physics/data/bt_euclidean_complete_g4_lower_loop_atlas_v1.json",
+  "atlas_sha256": "7edfb209a6a0e95df9b1e0ce4dbb121957c95fe211a1de33d3df317875cd5866",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_LOWER_LOOP_BOUNDS_V1",
+  "checks": {
+    "actual_interacting_H_minus_one_remains_open": true,
+    "complete_M4_leading_power_is_strictly_negative": true,
+    "no_continuum_born_krein_or_lorentzian_promotion": true,
+    "one_loop_is_at_most_logarithmic": true,
+    "perturbative_uniformity_is_not_promoted": true,
+    "producer_checks_all_pass": true,
+    "upstream_two_loop_coefficient_is_strictly_negative": true,
+    "zero_loop_has_exact_positive_finite_limit": true
+  },
+  "collinear_cubic_identity": {
+    "bound": "abs(K3)<=2*omega(p)^3/3",
+    "formula": "K3(-2p,p,p)=K3(-p,-p,2p)=-(2/3)*cos(p_1/2)^2*omega(p)^3",
+    "role": "This identity is used for every collinear cubic; its additional omega(p) beyond the generic selectable two-leg bound is decisive for closing the previously power-capable atlas rows 18, 19, 20, and 26."
+  },
+  "complete_leading_power": {
+    "conclusion": "The complete perturbative coefficient M4 has the same strictly negative leading N*omega(p) coefficient as its two-loop sector.",
+    "lower_loop_statement": "M4_zero=O(1) and M4_one=O(log L), hence both are o(N*omega(p)) because N*omega(p) is order L^2.",
+    "status": "COMPLETE_M4_LEADING_POWER_COEFFICIENT_STRICTLY_NEGATIVE",
+    "two_loop_input": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_TWO_PAIR_NONCANCELLATION_V1",
+    "two_loop_statement": "M4_two(L)/(N*omega(p)) has a strictly negative leading coefficient c4+c7."
+  },
+  "created": "2026-08-15",
+  "data": "reverse_physics/data/bt_euclidean_complete_g4_lower_loop_bounds_v1.json",
+  "data_sha256": "ec662978a69b69175eb85ba2ac2ba02a40703aa1acd0c54d8c929d4649b1b5cf",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "a volume-uniform bound on g_L^4 times the signed subleading two-loop remainder",
+    "validity or uniformity of the perturbative expansion at tuned nonzero coupling",
+    "the sign or divergence of the nonperturbative Gibbs score",
+    "the actual interacting H^-1 second moment",
+    "a continuum measure, Born rule, Krein reconstruction, or any Lorentzian claim"
+  ],
+  "independent_verifier": "reverse_physics/verify_bt_euclidean_complete_g4_lower_loop_bounds.py",
+  "lifecycle_state": "COMPLETE_M4_LEADING_POWER_DECIDED_INTERACTING_H_MINUS_ONE_OPEN",
+  "missing_object_ledger": [
+    "a uniform remainder theorem for the perturbative expansion on the tuned coupling branch",
+    "a nonperturbative centered conditional-score or convexity estimate",
+    "the actual interacting H^-1 second moment",
+    "a tight continuum measure or identification theorem",
+    "any Born/Krein reconstruction or Lorentzian causal transfer"
+  ],
+  "next_gate": "Use the now-complete negative M4 leading-power theorem as a perturbative obstruction diagnostic, but attack the actual interacting H^-1 estimate nonperturbatively through a centered conditional score or convexity/shell argument; coefficient growth alone cannot be promoted through a nonuniform perturbation series.",
+  "one_loop_shell_lemma": {
+    "centered_radius": "rho(k)=max norm of the centered representative; all propagator centers lie in {-2p,-p,0,p,2p}",
+    "dispersion": "omega(k)>=16*rho(k)^2/L^2 for k!=0",
+    "external_compensation": "Every weight-three row retains omega(p), and omega(p)*L^2<=4*pi^2.",
+    "status": "EXACT_COMMON_FIVE_CENTER_SHELL_BOUND",
+    "union_shell_count": "At most 405*m^3 sites have minimum nonzero distance m from the at most five centers.",
+    "weight_one": "N^(-1)*sum product shifted_omega^(-beta)<=405/64 when sum beta=1",
+    "weight_three": "N^(-1)*sum product shifted_omega^(-beta)<=1215*L^2/8192 when sum beta=3",
+    "weight_two": "N^(-1)*sum product shifted_omega^(-beta)<=405*(1+log floor(L/2))/256 when sum beta=2"
+  },
+  "one_loop_summary": {
+    "asymptotic_status": "O_LOG_L_AND_little_o_N_omega_p",
+    "common_bound_multiplier": {
+      "denominator": 4,
+      "numerator": 900315
+    },
+    "explicit_common_bound": "abs(M4_one(L))<=900315/4*pi^2*(1+log floor(L/2))",
+    "weight_sum_counts": {
+      "1": 4,
+      "2": 15,
+      "3": 8
+    }
+  },
+  "producer": "reverse_physics/bt_euclidean_complete_g4_lower_loop_bounds.py",
+  "producer_sha256": "4adf7ca30a0205b0eebf43946a28b508c51998908f8668bd2a2d164f6e55617b",
+  "provenance": {
+    "assumptions": [
+      "The certified connected-M4 normalization and two-loop affine atlas are imported unchanged through their downstream certificate hashes.",
+      "The external momentum is p=(1,0,0,0) on the four-dimensional periodic lattice.",
+      "The generic affine lower-loop atlas is restricted to L>=7 because its maximum absolute component source is six.",
+      "This is a perturbative LOCAL-ALGEBRAIC and EUCLIDEAN-SPECTRAL coefficient result only."
+    ],
+    "exact_arithmetic": "The affine atlas, all coefficients, Laurent-polynomial cross multiplication, exponent allocations, shell counts, and bound constants use integers or Fraction arithmetic. The displayed pi factors enter only through analytic sine inequalities; no floating-point value decides a claim.",
+    "inputs": [
+      {
+        "path": "reverse_physics/bt_euclidean_complete_g4_lower_loop_atlas.py",
+        "sha256": "3a09bd2d8c04d3f0c71491740af75fd0572c52a1ee4da81d949e542fa7209f08"
+      },
+      {
+        "path": "reverse_physics/data/bt_euclidean_complete_g4_lower_loop_atlas_v1.json",
+        "sha256": "7edfb209a6a0e95df9b1e0ce4dbb121957c95fe211a1de33d3df317875cd5866"
+      },
+      {
+        "path": "reverse_physics/bt_euclidean_complete_g4_lower_loop_bounds.py",
+        "sha256": "4adf7ca30a0205b0eebf43946a28b508c51998908f8668bd2a2d164f6e55617b"
+      },
+      {
+        "path": "reverse_physics/data/bt_euclidean_complete_g4_lower_loop_bounds_v1.json",
+        "sha256": "ec662978a69b69175eb85ba2ac2ba02a40703aa1acd0c54d8c929d4649b1b5cf"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_TWO_PAIR_NONCANCELLATION_V1.json",
+        "sha256": "9c53f6f0054cfc4046fca49c251c7cc7ce67ca921d5cdf7e0b1c17f905d207ae"
+      }
+    ],
+    "repository_base_commit": "0dc53a6ba452b0da8ad5a98b13b3d11871906778"
+  },
+  "question": "Can the omitted zero- and one-loop conditioned sectors cancel the certified negative two-loop N*omega(p) coefficient in complete BT M4?",
+  "report": "reverse_physics/reports/bt-euclidean-complete-g4-lower-loop-bounds.md",
+  "result_kind": "exact zero-loop recombination and volume-uniform one-loop shell bound completing the leading-power asymptotics of BT M4",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-complete-g4-lower-loop-bounds-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-complete-g4-lower-loop-bounds-v1",
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_complete_g4_lower_loop_atlas.py --check",
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_complete_g4_lower_loop_bounds.py --check",
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_complete_g4_lower_loop_bounds_decision.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_complete_g4_lower_loop_bounds.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_complete_g4_lower_loop_bounds"
+  ],
+  "zero_loop": {
+    "definition": "M4_zero(L)=L^(-4)*Z(omega(p)), p=(1,0,0,0)",
+    "large_volume_limit": "lim_(L->infinity) M4_zero(L)=111/(32*pi^4)",
+    "positivity": "For L>=7, 0<w<1 and the numerator is at least 63936-57456-840-780-170=4690>0.",
+    "rational_function": "Z(w)=(17*w^7-170*w^6+561*w^5-780*w^4-840*w^3+16128*w^2-57456*w+63936)/(32*w^2*(4-w)*(3-w)^2)",
+    "soft_residue": "lim_(w->0) w^2*Z(w)=111/2",
+    "status": "EXACT_POSITIVE_BOUNDED_NONZERO_LIMIT"
+  }
+}
