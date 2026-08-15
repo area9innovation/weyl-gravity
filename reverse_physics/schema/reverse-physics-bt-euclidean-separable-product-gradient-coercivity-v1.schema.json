@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-separable-product-gradient-coercivity-v1.schema.json",
+  "title": "BT Euclidean separable-product gradient-coercivity certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer", "theorem",
+    "orthogonal_decomposition", "proof_chain", "exact_fixture",
+    "method_disposition", "missing_object_ledger", "next_gate",
+    "does_not_establish", "provenance", "verification_commands",
+    "tier_receipt", "checks", "report", "schema", "verifier"
+  ],
+  "$defs": {
+    "fraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "string": {"type": "string", "minLength": 1}
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_SEPARABLE_PRODUCT_GRADIENT_COERCIVITY_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-separable-product-gradient-coercivity-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"},
+        {"const": "REDUCED-MODE"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/string"},
+    "question": {"$ref": "#/$defs/string"},
+    "answer": {"$ref": "#/$defs/string"},
+    "theorem": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scope", "definitions", "conclusion", "sharpness"],
+      "properties": {
+        "scope": {"const": "every flat periodic d-torus and every coordinate-separable smooth field"},
+        "definitions": {
+          "type": "object", "additionalProperties": false,
+          "required": ["field", "circle_scale", "residual", "euler_field"],
+          "properties": {
+            "field": {"$ref": "#/$defs/string"},
+            "circle_scale": {"$ref": "#/$defs/string"},
+            "residual": {"$ref": "#/$defs/string"},
+            "euler_field": {"$ref": "#/$defs/string"}
+          }
+        },
+        "conclusion": {"const": "||E||_2^2>=k_1^4||R||_2^2"},
+        "sharpness": {"$ref": "#/$defs/string"}
+      }
+    },
+    "orthogonal_decomposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["moments", "residual_norm", "one_body", "two_body", "orthogonality"],
+      "properties": {
+        "moments": {"$ref": "#/$defs/string"},
+        "residual_norm": {"$ref": "#/$defs/string"},
+        "one_body": {"$ref": "#/$defs/string"},
+        "two_body": {"$ref": "#/$defs/string"},
+        "orthogonality": {"$ref": "#/$defs/string"}
+      }
+    },
+    "proof_chain": {
+      "type": "object", "additionalProperties": false,
+      "required": ["one_body_pairing", "poincare_cauchy", "fluctuation_control", "mean_control_unit_scale", "closure"],
+      "properties": {
+        "one_body_pairing": {"$ref": "#/$defs/string"},
+        "poincare_cauchy": {"$ref": "#/$defs/string"},
+        "fluctuation_control": {"$ref": "#/$defs/string"},
+        "mean_control_unit_scale": {"$ref": "#/$defs/string"},
+        "closure": {"$ref": "#/$defs/string"}
+      }
+    },
+    "exact_fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["period", "profiles", "component_moments", "total_residual_norm_squared", "one_body_euler_norms_squared", "two_body_euler_norm_squared", "total_euler_norm_squared", "sharp_bound_slack"],
+      "properties": {
+        "period": {"const": "2*pi"},
+        "profiles": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/string"}},
+        "component_moments": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["Z", "X", "Y", "variance_R"],
+            "properties": {
+              "Z": {"$ref": "#/$defs/fraction"},
+              "X": {"$ref": "#/$defs/fraction"},
+              "Y": {"$ref": "#/$defs/fraction"},
+              "variance_R": {"$ref": "#/$defs/fraction"}
+            }
+          }
+        },
+        "total_residual_norm_squared": {"$ref": "#/$defs/fraction"},
+        "one_body_euler_norms_squared": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/fraction"}},
+        "two_body_euler_norm_squared": {"$ref": "#/$defs/fraction"},
+        "total_euler_norm_squared": {"$ref": "#/$defs/fraction"},
+        "sharp_bound_slack": {"$ref": "#/$defs/fraction"}
+      }
+    },
+    "method_disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["coordinate_separable_continuum_gradient_collapse", "sharp_free_coefficient_in_separable_class", "nonseparable_continuum_gradient_collapse", "lattice_all_field_gradient_bound", "background_marginal_hyperuniformity", "interacting_h_minus_one_bound", "continuum_reconstruction", "born_rule", "krein_reconstruction", "lorentzian_transfer"],
+      "properties": {
+        "coordinate_separable_continuum_gradient_collapse": {"const": "RULED_OUT"},
+        "sharp_free_coefficient_in_separable_class": {"const": "PROVED"},
+        "nonseparable_continuum_gradient_collapse": {"const": "OPEN"},
+        "lattice_all_field_gradient_bound": {"const": "OPEN"},
+        "background_marginal_hyperuniformity": {"const": "OPEN"},
+        "interacting_h_minus_one_bound": {"const": "OPEN"},
+        "continuum_reconstruction": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/string"}},
+    "next_gate": {"$ref": "#/$defs/string"},
+    "does_not_establish": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/string"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "f60175ff985351544e464660b47d339c5f969b69"},
+        "inputs": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/string"}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/string"}},
+    "tier_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "memory_policy"],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/string"},
+        "tier_1": {"$ref": "#/$defs/string"},
+        "tier_2": {"$ref": "#/$defs/string"},
+        "tier_3": {"$ref": "#/$defs/string"},
+        "memory_policy": {"$ref": "#/$defs/string"}
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-separable-product-gradient-coercivity.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-separable-product-gradient-coercivity-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_separable_product_gradient_coercivity.py"}
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_SEPARABLE_PRODUCT_GRADIENT_COERCIVITY_V1",
+  "schema_version": "reverse-physics-bt-euclidean-separable-product-gradient-coercivity-v1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "result_kind": "sharp continuum Euler-gradient theorem for every coordinate-separable positive field",
+  "question": "Can a coherent multidimensional path made from independent coordinate profiles collapse the normalized BT Euler-gradient quotient?",
+  "answer": "No. On every flat periodic d-torus, for psi(x)=sum_i psi_i(x_i), R=Delta psi+|grad psi|^2 and the BT Euler field E obey ||E||_2^2>=k_1^4||R||_2^2. The coefficient is the sharp free coefficient and is independent of d. Thus every product field Omega=product_i Omega_i is excluded as a gradient-collapse mechanism. The theorem is continuum REDUCED-MODE evidence, not the lattice H^-1 bound.",
+  "theorem": {
+    "scope": "every flat periodic d-torus and every coordinate-separable smooth field",
+    "definitions": {
+      "field": "psi(x_1,...,x_d)=sum_i psi_i(x_i), equivalently Omega=product_i exp(psi_i)",
+      "circle_scale": "k_1=2*pi/ell for common side length ell",
+      "residual": "R=Delta psi+|grad psi|^2=sum_i R_i with R_i=u_i'+u_i^2 and u_i=psi_i'",
+      "euler_field": "E=Delta R-2 div(R grad psi)"
+    },
+    "conclusion": "||E||_2^2>=k_1^4||R||_2^2",
+    "sharpness": "psi=epsilon*cos(k_1*x_1) gives quotient tending to k_1^4 as epsilon tends to zero"
+  },
+  "orthogonal_decomposition": {
+    "moments": "with normalized circle averages, Z_i=<u_i^2>, X_i=<u_i'^2>, Y_i=<u_i^4>, a_i=Z_i, and tilde R_i=R_i-a_i",
+    "residual_norm": "||R||^2=sum_i ||tilde R_i||^2+(sum_i Z_i)^2",
+    "one_body": "F_i=E_i-2(sum_(j!=i) Z_j)u_i'=(j_i-2A_i u_i)' with j_i=u_i''-2u_i^3 and A_i=sum_(j!=i)Z_j",
+    "two_body": "P_ij=-2[u_i' tilde R_j+u_j' tilde R_i] for i<j",
+    "orthogonality": "E=sum_i F_i+sum_(i<j)P_ij, and distinct one-body/two-body ANOVA subspaces are mutually orthogonal"
+  },
+  "proof_chain": {
+    "one_body_pairing": "-<j_i-2A_i u_i,u_i>=X_i+2Y_i+2A_i Z_i=:Q_i",
+    "poincare_cauchy": "||F_i||^2>=k_1^2 Q_i^2/Z_i, omitting indices with Z_i=0",
+    "fluctuation_control": "X_i>=k_1^2 Z_i and (X_i+2Y_i)^2>=X_i(X_i+Y_i) give sum_i||F_i||^2>=k_1^4 sum_i(X_i+Y_i)",
+    "mean_control_unit_scale": "after rescaling k_1=1, write X_i=Z_i+x_i and Y_i=Z_i^2+y_i; Cauchy gives sum_i Q_i^2/Z_i >= (S+2S^2+X+2Y)^2/S >=S+S^2+X+Y, where S=sum Z_i, X=sum x_i, Y=sum y_i",
+    "closure": "the last expression equals ||R||^2; the nonnegative orthogonal two-body norms may be discarded, and scaling restores k_1^4"
+  },
+  "exact_fixture": {
+    "period": "2*pi",
+    "profiles": [
+      "u_1(x)=sin(x)",
+      "u_2(y)=2 sin(y)",
+      "u_3=u_4=0"
+    ],
+    "component_moments": [
+      {
+        "Z": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "X": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "Y": {
+          "numerator": 3,
+          "denominator": 8
+        },
+        "variance_R": {
+          "numerator": 5,
+          "denominator": 8
+        }
+      },
+      {
+        "Z": {
+          "numerator": 2,
+          "denominator": 1
+        },
+        "X": {
+          "numerator": 2,
+          "denominator": 1
+        },
+        "Y": {
+          "numerator": 6,
+          "denominator": 1
+        },
+        "variance_R": {
+          "numerator": 4,
+          "denominator": 1
+        }
+      }
+    ],
+    "total_residual_norm_squared": {
+      "numerator": 87,
+      "denominator": 8
+    },
+    "one_body_euler_norms_squared": [
+      {
+        "numerator": 89,
+        "denominator": 4
+      },
+      {
+        "numerator": 200,
+        "denominator": 1
+      }
+    ],
+    "two_body_euler_norm_squared": {
+      "numerator": 21,
+      "denominator": 1
+    },
+    "total_euler_norm_squared": {
+      "numerator": 973,
+      "denominator": 4
+    },
+    "sharp_bound_slack": {
+      "numerator": 1859,
+      "denominator": 8
+    }
+  },
+  "method_disposition": {
+    "coordinate_separable_continuum_gradient_collapse": "RULED_OUT",
+    "sharp_free_coefficient_in_separable_class": "PROVED",
+    "nonseparable_continuum_gradient_collapse": "OPEN",
+    "lattice_all_field_gradient_bound": "OPEN",
+    "background_marginal_hyperuniformity": "OPEN",
+    "interacting_h_minus_one_bound": "OPEN",
+    "continuum_reconstruction": "NOT_ESTABLISHED",
+    "born_rule": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED"
+  },
+  "missing_object_ledger": [
+    "a lattice analogue or a nonseparable continuum concentration-compactness theorem",
+    "a full-Witten/background-marginal estimate rather than deterministic reduced-mode coercivity",
+    "an actual volume-uniform interacting H^-1 moment theorem or controlled divergence"
+  ],
+  "next_gate": "Analyze coherent fields with irreducible mixed-coordinate dependence. Use the ANOVA decomposition to isolate the first three-coordinate sector, or construct a nonseparable periodic family whose transverse-current cancellation survives in the normalized full-Witten Rayleigh quotient.",
+  "does_not_establish": [
+    "a theorem for arbitrary nonseparable fields",
+    "the all-field lattice gradient constant",
+    "current hyperuniformity or a background-marginal score bound",
+    "a Poincare inequality, Witten coercivity, or interacting H^-1 bound",
+    "a continuum measure, Born rule, or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "provenance": {
+    "repository_base_commit": "f60175ff985351544e464660b47d339c5f969b69",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ADDITIVE_CONTRACTION_AXIAL_COERCIVITY_V1.json",
+        "sha256": "60f282068257f75edccc61292b6834148c1e9404a4b3f070a46debe95e04bb2f"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ANNEALED_EDGE_ELLIPTICITY_V1.json",
+        "sha256": "7eb2d863fb90a4c941f44ab6987f4d550b2db13376abbebb3107243013aa22e3"
+      }
+    ],
+    "arithmetic": "exact Fraction moment evaluation for the two-profile sine fixture; the general theorem uses normalized product-space orthogonality, circle Poincare, Cauchy-Schwarz, and exact polynomial inequalities"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_separable_product_gradient_coercivity.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_separable_product_gradient_coercivity.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_separable_product_gradient_coercivity"
+  ],
+  "tier_receipt": {
+    "tier_0": "Python compilation and strict JSON/schema parsing passed; the planning import accepted 1692 nodes with zero invalid items and zero malformed events in 6.61 s at 189824 KB peak RSS; scoped diff and staged-diff checks are required before commit",
+    "tier_1": "exact producer passed 10/10 in 0.03 s at 20408 KB, the nonimporting Laurent-Fourier verifier passed 11/11 in 0.09 s at 30296 KB, and nine focused tests including mutation rejection passed in 0.11 s at 30588 KB",
+    "tier_2": "the unchanged axial-coercivity and annealed-edge inputs are content-hash pinned",
+    "tier_3": "not required absent a lattice H^-1/reconstruction lifecycle promotion, freeze, release, or shared-core change",
+    "memory_policy": "all Python commands ran sequentially under a 500000 KiB virtual-memory ceiling; Go used GOMEMLIMIT=300MiB and GOGC=50; the advisory Science Forge shadow rail was not rerun after its memory-capped external-indexing abort earlier in this session, and that skip is not a pass"
+  },
+  "checks": {
+    "ok": true,
+    "passed": 10,
+    "total": 10,
+    "failures": [],
+    "details": {
+      "fixture_residual_norm_is_87_over_8": true,
+      "fixture_euler_norm_is_973_over_4": true,
+      "fixture_sharp_bound_has_positive_slack": true,
+      "anova_subspaces_are_orthogonal": true,
+      "one_body_poincare_chain_closes": true,
+      "mean_cross_term_chain_closes": true,
+      "sharp_coefficient_is_dimension_independent": true,
+      "weak_field_limit_is_sharp": true,
+      "lattice_and_nonseparable_sectors_remain_open": true,
+      "no_h_minus_one_or_lorentzian_promotion": true
+    }
+  },
+  "report": "reverse_physics/reports/bt-euclidean-separable-product-gradient-coercivity.md",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-separable-product-gradient-coercivity-v1.schema.json",
+  "verifier": "reverse_physics/verify_bt_euclidean_separable_product_gradient_coercivity.py"
+}
