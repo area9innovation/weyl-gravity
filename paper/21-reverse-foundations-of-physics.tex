@@ -1769,6 +1769,42 @@ coefficient theorem.  Uniformity of the perturbation series at tuned
 coupling, the nonperturbative score, and the actual interacting \(H^{-1}\)
 moment remain open.
 
+Certificate
+
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_TUNED_REMAINDER_COMPENSATION_V1}
+
+turns that open uniformity issue into an exact obstruction.  Let
+\(F_L(g)=\mathbb E_{\nu_{L,g}}[s_{L,g}^2]\geq0\) be the full annealed
+zero-fiber-score moment.  Background inversion makes the cubic norm
+coefficient vanish exactly.  On the tuned branch the quadratic contribution
+is \(O(1)\), whereas
+
+\[
+ g_L^4M_4\sim c_*g_L^4N\omega_p\longrightarrow-\infty,
+ \qquad
+ c_*<-\frac{13403}{500000000}.
+\]
+
+Consequently the exact complement
+
+\[
+ Q_L=F_L(g_L)-g_L^2M_2(L)-g_L^4M_4(L)
+\]
+
+must satisfy
+
+\[
+ \liminf_{L\to\infty}\frac{Q_L}{g_L^4N\omega_p}
+ \geq-c_*>
+ \frac{13403}{500000000}.
+\]
+
+Thus a uniformly bounded fixed-order remainder, or one that is little-o of
+\(g_L^4N\omega_p\), is impossible.  All-order or nonperturbative compensation
+is mathematically required.  This does not determine whether the full
+positive moment \(F_L\) is bounded or divergent; it says that a proof must
+estimate the whole resummed score square rather than its orders separately.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The
@@ -2217,8 +2253,13 @@ have the positive finite limit \(111/(32\pi^4)\), while a five-centre shell
 bound and the exact collinear cubic soft factor prove that all twenty-seven
 one-loop rows sum to \(O(\log L)\).  They are therefore
 \(o(N\omega_p)\), and complete perturbative \(M_4\) has a strictly negative
-leading \(N\omega_p\) coefficient.  Tuned control of the full perturbative
-remainder and the interacting \(H^{-1}\) estimate remain open.
+leading \(N\omega_p\) coefficient.  On the tuned branch, parity kills the
+cubic norm coefficient and the quadratic contribution remains bounded, while
+the quartic truncation tends to minus infinity.  Positivity of the exact score
+square therefore forces the omitted sector to compensate on the same
+\(g_L^4N\omega_p\) scale.  A volume-uniform fixed-order remainder is now
+obstructed, but the all-order score and interacting \(H^{-1}\) estimate remain
+open.
 The logarithmic coefficient is not evidence that the resummed interacting
 moment diverges.  Only after the normalized marginal closes should the
 programme sum Fourier shells.  Another fixed-origin, pointwise,

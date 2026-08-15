@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-tuned-remainder-compensation-v1.schema.json",
+  "title": "BT tuned remainder compensation certificate",
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer", "exact_parity",
+    "coefficient_gap", "tuned_scaling", "exact_balance", "method_disposition",
+    "checks", "does_not_establish", "missing_object_ledger", "next_gate",
+    "provenance", "schema", "report", "independent_verifier",
+    "verification_commands"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_TUNED_REMAINDER_COMPENSATION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-tuned-remainder-compensation-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "TUNED_FIXED_ORDER_UNIFORMITY_OBSTRUCTED_NONPERTURBATIVE_SCORE_OPEN"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "exact_parity": {"type": "object", "required": ["background_involution", "parities", "cubic_norm_coefficient", "status"], "properties": {"status": {"const": "EXACT_ZERO_BY_ODD_GAUSSIAN_INTEGRAND"}}, "additionalProperties": true},
+    "coefficient_gap": {"type": "object", "required": ["pair_four_bound", "pair_seven_bound", "complete_limit", "strict_upper_bound", "gap", "status"], "properties": {"gap": {"$ref": "#/$defs/rational"}, "status": {"const": "EXACT_RATIONAL_STRICT_NEGATIVE_GAP"}}, "additionalProperties": {"type": ["string", "object"]}},
+    "tuned_scaling": {"type": "object", "required": ["external_mode", "running", "quadratic_coefficient", "quadratic_contribution", "quartic_scale", "quartic_contribution", "truncation", "status"], "properties": {"status": {"const": "PROVED_BY_CERTIFIED_ASYMPTOTIC_COMPOSITION"}}, "additionalProperties": {"type": "string"}},
+    "exact_balance": {"type": "object", "required": ["nonnegative_object", "complement_definition", "finite_L_inequality", "divergence", "normalized_lower_bound", "forbidden_remainder_classes", "interpretation", "status"], "properties": {"forbidden_remainder_classes": {"type": "array", "minItems": 2, "items": {"type": "string"}}, "status": {"const": "LEADING_POWER_COMPENSATION_FORCED"}}, "additionalProperties": {"type": ["string", "array"]}},
+    "method_disposition": {"type": "object", "minProperties": 12, "additionalProperties": {"type": "string"}},
+    "checks": {"type": "object", "minProperties": 12, "additionalProperties": {"const": true}},
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {"type": "object", "required": ["repository_base_commit", "inputs", "exact_arithmetic", "analytic_arithmetic", "assumptions"], "properties": {"repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}, "inputs": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/input"}}, "exact_arithmetic": {"type": "string"}, "analytic_arithmetic": {"type": "string"}, "assumptions": {"type": "array", "minItems": 4, "items": {"type": "string"}}}, "additionalProperties": false},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-tuned-remainder-compensation-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-tuned-remainder-compensation.md"},
+    "independent_verifier": {"const": "reverse_physics/verify_bt_euclidean_tuned_remainder_compensation.py"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {"type": "object", "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}, "additionalProperties": false},
+    "input": {"type": "object", "required": ["path", "sha256"], "properties": {"path": {"type": "string"}, "sha256": {"$ref": "#/$defs/sha256"}}, "additionalProperties": false}
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-19eabee832adbd8b",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-19eabee832adbd8b.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "codex",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-15",
+    "seq": 23,
+    "predecessor": "sf:program/event/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-805743812ec39b50",
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-euclidean-continuum-reconstruction",
+      "to_state": "ACTIVE",
+      "note": "Tuned-remainder checkpoint: background parity proves M3=0 exactly. On the certified fixed-physical-volume tuned branch, g_L^2 M2=O(1), while the complete negative quartic coefficient and the exact gap c4+c7<-13403/500000000 imply g_L^4 M4 tends to minus infinity on the g_L^4 N omega_p scale. Positivity of the exact annealed zero-fiber-score square therefore forces the exact complement beyond the quartic truncation to diverge positively, with normalized liminf greater than 13403/500000000. A uniformly bounded or little-o fixed-order remainder is obstructed; all-order or nonperturbative compensation is required. This does not decide whether the exact score is bounded or divergent, the annealed center, H^-1, continuum, Born, Krein, or Lorentzian physics. The next gate is a whole-composite nonperturbative block-spin or Gibbs-weighted Ward estimate."
+    },
+    "native": {
+      "authored_by": "sfc work-event",
+      "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-euclidean-continuum-reconstruction"
+    }
+  ]
+}
