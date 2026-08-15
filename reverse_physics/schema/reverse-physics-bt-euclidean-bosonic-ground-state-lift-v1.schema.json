@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-bosonic-ground-state-lift-v1.schema.json",
+  "title": "BT Euclidean bosonic ground-state lift certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "bosonic_lift_theorem", "ground_state_transform", "cycle_four_fixture",
+    "hyperbolic_comparator", "method_disposition", "missing_object_ledger",
+    "next_gate", "does_not_establish", "provenance", "verification_commands",
+    "tier_receipt", "checks", "schema", "report", "verifier"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_BOSONIC_GROUND_STATE_LIFT_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-bosonic-ground-state-lift-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "POSITIVE_BOSONIC_LIFT_PROVED_HYPERBOLIC_IMPORT_OBSTRUCTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "bosonic_lift_theorem": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scope", "hypotheses", "root_probability", "cofactor_identity", "gaussian_identity", "field_count", "uniform_root_mixture", "status"],
+      "properties": {
+        "scope": {"$ref": "#/$defs/text"},
+        "hypotheses": {"$ref": "#/$defs/text"},
+        "root_probability": {"const": "q_o=Omega_o^2/||Omega||_2^2"},
+        "cofactor_identity": {"const": "det K^(o)=det'(K)*q_o"},
+        "gaussian_identity": {"$ref": "#/$defs/text"},
+        "field_count": {"const": "two real commuting pinned Gaussian fields"},
+        "uniform_root_mixture": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED"}
+      }
+    },
+    "ground_state_transform": {
+      "type": "object", "additionalProperties": false,
+      "required": ["operator", "conductance", "quadratic_form", "conditional_interpretation", "status"],
+      "properties": {
+        "operator": {"const": "B=diag(Omega)*K*diag(Omega)"},
+        "conductance": {"const": "c_xy=w_xy*Omega_x*Omega_y"},
+        "quadratic_form": {"$ref": "#/$defs/text"},
+        "conditional_interpretation": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED"}
+      }
+    },
+    "cycle_four_fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["graph", "omega", "omega_norm_squared", "root_probabilities", "principal_minors", "pseudodeterminant", "rootwise_integrated_factors", "ground_state_conductances_cyclic_order", "spanning_tree_products", "spanning_tree_sum"],
+      "properties": {
+        "graph": {"const": "unweighted four-cycle"},
+        "omega": {"$ref": "#/$defs/fractionVector4"},
+        "omega_norm_squared": {"$ref": "#/$defs/fraction"},
+        "root_probabilities": {"$ref": "#/$defs/fractionVector4"},
+        "principal_minors": {"$ref": "#/$defs/fractionVector4"},
+        "pseudodeterminant": {"$ref": "#/$defs/fraction"},
+        "rootwise_integrated_factors": {"$ref": "#/$defs/fractionVector4"},
+        "ground_state_conductances_cyclic_order": {"$ref": "#/$defs/fractionVector4"},
+        "spanning_tree_products": {"$ref": "#/$defs/fractionVector4"},
+        "spanning_tree_sum": {"$ref": "#/$defs/fraction"}
+      }
+    },
+    "hyperbolic_comparator": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_1", "source_2", "bt_determinant_power", "vrjp_determinant_power", "exponent_difference", "energy_mismatch", "direct_import_disposition", "scope_boundary"],
+      "properties": {
+        "source_1": {"$ref": "#/$defs/text"},
+        "source_2": {"$ref": "#/$defs/text"},
+        "bt_determinant_power": {"const": "-1 on det'(K)"},
+        "vrjp_determinant_power": {"const": "+1/2 on the spanning-tree determinant"},
+        "exponent_difference": {"$ref": "#/$defs/fraction"},
+        "energy_mismatch": {"$ref": "#/$defs/text"},
+        "direct_import_disposition": {"const": "OBSTRUCTED_AS_MEASURE_IDENTITY"},
+        "scope_boundary": {"$ref": "#/$defs/text"}
+      }
+    },
+    "method_disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["positive_auxiliary_probability", "pinned_gff_random_conductance_bridge", "published_vrjp_hyperbolic_localization_direct_import", "bt_specific_annealed_witten_or_poincare_bound", "actual_interacting_h_minus_one_second_moment"],
+      "properties": {
+        "positive_auxiliary_probability": {"const": "PROVED_FINITE_GRAPH"},
+        "pinned_gff_random_conductance_bridge": {"const": "PROVED_FINITE_GRAPH"},
+        "published_vrjp_hyperbolic_localization_direct_import": {"const": "OBSTRUCTED"},
+        "bt_specific_annealed_witten_or_poincare_bound": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment": {"const": "OPEN"}
+      }
+    },
+    "missing_object_ledger": {"$ref": "#/$defs/textArray"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/textArray"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "literature_audit", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "2fce7906959f2b1191ca12d3df3e447bd8a32705"},
+        "inputs": {
+          "type": "array", "minItems": 1, "maxItems": 1,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"const": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FLAT_POTENTIAL_DETERMINANT_PUSHFORWARD_V1.json"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "literature_audit": {
+          "type": "object", "additionalProperties": false,
+          "required": ["arxiv_1507_04660_source_sha256", "arxiv_1111_3991_source_sha256", "role"],
+          "properties": {
+            "arxiv_1507_04660_source_sha256": {"const": "855d822578a8fc463ec4b53ab0197a4023849776a1fe04b5668d5e506f0f77f4"},
+            "arxiv_1111_3991_source_sha256": {"const": "2457010635a43b6524c7f564c6de7d6646b9c4938c0ab835396e7952fbf1ec95"},
+            "role": {"$ref": "#/$defs/text"}
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"$ref": "#/$defs/textArray"},
+    "tier_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "memory_policy", "elapsed_seconds_and_peak_kib", "repository_audits"],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/text"},
+        "tier_1": {"$ref": "#/$defs/text"},
+        "tier_2": {"$ref": "#/$defs/text"},
+        "tier_3": {"$ref": "#/$defs/text"},
+        "memory_policy": {"$ref": "#/$defs/text"},
+        "elapsed_seconds_and_peak_kib": {"$ref": "#/$defs/textObject"},
+        "repository_audits": {"$ref": "#/$defs/textObject"}
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 11},
+        "total": {"const": 11},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 11, "maxProperties": 11, "additionalProperties": {"const": true}}
+      }
+    },
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-bosonic-ground-state-lift-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-bosonic-ground-state-lift.md"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_bosonic_ground_state_lift.py"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "textArray": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "textObject": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "fraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "fractionVector4": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/fraction"}}
+  }
+}

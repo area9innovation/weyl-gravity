@@ -1,0 +1,244 @@
+{
+  "answer": "The first answer is yes and the second is no as a direct import. For any connected finite graph, K positive semidefinite of rank N-1, and positive K-ground vector Omega, the root cofactor identity det K^(o)=det'(K) q_o with q_o=Omega_o^2/||Omega||^2 turns 1/det'(K) into a positive integral over two real Gaussian fields pinned at o. After the ground-state transform these are pinned GFFs with conductances w_xy Omega_x Omega_y. A uniform mixture over roots leaves the root uniform after the bosons are integrated out. This is a genuine positive random-conductance bridge. It is not the published VRJP/hyperbolic measure: that law has a square-root spanning-tree determinant and a cosh edge energy, whereas BT has determinant power -1 and Gaussian confinement of a centered Schr\u00f6dinger potential. The determinant exponents differ by 3/2, so the supersymmetric normalization/localization theorem cannot be imported without changing the measure. No interacting H^-1 moment is decided.",
+  "bosonic_lift_theorem": {
+    "cofactor_identity": "det K^(o)=det'(K)*q_o",
+    "field_count": "two real commuting pinned Gaussian fields",
+    "gaussian_identity": "1/det'(K)=q_o*Integral exp[-(xi^T K^(o) xi+eta^T K^(o) eta)/2] d xi d eta/(2*pi)^(N-1)",
+    "hypotheses": "K is real symmetric positive semidefinite, rank(K)=N-1, K Omega=0, and Omega_x>0",
+    "root_probability": "q_o=Omega_o^2/||Omega||_2^2",
+    "scope": "every connected finite undirected weighted graph",
+    "status": "PROVED",
+    "uniform_root_mixture": "averaging the rooted identity with weight 1/N gives an exact positive joint lift; after Gaussian integration the root is uniform and independent of the flat potential"
+  },
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_BOSONIC_GROUND_STATE_LIFT_V1",
+  "checks": {
+    "details": {
+      "actual_interacting_moment_remains_open": true,
+      "cofactor_identity_holds_rootwise": true,
+      "fixture_operator_kills_positive_ground_state": true,
+      "ground_state_conductances_are_positive": true,
+      "matrix_tree_sum_is_exact": true,
+      "no_born_krein_or_lorentzian_promotion": true,
+      "principal_minors_are_positive": true,
+      "published_hyperbolic_localization_not_imported": true,
+      "root_weights_are_probability_vector": true,
+      "two_real_gaussians_produce_inverse_determinant": true,
+      "vrjp_determinant_exponent_differs_by_three_halves": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 11,
+    "total": 11
+  },
+  "created": "2026-08-15",
+  "cycle_four_fixture": {
+    "graph": "unweighted four-cycle",
+    "ground_state_conductances_cyclic_order": [
+      {
+        "denominator": 1,
+        "numerator": 2
+      },
+      {
+        "denominator": 1,
+        "numerator": 2
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      }
+    ],
+    "omega": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 2
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      }
+    ],
+    "omega_norm_squared": {
+      "denominator": 4,
+      "numerator": 25
+    },
+    "principal_minors": [
+      {
+        "denominator": 1,
+        "numerator": 5
+      },
+      {
+        "denominator": 1,
+        "numerator": 20
+      },
+      {
+        "denominator": 1,
+        "numerator": 5
+      },
+      {
+        "denominator": 4,
+        "numerator": 5
+      }
+    ],
+    "pseudodeterminant": {
+      "denominator": 4,
+      "numerator": 125
+    },
+    "root_probabilities": [
+      {
+        "denominator": 25,
+        "numerator": 4
+      },
+      {
+        "denominator": 25,
+        "numerator": 16
+      },
+      {
+        "denominator": 25,
+        "numerator": 4
+      },
+      {
+        "denominator": 25,
+        "numerator": 1
+      }
+    ],
+    "rootwise_integrated_factors": [
+      {
+        "denominator": 125,
+        "numerator": 4
+      },
+      {
+        "denominator": 125,
+        "numerator": 4
+      },
+      {
+        "denominator": 125,
+        "numerator": 4
+      },
+      {
+        "denominator": 125,
+        "numerator": 4
+      }
+    ],
+    "spanning_tree_products": [
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 2
+      },
+      {
+        "denominator": 1,
+        "numerator": 2
+      }
+    ],
+    "spanning_tree_sum": {
+      "denominator": 1,
+      "numerator": 5
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "a Poincare or Witten spectral gap",
+    "a bound or divergence for the actual interacting H^-1 moment",
+    "continuum tightness or continuum identification",
+    "ordinary OS reconstruction, Born probability, Krein reconstruction, or Lorentzian physics"
+  ],
+  "ground_state_transform": {
+    "conditional_interpretation": "the two commuting auxiliary fields are independent pinned GFFs in the positive random conductance environment c(Omega)",
+    "conductance": "c_xy=w_xy*Omega_x*Omega_y",
+    "operator": "B=diag(Omega)*K*diag(Omega)",
+    "quadratic_form": "for z_x=Omega_x phi_x and phi_o=0, z^T K z=sum_{unordered {x,y}} c_xy*(phi_x-phi_y)^2",
+    "status": "PROVED"
+  },
+  "hyperbolic_comparator": {
+    "bt_determinant_power": "-1 on det'(K)",
+    "direct_import_disposition": "OBSTRUCTED_AS_MEASURE_IDENTITY",
+    "energy_mismatch": "BT uses ||u||^2+N*ell_0(u)^2 on centered diagonal potentials; VRJP uses a nearest-neighbor cosh energy on a logarithmic field",
+    "exponent_difference": {
+      "denominator": 2,
+      "numerator": 3
+    },
+    "scope_boundary": "this does not rule out a new BT-specific theorem using pinned-GFF or random-conductance tools",
+    "source_1": "Sabot, Tarres, and Zeng, arXiv:1507.04660v2, Eq. (density_u): VRJP mixing density contains sqrt(D(W,u))",
+    "source_2": "Sabot and Tarres, arXiv:1111.3991v5, Theorem 2(i): density is exp(u_o-H(W,u))*sqrt(D(W,u)) with H a cosh edge energy",
+    "vrjp_determinant_power": "+1/2 on the spanning-tree determinant"
+  },
+  "lifecycle_state": "POSITIVE_BOSONIC_LIFT_PROVED_HYPERBOLIC_IMPORT_OBSTRUCTED",
+  "method_disposition": {
+    "actual_interacting_h_minus_one_second_moment": "OPEN",
+    "bt_specific_annealed_witten_or_poincare_bound": "OPEN",
+    "pinned_gff_random_conductance_bridge": "PROVED_FINITE_GRAPH",
+    "positive_auxiliary_probability": "PROVED_FINITE_GRAPH",
+    "published_vrjp_hyperbolic_localization_direct_import": "OBSTRUCTED"
+  },
+  "missing_object_ledger": [
+    "a volume-uniform estimate for the pinned-GFF/random-conductance lift",
+    "a coercive annealed Witten form or a normalized full-Witten low-Rayleigh sequence",
+    "the actual lowest-mode moment and all dyadic H^-1 shells",
+    "a compactly weaker tightness theorem after, and only after, the moment bound"
+  ],
+  "next_gate": "Use the exact positive lift to express the connection-corrected annealed Witten form through killed random-walk Green functions in conductances w_xy Omega_x Omega_y. Prove a volume-uniform form estimate, or construct a normalized low-Rayleigh sequence with nonzero lowest-mode overlap.",
+  "provenance": {
+    "arithmetic": "exact rational finite-graph arithmetic; no floating point",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FLAT_POTENTIAL_DETERMINANT_PUSHFORWARD_V1.json",
+        "sha256": "99970f00030bbfcd9223bfa5580efb6dda414ac05f03aeffb1bdf6127de9f831"
+      }
+    ],
+    "literature_audit": {
+      "arxiv_1111_3991_source_sha256": "2457010635a43b6524c7f564c6de7d6646b9c4938c0ab835396e7952fbf1ec95",
+      "arxiv_1507_04660_source_sha256": "855d822578a8fc463ec4b53ab0197a4023849776a1fe04b5668d5e506f0f77f4",
+      "role": "formula comparison only; neither archive is imported as executable evidence"
+    },
+    "repository_base_commit": "2fce7906959f2b1191ca12d3df3e447bd8a32705"
+  },
+  "question": "Does the flat-potential inverse determinant admit a positive random-walk lift, and can the H^{2|2}/VRJP localization measure be identified with it?",
+  "report": "reverse_physics/reports/bt-euclidean-bosonic-ground-state-lift.md",
+  "result_kind": "exact finite-graph positive auxiliary-field representation of the BT inverse pseudodeterminant and scoped direct-import obstruction",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-bosonic-ground-state-lift-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-bosonic-ground-state-lift-v1",
+  "tier_receipt": {
+    "elapsed_seconds_and_peak_kib": {
+      "focused_tests": "0.13 s, 30460 KiB; 10 tests including six mutations",
+      "independent_verifier": "0.10 s, 30072 KiB",
+      "producer_check": "0.04 s, 20620 KiB"
+    },
+    "memory_policy": "all Python commands run under ulimit -v 500000",
+    "repository_audits": {
+      "planning_import": "PASS: 1676 nodes, 0 invalid items, 0 malformed events",
+      "science_forge_shadow": "ADVISORY exit 0 with reported bridge-audit FAIL because sympy is absent in an external bp2transformer verifier, plus expected corpus coverage drift 1815 versus baseline 976; no pass claimed"
+    },
+    "tier_0": "Python and JSON parse; scoped git diff --check",
+    "tier_1": "producer check, independent verifier, focused mutation tests",
+    "tier_2": "not run: the imported content-addressed flat-potential theorem is unchanged",
+    "tier_3": "not run: no H^-1 theorem, lifecycle promotion, freeze, or release"
+  },
+  "verification_commands": [
+    "python3 reverse_physics/bt_euclidean_bosonic_ground_state_lift.py --check",
+    "python3 reverse_physics/verify_bt_euclidean_bosonic_ground_state_lift.py",
+    "python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_bosonic_ground_state_lift"
+  ],
+  "verifier": "reverse_physics/verify_bt_euclidean_bosonic_ground_state_lift.py"
+}
