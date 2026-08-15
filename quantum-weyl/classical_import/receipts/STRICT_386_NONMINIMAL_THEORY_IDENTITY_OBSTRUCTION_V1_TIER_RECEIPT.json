@@ -1,0 +1,109 @@
+{
+  "receipt_id": "STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1_TIER_RECEIPT",
+  "result_ids": [
+    "CLASSICAL_ORDINARY_DERIVATIVE_AUXILIARY_CUBIC_EXPORT_V1",
+    "STRICT_386_STABILIZED_Q3_LIFT_PREFLIGHT_V1",
+    "STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1",
+    "CLASSICAL_IMPORT_GATE_V8_RECONCILIATION",
+    "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V25",
+    "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V26",
+    "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
+    "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1"
+  ],
+  "recorded_at": "2026-08-15",
+  "base_commit": "5013af08d48bf45d99d9b841a75244122e3822f9",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "output_hashes": {
+    "classical_auxiliary_cubic_export": "a5cb1c62136cfad58bcd589d3719e6349e0e9bdd8ef2ce381cd4a8f259fddf59",
+    "classical_auxiliary_cubic_report": "a66cc504e2c94431c494fdf3d822f4e1f41a7141a7fead9c9d69220cee6115bd",
+    "strict_386_q3_preflight": "cd06d6009e9c1f5fa549036b61442154be49d385f4d8f71eedc002469fdb3d73",
+    "strict_386_q3_report": "faa3ad4813960d1cebbce62e57d2bf9d1e27dfc000966b07b51b38c13160e7a0",
+    "strict_nonminimal_identity_obstruction": "02f5a94d4cd33cad93b91dab7f11ce3bbedcf6c09e7e53910541b57b06cf0b64",
+    "strict_nonminimal_identity_report": "c42fe0f533985031a0b5128bbd3fecb0926c84e4ad4475eb312b4897c26773d4",
+    "classical_import_gate_v8": "b10b11ed48ddf5ddffb3a959982d20fe473282aa9c4b2ba7ae76a2d403bf1b7f",
+    "classical_import_gate_v8_report": "f76b4ac12c203b4c4bad7fe903182d56807f96d53a599ab8a37289592b29b21a",
+    "completion_atlas_v25": "d86187b939f4986314223478a85d16bbfcc797d1dd8f1e5c78c4b06e9a2c394c",
+    "completion_atlas_v26": "ef160fd219e212675bbd614f52831101cd2fdb43adf562e41dc9dca673eae85b",
+    "static_site_result": "a7159463d6a65ff90447256f780747a9495735021eda2ab17989d4131aeca34d",
+    "static_site_manifest": "57531a77b625bff50c9aea9bb971813fcb74ab4666b597038dcb57b37d2c145b",
+    "paper_claim_map": "39813cbea879efa243e07c5b8ddb7eab6b0be80b3dce67e9606117cb9608c67f",
+    "paper_pdf": "b64f7fcf445f894dd48a623e54697aeaded276dfc9a2dfcc4dba2fac7fd28b97"
+  },
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS_AFTER_CORRECTED_PATH",
+      "checks": [
+        {
+          "command": "python3 -m py_compile d_quotient_classical/nonminimal_identity/*.py quantum-weyl/classical_import/{build,check,verify}_strict_386_stabilized_q3_lift_preflight.py quantum-weyl/classical_import/{build,check,verify}_strict_386_nonminimal_theory_identity_obstruction.py quantum-weyl/classical_import/{build,check,verify}_classical_import_gate_v8_reconciliation.py foundations/{build,check,verify}_lorentzian_weyl_bv_completion_atlas_v{25,26}.py foundations/{build,check,verify}_matrix_site_v2.py paper/{generate_21_reverse_foundations_appendices,generate_21_reverse_foundations_claim_map,verify_21_reverse_foundations_claim_map}.py",
+          "elapsed_seconds": 0.12,
+          "maximum_resident_kib": 28824,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 -m json.tool d_quotient_classical/schema/classical-ordinary-derivative-auxiliary-cubic-export-v1.schema.json",
+          "elapsed_seconds": 0.13,
+          "maximum_resident_kib": 33492,
+          "status": "FAIL_BAD_PATH",
+          "disposition": "The schema lives below nonminimal_identity/schema. No certificate or claim check ran in this failed shell because set -e stopped immediately. The corrected path was then checked successfully."
+        },
+        {
+          "command": "python3 -m json.tool d_quotient_classical/nonminimal_identity/schema/classical-ordinary-derivative-auxiliary-cubic-export-v1.schema.json; then parse the five new quantum/atlas schemas",
+          "elapsed_seconds": 0.03,
+          "maximum_resident_kib": 14468,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "checks": [
+        {"command": "python3 -m unittest d_quotient_classical/nonminimal_identity/tests/test_classical_ordinary_derivative_auxiliary_cubic_export_v1.py -v", "elapsed_seconds": 0.19, "maximum_resident_kib": 30280, "status": "PASS_6_TESTS"},
+        {"command": "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_stabilized_q3_lift_preflight.py -v", "elapsed_seconds": 0.31, "maximum_resident_kib": 37452, "status": "PASS_7_TESTS"},
+        {"command": "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_nonminimal_theory_identity_obstruction.py -v", "elapsed_seconds": 0.24, "maximum_resident_kib": 31584, "status": "PASS_7_TESTS"},
+        {"command": "python3 -m unittest quantum-weyl/classical_import/tests/test_classical_import_gate_v8_reconciliation.py -v", "elapsed_seconds": 0.19, "maximum_resident_kib": 31316, "status": "PASS_6_TESTS"},
+        {"command": "python3 -m unittest foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v25.py -v", "elapsed_seconds": 0.21, "maximum_resident_kib": 31496, "status": "PASS_6_TESTS"},
+        {"command": "python3 -m unittest foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v26.py -v", "elapsed_seconds": 0.22, "maximum_resident_kib": 31848, "status": "PASS_7_TESTS"},
+        {"command": "python3 foundations/build_matrix_site_v2.py --check", "elapsed_seconds": 0.23, "maximum_resident_kib": 49708, "status": "PASS_GENERATED_243_ARTIFACTS_CURRENT"},
+        {"command": "python3 foundations/check_matrix_site_v2.py", "elapsed_seconds": 0.34, "maximum_resident_kib": 32652, "status": "PASS_576_CELLS_77_COMPLETION_CELLS"},
+        {"command": "python3 foundations/verify_matrix_site_v2.py", "elapsed_seconds": 0.53, "maximum_resident_kib": 56572, "status": "PASS_SCHEMA_DETERMINISM_MANIFEST_AND_BOUNDARIES"},
+        {"command": "python3 paper/generate_21_reverse_foundations_appendices.py --check", "elapsed_seconds": 0.06, "maximum_resident_kib": 25596, "status": "PASS_CURRENT"},
+        {"command": "python3 paper/generate_21_reverse_foundations_claim_map.py --check", "elapsed_seconds": 0.10, "maximum_resident_kib": 43400, "status": "PASS_CURRENT"},
+        {"command": "python3 paper/verify_21_reverse_foundations_claim_map.py", "elapsed_seconds": 0.13, "maximum_resident_kib": 44440, "status": "PASS_54_CLAIMS_AUTHORITY_HASHES_AND_BOUNDARIES"},
+        {"command": "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex", "elapsed_seconds": 0.95, "maximum_resident_kib": 53472, "status": "PASS_69_PAGES_WITH_NONFATAL_LAYOUT_WARNINGS"}
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "checks": [
+        {"command": "python3 d_quotient_classical/nonminimal_identity/verify_classical_ordinary_derivative_auxiliary_cubic_export_v1.py", "elapsed_seconds": 0.10, "maximum_resident_kib": 29280, "status": "PASS"},
+        {"command": "python3 quantum-weyl/classical_import/verify_strict_386_stabilized_q3_lift_preflight.py", "elapsed_seconds": 0.11, "maximum_resident_kib": 34060, "status": "PASS"},
+        {"command": "python3 quantum-weyl/classical_import/verify_strict_386_nonminimal_theory_identity_obstruction.py", "elapsed_seconds": 0.10, "maximum_resident_kib": 29984, "status": "PASS"},
+        {"command": "python3 quantum-weyl/classical_import/verify_classical_import_gate_v8_reconciliation.py", "elapsed_seconds": 0.10, "maximum_resident_kib": 29788, "status": "PASS"},
+        {"command": "python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v25.py", "elapsed_seconds": 0.11, "maximum_resident_kib": 30316, "status": "PASS"},
+        {"command": "python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v26.py", "elapsed_seconds": 0.12, "maximum_resident_kib": 30248, "status": "PASS"}
+      ],
+      "criterion": "The affected chain from the authoritative local cubic export through the independent receiver comparison, Gate V8, Atlas V26, static explorer and Paper 21 was replayed. Upstream classical action and unary-causal inputs were unchanged and remain content-addressed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze or release is made, no shared core algebra is changed, and no quantum lifecycle state is promoted. Gate A, Hadamard construction, renormalized products, QME restoration, residual transfer and Lorentzian certification remain false."
+    }
+  },
+  "science_forge_shadow": {
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": 3.42,
+    "maximum_resident_kib": 344168,
+    "process_exit": 0,
+    "certifying_status": "ADVISORY_NON_CERTIFYING_WITH_FINDINGS",
+    "findings": [
+      "The local s-f/certlab configuration resolves the bridge audit through the bp2transformer tree rather than this repository.",
+      "That external bridge audit fails because SymPy is unavailable under Python 3.14.",
+      "The corpus census reports 1830 certificates against the 2026-07-19 baseline of 976.",
+      "The Forge binary is an unpinned dirty development build whose embedded revision differs from the current forge/lib checkout."
+    ]
+  },
+  "claim_boundary": "The authoritative ordinary-derivative action has an exact nonzero auxiliary cubic channel Omega(f_hat,q2(v,v))=-1, whereas the exact 386-row trivial stabilization gives zero. This refutes literal zero-extension and the recorded linear shear as an authoritative nonlinear import. It does not invalidate the candidate q1/q2/q3 identities and does not obstruct a nonlinear auxiliary-elimination or cyclic L-infinity equivalence. Gate V8 therefore remains FAIL_CLOSED with zero accepted authoritative hashes. No complete Lorentzian off-shell BV propagator, full-complex Hadamard state, renormalized Lorentzian time-ordered product, causal pAQFT construction, QME restoration, residual transfer or Lorentzian quantum theory is claimed."
+}

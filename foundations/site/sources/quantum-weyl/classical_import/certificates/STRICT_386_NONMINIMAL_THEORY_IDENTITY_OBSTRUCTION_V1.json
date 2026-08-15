@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "strict-386-nonminimal-theory-identity-obstruction-v1",
+  "result_id": "STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1",
+  "result_kind": "EXACT_SOURCE_VERSUS_TRIVIAL_STABILIZATION_NONLINEAR_IDENTITY_OBSTRUCTION",
+  "result_state": "LITERAL_AND_LINEAR_THEORY_IDENTITY_REFUTED_NONLINEAR_EQUIVALENCE_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "scope": {
+    "theory": "strict pure-Weyl ordinary-derivative auxiliary formulation versus the 386-row trivial-stabilization candidate",
+    "background": "unit conformal cylinder normal frame",
+    "carrier_rows": 386,
+    "comparison_scope": "one exact cubic cyclic-form channel sufficient to refute literal equality",
+    "coefficient_field": "Q"
+  },
+  "exact_channel_comparison": {
+    "common_coordinate_presentation": "linear generalized-auxiliary split before the curvature-graph shear",
+    "cyclic_form_channel": "Omega(f_hat,q2(v,v))",
+    "block_channel": [
+      "AUX_F_HAT",
+      "AUX_V",
+      "AUX_V"
+    ],
+    "source_ordinary_derivative_value": "-1",
+    "candidate_trivial_stabilization_value": "0",
+    "source_minus_candidate_defect": "-1",
+    "source_nonzero_reason": "mixed third derivative of the authoritative ordinary-derivative action density",
+    "candidate_zero_reason": "q2_split vanishes whenever a contractible input is present; AUX_F_HAT and AUX_V remain interaction-inert under the recorded linear shear",
+    "literal_identity": false
+  },
+  "theory_identity_disposition": {
+    "candidate_internal_q1_q2_and_cyclicity_certificates_preserved": true,
+    "candidate_is_authoritative_ordinary_derivative_nonminimal_theory": false,
+    "linear_canonical_shear_suffices_for_theory_identity": false,
+    "nonlinear_canonical_or_L_infinity_equivalence_may_exist": true,
+    "nonlinear_equivalence_constructed": false,
+    "first_required_correction": "a quadratic auxiliary-elimination component whose pullback reproduces Omega(f_hat,q2(v,v))=-1",
+    "gate_consequence": "The candidate q2/q3 hashes remain excluded from Gate A until a nonlinear source-to-candidate map or complete authoritative interaction ledger is imported."
+  },
+  "claim_flags": {
+    "AUTHORITATIVE_SOURCE_AUXILIARY_CUBIC_IMPORTED": true,
+    "CANDIDATE_Q2_ZERO_CHANNEL_REPLAYED": true,
+    "LITERAL_TRIVIAL_STABILIZATION_THEORY_IDENTITY_REFUTED": true,
+    "LINEAR_SHEAR_ONLY_THEORY_IDENTITY_REFUTED": true,
+    "CANDIDATE_INTERNAL_IDENTITIES_INVALIDATED": false,
+    "NONLINEAR_CYCLIC_L_INFINITY_EQUIVALENCE_CONSTRUCTED": false,
+    "NONLINEAR_CYCLIC_L_INFINITY_EQUIVALENCE_OBSTRUCTED": false,
+    "AUTHORITATIVE_FULL_386_Q2_IMPORTED": false,
+    "AUTHORITATIVE_FULL_386_Q3_IMPORTED": false,
+    "CANDIDATE_CAUSAL_LAMBDA2_SOURCE_CLOSURE_CERTIFIED": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "QME_RESTORED": false
+  },
+  "does_not_establish": [
+    "that the candidate q1/q2/q3 algebra is internally inconsistent",
+    "nonexistence of a nonlinear cyclic L-infinity equivalence",
+    "the complete authoritative 386-row q2 or q3",
+    "general lambda-squared source closure or q2/q3/Green compatibility",
+    "Gate A, a Hadamard state, Lorentzian renormalized products, QME restoration, or residual transfer"
+  ],
+  "canonical_hashes": {
+    "exact_channel_comparison_sha256": "9fe0be691eaa44ba0da9c832a76df488aab073c13f51a28612c3a43218b55fd7",
+    "theory_identity_disposition_sha256": "6d9fda3e78fdd911b7a4808d2da5927ad5b0bb2b24305a63f5199c79586e373d"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_ORDINARY_DERIVATIVE_AUXILIARY_CUBIC_EXPORT_V1.json",
+        "result_id": "CLASSICAL_ORDINARY_DERIVATIVE_AUXILIARY_CUBIC_EXPORT_V1",
+        "sha256": "a5cb1c62136cfad58bcd589d3719e6349e0e9bdd8ef2ce381cd4a8f259fddf59",
+        "role": "authoritative action-derived auxiliary cubic channel"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1.json",
+        "result_id": "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1",
+        "sha256": "ee6a88080cc13547c809f53b9c033da59138be73eff69c0654659c18ddd2c65b",
+        "role": "exact trivial-stabilization candidate and inert-block ledger"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+        "result_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+        "sha256": "3b9d8a2fc5a70d20770452eb0a2a4891f59314c21c83188bfb59de0941cac4b2",
+        "role": "common 386-row block names and cyclic pairing carrier"
+      }
+    ]
+  },
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1.md",
+  "next_gate": "Construct and certify the quadratic term of the nonlinear auxiliary-elimination/cyclic L-infinity map, beginning with the f_hat-v-v channel, then replay q2 and q3 source pullback identities before causal Green composition."
+}

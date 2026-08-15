@@ -1,0 +1,550 @@
+{
+  "$schema": "../schema/strict-386-stabilized-q3-lift-preflight-v1.schema.json",
+  "schema": "strict-386-stabilized-q3-lift-preflight-v1",
+  "result_id": "STRICT_386_STABILIZED_Q3_LIFT_PREFLIGHT_V1",
+  "result_kind": "EXACT_CYCLIC_TRIVIAL_TERNARY_STABILIZATION_AND_THEORY_IDENTITY_PREFLIGHT",
+  "result_state": "STABILIZED_Q3_CANDIDATE_AND_ARITY_THREE_CERTIFIED_AUTHORITATIVE_NONMINIMAL_IDENTITY_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "5013af08d48bf45d99d9b841a75244122e3822f9",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": {
+    "carrier_rows": 386,
+    "endpoint_rows": 30,
+    "split_contractible_rows": 356,
+    "component_blocks": 22,
+    "background": "unit ultrastatic conformal cylinder",
+    "coordinate_presentation": "unshifted curvature graph coordinates"
+  },
+  "split_candidate": {
+    "construction_kind": "CYCLIC_TRIVIAL_TERNARY_STABILIZATION_CANDIDATE",
+    "formula": "q3_split(x,y,z)=i_end q3_min(pi_end x,pi_end y,pi_end z)",
+    "carrier_rows": 386,
+    "minimal_endpoint_rows": 30,
+    "contractible_rows_with_zero_split_interactions": 356,
+    "minimal_species_component_counts": {
+      "c": 4,
+      "omega": 1,
+      "h": 10,
+      "h_star": 10,
+      "c_star": 4,
+      "omega_star": 1
+    },
+    "minimal_q3_nonzero_components": 1,
+    "minimal_q3_zero_output_rows": 5,
+    "split_q1_endpoint_complement_crossings": 0,
+    "split_pairing_endpoint_complement_crossings": 0,
+    "minimal_q3_import_sha256": "3c1f0bf9cab39f765a6f8d3a10f20e9f9bc3d32779197431d6d2180c8d240837",
+    "minimal_arity_three_receiver_sha256": "7e0a472bd5ca27b8f2604e558ae6de1c1404016ca297fd19cbd64c8ba1f13f93",
+    "minimal_q3_cyclicity_sha256": "dea26f77dcf3e636d2a44fed15dce917faa363c6fb55f511c86f5f1296a99212",
+    "same_stabilization_q2_candidate_sha256": "45fa9d55e05f26afdd40011b11f5854a3d6f6a5c2176370589e8cf3e82601161",
+    "sha256": "6f385e74eb70c035700d93a5c64c4d7ca7412c73799f548e5bec651e5427a0f1"
+  },
+  "graph_transport_dag": {
+    "construction_kind": "EXACT_CANONICAL_TERNARY_TRANSPORT_DAG",
+    "formula": "q3_graph(x,y,z)=S q3_split(S^-1 x,S^-1 y,S^-1 z)",
+    "nodes": [
+      {
+        "node_id": "inverse_input_1",
+        "operation": "S^-1",
+        "sha256": "2fa994b87f6e5abde799887af61f066f2d5762b3e4513a79560fc56c6bf08ffb"
+      },
+      {
+        "node_id": "inverse_input_2",
+        "operation": "S^-1",
+        "sha256": "2fa994b87f6e5abde799887af61f066f2d5762b3e4513a79560fc56c6bf08ffb"
+      },
+      {
+        "node_id": "inverse_input_3",
+        "operation": "S^-1",
+        "sha256": "2fa994b87f6e5abde799887af61f066f2d5762b3e4513a79560fc56c6bf08ffb"
+      },
+      {
+        "node_id": "minimal_q3",
+        "operation": "q3_min after endpoint projection",
+        "sha256": "3c1f0bf9cab39f765a6f8d3a10f20e9f9bc3d32779197431d6d2180c8d240837"
+      },
+      {
+        "node_id": "forward_output",
+        "operation": "S",
+        "sha256": "9514c1c78dd880ad039b4c9ea084ae7f91bedda24ff784088cd9a7bda52c157e"
+      }
+    ],
+    "forward_tables": [
+      {
+        "table_id": "T_PRIMAL",
+        "source_block": "ENDPOINT_M",
+        "target_block": "CONE_X_U",
+        "nonzero_coefficients": 439,
+        "maximum_order": 3,
+        "sha256": "71c6ad4fb3dcb7702ce813e7a9f0ad216682500539c803df7d0a46405532e0eb"
+      },
+      {
+        "table_id": "T_FORCED_PARTNER",
+        "source_block": "CONE_X_U_SHARP",
+        "target_block": "ENDPOINT_E",
+        "nonzero_coefficients": 439,
+        "maximum_order": 3,
+        "sha256": "96004d39daf16288a68383be5a3b9536920c418e3e809bb992c70122ffcf4afb"
+      },
+      {
+        "table_id": "A_PRIMAL",
+        "source_block": "ENDPOINT_E",
+        "target_block": "CONE_X_EQ",
+        "nonzero_coefficients": 15,
+        "maximum_order": 0,
+        "sha256": "82ac42170c50484289193fef7e25de19f120082ab462b6c6dcc7690564121d68"
+      },
+      {
+        "table_id": "A_FORCED_PARTNER",
+        "source_block": "CONE_X_EQ_SHARP",
+        "target_block": "ENDPOINT_M",
+        "nonzero_coefficients": 15,
+        "maximum_order": 0,
+        "sha256": "181715a5719895421dc6f650c65b6d910093c3f077819eece2065db16821d57c"
+      },
+      {
+        "table_id": "B_PRIMAL",
+        "source_block": "ENDPOINT_I",
+        "target_block": "CONE_X_ID",
+        "nonzero_coefficients": 4,
+        "maximum_order": 0,
+        "sha256": "57004c8b635c0021c883754ba26bbe0ff6b83c772bcf22a1d18d3ecdd36b5d6c"
+      },
+      {
+        "table_id": "B_FORCED_PARTNER",
+        "source_block": "CONE_X_ID_SHARP",
+        "target_block": "ENDPOINT_G",
+        "nonzero_coefficients": 4,
+        "maximum_order": 0,
+        "sha256": "43b1dc604a729eb7ecdffc11a4fa272d792b389a0ce16da8090a33729828da63"
+      },
+      {
+        "table_id": "FORWARD_CROSS_A_TSHARP",
+        "source_block": "CONE_X_U_SHARP",
+        "target_block": "CONE_X_EQ",
+        "nonzero_coefficients": 405,
+        "maximum_order": 3,
+        "sha256": "8040a31d865f47bb1099e9bb1a52f486a311b85ad544ce634dcb9a293fe0bfde"
+      }
+    ],
+    "inverse_tables": [
+      {
+        "table_id": "INVERSE_T_PRIMAL",
+        "source_block": "ENDPOINT_M",
+        "target_block": "CONE_X_U",
+        "nonzero_coefficients": 439,
+        "maximum_order": 3,
+        "sha256": "fbd3ebfae4d7163e4cc42bacdbcf65eff186aa88532acd2d0835ce6be1da6ba6"
+      },
+      {
+        "table_id": "INVERSE_T_FORCED_PARTNER",
+        "source_block": "CONE_X_U_SHARP",
+        "target_block": "ENDPOINT_E",
+        "nonzero_coefficients": 439,
+        "maximum_order": 3,
+        "sha256": "1f5e012da73418695067749a296c91807821f6a723595701c84fc0537e9f8ea8"
+      },
+      {
+        "table_id": "INVERSE_A_PRIMAL",
+        "source_block": "ENDPOINT_E",
+        "target_block": "CONE_X_EQ",
+        "nonzero_coefficients": 15,
+        "maximum_order": 0,
+        "sha256": "ac41ef920be65a8eac1e1351967ef76351fa45b09470c92ca77207c60ce7864e"
+      },
+      {
+        "table_id": "INVERSE_A_FORCED_PARTNER",
+        "source_block": "CONE_X_EQ_SHARP",
+        "target_block": "ENDPOINT_M",
+        "nonzero_coefficients": 15,
+        "maximum_order": 0,
+        "sha256": "7fc85ceaa9897546d8a82cb4518297e3786d8371de121a55284ba045b7a13096"
+      },
+      {
+        "table_id": "INVERSE_B_PRIMAL",
+        "source_block": "ENDPOINT_I",
+        "target_block": "CONE_X_ID",
+        "nonzero_coefficients": 4,
+        "maximum_order": 0,
+        "sha256": "97b368dd4907ff9637a8f1e03adb9c544985703361dcb6f048249dcd026fd218"
+      },
+      {
+        "table_id": "INVERSE_B_FORCED_PARTNER",
+        "source_block": "CONE_X_ID_SHARP",
+        "target_block": "ENDPOINT_G",
+        "nonzero_coefficients": 4,
+        "maximum_order": 0,
+        "sha256": "9b98eb1a25ebe89659ff2e6f2e94a939381b9137b730aa11a12ed0e4aaff5d9d"
+      },
+      {
+        "table_id": "INVERSE_CROSS_T_ASHARP",
+        "source_block": "CONE_X_EQ_SHARP",
+        "target_block": "CONE_X_U",
+        "nonzero_coefficients": 405,
+        "maximum_order": 3,
+        "sha256": "4b50ce3f6432f104a9fbeb9638030898d8ca77a21bf2ceb8a973e852aa023134"
+      }
+    ],
+    "input_origins_for_h": [
+      "CONE_X_EQ_SHARP",
+      "ENDPOINT_M"
+    ],
+    "output_targets_for_h_star": [
+      "CONE_X_EQ",
+      "ENDPOINT_E"
+    ],
+    "active_input_blocks": [
+      "CONE_X_EQ_SHARP",
+      "ENDPOINT_M"
+    ],
+    "active_output_blocks": [
+      "CONE_X_EQ",
+      "ENDPOINT_E"
+    ],
+    "active_input_row_envelope": 50,
+    "active_output_row_envelope": 50,
+    "expanded_ternary_block_channels": 16,
+    "total_ordered_carrier_block_quadruples": 234256,
+    "excluded_from_support_envelope_block_quadruples": 234240,
+    "ternary_block_channel_ledger": [
+      {
+        "component_id": "q3_hstar_hhh",
+        "output_block": "CONE_X_EQ",
+        "input_blocks": [
+          "CONE_X_EQ_SHARP",
+          "CONE_X_EQ_SHARP",
+          "CONE_X_EQ_SHARP"
+        ]
+      },
+      {
+        "component_id": "q3_hstar_hhh",
+        "output_block": "CONE_X_EQ",
+        "input_blocks": [
+          "CONE_X_EQ_SHARP",
+          "CONE_X_EQ_SHARP",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "component_id": "q3_hstar_hhh",
+        "output_block": "CONE_X_EQ",
+        "input_blocks": [
+          "CONE_X_EQ_SHARP",
+          "ENDPOINT_M",
+          "CONE_X_EQ_SHARP"
+        ]
+      },
+      {
+        "component_id": "q3_hstar_hhh",
+        "output_block": "CONE_X_EQ",
+        "input_blocks": [
+          "CONE_X_EQ_SHARP",
+          "ENDPOINT_M",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "component_id": "q3_hstar_hhh",
+        "output_block": "CONE_X_EQ",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "CONE_X_EQ_SHARP",
+          "CONE_X_EQ_SHARP"
+        ]
+      },
+      {
+        "component_id": "q3_hstar_hhh",
+        "output_block": "CONE_X_EQ",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "CONE_X_EQ_SHARP",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "component_id": "q3_hstar_hhh",
+        "output_block": "CONE_X_EQ",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "ENDPOINT_M",
+          "CONE_X_EQ_SHARP"
+        ]
+      },
+      {
+        "component_id": "q3_hstar_hhh",
+        "output_block": "CONE_X_EQ",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "ENDPOINT_M",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "component_id": "q3_hstar_hhh",
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "CONE_X_EQ_SHARP",
+          "CONE_X_EQ_SHARP",
+          "CONE_X_EQ_SHARP"
+        ]
+      },
+      {
+        "component_id": "q3_hstar_hhh",
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "CONE_X_EQ_SHARP",
+          "CONE_X_EQ_SHARP",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "component_id": "q3_hstar_hhh",
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "CONE_X_EQ_SHARP",
+          "ENDPOINT_M",
+          "CONE_X_EQ_SHARP"
+        ]
+      },
+      {
+        "component_id": "q3_hstar_hhh",
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "CONE_X_EQ_SHARP",
+          "ENDPOINT_M",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "component_id": "q3_hstar_hhh",
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "CONE_X_EQ_SHARP",
+          "CONE_X_EQ_SHARP"
+        ]
+      },
+      {
+        "component_id": "q3_hstar_hhh",
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "CONE_X_EQ_SHARP",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "component_id": "q3_hstar_hhh",
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "ENDPOINT_M",
+          "CONE_X_EQ_SHARP"
+        ]
+      },
+      {
+        "component_id": "q3_hstar_hhh",
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "ENDPOINT_M",
+          "ENDPOINT_M"
+        ]
+      }
+    ],
+    "interaction_inert_blocks": [
+      "AUX_ETA",
+      "AUX_ETA_STAR",
+      "AUX_F_HAT",
+      "AUX_F_HAT_STAR",
+      "AUX_V",
+      "AUX_V_STAR",
+      "CONE_X_ID",
+      "CONE_X_ID_SHARP",
+      "CONE_X_U",
+      "CONE_X_U_SHARP",
+      "CONE_Y_EQ",
+      "CONE_Y_EQ_SHARP",
+      "CONE_Y_ID",
+      "CONE_Y_ID_SHARP",
+      "CONE_Y_U",
+      "CONE_Y_U_SHARP",
+      "ENDPOINT_G",
+      "ENDPOINT_I"
+    ],
+    "interaction_inert_rows": 286,
+    "support_envelope_warning": "A block channel is a potentially nonzero compositional path, not a flattened 386-row coefficient tensor.",
+    "sha256": "f3228873e82b6125a216ef4dbf147eaaf36ad960d71884074acc0928be9fe440"
+  },
+  "identity_transport": {
+    "q1_q2_q3_arity_three": {
+      "status": "VERIFIED_BY_ORTHOGONAL_DIRECT_SUM_AND_EXACT_CONJUGATION",
+      "minimal_typed_channels": 72,
+      "minimal_composable_paths": 212,
+      "minimal_path_kind_counts": {
+        "q1_q3": 2,
+        "q2_q2": 204,
+        "q3_q1": 6
+      },
+      "split_reason": "q1 preserves the endpoint/complement split; q2_split and q3_split vanish when any input lies in the complement; the minimal identity is exact",
+      "graph_reason": "qk_graph=S qk_split (S^-1)^k for k=1,2,3",
+      "defects": 0
+    },
+    "q3_S3_symmetry": {
+      "status": "VERIFIED_BY_EXACT_CONJUGATION",
+      "minimal_input_permutations": 6,
+      "defects": 0
+    },
+    "q3_cyclicity_mod_d": {
+      "status": "VERIFIED_BY_ORTHOGONAL_DIRECT_SUM_AND_BV_CANONICAL_TRANSPORT",
+      "minimal_permutation_group": "S4",
+      "minimal_cyclicity_defect_mod_d": "0",
+      "split_pairing_crossings": 0,
+      "canonical_shear_defects": 0,
+      "defects_mod_d": 0
+    },
+    "D_q3_derivation": {
+      "status": "VERIFIED_FOR_STABILIZED_CANDIDATE_BY_STATIONARY_NATURALITY_AND_CONJUGATION",
+      "real_generator": "T=Lie_partial_t",
+      "minimal_naturality_status": "CERTIFIED",
+      "shear_tables_checked": 14,
+      "shear_rational_coefficients_checked": 2642,
+      "temporal_shear_commutator_defects": 0,
+      "derivation_defects": 0,
+      "proof_rule": "On the stationary cylinder, Lie_partial_t commutes with the natural local q3 and the constant-coefficient shear jets; exact conjugation transports the ternary derivation identity."
+    }
+  },
+  "theory_identity_boundary": {
+    "candidate_status": "CERTIFIED_CONSTRUCTION_NOT_AUTHORITATIVE_NONMINIMAL_IMPORT",
+    "authoritative_full_386_row_q3_export_present": false,
+    "authoritative_nonminimal_auxiliary_q3_ledger_present": false,
+    "source_certified_cyclic_L_infinity_equivalence_present": false,
+    "candidate_equals_authoritative_nonminimal_classical_theory": "NOT_ESTABLISHED",
+    "same_stabilization_used_for_q1_q2_q3_and_pairing": true,
+    "candidate_general_local_arity_three_identity": true,
+    "candidate_causal_lambda2_source_closure": false,
+    "acceptable_closure_routes": [
+      "source exports the authoritative 386-row q2/q3 and they agree with the candidate",
+      "source certifies a cyclic L-infinity equivalence from its nonminimal theory to this trivial stabilization"
+    ]
+  },
+  "gate_disposition": {
+    "strict_386_candidate_q3_stabilization": "PASS",
+    "strict_386_candidate_arity_three_identity": "PASS",
+    "strict_386_candidate_q3_cyclicity": "PASS_MOD_HORIZONTAL_BOUNDARY",
+    "strict_386_candidate_D_q3_derivation": "PASS",
+    "strict_386_authoritative_nonminimal_theory_identity": "OPEN",
+    "strict_386_candidate_q2_q3_green_lambda2_response": "OPEN",
+    "classical_import_gate_a": "FAIL_CLOSED"
+  },
+  "foundational_strength": {
+    "finite_exact_layer": "All carrier, split, shear, support-envelope and conjugation data are finite rational objects.",
+    "smooth_local_layer": "The arbitrary-input q3 and cyclicity theorem use smooth natural differential-operator and variational calculus modulo compact-support boundary terms.",
+    "causal_layer": "Only compatibility with the already declared 386-row Lorentzian carrier and cylinder flow is asserted; no q3/Green composition is certified.",
+    "choice_operation_added": false,
+    "infinite_sum_added": false,
+    "weakest_complete_foundational_base": "NOT_ESTABLISHED"
+  },
+  "claim_flags": {
+    "STRICT_386_STABILIZED_Q3_CANDIDATE_CONSTRUCTED": true,
+    "STRICT_386_STABILIZED_Q1_Q2_Q3_ARITY_THREE_IDENTITY_VERIFIED": true,
+    "STRICT_386_STABILIZED_Q3_S3_SYMMETRY_VERIFIED": true,
+    "STRICT_386_STABILIZED_Q3_CYCLICITY_MOD_D_VERIFIED": true,
+    "STRICT_386_STABILIZED_D_Q3_DERIVATION_VERIFIED": true,
+    "STRICT_386_AUTHORITATIVE_FULL_Q3_IMPORTED": false,
+    "STRICT_386_CANDIDATE_AUTHORITATIVE_EQUIVALENCE_CERTIFIED": false,
+    "STRICT_386_CANDIDATE_CAUSAL_LAMBDA2_SOURCE_CLOSURE_CERTIFIED": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "RENORMALIZED_LORENTZIAN_PRODUCTS": false,
+    "QME_RESTORED": false,
+    "RESIDUAL_TRANSFERRED": false,
+    "LORENTZIAN_QUANTUM_THEORY": false
+  },
+  "canonical_hashes": {
+    "split_candidate_sha256": "6ea9eb90b6d0a12f3c694af067e0d21d6f67fd3a1c2a96c50adf62574e8a701f",
+    "graph_transport_dag_sha256": "3c5b1a2ee538f45ad1566cec063904b7311642e7b485540e406377cf53221c40",
+    "identity_transport_sha256": "23c7838a1b56fbc7682a8957ff3992a9424606e8b5040d5f44118c7eb7f1b038",
+    "theory_identity_boundary_sha256": "d839b62cb68cfb319c3259b1ae05ed18d16b238bea4417dd98f9d8b61d1f8fc4",
+    "gate_disposition_sha256": "e503edfa937667a655575d70da0128ff8d5c157fbd22f257f332246891725e44",
+    "foundational_strength_sha256": "b522aff6955c4fe2c2b020aab5d7170e0a5c508366d56cd81abc3550ff21e0ca"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1.json",
+        "sha256": "9b0e9da9e8838a0ade6e1f1214e16457e9a94af981d9d020c137d105f9e9c21e",
+        "result_id": "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1",
+        "role": "split q1"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+        "sha256": "3b9d8a2fc5a70d20770452eb0a2a4891f59314c21c83188bfb59de0941cac4b2",
+        "result_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+        "role": "basis and pairing"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1.json",
+        "sha256": "5f9240a362ce8568f0ac502e25978a4675f9744cc750dee5b1378828033eb301",
+        "result_id": "STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1",
+        "role": "BV-canonical shear"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1.json",
+        "sha256": "b805bd81b35f13325d938e93be91495e1d46aa5900fd168e55bdcde1afbfa8e2",
+        "result_id": "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1",
+        "role": "graph q1 and SDR"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1.json",
+        "sha256": "ee6a88080cc13547c809f53b9c033da59138be73eff69c0654659c18ddd2c65b",
+        "result_id": "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1",
+        "role": "same candidate stabilization for q2"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_PURE_WEYL_MINIMAL_BV_Q3_IMPORT_V1.json",
+        "sha256": "358268300bc11670e24a0dd849b82f482f63f23efa33fcb4a47d11dd5bde7afb",
+        "result_id": "STRICT_PURE_WEYL_MINIMAL_BV_Q3_IMPORT_V1",
+        "role": "authoritative minimal q3"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1.json",
+        "sha256": "ec51e447914516164b0caa51cbecbf12f1a4b2c8b7ecfbd1303f56d17cc095b5",
+        "result_id": "STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1",
+        "role": "minimal arity-three identity"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_Q3_CYCLICITY_V1.json",
+        "sha256": "61af401f4f5664164d93e8e945790708131c7e41d5ec2db9bb9dfad0c9406793",
+        "result_id": "STRICT_MINIMAL_BV_Q3_CYCLICITY_V1",
+        "role": "minimal q3 cyclicity modulo d"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_D_ACTION_V1.json",
+        "sha256": "c83c53250e3c8b8bc913f902a8cd4a4aff1a918c88b42167e9076e4aa96dc148",
+        "result_id": "STRICT_386_FULL_D_ACTION_V1",
+        "role": "stationary cylinder flow"
+      }
+    ],
+    "builder": {
+      "path": "quantum-weyl/classical_import/build_strict_386_stabilized_q3_lift_preflight.py",
+      "sha256": "6d7354fc3a43994425722a6e3110535550e8b6d5325798704bf442cdab90610b"
+    }
+  },
+  "does_not_establish": [
+    "that this exact trivial stabilization is the authoritative nonminimal pure-Weyl BV theory",
+    "a source-certified cyclic L-infinity equivalence to the authoritative nonminimal classical action",
+    "nonzero split-coordinate q3 interactions on the 356 contractible rows",
+    "a flattened coefficientwise 386-row q3 tensor instead of an exact compositional DAG",
+    "pointwise density cyclicity rather than cyclicity of integrated local functionals modulo horizontal boundary",
+    "candidate q2/q3 compatibility with advanced or retarded Green actions at lambda squared",
+    "an accepted Gate-A snapshot, Hadamard state, renormalized Lorentzian products, QME restoration or residual transfer"
+  ],
+  "next_gate": "Import a source-certified nonminimal theory identity for the common q1/q2/q3 stabilization, or an authoritative 386-row q2/q3 export; only then compose the accepted nonlinear brackets with the Green homotopy at lambda squared.",
+  "independent_checker": "quantum-weyl/classical_import/check_strict_386_stabilized_q3_lift_preflight.py",
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_386_STABILIZED_Q3_LIFT_PREFLIGHT_V1.md"
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-386-nonminimal-theory-identity-obstruction-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "dependency_tags", "scope", "exact_channel_comparison", "theory_identity_disposition", "claim_flags", "does_not_establish", "canonical_hashes", "provenance", "human_report", "next_gate"],
+  "properties": {
+    "schema": {"const": "strict-386-nonminimal-theory-identity-obstruction-v1"},
+    "result_id": {"const": "STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1"},
+    "result_kind": {"const": "EXACT_SOURCE_VERSUS_TRIVIAL_STABILIZATION_NONLINEAR_IDENTITY_OBSTRUCTION"},
+    "result_state": {"const": "LITERAL_AND_LINEAR_THEORY_IDENTITY_REFUTED_NONLINEAR_EQUIVALENCE_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"type": "object", "properties": {"carrier_rows": {"const": 386}, "coefficient_field": {"const": "Q"}}},
+    "exact_channel_comparison": {
+      "type": "object",
+      "properties": {
+        "block_channel": {"const": ["AUX_F_HAT", "AUX_V", "AUX_V"]},
+        "source_ordinary_derivative_value": {"const": "-1"},
+        "candidate_trivial_stabilization_value": {"const": "0"},
+        "source_minus_candidate_defect": {"const": "-1"},
+        "literal_identity": {"const": false}
+      }
+    },
+    "theory_identity_disposition": {
+      "type": "object",
+      "properties": {
+        "candidate_internal_q1_q2_and_cyclicity_certificates_preserved": {"const": true},
+        "candidate_is_authoritative_ordinary_derivative_nonminimal_theory": {"const": false},
+        "linear_canonical_shear_suffices_for_theory_identity": {"const": false},
+        "nonlinear_canonical_or_L_infinity_equivalence_may_exist": {"const": true},
+        "nonlinear_equivalence_constructed": {"const": false}
+      }
+    },
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1.md"}
+  }
+}

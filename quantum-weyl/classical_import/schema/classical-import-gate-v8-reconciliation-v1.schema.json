@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/classical-import-gate-v8-reconciliation-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "lifecycle", "dependency_tags", "export_reconciliation", "freeze_check_reconciliation", "required_hash_disposition", "minimal_missing_bundle", "gate_disposition", "m2_theory_identity_obstruction", "claim_flags", "provenance", "independent_checker", "human_report"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-classical-import-gate-v8-reconciliation-v1"},
+    "result_id": {"const": "CLASSICAL_IMPORT_GATE_V8_RECONCILIATION"},
+    "result_state": {"const": "LINEAR_THEORY_IDENTITY_REFUTED_NONLINEAR_EQUIVALENCE_REQUIRED_GATE_FAIL_CLOSED"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "export_reconciliation": {"type": "array", "minItems": 20, "maxItems": 20},
+    "freeze_check_reconciliation": {"type": "array", "minItems": 10, "maxItems": 10},
+    "m2_theory_identity_obstruction": {"type": "object", "properties": {"carrier_rows": {"const": 386}, "source_value": {"const": "-1"}, "candidate_value": {"const": "0"}, "defect": {"const": "-1"}, "nonlinear_equivalence_may_exist": {"const": true}, "nonlinear_equivalence_constructed": {"const": false}, "nonlinear_equivalence_obstructed": {"const": false}}},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_GATE_V8.md"}
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/classical-ordinary-derivative-auxiliary-cubic-export-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_kind", "lifecycle", "dependency_tags", "scope", "auxiliary_cubic_interaction", "theory_identity_disposition", "claim_flags", "does_not_establish", "canonical_hashes", "provenance", "human_report", "next_gate"],
+  "properties": {
+    "schema": {"const": "classical-ordinary-derivative-auxiliary-cubic-export-v1"},
+    "result_id": {"const": "CLASSICAL_ORDINARY_DERIVATIVE_AUXILIARY_CUBIC_EXPORT_V1"},
+    "result_kind": {"const": "AUTHORITATIVE_ACTION_DERIVED_NONMINIMAL_AUXILIARY_CUBIC_WITNESS"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "auxiliary_cubic_interaction": {
+      "type": "object",
+      "required": ["cubic_density", "candidate_block_channel", "witness"],
+      "properties": {
+        "candidate_block_channel": {"const": ["AUX_F_HAT", "AUX_V", "AUX_V"]},
+        "witness": {
+          "type": "object",
+          "required": ["mixed_derivative_d_t_d_s_squared_at_zero", "nonzero"],
+          "properties": {
+            "mixed_derivative_d_t_d_s_squared_at_zero": {"const": "-1"},
+            "nonzero": {"const": true}
+          }
+        }
+      }
+    },
+    "theory_identity_disposition": {
+      "type": "object",
+      "properties": {
+        "literal_zero_extension_compatible": {"const": false},
+        "linear_shift_only_compatible": {"const": false},
+        "nonlinear_auxiliary_elimination_or_higher_L_infinity_map_required": {"const": true},
+        "cyclic_L_infinity_equivalence_obstructed": {"const": false}
+      }
+    },
+    "human_report": {"const": "d_quotient_classical/reports/classical-ordinary-derivative-auxiliary-cubic-export-v1.md"}
+  }
+}

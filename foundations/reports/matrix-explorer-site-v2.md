@@ -39,7 +39,7 @@ eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
-Atlas V24 preserves the field-equation type result.  The degree-one-to-zero
+Atlas V26 preserves the field-equation type result.  The degree-one-to-zero
 Green component is an exact right inverse on Noether-compatible sources and a
 left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
 the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
@@ -50,8 +50,21 @@ The action-derived cubic Bach receiver realizes that target exactly:
 `q1 q3=-75760/9`.  Its authoritative successor now exports the arbitrary-input
 minimal q3, replays all 72 typed arity-three channels and 212 composable paths,
 and proves S4 quartic cyclicity modulo horizontal boundary terms.  These are
-minimal-carrier results.  They do not yet provide the 386-row cyclic stabilization,
-the authoritative nonminimal theory identity, or general nonlinear source closure.
+minimal-carrier results.  Exact zero-extension over the 356-row contractible
+complement followed by the accepted BV-canonical shear now gives a 386-row
+candidate q3 with sixteen potentially nonzero ternary block channels.  Orthogonal
+direct sum and exact conjugation transport the 72-channel/212-path arity-three
+identity, S3 symmetry, S4 cyclicity modulo boundary terms, and D/q3 derivation
+with zero defects.  This is a valid stabilization construction, not an authoritative
+nonminimal import.  The theory-identity test now has a decisive exact witness:
+the authoritative ordinary-derivative action gives
+`Omega(f_hat,q2(v,v))=-1`, while the trivial stabilization gives zero.  Literal
+identity and the linear-shear-only route are therefore refuted.  Nonlinear
+equivalence remains open; its first quadratic correction and general nonlinear
+source closure are the new frontier.
+Gate V8 propagates that decision into the authoritative import ledger: literal
+and linear identity are rejected, nonlinear equivalence remains an open
+constructive obligation, and Gate A still accepts zero authoritative hashes.
 The complete Berger q3 remains a different-theory Weyl-plus-clock result on a fixed
 54-row carrier; no certified same-theory cyclic map authorizes its direct import.
 
@@ -174,3 +187,5 @@ This site does not establish:
 - composition beyond the two certified scoped cross-cell interfaces
 - precision sampler equivalence, continuum reconstruction, or empirical support from the BT finite lattice
 - a complete observationally validated theory
+- that the exact stabilized-q3 candidate is the authoritative nonminimal pure-Weyl BV interaction
+- general lambda-squared causal source closure from the candidate q3 stabilization

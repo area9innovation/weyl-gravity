@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/foundations/foundational-lorentzian-weyl-bv-completion-atlas-v26.schema.json",
+  "type": "object",
+  "required": ["schema_version", "result_id", "predecessor", "branches", "stages", "strict_386_stabilized_q3_preflight", "strict_nonminimal_theory_identity_obstruction", "strict_gate_v8_reconciliation", "route_selection", "research_queue", "claim_flags", "provenance", "independent_checker", "human_report"],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v26"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V26"},
+    "branches": {"type": "array", "minItems": 7, "maxItems": 7},
+    "strict_nonminimal_theory_identity_obstruction": {
+      "type": "object",
+      "properties": {
+        "result_id": {"const": "STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1"},
+        "carrier_rows": {"const": 386}, "source_value": {"const": "-1"}, "candidate_value": {"const": "0"}, "source_minus_candidate_defect": {"const": "-1"},
+        "literal_identity_refuted": {"const": true}, "linear_shear_only_identity_refuted": {"const": true},
+        "nonlinear_equivalence_may_exist": {"const": true}, "nonlinear_equivalence_constructed": {"const": false}, "nonlinear_equivalence_obstructed": {"const": false},
+        "classical_import_gate_a_passed": {"const": false}
+      }
+    },
+    "strict_gate_v8_reconciliation": {
+      "type": "object",
+      "required": ["result_id", "gate_a_status", "accepted_top_level_hashes", "source_value", "candidate_value", "defect", "nonlinear_equivalence_may_exist", "nonlinear_equivalence_constructed", "nonlinear_equivalence_obstructed"],
+      "properties": {
+        "result_id": {"const": "CLASSICAL_IMPORT_GATE_V8_RECONCILIATION"},
+        "gate_a_status": {"const": "FAIL_CLOSED"},
+        "accepted_top_level_hashes": {"const": 0},
+        "source_value": {"const": "-1"}, "candidate_value": {"const": "0"}, "defect": {"const": "-1"},
+        "nonlinear_equivalence_may_exist": {"const": true},
+        "nonlinear_equivalence_constructed": {"const": false},
+        "nonlinear_equivalence_obstructed": {"const": false}
+      }
+    },
+    "route_selection": {"type": "array", "minItems": 11, "maxItems": 11},
+    "human_report": {"const": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v26.md"}
+  }
+}

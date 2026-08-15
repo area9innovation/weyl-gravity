@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-386-stabilized-q3-lift-preflight-v1.schema.json",
+  "title": "Strict 386-row stabilized q3 lift preflight",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_kind",
+    "result_state",
+    "lifecycle",
+    "dependency_tags",
+    "scope",
+    "split_candidate",
+    "graph_transport_dag",
+    "identity_transport",
+    "theory_identity_boundary",
+    "gate_disposition",
+    "foundational_strength",
+    "claim_flags",
+    "canonical_hashes",
+    "provenance",
+    "does_not_establish",
+    "next_gate"
+  ],
+  "properties": {
+    "schema": {"const": "strict-386-stabilized-q3-lift-preflight-v1"},
+    "result_id": {"const": "STRICT_386_STABILIZED_Q3_LIFT_PREFLIGHT_V1"},
+    "result_kind": {"const": "EXACT_CYCLIC_TRIVIAL_TERNARY_STABILIZATION_AND_THEORY_IDENTITY_PREFLIGHT"},
+    "result_state": {"const": "STABILIZED_Q3_CANDIDATE_AND_ARITY_THREE_CERTIFIED_AUTHORITATIVE_NONMINIMAL_IDENTITY_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]
+    },
+    "scope": {
+      "type": "object",
+      "properties": {
+        "carrier_rows": {"const": 386},
+        "endpoint_rows": {"const": 30},
+        "split_contractible_rows": {"const": 356},
+        "component_blocks": {"const": 22}
+      },
+      "required": ["carrier_rows", "endpoint_rows", "split_contractible_rows", "component_blocks"]
+    },
+    "split_candidate": {"type": "object"},
+    "graph_transport_dag": {"type": "object"},
+    "identity_transport": {"type": "object"},
+    "theory_identity_boundary": {"type": "object"},
+    "gate_disposition": {"type": "object"},
+    "foundational_strength": {"type": "object"},
+    "claim_flags": {"type": "object"},
+    "canonical_hashes": {"type": "object"},
+    "provenance": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 7, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 20}
+  }
+}
