@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-gauss-newton-witten-parametrix-obstruction-v1.schema.json",
+  "title": "BT Gauss-Newton Witten parametrix obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "general_remainder_identity", "exact_fixtures", "method_disposition",
+    "checks", "does_not_establish", "missing_object_ledger", "next_gate",
+    "provenance", "schema", "report", "independent_verifier",
+    "verification_commands"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_GAUSS_NEWTON_WITTEN_PARAMETRIX_OBSTRUCTION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-gauss-newton-witten-parametrix-obstruction-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "EXACT_POINTWISE_PARAMETRIX_METHOD_OBSTRUCTION"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "general_remainder_identity": {
+      "type": "object",
+      "required": [
+        "action", "full_candidate", "hessian_split", "exact_image",
+        "centered_metric_difference", "interpretation", "status"
+      ],
+      "properties": {
+        "status": {"const": "PROVED_EXACT_FINITE_DIMENSIONAL_IDENTITY"}
+      },
+      "additionalProperties": {"$ref": "#/$defs/text"}
+    },
+    "exact_fixtures": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "vacuum_full", "vacuum_centered", "asymmetric_full",
+        "asymmetric_centered"
+      ],
+      "properties": {
+        "vacuum_full": {"$ref": "#/$defs/fixture"},
+        "vacuum_centered": {"$ref": "#/$defs/fixture"},
+        "asymmetric_full": {"$ref": "#/$defs/fixture"},
+        "asymmetric_centered": {"$ref": "#/$defs/fixture"}
+      }
+    },
+    "method_disposition": {
+      "type": "object",
+      "required": [
+        "full_action_gauss_newton_pointwise_parametrix",
+        "centered_flat_map_pointwise_parametrix",
+        "constant_scalar_renormalization_of_either_candidate",
+        "connection_corrected_or_nonlocal_witten_parametrix",
+        "volume_uniform_witten_schur_coercivity",
+        "controlled_low_rayleigh_sequence",
+        "normalized_lowest_mode_second_moment",
+        "actual_interacting_h_minus_one_second_moment",
+        "interacting_tightness", "continuum_limit", "born_rule",
+        "krein_reconstruction", "lorentzian_transfer"
+      ],
+      "properties": {
+        "full_action_gauss_newton_pointwise_parametrix": {"const": "OBSTRUCTED"},
+        "centered_flat_map_pointwise_parametrix": {"const": "OBSTRUCTED"},
+        "constant_scalar_renormalization_of_either_candidate": {"const": "OBSTRUCTED_BY_EXACT_MODE_MIXING"},
+        "connection_corrected_or_nonlocal_witten_parametrix": {"const": "OPEN"},
+        "volume_uniform_witten_schur_coercivity": {"const": "OPEN"},
+        "controlled_low_rayleigh_sequence": {"const": "OPEN"},
+        "normalized_lowest_mode_second_moment": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment": {"const": "OPEN"},
+        "interacting_tightness": {"const": "NOT_ESTABLISHED"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"const": []},
+        "details": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "does_not_establish": {"$ref": "#/$defs/text_list"},
+    "missing_object_ledger": {"$ref": "#/$defs/text_list"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "b23463e5"},
+        "inputs": {"type": "array", "minItems": 2, "maxItems": 2},
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-gauss-newton-witten-parametrix-obstruction-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-gauss-newton-witten-parametrix-obstruction.md"},
+    "independent_verifier": {"const": "reverse_physics/verify_bt_euclidean_gauss_newton_witten_parametrix_obstruction.py"},
+    "verification_commands": {
+      "type": "array", "minItems": 3,
+      "items": {"$ref": "#/$defs/text"}
+    }
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "text_list": {
+      "type": "array", "minItems": 1,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "rational_vector": {
+      "type": "array", "items": {"$ref": "#/$defs/rational"}
+    },
+    "fourier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lowest_cosine", "lowest_sine", "checkerboard"],
+      "properties": {
+        "lowest_cosine": {"$ref": "#/$defs/rational"},
+        "lowest_sine": {"$ref": "#/$defs/rational"},
+        "checkerboard": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "omega", "candidate", "residual", "candidate_value",
+        "scalar_witten_part", "full_gauss_newton_part",
+        "residual_curvature_part", "L1_image", "source", "defect",
+        "L1_image_fourier_coefficients", "defect_fourier_coefficients",
+        "status"
+      ],
+      "properties": {
+        "omega": {"$ref": "#/$defs/rational_vector"},
+        "candidate": {"$ref": "#/$defs/text"},
+        "residual": {"$ref": "#/$defs/rational_vector"},
+        "candidate_value": {"$ref": "#/$defs/rational_vector"},
+        "scalar_witten_part": {"$ref": "#/$defs/rational_vector"},
+        "full_gauss_newton_part": {"$ref": "#/$defs/rational_vector"},
+        "residual_curvature_part": {"$ref": "#/$defs/rational_vector"},
+        "L1_image": {"$ref": "#/$defs/rational_vector"},
+        "source": {"$ref": "#/$defs/rational_vector"},
+        "defect": {"$ref": "#/$defs/rational_vector"},
+        "L1_image_fourier_coefficients": {"$ref": "#/$defs/fourier"},
+        "defect_fourier_coefficients": {"$ref": "#/$defs/fourier"},
+        "status": {"const": "EXACT_RATIONAL_C4_WITTEN_JET"}
+      }
+    }
+  }
+}

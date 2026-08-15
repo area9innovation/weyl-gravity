@@ -1,0 +1,759 @@
+{
+  "answer": "No. For v_G=lambda^2*(Dr^T Dr)^(-1)dT, the Gauss-Newton piece of Hess S maps v_G to dT, but L0 differentiates the background-dependent coefficients and the residual-weighted second derivative of r remains. On C4 the full candidate has L1 v_G=(49/50)dT already at the vacuum. At an asymmetric exact positive profile its defect has nonzero lowest-sine and checkerboard components, so no scalar multiplier repairs it. Replacing Dr by the centered flat-map Jacobian Du also fails, and differs away from the vacuum by the mean-residual rank-one metric term. This obstructs these two raw pointwise parametrices, not the Witten coercivity theorem.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_GAUSS_NEWTON_WITTEN_PARAMETRIX_OBSTRUCTION_V1",
+  "checks": {
+    "details": {
+      "actual_h_minus_one_moment_remains_open": true,
+      "asymmetric_centered_defect_mixes_checkerboard": true,
+      "asymmetric_centered_defect_mixes_lowest_sine": true,
+      "asymmetric_full_defect_mixes_checkerboard": true,
+      "asymmetric_full_defect_mixes_lowest_sine": true,
+      "asymmetric_full_gauss_newton_part_is_source": true,
+      "neither_candidate_is_exact_or_scalar_repairable": true,
+      "no_born_krein_or_lorentzian_promotion": true,
+      "vacuum_centered_candidate_has_9_over_10_cosine_image": true,
+      "vacuum_full_candidate_has_49_over_50_cosine_image": true,
+      "vacuum_full_defect_is_scalar_witten_derivative_term": true,
+      "witten_coercivity_remains_open": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 12,
+    "total": 12
+  },
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "failure of a connection-corrected, variational, or nonlocal Witten inverse",
+    "failure of volume-uniform Witten Schur coercivity",
+    "a controlled low-Rayleigh or diverging-volume Gibbs sequence",
+    "a normalized lowest-mode or interacting H^-1 moment bound",
+    "tightness, a continuum Euclidean BT measure, or limit identification",
+    "a Born rule, Krein reconstruction, or anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_fixtures": {
+    "asymmetric_centered": {
+      "L1_image": [
+        {
+          "denominator": 151875,
+          "numerator": 145751
+        },
+        {
+          "denominator": 22781250,
+          "numerator": 11165771
+        },
+        {
+          "denominator": 22781250,
+          "numerator": -465527
+        }
+      ],
+      "L1_image_fourier_coefficients": {
+        "checkerboard": {
+          "denominator": 607500,
+          "numerator": 130211
+        },
+        "lowest_cosine": {
+          "denominator": 1687500,
+          "numerator": 2050369
+        },
+        "lowest_sine": {
+          "denominator": 5062500,
+          "numerator": -1395443
+        }
+      },
+      "candidate": "centered_residual_jacobian_metric",
+      "candidate_value": [
+        {
+          "denominator": 675,
+          "numerator": 13
+        },
+        {
+          "denominator": 50625,
+          "numerator": 857
+        },
+        {
+          "denominator": 50625,
+          "numerator": -209
+        }
+      ],
+      "defect": [
+        {
+          "denominator": 303750,
+          "numerator": 139627
+        },
+        {
+          "denominator": 11390625,
+          "numerator": -112427
+        },
+        {
+          "denominator": 22781250,
+          "numerator": -465527
+        }
+      ],
+      "defect_fourier_coefficients": {
+        "checkerboard": {
+          "denominator": 607500,
+          "numerator": 130211
+        },
+        "lowest_cosine": {
+          "denominator": 1687500,
+          "numerator": 362869
+        },
+        "lowest_sine": {
+          "denominator": 5062500,
+          "numerator": -1395443
+        }
+      },
+      "full_gauss_newton_part": [
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 50,
+          "numerator": 31
+        },
+        {
+          "denominator": 50,
+          "numerator": 3
+        }
+      ],
+      "omega": [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        }
+      ],
+      "residual": [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 2,
+          "numerator": -1
+        },
+        {
+          "denominator": 2,
+          "numerator": -1
+        }
+      ],
+      "residual_curvature_part": [
+        {
+          "denominator": 12,
+          "numerator": 5
+        },
+        {
+          "denominator": 300,
+          "numerator": 31
+        },
+        {
+          "denominator": 300,
+          "numerator": 53
+        }
+      ],
+      "scalar_witten_part": [
+        {
+          "denominator": 607500,
+          "numerator": 26129
+        },
+        {
+          "denominator": 45562500,
+          "numerator": -10625333
+        },
+        {
+          "denominator": 45562500,
+          "numerator": -11714179
+        }
+      ],
+      "source": [
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "status": "EXACT_RATIONAL_C4_WITTEN_JET"
+    },
+    "asymmetric_full": {
+      "L1_image": [
+        {
+          "denominator": 103275,
+          "numerator": 107359
+        },
+        {
+          "denominator": 179078850,
+          "numerator": 59811583
+        },
+        {
+          "denominator": 179078850,
+          "numerator": -28593733
+        }
+      ],
+      "L1_image_fourier_coefficients": {
+        "checkerboard": {
+          "denominator": 413100,
+          "numerator": 79771
+        },
+        "lowest_cosine": {
+          "denominator": 2653020,
+          "numerator": 2708113
+        },
+        "lowest_sine": {
+          "denominator": 7959060,
+          "numerator": -5349419
+        }
+      },
+      "candidate": "full_action_residual_jacobian_metric",
+      "candidate_value": [
+        {
+          "denominator": 675,
+          "numerator": 13
+        },
+        {
+          "denominator": 6885,
+          "numerator": 101
+        },
+        {
+          "denominator": 34425,
+          "numerator": -181
+        }
+      ],
+      "defect": [
+        {
+          "denominator": 206550,
+          "numerator": 111443
+        },
+        {
+          "denominator": 89539425,
+          "numerator": -14863921
+        },
+        {
+          "denominator": 179078850,
+          "numerator": -28593733
+        }
+      ],
+      "defect_fourier_coefficients": {
+        "checkerboard": {
+          "denominator": 413100,
+          "numerator": 79771
+        },
+        "lowest_cosine": {
+          "denominator": 2653020,
+          "numerator": 55093
+        },
+        "lowest_sine": {
+          "denominator": 7959060,
+          "numerator": -5349419
+        }
+      },
+      "full_gauss_newton_part": [
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "omega": [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        }
+      ],
+      "residual": [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 2,
+          "numerator": -1
+        },
+        {
+          "denominator": 2,
+          "numerator": -1
+        }
+      ],
+      "residual_curvature_part": [
+        {
+          "denominator": 12,
+          "numerator": 5
+        },
+        {
+          "denominator": 204,
+          "numerator": 11
+        },
+        {
+          "denominator": 204,
+          "numerator": 31
+        }
+      ],
+      "scalar_witten_part": [
+        {
+          "denominator": 413100,
+          "numerator": 50761
+        },
+        {
+          "denominator": 358157700,
+          "numerator": -78768109
+        },
+        {
+          "denominator": 358157700,
+          "numerator": -111613391
+        }
+      ],
+      "source": [
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "status": "EXACT_RATIONAL_C4_WITTEN_JET"
+    },
+    "vacuum_centered": {
+      "L1_image": [
+        {
+          "denominator": 20,
+          "numerator": 9
+        },
+        {
+          "denominator": 20,
+          "numerator": 9
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "L1_image_fourier_coefficients": {
+        "checkerboard": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "lowest_cosine": {
+          "denominator": 10,
+          "numerator": 9
+        },
+        "lowest_sine": {
+          "denominator": 1,
+          "numerator": 0
+        }
+      },
+      "candidate": "centered_residual_jacobian_metric",
+      "candidate_value": [
+        {
+          "denominator": 50,
+          "numerator": 1
+        },
+        {
+          "denominator": 50,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "defect": [
+        {
+          "denominator": 20,
+          "numerator": -1
+        },
+        {
+          "denominator": 20,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "defect_fourier_coefficients": {
+        "checkerboard": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "lowest_cosine": {
+          "denominator": 10,
+          "numerator": -1
+        },
+        "lowest_sine": {
+          "denominator": 1,
+          "numerator": 0
+        }
+      },
+      "full_gauss_newton_part": [
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "omega": [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ],
+      "residual": [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "residual_curvature_part": [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "scalar_witten_part": [
+        {
+          "denominator": 20,
+          "numerator": -1
+        },
+        {
+          "denominator": 20,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "source": [
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "status": "EXACT_RATIONAL_C4_WITTEN_JET"
+    },
+    "vacuum_full": {
+      "L1_image": [
+        {
+          "denominator": 100,
+          "numerator": 49
+        },
+        {
+          "denominator": 100,
+          "numerator": 49
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "L1_image_fourier_coefficients": {
+        "checkerboard": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "lowest_cosine": {
+          "denominator": 50,
+          "numerator": 49
+        },
+        "lowest_sine": {
+          "denominator": 1,
+          "numerator": 0
+        }
+      },
+      "candidate": "full_action_residual_jacobian_metric",
+      "candidate_value": [
+        {
+          "denominator": 50,
+          "numerator": 1
+        },
+        {
+          "denominator": 50,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "defect": [
+        {
+          "denominator": 100,
+          "numerator": -1
+        },
+        {
+          "denominator": 100,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "defect_fourier_coefficients": {
+        "checkerboard": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "lowest_cosine": {
+          "denominator": 50,
+          "numerator": -1
+        },
+        "lowest_sine": {
+          "denominator": 1,
+          "numerator": 0
+        }
+      },
+      "full_gauss_newton_part": [
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "omega": [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ],
+      "residual": [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "residual_curvature_part": [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "scalar_witten_part": [
+        {
+          "denominator": 100,
+          "numerator": -1
+        },
+        {
+          "denominator": 100,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "source": [
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "status": "EXACT_RATIONAL_C4_WITTEN_JET"
+    }
+  },
+  "general_remainder_identity": {
+    "action": "S=||r||^2/(2*lambda^2)",
+    "centered_metric_difference": "Dr^T Dr=Du^T Du+N*d(mean r) tensor d(mean r)",
+    "exact_image": "L1 v_G=dT+L0 v_G+lambda^(-2)*G^(-1)*(sum_i r_i Hess r_i)*v_G",
+    "full_candidate": "v_G=lambda^2*(Dr^T Dr)^(-1)*dT_covector",
+    "hessian_split": "Hess S=lambda^(-2)*(Dr^T Dr+sum_i r_i Hess r_i)",
+    "interpretation": "the missing terms are configuration-space derivative and embedding-curvature terms, not a constant normalization",
+    "status": "PROVED_EXACT_FINITE_DIMENSIONAL_IDENTITY"
+  },
+  "independent_verifier": "reverse_physics/verify_bt_euclidean_gauss_newton_witten_parametrix_obstruction.py",
+  "lifecycle_state": "EXACT_POINTWISE_PARAMETRIX_METHOD_OBSTRUCTION",
+  "method_disposition": {
+    "actual_interacting_h_minus_one_second_moment": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "centered_flat_map_pointwise_parametrix": "OBSTRUCTED",
+    "connection_corrected_or_nonlocal_witten_parametrix": "OPEN",
+    "constant_scalar_renormalization_of_either_candidate": "OBSTRUCTED_BY_EXACT_MODE_MIXING",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "controlled_low_rayleigh_sequence": "OPEN",
+    "full_action_gauss_newton_pointwise_parametrix": "OBSTRUCTED",
+    "interacting_tightness": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "normalized_lowest_mode_second_moment": "OPEN",
+    "volume_uniform_witten_schur_coercivity": "OPEN"
+  },
+  "missing_object_ledger": [
+    "a connection-corrected residual-coordinate parametrix with an L-uniform form remainder",
+    "or a normalized low-Rayleigh sequence for the full Witten form with nonzero dT overlap",
+    "an L-uniform lowest-mode bound followed by a dyadic-shell H^-1 summation"
+  ],
+  "next_gate": "Do not scalar-rescale a pointwise residual-metric inverse. Either solve the connection-corrected one-form equation in residual coordinates and prove its remainder relatively form bounded, or use the exact nonzero Q-mode defect to seed a full Witten low-Rayleigh construction.",
+  "provenance": {
+    "arithmetic": "Exact Fraction arithmetic in an orthogonal rational basis of the C4 mean-zero carrier. The producer uses complete three-variable exponential Taylor jets through degree three and a degree-two Neumann matrix inverse.",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_WITTEN_ONE_FORM_SCHUR_GATE_V1.json",
+        "sha256": "c594809f535ec73a8e9adceb86c92bd4228d99f042c780ec9b17df1169fe0df1"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FLAT_POTENTIAL_PIOLA_WARD_CANCELLATION_V1.json",
+        "sha256": "00d48c4bc9b9bd024867edd8ff5cfca80b575393f59802a7c0a60ab1b140a61a"
+      }
+    ],
+    "repository_base_commit": "b23463e5"
+  },
+  "question": "Does a pointwise inverse residual-Jacobian metric give an exact or scalar-renormalizable inverse of the BT Witten one-form operator on a lowest Fourier source?",
+  "report": "reverse_physics/reports/bt-euclidean-gauss-newton-witten-parametrix-obstruction.md",
+  "result_kind": "exact finite-graph Witten image and mode-mixing obstruction for full and centered Gauss-Newton inverse fields",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-gauss-newton-witten-parametrix-obstruction-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-gauss-newton-witten-parametrix-obstruction-v1",
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_gauss_newton_witten_parametrix_obstruction.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_gauss_newton_witten_parametrix_obstruction.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_gauss_newton_witten_parametrix_obstruction"
+  ]
+}
