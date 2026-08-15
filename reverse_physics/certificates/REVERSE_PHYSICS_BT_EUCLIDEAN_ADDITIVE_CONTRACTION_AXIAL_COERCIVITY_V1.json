@@ -1,0 +1,274 @@
+{
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_ADDITIVE_CONTRACTION_AXIAL_COERCIVITY_V1",
+  "schema_version": "reverse-physics-bt-euclidean-additive-contraction-axial-coercivity-v1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "result_kind": "exact all-field finite-graph contraction and Ward identity, plus a sharp continuum one-dimensional coercivity theorem",
+  "question": "Can the unique-vacuum result be strengthened to exclude hidden sublevel topology and one-dimensional almost-stationary valleys?",
+  "answer": "Yes. Adding a positive constant to Omega and restoring the scale gauge gives an explicit monotone contraction of every finite-graph BT action sublevel to the vacuum. Its infinitesimal vector field gives an exact reciprocal-field-weighted Gibbs Ward identity. In the continuum sector depending on one periodic coordinate, two ordinary Poincare inequalities prove the sharp free-scale bound ||grad A||^2>=k_1^4||R||^2. Therefore an obstruction to uniform coercivity must be genuinely multidimensional; the full Witten and interacting H^-1 estimates are not proved.",
+  "additive_positive_field_contraction": {
+    "gauge": "prod_x Omega_x=1, equivalently sum_x log(Omega_x)=0",
+    "ungauged_homotopy": "Omega_x(s)=(1-s)*Omega_x+s, 0<=s<=1",
+    "gauge_restoration": "divide Omega(s) by its geometric mean; residuals and action are invariant under this common rescaling",
+    "residual_identity": "r_x(s)=r_x(0)*(1-s)*Omega_x/((1-s)*Omega_x+s)",
+    "action_derivative": "dA/ds=-sum_x r_x(0)^2*(1-s)*Omega_x^2/((1-s)*Omega_x+s)^3",
+    "strictness": "the derivative is negative for 0<=s<1 unless every residual vanishes; connectedness then gives the vacuum",
+    "topological_conclusion": "the full gauge quotient and every action sublevel strongly deformation retract to the vacuum",
+    "exact_fixture": {
+      "graph": "four-cycle",
+      "omega": [
+        {
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "numerator": 2,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 2
+        }
+      ],
+      "residual": [
+        {
+          "numerator": 1,
+          "denominator": 2
+        },
+        {
+          "numerator": -1,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 2
+        },
+        {
+          "numerator": 2,
+          "denominator": 1
+        }
+      ],
+      "s": {
+        "numerator": 1,
+        "denominator": 3
+      },
+      "deformed_omega_before_gauge_rescaling": [
+        {
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "numerator": 5,
+          "denominator": 3
+        },
+        {
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "numerator": 2,
+          "denominator": 3
+        }
+      ],
+      "deformation_factors": [
+        {
+          "numerator": 2,
+          "denominator": 3
+        },
+        {
+          "numerator": 4,
+          "denominator": 5
+        },
+        {
+          "numerator": 2,
+          "denominator": 3
+        },
+        {
+          "numerator": 1,
+          "denominator": 2
+        }
+      ],
+      "deformed_residual": [
+        {
+          "numerator": 1,
+          "denominator": 3
+        },
+        {
+          "numerator": -4,
+          "denominator": 5
+        },
+        {
+          "numerator": 1,
+          "denominator": 3
+        },
+        {
+          "numerator": 1,
+          "denominator": 1
+        }
+      ],
+      "residual_formula_matches": true,
+      "initial_action": {
+        "numerator": 11,
+        "denominator": 4
+      },
+      "deformed_action": {
+        "numerator": 419,
+        "denominator": 450
+      },
+      "strict_action_drop": {
+        "numerator": 1637,
+        "denominator": 900
+      },
+      "action_derivative_at_zero": {
+        "numerator": -9,
+        "denominator": 1
+      }
+    }
+  },
+  "reciprocal_field_ward_identity": {
+    "carrier": "H={psi:sum_x psi_x=0}",
+    "projection": "P_H=I-(1/N)*1*1^T",
+    "vector_field": "X(psi)=P_H*exp(-psi)=P_H*Omega^(-1)",
+    "divergence": "div_H X=-(1-1/N)*sum_x Omega_x^(-1)",
+    "gradient_pairing": "X dot grad A=-sum_x r_x^2/Omega_x",
+    "gibbs_measure": "dmu=Z^(-1)*exp[-A(psi)/lambda^2] dpsi on H",
+    "identity": "E_mu[sum_x r_x^2/Omega_x]=lambda^2*(1-1/N)*E_mu[sum_x 1/Omega_x]",
+    "normalized_form": "the reciprocal-field-size-biased mean residual square is exactly lambda^2*(1-1/N)",
+    "scope": "an exact actual-Gibbs finite-volume identity with a uniform right-hand coefficient, not an unweighted moment bound"
+  },
+  "continuum_axial_coercivity": {
+    "scope": "C4 periodic fields psi on a circle of length ell, embedded constantly in all spectator coordinates",
+    "definitions": "u=psi', R=u'+u^2, j=u''-2*u^3, E=delta A/delta psi=j'",
+    "first_identity": "||R||_2^2=X+Y, X=||u'||_2^2, Y=||u||_4^4",
+    "pairing": "-<j-mean(j),u>=X+2Y and mean(u)=0",
+    "first_poincare_step": "||j-mean(j)||_2^2 >= (X+2Y)^2/||u||_2^2 >= k_1^2*(X+Y)",
+    "second_poincare_step": "||E||_2^2=||j'||_2^2 >= k_1^2*||j-mean(j)||_2^2",
+    "theorem": "||E||_2^2>=k_1^4*||R||_2^2, k_1=2*pi/ell",
+    "sharpness": "the quotient tends to k_1^4 for an infinitesimal lowest Fourier mode",
+    "exact_fixture": {
+      "period": "2*pi",
+      "profile": "u=psi'=a*sin(x)",
+      "amplitude": {
+        "numerator": 1,
+        "denominator": 1
+      },
+      "residual": "R=u'+u^2=a*cos(x)+a^2*sin(x)^2",
+      "action_gradient": "E=(u''-2*u^3)'=-a*cos(x)-6*a^3*sin(x)^2*cos(x)",
+      "residual_norm_squared_average": {
+        "numerator": 7,
+        "denominator": 8
+      },
+      "gradient_norm_squared_average": {
+        "numerator": 17,
+        "denominator": 4
+      },
+      "quotient": {
+        "numerator": 34,
+        "denominator": 7
+      },
+      "strict_gap_above_sharp_constant_one": {
+        "numerator": 27,
+        "denominator": 8
+      }
+    }
+  },
+  "multidimensional_hodge_gate": {
+    "definitions": "R=Delta psi+|grad psi|^2, j=grad R-2*R*grad psi, E=delta A/delta psi=div j",
+    "curl_identity": "d(j_flat)=-2*dR wedge dpsi",
+    "one_dimensional_reason": "on a circle there is no transverse two-form, so after subtracting its mean j is controlled by div j through Poincare",
+    "higher_dimensional_failure_mode": "div j controls only the exact Hodge component; the transverse component generated by dR wedge dpsi can carry current without appearing in E",
+    "required_estimate": "control the transverse/curl component by div j and R on the actual Gibbs ensemble, or construct a sequence where it dominates",
+    "status": "OPEN"
+  },
+  "method_disposition": {
+    "finite_volume_sublevel_topology": "CONTRACTIBLE",
+    "finite_volume_false_vacua_or_saddles": "RULED_OUT",
+    "reciprocal_size_biased_residual_identity": "PROVED",
+    "continuum_one_dimensional_gradient_domination": "PROVED",
+    "multidimensional_transverse_current_control": "OPEN",
+    "full_multidimensional_sharp_gradient_domination": "OBSTRUCTED_BY_PREDECESSOR",
+    "weaker_full_multidimensional_gradient_domination": "OPEN",
+    "volume_uniform_witten_coercivity": "OPEN",
+    "interacting_h_minus_one_bound": "OPEN",
+    "continuum_reconstruction": "NOT_ESTABLISHED",
+    "born_rule": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED"
+  },
+  "missing_object_ledger": [
+    "a multidimensional estimate controlling transverse/cycle current cancellation",
+    "a positive L-uniform Witten/Poincare bound or a normalized low-Rayleigh sequence",
+    "an L-uniform interacting H^-1 second moment or an actual divergence sequence"
+  ],
+  "next_gate": "Use the exact contraction flow to split configurations into a small-oscillation region, where the free two-Poincare estimate is stable, and a multidimensional transverse-current region. Prove the latter is Gibbs-rare with the weighted Ward identity, or build a growing-volume field for which the normalized gradient quotient and full Witten Rayleigh quotient both collapse.",
+  "does_not_establish": [
+    "a full multidimensional volume-uniform gradient bound",
+    "a Poincare inequality or Witten one-form coercivity",
+    "an unweighted residual, field, or H^-1 moment estimate",
+    "tightness or a continuum BT measure",
+    "a Born rule or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "provenance": {
+    "repository_base_commit": "c6ac34fc7baf42b392afb2f4ebfa921bea2fc40d",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_UNIQUE_CRITICAL_POINT_GRADIENT_GATE_V1.json",
+        "sha256": "606ef7f58477b9eab18b41a1e83eb11d6b298129a1f9da1e96099487d9209c56"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_AFFINE_VIRIAL_ACTION_DENSITY_V1.json",
+        "sha256": "5ca8a2a7bc0d48300b0af031990e3c9c177fdec0d35f763666d2e397b495e1e0"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LATTICE_PILOT_V1.json",
+        "sha256": "4171ff54d9a92f7555337e8865029a7dbb65aaf0b4cf930017732fb0c6051320"
+      }
+    ],
+    "arithmetic": "Python Fraction arithmetic for the cycle homotopy fixture and period-2pi trigonometric moment fixture; analytic inequalities use exact integration by parts and Poincare constants"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_additive_contraction_axial_coercivity.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_additive_contraction_axial_coercivity.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_additive_contraction_axial_coercivity"
+  ],
+  "tier_receipt": {
+    "tier_0": "parse, strict schema, deterministic generation, diff check, and staged-diff inspection",
+    "tier_1": "exact producer, independent edge/Fourier verifier, unit tests, and mutation rejection",
+    "tier_2": "predecessors checked by content hash; no shared operator or generated chain changed",
+    "tier_3": "not run: no H^-1 theorem, reconstruction promotion, freeze, release, or shared-core change",
+    "memory_policy": "all Python commands run sequentially under a 500000 KiB virtual-memory ceiling"
+  },
+  "checks": {
+    "ok": true,
+    "passed": 12,
+    "total": 12,
+    "failures": [],
+    "details": {
+      "positive_field_fixture": true,
+      "residual_deformation_formula_exact": true,
+      "fixture_action_strictly_decreases": true,
+      "fixture_derivative_is_minus_nine": true,
+      "trig_moments_exact": true,
+      "axial_fixture_residual_norm": true,
+      "axial_fixture_gradient_norm": true,
+      "axial_fixture_strict_gap": true,
+      "all_sublevels_contract_to_vacuum": true,
+      "weighted_gibbs_ward_identity_is_volume_uniform": true,
+      "multidimensional_witten_and_h_minus_one_gates_remain_open": true,
+      "no_born_krein_or_lorentzian_promotion": true
+    }
+  },
+  "report": "reverse_physics/reports/bt-euclidean-additive-contraction-axial-coercivity.md",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-additive-contraction-axial-coercivity-v1.schema.json",
+  "verifier": "reverse_physics/verify_bt_euclidean_additive_contraction_axial_coercivity.py"
+}

@@ -1,0 +1,212 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-additive-contraction-axial-coercivity-v1.schema.json",
+  "title": "BT additive contraction and axial coercivity certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "additive_positive_field_contraction", "reciprocal_field_ward_identity",
+    "continuum_axial_coercivity", "multidimensional_hodge_gate", "method_disposition",
+    "missing_object_ledger", "next_gate", "does_not_establish",
+    "provenance", "verification_commands", "tier_receipt", "checks",
+    "report", "schema", "verifier"
+  ],
+  "$defs": {
+    "fraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "text": {"type": "string", "minLength": 1}
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_ADDITIVE_CONTRACTION_AXIAL_COERCIVITY_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-additive-contraction-axial-coercivity-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"},
+        {"const": "REDUCED-MODE"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "additive_positive_field_contraction": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "gauge", "ungauged_homotopy", "gauge_restoration",
+        "residual_identity", "action_derivative", "strictness",
+        "topological_conclusion", "exact_fixture"
+      ],
+      "properties": {
+        "gauge": {"$ref": "#/$defs/text"},
+        "ungauged_homotopy": {"const": "Omega_x(s)=(1-s)*Omega_x+s, 0<=s<=1"},
+        "gauge_restoration": {"$ref": "#/$defs/text"},
+        "residual_identity": {"const": "r_x(s)=r_x(0)*(1-s)*Omega_x/((1-s)*Omega_x+s)"},
+        "action_derivative": {"$ref": "#/$defs/text"},
+        "strictness": {"$ref": "#/$defs/text"},
+        "topological_conclusion": {"$ref": "#/$defs/text"},
+        "exact_fixture": {
+          "type": "object", "additionalProperties": false,
+          "required": [
+            "graph", "omega", "residual", "s",
+            "deformed_omega_before_gauge_rescaling", "deformation_factors",
+            "deformed_residual", "residual_formula_matches", "initial_action",
+            "deformed_action", "strict_action_drop", "action_derivative_at_zero"
+          ],
+          "properties": {
+            "graph": {"const": "four-cycle"},
+            "omega": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/fraction"}},
+            "residual": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/fraction"}},
+            "s": {"$ref": "#/$defs/fraction"},
+            "deformed_omega_before_gauge_rescaling": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/fraction"}},
+            "deformation_factors": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/fraction"}},
+            "deformed_residual": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/fraction"}},
+            "residual_formula_matches": {"const": true},
+            "initial_action": {"$ref": "#/$defs/fraction"},
+            "deformed_action": {"$ref": "#/$defs/fraction"},
+            "strict_action_drop": {"$ref": "#/$defs/fraction"},
+            "action_derivative_at_zero": {"$ref": "#/$defs/fraction"}
+          }
+        }
+      }
+    },
+    "reciprocal_field_ward_identity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["carrier", "projection", "vector_field", "divergence", "gradient_pairing", "gibbs_measure", "identity", "normalized_form", "scope"],
+      "properties": {
+        "carrier": {"$ref": "#/$defs/text"},
+        "projection": {"$ref": "#/$defs/text"},
+        "vector_field": {"const": "X(psi)=P_H*exp(-psi)=P_H*Omega^(-1)"},
+        "divergence": {"$ref": "#/$defs/text"},
+        "gradient_pairing": {"$ref": "#/$defs/text"},
+        "gibbs_measure": {"$ref": "#/$defs/text"},
+        "identity": {"$ref": "#/$defs/text"},
+        "normalized_form": {"$ref": "#/$defs/text"},
+        "scope": {"$ref": "#/$defs/text"}
+      }
+    },
+    "continuum_axial_coercivity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scope", "definitions", "first_identity", "pairing", "first_poincare_step", "second_poincare_step", "theorem", "sharpness", "exact_fixture"],
+      "properties": {
+        "scope": {"$ref": "#/$defs/text"},
+        "definitions": {"$ref": "#/$defs/text"},
+        "first_identity": {"const": "||R||_2^2=X+Y, X=||u'||_2^2, Y=||u||_4^4"},
+        "pairing": {"$ref": "#/$defs/text"},
+        "first_poincare_step": {"$ref": "#/$defs/text"},
+        "second_poincare_step": {"$ref": "#/$defs/text"},
+        "theorem": {"const": "||E||_2^2>=k_1^4*||R||_2^2, k_1=2*pi/ell"},
+        "sharpness": {"$ref": "#/$defs/text"},
+        "exact_fixture": {
+          "type": "object", "additionalProperties": false,
+          "required": ["period", "profile", "amplitude", "residual", "action_gradient", "residual_norm_squared_average", "gradient_norm_squared_average", "quotient", "strict_gap_above_sharp_constant_one"],
+          "properties": {
+            "period": {"const": "2*pi"},
+            "profile": {"const": "u=psi'=a*sin(x)"},
+            "amplitude": {"$ref": "#/$defs/fraction"},
+            "residual": {"$ref": "#/$defs/text"},
+            "action_gradient": {"$ref": "#/$defs/text"},
+            "residual_norm_squared_average": {"$ref": "#/$defs/fraction"},
+            "gradient_norm_squared_average": {"$ref": "#/$defs/fraction"},
+            "quotient": {"$ref": "#/$defs/fraction"},
+            "strict_gap_above_sharp_constant_one": {"$ref": "#/$defs/fraction"}
+          }
+        }
+      }
+    },
+    "multidimensional_hodge_gate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["definitions", "curl_identity", "one_dimensional_reason", "higher_dimensional_failure_mode", "required_estimate", "status"],
+      "properties": {
+        "definitions": {"$ref": "#/$defs/text"},
+        "curl_identity": {"const": "d(j_flat)=-2*dR wedge dpsi"},
+        "one_dimensional_reason": {"$ref": "#/$defs/text"},
+        "higher_dimensional_failure_mode": {"$ref": "#/$defs/text"},
+        "required_estimate": {"$ref": "#/$defs/text"},
+        "status": {"const": "OPEN"}
+      }
+    },
+    "method_disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "finite_volume_sublevel_topology", "finite_volume_false_vacua_or_saddles",
+        "reciprocal_size_biased_residual_identity", "continuum_one_dimensional_gradient_domination",
+        "multidimensional_transverse_current_control",
+        "full_multidimensional_sharp_gradient_domination", "weaker_full_multidimensional_gradient_domination",
+        "volume_uniform_witten_coercivity", "interacting_h_minus_one_bound",
+        "continuum_reconstruction", "born_rule", "krein_reconstruction", "lorentzian_transfer"
+      ],
+      "properties": {
+        "finite_volume_sublevel_topology": {"const": "CONTRACTIBLE"},
+        "finite_volume_false_vacua_or_saddles": {"const": "RULED_OUT"},
+        "reciprocal_size_biased_residual_identity": {"const": "PROVED"},
+        "continuum_one_dimensional_gradient_domination": {"const": "PROVED"},
+        "multidimensional_transverse_current_control": {"const": "OPEN"},
+        "full_multidimensional_sharp_gradient_domination": {"const": "OBSTRUCTED_BY_PREDECESSOR"},
+        "weaker_full_multidimensional_gradient_domination": {"const": "OPEN"},
+        "volume_uniform_witten_coercivity": {"const": "OPEN"},
+        "interacting_h_minus_one_bound": {"const": "OPEN"},
+        "continuum_reconstruction": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "c6ac34fc7baf42b392afb2f4ebfa921bea2fc40d"},
+        "inputs": {
+          "type": "array", "minItems": 3, "maxItems": 3,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "tier_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "memory_policy"],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/text"}, "tier_1": {"$ref": "#/$defs/text"},
+        "tier_2": {"$ref": "#/$defs/text"}, "tier_3": {"$ref": "#/$defs/text"},
+        "memory_policy": {"$ref": "#/$defs/text"}
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true}, "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-additive-contraction-axial-coercivity.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-additive-contraction-axial-coercivity-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_additive_contraction_axial_coercivity.py"}
+  }
+}
