@@ -1,0 +1,254 @@
+{
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_MIXED_MODE_SHARP_GRADIENT_OBSTRUCTION_V1",
+  "schema_version": "reverse-physics-bt-euclidean-mixed-mode-sharp-gradient-obstruction-v1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "result_kind": "exact mixed-Fourier obstruction to the sharp free BT gradient coefficient",
+  "question": "Does the sharp coefficient retained by every coordinate-separable field extend to arbitrary mixed-coordinate fields on the continuum torus or lattice?",
+  "answer": "No. The forced cos(x)cos(y) harmonic lowers the continuum quotient below one, and the lattice formal coefficient is negative for every L>=8. Thus on every such L there are positive fields with ||grad A||^2<omega_L^2||r||^2. An exact rational 8^4 field verifies a finite-amplitude instance. This obstructs coefficient one, not every positive uniform coefficient and not the interacting H^-1 estimate.",
+  "continuum_theorem": {
+    "field": "psi=a(cos x+cos y)+d cos x cos y on the 2*pi periodic four-torus",
+    "residual": "R=Delta psi+|grad psi|^2",
+    "euler_field": "E=Delta R-2 div(R grad psi)",
+    "residual_norm_formula": "(20a^4+40a^2d^2-32a^2d+16a^2+5d^4+16d^2)/16",
+    "euler_norm_formula": "(36a^6+238a^4d^2-112a^4d+36a^4+144a^2d^4-116a^2d^3+124a^2d^2-48a^2d+4a^2+9d^6+36d^4+16d^2)/4",
+    "second_order_family": "d=b a^2",
+    "leading_gap": "||E||^2-||R||^2=a^4(3b^2-10b+31/4)+O(a^6)",
+    "completion": "3b^2-10b+31/4=3(b-5/3)^2-7/12",
+    "optimal_second_order_correction": "b=5/3 with leading gap -7a^4/12"
+  },
+  "lattice_theorem": {
+    "scope": "periodic four-dimensional L^4 lattices with L>=8",
+    "field_family": "psi=a(cos(theta*x1)+cos(theta*x2))+b*a^2*cos(theta*x1)cos(theta*x2), theta=2*pi/L",
+    "definitions": "r_x=sum_(y~x) exp(psi_y-psi_x)-8, A=||r||^2/2, omega_L=2-2cos(theta)",
+    "formal_gap": "||grad A||^2-omega_L^2||r||^2=a^4 omega_L^4 C_L(b)+O(a^5)",
+    "coefficient": "C_L(b)=3b^2-10b+c_L^4-(5/4)c_L^2-(3/2)c_L+19/2, c_L=cos(2*pi/L)",
+    "minimized_coefficient": "C_L(5/3)=(12c_L^4-15c_L^2-18c_L+14)/12<0 for every L>=8",
+    "sign_proof": "p'(c)=6(c-1)(8c^2+8c+3)<0 on [sqrt(2)/2,1), while p(sqrt(2)/2)=19/2-9sqrt(2)<0",
+    "conclusion": "for every L>=8, inf_(psi nonconstant) ||grad A||^2/(omega_L^2||r||^2)<1"
+  },
+  "exact_continuum_fixture": {
+    "period": "2*pi",
+    "field": "psi=(1/12)(cos x+cos y)+(1/90)cos x cos y",
+    "amplitude": {
+      "numerator": 1,
+      "denominator": 12
+    },
+    "mixed_coefficient": {
+      "numerator": 1,
+      "denominator": 90
+    },
+    "residual_norm_squared": {
+      "numerator": 5858509,
+      "denominator": 839808000
+    },
+    "euler_norm_squared": {
+      "numerator": 26307248191,
+      "denominator": 3779136000000
+    },
+    "euler_minus_residual": {
+      "numerator": -56042309,
+      "denominator": 3779136000000
+    },
+    "quotient": {
+      "numerator": 26307248191,
+      "denominator": 26363290500
+    }
+  },
+  "exact_lattice_fixture": {
+    "length": 8,
+    "four_dimensional_embedding": "Omega(x1,x2,x3,x4)=table[x1][x2], independent of x3,x4",
+    "scale_gauge": "multiply the table by its inverse geometric mean to impose sum log(Omega)=0; all residuals, gradients, norms, and ratios are unchanged",
+    "omega_table": [
+      [
+        111370,
+        109558,
+        105303,
+        101213,
+        99566,
+        101213,
+        105303,
+        109558
+      ],
+      [
+        109558,
+        107815,
+        103721,
+        99783,
+        98196,
+        99783,
+        103721,
+        107815
+      ],
+      [
+        105303,
+        103721,
+        100000,
+        96412,
+        94964,
+        96412,
+        100000,
+        103721
+      ],
+      [
+        101213,
+        99783,
+        96412,
+        93156,
+        91839,
+        93156,
+        96412,
+        99783
+      ],
+      [
+        99566,
+        98196,
+        94964,
+        91839,
+        90575,
+        91839,
+        94964,
+        98196
+      ],
+      [
+        101213,
+        99783,
+        96412,
+        93156,
+        91839,
+        93156,
+        96412,
+        99783
+      ],
+      [
+        105303,
+        103721,
+        100000,
+        96412,
+        94964,
+        96412,
+        100000,
+        103721
+      ],
+      [
+        109558,
+        107815,
+        103721,
+        99783,
+        98196,
+        99783,
+        103721,
+        107815
+      ]
+    ],
+    "residual_norm_squared_per_transverse_copy": {
+      "numerator": 67330655111888649376319725213559660775920150958130250540809851771759776684139437298275446741729370249754369715711055519681,
+      "denominator": 1146239473770751083018205772053710013426071232207379003532074842624710267018415177210764735241097646381593434093955625000000
+    },
+    "gradient_norm_squared_per_transverse_copy": {
+      "numerator": 211791051443476469279170994096914923840804229750567860311857390807699148247867842545149163300971348244941338502639231215910784399089783423396140964245101843467656929635278767930128800205575875613937247615710170298627040175570435286731792857318187,
+      "denominator": 10510919449841986880159936792820340104187786651999544042221549252015269092837957385466952652442610678751811089829417980566056797008412355914585486958313285094260455418742129091097892617347024391121346668799895804284441468481275753125000000000000000
+    },
+    "raw_gradient_to_residual_ratio": {
+      "numerator": 211791051443476469279170994096914923840804229750567860311857390807699148247867842545149163300971348244941338502639231215910784399089783423396140964245101843467656929635278767930128800205575875613937247615710170298627040175570435286731792857318187,
+      "denominator": 617416437472729414748863757997561203315535438961827934355748291898860120880342610581653185151832688286371059674695110651941483470712923965602881596721441511701404558748683722798296735384345089193853451352656884010072812531455322522625245000000000
+    },
+    "rational_upper": {
+      "numerator": 35,
+      "denominator": 102
+    },
+    "rational_upper_minus_ratio": {
+      "numerator": 1148010718488274955798355338219980713618154851009325106956059012465184921578571792107803935844428173161760224187881465841985461299071601615746255375010812641358788900915994844541352913889801527211923423425594982098390115458648174206783925590821,
+      "denominator": 10496079437036400050730683885958540456364102462351074884047720962280622054965824379888104147581155700868308014469816881083005219002119707415248987144264505698923877498727623287571044501533866516295508672995167028171237813034740482884629165000000000
+    },
+    "sqrt2_upper": {
+      "numerator": 577,
+      "denominator": 408
+    },
+    "sqrt2_upper_square_excess": {
+      "numerator": 1,
+      "denominator": 1
+    },
+    "comparison": "||grad A||^2/||r||^2 < 35/102 < (2-sqrt(2))^2=omega_8^2"
+  },
+  "method_disposition": {
+    "separable_sharp_free_coefficient": "PROVED_BY_PREDECESSOR",
+    "arbitrary_nonseparable_coefficient_one": "OBSTRUCTED",
+    "lattice_coefficient_one_every_L_ge_8": "OBSTRUCTED",
+    "positive_volume_uniform_gradient_coefficient": "OPEN",
+    "normalized_full_witten_coercivity": "OPEN",
+    "interacting_h_minus_one_bound": "OPEN",
+    "actual_interacting_h_minus_one_divergence": "NOT_ESTABLISHED",
+    "continuum_reconstruction": "NOT_ESTABLISHED",
+    "born_rule": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED"
+  },
+  "missing_object_ledger": [
+    "a positive lower bound or a collapsing sequence for the full lattice gradient quotient",
+    "a normalized full-Witten low-Rayleigh family with lowest-mode overlap, or Witten coercivity",
+    "the actual volume-uniform interacting H^-1 moment theorem or controlled divergence"
+  ],
+  "next_gate": "Do not extend the separable coefficient-one proof to arbitrary fields. Insert the forced mixed harmonic into the connection-corrected Witten cyclic sector and test whether the negative deterministic resonance is absorbed by the connection term or produces a normalized low-Rayleigh direction.",
+  "does_not_establish": [
+    "collapse of the full lattice gradient quotient to zero",
+    "failure of every positive volume-uniform deterministic coefficient",
+    "a Poincare inequality or obstruction to every Witten-coercivity proof",
+    "boundedness or divergence of the actual interacting H^-1 moment",
+    "tightness, continuum identification, or a continuum OS theorem",
+    "a Born rule, Krein reconstruction, or anything LORENTZIAN-CAUSAL"
+  ],
+  "provenance": {
+    "repository_base_commit": "6eb99119ea3164fbd1e755bd1736d70115359c20",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_SEPARABLE_PRODUCT_GRADIENT_COERCIVITY_V1.json",
+        "sha256": "1c87cd762a463c0da55311fd869452772adcde9f9191057576e8555ab72ab26d"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_UNIQUE_CRITICAL_POINT_GRADIENT_GATE_V1.json",
+        "sha256": "606ef7f58477b9eab18b41a1e83eb11d6b298129a1f9da1e96099487d9209c56"
+      }
+    ],
+    "arithmetic": "exact rational continuum Fourier norms; exact formal lattice Fourier series in the cyclic shift variable; exact Fraction enumeration of an integer-valued positive 8x8 profile embedded in 8^4"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_mixed_mode_sharp_gradient_obstruction.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_mixed_mode_sharp_gradient_obstruction.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_mixed_mode_sharp_gradient_obstruction"
+  ],
+  "tier_receipt": {
+    "tier_0": "Python compilation and strict JSON/schema parsing passed; the planning import accepted 1693 nodes with zero invalid items and zero malformed events in 6.61 s at 182720 KB peak RSS; scoped diff and staged-diff checks are required before commit",
+    "tier_1": "exact producer passed 11/11 in 0.03 s at 20624 KB, the nonimporting formal-series/Fraction verifier passed 14/14 in 0.28 s at 33308 KB, and eleven focused tests including five mutation rejections passed in 1.43 s at 33256 KB",
+    "tier_2": "the unchanged separable-coercivity and unique-critical-point inputs are content-hash pinned",
+    "tier_3": "not required absent an H^-1, reconstruction, freeze, release, or shared-core lifecycle promotion",
+    "memory_policy": "all Python commands run sequentially under a 500000 KiB virtual-memory ceiling; Go used GOMEMLIMIT=300MiB and GOGC=50; the advisory Science Forge shadow rail was not rerun after its memory-capped external-indexing abort earlier in this session, and that skip is not a pass"
+  },
+  "checks": {
+    "ok": true,
+    "passed": 11,
+    "total": 11,
+    "failures": [],
+    "details": {
+      "continuum_exact_gap_is_negative": true,
+      "continuum_exact_quotient_is_below_one": true,
+      "mixed_harmonic_minimizer_is_five_thirds": true,
+      "lattice_coefficient_polynomial_is_negative_for_every_L_ge_8": true,
+      "lattice_L8_rational_margin_is_positive": true,
+      "sqrt2_upper_is_certified_by_unit_square_excess": true,
+      "rational_bridge_lies_below_omega8_squared": true,
+      "coefficient_one_is_obstructed_on_unbounded_lattice_volumes": true,
+      "positive_uniform_coefficient_remains_open": true,
+      "interacting_h_minus_one_remains_open": true,
+      "no_reconstruction_or_lorentzian_promotion": true
+    }
+  },
+  "report": "reverse_physics/reports/bt-euclidean-mixed-mode-sharp-gradient-obstruction.md",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-mixed-mode-sharp-gradient-obstruction-v1.schema.json",
+  "verifier": "reverse_physics/verify_bt_euclidean_mixed_mode_sharp_gradient_obstruction.py"
+}

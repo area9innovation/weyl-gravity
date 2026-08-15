@@ -1,0 +1,249 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-mixed-mode-sharp-gradient-obstruction-v1.schema.json",
+  "title": "BT Euclidean mixed-mode sharp-gradient obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "continuum_theorem", "lattice_theorem", "exact_continuum_fixture",
+    "exact_lattice_fixture", "method_disposition", "missing_object_ledger",
+    "next_gate", "does_not_establish", "provenance", "verification_commands",
+    "tier_receipt", "checks", "report", "schema", "verifier"
+  ],
+  "$defs": {
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "string": {"type": "string", "minLength": 1}
+  },
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EUCLIDEAN_MIXED_MODE_SHARP_GRADIENT_OBSTRUCTION_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-euclidean-mixed-mode-sharp-gradient-obstruction-v1"
+    },
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"},
+        {"const": "REDUCED-MODE"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/string"},
+    "question": {"$ref": "#/$defs/string"},
+    "answer": {"$ref": "#/$defs/string"},
+    "continuum_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "field", "residual", "euler_field", "residual_norm_formula",
+        "euler_norm_formula", "second_order_family", "leading_gap",
+        "completion", "optimal_second_order_correction"
+      ],
+      "properties": {
+        "field": {"$ref": "#/$defs/string"},
+        "residual": {"$ref": "#/$defs/string"},
+        "euler_field": {"$ref": "#/$defs/string"},
+        "residual_norm_formula": {"$ref": "#/$defs/string"},
+        "euler_norm_formula": {"$ref": "#/$defs/string"},
+        "second_order_family": {"const": "d=b a^2"},
+        "leading_gap": {
+          "const": "||E||^2-||R||^2=a^4(3b^2-10b+31/4)+O(a^6)"
+        },
+        "completion": {
+          "const": "3b^2-10b+31/4=3(b-5/3)^2-7/12"
+        },
+        "optimal_second_order_correction": {
+          "const": "b=5/3 with leading gap -7a^4/12"
+        }
+      }
+    },
+    "lattice_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope", "field_family", "definitions", "formal_gap", "coefficient",
+        "minimized_coefficient", "sign_proof", "conclusion"
+      ],
+      "properties": {
+        "scope": {"const": "periodic four-dimensional L^4 lattices with L>=8"},
+        "field_family": {"$ref": "#/$defs/string"},
+        "definitions": {"$ref": "#/$defs/string"},
+        "formal_gap": {"$ref": "#/$defs/string"},
+        "coefficient": {"$ref": "#/$defs/string"},
+        "minimized_coefficient": {"$ref": "#/$defs/string"},
+        "sign_proof": {"$ref": "#/$defs/string"},
+        "conclusion": {
+          "const": "for every L>=8, inf_(psi nonconstant) ||grad A||^2/(omega_L^2||r||^2)<1"
+        }
+      }
+    },
+    "exact_continuum_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "period", "field", "amplitude", "mixed_coefficient",
+        "residual_norm_squared", "euler_norm_squared", "euler_minus_residual",
+        "quotient"
+      ],
+      "properties": {
+        "period": {"const": "2*pi"},
+        "field": {"$ref": "#/$defs/string"},
+        "amplitude": {"$ref": "#/$defs/fraction"},
+        "mixed_coefficient": {"$ref": "#/$defs/fraction"},
+        "residual_norm_squared": {"$ref": "#/$defs/fraction"},
+        "euler_norm_squared": {"$ref": "#/$defs/fraction"},
+        "euler_minus_residual": {"$ref": "#/$defs/fraction"},
+        "quotient": {"$ref": "#/$defs/fraction"}
+      }
+    },
+    "exact_lattice_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "length", "four_dimensional_embedding", "scale_gauge", "omega_table",
+        "residual_norm_squared_per_transverse_copy",
+        "gradient_norm_squared_per_transverse_copy",
+        "raw_gradient_to_residual_ratio", "rational_upper",
+        "rational_upper_minus_ratio", "sqrt2_upper",
+        "sqrt2_upper_square_excess", "comparison"
+      ],
+      "properties": {
+        "length": {"const": 8},
+        "four_dimensional_embedding": {"$ref": "#/$defs/string"},
+        "scale_gauge": {"$ref": "#/$defs/string"},
+        "omega_table": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {
+            "type": "array",
+            "minItems": 8,
+            "maxItems": 8,
+            "items": {"type": "integer", "minimum": 1}
+          }
+        },
+        "residual_norm_squared_per_transverse_copy": {"$ref": "#/$defs/fraction"},
+        "gradient_norm_squared_per_transverse_copy": {"$ref": "#/$defs/fraction"},
+        "raw_gradient_to_residual_ratio": {"$ref": "#/$defs/fraction"},
+        "rational_upper": {"$ref": "#/$defs/fraction"},
+        "rational_upper_minus_ratio": {"$ref": "#/$defs/fraction"},
+        "sqrt2_upper": {"$ref": "#/$defs/fraction"},
+        "sqrt2_upper_square_excess": {"$ref": "#/$defs/fraction"},
+        "comparison": {
+          "const": "||grad A||^2/||r||^2 < 35/102 < (2-sqrt(2))^2=omega_8^2"
+        }
+      }
+    },
+    "method_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "separable_sharp_free_coefficient",
+        "arbitrary_nonseparable_coefficient_one",
+        "lattice_coefficient_one_every_L_ge_8",
+        "positive_volume_uniform_gradient_coefficient",
+        "normalized_full_witten_coercivity", "interacting_h_minus_one_bound",
+        "actual_interacting_h_minus_one_divergence", "continuum_reconstruction",
+        "born_rule", "krein_reconstruction", "lorentzian_transfer"
+      ],
+      "properties": {
+        "separable_sharp_free_coefficient": {"const": "PROVED_BY_PREDECESSOR"},
+        "arbitrary_nonseparable_coefficient_one": {"const": "OBSTRUCTED"},
+        "lattice_coefficient_one_every_L_ge_8": {"const": "OBSTRUCTED"},
+        "positive_volume_uniform_gradient_coefficient": {"const": "OPEN"},
+        "normalized_full_witten_coercivity": {"const": "OPEN"},
+        "interacting_h_minus_one_bound": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_divergence": {"const": "NOT_ESTABLISHED"},
+        "continuum_reconstruction": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {
+      "type": "array", "minItems": 1, "items": {"$ref": "#/$defs/string"}
+    },
+    "next_gate": {"$ref": "#/$defs/string"},
+    "does_not_establish": {
+      "type": "array", "minItems": 1, "items": {"$ref": "#/$defs/string"}
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {
+          "const": "6eb99119ea3164fbd1e755bd1736d70115359c20"
+        },
+        "inputs": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/string"}
+      }
+    },
+    "verification_commands": {
+      "type": "array", "minItems": 3, "items": {"$ref": "#/$defs/string"}
+    },
+    "tier_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "memory_policy"],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/string"},
+        "tier_1": {"$ref": "#/$defs/string"},
+        "tier_2": {"$ref": "#/$defs/string"},
+        "tier_3": {"$ref": "#/$defs/string"},
+        "memory_policy": {"$ref": "#/$defs/string"}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {
+          "type": "object", "minProperties": 1,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-euclidean-mixed-mode-sharp-gradient-obstruction.md"
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-euclidean-mixed-mode-sharp-gradient-obstruction-v1.schema.json"
+    },
+    "verifier": {
+      "const": "reverse_physics/verify_bt_euclidean_mixed_mode_sharp_gradient_obstruction.py"
+    }
+  }
+}
