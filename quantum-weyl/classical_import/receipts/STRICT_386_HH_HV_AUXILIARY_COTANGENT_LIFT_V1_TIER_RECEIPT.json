@@ -1,0 +1,143 @@
+{
+  "result_id": "STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1_TIER_RECEIPT",
+  "receipt_id": "STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1_TIER_RECEIPT",
+  "result_kind": "AFFECTED_CERTIFICATE_CHAIN_TEST_RECEIPT",
+  "lifecycle": "CLASSIFIED",
+  "recorded_at": "2026-08-15",
+  "repository_base_commit": "229fd0f2147e8ed611c5147328459f7678b1f605",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "result_ids": [
+    "CLASSICAL_HH_HV_AUXILIARY_SHIFT_V1",
+    "STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1",
+    "CLASSICAL_IMPORT_GATE_V11_RECONCILIATION",
+    "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V29",
+    "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
+    "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1"
+  ],
+  "output_hashes": {
+    "classical_hh_hv_auxiliary_shift": "81f2373e018214e8491140747db6fc54d0fc66a8107240df5598f302d68048af",
+    "classical_hh_hv_report": "50a6151255d0648d1ad1adee0ad144a5fb78e6ba81c9629205194c859d4b0526",
+    "strict_386_hh_hv_auxiliary_cotangent_lift": "fa911ad8bf926f60ff3f8896ac09a05f738e0f95ac9279433b20145ba5b9a77b",
+    "strict_386_hh_hv_report": "d2aa3bbbce28b2166b4fc2d7fea481471c45df4cf9db19f533eb7144dcc38f25",
+    "classical_import_gate_v11": "6401cc9deeacdabd9d959c0b1752c60b42ddb4060ac84c52d8ece3b972d93205",
+    "classical_import_gate_v11_report": "03332a935e9ffef764e27c63eb69fc5ae85f8c79196c49bbf288f901357a7859",
+    "completion_atlas_v29": "9c521668d10c4b6c7b5cde8e67eafb9e2c5bd70cba3158574110cf2f32b0c15c",
+    "completion_atlas_v29_report": "0ed107285f93ed99411e670206c304a91a934df5606222a3cd70f5b10a4202d4",
+    "static_site_result": "5dc419c39f9c5481672fa4b8db218a1a9f797f06b0efe54943ba01f2f53dd84d",
+    "static_site_manifest": "cde1b34bbb3008442bed1a85c54e4f04d437680769453c857ee0fb09cac30f22",
+    "paper_claim_map": "1c9b7129b5786753fd4be5b98c5d4ae1591bbae6814d7c19f8f3ce33b51e2764",
+    "paper_appendices": "4999440cb9f422c3da0546678df7d5225e86fd83ad317f0f7503e8858ecd2752",
+    "paper_pdf": "bd0d7dd88d0e7a1af5bb57c245937600dd5cec9ea0712f572df79b68ab22b345"
+  },
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        {
+          "command": "python3 -m py_compile <changed Python producers, checkers, verifiers, site and paper generators>",
+          "status": "PASS"
+        },
+        {
+          "command": "all changed and generated JSON parsed through their producers and verifiers",
+          "status": "PASS"
+        },
+        {
+          "command": "git diff --check -- <scoped paths>",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS_WITH_NONCERTIFYING_TOOL_GAP_RECORDED",
+      "checks": [
+        {
+          "command": "python3 d_quotient_classical/nonminimal_identity/check_classical_hh_hv_auxiliary_shift_v1.py",
+          "elapsed_seconds": 5.78,
+          "status": "PASS_61_STRATIFIED_HH_PAIRS_ALL_HV_AND_1200_WEYL_CHECKS"
+        },
+        {
+          "command": "python3 d_quotient_classical/nonminimal_identity/verify_classical_hh_hv_auxiliary_shift_v1.py",
+          "elapsed_seconds": 5.75,
+          "status": "PASS_SCHEMA_AND_INDEPENDENT_BIVARIATE_REPLAY"
+        },
+        {
+          "command": "python3 -m unittest d_quotient_classical.nonminimal_identity.tests.test_classical_hh_hv_auxiliary_shift_v1",
+          "elapsed_seconds": 34.65,
+          "status": "PASS_6_TESTS"
+        },
+        {
+          "command": "python3 -m unittest quantum-weyl.classical_import.tests.test_strict_386_hh_hv_auxiliary_cotangent_lift quantum-weyl.classical_import.tests.test_classical_import_gate_v11_reconciliation foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v29",
+          "status": "PASS_15_TESTS"
+        },
+        {
+          "command": "python3 -m unittest foundations.tests.test_matrix_site",
+          "status": "PASS_10_TESTS"
+        },
+        {
+          "command": "python3 paper/verify_21_reverse_foundations_claim_map.py",
+          "status": "PASS_59_CLAIMS_AUTHORITY_HASHES_APPENDICES_AND_BOUNDARIES"
+        },
+        {
+          "command": "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (two passes)",
+          "status": "PASS_71_PAGES_WITH_NONFATAL_EXISTING_LAYOUT_WARNINGS"
+        },
+        {
+          "command": "node --check foundations/matrix_site_v2_assets/app-v2.js",
+          "status": "NOT_RUN_NOT_A_PASS",
+          "reason": "The node executable is unavailable. Python static-site schema, token, deterministic-build, manifest and boundary checks pass, but do not substitute for a JavaScript parser."
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "checks": [
+        {
+          "command": "python3 d_quotient_classical/nonminimal_identity/check_classical_hh_hv_auxiliary_shift_v1.py --exhaustive",
+          "elapsed_seconds": 98.48,
+          "status": "PASS_ALL_1875_ELIGIBLE_HH_PAIRS_ALL_HV_AND_1200_WEYL_CHECKS"
+        },
+        {
+          "command": "python3 quantum-weyl/classical_import/verify_strict_386_hh_hv_auxiliary_cotangent_lift.py",
+          "elapsed_seconds": 0.24,
+          "status": "PASS_3907_COEFFICIENT_INDEPENDENT_EULER_ADJOINT_REPLAY"
+        },
+        {
+          "command": "python3 quantum-weyl/classical_import/verify_classical_import_gate_v11_reconciliation.py",
+          "elapsed_seconds": 0.11,
+          "status": "PASS_GATE_FAIL_CLOSED_BOUNDARY"
+        },
+        {
+          "command": "python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v29.py",
+          "elapsed_seconds": 0.11,
+          "status": "PASS_ATLAS_PROJECTION_AND_ROUTE_FRONTIER"
+        },
+        {
+          "command": "python3 foundations/verify_matrix_site_v2.py",
+          "status": "PASS_SCHEMA_DETERMINISM_MANIFEST_AND_BOUNDARIES"
+        }
+      ],
+      "criterion": "The affected chain from the authoritative nonlinear cylinder shift through the independently reconstructed field tables, exact Euler-adjoint lift, Gate V11, Atlas V29, static explorer and Paper 21 was rebuilt. The exhaustive bivariate replay is separated from the fast per-commit rail because it exceeds 60 seconds."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, release, theorem-lifecycle promotion or shared-core-algebra change is made. Gate A, exhaustive nonlinear family census, source q2/q3 pullback, Hadamard construction, renormalized products, QME restoration, residual transfer and Lorentzian certification remain false."
+    }
+  },
+  "science_forge_shadow": {
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": 3.01,
+    "maximum_resident_kib": 343216,
+    "process_exit": 0,
+    "certifying_status": "ADVISORY_NON_CERTIFYING_WITH_FINDINGS",
+    "findings": [
+      "The local bridge audit still resolves through the bp2transformer tree rather than this repository.",
+      "That external bridge audit fails because SymPy is unavailable.",
+      "The corpus census reports 1849 certificates against the 2026-07-19 baseline of 976.",
+      "The Forge binary is an unpinned dirty development build whose embedded revision differs from the current forge/lib checkout."
+    ]
+  },
+  "claim_boundary": "The exact unit-cylinder source-to-split shift has 1392 hh, 76 hv and 22 vv field coefficients. Its independently derived 386-row formal-adjoint lift has 3907 collected cotangent coefficients and zero coefficient defects, completing four of seven known-required cubic block families and the full quadratic auxiliary BV lift. This is not an exhaustive nonlinear BV census: three Diff auxiliary representation families and nonlinear Weyl/boost ghost-antifield terms remain. Gate V11 remains FAIL_CLOSED with zero accepted hashes. No complete source q2/q3 pullback, causal lambda-squared closure, full Lorentzian off-shell BV propagator, full-complex Hadamard state, renormalized Lorentzian products, causal pAQFT construction, QME restoration, residual transfer or Lorentzian quantum theory is claimed."
+}

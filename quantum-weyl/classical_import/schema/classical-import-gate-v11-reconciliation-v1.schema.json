@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/classical-import-gate-v11-reconciliation-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "lifecycle", "dependency_tags", "export_reconciliation", "freeze_check_reconciliation", "required_hash_disposition", "minimal_missing_bundle", "gate_disposition", "m2_hh_hv_cotangent_resolution", "claim_flags", "does_not_establish", "provenance", "transitive_provenance_drift", "independent_checker", "next_gate"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-classical-import-gate-v11-reconciliation-v1"},
+    "result_id": {"const": "CLASSICAL_IMPORT_GATE_V11_RECONCILIATION"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "export_reconciliation": {"type": "array", "minItems": 20, "maxItems": 20},
+    "freeze_check_reconciliation": {"type": "array", "minItems": 10, "maxItems": 10},
+    "m2_hh_hv_cotangent_resolution": {"type": "object", "required": ["hh_field_coefficients", "hv_field_coefficients", "combined_cotangent_coefficients", "formal_adjoint_defects", "full_quadratic_BV_cotangent_lift_serialized", "full_source_q2_q3_pullback_replayed"], "properties": {"hh_field_coefficients": {"const": 1392}, "hv_field_coefficients": {"const": 76}, "combined_cotangent_coefficients": {"const": 3907}, "formal_adjoint_defects": {"const": 0}, "full_quadratic_BV_cotangent_lift_serialized": {"const": true}, "full_source_q2_q3_pullback_replayed": {"const": false}}},
+    "gate_disposition": {"type": "object", "required": ["gate_a_status", "accepted_common_snapshot_hashes"], "properties": {"gate_a_status": {"const": "FAIL_CLOSED"}, "accepted_common_snapshot_hashes": {"const": 0}}},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_GATE_V11.md"}
+  },
+  "additionalProperties": true
+}

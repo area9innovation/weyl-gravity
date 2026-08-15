@@ -818,6 +818,15 @@
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_ZERO_FIBER_WARD_WEIGHT_OBSTRUCTION_V1",
       "sha256": "0d7cae4aa000cf6cf6ea8e75aa57472a4fcb72d95cd8d71811c96a7c8ab9b446"
     },
+    "classical_hh_hv_auxiliary_shift": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "d_quotient_classical/certificates/CLASSICAL_HH_HV_AUXILIARY_SHIFT_V1.json",
+      "result_id": "CLASSICAL_HH_HV_AUXILIARY_SHIFT_V1",
+      "sha256": "81f2373e018214e8491140747db6fc54d0fc66a8107240df5598f302d68048af"
+    },
     "classical_import_gate_v10": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -827,6 +836,16 @@
       "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V10_RECONCILIATION.json",
       "result_id": "CLASSICAL_IMPORT_GATE_V10_RECONCILIATION",
       "sha256": "eb099ba510bb5ede9509c330e4628241e10c7240cc331e1225a0dcb8984805cd"
+    },
+    "classical_import_gate_v11": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V11_RECONCILIATION.json",
+      "result_id": "CLASSICAL_IMPORT_GATE_V11_RECONCILIATION",
+      "sha256": "6401cc9deeacdabd9d959c0b1752c60b42ddb4060ac84c52d8ece3b972d93205"
     },
     "classical_import_gate_v5": {
       "dependency_tags": [
@@ -974,7 +993,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "dd57c51070208acf5937cc98015f31ba33cec5b6231ae750f23140faa45c0482"
+      "sha256": "5dc419c39f9c5481672fa4b8db218a1a9f797f06b0efe54943ba01f2f53dd84d"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -1277,6 +1296,18 @@
       "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V28",
       "sha256": "6f971959673c9b0a51ecd5752383ae7071026ce6d5be6cb3ae7a7b6124f3ef57"
     },
+    "lorentzian_weyl_bv_completion_atlas_v29": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V29.json",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V29",
+      "sha256": "9c521668d10c4b6c7b5cde8e67eafb9e2c5bd70cba3158574110cf2f32b0c15c"
+    },
     "lorentzian_weyl_bv_completion_atlas_v4": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -1483,6 +1514,15 @@
       "result_id": "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1",
       "sha256": "b805bd81b35f13325d938e93be91495e1d46aa5900fd168e55bdcde1afbfa8e2"
     },
+    "strict_386_hh_hv_auxiliary_cotangent_lift": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1.json",
+      "result_id": "STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1",
+      "sha256": "fa911ad8bf926f60ff3f8896ac09a05f738e0f95ac9279433b20145ba5b9a77b"
+    },
     "strict_386_local_sdr_component_maps": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -1684,10 +1724,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "74c7e617adcc2896fc9c0cf594aa5f86cc89ce60c40cb4069eda1d816808acee"
+      "sha256": "5276ad6557d213acb412b7ea6ad918426cb7b9e6183b9d4a11ade2311857c5b9"
     }
   },
-  "canonical_digest": "384c60fd35ec3738088e45ef32d2494355d7f55e0f6e97cf5ae8e23bdc478021",
+  "canonical_digest": "8a68de2320d0bb7f34b8283d0ce7ae1343ce93ace34034d219d8cf98940fcd00",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -1819,6 +1859,7 @@
     "bt_weighted_random_conductance_current_identity_established": true,
     "case_study_authorities_pinned": true,
     "classical_import_gate_v10_fail_closed": true,
+    "classical_import_gate_v11_fail_closed": true,
     "classical_import_gate_v8_fail_closed": true,
     "classical_import_gate_v9_fail_closed": true,
     "coded_h2_arbitrary_distribution_uniqueness_proved": false,
@@ -1905,16 +1946,17 @@
     "strict_386_first_nonlinear_equivalence_component_constructed": true,
     "strict_386_full_bv_arity_three_identity_certified": false,
     "strict_386_full_carrier_q2_certified": false,
-    "strict_386_full_cotangent_lift_serialized": false,
+    "strict_386_full_cotangent_lift_serialized": true,
     "strict_386_full_local_d_action_certified": true,
     "strict_386_full_q1_component_bytes_serialized": true,
     "strict_386_full_q1_squared_zero_replayed": true,
     "strict_386_full_q1_suspended_cyclicity_replayed": true,
+    "strict_386_full_quadratic_bv_cotangent_lift_serialized": true,
     "strict_386_full_source_q2_q3_pullback_replayed": false,
     "strict_386_full_suspended_green_adjoint_replayed": true,
     "strict_386_full_weyl_lambda2_source_closure_certified": false,
     "strict_386_graph_suspension_transported": true,
-    "strict_386_hh_hv_bv_cotangent_lift_component_complete": false,
+    "strict_386_hh_hv_bv_cotangent_lift_component_complete": true,
     "strict_386_infinite_tree_series_convergence_certified": false,
     "strict_386_known_required_cubic_families_enumerated": true,
     "strict_386_lambda2_witness_full_source_closed": true,
@@ -2733,6 +2775,21 @@
       ],
       "statement": "Gate V10 imports the seven-family census and the canonical vv BV sector while remaining fail closed with zero accepted authoritative hashes. Atlas V28 replaces the generic cubic-inventory request by three explicit fronts: exact hh/hv second-Frechet and cotangent tables, three Diff auxiliary BV representation vertices, and an exhaustive nonlinear Weyl/boost ghost-antifield manifest. Completing those fronts is prerequisite to the complete 386-row BV lift, source q2/q3 pullback, and lambda-squared causal response test. Neither the full nonlinear equivalence nor its obstruction is certified. Gate A, general causal closure, Hadamard data, renormalized Lorentzian products, QME restoration, and residual transfer remain unpromoted.",
       "status": "GATE_V10_VV_BV_SECTOR_CLOSED_THREE_COMPONENT_FRONTS_OPEN_GATE_A_FAIL_CLOSED"
+    },
+    {
+      "authorities": [
+        "classical_hh_hv_auxiliary_shift",
+        "strict_386_hh_hv_auxiliary_cotangent_lift",
+        "classical_import_gate_v11",
+        "lorentzian_weyl_bv_completion_atlas_v29"
+      ],
+      "claim_id": "RF-59-STRICT-WEYL-CURVED-QUADRATIC-AUXILIARY-BV-LIFT",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "On the unit conformal cylinder at a stereographic spatial origin, the exact source-to-split auxiliary shift has 1,392 nonzero hh, 76 hv, and 22 vv second-Frechet field coefficients. An independent bivariate nonlinear-geometry replay exhausts all 1,875 eligible metric two-jet pairs and checks the nonlinear Weyl second-variation identity on 1,200 component cases with zero defects. Formal adjoint collection on the declared 386-row carrier produces 3,907 cotangent coefficients with zero defects over 150 declared metric and four vector variation slices. Thus all hh, hv, and vv sectors of the quadratic auxiliary BV canonical lift are serialized, closing four of seven known-required cubic block families. This is not an exhaustive nonlinear BV census: three diffeomorphism auxiliary representation vertices and the nonlinear Weyl/boost ghost-antifield manifest remain open, as do the authoritative source q2/q3 pullback and lambda-squared causal closure. Gate V11 remains fail closed with zero accepted authoritative hashes, and Atlas V29 retires the completed quadratic routes without promoting Gate A, Hadamard data, renormalized Lorentzian products, QME restoration, or residual transfer.",
+      "status": "CURVED_HH_HV_VV_QUADRATIC_BV_COTANGENT_LIFT_EXACT_DIFF_GHOST_AND_SOURCE_PULLBACK_OPEN_GATE_A_FAIL_CLOSED"
     }
   ],
   "created": "2026-08-15",
@@ -2954,19 +3011,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "bd43566d20aa34599cbd68e282355fd53eab4a89670d6765d603a282e505e7e9",
+      "assembly_source_canonical_digest": "2bbdd7dc55648455a69e6fd01dd103e2b70a6cfaef859fcfdd13acdf21c93ee3",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "74c7e617adcc2896fc9c0cf594aa5f86cc89ce60c40cb4069eda1d816808acee",
+      "assembly_source_sha256": "5276ad6557d213acb412b7ea6ad918426cb7b9e6183b9d4a11ade2311857c5b9",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
-      "generator_sha256": "2437d44097df3f1f36e01a22ec0302a7a619204e5a06d7e7912004a3f75cfda1",
+      "generator_sha256": "6abc09fd945e2bfbe979369aba3f875f3200f27b7fc359a4e8b2cf581718e9a8",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "f4b354d2f1e71bcf57ec72b77c81abf8265ebd1505c3c370d4db28655c53fbe1",
-      "source_canonical_digest": "d7adcbdc4ea7d62a06732ba42be7f723a158cf093783e8454b5d072ccadddfb7",
+      "sha256": "4999440cb9f422c3da0546678df7d5225e86fd83ad317f0f7503e8858ecd2752",
+      "source_canonical_digest": "4b5b5c353eba83f8ab6d66d4fa24eff0c7cf1a0a4181a3b24c0a17004a715f27",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "aa89f155867166283a0d7e1627e3c02a7707709b094b090931b0f33ec38380f1"
+      "source_sha256": "6076ff8ba38a20d642c1bf87a94c8ae9399f947e2018aea11d235be02bc8a455"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "b4dc872ba2924f64d4c1294a796f1a8c3828f9786ba85382fd1ca81cbb62fd9a"
+    "sha256": "eed5dcf1d6b9957807fba22f41c1bcb1eba06c8da12f6ec4a86219d8debdf51c"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

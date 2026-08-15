@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/foundational-lorentzian-weyl-bv-completion-atlas-v29.schema.json",
+  "type": "object",
+  "required": ["schema_version", "result_id", "predecessor", "stages", "branches", "frontier_summary", "strict_hh_hv_auxiliary_cotangent_lift", "strict_gate_v11_reconciliation", "route_selection", "research_queue", "claim_flags", "does_not_establish", "provenance", "independent_checker", "human_report"],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v29"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V29"},
+    "strict_hh_hv_auxiliary_cotangent_lift": {"type": "object", "required": ["hh_field_coefficients", "hv_field_coefficients", "combined_cotangent_coefficients", "formal_adjoint_defects", "component_complete_families", "component_open_families"], "properties": {"hh_field_coefficients": {"const": 1392}, "hv_field_coefficients": {"const": 76}, "combined_cotangent_coefficients": {"const": 3907}, "formal_adjoint_defects": {"const": 0}, "component_complete_families": {"const": 4}, "component_open_families": {"const": 3}}},
+    "strict_gate_v11_reconciliation": {"type": "object", "required": ["gate_a_status", "accepted_top_level_hashes"], "properties": {"gate_a_status": {"const": "FAIL_CLOSED"}, "accepted_top_level_hashes": {"const": 0}}},
+    "route_selection": {"type": "array", "minItems": 12, "maxItems": 12},
+    "research_queue": {"type": "array", "minItems": 12, "maxItems": 12},
+    "human_report": {"const": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v29.md"}
+  },
+  "additionalProperties": true
+}

@@ -154,6 +154,10 @@ def main() -> int:
     strict_shifted_cubic = json.loads((ROOT / data["authorities"]["strict_386_shifted_auxiliary_cubic_inventory"]["path"]).read_text())
     gate_v10 = json.loads((ROOT / data["authorities"]["classical_import_gate_v10"]["path"]).read_text())
     completion_atlas_v28 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v28"]["path"]).read_text())
+    classical_hh_hv = json.loads((ROOT / data["authorities"]["classical_hh_hv_auxiliary_shift"]["path"]).read_text())
+    strict_hh_hv_lift = json.loads((ROOT / data["authorities"]["strict_386_hh_hv_auxiliary_cotangent_lift"]["path"]).read_text())
+    gate_v11 = json.loads((ROOT / data["authorities"]["classical_import_gate_v11"]["path"]).read_text())
+    completion_atlas_v29 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v29"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -470,6 +474,7 @@ def main() -> int:
         (56, "STRICT-WEYL-GATE-V9-COMPONENTWISE-PULLBACK-FRONTIER"),
         (57, "STRICT-WEYL-SHIFTED-CUBIC-INVENTORY-AND-VV-BV-LIFT"),
         (58, "STRICT-WEYL-GATE-V10-THREE-FRONT-COMPLETION-ATLAS"),
+        (59, "STRICT-WEYL-CURVED-QUADRATIC-AUXILIARY-BV-LIFT"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -786,6 +791,18 @@ def main() -> int:
     require(gate_v10["gate_disposition"]["gate_a_status"] == "FAIL_CLOSED" and gate_v10["gate_disposition"]["accepted_common_snapshot_hashes"] == 0 and gate_v10["required_hash_disposition"]["q2_hash"]["accepted"] is None, "Gate V10 hash/Gate-A firewall drift")
     require([item["route"] for item in completion_atlas_v28["route_selection"][:3]] == ["STRICT_SECOND_FRECHET_HH_HV_AUXILIARY_SHIFT_COMPONENTS", "STRICT_DIFF_AUXILIARY_BV_REPRESENTATION_COMPONENTS", "STRICT_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST"], "completion atlas V28 three-front ordering drift")
     require(completion_atlas_v28["strict_gate_v10_reconciliation"]["gate_a_status"] == "FAIL_CLOSED" and completion_atlas_v28["strict_shifted_auxiliary_cubic_inventory"]["vv_canonicality_defects"] == 0 and completion_atlas_v28["claim_flags"]["strict_386_nonlinear_equivalence_constructed"] is False and completion_atlas_v28["claim_flags"]["strict_386_nonlinear_equivalence_obstructed"] is False, "completion atlas V28 promotion firewall drift")
+    classical_tables = classical_hh_hv["field_component_tables"]
+    require(classical_tables["hh_second_Frechet"]["nonzero_output_component_coefficients"] == 1392 and classical_tables["hv_second_Frechet"]["nonzero_output_component_coefficients"] == 76, "classical hh/hv field-table census drift")
+    require(classical_tables["cylinder_curvature_regression"]["scalar_curvature"] == "6" and classical_tables["cylinder_curvature_regression"]["matches_unit_cylinder"] is True, "classical cylinder-curvature regression drift")
+    require(classical_tables["nonlinear_Weyl_second_variation_regression"]["component_checks"] == 1200 and classical_tables["nonlinear_Weyl_second_variation_regression"]["defects"] == 0, "classical nonlinear Weyl regression drift")
+    quadratic_lift = strict_hh_hv_lift["quadratic_BV_cotangent_lift"]
+    lift_complete = strict_hh_hv_lift["inventory_completeness"]
+    require(quadratic_lift["field_second_Frechet_component_counts"] == {"hh": 1392, "hv": 76, "vv": 22} and quadratic_lift["cotangent_component_counts_after_collection"]["combined"] == 3907, "strict curved quadratic cotangent-lift census drift")
+    require(quadratic_lift["formal_adjoint_replay"]["metric_variation_jet_slices_declared"] == 150 and quadratic_lift["formal_adjoint_replay"]["vector_variation_slices"] == 4 and quadratic_lift["formal_adjoint_replay"]["coefficient_defects"] == 0, "strict curved quadratic formal-adjoint replay drift")
+    require((lift_complete["component_coefficient_complete_families"], lift_complete["component_coefficient_open_families"]) == (4, 3) and lift_complete["full_386_quadratic_BV_cotangent_lift_serialized"] is True and lift_complete["diffeomorphism_BV_representation_component_complete"] is False and lift_complete["exhaustive_full_nonlinear_BV_family_census"] is False and lift_complete["full_source_q2_q3_pullback_replayed"] is False, "strict curved quadratic/source-pullback firewall drift")
+    require(gate_v11["gate_disposition"]["gate_a_status"] == "FAIL_CLOSED" and gate_v11["gate_disposition"]["accepted_common_snapshot_hashes"] == 0 and gate_v11["claim_flags"]["STRICT_386_FULL_QUADRATIC_BV_COTANGENT_LIFT_SERIALIZED"] is True and gate_v11["claim_flags"]["STRICT_386_DIFF_BV_REPRESENTATION_COMPONENT_COMPLETE"] is False, "Gate V11 quadratic-lift/Gate-A boundary drift")
+    require([item["route"] for item in completion_atlas_v29["route_selection"][:3]] == ["STRICT_DIFF_AUXILIARY_BV_REPRESENTATION_COMPONENTS", "STRICT_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST", "STRICT_SOURCE_Q2_Q3_PULLBACK_IDENTITY"], "completion atlas V29 frontier ordering drift")
+    require(completion_atlas_v29["strict_hh_hv_auxiliary_cotangent_lift"]["combined_cotangent_coefficients"] == 3907 and completion_atlas_v29["strict_gate_v11_reconciliation"]["accepted_top_level_hashes"] == 0 and completion_atlas_v29["claim_flags"]["strict_386_full_quadratic_bv_cotangent_lift_serialized"] is True and completion_atlas_v29["claim_flags"]["strict_386_full_source_q2_pullback_replayed"] is False, "completion atlas V29 projection/firewall drift")
     require(flags["strict_386_field_equation_green_component_typed"] is True and flags["strict_386_field_equation_constrained_right_inverse_certified"] is True and flags["strict_386_field_equation_quotient_left_inverse_certified"] is True and flags["strict_386_ungauge_fixed_full_inverse_obstructed"] is True and flags["strict_386_q2_only_lambda2_source_obstructed"] is True and flags["strict_386_authoritative_q3_cancellation_target_exact"] is True and flags["strict_386_authoritative_q3_imported"] is False and flags["strict_386_full_weyl_lambda2_source_closure_certified"] is False and flags["strict_386_all_order_nonlinear_source_closure_certified"] is False, "typed inverse/nonlinear lifecycle firewall drift")
     require(flags["strict_pure_weyl_metric_q3_witness_derived"] is True and flags["strict_pure_weyl_q3_witness_cancellation_certified"] is True and flags["strict_386_lambda2_witness_full_source_closed"] is True and flags["strict_386_Berger_q3_direct_import_compatible"] is False and flags["strict_386_arbitrary_input_q3_certified"] is False and flags["strict_386_full_bv_arity_three_identity_certified"] is False, "paper cubic-witness authority firewall drift")
     require(flags["strict_authoritative_minimal_q3_imported"] is True and flags["strict_minimal_full_bv_arity_three_identity_certified"] is True and flags["strict_minimal_q3_cyclicity_certified"] is True and flags["strict_386_q3_stabilized"] is False, "paper minimal-q3/386 firewall drift")
@@ -796,9 +813,9 @@ def main() -> int:
     require(flags["classical_import_gate_v8_fail_closed"] is True, "paper Gate V8 fail-closed flag missing")
     require(flags["strict_386_first_nonlinear_equivalence_component_constructed"] is True and flags["strict_386_f_hat_v_v_pullback_channel_closed"] is True and flags["strict_386_quadratic_auxiliary_map_support_local"] is True, "paper first nonlinear component flags missing")
     require(flags["strict_386_quadratic_auxiliary_map_uses_green_operator"] is False and flags["strict_386_quadratic_auxiliary_map_uses_choice_principle"] is False, "paper auxiliary map foundations boundary drift")
-    require(flags["strict_386_full_cotangent_lift_serialized"] is False and flags["strict_386_full_source_q2_q3_pullback_replayed"] is False and flags["classical_import_gate_v9_fail_closed"] is True, "paper Gate V9/full-pullback firewall drift")
+    require(flags["strict_386_full_cotangent_lift_serialized"] is True and flags["strict_386_full_quadratic_bv_cotangent_lift_serialized"] is True and flags["strict_386_full_source_q2_q3_pullback_replayed"] is False and flags["classical_import_gate_v9_fail_closed"] is True, "paper quadratic-lift/full-pullback boundary drift")
     require(flags["strict_386_known_required_cubic_families_enumerated"] is True and flags["strict_386_shifted_mass_h_f_hat_f_hat_components_imported"] is True and flags["strict_386_vv_field_map_components_imported"] is True and flags["strict_386_vv_cotangent_partner_components_serialized"] is True and flags["strict_386_vv_bv_cotangent_lift_canonical"] is True, "paper shifted-cubic/vv BV flags missing")
-    require(flags["strict_386_exhaustive_full_nonlinear_bv_family_census"] is False and flags["strict_386_hh_hv_bv_cotangent_lift_component_complete"] is False and flags["strict_386_diff_bv_representation_component_complete"] is False and flags["classical_import_gate_v10_fail_closed"] is True, "paper Gate V10/exhaustive-lift firewall drift")
+    require(flags["strict_386_exhaustive_full_nonlinear_bv_family_census"] is False and flags["strict_386_hh_hv_bv_cotangent_lift_component_complete"] is True and flags["strict_386_diff_bv_representation_component_complete"] is False and flags["classical_import_gate_v10_fail_closed"] is True and flags["classical_import_gate_v11_fail_closed"] is True, "paper Gate V11/exhaustive-lift firewall drift")
     require(flags["static_atlas_appendix_generated"] is True, "static atlas appendix flag is not certified")
     require(flags["complete_evidence_register_generated"] is True, "complete evidence register flag is not certified")
     require(flags["complete_literature_register_generated"] is True, "complete literature register flag is not certified")
@@ -1262,6 +1279,14 @@ def main() -> int:
         r"STRICT_386_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1",
         r"CLASSICAL_IMPORT_GATE_V10_RECONCILIATION",
         r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V28",
+        r"CLASSICAL_HH_HV_AUXILIARY_SHIFT_V1",
+        r"STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1",
+        r"CLASSICAL_IMPORT_GATE_V11_RECONCILIATION",
+        r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V29",
+        r"1,392 nonzero hh",
+        r"3,907 cotangent coefficients",
+        r"150 declared",
+        r"Four of the seven",
         r"72 nonzero",
         r"16 cotangent-partner",
         r"14 output rows",

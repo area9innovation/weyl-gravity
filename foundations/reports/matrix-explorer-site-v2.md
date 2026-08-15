@@ -34,12 +34,12 @@ all-real BT/Krein path integral; controlled conditional bridges remain open.
 
 The **Weyl BV routes** view projects the current audited Lorentzian completion atlas as
 seven architectures across eleven ordered gates, for 77 separately typed cells.
-It exposes the finite residual-SDR repair, fourteen ranked next constructions and the
+It exposes the finite residual-SDR repair, twelve ranked next constructions and the
 eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a theorem; in particular,
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
-Atlas V28 preserves the field-equation type result.  The degree-one-to-zero
+Atlas V29 preserves the field-equation type result.  The degree-one-to-zero
 Green component is an exact right inverse on Noether-compatible sources and a
 left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
 the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
@@ -70,8 +70,13 @@ field and 16 cotangent-partner coefficients with zero defect in all four
 pairing slices.  The 72-to-zero comparison proves that the vv shift alone is
 not the full normalization; it does not obstruct a further local canonical or
 L-infinity normalization.  The hh/hv, three Diff, and possible nonlinear
-Weyl/boost ghost-antifield families remain explicit fronts.  Gate V10 records
-that bounded advance while still accepting zero authoritative hashes.
+Weyl/boost ghost-antifield families remain explicit fronts.  The successor now
+closes the curved hh/hv route: 1,392 hh, 76 hv, and 22 vv field coefficients
+induce 3,907 collected cotangent coefficients with zero formal-adjoint defect.
+Thus the complete quadratic auxiliary canonical lift is serialized and four of
+seven known families are component-complete.  Gate V11 records that bounded
+advance while still accepting zero authoritative hashes; the three Diff families,
+exhaustive nonlinear ghost census, and complete source q2/q3 pullback remain open.
 The complete Berger q3 remains a different-theory Weyl-plus-clock result on a fixed
 54-row carrier; no certified same-theory cyclic map authorizes its direct import.
 

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-386-hh-hv-auxiliary-cotangent-lift-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "dependency_tags", "scope", "quadratic_BV_cotangent_lift", "required_cubic_family_inventory", "inventory_completeness", "claim_flags", "does_not_establish", "canonical_hashes", "provenance", "human_report", "next_gate"],
+  "properties": {
+    "schema": {"const": "strict-386-hh-hv-auxiliary-cotangent-lift-v1"},
+    "result_id": {"const": "STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "quadratic_BV_cotangent_lift": {
+      "type": "object",
+      "required": ["carrier_rows", "cotangent_component_counts_after_collection", "combined_cotangent_entries", "formal_adjoint_replay"],
+      "properties": {
+        "carrier_rows": {"const": 386},
+        "cotangent_component_counts_after_collection": {"const": {"hh_to_h_star": 3411, "hv_to_h_star": 320, "hv_to_v_star": 160, "vv_to_v_star": 16, "combined": 3907}},
+        "combined_cotangent_entries": {"type": "array", "minItems": 3907, "maxItems": 3907},
+        "formal_adjoint_replay": {"type": "object", "required": ["metric_variation_jet_slices_declared", "metric_variation_jet_slices_active", "metric_variation_jet_slices_identically_zero", "vector_variation_slices", "coefficient_defects"], "properties": {"metric_variation_jet_slices_declared": {"const": 150}, "metric_variation_jet_slices_active": {"const": 122}, "metric_variation_jet_slices_identically_zero": {"const": 28}, "vector_variation_slices": {"const": 4}, "coefficient_defects": {"const": 0}}}
+      }
+    },
+    "required_cubic_family_inventory": {"type": "array", "minItems": 7, "maxItems": 7},
+    "inventory_completeness": {"type": "object", "required": ["component_coefficient_complete_families", "component_coefficient_open_families", "hh_hv_BV_cotangent_lift_component_complete", "full_386_quadratic_BV_cotangent_lift_serialized", "diffeomorphism_BV_representation_component_complete", "exhaustive_full_nonlinear_BV_family_census"]},
+    "claim_flags": {"type": "object", "required": ["HH_HV_COTANGENT_PARTNERS_SERIALIZED", "FULL_386_QUADRATIC_BV_COTANGENT_LIFT_SERIALIZED", "DIFF_AUXILIARY_BV_REPRESENTATION_COMPLETE", "EXHAUSTIVE_FULL_NONLINEAR_BV_FAMILY_CENSUS", "CLASSICAL_IMPORT_GATE_PASSED", "HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED"]},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1.md"}
+  },
+  "additionalProperties": true
+}

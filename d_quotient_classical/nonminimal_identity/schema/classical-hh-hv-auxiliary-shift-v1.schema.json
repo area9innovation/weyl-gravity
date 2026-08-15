@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/classical-hh-hv-auxiliary-shift-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "dependency_tags", "scope", "field_component_tables", "foundational_strength", "claim_flags", "does_not_establish", "canonical_hashes", "provenance", "human_report", "next_gate"],
+  "properties": {
+    "schema": {"const": "classical-hh-hv-auxiliary-shift-v1"},
+    "result_id": {"const": "CLASSICAL_HH_HV_AUXILIARY_SHIFT_V1"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "field_component_tables": {
+      "type": "object",
+      "required": ["hh_second_Frechet", "hv_second_Frechet", "cylinder_curvature_regression", "nonlinear_Weyl_second_variation_regression"],
+      "properties": {
+        "hh_second_Frechet": {"type": "object", "required": ["nonzero_output_component_coefficients", "entries"], "properties": {"nonzero_output_component_coefficients": {"const": 1392}, "entries": {"type": "array", "minItems": 1392, "maxItems": 1392}}},
+        "hv_second_Frechet": {"type": "object", "required": ["nonzero_output_component_coefficients", "entries"], "properties": {"nonzero_output_component_coefficients": {"const": 76}, "entries": {"type": "array", "minItems": 76, "maxItems": 76}}},
+        "cylinder_curvature_regression": {"type": "object", "required": ["matches_unit_cylinder"], "properties": {"matches_unit_cylinder": {"const": true}}},
+        "nonlinear_Weyl_second_variation_regression": {"type": "object", "required": ["component_checks", "defects"], "properties": {"component_checks": {"const": 1200}, "defects": {"const": 0}}}
+      }
+    },
+    "claim_flags": {"type": "object", "required": ["HH_SECOND_FRECHET_COMPONENT_JETS_SERIALIZED", "HV_SECOND_FRECHET_COMPONENT_JETS_SERIALIZED", "HH_HV_COTANGENT_PARTNERS_SERIALIZED", "FULL_386_QUADRATIC_BV_COTANGENT_LIFT_SERIALIZED", "CLASSICAL_IMPORT_GATE_PASSED", "HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED"]},
+    "human_report": {"const": "d_quotient_classical/reports/classical-hh-hv-auxiliary-shift-v1.md"}
+  },
+  "additionalProperties": true
+}
