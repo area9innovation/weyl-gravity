@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-conformal-curvature-bubble-gate-v1.schema.json",
+  "title": "BT conformal-curvature bubble gate certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "four_dimensional_conformal_identity", "round_four_sphere_bubble",
+    "positive_floor_bubble", "torus_scaling_gate", "method_disposition",
+    "missing_object_ledger", "next_gate", "does_not_establish",
+    "provenance", "verification_commands", "tier_receipt", "checks",
+    "report", "schema", "verifier"
+  ],
+  "$defs": {
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "text": {"type": "string", "minLength": 1}
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_CONFORMAL_CURVATURE_BUBBLE_GATE_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-conformal-curvature-bubble-gate-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"},
+        {"const": "REDUCED-MODE"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "four_dimensional_conformal_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["metric", "bt_residual", "bt_action", "scalar_curvature", "volume_form", "identity", "interpretation"],
+      "properties": {
+        "metric": {"const": "g=Omega^2*delta on a four-dimensional Euclidean domain"},
+        "bt_residual": {"$ref": "#/$defs/text"},
+        "bt_action": {"const": "A=(1/2)*integral R^2 dx"},
+        "scalar_curvature": {"const": "Scal_g=-6*Omega^(-3)*Delta Omega=-6*Omega^(-2)*R"},
+        "volume_form": {"const": "dvol_g=Omega^4 dx"},
+        "identity": {"const": "integral Scal_g^2 dvol_g=36*integral R^2 dx=72*A"},
+        "interpretation": {"$ref": "#/$defs/text"}
+      }
+    },
+    "round_four_sphere_bubble": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["domain", "profile", "laplacian_identity", "residual", "scalar_curvature", "euler_gradient", "residual_norm_squared", "action", "status"],
+      "properties": {
+        "domain": {"const": "R^4"},
+        "profile": {"$ref": "#/$defs/text"},
+        "laplacian_identity": {"const": "Delta Omega_rho=-2*Omega_rho^3"},
+        "residual": {"$ref": "#/$defs/text"},
+        "scalar_curvature": {"const": "Scal_g=12"},
+        "euler_gradient": {"$ref": "#/$defs/text"},
+        "residual_norm_squared": {"$ref": "#/$defs/text"},
+        "action": {"const": "A[Omega_rho]=(16/3)*pi^2, independent of rho"},
+        "status": {"$ref": "#/$defs/text"}
+      }
+    },
+    "positive_floor_bubble": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["domain", "profile", "laplacian_identity", "residual", "weighted_scalar", "current", "euler_gradient", "radial_measure", "residual_norm_integral", "gradient_norm_integral", "limit_justification", "epsilon_to_zero_limits", "exact_point_fixture"],
+      "properties": {
+        "domain": {"const": "R^4"},
+        "profile": {"$ref": "#/$defs/text"},
+        "laplacian_identity": {"const": "Delta B=-8*B^3"},
+        "residual": {"$ref": "#/$defs/text"},
+        "weighted_scalar": {"$ref": "#/$defs/text"},
+        "current": {"const": "j=Omega^2*grad q"},
+        "euler_gradient": {"$ref": "#/$defs/text"},
+        "radial_measure": {"$ref": "#/$defs/text"},
+        "residual_norm_integral": {"$ref": "#/$defs/text"},
+        "gradient_norm_integral": {"$ref": "#/$defs/text"},
+        "limit_justification": {"$ref": "#/$defs/text"},
+        "epsilon_to_zero_limits": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["residual_norm_squared", "scaled_gradient_norm_squared", "gradient_quotient"],
+          "properties": {
+            "residual_norm_squared": {"$ref": "#/$defs/text"},
+            "scaled_gradient_norm_squared": {"$ref": "#/$defs/text"},
+            "gradient_quotient": {"$ref": "#/$defs/text"}
+          }
+        },
+        "exact_point_fixture": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["rho", "floor_a", "t_equals_1_plus_radius_squared_over_rho_squared", "epsilon_equals_a_rho", "bubble_B", "omega", "residual_R", "weighted_scalar_q_equals_R_over_omega_squared", "euler_gradient_E"],
+          "properties": {
+            "rho": {"$ref": "#/$defs/fraction"},
+            "floor_a": {"$ref": "#/$defs/fraction"},
+            "t_equals_1_plus_radius_squared_over_rho_squared": {"$ref": "#/$defs/fraction"},
+            "epsilon_equals_a_rho": {"$ref": "#/$defs/fraction"},
+            "bubble_B": {"$ref": "#/$defs/fraction"},
+            "omega": {"$ref": "#/$defs/fraction"},
+            "residual_R": {"$ref": "#/$defs/fraction"},
+            "weighted_scalar_q_equals_R_over_omega_squared": {"$ref": "#/$defs/fraction"},
+            "euler_gradient_E": {"$ref": "#/$defs/fraction"}
+          }
+        }
+      }
+    },
+    "torus_scaling_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["transition_radius", "matched_scale", "formal_bubble_quotient", "free_lowest_scale", "formal_normalized_ratio", "decisive_caveat", "status"],
+      "properties": {
+        "transition_radius": {"$ref": "#/$defs/text"},
+        "matched_scale": {"const": "set L^2=rho/a, hence a/rho=L^(-2)"},
+        "formal_bubble_quotient": {"$ref": "#/$defs/text"},
+        "free_lowest_scale": {"$ref": "#/$defs/text"},
+        "formal_normalized_ratio": {"const": "54/(5*pi^4)"},
+        "decisive_caveat": {"$ref": "#/$defs/text"},
+        "status": {"const": "OPEN"}
+      }
+    },
+    "method_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["continuum_conformal_curvature_identification", "noncompact_exact_critical_bubble", "positive_floor_critical_at_infinity_sequence", "periodic_torus_normalized_low_gradient_sequence", "positive_volume_uniform_deterministic_gradient_bound", "volume_uniform_witten_coercivity", "interacting_h_minus_one_bound", "continuum_reconstruction", "born_rule", "krein_reconstruction", "lorentzian_transfer"],
+      "properties": {
+        "continuum_conformal_curvature_identification": {"const": "PROVED"},
+        "noncompact_exact_critical_bubble": {"const": "PROVED"},
+        "positive_floor_critical_at_infinity_sequence": {"const": "PROVED"},
+        "periodic_torus_normalized_low_gradient_sequence": {"const": "OPEN"},
+        "positive_volume_uniform_deterministic_gradient_bound": {"const": "OPEN"},
+        "volume_uniform_witten_coercivity": {"const": "OPEN"},
+        "interacting_h_minus_one_bound": {"const": "OPEN"},
+        "continuum_reconstruction": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "37b3cac874c0662d09206d9d6a6b5362f7c4bf57"},
+        "inputs": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "tier_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "memory_policy", "elapsed_seconds", "repository_audits"],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/text"},
+        "tier_1": {"$ref": "#/$defs/text"},
+        "tier_2": {"$ref": "#/$defs/text"},
+        "tier_3": {"$ref": "#/$defs/text"},
+        "memory_policy": {"$ref": "#/$defs/text"},
+        "elapsed_seconds": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["producer_check", "independent_verifier", "unit_tests"],
+          "properties": {
+            "producer_check": {"const": "0.05"},
+            "independent_verifier": {"const": "0.14"},
+            "unit_tests": {"const": "0.17"}
+          }
+        },
+        "repository_audits": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["planning_conformance", "science_forge_shadow"],
+          "properties": {
+            "planning_conformance": {"$ref": "#/$defs/text"},
+            "science_forge_shadow": {"$ref": "#/$defs/text"}
+          }
+        }
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-conformal-curvature-bubble-gate.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-conformal-curvature-bubble-gate-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_conformal_curvature_bubble_gate.py"}
+  }
+}
