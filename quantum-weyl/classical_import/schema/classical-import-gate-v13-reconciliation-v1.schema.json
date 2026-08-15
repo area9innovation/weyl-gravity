@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/classical-import-gate-v13-reconciliation-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "lifecycle", "dependency_tags", "export_reconciliation", "freeze_check_reconciliation", "required_hash_disposition", "minimal_missing_bundle", "gate_disposition", "m2_shifted_cubic_inventory_resolution", "m2_nonlinear_ghost_manifest_resolution", "claim_flags", "does_not_establish", "provenance", "human_report", "next_gate", "independent_checker"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-classical-import-gate-v13-reconciliation-v1"},
+    "result_id": {"const": "CLASSICAL_IMPORT_GATE_V13_RECONCILIATION"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "export_reconciliation": {"type": "array", "minItems": 20, "maxItems": 20},
+    "freeze_check_reconciliation": {"type": "array", "minItems": 10, "maxItems": 10},
+    "m2_nonlinear_ghost_manifest_resolution": {"type": "object", "required": ["status", "evidence", "nonzero_ghost_antifield_families", "additional_nonlinear_Weyl_boost_ghost_antifield_families", "exhaustive_in_declared_scope", "full_386_source_q2_assembled"]},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_GATE_V13.md"},
+    "next_gate": {"type": "string", "minLength": 40}
+  }
+}

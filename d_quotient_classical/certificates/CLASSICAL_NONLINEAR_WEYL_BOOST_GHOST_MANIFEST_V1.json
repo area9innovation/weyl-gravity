@@ -1,0 +1,250 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "classical-nonlinear-weyl-boost-ghost-manifest-v1",
+  "result_id": "CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1",
+  "result_kind": "AUTHORITATIVE_NONLINEAR_WEYL_BOOST_GAUGE_ALGEBRA_AND_GHOST_MANIFEST",
+  "result_state": "FULL_WEYL_BOOST_LAWS_IMPORTED_INTERNAL_ALGEBRA_ABELIAN_SHIFTED_GHOST_MANIFEST_EXHAUSTIVE_IN_SCOPE",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "scope": {
+    "theory": "four-dimensional ordinary-derivative strict pure-Weyl gravity",
+    "fields": [
+      "g_mu_nu",
+      "phi_mu_nu",
+      "b_mu"
+    ],
+    "gauge_parameters": [
+      "c^mu",
+      "sigma",
+      "kappa_mu"
+    ],
+    "coefficient_field": "Q",
+    "claim_scope": "off-shell local gauge algebra and ghost-antifield families induced by Weyl/boost after the exact shifted-variable change"
+  },
+  "primary_literature": {
+    "citation": "R. R. Metsaev, Ordinary-derivative formulation of conformal low-spin fields, arXiv:0707.4437v3",
+    "url": "https://arxiv.org/abs/0707.4437",
+    "pdf_url": "https://arxiv.org/pdf/0707.4437v3",
+    "pdf_sha256": "80bbe298159e4fdfc35c0f4dd4e33f01e5da51227184a0bed870e5fa3e6b2676",
+    "pages": 58,
+    "equations": [
+      "6.2",
+      "6.3",
+      "6.5",
+      "6.6",
+      "6.7"
+    ],
+    "retrieved": "2026-08-15"
+  },
+  "source_transformations": {
+    "convention_crosswalk": {
+      "literature_parameter": "xi_D=-2 sigma_Metsaev",
+      "repository_parameter": "sigma=xi_D",
+      "effect": "Metsaev (6.5)-(6.7) become delta g=sigma g and delta b=d sigma-kappa"
+    },
+    "diffeomorphism": "delta_c(g,phi,b)=(L_c g,L_c phi,L_c b)",
+    "Weyl": "delta_sigma g=sigma g; delta_sigma b=d sigma; delta_sigma phi=0",
+    "conformal_boost": "delta_kappa g=0; delta_kappa b=-kappa; delta_kappa phi_mu_nu=nabla_mu kappa_nu+nabla_nu kappa_mu+b_mu kappa_nu+b_nu kappa_mu-g_mu_nu b^rho kappa_rho"
+  },
+  "shifted_auxiliary_covariance": {
+    "boost": {
+      "delta_G_b_coefficients": {
+        "sym_nabla_kappa": "-1/2",
+        "sym_b_kappa": "-1/2",
+        "g_div_kappa": "1",
+        "g_b_dot_kappa": "-1/2"
+      },
+      "A_g_delta_phi_coefficients": {
+        "sym_nabla_kappa": "-1/2",
+        "sym_b_kappa": "-1/2",
+        "g_div_kappa": "1",
+        "g_b_dot_kappa": "-1/2"
+      },
+      "delta_G_b_minus_A_g_delta_phi": {},
+      "f_hat_boost_invariant": true
+    },
+    "Weyl": {
+      "contributions": {
+        "delta_Ric": {
+          "hess_sigma": "-1",
+          "g_box_sigma": "-1/2"
+        },
+        "delta_sym_nabla_b": {
+          "hess_sigma": "1",
+          "sym_b_dsigma": "-1/2",
+          "g_b_dot_dsigma": "1/2"
+        },
+        "delta_half_b_tensor_b": {
+          "sym_b_dsigma": "1/2"
+        },
+        "delta_trace_term": {
+          "g_box_sigma": "1/2",
+          "g_b_dot_dsigma": "-1/2"
+        }
+      },
+      "delta_G_b_coefficients": {},
+      "A_g_on_weight_zero_covariant_tensors_invariant": true,
+      "f_hat_Weyl_invariant": true
+    }
+  },
+  "gauge_algebra": {
+    "brackets": [
+      {
+        "pair": "Diff,Diff",
+        "result": "Diff([c1,c2])",
+        "internal_zero": false
+      },
+      {
+        "pair": "Diff,Weyl",
+        "result": "Weyl(L_c sigma)",
+        "internal_zero": false
+      },
+      {
+        "pair": "Diff,boost",
+        "result": "boost(L_c kappa)",
+        "internal_zero": false
+      },
+      {
+        "pair": "Weyl,Weyl",
+        "result": "zero",
+        "internal_zero": true
+      },
+      {
+        "pair": "Weyl,boost",
+        "result": "zero",
+        "internal_zero": true,
+        "coefficient_defect": {}
+      },
+      {
+        "pair": "boost,boost",
+        "result": "zero",
+        "internal_zero": true,
+        "coefficient_defect": {}
+      }
+    ],
+    "off_shell_closure": true,
+    "field_dependent_structure_functions": false,
+    "local_gauge_reducibility": "none; the algebraic boost shift delta b=-kappa is injective"
+  },
+  "shifted_BRST_manifest": {
+    "ghost_change": "eta=kappa-d sigma",
+    "field_change": "f_hat=phi-A_g^-1 G^b(g,b)",
+    "BRST_rows": {
+      "Q_v_internal": "-eta",
+      "Q_f_hat_internal": "0",
+      "Q_eta_internal": "0",
+      "Q_sigma_internal": "0",
+      "Q_f_hat_Diff": "L_c f_hat",
+      "Q_v_Diff": "L_c v",
+      "Q_eta_Diff": "L_c eta",
+      "Q_sigma_Diff": "L_c sigma"
+    },
+    "non_Diff_nonlinear_ghost_antifield_terms": []
+  },
+  "nonzero_ghost_antifield_family_manifest": [
+    {
+      "family_id": "DIFF_C_C_C_STAR",
+      "source": "minimal BV master action",
+      "status": "SOURCE_SERIALIZED_MINIMAL"
+    },
+    {
+      "family_id": "DIFF_C_SIGMA_SIGMA_STAR",
+      "source": "minimal BV master action",
+      "status": "SOURCE_SERIALIZED_MINIMAL"
+    },
+    {
+      "family_id": "DIFF_C_ETA_ETA_STAR",
+      "source": "CLASSICAL_DIFF_AUXILIARY_BV_REPRESENTATION_V1",
+      "status": "SOURCE_SERIALIZED_AUXILIARY"
+    }
+  ],
+  "certified_zero_candidate_families": [
+    {
+      "candidate_family": "WEYL_SIGMA_ETA_ETA_STAR",
+      "coefficient": "0",
+      "reason": "Weyl and boost commute exactly"
+    },
+    {
+      "candidate_family": "BOOST_ETA_ETA_ETA_STAR",
+      "coefficient": "0",
+      "reason": "boost transformations commute exactly"
+    },
+    {
+      "candidate_family": "WEYL_OR_BOOST_F_HAT_F_HAT_STAR",
+      "coefficient": "0",
+      "reason": "f_hat is exactly invariant under both internal symmetries"
+    },
+    {
+      "candidate_family": "WEYL_OR_BOOST_V_V_STAR",
+      "coefficient": "0",
+      "reason": "the internal v transformation is the unary row Qv=-eta"
+    }
+  ],
+  "manifest_summary": {
+    "nonzero_ghost_antifield_families": 3,
+    "minimal_families": 2,
+    "auxiliary_families": 1,
+    "certified_zero_candidate_families": 4,
+    "additional_nonlinear_Weyl_boost_ghost_antifield_families": 0
+  },
+  "claim_flags": {
+    "FULL_NONLINEAR_WEYL_BOOST_GAUGE_TRANSFORMATIONS_IMPORTED": true,
+    "WEYL_BOOST_GAUGE_ALGEBRA_OFF_SHELL_CLOSED": true,
+    "SHIFTED_F_HAT_WEYL_BOOST_INVARIANT": true,
+    "INTERNAL_WEYL_BOOST_GHOST_BRACKETS_ZERO": true,
+    "EXHAUSTIVE_NONLINEAR_WEYL_BOOST_GHOST_ANTIFIELD_MANIFEST": true,
+    "ADDITIONAL_AUXILIARY_GHOST_ANTIFIELD_FAMILIES_REQUIRED": false,
+    "FULL_386_SOURCE_Q2_ASSEMBLED": false,
+    "FULL_Q1_Q2_IDENTITY_REPLAYED": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "QME_RESTORED": false
+  },
+  "does_not_establish": [
+    "the assembled 386-row source q2 or q3 payload",
+    "the q1/q2 identity, cyclicity or D-equivariance after combining all component families",
+    "the residual SDR and pairing gates required by Gate A",
+    "a Lorentzian off-shell BV propagator, Hadamard state, renormalized products, QME restoration or residual transfer"
+  ],
+  "canonical_hashes": {
+    "source_transformations_sha256": "4f9bb60c0a518f608182600633482ed089f937cf21c54e0f89683c223c554d3a",
+    "shifted_auxiliary_covariance_sha256": "1a1b7622b0d6d411cd6a7f2d8c854d71a60cd826b800f6d51d00f86863a8d0fc",
+    "gauge_algebra_sha256": "fd5ee3949be93a0a9eea7bb37d1a5340d317b6ae00cc6f29b57adf622bcc6121",
+    "shifted_BRST_manifest_sha256": "37be4f8e68ccdb66ddb7b38c4045f08196bb82a1c3648def9915b15ebb6258de",
+    "nonzero_family_manifest_sha256": "adb0f821f247598dc368074cae3f0c037b44c8662bf5f84bbede6bc17d8cf460",
+    "certified_zero_candidate_families_sha256": "98e978df1c71643f7d95bb76c5475d9074cbf35f818e03b5a00cfe1e63be9ac5"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "covariant_completion/certificates/curved_auxiliary_action_definition.json",
+        "result_or_artifact_id": "pure-weyl-covariant-auxiliary-action-definition-v1",
+        "sha256": "6acb586df9784c925fc994701ae910cc243e6898d635626513f4a1adfbdab4db",
+        "role": "local action and incomplete gauge manifest to be completed append-only"
+      },
+      {
+        "path": "field_bv_identification/certificates/minimal_bv_chain.json",
+        "result_or_artifact_id": "pure-weyl-field-bv-minimal-chain-v1",
+        "sha256": "3f9d04dd729c911fbe07768158d96ae411634b7a91bf70a139e8c7cf1dcd8c64",
+        "role": "displayed minimal Diff x Weyl master action"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2.json",
+        "result_or_artifact_id": "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2",
+        "sha256": "3fa276bd04fce3b0142e910e907cab3ad3e4d39bbd60b966de90fa11860c03dc",
+        "role": "executable minimal ghost and antifield rows"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_DIFF_AUXILIARY_BV_REPRESENTATION_V1.json",
+        "result_or_artifact_id": "CLASSICAL_DIFF_AUXILIARY_BV_REPRESENTATION_V1",
+        "sha256": "56383354a3a2237c78ef3e0f9e009da57f665be945850651582ca1b4d9581d37",
+        "role": "source-forced Diff action on shifted auxiliary fields"
+      }
+    ]
+  },
+  "human_report": "d_quotient_classical/reports/classical-nonlinear-weyl-boost-ghost-manifest-v1.md",
+  "next_gate": "Import this exhaustive scoped manifest into the 386-row receiver, assemble all known source q2 component families on common bytes, and replay q1/q2, cyclicity and D-equivariance without inferring those identities from the manifest alone."
+}

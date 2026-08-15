@@ -64,10 +64,10 @@ BT_EUCLIDEAN_IMPORT = FOUNDATIONS / "results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_I
 AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json"
 FULL_SURFACE_AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json"
 LADDER = FOUNDATIONS / "results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
-COMPLETION_ATLAS = FOUNDATIONS / "results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V30.json"
-COMPLETION_REPORT = FOUNDATIONS / "reports/lorentzian-weyl-bv-completion-atlas-v30.md"
-COMPLETION_GATE = ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V12_RECONCILIATION.json"
-COMPLETION_GATE_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_GATE_V12.md"
+COMPLETION_ATLAS = FOUNDATIONS / "results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V31.json"
+COMPLETION_REPORT = FOUNDATIONS / "reports/lorentzian-weyl-bv-completion-atlas-v31.md"
+COMPLETION_GATE = ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V13_RECONCILIATION.json"
+COMPLETION_GATE_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_GATE_V13.md"
 COMPLETION_SDR = ROOT / "quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json"
 COMPLETION_SDR_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_DFINITE_RESIDUAL_SDR_V1.md"
 COMPLETION_CYCLIC = ROOT / "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1.json"
@@ -130,6 +130,8 @@ COMPLETION_HH_HV_LIFT = ROOT / "quantum-weyl/classical_import/certificates/STRIC
 COMPLETION_HH_HV_LIFT_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1.md"
 COMPLETION_DIFF_AUXILIARY = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1.json"
 COMPLETION_DIFF_AUXILIARY_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1.md"
+COMPLETION_GHOST_MANIFEST = ROOT / "d_quotient_classical/certificates/CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1.json"
+COMPLETION_GHOST_MANIFEST_REPORT = ROOT / "d_quotient_classical/reports/classical-nonlinear-weyl-boost-ghost-manifest-v1.md"
 LEDGERS = v1.LEDGERS
 CREATED = "2026-08-15"
 BASE_COMMIT = "229fd0f2147e8ed611c5147328459f7678b1f605"
@@ -418,6 +420,8 @@ def build_dataset() -> dict[str, Any]:
             "completion_hh_hv_lift_report": site_link(rel(COMPLETION_HH_HV_LIFT_REPORT)),
             "completion_diff_auxiliary": site_link(rel(COMPLETION_DIFF_AUXILIARY)),
             "completion_diff_auxiliary_report": site_link(rel(COMPLETION_DIFF_AUXILIARY_REPORT)),
+            "completion_ghost_manifest": site_link(rel(COMPLETION_GHOST_MANIFEST)),
+            "completion_ghost_manifest_report": site_link(rel(COMPLETION_GHOST_MANIFEST_REPORT)),
         },
     }
     dataset["canonical_digest"] = canonical_digest(dataset)
@@ -462,12 +466,12 @@ all-real BT/Krein path integral; controlled conditional bridges remain open.
 
 The **Weyl BV routes** view projects the current audited Lorentzian completion atlas as
 seven architectures across eleven ordered gates, for 77 separately typed cells.
-It exposes the finite residual-SDR repair, eleven ranked next constructions and the
+It exposes the finite residual-SDR repair, ten ranked next constructions and the
 eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a theorem; in particular,
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
-Atlas V30 preserves the field-equation type result.  The degree-one-to-zero
+Atlas V31 preserves the field-equation type result.  The degree-one-to-zero
 Green component is an exact right inverse on Noether-compatible sources and a
 left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
 the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
@@ -505,9 +509,13 @@ Thus the complete quadratic auxiliary canonical lift is serialized and four of
 seven known families are component-complete.  The successor closes the three
 Diff families as well: 264 master-density coefficients generate 336 field, 632
 antifield, and 704 `c_star` coefficients with zero variational or Koszul defect.
-All seven known-required families are therefore component-complete.  Gate V12
-still accepts zero authoritative hashes because the exhaustive nonlinear
-Weyl/conformal-boost ghost manifest and complete source q2/q3 pullback remain open.
+All seven known-required families are therefore component-complete.  The
+primary-source completion of Metsaev's nonlinear boost law now proves that the
+Weyl/boost internal algebra is Abelian and the shifted auxiliary tensor is
+invariant.  Thus the seven auxiliary families are exhaustive in the declared
+source scope and no additional Weyl/boost ghost-antifield family is required.
+Gate V13 still accepts zero authoritative hashes because the common 386-row
+source q2/q3 assembly and its q1/q2, cyclicity, and D identities remain open.
 The complete Berger q3 remains a different-theory Weyl-plus-clock result on a fixed
 54-row carrier; no certified same-theory cyclic map authorizes its direct import.
 
@@ -843,9 +851,10 @@ def generated() -> dict[Path, bytes]:
         COMPLETION_CUBIC_INVENTORY_REPORT,
         COMPLETION_HH_HV_LIFT_REPORT,
         COMPLETION_DIFF_AUXILIARY_REPORT,
+        COMPLETION_GHOST_MANIFEST_REPORT,
     ]
     bundled_sources = sorted(set([CUBE, *PREVIOUS_CUBES, FULL_SURFACE_AUDIT, CORNER_BORN_INTERFACE, GROUND_STATE_DYNAMICS_INTERFACE, BT_EUCLIDEAN_IMPORT, GR_CASSINI_RESULT, GR_CASSINI_SCHEMA, MANNHEIM_NGC3198_RESULT, MANNHEIM_NGC3198_SCHEMA, MANNHEIM_NGC3198_PARAMETERS, MANNHEIM_NGC3198_SPARC, MANNHEIM_NGC3198_CPP, NGC3198_COMMON_FIT_RESULT, NGC3198_COMMON_FIT_SCHEMA, NGC3198_COMMON_FIT_PROTOCOL, NGC3198_COMMON_FIT_CPP, AUDIT, LADDER, COMPLETION_ATLAS, COMPLETION_REPORT, COMPLETION_GATE, COMPLETION_GATE_REPORT, COMPLETION_SDR, COMPLETION_SDR_REPORT, COMPLETION_CYCLIC, COMPLETION_CYCLIC_REPORT, COMPLETION_TRANSPORT, COMPLETION_TRANSPORT_REPORT, COMPLETION_ENDPOINT, COMPLETION_ENDPOINT_REPORT, COMPLETION_SUSPENSION, COMPLETION_SUSPENSION_REPORT, COMPLETION_COMPONENT_PAIRING, COMPLETION_COMPONENT_PAIRING_REPORT, COMPLETION_OPERATOR_PORTABILITY, COMPLETION_OPERATOR_PORTABILITY_REPORT, COMPLETION_Q1_SIGN_GATE, COMPLETION_Q1_SIGN_GATE_REPORT, COMPLETION_Q1_SIGN_REPAIR, COMPLETION_Q1_SIGN_REPAIR_REPORT, COMPLETION_FULL_Q1, COMPLETION_FULL_Q1_REPORT, COMPLETION_LOCAL_SDR, COMPLETION_LOCAL_SDR_REPORT, COMPLETION_CANONICAL_SHEAR, COMPLETION_CANONICAL_SHEAR_REPORT, COMPLETION_GREEN_ACTION_NAME, COMPLETION_GREEN_ACTION_NAME_REPORT, COMPLETION_UNARY_CAUSAL_SNAPSHOT, COMPLETION_UNARY_CAUSAL_SNAPSHOT_REPORT, COMPLETION_FULL_D, COMPLETION_FULL_D_REPORT, COMPLETION_Q2_PREFLIGHT, COMPLETION_Q2_PREFLIGHT_REPORT, COMPLETION_Q2_GREEN, COMPLETION_Q2_GREEN_REPORT, COMPLETION_RECURSIVE_TREES, COMPLETION_RECURSIVE_TREES_REPORT, COMPLETION_FORMAL_COEFFICIENTS, COMPLETION_FORMAL_COEFFICIENTS_REPORT, COMPLETION_FIELD_EQUATION_QUOTIENT_INVERSE, COMPLETION_FIELD_EQUATION_QUOTIENT_INVERSE_REPORT, COMPLETION_QUADRATIC_OBSTRUCTION, COMPLETION_QUADRATIC_OBSTRUCTION_REPORT, COMPLETION_Q3_WITNESS, COMPLETION_Q3_WITNESS_REPORT, COMPLETION_MINIMAL_Q3, COMPLETION_MINIMAL_Q3_REPORT, COMPLETION_ARITY3, COMPLETION_ARITY3_REPORT, COMPLETION_Q3_CYCLICITY, COMPLETION_Q3_CYCLICITY_REPORT, COMPLETION_CUBIC_INVENTORY, COMPLETION_CUBIC_INVENTORY_REPORT, COMPLETION_HH_HV_LIFT, COMPLETION_HH_HV_LIFT_REPORT, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
-    bundled_sources = sorted(set([*bundled_sources, COMPLETION_DIFF_AUXILIARY, COMPLETION_DIFF_AUXILIARY_REPORT, *completion_evidence_paths]))
+    bundled_sources = sorted(set([*bundled_sources, COMPLETION_DIFF_AUXILIARY, COMPLETION_DIFF_AUXILIARY_REPORT, COMPLETION_GHOST_MANIFEST, COMPLETION_GHOST_MANIFEST_REPORT, *completion_evidence_paths]))
     for source in bundled_sources:
         outputs[SITE / "sources" / source.relative_to(ROOT)] = source.read_bytes()
     input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", FOUNDATIONS / "theory_assembly.py", FOUNDATIONS / "build_gr_cassini_assembly.py", FOUNDATIONS / "check_gr_cassini_assembly.py", FOUNDATIONS / "verify_gr_cassini_assembly.py", FOUNDATIONS / "build_mannheim_ngc3198_assembly.py", FOUNDATIONS / "check_mannheim_ngc3198_assembly.py", FOUNDATIONS / "verify_mannheim_ngc3198_assembly.py", FOUNDATIONS / "build_ngc3198_common_fit_comparison.py", FOUNDATIONS / "check_ngc3198_common_fit_comparison.py", FOUNDATIONS / "verify_ngc3198_common_fit_comparison.py", FOUNDATIONS / "standard-gr-observational-control-v1.json", FOUNDATIONS / "schema/standard-gr-observational-control-v1.schema.json", *bundled_sources, ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js", V2_ASSETS / "styles-v2.css"]))
@@ -877,7 +886,7 @@ def generated() -> dict[Path, bytes]:
         "human_report": "foundations/reports/matrix-explorer-site-v2.md",
     }
     result["features"] = [item for item in result["features"] if not item.startswith("Gate V11 reconciliation")]
-    result["features"].append("Gate V12 reconciliation with all seven known cubic families component-complete and an explicit exhaustive-census firewall")
+    result["features"].append("Gate V13 reconciliation with an exhaustive seven-family auxiliary census and an explicit common-source-q2 assembly firewall")
     result["features"].append("exact 386-row candidate q3 stabilization with 16 ternary block channels and strict authority firewall")
     result["features"].append("exact source-versus-candidate auxiliary cubic witness refuting literal and linear-shear theory identity")
     result["features"].append("exact first nonlinear auxiliary-elimination component closing the f-hat-v-v channel with full BV pullback still open")
@@ -916,7 +925,9 @@ def generated() -> dict[Path, bytes]:
     result["claim_flags"]["strict_386_f_hat_v_v_pullback_channel_closed"] = True
     result["claim_flags"]["strict_386_known_required_cubic_families_enumerated"] = True
     result["claim_flags"]["strict_386_vv_bv_cotangent_lift_canonical"] = True
-    result["claim_flags"]["strict_386_exhaustive_full_nonlinear_bv_family_census"] = False
+    result["claim_flags"]["strict_386_exhaustive_full_nonlinear_bv_family_census"] = True
+    result["claim_flags"]["strict_nonlinear_weyl_boost_ghost_manifest_complete"] = True
+    result["claim_flags"]["strict_386_full_source_q2_assembled"] = False
     result["claim_flags"]["strict_386_hh_hv_bv_cotangent_lift_component_complete"] = True
     result["claim_flags"]["strict_386_full_bv_cotangent_lift_serialized"] = True
     result["claim_flags"]["strict_386_full_quadratic_bv_cotangent_lift_serialized"] = True

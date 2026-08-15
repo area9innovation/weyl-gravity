@@ -17,7 +17,7 @@ VIABILITY = ROOT / "foundations/site/viability.json"
 ASSEMBLIES = ROOT / "foundations/site/assemblies.json"
 CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V15.json"
 LADDER = ROOT / "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
-COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V30.json"
+COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V31.json"
 COMPLETION_GREEN_ACTION_NAME = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_GREEN_ACTION_NAME_V1.json"
 COMPLETION_UNARY_CAUSAL_SNAPSHOT = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1.json"
 COMPLETION_FULL_D = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_FULL_D_ACTION_V1.json"
@@ -36,6 +36,8 @@ COMPLETION_HH_HV_LIFT = ROOT / "quantum-weyl/classical_import/certificates/STRIC
 COMPLETION_GATE_V11 = ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V11_RECONCILIATION.json"
 COMPLETION_DIFF_AUXILIARY = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1.json"
 COMPLETION_GATE_V12 = ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V12_RECONCILIATION.json"
+COMPLETION_GHOST_MANIFEST = ROOT / "d_quotient_classical/certificates/CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1.json"
+COMPLETION_GATE_V13 = ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V13_RECONCILIATION.json"
 STATUSES = {"LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "REVIEWED_GAP", "NOT_MAPPED"}
 MIGRATIONS = {"EXACT_PARENT_TRANSFER", "CAPABILITY_QUALIFIED", "REVIEWED_OVERLAY", "REVIEWED_NO_TRANSFER", "REVIEWED_CHILD_GAP", "DIRECT_COORDINATE_REVIEW", "NOT_REVIEWED"}
 
@@ -57,7 +59,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     data = load(DATA) if data is None else data
     cube, ladder, completion_source, result, manifest, viability, assemblies = load(CUBE), load(LADDER), load(COMPLETION_ATLAS), load(RESULT), load(MANIFEST), load(VIABILITY), load(ASSEMBLIES)
     green_source, unary_causal_source = load(COMPLETION_GREEN_ACTION_NAME), load(COMPLETION_UNARY_CAUSAL_SNAPSHOT)
-    full_d_source, q2_preflight_source, q2_green_source, recursive_tree_source, formal_source, typed_inverse_source, quadratic_source, q3_witness_source, gate_v8_source, gate_v9_source, gate_v10_source, cubic_inventory_source, hh_hv_lift_source, gate_v11_source, diff_auxiliary_source, gate_v12_source = load(COMPLETION_FULL_D), load(COMPLETION_Q2_PREFLIGHT), load(COMPLETION_Q2_GREEN), load(COMPLETION_RECURSIVE_TREES), load(COMPLETION_FORMAL_COEFFICIENTS), load(COMPLETION_FIELD_EQUATION_QUOTIENT_INVERSE), load(COMPLETION_QUADRATIC_OBSTRUCTION), load(COMPLETION_Q3_WITNESS), load(COMPLETION_GATE_V8), load(COMPLETION_GATE_V9), load(COMPLETION_GATE_V10), load(COMPLETION_CUBIC_INVENTORY), load(COMPLETION_HH_HV_LIFT), load(COMPLETION_GATE_V11), load(COMPLETION_DIFF_AUXILIARY), load(COMPLETION_GATE_V12)
+    full_d_source, q2_preflight_source, q2_green_source, recursive_tree_source, formal_source, typed_inverse_source, quadratic_source, q3_witness_source, gate_v8_source, gate_v9_source, gate_v10_source, cubic_inventory_source, hh_hv_lift_source, gate_v11_source, diff_auxiliary_source, gate_v12_source, ghost_manifest_source, gate_v13_source = load(COMPLETION_FULL_D), load(COMPLETION_Q2_PREFLIGHT), load(COMPLETION_Q2_GREEN), load(COMPLETION_RECURSIVE_TREES), load(COMPLETION_FORMAL_COEFFICIENTS), load(COMPLETION_FIELD_EQUATION_QUOTIENT_INVERSE), load(COMPLETION_QUADRATIC_OBSTRUCTION), load(COMPLETION_Q3_WITNESS), load(COMPLETION_GATE_V8), load(COMPLETION_GATE_V9), load(COMPLETION_GATE_V10), load(COMPLETION_CUBIC_INVENTORY), load(COMPLETION_HH_HV_LIFT), load(COMPLETION_GATE_V11), load(COMPLETION_DIFF_AUXILIARY), load(COMPLETION_GATE_V12), load(COMPLETION_GHOST_MANIFEST), load(COMPLETION_GATE_V13)
     errors: list[str] = []
     axes = {x.get("id"): x for x in data.get("axes", [])}
     keys = {axis_id: [x.get("id") for x in axes.get(axis_id, {}).get("keys", [])] for axis_id in ("FOUNDATION", "CARRIER", "REFINED_OBLIGATION")}
@@ -175,12 +177,12 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("Lorentzian completion atlas projection")
     if len(completion.get("branches", [])) != 7 or len(completion.get("stages", [])) != 11 or sum(len(item.get("stages", [])) for item in completion.get("branches", [])) != 77:
         errors.append("Lorentzian completion branch/stage closure")
-    if len(completion.get("route_selection", [])) != 11 or len(completion.get("berger_h26_c26_decision_chain", [])) != 11:
+    if len(completion.get("route_selection", [])) != 10 or len(completion.get("berger_h26_c26_decision_chain", [])) != 11:
         errors.append("Lorentzian completion route/decision closure")
     completion_flags = completion.get("claim_flags", {})
     if completion_flags.get("general_noncone_104_row_no_go") is not False or completion_flags.get("lorentzian_full_theory_certified") is not False:
         errors.append("Lorentzian completion fail-closed boundary")
-    if completion.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V30":
+    if completion.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V31":
         errors.append("Lorentzian completion atlas version")
     transport = completion.get("strict_causal_sign_transport", {})
     if transport.get("full_dimension") != 386 or transport.get("positive_signs") != 381 or transport.get("negative_signs") != 5 or transport.get("causal_stage_preserved") is not True:
@@ -407,10 +409,10 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     if completion_flags.get("strict_386_authoritative_full_q2_imported") is not False or completion_flags.get("strict_386_candidate_theory_identity_certified") is not False or completion_flags.get("strict_386_full_carrier_q2_certified") is not False or completion_flags.get("strict_386_d_q2_derivation_replayed") is not False or completion_flags.get("strict_pure_weyl_classical_gate_passed") is not False:
         errors.append("strict V17 authoritative q2/Gate firewall")
     route_names = [item.get("route") for item in completion.get("route_selection", [])]
-    if route_names[:4] != ["STRICT_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST", "STRICT_SOURCE_Q2_Q3_PULLBACK_IDENTITY", "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE", "STRICT_CANDIDATE_Q2_Q3_GREEN_LAMBDA2_RESPONSE"]:
-        errors.append("strict V30 nonlinear-equivalence route frontier")
-    if any(item in {"STRICT_SECOND_FRECHET_HH_HV_AUXILIARY_SHIFT_COMPONENTS", "STRICT_386_BV_COTANGENT_LIFT_COMPONENTS", "STRICT_DIFF_AUXILIARY_BV_REPRESENTATION_COMPONENTS"} for item in route_names):
-        errors.append("strict V30 completed component routes retained")
+    if route_names[:3] != ["STRICT_SOURCE_Q2_Q3_COMMON_ASSEMBLY_AND_IDENTITIES", "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE", "STRICT_CANDIDATE_Q2_Q3_GREEN_LAMBDA2_RESPONSE"]:
+        errors.append("strict V31 common-source assembly route frontier")
+    if any(item in {"STRICT_SECOND_FRECHET_HH_HV_AUXILIARY_SHIFT_COMPONENTS", "STRICT_386_BV_COTANGENT_LIFT_COMPONENTS", "STRICT_DIFF_AUXILIARY_BV_REPRESENTATION_COMPONENTS", "STRICT_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST"} for item in route_names):
+        errors.append("strict V31 completed component or manifest routes retained")
     if any(item in {"STRICT_TYPED_FIELD_EQUATION_GREEN_INVERSE", "STRICT_Q2_Q3_SOURCE_COCYCLE_CLOSURE", "STRICT_AUTHORITATIVE_Q2_Q3_ARITY_THREE_EXPORT", "STRICT_LAMBDA2_FULL_SOURCE_COCYCLE_CLOSURE"} for item in route_names):
         errors.append("strict V25 retired route frontier")
     minimal_q3 = completion.get("strict_minimal_q3_completion", {})
@@ -511,6 +513,29 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         or gate_v12.get("complete_source_q2_q3_pullback_replayed") is not False
     ):
         errors.append("strict Gate V12 projection")
+    ghost_manifest = completion.get("strict_nonlinear_weyl_boost_ghost_manifest", {})
+    if (
+        ghost_manifest.get("result_id") != ghost_manifest_source.get("result_id")
+        or (ghost_manifest.get("nonzero_ghost_antifield_families"), ghost_manifest.get("minimal_families"), ghost_manifest.get("auxiliary_families")) != (3, 2, 1)
+        or ghost_manifest.get("certified_zero_candidate_families") != 4
+        or ghost_manifest.get("additional_nonlinear_Weyl_boost_ghost_antifield_families") != 0
+        or ghost_manifest.get("off_shell_closure") is not True
+        or ghost_manifest.get("field_dependent_structure_functions") is not False
+        or ghost_manifest.get("shifted_f_hat_Weyl_invariant") is not True
+        or ghost_manifest.get("shifted_f_hat_boost_invariant") is not True
+        or ghost_manifest.get("exhaustive_in_declared_scope") is not True
+        or ghost_manifest.get("full_386_source_q2_assembled") is not False
+    ):
+        errors.append("strict V31 nonlinear Weyl/boost ghost-manifest projection")
+    gate_v13 = completion.get("strict_gate_v13_reconciliation", {})
+    if (
+        gate_v13.get("result_id") != gate_v13_source.get("result_id")
+        or gate_v13.get("gate_a_status") != "FAIL_CLOSED"
+        or gate_v13.get("accepted_top_level_hashes") != 0
+        or gate_v13.get("exhaustive_auxiliary_family_census") is not True
+        or gate_v13.get("full_source_q2_assembled") is not False
+    ):
+        errors.append("strict Gate V13 projection")
     result_flags = result.get("claim_flags", {})
     if result_flags.get("strict_graph_green_names_exposed") is not True or result_flags.get("strict_unary_causal_snapshot_exposed") is not True or result_flags.get("strict_full_d_action_exposed") is not True or result_flags.get("strict_d_q1_replay_exposed") is not True or result_flags.get("strict_stabilized_q2_candidate_exposed") is not True or result_flags.get("strict_stabilized_d_q2_derivation_exposed") is not True or result_flags.get("strict_candidate_q2_green_first_response_exposed") is not True or result_flags.get("strict_candidate_q2_green_foundations_exposed") is not True or result_flags.get("strict_candidate_polarized_finite_trees_exposed") is not True or result_flags.get("strict_first_mixed_sign_domain_nondefinition_exposed") is not True or result_flags.get("strict_candidate_polarized_formal_coefficients_exposed") is not True or result_flags.get("strict_lambda_adic_stabilization_exposed") is not True or result_flags.get("strict_lambda_squared_bv_promotion_gate_exposed") is not True or result_flags.get("strict_field_equation_green_component_exposed") is not True or result_flags.get("strict_field_equation_quotient_inverse_exposed") is not True or result_flags.get("strict_ungauge_fixed_full_inverse_obstruction_exposed") is not True or result_flags.get("strict_all_order_source_closure_exposed") is not False or result_flags.get("strict_authoritative_q2_green_compatibility_exposed") is not False or result_flags.get("strict_recursive_nonlinear_green_trees_exposed") is not False or result_flags.get("strict_unrestricted_mixed_sign_trees_exposed") is not False or result_flags.get("strict_arbitrary_causal_difference_trees_exposed") is not False or result_flags.get("strict_infinite_tree_series_convergence_exposed") is not False or result_flags.get("strict_typed_field_equation_green_inverse_exposed") is not False or result_flags.get("strict_weyl_bv_maurer_cartan_series_exposed") is not False or result_flags.get("strict_authoritative_formal_moller_map_exposed") is not False or result_flags.get("strict_analytic_moller_convergence_exposed") is not False or result_flags.get("strict_nonperturbative_moller_map_exposed") is not False or result_flags.get("strict_authoritative_full_carrier_q2_exposed") is not False or result_flags.get("strict_full_carrier_q2_exposed") is not False or result_flags.get("strict_classical_gate_a_passed") is not False:
         errors.append("site completion exposure flags")
@@ -526,9 +551,11 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         or result_flags.get("strict_386_full_quadratic_bv_cotangent_lift_serialized") is not True
         or result_flags.get("strict_386_diff_bv_representation_component_complete") is not True
         or result_flags.get("strict_386_seven_known_required_cubic_families_component_complete") is not True
-        or result_flags.get("strict_386_exhaustive_full_nonlinear_bv_family_census") is not False
+        or result_flags.get("strict_386_exhaustive_full_nonlinear_bv_family_census") is not True
+        or result_flags.get("strict_nonlinear_weyl_boost_ghost_manifest_complete") is not True
+        or result_flags.get("strict_386_full_source_q2_assembled") is not False
     ):
-        errors.append("site V30 auxiliary interaction flags")
+        errors.append("site V31 auxiliary-census/source-assembly flags")
     if viability.get("source_atlas_digest") != data.get("canonical_digest") or viability.get("canonical_digest") != result.get("independent_checker", {}).get("expected_viability_digest"):
         errors.append("theory viability source/digest pin")
     if len(viability.get("profiles", [])) != 36 or len(viability.get("carrier_envelopes", [])) != 6:
@@ -597,7 +624,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     for token in ("NGC 3198 head-to-head control", "Scoped winner: GR + NFW", "Why RMS and χ² disagree", "FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1"):
         if token not in app:
             errors.append("common-fit interface token " + token)
-    for token in ("completionView", "Weyl BV routes", "completionExplorer", "77 separately typed cells", "Where effort has the highest expected value", "RANK_ONLY_FEASIBLE", "general non-cone 104-row no-go", "Finite residual control", "Gate A still closed", "Gate V12", "Cubic family census and vv lift", "Curved quadratic canonical lift completed", "Known cubic-family frontier completed", "Known is not exhaustive", "1392", "3907", "264", "336", "632", "704", "22", "16", "four pairing slices", "Causal convention crosswalk", "Endpoint search completed", "arrow_tables_matching", "bach_columns_matching", "619", "Suspension question resolved", "54", "30", "376", "10", "Full component pairing serialized", "356=36+320", "410", "Three portability contracts", "FINITE_COMPONENT_JET_TABLE", "FINITE_SPARSE_COMPONENT_MAP", "ANALYTIC_GREEN_ACTION", "Complete unary snapshot", "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1", "Exact split local SDR", "STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1", "H_alg", "190", "Canonical coordinate bridge certified", "STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1", "1321", "A(-Tsharp)", "T(-Asharp)", "Represented Green action certified", "Hodge eigenspace projectors", "STRICT_386_GRAPH_GREEN_ACTION_NAME_V1", "Scoped common snapshot accepted", "hashes bind one unary-causal carrier", "STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1", "Full cylinder flow certified", "STRICT_386_FULL_D_ACTION_V1", "4374", "Fourteen hashes", "Algebraic q2 lift certified", "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1", "140", "68", "Finite polarized recursion certified", "Every retarded tree", "38", "40", "Two four-leaf terms", "Formal coefficients certified", "Two unique λ-adic series", "The first BV promotion gap is at λ²", "1430", "STRICT_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST", "STRICT_SOURCE_Q2_Q3_PULLBACK_IDENTITY", "STRICT_CANDIDATE_Q2_Q3_GREEN_LAMBDA2_RESPONSE", "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE", "STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1", "The quadratic-only λ² source is not closed", "Cubic regression witness", "Minimal cubic L∞ package completed", "Full-graph cubic candidate certified", "Valid construction, unproven identity", "STRICT_386_STABILIZED_Q3_LIFT_PREFLIGHT_V1", "Theory-identity test decided", "STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1", "source-minus-candidate defect", "First nonlinear correction constructed", "STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1", "72", "212", "S4", "41", "NO_CERTIFIED_SAME_THEORY_CARRIER_MAP", "37880/27", "-75760/9", "graph coordinates"):
+    for token in ("completionView", "Weyl BV routes", "completionExplorer", "77 separately typed cells", "Where effort has the highest expected value", "RANK_ONLY_FEASIBLE", "general non-cone 104-row no-go", "Finite residual control", "Gate A still closed", "Gate V13", "Cubic family census and vv lift", "Curved quadratic canonical lift completed", "Component frontier completed", "Primary-source surprise", "The missing nonlinear ghost manifest adds no new families", "Census is not assembly", "1392", "3907", "264", "336", "632", "704", "22", "16", "four pairing slices", "Causal convention crosswalk", "Endpoint search completed", "arrow_tables_matching", "bach_columns_matching", "619", "Suspension question resolved", "54", "30", "376", "10", "Full component pairing serialized", "356=36+320", "410", "Three portability contracts", "FINITE_COMPONENT_JET_TABLE", "FINITE_SPARSE_COMPONENT_MAP", "ANALYTIC_GREEN_ACTION", "Complete unary snapshot", "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1", "Exact split local SDR", "STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1", "H_alg", "190", "Canonical coordinate bridge certified", "STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1", "1321", "A(-Tsharp)", "T(-Asharp)", "Represented Green action certified", "Hodge eigenspace projectors", "STRICT_386_GRAPH_GREEN_ACTION_NAME_V1", "Scoped common snapshot accepted", "hashes bind one unary-causal carrier", "STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1", "Full cylinder flow certified", "STRICT_386_FULL_D_ACTION_V1", "4374", "Fourteen hashes", "Algebraic q2 lift certified", "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1", "140", "68", "Finite polarized recursion certified", "Every retarded tree", "38", "40", "Two four-leaf terms", "Formal coefficients certified", "Two unique λ-adic series", "The first BV promotion gap is at λ²", "1430", "STRICT_SOURCE_Q2_Q3_COMMON_ASSEMBLY_AND_IDENTITIES", "STRICT_CANDIDATE_Q2_Q3_GREEN_LAMBDA2_RESPONSE", "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE", "STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1", "The quadratic-only λ² source is not closed", "Cubic regression witness", "Minimal cubic L∞ package completed", "Full-graph cubic candidate certified", "Valid construction, unproven identity", "STRICT_386_STABILIZED_Q3_LIFT_PREFLIGHT_V1", "Theory-identity test decided", "STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1", "source-minus-candidate defect", "First nonlinear correction constructed", "STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1", "72", "212", "S4", "41", "NO_CERTIFIED_SAME_THEORY_CARRIER_MAP", "37880/27", "-75760/9", "graph coordinates"):
         if token not in html + app + json.dumps(data):
             errors.append("completion interface token " + token)
 

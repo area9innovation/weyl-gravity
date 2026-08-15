@@ -866,6 +866,16 @@
       "result_id": "CLASSICAL_IMPORT_GATE_V12_RECONCILIATION",
       "sha256": "6cc2a98d1cf81ec12a38e02bc5d1959907240a6c06e51aae92911be8f243c6db"
     },
+    "classical_import_gate_v13": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V13_RECONCILIATION.json",
+      "result_id": "CLASSICAL_IMPORT_GATE_V13_RECONCILIATION",
+      "sha256": "ba9ac1a3452eb5e16f5f589eaef40fd8c4ca08864d817cd6d2d7842e5d78aa14"
+    },
     "classical_import_gate_v5": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -924,6 +934,15 @@
       "path": "d_quotient_classical/certificates/CLASSICAL_MINIMAL_BV_Q3_EXPORT_V1.json",
       "result_id": "CLASSICAL_MINIMAL_BV_Q3_EXPORT_V1",
       "sha256": "eb217d49cde1e998bec352bc82cd67b80243d849fcdcacbfb33dabbb7837eda3"
+    },
+    "classical_nonlinear_weyl_boost_ghost_manifest": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "d_quotient_classical/certificates/CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1.json",
+      "result_id": "CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1",
+      "sha256": "b4cea7dc000aea74e4fb466d9b98da1786df8c03b4a1ebb614d5e8c275a295ba"
     },
     "classical_ordinary_derivative_auxiliary_cubic_export": {
       "dependency_tags": [
@@ -1012,7 +1031,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "e7f0bf3ab416a823c3a2fa4e6ec3626100f667fb96f836311322ed467b34a9d3"
+      "sha256": "9a79856b81406d351199a17427eb73940931c87dd68223aa8617e51910745ba0"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -1338,6 +1357,18 @@
       "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V30.json",
       "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V30",
       "sha256": "5eddc65453bdfea8d13a7973fef7e1a76eefacc548d5595018ca842663819fe7"
+    },
+    "lorentzian_weyl_bv_completion_atlas_v31": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V31.json",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V31",
+      "sha256": "badced1365cf584b2fd78f8a188a2c66514439c5ba4d689ae20d5f8933a27004"
     },
     "lorentzian_weyl_bv_completion_atlas_v4": {
       "dependency_tags": [
@@ -1764,10 +1795,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "0944bf8c8b2ee8574cfdf3140a19cfe563f861734becbe8f0965bcc22f04cf18"
+      "sha256": "ec6b76a799fe222695179b9059529bfa703e70fb451a5154d7c346b2fe2a0a21"
     }
   },
-  "canonical_digest": "121ff20717de6b2f42f73d4ce89f7fdef1d3de9ab6fde89e415e9736fc9d8362",
+  "canonical_digest": "ecbf9940cf57d3f909bda1916185392081be123265b079e11528e8e3d393dbba",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -1901,6 +1932,7 @@
     "classical_import_gate_v10_fail_closed": true,
     "classical_import_gate_v11_fail_closed": true,
     "classical_import_gate_v12_fail_closed": true,
+    "classical_import_gate_v13_fail_closed": true,
     "classical_import_gate_v8_fail_closed": true,
     "classical_import_gate_v9_fail_closed": true,
     "coded_h2_arbitrary_distribution_uniqueness_proved": false,
@@ -1978,7 +2010,7 @@
     "strict_386_effective_numeric_green_solver": false,
     "strict_386_endpoint_all_700_bach_columns_match": true,
     "strict_386_endpoint_q1_content_identified": true,
-    "strict_386_exhaustive_full_nonlinear_bv_family_census": false,
+    "strict_386_exhaustive_full_nonlinear_bv_family_census": true,
     "strict_386_f_hat_v_v_pullback_channel_closed": true,
     "strict_386_field_equation_constrained_right_inverse_certified": true,
     "strict_386_field_equation_green_component_typed": true,
@@ -1993,6 +2025,7 @@
     "strict_386_full_q1_squared_zero_replayed": true,
     "strict_386_full_q1_suspended_cyclicity_replayed": true,
     "strict_386_full_quadratic_bv_cotangent_lift_serialized": true,
+    "strict_386_full_source_q2_assembled": false,
     "strict_386_full_source_q2_q3_pullback_replayed": false,
     "strict_386_full_suspended_green_adjoint_replayed": true,
     "strict_386_full_weyl_lambda2_source_closure_certified": false,
@@ -2041,6 +2074,7 @@
     "strict_minimal_bv_cyclicity_reconciled": true,
     "strict_minimal_full_bv_arity_three_identity_certified": true,
     "strict_minimal_q3_cyclicity_certified": true,
+    "strict_nonlinear_weyl_boost_ghost_manifest_complete": true,
     "strict_pure_weyl_local_q1_q2_certified": true,
     "strict_pure_weyl_metric_q3_witness_derived": true,
     "strict_pure_weyl_q3_witness_cancellation_certified": true,
@@ -2847,6 +2881,20 @@
       ],
       "statement": "Naturality of the exact curved source-to-split shift forces f_hat to transform as a symmetric covariant tensor and v and the odd shifted boost ghost eta as covectors. Their three first-jet Lie actions contain 168 collected ordered field coefficients. On the fixed 386-row carrier, variational differentiation against the exact non-diagonal odd pairing produces 264 master-density, 336 field-output, 632 antifield-output, and 704 Diff momentum-map coefficients. An independent receiver reconstructs every coefficient and finds zero formal-variational and Koszul defects. All seven currently known required cubic families are therefore component-complete. This is deliberately not promoted to an exhaustive nonlinear BV census: the authoritative nonlinear Weyl/conformal-boost ghost-antifield manifest and the assembled source q2/q3 identities remain open. Gate V12 stays fail closed with zero accepted hashes, and Atlas V30 ranks the exhaustive manifest first without promoting Hadamard data, renormalized Lorentzian products, QME restoration, or residual transfer.",
       "status": "SEVEN_KNOWN_CUBIC_FAMILIES_COMPONENT_COMPLETE_EXHAUSTIVE_GHOST_MANIFEST_AND_SOURCE_Q2_OPEN_GATE_A_FAIL_CLOSED"
+    },
+    {
+      "authorities": [
+        "classical_nonlinear_weyl_boost_ghost_manifest",
+        "classical_import_gate_v13",
+        "lorentzian_weyl_bv_completion_atlas_v31"
+      ],
+      "claim_id": "RF-61-STRICT-WEYL-NONLINEAR-GHOST-MANIFEST",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "Metsaev's full nonlinear conformal-boost transformation contains the b_mu kappa_n+b_nu kappa_mu-g_mn b.kappa terms required for exact covariance. In the repository convention sigma=-2 sigma_Metsaev, the shifted variables eta=kappa-d sigma and f_hat=phi-A_g^{-1}G^b make the internal Weyl/boost algebra Abelian off shell and f_hat invariant under both internal symmetries. The exact ghost-antifield manifest has three nonzero families: the two minimal Diff actions on c and sigma and the auxiliary Diff action on eta. Four candidate internal Weyl/boost families vanish, and no additional nonlinear Weyl/boost ghost-antifield family is required in the declared source scope. Thus the seven serialized auxiliary cubic families form an exhaustive scoped census. This does not assemble the minimal and auxiliary terms into one 386-row source q2/q3 payload or replay q1/q2, cyclicity, and D-equivariance on common bytes. Gate V13 remains fail closed with zero accepted hashes, and Atlas V31 ranks common source assembly first without promoting Hadamard data, renormalized Lorentzian products, QME restoration, or residual transfer.",
+      "status": "NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_EXHAUSTIVE_AUXILIARY_CENSUS_CERTIFIED_COMMON_SOURCE_Q2_ASSEMBLY_OPEN_GATE_A_FAIL_CLOSED"
     }
   ],
   "created": "2026-08-15",
@@ -3036,6 +3084,11 @@
       "url": "https://arxiv.org/abs/2304.01723"
     },
     {
+      "role": "full nonlinear ordinary-derivative Weyl/conformal-boost gauge transformations",
+      "source_id": "metsaev-2007",
+      "url": "https://arxiv.org/abs/0707.4437"
+    },
+    {
       "role": "standard-GR solar-system positive control",
       "source_id": "bertotti-iess-tortora-2003",
       "url": "https://doi.org/10.1038/nature01997"
@@ -3068,19 +3121,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "563192b93721d15a9ee74b65a0926447f03d2d70a10ff79c40ee4dc1328bc445",
+      "assembly_source_canonical_digest": "d810640f66b4f3462f90770273d49ce9bd00b9fd876160996df24b32d3c969e5",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "0944bf8c8b2ee8574cfdf3140a19cfe563f861734becbe8f0965bcc22f04cf18",
+      "assembly_source_sha256": "ec6b76a799fe222695179b9059529bfa703e70fb451a5154d7c346b2fe2a0a21",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
-      "generator_sha256": "1e6aea0ce40658d613a51a3befbd33654a92b5dcf5ea0a8006461b740ccc8513",
+      "generator_sha256": "71c6288ff4aa8dd99f15ec4a59bc207c2543478b7ca7b670367794adc664cabe",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "302b37838880d58f187a77ee7f952786ff714a30cb56fae3fa6607474658943a",
-      "source_canonical_digest": "a9dad5b2159643783f1082dbdc995a821a3b0eab1970abe3c5b59beb8ec59ab9",
+      "sha256": "4886f78557711d9d15ce02b68ae3f4bab1db9097095fc7f6297d622671669dd6",
+      "source_canonical_digest": "15333e2c01ad9ba7100d1d18f6294abfdf56a684a7fc0ba5dc719641c59d194b",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "d1061b5238f3e9ac8dac72932ecd269138911368168ef1f3430c7dd8bfbfda8c"
+      "source_sha256": "26285d2fd013a2a3ec44f852e86e07ea4a87a6491ab96fb4f36bc8478fe27901"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "b184235a5112fcc53d49b34ad4592b4d5949bf1d3c63bd3ace4902f193f0dd0e"
+    "sha256": "f35225aa28c607efa9a46ae55f89284db7337accb1bf7e56fc521e3a1fe5c179"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

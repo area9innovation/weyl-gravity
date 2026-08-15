@@ -162,6 +162,9 @@ def main() -> int:
     strict_diff_auxiliary = json.loads((ROOT / data["authorities"]["strict_386_diff_auxiliary_bv_representation"]["path"]).read_text())
     gate_v12 = json.loads((ROOT / data["authorities"]["classical_import_gate_v12"]["path"]).read_text())
     completion_atlas_v30 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v30"]["path"]).read_text())
+    ghost_manifest = json.loads((ROOT / data["authorities"]["classical_nonlinear_weyl_boost_ghost_manifest"]["path"]).read_text())
+    gate_v13 = json.loads((ROOT / data["authorities"]["classical_import_gate_v13"]["path"]).read_text())
+    completion_atlas_v31 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v31"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -480,6 +483,7 @@ def main() -> int:
         (58, "STRICT-WEYL-GATE-V10-THREE-FRONT-COMPLETION-ATLAS"),
         (59, "STRICT-WEYL-CURVED-QUADRATIC-AUXILIARY-BV-LIFT"),
         (60, "STRICT-WEYL-AUXILIARY-DIFF-BV-LIFT"),
+        (61, "STRICT-WEYL-NONLINEAR-GHOST-MANIFEST"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -817,6 +821,12 @@ def main() -> int:
     require(gate_v12["gate_disposition"]["gate_a_status"] == "FAIL_CLOSED" and gate_v12["gate_disposition"]["accepted_common_snapshot_hashes"] == 0 and gate_v12["claim_flags"]["STRICT_386_DIFF_BV_REPRESENTATION_COMPONENT_COMPLETE"] is True and gate_v12["claim_flags"]["STRICT_386_EXHAUSTIVE_FULL_NONLINEAR_BV_FAMILY_CENSUS"] is False, "Gate V12 Diff/Gate-A boundary drift")
     require([item["route"] for item in completion_atlas_v30["route_selection"][:3]] == ["STRICT_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST", "STRICT_SOURCE_Q2_Q3_PULLBACK_IDENTITY", "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE"], "completion atlas V30 frontier ordering drift")
     require(completion_atlas_v30["strict_diff_auxiliary_bv_representation"]["component_complete_families"] == 7 and completion_atlas_v30["strict_diff_auxiliary_bv_representation"]["exhaustive_full_nonlinear_BV_family_census"] is False and completion_atlas_v30["strict_gate_v12_reconciliation"]["accepted_top_level_hashes"] == 0, "completion atlas V30 projection/firewall drift")
+    ghost_summary = ghost_manifest["manifest_summary"]
+    require(ghost_summary == {"nonzero_ghost_antifield_families": 3, "minimal_families": 2, "auxiliary_families": 1, "certified_zero_candidate_families": 4, "additional_nonlinear_Weyl_boost_ghost_antifield_families": 0}, "nonlinear Weyl/boost ghost manifest census drift")
+    require(ghost_manifest["claim_flags"]["WEYL_BOOST_GAUGE_ALGEBRA_OFF_SHELL_CLOSED"] is True and ghost_manifest["claim_flags"]["SHIFTED_F_HAT_WEYL_BOOST_INVARIANT"] is True and ghost_manifest["claim_flags"]["EXHAUSTIVE_NONLINEAR_WEYL_BOOST_GHOST_ANTIFIELD_MANIFEST"] is True and ghost_manifest["claim_flags"]["FULL_386_SOURCE_Q2_ASSEMBLED"] is False, "nonlinear ghost-manifest/source-assembly boundary drift")
+    require(gate_v13["gate_disposition"]["gate_a_status"] == "FAIL_CLOSED" and gate_v13["gate_disposition"]["accepted_common_snapshot_hashes"] == 0 and gate_v13["claim_flags"]["STRICT_386_EXHAUSTIVE_FULL_NONLINEAR_BV_FAMILY_CENSUS"] is True and gate_v13["claim_flags"]["STRICT_386_FULL_SOURCE_Q2_ASSEMBLED"] is False, "Gate V13 census/assembly firewall drift")
+    require([item["route"] for item in completion_atlas_v31["route_selection"][:3]] == ["STRICT_SOURCE_Q2_Q3_COMMON_ASSEMBLY_AND_IDENTITIES", "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE", "STRICT_CANDIDATE_Q2_Q3_GREEN_LAMBDA2_RESPONSE"], "completion atlas V31 frontier ordering drift")
+    require(completion_atlas_v31["claim_flags"]["strict_386_exhaustive_full_nonlinear_bv_family_census"] is True and completion_atlas_v31["claim_flags"]["strict_nonlinear_weyl_boost_ghost_manifest_complete"] is True and completion_atlas_v31["claim_flags"]["strict_386_full_source_q2_assembled"] is False, "completion atlas V31 census/assembly firewall drift")
     require(flags["strict_386_field_equation_green_component_typed"] is True and flags["strict_386_field_equation_constrained_right_inverse_certified"] is True and flags["strict_386_field_equation_quotient_left_inverse_certified"] is True and flags["strict_386_ungauge_fixed_full_inverse_obstructed"] is True and flags["strict_386_q2_only_lambda2_source_obstructed"] is True and flags["strict_386_authoritative_q3_cancellation_target_exact"] is True and flags["strict_386_authoritative_q3_imported"] is False and flags["strict_386_full_weyl_lambda2_source_closure_certified"] is False and flags["strict_386_all_order_nonlinear_source_closure_certified"] is False, "typed inverse/nonlinear lifecycle firewall drift")
     require(flags["strict_pure_weyl_metric_q3_witness_derived"] is True and flags["strict_pure_weyl_q3_witness_cancellation_certified"] is True and flags["strict_386_lambda2_witness_full_source_closed"] is True and flags["strict_386_Berger_q3_direct_import_compatible"] is False and flags["strict_386_arbitrary_input_q3_certified"] is False and flags["strict_386_full_bv_arity_three_identity_certified"] is False, "paper cubic-witness authority firewall drift")
     require(flags["strict_authoritative_minimal_q3_imported"] is True and flags["strict_minimal_full_bv_arity_three_identity_certified"] is True and flags["strict_minimal_q3_cyclicity_certified"] is True and flags["strict_386_q3_stabilized"] is False, "paper minimal-q3/386 firewall drift")
@@ -829,7 +839,7 @@ def main() -> int:
     require(flags["strict_386_quadratic_auxiliary_map_uses_green_operator"] is False and flags["strict_386_quadratic_auxiliary_map_uses_choice_principle"] is False, "paper auxiliary map foundations boundary drift")
     require(flags["strict_386_full_cotangent_lift_serialized"] is True and flags["strict_386_full_quadratic_bv_cotangent_lift_serialized"] is True and flags["strict_386_full_source_q2_q3_pullback_replayed"] is False and flags["classical_import_gate_v9_fail_closed"] is True, "paper quadratic-lift/full-pullback boundary drift")
     require(flags["strict_386_known_required_cubic_families_enumerated"] is True and flags["strict_386_shifted_mass_h_f_hat_f_hat_components_imported"] is True and flags["strict_386_vv_field_map_components_imported"] is True and flags["strict_386_vv_cotangent_partner_components_serialized"] is True and flags["strict_386_vv_bv_cotangent_lift_canonical"] is True, "paper shifted-cubic/vv BV flags missing")
-    require(flags["strict_386_exhaustive_full_nonlinear_bv_family_census"] is False and flags["strict_386_hh_hv_bv_cotangent_lift_component_complete"] is True and flags["strict_386_diff_bv_representation_component_complete"] is True and flags["strict_386_seven_known_required_cubic_families_component_complete"] is True and flags["classical_import_gate_v10_fail_closed"] is True and flags["classical_import_gate_v11_fail_closed"] is True and flags["classical_import_gate_v12_fail_closed"] is True, "paper Gate V12/exhaustive-lift firewall drift")
+    require(flags["strict_386_exhaustive_full_nonlinear_bv_family_census"] is True and flags["strict_nonlinear_weyl_boost_ghost_manifest_complete"] is True and flags["strict_386_full_source_q2_assembled"] is False and flags["strict_386_hh_hv_bv_cotangent_lift_component_complete"] is True and flags["strict_386_diff_bv_representation_component_complete"] is True and flags["strict_386_seven_known_required_cubic_families_component_complete"] is True and flags["classical_import_gate_v10_fail_closed"] is True and flags["classical_import_gate_v11_fail_closed"] is True and flags["classical_import_gate_v12_fail_closed"] is True and flags["classical_import_gate_v13_fail_closed"] is True, "paper Gate V13 census/assembly firewall drift")
     require(flags["static_atlas_appendix_generated"] is True, "static atlas appendix flag is not certified")
     require(flags["complete_evidence_register_generated"] is True, "complete evidence register flag is not certified")
     require(flags["complete_literature_register_generated"] is True, "complete literature register flag is not certified")
@@ -1297,6 +1307,11 @@ def main() -> int:
         r"STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1",
         r"CLASSICAL_IMPORT_GATE_V11_RECONCILIATION",
         r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V29",
+        r"CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1",
+        r"CLASSICAL_IMPORT_GATE_V13_RECONCILIATION",
+        r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V31",
+        r"Census is not assembly",
+        r"STRICT_SOURCE_Q2_Q3_COMMON_ASSEMBLY_AND_IDENTITIES",
         r"1,392 nonzero hh",
         r"3,907 cotangent coefficients",
         r"150 declared",

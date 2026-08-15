@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/classical-nonlinear-weyl-boost-ghost-manifest-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "dependency_tags", "primary_literature", "source_transformations", "shifted_auxiliary_covariance", "gauge_algebra", "shifted_BRST_manifest", "nonzero_ghost_antifield_family_manifest", "certified_zero_candidate_families", "manifest_summary", "claim_flags", "does_not_establish", "canonical_hashes", "provenance", "human_report", "next_gate"],
+  "properties": {
+    "schema": {"const": "classical-nonlinear-weyl-boost-ghost-manifest-v1"},
+    "result_id": {"const": "CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "primary_literature": {"type": "object", "required": ["citation", "url", "pdf_url", "pdf_sha256", "equations"]},
+    "source_transformations": {"type": "object", "required": ["convention_crosswalk", "diffeomorphism", "Weyl", "conformal_boost"]},
+    "shifted_auxiliary_covariance": {"type": "object", "required": ["boost", "Weyl"]},
+    "gauge_algebra": {"type": "object", "required": ["brackets", "off_shell_closure", "field_dependent_structure_functions", "local_gauge_reducibility"]},
+    "shifted_BRST_manifest": {"type": "object"},
+    "nonzero_ghost_antifield_family_manifest": {"type": "array", "minItems": 3, "maxItems": 3},
+    "certified_zero_candidate_families": {"type": "array", "minItems": 4, "maxItems": 4},
+    "manifest_summary": {"type": "object"},
+    "claim_flags": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 4},
+    "canonical_hashes": {"type": "object"},
+    "provenance": {"type": "object", "required": ["inputs"]},
+    "human_report": {"const": "d_quotient_classical/reports/classical-nonlinear-weyl-boost-ghost-manifest-v1.md"},
+    "next_gate": {"type": "string", "minLength": 40}
+  }
+}

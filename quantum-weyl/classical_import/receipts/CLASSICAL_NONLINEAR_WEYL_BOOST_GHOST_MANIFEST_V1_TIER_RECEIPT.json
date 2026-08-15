@@ -1,0 +1,127 @@
+{
+  "result_id": "CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1_TIER_RECEIPT",
+  "receipt_id": "CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1_TIER_RECEIPT",
+  "result_kind": "AFFECTED_CERTIFICATE_CHAIN_TEST_RECEIPT",
+  "lifecycle": "CLASSIFIED",
+  "recorded_at": "2026-08-15",
+  "repository_base_commit": "6eb99119ea3164fbd1e755bd1736d70115359c20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "result_ids": [
+    "CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1",
+    "CLASSICAL_IMPORT_GATE_V13_RECONCILIATION",
+    "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V31",
+    "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
+    "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1"
+  ],
+  "primary_source": {
+    "citation": "R. R. Metsaev, Ordinary-derivative formulation of conformal low-spin fields, arXiv:0707.4437v3",
+    "url": "https://arxiv.org/abs/0707.4437",
+    "pdf_url": "https://arxiv.org/pdf/0707.4437v3",
+    "pdf_sha256": "80bbe298159e4fdfc35c0f4dd4e33f01e5da51227184a0bed870e5fa3e6b2676",
+    "pages": 58,
+    "equations_used": [
+      "6.2",
+      "6.3",
+      "6.5",
+      "6.6",
+      "6.7"
+    ],
+    "retrieved": "2026-08-15"
+  },
+  "output_hashes": {
+    "classical_ghost_manifest": "b4cea7dc000aea74e4fb466d9b98da1786df8c03b4a1ebb614d5e8c275a295ba",
+    "classical_ghost_manifest_report": "4f06a31ff009489b2d0c8a94af4edcefc0bff907b519893b3a14138c99846dde",
+    "classical_import_gate_v13": "ba9ac1a3452eb5e16f5f589eaef40fd8c4ca08864d817cd6d2d7842e5d78aa14",
+    "classical_import_gate_v13_report": "099b1b365c475d70934383dd347a353c0f9a51812ed798a4f45b637ae4d48e3b",
+    "completion_atlas_v31": "badced1365cf584b2fd78f8a188a2c66514439c5ba4d689ae20d5f8933a27004",
+    "completion_atlas_v31_report": "defc6778d7e5e9490f9c9bb65b903016ca50141db03f3853587a6e1d5c495e08",
+    "static_site_result": "9a79856b81406d351199a17427eb73940931c87dd68223aa8617e51910745ba0",
+    "static_site_manifest": "1fa1de40983e23a7829cdf74f96a4ba49f275fcde21c1bc9655a858d5757c90f",
+    "paper_claim_map": "afffe29288860855a59303cb40d181448286de656f7b61bc5f123d5168dc1bfd",
+    "paper_appendices": "4886f78557711d9d15ce02b68ae3f4bab1db9097095fc7f6297d622671669dd6",
+    "paper_pdf": "4d67016ee7115b8227705fdd12c4d5108cc44178775454cd64cae8b77d515b7f"
+  },
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        {
+          "command": "python3 -m py_compile <changed manifest, Gate V13, Atlas V31, site and Paper 21 Python paths>",
+          "elapsed_seconds": 0.12,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 -m json.tool <changed and generated JSON artifacts>",
+          "elapsed_seconds": 0.42,
+          "status": "PASS"
+        },
+        {
+          "command": "git diff --check -- <scoped paths>",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS_WITH_NONCERTIFYING_TOOL_GAP_RECORDED",
+      "checks": [
+        {
+          "command": "python3 d_quotient_classical/nonminimal_identity/classical_nonlinear_weyl_boost_ghost_manifest_v1.py --check && python3 d_quotient_classical/nonminimal_identity/check_classical_nonlinear_weyl_boost_ghost_manifest_v1.py && python3 d_quotient_classical/nonminimal_identity/verify_classical_nonlinear_weyl_boost_ghost_manifest_v1.py",
+          "elapsed_seconds": 0.18,
+          "status": "PASS_3_NONZERO_4_ZERO_0_ADDITIONAL_FAMILIES"
+        },
+        {
+          "command": "python3 -m unittest d_quotient_classical.nonminimal_identity.tests.test_classical_nonlinear_weyl_boost_ghost_manifest_v1 quantum-weyl.classical_import.tests.test_classical_import_gate_v13_reconciliation foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v31 foundations.tests.test_matrix_site foundations.tests.test_theory_assembly foundations.tests.test_theory_viability",
+          "elapsed_seconds": 3.4,
+          "status": "PASS_35_TESTS"
+        },
+        {
+          "command": "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (two passes), followed by Overfull/undefined-reference/rerun scan",
+          "elapsed_seconds": 1.9,
+          "status": "PASS_71_PAGES_NO_OVERFULL_OR_UNDEFINED_REFERENCE_FINDINGS"
+        },
+        {
+          "command": "node --check foundations/matrix_site_v2_assets/app-v2.js",
+          "status": "NOT_RUN_NOT_A_PASS",
+          "reason": "The node executable is unavailable. The independent Python site checker, schema verifier, deterministic-build comparison, content-addressed manifest checks, browser-source token checks, and unit tests pass; they do not constitute a JavaScript parser result."
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "checks": [
+        {
+          "command": "python3 quantum-weyl/classical_import/build_classical_import_gate_v13_reconciliation.py --check && python3 quantum-weyl/classical_import/check_classical_import_gate_v13_reconciliation.py && python3 quantum-weyl/classical_import/verify_classical_import_gate_v13_reconciliation.py && python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v31.py --check && python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v31.py && python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v31.py",
+          "elapsed_seconds": 0.32,
+          "status": "PASS_GATE_V13_FAIL_CLOSED_AND_ATLAS_V31_77_CELLS_10_ROUTES"
+        },
+        {
+          "command": "python3 foundations/build_matrix_site_v2.py --check && python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py && python3 foundations/verify_theory_assembly.py && python3 foundations/verify_theory_viability.py && python3 paper/generate_21_reverse_foundations_appendices.py --check && python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+          "elapsed_seconds": 1.75,
+          "status": "PASS_SITE_SCHEMA_DETERMINISM_FULL_PROVENANCE_BUNDLE_ASSEMBLY_VIABILITY_AND_PAPER_BOUNDARIES"
+        }
+      ],
+      "criterion": "The affected chain from the primary-source nonlinear transformation manifest through Gate V13, Atlas V31, the full append-only researcher-site evidence bundle and Paper 21 was rebuilt and independently replayed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, release, theorem-lifecycle promotion or shared-core-algebra change is made. The result remains CLASSIFIED; common source q2/q3 assembly, identity replay, Gate A, Hadamard construction, renormalized products, QME restoration, residual transfer and Lorentzian certification remain false."
+    }
+  },
+  "science_forge_shadow": {
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": 2.84,
+    "maximum_resident_kib": 338928,
+    "process_exit": 0,
+    "certifying_status": "ADVISORY_NON_CERTIFYING_WITH_FINDINGS",
+    "findings": [
+      "The local bridge audit still resolves through the bp2transformer tree rather than this repository.",
+      "That external bridge audit fails because SymPy is unavailable.",
+      "The corpus census reports 1862 certificates against the 2026-07-19 baseline of 976.",
+      "The Forge binary is an unpinned dirty development build whose embedded revision differs from the current forge/lib checkout."
+    ]
+  },
+  "claim_boundary": "The full nonlinear Metsaev Weyl/conformal-boost transformations imply an off-shell Abelian internal Weyl/boost algebra after eta=kappa-d sigma and an internally invariant shifted auxiliary tensor f_hat. The exact manifest has three nonzero ghost-antifield families, certifies four candidate families as zero, and requires no additional nonlinear Weyl/boost family in the declared ordinary-derivative source scope. This makes the seven serialized auxiliary cubic families an exhaustive scoped census. It does not assemble one authoritative 386-row source q2/q3 payload or replay q1/q2, cyclicity, D-equivariance or lambda-squared causal source closure on common bytes. Gate V13 remains FAIL_CLOSED with zero accepted common hashes. No full Lorentzian off-shell BV propagator, full-complex Hadamard state, renormalized Lorentzian products, causal pAQFT construction, QME restoration, residual transfer or Lorentzian quantum theory is claimed."
+}
