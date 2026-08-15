@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-two-scale-round-tower-obstruction-v1.schema.json",
+  "title": "BT two-scale round tower obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "tower_family", "exact_radial_algebra",
+    "inner_scale", "asymptotics", "method_disposition", "missing_object_ledger",
+    "next_gate", "does_not_establish", "provenance", "verification_commands",
+    "tier_receipt", "checks", "report", "schema", "verifier"
+  ],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "fraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "textArray": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}}
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_TWO_SCALE_ROUND_TOWER_OBSTRUCTION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-two-scale-round-tower-obstruction-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"},
+        {"const": "REDUCED-MODE"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "tower_family": {
+      "type": "object", "additionalProperties": false,
+      "required": ["space", "field", "residual", "q_scalar", "euler", "quotient"],
+      "properties": {
+        "space": {"const": "R^4 with radial coordinate r and t=r^2"},
+        "field": {"const": "Omega_epsilon=2*epsilon/(t+epsilon^2)+2/(t+1), 0<epsilon<1"},
+        "residual": {"const": "R=Delta Omega/Omega"},
+        "q_scalar": {"const": "q=R/Omega^2"},
+        "euler": {"const": "E=div(Omega^2*grad q)=4/t*d_dt(t^2*Omega^2*d_t q)"},
+        "quotient": {"const": "Q_tower(epsilon)=||E_epsilon||_2^2/||R_epsilon||_2^2"}
+      }
+    },
+    "exact_radial_algebra": {
+      "type": "object", "additionalProperties": false,
+      "required": ["d", "c", "q", "q_derivative", "derivation"],
+      "properties": {
+        "d": {"const": "d=epsilon^2-epsilon+1"},
+        "c": {"const": "c=4*epsilon^2-epsilon^3-epsilon"},
+        "q": {"$ref": "#/$defs/text"},
+        "q_derivative": {"const": "d_t q=-6*epsilon*(1-epsilon)^2*(t-epsilon)/[(1+epsilon)^2*(t+epsilon)^3]"},
+        "derivation": {"$ref": "#/$defs/text"}
+      }
+    },
+    "inner_scale": {
+      "type": "object", "additionalProperties": false,
+      "required": ["coordinate", "field_expansion", "q_expansion", "euler_profile", "measure", "profile_integral"],
+      "properties": {
+        "coordinate": {"const": "t=epsilon^2*u"},
+        "field_expansion": {"$ref": "#/$defs/text"},
+        "q_expansion": {"const": "q=-2+6*epsilon*(1+u)+O(epsilon^2*(1+u)^2)"},
+        "euler_profile": {"const": "epsilon^3*E_epsilon(epsilon^2*u) tends to 192/(1+u)^3"},
+        "measure": {"const": "2*pi^2*r^3*dr=pi^2*t*dt"},
+        "profile_integral": {"const": "integral_0^infinity u/(1+u)^6 du=1/20"}
+      }
+    },
+    "asymptotics": {
+      "type": "object", "additionalProperties": false,
+      "required": ["euler_norm", "inner_residual", "outer_residual", "residual_norm", "quotient", "conclusion", "constants"],
+      "properties": {
+        "euler_norm": {"const": "||E_epsilon||_2^2=(9216/5)*pi^2*epsilon^-2+o(epsilon^-2)"},
+        "inner_residual": {"const": "the inner scale contributes (32/3)*pi^2"},
+        "outer_residual": {"const": "the outer scale contributes (32/3)*pi^2"},
+        "residual_norm": {"const": "||R_epsilon||_2^2 tends to (64/3)*pi^2"},
+        "quotient": {"const": "Q_tower(epsilon)=(432/5)*epsilon^-2+o(epsilon^-2)"},
+        "conclusion": {"const": "Q_tower(epsilon) tends to infinity as epsilon tends to zero"},
+        "constants": {
+          "type": "object", "additionalProperties": false,
+          "required": [
+            "inner_euler_profile_numerator", "inner_euler_beta_integral",
+            "euler_norm_coefficient_without_pi2", "one_bubble_residual_coefficient_without_pi2",
+            "tower_residual_coefficient_without_pi2", "quotient_coefficient"
+          ],
+          "properties": {
+            "inner_euler_profile_numerator": {"$ref": "#/$defs/fraction"},
+            "inner_euler_beta_integral": {"$ref": "#/$defs/fraction"},
+            "euler_norm_coefficient_without_pi2": {"$ref": "#/$defs/fraction"},
+            "one_bubble_residual_coefficient_without_pi2": {"$ref": "#/$defs/fraction"},
+            "tower_residual_coefficient_without_pi2": {"$ref": "#/$defs/fraction"},
+            "quotient_coefficient": {"$ref": "#/$defs/fraction"}
+          }
+        }
+      }
+    },
+    "method_disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "single_round_bubble", "canonical_two_scale_same_center_round_tower",
+        "periodized_two_scale_tower", "arbitrary_same_center_tower_profiles",
+        "irregular_bubble_gases_and_necks", "delocalized_transverse_current",
+        "positive_all_field_gradient_bound", "volume_uniform_witten_coercivity",
+        "interacting_h_minus_one_bound", "continuum_reconstruction", "born_rule",
+        "krein_reconstruction", "lorentzian_transfer"
+      ],
+      "properties": {
+        "single_round_bubble": {"const": "EXACT_CRITICAL_ON_R4"},
+        "canonical_two_scale_same_center_round_tower": {"const": "OBSTRUCTED_BY_POWER_EULER_COST"},
+        "periodized_two_scale_tower": {"const": "OPEN"},
+        "arbitrary_same_center_tower_profiles": {"const": "OPEN"},
+        "irregular_bubble_gases_and_necks": {"const": "OPEN"},
+        "delocalized_transverse_current": {"const": "OPEN"},
+        "positive_all_field_gradient_bound": {"const": "OPEN"},
+        "volume_uniform_witten_coercivity": {"const": "OPEN"},
+        "interacting_h_minus_one_bound": {"const": "OPEN"},
+        "continuum_reconstruction": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"$ref": "#/$defs/textArray"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/textArray"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "3c26d05da2a073ed13c388763d64ad03412aaf21"},
+        "inputs": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"$ref": "#/$defs/textArray"},
+    "tier_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "memory_policy", "elapsed_seconds_and_peak_kib", "repository_audits"],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/text"},
+        "tier_1": {"$ref": "#/$defs/text"},
+        "tier_2": {"$ref": "#/$defs/text"},
+        "tier_3": {"$ref": "#/$defs/text"},
+        "memory_policy": {"$ref": "#/$defs/text"},
+        "elapsed_seconds_and_peak_kib": {
+          "type": "object", "additionalProperties": false,
+          "required": ["producer_check", "independent_verifier", "unit_tests"],
+          "properties": {
+            "producer_check": {"$ref": "#/$defs/text"},
+            "independent_verifier": {"$ref": "#/$defs/text"},
+            "unit_tests": {"$ref": "#/$defs/text"}
+          }
+        },
+        "repository_audits": {
+          "type": "object", "additionalProperties": false,
+          "required": ["planning_import", "science_forge_shadow"],
+          "properties": {
+            "planning_import": {"$ref": "#/$defs/text"},
+            "science_forge_shadow": {"$ref": "#/$defs/text"}
+          }
+        }
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-two-scale-round-tower-obstruction.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-two-scale-round-tower-obstruction-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_two_scale_round_tower_obstruction.py"}
+  }
+}

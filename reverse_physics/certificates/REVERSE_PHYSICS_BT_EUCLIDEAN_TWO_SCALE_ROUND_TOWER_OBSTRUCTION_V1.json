@@ -1,0 +1,161 @@
+{
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_TWO_SCALE_ROUND_TOWER_OBSTRUCTION_V1",
+  "schema_version": "reverse-physics-bt-euclidean-two-scale-round-tower-obstruction-v1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "result_kind": "exact radial asymptotic obstruction for the canonical two-scale round bubble tower",
+  "question": "Can two same-center round conformal bubbles with a vanishing scale ratio make the normalized BT Euler-gradient quotient collapse?",
+  "answer": "No. For Omega_epsilon(r)=2*epsilon/(r^2+epsilon^2)+2/(r^2+1), the residual norm tends to (64/3)*pi^2, while the Euler norm squared is asymptotic to (9216/5)*pi^2*epsilon^-2. Therefore the quotient is asymptotic to (432/5)*epsilon^-2 and diverges. The outer bubble acts as a small constant perturbation of the inner bubble and produces a power-cost neck. This is an R4 radial-family theorem, not a general periodic tower classification.",
+  "tower_family": {
+    "space": "R^4 with radial coordinate r and t=r^2",
+    "field": "Omega_epsilon=2*epsilon/(t+epsilon^2)+2/(t+1), 0<epsilon<1",
+    "residual": "R=Delta Omega/Omega",
+    "q_scalar": "q=R/Omega^2",
+    "euler": "E=div(Omega^2*grad q)=4/t*d_dt(t^2*Omega^2*d_t q)",
+    "quotient": "Q_tower(epsilon)=||E_epsilon||_2^2/||R_epsilon||_2^2"
+  },
+  "exact_radial_algebra": {
+    "d": "d=epsilon^2-epsilon+1",
+    "c": "c=4*epsilon^2-epsilon^3-epsilon",
+    "q": "q=-2*[d*(t^2+epsilon^2)+c*t]/[(1+epsilon)^2*(t+epsilon)^2]",
+    "q_derivative": "d_t q=-6*epsilon*(1-epsilon)^2*(t-epsilon)/[(1+epsilon)^2*(t+epsilon)^3]",
+    "derivation": "write a=epsilon*(t+1), b=t+epsilon^2; the numerator of Delta Omega is proportional to a^3+b^3=(a+b)*(a^2-a*b+b^2)"
+  },
+  "inner_scale": {
+    "coordinate": "t=epsilon^2*u",
+    "field_expansion": "Omega_epsilon(epsilon^2*u)=2/epsilon*[1/(1+u)+epsilon+O(epsilon^3*u)]",
+    "q_expansion": "q=-2+6*epsilon*(1+u)+O(epsilon^2*(1+u)^2)",
+    "euler_profile": "epsilon^3*E_epsilon(epsilon^2*u) tends to 192/(1+u)^3",
+    "measure": "2*pi^2*r^3*dr=pi^2*t*dt",
+    "profile_integral": "integral_0^infinity u/(1+u)^6 du=1/20"
+  },
+  "asymptotics": {
+    "euler_norm": "||E_epsilon||_2^2=(9216/5)*pi^2*epsilon^-2+o(epsilon^-2)",
+    "inner_residual": "the inner scale contributes (32/3)*pi^2",
+    "outer_residual": "the outer scale contributes (32/3)*pi^2",
+    "residual_norm": "||R_epsilon||_2^2 tends to (64/3)*pi^2",
+    "quotient": "Q_tower(epsilon)=(432/5)*epsilon^-2+o(epsilon^-2)",
+    "conclusion": "Q_tower(epsilon) tends to infinity as epsilon tends to zero",
+    "constants": {
+      "inner_euler_profile_numerator": {
+        "numerator": 192,
+        "denominator": 1
+      },
+      "inner_euler_beta_integral": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "euler_norm_coefficient_without_pi2": {
+        "numerator": 9216,
+        "denominator": 5
+      },
+      "one_bubble_residual_coefficient_without_pi2": {
+        "numerator": 32,
+        "denominator": 3
+      },
+      "tower_residual_coefficient_without_pi2": {
+        "numerator": 64,
+        "denominator": 3
+      },
+      "quotient_coefficient": {
+        "numerator": 432,
+        "denominator": 5
+      }
+    }
+  },
+  "method_disposition": {
+    "single_round_bubble": "EXACT_CRITICAL_ON_R4",
+    "canonical_two_scale_same_center_round_tower": "OBSTRUCTED_BY_POWER_EULER_COST",
+    "periodized_two_scale_tower": "OPEN",
+    "arbitrary_same_center_tower_profiles": "OPEN",
+    "irregular_bubble_gases_and_necks": "OPEN",
+    "delocalized_transverse_current": "OPEN",
+    "positive_all_field_gradient_bound": "OPEN",
+    "volume_uniform_witten_coercivity": "OPEN",
+    "interacting_h_minus_one_bound": "OPEN",
+    "continuum_reconstruction": "NOT_ESTABLISHED",
+    "born_rule": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED"
+  },
+  "missing_object_ledger": [
+    "a periodic gluing theorem for two or more scales at one point",
+    "classification of non-round tower profiles and neck interactions",
+    "control of irregular gases and delocalized transverse currents",
+    "a connection-corrected Witten inverse or a normalized low-Rayleigh sequence",
+    "an actual interacting H^-1 bound or controlled Gibbs divergence"
+  ],
+  "next_gate": "The canonical two-round-bubble tower is power-obstructed. Decide whether periodic gluing can cancel its epsilon^-2 inner-neck coefficient; bounded outer gluing errors cannot. Then either generalize the inner expansion to arbitrary positive tower profiles or return to the Witten Schur estimate with single bubbles, fixed finite splitting, dense crystals, and the canonical tower removed from the concentration alternatives.",
+  "does_not_establish": [
+    "a theorem for a periodized two-scale tower",
+    "exclusion of arbitrary tower profiles, necks, or irregular bubble gases",
+    "a positive all-field deterministic gradient constant",
+    "a Witten/Poincare theorem or interacting Gibbs H^-1 estimate",
+    "tightness, a continuum BT measure, or limit identification",
+    "a Born rule or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "provenance": {
+    "repository_base_commit": "3c26d05da2a073ed13c388763d64ad03412aaf21",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CONFORMAL_CURVATURE_BUBBLE_GATE_V1.json",
+        "sha256": "ea963a18030e4bc0452ff94a6547e86cae76f010bf242c3a7690a8eef8c05e3d"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_MULTIBUBBLE_CRYSTAL_SCALING_V1.json",
+        "sha256": "46da5735c4481ce65137d34ecd9a9081a468daa6e1914ad1e1e958b2013ad226"
+      }
+    ],
+    "arithmetic": "Exact Fraction arithmetic for all coefficients and beta integrals; the asymptotic proof uses rational radial identities, inner scaling, and dominated region splitting."
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_two_scale_round_tower_obstruction.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_two_scale_round_tower_obstruction.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_two_scale_round_tower_obstruction"
+  ],
+  "tier_receipt": {
+    "tier_0": "parse, strict schema, deterministic generation, diff check, and staged-diff inspection",
+    "tier_1": "exact producer, non-importing radial verifier, focused tests, and mutation rejection",
+    "tier_2": "the round-bubble and crystal predecessors are checked by content hash and direct verifier",
+    "tier_3": "not run: this is a radial-family asymptotic obstruction, not an all-field Witten/H^-1 promotion, freeze, or release",
+    "memory_policy": "all Python commands run sequentially under a 500000 KiB virtual-memory ceiling",
+    "elapsed_seconds_and_peak_kib": {
+      "producer_check": "0.04 seconds, 20512 KiB",
+      "independent_verifier": "0.10 seconds, 29544 KiB",
+      "unit_tests": "0.12 seconds, 30572 KiB"
+    },
+    "repository_audits": {
+      "planning_import": "sequence-50 event accepted in 7.3 seconds; import-program folded 1657 nodes with zero invalid items and zero malformed events in 6.95 seconds at 244060 KiB under GOMEMLIMIT=300MiB",
+      "science_forge_shadow": "not run unless a registered shadow input changes; a skipped or failed rail is not a pass"
+    }
+  },
+  "checks": {
+    "ok": true,
+    "passed": 12,
+    "total": 12,
+    "failures": [],
+    "details": {
+      "sum_of_cubes_factorization": true,
+      "exact_q_formula_and_derivative": true,
+      "inner_q_first_correction": true,
+      "inner_euler_profile": true,
+      "euler_beta_integral": true,
+      "euler_norm_coefficient": true,
+      "two_bubble_residual_energy": true,
+      "quotient_coefficient": true,
+      "tower_collapse_obstructed": true,
+      "periodic_and_general_towers_stay_open": true,
+      "witten_and_gibbs_gates_stay_open": true,
+      "no_born_krein_or_lorentzian_promotion": true
+    }
+  },
+  "report": "reverse_physics/reports/bt-euclidean-two-scale-round-tower-obstruction.md",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-two-scale-round-tower-obstruction-v1.schema.json",
+  "verifier": "reverse_physics/verify_bt_euclidean_two_scale_round_tower_obstruction.py"
+}
