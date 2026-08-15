@@ -1,0 +1,327 @@
+{
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_ADDITIVE_FLOW_RATE_OBSTRUCTION_V1",
+  "schema_version": "reverse-physics-bt-euclidean-additive-flow-rate-obstruction-v1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "lifecycle_state": "ADDITIVE_CONTRACTION_QUANTITATIVE_RATE_OBSTRUCTED",
+  "result_kind": "exact fixed-volume obstruction to a field-uniform relative decay rate for the certified additive BT contraction",
+  "question": "Does the global additive contraction of BT action sublevels have a field-uniform exponential action-decay rate suitable as a direct quantitative Lyapunov/Poincare input?",
+  "answer": "No. On an exact axial C6 family in geometric-mean gauge, the unnormalized additive relative action-decay rate is asymptotic to 4/x and the bounded normalized rate to 4/(3*x^4), where x=2^m. Both tend to zero even at fixed volume. The ordinary Euclidean action-gradient quotient instead grows as 3*x^12. Thus this family obstructs only promotion of the explicit additive contraction from a topological deformation to a uniform quantitative flow; it is not an almost-stationary family and does not obstruct a gradient-flow, Witten, marginal, or H^-1 theorem.",
+  "family": {
+    "lattice": "periodic 6^4 torus, axial six-cycle replicated over 6^3 transverse sites",
+    "positive_axial_profile": "Omega_m=(x,x^-3,x^-3,x^-3,x,x^7), x=2^m",
+    "gauge": "product Omega_m=1",
+    "axial_residual": "(R,S,0,S,R,T), R=x^6+x^-4-2, S=x^4-1, T=2*x^-6-2",
+    "spatial_replication": "action, both dissipations, residual square, and gradient square all acquire the same factor 6^3 where applicable, so the declared ratios are unchanged"
+  },
+  "leading_laurent_terms": {
+    "residual_square": {
+      "exponent": 12,
+      "coefficient": {
+        "numerator": 2,
+        "denominator": 1
+      }
+    },
+    "additive_dissipation": {
+      "exponent": 11,
+      "coefficient": {
+        "numerator": 4,
+        "denominator": 1
+      }
+    },
+    "reciprocal_sum": {
+      "exponent": 3,
+      "coefficient": {
+        "numerator": 3,
+        "denominator": 1
+      }
+    },
+    "gradient_square": {
+      "exponent": 24,
+      "coefficient": {
+        "numerator": 6,
+        "denominator": 1
+      }
+    }
+  },
+  "asymptotic_theorem": {
+    "unnormalized_flow": "X=P_H Omega^-1 and -X dot grad A=D=sum r_x^2/Omega_x",
+    "unnormalized_relative_decay": "D/A ~ 4/x -> 0",
+    "normalized_flow": "X_1=P_H pi with pi=Omega^-1/W and -X_1 dot grad A=D/W",
+    "normalized_relative_decay": "(D/W)/A ~ 4/(3*x^4) -> 0",
+    "euclidean_gradient_quotient": "||grad A||^2/||r||^2 ~ 3*x^12 -> infinity",
+    "status": "PROVED_BY_EXACT_LAURENT_LEADING_TERMS"
+  },
+  "exact_rows": [
+    {
+      "m": 1,
+      "x": 2,
+      "exponents": [
+        1,
+        -3,
+        -3,
+        -3,
+        1,
+        7
+      ],
+      "geometric_mean_gauge_product": {
+        "numerator": 1,
+        "denominator": 1
+      },
+      "residual_square_per_axial_cycle": {
+        "numerator": 8353161,
+        "denominator": 1024
+      },
+      "action_per_axial_cycle": {
+        "numerator": 8353161,
+        "denominator": 2048
+      },
+      "unnormalized_additive_dissipation": {
+        "numerator": 976720257,
+        "denominator": 131072
+      },
+      "unnormalized_relative_action_decay": {
+        "numerator": 108524473,
+        "denominator": 59400256
+      },
+      "normalized_additive_dissipation": {
+        "numerator": 3356427,
+        "denominator": 11264
+      },
+      "normalized_relative_action_decay": {
+        "numerator": 2237618,
+        "denominator": 30628257
+      },
+      "euclidean_action_gradient_square": {
+        "numerator": 191153683436787,
+        "denominator": 2097152
+      },
+      "euclidean_gradient_quotient": {
+        "numerator": 21239298159643,
+        "denominator": 1900808192
+      }
+    },
+    {
+      "m": 2,
+      "x": 4,
+      "exponents": [
+        2,
+        -6,
+        -6,
+        -6,
+        2,
+        14
+      ],
+      "geometric_mean_gauge_product": {
+        "numerator": 1,
+        "denominator": 1
+      },
+      "residual_square_per_axial_cycle": {
+        "numerator": 141145837265025,
+        "denominator": 4194304
+      },
+      "action_per_axial_cycle": {
+        "numerator": 141145837265025,
+        "denominator": 8388608
+      },
+      "unnormalized_additive_dissipation": {
+        "numerator": 1147864987550081025,
+        "denominator": 68719476736
+      },
+      "unnormalized_relative_action_decay": {
+        "numerator": 5101622166889249,
+        "denominator": 5138963106111488
+      },
+      "normalized_additive_dissipation": {
+        "numerator": 382621662516693675,
+        "denominator": 4409501155328
+      },
+      "normalized_relative_action_decay": {
+        "numerator": 10203244333778498,
+        "denominator": 1978501423167755169
+      },
+      "euclidean_action_gradient_square": {
+        "numerator": 59209797526130976879635734275,
+        "denominator": 35184372088832
+      },
+      "euclidean_gradient_quotient": {
+        "numerator": 263154655671693230576158819,
+        "denominator": 5262298220658163712
+      }
+    },
+    {
+      "m": 4,
+      "x": 16,
+      "exponents": [
+        4,
+        -12,
+        -12,
+        -12,
+        4,
+        28
+      ],
+      "geometric_mean_gauge_product": {
+        "numerator": 1,
+        "denominator": 1
+      },
+      "residual_square_per_axial_cycle": {
+        "numerator": 39614676256935309046192308225,
+        "denominator": 70368744177664
+      },
+      "action_per_axial_cycle": {
+        "numerator": 39614676256935309046192308225,
+        "denominator": 140737488355328
+      },
+      "unnormalized_additive_dissipation": {
+        "numerator": 1329207555074948068024127665391796225,
+        "denominator": 18889465931478580854784
+      },
+      "unnormalized_relative_action_decay": {
+        "numerator": 20441484891579362830051944104449,
+        "denominator": 81768425108210710083164608397312
+      },
+      "normalized_additive_dissipation": {
+        "numerator": 443069185024982689341375888463932075,
+        "denominator": 77372039516440201703456768
+      },
+      "normalized_relative_action_decay": {
+        "numerator": 40882969783158725660103888208898,
+        "denominator": 2009561257566272685922926461012115969
+      },
+      "euclidean_action_gradient_square": {
+        "numerator": 4707777290099785185831225696248896286413414875778156265475,
+        "denominator": 9903520314283042199192993792
+      },
+      "euclidean_gradient_quotient": {
+        "numerator": 72399496964241217775182248308325971340460051915081219,
+        "denominator": 85740408126267153536164412414819827712
+      }
+    },
+    {
+      "m": 8,
+      "x": 256,
+      "exponents": [
+        8,
+        -24,
+        -24,
+        -24,
+        8,
+        56
+      ],
+      "geometric_mean_gauge_product": {
+        "numerator": 1,
+        "denominator": 1
+      },
+      "residual_square_per_axial_cycle": {
+        "numerator": 3138550868424046598752671935112611193100058988883711361025,
+        "denominator": 19807040628566084398385987584
+      },
+      "action_per_axial_cycle": {
+        "numerator": 3138550868424046598752671935112611193100058988883711361025,
+        "denominator": 39614081257132168796771975168
+      },
+      "unnormalized_additive_dissipation": {
+        "numerator": 1766847064366995636097417164040946396722593135375151423735245249418625025,
+        "denominator": 1427247692705959881058285969449495136382746624
+      },
+      "unnormalized_relative_action_decay": {
+        "numerator": 411388693725334226475054276147851574182573896720625574898434049,
+        "denominator": 26328876410681541892826495493905347067827588946283471541750464512
+      },
+      "normalized_additive_dissipation": {
+        "numerator": 588949021455665212032472388013648798907531045125050474578415083139541675,
+        "denominator": 23945242829746304278270949425159743561512325163778048
+      },
+      "normalized_relative_action_decay": {
+        "numerator": 822777387450668452950108552295703148365147793441251149796868098,
+        "denominator": 2650351479887242307210893615394194231183647495489700747113035784410759169
+      },
+      "euclidean_action_gradient_square": {
+        "numerator": 29551504642708442227226063528487652299603747186618028030288693727644804884976684115222698617294174958110560351158275,
+        "denominator": 784637716923335095479473677900958302012794430558004314112
+      },
+      "euclidean_gradient_quotient": {
+        "numerator": 6880705827777738422895523455842056538396582790911434121166912185957639137910709066728778142708846821769219,
+        "denominator": 28948905759821590400139196198045397241817341002449564420394225579993241485312
+      }
+    }
+  ],
+  "method_disposition": {
+    "global_additive_sublevel_contraction": "IMPORTED_PROVED",
+    "field_uniform_unnormalized_additive_relative_decay": "OBSTRUCTED",
+    "field_uniform_normalized_additive_relative_decay": "OBSTRUCTED",
+    "actual_euclidean_gradient_flow_rate": "NOT_DECIDED",
+    "full_witten_one_form_coercivity": "OPEN",
+    "normalized_lowest_mode_marginal": "OPEN",
+    "interacting_uniform_h_minus_one": "OPEN"
+  },
+  "research_consequence": {
+    "retired_route": "do not infer a uniform Poincare or Lyapunov constant from contractibility of action sublevels or from the explicit additive homotopy alone",
+    "surviving_positive_route": "quantify the actual Euclidean gradient-flow quotient or the full Witten form; the exact family becomes steeper, not flatter, in those metrics",
+    "continuum_gate": "conditional marginal/current susceptibility and full-Witten coercivity remain the direct formulations of the required estimate"
+  },
+  "missing_object_ledger": [
+    "a volume-uniform lower bound or countersequence for the actual Euclidean gradient quotient at the omega_L^2 scale",
+    "a quantitative bridge from any actual-gradient theorem to the lowest-phase Witten or marginal estimate",
+    "the actual interacting H^-1 bound or controlled divergence"
+  ],
+  "next_gate": "Return to the actual gradient/Witten operator rather than the additive homotopy. Prove or obstruct a volume-uniform bound for ||grad A||^2/(omega_L^2||r||^2), then determine whether it supplies a valid Gibbs/Witten Lyapunov bridge.",
+  "does_not_establish": [
+    "slow convergence of the ordinary Euclidean gradient flow",
+    "an actual full-Witten low-Rayleigh sequence",
+    "failure or success of the normalized lowest-mode or H^-1 estimate",
+    "a continuum Euclidean measure, Born rule, Krein reconstruction, or Lorentzian physics"
+  ],
+  "provenance": {
+    "source_commit": "1ef8fa12e0cd3173ad23c85ac9249024a266bb68",
+    "input_sha256": {
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ADDITIVE_CONTRACTION_AXIAL_COERCIVITY_V1.json": "60f282068257f75edccc61292b6834148c1e9404a4b3f070a46debe95e04bb2f",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_UNIQUE_CRITICAL_POINT_GRADIENT_GATE_V1.json": "606ef7f58477b9eab18b41a1e83eb11d6b298129a1f9da1e96099487d9209c56"
+    },
+    "arithmetic": "exact Fraction evaluation of integer Laurent polynomials in x=2^m; no floating-point sign or limit enters the claim"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_additive_flow_rate_obstruction.py --check",
+    "ulimit -v 500000; mise x python@3.12 -- python3 reverse_physics/verify_bt_euclidean_additive_flow_rate_obstruction.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_additive_flow_rate_obstruction"
+  ],
+  "tier_receipt": {
+    "tier_0": "Python compilation and certificate/schema JSON parsing passed under the 500 MB address-space cap; the planning import accepted 1,688 nodes with zero invalid items and zero malformed events in 6.53 s; final scoped diff and staged-diff checks remain required before commit",
+    "tier_1": "producer passed 18/18 in 0.04 s at 20,816 KB peak RSS; independent SymPy verifier passed in 0.74 s at 73,776 KB after an initial 0.63 s structural-expression comparison failure was corrected to algebraic equality and not counted as a pass; seven tests passed in 0.04 s at 21,356 KB; the 2.96 s advisory Science Forge wrapper exited zero but its external bridge audit failed closed for missing sympy and its census reported drift at 1,849 versus 976 certificates",
+    "tier_2": "not run because the imported additive-contraction and unique-critical-point certificates are unchanged and are checked by exact content hash",
+    "tier_3": "not run because this is a proof-route obstruction without a lifecycle promotion, freeze, release, or shared-core change"
+  },
+  "checks": {
+    "ok": true,
+    "passed": 18,
+    "total": 18,
+    "failures": [],
+    "details": {
+      "family_is_in_geometric_mean_gauge": true,
+      "residual_square_leading_term_is_2x12": true,
+      "dissipation_leading_term_is_4x11": true,
+      "reciprocal_sum_leading_term_is_3x3": true,
+      "gradient_square_leading_term_is_6x24": true,
+      "unnormalized_relative_rate_asymptotic_is_4_over_x": true,
+      "normalized_relative_rate_asymptotic_is_4_over_3x4": true,
+      "euclidean_gradient_quotient_asymptotic_is_3x12": true,
+      "all_exact_rates_are_positive": true,
+      "sampled_unnormalized_rates_strictly_decrease": true,
+      "sampled_normalized_rates_strictly_decrease": true,
+      "sampled_gradient_quotients_strictly_increase": true,
+      "spatial_replication_preserves_all_ratios": true,
+      "additive_flow_uniform_exponential_rate_is_obstructed": true,
+      "normalized_additive_flow_uniform_exponential_rate_is_obstructed": true,
+      "actual_gradient_low_rayleigh_sequence_is_not_produced": true,
+      "interacting_h_minus_one_remains_open": true,
+      "no_born_krein_or_lorentzian_promotion": true
+    }
+  },
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-additive-flow-rate-obstruction-v1.schema.json",
+  "report": "reverse_physics/reports/bt-euclidean-additive-flow-rate-obstruction.md",
+  "verifier": "reverse_physics/verify_bt_euclidean_additive_flow_rate_obstruction.py"
+}

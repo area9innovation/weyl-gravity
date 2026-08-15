@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-additive-flow-rate-obstruction-v1.schema.json",
+  "title": "BT additive flow-rate obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer", "family",
+    "leading_laurent_terms", "asymptotic_theorem", "exact_rows",
+    "method_disposition", "research_consequence", "missing_object_ledger",
+    "next_gate", "does_not_establish", "provenance",
+    "verification_commands", "tier_receipt", "checks", "schema", "report",
+    "verifier"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EUCLIDEAN_ADDITIVE_FLOW_RATE_OBSTRUCTION_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-euclidean-additive-flow-rate-obstruction-v1"
+    },
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {
+      "const": "ADDITIVE_CONTRACTION_QUANTITATIVE_RATE_OBSTRUCTED"
+    },
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "family": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lattice", "positive_axial_profile", "gauge", "axial_residual",
+        "spatial_replication"
+      ],
+      "properties": {
+        "lattice": {"$ref": "#/$defs/text"},
+        "positive_axial_profile": {"$ref": "#/$defs/text"},
+        "gauge": {"const": "product Omega_m=1"},
+        "axial_residual": {"$ref": "#/$defs/text"},
+        "spatial_replication": {"$ref": "#/$defs/text"}
+      }
+    },
+    "leading_laurent_terms": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "residual_square", "additive_dissipation", "reciprocal_sum",
+        "gradient_square"
+      ],
+      "properties": {
+        "residual_square": {"$ref": "#/$defs/leading"},
+        "additive_dissipation": {"$ref": "#/$defs/leading"},
+        "reciprocal_sum": {"$ref": "#/$defs/leading"},
+        "gradient_square": {"$ref": "#/$defs/leading"}
+      }
+    },
+    "asymptotic_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unnormalized_flow", "unnormalized_relative_decay",
+        "normalized_flow", "normalized_relative_decay",
+        "euclidean_gradient_quotient", "status"
+      ],
+      "properties": {
+        "unnormalized_flow": {"$ref": "#/$defs/text"},
+        "unnormalized_relative_decay": {"const": "D/A ~ 4/x -> 0"},
+        "normalized_flow": {"$ref": "#/$defs/text"},
+        "normalized_relative_decay": {"const": "(D/W)/A ~ 4/(3*x^4) -> 0"},
+        "euclidean_gradient_quotient": {"const": "||grad A||^2/||r||^2 ~ 3*x^12 -> infinity"},
+        "status": {"const": "PROVED_BY_EXACT_LAURENT_LEADING_TERMS"}
+      }
+    },
+    "exact_rows": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/row"}
+    },
+    "method_disposition": {"type": "object"},
+    "research_consequence": {"type": "object"},
+    "missing_object_ledger": {"$ref": "#/$defs/textArray"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/textArray"},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "input_sha256", "arithmetic"]
+    },
+    "verification_commands": {"$ref": "#/$defs/textArray"},
+    "tier_receipt": {"type": "object"},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 18},
+        "total": {"const": 18},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {
+          "type": "object",
+          "minProperties": 18,
+          "maxProperties": 18,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-euclidean-additive-flow-rate-obstruction-v1.schema.json"
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-euclidean-additive-flow-rate-obstruction.md"
+    },
+    "verifier": {
+      "const": "reverse_physics/verify_bt_euclidean_additive_flow_rate_obstruction.py"
+    }
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "textArray": {
+      "type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}
+    },
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "leading": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["exponent", "coefficient"],
+      "properties": {
+        "exponent": {"type": "integer"},
+        "coefficient": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "row": {
+      "type": "object",
+      "required": [
+        "m", "x", "exponents", "geometric_mean_gauge_product",
+        "residual_square_per_axial_cycle", "action_per_axial_cycle",
+        "unnormalized_additive_dissipation",
+        "unnormalized_relative_action_decay",
+        "normalized_additive_dissipation",
+        "normalized_relative_action_decay",
+        "euclidean_action_gradient_square", "euclidean_gradient_quotient"
+      ]
+    }
+  }
+}
