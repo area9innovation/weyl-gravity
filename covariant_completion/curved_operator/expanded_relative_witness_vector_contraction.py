@@ -5,13 +5,13 @@ the vector field ``v[4]`` as an apparently open singleton.  The graph forgets
 the BV differential.  After the certified local canonical auxiliary shift,
 the vector row belongs to the pointwise generalized-auxiliary complex
 
-``eta -> -v`` and ``v^sharp -> -eta^sharp``.
+``eta -> -v`` and ``v^sharp -> +eta^sharp``.
 
 Consequently there is no need to invert the second-order diagonal selected
 by the fixed witness.  On the sixteen-dimensional vector cotangent summand,
 ordered as ``(eta,v,v^sharp,eta^sharp)``, choose the replacement witness
 
-``W(v)=-eta`` and ``W(eta^sharp)=-v^sharp``.
+``W(v)=-eta`` and ``W(eta^sharp)=+v^sharp``.
 
 Then, as an equality of complete local operators,
 
@@ -63,13 +63,9 @@ def _block_matrix() -> tuple[sp.Matrix, sp.Matrix]:
 
     # Block order: eta, v, v^sharp, eta^sharp.
     q[VECTOR_RANK : 2 * VECTOR_RANK, 0:VECTOR_RANK] = -identity
-    q[3 * VECTOR_RANK : 4 * VECTOR_RANK, 2 * VECTOR_RANK : 3 * VECTOR_RANK] = (
-        -identity
-    )
+    q[3 * VECTOR_RANK : 4 * VECTOR_RANK, 2 * VECTOR_RANK : 3 * VECTOR_RANK] = identity
     witness[0:VECTOR_RANK, VECTOR_RANK : 2 * VECTOR_RANK] = -identity
-    witness[2 * VECTOR_RANK : 3 * VECTOR_RANK, 3 * VECTOR_RANK : 4 * VECTOR_RANK] = (
-        -identity
-    )
+    witness[2 * VECTOR_RANK : 3 * VECTOR_RANK, 3 * VECTOR_RANK : 4 * VECTOR_RANK] = identity
     return q, witness
 
 
@@ -151,7 +147,7 @@ class ExpandedRelativeVectorContraction:
         transformed = _nested(split, "transformed_Q")
         if transformed.get("off_diagonal_blocks") != "zero":
             raise AssertionError("vector auxiliary summand is no longer direct")
-        expected_arrows = {"eta -> -v", "v^* -> -eta^*"}
+        expected_arrows = {"eta -> -v", "v^* -> +eta^*"}
         actual_arrows = set(transformed.get("generalized_auxiliary", []))
         if not expected_arrows.issubset(actual_arrows):
             raise AssertionError("shifted vector cotangent arrows unavailable")
@@ -177,7 +173,7 @@ class ExpandedRelativeVectorContraction:
             for entry in universal.get("all_rows", [])
             if isinstance(entry, Mapping)
         }
-        if ("eta -> -v", 4) not in rows or ("v^* -> -eta^*", 4) not in rows:
+        if ("eta -> -v", 4) not in rows or ("v^* -> +eta^*", 4) not in rows:
             raise AssertionError("universal split vector ranks drifted")
 
         if shifted_filtration_certificate.get("schema") != (
@@ -206,7 +202,7 @@ class ExpandedRelativeVectorContraction:
                 "block_order": ["eta[4]", "v[4]", "v_sharp[4]", "eta_sharp[4]"],
                 "field_singleton_rank": VECTOR_RANK,
                 "dimension": TOTAL_RANK,
-                "differential": "eta -> -v; v_sharp -> -eta_sharp",
+                "differential": "eta -> -v; v_sharp -> +eta_sharp",
                 "differential_order": 0,
                 "curvature_coefficients": 0,
                 "Q_squared_defect": 0,
@@ -215,7 +211,7 @@ class ExpandedRelativeVectorContraction:
                 "matrix_sha256": _digest(self.differential),
             },
             "replacement_witness": {
-                "formula": "W(v)=-eta; W(eta_sharp)=-v_sharp",
+                "formula": "W(v)=-eta; W(eta_sharp)=+v_sharp",
                 "differential_order": 0,
                 "W_squared_defect": 0,
                 "cotangent_partner_included": True,

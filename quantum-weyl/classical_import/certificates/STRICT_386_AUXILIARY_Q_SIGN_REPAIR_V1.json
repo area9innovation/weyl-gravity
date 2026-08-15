@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "strict-386-auxiliary-q-sign-repair-v1",
+  "result_id": "STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1",
+  "result_kind": "EXACT_CLASSICAL_AUXILIARY_Q_SIGN_REPAIR_CERTIFICATE",
+  "result_state": "REPAIR_CERTIFIED_FULL_Q1_SERIALIZATION_NEXT",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "d0f09db4d46aa5a8198ef452f68443cf7380009f",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "Was the exact auxiliary cotangent sign conflict identified by the historical strict 386-row split-q1 gate repaired consistently in executable source, human-readable ledgers, regenerated classical certificates, odd-pairing replay and the complete covariant verification stack?",
+  "answer": "Yes, within the declared classical scope. The factorized cotangent arrow and every affected ledger now use v_star to plus eta_star, matching the already serialized executable matrix and odd pairing. Exact replay gives zero q-squared and zero cyclicity defects for the repaired plus sign; the rejected minus-sign regression remains nilpotent but produces eight rational cyclicity defects. The affected retract, vector, current, direct-pairing, causal-transport and dependency chains pass, and the full covariant suite exits successfully with all 82 terminal overclaim guards passing. The canonical runner now regenerates the SHA-bound direct-pairing receipt after prolonged-current generation, preventing the stale-hash ordering failure discovered during repair. This result resolves the local source/ledger inconsistency but does not serialize the full 386-row q1 operator, accept a common quantum-import snapshot, construct a Hadamard state or restore the QME.",
+  "predecessor": {
+    "result_id": "STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1",
+    "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1.json",
+    "sha256": "385a9fe8802fbea9e687f7c09796744763ce45f7734ed9bdabffc15a135c55e7",
+    "preserved": true
+  },
+  "repair": {
+    "block": "AUX_V_STAR -> AUX_ETA_STAR",
+    "old_declared_sign": "-I_4",
+    "authoritative_sign": "+I_4",
+    "source_and_ledgers_consistent": true,
+    "repair_applied": true,
+    "affected_chain_regenerated": true,
+    "canonical_runner_dependency_order_repaired": true
+  },
+  "exact_replay": {
+    "repaired_plus_sign": {
+      "q_squared_defects": 0,
+      "odd_pairing_cyclicity_defects": 0
+    },
+    "rejected_minus_sign_regression": {
+      "q_squared_defects": 0,
+      "odd_pairing_cyclicity_defects": 8
+    },
+    "discriminator": "Nilpotency accepts both isolated signs; the serialized odd pairing rejects the minus-sign regression with eight exact rational defects."
+  },
+  "verification": {
+    "tier_1": {
+      "status": "PASS",
+      "checks": [
+        "curved retract 10/10",
+        "vector contraction 21/21",
+        "curved current 10/10",
+        "direct pairing transport",
+        "dependency report 22/22",
+        "final transport 25/25",
+        "four-flag closure 5/5"
+      ]
+    },
+    "tier_3": {
+      "status": "PASS",
+      "command": "PYTHONPATH=/tmp/weyl-scipy/root/usr/lib/python3/dist-packages:/tmp/weyl-sympy/root/usr/lib/python3/dist-packages python3 symbolic/verify_conformal_covariant_completion.py --emit --guards",
+      "elapsed_seconds": 1433.5,
+      "terminal_guard": "COVARIANT COMPLETION OVERCLAIM GUARDS: 82/82 PASS",
+      "terminal_result": "CONFORMAL COVARIANT CERTIFICATION STACK: ALL IMPLEMENTED CHECKS PASS",
+      "dependency_overlay": {
+        "numpy": "2.3.5",
+        "scipy": "1.16.3",
+        "sympy": "1.14.0",
+        "decorator": "5.2.1"
+      }
+    }
+  },
+  "claim_flags": {
+    "STRICT_386_AUXILIARY_Q_SIGN_REPAIR_APPLIED": true,
+    "STRICT_386_AUXILIARY_Q_SOURCE_LEDGER_PAIRING_CONSISTENT": true,
+    "AFFECTED_CLASSICAL_CERTIFICATE_CHAIN_VERIFIED": true,
+    "FULL_CLASSICAL_COVARIANT_SUITE_PASSED": true,
+    "STRICT_FULL_386_Q1_PORTABLE_COMPONENT_BYTES": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "QME_RESTORED": false,
+    "LORENTZIAN_QUANTUM_THEORY": false
+  },
+  "next_gate": "Emit the endpoint, repaired auxiliary and curvature mapping-cylinder blocks as one canonical sparse 386-row q1 table; independently replay q1 squared and odd-pairing cyclicity; then bind the accepted bytes into one classical import snapshot.",
+  "does_not_establish": [
+    "receiver-readable full 386-row q1 component bytes or an accepted common classical snapshot hash",
+    "portable support-local SDR component maps or represented endpoint and full Green actions",
+    "local D, q2 compatibility, a BRST-compatible Hadamard state, renormalized Lorentzian products, QME restoration, residual quantum transfer or a Lorentzian quantum theory"
+  ],
+  "provenance": {
+    "sources": {
+      "generalized_retract_source": {
+        "path": "covariant_completion/auxiliary_equivalence/generalized_retract.py",
+        "sha256": "b2b41ca3991bc617dcc239ecca362de90fd899c238e6d0ad29791fa46671f23c"
+      },
+      "factorized_split_source": {
+        "path": "covariant_completion/curved_retract/factorized_q_split.py",
+        "sha256": "ba77b3570579988b68be1def9ab4427b7089c97b20245ec1796413f4fc617565"
+      },
+      "universal_split_source": {
+        "path": "covariant_completion/curved_retract/universal_split.py",
+        "sha256": "f6150fb09c432d3865228f88df1922d41cf6c62f179dd91a6cc8f3c013bb0153"
+      },
+      "vector_contraction_source": {
+        "path": "covariant_completion/curved_operator/expanded_relative_witness_vector_contraction.py",
+        "sha256": "0ad8a09ca3fe350b6e9466c73e3d52058a35be461ad82dc386b9aed4c05117dc"
+      },
+      "current_closure_source": {
+        "path": "covariant_completion/curved_current/bv_current_closure.py",
+        "sha256": "cf3ac1452cbe789435eec42b1a4eaf61fde9caf515ec7bdbfc623ccff89b3515"
+      },
+      "canonical_runner": {
+        "path": "symbolic/verify_conformal_covariant_completion.py",
+        "sha256": "3ff387f9a7a8ad81c098655bf0f25635e870d5c4c7c45658bc4f934775728358"
+      }
+    },
+    "certificates": {
+      "generalized_retract": {
+        "path": "covariant_completion/certificates/generalized_auxiliary_contraction.json",
+        "sha256": "6218d51ad86548cf1e2b3356f359aca9539def987829af6a1082b7278f9d38a0",
+        "schema": "pure-weyl-support-local-generalized-auxiliary-retract-v1"
+      },
+      "curved_split": {
+        "path": "covariant_completion/certificates/curved_auxiliary_canonical_split.json",
+        "sha256": "e8326afd4f8cf919f2d3c20de8065a767a40f40f509968fb542efe43a6a80343",
+        "schema": "pure-weyl-curved-auxiliary-canonical-split-v1"
+      },
+      "vector_contraction": {
+        "path": "covariant_completion/certificates/curved_expanded_relative_witness_vector_contraction.json",
+        "sha256": "464abdcb90aa1cdda65192851a60623e0dc1f1aafeed12632880b479498fa497",
+        "schema": "pure-weyl-expanded-relative-vector-contraction-v1"
+      },
+      "curved_retract": {
+        "path": "covariant_completion/certificates/curved_deformation_retract_status.json",
+        "sha256": "fbbaa1a1118110cfbc56974b684883fc89de1cd964a8d47abe4822cf15210271",
+        "schema": "pure-weyl-curved-deformation-retract-status-v1"
+      },
+      "curved_current": {
+        "path": "covariant_completion/certificates/curved_current_comparison.json",
+        "sha256": "c98211f74ae81b5b2d8acaadbd61d20e3cfa58bf0b24ef4077e29677457812bc",
+        "schema": "pure-weyl-curved-current-comparison-status-v1"
+      },
+      "prolonged_current": {
+        "path": "covariant_completion/certificates/curved_prolonged_current_comparison.json",
+        "sha256": "0e4633e1ff45edf06f296981f48a77000db054dff7f265b67a27852de0035e86",
+        "schema": "pure-weyl-prolonged-current-comparison-v1"
+      },
+      "direct_pairing": {
+        "path": "covariant_completion/certificates/curved_direct_causal_pairing_transport.json",
+        "sha256": "0ad3161cf1f881294cda1b0d5902855949e93d782023f90b00dc31cdc9670b1e",
+        "schema": "pure-weyl-direct-causal-pairing-transport-v1"
+      },
+      "causal_transport": {
+        "path": "covariant_completion/certificates/curved_causal_transport_recognition.json",
+        "sha256": "1535fac71b2dd1c52a8f778ac57f0da9efea611c41ae596327885940dc853b14",
+        "schema": "pure-weyl-causal-transport-recognition-v1"
+      },
+      "so42_transport": {
+        "path": "covariant_completion/certificates/curved_SO42_causal_transport_recognition.json",
+        "sha256": "ea155acd9de80bdb1b4d5e236020cf4580899773aaf630cb4a4e806a1007be82",
+        "schema": "pure-weyl-so42-causal-transport-recognition-v1"
+      },
+      "dependency_report": {
+        "path": "covariant_completion/certificates/final_claim_dependencies.json",
+        "sha256": "7ebb80ebc44ef2f07151e26c15e29d15e456a75235b8a9dd8eba3917183b59da",
+        "schema": "pure-weyl-final-covariant-claim-dependencies-v1"
+      },
+      "completed_status": {
+        "path": "covariant_completion/certificates/completed_covariant_status.json",
+        "sha256": "22ca1e14f820cfd660ce39ee7838de49f98cf30f6493ee3f0152d95b4b8c9740",
+        "schema": "pure-weyl-completed-covariant-bv-status-v1"
+      }
+    },
+    "pairing": {
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+      "sha256": "e760565a08c4b551551ebff8ec5cdac26beb7715e976fe8612407278ee315303"
+    },
+    "executable_witness": {
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_AUXILIARY_Q_SIGN_WITNESS_V1.json",
+      "sha256": "e451eadc156ee322304e45fd43c45f74786713f8b6bcd422c71c50588ca0ac16"
+    }
+  },
+  "independent_checker": {
+    "path": "quantum-weyl/classical_import/check_strict_386_auxiliary_q_sign_repair.py",
+    "expected_digest": "5dc3b3ade81d5ab3208aba8a63159dc40dc29c988c547773d2b7e27197574fa8"
+  },
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.md"
+}

@@ -19,6 +19,14 @@ WITNESS = HERE / "certificates/STRICT_386_AUXILIARY_Q_SIGN_WITNESS_V1.json"
 GENERALIZED = ROOT / "covariant_completion/certificates/generalized_auxiliary_contraction.json"
 CURVED = ROOT / "covariant_completion/certificates/curved_auxiliary_canonical_split.json"
 FACTORIZED_SOURCE = ROOT / "covariant_completion/curved_retract/factorized_q_split.py"
+REPAIR = HERE / "certificates/STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.json"
+SUPERSEDED_PATHS = {
+    "covariant_completion/certificates/generalized_auxiliary_contraction.json",
+    "covariant_completion/certificates/curved_auxiliary_canonical_split.json",
+    "covariant_completion/curved_retract/factorized_q_split.py",
+    "covariant_completion/auxiliary_equivalence/generalized_retract.py",
+    "covariant_completion/curved_retract/universal_split.py",
+}
 
 
 Matrix = list[list[Fraction]]
@@ -111,6 +119,12 @@ def contraction(q: Matrix) -> Matrix:
 
 def check(value: dict[str, Any] | None = None) -> list[str]:
     value = json.loads(RESULT.read_text()) if value is None else value
+    repair = json.loads(REPAIR.read_text()) if REPAIR.is_file() else {}
+    superseded = (
+        repair.get("result_id") == "STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1"
+        and repair.get("predecessor", {}).get("sha256") == sha(RESULT)
+        and repair.get("repair", {}).get("repair_applied") is True
+    )
     pairing = json.loads(PAIRING.read_text())
     witness = json.loads(WITNESS.read_text())
     generalized = json.loads(GENERALIZED.read_text())
@@ -124,10 +138,13 @@ def check(value: dict[str, Any] | None = None) -> list[str]:
         errors.append("executable matrix digest")
     if witness.get("nonzero_entries") != 30 or witness.get("observed_blocks", {}).get("v_star_to_eta_star") != "+I_4":
         errors.append("witness sign/count")
-    if curved.get("factorized_curved_Q_split", {}).get("transformed_Q", {}).get("generalized_auxiliary", [])[-1:] != ["v^* -> -eta^*"]:
-        errors.append("curved declaration")
-    if 'q[9][8] = OperatorPolynomial.identity(-1)' not in FACTORIZED_SOURCE.read_text():
-        errors.append("factorized source declaration")
+    if not superseded:
+        if curved.get("factorized_curved_Q_split", {}).get("transformed_Q", {}).get("generalized_auxiliary", [])[-1:] != ["v^* -> -eta^*"]:
+            errors.append("curved declaration")
+        if 'q[9][8] = OperatorPolynomial.identity(-1)' not in FACTORIZED_SOURCE.read_text():
+            errors.append("factorized source declaration")
+    elif repair.get("claim_flags", {}).get("AFFECTED_CLASSICAL_CERTIFICATE_CHAIN_VERIFIED") is not True:
+        errors.append("superseding repair chain")
 
     try:
         q_plus = decode_q(witness)
@@ -177,7 +194,12 @@ def check(value: dict[str, Any] | None = None) -> list[str]:
         errors.append("canonical digest")
     for item in value.get("provenance", {}).get("inputs", []):
         path = ROOT / item.get("path", "")
-        if not path.is_file() or sha(path) != item.get("sha256"):
+        historical = superseded and item.get("path") in SUPERSEDED_PATHS
+        recorded = item.get("sha256", "")
+        if historical:
+            if len(recorded) != 64 or any(character not in "0123456789abcdef" for character in recorded):
+                errors.append("historical provenance " + item.get("path", ""))
+        elif not path.is_file() or sha(path) != recorded:
             errors.append("provenance " + item.get("path", ""))
     return errors
 
@@ -191,7 +213,11 @@ def main() -> int:
     else:
         print("  - executable +I dual arrow: zero exact cyclicity defects")
         print("  - declared -I dual arrow: eight exact cyclicity defects")
-        print("  - full q1 serialization remains fail closed pending classical sign repair")
+        repair = json.loads(REPAIR.read_text()) if REPAIR.is_file() else {}
+        if repair.get("repair", {}).get("repair_applied") is True:
+            print("  - historical diagnosis preserved; superseding repair is certified")
+        else:
+            print("  - full q1 serialization remains fail closed pending classical sign repair")
     return bool(errors)
 
 

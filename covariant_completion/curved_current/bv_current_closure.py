@@ -127,7 +127,7 @@ class BVCurrentClosure:
             != polynomial_type.atom("Cmet")
         ) + int(
             factorized_q_split.transformed_q[9][8]
-            != polynomial_type.identity(-1)
+            != polynomial_type.identity(1)
         )
 
         # Executable shifted gauge fermion.  Rows are bar_c_met[5]; columns

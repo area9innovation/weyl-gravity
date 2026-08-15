@@ -335,6 +335,10 @@ def main() -> None:
     _run("verify_conformal_curvature_mapping_cylinder_substitution.py")
     _run("verify_conformal_prolonged_current_comparison.py")
     _run(
+        "verify_conformal_direct_causal_pairing_transport.py",
+        *guarded_args,
+    )
+    _run(
         "verify_conformal_rank14_endpoint_green_witness_boundary.py",
         *guard_only_args,
     )

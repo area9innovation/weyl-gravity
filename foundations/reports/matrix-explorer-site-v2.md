@@ -47,8 +47,11 @@ has 54 ordered nonzero entries, while its pullback to the thirty Gate coordinate
 has 30.  The full 386-row hybrid basis and rank-386 pairing are now serialized:
 the 356-row complement splits as 36 auxiliary plus 320 cone rows and the full
 pairing has 410 ordered entries.  The componentwise T adjoint replays exactly.
-Full q1, projector and Green component tables—and therefore all operator-level
-component adjoints—remain open, as do q2/D, Hadamard and QME.
+The four-row auxiliary cotangent sign conflict is now repaired in source and
+ledgers, replayed against the exact pairing, and propagated through the full
+covariant suite with 82/82 terminal overclaim guards. Full q1, projector and
+Green component tables—and therefore all operator-level component adjoints—
+remain open, as do q2/D, Hadamard and QME.
 
 The new reconstruction import supplies the first explicit weak-arithmetic
 finite-approximant theorem for a declared bounded wave observable. Its rational

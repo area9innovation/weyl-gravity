@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import importlib.util
+import hashlib
 import json
 from jsonschema import Draft202012Validator, FormatChecker
 from pathlib import Path
@@ -14,6 +15,7 @@ HERE = ROOT / "quantum-weyl/classical_import"
 RESULT = HERE / "certificates/STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1.json"
 REPORT = HERE / "REPORT_STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1.md"
 SCHEMA = HERE / "schema/strict-386-full-q1-split-sign-gate-v1.schema.json"
+REPAIR = HERE / "certificates/STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.json"
 
 
 def module(path: Path, name: str):
@@ -39,11 +41,19 @@ def main() -> int:
         for item in Draft202012Validator(schema, format_checker=FormatChecker()).iter_errors(value)
     ]
     errors.extend("checker " + item for item in checker.check(value))
-    result_bytes, report_bytes = builder.generated()
-    if RESULT.read_bytes() != result_bytes:
-        errors.append("deterministic result drift")
-    if REPORT.read_bytes() != report_bytes:
-        errors.append("deterministic report drift")
+    repair = json.loads(REPAIR.read_text()) if REPAIR.is_file() else {}
+    superseded = (
+        repair.get("result_id") == "STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1"
+        and repair.get("predecessor", {}).get("sha256")
+        == hashlib.sha256(RESULT.read_bytes()).hexdigest()
+        and repair.get("repair", {}).get("repair_applied") is True
+    )
+    if not superseded:
+        result_bytes, report_bytes = builder.generated()
+        if RESULT.read_bytes() != result_bytes:
+            errors.append("deterministic result drift")
+        if REPORT.read_bytes() != report_bytes:
+            errors.append("deterministic report drift")
     for token in (
         "eight exact defects",
         "executable `+I_4`",

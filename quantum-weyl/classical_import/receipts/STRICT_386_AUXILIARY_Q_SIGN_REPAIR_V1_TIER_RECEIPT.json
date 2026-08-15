@@ -1,0 +1,62 @@
+{
+  "receipt_id": "STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Authoritative +I4 auxiliary cotangent sign repair, exact pairing regression replay, affected classical certificate regeneration, canonical runner ordering repair, and full covariant-suite verification.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile quantum-weyl/classical_import/build_strict_386_auxiliary_q_sign_repair.py quantum-weyl/classical_import/check_strict_386_auxiliary_q_sign_repair.py quantum-weyl/classical_import/verify_strict_386_auxiliary_q_sign_repair.py symbolic/verify_conformal_covariant_completion.py",
+        "python3 -m json.tool quantum-weyl/classical_import/schema/strict-386-auxiliary-q-sign-repair-v1.schema.json",
+        "git diff --check -- <explicit repair paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "python3 quantum-weyl/classical_import/build_strict_386_auxiliary_q_sign_repair.py --check",
+        "python3 quantum-weyl/classical_import/check_strict_386_auxiliary_q_sign_repair.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_auxiliary_q_sign_repair.py",
+        "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_auxiliary_q_sign_repair.py -v",
+        "python3 quantum-weyl/classical_import/check_strict_386_full_q1_split_sign_gate.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_full_q1_split_sign_gate.py",
+        "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_full_q1_split_sign_gate.py -v"
+      ],
+      "checks": {
+        "repaired_plus_q_squared_defects": 0,
+        "repaired_plus_cyclicity_defects": 0,
+        "rejected_minus_q_squared_defects": 0,
+        "rejected_minus_cyclicity_defects": 8,
+        "new_repair_unit_tests": "6/6 PASS",
+        "historical_gate_unit_tests": "8/8 PASS"
+      }
+    },
+    "tier_2": {
+      "status": "PASS_AS_PART_OF_TIER_3",
+      "criterion": "The shared auxiliary differential and content-addressed downstream certificate chain changed, so the affected chain was exercised inside the complete Tier-3 rebuild."
+    },
+    "tier_3": {
+      "status": "PASS",
+      "command": "PYTHONPATH=/tmp/weyl-scipy/root/usr/lib/python3/dist-packages:/tmp/weyl-sympy/root/usr/lib/python3/dist-packages python3 symbolic/verify_conformal_covariant_completion.py --emit --guards",
+      "elapsed_seconds": 1433.5,
+      "terminal_guard": "COVARIANT COMPLETION OVERCLAIM GUARDS: 82/82 PASS",
+      "terminal_result": "CONFORMAL COVARIANT CERTIFICATION STACK: ALL IMPLEMENTED CHECKS PASS",
+      "dependency_overlay": {
+        "numpy": "2.3.5",
+        "scipy": "1.16.3",
+        "sympy": "1.14.0",
+        "decorator": "5.2.1"
+      }
+    }
+  },
+  "artifact_sha256": {
+    "quantum-weyl/classical_import/certificates/STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.json": "57c6dd9f5df7ae0e71af6150b154f95fa4f7b2baa849686d7c3cdada5138344f",
+    "quantum-weyl/classical_import/REPORT_STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.md": "707b20e275809fa455fbeaa89b462f480c664f894acdfb6768adb6c324c9ac6a"
+  },
+  "claim_boundary": "This certifies the +I4 source/ledger/pairing repair and the regenerated classical covariant chain. It does not establish receiver-readable full-386 q1 bytes, an accepted common import snapshot, Hadamard data, QME restoration, residual quantum transfer, or a Lorentzian quantum theory."
+}

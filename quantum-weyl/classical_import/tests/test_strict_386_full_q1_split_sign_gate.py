@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
+import hashlib
 import importlib.util
 import json
 from pathlib import Path
@@ -32,10 +33,11 @@ class Strict386FullQ1SplitSignGateTests(unittest.TestCase):
     def test_repository_result(self) -> None:
         self.assertEqual(checker.check(self.value), [])
 
-    def test_generated_current(self) -> None:
-        result, report = builder.generated()
-        self.assertEqual(result, (HERE / "certificates/STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1.json").read_bytes())
-        self.assertEqual(report, (HERE / "REPORT_STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1.md").read_bytes())
+    def test_historical_artifact_preserved_by_repair(self) -> None:
+        result_path = HERE / "certificates/STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1.json"
+        repair = json.loads((HERE / "certificates/STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.json").read_text())
+        self.assertEqual(repair["predecessor"]["sha256"], hashlib.sha256(result_path.read_bytes()).hexdigest())
+        self.assertTrue(repair["predecessor"]["preserved"])
 
     def test_plus_sign_cyclicity_mutation_fails(self) -> None:
         value = deepcopy(self.value)

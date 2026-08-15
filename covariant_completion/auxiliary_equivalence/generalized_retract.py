@@ -280,7 +280,7 @@ class GeneralizedAuxiliaryRetract:
             "all_added_bv_rows": [
                 {"arrow": "eta -> -v", "dimension": 4},
                 {"arrow": "f_hat -> M f_hat^*", "dimension": 10},
-                {"arrow": "v^* -> -eta^*", "dimension": 4},
+                {"arrow": "v^* -> +eta^*", "dimension": 4},
             ],
             "sdr": {
                 "p_i": "identity",

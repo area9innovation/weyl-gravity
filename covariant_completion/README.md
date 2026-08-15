@@ -185,7 +185,7 @@ auxiliary tensor by its pointwise equation-of-motion solution block
 diagonalizes the Hessian and makes the shifted tensor gauge invariant.  With
 `eta=xi_0-d sigma`, the remaining added cotangent sector consists of the
 three arrows `eta -> -v`, `f_hat -> M f_hat^*`, and
-`v^* -> -eta^*`.  Explicit `66 x 30` inclusion/projection matrices and a
+`v^* -> +eta^*`.  Explicit `66 x 30` inclusion/projection matrices and a
 36-dimensional homotopy verify both chain-map identities and
 `i p-1=Qk+kQ`.  All formulas are finite differential or pointwise maps and
 therefore preserve compact, spacelike-compact, and unrestricted smooth

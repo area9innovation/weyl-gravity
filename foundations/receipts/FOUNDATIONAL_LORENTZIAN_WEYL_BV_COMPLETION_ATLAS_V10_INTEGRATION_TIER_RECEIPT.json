@@ -1,0 +1,57 @@
+{
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V10_INTEGRATION_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V10",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Append-only Atlas V10, in-place explorer refresh, historical V9 preservation, and Paper 21 integration of the certified auxiliary-q sign repair.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile foundations/build_lorentzian_weyl_bv_completion_atlas_v10.py foundations/check_lorentzian_weyl_bv_completion_atlas_v10.py foundations/verify_lorentzian_weyl_bv_completion_atlas_v10.py foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py foundations/verify_matrix_site_v2.py paper/generate_21_reverse_foundations_claim_map.py paper/verify_21_reverse_foundations_claim_map.py",
+        "python3 -m json.tool foundations/schema/foundational-lorentzian-weyl-bv-completion-atlas-v10.schema.json",
+        "git diff --check -- <explicit atlas/site/paper paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v10.py --check && python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v10.py && python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v10.py && python3 -m unittest foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v10.py -v",
+        "python3 foundations/build_matrix_site_v2.py --check && python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py && python3 -m unittest foundations/tests/test_matrix_site.py -v",
+        "python3 paper/generate_21_reverse_foundations_appendices.py --check && python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+        "pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (twice, from paper/)"
+      ],
+      "checks": {
+        "atlas_v10_unit_tests": "6/6 PASS",
+        "site_unit_tests": "10/10 PASS",
+        "site_cells": 576,
+        "completion_cells": 77,
+        "completion_routes": 9,
+        "paper_pages": 61
+      }
+    },
+    "tier_2": {
+      "status": "NOT_SEPARATELY_RUN",
+      "criterion": "Atlas, static navigation and paper projections consume the already Tier-3-certified repair artifact; their deterministic direct consumers passed Tier 1."
+    },
+    "tier_3": {
+      "status": "NOT_REQUIRED_FOR_PRESENTATION_LAYER",
+      "criterion": "The shared classical algebra change was already validated by the repair receipt's complete Tier-3 run; this receipt covers append-only projections and presentation artifacts."
+    }
+  },
+  "artifact_sha256": {
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V10.json": "af06563333cd56c40238341f9d5f7a1bfb2f9e5d959c9dff0d9efdfeef16102e",
+    "foundations/reports/lorentzian-weyl-bv-completion-atlas-v10.md": "aeedb97b26347266c6fd9ddbe32c2dd80cfb546788f936dc8c4ec7013d71d014",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "11fbfd9589dc8f8205619c1d48ad6cefdf8c23422460fd2247b8bfab13c4c539",
+    "foundations/site/manifest.json": "208701d10990c56e441fb1e87abe1d14a8ff7753dd26d270397f87ba2670ccfb",
+    "paper/21-reverse-foundations-of-physics-appendices.tex": "9f6ec7d2c87c9d42ba81e9b3f1cb5fe214e9d6e2b9e3e6f967d5927936ad0d7a",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "91e99bcd45fd6bb738f1b1b701343d9dc7c47aaf67fb5cb11ead0f82d1c89f3e",
+    "paper/21-reverse-foundations-of-physics.pdf": "cf4a2c4b97ba8c77d1a2ef42a29881956384a1df1f258434f7a906af69e97aaa"
+  },
+  "claim_boundary": "Atlas V10 and the existing explorer expose a certified classical sign repair and rank full-q1 serialization first. They do not promote Gate A, Hadamard, QME, residual transfer, empirical validity, or a complete Lorentzian quantum theory."
+}

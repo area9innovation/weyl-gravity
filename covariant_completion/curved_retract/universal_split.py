@@ -72,7 +72,7 @@ class UniversalAuxiliarySplit:
             "all_rows": [
                 {"arrow": "eta -> -v", "rank": 4},
                 {"arrow": "phi_hat -> A_g phi_hat^*", "rank": 10},
-                {"arrow": "v^* -> -eta^*", "rank": 4},
+                {"arrow": "v^* -> +eta^*", "rank": 4},
             ],
             "nilpotency": "q_genaux^2=0",
             "selected_sign_convention": "q_genaux k+k q_genaux=-identity",

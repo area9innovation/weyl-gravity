@@ -18030,24 +18030,24 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "completion_atlas": {
-    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v9",
-    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V9",
+    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v10",
+    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V10",
     "result_kind": "BRANCH_BY_STAGE_COMPLETION_ATLAS",
     "lifecycle": "CLASSIFIED",
     "created": "2026-08-15",
-    "repository_base_commit": "f4ca51aac8f44117686464d17f2c61767d0d780a",
+    "repository_base_commit": "d0f09db4d46aa5a8198ef452f68443cf7380009f",
     "dependency_tags": [
       "LOCAL-ALGEBRAIC",
       "EUCLIDEAN-SPECTRAL",
       "REDUCED-MODE",
       "LORENTZIAN-CAUSAL"
     ],
-    "question": "Does the fixed 386-row split presentation already support an honest full-q1 serialization, or is there a smaller exact classical inconsistency that must be repaired before the finite operator bytes and later causal Green-homotopy actions can share one accepted snapshot?",
-    "answer": "Atlas V9 reaches the first concrete obstruction inside the V8 full-q1 serialization route. The published 386-row carrier is a split mapping-cylinder presentation: its primitive unary differential consists of the endpoint complex, the generalized-auxiliary contractible summand, and the autonomous curvature cone with its cotangent dual. The T, A and B attachment maps belong to the separate degree-zero canonical shear and inclusion/projection data, rather than being additional primitive q1 arrows in this split basis. On the 36 generalized-auxiliary rows, the exact executable matrix already pinned by the classical certificate contains the dual arrow v_star to eta_star with sign +I_4. The factorized curved-Q source and human-readable certificate ledgers declare -I_4 instead. Both candidates remain nilpotent and admit the recorded contraction, so those two checks cannot distinguish them. The independent exact odd-pairing replay does distinguish them: +I_4 has zero cyclicity defects, while -I_4 has eight rational defects, two orientations for each of four components. Full-q1 serialization is therefore blocked before any analytic issue arises. The preferred repair is local and explicit—change the factorized dual arrow and its textual ledgers to +I_4, matching the executable matrix and serialized pairing—then regenerate the affected classical certificate chain. V9 records the discrepancy without applying the repair or promoting the full q1 bytes. The causal Green-homotopy theorem, support transfer, suspension result and operator-type classification remain preserved. Gate A, local D, q2, a represented advanced/retarded action, Hadamard construction, Ward identities, renormalized products, QME restoration and residual transfer all remain fail closed.",
+    "question": "After the exact four-row auxiliary cotangent sign conflict was isolated in atlas V9, has the preferred repair been applied consistently enough to reopen the strict 386-row full-q1 serialization route, and which acceptance boundary remains before the quantum programme may import a common classical snapshot?",
+    "answer": "Atlas V10 certifies the preferred local repair identified by V9. The factorized auxiliary cotangent arrow, generalized and universal split ledgers, vector contraction, current comparison and all regenerated downstream certificates now use v_star to plus eta_star, agreeing with the executable 36-row matrix and the fixed exact odd pairing. Independent rational replay gives zero q-squared and zero cyclicity defects for the repaired plus sign, while the deliberately reconstructed minus-sign regression remains nilpotent but produces the same eight cyclicity defects diagnosed by V9. The scoped retract, vector, current, direct-pairing, dependency and final-transport rails pass, and an uninterrupted full covariant rebuild completed in 1433.50 seconds with all 82 terminal overclaim guards passing. The rebuild also exposed and repaired a deterministic orchestration bug: the canonical runner now regenerates the SHA-bound direct-pairing receipt after its prolonged-current input. This closes the source/ledger inconsistency without rewriting the historical V9 diagnosis. It does not yet close strict Gate A: the full endpoint, repaired auxiliary and curvature-cone q1 blocks have not been emitted as one receiver-readable sparse 386-row table, independently replayed against the rank-386 pairing, and bound into one accepted import snapshot. Full q1 serialization is therefore the highest-leverage next object. Support-local SDR maps, represented endpoint and full Green actions, local D, q2 compatibility, Hadamard construction, Ward identities, renormalized Lorentzian products, QME restoration and residual quantum transfer remain fail closed.",
     "predecessor": {
-      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V8",
-      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V8.json",
-      "sha256": "124a69a59443ea95d7752ad849f642c44e83aa82193fedc8aa0cd0e14aa10d4b",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V9",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V9.json",
+      "sha256": "019de2f4bd6864a0028c274b30eeae39265810999bf79c172b90f0abd2cd6f58",
       "preserved": true
     },
     "status_vocabulary": [
@@ -18155,16 +18155,17 @@ window.MATRIX_EXPLORER_DATA = {
           {
             "stage": "S0_CLASSICAL_AUTHORITY",
             "status": "FAIL_CLOSED",
-            "statement": "The fixed 386-row basis and pairing expose an exact text/matrix sign conflict in the 36-row auxiliary q1 summand: executable +I4 is cyclic, while declared -I4 has eight pairing defects. Full q1 serialization pauses pending a classical source-and-ledger repair.",
+            "statement": "The four-row auxiliary q1 sign conflict is repaired: source, ledgers, exact pairing replay and the complete affected classical chain agree on +I4, and the full covariant suite passes. Gate A remains closed only because a receiver-readable full 386-row q1 table and accepted common snapshot hash are not yet emitted.",
             "evidence": [
               "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
               "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
               "STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1",
               "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
               "STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1",
-              "STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1"
+              "STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1",
+              "STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1"
             ],
-            "boundary": "The preferred +I4 repair has not been applied or propagated through the affected classical certificate chain. Full q1, local SDR, Green actions, all-row adjoints, a common snapshot hash, local D, q2 and residual extension remain open."
+            "boundary": "The repair certificate does not itself serialize the endpoint, auxiliary and curvature-cone blocks as one full q1 artifact or accept them into the quantum import manifest. Local SDR maps, Green actions, local D, q2 and quantum lifecycle stages remain open."
           },
           {
             "stage": "S1_OFF_SHELL_BV",
@@ -18253,7 +18254,7 @@ window.MATRIX_EXPLORER_DATA = {
           }
         ],
         "first_unclosed_gate": "S0_CLASSICAL_AUTHORITY",
-        "next_decisive_object": "Repair the factorized auxiliary cotangent arrow and textual ledgers to v_star -> +eta_star, regenerate the affected classical chain, and independently replay the 36-row cyclicity gate before emitting the full 386-row q1 table."
+        "next_decisive_object": "Emit a canonical sparse 386-row q1 table on the published paired carrier, independently replay q1 squared and odd-pairing cyclicity on every block, and bind the accepted bytes into one classical import snapshot."
       },
       {
         "id": "PURE_WEYL_BACH_FLAT_RANK310",
@@ -18858,8 +18859,8 @@ window.MATRIX_EXPLORER_DATA = {
       "theory_identity_front": {
         "branch": "STRICT_PURE_WEYL_386",
         "first_gate": "S0_CLASSICAL_AUTHORITY",
-        "current_fact": "The fixed carrier identifies a four-entry text/matrix sign conflict invisible to nilpotency and contraction but detected by eight exact odd-pairing defects.",
-        "best_next_object": "A repaired authoritative auxiliary q source and regenerated affected certificate chain, followed by the receiver-readable full-q1 table."
+        "current_fact": "The auxiliary source/ledger inconsistency is repaired and the entire affected classical chain passes; only the combined receiver-readable q1 artifact and accepted snapshot binding remain at Gate A.",
+        "best_next_object": "A canonical sparse full-386 q1 table with independent all-row nilpotency and odd-pairing replay."
       },
       "analytic_maturity_front": {
         "branch": "BERGER_POSITIVE_CLOCK_54",
@@ -19001,21 +19002,21 @@ window.MATRIX_EXPLORER_DATA = {
     "route_selection": [
       {
         "rank": 1,
-        "route": "STRICT_386_AUXILIARY_Q_SIGN_REPAIR",
-        "branch": "STRICT_PURE_WEYL_386",
-        "scientific_leverage": "VERY_HIGH",
-        "tractability": "VERY_HIGH",
-        "dependency_depth": "LOW",
-        "recommendation": "Change the factorized auxiliary dual arrow and matching textual ledgers to +I4, regenerate the affected classical certificates, and replay exact pairing cyclicity before any full-q1 claim."
-      },
-      {
-        "rank": 2,
         "route": "STRICT_386_FULL_Q1_JET_TABLE",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "HIGH",
         "dependency_depth": "LOW",
-        "recommendation": "After the sign repair, emit endpoint, auxiliary and mapping-cylinder blocks as one canonical sparse 386-row q1 table and independently replay q1 squared and pairing adjointness."
+        "recommendation": "Emit endpoint, repaired auxiliary and curvature mapping-cylinder blocks as one canonical sparse 386-row q1 table and independently replay q1 squared and odd-pairing cyclicity."
+      },
+      {
+        "rank": 2,
+        "route": "STRICT_386_ACCEPTED_COMMON_SNAPSHOT",
+        "branch": "STRICT_PURE_WEYL_386",
+        "scientific_leverage": "VERY_HIGH",
+        "tractability": "HIGH",
+        "dependency_depth": "LOW",
+        "recommendation": "Bind the verified full-q1 bytes, basis, pairing and classical dependency hashes into one receiver-accepted import snapshot without treating regeneration as independent verification."
       },
       {
         "rank": 3,
@@ -19024,7 +19025,7 @@ window.MATRIX_EXPLORER_DATA = {
         "scientific_leverage": "HIGH",
         "tractability": "HIGH",
         "dependency_depth": "LOW",
-        "recommendation": "Serialize H_alg, P_alg, P_end, i_end and p_end from the exact producers and replay the support-local SDR and cyclic identities without rerunning those producers."
+        "recommendation": "Serialize H_alg, P_alg, P_end, i_end and p_end from exact producers and independently replay the support-local SDR and cyclic identities on the accepted carrier."
       },
       {
         "rank": 4,
@@ -19042,7 +19043,7 @@ window.MATRIX_EXPLORER_DATA = {
         "scientific_leverage": "HIGH",
         "tractability": "LOW",
         "dependency_depth": "HIGH",
-        "recommendation": "Compose the portable endpoint Green action with the local SDR maps and replay full homotopy, causal support and suspended adjointness on the fixed carrier."
+        "recommendation": "Compose the represented endpoint Green action with accepted local SDR maps and replay full homotopy, causal support and suspended adjointness on the fixed carrier."
       },
       {
         "rank": 6,
@@ -19069,7 +19070,7 @@ window.MATRIX_EXPLORER_DATA = {
         "scientific_leverage": "VERY_HIGH",
         "tractability": "LOW",
         "dependency_depth": "MEDIUM",
-        "recommendation": "Retain the analytically mature independent route through direct nonstationary q26-equivariant distributional selection."
+        "recommendation": "Retain the analytically mature independent route through direct nonstationary q26-equivariant distributional state selection."
       },
       {
         "rank": 9,
@@ -19085,20 +19086,20 @@ window.MATRIX_EXPLORER_DATA = {
       {
         "priority": 1,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_386_AUXILIARY_Q_SIGN_REPAIR",
-        "why": "Change the factorized auxiliary dual arrow and matching textual ledgers to +I4, regenerate the affected classical certificates, and replay exact pairing cyclicity before any full-q1 claim."
+        "object": "STRICT_386_FULL_Q1_JET_TABLE",
+        "why": "Emit endpoint, repaired auxiliary and curvature mapping-cylinder blocks as one canonical sparse 386-row q1 table and independently replay q1 squared and odd-pairing cyclicity."
       },
       {
         "priority": 2,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_386_FULL_Q1_JET_TABLE",
-        "why": "After the sign repair, emit endpoint, auxiliary and mapping-cylinder blocks as one canonical sparse 386-row q1 table and independently replay q1 squared and pairing adjointness."
+        "object": "STRICT_386_ACCEPTED_COMMON_SNAPSHOT",
+        "why": "Bind the verified full-q1 bytes, basis, pairing and classical dependency hashes into one receiver-accepted import snapshot without treating regeneration as independent verification."
       },
       {
         "priority": 3,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_386_LOCAL_SDR_COMPONENT_MAPS",
-        "why": "Serialize H_alg, P_alg, P_end, i_end and p_end from the exact producers and replay the support-local SDR and cyclic identities without rerunning those producers."
+        "why": "Serialize H_alg, P_alg, P_end, i_end and p_end from exact producers and independently replay the support-local SDR and cyclic identities on the accepted carrier."
       },
       {
         "priority": 4,
@@ -19110,7 +19111,7 @@ window.MATRIX_EXPLORER_DATA = {
         "priority": 5,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_FULL_GREEN_COMPONENT_ACTION_REPLAY",
-        "why": "Compose the portable endpoint Green action with the local SDR maps and replay full homotopy, causal support and suspended adjointness on the fixed carrier."
+        "why": "Compose the represented endpoint Green action with accepted local SDR maps and replay full homotopy, causal support and suspended adjointness on the fixed carrier."
       },
       {
         "priority": 6,
@@ -19128,7 +19129,7 @@ window.MATRIX_EXPLORER_DATA = {
         "priority": 8,
         "branch": "BERGER_POSITIVE_CLOCK_54",
         "object": "DIRECT_SPACETIME_Q26_HADAMARD",
-        "why": "Retain the analytically mature independent route through direct nonstationary q26-equivariant distributional selection."
+        "why": "Retain the analytically mature independent route through direct nonstationary q26-equivariant distributional state selection."
       },
       {
         "priority": 9,
@@ -19383,6 +19384,16 @@ window.MATRIX_EXPLORER_DATA = {
           "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1.json",
           "sha256": "385a9fe8802fbea9e687f7c09796744763ce45f7734ed9bdabffc15a135c55e7",
           "role": "exact split-q1 auxiliary text/matrix sign gate"
+        },
+        {
+          "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V9.json",
+          "sha256": "019de2f4bd6864a0028c274b30eeae39265810999bf79c172b90f0abd2cd6f58",
+          "role": "immutable V9 atlas predecessor"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.json",
+          "sha256": "57c6dd9f5df7ae0e71af6150b154f95fa4f7b2baa849686d7c3cdada5138344f",
+          "role": "exact auxiliary-q sign repair and full classical-suite receipt"
         }
       ]
     },
@@ -19433,7 +19444,11 @@ window.MATRIX_EXPLORER_DATA = {
       "strict_386_executable_auxiliary_q_cyclic_with_serialized_pairing": true,
       "strict_386_declared_minus_sign_cyclic_with_serialized_pairing": false,
       "strict_386_split_coordinate_location_classified": true,
-      "strict_386_auxiliary_q_sign_repair_applied": false
+      "strict_386_auxiliary_q_sign_repair_applied": true,
+      "v9_preserved": true,
+      "strict_386_auxiliary_q_source_ledger_pairing_consistent": true,
+      "strict_386_affected_classical_chain_verified": true,
+      "strict_386_full_classical_covariant_suite_passed": true
     },
     "does_not_establish": [
       "a passed strict pure-Weyl classical import gate",
@@ -19469,30 +19484,32 @@ window.MATRIX_EXPLORER_DATA = {
       "a receiver-readable full 386-row q1 component jet table or accepted common operator snapshot hash",
       "componentwise nilpotency and cyclicity of the endpoint and curvature-cone blocks in one combined artifact",
       "portable local SDR maps, endpoint/full Green actions, local D or q2 compatibility",
-      "a Hadamard state, Ward theorem, QME restoration, residual transfer or Lorentzian quantum theory"
+      "a Hadamard state, Ward theorem, QME restoration, residual transfer or Lorentzian quantum theory",
+      "receiver-readable full 386-row q1 component bytes or an accepted common classical snapshot hash",
+      "portable support-local SDR component maps or represented endpoint and full Green actions",
+      "local D, q2 compatibility, a BRST-compatible Hadamard state, renormalized Lorentzian products, QME restoration, residual quantum transfer or a Lorentzian quantum theory"
     ],
     "independent_checker": {
-      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v9.py",
+      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v10.py",
       "checks": [
-        "V8 preservation",
+        "V9 preservation",
         "77-cell closure",
         "strict S0-only mutation",
-        "36-row sign-gate projection",
-        "zero-versus-eight cyclicity replay",
-        "nilpotency/contraction nondiscrimination",
-        "split-coordinate classification",
-        "repair/full-q1 firewall",
+        "repair projection",
+        "zero-versus-eight replay",
+        "Tier-3 receipt",
+        "full-q1/import firewall",
         "causal theorem preservation",
         "nine-route ranking",
         "append-only provenance",
         "content hashes",
         "canonical digest"
       ],
-      "expected_digest": "febe08162b29b4759b7b96a7ceb1a4c19f07e10b782063bd2c60667f36b423c6"
+      "expected_digest": "ea301acf8a3878b86df297a0e137af6703d5fba1c8f8e70149add90f15c6ac3a"
     },
-    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v9.md",
+    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v10.md",
     "strict_gate_a_progress": {
-      "status": "AUXILIARY_Q_TEXT_MATRIX_SIGN_REPAIR_REQUIRED",
+      "status": "AUXILIARY_Q_SIGN_REPAIRED_FULL_Q1_REQUIRED",
       "evidence": [
         "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
         "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
@@ -19543,8 +19560,8 @@ window.MATRIX_EXPLORER_DATA = {
           "q2_omegastar_hhstar__reverse"
         ]
       },
-      "remaining_common_carrier": "Repair the factorized curved auxiliary dual-arrow sign to +I_4 or explicitly replace the auxiliary pairing convention, then regenerate and verify the affected classical certificate chain. Only after the repaired source and serialized pairing agree should the full split-basis q1 table be emitted.",
-      "boundary": "The exact +I4/-I4 conflict must be repaired in the classical authority before full q1 or downstream local and analytic action artifacts can be accepted on one snapshot.",
+      "remaining_common_carrier": "Emit the endpoint, repaired auxiliary and curvature mapping-cylinder blocks as one canonical sparse 386-row q1 table; independently replay q1 squared and odd-pairing cyclicity; then bind the accepted bytes into one classical import snapshot.",
+      "boundary": "The repair and full classical rebuild pass, but Gate A still requires the combined full-q1 bytes and one receiver-accepted content-addressed snapshot.",
       "endpoint_q1_control": {
         "dimension": 30,
         "arrow_tables_matching": 80,
@@ -19615,6 +19632,24 @@ window.MATRIX_EXPLORER_DATA = {
         "foundational_upper_bound": "PRA",
         "choice_operation_added": false,
         "next_gate": "Repair the factorized curved auxiliary dual-arrow sign to +I_4 or explicitly replace the auxiliary pairing convention, then regenerate and verify the affected classical certificate chain. Only after the repaired source and serialized pairing agree should the full split-basis q1 table be emitted."
+      },
+      "auxiliary_q_sign_repair_control": {
+        "result_id": "STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1",
+        "status": "REPAIR_CERTIFIED_FULL_Q1_SERIALIZATION_NEXT",
+        "block": "AUX_V_STAR -> AUX_ETA_STAR",
+        "old_declared_sign": "-I_4",
+        "authoritative_sign": "+I_4",
+        "repair_applied": true,
+        "source_and_ledgers_consistent": true,
+        "affected_chain_regenerated": true,
+        "plus_cyclicity_defects": 0,
+        "minus_regression_cyclicity_defects": 8,
+        "tier_3_status": "PASS",
+        "tier_3_elapsed_seconds": 1433.5,
+        "terminal_overclaim_guards": 82,
+        "full_q1_serialized": false,
+        "classical_import_gate_passed": false,
+        "next_gate": "Emit the endpoint, repaired auxiliary and curvature mapping-cylinder blocks as one canonical sparse 386-row q1 table; independently replay q1 squared and odd-pairing cyclicity; then bind the accepted bytes into one classical import snapshot."
       }
     },
     "strict_causal_sign_transport": {
@@ -19725,6 +19760,24 @@ window.MATRIX_EXPLORER_DATA = {
       "foundational_upper_bound": "PRA",
       "choice_operation_added": false,
       "next_gate": "Repair the factorized curved auxiliary dual-arrow sign to +I_4 or explicitly replace the auxiliary pairing convention, then regenerate and verify the affected classical certificate chain. Only after the repaired source and serialized pairing agree should the full split-basis q1 table be emitted."
+    },
+    "strict_auxiliary_q_sign_repair": {
+      "result_id": "STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1",
+      "status": "REPAIR_CERTIFIED_FULL_Q1_SERIALIZATION_NEXT",
+      "block": "AUX_V_STAR -> AUX_ETA_STAR",
+      "old_declared_sign": "-I_4",
+      "authoritative_sign": "+I_4",
+      "repair_applied": true,
+      "source_and_ledgers_consistent": true,
+      "affected_chain_regenerated": true,
+      "plus_cyclicity_defects": 0,
+      "minus_regression_cyclicity_defects": 8,
+      "tier_3_status": "PASS",
+      "tier_3_elapsed_seconds": 1433.5,
+      "terminal_overclaim_guards": 82,
+      "full_q1_serialized": false,
+      "classical_import_gate_passed": false,
+      "next_gate": "Emit the endpoint, repaired auxiliary and curvature mapping-cylinder blocks as one canonical sparse 386-row q1 table; independently replay q1 squared and odd-pairing cyclicity; then bind the accepted bytes into one classical import snapshot."
     }
   },
   "cross_cell_interfaces": [
@@ -19894,8 +19947,8 @@ window.MATRIX_EXPLORER_DATA = {
     "ground_state_dynamics_interface_report": "sources/foundations/reports/krein-fock-ground-state-dynamics-interface.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md",
-    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V9.json",
-    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v9.md",
+    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V10.json",
+    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v10.md",
     "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V5_RECONCILIATION.json",
     "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V5.md",
     "completion_sdr": "sources/quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json",
@@ -19913,7 +19966,9 @@ window.MATRIX_EXPLORER_DATA = {
     "completion_operator_portability": "sources/quantum-weyl/classical_import/certificates/STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1.json",
     "completion_operator_portability_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1.md",
     "completion_q1_sign_gate": "sources/quantum-weyl/classical_import/certificates/STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1.json",
-    "completion_q1_sign_gate_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1.md"
+    "completion_q1_sign_gate_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1.md",
+    "completion_q1_sign_repair": "sources/quantum-weyl/classical_import/certificates/STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.json",
+    "completion_q1_sign_repair_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.md"
   },
-  "canonical_digest": "ee0d2881f24b2bdd669d263e7f73db6bd75166815a89bf5707111d3f1f02c7be"
+  "canonical_digest": "ff4162c82c7c747ec33ae0ac517ed7370e3bf2547eb77e381e099ebe4d4afce1"
 };

@@ -17,7 +17,7 @@ VIABILITY = ROOT / "foundations/site/viability.json"
 ASSEMBLIES = ROOT / "foundations/site/assemblies.json"
 CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V15.json"
 LADDER = ROOT / "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
-COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V9.json"
+COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V10.json"
 STATUSES = {"LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "REVIEWED_GAP", "NOT_MAPPED"}
 MIGRATIONS = {"EXACT_PARENT_TRANSFER", "CAPABILITY_QUALIFIED", "REVIEWED_OVERLAY", "REVIEWED_NO_TRANSFER", "REVIEWED_CHILD_GAP", "DIRECT_COORDINATE_REVIEW", "NOT_REVIEWED"}
 
@@ -160,7 +160,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     completion_flags = completion.get("claim_flags", {})
     if completion_flags.get("general_noncone_104_row_no_go") is not False or completion_flags.get("lorentzian_full_theory_certified") is not False:
         errors.append("Lorentzian completion fail-closed boundary")
-    if completion.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V9":
+    if completion.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V10":
         errors.append("Lorentzian completion atlas version")
     transport = completion.get("strict_causal_sign_transport", {})
     if transport.get("full_dimension") != 386 or transport.get("positive_signs") != 381 or transport.get("negative_signs") != 5 or transport.get("causal_stage_preserved") is not True:
@@ -199,7 +199,12 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("strict split-q1 sign-gate projection")
     if sign_gate.get("executable_cyclicity_defects") != 0 or sign_gate.get("declared_cyclicity_defects") != 8 or sign_gate.get("both_nilpotent") is not True or sign_gate.get("both_contractible") is not True:
         errors.append("strict split-q1 exact replay")
-    if sign_gate.get("repair_applied") is not False or completion_flags.get("strict_386_auxiliary_q_sign_repair_applied") is not False or completion_flags.get("strict_full_386_q1_portable_component_bytes") is not False:
+    repair = completion.get("strict_auxiliary_q_sign_repair", {})
+    if sign_gate.get("repair_applied") is not False:
+        errors.append("historical strict split-q1 diagnosis mutated")
+    if (repair.get("repair_applied"), repair.get("source_and_ledgers_consistent"), repair.get("affected_chain_regenerated"), repair.get("plus_cyclicity_defects"), repair.get("minus_regression_cyclicity_defects"), repair.get("tier_3_status"), repair.get("terminal_overclaim_guards")) != (True, True, True, 0, 8, "PASS", 82):
+        errors.append("strict split-q1 repair projection")
+    if completion_flags.get("strict_386_auxiliary_q_sign_repair_applied") is not True or completion_flags.get("strict_full_386_q1_portable_component_bytes") is not False or repair.get("full_q1_serialized") is not False or repair.get("classical_import_gate_passed") is not False:
         errors.append("strict split-q1 repair/full-q1 firewall")
     if viability.get("source_atlas_digest") != data.get("canonical_digest") or viability.get("canonical_digest") != result.get("independent_checker", {}).get("expected_viability_digest"):
         errors.append("theory viability source/digest pin")

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-386-auxiliary-q-sign-repair-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "created", "repository_base_commit", "dependency_tags", "question", "answer", "predecessor", "repair", "exact_replay", "verification", "claim_flags", "next_gate", "does_not_establish", "provenance", "independent_checker", "human_report"],
+  "properties": {
+    "schema": {"const": "strict-386-auxiliary-q-sign-repair-v1"},
+    "result_id": {"const": "STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1"},
+    "result_kind": {"const": "EXACT_CLASSICAL_AUXILIARY_Q_SIGN_REPAIR_CERTIFICATE"},
+    "result_state": {"const": "REPAIR_CERTIFIED_FULL_Q1_SERIALIZATION_NEXT"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "question": {"type": "string", "minLength": 180},
+    "answer": {"type": "string", "minLength": 800},
+    "predecessor": {"type": "object", "required": ["result_id", "path", "sha256", "preserved"], "properties": {"result_id": {"const": "STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1"}, "preserved": {"const": true}, "sha256": {"$ref": "#/$defs/hash"}}},
+    "repair": {"type": "object", "required": ["block", "old_declared_sign", "authoritative_sign", "source_and_ledgers_consistent", "repair_applied", "affected_chain_regenerated", "canonical_runner_dependency_order_repaired"], "properties": {"old_declared_sign": {"const": "-I_4"}, "authoritative_sign": {"const": "+I_4"}, "source_and_ledgers_consistent": {"const": true}, "repair_applied": {"const": true}, "affected_chain_regenerated": {"const": true}, "canonical_runner_dependency_order_repaired": {"const": true}}},
+    "exact_replay": {"type": "object", "required": ["repaired_plus_sign", "rejected_minus_sign_regression", "discriminator"]},
+    "verification": {
+      "type": "object",
+      "required": ["tier_1", "tier_3"],
+      "properties": {
+        "tier_3": {
+          "type": "object",
+          "required": ["status", "command", "elapsed_seconds", "terminal_guard", "terminal_result", "dependency_overlay"],
+          "properties": {
+            "status": {"const": "PASS"},
+            "elapsed_seconds": {"const": 1433.5}
+          }
+        }
+      }
+    },
+    "claim_flags": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "next_gate": {"type": "string", "minLength": 180},
+    "does_not_establish": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true},
+    "provenance": {"type": "object", "required": ["sources", "certificates", "pairing", "executable_witness"]},
+    "independent_checker": {"type": "object", "required": ["path", "expected_digest"], "properties": {"expected_digest": {"$ref": "#/$defs/hash"}}},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.md"}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

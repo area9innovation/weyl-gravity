@@ -69,7 +69,7 @@ class FactorizedCurvedQSplit:
         q[3][2] = OperatorPolynomial.atom("Cmet")
         q[5][4] = OperatorPolynomial.identity(-1)  # eta -> -v
         q[7][6] = OperatorPolynomial.atom("Ag")  # f_hat -> A_g f_hat^*
-        q[9][8] = OperatorPolynomial.identity(-1)  # v^* -> -eta^*
+        q[9][8] = OperatorPolynomial.identity(1)  # v^* -> +eta^*
 
         raw_square = matrix_multiply(q, q)
         relations = {
@@ -147,7 +147,7 @@ class FactorizedCurvedQSplit:
                 "generalized_auxiliary": [
                     "eta -> -v",
                     "f_hat -> A_g f_hat^*",
-                    "v^* -> -eta^*",
+                    "v^* -> +eta^*",
                 ],
                 "off_diagonal_blocks": "zero",
             },
