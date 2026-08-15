@@ -120,6 +120,7 @@ def main() -> int:
     bt_g4_general_l = json.loads((ROOT / data["authorities"]["bt_complete_g4_general_l_two_loop"]["path"]).read_text())
     bt_g4_seven = json.loads((ROOT / data["authorities"]["bt_complete_g4_seven_kernel_reduction"]["path"]).read_text())
     bt_g4_subpower = json.loads((ROOT / data["authorities"]["bt_complete_g4_subpower_pair_bounds"]["path"]).read_text())
+    bt_g4_linear = json.loads((ROOT / data["authorities"]["bt_complete_g4_linear_pair_bounds"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -315,6 +316,11 @@ def main() -> int:
     require(atlas["bt_g4_power_capable_pairs"] == bt_g4_subpower["power_sector_reduction"]["pairs_still_capable_of_N_omega_p_scale"] == [3, 4, 6, 7], "BT four-pair power gate drift")
     require(atlas["bt_g4_three_pair_tuned_uniformity_status"] == bt_g4_subpower["method_disposition"]["pairs_1_2_5_tuned_g_four_uniformity"] == "PROVED", "BT three-pair tuned uniformity drift")
     require(atlas["bt_g4_four_pair_power_coefficient_status"] == bt_g4_subpower["method_disposition"]["combined_pairs_3_4_6_7_power_coefficient"] == "OPEN", "BT subpower result promoted to four-pair coefficient")
+    require(atlas["bt_g4_pair_three_scale"] == bt_g4_linear["method_disposition"]["pair_3_scale"] == "O_L", "BT pair-3 scale drift")
+    require(atlas["bt_g4_pair_six_scale"] == bt_g4_linear["method_disposition"]["pair_6_scale"] == "O_L_LOG_L", "BT pair-6 scale drift")
+    require(atlas["bt_g4_five_subpower_pairs"] == bt_g4_linear["power_sector_reduction"]["subpower_pairs"] == [1, 2, 3, 5, 6], "BT five-pair subpower set drift")
+    require(atlas["bt_g4_two_power_capable_pairs"] == bt_g4_linear["power_sector_reduction"]["pairs_still_capable_of_N_omega_p_scale"] == [4, 7], "BT two-pair power gate drift")
+    require(atlas["bt_g4_pair_four_seven_coefficient_status"] == bt_g4_linear["method_disposition"]["combined_pairs_4_7_power_coefficient"] == "OPEN", "BT linear-pair result promoted to pair-4/pair-7 coefficient")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -435,6 +441,10 @@ def main() -> int:
     require(flags["bt_complete_order_g_four_pairs_1_2_5_tuned_uniformity_established"] is True, "BT three-pair tuned uniformity omitted")
     require(flags["bt_complete_order_g_four_power_gate_reduced_to_pairs_3_4_6_7"] is True, "BT four-pair power reduction omitted")
     require(flags["bt_complete_order_g_four_four_pair_power_coefficient_established"] is False, "BT four-pair power coefficient promoted")
+    require(flags["bt_complete_order_g_four_pair_three_O_L_established"] is True, "BT pair-3 O(L) bound omitted")
+    require(flags["bt_complete_order_g_four_pair_six_O_L_log_L_established"] is True, "BT pair-6 O(L log L) bound omitted")
+    require(flags["bt_complete_order_g_four_power_gate_reduced_to_pairs_4_7"] is True, "BT two-pair power gate omitted")
+    require(flags["bt_complete_order_g_four_pair_4_7_coefficient_established"] is False, "BT pair-4/pair-7 coefficient promoted")
     require(flags["bt_complete_order_g_four_explicit_momentum_kernel_established"] is False, "BT expected-Hessian formula promoted to explicit momentum kernel")
     require(flags["bt_complete_order_g_four_effective_kernel_bound_established"] is False, "BT effective second-chaos kernel bound promoted")
     require(flags["bt_complete_order_g_four_power_survival_established"] is False, "BT chaos reduction promoted to whole-lattice power survival")
@@ -705,8 +715,9 @@ def main() -> int:
         r"\mathbb E_{q_m}[u^2]",
         r"recentered conditional width",
         r"annealed second moment of the moving center",
-        r"pairs 3, 4, 6, and 7",
         r"REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_SUBPOWER_PAIR_BOUNDS_V1",
+        r"REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_LINEAR_PAIR_BOUNDS_V1",
+        r"negative pair 4 and positive pair 7",
     ]:
         require(phrase in prose, f"required boundary missing from paper: {phrase}")
     for citation in [

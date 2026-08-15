@@ -138,11 +138,12 @@ On the certified tuned branch, \(g_L^4=O(\log^{-2}L)\), so each of these
 three contributions is uniformly bounded. They have zero contribution to a
 putative \(N\omega_p\) coefficient.
 
-Pairs 3 and 6 are parity-sensitive and remain unbounded analytically. Pair 4
-has the certified negative \(L^2\)-magnitude lower bound; pair 7 is positive
-and power-capable. The next calculation is to symmetrize pairs 3 and 6 under
-\(p\)-reflection before taking absolute values, then determine the common
-power coefficient of pairs 3, 4, 6, and 7.
+The successor certificate
+REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_LINEAR_PAIR_BOUNDS_V1 proves pair 3
+is \(O(L)\) and pair 6 is \(O(L\log L)\), so they too are
+\(o(N\omega_p)\). Pair 4 has the certified negative \(L^2\)-magnitude
+lower bound and pair 7 is positive and power-capable. The leading power
+calculation is therefore reduced to their common coefficient.
 
 ## Claim boundary
 

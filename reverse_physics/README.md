@@ -248,6 +248,10 @@ bt_euclidean_complete_g4_subpower_pair_bounds.py
                                        proves exact O(log(L)^2) bounds for
                                        inversion pairs 1, 2, and 5, reducing
                                        the power gate to pairs 3, 4, 6, and 7
+bt_euclidean_complete_g4_linear_pair_bounds.py
+                                       proves O(L) and O(L log L) bounds for
+                                       pairs 3 and 6, reducing the leading
+                                       power gate to negative 4 versus positive 7
 bt_four_point_bubble_log_jet.py        first virtual coefficient: arbitrary-mass
                                        bubble logarithm and four-leg interference jet
 bt_triangle_box_log_jet.py             complete triangle and box logarithmic jets;

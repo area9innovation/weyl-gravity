@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-complete-g4-linear-pair-bounds-v1.schema.json",
+  "title": "Exact BT complete-g4 linear pair bounds",
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer", "data",
+    "data_sha256", "producer", "producer_sha256", "vertex_bounds",
+    "torus_convolution", "pair_bounds", "power_sector_reduction",
+    "method_disposition", "checks", "does_not_establish",
+    "missing_object_ledger", "next_gate", "provenance", "schema", "report",
+    "independent_verifier", "verification_commands"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_LINEAR_PAIR_BOUNDS_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-complete-g4-linear-pair-bounds-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "TWO_LINEAR_PAIR_BOUNDS_PROVED_TWO_PAIR_POWER_GATE_OPEN"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "data": {"const": "reverse_physics/data/bt_euclidean_complete_g4_linear_pair_bounds_v1.json"},
+    "data_sha256": {"$ref": "#/$defs/sha256"},
+    "producer": {"const": "reverse_physics/bt_euclidean_complete_g4_linear_pair_bounds.py"},
+    "producer_sha256": {"$ref": "#/$defs/sha256"},
+    "vertex_bounds": {
+      "type": "object",
+      "required": ["cubic", "quartic", "quintic", "quintic_derivation", "constants", "status"],
+      "properties": {
+        "cubic": {"type": "string"},
+        "quartic": {"type": "string"},
+        "quintic": {"const": "For conserved k1+...+k5=0, abs(K5)<=8*product_i sqrt(omega(ki))."},
+        "quintic_derivation": {"type": "string"},
+        "constants": {
+          "const": {
+            "cubic_two_leg": {"numerator": 2, "denominator": 3},
+            "quartic_all_leg_product": {"numerator": 56, "denominator": 3},
+            "quintic_all_leg_product": {"numerator": 8, "denominator": 1}
+          }
+        },
+        "status": {"const": "EXACT_CUBIC_QUARTIC_QUINTIC_PRODUCT_BOUNDS"}
+      },
+      "additionalProperties": false
+    },
+    "torus_convolution": {
+      "type": "object",
+      "required": ["rho", "inner_definition", "inner_partition", "inner_bound", "outer_definition", "outer_shell_count", "outer_bound", "spectral_conversion", "status"],
+      "properties": {
+        "rho": {"type": "string"},
+        "inner_definition": {"type": "string"},
+        "inner_partition": {"type": "string"},
+        "inner_bound": {"const": "C_33(x)<=40720/max(1,rho(x))^2"},
+        "outer_definition": {"type": "string"},
+        "outer_shell_count": {"type": "string"},
+        "outer_bound": {"const": "D_133(p)<=3298320*L"},
+        "spectral_conversion": {"type": "string"},
+        "status": {"const": "EXACT_FOUR_DIMENSIONAL_THREE_WEIGHT_CONVOLUTION_BOUND"}
+      },
+      "additionalProperties": false
+    },
+    "pair_bounds": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {"allOf": [{"$ref": "#/$defs/pair_bound"}, {"properties": {"pair": {"const": 3}, "raw_bound": {"const": "abs(I_3(L))<=3584*omega(p)^(3/2)*S_3(L)/N"}, "explicit_bound": {"const": "abs(I_3(L))<=5772060*pi^3*L"}, "asymptotic_status": {"const": "O_L_AND_little_o_N_omega_p"}}}]},
+        {"allOf": [{"$ref": "#/$defs/pair_bound"}, {"properties": {"pair": {"const": 6}, "raw_bound": {"const": "abs(I_6(L))<=960*omega(p)^(3/2)*G1(L)*J_L/N"}, "explicit_bound": {"const": "abs(I_6(L))<=15360*pi^3*L*B_L, B_L=11/16+(1/2)*log(floor(L/2))"}, "asymptotic_status": {"const": "O_L_LOG_L_AND_little_o_N_omega_p"}}}]}
+      ],
+      "items": false
+    },
+    "power_sector_reduction": {
+      "type": "object",
+      "required": ["subpower_pairs", "pairs_still_capable_of_N_omega_p_scale", "consequence", "tuned_branch_boundary", "status"],
+      "properties": {
+        "subpower_pairs": {"const": [1, 2, 3, 5, 6]},
+        "pairs_still_capable_of_N_omega_p_scale": {"const": [4, 7]},
+        "consequence": {"type": "string"},
+        "tuned_branch_boundary": {"type": "string"},
+        "status": {"const": "FIVE_PAIRS_REMOVED_FROM_POWER_COEFFICIENT_TWO_PAIR_POWER_GATE_OPEN"}
+      },
+      "additionalProperties": false
+    },
+    "method_disposition": {
+      "type": "object",
+      "required": ["pair_3_scale", "pair_6_scale", "pairs_3_6_contribution_to_N_omega_p_coefficient", "pairs_3_6_tuned_g_four_uniformity", "pair_4_scale", "pair_7_scale", "combined_pairs_4_7_power_coefficient", "complete_seven_kernel_large_volume_sign_and_scaling", "complete_M4_large_volume_sign_and_scaling", "nonperturbative_annealed_score", "actual_interacting_h_minus_one_second_moment", "continuum_limit", "born_rule", "krein_reconstruction", "lorentzian_transfer"],
+      "properties": {
+        "pair_3_scale": {"const": "O_L"},
+        "pair_6_scale": {"const": "O_L_LOG_L"},
+        "pairs_3_6_contribution_to_N_omega_p_coefficient": {"const": "ZERO"},
+        "pairs_3_6_tuned_g_four_uniformity": {"const": "NOT_ESTABLISHED_BY_THESE_BOUNDS"},
+        "pair_4_scale": {"const": "NEGATIVE_ORDER_L_SQUARED_MAGNITUDE_LOWER_BOUND"},
+        "pair_7_scale": {"const": "POSITIVE_POWER_CAPABLE"},
+        "combined_pairs_4_7_power_coefficient": {"const": "OPEN"},
+        "complete_seven_kernel_large_volume_sign_and_scaling": {"const": "OPEN"},
+        "complete_M4_large_volume_sign_and_scaling": {"const": "OPEN"},
+        "nonperturbative_annealed_score": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment": {"const": "OPEN"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "checks": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}},
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "required": ["repository_base_commit", "inputs", "exact_arithmetic", "assumptions"],
+      "properties": {
+        "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "inputs": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/input"}},
+        "exact_arithmetic": {"type": "string"},
+        "assumptions": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-complete-g4-linear-pair-bounds-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-complete-g4-linear-pair-bounds.md"},
+    "independent_verifier": {"const": "reverse_physics/verify_bt_euclidean_complete_g4_linear_pair_bounds.py"},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "form": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer"}},
+    "kernel": {"type": "object", "required": ["degree", "arguments"], "properties": {"degree": {"enum": [3, 4, 5]}, "arguments": {"type": "array", "minItems": 3, "maxItems": 5, "items": {"$ref": "#/$defs/form"}}}, "additionalProperties": false},
+    "representative": {"type": "object", "required": ["kernels", "propagators"], "properties": {"kernels": {"type": "array", "minItems": 2, "maxItems": 3, "items": {"$ref": "#/$defs/kernel"}}, "propagators": {"type": "array", "minItems": 3, "maxItems": 4, "items": {"$ref": "#/$defs/form"}}}, "additionalProperties": false},
+    "rational": {"type": "object", "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}, "additionalProperties": false},
+    "upstream": {"type": "object", "required": ["atlas_rows_one_based", "origin", "paired_coefficient", "representative"], "properties": {"atlas_rows_one_based": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer"}}, "origin": {"type": "string"}, "paired_coefficient": {"$ref": "#/$defs/rational"}, "representative": {"$ref": "#/$defs/representative"}}, "additionalProperties": false},
+    "pair_bound": {"type": "object", "required": ["pair", "upstream", "allocation", "raw_bound", "explicit_bound", "asymptotic_status"], "properties": {"pair": {"enum": [3, 6]}, "upstream": {"$ref": "#/$defs/upstream"}, "allocation": {"type": "string"}, "raw_bound": {"type": "string"}, "explicit_bound": {"type": "string"}, "asymptotic_status": {"type": "string"}}, "additionalProperties": false},
+    "input": {"type": "object", "required": ["path", "sha256"], "properties": {"path": {"type": "string"}, "sha256": {"$ref": "#/$defs/sha256"}}, "additionalProperties": false}
+  }
+}
