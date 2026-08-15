@@ -76,6 +76,11 @@ class StrictCylinderHstarBasepointRowTests(unittest.TestCase):
         value["claim_flags"]["PORTABLE_TENSOR_NATURAL_HSTAR_ROW"] = True
         self.assertTrue(any("claim boundary" in error for error in CHECK.check(value)))
 
+    def test_diff_noether_demotion_fails(self) -> None:
+        value = copy.deepcopy(self.value)
+        value["claim_flags"]["DIFFERENTIATED_DIFF_NOETHER_REPLAYED"] = False
+        self.assertTrue(any("claim boundary" in error for error in CHECK.check(value)))
+
     def test_missing_object_promotion_fails(self) -> None:
         value = copy.deepcopy(self.value)
         value["missing_object_ledger"][0]["status"] = "AVAILABLE"

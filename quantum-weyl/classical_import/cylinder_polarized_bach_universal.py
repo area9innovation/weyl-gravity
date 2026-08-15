@@ -425,6 +425,7 @@ def determinant(metric: Mapping[tuple[int, int], NaturalTaylor]) -> NaturalTaylo
 
 
 def _connection(metric: Mapping[tuple[int, int], NaturalTaylor], inverse: Mapping[tuple[int, int], NaturalTaylor]) -> dict[tuple[int, int, int], NaturalTaylor]:
+    connection_order = min(value.order for value in metric.values()) - 1
     return {
         (target, left, right): sum_natural(
             (
@@ -436,13 +437,14 @@ def _connection(metric: Mapping[tuple[int, int], NaturalTaylor], inverse: Mappin
                 ).scale(Fraction(1, 2))
                 for index in range(DIMENSION)
             ),
-            order=3,
+            order=connection_order,
         )
         for target, left, right in product(range(DIMENSION), repeat=3)
     }
 
 
 def _geometry(metric: Mapping[tuple[int, int], NaturalTaylor]) -> dict[str, object]:
+    curvature_order = min(value.order for value in metric.values()) - 2
     inverse = inverse_metric(metric)
     gamma = _connection(metric, inverse)
     riemann = {
@@ -455,31 +457,32 @@ def _geometry(metric: Mapping[tuple[int, int], NaturalTaylor]) -> dict[str, obje
                     - gamma[(middle, first, vector)] * gamma[(target, second, middle)]
                     for middle in range(DIMENSION)
                 ),
-                order=2,
+                order=curvature_order,
             )
-        ).truncate(2)
+        ).truncate(curvature_order)
         for target, vector, first, second in product(range(DIMENSION), repeat=4)
     }
-    ricci = {(a, b): sum_natural((riemann[(index, a, index, b)] for index in range(DIMENSION)), order=2) for a, b in product(range(DIMENSION), repeat=2)}
-    scalar = sum_natural((inverse[(a, b)] * ricci[(a, b)] for a, b in product(range(DIMENSION), repeat=2)), order=2)
+    ricci = {(a, b): sum_natural((riemann[(index, a, index, b)] for index in range(DIMENSION)), order=curvature_order) for a, b in product(range(DIMENSION), repeat=2)}
+    scalar = sum_natural((inverse[(a, b)] * ricci[(a, b)] for a, b in product(range(DIMENSION), repeat=2)), order=curvature_order)
     return {"metric": metric, "inverse": inverse, "connection": gamma, "riemann": riemann, "ricci": ricci, "scalar": scalar}
 
 
 def _schouten_and_weyl(geometry: Mapping[str, object]) -> tuple[dict[tuple[int, int], NaturalTaylor], dict[tuple[int, int, int, int], NaturalTaylor]]:
     metric, riemann, ricci, scalar = geometry["metric"], geometry["riemann"], geometry["ricci"], geometry["scalar"]
     assert isinstance(metric, Mapping) and isinstance(riemann, Mapping) and isinstance(ricci, Mapping) and isinstance(scalar, NaturalTaylor)
+    curvature_order = scalar.order
     schouten = {}
     for a, b in PAIRS:
-        value = (ricci[(a, b)] - metric[(a, b)] * scalar.scale(Fraction(1, 6))).scale(Fraction(1, 2)).truncate(2)
+        value = (ricci[(a, b)] - metric[(a, b)] * scalar.scale(Fraction(1, 6))).scale(Fraction(1, 2)).truncate(curvature_order)
         schouten[(a, b)] = schouten[(b, a)] = value
     two_forms = tuple(combinations(range(DIMENSION), 2))
     canonical_weyl = {}
     for left_index, (a, b) in enumerate(two_forms):
         for c, d in two_forms[left_index:]:
-            lowered = sum_natural((metric[(a, target)] * riemann[(target, b, c, d)] for target in range(DIMENSION)), order=2)
+            lowered = sum_natural((metric[(a, target)] * riemann[(target, b, c, d)] for target in range(DIMENSION)), order=curvature_order)
             correction = metric[(a, c)] * schouten[(d, b)] - metric[(a, d)] * schouten[(c, b)] - metric[(b, c)] * schouten[(d, a)] + metric[(b, d)] * schouten[(c, a)]
             canonical_weyl[((a, b), (c, d))] = (lowered - correction).truncate(2)
-    zero = NaturalTaylor.constant(2, 0)
+    zero = NaturalTaylor.constant(curvature_order, 0)
     weyl = {}
     for a, b, c, d in product(range(DIMENSION), repeat=4):
         if a == b or c == d:
@@ -496,6 +499,9 @@ def _bach_lower(geometry: Mapping[str, object]) -> dict[tuple[int, int], Natural
     inverse, gamma = geometry["inverse"], geometry["connection"]
     assert isinstance(inverse, Mapping) and isinstance(gamma, Mapping)
     schouten, weyl = _schouten_and_weyl(geometry)
+    curvature_order = next(iter(schouten.values())).order
+    cotton_order = curvature_order - 1
+    bach_order = cotton_order - 1
     first_schouten = {}
     for axis in range(DIMENSION):
         for first, second in PAIRS:
@@ -507,12 +513,12 @@ def _bach_lower(geometry: Mapping[str, object]) -> dict[tuple[int, int], Natural
                         + gamma[(replacement, axis, second)] * schouten[(first, replacement)]
                         for replacement in range(DIMENSION)
                     ),
-                    order=1,
+                    order=cotton_order,
                 )
-            ).truncate(1)
+            ).truncate(cotton_order)
             first_schouten[(axis, first, second)] = first_schouten[(axis, second, first)] = value
     cotton = {}
-    zero = NaturalTaylor.constant(1, 0)
+    zero = NaturalTaylor.constant(cotton_order, 0)
     for second in range(DIMENSION):
         for inner in range(DIMENSION):
             cotton[(inner, inner, second)] = zero
@@ -531,46 +537,48 @@ def _bach_lower(geometry: Mapping[str, object]) -> dict[tuple[int, int], Natural
                     + gamma[(replacement, outer, second)] * cotton[(inner, first, replacement)]
                     for replacement in range(DIMENSION)
                 ),
-                order=0,
+                order=bach_order,
             )
             contracted.append(inverse[(outer, inner)] * derivative)
-        value = sum_natural(contracted, order=0)
+        value = sum_natural(contracted, order=bach_order)
         divergence[(first, second)] = divergence[(second, first)] = value
     schouten_up = {}
     for first, second in PAIRS:
         value = sum_natural(
             (inverse[(first, left)] * inverse[(second, right)] * schouten[(left, right)] for left, right in product(range(DIMENSION), repeat=2)),
-            order=0,
+            order=bach_order,
         )
         schouten_up[(first, second)] = schouten_up[(second, first)] = value
     algebraic = {}
     for first, second in PAIRS:
-        value = sum_natural((schouten_up[(inner, outer)] * weyl[(first, inner, second, outer)] for inner, outer in product(range(DIMENSION), repeat=2)), order=0)
+        value = sum_natural((schouten_up[(inner, outer)] * weyl[(first, inner, second, outer)] for inner, outer in product(range(DIMENSION), repeat=2)), order=bach_order)
         algebraic[(first, second)] = algebraic[(second, first)] = value
     output = {}
     for first, second in PAIRS:
-        value = (divergence[(first, second)] + algebraic[(first, second)]).truncate(0)
+        value = (divergence[(first, second)] + algebraic[(first, second)]).truncate(bach_order)
         output[(first, second)] = output[(second, first)] = value
     return output
 
 
-def universal_euler_construction() -> dict[str, object]:
-    """Construct the metric and all ten exact Euler-density Taylor rows once."""
+def universal_euler_construction(output_coordinate_order: int = 0) -> dict[str, object]:
+    """Construct exact Euler-density Taylor rows through a coordinate order."""
 
-    metric = metric_jet()
+    if output_coordinate_order < 0:
+        raise ValueError("output coordinate order must be nonnegative")
+    metric = metric_jet(4 + output_coordinate_order)
     geometry = _geometry(metric)
     inverse = geometry["inverse"]
     assert isinstance(inverse, Mapping)
     bach_action = {pair: value.scale(-2) for pair, value in _bach_lower(geometry).items()}
-    volume = determinant(metric).scale(-1).sqrt().truncate(0)
+    volume = determinant(metric).scale(-1).sqrt().truncate(output_coordinate_order)
     density_rows = {}
     for first, second in PAIRS:
         density = volume * sum_natural(
             (inverse[(first, left)] * inverse[(second, right)] * bach_action[(left, right)] for left, right in product(range(DIMENSION), repeat=2)),
-            order=0,
+            order=output_coordinate_order,
         )
         density_rows[(first, second)] = density_rows[(second, first)] = density
-    return {"metric": metric, "density_rows": density_rows}
+    return {"metric": metric, "density_rows": density_rows, "output_coordinate_order": output_coordinate_order}
 
 
 def universal_euler_rows(construction: Mapping[str, object] | None = None) -> dict[tuple[int, int], BilinearOperator]:
@@ -592,6 +600,50 @@ def universal_weyl_trace_defects(construction: Mapping[str, object]) -> dict[str
         "background": str(trace.background.base),
         "linear_term_count": len(trace.linear.terms),
         "bilinear_term_count": len(trace.bilinear.at_base()),
+    }
+
+
+def universal_diff_noether_defects(construction: Mapping[str, object]) -> dict[str, object]:
+    """Replay the Diff identity through quadratic order at the base point.
+
+    For a symmetric contravariant Euler density the coordinate identity is
+
+    ``E^ab partial_lambda g_ab - 2 partial_a(E^ab g_lambda_b)=0``.
+
+    Its derivative raises the required metric-jet order from four to five, so
+    the construction must retain at least one output coordinate derivative.
+    """
+
+    if construction.get("output_coordinate_order", 0) < 1:
+        raise ValueError("Diff Noether replay requires output coordinate order at least one")
+    metric, density_rows = construction["metric"], construction["density_rows"]
+    assert isinstance(metric, Mapping) and isinstance(density_rows, Mapping)
+    rows = []
+    for covector in range(DIMENSION):
+        metric_derivative = sum_natural(
+            (density_rows[(a, b)] * metric[(a, b)].derivative(covector) for a, b in product(range(DIMENSION), repeat=2)),
+            order=0,
+        )
+        product_divergence = sum_natural(
+            (
+                (density_rows[(a, b)] * metric[(covector, b)]).derivative(a)
+                for a, b in product(range(DIMENSION), repeat=2)
+            ),
+            order=0,
+        )
+        rows.append(metric_derivative - product_divergence.scale(2))
+    return {
+        "coordinate_formula": "E^ab partial_lambda g_ab - 2 partial_a(E^ab g_lambda_b)=0",
+        "required_metric_jet_order": 5,
+        "rows": [
+            {
+                "covector_index": index,
+                "background": str(row.background.base),
+                "linear_term_count": len(row.linear.terms),
+                "bilinear_term_count": len(row.bilinear.at_base()),
+            }
+            for index, row in enumerate(rows)
+        ],
     }
 
 

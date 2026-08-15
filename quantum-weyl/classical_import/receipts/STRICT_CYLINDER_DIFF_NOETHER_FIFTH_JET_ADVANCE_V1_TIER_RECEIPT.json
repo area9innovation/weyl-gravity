@@ -1,0 +1,165 @@
+{
+  "receipt_id": "STRICT_CYLINDER_DIFF_NOETHER_FIFTH_JET_ADVANCE_V1_TIER_RECEIPT",
+  "result_ids": [
+    "STRICT_CYLINDER_POLARIZED_BACH_EVALUATOR_V1",
+    "STRICT_CYLINDER_BACH_UNIVERSAL_EXPORT_V1",
+    "STRICT_CYLINDER_HSTAR_BASEPOINT_ROW_V1"
+  ],
+  "recorded_at": "2026-08-15",
+  "base_commit": "b092cee0fd1c4b8b5e0d6de4bb3eb2cc09290ca6",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "output_hashes": {
+    "point_engine": "2503bcfdeafbe1dc4fc6146ddfcb1642326e19f449bebba6fd1d7580b2cebc73",
+    "point_evaluator_certificate": "1ff5670225d05188a59b3ddf366979e4baf55461010125ef97da8875ea2aee7e",
+    "universal_engine": "0f07718b39d22b3e685217893fa2898a6ec23fdb005143a3f4027ff370014e92",
+    "universal_builder": "ffc01c180023ebbd0d4c8780eb95289d163ba2f7ed67a2391c84b69c19910797",
+    "universal_independent_checker": "0d4b65d82307baea0b2002e3336e026f954987adc3057455c91e4dd67e527141",
+    "universal_schema_verifier": "7f9e0c5a97ac8ebe8bbc3f75cde6bad234eb0417562ad0d2a07a8882e27c2a77",
+    "universal_mutation_tests": "186677dd6a86575567b80d893214e5e392f84b6841701fb25e7bf66e96cbfe6a",
+    "universal_schema": "a31442dcb106c97adf44bfc79812ccfd08419722e3fb8e111c6c7f695bf168f0",
+    "universal_certificate": "0935383606b6213db25762603fe45faa570babc32baa16b39afe4a7bb88293d9",
+    "universal_human_report": "005455830f8b2bd4e6a98342e72ad3608bd33e9abaa2645a9f8e2fd9598b25b4",
+    "hstar_builder": "b8928a0feddce63a41878185cd6ab5193b225193ed57609480e6b90f4da7ec71",
+    "hstar_independent_checker": "23e8d56ac5972a128255c31da74e6ab9f5e4c7137bdebeb0a807bf0415e8143a",
+    "hstar_schema_verifier": "48938c28d28ac6da01423de9e07cdc3f2a7e982bacf5bfbeb30d6b0260c5565a",
+    "hstar_mutation_tests": "a334ba179371af73585480472ca08c3862d4f01d511e7e539e0d7b1d16575678",
+    "hstar_schema": "eeecf04c30fc3653f2c6473509f431fd8638e3fcc8865c41ac22ace419d6aa2b",
+    "hstar_certificate": "edc39ae4c7274cc78e04f8c7deb883bf2122fdca1a9e3070419ae1e045f5fb19",
+    "hstar_human_report": "56e6f3380cbeec399449ceafcea33707476adc96538a5ef8b446308a4eca5909",
+    "central_import_report": "acb874f923b79a080cae7dbc1a8d2c529372eac6e4fb82070a1f646a22012a3a"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile on the affected point/universal engines, builders, checkers and verifiers",
+      "elapsed_seconds": 0.2,
+      "status": "PASS"
+    },
+    {
+      "tier": 0,
+      "command": "jq empty on the affected universal and h-star schemas",
+      "elapsed_seconds": 0.0,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/build_strict_cylinder_polarized_bach_evaluator.py --check",
+      "elapsed_seconds": 0.98,
+      "maximum_resident_kibibytes": 23000,
+      "status": "PASS_GENERATED_ARTIFACTS_CURRENT"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/check_strict_cylinder_polarized_bach_evaluator.py",
+      "elapsed_seconds": 0.77,
+      "maximum_resident_kibibytes": 20988,
+      "status": "PASS_EXISTING_POINT_EVALUATOR_BOUNDARY"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/verify_strict_cylinder_polarized_bach_evaluator.py",
+      "elapsed_seconds": 0.83,
+      "maximum_resident_kibibytes": 30104,
+      "status": "PASS_SCHEMA_PROVENANCE_AND_REPORT"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_cylinder_polarized_bach_evaluator.py -v",
+      "elapsed_seconds": 9.81,
+      "maximum_resident_kibibytes": 31688,
+      "status": "PASS_12_TESTS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/check_strict_cylinder_bach_universal_export.py",
+      "elapsed_seconds": 2.53,
+      "maximum_resident_kibibytes": 26380,
+      "status": "PASS_TABLE_WEYL_IDENTITY_AND_THREE_INDEPENDENT_FIFTH_JET_DIFF_PROBES"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/verify_strict_cylinder_bach_universal_export.py",
+      "elapsed_seconds": 2.72,
+      "maximum_resident_kibibytes": 34656,
+      "status": "PASS_SCHEMA_REPORT_DIFF_PROMOTION_AND_GLOBALIZATION_FIREWALL"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_cylinder_bach_universal_export.py -v",
+      "elapsed_seconds": 35.56,
+      "maximum_resident_kibibytes": 42144,
+      "status": "PASS_14_TESTS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/build_strict_cylinder_hstar_basepoint_row.py --check",
+      "elapsed_seconds": 0.45,
+      "maximum_resident_kibibytes": 26460,
+      "status": "PASS_GENERATED_ARTIFACTS_CURRENT"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/check_strict_cylinder_hstar_basepoint_row.py",
+      "elapsed_seconds": 7.08,
+      "maximum_resident_kibibytes": 29628,
+      "status": "PASS_HSTAR_ROW_AND_INHERITED_DIFF_BOUNDARY"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/verify_strict_cylinder_hstar_basepoint_row.py",
+      "elapsed_seconds": 7.21,
+      "maximum_resident_kibibytes": 39416,
+      "status": "PASS_SCHEMA_REPORT_AND_NO_PORTABILITY_PROMOTION"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_cylinder_hstar_basepoint_row.py -v",
+      "elapsed_seconds": 51.36,
+      "maximum_resident_kibibytes": 42152,
+      "status": "PASS_13_TESTS"
+    },
+    {
+      "tier": 2,
+      "command": "python3 quantum-weyl/classical_import/build_strict_cylinder_bach_universal_export.py --check",
+      "elapsed_seconds": 252.42,
+      "maximum_resident_kibibytes": 230928,
+      "status": "PASS_EXHAUSTIVE_FOURTH_ORDER_TABLE_AND_FOUR_FIFTH_JET_DIFF_ROWS_CURRENT"
+    }
+  ],
+  "supplemental_attempts": [
+    {
+      "command": "direct universal_euler_construction(1) plus universal_diff_noether_defects exploratory replay",
+      "elapsed_seconds": 243.15,
+      "maximum_resident_kibibytes": 222408,
+      "status": "PASS_EXPLORATORY_ALL_FOUR_ROWS_ZERO",
+      "counted_as_current_pass": false,
+      "boundary": "This established feasibility and the exact expected result but did not bind generated certificate bytes."
+    },
+    {
+      "command": "python3 quantum-weyl/classical_import/build_strict_cylinder_bach_universal_export.py",
+      "elapsed_seconds": 247.91,
+      "maximum_resident_kibibytes": 230916,
+      "status": "PASS_PRODUCER_REGENERATION",
+      "counted_as_independent_pass": false,
+      "boundary": "This generated the artifact; reproduction by its producer is not the independent receiver and is superseded as currentness evidence by the final --check run."
+    }
+  ],
+  "advisory_rails": [
+    {
+      "command": "ci/science-forge-shadow.sh",
+      "elapsed_seconds": 2.2,
+      "maximum_resident_kibibytes": 339168,
+      "process_status": "ADVISORY_EXIT_0",
+      "certifying_status": "NOT_A_PASS",
+      "findings": [
+        "bridge audit failed because the cached Forge 0.0.2 binary and current FORGE_LIB disagree and current lib/prelude.forge triggers E9118",
+        "coverage census reports repository-wide drift: 1714 certificates versus the 2026-07-19 baseline of 976"
+      ],
+      "boundary": "This read-only shadow rail is advisory by repository policy. Its findings are retained and are not used as evidence for the Diff identity."
+    }
+  ],
+  "tier_3_not_run": "No freeze, paper theorem/lifecycle promotion, release, tag or broadly shared core algebra change is made. The affected point-evaluator, universal-table and h-star certificate chain ran through Tier 2. Globalization, suspended q2, remaining interaction identities, Gate A, causal Green data, Hadamard and QME remain open.",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC advance retains one output-coordinate derivative of the action-normalized Euler density and proves that E^ab partial_lambda g_ab - 2 partial_a(E^ab g_lambda_b) has zero background, unary and quadratic terms for all four covector rows on arbitrary metric five-jets at the declared cylinder frame. A separate exact bivariate point evaluator returns zero on three non-special fifth-jet pairs. It does not export the universal derivative coefficient table, establish coordinate-change/SO(4) globalization, suspend the complete six-row q2, prove all q1q2/D/cyclicity identities, pass Gate A, or establish causal Green, Hadamard, QME or Lorentzian quantum claims."
+}

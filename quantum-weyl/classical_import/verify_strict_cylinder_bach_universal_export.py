@@ -22,16 +22,17 @@ def verify(value: dict[str, object], report: str) -> list[str]:
     errors = [f"schema: {error.message}" for error in Draft202012Validator(json.loads(SCHEMA.read_text())).iter_errors(value)]
     errors.extend(check(value))
     for token in (
-        "UNIVERSAL_CYLINDER_TABLE_FAST_RECEIVER_READY_GLOBAL_AST_AND_DIFF_IDENTITY_OPEN",
+        "UNIVERSAL_CYLINDER_TABLE_AND_DIFF_IDENTITY_CERTIFIED_GLOBAL_AST_OPEN",
         "700",
         "19,401",
         "normalized Taylor",
         "Input-slot symmetry is checked",
         "zero background, unary and quadratic defects",
+        "all four fifth-jet coordinate",
+        "three independent exact fifth-jet point-evaluator Diff probes",
         "TENSOR_NATURAL_GLOBALIZATION",
-        "DIFFERENTIATED_DIFF_NOETHER",
         "HT1B_MODE_ADAPTERS",
-        "STRICT_HSTAR_ROW_INTEGRATION",
+        "STRICT_HSTAR_PORTABLE_INTEGRATION",
         "Tier 2",
         "fast independent checker",
     ):
@@ -53,7 +54,7 @@ def main() -> int:
             print(f"  - {error}")
     else:
         print("  - schema, compact table, full Weyl identity, point probes and report agree")
-        print("  - globalization, Diff identity, HT1B adapters and h-star integration remain open")
+        print("  - Diff identity certified; globalization, HT1B adapters and portable h-star integration remain open")
     return bool(errors)
 
 

@@ -2,7 +2,7 @@
 
 **Result:** `STRICT_CYLINDER_BACH_UNIVERSAL_EXPORT_V1`
 
-**State:** `UNIVERSAL_CYLINDER_TABLE_FAST_RECEIVER_READY_GLOBAL_AST_AND_DIFF_IDENTITY_OPEN`
+**State:** `UNIVERSAL_CYLINDER_TABLE_AND_DIFF_IDENTITY_CERTIFIED_GLOBAL_AST_OPEN`
 
 **Dependency:** `LOCAL-ALGEBRAIC`
 
@@ -15,10 +15,13 @@ inputs, all ten contravariant density outputs, and
 **19,401** nonzero exact symmetric coefficients.
 Input-slot symmetry is checked before compression rather than assumed.
 
-This closes the coefficient-enumeration problem at the chosen frame. It does
-not yet close the portable `h_star` row: SO(4) isotropy-covariant globalization,
-the differentiated Diff identity, the HT1B adapters and the metric-antifield
-cotangent terms remain separate gates.
+This closes the coefficient-enumeration problem at the chosen frame. The same
+natural construction, retained through one output-coordinate derivative,
+also cancels all four background, unary and quadratic Diff Noether rows on
+arbitrary metric five-jets. Three separate point-evaluator fixtures replay
+that cancellation. It does not yet close the portable `h_star` row:
+SO(4)-isotropy/coordinate globalization, the HT1B adapters and suspended
+six-row interaction identities remain separate gates.
 
 ## Row sizes
 
@@ -46,6 +49,9 @@ evaluation restores the swapped term when the two basis indices differ.
 
 - zero input-swap defects on the unreduced ordered table;
 - zero background, unary and quadratic defects in `g_ab E^ab=0`;
+- zero background, unary and quadratic terms in all four fifth-jet coordinate
+  identities `E^ab partial_lambda g_ab - 2 partial_a(E^ab g_lambda_b)=0`;
+- three independent exact fifth-jet point-evaluator Diff probes;
 - maximum total input derivative order four;
 - three independent concrete-jet comparisons in which the universal table,
   compact table and earlier point evaluator agree exactly.
@@ -54,10 +60,9 @@ evaluation restores the swapped term when the two basis indices differ.
 
 | Gate | Status | Required evidence |
 |---|---|---|
-| `DIFFERENTIATED_DIFF_NOETHER` | `OPEN` | derive the order-five divergence test with connection and density variations |
 | `HT1B_MODE_ADAPTERS` | `OPEN` | evaluate and integrate the two named nonzero cylinder channels |
 | `TENSOR_NATURAL_GLOBALIZATION` | `OPEN` | certify SO(4) isotropy covariance and portable coordinate/tensor AST semantics |
-| `STRICT_HSTAR_ROW_INTEGRATION` | `OPEN` | combine the metric Hessian with Diff/Weyl cotangent terms and replay the complete q2 receiver |
+| `STRICT_HSTAR_PORTABLE_INTEGRATION` | `OPEN` | globalize the metric Hessian, suspend all bilinear rows and replay the complete q2 receiver |
 
 ## Production and replay
 
@@ -74,9 +79,9 @@ python3 quantum-weyl/classical_import/verify_strict_cylinder_bach_universal_expo
 ## Does not establish
 
 - an SO(4)-isotropy-covariant tensor-natural globalization of the basepoint table.
-- the differentiated diffeomorphism Noether identity or its fifth-jet cancellation.
+- a tensor-natural coordinate-change or SO(4)-isotropy globalization theorem beyond the exact Weyl and Diff identities.
 - the two nonzero HT1B mode densities or their exact S3 integrations.
-- the metric-antifield Diff and Weyl cotangent terms.
-- a portable complete h-star row or suspended six-row q2.
+- an exported universal first-coordinate-derivative table; only the exact zero Noether reduction and independent point probes are retained.
+- a portable complete h-star row or suspended six-row q2, despite the separate exact basepoint cotangent assembly.
 - the q1q2, D-derivation or BV-cyclicity receiver identities.
 - a passed Gate A, causal Green homotopy, Hadamard state, restored QME, or Lorentzian quantum theory.

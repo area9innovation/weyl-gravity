@@ -67,6 +67,11 @@ class StrictCylinderBachUniversalExportTests(unittest.TestCase):
         value["exact_checks"]["three_independent_point_evaluator_crosschecks"][0]["output"][0] = "0"
         self.assertTrue(any("crosscheck failed" in error for error in CHECK.check(value)))
 
+    def test_diff_point_crosscheck_mutation_fails(self) -> None:
+        value = copy.deepcopy(self.value)
+        value["exact_checks"]["three_independent_fifth_jet_diff_point_crosschecks"][0]["covector_defects"][0] = "1"
+        self.assertTrue(any("Diff point crosscheck failed" in error for error in CHECK.check(value)))
+
     def test_implementation_hash_mutation_fails(self) -> None:
         value = copy.deepcopy(self.value)
         value["implementation"]["universal_engine"]["sha256"] = "0" * 64
@@ -80,6 +85,11 @@ class StrictCylinderBachUniversalExportTests(unittest.TestCase):
     def test_globalization_promotion_fails(self) -> None:
         value = copy.deepcopy(self.value)
         value["claim_flags"]["PORTABLE_TENSOR_NATURAL_HSTAR_ROW"] = True
+        self.assertTrue(any("claim boundary" in error for error in CHECK.check(value)))
+
+    def test_diff_noether_demotion_fails(self) -> None:
+        value = copy.deepcopy(self.value)
+        value["claim_flags"]["DIFFERENTIATED_DIFF_NOETHER_REPLAYED"] = False
         self.assertTrue(any("claim boundary" in error for error in CHECK.check(value)))
 
     def test_receiver_declaration_mutation_fails(self) -> None:

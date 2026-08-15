@@ -23,7 +23,7 @@ def verify(value: dict[str, object], report: str) -> list[str]:
     errors = [f"schema: {error.message}" for error in Draft202012Validator(schema).iter_errors(value)]
     errors.extend(check(value))
     for token in (
-        "HSTAR_BASEPOINT_ROW_ASSEMBLED_PORTABLE_GLOBALIZATION_AND_INTERACTION_IDENTITIES_OPEN",
+        "HSTAR_BASEPOINT_ROW_AND_DIFF_IDENTITY_ASSEMBLED_PORTABLE_GLOBALIZATION_AND_POLARIZATION_OPEN",
         "q2_diagonal(h_star)",
         "one half",
         "minus the metric Euler derivative",

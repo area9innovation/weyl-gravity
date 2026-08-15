@@ -2,7 +2,7 @@
 
 **Result:** `STRICT_CYLINDER_HSTAR_BASEPOINT_ROW_V1`
 
-**State:** `HSTAR_BASEPOINT_ROW_ASSEMBLED_PORTABLE_GLOBALIZATION_AND_INTERACTION_IDENTITIES_OPEN`
+**State:** `HSTAR_BASEPOINT_ROW_AND_DIFF_IDENTITY_ASSEMBLED_PORTABLE_GLOBALIZATION_AND_POLARIZATION_OPEN`
 
 **Dependency:** `LOCAL-ALGEBRAIC`
 
@@ -23,7 +23,9 @@ metric gauge master terms, including the density-divergence contribution.
 
 This is real progress past a missing-row placeholder, but it is deliberately a
 **basepoint assembly**, not a portable six-row `q2`: the large `K` table still
-needs tensor-natural globalization and the differentiated Diff identity.
+needs tensor-natural globalization and suspended graded polarization. The
+separate universal fifth-jet calculation now certifies all four differentiated
+Diff Noether rows exactly.
 
 ## Three components
 
@@ -39,7 +41,7 @@ needs tensor-natural globalization and the differentiated Diff identity.
 |---|---|---|
 | `HSTAR_BASEPOINT_DIAGONAL_ASSEMBLY` | `PASS` | all three source-fixed terms are serialized; the exact Hessian factor 1/2 and cotangent signs are replayed |
 | `TENSOR_NATURAL_GLOBALIZATION` | `OPEN` | the K term remains a one-frame component table without an SO(4)-isotropy/coordinate-change certificate |
-| `DIFFERENTIATED_DIFF_NOETHER` | `OPEN` | the fifth-jet divergence cancellation has not been independently replayed |
+| `DIFFERENTIATED_DIFF_NOETHER` | `PASS` | all four background, unary and quadratic fifth-jet coordinate rows cancel in the universal engine and three independent point probes |
 | `SUSPENDED_GRADED_POLARIZATION` | `OPEN` | this artifact fixes the diagonal Taylor row, not the repository suspended bilinear sign convention |
 | `SIX_ROW_INTERACTION_IDENTITIES` | `OPEN` | q1q2=0, Koszul symmetry, D derivation and BV cyclicity await a portable six-row payload |
 
@@ -48,7 +50,6 @@ needs tensor-natural globalization and the differentiated Diff identity.
 | Object | Status | Blocks |
 |---|---|---|
 | SO(4)-isotropy-covariant globalization of K | `MISSING` | portable h-star row |
-| differentiated Diff Noether identity through total jet order five | `MISSING` | coordinate-independence and q1q2 interaction replay |
 | suspended graded bilinear polarization of all six rows | `MISSING` | Koszul symmetry and complete q2 receiver |
 | full local D action and common BV pairing replay | `MISSING` | D derivation, cyclicity and Gate A |
 
@@ -70,7 +71,7 @@ python3 -m unittest quantum-weyl/classical_import/tests/test_strict_cylinder_hst
 ## Does not establish
 
 - a coordinate-independent or SO(4)-isotropy-covariant globalization of the metric Hessian table.
-- the differentiated diffeomorphism Noether identity or complete arity-two master identity.
+- the complete arity-two master identity beyond the now-certified differentiated Diff Noether row.
 - the repository suspended graded bilinear q2 or its Koszul symmetry.
 - a portable complete six-row support-local q2 or complete local D action.
 - BV cyclicity on a common support-local pairing or a passed classical import Gate A.

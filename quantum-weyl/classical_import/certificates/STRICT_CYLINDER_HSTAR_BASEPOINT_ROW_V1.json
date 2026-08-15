@@ -2,7 +2,7 @@
   "schema": "strict-cylinder-hstar-basepoint-row-v1",
   "result_id": "STRICT_CYLINDER_HSTAR_BASEPOINT_ROW_V1",
   "result_kind": "EXACT_HOMOGENEOUS_BASEPOINT_DIAGONAL_TAYLOR_ROW_ASSEMBLY",
-  "result_state": "HSTAR_BASEPOINT_ROW_ASSEMBLED_PORTABLE_GLOBALIZATION_AND_INTERACTION_IDENTITIES_OPEN",
+  "result_state": "HSTAR_BASEPOINT_ROW_AND_DIFF_IDENTITY_ASSEMBLED_PORTABLE_GLOBALIZATION_AND_POLARIZATION_OPEN",
   "lifecycle": "CLASSIFIED",
   "created": "2026-08-15",
   "repository_base_commit": "1b4b9350",
@@ -231,8 +231,8 @@
     },
     {
       "gate": "DIFFERENTIATED_DIFF_NOETHER",
-      "status": "OPEN",
-      "evidence": "the fifth-jet divergence cancellation has not been independently replayed"
+      "status": "PASS",
+      "evidence": "all four background, unary and quadratic fifth-jet coordinate rows cancel in the universal engine and three independent point probes"
     },
     {
       "gate": "SUSPENDED_GRADED_POLARIZATION",
@@ -249,15 +249,15 @@
     "source_crosswalk_sha256": "40f6772f9e903dc227c69c56f54c0e620cf8aeea67b28096608d08ca072e1204",
     "components_sha256": "6c57e9c01f45c82a8744ff35ce98c5f485d712bfe63b875cd72635338db8441f",
     "exact_checks_sha256": "ddecb42e553c273cce12d55b5e5f831763b522b65cb8e4620097132277f2814f",
-    "gates_sha256": "ea16ae18df4ead26d5c4b303c03fd12cf0e659fea1bab5dc625a172cff6d1860",
-    "missing_object_ledger_sha256": "6dfa6d66f4b143471875112fef6ea2a08098d6c8930dbda92dc57e62f1916b22"
+    "gates_sha256": "fc3c184847c5c7e5e70cc0dd2ac7f1609f7745753f59f7058b60c6a1bdf505eb",
+    "missing_object_ledger_sha256": "c1b83bf4e016facf452933aa2369d7b921fad10d5b19aba9ddc3c3f202ccbcd0"
   },
   "provenance": {
     "inputs": [
       {
         "path": "quantum-weyl/classical_import/certificates/STRICT_CYLINDER_BACH_UNIVERSAL_EXPORT_V1.json",
         "result_or_artifact_id": "STRICT_CYLINDER_BACH_UNIVERSAL_EXPORT_V1",
-        "sha256": "13489325f30825fc33ef178fad0f0f8ff150f2a353ce0b38db99e48c2016fefe",
+        "sha256": "0935383606b6213db25762603fe45faa570babc32baa16b39afe4a7bb88293d9",
         "role": "exact polarized metric Euler-density table"
       },
       {
@@ -291,7 +291,7 @@
     "METRIC_ANTIFIELD_DIFF_COTANGENT_TERM_CERTIFIED": true,
     "METRIC_ANTIFIELD_WEYL_COTANGENT_TERM_CERTIFIED": true,
     "PORTABLE_TENSOR_NATURAL_HSTAR_ROW": false,
-    "DIFFERENTIATED_DIFF_NOETHER_REPLAYED": false,
+    "DIFFERENTIATED_DIFF_NOETHER_REPLAYED": true,
     "SUSPENDED_GRADED_POLARIZATION_REPLAYED": false,
     "STRICT_SUPPORT_LOCAL_Q2_COMPLETE": false,
     "CLASSICAL_IMPORT_GATE_PASSED": false,
@@ -303,11 +303,6 @@
       "object": "SO(4)-isotropy-covariant globalization of K",
       "status": "MISSING",
       "blocks": "portable h-star row"
-    },
-    {
-      "object": "differentiated Diff Noether identity through total jet order five",
-      "status": "MISSING",
-      "blocks": "coordinate-independence and q1q2 interaction replay"
     },
     {
       "object": "suspended graded bilinear polarization of all six rows",
@@ -322,7 +317,7 @@
   ],
   "does_not_establish": [
     "a coordinate-independent or SO(4)-isotropy-covariant globalization of the metric Hessian table",
-    "the differentiated diffeomorphism Noether identity or complete arity-two master identity",
+    "the complete arity-two master identity beyond the now-certified differentiated Diff Noether row",
     "the repository suspended graded bilinear q2 or its Koszul symmetry",
     "a portable complete six-row support-local q2 or complete local D action",
     "BV cyclicity on a common support-local pairing or a passed classical import Gate A",

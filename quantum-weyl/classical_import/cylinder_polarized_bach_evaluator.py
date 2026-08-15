@@ -249,6 +249,7 @@ def inverse_matrix(matrix: Mapping[tuple[int, int], Jet]) -> dict[tuple[int, int
 
 
 def _connection(metric: Mapping[tuple[int, int], Jet], inverse: Mapping[tuple[int, int], Jet]) -> dict[tuple[int, int, int], Jet]:
+    connection_order = min(value.order for value in metric.values()) - 1
     output = {}
     for target, left, right in product(range(DIMENSION), repeat=3):
         output[(target, left, right)] = sum_jets(
@@ -261,12 +262,13 @@ def _connection(metric: Mapping[tuple[int, int], Jet], inverse: Mapping[tuple[in
                 ).scale(Fraction(1, 2))
                 for index in range(DIMENSION)
             ),
-            order=3,
+            order=connection_order,
         )
     return output
 
 
 def _geometry(metric: Mapping[tuple[int, int], Jet]) -> dict[str, object]:
+    curvature_order = min(value.order for value in metric.values()) - 2
     inverse = inverse_matrix(metric)
     gamma = _connection(metric, inverse)
     riemann = {}
@@ -280,14 +282,14 @@ def _geometry(metric: Mapping[tuple[int, int], Jet]) -> dict[str, object]:
                     - gamma[(middle, first, vector)] * gamma[(target, second, middle)]
                     for middle in range(DIMENSION)
                 ),
-                order=2,
+                order=curvature_order,
             )
-        ).truncate(2)
+        ).truncate(curvature_order)
     ricci = {
-        (a, b): sum_jets((riemann[(index, a, index, b)] for index in range(DIMENSION)), order=2)
+        (a, b): sum_jets((riemann[(index, a, index, b)] for index in range(DIMENSION)), order=curvature_order)
         for a, b in product(range(DIMENSION), repeat=2)
     }
-    scalar = sum_jets((inverse[(a, b)] * ricci[(a, b)] for a, b in product(range(DIMENSION), repeat=2)), order=2)
+    scalar = sum_jets((inverse[(a, b)] * ricci[(a, b)] for a, b in product(range(DIMENSION), repeat=2)), order=curvature_order)
     return {"metric": metric, "inverse": inverse, "connection": gamma, "riemann": riemann, "ricci": ricci, "scalar": scalar}
 
 
@@ -297,13 +299,14 @@ def _schouten_and_weyl(geometry: Mapping[str, object]) -> tuple[dict[tuple[int, 
     ricci = geometry["ricci"]
     scalar = geometry["scalar"]
     assert isinstance(metric, Mapping) and isinstance(riemann, Mapping) and isinstance(ricci, Mapping) and isinstance(scalar, Jet)
+    curvature_order = scalar.order
     schouten = {
-        (a, b): (ricci[(a, b)] - metric[(a, b)] * scalar.scale(Fraction(1, 6))).scale(Fraction(1, 2)).truncate(2)
+        (a, b): (ricci[(a, b)] - metric[(a, b)] * scalar.scale(Fraction(1, 6))).scale(Fraction(1, 2)).truncate(curvature_order)
         for a, b in product(range(DIMENSION), repeat=2)
     }
     weyl = {}
     for a, b, c, d in product(range(DIMENSION), repeat=4):
-        lowered = sum_jets((metric[(a, target)] * riemann[(target, b, c, d)] for target in range(DIMENSION)), order=2)
+        lowered = sum_jets((metric[(a, target)] * riemann[(target, b, c, d)] for target in range(DIMENSION)), order=curvature_order)
         correction = (
             metric[(a, c)] * schouten[(d, b)]
             - metric[(a, d)] * schouten[(c, b)]
@@ -319,6 +322,9 @@ def _bach_lower(geometry: Mapping[str, object]) -> dict[tuple[int, int], Jet]:
     gamma = geometry["connection"]
     assert isinstance(inverse, Mapping) and isinstance(gamma, Mapping)
     schouten, weyl = _schouten_and_weyl(geometry)
+    curvature_order = next(iter(schouten.values())).order
+    cotton_order = curvature_order - 1
+    bach_order = cotton_order - 1
     first_schouten = {}
     for axis, first, second in product(range(DIMENSION), repeat=3):
         first_schouten[(axis, first, second)] = (
@@ -329,9 +335,9 @@ def _bach_lower(geometry: Mapping[str, object]) -> dict[tuple[int, int], Jet]:
                     + gamma[(replacement, axis, second)] * schouten[(first, replacement)]
                     for replacement in range(DIMENSION)
                 ),
-                order=1,
+                order=cotton_order,
             )
-        ).truncate(1)
+        ).truncate(cotton_order)
     cotton = {
         (inner, first, second): first_schouten[(inner, first, second)] - first_schouten[(first, second, inner)]
         for inner, first, second in product(range(DIMENSION), repeat=3)
@@ -347,28 +353,28 @@ def _bach_lower(geometry: Mapping[str, object]) -> dict[tuple[int, int], Jet]:
                     + gamma[(replacement, outer, second)] * cotton[(inner, first, replacement)]
                     for replacement in range(DIMENSION)
                 ),
-                order=0,
+                order=bach_order,
             )
             contracted.append(inverse[(outer, inner)] * derivative)
-        divergence[(first, second)] = sum_jets(contracted, order=0)
+        divergence[(first, second)] = sum_jets(contracted, order=bach_order)
     schouten_up = {
         (first, second): sum_jets(
             (
                 inverse[(first, left)] * inverse[(second, right)] * schouten[(left, right)]
                 for left, right in product(range(DIMENSION), repeat=2)
             ),
-            order=0,
+            order=bach_order,
         )
         for first, second in product(range(DIMENSION), repeat=2)
     }
     algebraic = {
         (first, second): sum_jets(
             (schouten_up[(inner, outer)] * weyl[(first, inner, second, outer)] for inner, outer in product(range(DIMENSION), repeat=2)),
-            order=0,
+            order=bach_order,
         )
         for first, second in product(range(DIMENSION), repeat=2)
     }
-    return {(first, second): (divergence[(first, second)] + algebraic[(first, second)]).truncate(0) for first, second in product(range(DIMENSION), repeat=2)}
+    return {(first, second): (divergence[(first, second)] + algebraic[(first, second)]).truncate(bach_order) for first, second in product(range(DIMENSION), repeat=2)}
 
 
 def _bach_euler_density_jets(
@@ -376,16 +382,21 @@ def _bach_euler_density_jets(
     right: MetricJets,
     *,
     background: Mapping[tuple[int, int], Jet] | None = None,
+    output_coordinate_order: int = 0,
 ) -> tuple[dict[tuple[int, int], Jet], dict[tuple[int, int], Jet]]:
     """Return the perturbed metric and action-normalized Euler density jets."""
 
-    background = cylinder_background(4) if background is None else background
+    if output_coordinate_order < 0:
+        raise ValueError("output coordinate order must be nonnegative")
+    background = cylinder_background(4 + output_coordinate_order) if background is None else background
+    if min(item.order for item in background.values()) < 4 + output_coordinate_order:
+        raise ValueError("background does not retain enough coordinate jets for requested output order")
     metric = perturbed_metric(background, left, right)
     geometry = _geometry(metric)
     inverse = geometry["inverse"]
     assert isinstance(inverse, Mapping)
     bach_action = {pair: value.scale(-2) for pair, value in _bach_lower(geometry).items()}
-    volume = determinant(metric).scale(-1).sqrt().truncate(0)
+    volume = determinant(metric).scale(-1).sqrt().truncate(output_coordinate_order)
     output: dict[tuple[int, int], Jet] = {}
     for first, second in product(range(DIMENSION), repeat=2):
         output[(first, second)] = volume * sum_jets(
@@ -393,7 +404,7 @@ def _bach_euler_density_jets(
                 inverse[(first, left_index)] * inverse[(second, right_index)] * bach_action[(left_index, right_index)]
                 for left_index, right_index in product(range(DIMENSION), repeat=2)
             ),
-            order=0,
+            order=output_coordinate_order,
         )
     return metric, output
 
@@ -434,6 +445,35 @@ def polarized_weyl_trace_identity(
     metric, density = _bach_euler_density_jets(left, right, background=background)
     trace = sum_jets((metric[(a, b)] * density[(a, b)] for a, b in product(range(DIMENSION), repeat=2)), order=0)
     return trace.coefficient(1, 1)
+
+
+def polarized_diff_noether_identity(
+    left: MetricJets,
+    right: MetricJets,
+    *,
+    background: Mapping[tuple[int, int], Jet] | None = None,
+) -> dict[int, Fraction]:
+    """Return the four polarized fifth-jet Diff Noether defects.
+
+    The Euler object is a symmetric contravariant density, so the exact local
+    coordinate identity is
+
+    ``E^ab partial_lambda g_ab - 2 partial_a(E^ab g_lambda_b)=0``.
+    """
+
+    metric, density = _bach_euler_density_jets(left, right, background=background, output_coordinate_order=1)
+    output = {}
+    for covector in range(DIMENSION):
+        metric_derivative = sum_jets(
+            (density[(a, b)] * metric[(a, b)].derivative(covector) for a, b in product(range(DIMENSION), repeat=2)),
+            order=0,
+        )
+        product_divergence = sum_jets(
+            ((density[(a, b)] * metric[(covector, b)]).derivative(a) for a, b in product(range(DIMENSION), repeat=2)),
+            order=0,
+        )
+        output[covector] = (metric_derivative - product_divergence.scale(2)).coefficient(1, 1)
+    return output
 
 
 def cylinder_background_invariants() -> dict[str, object]:

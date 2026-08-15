@@ -9,7 +9,7 @@
     "schema": {"const": "strict-cylinder-hstar-basepoint-row-v1"},
     "result_id": {"const": "STRICT_CYLINDER_HSTAR_BASEPOINT_ROW_V1"},
     "result_kind": {"const": "EXACT_HOMOGENEOUS_BASEPOINT_DIAGONAL_TAYLOR_ROW_ASSEMBLY"},
-    "result_state": {"const": "HSTAR_BASEPOINT_ROW_ASSEMBLED_PORTABLE_GLOBALIZATION_AND_INTERACTION_IDENTITIES_OPEN"},
+    "result_state": {"const": "HSTAR_BASEPOINT_ROW_AND_DIFF_IDENTITY_ASSEMBLED_PORTABLE_GLOBALIZATION_AND_POLARIZATION_OPEN"},
     "lifecycle": {"const": "CLASSIFIED"},
     "created": {"type": "string", "format": "date"},
     "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{8,40}$"},
@@ -105,7 +105,7 @@
         "METRIC_ANTIFIELD_DIFF_COTANGENT_TERM_CERTIFIED": {"const": true},
         "METRIC_ANTIFIELD_WEYL_COTANGENT_TERM_CERTIFIED": {"const": true},
         "PORTABLE_TENSOR_NATURAL_HSTAR_ROW": {"const": false},
-        "DIFFERENTIATED_DIFF_NOETHER_REPLAYED": {"const": false},
+        "DIFFERENTIATED_DIFF_NOETHER_REPLAYED": {"const": true},
         "SUSPENDED_GRADED_POLARIZATION_REPLAYED": {"const": false},
         "STRICT_SUPPORT_LOCAL_Q2_COMPLETE": {"const": false},
         "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
@@ -113,7 +113,7 @@
         "QME_RESTORED": {"const": false}
       }
     },
-    "missing_object_ledger": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/missing"}},
+    "missing_object_ledger": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/missing"}},
     "does_not_establish": {"type": "array", "minItems": 6, "items": {"type": "string", "minLength": 60}},
     "independent_checker": {"const": "quantum-weyl/classical_import/check_strict_cylinder_hstar_basepoint_row.py"},
     "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_CYLINDER_HSTAR_BASEPOINT_ROW_V1.md"}

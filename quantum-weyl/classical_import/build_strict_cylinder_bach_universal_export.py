@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 from typing import Any, Mapping
 
-from cylinder_polarized_bach_evaluator import polarized_bach_euler_density, sparse_fixture
+from cylinder_polarized_bach_evaluator import PAIRS as POINT_PAIRS, polarized_bach_euler_density, polarized_diff_noether_identity, sparse_fixture
 from cylinder_polarized_bach_universal import (
     PAIRS,
     BilinearOperator,
@@ -19,6 +19,7 @@ from cylinder_polarized_bach_universal import (
     symmetry_defects,
     universal_euler_construction,
     universal_euler_rows,
+    universal_diff_noether_defects,
     universal_weyl_trace_defects,
 )
 
@@ -57,6 +58,14 @@ def input_basis() -> list[dict[str, object]]:
 
 def _serialize_output(values: Mapping[tuple[int, int], Fraction]) -> list[str]:
     return [str(values[pair]) for pair in PAIRS]
+
+
+def fifth_jet_fixture(seed: int) -> dict[tuple[int, int], dict[tuple[int, int, int, int], Fraction]]:
+    words = ((0, 0, 0, 0), (1, 0, 0, 0), (0, 1, 1, 0), (0, 0, 0, 4), (1, 1, 1, 2))
+    return {
+        pair: {words[(index + seed) % len(words)]: Fraction((2 * index + seed) % 11 - 5, index % 4 + 1)}
+        for index, pair in enumerate(POINT_PAIRS)
+    }
 
 
 def compact_table(construction: Mapping[str, object]) -> dict[str, object]:
@@ -140,12 +149,19 @@ def build() -> dict[str, Any]:
     if gstar["tensor_type"]["symmetry"] != "symmetric_contravariant_density":
         raise ValueError("metric-antifield output type drift")
 
-    construction = universal_euler_construction()
+    construction = universal_euler_construction(1)
     rows = universal_euler_rows(construction)
     table = compact_table(construction)
     trace = universal_weyl_trace_defects(construction)
     if trace != {"background": "0", "linear_term_count": 0, "bilinear_term_count": 0}:
         raise ValueError(f"universal Weyl trace identity failed: {trace}")
+    diff_noether = universal_diff_noether_defects(construction)
+    expected_diff_rows = [
+        {"covector_index": index, "background": "0", "linear_term_count": 0, "bilinear_term_count": 0}
+        for index in range(4)
+    ]
+    if diff_noether["rows"] != expected_diff_rows or diff_noether["required_metric_jet_order"] != 5:
+        raise ValueError(f"universal Diff Noether identity failed: {diff_noether}")
     crosschecks = []
     for left_seed, right_seed in ((1, 2), (3, 4), (5, 6)):
         left, right = sparse_fixture(left_seed), sparse_fixture(right_seed)
@@ -162,6 +178,19 @@ def build() -> dict[str, Any]:
             "output_sha256": digest(_serialize_output(point_result)),
             "universal_equals_compact_equals_point": True,
         })
+    diff_point_crosschecks = []
+    for left_seed, right_seed in ((1, 2), (3, 4), (5, 6)):
+        defects = polarized_diff_noether_identity(fifth_jet_fixture(left_seed), fifth_jet_fixture(right_seed))
+        if any(defects.values()):
+            raise ValueError(f"point-evaluator Diff Noether defect for seeds {left_seed},{right_seed}: {defects}")
+        serialized = [str(defects[index]) for index in range(4)]
+        diff_point_crosschecks.append({
+            "left_seed": left_seed,
+            "right_seed": right_seed,
+            "covector_defects": serialized,
+            "output_sha256": digest(serialized),
+            "all_four_rows_zero": True,
+        })
     all_entries = [entry for row in table["rows"] for entry in row["symmetric_bilinear_entries"]]
     basis = table["input_basis"]
     maximum_total_order = max(basis[left]["order"] + basis[right]["order"] for left, right, _ in all_entries)
@@ -170,7 +199,7 @@ def build() -> dict[str, Any]:
         "schema": "strict-cylinder-bach-universal-export-v1",
         "result_id": "STRICT_CYLINDER_BACH_UNIVERSAL_EXPORT_V1",
         "result_kind": "EXACT_UNIVERSAL_HOMOGENEOUS_BASEPOINT_COMPONENT_TABLE",
-        "result_state": "UNIVERSAL_CYLINDER_TABLE_FAST_RECEIVER_READY_GLOBAL_AST_AND_DIFF_IDENTITY_OPEN",
+        "result_state": "UNIVERSAL_CYLINDER_TABLE_AND_DIFF_IDENTITY_CERTIFIED_GLOBAL_AST_OPEN",
         "lifecycle": "CLASSIFIED",
         "created": "2026-08-15",
         "repository_base_commit": "1b4b9350",
@@ -184,13 +213,14 @@ def build() -> dict[str, Any]:
             "taylor_convention": "coefficient of a*b with no hidden factor of 1/2",
             "action_normalization": "B_action=-2 B_standard",
             "maximum_total_input_derivative_order": maximum_total_order,
+            "Diff_identity_validation_metric_jet_order": 5,
             "coefficient_field": "Q",
             "support_locality": "every exported entry is a finite product of input derivatives at one point; no inverse differential operator occurs",
             "globalization_boundary": "the table is exhaustive at one homogeneous cylinder frame, but an explicit SO(4) isotropy-covariant tensor-natural globalization certificate is not yet supplied",
         },
         "construction": {
             "algorithm": benchmark["candidate_program_contract"],
-            "coefficient_method": "second-order sparse natural-operator automatic differentiation over exact rational coordinate coefficient jets",
+            "coefficient_method": "second-order sparse natural-operator automatic differentiation over exact rational coordinate coefficient jets, retaining one output-coordinate derivative for the Diff identity",
             "input_slots": "ordered during construction and reduced only after exact swap equality",
             "producer_cost_class": "TIER_2_EXHAUSTIVE_NOT_PER_COMMIT",
         },
@@ -201,7 +231,9 @@ def build() -> dict[str, Any]:
             "maximum_total_derivative_order_four": maximum_total_order == 4,
             "input_swap_symmetry_defect_count": len(symmetry_defects(rows)),
             "universal_weyl_trace_defects": trace,
+            "universal_diff_noether_defects": diff_noether,
             "three_independent_point_evaluator_crosschecks": crosschecks,
+            "three_independent_fifth_jet_diff_point_crosschecks": diff_point_crosschecks,
             "compact_table_reproduces_unreduced_operator": True,
         },
         "canonical_hashes": {
@@ -210,6 +242,7 @@ def build() -> dict[str, Any]:
             "row_sha256": row_hashes,
             "universal_table_sha256": digest(table),
             "point_crosschecks_sha256": digest(crosschecks),
+            "diff_point_crosschecks_sha256": digest(diff_point_crosschecks),
         },
         "implementation": {
             "universal_engine": {"path": str(UNIVERSAL_ENGINE.relative_to(ROOT)), "sha256": sha(UNIVERSAL_ENGINE)},
@@ -219,20 +252,19 @@ def build() -> dict[str, Any]:
         "independent_receiver": {
             "path": "quantum-weyl/classical_import/check_strict_cylinder_bach_universal_export.py",
             "cost_class": "TIER_1_FAST_REPLAY",
-            "replays": ["compact table hashes and shape", "normalized four-jet basis", "full unary and quadratic Weyl identity", "three point-evaluator comparisons", "claim and provenance boundaries"],
+            "replays": ["compact table hashes and shape", "normalized four-jet basis", "full unary and quadratic Weyl identity", "four-row universal fifth-jet Diff status", "three independent fifth-jet point-evaluator Diff probes", "claim and provenance boundaries"],
         },
         "next_gates": [
-            {"gate": "DIFFERENTIATED_DIFF_NOETHER", "status": "OPEN", "required": "derive the order-five divergence test with connection and density variations"},
             {"gate": "HT1B_MODE_ADAPTERS", "status": "OPEN", "required": "evaluate and integrate the two named nonzero cylinder channels"},
             {"gate": "TENSOR_NATURAL_GLOBALIZATION", "status": "OPEN", "required": "certify SO(4) isotropy covariance and portable coordinate/tensor AST semantics"},
-            {"gate": "STRICT_HSTAR_ROW_INTEGRATION", "status": "OPEN", "required": "combine the metric Hessian with Diff/Weyl cotangent terms and replay the complete q2 receiver"},
+            {"gate": "STRICT_HSTAR_PORTABLE_INTEGRATION", "status": "OPEN", "required": "globalize the metric Hessian, suspend all bilinear rows and replay the complete q2 receiver"},
         ],
         "claim_flags": {
             "UNIVERSAL_BASEPOINT_METRIC_HESSIAN_TABLE_EXPORTED": True,
             "EXHAUSTIVE_INPUT_SWAP_AND_WEYL_TRACE_REPLAYED": True,
             "FAST_INDEPENDENT_TABLE_RECEIVER_IMPLEMENTED": True,
             "PORTABLE_TENSOR_NATURAL_HSTAR_ROW": False,
-            "DIFFERENTIATED_DIFF_NOETHER_REPLAYED": False,
+            "DIFFERENTIATED_DIFF_NOETHER_REPLAYED": True,
             "HT1B_NONZERO_CHANNELS_REPLAYED_BY_TABLE": False,
             "STRICT_SUPPORT_LOCAL_Q2_COMPLETE": False,
             "CLASSICAL_IMPORT_GATE_PASSED": False,
@@ -241,10 +273,10 @@ def build() -> dict[str, Any]:
         },
         "does_not_establish": [
             "an SO(4)-isotropy-covariant tensor-natural globalization of the basepoint table",
-            "the differentiated diffeomorphism Noether identity or its fifth-jet cancellation",
+            "a tensor-natural coordinate-change or SO(4)-isotropy globalization theorem beyond the exact Weyl and Diff identities",
             "the two nonzero HT1B mode densities or their exact S3 integrations",
-            "the metric-antifield Diff and Weyl cotangent terms",
-            "a portable complete h-star row or suspended six-row q2",
+            "an exported universal first-coordinate-derivative table; only the exact zero Noether reduction and independent point probes are retained",
+            "a portable complete h-star row or suspended six-row q2, despite the separate exact basepoint cotangent assembly",
             "the q1q2, D-derivation or BV-cyclicity receiver identities",
             "a passed Gate A, causal Green homotopy, Hadamard state, restored QME, or Lorentzian quantum theory",
         ],
@@ -278,10 +310,13 @@ inputs, all ten contravariant density outputs, and
 **{counts['symmetric_bilinear_terms']:,}** nonzero exact symmetric coefficients.
 Input-slot symmetry is checked before compression rather than assumed.
 
-This closes the coefficient-enumeration problem at the chosen frame. It does
-not yet close the portable `h_star` row: SO(4) isotropy-covariant globalization,
-the differentiated Diff identity, the HT1B adapters and the metric-antifield
-cotangent terms remain separate gates.
+This closes the coefficient-enumeration problem at the chosen frame. The same
+natural construction, retained through one output-coordinate derivative,
+also cancels all four background, unary and quadratic Diff Noether rows on
+arbitrary metric five-jets. Three separate point-evaluator fixtures replay
+that cancellation. It does not yet close the portable `h_star` row:
+SO(4)-isotropy/coordinate globalization, the HT1B adapters and suspended
+six-row interaction identities remain separate gates.
 
 ## Row sizes
 
@@ -300,6 +335,9 @@ evaluation restores the swapped term when the two basis indices differ.
 
 - zero input-swap defects on the unreduced ordered table;
 - zero background, unary and quadratic defects in `g_ab E^ab=0`;
+- zero background, unary and quadratic terms in all four fifth-jet coordinate
+  identities `E^ab partial_lambda g_ab - 2 partial_a(E^ab g_lambda_b)=0`;
+- three independent exact fifth-jet point-evaluator Diff probes;
 - maximum total input derivative order four;
 - three independent concrete-jet comparisons in which the universal table,
   compact table and earlier point evaluator agree exactly.

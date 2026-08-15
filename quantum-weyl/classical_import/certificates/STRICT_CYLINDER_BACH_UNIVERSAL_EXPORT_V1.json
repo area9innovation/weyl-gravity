@@ -2,7 +2,7 @@
   "schema": "strict-cylinder-bach-universal-export-v1",
   "result_id": "STRICT_CYLINDER_BACH_UNIVERSAL_EXPORT_V1",
   "result_kind": "EXACT_UNIVERSAL_HOMOGENEOUS_BASEPOINT_COMPONENT_TABLE",
-  "result_state": "UNIVERSAL_CYLINDER_TABLE_FAST_RECEIVER_READY_GLOBAL_AST_AND_DIFF_IDENTITY_OPEN",
+  "result_state": "UNIVERSAL_CYLINDER_TABLE_AND_DIFF_IDENTITY_CERTIFIED_GLOBAL_AST_OPEN",
   "lifecycle": "CLASSIFIED",
   "created": "2026-08-15",
   "repository_base_commit": "1b4b9350",
@@ -27,6 +27,7 @@
     "taylor_convention": "coefficient of a*b with no hidden factor of 1/2",
     "action_normalization": "B_action=-2 B_standard",
     "maximum_total_input_derivative_order": 4,
+    "Diff_identity_validation_metric_jet_order": 5,
     "coefficient_field": "Q",
     "support_locality": "every exported entry is a finite product of input derivatives at one point; no inverse differential operator occurs",
     "globalization_boundary": "the table is exhaustive at one homogeneous cylinder frame, but an explicit SO(4) isotropy-covariant tensor-natural globalization certificate is not yet supplied"
@@ -82,7 +83,7 @@
         "maximum_metric_jet_order": 4
       }
     ],
-    "coefficient_method": "second-order sparse natural-operator automatic differentiation over exact rational coordinate coefficient jets",
+    "coefficient_method": "second-order sparse natural-operator automatic differentiation over exact rational coordinate coefficient jets, retaining one output-coordinate derivative for the Diff identity",
     "input_slots": "ordered during construction and reduced only after exact swap equality",
     "producer_cost_class": "TIER_2_EXHAUSTIVE_NOT_PER_COMMIT"
   },
@@ -110305,6 +110306,36 @@
       "linear_term_count": 0,
       "bilinear_term_count": 0
     },
+    "universal_diff_noether_defects": {
+      "coordinate_formula": "E^ab partial_lambda g_ab - 2 partial_a(E^ab g_lambda_b)=0",
+      "required_metric_jet_order": 5,
+      "rows": [
+        {
+          "covector_index": 0,
+          "background": "0",
+          "linear_term_count": 0,
+          "bilinear_term_count": 0
+        },
+        {
+          "covector_index": 1,
+          "background": "0",
+          "linear_term_count": 0,
+          "bilinear_term_count": 0
+        },
+        {
+          "covector_index": 2,
+          "background": "0",
+          "linear_term_count": 0,
+          "bilinear_term_count": 0
+        },
+        {
+          "covector_index": 3,
+          "background": "0",
+          "linear_term_count": 0,
+          "bilinear_term_count": 0
+        }
+      ]
+    },
     "three_independent_point_evaluator_crosschecks": [
       {
         "left_seed": 1,
@@ -110364,6 +110395,44 @@
         "universal_equals_compact_equals_point": true
       }
     ],
+    "three_independent_fifth_jet_diff_point_crosschecks": [
+      {
+        "left_seed": 1,
+        "right_seed": 2,
+        "covector_defects": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "output_sha256": "73ca7a9ed16e954dab2040896df29f2c5ee175ef8d98eaec144f0cd2f4a3fcd9",
+        "all_four_rows_zero": true
+      },
+      {
+        "left_seed": 3,
+        "right_seed": 4,
+        "covector_defects": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "output_sha256": "73ca7a9ed16e954dab2040896df29f2c5ee175ef8d98eaec144f0cd2f4a3fcd9",
+        "all_four_rows_zero": true
+      },
+      {
+        "left_seed": 5,
+        "right_seed": 6,
+        "covector_defects": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "output_sha256": "73ca7a9ed16e954dab2040896df29f2c5ee175ef8d98eaec144f0cd2f4a3fcd9",
+        "all_four_rows_zero": true
+      }
+    ],
     "compact_table_reproduces_unreduced_operator": true
   },
   "canonical_hashes": {
@@ -110382,16 +110451,17 @@
       "(3, 3)": "d98549944d2008d9d4f1c6658ab4f8c33475b3698a9339713fb269067d29c1fd"
     },
     "universal_table_sha256": "2aac70a9b5f0691433deda6544cbdc65437d2514cee25581f4c7af25bf46e11b",
-    "point_crosschecks_sha256": "30838404479dedb5cbd2ca68d3c970ccb8fb5470b53846b0f1d51b7de31d27de"
+    "point_crosschecks_sha256": "30838404479dedb5cbd2ca68d3c970ccb8fb5470b53846b0f1d51b7de31d27de",
+    "diff_point_crosschecks_sha256": "e52cb734ca90ad799594f19d69531134ff4058fdc7a3ecb5c9418e04ef833e11"
   },
   "implementation": {
     "universal_engine": {
       "path": "quantum-weyl/classical_import/cylinder_polarized_bach_universal.py",
-      "sha256": "65affb0053660b8c262615c4efddd42a84c62c96f41754a8a70faaa5780a0c9a"
+      "sha256": "0f07718b39d22b3e685217893fa2898a6ec23fdb005143a3f4027ff370014e92"
     },
     "point_engine": {
       "path": "quantum-weyl/classical_import/cylinder_polarized_bach_evaluator.py",
-      "sha256": "2770635593bdaa940ba68da77872e135f3b7ce92f5a36c8941329a7ba767bf65"
+      "sha256": "2503bcfdeafbe1dc4fc6146ddfcb1642326e19f449bebba6fd1d7580b2cebc73"
     }
   },
   "provenance": {
@@ -110405,7 +110475,7 @@
       {
         "path": "quantum-weyl/classical_import/certificates/STRICT_CYLINDER_POLARIZED_BACH_EVALUATOR_V1.json",
         "result_or_artifact_id": "STRICT_CYLINDER_POLARIZED_BACH_EVALUATOR_V1",
-        "sha256": "b93a04827c53af90fdf78c87c4b2434dcc1fa330881251b710bd0b0e78a1e58a",
+        "sha256": "1ff5670225d05188a59b3ddf366979e4baf55461010125ef97da8875ea2aee7e",
         "role": "independent concrete-jet evaluator prototype"
       },
       {
@@ -110423,16 +110493,12 @@
       "compact table hashes and shape",
       "normalized four-jet basis",
       "full unary and quadratic Weyl identity",
-      "three point-evaluator comparisons",
+      "four-row universal fifth-jet Diff status",
+      "three independent fifth-jet point-evaluator Diff probes",
       "claim and provenance boundaries"
     ]
   },
   "next_gates": [
-    {
-      "gate": "DIFFERENTIATED_DIFF_NOETHER",
-      "status": "OPEN",
-      "required": "derive the order-five divergence test with connection and density variations"
-    },
     {
       "gate": "HT1B_MODE_ADAPTERS",
       "status": "OPEN",
@@ -110444,9 +110510,9 @@
       "required": "certify SO(4) isotropy covariance and portable coordinate/tensor AST semantics"
     },
     {
-      "gate": "STRICT_HSTAR_ROW_INTEGRATION",
+      "gate": "STRICT_HSTAR_PORTABLE_INTEGRATION",
       "status": "OPEN",
-      "required": "combine the metric Hessian with Diff/Weyl cotangent terms and replay the complete q2 receiver"
+      "required": "globalize the metric Hessian, suspend all bilinear rows and replay the complete q2 receiver"
     }
   ],
   "claim_flags": {
@@ -110454,7 +110520,7 @@
     "EXHAUSTIVE_INPUT_SWAP_AND_WEYL_TRACE_REPLAYED": true,
     "FAST_INDEPENDENT_TABLE_RECEIVER_IMPLEMENTED": true,
     "PORTABLE_TENSOR_NATURAL_HSTAR_ROW": false,
-    "DIFFERENTIATED_DIFF_NOETHER_REPLAYED": false,
+    "DIFFERENTIATED_DIFF_NOETHER_REPLAYED": true,
     "HT1B_NONZERO_CHANNELS_REPLAYED_BY_TABLE": false,
     "STRICT_SUPPORT_LOCAL_Q2_COMPLETE": false,
     "CLASSICAL_IMPORT_GATE_PASSED": false,
@@ -110463,10 +110529,10 @@
   },
   "does_not_establish": [
     "an SO(4)-isotropy-covariant tensor-natural globalization of the basepoint table",
-    "the differentiated diffeomorphism Noether identity or its fifth-jet cancellation",
+    "a tensor-natural coordinate-change or SO(4)-isotropy globalization theorem beyond the exact Weyl and Diff identities",
     "the two nonzero HT1B mode densities or their exact S3 integrations",
-    "the metric-antifield Diff and Weyl cotangent terms",
-    "a portable complete h-star row or suspended six-row q2",
+    "an exported universal first-coordinate-derivative table; only the exact zero Noether reduction and independent point probes are retained",
+    "a portable complete h-star row or suspended six-row q2, despite the separate exact basepoint cotangent assembly",
     "the q1q2, D-derivation or BV-cyclicity receiver identities",
     "a passed Gate A, causal Green homotopy, Hadamard state, restored QME, or Lorentzian quantum theory"
   ],

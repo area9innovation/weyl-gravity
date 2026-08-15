@@ -23,7 +23,6 @@ DIFF_FORMULA = "c^rho partial_rho h_star^{mu nu} - h_star^{rho nu} partial_rho c
 ROW_FORMULA = "q2_diagonal(h_star)^{mu nu}=(1/2)K^{mu nu}[h,h]+Lie_c(h_star)^{mu nu}-2 omega h_star^{mu nu}"
 FALSE_FLAGS = {
     "PORTABLE_TENSOR_NATURAL_HSTAR_ROW",
-    "DIFFERENTIATED_DIFF_NOETHER_REPLAYED",
     "SUSPENDED_GRADED_POLARIZATION_REPLAYED",
     "STRICT_SUPPORT_LOCAL_Q2_COMPLETE",
     "CLASSICAL_IMPORT_GATE_PASSED",
@@ -132,7 +131,7 @@ def check(value: dict[str, Any]) -> list[str]:
     if upstream_errors:
         errors.append(f"upstream universal table receiver failed: {upstream_errors[:2]}")
 
-    if value.get("result_state") != "HSTAR_BASEPOINT_ROW_ASSEMBLED_PORTABLE_GLOBALIZATION_AND_INTERACTION_IDENTITIES_OPEN" or value.get("lifecycle") != "CLASSIFIED":
+    if value.get("result_state") != "HSTAR_BASEPOINT_ROW_AND_DIFF_IDENTITY_ASSEMBLED_PORTABLE_GLOBALIZATION_AND_POLARIZATION_OPEN" or value.get("lifecycle") != "CLASSIFIED":
         errors.append("result state/lifecycle drift")
     if value.get("dependency_tags") != ["LOCAL-ALGEBRAIC"]:
         errors.append("dependency-tag promotion")
@@ -186,18 +185,18 @@ def check(value: dict[str, Any]) -> list[str]:
     expected_gates = {
         "HSTAR_BASEPOINT_DIAGONAL_ASSEMBLY": "PASS",
         "TENSOR_NATURAL_GLOBALIZATION": "OPEN",
-        "DIFFERENTIATED_DIFF_NOETHER": "OPEN",
+        "DIFFERENTIATED_DIFF_NOETHER": "PASS",
         "SUSPENDED_GRADED_POLARIZATION": "OPEN",
         "SIX_ROW_INTERACTION_IDENTITIES": "OPEN",
     }
     if {item.get("gate"): item.get("status") for item in value.get("gates", [])} != expected_gates:
         errors.append("gate ledger drift or false promotion")
     flags = value.get("claim_flags", {})
-    true_flags = {"HSTAR_BASEPOINT_DIAGONAL_ROW_ASSEMBLED", "METRIC_ANTIFIELD_DIFF_COTANGENT_TERM_CERTIFIED", "METRIC_ANTIFIELD_WEYL_COTANGENT_TERM_CERTIFIED"}
+    true_flags = {"HSTAR_BASEPOINT_DIAGONAL_ROW_ASSEMBLED", "METRIC_ANTIFIELD_DIFF_COTANGENT_TERM_CERTIFIED", "METRIC_ANTIFIELD_WEYL_COTANGENT_TERM_CERTIFIED", "DIFFERENTIATED_DIFF_NOETHER_REPLAYED"}
     if any(flags.get(item) is not True for item in true_flags) or any(flags.get(item) is not False for item in FALSE_FLAGS):
         errors.append("claim boundary flag drift or promotion")
     missing = value.get("missing_object_ledger", [])
-    if len(missing) != 4 or any(item.get("status") != "MISSING" for item in missing):
+    if len(missing) != 3 or any(item.get("status") != "MISSING" for item in missing):
         errors.append("missing-object ledger shortened or promoted")
     expected_hashes = {
         "source_crosswalk_sha256": digest(crosswalk),
@@ -253,7 +252,7 @@ def main() -> int:
             print(f"  - {error}")
     else:
         print("  - exact 1/2 Hessian normalization and both cotangent signs replayed")
-        print("  - basepoint row assembled; globalization, polarization and identities remain open")
+        print("  - Diff identity passes; globalization, polarization and remaining interaction identities stay open")
     return bool(errors)
 
 

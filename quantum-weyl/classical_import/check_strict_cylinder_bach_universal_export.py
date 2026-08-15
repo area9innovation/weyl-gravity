@@ -15,12 +15,11 @@ ROOT = Path(__file__).resolve().parents[2]
 HERE = ROOT / "quantum-weyl/classical_import"
 RESULT = HERE / "certificates/STRICT_CYLINDER_BACH_UNIVERSAL_EXPORT_V1.json"
 sys.path.insert(0, str(HERE))
-from cylinder_polarized_bach_evaluator import PAIRS, polarized_bach_euler_density, sparse_fixture  # noqa: E402
+from cylinder_polarized_bach_evaluator import PAIRS, polarized_bach_euler_density, polarized_diff_noether_identity, sparse_fixture  # noqa: E402
 
 
 FALSE_FLAGS = {
     "PORTABLE_TENSOR_NATURAL_HSTAR_ROW",
-    "DIFFERENTIATED_DIFF_NOETHER_REPLAYED",
     "HT1B_NONZERO_CHANNELS_REPLAYED_BY_TABLE",
     "STRICT_SUPPORT_LOCAL_Q2_COMPLETE",
     "CLASSICAL_IMPORT_GATE_PASSED",
@@ -42,6 +41,14 @@ def expected_basis() -> list[dict[str, object]]:
         {"index": index, "component": component, "component_pair": list(PAIRS[component]), "word": list(word), "order": sum(word)}
         for index, (component, word) in enumerate((item for component in range(10) for item in ((component, word) for word in words_through(4))))
     ]
+
+
+def fifth_jet_fixture(seed: int) -> dict[tuple[int, int], dict[tuple[int, int, int, int], Fraction]]:
+    words = ((0, 0, 0, 0), (1, 0, 0, 0), (0, 1, 1, 0), (0, 0, 0, 4), (1, 1, 1, 2))
+    return {
+        pair: {words[(index + seed) % len(words)]: Fraction((2 * index + seed) % 11 - 5, index % 4 + 1)}
+        for index, pair in enumerate(PAIRS)
+    }
 
 
 def decode(table: Mapping[str, Any]) -> tuple[list[dict[str, object]], list[Fraction], list[dict[int, Fraction]], list[dict[tuple[int, int], Fraction]]]:
@@ -110,12 +117,12 @@ def weyl_identity_defects(table: Mapping[str, Any]) -> dict[str, object]:
 
 def check(value: dict[str, Any]) -> list[str]:
     errors: list[str] = []
-    if value.get("result_state") != "UNIVERSAL_CYLINDER_TABLE_FAST_RECEIVER_READY_GLOBAL_AST_AND_DIFF_IDENTITY_OPEN" or value.get("lifecycle") != "CLASSIFIED":
+    if value.get("result_state") != "UNIVERSAL_CYLINDER_TABLE_AND_DIFF_IDENTITY_CERTIFIED_GLOBAL_AST_OPEN" or value.get("lifecycle") != "CLASSIFIED":
         errors.append("result state/lifecycle drift")
     if value.get("dependency_tags") != ["LOCAL-ALGEBRAIC"]:
         errors.append("dependency tag promotion")
     scope = value.get("scope", {})
-    if scope.get("maximum_total_input_derivative_order") != 4 or scope.get("coefficient_field") != "Q":
+    if scope.get("maximum_total_input_derivative_order") != 4 or scope.get("Diff_identity_validation_metric_jet_order") != 5 or scope.get("coefficient_field") != "Q":
         errors.append("derivative/exactness scope drift")
     if scope.get("action_normalization") != "B_action=-2 B_standard" or "not yet supplied" not in scope.get("globalization_boundary", ""):
         errors.append("normalization or globalization boundary drift")
@@ -169,6 +176,7 @@ def check(value: dict[str, Any]) -> list[str]:
         "row_sha256": {str(tuple(row["output_pair"])): digest(row) for row in rows},
         "universal_table_sha256": digest(table),
         "point_crosschecks_sha256": digest(value.get("exact_checks", {}).get("three_independent_point_evaluator_crosschecks")),
+        "diff_point_crosschecks_sha256": digest(value.get("exact_checks", {}).get("three_independent_fifth_jet_diff_point_crosschecks")),
     }
     if hashes != expected_hashes:
         errors.append("canonical table hashes do not reproduce")
@@ -180,6 +188,13 @@ def check(value: dict[str, Any]) -> list[str]:
     producer_trace = checks.get("universal_weyl_trace_defects", {})
     if producer_trace != {"background": "0", "linear_term_count": 0, "bilinear_term_count": 0}:
         errors.append("producer Weyl trace status promoted or failed")
+    diff_noether = checks.get("universal_diff_noether_defects", {})
+    expected_diff_rows = [
+        {"covector_index": index, "background": "0", "linear_term_count": 0, "bilinear_term_count": 0}
+        for index in range(4)
+    ]
+    if diff_noether.get("coordinate_formula") != "E^ab partial_lambda g_ab - 2 partial_a(E^ab g_lambda_b)=0" or diff_noether.get("required_metric_jet_order") != 5 or diff_noether.get("rows") != expected_diff_rows:
+        errors.append("producer universal Diff Noether status promoted or failed")
     crosschecks = checks.get("three_independent_point_evaluator_crosschecks", [])
     if [(item.get("left_seed"), item.get("right_seed")) for item in crosschecks] != [(1, 2), (3, 4), (5, 6)]:
         errors.append("point-evaluator crosscheck inventory drift")
@@ -194,6 +209,15 @@ def check(value: dict[str, Any]) -> list[str]:
                 errors.append(f"point/compact/swap crosscheck failed for seeds {record['left_seed']},{record['right_seed']}")
     if checks.get("input_swap_symmetry_defect_count") != 0 or checks.get("compact_table_reproduces_unreduced_operator") is not True:
         errors.append("producer symmetry/compact disposition drift")
+    diff_crosschecks = checks.get("three_independent_fifth_jet_diff_point_crosschecks", [])
+    if [(item.get("left_seed"), item.get("right_seed")) for item in diff_crosschecks] != [(1, 2), (3, 4), (5, 6)]:
+        errors.append("fifth-jet Diff point-crosscheck inventory drift")
+    else:
+        for record in diff_crosschecks:
+            defects = polarized_diff_noether_identity(fifth_jet_fixture(record["left_seed"]), fifth_jet_fixture(record["right_seed"]))
+            serialized = [str(defects[index]) for index in range(4)]
+            if any(defects.values()) or record.get("covector_defects") != serialized or record.get("output_sha256") != digest(serialized) or record.get("all_four_rows_zero") is not True:
+                errors.append(f"fifth-jet Diff point crosscheck failed for seeds {record['left_seed']},{record['right_seed']}")
 
     for item in value.get("implementation", {}).values():
         path = ROOT / item.get("path", "")
@@ -204,13 +228,13 @@ def check(value: dict[str, Any]) -> list[str]:
         if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != item.get("sha256"):
             errors.append(f"provenance drift: {item.get('path')}")
     receiver = value.get("independent_receiver", {})
-    if receiver.get("path") != "quantum-weyl/classical_import/check_strict_cylinder_bach_universal_export.py" or receiver.get("cost_class") != "TIER_1_FAST_REPLAY" or len(receiver.get("replays", [])) != 5:
+    if receiver.get("path") != "quantum-weyl/classical_import/check_strict_cylinder_bach_universal_export.py" or receiver.get("cost_class") != "TIER_1_FAST_REPLAY" or len(receiver.get("replays", [])) != 6:
         errors.append("fast independent receiver declaration drift")
     gates = {item.get("gate"): item.get("status") for item in value.get("next_gates", [])}
-    if set(gates) != {"DIFFERENTIATED_DIFF_NOETHER", "HT1B_MODE_ADAPTERS", "TENSOR_NATURAL_GLOBALIZATION", "STRICT_HSTAR_ROW_INTEGRATION"} or any(status != "OPEN" for status in gates.values()):
+    if set(gates) != {"HT1B_MODE_ADAPTERS", "TENSOR_NATURAL_GLOBALIZATION", "STRICT_HSTAR_PORTABLE_INTEGRATION"} or any(status != "OPEN" for status in gates.values()):
         errors.append("next-gate inventory/status drift")
     flags = value.get("claim_flags", {})
-    if flags.get("UNIVERSAL_BASEPOINT_METRIC_HESSIAN_TABLE_EXPORTED") is not True or flags.get("EXHAUSTIVE_INPUT_SWAP_AND_WEYL_TRACE_REPLAYED") is not True or flags.get("FAST_INDEPENDENT_TABLE_RECEIVER_IMPLEMENTED") is not True or any(flags.get(flag) is not False for flag in FALSE_FLAGS):
+    if flags.get("UNIVERSAL_BASEPOINT_METRIC_HESSIAN_TABLE_EXPORTED") is not True or flags.get("EXHAUSTIVE_INPUT_SWAP_AND_WEYL_TRACE_REPLAYED") is not True or flags.get("FAST_INDEPENDENT_TABLE_RECEIVER_IMPLEMENTED") is not True or flags.get("DIFFERENTIATED_DIFF_NOETHER_REPLAYED") is not True or any(flags.get(flag) is not False for flag in FALSE_FLAGS):
         errors.append("claim boundary flag promoted")
     return errors
 
@@ -225,7 +249,7 @@ def main() -> int:
     else:
         counts = value["universal_table"]["counts"]
         print(f"  - {counts['input_basis']} inputs, {counts['symmetric_bilinear_terms']} exact symmetric coefficients, 10 outputs")
-        print("  - fast hashes, full Weyl identity and 3 point-evaluator comparisons replayed")
+        print("  - fast hashes, full Weyl identity, fifth-jet Diff probes and point comparisons replayed")
     return bool(errors)
 
 

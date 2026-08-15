@@ -123,7 +123,7 @@ def build() -> dict[str, Any]:
     for value, (_, result_id, _) in zip((universal, partial, exported, imported, normalization), INPUTS):
         if value.get("result_id", value.get("schema")) != result_id:
             raise ValueError(f"provenance result drift: {result_id}")
-    if universal.get("result_state") != "UNIVERSAL_CYLINDER_TABLE_FAST_RECEIVER_READY_GLOBAL_AST_AND_DIFF_IDENTITY_OPEN":
+    if universal.get("result_state") != "UNIVERSAL_CYLINDER_TABLE_AND_DIFF_IDENTITY_CERTIFIED_GLOBAL_AST_OPEN":
         raise ValueError("universal table boundary drift")
     if partial.get("claim_flags", {}).get("SIXTH_METRIC_ANTIFIELD_ROW_PORTABLE") is not False:
         raise ValueError("partial q2 boundary was silently promoted")
@@ -225,7 +225,7 @@ def build() -> dict[str, Any]:
     gates = [
         {"gate": "HSTAR_BASEPOINT_DIAGONAL_ASSEMBLY", "status": "PASS", "evidence": "all three source-fixed terms are serialized; the exact Hessian factor 1/2 and cotangent signs are replayed"},
         {"gate": "TENSOR_NATURAL_GLOBALIZATION", "status": "OPEN", "evidence": "the K term remains a one-frame component table without an SO(4)-isotropy/coordinate-change certificate"},
-        {"gate": "DIFFERENTIATED_DIFF_NOETHER", "status": "OPEN", "evidence": "the fifth-jet divergence cancellation has not been independently replayed"},
+        {"gate": "DIFFERENTIATED_DIFF_NOETHER", "status": "PASS", "evidence": "all four background, unary and quadratic fifth-jet coordinate rows cancel in the universal engine and three independent point probes"},
         {"gate": "SUSPENDED_GRADED_POLARIZATION", "status": "OPEN", "evidence": "this artifact fixes the diagonal Taylor row, not the repository suspended bilinear sign convention"},
         {"gate": "SIX_ROW_INTERACTION_IDENTITIES", "status": "OPEN", "evidence": "q1q2=0, Koszul symmetry, D derivation and BV cyclicity await a portable six-row payload"},
     ]
@@ -233,7 +233,7 @@ def build() -> dict[str, Any]:
         "schema": "strict-cylinder-hstar-basepoint-row-v1",
         "result_id": "STRICT_CYLINDER_HSTAR_BASEPOINT_ROW_V1",
         "result_kind": "EXACT_HOMOGENEOUS_BASEPOINT_DIAGONAL_TAYLOR_ROW_ASSEMBLY",
-        "result_state": "HSTAR_BASEPOINT_ROW_ASSEMBLED_PORTABLE_GLOBALIZATION_AND_INTERACTION_IDENTITIES_OPEN",
+        "result_state": "HSTAR_BASEPOINT_ROW_AND_DIFF_IDENTITY_ASSEMBLED_PORTABLE_GLOBALIZATION_AND_POLARIZATION_OPEN",
         "lifecycle": "CLASSIFIED",
         "created": "2026-08-15",
         "repository_base_commit": "1b4b9350",
@@ -275,7 +275,7 @@ def build() -> dict[str, Any]:
             "METRIC_ANTIFIELD_DIFF_COTANGENT_TERM_CERTIFIED": True,
             "METRIC_ANTIFIELD_WEYL_COTANGENT_TERM_CERTIFIED": True,
             "PORTABLE_TENSOR_NATURAL_HSTAR_ROW": False,
-            "DIFFERENTIATED_DIFF_NOETHER_REPLAYED": False,
+            "DIFFERENTIATED_DIFF_NOETHER_REPLAYED": True,
             "SUSPENDED_GRADED_POLARIZATION_REPLAYED": False,
             "STRICT_SUPPORT_LOCAL_Q2_COMPLETE": False,
             "CLASSICAL_IMPORT_GATE_PASSED": False,
@@ -284,13 +284,12 @@ def build() -> dict[str, Any]:
         },
         "missing_object_ledger": [
             {"object": "SO(4)-isotropy-covariant globalization of K", "status": "MISSING", "blocks": "portable h-star row"},
-            {"object": "differentiated Diff Noether identity through total jet order five", "status": "MISSING", "blocks": "coordinate-independence and q1q2 interaction replay"},
             {"object": "suspended graded bilinear polarization of all six rows", "status": "MISSING", "blocks": "Koszul symmetry and complete q2 receiver"},
             {"object": "full local D action and common BV pairing replay", "status": "MISSING", "blocks": "D derivation, cyclicity and Gate A"},
         ],
         "does_not_establish": [
             "a coordinate-independent or SO(4)-isotropy-covariant globalization of the metric Hessian table",
-            "the differentiated diffeomorphism Noether identity or complete arity-two master identity",
+            "the complete arity-two master identity beyond the now-certified differentiated Diff Noether row",
             "the repository suspended graded bilinear q2 or its Koszul symmetry",
             "a portable complete six-row support-local q2 or complete local D action",
             "BV cyclicity on a common support-local pairing or a passed classical import Gate A",
@@ -341,7 +340,9 @@ metric gauge master terms, including the density-divergence contribution.
 
 This is real progress past a missing-row placeholder, but it is deliberately a
 **basepoint assembly**, not a portable six-row `q2`: the large `K` table still
-needs tensor-natural globalization and the differentiated Diff identity.
+needs tensor-natural globalization and suspended graded polarization. The
+separate universal fifth-jet calculation now certifies all four differentiated
+Diff Noether rows exactly.
 
 ## Three components
 
