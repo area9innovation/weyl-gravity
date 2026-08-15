@@ -18030,24 +18030,24 @@
     ]
   },
   "completion_atlas": {
-    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v7",
-    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V7",
+    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v8",
+    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V8",
     "result_kind": "BRANCH_BY_STAGE_COMPLETION_ATLAS",
     "lifecycle": "CLASSIFIED",
     "created": "2026-08-15",
-    "repository_base_commit": "7066e14d17bb37e6ad8dacdc10726dbb830ebec4",
+    "repository_base_commit": "2d92392e9840eed7a2da81551a25e33d7f0815d1",
     "dependency_tags": [
       "LOCAL-ALGEBRAIC",
       "EUCLIDEAN-SPECTRAL",
       "REDUCED-MODE",
       "LORENTZIAN-CAUSAL"
     ],
-    "question": "After fixing the suspension convention, can the full strict 386-row carrier and pairing be serialized componentwise, and which exact operator bytes now block Gate A?",
-    "answer": "Yes. Atlas V7 imports an explicit hybrid Gate basis with 386 unique component rows: thirty Gate-canonical endpoint rows, thirty-six ordered generalized-auxiliary doublet rows and all 320 split curvature mapping-cylinder cone/cotangent rows. The algebraic complement is therefore concretely 356=36+320 rather than only a projector rank. The odd pairing is a complete exact rational table with 410 ordered nonzero entries and rank 386: 30 endpoint, 60 auxiliary-complement and 320 cone-complement entries. Every entry has total degree one and the reverse coefficient is its negative. The full T, T^sharp_G and R diagonals are serialized on those same row indices; T^T Omega=Omega T^sharp_G and R=T^sharp_G T replay componentwise with the certified 381/5, 381/5 and 376/10 sign counts. V7 also corrects a coordinate label: the earlier count 54 describes the endpoint DeWitt/ghost pairing before Gate pullback, whereas the Gate-coordinate endpoint pairing has 30 entries; the suspension algebra is unchanged. Gate A remains fail closed because the full prolonged q1, H_alg, endpoint inclusion/projection and advanced/retarded Green operator coefficient tables are still represented by formal block identities and hashes rather than one portable component snapshot. Thus not every component operator adjoint or homotopy identity has been independently replayed. Local D, q2, Hadamard, Ward, positivity, renormalized products, QME and residual transfer remain open.",
+    "question": "Which mathematically typed portable artifacts are actually missing after the strict 386-row basis and pairing were serialized, and how should the completion route be split without mistaking a nonlocal Green map for a finite local coefficient table?",
+    "answer": "Atlas V8 replaces the single vague all-operator serialization task by three nonconflated portability contracts. A finite-order local differential operator needs a sparse component jet table; an algebraic inclusion, projection or contracting homotopy needs a finite sparse component map; an advanced or retarded Green operator needs a represented nonlocal action, convergent operator name or distribution kernel on declared topological source and target spaces. The thirty-row endpoint q1 already satisfies the first contract through 80 exact arrow tables, 619 common nonzero coefficients and 700 checked Bach columns. The full 386-row q1 is coefficientwise complete in its exact producers, and H_alg, P_alg, P_end, i_end and p_end are executable and hashed, but their receiver-readable all-row tables are absent. The endpoint and full Green homotopies remain theorem-level causally certified: V8 does not revoke their support, homotopy or adjoint transfer. What is absent is a receiver-executable nonlocal action or kernel, so demanding a finite Green jet table would be a category error. The resulting route is now operational: serialize full q1; serialize the local SDR maps; specify and import a portable endpoint Green action; then assemble and replay the full action. The finite serialization work has a PRA upper bound and adds no infinite choice operation. The weakest foundation for the analytic Green theorem is not established and no Choice principle is inferred from physics. Gate A, local D, q2, Hadamard, Ward, positivity, renormalized products, QME and residual transfer remain fail closed.",
     "predecessor": {
-      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V6",
-      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V6.json",
-      "sha256": "b7fcd520462bd32753eebac0ea1852c2e00bc27d08a44d460b4b19f9281bf825",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V7",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V7.json",
+      "sha256": "0151f9d2401b7a09e89487a83caff708cae86604d797c26150d1e6fda2b7cc64",
       "preserved": true
     },
     "status_vocabulary": [
@@ -18155,14 +18155,15 @@
           {
             "stage": "S0_CLASSICAL_AUTHORITY",
             "status": "FAIL_CLOSED",
-            "statement": "The common endpoint q1, suspension character and full 386-row hybrid component basis/pairing are now exact. The basis has 30 endpoint, 36 generalized-auxiliary and 320 mapping-cylinder rows; its rank-386 odd pairing has 410 ordered rational entries.",
+            "statement": "The 386-row basis and pairing are portable, and endpoint q1 has receiver-readable exact component bytes. Full q1 and the local SDR are exact in producers but not serialized as stable all-row receiver objects.",
             "evidence": [
               "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
               "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
               "STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1",
-              "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1"
+              "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+              "STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1"
             ],
-            "boundary": "Gate A still lacks full prolonged q1, H_alg, endpoint inclusion/projection and Green operator component tables, one common accepted operator snapshot hash, local D, q2 and the full residual extension."
+            "boundary": "Gate A still lacks portable full-q1 and local-SDR component maps, a portable endpoint/full Green action, all-row identity replay, one accepted operator snapshot hash, local D, q2 and the full residual extension."
           },
           {
             "stage": "S1_OFF_SHELL_BV",
@@ -18176,13 +18177,14 @@
           {
             "stage": "S2_CAUSAL_GREEN",
             "status": "SCOPED_CERTIFIED",
-            "statement": "The projector-level suspended Green adjoint remains certified, and T^T Omega=Omega T^sharp now replays on all 410 serialized pairing entries. The full Green operators themselves are not component coefficient tables in this basis.",
+            "statement": "The causal Green-homotopy existence and support/adjoint transfer remain certified. Green maps are nonlocal analytic objects: the missing portable artifact is an action, convergent name or distribution kernel on declared represented spaces, not a finite jet table.",
             "evidence": [
               "pure-weyl-full-prolonged-green-homotopy-assembly-v1",
               "STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1",
-              "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1"
+              "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+              "STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1"
             ],
-            "boundary": "A component-by-component q1/projector/Green adjoint and homotopy replay awaits portable operator coefficient tables; q2 and D are not established."
+            "boundary": "No receiver-executable endpoint or full advanced/retarded action is serialized, so component action, homotopy and suspended-adjoint replay remain open; q2 and D are not established."
           },
           {
             "stage": "S3_NONLINEAR_CARTAN",
@@ -18250,7 +18252,7 @@
           }
         ],
         "first_unclosed_gate": "S0_CLASSICAL_AUTHORITY",
-        "next_decisive_object": "Serialize full prolonged q1, H_alg, endpoint inclusion/projection and advanced/retarded Green coefficient tables in the fixed 386-row hybrid basis, then independently replay every component adjoint and homotopy identity."
+        "next_decisive_object": "Emit one canonical full-q1 finite component jet table on the fixed 386-row basis and independently replay q1 squared and pairing adjointness; then serialize the local SDR maps under their separate contract."
       },
       {
         "id": "PURE_WEYL_BACH_FLAT_RANK310",
@@ -18855,8 +18857,8 @@
       "theory_identity_front": {
         "branch": "STRICT_PURE_WEYL_386",
         "first_gate": "S0_CLASSICAL_AUTHORITY",
-        "current_fact": "The common endpoint q1, suspension character, all 386 hybrid row names and the rank-386 odd pairing are exact; T adjointness replays on all 410 pairing entries.",
-        "best_next_object": "Portable component coefficient tables for full prolonged q1, H_alg, endpoint inclusion/projection and both Green operators, followed by an independent all-row replay."
+        "current_fact": "Endpoint q1, all 386 row names and the exact pairing are portable. Full q1/local SDR are exact but producer-bound; Green existence is certified but its nonlocal action is not portable.",
+        "best_next_object": "A canonical receiver-readable full-q1 component jet table, followed by exact local SDR component maps and a separately represented endpoint Green action."
       },
       "analytic_maturity_front": {
         "branch": "BERGER_POSITIVE_CLOCK_54",
@@ -18998,80 +19000,125 @@
     "route_selection": [
       {
         "rank": 1,
-        "route": "STRICT_386_OPERATOR_COMPONENT_SERIALIZATION",
+        "route": "STRICT_386_FULL_Q1_JET_TABLE",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
-        "tractability": "MEDIUM",
+        "tractability": "HIGH",
         "dependency_depth": "LOW",
-        "recommendation": "Emit q1, H_alg, endpoint inclusion/projection and both Green operators on the fixed 386-row basis and replay every component identity."
+        "recommendation": "Emit the already computed endpoint, auxiliary and mapping-cylinder q1 blocks as one canonical sparse 386-row jet table and independently replay q1 squared and pairing adjointness."
       },
       {
         "rank": 2,
+        "route": "STRICT_386_LOCAL_SDR_COMPONENT_MAPS",
+        "branch": "STRICT_PURE_WEYL_386",
+        "scientific_leverage": "HIGH",
+        "tractability": "HIGH",
+        "dependency_depth": "LOW",
+        "recommendation": "Serialize H_alg, P_alg, P_end, i_end and p_end from the exact producers and replay the support-local SDR and cyclic identities without rerunning those producers."
+      },
+      {
+        "rank": 3,
+        "route": "STRICT_ENDPOINT_ANALYTIC_GREEN_ACTION",
+        "branch": "STRICT_PURE_WEYL_386",
+        "scientific_leverage": "VERY_HIGH",
+        "tractability": "LOW",
+        "dependency_depth": "MEDIUM",
+        "recommendation": "Declare represented test and distribution spaces and import an advanced/retarded endpoint action or kernel with topology, continuity, uniqueness, support and adjoint data."
+      },
+      {
+        "rank": 4,
+        "route": "STRICT_FULL_GREEN_COMPONENT_ACTION_REPLAY",
+        "branch": "STRICT_PURE_WEYL_386",
+        "scientific_leverage": "HIGH",
+        "tractability": "LOW",
+        "dependency_depth": "HIGH",
+        "recommendation": "Compose the portable endpoint Green action with the local SDR maps and replay full homotopy, causal support and suspended adjointness on the fixed carrier."
+      },
+      {
+        "rank": 5,
         "route": "STRICT_386_LOCAL_D",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "LOW",
         "dependency_depth": "MEDIUM",
-        "recommendation": "Serialize cylinder-time D on the accepted operator carrier and verify its q1 commutator before nonlinear transfer."
+        "recommendation": "Serialize cylinder-time D on the accepted operator carrier and verify its q1 commutator only after the unary carrier artifacts share one digest."
       },
       {
-        "rank": 3,
+        "rank": 6,
         "route": "STRICT_386_Q2_GREEN_COMPATIBILITY",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "HIGH",
         "tractability": "LOW",
         "dependency_depth": "HIGH",
-        "recommendation": "Bind target-action q2 to the same paired D-equivariant causal carrier and test contraction compatibility."
+        "recommendation": "Bind target-action q2 to the same paired D-equivariant causal carrier and test contraction compatibility after the complete unary action replay."
       },
       {
-        "rank": 4,
+        "rank": 7,
         "route": "DIRECT_SPACETIME_Q26_HADAMARD",
         "branch": "BERGER_POSITIVE_CLOCK_54",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "LOW",
         "dependency_depth": "MEDIUM",
-        "recommendation": "Retain the analytically mature parallel route through direct nonstationary q26-equivariant distributional selection."
+        "recommendation": "Retain the analytically mature independent route through direct nonstationary q26-equivariant distributional selection."
       },
       {
-        "rank": 5,
+        "rank": 8,
         "route": "BACH_FLAT_NONLINEAR_CARTAN",
         "branch": "PURE_WEYL_BACH_FLAT_RANK310",
         "scientific_leverage": "HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "MEDIUM",
-        "recommendation": "Use the broad curved strict causal branch as the independent nonlinear compatibility control."
+        "recommendation": "Use the broad curved strict causal branch as an independent nonlinear compatibility control while the target-theory portability route advances."
       }
     ],
     "research_queue": [
       {
         "priority": 1,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "all-row operator component serialization",
-        "why": "The basis and pairing are exact; portable q1/projector/Green bytes are the smallest remaining same-carrier object."
+        "object": "STRICT_386_FULL_Q1_JET_TABLE",
+        "why": "Emit the already computed endpoint, auxiliary and mapping-cylinder q1 blocks as one canonical sparse 386-row jet table and independently replay q1 squared and pairing adjointness."
       },
       {
         "priority": 2,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "same-carrier local D",
-        "why": "D equivariance is the next admission gate after component operator replay."
+        "object": "STRICT_386_LOCAL_SDR_COMPONENT_MAPS",
+        "why": "Serialize H_alg, P_alg, P_end, i_end and p_end from the exact producers and replay the support-local SDR and cyclic identities without rerunning those producers."
       },
       {
         "priority": 3,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "same-carrier q2/Green compatibility",
-        "why": "This is the first nonlinear target-theory test after the complete unary carrier."
+        "object": "STRICT_ENDPOINT_ANALYTIC_GREEN_ACTION",
+        "why": "Declare represented test and distribution spaces and import an advanced/retarded endpoint action or kernel with topology, continuity, uniqueness, support and adjoint data."
       },
       {
         "priority": 4,
-        "branch": "BERGER_POSITIVE_CLOCK_54",
-        "object": "direct spacetime q26-equivariant nonstationary Hadamard selection",
-        "why": "Berger remains the shortest independent route toward a full-carrier Hadamard/Ward result."
+        "branch": "STRICT_PURE_WEYL_386",
+        "object": "STRICT_FULL_GREEN_COMPONENT_ACTION_REPLAY",
+        "why": "Compose the portable endpoint Green action with the local SDR maps and replay full homotopy, causal support and suspended adjointness on the fixed carrier."
       },
       {
         "priority": 5,
+        "branch": "STRICT_PURE_WEYL_386",
+        "object": "STRICT_386_LOCAL_D",
+        "why": "Serialize cylinder-time D on the accepted operator carrier and verify its q1 commutator only after the unary carrier artifacts share one digest."
+      },
+      {
+        "priority": 6,
+        "branch": "STRICT_PURE_WEYL_386",
+        "object": "STRICT_386_Q2_GREEN_COMPATIBILITY",
+        "why": "Bind target-action q2 to the same paired D-equivariant causal carrier and test contraction compatibility after the complete unary action replay."
+      },
+      {
+        "priority": 7,
+        "branch": "BERGER_POSITIVE_CLOCK_54",
+        "object": "DIRECT_SPACETIME_Q26_HADAMARD",
+        "why": "Retain the analytically mature independent route through direct nonstationary q26-equivariant distributional selection."
+      },
+      {
+        "priority": 8,
         "branch": "PURE_WEYL_BACH_FLAT_RANK310",
-        "object": "same-carrier nonlinear cyclic D-Cartan transfer",
-        "why": "It tests nonlinear survival on the broadest curved strict causal control."
+        "object": "BACH_FLAT_NONLINEAR_CARTAN",
+        "why": "Use the broad curved strict causal branch as an independent nonlinear compatibility control while the target-theory portability route advances."
       }
     ],
     "provenance": {
@@ -19300,6 +19347,16 @@
           "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
           "sha256": "e760565a08c4b551551ebff8ec5cdac26beb7715e976fe8612407278ee315303",
           "role": "exact 386-row component basis and pairing serialization"
+        },
+        {
+          "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V7.json",
+          "sha256": "0151f9d2401b7a09e89487a83caff708cae86604d797c26150d1e6fda2b7cc64",
+          "role": "immutable V7 atlas predecessor"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1.json",
+          "sha256": "50c3a41250cad38ea49a8815da664a9b5608f568ab200f3489318a2d5b1117ad",
+          "role": "typed local/nonlocal strict-operator portability audit"
         }
       ]
     },
@@ -19336,7 +19393,15 @@
       "v6_preserved": true,
       "strict_386_component_basis_serialized": true,
       "strict_386_componentwise_t_adjoint_replayed": true,
-      "strict_386_all_operator_component_adjoints_replayed": false
+      "strict_386_all_operator_component_adjoints_replayed": false,
+      "v7_preserved": true,
+      "strict_386_operator_portability_types_classified": true,
+      "strict_endpoint_q1_portable_component_bytes": true,
+      "strict_causal_green_homotopy_theorem_preserved": true,
+      "strict_full_386_q1_portable_component_bytes": false,
+      "strict_full_386_local_sdr_portable_component_bytes": false,
+      "strict_endpoint_green_portable_action_serialized": false,
+      "strict_full_green_portable_action_serialized": false
     },
     "does_not_establish": [
       "a passed strict pure-Weyl classical import gate",
@@ -19361,27 +19426,35 @@
       "local D or q2 compatibility on the common causal carrier",
       "portable full prolonged q1, H_alg, endpoint inclusion/projection or Green operator component tables",
       "an independent component-by-component replay of every operator adjoint and homotopy identity",
-      "one accepted common Gate-A operator hash, local D, q2, Hadamard, QME or Lorentzian quantum theory"
+      "one accepted common Gate-A operator hash, local D, q2, Hadamard, QME or Lorentzian quantum theory",
+      "portable full q1, H_alg, projector, inclusion or projection component tables",
+      "a receiver-executable endpoint or full advanced/retarded Green action or distribution kernel",
+      "that the existing causal Green-homotopy theorem is false or incomplete as an existence theorem",
+      "componentwise replay of every homotopy, projector and suspended-adjoint identity",
+      "the weakest foundational base for the imported analytic Green theorem",
+      "a passed Gate A, local D, q2 compatibility, Hadamard state, Ward theorem, QME restoration or Lorentzian quantum theory"
     ],
     "independent_checker": {
-      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v7.py",
+      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v8.py",
       "checks": [
-        "V6 preservation",
+        "V7 preservation",
         "77-cell closure",
-        "386=30+36+320 row projection",
-        "410-entry rank-386 pairing projection",
-        "54-to-30 coordinate terminology repair",
-        "componentwise suspension replay",
-        "operator-byte and Gate-A firewalls",
-        "route ranking",
+        "three typed portability contracts",
+        "six-family operator inventory",
+        "endpoint q1 exact-count projection",
+        "local/nonlocal firewall",
+        "causal theorem preservation",
+        "Gate-A/D/q2/quantum firewalls",
+        "eight-route ranking",
+        "append-only provenance",
         "content hashes",
         "canonical digest"
       ],
-      "expected_digest": "49d59eb717622b2c887d2cc9636e31b8c589fe5ad6cdf4d1ba58fedbeebc45a9"
+      "expected_digest": "33321e33761067a0b3c94c9834d8f5c09f2a0435f44d78ef0c8c5606e376bdf3"
     },
-    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v7.md",
+    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v8.md",
     "strict_gate_a_progress": {
-      "status": "FULL_COMPONENT_BASIS_PAIRING_AND_SUSPENSION_SERIALIZED_OPERATOR_TABLES_D_Q2_OPEN",
+      "status": "ENDPOINT_Q1_PORTABLE_FULL_LOCAL_AND_ANALYTIC_ACTION_ARTIFACTS_OPEN",
       "evidence": [
         "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
         "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
@@ -19432,8 +19505,8 @@
           "q2_omegastar_hhstar__reverse"
         ]
       },
-      "remaining_common_carrier": "Serialize the full prolonged q1, H_alg, endpoint inclusion/projection and advanced/retarded Green coefficient tables in this exact 386-row hybrid basis, then independently replay every component adjoint and homotopy identity before introducing local D or q2.",
-      "boundary": "The component basis and pairing are closed. Gate A still requires portable all-row operator tables, component adjoint/homotopy replay, common hashes, local D, q2 and residual-SDR extension.",
+      "remaining_common_carrier": "Emit one canonical full-q1 finite component jet table on the fixed 386-row basis from the existing generalized-auxiliary, curvature-cylinder and endpoint producers. Independently reconstruct q1 and replay q1 squared and pairing adjointness before serializing the local SDR maps. Treat Lambda_plus/minus under the separate ANALYTIC_GREEN_ACTION contract.",
+      "boundary": "Endpoint q1 is portable. Full q1/local SDR tables, endpoint/full nonlocal Green actions, all-row replay, common hashes, local D, q2 and residual-SDR extension remain open.",
       "endpoint_q1_control": {
         "dimension": 30,
         "arrow_tables_matching": 80,
@@ -19459,6 +19532,33 @@
         "pairing_rank": 386,
         "T_negative": 5,
         "R_negative": 10
+      },
+      "operator_portability_control": {
+        "result_id": "STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1",
+        "status": "LOCAL_OPERATOR_SERIALIZATION_TRACTABLE_GREEN_ACTION_REPRESENTATION_OPEN",
+        "contracts": [
+          "FINITE_COMPONENT_JET_TABLE",
+          "FINITE_SPARSE_COMPONENT_MAP",
+          "ANALYTIC_GREEN_ACTION"
+        ],
+        "operator_families_classified": 6,
+        "status_counts": {
+          "EXACT_EXECUTABLE_AND_HASHED_RECEIVER_TABLE_ABSENT": 2,
+          "PORTABLE_COMPONENT_BYTES": 1,
+          "PRODUCER_COEFFICIENTWISE_COMPLETE_RECEIVER_TABLE_ABSENT": 1,
+          "THEOREM_CHARACTERIZED_PORTABLE_ACTION_ABSENT": 2
+        },
+        "endpoint_q1_arrow_tables": 80,
+        "endpoint_q1_nonzero_coefficients": 619,
+        "endpoint_q1_bach_columns": 700,
+        "full_q1_portable": false,
+        "local_sdr_portable": false,
+        "endpoint_green_action_portable": false,
+        "full_green_action_portable": false,
+        "causal_green_theorem_preserved": true,
+        "finite_local_upper_bound": "PRA",
+        "analytic_green_weakest_base": "NOT_ESTABLISHED",
+        "next_gate": "Emit one canonical full-q1 finite component jet table on the fixed 386-row basis from the existing generalized-auxiliary, curvature-cylinder and endpoint producers. Independently reconstruct q1 and replay q1 squared and pairing adjointness before serializing the local SDR maps. Treat Lambda_plus/minus under the separate ANALYTIC_GREEN_ACTION contract."
       }
     },
     "strict_causal_sign_transport": {
@@ -19524,6 +19624,33 @@
       "all_operator_component_adjoints_replayed": false,
       "finite_serialization_base": "PRA",
       "next_gate": "Serialize the full prolonged q1, H_alg, endpoint inclusion/projection and advanced/retarded Green coefficient tables in this exact 386-row hybrid basis, then independently replay every component adjoint and homotopy identity before introducing local D or q2."
+    },
+    "strict_operator_portability": {
+      "result_id": "STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1",
+      "status": "LOCAL_OPERATOR_SERIALIZATION_TRACTABLE_GREEN_ACTION_REPRESENTATION_OPEN",
+      "contracts": [
+        "FINITE_COMPONENT_JET_TABLE",
+        "FINITE_SPARSE_COMPONENT_MAP",
+        "ANALYTIC_GREEN_ACTION"
+      ],
+      "operator_families_classified": 6,
+      "status_counts": {
+        "EXACT_EXECUTABLE_AND_HASHED_RECEIVER_TABLE_ABSENT": 2,
+        "PORTABLE_COMPONENT_BYTES": 1,
+        "PRODUCER_COEFFICIENTWISE_COMPLETE_RECEIVER_TABLE_ABSENT": 1,
+        "THEOREM_CHARACTERIZED_PORTABLE_ACTION_ABSENT": 2
+      },
+      "endpoint_q1_arrow_tables": 80,
+      "endpoint_q1_nonzero_coefficients": 619,
+      "endpoint_q1_bach_columns": 700,
+      "full_q1_portable": false,
+      "local_sdr_portable": false,
+      "endpoint_green_action_portable": false,
+      "full_green_action_portable": false,
+      "causal_green_theorem_preserved": true,
+      "finite_local_upper_bound": "PRA",
+      "analytic_green_weakest_base": "NOT_ESTABLISHED",
+      "next_gate": "Emit one canonical full-q1 finite component jet table on the fixed 386-row basis from the existing generalized-auxiliary, curvature-cylinder and endpoint producers. Independently reconstruct q1 and replay q1 squared and pairing adjointness before serializing the local SDR maps. Treat Lambda_plus/minus under the separate ANALYTIC_GREEN_ACTION contract."
     }
   },
   "cross_cell_interfaces": [
@@ -19693,8 +19820,8 @@
     "ground_state_dynamics_interface_report": "sources/foundations/reports/krein-fock-ground-state-dynamics-interface.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md",
-    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V7.json",
-    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v7.md",
+    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V8.json",
+    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v8.md",
     "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V5_RECONCILIATION.json",
     "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V5.md",
     "completion_sdr": "sources/quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json",
@@ -19708,7 +19835,9 @@
     "completion_suspension": "sources/quantum-weyl/classical_import/certificates/STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1.json",
     "completion_suspension_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1.md",
     "completion_component_pairing": "sources/quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
-    "completion_component_pairing_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.md"
+    "completion_component_pairing_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.md",
+    "completion_operator_portability": "sources/quantum-weyl/classical_import/certificates/STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1.json",
+    "completion_operator_portability_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1.md"
   },
-  "canonical_digest": "c83ff6cddba8d587b4e647c7c533bb9fc5d020dcea27c1b23ad59f96bcd2dcad"
+  "canonical_digest": "f5a71b20e426c309d8c0ed291bb7967f69be1b5aeea57d5bf3d4ce579d71c7df"
 }

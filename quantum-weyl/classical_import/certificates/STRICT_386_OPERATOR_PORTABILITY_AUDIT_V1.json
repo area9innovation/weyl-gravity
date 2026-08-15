@@ -1,0 +1,367 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "strict-386-operator-portability-audit-v1",
+  "result_id": "STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1",
+  "result_kind": "TYPED_OPERATOR_SERIALIZATION_AND_ANALYTIC_PORTABILITY_AUDIT",
+  "result_state": "LOCAL_OPERATOR_SERIALIZATION_TRACTABLE_GREEN_ACTION_REPRESENTATION_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "2d92392e9840eed7a2da81551a25e33d7f0815d1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "What must be serialized for independent replay of every strict 386-row unary operator, and which current authorities already provide portable bytes rather than formulas or producer hashes?",
+  "answer": "The operator gate must split by mathematical type. The endpoint q1 is already a portable finite jet table. The full q1, H_alg, projectors, inclusion and projection are exact and executable in current producers, but only their formulas, summaries and hashes cross the certificate boundary; they need finite sparse component or jet tables. Advanced and retarded Green homotopies are nonlocal analytic maps. The current causal theorem and its support/adjoint transfer remain valid, but no receiver-executable kernel, convergent name or represented action is serialized. Asking for a finite Green coefficient table is therefore the wrong contract. The next route is: serialize full local q1 first, serialize H_alg/i/p second, then import an analytic endpoint Green action on declared represented spaces and assemble the full action. Gate A, local D, q2, Hadamard and QME remain fail closed.",
+  "carrier": {
+    "basis_result": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+    "basis_digest": "8e29f0f2419d1086969fd1962c62bd5c185bff3772ebd247591bdea5ac2828c4",
+    "pairing_digest": "912aecc758dfd5f0d9de815530a2fe1428442afe874343a08d90673e1f2f6381",
+    "rows": 386,
+    "split": "386=30+36+320"
+  },
+  "portability_contracts": [
+    {
+      "id": "FINITE_COMPONENT_JET_TABLE",
+      "applies_to": "finite-order local differential operators on the fixed component carrier",
+      "required_fields": [
+        "source and target basis digests",
+        "source row, target row and derivative multiindex",
+        "exact rational or declared algebraic coefficient",
+        "maximum differential order and complete multiindex coverage",
+        "formal-adjoint convention and canonical content digest"
+      ],
+      "independent_replay": "The receiver reconstructs the sparse jet matrix and replays composition, nilpotency and adjoint identities without running the producer."
+    },
+    {
+      "id": "FINITE_SPARSE_COMPONENT_MAP",
+      "applies_to": "support-local algebraic maps, inclusions, projections and contracting homotopies",
+      "required_fields": [
+        "source and target basis digests",
+        "source row, target row and exact coefficient or local operator entry",
+        "degree, support-locality and complete row coverage",
+        "canonical content digest"
+      ],
+      "independent_replay": "The receiver reconstructs the map and checks SDR, projector, chain-map and cyclic identities on the serialized entries."
+    },
+    {
+      "id": "ANALYTIC_GREEN_ACTION",
+      "applies_to": "nonlocal advanced or retarded continuous operators",
+      "required_fields": [
+        "represented source and target test/distribution spaces and topology",
+        "receiver-executable action, convergent operator name, or distribution-kernel representation",
+        "advanced or retarded orientation and causal-support theorem",
+        "domain, continuity and uniqueness statement",
+        "pairing convention, adjoint action and homotopy identities",
+        "analytic assumptions, dependency tag and canonical provenance"
+      ],
+      "independent_replay": "A theorem-level formula may prove existence, but component replay requires an imported action or kernel on declared represented spaces; a finite jet table cannot encode a genuinely nonlocal Green map."
+    }
+  ],
+  "operator_inventory": [
+    {
+      "id": "ENDPOINT_Q1_30",
+      "kind": "FINITE_COMPONENT_JET_TABLE",
+      "status": "PORTABLE_COMPONENT_BYTES",
+      "carrier_rows": 30,
+      "evidence": [
+        "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
+        "strict-cylinder-coordinate-to-covariant-symmetric-four-jet-v1"
+      ],
+      "present": {
+        "arrow_tables": 80,
+        "common_nonzero_coefficients": 619,
+        "Bach_columns_checked": 700
+      },
+      "missing": [],
+      "boundary": "This is the thirty-row endpoint only, not the 356-row complement."
+    },
+    {
+      "id": "FULL_Q1_386",
+      "kind": "FINITE_COMPONENT_JET_TABLE",
+      "status": "PRODUCER_COEFFICIENTWISE_COMPLETE_RECEIVER_TABLE_ABSENT",
+      "carrier_rows": 386,
+      "evidence": [
+        "pure-weyl-curvature-mapping-cylinder-substitution-v1",
+        "pure-weyl-support-local-generalized-auxiliary-retract-v1",
+        "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1"
+      ],
+      "present": {
+        "endpoint_rows_portable": 30,
+        "complement_rows_declared": 356,
+        "mapping_block_rows": 16,
+        "attachment_table_multiindices": {
+          "A_equation": 15,
+          "B_identity": 1,
+          "T_state": 35
+        },
+        "prolonged_Q_digest": "a346542a3c3eae6e80bd28b4ad7e707c51e5f3089b5241ba781efd280363fa29",
+        "auxiliary_original_differential_digest": "87934e7cf079f90af089a57665862500467677003eedec7625328c36802c58c4"
+      },
+      "missing": [
+        "one receiver-readable 386-row sparse jet table",
+        "serialized generalized-auxiliary differential entries",
+        "serialized T_state, A_equation, B_identity and formal-adjoint entries",
+        "serialized autonomous curvature differential entries"
+      ],
+      "boundary": "Producer completeness and matrix hashes do not let an independent receiver reconstruct the component operator."
+    },
+    {
+      "id": "H_ALG_AND_PROJECTORS_386",
+      "kind": "FINITE_SPARSE_COMPONENT_MAP",
+      "status": "EXACT_EXECUTABLE_AND_HASHED_RECEIVER_TABLE_ABSENT",
+      "carrier_rows": 386,
+      "evidence": [
+        "pure-weyl-prolonged-hybrid-algebraic-projector-v1",
+        "pure-weyl-support-local-generalized-auxiliary-retract-v1",
+        "pure-weyl-curvature-mapping-cylinder-kernel-v1"
+      ],
+      "present": {
+        "composite_formula": "k=k_cyl+I_cyl k_aux P_cyl",
+        "H_alg_formula": "-k",
+        "auxiliary_H_alg_digest": "5d92f075c527c3d55bba6f4270b79be369c1a99af6f9031a5bdc829d523d24b6",
+        "mapping_homotopy_digest": "eba35a2f5b610a617b1ab10b85d0ab320533268eb46b375bdc302b0ae651390a",
+        "projector_identities_exact": true
+      },
+      "missing": [
+        "386-row H_alg, P_alg and P_end entry tables"
+      ],
+      "boundary": "Exact executable matrices and their hashes are reproduction inputs, not portable receiver bytes."
+    },
+    {
+      "id": "ENDPOINT_INCLUSION_PROJECTION_386_30",
+      "kind": "FINITE_SPARSE_COMPONENT_MAP",
+      "status": "EXACT_EXECUTABLE_AND_HASHED_RECEIVER_TABLE_ABSENT",
+      "carrier_rows": 386,
+      "evidence": [
+        "pure-weyl-prolonged-hybrid-algebraic-projector-v1",
+        "pure-weyl-support-local-generalized-auxiliary-retract-v1",
+        "pure-weyl-curvature-mapping-cylinder-kernel-v1"
+      ],
+      "present": {
+        "inclusion_formula": "I=I_cyl I_aux",
+        "projection_formula": "P=P_aux P_cyl",
+        "auxiliary_inclusion_digest": "a76104bfdac9cc2d5d40908ed64c41ae18a712773e88c48a881d8aa89a5c6f4b",
+        "auxiliary_projection_digest": "39a4a0b56b925415eb99b53cd2398010c25523dcc0c70079d12400c89f3452b7",
+        "mapping_inclusion_digest": "7c79b667069ddb38f9d33cf3fb10dce5f9d05e50e20fb35e5545ac2dc520acfd",
+        "mapping_projection_digest": "136acb94ce478f52fbdb5849506684cb011f93479b2f8423c0e2516156a54170"
+      },
+      "missing": [
+        "386-by-30 inclusion and 30-by-386 projection entry tables"
+      ],
+      "boundary": "The formulas establish the SDR, but the receiver cannot replay i_end^sharp=p_end from hashes alone."
+    },
+    {
+      "id": "ENDPOINT_GREEN_PLUS_MINUS_30",
+      "kind": "ANALYTIC_GREEN_ACTION",
+      "status": "THEOREM_CHARACTERIZED_PORTABLE_ACTION_ABSENT",
+      "carrier_rows": 30,
+      "evidence": [
+        "pure-weyl-adjoint-tractor-green-transfer-v1",
+        "adjoint-tractor-bgg-curved-pbw-v1",
+        "pure-weyl-full-prolonged-green-homotopy-assembly-v1"
+      ],
+      "present": {
+        "tracefree_transfer_formula": "Lambda_end,+/-=p Lambda_parent,+/- i",
+        "tracefree_causal_green_homotopy": true,
+        "curved_BGG_keys_exact": true,
+        "parent_green_homotopy_transferred_in_PBW_file": false,
+        "endpoint_assembly_formula": "Lambda_end,+/-=U (Lambda_TF,+/- direct-sum h_tr) U^-1"
+      },
+      "missing": [
+        "represented endpoint source and target spaces",
+        "receiver-executable advanced and retarded action or kernel",
+        "component action ledger for adjoint and homotopy replay"
+      ],
+      "boundary": "The causal transfer theorem remains valid; this audit records only that its operator action is not a portable component artifact."
+    },
+    {
+      "id": "FULL_GREEN_PLUS_MINUS_386",
+      "kind": "ANALYTIC_GREEN_ACTION",
+      "status": "THEOREM_CHARACTERIZED_PORTABLE_ACTION_ABSENT",
+      "carrier_rows": 386,
+      "evidence": [
+        "pure-weyl-full-prolonged-green-homotopy-assembly-v1",
+        "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1"
+      ],
+      "present": {
+        "causal_green_homotopy_theorem": true,
+        "assembly_formula": "Lambda_full,+/-=H_alg+i_end Lambda_end,+/- p_end",
+        "homotopy_identity_exact_conditionally": true,
+        "graded_adjoint_exact_conditionally": true,
+        "projector_level_suspended_adjoint_replayed": true
+      },
+      "missing": [
+        "portable endpoint Green action",
+        "portable H_alg, inclusion and projection tables",
+        "receiver-executable full advanced and retarded action or kernel",
+        "componentwise full homotopy and suspended-adjoint replay"
+      ],
+      "boundary": "Formal composition and support transfer certify the theorem but are not a serialized nonlocal operator action."
+    }
+  ],
+  "status_counts": {
+    "EXACT_EXECUTABLE_AND_HASHED_RECEIVER_TABLE_ABSENT": 2,
+    "PORTABLE_COMPONENT_BYTES": 1,
+    "PRODUCER_COEFFICIENTWISE_COMPLETE_RECEIVER_TABLE_ABSENT": 1,
+    "THEOREM_CHARACTERIZED_PORTABLE_ACTION_ABSENT": 2
+  },
+  "route_split": [
+    {
+      "rank": 1,
+      "route": "STRICT_386_FULL_Q1_JET_TABLE",
+      "kind": "FINITE_COMPONENT_JET_TABLE",
+      "reason": "Every source calculation exists; the receiver table and common digest are the missing objects."
+    },
+    {
+      "rank": 2,
+      "route": "STRICT_386_LOCAL_SDR_COMPONENT_MAPS",
+      "kind": "FINITE_SPARSE_COMPONENT_MAP",
+      "reason": "H_alg, P_alg, P_end, i_end and p_end are exact executable local maps and can be emitted without solving a new PDE."
+    },
+    {
+      "rank": 3,
+      "route": "STRICT_ENDPOINT_ANALYTIC_GREEN_ACTION",
+      "kind": "ANALYTIC_GREEN_ACTION",
+      "reason": "The theorem exists, but portability requires represented spaces and an action/kernel object rather than another finite matrix."
+    },
+    {
+      "rank": 4,
+      "route": "STRICT_FULL_GREEN_COMPONENT_ACTION_REPLAY",
+      "kind": "ANALYTIC_GREEN_ACTION",
+      "reason": "Assemble only after the local maps and endpoint action share the fixed 386-row convention."
+    }
+  ],
+  "foundational_strength": {
+    "finite_local_serialization_upper_bound": "PRA",
+    "finite_local_choice_operation_added": false,
+    "current_analytic_environment": "CLASSICAL_STANDARD_SMOOTH_DISTRIBUTIONAL",
+    "weakest_base_for_analytic_green_action": "NOT_ESTABLISHED",
+    "physics_implies_choice_principle": false,
+    "note": "The finite tables add no infinite selection. The causal theorem's weakest foundational calibration cannot be inferred from that finite wrapper."
+  },
+  "claim_flags": {
+    "STRICT_386_OPERATOR_PORTABILITY_TYPES_CLASSIFIED": true,
+    "STRICT_ENDPOINT_Q1_PORTABLE_COMPONENT_BYTES": true,
+    "STRICT_FULL_386_Q1_PORTABLE_COMPONENT_BYTES": false,
+    "STRICT_FULL_386_LOCAL_SDR_PORTABLE_COMPONENT_BYTES": false,
+    "STRICT_ENDPOINT_GREEN_PORTABLE_ACTION_SERIALIZED": false,
+    "STRICT_FULL_GREEN_PORTABLE_ACTION_SERIALIZED": false,
+    "STRICT_CAUSAL_GREEN_HOMOTOPY_THEOREM_PRESERVED": true,
+    "STRICT_386_ALL_OPERATOR_COMPONENT_ADJOINTS_REPLAYED": false,
+    "STRICT_386_LOCAL_D_CERTIFIED": false,
+    "STRICT_386_Q2_GREEN_COMPATIBILITY_CERTIFIED": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "QME_RESTORED": false,
+    "LORENTZIAN_QUANTUM_THEORY": false
+  },
+  "does_not_establish": [
+    "portable full q1, H_alg, projector, inclusion or projection component tables",
+    "a receiver-executable endpoint or full advanced/retarded Green action or distribution kernel",
+    "that the existing causal Green-homotopy theorem is false or incomplete as an existence theorem",
+    "componentwise replay of every homotopy, projector and suspended-adjoint identity",
+    "the weakest foundational base for the imported analytic Green theorem",
+    "a passed Gate A, local D, q2 compatibility, Hadamard state, Ward theorem, QME restoration or Lorentzian quantum theory"
+  ],
+  "next_gate": "Emit one canonical full-q1 finite component jet table on the fixed 386-row basis from the existing generalized-auxiliary, curvature-cylinder and endpoint producers. Independently reconstruct q1 and replay q1 squared and pairing adjointness before serializing the local SDR maps. Treat Lambda_plus/minus under the separate ANALYTIC_GREEN_ACTION contract.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+        "result_or_schema_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+        "sha256": "e760565a08c4b551551ebff8ec5cdac26beb7715e976fe8612407278ee315303",
+        "role": "fixed 386-row basis and pairing"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1.json",
+        "result_or_schema_id": "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
+        "sha256": "7dcafc995a0662f610d721d39b3255f5fae6e32105286cc05051e3b658e16032",
+        "role": "portable endpoint q1 summary"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_WITNESS_V1.json",
+        "result_or_schema_id": "strict-cylinder-coordinate-to-covariant-symmetric-four-jet-v1",
+        "sha256": "cfd25e7f5b95c2f9b7828a81609004b2a1705962d580c4294367af114c59d364",
+        "role": "endpoint coefficient tables"
+      },
+      {
+        "path": "covariant_completion/certificates/generalized_auxiliary_contraction.json",
+        "result_or_schema_id": "pure-weyl-support-local-generalized-auxiliary-retract-v1",
+        "sha256": "ced687fa4dfff290cc3eb143a6ce53689db4928de769a36c9d585385a82116cc",
+        "role": "executable auxiliary differential and SDR hashes"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_curvature_mapping_cylinder_kernel.json",
+        "result_or_schema_id": "pure-weyl-curvature-mapping-cylinder-kernel-v1",
+        "sha256": "811156547c6492e0242be1284b5799b832a58b0b778784281bb24916acf3ba41",
+        "role": "mapping-cylinder operator-word matrices"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_curvature_mapping_cylinder_substitution.json",
+        "result_or_schema_id": "pure-weyl-curvature-mapping-cylinder-substitution-v1",
+        "sha256": "04512974e9b85fde17a184c9840b4b049a3c97c40c0cde57985079f9341968e7",
+        "role": "coefficientwise-complete producer summary"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_prolonged_hybrid_algebraic_projector.json",
+        "result_or_schema_id": "pure-weyl-prolonged-hybrid-algebraic-projector-v1",
+        "sha256": "ed35ee39859c5ada10414079e091ff73190e6dbe08e4a6d334bb77febfea250e",
+        "role": "hybrid local SDR formulas and hashes"
+      },
+      {
+        "path": "covariant_completion/certificates/adjoint_tractor_green_transfer.json",
+        "result_or_schema_id": "pure-weyl-adjoint-tractor-green-transfer-v1",
+        "sha256": "228e4ffd21fccdac155629342ea75ab590f10b75272dcfe20fdc2fa304edb7d8",
+        "role": "trace-free Green transfer theorem"
+      },
+      {
+        "path": "covariant_completion/certificates/adjoint_tractor_bgg_curved_pbw.json",
+        "result_or_schema_id": "adjoint-tractor-bgg-curved-pbw-v1",
+        "sha256": "ae8fa2cc43cc655b13a8a120b4479e0c1603270df57555b30a1e81534e688fd4",
+        "role": "curved BGG/PBW transfer dependency"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_full_prolonged_green_homotopy_assembly.json",
+        "result_or_schema_id": "pure-weyl-full-prolonged-green-homotopy-assembly-v1",
+        "sha256": "1f8aae727a06fb82c70732f7207499d427894247d09fea22f677a0f9b38be0ee",
+        "role": "full causal homotopy theorem"
+      },
+      {
+        "path": "covariant_completion/auxiliary_equivalence/generalized_retract.py",
+        "result_or_schema_id": "EXECUTABLE_SOURCE",
+        "sha256": "9f920acf590175bffdc8c8429c1478291e27656df573ee0fa3cc863a3bf4d80f",
+        "role": "exact producer source inspected for serialization availability"
+      },
+      {
+        "path": "covariant_completion/curved_retract/curvature_auxiliary_chain_map.py",
+        "result_or_schema_id": "EXECUTABLE_SOURCE",
+        "sha256": "4ef7b631c7e1232b0617d92b55c5d80655c6c44efe47f21965d7f4855d487182",
+        "role": "exact producer source inspected for serialization availability"
+      },
+      {
+        "path": "covariant_completion/curved_retract/curvature_mapping_cylinder_kernel.py",
+        "result_or_schema_id": "EXECUTABLE_SOURCE",
+        "sha256": "86ad094f339c7404902a093c5786c49ea24675d080d4f3a2a6eadfcfe84c344a",
+        "role": "exact producer source inspected for serialization availability"
+      },
+      {
+        "path": "covariant_completion/curved_operator/prolonged_hybrid_algebraic_projector.py",
+        "result_or_schema_id": "EXECUTABLE_SOURCE",
+        "sha256": "90f668cd9af02b403005ed3aa62cffcf153b8122767199a8dab07afb5c4999cc",
+        "role": "exact producer source inspected for serialization availability"
+      },
+      {
+        "path": "covariant_completion/curved_operator/full_prolonged_green_homotopy_assembly.py",
+        "result_or_schema_id": "EXECUTABLE_SOURCE",
+        "sha256": "d56692863a20795b0e635c07c5a617b3d1bcacffa3448ab7c9030ed2b062e3e4",
+        "role": "exact producer source inspected for serialization availability"
+      }
+    ]
+  },
+  "independent_checker": {
+    "path": "quantum-weyl/classical_import/check_strict_386_operator_portability_audit.py",
+    "expected_digest": "a85d956af016f98f2e6da117885ad55b1084c10f60ad9f67550f3976d32be9de"
+  },
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1.md"
+}

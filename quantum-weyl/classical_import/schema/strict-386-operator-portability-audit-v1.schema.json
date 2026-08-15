@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-386-operator-portability-audit-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "created", "repository_base_commit", "dependency_tags", "question", "answer", "carrier", "portability_contracts", "operator_inventory", "status_counts", "route_split", "foundational_strength", "claim_flags", "does_not_establish", "next_gate", "provenance", "independent_checker", "human_report"],
+  "properties": {
+    "schema": {"const": "strict-386-operator-portability-audit-v1"},
+    "result_id": {"const": "STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1"},
+    "result_kind": {"const": "TYPED_OPERATOR_SERIALIZATION_AND_ANALYTIC_PORTABILITY_AUDIT"},
+    "result_state": {"const": "LOCAL_OPERATOR_SERIALIZATION_TRACTABLE_GREEN_ACTION_REPRESENTATION_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"$ref": "#/$defs/git_hash"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "question": {"type": "string", "minLength": 100},
+    "answer": {"type": "string", "minLength": 500},
+    "carrier": {"type": "object", "required": ["basis_result", "basis_digest", "pairing_digest", "rows", "split"], "properties": {"rows": {"const": 386}, "split": {"const": "386=30+36+320"}}},
+    "portability_contracts": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "required": ["id", "applies_to", "required_fields", "independent_replay"]}},
+    "operator_inventory": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "required": ["id", "kind", "status", "carrier_rows", "evidence", "present", "missing", "boundary"]}},
+    "status_counts": {"type": "object", "minProperties": 4, "maxProperties": 4},
+    "route_split": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "required": ["rank", "route", "kind", "reason"]}},
+    "foundational_strength": {"type": "object", "required": ["finite_local_serialization_upper_bound", "finite_local_choice_operation_added", "current_analytic_environment", "weakest_base_for_analytic_green_action", "physics_implies_choice_principle", "note"]},
+    "claim_flags": {"type": "object", "required": ["STRICT_386_OPERATOR_PORTABILITY_TYPES_CLASSIFIED", "STRICT_ENDPOINT_Q1_PORTABLE_COMPONENT_BYTES", "STRICT_FULL_386_Q1_PORTABLE_COMPONENT_BYTES", "STRICT_FULL_386_LOCAL_SDR_PORTABLE_COMPONENT_BYTES", "STRICT_ENDPOINT_GREEN_PORTABLE_ACTION_SERIALIZED", "STRICT_FULL_GREEN_PORTABLE_ACTION_SERIALIZED", "STRICT_CAUSAL_GREEN_HOMOTOPY_THEOREM_PRESERVED", "STRICT_386_ALL_OPERATOR_COMPONENT_ADJOINTS_REPLAYED", "STRICT_386_LOCAL_D_CERTIFIED", "STRICT_386_Q2_GREEN_COMPATIBILITY_CERTIFIED", "CLASSICAL_IMPORT_GATE_PASSED", "HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED", "LORENTZIAN_QUANTUM_THEORY"]},
+    "does_not_establish": {"type": "array", "minItems": 6, "maxItems": 6, "uniqueItems": true, "items": {"type": "string", "minLength": 50}},
+    "next_gate": {"type": "string", "minLength": 200},
+    "provenance": {"type": "object", "required": ["inputs"], "properties": {"inputs": {"type": "array", "minItems": 15, "maxItems": 15, "items": {"type": "object", "required": ["path", "result_or_schema_id", "sha256", "role"]}}}},
+    "independent_checker": {"type": "object", "required": ["path", "expected_digest"], "properties": {"path": {"const": "quantum-weyl/classical_import/check_strict_386_operator_portability_audit.py"}, "expected_digest": {"$ref": "#/$defs/hash"}}},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1.md"}
+  },
+  "$defs": {
+    "git_hash": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

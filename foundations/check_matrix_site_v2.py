@@ -17,7 +17,7 @@ VIABILITY = ROOT / "foundations/site/viability.json"
 ASSEMBLIES = ROOT / "foundations/site/assemblies.json"
 CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V15.json"
 LADDER = ROOT / "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
-COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V7.json"
+COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V8.json"
 STATUSES = {"LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "REVIEWED_GAP", "NOT_MAPPED"}
 MIGRATIONS = {"EXACT_PARENT_TRANSFER", "CAPABILITY_QUALIFIED", "REVIEWED_OVERLAY", "REVIEWED_NO_TRANSFER", "REVIEWED_CHILD_GAP", "DIRECT_COORDINATE_REVIEW", "NOT_REVIEWED"}
 
@@ -155,12 +155,12 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("Lorentzian completion atlas projection")
     if len(completion.get("branches", [])) != 7 or len(completion.get("stages", [])) != 11 or sum(len(item.get("stages", [])) for item in completion.get("branches", [])) != 77:
         errors.append("Lorentzian completion branch/stage closure")
-    if len(completion.get("route_selection", [])) != 5 or len(completion.get("berger_h26_c26_decision_chain", [])) != 11:
+    if len(completion.get("route_selection", [])) != 8 or len(completion.get("berger_h26_c26_decision_chain", [])) != 11:
         errors.append("Lorentzian completion route/decision closure")
     completion_flags = completion.get("claim_flags", {})
     if completion_flags.get("general_noncone_104_row_no_go") is not False or completion_flags.get("lorentzian_full_theory_certified") is not False:
         errors.append("Lorentzian completion fail-closed boundary")
-    if completion.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V7":
+    if completion.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V8":
         errors.append("Lorentzian completion atlas version")
     transport = completion.get("strict_causal_sign_transport", {})
     if transport.get("full_dimension") != 386 or transport.get("positive_signs") != 381 or transport.get("negative_signs") != 5 or transport.get("causal_stage_preserved") is not True:
@@ -176,7 +176,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("strict endpoint suspension resolution")
     suspension = completion.get("strict_suspended_adjoint_bridge", {})
     # The immutable V1 bridge records 54 entries in the pre-pullback
-    # DeWitt/ghost coordinates.  The V7 component projection below supplies
+    # DeWitt/ghost coordinates.  The V8 component projection below supplies
     # the unambiguous 54 pre-pullback / 30 Gate-coordinate reconciliation.
     if suspension.get("endpoint_pairing_entries") != 54 or suspension.get("full_R_positive") != 376 or suspension.get("full_R_negative") != 10 or suspension.get("full_suspended_green_adjoint_replayed") is not True:
         errors.append("strict suspension bridge projection")
@@ -187,6 +187,13 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("strict component-pairing replay boundary")
     if completion_flags.get("strict_386_component_pairing_serialized") is not True or completion_flags.get("strict_386_all_operator_component_adjoints_replayed") is not False:
         errors.append("strict component-pairing flags")
+    portability = completion.get("strict_operator_portability", {})
+    if portability.get("contracts") != ["FINITE_COMPONENT_JET_TABLE", "FINITE_SPARSE_COMPONENT_MAP", "ANALYTIC_GREEN_ACTION"] or portability.get("operator_families_classified") != 6:
+        errors.append("strict operator-portability types")
+    if (portability.get("endpoint_q1_arrow_tables"), portability.get("endpoint_q1_nonzero_coefficients"), portability.get("endpoint_q1_bach_columns")) != (80, 619, 700):
+        errors.append("strict endpoint portability counts")
+    if portability.get("full_q1_portable") is not False or portability.get("local_sdr_portable") is not False or portability.get("endpoint_green_action_portable") is not False or portability.get("full_green_action_portable") is not False or portability.get("causal_green_theorem_preserved") is not True:
+        errors.append("strict operator-portability boundary")
     if viability.get("source_atlas_digest") != data.get("canonical_digest") or viability.get("canonical_digest") != result.get("independent_checker", {}).get("expected_viability_digest"):
         errors.append("theory viability source/digest pin")
     if len(viability.get("profiles", [])) != 36 or len(viability.get("carrier_envelopes", [])) != 6:
@@ -255,7 +262,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     for token in ("NGC 3198 head-to-head control", "Scoped winner: GR + NFW", "Why RMS and χ² disagree", "FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1"):
         if token not in app:
             errors.append("common-fit interface token " + token)
-    for token in ("completionView", "Weyl BV routes", "completionExplorer", "77 separately typed cells", "Where effort has the highest expected value", "RANK_ONLY_FEASIBLE", "general non-cone 104-row no-go", "Finite residual control", "Gate A still closed", "Gate V5", "Causal convention crosswalk", "Endpoint search completed", "arrow_tables_matching", "bach_columns_matching", "619", "Suspension question resolved", "54", "30", "376", "10", "Full component pairing serialized", "356=36+320", "410", "STRICT_386_OPERATOR_COMPONENT_SERIALIZATION"):
+    for token in ("completionView", "Weyl BV routes", "completionExplorer", "77 separately typed cells", "Where effort has the highest expected value", "RANK_ONLY_FEASIBLE", "general non-cone 104-row no-go", "Finite residual control", "Gate A still closed", "Gate V5", "Causal convention crosswalk", "Endpoint search completed", "arrow_tables_matching", "bach_columns_matching", "619", "Suspension question resolved", "54", "30", "376", "10", "Full component pairing serialized", "356=36+320", "410", "Three portability contracts", "FINITE_COMPONENT_JET_TABLE", "FINITE_SPARSE_COMPONENT_MAP", "ANALYTIC_GREEN_ACTION", "STRICT_386_FULL_Q1_JET_TABLE"):
         if token not in html + app + json.dumps(data):
             errors.append("completion interface token " + token)
 

@@ -802,6 +802,19 @@ componentwise.  That operator serialization is now the first-ranked route,
 followed by local `D` and same-carrier `q2`; Gate A, Hadamard and QME remain
 fail closed.
 
+The append-only
+[`V8 completion atlas`](reports/lorentzian-weyl-bv-completion-atlas-v8.md)
+then separates the remaining operator work by mathematical type.  Full local
+`q1` needs a finite component jet table; the support-local SDR needs finite
+sparse component maps; advanced and retarded Green homotopies instead need a
+represented nonlocal action, convergent name, or distribution kernel on
+declared topological spaces.  Endpoint `q1` is already portable through 80
+exact arrow tables, 619 nonzero coefficients and 700 checked Bach columns.
+The full local producers are exact but their all-row receiver tables remain
+open.  The causal Green theorem remains valid, while its receiver-executable
+action is not yet serialized.  The explorer now exposes this typed route
+split instead of asking for a mathematically inappropriate finite Green table.
+
 ```bash
 python3 foundations/build_lorentzian_weyl_bv_completion_atlas.py --check
 python3 foundations/check_lorentzian_weyl_bv_completion_atlas.py
@@ -831,6 +844,10 @@ python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v7.py --check
 python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v7.py
 python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v7.py
 python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v7
+python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v8.py --check
+python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v8.py
+python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v8.py
+python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v8
 ```
 
 ## Lifecycle

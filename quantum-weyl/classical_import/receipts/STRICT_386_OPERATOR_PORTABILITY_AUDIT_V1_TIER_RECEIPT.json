@@ -1,0 +1,52 @@
+{
+  "receipt_id": "STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "lifecycle": "CLASSIFIED",
+  "scope": "Typed portability audit for the six strict 386-row unary operator families, separating finite local component serialization from represented nonlocal Green actions.",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.3,
+      "commands": [
+        "python3 -m py_compile quantum-weyl/classical_import/build_strict_386_operator_portability_audit.py quantum-weyl/classical_import/check_strict_386_operator_portability_audit.py quantum-weyl/classical_import/verify_strict_386_operator_portability_audit.py quantum-weyl/classical_import/tests/test_strict_386_operator_portability_audit.py",
+        "git diff --check -- <scoped operator-portability paths>"
+      ],
+      "result": "Python sources compile, JSON schema parses through the verifier, and the scoped diff has no whitespace errors."
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 0.4,
+      "command": "python3 quantum-weyl/classical_import/build_strict_386_operator_portability_audit.py --check && python3 quantum-weyl/classical_import/check_strict_386_operator_portability_audit.py && python3 quantum-weyl/classical_import/verify_strict_386_operator_portability_audit.py && python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_operator_portability_audit.py -v",
+      "result": "Deterministic build, independent boundary checker, Draft 2020-12 schema verifier, report checks and 8/8 mutation tests pass."
+    },
+    "tier_2": {
+      "status": "PASS_BY_PINNED_AFFECTED_CHAIN",
+      "elapsed_seconds": 0.1,
+      "command": "independent checker content-hash replay over 10 authority certificates and 5 exact producer sources",
+      "result": "All 15 imported inputs are present and match their pinned SHA-256 hashes; source theorem and producer completeness projections replay. Full classical producers were not rerun because no mathematical input or shared operator changed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, theorem lifecycle promotion, release, or shared core algebra change; the audit remains CLASSIFIED and fail closed."
+    }
+  },
+  "content_hashes": {
+    "quantum-weyl/classical_import/build_strict_386_operator_portability_audit.py": "a3f6d7d6e26d132589763b9c771e235b3e4f06e09407ff3e0a502b9c33bb3339",
+    "quantum-weyl/classical_import/check_strict_386_operator_portability_audit.py": "8b1e803397204e0c5e4e8ea37448c17d5bc4341fa4e6194455e1694e0035bd50",
+    "quantum-weyl/classical_import/verify_strict_386_operator_portability_audit.py": "a44a37368199c32c8eb2ebff95bd3fffee674e43e18f3179c9448ef34f8bc11c",
+    "quantum-weyl/classical_import/schema/strict-386-operator-portability-audit-v1.schema.json": "63c32d736707b837b1b9d0e06610019ac7d52ee86b4a74a7f97f7ef3c6eacb8b",
+    "quantum-weyl/classical_import/tests/test_strict_386_operator_portability_audit.py": "57cbe2841758b55ab87403070707dd6e5424f8f013ccadac0e095386ba7ba0c1",
+    "quantum-weyl/classical_import/certificates/STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1.json": "50c3a41250cad38ea49a8815da664a9b5608f568ab200f3489318a2d5b1117ad",
+    "quantum-weyl/classical_import/REPORT_STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1.md": "d0a016694649a47066a9d0a767f0af34b24d1166e5c695ed63566b5d92ea44c6"
+  },
+  "boundaries": [
+    "This receipt does not promote full q1, local SDR maps, or endpoint/full Green actions to portable artifacts.",
+    "It preserves the existing causal Green-homotopy theorem but does not establish its weakest foundational base.",
+    "Gate A, local D, q2, Hadamard, QME and Lorentzian quantum certification remain open."
+  ]
+}

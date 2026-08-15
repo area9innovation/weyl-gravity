@@ -1,0 +1,55 @@
+#!/usr/bin/env python3
+"""Schema, determinism and independence verifier for atlas V8."""
+
+from __future__ import annotations
+
+import importlib.util
+import json
+from pathlib import Path
+from jsonschema import Draft202012Validator, FormatChecker
+
+
+ROOT = Path(__file__).resolve().parents[1]
+HERE = ROOT / "foundations"
+RESULT = HERE / "results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V8.json"
+REPORT = HERE / "reports/lorentzian-weyl-bv-completion-atlas-v8.md"
+SCHEMA = HERE / "schema/foundational-lorentzian-weyl-bv-completion-atlas-v8.schema.json"
+
+
+def module(path: Path, name: str):
+    spec = importlib.util.spec_from_file_location(name, path)
+    if spec is None or spec.loader is None:
+        raise ImportError(path)
+    value = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(value)
+    return value
+
+
+builder = module(HERE / "build_lorentzian_weyl_bv_completion_atlas_v8.py", "atlas_v8_builder")
+checker = module(HERE / "check_lorentzian_weyl_bv_completion_atlas_v8.py", "atlas_v8_checker")
+
+
+def main() -> int:
+    value = json.loads(RESULT.read_text())
+    schema = json.loads(SCHEMA.read_text())
+    report = REPORT.read_text()
+    Draft202012Validator.check_schema(schema)
+    errors = ["schema " + item.message for item in Draft202012Validator(schema, format_checker=FormatChecker()).iter_errors(value)]
+    errors.extend("checker " + item for item in checker.check(value))
+    result_bytes, report_bytes = builder.generated()
+    if RESULT.read_bytes() != result_bytes:
+        errors.append("deterministic result drift")
+    if REPORT.read_bytes() != report_bytes:
+        errors.append("deterministic report drift")
+    for token in ("three nonconflated portability contracts", "FINITE_COMPONENT_JET_TABLE", "FINITE_SPARSE_COMPONENT_MAP", "ANALYTIC_GREEN_ACTION", "80", "619", "700", "category error", "causal Green theorem", "Gate A", "Boundaries"):
+        if token not in report:
+            errors.append("report token " + token)
+    print("FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V8_SCHEMA: " + ("PASS" if not errors else "FAIL"))
+    if errors:
+        for error in errors:
+            print("  - " + error)
+    return bool(errors)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,0 +1,59 @@
+{
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V8_INTEGRATION_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V8",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "lifecycle": "CLASSIFIED",
+  "scope": "Append-only atlas V8 and in-place static explorer integration of the typed strict-operator portability audit.",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.4,
+      "commands": [
+        "python3 -m py_compile foundations/build_lorentzian_weyl_bv_completion_atlas_v8.py foundations/check_lorentzian_weyl_bv_completion_atlas_v8.py foundations/verify_lorentzian_weyl_bv_completion_atlas_v8.py foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v8.py foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py foundations/verify_matrix_site_v2.py",
+        "git diff --check -- <scoped atlas and site paths>"
+      ],
+      "result": "All changed Python sources compile, structured artifacts parse through their verifiers, and scoped whitespace checks pass."
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 4.9,
+      "commands": [
+        "python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v8.py --check && python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v8.py && python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v8.py && python3 -m unittest foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v8.py -v",
+        "python3 foundations/build_matrix_site_v2.py --check && python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py && python3 -m unittest foundations.tests.test_matrix_site -v"
+      ],
+      "result": "Atlas determinism, independent checker, schema/report verifier and 8/8 mutation tests pass; the static explorer passes its independent 576-cell audit and 10/10 site tests with eight completion routes."
+    },
+    "tier_2": {
+      "status": "PASS_BY_AFFECTED_CHAIN",
+      "elapsed_seconds": 0.8,
+      "command": "operator-portability audit -> immutable atlas V7 -> atlas V8 -> matrix-site deterministic generation and independent verification",
+      "result": "The transitive changed certificate chain is content-pinned and verified. Unchanged V7 predecessor evidence and classical authority inputs were checked by hash rather than rebuilt."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, release, theorem lifecycle promotion, or shared core algebra change; V8 is an append-only CLASSIFIED integration."
+    }
+  },
+  "content_hashes": {
+    "foundations/build_lorentzian_weyl_bv_completion_atlas_v8.py": "3030e6a63451647f527ea571896b78bd3fba083aa5f82108d247f9ceb12616ac",
+    "foundations/check_lorentzian_weyl_bv_completion_atlas_v8.py": "d91f09f7911da9dc4cc191526ae39a0871c8ef2e3f7fb6596541c2497be52571",
+    "foundations/verify_lorentzian_weyl_bv_completion_atlas_v8.py": "f7f236657a43d4aece4b867e25a9cfa9b83d382908c75a4d33794532fabea005",
+    "foundations/schema/foundational-lorentzian-weyl-bv-completion-atlas-v8.schema.json": "c34ffb018c89d3caacea0294f41ddb61a3d4e0f4f47b7c2f369e9737f0b82f07",
+    "foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v8.py": "4ea4b666d136fc857a54bc695eca88e26a4f8ef46efd9ca20a9aac98bc97c271",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V8.json": "124a69a59443ea95d7752ad849f642c44e83aa82193fedc8aa0cd0e14aa10d4b",
+    "foundations/reports/lorentzian-weyl-bv-completion-atlas-v8.md": "a8c3814de760f0fd9dc540bdbf11f47da755ce8362f08cece241527315b93870",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "92dcb7061df224f0f45a2bd60a3160c269861c71d773a9d46d6869afe53db973",
+    "foundations/site/manifest.json": "2a71dbfcfa1d0deec60f3792e18057c2774c4f6dccdbb0b78718c45d3ac126c7"
+  },
+  "boundaries": [
+    "Atlas V8 classifies missing artifacts; it does not serialize the missing full-q1, local-SDR, or Green-action objects.",
+    "The route ranking is a research decision aid, not a theorem or probability ranking.",
+    "Gate A, D, q2, Hadamard, Ward, QME, residual transfer and Lorentzian quantum certification remain fail closed."
+  ]
+}
