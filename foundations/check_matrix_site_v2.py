@@ -17,13 +17,14 @@ VIABILITY = ROOT / "foundations/site/viability.json"
 ASSEMBLIES = ROOT / "foundations/site/assemblies.json"
 CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V15.json"
 LADDER = ROOT / "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
-COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V19.json"
+COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V20.json"
 COMPLETION_GREEN_ACTION_NAME = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_GREEN_ACTION_NAME_V1.json"
 COMPLETION_UNARY_CAUSAL_SNAPSHOT = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1.json"
 COMPLETION_FULL_D = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_FULL_D_ACTION_V1.json"
 COMPLETION_Q2_PREFLIGHT = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1.json"
 COMPLETION_Q2_GREEN = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1.json"
 COMPLETION_RECURSIVE_TREES = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_RECURSIVE_CAUSAL_TREE_DOMAINS_V1.json"
+COMPLETION_FORMAL_COEFFICIENTS = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1.json"
 COMPLETION_GATE_V7 = ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V7_RECONCILIATION.json"
 STATUSES = {"LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "REVIEWED_GAP", "NOT_MAPPED"}
 MIGRATIONS = {"EXACT_PARENT_TRANSFER", "CAPABILITY_QUALIFIED", "REVIEWED_OVERLAY", "REVIEWED_NO_TRANSFER", "REVIEWED_CHILD_GAP", "DIRECT_COORDINATE_REVIEW", "NOT_REVIEWED"}
@@ -46,7 +47,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     data = load(DATA) if data is None else data
     cube, ladder, completion_source, result, manifest, viability, assemblies = load(CUBE), load(LADDER), load(COMPLETION_ATLAS), load(RESULT), load(MANIFEST), load(VIABILITY), load(ASSEMBLIES)
     green_source, unary_causal_source = load(COMPLETION_GREEN_ACTION_NAME), load(COMPLETION_UNARY_CAUSAL_SNAPSHOT)
-    full_d_source, q2_preflight_source, q2_green_source, recursive_tree_source, gate_v7_source = load(COMPLETION_FULL_D), load(COMPLETION_Q2_PREFLIGHT), load(COMPLETION_Q2_GREEN), load(COMPLETION_RECURSIVE_TREES), load(COMPLETION_GATE_V7)
+    full_d_source, q2_preflight_source, q2_green_source, recursive_tree_source, formal_source, gate_v7_source = load(COMPLETION_FULL_D), load(COMPLETION_Q2_PREFLIGHT), load(COMPLETION_Q2_GREEN), load(COMPLETION_RECURSIVE_TREES), load(COMPLETION_FORMAL_COEFFICIENTS), load(COMPLETION_GATE_V7)
     errors: list[str] = []
     axes = {x.get("id"): x for x in data.get("axes", [])}
     keys = {axis_id: [x.get("id") for x in axes.get(axis_id, {}).get("keys", [])] for axis_id in ("FOUNDATION", "CARRIER", "REFINED_OBLIGATION")}
@@ -164,12 +165,12 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("Lorentzian completion atlas projection")
     if len(completion.get("branches", [])) != 7 or len(completion.get("stages", [])) != 11 or sum(len(item.get("stages", [])) for item in completion.get("branches", [])) != 77:
         errors.append("Lorentzian completion branch/stage closure")
-    if len(completion.get("route_selection", [])) != 11 or len(completion.get("berger_h26_c26_decision_chain", [])) != 11:
+    if len(completion.get("route_selection", [])) != 12 or len(completion.get("berger_h26_c26_decision_chain", [])) != 11:
         errors.append("Lorentzian completion route/decision closure")
     completion_flags = completion.get("claim_flags", {})
     if completion_flags.get("general_noncone_104_row_no_go") is not False or completion_flags.get("lorentzian_full_theory_certified") is not False:
         errors.append("Lorentzian completion fail-closed boundary")
-    if completion.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V19":
+    if completion.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V20":
         errors.append("Lorentzian completion atlas version")
     transport = completion.get("strict_causal_sign_transport", {})
     if transport.get("full_dimension") != 386 or transport.get("positive_signs") != 381 or transport.get("negative_signs") != 5 or transport.get("causal_stage_preserved") is not True:
@@ -335,6 +336,15 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("strict recursive mixed-sign census")
     if recursive_trees.get("unrestricted_mixed_sign_trees") is not False or recursive_trees.get("arbitrary_causal_difference_trees") is not False or recursive_trees.get("infinite_tree_series_convergence") is not False or recursive_trees.get("authoritative_q2") is not False:
         errors.append("strict recursive tree promotion firewall")
+    formal = completion.get("strict_polarized_formal_coefficients", {})
+    if (formal.get("result_id"), formal.get("orientations"), formal.get("checked_through_leaves"), formal.get("largest_checked_tree_count")) != (formal_source.get("result_id"), 2, 9, 1430):
+        errors.append("strict formal coefficient projection")
+    if formal.get("coefficientwise_fixed_point") is not True or formal.get("catalan_formula") is not True or formal.get("formal_inverse") is not True or formal.get("lambda_adic_stabilization") is not True:
+        errors.append("strict formal coefficient closure")
+    if formal.get("order_lambda_squared_bv_residual") != formal_source.get("bv_equation_diagnostic", {}).get("order_lambda_squared_residual") or formal.get("order_lambda_squared_bv_residual_zero_certified") is not False:
+        errors.append("strict lambda-squared BV diagnostic")
+    if formal.get("analytic_convergence") is not False or formal.get("nonperturbative_inverse") is not False or formal.get("weyl_bv_maurer_cartan_series") is not False or formal.get("authoritative_weyl_bv_moller_map") is not False or formal.get("typed_field_equation_green_inverse") is not False:
+        errors.append("strict formal Moller promotion firewall")
     if completion_flags.get("strict_386_full_local_d_action_certified") is not True or completion_flags.get("strict_386_d_q1_commutator_replayed") is not True or completion_flags.get("strict_386_d_formal_skew_adjoint_replayed") is not True or completion_flags.get("strict_386_unary_causal_d_scoped_snapshot_accepted") is not True:
         errors.append("strict V16 D successor flags")
     if completion_flags.get("strict_386_stabilized_q2_candidate_certified") is not True or completion_flags.get("strict_386_stabilized_d_q2_derivation_verified") is not True:
@@ -347,14 +357,18 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("strict V19 polarized-tree successor flags")
     if completion_flags.get("strict_386_unrestricted_mixed_sign_trees_certified") is not False or completion_flags.get("strict_386_arbitrary_causal_difference_trees_certified") is not False or completion_flags.get("strict_386_infinite_tree_series_convergence_certified") is not False or completion_flags.get("strict_386_authoritative_q2_recursive_trees_certified") is not False:
         errors.append("strict V19 recursive-tree promotion firewall")
+    if completion_flags.get("strict_386_candidate_polarized_formal_coefficients_certified") is not True or completion_flags.get("strict_386_candidate_coefficientwise_fixed_point_verified") is not True or completion_flags.get("strict_386_candidate_catalan_formula_verified") is not True or completion_flags.get("strict_386_candidate_lambda_adic_stabilization_verified") is not True:
+        errors.append("strict V20 formal-coefficient successor flags")
+    if completion_flags.get("strict_386_order_lambda_squared_bv_residual_zero_certified") is not False or completion_flags.get("strict_386_typed_field_equation_green_inverse_certified") is not False or completion_flags.get("strict_386_weyl_bv_maurer_cartan_series_certified") is not False or completion_flags.get("strict_386_authoritative_formal_moller_map_certified") is not False or completion_flags.get("strict_386_analytic_moller_convergence_certified") is not False:
+        errors.append("strict V20 Moller/BV promotion firewall")
     if completion_flags.get("strict_386_authoritative_full_q2_imported") is not False or completion_flags.get("strict_386_candidate_theory_identity_certified") is not False or completion_flags.get("strict_386_full_carrier_q2_certified") is not False or completion_flags.get("strict_386_d_q2_derivation_replayed") is not False or completion_flags.get("strict_pure_weyl_classical_gate_passed") is not False:
         errors.append("strict V17 authoritative q2/Gate firewall")
     if completion.get("route_selection", [{}])[0].get("route") != "STRICT_386_AUTHORITATIVE_Q2_IDENTITY":
-        errors.append("strict V19 route frontier")
-    if completion.get("route_selection", [{}, {}])[1].get("route") != "STRICT_POLARIZED_FORMAL_MOLLER_COEFFICIENTS":
-        errors.append("strict V19 formal-Moller frontier")
+        errors.append("strict V20 route frontier")
+    if completion.get("route_selection", [{}, {}])[1].get("route") != "STRICT_TYPED_FIELD_EQUATION_GREEN_INVERSE" or completion.get("route_selection", [{}, {}, {}])[2].get("route") != "STRICT_Q2_Q3_MAURER_CARTAN_CLOSURE":
+        errors.append("strict V20 Moller/BV frontier")
     result_flags = result.get("claim_flags", {})
-    if result_flags.get("strict_graph_green_names_exposed") is not True or result_flags.get("strict_unary_causal_snapshot_exposed") is not True or result_flags.get("strict_full_d_action_exposed") is not True or result_flags.get("strict_d_q1_replay_exposed") is not True or result_flags.get("strict_stabilized_q2_candidate_exposed") is not True or result_flags.get("strict_stabilized_d_q2_derivation_exposed") is not True or result_flags.get("strict_candidate_q2_green_first_response_exposed") is not True or result_flags.get("strict_candidate_q2_green_foundations_exposed") is not True or result_flags.get("strict_candidate_polarized_finite_trees_exposed") is not True or result_flags.get("strict_first_mixed_sign_domain_nondefinition_exposed") is not True or result_flags.get("strict_authoritative_q2_green_compatibility_exposed") is not False or result_flags.get("strict_recursive_nonlinear_green_trees_exposed") is not False or result_flags.get("strict_unrestricted_mixed_sign_trees_exposed") is not False or result_flags.get("strict_arbitrary_causal_difference_trees_exposed") is not False or result_flags.get("strict_infinite_tree_series_convergence_exposed") is not False or result_flags.get("strict_authoritative_full_carrier_q2_exposed") is not False or result_flags.get("strict_full_carrier_q2_exposed") is not False or result_flags.get("strict_classical_gate_a_passed") is not False:
+    if result_flags.get("strict_graph_green_names_exposed") is not True or result_flags.get("strict_unary_causal_snapshot_exposed") is not True or result_flags.get("strict_full_d_action_exposed") is not True or result_flags.get("strict_d_q1_replay_exposed") is not True or result_flags.get("strict_stabilized_q2_candidate_exposed") is not True or result_flags.get("strict_stabilized_d_q2_derivation_exposed") is not True or result_flags.get("strict_candidate_q2_green_first_response_exposed") is not True or result_flags.get("strict_candidate_q2_green_foundations_exposed") is not True or result_flags.get("strict_candidate_polarized_finite_trees_exposed") is not True or result_flags.get("strict_first_mixed_sign_domain_nondefinition_exposed") is not True or result_flags.get("strict_candidate_polarized_formal_coefficients_exposed") is not True or result_flags.get("strict_lambda_adic_stabilization_exposed") is not True or result_flags.get("strict_lambda_squared_bv_promotion_gate_exposed") is not True or result_flags.get("strict_authoritative_q2_green_compatibility_exposed") is not False or result_flags.get("strict_recursive_nonlinear_green_trees_exposed") is not False or result_flags.get("strict_unrestricted_mixed_sign_trees_exposed") is not False or result_flags.get("strict_arbitrary_causal_difference_trees_exposed") is not False or result_flags.get("strict_infinite_tree_series_convergence_exposed") is not False or result_flags.get("strict_typed_field_equation_green_inverse_exposed") is not False or result_flags.get("strict_weyl_bv_maurer_cartan_series_exposed") is not False or result_flags.get("strict_authoritative_formal_moller_map_exposed") is not False or result_flags.get("strict_analytic_moller_convergence_exposed") is not False or result_flags.get("strict_nonperturbative_moller_map_exposed") is not False or result_flags.get("strict_authoritative_full_carrier_q2_exposed") is not False or result_flags.get("strict_full_carrier_q2_exposed") is not False or result_flags.get("strict_classical_gate_a_passed") is not False:
         errors.append("site completion exposure flags")
     if viability.get("source_atlas_digest") != data.get("canonical_digest") or viability.get("canonical_digest") != result.get("independent_checker", {}).get("expected_viability_digest"):
         errors.append("theory viability source/digest pin")
@@ -424,7 +438,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     for token in ("NGC 3198 head-to-head control", "Scoped winner: GR + NFW", "Why RMS and χ² disagree", "FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1"):
         if token not in app:
             errors.append("common-fit interface token " + token)
-    for token in ("completionView", "Weyl BV routes", "completionExplorer", "77 separately typed cells", "Where effort has the highest expected value", "RANK_ONLY_FEASIBLE", "general non-cone 104-row no-go", "Finite residual control", "Gate A still closed", "Gate V7", "Causal convention crosswalk", "Endpoint search completed", "arrow_tables_matching", "bach_columns_matching", "619", "Suspension question resolved", "54", "30", "376", "10", "Full component pairing serialized", "356=36+320", "410", "Three portability contracts", "FINITE_COMPONENT_JET_TABLE", "FINITE_SPARSE_COMPONENT_MAP", "ANALYTIC_GREEN_ACTION", "Complete unary snapshot", "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1", "Exact split local SDR", "STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1", "H_alg", "190", "Canonical coordinate bridge certified", "STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1", "1321", "A(-Tsharp)", "T(-Asharp)", "Represented Green action certified", "Hodge eigenspace projectors", "STRICT_386_GRAPH_GREEN_ACTION_NAME_V1", "Scoped common snapshot accepted", "hashes bind one unary-causal carrier", "STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1", "Full cylinder flow certified", "STRICT_386_FULL_D_ACTION_V1", "4374", "Fourteen hashes", "Algebraic q2 lift certified", "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1", "140", "68", "Finite polarized recursion certified", "Every retarded tree", "38", "40", "Two four-leaf terms", "STRICT_386_AUTHORITATIVE_Q2_IDENTITY", "STRICT_POLARIZED_FORMAL_MOLLER_COEFFICIENTS", "graph coordinates"):
+    for token in ("completionView", "Weyl BV routes", "completionExplorer", "77 separately typed cells", "Where effort has the highest expected value", "RANK_ONLY_FEASIBLE", "general non-cone 104-row no-go", "Finite residual control", "Gate A still closed", "Gate V7", "Causal convention crosswalk", "Endpoint search completed", "arrow_tables_matching", "bach_columns_matching", "619", "Suspension question resolved", "54", "30", "376", "10", "Full component pairing serialized", "356=36+320", "410", "Three portability contracts", "FINITE_COMPONENT_JET_TABLE", "FINITE_SPARSE_COMPONENT_MAP", "ANALYTIC_GREEN_ACTION", "Complete unary snapshot", "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1", "Exact split local SDR", "STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1", "H_alg", "190", "Canonical coordinate bridge certified", "STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1", "1321", "A(-Tsharp)", "T(-Asharp)", "Represented Green action certified", "Hodge eigenspace projectors", "STRICT_386_GRAPH_GREEN_ACTION_NAME_V1", "Scoped common snapshot accepted", "hashes bind one unary-causal carrier", "STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1", "Full cylinder flow certified", "STRICT_386_FULL_D_ACTION_V1", "4374", "Fourteen hashes", "Algebraic q2 lift certified", "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1", "140", "68", "Finite polarized recursion certified", "Every retarded tree", "38", "40", "Two four-leaf terms", "Formal coefficients certified", "Two unique λ-adic series", "The first BV promotion gap is at λ²", "1430", "STRICT_386_AUTHORITATIVE_Q2_IDENTITY", "STRICT_TYPED_FIELD_EQUATION_GREEN_INVERSE", "STRICT_Q2_Q3_MAURER_CARTAN_CLOSURE", "graph coordinates"):
         if token not in html + app + json.dumps(data):
             errors.append("completion interface token " + token)
 

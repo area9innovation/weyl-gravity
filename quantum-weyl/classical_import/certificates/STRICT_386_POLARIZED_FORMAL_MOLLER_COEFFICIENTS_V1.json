@@ -1,0 +1,309 @@
+{
+  "$schema": "../schema/strict-386-polarized-formal-moller-coefficients-v1.schema.json",
+  "schema": "strict-386-polarized-formal-moller-coefficients-v1",
+  "schema_path": "quantum-weyl/classical_import/schema/strict-386-polarized-formal-moller-coefficients-v1.schema.json",
+  "result_id": "STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1",
+  "result_kind": "CANDIDATE_POLARIZED_FORMAL_YANG_FELDMAN_COEFFICIENT_THEOREM_WITH_BV_PROMOTION_GATE",
+  "result_state": "FORMAL_FIXED_POINT_COEFFICIENTS_CERTIFIED_MOLLER_AND_MAURER_CARTAN_PROMOTION_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "5754b7b4aa89243078e0bb4967a276c3c79a690f",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "Do the finite polarized q2/Green trees assemble into unique formal coefficients, and is that already a Weyl-BV Moller map?",
+  "answer": "The coefficients do assemble uniquely. For each orientation the quadratic Yang-Feldman fixed-point equation has a unique lambda-adic formal inverse whose m-th coefficient is the exact sum of the Catalan(m) plane binary response trees with weight (-1/2)^m. Every coefficient is defined on the certified PC/FC support domain and is continuous on fixed support steps. This is formal convergence only. More importantly, it is not yet a Weyl-BV Moller theorem: the first BV equation coefficient closes, but at lambda squared the available identities leave an explicit B(q2) residual whose vanishing is not certified. The candidate lacks authoritative q2 identity, a typed field-equation Green inverse, and q3/higher source data.",
+  "scope": {
+    "theory": "strict pure-Weyl stabilized q2 candidate",
+    "background": "unit ultrastatic vacuum conformal cylinder R x S3",
+    "carrier": "fixed 386-row graph BV carrier",
+    "inputs": "compactly supported smooth ghost-number-zero bosonic sections",
+    "orientations": [
+      "plus/retarded",
+      "minus/advanced"
+    ],
+    "completion": "formal lambda-adic coefficient sequence only"
+  },
+  "literature_template": {
+    "id": "hawkins-rejzner-2020",
+    "citation": "Eli Hawkins and Kasia Rejzner, The Star Product in Interacting Quantum Field Theory, Letters in Mathematical Physics 110 (2020), 1257-1313.",
+    "stable_url": "https://arxiv.org/abs/1612.09157",
+    "artifact": {
+      "status": "CONTENT_PINNED",
+      "locator": "https://arxiv.org/pdf/1612.09157",
+      "sha256": "8175a1e403cf4843c171a5df040f35decb591280cd19d1a099323c29f642957e"
+    },
+    "imported_statement": "Lemma 3.12: for formal lambda, the retarded Moller map satisfies the Yang-Feldman equation; its inverse is identity plus the retarded free Green response; Picard iteration converges lambda-adically, while nonperturbative inverse existence is a separate issue.",
+    "application_boundary": "The paper treats an action-derived Euler-Lagrange interaction and a Green-hyperbolic free operator. It supplies the formal template, not Weyl-BV theory identity, the candidate q2, a full BV Green inverse, or a QME theorem.",
+    "sha256": "ff9c15e0498ff5d7d835086e1ba9526131acb169f36650a3465f31e6e71f7e5f"
+  },
+  "formal_convention": {
+    "input": "a compactly supported smooth ghost-number-zero bosonic section x on the 386-row graph carrier",
+    "orientation_symbol": "sigma in {plus(retarded), minus(advanced)}",
+    "binary_response": "B_sigma(u,v)=Lambda_graph,sigma(q2_candidate(u,v))",
+    "series": "R_sigma,lambda(x)=sum_{m>=0} lambda^m r_sigma,m(x)",
+    "fixed_point": "R_sigma,lambda(x)=x-(lambda/2) B_sigma(R_sigma,lambda(x),R_sigma,lambda(x))",
+    "inverse_name": "I_sigma,lambda(y)=y+(lambda/2) B_sigma(y,y)",
+    "direction": "R is the formal inverse of I; this direction matches the retarded Yang-Feldman convention in the pinned template.",
+    "factor_one_half_source": "suspended-graded-symmetric-factorial-v1 q2 convention",
+    "terminology": "candidate polarized formal Yang-Feldman/Moller coefficients",
+    "sha256": "ef0e8379430903cfca5793349d61d604da0c159e4f5a0370b93b7d4f7dd7ac0a"
+  },
+  "coefficient_recurrence": {
+    "base": "r_sigma,0(x)=x",
+    "step": "r_sigma,m(x)=-(1/2) sum_{i+j=m-1} B_sigma(r_sigma,i(x),r_sigma,j(x)) for m>=1",
+    "triangular_uniqueness": "The coefficient of lambda^m depends only on coefficients of lower powers, hence exists uniquely by finite recursion.",
+    "coefficientwise_residual": "[lambda^m](R-x+(lambda/2)B_sigma(R,R))=0 for every m>=0",
+    "inverse_composition": "I_sigma,lambda(R_sigma,lambda(x))=x coefficientwise; uniqueness gives R_sigma,lambda(I_sigma,lambda(y))=y in the typed formal algebra whenever the compositions are admitted.",
+    "picard_stabilization": "Starting at R^(0)=x, the coefficient of lambda^m in R^(k+1)=x-(lambda/2)B(R^(k),R^(k)) stabilizes by k=m.",
+    "formal_topology": "lambda-adic only: for every N, a finite Picard iterate agrees modulo lambda^(N+1)",
+    "analytic_norm_or_radius": "NOT_SUPPLIED",
+    "sha256": "58ffac73e698a708f774ff43606f2e3912d7ae034330112e7a4cd3e347245140"
+  },
+  "catalan_tree_formula": {
+    "formula": "r_sigma,m(x)=(-1/2)^m sum_{T in PBT_(m+1)} T[B_sigma;x]",
+    "index_family": "plane full binary trees with m+1 leaves",
+    "tree_count": "Catalan(m)",
+    "all_orders_proof": "Root decomposition is a disjoint union over left-leaf counts 1 through m and reproduces the triangular recurrence.",
+    "checked_through_leaves": 9,
+    "checked_rows": [
+      {
+        "coupling_power": 0,
+        "leaves": 1,
+        "plane_tree_count": 1,
+        "catalan_closed_form": 1,
+        "coefficient_per_plane_tree": "1",
+        "commutative_scalar_collapse": "1",
+        "recurrence_residual": "0",
+        "canonical_tree_list_sha256": "cd65ea2c2ad99e94a85b1b6df72efef9cb2ed0ae933a60c32ce16317f7d7d6aa"
+      },
+      {
+        "coupling_power": 1,
+        "leaves": 2,
+        "plane_tree_count": 1,
+        "catalan_closed_form": 1,
+        "coefficient_per_plane_tree": "-1/2",
+        "commutative_scalar_collapse": "-1/2",
+        "recurrence_residual": "0",
+        "canonical_tree_list_sha256": "a6befb8f3dc594a725f2208e260367c7e048ad73dbd6c197ce81bffa39f997ef"
+      },
+      {
+        "coupling_power": 2,
+        "leaves": 3,
+        "plane_tree_count": 2,
+        "catalan_closed_form": 2,
+        "coefficient_per_plane_tree": "1/4",
+        "commutative_scalar_collapse": "1/2",
+        "recurrence_residual": "0",
+        "canonical_tree_list_sha256": "3d296184249e0daa918a8ec0ca90fa2c8f92c6a409f696a330366d119fc43b90"
+      },
+      {
+        "coupling_power": 3,
+        "leaves": 4,
+        "plane_tree_count": 5,
+        "catalan_closed_form": 5,
+        "coefficient_per_plane_tree": "-1/8",
+        "commutative_scalar_collapse": "-5/8",
+        "recurrence_residual": "0",
+        "canonical_tree_list_sha256": "f6082d1a3e9da2bcac6a5303fc688fc619cf820a123907d6f68a0cace56935d9"
+      },
+      {
+        "coupling_power": 4,
+        "leaves": 5,
+        "plane_tree_count": 14,
+        "catalan_closed_form": 14,
+        "coefficient_per_plane_tree": "1/16",
+        "commutative_scalar_collapse": "7/8",
+        "recurrence_residual": "0",
+        "canonical_tree_list_sha256": "cc644a5c7699e12df2fe1efbf5fa8fdd9978d88c56f1c9c294b4c62287fe1ea6"
+      },
+      {
+        "coupling_power": 5,
+        "leaves": 6,
+        "plane_tree_count": 42,
+        "catalan_closed_form": 42,
+        "coefficient_per_plane_tree": "-1/32",
+        "commutative_scalar_collapse": "-21/16",
+        "recurrence_residual": "0",
+        "canonical_tree_list_sha256": "d2a1950c7de894aea79f44aab0996ca6edab357c8557cb1f5e7bb75b892cae14"
+      },
+      {
+        "coupling_power": 6,
+        "leaves": 7,
+        "plane_tree_count": 132,
+        "catalan_closed_form": 132,
+        "coefficient_per_plane_tree": "1/64",
+        "commutative_scalar_collapse": "33/16",
+        "recurrence_residual": "0",
+        "canonical_tree_list_sha256": "0b8b180e3f9cafa92772db7d370f985749bf2824d94fb77403113c1ed01beb53"
+      },
+      {
+        "coupling_power": 7,
+        "leaves": 8,
+        "plane_tree_count": 429,
+        "catalan_closed_form": 429,
+        "coefficient_per_plane_tree": "-1/128",
+        "commutative_scalar_collapse": "-429/128",
+        "recurrence_residual": "0",
+        "canonical_tree_list_sha256": "02628e74f48c25b721b393ad9e45be5a693978d0981a237e1a9afe4ce952b9e4"
+      },
+      {
+        "coupling_power": 8,
+        "leaves": 9,
+        "plane_tree_count": 1430,
+        "catalan_closed_form": 1430,
+        "coefficient_per_plane_tree": "1/256",
+        "commutative_scalar_collapse": "715/128",
+        "recurrence_residual": "0",
+        "canonical_tree_list_sha256": "eac3ac280bdb58b983f0af2f0c10cb984356002251ecde22b829a9a500a05d2d"
+      }
+    ],
+    "low_orders": [
+      "r_0=x",
+      "r_1=-(1/2)B(x,x)",
+      "r_2=(1/4)(B(x,B(x,x))+B(B(x,x),x))",
+      "r_3=-(1/8) sum over the five four-leaf plane B-trees"
+    ],
+    "sha256": "df3585066ccac9e85b3da9f863a664105caa3a17a18b2a1f0bf46e464aa39fa2"
+  },
+  "polarized_support_and_continuity": {
+    "plus": {
+      "name": "retarded",
+      "coefficient_support_for_m_ge_1": "past compact",
+      "lower_time_bound": "max of the compact leaf lower bounds",
+      "every_finite_coefficient_defined": true,
+      "fixed_step_continuity": "continuous homogeneous polynomial of degree m+1 on every fixed compact leaf-support Frechet step"
+    },
+    "minus": {
+      "name": "advanced",
+      "coefficient_support_for_m_ge_1": "future compact",
+      "upper_time_bound": "min of the compact leaf upper bounds",
+      "every_finite_coefficient_defined": true,
+      "fixed_step_continuity": "continuous homogeneous polynomial of degree m+1 on every fixed compact leaf-support Frechet step"
+    },
+    "sha256": "057ea160be6ac8ab88753bf24c6afd86eb2ab30aa0b9c5fc7a6d53268f855a04"
+  },
+  "bv_equation_diagnostic": {
+    "assumption": "q1(x)=0 and x has suspended degree zero",
+    "candidate_equation_tested": "E_lambda(R)=q1(R)+(lambda/2)q2_candidate(R,R)",
+    "order_lambda_residual": "q1(r_1)+(1/2)q2(x,x)=0",
+    "order_lambda_squared_residual": "(1/4)(B_sigma(x,q2(x,x))+B_sigma(q2(x,x),x))",
+    "order_lambda_squared_zero_certified": false,
+    "meaning": "The arity-two homotopy-response identity closes the first equation coefficient but does not by itself prove that the formal fixed point is a Maurer-Cartan solution. A typed field-equation Green inverse and the source q2/q3/higher L-infinity identities are still required.",
+    "nonzero_claimed": false,
+    "obstruction_or_missing_identity": "UNDECIDED",
+    "sha256": "fd0401394c144124d4ba83090d1261db62750e8b84343813370fdbdf6d6d8db5"
+  },
+  "foundational_strength": {
+    "classification": "UNIFORM_PRIMITIVE_RECURSIVE_FORMAL_COEFFICIENT_SCHEMA_OVER_IMPORTED_CLASSICAL_GREEN_ANALYSIS",
+    "fixed_order": "For each requested m, the tree set, exact rational weights, residual check and support proof are finite primitive-recursive data.",
+    "formal_sequence": "Coding the whole coefficient family as an omega-sequence uses ordinary recursion/comprehension (available in ZF and standard weak second-order bases) but no choice function.",
+    "lambda_adic_completion": "A formal-series type is a countable coefficient sequence; lambda-adic stabilization is not metric or analytic convergence.",
+    "analytic_realization": "Every coefficient still imports the classical PC/FC Green-extension and smooth support-space theorem pinned by the predecessor.",
+    "choice_operation_added": false,
+    "infinite_analytic_sum_added": false,
+    "weakest_complete_foundational_base": "NOT_ESTABLISHED",
+    "sha256": "66963d1980ea8afaa895ddb43c048836aacd3f362209d34a1b59dfc7468bdb09"
+  },
+  "authority_boundary": {
+    "candidate_q2_only": true,
+    "formal_template_source_pinned": true,
+    "action_derived_interaction_identity": false,
+    "typed_field_equation_green_inverse": false,
+    "authoritative_full_q2_imported": false,
+    "q3_or_higher_operations_imported": false,
+    "formal_moller_map_for_weyl_bv_certified": false,
+    "classical_import_gate_a_status": "FAIL_CLOSED",
+    "sha256": "f826a5e0addc37f21b4d14d8c8a9e39006294cc4e6ff9bcd0abe4cd6f6224926"
+  },
+  "formal_coefficient_snapshot": {
+    "kind": "STRICT_386_CANDIDATE_POLARIZED_FORMAL_YANG_FELDMAN_COEFFICIENT_SNAPSHOT",
+    "orientation_count": 2,
+    "convention_sha256": "ef0e8379430903cfca5793349d61d604da0c159e4f5a0370b93b7d4f7dd7ac0a",
+    "recurrence_sha256": "58ffac73e698a708f774ff43606f2e3912d7ae034330112e7a4cd3e347245140",
+    "tree_formula_sha256": "df3585066ccac9e85b3da9f863a664105caa3a17a18b2a1f0bf46e464aa39fa2",
+    "orientations_sha256": "057ea160be6ac8ab88753bf24c6afd86eb2ab30aa0b9c5fc7a6d53268f855a04",
+    "bv_diagnostic_sha256": "fd0401394c144124d4ba83090d1261db62750e8b84343813370fdbdf6d6d8db5",
+    "foundations_sha256": "66963d1980ea8afaa895ddb43c048836aacd3f362209d34a1b59dfc7468bdb09",
+    "authority_sha256": "f826a5e0addc37f21b4d14d8c8a9e39006294cc4e6ff9bcd0abe4cd6f6224926",
+    "receiver_status": "FORMAL_FIXED_POINT_COEFFICIENTS_ONLY_NOT_WEYL_BV_MOLLER_OR_GATE_A",
+    "sha256": "cd265b0f926d3cee8f97f16b6934b4ba22c3fd21bd5516e7994911251030bdc5"
+  },
+  "claim_flags": {
+    "STRICT_386_CANDIDATE_POLARIZED_FORMAL_COEFFICIENTS_CERTIFIED": true,
+    "STRICT_386_CANDIDATE_COEFFICIENTWISE_FIXED_POINT_VERIFIED": true,
+    "STRICT_386_CANDIDATE_CATALAN_TREE_FORMULA_VERIFIED": true,
+    "STRICT_386_CANDIDATE_FORMAL_INVERSE_VERIFIED": true,
+    "STRICT_386_CANDIDATE_LAMBDA_ADIC_STABILIZATION_VERIFIED": true,
+    "STRICT_386_CANDIDATE_ANALYTIC_SERIES_CONVERGENCE_CERTIFIED": false,
+    "STRICT_386_CANDIDATE_NONPERTURBATIVE_MOLLER_MAP_CONSTRUCTED": false,
+    "STRICT_386_WEYL_BV_MAURER_CARTAN_SERIES_CERTIFIED": false,
+    "STRICT_386_AUTHORITATIVE_FORMAL_MOLLER_MAP_CERTIFIED": false,
+    "STRICT_386_Q3_OR_HIGHER_CAUSAL_TREES_CERTIFIED": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "RENORMALIZED_LORENTZIAN_PRODUCTS": false,
+    "QME_RESTORED": false,
+    "RESIDUAL_TRANSFERRED": false,
+    "LORENTZIAN_QUANTUM_THEORY": false
+  },
+  "does_not_establish": [
+    "that the stabilized q2 candidate is the authoritative nonlinear classical Weyl BV operation",
+    "that the action-derived hypotheses of the pinned Moller theorem hold for the candidate",
+    "a typed inverse of the full Weyl-BV field-equation operator",
+    "vanishing or nonvanishing of the displayed lambda-squared BV residual",
+    "a Maurer-Cartan solution or a source-certified q2/q3/higher L-infinity solution",
+    "analytic convergence, summability, a convergence radius, a nonperturbative inverse or a selected classical solution",
+    "mixed-sign causal-difference recursion",
+    "an accepted Gate-A q2 or formal-map hash",
+    "a Hadamard state, positivity, renormalized Lorentzian products, QME restoration, residual transfer, unitarity or a Lorentzian quantum theory"
+  ],
+  "next_gate": "Source-certify the authoritative nonlinear brackets and type the Green homotopy on the actual field-equation sector. Replay the lambda-squared BV residual with q2/q3 identities; only if every coefficient of the interacting equation closes may these formal fixed-point coefficients be promoted to a Weyl-BV Moller map. Analytic convergence remains a later, independent gate.",
+  "canonical_hashes": {
+    "literature_template_sha256": "ff9c15e0498ff5d7d835086e1ba9526131acb169f36650a3465f31e6e71f7e5f",
+    "formal_convention_sha256": "ef0e8379430903cfca5793349d61d604da0c159e4f5a0370b93b7d4f7dd7ac0a",
+    "coefficient_recurrence_sha256": "58ffac73e698a708f774ff43606f2e3912d7ae034330112e7a4cd3e347245140",
+    "catalan_tree_formula_sha256": "df3585066ccac9e85b3da9f863a664105caa3a17a18b2a1f0bf46e464aa39fa2",
+    "polarized_support_sha256": "057ea160be6ac8ab88753bf24c6afd86eb2ab30aa0b9c5fc7a6d53268f855a04",
+    "bv_equation_diagnostic_sha256": "fd0401394c144124d4ba83090d1261db62750e8b84343813370fdbdf6d6d8db5",
+    "foundational_strength_sha256": "66963d1980ea8afaa895ddb43c048836aacd3f362209d34a1b59dfc7468bdb09",
+    "authority_boundary_sha256": "f826a5e0addc37f21b4d14d8c8a9e39006294cc4e6ff9bcd0abe4cd6f6224926",
+    "formal_coefficient_snapshot_sha256": "cd265b0f926d3cee8f97f16b6934b4ba22c3fd21bd5516e7994911251030bdc5"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_RECURSIVE_CAUSAL_TREE_DOMAINS_V1.json",
+        "result_or_artifact_id": "STRICT_386_RECURSIVE_CAUSAL_TREE_DOMAINS_V1",
+        "sha256": "c209a21499367e6ba52baba20ca9264c8bf2ed1123646e9278e1c938cf9b1ca7",
+        "role": "finite polarized support-domain theorem"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1.json",
+        "result_or_artifact_id": "STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1",
+        "sha256": "d9ea0e618ff31a92dcb83459d0b0b491783569b0b25523776af92fe02fe4bfd5",
+        "role": "binary response and homotopy identity"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_LOCAL_Q1_Q2_IDENTITY_V1.json",
+        "result_or_artifact_id": "STRICT_LOCAL_Q1_Q2_IDENTITY_V1",
+        "sha256": "8300dddd6120632958a307e1924f27fb4e24ae6802e3163a825bd1dce54de738",
+        "role": "suspended factorial convention and arity-two identity"
+      }
+    ]
+  },
+  "independent_checker": {
+    "path": "quantum-weyl/classical_import/check_strict_386_polarized_formal_moller_coefficients.py",
+    "checks": [
+      "dependency identities and hashes",
+      "independent postfix plane-tree enumeration through nine leaves",
+      "exact rational recurrence and Catalan closed form",
+      "coefficientwise fixed-point residual and Picard stabilization",
+      "polarized support and continuity inheritance",
+      "lambda-squared BV residual derivation",
+      "formal-versus-analytic and Moller/QME authority firewalls"
+    ]
+  },
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1.md"
+}

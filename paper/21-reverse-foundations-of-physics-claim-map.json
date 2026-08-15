@@ -896,7 +896,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "89c08ebedaf17020cb4274becc7a6f874872737dee03e80d6a343830e7b55cca"
+      "sha256": "754776fd2dafecf5fe0e9ed9b89e63d0253c87666b1ef97f131ceebe67ade807"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -1090,6 +1090,18 @@
       "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V19.json",
       "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V19",
       "sha256": "85ff97849543e61053f40273a92b3ea3816f4fa94f70110de14a3e44feef2251"
+    },
+    "lorentzian_weyl_bv_completion_atlas_v20": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V20.json",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V20",
+      "sha256": "fa7fe84c2856c0450e727500aabbd4c7707d1db6727a6ca4bf24d28453a3fd47"
     },
     "lorentzian_weyl_bv_completion_atlas_v4": {
       "dependency_tags": [
@@ -1297,6 +1309,16 @@
       "result_id": "STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1",
       "sha256": "f9da17b642571442a5785186ed587a7244e7549b57e3712ca01588381c88017f"
     },
+    "strict_386_polarized_formal_moller_coefficients": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1.json",
+      "result_id": "STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1",
+      "sha256": "583d8a8965c40fb4b8109520ae586c1bdc81ad4bcaadd23811a21dabb428ee6c"
+    },
     "strict_386_recursive_causal_tree_domains": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -1394,10 +1416,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "ce80fa7c1b7f7bfc047fb386ec8ce349e6030299f3c95ed2ccf1768de972eacd"
+      "sha256": "40517e77e30d2184281d4a5e1a8950f8f47af4bb3eeab1c295bc31f920c834ac"
     }
   },
-  "canonical_digest": "e0d038ace5d041dab64c6fe726cbf662dd951a5b2440e2d6035baf5f9e666501",
+  "canonical_digest": "f9f6cdd4168406cbd46e066c10599e680371aad9dc1eb7aafe61918e74254cd2",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -1557,13 +1579,16 @@
     "scalar_minkowski_green_certified": true,
     "static_atlas_appendix_generated": true,
     "strict_386_all_operator_component_adjoints_replayed": false,
+    "strict_386_analytic_moller_convergence_certified": false,
     "strict_386_arbitrary_causal_difference_trees_certified": false,
+    "strict_386_authoritative_formal_moller_map_certified": false,
     "strict_386_authoritative_full_q2_imported": false,
     "strict_386_authoritative_q2_green_compatibility_certified": false,
     "strict_386_authoritative_q2_recursive_trees_certified": false,
     "strict_386_candidate_advanced_all_finite_q2_trees_certified": true,
     "strict_386_candidate_first_nonlinear_causal_response_certified": true,
     "strict_386_candidate_fixed_step_tree_continuity_certified": true,
+    "strict_386_candidate_polarized_formal_coefficients_certified": true,
     "strict_386_candidate_q2_green_causal_support_certified": true,
     "strict_386_candidate_q2_green_response_identity_verified": true,
     "strict_386_candidate_q2_green_same_carrier_verified": true,
@@ -1612,6 +1637,7 @@
     "strict_386_unrestricted_mixed_sign_trees_certified": false,
     "strict_386_unshifted_graph_q1_snapshot_complete": true,
     "strict_386_unshifted_graph_sdr_snapshot_complete": true,
+    "strict_386_weyl_bv_maurer_cartan_series_certified": false,
     "strict_d_gauge_or_charge_decided": false,
     "strict_minimal_bv_cyclicity_reconciled": true,
     "strict_pure_weyl_local_q1_q2_certified": true,
@@ -2227,6 +2253,19 @@
       ],
       "statement": "On the unit cylinder, the represented graph Green homotopies extend to past-compact retarded and future-compact advanced source spaces by the content-pinned classical Green theorem. Every surrounding graph transport is finite-order and support-local, so structural induction defines every finite all-retarded and every finite all-advanced q2-candidate tree continuously on fixed leaf-support steps, with zero support-domain defects. The exact support grammar also locates the first unrestricted mixed-sign nondefinition: at four leaves, 38 of 40 decorated plane binary trees are uniformly defined, while a retarded parent of two advanced children and its time reverse require the Green operator on the wrong support class. The S3 scalar zero mode makes the corresponding opposite-polarity improper Duhamel integral diverge quadratically. This is a candidate-scoped finite-tree theorem, not authoritative q2, an unrestricted causal-difference recursion, an infinite series, higher brackets, Hadamard data, or QME restoration.",
       "status": "CANDIDATE_POLARIZED_FINITE_CAUSAL_TREES_CERTIFIED_MIXED_SIGN_AND_INFINITE_BOUNDARIES_EXPLICIT"
+    },
+    {
+      "authorities": [
+        "strict_386_polarized_formal_moller_coefficients",
+        "lorentzian_weyl_bv_completion_atlas_v20"
+      ],
+      "claim_id": "RF-47-STRICT-WEYL-POLARIZED-FORMAL-COEFFICIENTS-AND-BV-GATE",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "For each retarded or advanced orientation, the candidate quadratic Yang-Feldman equation has a unique lambda-adic formal inverse. Its coupling-order m coefficient is the exact sum of the Catalan(m) plane binary response trees with rational weight (-1/2)^m; independent enumeration, fixed-point residuals, and Picard stabilization are checked through nine leaves. Every coefficient inherits the certified PC/FC support and fixed-step continuity. This closes formal coefficient existence, not analytic convergence. It also does not yet establish a Weyl-BV Moller map: for a q1-closed degree-zero input, the interacting BV equation closes at order lambda, but the available identities leave (1/4)(B(x,q2(x,x))+B(q2(x,x),x)) at lambda squared, with neither vanishing nor nonvanishing certified. A typed field-equation Green inverse and source-certified q2/q3/higher identities are the next gates.",
+      "status": "CANDIDATE_POLARIZED_FORMAL_FIXED_POINT_COEFFICIENTS_CERTIFIED_WEYL_BV_MOLLER_PROMOTION_OPEN"
     }
   ],
   "created": "2026-08-15",
@@ -2249,6 +2288,9 @@
     "uniqueness among arbitrary distributional weak solutions",
     "a variable-coefficient, curved-spacetime, Weyl, or metric-BV Green operator from the flat scalar 1+1 benchmark",
     "an effective strict 386-row Green solver, serialized distribution-kernel bytes, or weakest analytic base from the classical convergent name",
+    "a Weyl-BV Maurer-Cartan or authoritative Moller map from the candidate formal fixed-point coefficients",
+    "analytic convergence or a nonperturbative inverse from lambda-adic stabilization",
+    "vanishing or nonvanishing of the displayed lambda-squared B(q2) residual",
     "a same-carrier full q2 payload, D/q2 derivation identity, D-Cartan homotopy, or physical charge classification from the certified local cylinder flow",
     "the authoritative twenty-export, seven-hash classical Gate A from the scoped unary-causal-D snapshot",
     "a complete Lorentzian off-shell BV propagator",
@@ -2368,6 +2410,11 @@
       "url": "https://arxiv.org/abs/1310.0738"
     },
     {
+      "role": "formal Yang--Feldman and classical Moller-map template",
+      "source_id": "hawkins-rejzner-2020",
+      "url": "https://arxiv.org/abs/1612.09157"
+    },
+    {
       "role": "represented smooth and compactly supported test-function spaces",
       "source_id": "pauly-steinberg-2018",
       "url": "https://doi.org/10.1007/s00224-016-9745-6"
@@ -2425,19 +2472,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "a0bee662f707cf432b758102d7aeaeb3d8593b5aff8480a6e49a83be3a6addfd",
+      "assembly_source_canonical_digest": "69c0be531eab8444d20a5bf04f6b84671b17e6d6012743602b14fe78b866cc80",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "ce80fa7c1b7f7bfc047fb386ec8ce349e6030299f3c95ed2ccf1768de972eacd",
+      "assembly_source_sha256": "40517e77e30d2184281d4a5e1a8950f8f47af4bb3eeab1c295bc31f920c834ac",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
-      "generator_sha256": "f7ada205dc011dc3b06e5cba739000088df0918ff06ff03a4fd664fcbcb8b2a5",
+      "generator_sha256": "6b604e7cc5e17fe9d0138b5a7c014827f01efebbd42d86b135b7aeb42f4237cb",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "11a11086b8dee15c0059c2402edd1b96b67cb73753b4f8a459332ca3036ef3a8",
-      "source_canonical_digest": "af0a176516578571f55742ef96342c222a8b768adb7374ec725a0af9ff5e37ff",
+      "sha256": "c2873a52434d59b30e0b1bb35fc3661ad4615ec1ada055fa08fe3731d97d29f8",
+      "source_canonical_digest": "81076bfb1d2da28fbc629d46bdb6b50ee3b2f1fa15100df65e7f3f9087633405",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "fc7ec367117e939264f188059916fcba4587b1bb8c95af3fbdd8bb82401ed153"
+      "source_sha256": "bf938251bdab59aa9524999f4aab029aa199d236c34dd539bc9df99999fef9b4"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "45e68796cfe43b67b1c8dd2c7f8d9a7efd3ec3dd1332641ddbe93c0f653fc987"
+    "sha256": "7bd97b8318d99177ac448c261a55cade4903b53633fbac47b034d31942e1dd0e"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

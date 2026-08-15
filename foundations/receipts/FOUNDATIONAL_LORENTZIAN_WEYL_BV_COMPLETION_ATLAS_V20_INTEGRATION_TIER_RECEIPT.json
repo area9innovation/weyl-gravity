@@ -1,0 +1,84 @@
+{
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V20_INTEGRATION_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V20",
+  "created": "2026-08-15",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "scope": "Append-only V20 projection of exact polarized formal coefficients and the lambda-squared BV promotion gate into the 77-cell completion atlas, existing static researcher site and reverse-foundations paper.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.8,
+      "commands": [
+        "python3 -m py_compile <explicit V20, site and paper generator/checker/test paths>",
+        "python3 -m json.tool <explicit formal, V20, site, claim-map, event and receipt JSON paths>",
+        "deno check foundations/site/app.js foundations/site/migration-review.js",
+        "git diff --check -- <explicit scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 7.2,
+      "commands": [
+        "python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v20.py --check",
+        "python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v20.py",
+        "python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v20.py",
+        "python3 -m unittest foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v20.py",
+        "python3 foundations/build_matrix_site_v2.py --check",
+        "python3 foundations/check_matrix_site_v2.py",
+        "python3 foundations/verify_matrix_site_v2.py",
+        "python3 -m unittest foundations/tests/test_matrix_site.py",
+        "python3 paper/generate_21_reverse_foundations_appendices.py --check",
+        "python3 paper/generate_21_reverse_foundations_claim_map.py --check",
+        "python3 paper/verify_21_reverse_foundations_claim_map.py",
+        "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (two passes)"
+      ],
+      "checks": {
+        "atlas_cells_preserved": 77,
+        "atlas_mutation_tests": "11/11 PASS",
+        "site_cells": 576,
+        "site_routes": 12,
+        "site_tests": "10/10 PASS",
+        "paper_claims": 47,
+        "paper_pdf_pages": 67,
+        "top_ranked_route": "STRICT_386_AUTHORITATIVE_Q2_IDENTITY",
+        "second_ranked_route": "STRICT_TYPED_FIELD_EQUATION_GREEN_INVERSE",
+        "third_ranked_route": "STRICT_Q2_Q3_MAURER_CARTAN_CLOSURE",
+        "classical_gate_a": "FAIL_CLOSED"
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 1.8,
+      "commands": [
+        "python3 quantum-weyl/classical_import/check_strict_386_polarized_formal_moller_coefficients.py",
+        "python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v20.py",
+        "python3 foundations/check_matrix_site_v2.py",
+        "python3 paper/verify_21_reverse_foundations_claim_map.py"
+      ],
+      "criterion": "The formal evidence, atlas projection, site source links, appendices and paper claim were independently checked while preserving field-inverse, Maurer-Cartan, analytic convergence, Hadamard and QME firewalls."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze, release tag, shared core algebra, paper theorem lifecycle, QME state or Lorentzian completion was promoted."
+    }
+  },
+  "artifact_sha256": {
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V20.json": "fa7fe84c2856c0450e727500aabbd4c7707d1db6727a6ca4bf24d28453a3fd47",
+    "foundations/reports/lorentzian-weyl-bv-completion-atlas-v20.md": "9d6bec8465cf8ce43b186df1e9b21369788aac8016eb91a2ff28577a6956fbf7",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "754776fd2dafecf5fe0e9ed9b89e63d0253c87666b1ef97f131ceebe67ade807",
+    "foundations/site/manifest.json": "d989f7f6ebc03a8a512c3797fb1edf3b3833192d7ae83ae80e2106b08251bc70",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "94c9f9ddf1cf391f4bb15e79d14fc18519f88a26a3abdc8ad89379f940f95552",
+    "paper/21-reverse-foundations-of-physics-appendices.tex": "c2873a52434d59b30e0b1bb35fc3661ad4615ec1ada055fa08fe3731d97d29f8",
+    "paper/21-reverse-foundations-of-physics.pdf": "1aa3c9c9a7dd5d9f7f9e100901d6af236c48bcf4c0985c54c1383dc253abf3fb",
+    "planning/events/reverse-foundations-lorentzian-weyl-bv-completion-ACTIVE-778557db54ac4a76.json": "6f2e5b2fac817f049aeebe6fde8c8320fdc0e8441b78154b1ce9f23008244df3"
+  },
+  "advisory_shadow_rail": {
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": 3.0,
+    "exit_status": 0,
+    "bridge_audit": "FAIL_CLOSED: external bp2transformer verifier lacks sympy; Forge binary/stdlib revisions also differ",
+    "coverage_census": "DRIFT: 1800 certificates versus baseline 976",
+    "disposition": "The advisory findings remain visible and do not alter the scoped V20 result or promote its candidate construction."
+  },
+  "claim_boundary": "Atlas V20, the site and paper expose exact candidate formal coefficients and the first unclosed BV promotion coefficient. They do not claim a typed field-equation Green inverse, authoritative q2/q3/higher identities, a Weyl-BV Moller or Maurer-Cartan theorem, analytic convergence, an accepted Gate A, Hadamard state, renormalized products, QME restoration, residual transfer or a completed Lorentzian quantum theory."
+}

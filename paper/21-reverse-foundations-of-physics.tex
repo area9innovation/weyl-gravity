@@ -2658,6 +2658,44 @@ analytic theorem remain uncalibrated.  Atlas V19 still ranks authoritative
 \cert{STRICT_POLARIZED_FORMAL_MOLLER_COEFFICIENTS} second.  Higher brackets,
 Hadamard data, and the QME are not promoted.
 
+That second route can now be decided exactly
+(\cert{STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1},
+\cert{FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V20}).  Fix one causal
+orientation and write $B=\Lambda q_2$.  In the suspended factorial
+convention the explicitly directed candidate Yang--Feldman equation is
+\[
+ R_\lambda(x)=x-\frac{\lambda}{2}B(R_\lambda(x),R_\lambda(x)).
+\]
+It has a unique formal solution.  If
+$R_\lambda=\sum_{m\geq0}\lambda^m r_m$, then
+\[
+ r_0=x,\qquad
+ r_m=-\frac12\sum_{i+j=m-1}B(r_i,r_j).
+\]
+Equivalently, $r_m$ is the sum over the Catalan number $C_m$ of plane binary
+trees with $m+1$ leaves, each carrying weight $(-1/2)^m$.  Exact independent
+enumeration through nine leaves reaches $C_8=1430$ trees and gives zero
+coefficient residuals.  Picard iteration stabilizes every fixed coefficient,
+so the construction converges in the lambda-adic formal topology.  This is
+the same formal distinction emphasized by the classical Yang--Feldman
+template of Hawkins and Rejzner \cite{HawkinsRejzner2020}: it supplies no
+analytic radius, norm estimate, or nonperturbative inverse.
+
+The stronger Weyl--BV name is deliberately withheld.  For a $q_1$-closed
+degree-zero input, the available homotopy identity closes the candidate BV
+equation at order \(\lambda\).  At lambda squared it leaves
+\[
+ \frac14\bigl(B(x,q_2(x,x))+B(q_2(x,x),x)\bigr),
+\]
+whose vanishing is not certified and whose nonzero value is not claimed.
+Thus formal tree enumeration was the easy layer; the first real promotion
+gate is a typed inverse on the field-equation sector together with the
+source-certified $q_2,q_3,\ldots$ identities.  Atlas V20 accordingly ranks
+\cert{STRICT_TYPED_FIELD_EQUATION_GREEN_INVERSE} and
+\cert{STRICT_Q2_Q3_MAURER_CARTAN_CLOSURE} immediately after authoritative
+$q_2$ identity.  Analytic convergence, Hadamard data, renormalized products,
+and QME restoration remain later independent gates.
+
 The corpus
 does contain a positive four-row metric Bach BV Green homotopy on unit Nariai
 and an exact but analytically incomplete Berger route.  Conversely, the
@@ -2919,6 +2957,8 @@ The principal machine-readable authorities are
 \cert{FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V18},
 \cert{STRICT_386_RECURSIVE_CAUSAL_TREE_DOMAINS_V1},
 \cert{FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V19},
+\cert{STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1},
+\cert{FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V20},
 \cert{REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1},
 \cert{REVERSE_PHYSICS_BT_EUCLIDEAN_OS_WITNESS_PREFLIGHT_V1},
 \cert{REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_TILT_JACOBIAN_CANCELLATION_V1},
@@ -3031,6 +3071,12 @@ K.~S.~Gibbons, M.~J.~Hoffman, and W.~K.~Wootters,
 L.~Hardy,
 ``Quantum theory from five reasonable axioms,'' 2001.
 \url{https://arxiv.org/abs/quant-ph/0101012}.
+
+\bibitem{HawkinsRejzner2020}
+E.~Hawkins and K.~Rejzner,
+``The star product in interacting quantum field theory,''
+\emph{Letters in Mathematical Physics} \textbf{110} (2020), 1257--1313.
+\url{https://arxiv.org/abs/1612.09157}.
 
 \bibitem{HeunenLandsmanSpitters2009}
 C.~Heunen, N.~P.~Landsman, and B.~Spitters,

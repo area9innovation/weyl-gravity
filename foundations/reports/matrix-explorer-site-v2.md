@@ -137,7 +137,9 @@ This site does not establish:
 - that the exact stabilized-q2 candidate is the authoritative nonlinear classical Weyl BV extension
 - authoritative q2/Green compatibility from candidate first-response compatibility
 - unrestricted mixed-sign or arbitrary causal-difference trees from the certified polarized finite recursion
-- a formal or convergent infinite tree series
+- a Weyl-BV Maurer-Cartan or Moller map from the candidate formal fixed-point coefficients
+- analytic convergence, a convergence radius, or a nonperturbative Moller inverse from lambda-adic stabilization
+- vanishing or nonvanishing of the lambda-squared B(q2) residual
 - q3 or higher causal brackets
 - a weakest-base or choice-free proof of the infinite analytic Green layer
 - a source-certified cyclic L-infinity equivalence or accepted q2 Gate-A hash

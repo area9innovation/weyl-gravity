@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-386-polarized-formal-moller-coefficients-v1.schema.json",
+  "title": "Strict 386-row polarized formal Moller coefficients v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_kind",
+    "result_state",
+    "lifecycle",
+    "dependency_tags",
+    "literature_template",
+    "formal_convention",
+    "coefficient_recurrence",
+    "catalan_tree_formula",
+    "polarized_support_and_continuity",
+    "bv_equation_diagnostic",
+    "foundational_strength",
+    "authority_boundary",
+    "formal_coefficient_snapshot",
+    "claim_flags",
+    "does_not_establish",
+    "canonical_hashes",
+    "provenance",
+    "independent_checker"
+  ],
+  "properties": {
+    "schema": {"const": "strict-386-polarized-formal-moller-coefficients-v1"},
+    "result_id": {"const": "STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1"},
+    "result_kind": {"type": "string"},
+    "result_state": {"type": "string"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LORENTZIAN-CAUSAL"}
+    },
+    "literature_template": {
+      "type": "object",
+      "required": ["artifact", "imported_statement", "application_boundary", "sha256"],
+      "properties": {
+        "artifact": {
+          "type": "object",
+          "required": ["status", "locator", "sha256"],
+          "properties": {
+            "status": {"const": "CONTENT_PINNED"},
+            "sha256": {"pattern": "^[0-9a-f]{64}$"}
+          }
+        },
+        "sha256": {"pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "formal_convention": {
+      "type": "object",
+      "required": ["binary_response", "series", "fixed_point", "inverse_name", "direction", "factor_one_half_source", "sha256"]
+    },
+    "coefficient_recurrence": {
+      "type": "object",
+      "required": ["base", "step", "triangular_uniqueness", "coefficientwise_residual", "inverse_composition", "picard_stabilization", "formal_topology", "analytic_norm_or_radius", "sha256"],
+      "properties": {"analytic_norm_or_radius": {"const": "NOT_SUPPLIED"}}
+    },
+    "catalan_tree_formula": {
+      "type": "object",
+      "required": ["formula", "index_family", "tree_count", "all_orders_proof", "checked_through_leaves", "checked_rows", "low_orders", "sha256"],
+      "properties": {
+        "checked_through_leaves": {"type": "integer", "minimum": 4},
+        "checked_rows": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "object",
+            "required": ["coupling_power", "leaves", "plane_tree_count", "catalan_closed_form", "coefficient_per_plane_tree", "commutative_scalar_collapse", "recurrence_residual", "canonical_tree_list_sha256"],
+            "properties": {
+              "coupling_power": {"type": "integer", "minimum": 0},
+              "leaves": {"type": "integer", "minimum": 1},
+              "plane_tree_count": {"type": "integer", "minimum": 1},
+              "catalan_closed_form": {"type": "integer", "minimum": 1},
+              "recurrence_residual": {"const": "0"},
+              "canonical_tree_list_sha256": {"pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    "polarized_support_and_continuity": {
+      "type": "object",
+      "required": ["plus", "minus", "sha256"],
+      "properties": {
+        "plus": {"$ref": "#/$defs/orientation"},
+        "minus": {"$ref": "#/$defs/orientation"},
+        "sha256": {"pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "bv_equation_diagnostic": {
+      "type": "object",
+      "required": ["candidate_equation_tested", "order_lambda_residual", "order_lambda_squared_residual", "order_lambda_squared_zero_certified", "meaning", "nonzero_claimed", "obstruction_or_missing_identity", "sha256"],
+      "properties": {
+        "order_lambda_squared_zero_certified": {"const": false},
+        "nonzero_claimed": {"const": false},
+        "obstruction_or_missing_identity": {"const": "UNDECIDED"}
+      }
+    },
+    "foundational_strength": {
+      "type": "object",
+      "required": ["classification", "fixed_order", "formal_sequence", "lambda_adic_completion", "analytic_realization", "choice_operation_added", "infinite_analytic_sum_added", "weakest_complete_foundational_base", "sha256"],
+      "properties": {
+        "choice_operation_added": {"const": false},
+        "infinite_analytic_sum_added": {"const": false},
+        "weakest_complete_foundational_base": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "authority_boundary": {
+      "type": "object",
+      "required": ["candidate_q2_only", "formal_template_source_pinned", "action_derived_interaction_identity", "typed_field_equation_green_inverse", "authoritative_full_q2_imported", "q3_or_higher_operations_imported", "formal_moller_map_for_weyl_bv_certified", "classical_import_gate_a_status", "sha256"],
+      "properties": {
+        "candidate_q2_only": {"const": true},
+        "action_derived_interaction_identity": {"const": false},
+        "typed_field_equation_green_inverse": {"const": false},
+        "formal_moller_map_for_weyl_bv_certified": {"const": false},
+        "classical_import_gate_a_status": {"const": "FAIL_CLOSED"}
+      }
+    },
+    "formal_coefficient_snapshot": {"type": "object", "required": ["kind", "orientation_count", "receiver_status", "sha256"]},
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "STRICT_386_CANDIDATE_POLARIZED_FORMAL_COEFFICIENTS_CERTIFIED",
+        "STRICT_386_CANDIDATE_ANALYTIC_SERIES_CONVERGENCE_CERTIFIED",
+        "STRICT_386_CANDIDATE_NONPERTURBATIVE_MOLLER_MAP_CONSTRUCTED",
+        "STRICT_386_WEYL_BV_MAURER_CARTAN_SERIES_CERTIFIED",
+        "STRICT_386_AUTHORITATIVE_FORMAL_MOLLER_MAP_CERTIFIED",
+        "HADAMARD_STATE_CONSTRUCTED",
+        "QME_RESTORED"
+      ]
+    },
+    "does_not_establish": {"type": "array", "minItems": 8, "items": {"type": "string"}},
+    "canonical_hashes": {"type": "object", "minProperties": 9, "additionalProperties": {"pattern": "^[0-9a-f]{64}$"}},
+    "provenance": {
+      "type": "object",
+      "required": ["inputs"],
+      "properties": {
+        "inputs": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "object",
+            "required": ["path", "result_or_artifact_id", "sha256", "role"],
+            "properties": {"sha256": {"pattern": "^[0-9a-f]{64}$"}}
+          }
+        }
+      }
+    },
+    "independent_checker": {"type": "object", "required": ["path", "checks"]}
+  },
+  "$defs": {
+    "orientation": {
+      "type": "object",
+      "required": ["name", "coefficient_support_for_m_ge_1", "every_finite_coefficient_defined", "fixed_step_continuity"],
+      "properties": {"every_finite_coefficient_defined": {"const": true}}
+    }
+  }
+}

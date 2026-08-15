@@ -1,0 +1,64 @@
+{
+  "receipt_id": "STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1",
+  "created": "2026-08-15",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "scope": "Candidate-scoped exact retarded and advanced lambda-adic Yang-Feldman coefficient families, Catalan tree formula, coefficientwise inverse and Picard stabilization, PC/FC support inheritance, and the first unclosed Weyl-BV equation coefficient.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.3,
+      "commands": [
+        "python3 -m py_compile <explicit formal-coefficient builder, checker, verifier and test paths>",
+        "python3 -m json.tool <explicit formal-coefficient schema, certificate and receipt paths>",
+        "git diff --check -- <explicit formal-coefficient paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 0.7,
+      "commands": [
+        "python3 quantum-weyl/classical_import/build_strict_386_polarized_formal_moller_coefficients.py --check",
+        "python3 quantum-weyl/classical_import/check_strict_386_polarized_formal_moller_coefficients.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_polarized_formal_moller_coefficients.py",
+        "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_polarized_formal_moller_coefficients.py"
+      ],
+      "checks": {
+        "polarized_orientations": 2,
+        "checked_through_leaves": 9,
+        "largest_checked_tree_family": 1430,
+        "coefficientwise_fixed_point_residuals": 0,
+        "mutation_tests": "15/15 PASS",
+        "lambda_adic_stabilization": "VERIFIED",
+        "analytic_convergence": "NOT_ESTABLISHED",
+        "lambda_squared_bv_residual_zero": "NOT_ESTABLISHED",
+        "authoritative_weyl_bv_moller_map": "NOT_ESTABLISHED"
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 1.2,
+      "commands": [
+        "python3 quantum-weyl/classical_import/check_strict_386_stabilized_q2_green_composition_preflight.py",
+        "python3 quantum-weyl/classical_import/check_strict_386_recursive_causal_tree_domains.py",
+        "python3 quantum-weyl/classical_import/check_strict_386_polarized_formal_moller_coefficients.py"
+      ],
+      "criterion": "The binary response and recursive support-domain predecessors were independently replayed before the exact formal-coefficient checker; producer regeneration was not counted as verification."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, release, shared core algebra, lifecycle promotion, analytic convergence theorem, Maurer-Cartan theorem, Hadamard state, QME result or Lorentzian completion was claimed."
+    }
+  },
+  "artifact_sha256": {
+    "quantum-weyl/classical_import/certificates/STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1.json": "583d8a8965c40fb4b8109520ae586c1bdc81ad4bcaadd23811a21dabb428ee6c",
+    "quantum-weyl/classical_import/REPORT_STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1.md": "bb4e97f5b707493f19f1a7de8b4322a7fe7f022a7053312c1502eab232b28706"
+  },
+  "literature_pin": {
+    "citation": "Hawkins and Rejzner, The Star Product in Interacting Quantum Field Theory, Lemma 3.12",
+    "url": "https://arxiv.org/abs/1612.09157",
+    "pdf_sha256": "8175a1e403cf4843c171a5df040f35decb591280cd19d1a099323c29f642957e",
+    "boundary": "The source supplies the action-derived formal Yang-Feldman template; it does not identify the receiver q2 with Weyl gravity or prove its BV equation."
+  },
+  "claim_boundary": "This establishes two unique candidate polarized formal fixed-point coefficient families, exact Catalan weights, PC/FC support and lambda-adic stabilization. It does not establish a typed Weyl field-equation inverse, vanishing or nonvanishing of the displayed lambda-squared BV residual, authoritative q2/q3/higher identities, a Weyl-BV Maurer-Cartan or Moller map, analytic convergence, Hadamard data, renormalized products, QME restoration or a quantum theory."
+}

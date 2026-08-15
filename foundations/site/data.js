@@ -18030,24 +18030,24 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "completion_atlas": {
-    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v19",
-    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V19",
+    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v20",
+    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V20",
     "result_kind": "BRANCH_BY_STAGE_COMPLETION_ATLAS",
     "lifecycle": "CLASSIFIED",
     "created": "2026-08-15",
-    "repository_base_commit": "a10212695438b66626f72a468928320f7f3f2def",
+    "repository_base_commit": "5754b7b4aa89243078e0bb4967a276c3c79a690f",
     "dependency_tags": [
       "LOCAL-ALGEBRAIC",
       "EUCLIDEAN-SPECTRAL",
       "REDUCED-MODE",
       "LORENTZIAN-CAUSAL"
     ],
-    "question": "Which recursive candidate q2/Green trees close on honest support spaces, where does sign mixing first fail, and what is the next route toward a formal interacting causal architecture?",
-    "answer": "Atlas V19 replaces the undifferentiated recursive-domain gap by a sharp split. Every finite all-retarded and every finite all-advanced candidate q2 tree closes continuously on fixed past-compact or future-compact support steps, with zero support-domain defects. Unrestricted sign mixing is not uniformly defined: the first two missing decorations occur in the balanced four-leaf topology, while all comb trees remain admissible. Thus polarized finite Møller trees survive, but arbitrary causal-difference trees, an infinite or formal series, higher brackets, authoritative q2 identity, Hadamard data and QME restoration remain open. All 77 cells and the classical authority firewall are preserved.",
+    "question": "Do the certified polarized trees define a formal Weyl-BV Moller map, or where does that promotion first require new classical data?",
+    "answer": "Atlas V20 closes the purely formal combinatorial step but refuses the stronger name. Both polarized quadratic response equations have unique lambda-adic coefficient sequences: coefficient m is the exact Catalan(m) tree sum with weight (-1/2)^m, supported on the certified PC/FC domain. Yet the first-response homotopy identity proves the interacting BV equation only through order lambda. At lambda squared an explicit B(q2) residual remains undecided. Thus the new result is a candidate formal fixed-point inverse, not an authoritative Weyl-BV Moller map. The decisive next objects are now a typed field-equation Green inverse and source-certified q2/q3/higher identities. All 77 cells and every Hadamard/QME firewall remain preserved.",
     "predecessor": {
-      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V18",
-      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V18.json",
-      "sha256": "1646208c095c513877e2a86c04d31b04582206f108be40e762fa5dbdfde5f520",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V19",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V19.json",
+      "sha256": "85ff97849543e61053f40273a92b3ea3816f4fa94f70110de14a3e44feef2251",
       "preserved": true
     },
     "status_vocabulary": [
@@ -18203,13 +18203,14 @@ window.MATRIX_EXPLORER_DATA = {
           {
             "stage": "S3_NONLINEAR_CARTAN",
             "status": "PARTIAL_CERTIFIED",
-            "statement": "The candidate nonlinear causal architecture now closes on every finite polarized retarded or advanced q2/Green tree. The exact support grammar locates the first unrestricted mixed-sign nondefinition at the balanced four-leaf topology. Authoritative q2 identity, higher brackets, a formal or convergent Møller series and the D-Cartan classification remain open.",
+            "statement": "Every finite polarized response tree and the resulting unique lambda-adic coefficient sequence are certified for the candidate. The formal fixed-point residual vanishes coefficientwise, but the Weyl-BV equation is established only at first order: an explicit undecided B(q2) residual appears at lambda squared. A typed field-equation Green inverse and source q2/q3/higher identities remain open.",
             "evidence": [
               "QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION",
               "STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1",
-              "STRICT_386_RECURSIVE_CAUSAL_TREE_DOMAINS_V1"
+              "STRICT_386_RECURSIVE_CAUSAL_TREE_DOMAINS_V1",
+              "STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1"
             ],
-            "boundary": "Finite polarized candidate trees are not an authoritative interaction, an unrestricted causal-difference recursion, an infinite perturbation series, a Hadamard state or a QME theorem."
+            "boundary": "Formal coefficient existence and lambda-adic stabilization are not analytic convergence, an action-derived Moller theorem, a Maurer-Cartan solution, authoritative q2, Hadamard data or QME restoration."
           },
           {
             "stage": "S4_HADAMARD_CCR",
@@ -18268,7 +18269,7 @@ window.MATRIX_EXPLORER_DATA = {
           }
         ],
         "first_unclosed_gate": "S0_CLASSICAL_AUTHORITY",
-        "next_decisive_object": "Source-certify q2 theory identity; meanwhile assemble the polarized finite trees coefficientwise into a formal Møller map and identify every required q3/higher source bracket."
+        "next_decisive_object": "Source-certify q2/q3/higher theory identity and construct the typed field-equation Green inverse needed to decide the lambda-squared BV residual."
       },
       {
         "id": "PURE_WEYL_BACH_FLAT_RANK310",
@@ -18895,9 +18896,9 @@ window.MATRIX_EXPLORER_DATA = {
       "strict_nonlinear_causal_front": {
         "branch": "STRICT_PURE_WEYL_386",
         "stage": "S3_NONLINEAR_CARTAN",
-        "current_fact": "All finite polarized candidate q2/Green trees close on PC/FC support steps; 38/40 four-leaf sign decorations are uniformly defined.",
-        "best_next_object": "A coefficientwise polarized formal Møller map, kept candidate-scoped, plus a source inventory of q3 and higher brackets.",
-        "foundational_boundary": "Finite support grammar is primitive recursive; PC/FC Green extensions remain imported classical smooth analysis with uncalibrated weakest base."
+        "current_fact": "Both candidate polarized fixed-point series exist uniquely lambda-adically with exact Catalan coefficients; the first unclosed BV equation coefficient is lambda squared.",
+        "best_next_object": "A field-equation-sector Green inverse plus exact q2/q3/higher source identities that decide the displayed B(q2) residual.",
+        "foundational_boundary": "Each coefficient is primitive-recursive finite data; the omega-sequence is formal, while every analytic coefficient still imports classical PC/FC Green analysis."
       }
     },
     "classical_import_reconciliation": {
@@ -19028,25 +19029,25 @@ window.MATRIX_EXPLORER_DATA = {
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "HIGH",
-        "recommendation": "Export the authoritative full nonlinear q2 or a source-certified cyclic L-infinity equivalence; compare it to the candidate and bind its hash."
+        "recommendation": "Export the authoritative nonlinear brackets or a source-certified cyclic L-infinity equivalence and bind their exact hashes."
       },
       {
         "rank": 2,
-        "route": "STRICT_POLARIZED_FORMAL_MOLLER_COEFFICIENTS",
+        "route": "STRICT_TYPED_FIELD_EQUATION_GREEN_INVERSE",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
-        "tractability": "HIGH",
-        "dependency_depth": "MEDIUM",
-        "recommendation": "Use the now-closed finite polarized domains to construct retarded and advanced formal coefficients and replay the fixed-point recursion without asserting analytic convergence."
+        "tractability": "MEDIUM",
+        "dependency_depth": "HIGH",
+        "recommendation": "Restrict the 386-row homotopy to the actual field-equation complex and prove the inverse identity required by Yang-Feldman, rather than a chain-homotopy identity alone."
       },
       {
         "rank": 3,
-        "route": "STRICT_HIGHER_BRACKET_CAUSAL_IMPORT",
+        "route": "STRICT_Q2_Q3_MAURER_CARTAN_CLOSURE",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "LOW",
         "dependency_depth": "HIGH",
-        "recommendation": "Inventory and source-certify q3 and every higher classical bracket required beyond the binary candidate, then test their support-local causal insertion."
+        "recommendation": "Replay the lambda-squared B(q2) residual with source q2/q3/higher identities and continue coefficientwise only when each obstruction closes."
       },
       {
         "rank": 4,
@@ -19104,21 +19105,30 @@ window.MATRIX_EXPLORER_DATA = {
       },
       {
         "rank": 10,
+        "route": "STRICT_ANALYTIC_MOLLER_CONVERGENCE",
+        "branch": "STRICT_PURE_WEYL_386",
+        "scientific_leverage": "MEDIUM",
+        "tractability": "LOW",
+        "dependency_depth": "HIGH",
+        "recommendation": "Only after the BV coefficients close, derive seminorm majorants and a nonzero convergence domain; lambda-adic stabilization is not evidence for this route."
+      },
+      {
+        "rank": 11,
         "route": "STRICT_MIXED_WEIGHTED_CAUSAL_DOMAIN",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "MEDIUM",
         "tractability": "MEDIUM",
         "dependency_depth": "MEDIUM",
-        "recommendation": "Test weighted or decaying opposite-polarity domains against the scalar zero-mode witness; do not require them for polarized Møller recursion."
+        "recommendation": "Test weighted or decaying opposite-polarity domains against the scalar zero-mode witness; polarized recursion does not require this."
       },
       {
-        "rank": 11,
+        "rank": 12,
         "route": "STRICT_GREEN_FOUNDATIONAL_CALIBRATION",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "MEDIUM",
         "tractability": "MEDIUM",
         "dependency_depth": "MEDIUM",
-        "recommendation": "Calibrate the weakest reverse-mathematical and choice principles behind the PC/FC Green extensions and spectral completeness."
+        "recommendation": "Calibrate the weakest reverse-mathematical and choice principles behind the PC/FC Green extensions and formal sequence coding."
       }
     ],
     "research_queue": [
@@ -19126,19 +19136,19 @@ window.MATRIX_EXPLORER_DATA = {
         "priority": 1,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_386_AUTHORITATIVE_Q2_IDENTITY",
-        "why": "Export the authoritative full nonlinear q2 or a source-certified cyclic L-infinity equivalence; compare it to the candidate and bind its hash."
+        "why": "Export the authoritative nonlinear brackets or a source-certified cyclic L-infinity equivalence and bind their exact hashes."
       },
       {
         "priority": 2,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_POLARIZED_FORMAL_MOLLER_COEFFICIENTS",
-        "why": "Use the now-closed finite polarized domains to construct retarded and advanced formal coefficients and replay the fixed-point recursion without asserting analytic convergence."
+        "object": "STRICT_TYPED_FIELD_EQUATION_GREEN_INVERSE",
+        "why": "Restrict the 386-row homotopy to the actual field-equation complex and prove the inverse identity required by Yang-Feldman, rather than a chain-homotopy identity alone."
       },
       {
         "priority": 3,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_HIGHER_BRACKET_CAUSAL_IMPORT",
-        "why": "Inventory and source-certify q3 and every higher classical bracket required beyond the binary candidate, then test their support-local causal insertion."
+        "object": "STRICT_Q2_Q3_MAURER_CARTAN_CLOSURE",
+        "why": "Replay the lambda-squared B(q2) residual with source q2/q3/higher identities and continue coefficientwise only when each obstruction closes."
       },
       {
         "priority": 4,
@@ -19179,14 +19189,20 @@ window.MATRIX_EXPLORER_DATA = {
       {
         "priority": 10,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_MIXED_WEIGHTED_CAUSAL_DOMAIN",
-        "why": "Test weighted or decaying opposite-polarity domains against the scalar zero-mode witness; do not require them for polarized Møller recursion."
+        "object": "STRICT_ANALYTIC_MOLLER_CONVERGENCE",
+        "why": "Only after the BV coefficients close, derive seminorm majorants and a nonzero convergence domain; lambda-adic stabilization is not evidence for this route."
       },
       {
         "priority": 11,
         "branch": "STRICT_PURE_WEYL_386",
+        "object": "STRICT_MIXED_WEIGHTED_CAUSAL_DOMAIN",
+        "why": "Test weighted or decaying opposite-polarity domains against the scalar zero-mode witness; polarized recursion does not require this."
+      },
+      {
+        "priority": 12,
+        "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_GREEN_FOUNDATIONAL_CALIBRATION",
-        "why": "Calibrate the weakest reverse-mathematical and choice principles behind the PC/FC Green extensions and spectral completeness."
+        "why": "Calibrate the weakest reverse-mathematical and choice principles behind the PC/FC Green extensions and formal sequence coding."
       }
     ],
     "provenance": {
@@ -19550,6 +19566,16 @@ window.MATRIX_EXPLORER_DATA = {
           "path": "quantum-weyl/classical_import/certificates/STRICT_386_RECURSIVE_CAUSAL_TREE_DOMAINS_V1.json",
           "sha256": "c209a21499367e6ba52baba20ca9264c8bf2ed1123646e9278e1c938cf9b1ca7",
           "role": "strict candidate polarized recursive-tree theorem and mixed-sign boundary"
+        },
+        {
+          "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V19.json",
+          "sha256": "85ff97849543e61053f40273a92b3ea3816f4fa94f70110de14a3e44feef2251",
+          "role": "immutable V19 atlas predecessor"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1.json",
+          "sha256": "583d8a8965c40fb4b8109520ae586c1bdc81ad4bcaadd23811a21dabb428ee6c",
+          "role": "strict candidate polarized formal coefficients and BV promotion diagnostic"
         }
       ]
     },
@@ -19661,7 +19687,18 @@ window.MATRIX_EXPLORER_DATA = {
       "strict_386_arbitrary_causal_difference_trees_certified": false,
       "strict_386_infinite_tree_series_convergence_certified": false,
       "strict_386_authoritative_q2_recursive_trees_certified": false,
-      "strict_386_q3_or_higher_causal_trees_certified": false
+      "strict_386_q3_or_higher_causal_trees_certified": false,
+      "v19_preserved": true,
+      "strict_386_candidate_polarized_formal_coefficients_certified": true,
+      "strict_386_candidate_coefficientwise_fixed_point_verified": true,
+      "strict_386_candidate_catalan_formula_verified": true,
+      "strict_386_candidate_lambda_adic_stabilization_verified": true,
+      "strict_386_order_lambda_squared_bv_residual_zero_certified": false,
+      "strict_386_typed_field_equation_green_inverse_certified": false,
+      "strict_386_weyl_bv_maurer_cartan_series_certified": false,
+      "strict_386_authoritative_formal_moller_map_certified": false,
+      "strict_386_analytic_moller_convergence_certified": false,
+      "strict_386_nonperturbative_moller_map_constructed": false
     },
     "does_not_establish": [
       "a passed strict pure-Weyl classical import gate",
@@ -19742,22 +19779,25 @@ window.MATRIX_EXPLORER_DATA = {
       "uniform definition of all mixed-sign or arbitrary causal-difference candidate trees",
       "a formal or convergent infinite polarized Møller series",
       "q3 or higher causal brackets on the strict carrier",
-      "authoritative recursive Weyl interaction rather than candidate binary recursion"
+      "authoritative recursive Weyl interaction rather than candidate binary recursion",
+      "that coefficientwise formal fixed-point inversion is a Weyl-BV Maurer-Cartan or Moller theorem",
+      "vanishing or nonvanishing of the lambda-squared B(q2) residual",
+      "a typed field-equation Green inverse or source q3/higher brackets",
+      "analytic convergence or a nonperturbative Moller inverse"
     ],
     "independent_checker": {
-      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v19.py",
+      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v20.py",
       "checks": [
-        "V18 predecessor and all 77 cells preserved",
-        "polarized retarded/advanced finite-tree projection",
-        "four-leaf 40/38/2 mixed-sign boundary projection",
-        "finite exact versus imported analytic foundation split",
-        "candidate, higher-bracket, infinite-series and authority firewalls",
-        "eleven-route deterministic queue",
-        "Hadamard/QME/lifecycle firewall"
+        "V19 predecessor and all 77 cells preserved",
+        "exact formal coefficient and Catalan projection",
+        "lambda-adic versus analytic-convergence separation",
+        "lambda and lambda-squared BV diagnostic projection",
+        "field-inverse, higher-bracket, authority, Hadamard and QME firewalls",
+        "twelve-route deterministic queue"
       ],
-      "expected_digest": "b614e4519c176f9c96ba1a5bd60935c9408281f45f24c3c28bc996ad185b93f3"
+      "expected_digest": "6affb781af2121bd01e5ed3d7fd18481d741bf0e35aae52ce1210f0a8a2c739f"
     },
-    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v19.md",
+    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v20.md",
     "strict_gate_a_progress": {
       "status": "STABILIZED_Q2_CANDIDATE_CERTIFIED_AUTHORITATIVE_IDENTITY_REQUIRED",
       "evidence": [
@@ -20560,6 +20600,29 @@ window.MATRIX_EXPLORER_DATA = {
       "foundational_classification": "FINITE_EXACT_TREE_GRAMMAR_OVER_CLASSICAL_SUPPORT_SPACE_ANALYSIS",
       "weakest_complete_foundational_base": "NOT_ESTABLISHED",
       "next_gate": "Keep authoritative q2 identity first. For the candidate analytic route, either introduce a weighted/decaying mixed support space that removes the zero-mode mismatch or use polarized retarded/advanced Møller trees; then establish tree-series estimates and import any q3/higher brackets before making an interacting or Hadamard claim."
+    },
+    "strict_polarized_formal_coefficients": {
+      "result_id": "STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1",
+      "status": "FORMAL_FIXED_POINT_COEFFICIENTS_CERTIFIED_MOLLER_AND_MAURER_CARTAN_PROMOTION_OPEN",
+      "orientations": 2,
+      "checked_through_leaves": 9,
+      "largest_checked_tree_count": 1430,
+      "coefficientwise_fixed_point": true,
+      "catalan_formula": true,
+      "formal_inverse": true,
+      "lambda_adic_stabilization": true,
+      "analytic_convergence": false,
+      "nonperturbative_inverse": false,
+      "order_lambda_bv_residual_zero": true,
+      "order_lambda_squared_bv_residual": "(1/4)(B_sigma(x,q2(x,x))+B_sigma(q2(x,x),x))",
+      "order_lambda_squared_bv_residual_zero_certified": false,
+      "weyl_bv_maurer_cartan_series": false,
+      "authoritative_weyl_bv_moller_map": false,
+      "typed_field_equation_green_inverse": false,
+      "q3_or_higher_imported": false,
+      "foundational_classification": "UNIFORM_PRIMITIVE_RECURSIVE_FORMAL_COEFFICIENT_SCHEMA_OVER_IMPORTED_CLASSICAL_GREEN_ANALYSIS",
+      "weakest_complete_foundational_base": "NOT_ESTABLISHED",
+      "next_gate": "Source-certify the authoritative nonlinear brackets and type the Green homotopy on the actual field-equation sector. Replay the lambda-squared BV residual with q2/q3 identities; only if every coefficient of the interacting equation closes may these formal fixed-point coefficients be promoted to a Weyl-BV Moller map. Analytic convergence remains a later, independent gate."
     }
   },
   "cross_cell_interfaces": [
@@ -20729,8 +20792,8 @@ window.MATRIX_EXPLORER_DATA = {
     "ground_state_dynamics_interface_report": "sources/foundations/reports/krein-fock-ground-state-dynamics-interface.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md",
-    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V19.json",
-    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v19.md",
+    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V20.json",
+    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v20.md",
     "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V7_RECONCILIATION.json",
     "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V7.md",
     "completion_sdr": "sources/quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json",
@@ -20768,7 +20831,9 @@ window.MATRIX_EXPLORER_DATA = {
     "completion_q2_green": "sources/quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1.json",
     "completion_q2_green_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1.md",
     "completion_recursive_trees": "sources/quantum-weyl/classical_import/certificates/STRICT_386_RECURSIVE_CAUSAL_TREE_DOMAINS_V1.json",
-    "completion_recursive_trees_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_RECURSIVE_CAUSAL_TREE_DOMAINS_V1.md"
+    "completion_recursive_trees_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_RECURSIVE_CAUSAL_TREE_DOMAINS_V1.md",
+    "completion_formal_coefficients": "sources/quantum-weyl/classical_import/certificates/STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1.json",
+    "completion_formal_coefficients_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1.md"
   },
-  "canonical_digest": "af0a176516578571f55742ef96342c222a8b768adb7374ec725a0af9ff5e37ff"
+  "canonical_digest": "81076bfb1d2da28fbc629d46bdb6b50ee3b2f1fa15100df65e7f3f9087633405"
 };
