@@ -1,0 +1,192 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-single-site-fiber-single-well-gate-v1.schema.json",
+  "title": "BT one-site fiber single-well gate certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "one_site_reduction", "single_well_theorem",
+    "minimum_curvature", "nonconvex_fixture", "literature_hypothesis_audit",
+    "method_disposition", "missing_object_ledger", "next_gate", "does_not_establish",
+    "provenance", "verification_commands", "tier_receipt", "checks", "report", "schema", "verifier"
+  ],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "fraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "textArray": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}}
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_SINGLE_SITE_FIBER_SINGLE_WELL_GATE_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-single-site-fiber-single-well-gate-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}, {"const": "EUCLIDEAN-SPECTRAL"}],
+      "items": false
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "one_site_reduction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["graph", "action", "fiber", "definitions", "exact_energy", "deleted_residual_bound", "critical_polynomial"],
+      "properties": {
+        "graph": {"const": "finite simple q-regular graph with 1<=q<16"},
+        "action": {"$ref": "#/$defs/text"},
+        "fiber": {"$ref": "#/$defs/text"},
+        "definitions": {"$ref": "#/$defs/text"},
+        "exact_energy": {"$ref": "#/$defs/text"},
+        "deleted_residual_bound": {"const": "d_i>-q"},
+        "critical_polynomial": {"$ref": "#/$defs/text"}
+      }
+    },
+    "single_well_theorem": {
+      "type": "object", "additionalProperties": false,
+      "required": ["product_inequality", "stationary_value_identity", "quartic_minimum", "strict_sign", "conclusion", "bt_degree", "exact_product_lower_bound", "exact_q_less_than_16_margin"],
+      "properties": {
+        "product_inequality": {"$ref": "#/$defs/text"},
+        "stationary_value_identity": {"$ref": "#/$defs/text"},
+        "quartic_minimum": {"$ref": "#/$defs/text"},
+        "strict_sign": {"$ref": "#/$defs/text"},
+        "conclusion": {"$ref": "#/$defs/text"},
+        "bt_degree": {"const": 8},
+        "exact_product_lower_bound": {"$ref": "#/$defs/fraction"},
+        "exact_q_less_than_16_margin": {"$ref": "#/$defs/fraction"}
+      }
+    },
+    "minimum_curvature": {
+      "type": "object", "additionalProperties": false,
+      "required": ["identity", "bound_chain", "rational_square_check", "bt_action_bound", "coupled_action_bound", "scope"],
+      "properties": {
+        "identity": {"$ref": "#/$defs/text"},
+        "bound_chain": {"$ref": "#/$defs/text"},
+        "rational_square_check": {"const": "sqrt(2)>45/32 because 2*32^2>45^2"},
+        "bt_action_bound": {"const": "F''(z_star)>13"},
+        "coupled_action_bound": {"$ref": "#/$defs/text"},
+        "scope": {"const": "curvature at the minimum only, not global strong convexity"}
+      }
+    },
+    "nonconvex_fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["lattice", "field_modulo_constant", "inverse_incident_edge_weights", "deleted_neighbor_residuals", "A", "C2", "C1", "critical_polynomial", "P_at_3", "P_at_4", "fiber_curvature_at_z_0", "root_bracket"],
+      "properties": {
+        "lattice": {"const": "periodic 4^4 nearest-neighbor lattice"},
+        "field_modulo_constant": {"$ref": "#/$defs/text"},
+        "inverse_incident_edge_weights": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"$ref": "#/$defs/fraction"}},
+        "deleted_neighbor_residuals": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"$ref": "#/$defs/fraction"}},
+        "A": {"$ref": "#/$defs/fraction"},
+        "C2": {"$ref": "#/$defs/fraction"},
+        "C1": {"$ref": "#/$defs/fraction"},
+        "critical_polynomial": {"const": "P(x)=32*x^4-121*x^3+32*x-16"},
+        "P_at_3": {"$ref": "#/$defs/fraction"},
+        "P_at_4": {"$ref": "#/$defs/fraction"},
+        "fiber_curvature_at_z_0": {"$ref": "#/$defs/fraction"},
+        "root_bracket": {"const": "the unique minimizer has log(3)<z_star<log(4)"}
+      }
+    },
+    "literature_hypothesis_audit": {
+      "type": "object", "additionalProperties": false,
+      "required": ["thoma_membrane", "menz_otto", "nonconvex_gradient_rg", "import_status"],
+      "properties": {
+        "thoma_membrane": {"$ref": "#/$defs/text"},
+        "menz_otto": {"$ref": "#/$defs/text"},
+        "nonconvex_gradient_rg": {"$ref": "#/$defs/text"},
+        "import_status": {"const": "METHODS_IDENTIFIED_THEOREMS_NOT_IMPORTED"}
+      }
+    },
+    "method_disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["all_one_site_fibers_single_well", "bt_one_site_minimum_curvature", "global_one_site_strong_convexity", "uniform_one_site_poincare", "uniform_inter_site_influence", "lu_yau_or_otto_reznikoff_import", "volume_uniform_witten_coercivity", "interacting_h_minus_one_bound", "continuum_reconstruction", "ordinary_os_at_lambda_0p4", "born_rule", "krein_reconstruction", "lorentzian_transfer"],
+      "properties": {
+        "all_one_site_fibers_single_well": {"const": "PROVED_FOR_Q_LESS_THAN_16"},
+        "bt_one_site_minimum_curvature": {"const": "PROVED_GREATER_THAN_13"},
+        "global_one_site_strong_convexity": {"const": "OBSTRUCTED_BY_EXACT_L4_FIXTURE"},
+        "uniform_one_site_poincare": {"const": "OPEN"},
+        "uniform_inter_site_influence": {"const": "OPEN"},
+        "lu_yau_or_otto_reznikoff_import": {"const": "NOT_JUSTIFIED"},
+        "volume_uniform_witten_coercivity": {"const": "OPEN"},
+        "interacting_h_minus_one_bound": {"const": "OPEN"},
+        "continuum_reconstruction": {"const": "NOT_ESTABLISHED"},
+        "ordinary_os_at_lambda_0p4": {"const": "OBSTRUCTED_ON_DECLARED_L6_FIXTURE"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"$ref": "#/$defs/textArray"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/textArray"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic", "literature_sources"],
+      "properties": {
+        "repository_base_commit": {"const": "2040f0c7964077686b7171b528be69cde62d4772"},
+        "inputs": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"},
+        "literature_sources": {"$ref": "#/$defs/textArray"}
+      }
+    },
+    "verification_commands": {"$ref": "#/$defs/textArray"},
+    "tier_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "memory_policy", "elapsed_seconds_and_peak_kib", "repository_audits"],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/text"},
+        "tier_1": {"$ref": "#/$defs/text"},
+        "tier_2": {"$ref": "#/$defs/text"},
+        "tier_3": {"$ref": "#/$defs/text"},
+        "memory_policy": {"$ref": "#/$defs/text"},
+        "elapsed_seconds_and_peak_kib": {
+          "type": "object", "additionalProperties": false,
+          "required": ["producer_check", "independent_verifier", "unit_tests"],
+          "properties": {
+            "producer_check": {"$ref": "#/$defs/text"},
+            "independent_verifier": {"$ref": "#/$defs/text"},
+            "unit_tests": {"$ref": "#/$defs/text"}
+          }
+        },
+        "repository_audits": {
+          "type": "object", "additionalProperties": false,
+          "required": ["planning_import", "science_forge_shadow"],
+          "properties": {
+            "planning_import": {"$ref": "#/$defs/text"},
+            "science_forge_shadow": {"$ref": "#/$defs/text"}
+          }
+        }
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-single-site-fiber-single-well-gate.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-single-site-fiber-single-well-gate-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_single_site_fiber_single_well_gate.py"}
+  }
+}
