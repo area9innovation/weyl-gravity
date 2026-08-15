@@ -1,0 +1,878 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "classical-shifted-auxiliary-cubic-inventory-v1",
+  "result_id": "CLASSICAL_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1",
+  "result_kind": "AUTHORITATIVE_SHIFTED_AUXILIARY_CUBIC_COMPONENT_EXPORT_AND_COMPLETENESS_AUDIT",
+  "result_state": "H_F_HAT_F_HAT_AND_VV_MAP_COMPONENTS_EXACT_REQUIRED_FAMILIES_ENUMERATED_FULL_BV_CENSUS_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "scope": {
+    "theory": "four-dimensional ordinary-derivative strict pure-Weyl gravity",
+    "background": "Minkowski normal frame at zero Stueckelberg vector",
+    "carrier_sector": "66-row generalized-auxiliary sector embedded in the strict 386-row carrier",
+    "coefficient_field": "Q",
+    "claim_scope": "zero-jet shifted-mass cubic coefficients, vv field-map coefficients, and evidence-typed required-family census"
+  },
+  "shifted_auxiliary_mass_vertex": {
+    "source_density": "sqrt(-g)/4*((tr_g f_hat)^2-f_hat^{mu nu}f_hat_mu nu)",
+    "cubic_density": "(tr h)((tr f_hat)^2-f_hat^2)/8-(tr f_hat)(h^sharp:f_hat)/2+h^{mu alpha}g^{nu beta}f_hat_{alpha beta}f_hat_{mu nu}/2",
+    "block_family": [
+      "ENDPOINT_M",
+      "AUX_F_HAT",
+      "AUX_F_HAT"
+    ],
+    "component_basis": [
+      "00",
+      "01",
+      "02",
+      "03",
+      "11",
+      "12",
+      "13",
+      "22",
+      "23",
+      "33"
+    ],
+    "possible_symmetric_component_monomials": 550,
+    "nonzero_component_monomials": 72,
+    "entries": [
+      {
+        "h_row": "h_00",
+        "f_hat_left_row": "f_hat_00",
+        "f_hat_right_row": "f_hat_11",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/4"
+      },
+      {
+        "h_row": "h_00",
+        "f_hat_left_row": "f_hat_00",
+        "f_hat_right_row": "f_hat_22",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/4"
+      },
+      {
+        "h_row": "h_00",
+        "f_hat_left_row": "f_hat_00",
+        "f_hat_right_row": "f_hat_33",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/4"
+      },
+      {
+        "h_row": "h_00",
+        "f_hat_left_row": "f_hat_01",
+        "f_hat_right_row": "f_hat_01",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/2"
+      },
+      {
+        "h_row": "h_00",
+        "f_hat_left_row": "f_hat_02",
+        "f_hat_right_row": "f_hat_02",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/2"
+      },
+      {
+        "h_row": "h_00",
+        "f_hat_left_row": "f_hat_03",
+        "f_hat_right_row": "f_hat_03",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/2"
+      },
+      {
+        "h_row": "h_00",
+        "f_hat_left_row": "f_hat_11",
+        "f_hat_right_row": "f_hat_22",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/4"
+      },
+      {
+        "h_row": "h_00",
+        "f_hat_left_row": "f_hat_11",
+        "f_hat_right_row": "f_hat_33",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/4"
+      },
+      {
+        "h_row": "h_00",
+        "f_hat_left_row": "f_hat_12",
+        "f_hat_right_row": "f_hat_12",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/2"
+      },
+      {
+        "h_row": "h_00",
+        "f_hat_left_row": "f_hat_13",
+        "f_hat_right_row": "f_hat_13",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/2"
+      },
+      {
+        "h_row": "h_00",
+        "f_hat_left_row": "f_hat_22",
+        "f_hat_right_row": "f_hat_33",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/4"
+      },
+      {
+        "h_row": "h_00",
+        "f_hat_left_row": "f_hat_23",
+        "f_hat_right_row": "f_hat_23",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/2"
+      },
+      {
+        "h_row": "h_01",
+        "f_hat_left_row": "f_hat_01",
+        "f_hat_right_row": "f_hat_22",
+        "homogeneous_polynomial_coefficient": "1",
+        "D_h_D_f_left_D_f_right": "1"
+      },
+      {
+        "h_row": "h_01",
+        "f_hat_left_row": "f_hat_01",
+        "f_hat_right_row": "f_hat_33",
+        "homogeneous_polynomial_coefficient": "1",
+        "D_h_D_f_left_D_f_right": "1"
+      },
+      {
+        "h_row": "h_01",
+        "f_hat_left_row": "f_hat_02",
+        "f_hat_right_row": "f_hat_12",
+        "homogeneous_polynomial_coefficient": "-1",
+        "D_h_D_f_left_D_f_right": "-1"
+      },
+      {
+        "h_row": "h_01",
+        "f_hat_left_row": "f_hat_03",
+        "f_hat_right_row": "f_hat_13",
+        "homogeneous_polynomial_coefficient": "-1",
+        "D_h_D_f_left_D_f_right": "-1"
+      },
+      {
+        "h_row": "h_02",
+        "f_hat_left_row": "f_hat_01",
+        "f_hat_right_row": "f_hat_12",
+        "homogeneous_polynomial_coefficient": "-1",
+        "D_h_D_f_left_D_f_right": "-1"
+      },
+      {
+        "h_row": "h_02",
+        "f_hat_left_row": "f_hat_02",
+        "f_hat_right_row": "f_hat_11",
+        "homogeneous_polynomial_coefficient": "1",
+        "D_h_D_f_left_D_f_right": "1"
+      },
+      {
+        "h_row": "h_02",
+        "f_hat_left_row": "f_hat_02",
+        "f_hat_right_row": "f_hat_33",
+        "homogeneous_polynomial_coefficient": "1",
+        "D_h_D_f_left_D_f_right": "1"
+      },
+      {
+        "h_row": "h_02",
+        "f_hat_left_row": "f_hat_03",
+        "f_hat_right_row": "f_hat_23",
+        "homogeneous_polynomial_coefficient": "-1",
+        "D_h_D_f_left_D_f_right": "-1"
+      },
+      {
+        "h_row": "h_03",
+        "f_hat_left_row": "f_hat_01",
+        "f_hat_right_row": "f_hat_13",
+        "homogeneous_polynomial_coefficient": "-1",
+        "D_h_D_f_left_D_f_right": "-1"
+      },
+      {
+        "h_row": "h_03",
+        "f_hat_left_row": "f_hat_02",
+        "f_hat_right_row": "f_hat_23",
+        "homogeneous_polynomial_coefficient": "-1",
+        "D_h_D_f_left_D_f_right": "-1"
+      },
+      {
+        "h_row": "h_03",
+        "f_hat_left_row": "f_hat_03",
+        "f_hat_right_row": "f_hat_11",
+        "homogeneous_polynomial_coefficient": "1",
+        "D_h_D_f_left_D_f_right": "1"
+      },
+      {
+        "h_row": "h_03",
+        "f_hat_left_row": "f_hat_03",
+        "f_hat_right_row": "f_hat_22",
+        "homogeneous_polynomial_coefficient": "1",
+        "D_h_D_f_left_D_f_right": "1"
+      },
+      {
+        "h_row": "h_11",
+        "f_hat_left_row": "f_hat_00",
+        "f_hat_right_row": "f_hat_11",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/4"
+      },
+      {
+        "h_row": "h_11",
+        "f_hat_left_row": "f_hat_00",
+        "f_hat_right_row": "f_hat_22",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/4"
+      },
+      {
+        "h_row": "h_11",
+        "f_hat_left_row": "f_hat_00",
+        "f_hat_right_row": "f_hat_33",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/4"
+      },
+      {
+        "h_row": "h_11",
+        "f_hat_left_row": "f_hat_01",
+        "f_hat_right_row": "f_hat_01",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/2"
+      },
+      {
+        "h_row": "h_11",
+        "f_hat_left_row": "f_hat_02",
+        "f_hat_right_row": "f_hat_02",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/2"
+      },
+      {
+        "h_row": "h_11",
+        "f_hat_left_row": "f_hat_03",
+        "f_hat_right_row": "f_hat_03",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/2"
+      },
+      {
+        "h_row": "h_11",
+        "f_hat_left_row": "f_hat_11",
+        "f_hat_right_row": "f_hat_22",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/4"
+      },
+      {
+        "h_row": "h_11",
+        "f_hat_left_row": "f_hat_11",
+        "f_hat_right_row": "f_hat_33",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/4"
+      },
+      {
+        "h_row": "h_11",
+        "f_hat_left_row": "f_hat_12",
+        "f_hat_right_row": "f_hat_12",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/2"
+      },
+      {
+        "h_row": "h_11",
+        "f_hat_left_row": "f_hat_13",
+        "f_hat_right_row": "f_hat_13",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/2"
+      },
+      {
+        "h_row": "h_11",
+        "f_hat_left_row": "f_hat_22",
+        "f_hat_right_row": "f_hat_33",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/4"
+      },
+      {
+        "h_row": "h_11",
+        "f_hat_left_row": "f_hat_23",
+        "f_hat_right_row": "f_hat_23",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/2"
+      },
+      {
+        "h_row": "h_12",
+        "f_hat_left_row": "f_hat_00",
+        "f_hat_right_row": "f_hat_12",
+        "homogeneous_polynomial_coefficient": "1",
+        "D_h_D_f_left_D_f_right": "1"
+      },
+      {
+        "h_row": "h_12",
+        "f_hat_left_row": "f_hat_01",
+        "f_hat_right_row": "f_hat_02",
+        "homogeneous_polynomial_coefficient": "-1",
+        "D_h_D_f_left_D_f_right": "-1"
+      },
+      {
+        "h_row": "h_12",
+        "f_hat_left_row": "f_hat_12",
+        "f_hat_right_row": "f_hat_33",
+        "homogeneous_polynomial_coefficient": "-1",
+        "D_h_D_f_left_D_f_right": "-1"
+      },
+      {
+        "h_row": "h_12",
+        "f_hat_left_row": "f_hat_13",
+        "f_hat_right_row": "f_hat_23",
+        "homogeneous_polynomial_coefficient": "1",
+        "D_h_D_f_left_D_f_right": "1"
+      },
+      {
+        "h_row": "h_13",
+        "f_hat_left_row": "f_hat_00",
+        "f_hat_right_row": "f_hat_13",
+        "homogeneous_polynomial_coefficient": "1",
+        "D_h_D_f_left_D_f_right": "1"
+      },
+      {
+        "h_row": "h_13",
+        "f_hat_left_row": "f_hat_01",
+        "f_hat_right_row": "f_hat_03",
+        "homogeneous_polynomial_coefficient": "-1",
+        "D_h_D_f_left_D_f_right": "-1"
+      },
+      {
+        "h_row": "h_13",
+        "f_hat_left_row": "f_hat_12",
+        "f_hat_right_row": "f_hat_23",
+        "homogeneous_polynomial_coefficient": "1",
+        "D_h_D_f_left_D_f_right": "1"
+      },
+      {
+        "h_row": "h_13",
+        "f_hat_left_row": "f_hat_13",
+        "f_hat_right_row": "f_hat_22",
+        "homogeneous_polynomial_coefficient": "-1",
+        "D_h_D_f_left_D_f_right": "-1"
+      },
+      {
+        "h_row": "h_22",
+        "f_hat_left_row": "f_hat_00",
+        "f_hat_right_row": "f_hat_11",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/4"
+      },
+      {
+        "h_row": "h_22",
+        "f_hat_left_row": "f_hat_00",
+        "f_hat_right_row": "f_hat_22",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/4"
+      },
+      {
+        "h_row": "h_22",
+        "f_hat_left_row": "f_hat_00",
+        "f_hat_right_row": "f_hat_33",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/4"
+      },
+      {
+        "h_row": "h_22",
+        "f_hat_left_row": "f_hat_01",
+        "f_hat_right_row": "f_hat_01",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/2"
+      },
+      {
+        "h_row": "h_22",
+        "f_hat_left_row": "f_hat_02",
+        "f_hat_right_row": "f_hat_02",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/2"
+      },
+      {
+        "h_row": "h_22",
+        "f_hat_left_row": "f_hat_03",
+        "f_hat_right_row": "f_hat_03",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/2"
+      },
+      {
+        "h_row": "h_22",
+        "f_hat_left_row": "f_hat_11",
+        "f_hat_right_row": "f_hat_22",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/4"
+      },
+      {
+        "h_row": "h_22",
+        "f_hat_left_row": "f_hat_11",
+        "f_hat_right_row": "f_hat_33",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/4"
+      },
+      {
+        "h_row": "h_22",
+        "f_hat_left_row": "f_hat_12",
+        "f_hat_right_row": "f_hat_12",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/2"
+      },
+      {
+        "h_row": "h_22",
+        "f_hat_left_row": "f_hat_13",
+        "f_hat_right_row": "f_hat_13",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/2"
+      },
+      {
+        "h_row": "h_22",
+        "f_hat_left_row": "f_hat_22",
+        "f_hat_right_row": "f_hat_33",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/4"
+      },
+      {
+        "h_row": "h_22",
+        "f_hat_left_row": "f_hat_23",
+        "f_hat_right_row": "f_hat_23",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/2"
+      },
+      {
+        "h_row": "h_23",
+        "f_hat_left_row": "f_hat_00",
+        "f_hat_right_row": "f_hat_23",
+        "homogeneous_polynomial_coefficient": "1",
+        "D_h_D_f_left_D_f_right": "1"
+      },
+      {
+        "h_row": "h_23",
+        "f_hat_left_row": "f_hat_02",
+        "f_hat_right_row": "f_hat_03",
+        "homogeneous_polynomial_coefficient": "-1",
+        "D_h_D_f_left_D_f_right": "-1"
+      },
+      {
+        "h_row": "h_23",
+        "f_hat_left_row": "f_hat_11",
+        "f_hat_right_row": "f_hat_23",
+        "homogeneous_polynomial_coefficient": "-1",
+        "D_h_D_f_left_D_f_right": "-1"
+      },
+      {
+        "h_row": "h_23",
+        "f_hat_left_row": "f_hat_12",
+        "f_hat_right_row": "f_hat_13",
+        "homogeneous_polynomial_coefficient": "1",
+        "D_h_D_f_left_D_f_right": "1"
+      },
+      {
+        "h_row": "h_33",
+        "f_hat_left_row": "f_hat_00",
+        "f_hat_right_row": "f_hat_11",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/4"
+      },
+      {
+        "h_row": "h_33",
+        "f_hat_left_row": "f_hat_00",
+        "f_hat_right_row": "f_hat_22",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/4"
+      },
+      {
+        "h_row": "h_33",
+        "f_hat_left_row": "f_hat_00",
+        "f_hat_right_row": "f_hat_33",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/4"
+      },
+      {
+        "h_row": "h_33",
+        "f_hat_left_row": "f_hat_01",
+        "f_hat_right_row": "f_hat_01",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/2"
+      },
+      {
+        "h_row": "h_33",
+        "f_hat_left_row": "f_hat_02",
+        "f_hat_right_row": "f_hat_02",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/2"
+      },
+      {
+        "h_row": "h_33",
+        "f_hat_left_row": "f_hat_03",
+        "f_hat_right_row": "f_hat_03",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/2"
+      },
+      {
+        "h_row": "h_33",
+        "f_hat_left_row": "f_hat_11",
+        "f_hat_right_row": "f_hat_22",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/4"
+      },
+      {
+        "h_row": "h_33",
+        "f_hat_left_row": "f_hat_11",
+        "f_hat_right_row": "f_hat_33",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/4"
+      },
+      {
+        "h_row": "h_33",
+        "f_hat_left_row": "f_hat_12",
+        "f_hat_right_row": "f_hat_12",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/2"
+      },
+      {
+        "h_row": "h_33",
+        "f_hat_left_row": "f_hat_13",
+        "f_hat_right_row": "f_hat_13",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/2"
+      },
+      {
+        "h_row": "h_33",
+        "f_hat_left_row": "f_hat_22",
+        "f_hat_right_row": "f_hat_33",
+        "homogeneous_polynomial_coefficient": "-1/4",
+        "D_h_D_f_left_D_f_right": "-1/4"
+      },
+      {
+        "h_row": "h_33",
+        "f_hat_left_row": "f_hat_23",
+        "f_hat_right_row": "f_hat_23",
+        "homogeneous_polynomial_coefficient": "1/4",
+        "D_h_D_f_left_D_f_right": "1/2"
+      }
+    ],
+    "pure_trace_h_defects": 0,
+    "pure_trace_h_check_count": 55,
+    "interpretation": "The zero pure-trace count is the componentwise four-dimensional Weyl-invariance check of the shifted auxiliary mass vertex."
+  },
+  "quadratic_vv_field_map": {
+    "homogeneous_component": "F_(2)(v)=v tensor v-(1/2)g v^2",
+    "second_Frechet_component": "D^2F(v,w)=v tensor w+w tensor v-g(v,w)g",
+    "block_family": {
+      "inputs": [
+        "AUX_V",
+        "AUX_V"
+      ],
+      "output": "AUX_F_HAT"
+    },
+    "possible_symmetric_component_coefficients": 100,
+    "nonzero_homogeneous_component_coefficients": 22,
+    "entries": [
+      {
+        "output_row": "f_hat_00",
+        "v_left_row": "v_0",
+        "v_right_row": "v_0",
+        "homogeneous_polynomial_coefficient": "1/2",
+        "second_Frechet_coefficient": "1"
+      },
+      {
+        "output_row": "f_hat_00",
+        "v_left_row": "v_1",
+        "v_right_row": "v_1",
+        "homogeneous_polynomial_coefficient": "1/2",
+        "second_Frechet_coefficient": "1"
+      },
+      {
+        "output_row": "f_hat_00",
+        "v_left_row": "v_2",
+        "v_right_row": "v_2",
+        "homogeneous_polynomial_coefficient": "1/2",
+        "second_Frechet_coefficient": "1"
+      },
+      {
+        "output_row": "f_hat_00",
+        "v_left_row": "v_3",
+        "v_right_row": "v_3",
+        "homogeneous_polynomial_coefficient": "1/2",
+        "second_Frechet_coefficient": "1"
+      },
+      {
+        "output_row": "f_hat_01",
+        "v_left_row": "v_0",
+        "v_right_row": "v_1",
+        "homogeneous_polynomial_coefficient": "1",
+        "second_Frechet_coefficient": "1"
+      },
+      {
+        "output_row": "f_hat_02",
+        "v_left_row": "v_0",
+        "v_right_row": "v_2",
+        "homogeneous_polynomial_coefficient": "1",
+        "second_Frechet_coefficient": "1"
+      },
+      {
+        "output_row": "f_hat_03",
+        "v_left_row": "v_0",
+        "v_right_row": "v_3",
+        "homogeneous_polynomial_coefficient": "1",
+        "second_Frechet_coefficient": "1"
+      },
+      {
+        "output_row": "f_hat_11",
+        "v_left_row": "v_0",
+        "v_right_row": "v_0",
+        "homogeneous_polynomial_coefficient": "1/2",
+        "second_Frechet_coefficient": "1"
+      },
+      {
+        "output_row": "f_hat_11",
+        "v_left_row": "v_1",
+        "v_right_row": "v_1",
+        "homogeneous_polynomial_coefficient": "1/2",
+        "second_Frechet_coefficient": "1"
+      },
+      {
+        "output_row": "f_hat_11",
+        "v_left_row": "v_2",
+        "v_right_row": "v_2",
+        "homogeneous_polynomial_coefficient": "-1/2",
+        "second_Frechet_coefficient": "-1"
+      },
+      {
+        "output_row": "f_hat_11",
+        "v_left_row": "v_3",
+        "v_right_row": "v_3",
+        "homogeneous_polynomial_coefficient": "-1/2",
+        "second_Frechet_coefficient": "-1"
+      },
+      {
+        "output_row": "f_hat_12",
+        "v_left_row": "v_1",
+        "v_right_row": "v_2",
+        "homogeneous_polynomial_coefficient": "1",
+        "second_Frechet_coefficient": "1"
+      },
+      {
+        "output_row": "f_hat_13",
+        "v_left_row": "v_1",
+        "v_right_row": "v_3",
+        "homogeneous_polynomial_coefficient": "1",
+        "second_Frechet_coefficient": "1"
+      },
+      {
+        "output_row": "f_hat_22",
+        "v_left_row": "v_0",
+        "v_right_row": "v_0",
+        "homogeneous_polynomial_coefficient": "1/2",
+        "second_Frechet_coefficient": "1"
+      },
+      {
+        "output_row": "f_hat_22",
+        "v_left_row": "v_1",
+        "v_right_row": "v_1",
+        "homogeneous_polynomial_coefficient": "-1/2",
+        "second_Frechet_coefficient": "-1"
+      },
+      {
+        "output_row": "f_hat_22",
+        "v_left_row": "v_2",
+        "v_right_row": "v_2",
+        "homogeneous_polynomial_coefficient": "1/2",
+        "second_Frechet_coefficient": "1"
+      },
+      {
+        "output_row": "f_hat_22",
+        "v_left_row": "v_3",
+        "v_right_row": "v_3",
+        "homogeneous_polynomial_coefficient": "-1/2",
+        "second_Frechet_coefficient": "-1"
+      },
+      {
+        "output_row": "f_hat_23",
+        "v_left_row": "v_2",
+        "v_right_row": "v_3",
+        "homogeneous_polynomial_coefficient": "1",
+        "second_Frechet_coefficient": "1"
+      },
+      {
+        "output_row": "f_hat_33",
+        "v_left_row": "v_0",
+        "v_right_row": "v_0",
+        "homogeneous_polynomial_coefficient": "1/2",
+        "second_Frechet_coefficient": "1"
+      },
+      {
+        "output_row": "f_hat_33",
+        "v_left_row": "v_1",
+        "v_right_row": "v_1",
+        "homogeneous_polynomial_coefficient": "-1/2",
+        "second_Frechet_coefficient": "-1"
+      },
+      {
+        "output_row": "f_hat_33",
+        "v_left_row": "v_2",
+        "v_right_row": "v_2",
+        "homogeneous_polynomial_coefficient": "-1/2",
+        "second_Frechet_coefficient": "-1"
+      },
+      {
+        "output_row": "f_hat_33",
+        "v_left_row": "v_3",
+        "v_right_row": "v_3",
+        "homogeneous_polynomial_coefficient": "1/2",
+        "second_Frechet_coefficient": "1"
+      }
+    ]
+  },
+  "required_cubic_family_inventory": [
+    {
+      "family_id": "SHIFTED_MASS_H_F_HAT_F_HAT",
+      "cubic_vertex": [
+        "ENDPOINT_M",
+        "AUX_F_HAT",
+        "AUX_F_HAT"
+      ],
+      "status": "COMPONENT_COEFFICIENTS_SERIALIZED",
+      "authority": "exact shifted auxiliary mass density",
+      "derivative_order": 0
+    },
+    {
+      "family_id": "TYPE_II_F_HAT_STAR_V_V",
+      "cubic_vertex": [
+        "AUX_F_HAT_STAR",
+        "AUX_V",
+        "AUX_V"
+      ],
+      "status": "FIELD_COMPONENT_COEFFICIENTS_SERIALIZED_COTANGENT_PARTNER_REQUIRED",
+      "authority": "quadratic vector component of the exact type-II generator",
+      "derivative_order": 0
+    },
+    {
+      "family_id": "TYPE_II_F_HAT_STAR_H_H",
+      "cubic_vertex": [
+        "AUX_F_HAT_STAR",
+        "ENDPOINT_M",
+        "ENDPOINT_M"
+      ],
+      "status": "FORMULA_DEFINED_COMPONENT_COEFFICIENTS_OPEN",
+      "authority": "D_g^2(A_g^-1 G^b) in the exact type-II generator",
+      "derivative_order": 2
+    },
+    {
+      "family_id": "TYPE_II_F_HAT_STAR_H_V",
+      "cubic_vertex": [
+        "AUX_F_HAT_STAR",
+        "ENDPOINT_M",
+        "AUX_V"
+      ],
+      "status": "FORMULA_DEFINED_COMPONENT_COEFFICIENTS_OPEN",
+      "authority": "D_g D_b(A_g^-1 G^b) in the exact type-II generator",
+      "derivative_order": 2
+    },
+    {
+      "family_id": "DIFF_C_F_HAT_F_HAT_STAR",
+      "cubic_vertex": [
+        "ENDPOINT_G_DIFF",
+        "AUX_F_HAT",
+        "AUX_F_HAT_STAR"
+      ],
+      "status": "SOURCE_FORCED_COMPONENT_COEFFICIENTS_OPEN",
+      "authority": "diffeomorphism Lie derivative and BV cotangent lift",
+      "derivative_order": 1
+    },
+    {
+      "family_id": "DIFF_C_V_V_STAR",
+      "cubic_vertex": [
+        "ENDPOINT_G_DIFF",
+        "AUX_V",
+        "AUX_V_STAR"
+      ],
+      "status": "SOURCE_FORCED_COMPONENT_COEFFICIENTS_OPEN",
+      "authority": "diffeomorphism Lie derivative and BV cotangent lift",
+      "derivative_order": 1
+    },
+    {
+      "family_id": "DIFF_C_ETA_ETA_STAR",
+      "cubic_vertex": [
+        "ENDPOINT_G_DIFF",
+        "AUX_ETA",
+        "AUX_ETA_STAR"
+      ],
+      "status": "SOURCE_FORCED_COMPONENT_COEFFICIENTS_OPEN",
+      "authority": "diffeomorphism semidirect action on the shifted boost ghost and its cotangent",
+      "derivative_order": 1
+    }
+  ],
+  "inventory_completeness": {
+    "known_required_cubic_block_families_enumerated": 7,
+    "component_coefficient_complete_families": 1,
+    "component_coefficient_complete_after_vv_receiver_cotangent_partner": 2,
+    "formula_defined_but_component_open_families": 2,
+    "source_forced_gauge_BV_component_open_families": 3,
+    "exhaustive_full_nonlinear_BV_family_census": false,
+    "reason_not_exhaustive": "The portable source manifest gives the action, the exact field shift and linearized boost transformation, but not the complete nonlinear Weyl/boost ghost algebra and all antifield transformations. Those bytes are required before absence of further ghost families can be certified.",
+    "full_component_coefficient_inventory": false
+  },
+  "candidate_comparison": {
+    "trivial_stabilization_auxiliary_blocks_interaction_inert": true,
+    "f_hat_v_v_mismatch_after_vv_pullback": "CLOSED",
+    "h_f_hat_f_hat_source_vertex_nonzero_coefficients": 72,
+    "h_f_hat_f_hat_candidate_vertex_nonzero_coefficients": 0,
+    "exact_auxiliary_shift_alone_identifies_source_with_trivial_stabilization": false,
+    "further_metric_dependent_canonical_or_L_infinity_normalization_may_exist": true,
+    "full_nonlinear_equivalence_obstructed": false
+  },
+  "foundational_strength": {
+    "exact_rational": true,
+    "finite_component_tables": true,
+    "support_local": true,
+    "uses_green_operator": false,
+    "uses_choice_principle": false
+  },
+  "claim_flags": {
+    "SHIFTED_MASS_H_F_HAT_F_HAT_COMPONENTS_SERIALIZED": true,
+    "VV_FIELD_MAP_COMPONENTS_SERIALIZED": true,
+    "KNOWN_REQUIRED_CUBIC_FAMILIES_ENUMERATED": true,
+    "EXHAUSTIVE_FULL_NONLINEAR_BV_FAMILY_CENSUS": false,
+    "FULL_COMPONENT_COEFFICIENT_INVENTORY": false,
+    "EXACT_SHIFT_ALONE_IDENTIFIES_TRIVIAL_STABILIZATION": false,
+    "FULL_NONLINEAR_EQUIVALENCE_OBSTRUCTED": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "QME_RESTORED": false
+  },
+  "does_not_establish": [
+    "an exhaustive nonlinear Weyl/boost ghost-antifield family census",
+    "the hh or hv component tables of the auxiliary shift",
+    "the component tables of the three diffeomorphism representation vertices",
+    "a complete 386-row BV cotangent lift or source q2/q3 pullback",
+    "Gate A, Hadamard data, renormalized Lorentzian products, QME restoration, or residual transfer"
+  ],
+  "canonical_hashes": {
+    "shifted_auxiliary_mass_vertex_sha256": "e618a703754317bf1a1fb439645212cebd1b6a8c2f4ff58cab286d67811c0130",
+    "quadratic_vv_field_map_sha256": "f4eefa1760ac1e059005a1df65ab25457980713a5d9ce822ab1c822a851ab873",
+    "required_cubic_family_inventory_sha256": "20c238cba49da1d0a4997ccc9cc349b634b44597cc49f80bb38250f0f90f7de9",
+    "candidate_comparison_sha256": "e7bb5c546700e6bb6e3af02476f1aef4f64b357027c53281fa1f5cdeaf36ea28"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "covariant_completion/certificates/curved_auxiliary_action_definition.json",
+        "schema": "pure-weyl-covariant-auxiliary-action-definition-v1",
+        "sha256": "6acb586df9784c925fc994701ae910cc243e6898d635626513f4a1adfbdab4db",
+        "role": "authoritative ordinary-derivative action and gauge manifest"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_auxiliary_canonical_split.json",
+        "schema": "pure-weyl-curved-auxiliary-canonical-split-v1",
+        "sha256": "e8326afd4f8cf919f2d3c20de8065a767a40f40f509968fb542efe43a6a80343",
+        "role": "exact nonlinear split and type-II BV generator"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_QUADRATIC_AUXILIARY_ELIMINATION_MAP_V1.json",
+        "result_id": "CLASSICAL_QUADRATIC_AUXILIARY_ELIMINATION_MAP_V1",
+        "sha256": "0f5027c3e466fcbd5a7153cc1dac10be10ed7326cb501adc9cf644f50274515b",
+        "role": "first exact quadratic vector component"
+      }
+    ]
+  },
+  "literature": {
+    "reference": "R. R. Metsaev, Ordinary-derivative formulation of conformal low-spin fields, arXiv:0707.4437v3, Sec. 6",
+    "url": "https://arxiv.org/abs/0707.4437"
+  },
+  "human_report": "d_quotient_classical/reports/classical-shifted-auxiliary-cubic-inventory-v1.md",
+  "next_gate": "Import the 72-entry shifted-mass vertex and 22-entry vv field map into the 386-row receiver, construct the paired vv antifield table, then derive the hh/hv and nonlinear gauge-BV component tables before claiming a full cotangent lift or exhaustive family census."
+}

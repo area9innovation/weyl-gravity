@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/classical-shifted-auxiliary-cubic-inventory-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "dependency_tags", "scope", "shifted_auxiliary_mass_vertex", "quadratic_vv_field_map", "required_cubic_family_inventory", "inventory_completeness", "candidate_comparison", "foundational_strength", "claim_flags", "does_not_establish", "canonical_hashes", "provenance", "human_report", "next_gate"],
+  "properties": {
+    "schema": {"const": "classical-shifted-auxiliary-cubic-inventory-v1"},
+    "result_id": {"const": "CLASSICAL_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "shifted_auxiliary_mass_vertex": {"type": "object", "required": ["nonzero_component_monomials", "entries", "pure_trace_h_defects"]},
+    "quadratic_vv_field_map": {"type": "object", "required": ["nonzero_homogeneous_component_coefficients", "entries"]},
+    "required_cubic_family_inventory": {"type": "array", "minItems": 7, "maxItems": 7},
+    "inventory_completeness": {"type": "object", "required": ["exhaustive_full_nonlinear_BV_family_census", "full_component_coefficient_inventory"]},
+    "claim_flags": {"type": "object", "required": ["SHIFTED_MASS_H_F_HAT_F_HAT_COMPONENTS_SERIALIZED", "EXHAUSTIVE_FULL_NONLINEAR_BV_FAMILY_CENSUS", "CLASSICAL_IMPORT_GATE_PASSED", "HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED"]},
+    "human_report": {"const": "d_quotient_classical/reports/classical-shifted-auxiliary-cubic-inventory-v1.md"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,35 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/reverse-foundations-lorentzian-weyl-bv-completion-ACTIVE-8de69408816a3a9b",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-foundations-lorentzian-weyl-bv-completion-ACTIVE-8de69408816a3a9b.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "codex",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-15",
+    "seq": 15,
+    "predecessor": "sf:program/event/reverse-foundations-lorentzian-weyl-bv-completion-ACTIVE-f507a58e48f352b4",
+    "payload": {
+      "target": "sf:program/work/reverse-foundations-lorentzian-weyl-bv-completion",
+      "to_state": "ACTIVE",
+      "note": "Expanded the shifted auxiliary mass and vv nonlinear map exactly. The source has 72 nonzero h-f_hat-f_hat coefficients and the vv map has 22; the independent 386-row receiver constructs the paired 16-coefficient cotangent sector and verifies zero defect in four canonicality slices. Seven currently required cubic families are enumerated, with two component-complete. Gate V10 and Atlas V28 remain fail closed and replace the generic inventory request by three explicit fronts: hh/hv second-Frechet and cotangent tables, three Diff auxiliary BV representation vertices, and an exhaustive nonlinear Weyl/boost ghost-antifield manifest. The 72-to-zero comparison proves the vv shift alone is incomplete but does not obstruct further local normalization. Site and Paper 21 expose the result without promoting Gate A, causal lambda-squared closure, Hadamard data, renormalized products, QME restoration or residual transfer."
+    },
+    "native": {
+      "authored_by": "manual fallback because the configured Science Forge status/bridge rail resolves through the bp2transformer tree",
+      "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-foundations-lorentzian-weyl-bv-completion"
+    }
+  ]
+}

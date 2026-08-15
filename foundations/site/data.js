@@ -18030,24 +18030,24 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "completion_atlas": {
-    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v27",
-    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V27",
+    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v28",
+    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V28",
     "result_kind": "BRANCH_BY_STAGE_COMPLETION_ATLAS",
     "lifecycle": "CLASSIFIED",
     "created": "2026-08-15",
-    "repository_base_commit": "a004672f18a9011ff65b7e79b498d4a3f7985bec",
+    "repository_base_commit": "dab6c761997f09fad3ca1f9aa87b009ec98ec1ad",
     "dependency_tags": [
       "LOCAL-ALGEBRAIC",
       "EUCLIDEAN-SPECTRAL",
       "REDUCED-MODE",
       "LORENTZIAN-CAUSAL"
     ],
-    "question": "Does the exact nonlinear auxiliary shift repair the first strict source/candidate mismatch, and what is the next complete-equivalence obligation?",
-    "answer": "Atlas V27 constructs the first nonlinear equivalence component. The exact source-to-split quadratic map F_(2)(v)=v tensor v-(1/2)g v^2 induces a +1 inverse-shift mass cross term, canceling the authoritative source value Omega(f_hat,q2(v,v))=-1 and matching candidate zero. Full theory identity remains open because metric-dependent h-f_hat-f_hat and ghost/antifield channels have not been serialized or replayed. The next decisive work is a complete induced-cubic-channel inventory and componentwise 386-row cotangent lift, followed by full source q2/q3 identities and lambda-squared causal closure.",
+    "question": "What does the exact cubic-family census and canonical vv BV lift resolve, and which component families now form the shortest path to source-equivalent causal transfer?",
+    "answer": "Atlas V28 turns the former generic cubic-inventory request into three explicit component fronts. Seven known-required cubic families are enumerated; two are exact, including a canonical vv field/cotangent lift with 22+16 coefficients, while 72 exact h-f_hat-f_hat source coefficients show that the vv shift alone is not the full normalization. The shortest path is now hh/hv second-Frechet and cotangent tables, the three Diff auxiliary representation vertices, and an exhaustive nonlinear Weyl/boost ghost-antifield manifest. Only then can the complete 386-row q2/q3 pullback and lambda-squared causal source closure be tested. Gate A remains fail closed.",
     "predecessor": {
-      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V26",
-      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V26.json",
-      "sha256": "ef160fd219e212675bbd614f52831101cd2fdb43adf562e41dc9dca673eae85b",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V27",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V27.json",
+      "sha256": "52b83585189854b6d1bf5ddf734194192c7d730b4a60ca9a6a51d7ad2a8dc4d9",
       "preserved": true
     },
     "status_vocabulary": [
@@ -18202,8 +18202,8 @@ window.MATRIX_EXPLORER_DATA = {
           },
           {
             "stage": "S3_NONLINEAR_CARTAN",
-            "status": "PARTIAL_CERTIFIED_FIRST_NONLINEAR_COMPONENT_CONSTRUCTED_FULL_BV_PULLBACK_OPEN",
-            "statement": "The exact quadratic auxiliary-elimination component closes the previously mismatched f_hat-v-v cyclic channel. Full source/candidate theory identity remains open until the 386-row BV cotangent lift and every metric-dependent auxiliary and ghost/antifield cubic channel are serialized and replayed.",
+            "status": "PARTIAL_CERTIFIED_SEVEN_CUBIC_FAMILIES_VV_BV_LIFT_CANONICAL_FULL_PULLBACK_OPEN",
+            "statement": "Seven known-required cubic families are enumerated. Exact h-f_hat-f_hat coefficients and the canonical vv field/cotangent sector are imported; hh/hv, Diff and nonlinear Weyl/boost ghost-antifield components remain before full source q2/q3 replay.",
             "evidence": [
               "QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION",
               "STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1",
@@ -18218,9 +18218,10 @@ window.MATRIX_EXPLORER_DATA = {
               "STRICT_MINIMAL_BV_Q3_CYCLICITY_V1",
               "STRICT_386_STABILIZED_Q3_LIFT_PREFLIGHT_V1",
               "STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1",
-              "STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1"
+              "STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1",
+              "STRICT_386_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1"
             ],
-            "boundary": "This constructs one necessary nonlinear component and repairs one channel. It does not establish the complete cyclic L-infinity equivalence, authoritative q2/q3 hashes, causal lambda-squared closure, Hadamard data or QME restoration."
+            "boundary": "Two component-complete families and a zero-defect vv canonicality check do not establish an exhaustive family census, complete 386-row lift, cyclic L-infinity equivalence, causal lambda-squared closure, Hadamard state or QME restoration."
           },
           {
             "stage": "S4_HADAMARD_CCR",
@@ -18279,7 +18280,7 @@ window.MATRIX_EXPLORER_DATA = {
           }
         ],
         "first_unclosed_gate": "S0_CLASSICAL_AUTHORITY",
-        "next_decisive_object": "Enumerate all cubic channels induced by the exact auxiliary shift and serialize the componentwise 386-row BV cotangent lift, beginning with h-f_hat-f_hat and ghost/antifield families."
+        "next_decisive_object": "Derive exact hh/hv second-Frechet and cotangent tables, the three Diff auxiliary BV representation vertices, and an exhaustive nonlinear Weyl/boost ghost-antifield manifest."
       },
       {
         "id": "PURE_WEYL_BACH_FLAT_RANK310",
@@ -18906,10 +18907,10 @@ window.MATRIX_EXPLORER_DATA = {
       "strict_nonlinear_causal_front": {
         "branch": "STRICT_PURE_WEYL_386",
         "stage": "S3_NONLINEAR_CARTAN",
-        "current_fact": "The first exact nonlinear auxiliary-elimination component cancels the f_hat-v-v mismatch; full source pullback remains open.",
-        "best_next_object": "A complete induced-cubic-channel inventory followed by the componentwise 386-row BV cotangent lift.",
-        "falsification_target": "Every metric-dependent auxiliary and ghost/antifield channel must match the transported candidate while preserving q1/q2/q3 identities, cyclicity and D-equivariance.",
-        "foundational_boundary": "The constructed component is finite exact support-local algebra, uses neither a Green operator nor Choice, and makes no causal analytic claim."
+        "current_fact": "Seven required cubic families are known; h-f_hat-f_hat and vv are component-exact, and the vv BV lift is canonical. Five known families and possible nonlinear ghost-antifield families remain.",
+        "best_next_object": "The hh/hv second-Frechet plus cotangent tables, followed by the three Diff auxiliary representation vertices and nonlinear Weyl/boost manifest.",
+        "falsification_target": "A complete component census must either match the transported candidate in all q2/q3, cyclicity and D identities or provide an exact nonzero defect that survives allowed local canonical normalizations.",
+        "foundational_boundary": "Current progress is finite exact support-local algebra and uses neither a Green operator nor Choice; no causal analytic claim follows."
       }
     },
     "classical_import_reconciliation": {
@@ -19035,51 +19036,69 @@ window.MATRIX_EXPLORER_DATA = {
     "route_selection": [
       {
         "rank": 1,
-        "route": "STRICT_NONLINEAR_SHIFT_CUBIC_CHANNEL_INVENTORY",
+        "route": "STRICT_SECOND_FRECHET_HH_HV_AUXILIARY_SHIFT_COMPONENTS",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "HIGH",
         "dependency_depth": "MEDIUM",
-        "recommendation": "Enumerate every cubic channel induced by the exact auxiliary shift, beginning with h-f_hat-f_hat and ghost/antifield families."
+        "recommendation": "Serialize the hh/hv field and cotangent tables of the metric-dependent auxiliary shift."
       },
       {
         "rank": 2,
+        "route": "STRICT_DIFF_AUXILIARY_BV_REPRESENTATION_COMPONENTS",
+        "branch": "STRICT_PURE_WEYL_386",
+        "scientific_leverage": "VERY_HIGH",
+        "tractability": "HIGH",
+        "dependency_depth": "MEDIUM",
+        "recommendation": "Derive the f_hat, v and eta Diff ghost-antifield vertices on the exact carrier."
+      },
+      {
+        "rank": 3,
+        "route": "STRICT_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST",
+        "branch": "STRICT_PURE_WEYL_386",
+        "scientific_leverage": "VERY_HIGH",
+        "tractability": "MEDIUM",
+        "dependency_depth": "MEDIUM",
+        "recommendation": "Close the family census by auditing nonlinear Weyl and boost ghost-antifield terms."
+      },
+      {
+        "rank": 4,
         "route": "STRICT_386_BV_COTANGENT_LIFT_COMPONENTS",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "HIGH",
-        "recommendation": "Serialize the local canonical cotangent lift on the exact 386-row carrier with hashes and independent checks."
+        "recommendation": "Assemble the complete local canonical lift from the certified component families."
       },
       {
-        "rank": 3,
+        "rank": 5,
         "route": "STRICT_SOURCE_Q2_Q3_PULLBACK_IDENTITY",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "HIGH",
-        "recommendation": "Replay the authoritative source master action through arity three under the complete nonlinear map."
+        "recommendation": "Replay the authoritative source master action through arity three under the complete lift."
       },
       {
-        "rank": 4,
+        "rank": 6,
         "route": "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "HIGH",
-        "recommendation": "After nonlinear theory identity, prove Noether closure of the general lambda-squared source."
+        "recommendation": "After nonlinear identity, prove Noether closure of the general lambda-squared source."
       },
       {
-        "rank": 5,
+        "rank": 7,
         "route": "STRICT_CANDIDATE_Q2_Q3_GREEN_LAMBDA2_RESPONSE",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "HIGH",
-        "recommendation": "Compose accepted source-equivalent q2/q3 with both Green orientations and verify response identities."
+        "recommendation": "Compose accepted q2/q3 with both Green orientations and verify response identities."
       },
       {
-        "rank": 6,
+        "rank": 8,
         "route": "STRICT_RESIDUAL_SDR_COMMON_CARRIER",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
@@ -19088,7 +19107,7 @@ window.MATRIX_EXPLORER_DATA = {
         "recommendation": "Extend or reconstruct iota_cl, pi_cl and s_cl beyond the D-finite control and replay every common-carrier identity."
       },
       {
-        "rank": 7,
+        "rank": 9,
         "route": "STRICT_FULL_CYCLIC_PAIRING",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
@@ -19097,7 +19116,7 @@ window.MATRIX_EXPLORER_DATA = {
         "recommendation": "Bind the full pairing/sign convention to every nonminimal, auxiliary and residual row."
       },
       {
-        "rank": 8,
+        "rank": 10,
         "route": "STRICT_RESIDUAL_EXACT_PAYLOAD",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "HIGH",
@@ -19106,7 +19125,7 @@ window.MATRIX_EXPLORER_DATA = {
         "recommendation": "Serialize ordered primal/dual modes, exact SO(4,2) constants and representation matrices."
       },
       {
-        "rank": 9,
+        "rank": 11,
         "route": "DIRECT_SPACETIME_Q26_HADAMARD",
         "branch": "BERGER_POSITIVE_CLOCK_54",
         "scientific_leverage": "VERY_HIGH",
@@ -19115,7 +19134,7 @@ window.MATRIX_EXPLORER_DATA = {
         "recommendation": "Keep the analytically mature Berger Hadamard route as a different-theory control, not as the strict pure-Weyl carrier map."
       },
       {
-        "rank": 10,
+        "rank": 12,
         "route": "STRICT_D_CARTAN_AND_CHARGE_DECISION",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "HIGH",
@@ -19124,7 +19143,7 @@ window.MATRIX_EXPLORER_DATA = {
         "recommendation": "Classify the nonlinear D-Cartan homotopy and proper-gauge/charge status on the strict carrier."
       },
       {
-        "rank": 11,
+        "rank": 13,
         "route": "STRICT_ANALYTIC_MOLLER_CONVERGENCE",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "MEDIUM",
@@ -19133,7 +19152,7 @@ window.MATRIX_EXPLORER_DATA = {
         "recommendation": "Only after all-order source closure, derive seminorm majorants and a nonzero convergence domain."
       },
       {
-        "rank": 12,
+        "rank": 14,
         "route": "STRICT_MIXED_WEIGHTED_CAUSAL_DOMAIN",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "MEDIUM",
@@ -19146,71 +19165,83 @@ window.MATRIX_EXPLORER_DATA = {
       {
         "priority": 1,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_NONLINEAR_SHIFT_CUBIC_CHANNEL_INVENTORY",
-        "why": "Enumerate every cubic channel induced by the exact auxiliary shift, beginning with h-f_hat-f_hat and ghost/antifield families."
+        "object": "STRICT_SECOND_FRECHET_HH_HV_AUXILIARY_SHIFT_COMPONENTS",
+        "why": "Serialize the hh/hv field and cotangent tables of the metric-dependent auxiliary shift."
       },
       {
         "priority": 2,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_386_BV_COTANGENT_LIFT_COMPONENTS",
-        "why": "Serialize the local canonical cotangent lift on the exact 386-row carrier with hashes and independent checks."
+        "object": "STRICT_DIFF_AUXILIARY_BV_REPRESENTATION_COMPONENTS",
+        "why": "Derive the f_hat, v and eta Diff ghost-antifield vertices on the exact carrier."
       },
       {
         "priority": 3,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_SOURCE_Q2_Q3_PULLBACK_IDENTITY",
-        "why": "Replay the authoritative source master action through arity three under the complete nonlinear map."
+        "object": "STRICT_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST",
+        "why": "Close the family census by auditing nonlinear Weyl and boost ghost-antifield terms."
       },
       {
         "priority": 4,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE",
-        "why": "After nonlinear theory identity, prove Noether closure of the general lambda-squared source."
+        "object": "STRICT_386_BV_COTANGENT_LIFT_COMPONENTS",
+        "why": "Assemble the complete local canonical lift from the certified component families."
       },
       {
         "priority": 5,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_CANDIDATE_Q2_Q3_GREEN_LAMBDA2_RESPONSE",
-        "why": "Compose accepted source-equivalent q2/q3 with both Green orientations and verify response identities."
+        "object": "STRICT_SOURCE_Q2_Q3_PULLBACK_IDENTITY",
+        "why": "Replay the authoritative source master action through arity three under the complete lift."
       },
       {
         "priority": 6,
+        "branch": "STRICT_PURE_WEYL_386",
+        "object": "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE",
+        "why": "After nonlinear identity, prove Noether closure of the general lambda-squared source."
+      },
+      {
+        "priority": 7,
+        "branch": "STRICT_PURE_WEYL_386",
+        "object": "STRICT_CANDIDATE_Q2_Q3_GREEN_LAMBDA2_RESPONSE",
+        "why": "Compose accepted q2/q3 with both Green orientations and verify response identities."
+      },
+      {
+        "priority": 8,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_RESIDUAL_SDR_COMMON_CARRIER",
         "why": "Extend or reconstruct iota_cl, pi_cl and s_cl beyond the D-finite control and replay every common-carrier identity."
       },
       {
-        "priority": 7,
+        "priority": 9,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_FULL_CYCLIC_PAIRING",
         "why": "Bind the full pairing/sign convention to every nonminimal, auxiliary and residual row."
       },
       {
-        "priority": 8,
+        "priority": 10,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_RESIDUAL_EXACT_PAYLOAD",
         "why": "Serialize ordered primal/dual modes, exact SO(4,2) constants and representation matrices."
       },
       {
-        "priority": 9,
+        "priority": 11,
         "branch": "BERGER_POSITIVE_CLOCK_54",
         "object": "DIRECT_SPACETIME_Q26_HADAMARD",
         "why": "Keep the analytically mature Berger Hadamard route as a different-theory control, not as the strict pure-Weyl carrier map."
       },
       {
-        "priority": 10,
+        "priority": 12,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_D_CARTAN_AND_CHARGE_DECISION",
         "why": "Classify the nonlinear D-Cartan homotopy and proper-gauge/charge status on the strict carrier."
       },
       {
-        "priority": 11,
+        "priority": 13,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_ANALYTIC_MOLLER_CONVERGENCE",
         "why": "Only after all-order source closure, derive seminorm majorants and a nonzero convergence domain."
       },
       {
-        "priority": 12,
+        "priority": 14,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_MIXED_WEIGHTED_CAUSAL_DOMAIN",
         "why": "Test weighted opposite-polarity domains against the scalar zero-mode witness; polarized recursion does not require this."
@@ -19682,6 +19713,21 @@ window.MATRIX_EXPLORER_DATA = {
           "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V9_RECONCILIATION.json",
           "sha256": "6abb2ba1d3ad40c70dc996811de4ae64f85134fc885ae914eed1d64f5be9e099",
           "role": "fail-closed Gate-A successor after first nonlinear component"
+        },
+        {
+          "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V27.json",
+          "sha256": "52b83585189854b6d1bf5ddf734194192c7d730b4a60ca9a6a51d7ad2a8dc4d9",
+          "role": "immutable V27 atlas predecessor"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1.json",
+          "sha256": "44a14783bd7b6d778bca53d5994f9d7a6f5c2e975d0785d568553ec4cc667895",
+          "role": "exact shifted-cubic census and canonical vv BV lift"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V10_RECONCILIATION.json",
+          "sha256": "eb099ba510bb5ede9509c330e4628241e10c7240cc331e1225a0dcb8984805cd",
+          "role": "fail-closed Gate-A successor after cubic inventory"
         }
       ]
     },
@@ -19857,7 +19903,16 @@ window.MATRIX_EXPLORER_DATA = {
       "strict_386_component_uses_choice_principle": false,
       "strict_386_full_bv_cotangent_lift_serialized": false,
       "strict_386_full_source_q2_pullback_replayed": false,
-      "strict_386_full_source_q3_pullback_replayed": false
+      "strict_386_full_source_q3_pullback_replayed": false,
+      "v27_preserved": true,
+      "strict_386_known_required_cubic_families_enumerated": true,
+      "strict_386_h_f_hat_f_hat_components_imported": true,
+      "strict_386_vv_field_map_components_imported": true,
+      "strict_386_vv_cotangent_partner_components_serialized": true,
+      "strict_386_vv_bv_cotangent_lift_canonical": true,
+      "strict_386_exhaustive_full_nonlinear_bv_family_census": false,
+      "strict_386_hh_hv_bv_cotangent_lift_component_complete": false,
+      "strict_386_diff_bv_representation_component_complete": false
     },
     "does_not_establish": [
       "a passed strict pure-Weyl classical import gate",
@@ -19965,21 +20020,24 @@ window.MATRIX_EXPLORER_DATA = {
       "the complete authoritative 386-row q2/q3 or its causal lambda-squared source closure",
       "a componentwise 386-row BV cotangent lift or complete source q2/q3 pullback",
       "agreement of the metric-dependent h-f_hat-f_hat and ghost/antifield channel families",
-      "a full cyclic L-infinity equivalence, authoritative q2/q3 hashes, or causal lambda-squared closure"
+      "a full cyclic L-infinity equivalence, authoritative q2/q3 hashes, or causal lambda-squared closure",
+      "an exhaustive nonlinear BV family census or complete hh/hv, Diff, Weyl and boost component inventory",
+      "that the 72 h-f_hat-f_hat comparison obstructs a further metric-dependent canonical or L-infinity normalization",
+      "a complete source q2/q3 pullback, causal lambda-squared closure, Hadamard state, renormalized Lorentzian products, or QME restoration"
     ],
     "independent_checker": {
-      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v27.py",
+      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v28.py",
       "checks": [
-        "V26 predecessor and 77-cell preservation",
-        "exact -1 + 1 = 0 nonlinear-channel projection",
-        "Gate V9 fail-closed projection",
-        "first-component promotion versus full-equivalence firewall",
-        "twelve-route deterministic queue",
+        "V27 predecessor and 77-cell preservation",
+        "seven-family, 72, 22+16 and four-slice projection",
+        "Gate V10 fail-closed projection",
+        "vv-sector promotion versus exhaustive-census and full-equivalence firewalls",
+        "fourteen-route deterministic queue",
         "Gate-A/Hadamard/QME firewalls"
       ],
-      "expected_digest": "1173eea19945b2bfa16328f048b60d83f1f2dbe0f81158959d969443d20ddac8"
+      "expected_digest": "0df9eb0a2dc82d75864ffa0b8c6865eee1f8854744f9e49752bc0189e8be9295"
     },
-    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v27.md",
+    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v28.md",
     "strict_gate_a_progress": {
       "status": "STABILIZED_Q2_CANDIDATE_CERTIFIED_AUTHORITATIVE_IDENTITY_REQUIRED",
       "evidence": [
@@ -21033,6 +21091,69 @@ window.MATRIX_EXPLORER_DATA = {
         "M6_CENTERED_REPRESENTATIVES"
       ],
       "next_gate": "Enumerate every cubic channel induced by the exact nonlinear auxiliary shift and its BV cotangent lift, beginning with h-f_hat-f_hat and ghost/antifield families. Serialize the componentwise 386-row lift and independently replay full source q2/q3, cyclicity and D identities before accepting hashes. M1 and M3-M6 remain independent blockers."
+    },
+    "strict_shifted_auxiliary_cubic_inventory": {
+      "result_id": "STRICT_386_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1",
+      "carrier_rows": 386,
+      "known_required_cubic_families": 7,
+      "component_complete_families": 2,
+      "component_open_families": 5,
+      "family_ids": [
+        "SHIFTED_MASS_H_F_HAT_F_HAT",
+        "TYPE_II_F_HAT_STAR_V_V",
+        "TYPE_II_F_HAT_STAR_H_H",
+        "TYPE_II_F_HAT_STAR_H_V",
+        "DIFF_C_F_HAT_F_HAT_STAR",
+        "DIFF_C_V_V_STAR",
+        "DIFF_C_ETA_ETA_STAR"
+      ],
+      "h_f_hat_f_hat_source_coefficients": 72,
+      "h_f_hat_f_hat_candidate_coefficients": 0,
+      "vv_field_map_coefficients": 22,
+      "vv_cotangent_partner_coefficients": 16,
+      "vv_active_output_rows": 14,
+      "vv_zero_output_rows": 372,
+      "vv_canonicality_slices": 4,
+      "vv_canonicality_defects": 0,
+      "vv_BV_cotangent_lift_component_complete": true,
+      "hh_hv_BV_cotangent_lift_component_complete": false,
+      "diffeomorphism_BV_representation_component_complete": false,
+      "exhaustive_full_nonlinear_BV_family_census": false,
+      "full_386_BV_cotangent_lift_serialized": false,
+      "full_source_q2_q3_pullback_replayed": false,
+      "full_nonlinear_equivalence_obstructed": false,
+      "foundational_classification": "FINITE_EXACT_SUPPORT_LOCAL_COMPONENT_ALGEBRA",
+      "next_gate": "Derive and serialize D_g^2(A_g^-1 G^b) and D_g D_b(A_g^-1 G^b), their h-star/v-star cotangent partners, and the three Diff auxiliary representation vertices; then audit the full nonlinear Weyl/boost ghost manifest before assembling a complete 386-row lift."
+    },
+    "strict_gate_v10_reconciliation": {
+      "result_id": "CLASSICAL_IMPORT_GATE_V10_RECONCILIATION",
+      "status": "SEVEN_REQUIRED_CUBIC_FAMILIES_ENUMERATED_VV_BV_LIFT_CANONICAL_HH_HV_GAUGE_COMPONENTS_OPEN_GATE_FAIL_CLOSED",
+      "exports_total": 20,
+      "exports_receiver_verified_scoped": 11,
+      "freeze_checks_total": 10,
+      "freeze_checks_receiver_verified_scoped": 8,
+      "freeze_checks_supporting_evidence_only": 1,
+      "freeze_checks_blocked": 1,
+      "accepted_top_level_hashes": 0,
+      "gate_a_status": "FAIL_CLOSED",
+      "candidate_q2_hash_accepted": false,
+      "known_required_cubic_families": 7,
+      "vv_BV_lift_canonical": true,
+      "hh_hv_component_complete": false,
+      "diffeomorphism_representation_component_complete": false,
+      "exhaustive_full_nonlinear_BV_family_census": false,
+      "full_bv_cotangent_lift_serialized": false,
+      "complete_source_q2_q3_pullback_replayed": false,
+      "full_nonlinear_equivalence_obstructed": false,
+      "missing_bundle_ids": [
+        "M1_COMMON_STRICT_SNAPSHOT",
+        "M2_STRICT_Q2_D",
+        "M3_RESIDUAL_SDR",
+        "M4_FULL_CYCLIC_PAIRING",
+        "M5_RESIDUAL_EXACT_PAYLOAD",
+        "M6_CENTERED_REPRESENTATIVES"
+      ],
+      "next_gate": "Derive exact hh/hv field and cotangent tables and the three Diff auxiliary BV representation vertices; audit nonlinear Weyl/boost ghost-antifield families; then assemble and independently replay the complete 386-row source q2/q3 pullback. M1 and M3-M6 remain independent blockers."
     }
   },
   "cross_cell_interfaces": [
@@ -21202,10 +21323,10 @@ window.MATRIX_EXPLORER_DATA = {
     "ground_state_dynamics_interface_report": "sources/foundations/reports/krein-fock-ground-state-dynamics-interface.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md",
-    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V27.json",
-    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v27.md",
-    "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V9_RECONCILIATION.json",
-    "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V9.md",
+    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V28.json",
+    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v28.md",
+    "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V10_RECONCILIATION.json",
+    "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V10.md",
     "completion_sdr": "sources/quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json",
     "completion_sdr_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_DFINITE_RESIDUAL_SDR_V1.md",
     "completion_cyclic": "sources/quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1.json",
@@ -21261,7 +21382,9 @@ window.MATRIX_EXPLORER_DATA = {
     "completion_identity_obstruction": "sources/quantum-weyl/classical_import/certificates/STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1.json",
     "completion_identity_obstruction_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1.md",
     "completion_quadratic_elimination": "sources/quantum-weyl/classical_import/certificates/STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1.json",
-    "completion_quadratic_elimination_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1.md"
+    "completion_quadratic_elimination_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1.md",
+    "completion_cubic_inventory": "sources/quantum-weyl/classical_import/certificates/STRICT_386_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1.json",
+    "completion_cubic_inventory_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1.md"
   },
-  "canonical_digest": "a92816c6ace5e8c4c76fb4cf0cd1c6a09c0b84fc21cba2a8841c56dc1fda66a9"
+  "canonical_digest": "d7adcbdc4ea7d62a06732ba42be7f723a158cf093783e8454b5d072ccadddfb7"
 };

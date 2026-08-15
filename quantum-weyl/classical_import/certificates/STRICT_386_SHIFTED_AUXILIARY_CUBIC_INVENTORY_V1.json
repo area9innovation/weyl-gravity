@@ -1,0 +1,604 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "strict-386-shifted-auxiliary-cubic-inventory-v1",
+  "result_id": "STRICT_386_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1",
+  "result_kind": "INDEPENDENT_386_ROW_CUBIC_FAMILY_IMPORT_AND_SCOPED_BV_COTANGENT_LIFT",
+  "result_state": "SEVEN_REQUIRED_FAMILIES_ENUMERATED_HFF_AND_VV_COMPONENTS_EXACT_VV_BV_LIFT_CANONICAL_FULL_LIFT_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "scope": {
+    "theory": "strict pure-Weyl ordinary-derivative auxiliary formulation",
+    "background": "Minkowski normal frame at zero vector",
+    "carrier_rows": 386,
+    "coefficient_field": "Q",
+    "claim_scope": "known required cubic-family census, exact h-f_hat-f_hat import, and componentwise vv field/cotangent sector"
+  },
+  "vv_BV_cotangent_lift": {
+    "carrier_rows": 386,
+    "linear_identity_rows": 386,
+    "quadratic_active_output_rows": 14,
+    "quadratic_zero_output_rows": 372,
+    "active_output_blocks": [
+      "AUX_F_HAT",
+      "AUX_V_STAR"
+    ],
+    "field_map_formula": "f_hat'=f_hat+F_(2)(v), F_(2)(v)=v tensor v-(1/2)g v^2",
+    "cotangent_formula": "v_star_old=v_star_new+J_v^-1 (D_v F_(2))^T J_f f_hat_star_new",
+    "field_map_nonzero_component_coefficients": 22,
+    "cotangent_partner_nonzero_component_coefficients": 16,
+    "field_map_entries": [
+      {
+        "output_row": "f_hat_00",
+        "v_left_row": "v_0",
+        "v_right_row": "v_0",
+        "homogeneous_polynomial_coefficient": "1/2",
+        "second_Frechet_coefficient": "1",
+        "output_index": 34,
+        "v_left_index": 44,
+        "v_right_index": 44
+      },
+      {
+        "output_row": "f_hat_00",
+        "v_left_row": "v_1",
+        "v_right_row": "v_1",
+        "homogeneous_polynomial_coefficient": "1/2",
+        "second_Frechet_coefficient": "1",
+        "output_index": 34,
+        "v_left_index": 45,
+        "v_right_index": 45
+      },
+      {
+        "output_row": "f_hat_00",
+        "v_left_row": "v_2",
+        "v_right_row": "v_2",
+        "homogeneous_polynomial_coefficient": "1/2",
+        "second_Frechet_coefficient": "1",
+        "output_index": 34,
+        "v_left_index": 46,
+        "v_right_index": 46
+      },
+      {
+        "output_row": "f_hat_00",
+        "v_left_row": "v_3",
+        "v_right_row": "v_3",
+        "homogeneous_polynomial_coefficient": "1/2",
+        "second_Frechet_coefficient": "1",
+        "output_index": 34,
+        "v_left_index": 47,
+        "v_right_index": 47
+      },
+      {
+        "output_row": "f_hat_01",
+        "v_left_row": "v_0",
+        "v_right_row": "v_1",
+        "homogeneous_polynomial_coefficient": "1",
+        "second_Frechet_coefficient": "1",
+        "output_index": 35,
+        "v_left_index": 44,
+        "v_right_index": 45
+      },
+      {
+        "output_row": "f_hat_02",
+        "v_left_row": "v_0",
+        "v_right_row": "v_2",
+        "homogeneous_polynomial_coefficient": "1",
+        "second_Frechet_coefficient": "1",
+        "output_index": 36,
+        "v_left_index": 44,
+        "v_right_index": 46
+      },
+      {
+        "output_row": "f_hat_03",
+        "v_left_row": "v_0",
+        "v_right_row": "v_3",
+        "homogeneous_polynomial_coefficient": "1",
+        "second_Frechet_coefficient": "1",
+        "output_index": 37,
+        "v_left_index": 44,
+        "v_right_index": 47
+      },
+      {
+        "output_row": "f_hat_11",
+        "v_left_row": "v_0",
+        "v_right_row": "v_0",
+        "homogeneous_polynomial_coefficient": "1/2",
+        "second_Frechet_coefficient": "1",
+        "output_index": 38,
+        "v_left_index": 44,
+        "v_right_index": 44
+      },
+      {
+        "output_row": "f_hat_11",
+        "v_left_row": "v_1",
+        "v_right_row": "v_1",
+        "homogeneous_polynomial_coefficient": "1/2",
+        "second_Frechet_coefficient": "1",
+        "output_index": 38,
+        "v_left_index": 45,
+        "v_right_index": 45
+      },
+      {
+        "output_row": "f_hat_11",
+        "v_left_row": "v_2",
+        "v_right_row": "v_2",
+        "homogeneous_polynomial_coefficient": "-1/2",
+        "second_Frechet_coefficient": "-1",
+        "output_index": 38,
+        "v_left_index": 46,
+        "v_right_index": 46
+      },
+      {
+        "output_row": "f_hat_11",
+        "v_left_row": "v_3",
+        "v_right_row": "v_3",
+        "homogeneous_polynomial_coefficient": "-1/2",
+        "second_Frechet_coefficient": "-1",
+        "output_index": 38,
+        "v_left_index": 47,
+        "v_right_index": 47
+      },
+      {
+        "output_row": "f_hat_12",
+        "v_left_row": "v_1",
+        "v_right_row": "v_2",
+        "homogeneous_polynomial_coefficient": "1",
+        "second_Frechet_coefficient": "1",
+        "output_index": 39,
+        "v_left_index": 45,
+        "v_right_index": 46
+      },
+      {
+        "output_row": "f_hat_13",
+        "v_left_row": "v_1",
+        "v_right_row": "v_3",
+        "homogeneous_polynomial_coefficient": "1",
+        "second_Frechet_coefficient": "1",
+        "output_index": 40,
+        "v_left_index": 45,
+        "v_right_index": 47
+      },
+      {
+        "output_row": "f_hat_22",
+        "v_left_row": "v_0",
+        "v_right_row": "v_0",
+        "homogeneous_polynomial_coefficient": "1/2",
+        "second_Frechet_coefficient": "1",
+        "output_index": 41,
+        "v_left_index": 44,
+        "v_right_index": 44
+      },
+      {
+        "output_row": "f_hat_22",
+        "v_left_row": "v_1",
+        "v_right_row": "v_1",
+        "homogeneous_polynomial_coefficient": "-1/2",
+        "second_Frechet_coefficient": "-1",
+        "output_index": 41,
+        "v_left_index": 45,
+        "v_right_index": 45
+      },
+      {
+        "output_row": "f_hat_22",
+        "v_left_row": "v_2",
+        "v_right_row": "v_2",
+        "homogeneous_polynomial_coefficient": "1/2",
+        "second_Frechet_coefficient": "1",
+        "output_index": 41,
+        "v_left_index": 46,
+        "v_right_index": 46
+      },
+      {
+        "output_row": "f_hat_22",
+        "v_left_row": "v_3",
+        "v_right_row": "v_3",
+        "homogeneous_polynomial_coefficient": "-1/2",
+        "second_Frechet_coefficient": "-1",
+        "output_index": 41,
+        "v_left_index": 47,
+        "v_right_index": 47
+      },
+      {
+        "output_row": "f_hat_23",
+        "v_left_row": "v_2",
+        "v_right_row": "v_3",
+        "homogeneous_polynomial_coefficient": "1",
+        "second_Frechet_coefficient": "1",
+        "output_index": 42,
+        "v_left_index": 46,
+        "v_right_index": 47
+      },
+      {
+        "output_row": "f_hat_33",
+        "v_left_row": "v_0",
+        "v_right_row": "v_0",
+        "homogeneous_polynomial_coefficient": "1/2",
+        "second_Frechet_coefficient": "1",
+        "output_index": 43,
+        "v_left_index": 44,
+        "v_right_index": 44
+      },
+      {
+        "output_row": "f_hat_33",
+        "v_left_row": "v_1",
+        "v_right_row": "v_1",
+        "homogeneous_polynomial_coefficient": "-1/2",
+        "second_Frechet_coefficient": "-1",
+        "output_index": 43,
+        "v_left_index": 45,
+        "v_right_index": 45
+      },
+      {
+        "output_row": "f_hat_33",
+        "v_left_row": "v_2",
+        "v_right_row": "v_2",
+        "homogeneous_polynomial_coefficient": "-1/2",
+        "second_Frechet_coefficient": "-1",
+        "output_index": 43,
+        "v_left_index": 46,
+        "v_right_index": 46
+      },
+      {
+        "output_row": "f_hat_33",
+        "v_left_row": "v_3",
+        "v_right_row": "v_3",
+        "homogeneous_polynomial_coefficient": "1/2",
+        "second_Frechet_coefficient": "1",
+        "output_index": 43,
+        "v_left_index": 47,
+        "v_right_index": 47
+      }
+    ],
+    "cotangent_partner_entries": [
+      {
+        "output_row": "v_star_0",
+        "output_index": 58,
+        "v_input_row": "v_0",
+        "v_input_index": 44,
+        "f_hat_star_input_row": "f_hat_star_00",
+        "f_hat_star_input_index": 48,
+        "coefficient": "-1"
+      },
+      {
+        "output_row": "v_star_0",
+        "output_index": 58,
+        "v_input_row": "v_1",
+        "v_input_index": 45,
+        "f_hat_star_input_row": "f_hat_star_01",
+        "f_hat_star_input_index": 49,
+        "coefficient": "1"
+      },
+      {
+        "output_row": "v_star_0",
+        "output_index": 58,
+        "v_input_row": "v_2",
+        "v_input_index": 46,
+        "f_hat_star_input_row": "f_hat_star_02",
+        "f_hat_star_input_index": 50,
+        "coefficient": "1"
+      },
+      {
+        "output_row": "v_star_0",
+        "output_index": 58,
+        "v_input_row": "v_3",
+        "v_input_index": 47,
+        "f_hat_star_input_row": "f_hat_star_03",
+        "f_hat_star_input_index": 51,
+        "coefficient": "1"
+      },
+      {
+        "output_row": "v_star_1",
+        "output_index": 59,
+        "v_input_row": "v_0",
+        "v_input_index": 44,
+        "f_hat_star_input_row": "f_hat_star_01",
+        "f_hat_star_input_index": 49,
+        "coefficient": "-1"
+      },
+      {
+        "output_row": "v_star_1",
+        "output_index": 59,
+        "v_input_row": "v_1",
+        "v_input_index": 45,
+        "f_hat_star_input_row": "f_hat_star_11",
+        "f_hat_star_input_index": 52,
+        "coefficient": "1"
+      },
+      {
+        "output_row": "v_star_1",
+        "output_index": 59,
+        "v_input_row": "v_2",
+        "v_input_index": 46,
+        "f_hat_star_input_row": "f_hat_star_12",
+        "f_hat_star_input_index": 53,
+        "coefficient": "1"
+      },
+      {
+        "output_row": "v_star_1",
+        "output_index": 59,
+        "v_input_row": "v_3",
+        "v_input_index": 47,
+        "f_hat_star_input_row": "f_hat_star_13",
+        "f_hat_star_input_index": 54,
+        "coefficient": "1"
+      },
+      {
+        "output_row": "v_star_2",
+        "output_index": 60,
+        "v_input_row": "v_0",
+        "v_input_index": 44,
+        "f_hat_star_input_row": "f_hat_star_02",
+        "f_hat_star_input_index": 50,
+        "coefficient": "-1"
+      },
+      {
+        "output_row": "v_star_2",
+        "output_index": 60,
+        "v_input_row": "v_1",
+        "v_input_index": 45,
+        "f_hat_star_input_row": "f_hat_star_12",
+        "f_hat_star_input_index": 53,
+        "coefficient": "1"
+      },
+      {
+        "output_row": "v_star_2",
+        "output_index": 60,
+        "v_input_row": "v_2",
+        "v_input_index": 46,
+        "f_hat_star_input_row": "f_hat_star_22",
+        "f_hat_star_input_index": 55,
+        "coefficient": "1"
+      },
+      {
+        "output_row": "v_star_2",
+        "output_index": 60,
+        "v_input_row": "v_3",
+        "v_input_index": 47,
+        "f_hat_star_input_row": "f_hat_star_23",
+        "f_hat_star_input_index": 56,
+        "coefficient": "1"
+      },
+      {
+        "output_row": "v_star_3",
+        "output_index": 61,
+        "v_input_row": "v_0",
+        "v_input_index": 44,
+        "f_hat_star_input_row": "f_hat_star_03",
+        "f_hat_star_input_index": 51,
+        "coefficient": "-1"
+      },
+      {
+        "output_row": "v_star_3",
+        "output_index": 61,
+        "v_input_row": "v_1",
+        "v_input_index": 45,
+        "f_hat_star_input_row": "f_hat_star_13",
+        "f_hat_star_input_index": 54,
+        "coefficient": "1"
+      },
+      {
+        "output_row": "v_star_3",
+        "output_index": 61,
+        "v_input_row": "v_2",
+        "v_input_index": 46,
+        "f_hat_star_input_row": "f_hat_star_23",
+        "f_hat_star_input_index": 56,
+        "coefficient": "1"
+      },
+      {
+        "output_row": "v_star_3",
+        "output_index": 61,
+        "v_input_row": "v_3",
+        "v_input_index": 47,
+        "f_hat_star_input_row": "f_hat_star_33",
+        "f_hat_star_input_index": 57,
+        "coefficient": "1"
+      }
+    ],
+    "canonicality_slices": [
+      {
+        "v_input_row": "v_0",
+        "matrix_shape": [
+          4,
+          10
+        ],
+        "nonzero_canonicality_defects": 0,
+        "defect_sha256": "9e7ff95c46a29e925b3af5bd4d77689858c9249c3d8811d5682b17f831b70630"
+      },
+      {
+        "v_input_row": "v_1",
+        "matrix_shape": [
+          4,
+          10
+        ],
+        "nonzero_canonicality_defects": 0,
+        "defect_sha256": "9e7ff95c46a29e925b3af5bd4d77689858c9249c3d8811d5682b17f831b70630"
+      },
+      {
+        "v_input_row": "v_2",
+        "matrix_shape": [
+          4,
+          10
+        ],
+        "nonzero_canonicality_defects": 0,
+        "defect_sha256": "9e7ff95c46a29e925b3af5bd4d77689858c9249c3d8811d5682b17f831b70630"
+      },
+      {
+        "v_input_row": "v_3",
+        "matrix_shape": [
+          4,
+          10
+        ],
+        "nonzero_canonicality_defects": 0,
+        "defect_sha256": "9e7ff95c46a29e925b3af5bd4d77689858c9249c3d8811d5682b17f831b70630"
+      }
+    ],
+    "canonicality_defects": 0,
+    "finite_order_local": true,
+    "differential_order": 0,
+    "uses_green_operator": false,
+    "uses_choice_principle": false
+  },
+  "required_cubic_family_inventory": [
+    {
+      "family_id": "SHIFTED_MASS_H_F_HAT_F_HAT",
+      "cubic_vertex": [
+        "ENDPOINT_M",
+        "AUX_F_HAT",
+        "AUX_F_HAT"
+      ],
+      "status": "COMPONENT_COEFFICIENTS_SERIALIZED",
+      "authority": "exact shifted auxiliary mass density",
+      "derivative_order": 0
+    },
+    {
+      "family_id": "TYPE_II_F_HAT_STAR_V_V",
+      "cubic_vertex": [
+        "AUX_F_HAT_STAR",
+        "AUX_V",
+        "AUX_V"
+      ],
+      "status": "FIELD_AND_COTANGENT_COMPONENT_COEFFICIENTS_SERIALIZED",
+      "authority": "quadratic vector component of the exact type-II generator",
+      "derivative_order": 0,
+      "receiver_evidence": "STRICT_386_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1"
+    },
+    {
+      "family_id": "TYPE_II_F_HAT_STAR_H_H",
+      "cubic_vertex": [
+        "AUX_F_HAT_STAR",
+        "ENDPOINT_M",
+        "ENDPOINT_M"
+      ],
+      "status": "FORMULA_DEFINED_COMPONENT_COEFFICIENTS_OPEN",
+      "authority": "D_g^2(A_g^-1 G^b) in the exact type-II generator",
+      "derivative_order": 2
+    },
+    {
+      "family_id": "TYPE_II_F_HAT_STAR_H_V",
+      "cubic_vertex": [
+        "AUX_F_HAT_STAR",
+        "ENDPOINT_M",
+        "AUX_V"
+      ],
+      "status": "FORMULA_DEFINED_COMPONENT_COEFFICIENTS_OPEN",
+      "authority": "D_g D_b(A_g^-1 G^b) in the exact type-II generator",
+      "derivative_order": 2
+    },
+    {
+      "family_id": "DIFF_C_F_HAT_F_HAT_STAR",
+      "cubic_vertex": [
+        "ENDPOINT_G_DIFF",
+        "AUX_F_HAT",
+        "AUX_F_HAT_STAR"
+      ],
+      "status": "SOURCE_FORCED_COMPONENT_COEFFICIENTS_OPEN",
+      "authority": "diffeomorphism Lie derivative and BV cotangent lift",
+      "derivative_order": 1
+    },
+    {
+      "family_id": "DIFF_C_V_V_STAR",
+      "cubic_vertex": [
+        "ENDPOINT_G_DIFF",
+        "AUX_V",
+        "AUX_V_STAR"
+      ],
+      "status": "SOURCE_FORCED_COMPONENT_COEFFICIENTS_OPEN",
+      "authority": "diffeomorphism Lie derivative and BV cotangent lift",
+      "derivative_order": 1
+    },
+    {
+      "family_id": "DIFF_C_ETA_ETA_STAR",
+      "cubic_vertex": [
+        "ENDPOINT_G_DIFF",
+        "AUX_ETA",
+        "AUX_ETA_STAR"
+      ],
+      "status": "SOURCE_FORCED_COMPONENT_COEFFICIENTS_OPEN",
+      "authority": "diffeomorphism semidirect action on the shifted boost ghost and its cotangent",
+      "derivative_order": 1
+    }
+  ],
+  "inventory_completeness": {
+    "known_required_cubic_block_families_enumerated": 7,
+    "component_coefficient_complete_families": 2,
+    "component_coefficient_open_families": 5,
+    "vv_BV_cotangent_lift_component_complete": true,
+    "hh_hv_BV_cotangent_lift_component_complete": false,
+    "diffeomorphism_BV_representation_component_complete": false,
+    "exhaustive_full_nonlinear_BV_family_census": false,
+    "full_386_quadratic_BV_cotangent_lift_serialized": false,
+    "full_source_q2_q3_pullback_replayed": false
+  },
+  "candidate_comparison": {
+    "previous_f_hat_v_v_channel_residual": "0",
+    "shifted_mass_h_f_hat_f_hat_source_nonzero_coefficients": 72,
+    "trivial_candidate_h_f_hat_f_hat_nonzero_coefficients": 0,
+    "new_exact_source_candidate_component_defect_count": 72,
+    "interpretation": "The vv nonlinear shift closes the old channel but does not make the metric-dependent auxiliary mass interaction-inert.",
+    "further_metric_dependent_canonical_or_L_infinity_normalization_may_exist": true,
+    "full_nonlinear_equivalence_obstructed": false
+  },
+  "claim_flags": {
+    "KNOWN_REQUIRED_CUBIC_FAMILIES_ENUMERATED": true,
+    "SHIFTED_MASS_H_F_HAT_F_HAT_COMPONENTS_IMPORTED": true,
+    "VV_FIELD_MAP_COMPONENTS_IMPORTED": true,
+    "VV_COTANGENT_PARTNER_COMPONENTS_SERIALIZED": true,
+    "VV_BV_COTANGENT_LIFT_CANONICAL": true,
+    "EXHAUSTIVE_FULL_NONLINEAR_BV_FAMILY_CENSUS": false,
+    "FULL_386_BV_COTANGENT_LIFT_SERIALIZED": false,
+    "FULL_SOURCE_Q2_PULLBACK_REPLAYED": false,
+    "FULL_SOURCE_Q3_PULLBACK_REPLAYED": false,
+    "FULL_CYCLIC_L_INFINITY_EQUIVALENCE_CONSTRUCTED": false,
+    "FULL_NONLINEAR_EQUIVALENCE_OBSTRUCTED": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "CAUSAL_LAMBDA2_SOURCE_CLOSURE_CERTIFIED": false,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "QME_RESTORED": false
+  },
+  "does_not_establish": [
+    "the hh or hv component sectors of the nonlinear field/cotangent map",
+    "component tables for the Diff auxiliary BV representation",
+    "absence of further nonlinear Weyl/boost ghost-antifield families",
+    "the full source q2/q3 pullback or cyclic L-infinity equivalence",
+    "Gate A, causal lambda-squared closure, Hadamard data, renormalized Lorentzian products, QME restoration, or residual transfer"
+  ],
+  "canonical_hashes": {
+    "vv_BV_cotangent_lift_sha256": "2a9826b70a1a3ec238bfbf681c9c38c7cc9d442972e31d8520865c4aa0751088",
+    "required_cubic_family_inventory_sha256": "cedbf5e96541e3cd0ab947c6e094ba4fc34b465df0b35a4b399ebb2a6c868711",
+    "inventory_completeness_sha256": "1fd8142d9e13d6584323a8c88322b82b59c453e5d509d945f0b5ba8452f4a6d1",
+    "candidate_comparison_sha256": "f3c93cd02294e49c44cac1858ad6cd3c09f61416183217f1fbbc20f531abbc5d"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1.json",
+        "result_id": "CLASSICAL_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1",
+        "sha256": "676890b3caec7d49ed968b8ca4eff5b946e74ddc1cfa2c709bcd1efb11be8820",
+        "role": "authoritative shifted cubic coefficients and family audit"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+        "result_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+        "sha256": "3b9d8a2fc5a70d20770452eb0a2a4891f59314c21c83188bfb59de0941cac4b2",
+        "role": "exact 386-row basis and odd pairing"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1.json",
+        "result_id": "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1",
+        "sha256": "ee6a88080cc13547c809f53b9c033da59138be73eff69c0654659c18ddd2c65b",
+        "role": "interaction-inert trivial-stabilization comparison"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1.json",
+        "result_id": "STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1",
+        "sha256": "5c3fa2a16bd60edc0891ce004d1fe7988647aa015185b6e4a901d867f1041b44",
+        "role": "closed predecessor vv channel"
+      }
+    ]
+  },
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_386_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1.md",
+  "next_gate": "Derive and serialize D_g^2(A_g^-1 G^b) and D_g D_b(A_g^-1 G^b), their h-star/v-star cotangent partners, and the three Diff auxiliary representation vertices; then audit the full nonlinear Weyl/boost ghost manifest before assembling a complete 386-row lift."
+}

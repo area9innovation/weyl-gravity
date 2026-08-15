@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/classical-import-gate-v10-reconciliation-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "lifecycle", "dependency_tags", "export_reconciliation", "freeze_check_reconciliation", "required_hash_disposition", "minimal_missing_bundle", "gate_disposition", "m2_quadratic_elimination_resolution", "m2_shifted_cubic_inventory_resolution", "claim_flags", "provenance", "independent_checker", "human_report", "next_gate"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-classical-import-gate-v10-reconciliation-v1"},
+    "result_id": {"const": "CLASSICAL_IMPORT_GATE_V10_RECONCILIATION"},
+    "result_state": {"const": "SEVEN_REQUIRED_CUBIC_FAMILIES_ENUMERATED_VV_BV_LIFT_CANONICAL_HH_HV_GAUGE_COMPONENTS_OPEN_GATE_FAIL_CLOSED"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "export_reconciliation": {"type": "array", "minItems": 20, "maxItems": 20},
+    "freeze_check_reconciliation": {"type": "array", "minItems": 10, "maxItems": 10},
+    "m2_shifted_cubic_inventory_resolution": {
+      "type": "object",
+      "required": ["carrier_rows", "known_required_cubic_block_families", "component_complete_families", "component_open_families", "h_f_hat_f_hat_source_coefficients", "h_f_hat_f_hat_candidate_coefficients", "vv_field_map_coefficients", "vv_cotangent_partner_coefficients", "vv_canonicality_slices", "vv_canonicality_defects", "hh_hv_component_complete", "diffeomorphism_representation_component_complete", "exhaustive_full_nonlinear_BV_family_census", "full_386_BV_cotangent_lift_serialized", "complete_source_q2_q3_pullback_replayed", "full_nonlinear_equivalence_obstructed"],
+      "properties": {
+        "carrier_rows": {"const": 386},
+        "known_required_cubic_block_families": {"const": 7},
+        "component_complete_families": {"const": 2},
+        "component_open_families": {"const": 5},
+        "h_f_hat_f_hat_source_coefficients": {"const": 72},
+        "h_f_hat_f_hat_candidate_coefficients": {"const": 0},
+        "vv_field_map_coefficients": {"const": 22},
+        "vv_cotangent_partner_coefficients": {"const": 16},
+        "vv_canonicality_slices": {"const": 4},
+        "vv_canonicality_defects": {"const": 0},
+        "hh_hv_component_complete": {"const": false},
+        "diffeomorphism_representation_component_complete": {"const": false},
+        "exhaustive_full_nonlinear_BV_family_census": {"const": false},
+        "full_386_BV_cotangent_lift_serialized": {"const": false},
+        "complete_source_q2_q3_pullback_replayed": {"const": false},
+        "full_nonlinear_equivalence_obstructed": {"const": false}
+      }
+    },
+    "gate_disposition": {
+      "type": "object",
+      "properties": {
+        "gate_a_status": {"const": "FAIL_CLOSED"},
+        "accepted_common_snapshot_hashes": {"const": 0},
+        "claim_state": {"const": "CLASSICAL_IMPORT_CUBIC_FAMILIES_ENUMERATED_VV_BV_LIFT_CANONICAL_FULL_PULLBACK_OPEN"}
+      }
+    },
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_GATE_V10.md"}
+  }
+}

@@ -34,12 +34,12 @@ all-real BT/Krein path integral; controlled conditional bridges remain open.
 
 The **Weyl BV routes** view projects the current audited Lorentzian completion atlas as
 seven architectures across eleven ordered gates, for 77 separately typed cells.
-It exposes the finite residual-SDR repair, twelve ranked next constructions and the
+It exposes the finite residual-SDR repair, fourteen ranked next constructions and the
 eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a theorem; in particular,
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
-Atlas V27 preserves the field-equation type result.  The degree-one-to-zero
+Atlas V28 preserves the field-equation type result.  The degree-one-to-zero
 Green component is an exact right inverse on Noether-compatible sources and a
 left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
 the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
@@ -63,11 +63,15 @@ identity and the linear-shear-only route are therefore refuted.  Nonlinear
 equivalence is now constructive at first order: the exact quadratic auxiliary
 map contributes `+1`, taking the source channel from `-1` to `0`, equal to the
 candidate.  This first nonlinear component closes one channel.  The full source
-pullback remains open because the componentwise 386-row BV cotangent lift and
-the metric-dependent and ghost/antifield cubic families are not yet replayed.
-Gate V9 propagates that bounded advance into the authoritative import ledger:
-one nonlinear channel closes, full equivalence remains an open constructive
-obligation, and Gate A still accepts zero authoritative hashes.
+pullback remains open.  The successor census enumerates seven known-required
+cubic families.  Two are component-exact: the shifted mass has 72 nonzero
+`h-f_hat-f_hat` coefficients, while the vv canonical transformation has 22
+field and 16 cotangent-partner coefficients with zero defect in all four
+pairing slices.  The 72-to-zero comparison proves that the vv shift alone is
+not the full normalization; it does not obstruct a further local canonical or
+L-infinity normalization.  The hh/hv, three Diff, and possible nonlinear
+Weyl/boost ghost-antifield families remain explicit fronts.  Gate V10 records
+that bounded advance while still accepting zero authoritative hashes.
 The complete Berger q3 remains a different-theory Weyl-plus-clock result on a fixed
 54-row carrier; no certified same-theory cyclic map authorizes its direct import.
 
