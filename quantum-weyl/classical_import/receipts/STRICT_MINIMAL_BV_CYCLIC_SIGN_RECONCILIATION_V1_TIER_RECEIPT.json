@@ -1,0 +1,109 @@
+{
+  "receipt_id": "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1_TIER_RECEIPT",
+  "result_id": "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "base_commit": "6994434dd201a0ec6bfd6d835b1c981ac9df12b7",
+  "content_hashes": {
+    "quantum-weyl/classical_import/local_bv_cyclicity_receiver.py": "b0cb070d58fce43a56ebe832814c5881ebf0c8b5f43192989f054a558d845f8e",
+    "quantum-weyl/classical_import/build_strict_minimal_bv_cyclic_sign_reconciliation.py": "f29a1d2ff217f24e0aacc5ab667934b906c7a638f7c5c9792eec2eee174251b6",
+    "quantum-weyl/classical_import/check_strict_minimal_bv_cyclic_sign_reconciliation.py": "6c5835d454b6e11c29ca0888c610378e416e92b1a2a04882cbeba235292adb50",
+    "quantum-weyl/classical_import/verify_strict_minimal_bv_cyclic_sign_reconciliation.py": "c21909dd83ce590b1fc549ab6d9bdfdb073ed3aa6f27d9dc97e554540126fa20",
+    "quantum-weyl/classical_import/schema/strict-minimal-bv-cyclic-sign-reconciliation-v1.schema.json": "cf5b4cff3a22581bcf4c2475e852e1fd8ac7b717e49249ca3bfb8cb693e26563",
+    "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1.json": "c4cd8b1399e176e9eb1eadbfa0c5b85901d7361f39c706a7e7d4469e945e5169",
+    "quantum-weyl/classical_import/REPORT_STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1.md": "bdc5f6fc97c1b93683db00dee5299cb2b07461b3c132625bfaafd58de0a49526",
+    "quantum-weyl/classical_import/tests/test_strict_minimal_bv_cyclic_sign_reconciliation.py": "ddea18b5c029f7d36248e8c683bc2495156047be7aed61963adcfaa8a8bd7aed",
+    "paper/21-reverse-foundations-of-physics.tex": "1beef1ba4b8b1f76f69918c553bc9a79ebc3f30bbf08d51910234ce7650fd466",
+    "paper/generate_21_reverse_foundations_claim_map.py": "a5e821ccec9d5d6fcd317164e9b65aad09fb67c3d85566ef4d796a59df29f5be",
+    "paper/verify_21_reverse_foundations_claim_map.py": "f5030ce53e9149c512debc80d153e346e04dc68a069ce02e2bcef50a72b87a25",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "d1ab74231c1c9ac8af5a14d774a6e6d27d4f41125c76fc35c54017545c0a5e9a"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile cyclic receiver/builder/checker/verifier/test and paper claim-map generator/verifier; jq empty cyclic schema/certificate and paper claim map",
+          "elapsed_seconds": 0.6,
+          "status": "PASS"
+        },
+        {
+          "command": "git diff --check -- <scoped paths>",
+          "elapsed_seconds": 0.01,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 quantum-weyl/classical_import/build_strict_minimal_bv_cyclic_sign_reconciliation.py --check",
+          "elapsed_seconds": 0.19,
+          "status": "PASS"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 quantum-weyl/classical_import/check_strict_minimal_bv_cyclic_sign_reconciliation.py",
+          "elapsed_seconds": 0.04,
+          "status": "PASS",
+          "independent_rail": "checks the master-vertex multiplier relations independently of the producer, the rank-30 pairing, 540 source defects, zero translated defects among 932 expanded coefficients, and mutation witnesses for both Noether sectors"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 quantum-weyl/classical_import/verify_strict_minimal_bv_cyclic_sign_reconciliation.py",
+          "elapsed_seconds": 0.26,
+          "status": "PASS"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 -m unittest quantum-weyl/classical_import/tests/test_strict_minimal_bv_cyclic_sign_reconciliation.py -v",
+          "elapsed_seconds": 0.28,
+          "status": "PASS",
+          "tests": 7
+        },
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+          "elapsed_seconds": 0.14,
+          "status": "PASS",
+          "independent_rail": "pins the cyclicity and Gate-V5 authorities, checks the 30/540/932/0 counts, and preserves false D, full-carrier, Gate-A and causal boundaries"
+        },
+        {
+          "command": "two-pass pdflatex -interaction=nonstopmode -halt-on-error paper/21-reverse-foundations-of-physics.tex with an external output directory",
+          "elapsed_seconds": 1.46,
+          "status": "PASS",
+          "artifact": "/tmp/weyl-paper21-cyclic-PPxPLe/21-reverse-foundations-of-physics.pdf"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_EXACT_TRANSPORT_AND_CONTENT_ADDRESS",
+      "reason": "The sign involution transports q1 and q2 by exact conjugation. The previously certified q1-squared and 18-channel/51-path q1-q2 inputs are unchanged and SHA-pinned; the new checker independently verifies the translation multipliers and preservation flags. Re-running their unchanged producers would be reproduction rather than an independent check."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "No freeze/tag, release, shared core-algebra change, or quantum lifecycle promotion; Gate A remains fail closed."
+    }
+  },
+  "advisories": {
+    "paper_prose": {
+      "command": "/home/alstrup/area9/tango/forge/tools/science-forge/paper_prose_advisory.sh paper/21-reverse-foundations-of-physics.tex",
+      "status": "ADVISORY_FINDINGS",
+      "findings": [
+        "parenthetical rate above heuristic budget",
+        "abstract-word rate above heuristic budget",
+        "one abstract numeric ledger finding"
+      ]
+    },
+    "science_forge_shadow": {
+      "command": "bash ci/science-forge-shadow.sh",
+      "elapsed_seconds": 2.16,
+      "status": "ADVISORY_FINDINGS",
+      "findings": [
+        "Forge 0.0.2 stdlib hash mismatch",
+        "bridge audit failed closed at E9118 atomic memory-order literal",
+        "coverage census drift: 1723 certificates versus baseline 976"
+      ]
+    }
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC receipt certifies the canonical odd cotangent pairing on the 30-component strict minimal carrier, diagnoses 540 non-Bach cyclicity defects in the landed convention, and certifies an involutive ghost-antifield sign translation with zero defects among 932 expanded coefficients. Exact conjugation preserves q1 squared and the 18-channel/51-path q1-q2 identity. The Bach unary and h-h-h cubic sectors are covered by the second- and third-variation theorem for the pinned local Weyl action modulo compact-support boundary terms. It does not establish local D, the nonminimal/auxiliary/residual carrier, the full SDR pairing, Gate A, causal propagation, Hadamard, QME, positivity, or quantum theory."
+}

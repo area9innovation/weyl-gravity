@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-minimal-bv-cyclic-sign-reconciliation-v1.schema.json",
+  "title": "Strict minimal-BV cyclic sign reconciliation v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema", "schema", "result_id", "result_kind", "result_state",
+    "lifecycle", "created", "repository_base_commit", "dependency_tags",
+    "scope", "diagnosis", "canonical_pairing", "sign_translation",
+    "cyclicity_receiver", "variational_completion", "proof_checks",
+    "canonical_hashes", "provenance", "claim_flags",
+    "does_not_establish", "next_gate", "schema_path",
+    "independent_checker", "human_report"
+  ],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "strict-minimal-bv-cyclic-sign-reconciliation-v1"},
+    "result_id": {"const": "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1"},
+    "result_kind": {"const": "CANONICAL_PAIRING_CONVENTION_RECONCILIATION"},
+    "result_state": {"const": "MINIMAL_Q1_Q2_CANONICALLY_CYCLIC_D_AND_FULL_CARRIER_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string"},
+    "repository_base_commit": {"type": "string"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"type": "object", "minProperties": 6},
+    "diagnosis": {
+      "type": "object",
+      "required": ["source_convention_status", "source_non_Bach_cyclicity_defect_coefficient_count", "source_non_Bach_cyclicity_defect_sector_count", "first_exact_witness", "interpretation"],
+      "properties": {
+        "source_convention_status": {"const": "NILPOTENT_BUT_NOT_CANONICALLY_CYCLIC"},
+        "source_non_Bach_cyclicity_defect_coefficient_count": {"const": 540},
+        "source_non_Bach_cyclicity_defect_sector_count": {"const": 8},
+        "first_exact_witness": {"type": "object"},
+        "interpretation": {"type": "string"}
+      }
+    },
+    "canonical_pairing": {
+      "type": "object",
+      "required": ["kind", "degree", "density_formula", "support_domain", "component_basis_dimension", "nonzero_ordered_entry_count", "rank", "off_diagonal_symmetric_tensor_weight", "entries"],
+      "properties": {
+        "kind": {"const": "CANONICAL_SUPPORT_LOCAL_ODD_COTANGENT_PAIRING"},
+        "degree": {"const": -1},
+        "component_basis_dimension": {"const": 30},
+        "nonzero_ordered_entry_count": {"const": 30},
+        "rank": {"const": 30},
+        "off_diagonal_symmetric_tensor_weight": {"const": 2},
+        "density_formula": {"type": "string"},
+        "support_domain": {"type": "string"},
+        "entries": {"type": "array", "minItems": 30, "maxItems": 30}
+      }
+    },
+    "sign_translation": {
+      "type": "object",
+      "required": ["formula", "generator_signs", "involutive", "q1_formula", "q2_formula", "q1_rows", "q2_rows", "changed_q1_component_ids", "changed_q2_component_ids"],
+      "properties": {
+        "involutive": {"const": true},
+        "q1_rows": {"type": "array", "minItems": 5, "maxItems": 5},
+        "q2_rows": {"type": "array", "minItems": 22, "maxItems": 22},
+        "changed_q1_component_ids": {"const": ["q1_cstar_hstar", "q1_omegastar_hstar"]},
+        "changed_q2_component_ids": {"const": ["q2_cstar_hhstar__forward", "q2_cstar_hhstar__reverse", "q2_omegastar_hhstar__forward", "q2_omegastar_hhstar__reverse"]},
+        "formula": {"type": "string"},
+        "generator_signs": {"type": "object"},
+        "q1_formula": {"type": "string"},
+        "q2_formula": {"type": "string"}
+      }
+    },
+    "cyclicity_receiver": {
+      "type": "object",
+      "required": ["basis_dimension", "pairing_entry_count", "primary_kernel_count", "ordered_component_count", "expanded_q2_coefficient_count", "excluded_primary_id", "source_convention_defect", "translated_convention_defect", "translation", "multiplier_classification"],
+      "properties": {
+        "basis_dimension": {"const": 30},
+        "pairing_entry_count": {"const": 30},
+        "primary_kernel_count": {"const": 11},
+        "ordered_component_count": {"const": 21},
+        "expanded_q2_coefficient_count": {"const": 932},
+        "excluded_primary_id": {"const": "q2_hstar_hh"},
+        "source_convention_defect": {"type": "object"},
+        "translated_convention_defect": {
+          "type": "object",
+          "required": ["coefficient_count", "sector_count", "sectors", "first_witness"],
+          "properties": {
+            "coefficient_count": {"const": 0},
+            "sector_count": {"const": 0},
+            "sectors": {"const": []},
+            "first_witness": {"const": null}
+          }
+        },
+        "translation": {"type": "object"},
+        "multiplier_classification": {"type": "object"}
+      }
+    },
+    "variational_completion": {"type": "object", "minProperties": 5},
+    "proof_checks": {"type": "array", "minItems": 8, "maxItems": 8},
+    "canonical_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["canonical_pairing_sha256", "sign_translation_sha256", "cyclicity_receiver_sha256", "variational_completion_sha256", "proof_checks_sha256"],
+      "properties": {
+        "canonical_pairing_sha256": {"$ref": "#/$defs/sha256"},
+        "sign_translation_sha256": {"$ref": "#/$defs/sha256"},
+        "cyclicity_receiver_sha256": {"$ref": "#/$defs/sha256"},
+        "variational_completion_sha256": {"$ref": "#/$defs/sha256"},
+        "proof_checks_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "provenance": {"type": "object", "required": ["inputs", "implementation"]},
+    "claim_flags": {
+      "type": "object",
+      "required": ["CANONICAL_MINIMAL_BV_PAIRING_SERIALIZED", "CANONICAL_SIGN_TRANSLATION_CERTIFIED", "Q1_SQUARED_ZERO_PRESERVED", "Q1_Q2_ARITY_TWO_NILPOTENCY_PRESERVED", "BV_CYCLICITY_Q1_REPLAYED", "BV_CYCLICITY_Q2_REPLAYED", "STRICT_FULL_LOCAL_D_ACTION_CERTIFIED", "D_Q1_COMMUTATOR_REPLAYED", "D_Q2_DERIVATION_REPLAYED", "FULL_COMMON_CARRIER_PAIRING_CERTIFIED", "STRICT_SUPPORT_LOCAL_Q2_COMPLETE", "CLASSICAL_IMPORT_GATE_PASSED", "LORENTZIAN_CAUSAL_CERTIFIED", "QME_RESTORED"],
+      "properties": {
+        "CANONICAL_MINIMAL_BV_PAIRING_SERIALIZED": {"const": true},
+        "CANONICAL_SIGN_TRANSLATION_CERTIFIED": {"const": true},
+        "Q1_SQUARED_ZERO_PRESERVED": {"const": true},
+        "Q1_Q2_ARITY_TWO_NILPOTENCY_PRESERVED": {"const": true},
+        "BV_CYCLICITY_Q1_REPLAYED": {"const": true},
+        "BV_CYCLICITY_Q2_REPLAYED": {"const": true},
+        "STRICT_FULL_LOCAL_D_ACTION_CERTIFIED": {"const": false},
+        "D_Q1_COMMUTATOR_REPLAYED": {"const": false},
+        "D_Q2_DERIVATION_REPLAYED": {"const": false},
+        "FULL_COMMON_CARRIER_PAIRING_CERTIFIED": {"const": false},
+        "STRICT_SUPPORT_LOCAL_Q2_COMPLETE": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "LORENTZIAN_CAUSAL_CERTIFIED": {"const": false},
+        "QME_RESTORED": {"const": false}
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "string"}},
+    "next_gate": {"type": "string"},
+    "schema_path": {"const": "quantum-weyl/classical_import/schema/strict-minimal-bv-cyclic-sign-reconciliation-v1.schema.json"},
+    "independent_checker": {"const": "quantum-weyl/classical_import/check_strict_minimal_bv_cyclic_sign_reconciliation.py"},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1.md"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

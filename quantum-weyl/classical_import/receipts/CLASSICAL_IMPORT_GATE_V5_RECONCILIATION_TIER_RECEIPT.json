@@ -1,0 +1,98 @@
+{
+  "receipt_id": "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION_TIER_RECEIPT",
+  "result_id": "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "base_commit": "6994434dd201a0ec6bfd6d835b1c981ac9df12b7",
+  "content_hashes": {
+    "quantum-weyl/classical_import/build_classical_import_gate_v5_reconciliation.py": "56da7dc0e71526683aeb20cf7216d771f47b11d9c2c34b68d028de16f1ee63a8",
+    "quantum-weyl/classical_import/check_classical_import_gate_v5_reconciliation.py": "0323800bb880edddd261ef02413a864f5593f4fc1be260533e2854044b4decef",
+    "quantum-weyl/classical_import/verify_classical_import_gate_v5_reconciliation.py": "c46d45c970e984ce05cf9d984ccb0d492cfb93bb125a7156f7cb15a5699e7b9c",
+    "quantum-weyl/classical_import/schema/classical-import-gate-v5-reconciliation-v1.schema.json": "f7e4c8848296bcc9d47526b9997783081002c9b1884e21e693559bc9b824ccee",
+    "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V5_RECONCILIATION.json": "3f06924664f8433a2332afb58edcf513723a889ef802298832b137b03608427f",
+    "quantum-weyl/classical_import/REPORT_GATE_V5.md": "313d34d38a7095ea9addf065f79410747d7d9d929c98aeb439bccf4320c51208",
+    "quantum-weyl/classical_import/tests/test_classical_import_gate_v5_reconciliation.py": "a9ee1eb7087f4eb59352adda426ccb2a67c6f79f8d7c056ac386ce567c016bf5",
+    "quantum-weyl/classical_import/REPORT.md": "c42db8bc4bd977004fb9e4d3918099644e5d2c229b6805fc09bc686f39f72995",
+    "paper/21-reverse-foundations-of-physics.tex": "1beef1ba4b8b1f76f69918c553bc9a79ebc3f30bbf08d51910234ce7650fd466",
+    "paper/generate_21_reverse_foundations_claim_map.py": "a5e821ccec9d5d6fcd317164e9b65aad09fb67c3d85566ef4d796a59df29f5be",
+    "paper/verify_21_reverse_foundations_claim_map.py": "f5030ce53e9149c512debc80d153e346e04dc68a069ce02e2bcef50a72b87a25",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "d1ab74231c1c9ac8af5a14d774a6e6d27d4f41125c76fc35c54017545c0a5e9a"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile Gate-V5 builder/checker/verifier/test and paper claim-map generator/verifier; jq empty Gate-V5 schema/certificate and paper claim map",
+          "elapsed_seconds": 0.6,
+          "status": "PASS"
+        },
+        {
+          "command": "git diff --check -- <scoped paths>",
+          "elapsed_seconds": 0.01,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 quantum-weyl/classical_import/build_classical_import_gate_v5_reconciliation.py --check",
+          "elapsed_seconds": 0.05,
+          "status": "PASS"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 quantum-weyl/classical_import/check_classical_import_gate_v5_reconciliation.py",
+          "elapsed_seconds": 0.03,
+          "status": "PASS",
+          "independent_rail": "reconstructs exactly two new scoped promotions, 20 export and 10 check statuses, 21 provenance pins, the rank-30/540-to-zero crosswalk, unchanged D rows, zero accepted common hashes and Gate-A fail-closed flags"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 quantum-weyl/classical_import/verify_classical_import_gate_v5_reconciliation.py",
+          "elapsed_seconds": 0.10,
+          "status": "PASS"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 -m unittest quantum-weyl/classical_import/tests/test_classical_import_gate_v5_reconciliation.py -v",
+          "elapsed_seconds": 0.12,
+          "status": "PASS",
+          "tests": 7
+        },
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+          "elapsed_seconds": 0.14,
+          "status": "PASS"
+        },
+        {
+          "command": "two-pass pdflatex -interaction=nonstopmode -halt-on-error paper/21-reverse-foundations-of-physics.tex with an external output directory",
+          "elapsed_seconds": 1.46,
+          "status": "PASS",
+          "artifact": "/tmp/weyl-paper21-cyclic-PPxPLe/21-reverse-foundations-of-physics.pdf"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "Gate V5 is a reconciliation over unchanged SHA-pinned V4, strict q1, strict q2, strict q1-q2 and newly verified cyclic-sign certificates. Their producer/receiver rails are not silently substituted for one another; V5 independently checks the status crosswalk and provenance pins."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "Gate A remains FAIL_CLOSED, no lifecycle is promoted beyond CLASSIFIED, and this is not a freeze/tag, release, or shared core-algebra change."
+    }
+  },
+  "advisory_science_forge": {
+    "command": "bash ci/science-forge-shadow.sh",
+    "elapsed_seconds": 2.16,
+    "status": "ADVISORY_FINDINGS",
+    "findings": [
+      "Forge 0.0.2 stdlib hash mismatch",
+      "bridge audit failed closed at E9118 atomic memory-order literal",
+      "coverage census drift: 1723 certificates versus baseline 976"
+    ]
+  },
+  "claim_boundary": "This reconciliation promotes only the strict minimal canonical pairing and q1/q2 cyclicity rows to RECEIVER_VERIFIED_SCOPED and rebinds the already scoped q0/q1/q2/q1-q2 evidence to the translated ghost-antifield convention. It accepts zero common snapshot hashes and leaves local D, D identities, nonminimal/auxiliary/residual extension, full SDR cyclicity, M3/M5/M6, Gate A, Lorentzian causal, Hadamard and QME claims fail closed."
+}

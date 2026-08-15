@@ -202,14 +202,29 @@ components. The channels form four natural families: semidirect Diff/Weyl
 gauge closure, Bach-Euler equivariance, differentiated Diff Noether, and
 differentiated Weyl Noether. All vanish compositionally and in three exact
 five-jet background replays; one sign mutation in each family produces a
-nonzero defect. Thus `q1q2=0` is now certified, while the `D` and common BV-
-pairing identities, the seven-proof support-local export contract, Gate A,
-causal propagation and every quantum lifecycle promotion remain fail closed.
+nonzero defect. Thus `q1q2=0` is certified in the source receiver convention.
+
+Attempting to add the missing canonical odd pairing exposed a convention
+defect rather than a routine omission. The exact thirty-component receiver in
+[`STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1`](REPORT_STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1.md)
+finds 540 non-Bach cyclicity defects in the source convention. They are
+removed by the involution
+`(c_star,omega_star) -> (-c_star,-omega_star)`, which changes two q1 rows and
+four ordered q2 rows. This is an exact conjugation, so q1 squared and the full
+eighteen-channel/fifty-one-path q1q2 theorem are preserved. After translation
+all 932 expanded non-Bach coefficients are cyclic modulo formal integration
+by parts; the Bach unary and cubic sectors close by the second- and
+third-variation symmetry of the pinned local Weyl action. The canonical
+minimal odd pairing has component dimension and rank thirty.
+
 The current aggregate disposition is
-[`CLASSICAL_IMPORT_GATE_V4_RECONCILIATION`](REPORT_GATE_V4.md): it promotes
-only the minimal `q2` export and `q1q2` check to same-theory scoped evidence,
-leaves all seven common snapshot hashes unaccepted, and narrows M2 to local
-`D`, full-carrier extension and the independent M4 pairing/cyclicity layer.
+[`CLASSICAL_IMPORT_GATE_V5_RECONCILIATION`](REPORT_GATE_V5.md). It promotes
+the minimal canonical pairing and q2 cyclic check to same-theory scoped
+evidence, rebinds q0/q2/q1q2 to the translated convention, and leaves all
+seven common snapshot hashes unaccepted. Local `D`, both D identities, the
+nonminimal/auxiliary/residual pairing extension, the continuum residual SDR,
+and M5/M6 remain open. Gate A, causal propagation and every quantum lifecycle
+promotion therefore remain fail closed.
 
 ## Antifield/Koszul--Tate handoff contract
 

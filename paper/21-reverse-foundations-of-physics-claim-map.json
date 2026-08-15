@@ -686,15 +686,15 @@
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_ZERO_FIBER_WARD_WEIGHT_OBSTRUCTION_V1",
       "sha256": "0d7cae4aa000cf6cf6ea8e75aa57472a4fcb72d95cd8d71811c96a7c8ab9b446"
     },
-    "classical_import_gate_v4": {
+    "classical_import_gate_v5": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
         "LORENTZIAN-CAUSAL"
       ],
       "lifecycle": "CLASSIFIED",
-      "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V4_RECONCILIATION.json",
-      "result_id": "CLASSICAL_IMPORT_GATE_V4_RECONCILIATION",
-      "sha256": "a36b3bf8dcc8539a1f40d06a93bf073157bdab3866d16eecdafaa51d93754fca"
+      "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V5_RECONCILIATION.json",
+      "result_id": "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
+      "sha256": "3f06924664f8433a2332afb58edcf513723a889ef802298832b137b03608427f"
     },
     "coded_local_weak_wave_test_class": {
       "dependency_tags": [
@@ -898,6 +898,15 @@
       "result_id": "STRICT_LOCAL_Q1_Q2_IDENTITY_V1",
       "sha256": "8300dddd6120632958a307e1924f27fb4e24ae6802e3163a825bd1dce54de738"
     },
+    "strict_minimal_bv_cyclic_sign_reconciliation": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1.json",
+      "result_id": "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
+      "sha256": "c4cd8b1399e176e9eb1eadbfa0c5b85901d7361f39c706a7e7d4469e945e5169"
+    },
     "strict_portable_local_q1": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC"
@@ -930,7 +939,7 @@
       "sha256": "7619ce964d21c0057038b299a63c89c8f56a2a4f052bc8551baa14ca7de037ba"
     }
   },
-  "canonical_digest": "f712c667aa24749434d499faf3677c0dfc7e9f554e83d5a15106503126b78d0d",
+  "canonical_digest": "75d75ab70885b764daa82107d90d2476035929663e9c54b9886dc71bbda39ef3",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -1066,6 +1075,7 @@
     "scalar_minkowski_causal_support_proved": true,
     "scalar_minkowski_green_certified": true,
     "static_atlas_appendix_generated": true,
+    "strict_minimal_bv_cyclicity_reconciled": true,
     "strict_pure_weyl_local_q1_q2_certified": true,
     "support_indexed_full_lf_topology_reconstructed": false,
     "support_indexed_name_equivalence_certified": true,
@@ -1388,14 +1398,15 @@
       "authorities": [
         "strict_portable_local_q1",
         "strict_local_q1_q2_identity",
-        "classical_import_gate_v4"
+        "strict_minimal_bv_cyclic_sign_reconciliation",
+        "classical_import_gate_v5"
       ],
       "claim_id": "RF-24-STRICT-WEYL-LOCAL-Q1-Q2",
       "dependency_tags": [
         "LOCAL-ALGEBRAIC"
       ],
-      "statement": "On the declared Bach-flat strict pure-Weyl minimal BV carrier, the portable unary complex is square zero and the arity-two master identity exhausts 18 typed channels and 51 composable paths using all five q1 and all twenty-two ordered q2 components. Full local D, common BV pairing and cyclicity, Gate A, causal propagation and quantum lifecycle promotions remain open.",
-      "status": "LOCAL_ALGEBRAIC_ARITY_TWO_MASTER_IDENTITY_WITH_GATE_BOUNDARY"
+      "statement": "On the declared Bach-flat strict pure-Weyl minimal BV carrier, the portable unary complex is square zero and the arity-two master identity exhausts 18 typed channels and 51 composable paths using all five q1 and all twenty-two ordered q2 components. An exact 30-component receiver finds 540 canonical-cyclicity defects in the landed ghost-antifield convention and certifies an involutive sign translation that removes all defects in 932 expanded non-Bach coefficients while preserving q1 squared and the q1-q2 identity. Gate A remains fail closed because full local D and the nonminimal, auxiliary and residual carrier are not yet receiver-certified; causal propagation and quantum lifecycle promotions remain open.",
+      "status": "LOCAL_ALGEBRAIC_MINIMAL_Q1_Q2_CYCLIC_RECONCILIATION_WITH_GATE_BOUNDARY"
     }
   ],
   "created": "2026-08-14",
@@ -1599,7 +1610,7 @@
       "source_sha256": "e0ae0418b415f4a7b6cd8d0968316b537755fa091135d8d7cd35d6fc25927d2a"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "1bce648cbd22eecdde37efca328a6e15249efc74ade095790968e61799382778"
+    "sha256": "1beef1ba4b8b1f76f69918c553bc9a79ebc3f30bbf08d51910234ce7650fd466"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

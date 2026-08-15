@@ -1,0 +1,993 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "strict-minimal-bv-cyclic-sign-reconciliation-v1",
+  "result_id": "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
+  "result_kind": "CANONICAL_PAIRING_CONVENTION_RECONCILIATION",
+  "result_state": "MINIMAL_Q1_Q2_CANONICALLY_CYCLIC_D_AND_FULL_CARRIER_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "6994434d",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "scope": {
+    "theory": "strict pure-Weyl minimal Diff x Weyl BV theory",
+    "background_class": "smooth nondegenerate four-dimensional Bach-flat pseudo-Riemannian metrics",
+    "carrier": "compactly supported smooth minimal BV sections",
+    "locality": "SUPPORT_LOCAL_POLYDIFFERENTIAL",
+    "coefficient_field": "Q for the component receiver; smooth real tensor-natural semantics",
+    "convention": "suspended-graded-symmetric-factorial-v1 with canonical primal-to-antifield odd-Darboux orientation"
+  },
+  "diagnosis": {
+    "source_convention_status": "NILPOTENT_BUT_NOT_CANONICALLY_CYCLIC",
+    "source_non_Bach_cyclicity_defect_coefficient_count": 540,
+    "source_non_Bach_cyclicity_defect_sector_count": 8,
+    "first_exact_witness": {
+      "basis": [
+        "h_00",
+        "h_star_00",
+        "c_0"
+      ],
+      "first_word": [],
+      "second_word": [
+        0
+      ],
+      "coefficient": "4"
+    },
+    "interpretation": "the obstruction is a receiver/source cotangent-coordinate sign mismatch, not a failure of the pure-Weyl master action or of the already certified nilpotency identities"
+  },
+  "canonical_pairing": {
+    "kind": "CANONICAL_SUPPORT_LOCAL_ODD_COTANGENT_PAIRING",
+    "degree": -1,
+    "density_formula": "integral (h^{*mu nu} h_mu nu + c^*_mu c^mu + omega^* omega), with the displayed odd-Darboux orientations",
+    "support_domain": "one compactly supported argument; compact-compact is allowed",
+    "component_basis_dimension": 30,
+    "nonzero_ordered_entry_count": 30,
+    "rank": 30,
+    "off_diagonal_symmetric_tensor_weight": 2,
+    "entries": [
+      {
+        "left_index": 0,
+        "right_index": 15,
+        "left": "h_00",
+        "right": "h_star_00",
+        "coefficient": "1"
+      },
+      {
+        "left_index": 1,
+        "right_index": 16,
+        "left": "h_01",
+        "right": "h_star_01",
+        "coefficient": "2"
+      },
+      {
+        "left_index": 2,
+        "right_index": 17,
+        "left": "h_02",
+        "right": "h_star_02",
+        "coefficient": "2"
+      },
+      {
+        "left_index": 3,
+        "right_index": 18,
+        "left": "h_03",
+        "right": "h_star_03",
+        "coefficient": "2"
+      },
+      {
+        "left_index": 4,
+        "right_index": 19,
+        "left": "h_11",
+        "right": "h_star_11",
+        "coefficient": "1"
+      },
+      {
+        "left_index": 5,
+        "right_index": 20,
+        "left": "h_12",
+        "right": "h_star_12",
+        "coefficient": "2"
+      },
+      {
+        "left_index": 6,
+        "right_index": 21,
+        "left": "h_13",
+        "right": "h_star_13",
+        "coefficient": "2"
+      },
+      {
+        "left_index": 7,
+        "right_index": 22,
+        "left": "h_22",
+        "right": "h_star_22",
+        "coefficient": "1"
+      },
+      {
+        "left_index": 8,
+        "right_index": 23,
+        "left": "h_23",
+        "right": "h_star_23",
+        "coefficient": "2"
+      },
+      {
+        "left_index": 9,
+        "right_index": 24,
+        "left": "h_33",
+        "right": "h_star_33",
+        "coefficient": "1"
+      },
+      {
+        "left_index": 10,
+        "right_index": 25,
+        "left": "c_0",
+        "right": "c_star_0",
+        "coefficient": "1"
+      },
+      {
+        "left_index": 11,
+        "right_index": 26,
+        "left": "c_1",
+        "right": "c_star_1",
+        "coefficient": "1"
+      },
+      {
+        "left_index": 12,
+        "right_index": 27,
+        "left": "c_2",
+        "right": "c_star_2",
+        "coefficient": "1"
+      },
+      {
+        "left_index": 13,
+        "right_index": 28,
+        "left": "c_3",
+        "right": "c_star_3",
+        "coefficient": "1"
+      },
+      {
+        "left_index": 14,
+        "right_index": 29,
+        "left": "omega",
+        "right": "omega_star",
+        "coefficient": "1"
+      },
+      {
+        "left_index": 15,
+        "right_index": 0,
+        "left": "h_star_00",
+        "right": "h_00",
+        "coefficient": "-1"
+      },
+      {
+        "left_index": 16,
+        "right_index": 1,
+        "left": "h_star_01",
+        "right": "h_01",
+        "coefficient": "-2"
+      },
+      {
+        "left_index": 17,
+        "right_index": 2,
+        "left": "h_star_02",
+        "right": "h_02",
+        "coefficient": "-2"
+      },
+      {
+        "left_index": 18,
+        "right_index": 3,
+        "left": "h_star_03",
+        "right": "h_03",
+        "coefficient": "-2"
+      },
+      {
+        "left_index": 19,
+        "right_index": 4,
+        "left": "h_star_11",
+        "right": "h_11",
+        "coefficient": "-1"
+      },
+      {
+        "left_index": 20,
+        "right_index": 5,
+        "left": "h_star_12",
+        "right": "h_12",
+        "coefficient": "-2"
+      },
+      {
+        "left_index": 21,
+        "right_index": 6,
+        "left": "h_star_13",
+        "right": "h_13",
+        "coefficient": "-2"
+      },
+      {
+        "left_index": 22,
+        "right_index": 7,
+        "left": "h_star_22",
+        "right": "h_22",
+        "coefficient": "-1"
+      },
+      {
+        "left_index": 23,
+        "right_index": 8,
+        "left": "h_star_23",
+        "right": "h_23",
+        "coefficient": "-2"
+      },
+      {
+        "left_index": 24,
+        "right_index": 9,
+        "left": "h_star_33",
+        "right": "h_33",
+        "coefficient": "-1"
+      },
+      {
+        "left_index": 25,
+        "right_index": 10,
+        "left": "c_star_0",
+        "right": "c_0",
+        "coefficient": "-1"
+      },
+      {
+        "left_index": 26,
+        "right_index": 11,
+        "left": "c_star_1",
+        "right": "c_1",
+        "coefficient": "-1"
+      },
+      {
+        "left_index": 27,
+        "right_index": 12,
+        "left": "c_star_2",
+        "right": "c_2",
+        "coefficient": "-1"
+      },
+      {
+        "left_index": 28,
+        "right_index": 13,
+        "left": "c_star_3",
+        "right": "c_3",
+        "coefficient": "-1"
+      },
+      {
+        "left_index": 29,
+        "right_index": 14,
+        "left": "omega_star",
+        "right": "omega",
+        "coefficient": "-1"
+      }
+    ]
+  },
+  "sign_translation": {
+    "formula": "T(h,c,omega,h_star,c_star,omega_star)=(h,c,omega,h_star,-c_star,-omega_star)",
+    "generator_signs": {
+      "h": 1,
+      "c": 1,
+      "omega": 1,
+      "h_star": 1,
+      "c_star": -1,
+      "omega_star": -1
+    },
+    "involutive": true,
+    "q1_formula": "q1'=T q1 T^-1",
+    "q2_formula": "q2'=T q2(T^-1 -,T^-1 -)",
+    "q1_rows": [
+      {
+        "component_id": "q1_h_c",
+        "input": "c",
+        "output": "h",
+        "source_coefficient": 1,
+        "translation_multiplier": 1,
+        "translated_coefficient": 1
+      },
+      {
+        "component_id": "q1_h_omega",
+        "input": "omega",
+        "output": "h",
+        "source_coefficient": 1,
+        "translation_multiplier": 1,
+        "translated_coefficient": 1
+      },
+      {
+        "component_id": "q1_hstar_h",
+        "input": "h",
+        "output": "h_star",
+        "source_coefficient": 1,
+        "translation_multiplier": 1,
+        "translated_coefficient": 1
+      },
+      {
+        "component_id": "q1_cstar_hstar",
+        "input": "h_star",
+        "output": "c_star",
+        "source_coefficient": 1,
+        "translation_multiplier": -1,
+        "translated_coefficient": -1
+      },
+      {
+        "component_id": "q1_omegastar_hstar",
+        "input": "h_star",
+        "output": "omega_star",
+        "source_coefficient": 1,
+        "translation_multiplier": -1,
+        "translated_coefficient": -1
+      }
+    ],
+    "q2_rows": [
+      {
+        "component_id": "q2_c_cc",
+        "primary_id": "q2_c_cc",
+        "inputs": [
+          "c",
+          "c"
+        ],
+        "output": "c",
+        "source_coefficient_relative_to_primary": 1,
+        "translation_multiplier": 1,
+        "translated_coefficient_relative_to_primary": 1
+      },
+      {
+        "component_id": "q2_omega_comega__forward",
+        "primary_id": "q2_omega_comega",
+        "inputs": [
+          "c",
+          "omega"
+        ],
+        "output": "omega",
+        "source_coefficient_relative_to_primary": 1,
+        "translation_multiplier": 1,
+        "translated_coefficient_relative_to_primary": 1
+      },
+      {
+        "component_id": "q2_omega_comega__reverse",
+        "primary_id": "q2_omega_comega",
+        "inputs": [
+          "omega",
+          "c"
+        ],
+        "output": "omega",
+        "source_coefficient_relative_to_primary": -1,
+        "translation_multiplier": 1,
+        "translated_coefficient_relative_to_primary": -1
+      },
+      {
+        "component_id": "q2_h_ch__forward",
+        "primary_id": "q2_h_ch",
+        "inputs": [
+          "c",
+          "h"
+        ],
+        "output": "h",
+        "source_coefficient_relative_to_primary": 1,
+        "translation_multiplier": 1,
+        "translated_coefficient_relative_to_primary": 1
+      },
+      {
+        "component_id": "q2_h_ch__reverse",
+        "primary_id": "q2_h_ch",
+        "inputs": [
+          "h",
+          "c"
+        ],
+        "output": "h",
+        "source_coefficient_relative_to_primary": 1,
+        "translation_multiplier": 1,
+        "translated_coefficient_relative_to_primary": 1
+      },
+      {
+        "component_id": "q2_h_omegah__forward",
+        "primary_id": "q2_h_omegah",
+        "inputs": [
+          "omega",
+          "h"
+        ],
+        "output": "h",
+        "source_coefficient_relative_to_primary": 1,
+        "translation_multiplier": 1,
+        "translated_coefficient_relative_to_primary": 1
+      },
+      {
+        "component_id": "q2_h_omegah__reverse",
+        "primary_id": "q2_h_omegah",
+        "inputs": [
+          "h",
+          "omega"
+        ],
+        "output": "h",
+        "source_coefficient_relative_to_primary": 1,
+        "translation_multiplier": 1,
+        "translated_coefficient_relative_to_primary": 1
+      },
+      {
+        "component_id": "q2_hstar_hh",
+        "primary_id": "q2_hstar_hh",
+        "inputs": [
+          "h",
+          "h"
+        ],
+        "output": "h_star",
+        "source_coefficient_relative_to_primary": 1,
+        "translation_multiplier": 1,
+        "translated_coefficient_relative_to_primary": 1
+      },
+      {
+        "component_id": "q2_hstar_chstar__forward",
+        "primary_id": "q2_hstar_chstar",
+        "inputs": [
+          "c",
+          "h_star"
+        ],
+        "output": "h_star",
+        "source_coefficient_relative_to_primary": 1,
+        "translation_multiplier": 1,
+        "translated_coefficient_relative_to_primary": 1
+      },
+      {
+        "component_id": "q2_hstar_chstar__reverse",
+        "primary_id": "q2_hstar_chstar",
+        "inputs": [
+          "h_star",
+          "c"
+        ],
+        "output": "h_star",
+        "source_coefficient_relative_to_primary": -1,
+        "translation_multiplier": 1,
+        "translated_coefficient_relative_to_primary": -1
+      },
+      {
+        "component_id": "q2_hstar_omegahstar__forward",
+        "primary_id": "q2_hstar_omegahstar",
+        "inputs": [
+          "omega",
+          "h_star"
+        ],
+        "output": "h_star",
+        "source_coefficient_relative_to_primary": 1,
+        "translation_multiplier": 1,
+        "translated_coefficient_relative_to_primary": 1
+      },
+      {
+        "component_id": "q2_hstar_omegahstar__reverse",
+        "primary_id": "q2_hstar_omegahstar",
+        "inputs": [
+          "h_star",
+          "omega"
+        ],
+        "output": "h_star",
+        "source_coefficient_relative_to_primary": -1,
+        "translation_multiplier": 1,
+        "translated_coefficient_relative_to_primary": -1
+      },
+      {
+        "component_id": "q2_cstar_hhstar__forward",
+        "primary_id": "q2_cstar_hhstar",
+        "inputs": [
+          "h",
+          "h_star"
+        ],
+        "output": "c_star",
+        "source_coefficient_relative_to_primary": 1,
+        "translation_multiplier": -1,
+        "translated_coefficient_relative_to_primary": -1
+      },
+      {
+        "component_id": "q2_cstar_hhstar__reverse",
+        "primary_id": "q2_cstar_hhstar",
+        "inputs": [
+          "h_star",
+          "h"
+        ],
+        "output": "c_star",
+        "source_coefficient_relative_to_primary": 1,
+        "translation_multiplier": -1,
+        "translated_coefficient_relative_to_primary": -1
+      },
+      {
+        "component_id": "q2_cstar_ccstar__forward",
+        "primary_id": "q2_cstar_ccstar",
+        "inputs": [
+          "c",
+          "c_star"
+        ],
+        "output": "c_star",
+        "source_coefficient_relative_to_primary": 1,
+        "translation_multiplier": 1,
+        "translated_coefficient_relative_to_primary": 1
+      },
+      {
+        "component_id": "q2_cstar_ccstar__reverse",
+        "primary_id": "q2_cstar_ccstar",
+        "inputs": [
+          "c_star",
+          "c"
+        ],
+        "output": "c_star",
+        "source_coefficient_relative_to_primary": 1,
+        "translation_multiplier": 1,
+        "translated_coefficient_relative_to_primary": 1
+      },
+      {
+        "component_id": "q2_cstar_omegaomegastar__forward",
+        "primary_id": "q2_cstar_omegaomegastar",
+        "inputs": [
+          "omega",
+          "omega_star"
+        ],
+        "output": "c_star",
+        "source_coefficient_relative_to_primary": 1,
+        "translation_multiplier": 1,
+        "translated_coefficient_relative_to_primary": 1
+      },
+      {
+        "component_id": "q2_cstar_omegaomegastar__reverse",
+        "primary_id": "q2_cstar_omegaomegastar",
+        "inputs": [
+          "omega_star",
+          "omega"
+        ],
+        "output": "c_star",
+        "source_coefficient_relative_to_primary": 1,
+        "translation_multiplier": 1,
+        "translated_coefficient_relative_to_primary": 1
+      },
+      {
+        "component_id": "q2_omegastar_hhstar__forward",
+        "primary_id": "q2_omegastar_hhstar",
+        "inputs": [
+          "h",
+          "h_star"
+        ],
+        "output": "omega_star",
+        "source_coefficient_relative_to_primary": 1,
+        "translation_multiplier": -1,
+        "translated_coefficient_relative_to_primary": -1
+      },
+      {
+        "component_id": "q2_omegastar_hhstar__reverse",
+        "primary_id": "q2_omegastar_hhstar",
+        "inputs": [
+          "h_star",
+          "h"
+        ],
+        "output": "omega_star",
+        "source_coefficient_relative_to_primary": 1,
+        "translation_multiplier": -1,
+        "translated_coefficient_relative_to_primary": -1
+      },
+      {
+        "component_id": "q2_omegastar_comegastar__forward",
+        "primary_id": "q2_omegastar_comegastar",
+        "inputs": [
+          "c",
+          "omega_star"
+        ],
+        "output": "omega_star",
+        "source_coefficient_relative_to_primary": 1,
+        "translation_multiplier": 1,
+        "translated_coefficient_relative_to_primary": 1
+      },
+      {
+        "component_id": "q2_omegastar_comegastar__reverse",
+        "primary_id": "q2_omegastar_comegastar",
+        "inputs": [
+          "omega_star",
+          "c"
+        ],
+        "output": "omega_star",
+        "source_coefficient_relative_to_primary": 1,
+        "translation_multiplier": 1,
+        "translated_coefficient_relative_to_primary": 1
+      }
+    ],
+    "changed_q1_component_ids": [
+      "q1_cstar_hstar",
+      "q1_omegastar_hstar"
+    ],
+    "changed_q2_component_ids": [
+      "q2_cstar_hhstar__forward",
+      "q2_cstar_hhstar__reverse",
+      "q2_omegastar_hhstar__forward",
+      "q2_omegastar_hhstar__reverse"
+    ]
+  },
+  "cyclicity_receiver": {
+    "basis_dimension": 30,
+    "pairing_entry_count": 30,
+    "primary_kernel_count": 11,
+    "ordered_component_count": 21,
+    "expanded_q2_coefficient_count": 932,
+    "excluded_primary_id": "q2_hstar_hh",
+    "source_convention_defect": {
+      "coefficient_count": 540,
+      "sector_count": 8,
+      "sectors": [
+        {
+          "symbols": [
+            "c",
+            "h",
+            "h_star"
+          ],
+          "coefficient_count": 104
+        },
+        {
+          "symbols": [
+            "c",
+            "h_star",
+            "h"
+          ],
+          "coefficient_count": 116
+        },
+        {
+          "symbols": [
+            "h",
+            "h_star",
+            "c"
+          ],
+          "coefficient_count": 140
+        },
+        {
+          "symbols": [
+            "h",
+            "h_star",
+            "omega"
+          ],
+          "coefficient_count": 10
+        },
+        {
+          "symbols": [
+            "h_star",
+            "h",
+            "c"
+          ],
+          "coefficient_count": 140
+        },
+        {
+          "symbols": [
+            "h_star",
+            "h",
+            "omega"
+          ],
+          "coefficient_count": 10
+        },
+        {
+          "symbols": [
+            "omega",
+            "h",
+            "h_star"
+          ],
+          "coefficient_count": 10
+        },
+        {
+          "symbols": [
+            "omega",
+            "h_star",
+            "h"
+          ],
+          "coefficient_count": 10
+        }
+      ],
+      "first_witness": {
+        "basis": [
+          "h_00",
+          "h_star_00",
+          "c_0"
+        ],
+        "first_word": [],
+        "second_word": [
+          0
+        ],
+        "coefficient": "4"
+      }
+    },
+    "translated_convention_defect": {
+      "coefficient_count": 0,
+      "sector_count": 0,
+      "sectors": [],
+      "first_witness": null
+    },
+    "translation": {
+      "generator_signs": {
+        "h": 1,
+        "c": 1,
+        "omega": 1,
+        "h_star": 1,
+        "c_star": -1,
+        "omega_star": -1
+      },
+      "changed_primary_ids": [
+        "q2_cstar_hhstar",
+        "q2_omegastar_hhstar"
+      ],
+      "revert_diff_Noether_defect": {
+        "coefficient_count": 500,
+        "sector_count": 4,
+        "sectors": [
+          {
+            "symbols": [
+              "c",
+              "h",
+              "h_star"
+            ],
+            "coefficient_count": 104
+          },
+          {
+            "symbols": [
+              "c",
+              "h_star",
+              "h"
+            ],
+            "coefficient_count": 116
+          },
+          {
+            "symbols": [
+              "h",
+              "h_star",
+              "c"
+            ],
+            "coefficient_count": 140
+          },
+          {
+            "symbols": [
+              "h_star",
+              "h",
+              "c"
+            ],
+            "coefficient_count": 140
+          }
+        ],
+        "first_witness": {
+          "basis": [
+            "h_00",
+            "h_star_00",
+            "c_0"
+          ],
+          "first_word": [],
+          "second_word": [
+            0
+          ],
+          "coefficient": "4"
+        }
+      },
+      "revert_Weyl_Noether_defect": {
+        "coefficient_count": 40,
+        "sector_count": 4,
+        "sectors": [
+          {
+            "symbols": [
+              "h",
+              "h_star",
+              "omega"
+            ],
+            "coefficient_count": 10
+          },
+          {
+            "symbols": [
+              "h_star",
+              "h",
+              "omega"
+            ],
+            "coefficient_count": 10
+          },
+          {
+            "symbols": [
+              "omega",
+              "h",
+              "h_star"
+            ],
+            "coefficient_count": 10
+          },
+          {
+            "symbols": [
+              "omega",
+              "h_star",
+              "h"
+            ],
+            "coefficient_count": 10
+          }
+        ],
+        "first_witness": {
+          "basis": [
+            "h_00",
+            "h_star_00",
+            "omega"
+          ],
+          "first_word": [],
+          "second_word": [],
+          "coefficient": "-4"
+        }
+      }
+    },
+    "multiplier_classification": {
+      "primary_order": [
+        "q2_c_cc",
+        "q2_omega_comega",
+        "q2_h_ch",
+        "q2_h_omegah",
+        "q2_hstar_chstar",
+        "q2_hstar_omegahstar",
+        "q2_cstar_hhstar",
+        "q2_cstar_ccstar",
+        "q2_cstar_omegaomegastar",
+        "q2_omegastar_hhstar",
+        "q2_omegastar_comegastar"
+      ],
+      "equation_count": 888,
+      "rank": 7,
+      "nullity": 4,
+      "integer_nullspace_basis": [
+        [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "landed_all_one_multiplier_satisfies": false
+    }
+  },
+  "variational_completion": {
+    "q1_metric_sector": "the linear Bach Euler operator is the second variation of S_W and is formally self-adjoint modulo a compact-support boundary term",
+    "q2_metric_cubic_sector": "integral h_3 K_g(h_1,h_2) is the third variation of S_W and is symmetric in all three metric directions modulo a compact-support boundary term",
+    "kinematic_cotangent_sectors": "the component receiver expands every other primary kernel and performs formal integration by parts coefficientwise",
+    "action": "S=-integral sqrt(abs(g)) C_{mu nu rho sigma} C^{mu nu rho sigma}",
+    "Euler_coordinate": "E_g^{mu nu}:=delta S/delta g_{mu nu}=-2 sqrt(abs(g)) B^{mu nu}"
+  },
+  "proof_checks": [
+    {
+      "check_id": "canonical_pairing_nondegenerate",
+      "status": "VERIFIED",
+      "evidence": "thirty independent component rows, thirty nonzero ordered entries and exact rank thirty"
+    },
+    {
+      "check_id": "sign_translation_involutive_and_typed",
+      "status": "VERIFIED",
+      "evidence": "T is diagonal, T^2=1, and preserves every generator degree, parity, tensor type and support"
+    },
+    {
+      "check_id": "q1_squared_zero",
+      "status": "VERIFIED_BY_EXACT_CONJUGATION",
+      "evidence": "q1'=T q1 T^-1 and the pinned source q1 squared is zero"
+    },
+    {
+      "check_id": "q1_q2_arity_two_nilpotency",
+      "status": "VERIFIED_BY_EXACT_CONJUGATION",
+      "evidence": "q2'=T q2(T^-1,T^-1), so the pinned eighteen-channel/fifty-one-path identity is transported exactly"
+    },
+    {
+      "check_id": "BV_cyclicity_q1",
+      "status": "VERIFIED",
+      "evidence": "the translated Noether rows are the negative formal adjoints of the Diff/Weyl gauge maps and the Bach Hessian is the second variation of the pinned action"
+    },
+    {
+      "check_id": "BV_cyclicity_q2",
+      "status": "VERIFIED",
+      "evidence": "all 932 expanded non-Bach coefficients have zero defect modulo exact integration by parts; the hhh sector is the symmetric third variation of the pinned local Weyl action"
+    },
+    {
+      "check_id": "D_q1_commutator_zero",
+      "status": "NOT_REPLAYED",
+      "evidence": "no background-specific full local D action is selected"
+    },
+    {
+      "check_id": "D_q2_derivation",
+      "status": "NOT_REPLAYED",
+      "evidence": "no background-specific full local D action is selected"
+    }
+  ],
+  "canonical_hashes": {
+    "canonical_pairing_sha256": "2921c78bdb5ddda5512d59d0fd0342481d4bcabc2a3a13a2720d5053c4263e75",
+    "sign_translation_sha256": "63d4e5b3d074c844de72a1771f46ba7c0b15b5c18fb84315301e89149ee96685",
+    "cyclicity_receiver_sha256": "39b3f57a080c93f04250c4bca97967f38b5569b9f0c4cc2f2106c89d0e390d4f",
+    "variational_completion_sha256": "bb4ac0a08cb173c970a82794616afdcc5d7b9e9b5aa1cb3bae3ad924936195f3",
+    "proof_checks_sha256": "02e9cbc946ed2038b6ae92e18d9e10a4050bda61f899ee53a6eadc43d71a9217"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_PORTABLE_LOCAL_Q1_AST_V1.json",
+        "result_or_artifact_id": "STRICT_PORTABLE_LOCAL_Q1_AST_V1",
+        "sha256": "bcd78cf73f494517304f1ae5aedffa48036443a9c45566a94b3ed972de83b338",
+        "role": "portable Bach-flat q1 and square-zero theorem"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1.json",
+        "result_or_artifact_id": "STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1",
+        "sha256": "513b43a90a936e1837947078e8f72da772f37461996b0b27b7df938ab355fbb3",
+        "role": "portable six-row q2 and ordered Koszul ledger"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_LOCAL_Q1_Q2_IDENTITY_V1.json",
+        "result_or_artifact_id": "STRICT_LOCAL_Q1_Q2_IDENTITY_V1",
+        "sha256": "8300dddd6120632958a307e1924f27fb4e24ae6802e3163a825bd1dce54de738",
+        "role": "complete minimal-sector arity-two identity"
+      },
+      {
+        "path": "d_quotient_classical/minimal_bv_antifield/foundation/action_normalization.json",
+        "result_or_artifact_id": "PURE_WEYL_ACTION_NORMALIZATION_V2",
+        "sha256": "1d0db9cd5a408e4fb9e745856da8a884ea600ab27ab90539d30252b7c226e48f",
+        "role": "authoritative action, Euler coordinate and minimal master terms"
+      }
+    ],
+    "implementation": [
+      {
+        "path": "quantum-weyl/classical_import/local_bv_cyclicity_receiver.py",
+        "sha256": "b0cb070d58fce43a56ebe832814c5881ebf0c8b5f43192989f054a558d845f8e",
+        "role": "independent component expansion and exact integration-by-parts receiver"
+      }
+    ]
+  },
+  "claim_flags": {
+    "CANONICAL_MINIMAL_BV_PAIRING_SERIALIZED": true,
+    "CANONICAL_SIGN_TRANSLATION_CERTIFIED": true,
+    "Q1_SQUARED_ZERO_PRESERVED": true,
+    "Q1_Q2_ARITY_TWO_NILPOTENCY_PRESERVED": true,
+    "BV_CYCLICITY_Q1_REPLAYED": true,
+    "BV_CYCLICITY_Q2_REPLAYED": true,
+    "STRICT_FULL_LOCAL_D_ACTION_CERTIFIED": false,
+    "D_Q1_COMMUTATOR_REPLAYED": false,
+    "D_Q2_DERIVATION_REPLAYED": false,
+    "FULL_COMMON_CARRIER_PAIRING_CERTIFIED": false,
+    "STRICT_SUPPORT_LOCAL_Q2_COMPLETE": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "LORENTZIAN_CAUSAL_CERTIFIED": false,
+    "QME_RESTORED": false
+  },
+  "does_not_establish": [
+    "that the untranslated receiver convention is cyclic under the canonical pairing",
+    "a local D action or either D identity",
+    "the nonminimal, auxiliary, residual or continuum-SDR extension of the pairing",
+    "a complete common-snapshot Gate-A carrier or any accepted common snapshot hash",
+    "a Lorentzian gauge-fixed Green homotopy, Hadamard state, renormalized product or QME",
+    "positivity, particles, scattering, unitarity or a Lorentzian quantum theory"
+  ],
+  "next_gate": "Adopt the explicit sign translation at the strict import boundary, extend the canonical pairing and translated q1/q2 convention to every retained nonminimal and auxiliary row, then select and serialize the background-specific local D action. Gate A remains fail closed until the common full-carrier hashes and M3/M5/M6 data agree.",
+  "schema_path": "quantum-weyl/classical_import/schema/strict-minimal-bv-cyclic-sign-reconciliation-v1.schema.json",
+  "independent_checker": "quantum-weyl/classical_import/check_strict_minimal_bv_cyclic_sign_reconciliation.py",
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1.md"
+}
