@@ -57,6 +57,7 @@ AUTHORITY_PATHS = {
     "bt_complete_g4_subpower_pair_bounds": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_SUBPOWER_PAIR_BOUNDS_V1.json",
     "bt_complete_g4_linear_pair_bounds": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_LINEAR_PAIR_BOUNDS_V1.json",
     "bt_complete_g4_two_pair_coefficient_normal_form": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_TWO_PAIR_COEFFICIENT_NORMAL_FORM_V1.json",
+    "bt_complete_g4_two_pair_noncancellation": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_TWO_PAIR_NONCANCELLATION_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -141,6 +142,7 @@ def build() -> dict:
     bt_g4_subpower = loaded["bt_complete_g4_subpower_pair_bounds"]
     bt_g4_linear = loaded["bt_complete_g4_linear_pair_bounds"]
     bt_g4_two_pair = loaded["bt_complete_g4_two_pair_coefficient_normal_form"]
+    bt_g4_two_pair_noncancellation = loaded["bt_complete_g4_two_pair_noncancellation"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -421,6 +423,8 @@ def build() -> dict:
             "bt_g4_pair_four_magnitude_floor": bt_g4_two_pair["pair_four"]["magnitude_lower_decimal_floor"],
             "bt_g4_pair_seven_coefficient_status": bt_g4_two_pair["method_disposition"]["pair_7_coefficient_normal_form"],
             "bt_g4_two_pair_comparison_status": bt_g4_two_pair["method_disposition"]["combined_pair_4_pair_7_coefficient"],
+            "bt_g4_two_pair_noncancellation_status": bt_g4_two_pair_noncancellation["method_disposition"]["combined_pair_4_pair_7_coefficient"],
+            "bt_g4_pair_seven_upper_decimal": bt_g4_two_pair_noncancellation["pair_seven_bound"]["c_7_upper_decimal_ceiling"],
             "standard_reference_direct_obligations": next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")["coverage"]["direct"],
             "external_calibration_records": len(assembly_data["calibration_controls"][0]["records"]),
             "external_calibration_benchmark_families": sum(item["status"] == "SUPPORTED_CONTROL" for item in assembly_data["calibration_controls"][0]["benchmark_coverage"]),
@@ -546,6 +550,7 @@ def build() -> dict:
                     "bt_complete_g4_subpower_pair_bounds",
                     "bt_complete_g4_linear_pair_bounds",
                     "bt_complete_g4_two_pair_coefficient_normal_form",
+                    "bt_complete_g4_two_pair_noncancellation",
                 ],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
@@ -737,12 +742,12 @@ def build() -> dict:
             "bt_complete_order_g_four_pair_three_O_L_established": True,
             "bt_complete_order_g_four_pair_six_O_L_log_L_established": True,
             "bt_complete_order_g_four_power_gate_reduced_to_pairs_4_7": True,
-            "bt_complete_order_g_four_pair_4_7_coefficient_established": False,
+            "bt_complete_order_g_four_pair_4_7_coefficient_established": True,
             "bt_complete_order_g_four_pair_4_limit_established": True,
             "bt_complete_order_g_four_pair_4_coefficient_below_minus_0_01613": True,
             "bt_complete_order_g_four_pair_7_limit_established": True,
             "bt_complete_order_g_four_pair_7_positive_finite": True,
-            "bt_complete_order_g_four_pair_4_7_noncancellation_established": False,
+            "bt_complete_order_g_four_pair_4_7_noncancellation_established": True,
             "bt_complete_order_g_four_explicit_momentum_kernel_established": False,
             "bt_complete_order_g_four_effective_kernel_bound_established": False,
             "bt_complete_order_g_four_power_survival_established": False,
@@ -891,12 +896,20 @@ def build() -> dict:
                 "is O(L log L), hence both are little-o of N*omega(p). The common "
                 "coefficient is reduced to negative pair 4 and positive pair 7. Both "
                 "normalized limits exist: c_4 is an explicit integer sum with "
-                "c_4<-0.01613, and c_7 is a positive finite Brillouin-zone integral "
-                "with a collapsed numerator. Their noncancellation, tuned control of "
+                "c_4<-0.01613. A sharp lattice dispersion bound and exact outward "
+                "Green cubature give 0<c_7<0.016103194, so c_4+c_7<0. Tuned control of "
                 "the subleading sector, "
                 "lower-loop recombination, full M4 asymptotics, and the interacting "
                 "H^-1 moment remain open."
             )
+            break
+    for claim in payload["claims"]:
+        if claim["claim_id"] == "RF-13-BT-INTERACTING-RECONSTRUCTION-FRONTIER":
+            claim["statement"] = claim["statement"].replace(
+                "Both normalized limits exist: c_4 has an exact negative integer-sum formula with c_4<-0.01613, while c_7 is one strictly positive finite Brillouin-zone integral with a collapsed numerator. Their noncancellation remains open.",
+                "Both normalized limits exist. A sharp lattice vector-dispersion theorem and exact outward Green-function cubature prove 0<c_7<0.016103194<0.01613, while c_4<-0.01613; hence c_4+c_7<0.",
+            )
+            claim["status"] = "EXACT_FINITE_OS_AND_METHOD_OBSTRUCTIONS_WITH_STRICT_NEGATIVE_TWO_LOOP_POWER_COEFFICIENT_COMPLETE_M4_OPEN"
             break
     payload["canonical_digest"] = canonical_digest(payload)
     return payload

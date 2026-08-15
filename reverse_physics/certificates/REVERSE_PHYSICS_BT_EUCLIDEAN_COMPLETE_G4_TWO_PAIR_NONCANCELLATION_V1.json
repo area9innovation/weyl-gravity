@@ -1,0 +1,161 @@
+{
+  "answer": "No. A sharp lattice vector-dispersion inequality bounds c_7 by three times a three-Green convolution. Exact outward cubature and Hausdorff-Young give c_7<0.016103194<0.01613, while the upstream rational certificate gives c_4<-0.01613. Therefore c_4+c_7<0. This proves the sign of the leading two-loop power coefficient, not complete M4 or the interacting H^-1 estimate.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_TWO_PAIR_NONCANCELLATION_V1",
+  "checks": {
+    "actual_interacting_H_minus_one_remains_open": true,
+    "combined_coefficient_is_strictly_negative": true,
+    "complete_M4_remains_open": true,
+    "no_continuum_born_krein_or_lorentzian_promotion": true,
+    "pair_seven_has_exact_outward_upper_interval": true,
+    "producer_checks_all_pass": true,
+    "sharp_dispersion_theorem_is_proved": true
+  },
+  "comparison": {
+    "combined": "c_4+c_7<0",
+    "pair_four": "c_4<-0.01613",
+    "pair_seven": "0<c_7<0.016103194<0.01613",
+    "status": "STRICT_TWO_PAIR_NONCANCELLATION_PROVED_NEGATIVE"
+  },
+  "created": "2026-08-15",
+  "data": "reverse_physics/data/bt_euclidean_complete_g4_two_pair_noncancellation_v1.json",
+  "data_sha256": "0553f510b3d27b28d9cdff49aabd68238ad9bf6e5ce96897771adb380a864a2b",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "dispersion_theorem": {
+    "boundary_matrix": "With m=(x^2,x*y,y^2), R_epsilon=3*[[b,epsilon*b,0],[epsilon*b,a+b+c,epsilon*a],[0,epsilon*a,a]], and ell_epsilon=(sin(x_angle)+sin(z),2*epsilon*sin(z),sin(y_angle)+sin(z)), the endpoint remainder is m^T*(R_epsilon-ell_epsilon*ell_epsilon^T)*m.",
+    "claim": "norm(A*sin(q)+B*sin(r)+C*sin(s))^2 <= 9*A*B*C",
+    "concavity_step": "For fixed A,B the scalar remainder is a concave quadratic in C, so its minimum on [(sqrt(A)-sqrt(B))^2,(sqrt(A)+sqrt(B))^2] is at a degenerate endpoint C=(sqrt(A)+epsilon*sqrt(B))^2.",
+    "hypotheses": "q+r+s=0 mod 2*pi componentwise; A=omega(q), B=omega(r), C=omega(s)",
+    "positive_matrix_minors": "The principal minors of R_+/3 are b,a+b+c,a,b*(a+c),a*b,a*(b+c),a*b*c; hence R_+ is positive semidefinite.",
+    "rank_one_test": "ell_+^T R_+^(-1) ell_+=(1/3)*[(sin(x)+sin(y))^2/c+(sin(x)+sin(z))^2/b+(sin(y)+sin(z))^2/a] <= 1.",
+    "scalar_lemma": "[A*sin(x)+B*sin(y)+C*sin(z)]^2 <= 3*[B*C*a+A*C*b+A*B*c] when x+y+z=0, a=2-2*cos(x), b=2-2*cos(y), c=2-2*cos(z), and sqrt(A),sqrt(B),sqrt(C) are triangle sides",
+    "sharpness": "The constant 9 is approached by collinear all-soft triples.",
+    "status": "EXACT_SHARP_LATTICE_VECTOR_DISPERSION_INEQUALITY_PROVED",
+    "summation": "Apply the scalar lemma in each of four axes and sum: 3*A*B*C*sum_mu(a_mu/A+b_mu/B+c_mu/C)=9*A*B*C.",
+    "triangle_witness": "sqrt(omega(q+r))=norm(exp(i*q)*(exp(i*r)-1)+(exp(i*q)-1)) <= sqrt(omega(q))+sqrt(omega(r)), cyclically",
+    "trigonometric_closure": "The three ratios are cos^2((x-y)/2), cos^2((x-z)/2), cos^2((y-z)/2), each at most one; zero denominators follow by continuity. epsilon=-1 is an orthogonal diagonal congruence."
+  },
+  "does_not_establish": [
+    "a uniform bound on the subleading two-loop remainder after multiplication by tuned g_L^4",
+    "the sign or scaling of complete M4 after lower-loop recombination",
+    "boundedness or divergence of the nonperturbative Gibbs score or actual interacting H^-1 moment",
+    "tightness or identification of an interacting continuum measure",
+    "a Born rule, Krein reconstruction, scattering statement, or any LORENTZIAN-CAUSAL claim"
+  ],
+  "independent_verifier": "reverse_physics/verify_bt_euclidean_complete_g4_two_pair_noncancellation.py",
+  "lifecycle_state": "TWO_PAIR_NONCANCELLATION_PROVED_COMPLETE_M4_OPEN",
+  "method_disposition": {
+    "actual_interacting_h_minus_one_second_moment": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "combined_pair_4_pair_7_coefficient": "PROVED_STRICTLY_NEGATIVE",
+    "complete_M4_large_volume_sign_and_scaling": "OPEN",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "leading_two_loop_power_coefficient": "PROVED_STRICTLY_NEGATIVE",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "lower_loop_recombination_into_complete_M4": "OPEN",
+    "nonperturbative_annealed_score": "OPEN",
+    "pair_7_upper_interval": "PROVED_EXACT_OUTWARD",
+    "sharp_lattice_vector_dispersion_inequality": "PROVED",
+    "subleading_two_loop_remainder_under_tuned_g_L_four": "OPEN"
+  },
+  "missing_object_ledger": [
+    "a volume-uniform tuned bound for the subleading two-loop remainder",
+    "lower-loop recombination into the complete order-g^4 coefficient",
+    "the complete M4 large-volume sign and scaling",
+    "a nonperturbative center or score estimate",
+    "the actual interacting H^-1 second moment"
+  ],
+  "next_gate": "Recombine the lower-loop order-g^4 pieces with the now-negative leading two-loop coefficient, and prove a uniform tuned bound on the subleading remainder before returning to the nonperturbative center/score estimate.",
+  "pair_seven_bound": {
+    "A_4_lower": {
+      "denominator": 8721722238370386762744458559939533528308997979551882894249672484000926914956406087178159417746120610057797649793205251792785887682424290624522512468013430940249462664840419918962147378232964613600254504929684770895531440163317508181526296401959476805374366060120744376210301172530934218271149199542654208665310867573134786160110310075679335567574757304890864573118739851781329354894367096255524578022896245461974549476058694820949064561081725670099706107684335872816364967256027363411627888673381066706090214789055578525909981760248086528,
+      "numerator": 1350551419307018664289714318434669598600269024945702630861770144788495186813958794419738113638598465135211382948820795645825672158379731919713132131831743260898746751644030439096630380224264562538554618813644888832700869114000016245434996223482163610605932012506056212048965714176711053227093004730391237839716312168078886123566199244031015612021473653409283975792746986092442905971251716144193246409906990030729012847377377993678701434654812729510983557963889851055947955227223548884243108501047429456124019536947606141913810894407296151
+    },
+    "A_4_upper": {
+      "denominator": 51862953153292636974105221224142581853185062120634555480157826974103974168318976386573693096061675995451603637416308058490053646161551059037446975708007812500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+      "numerator": 8198262883157509864721343811716592382202254848159075220966545012770890305740992198485674111429935566447196284085542553072613614882765722869198397254007267113742153596838196666983039190448628003916731093869574442482954347627512348222565891735106499213
+    },
+    "J_3_upper": {
+      "denominator": 139499203372276190801027951011578947236136620677792710533533224115115618323108275920180286487241911280694725295586453166049481291449184169168276977783321994570417926453515417665321717243084730112215001922758708263722852293412881048393636234090847473797681609628301643547820270626367841362660351652696742422901256710358517014427729668907874864772571391435962342228696792991001037738049062634868272576518099706668264420817698466710521376654696723562665283679962158203125000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+      "numerator": 748794207087358722374881121161311124483059149474488905511765184394662182475987399888082953514847088738488805866564300317270054003000091347259046118934098079754051077822728632733827653515794940978756463562588442131379606480116664123444318634196319376942510383655975670055198802427807844508881927898447407591974100938934290559820670311245670292905055690568387387816086160482126206624137651730240732150851462131933116392244647290529626826925284161235609877059310015227976885378542448939896605180352000633779338850808212541372143340702317709278253889655701305057010464305464544444091299575730213434773748182730436371848113006749266048947633081847887534903907400552833644215096538921037732897752206578481263599140634382207930599238972899885191282908056597
+    },
+    "axis_symmetry": "c_7=(1/3)*int norm(F)^2/[A^2*B^2*C^2] <= 3*J_3",
+    "c_7_upper": {
+      "denominator": 46499734457425396933675983670526315745378873559264236844511074705038539441036091973393428829080637093564908431862151055349827097149728056389425659261107331523472642151171805888440572414361576704071667307586236087907617431137627016131212078030282491265893869876100547849273423542122613787553450550898914140967085570119505671475909889635958288257523797145320780742898930997000345912683020878289424192172699902222754806939232822236840458884898907854221761226654052734375000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+      "numerator": 748794207087358722374881121161311124483059149474488905511765184394662182475987399888082953514847088738488805866564300317270054003000091347259046118934098079754051077822728632733827653515794940978756463562588442131379606480116664123444318634196319376942510383655975670055198802427807844508881927898447407591974100938934290559820670311245670292905055690568387387816086160482126206624137651730240732150851462131933116392244647290529626826925284161235609877059310015227976885378542448939896605180352000633779338850808212541372143340702317709278253889655701305057010464305464544444091299575730213434773748182730436371848113006749266048947633081847887534903907400552833644215096538921037732897752206578481263599140634382207930599238972899885191282908056597
+    },
+    "c_7_upper_decimal_ceiling": "0.016103194",
+    "center_dyadic_bits": 40,
+    "centered_M_upper": {
+      "denominator": 34575302102195091316070147482761721235456708080423036986771884649402649445545984257715795397374450663634402424944205372326702430774367372691631317138671875000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+      "numerator": 1301869677025980208786603649424204388748201079818466796501869745953313214332183986039293437505336426736855616534959385811308157781804307408951141797240826378310576942918134123097736837655951382666426965355596721755131309857642960610596443099869393931
+    },
+    "centered_hausdorff_young": "J_3<=A_4^3+M^2, where M=int_BZ abs(1/omega(k)-A_4)^(3/2); this is Hausdorff-Young for the nonzero Fourier coefficients.",
+    "coarse_centered_integer_sum": 3589205867322631055480292,
+    "coarse_intervals_per_axis": 96,
+    "coarse_inverse_integer_sum": 15477843158191268152952487,
+    "comparison_threshold": {
+      "denominator": 100000,
+      "numerator": 1613
+    },
+    "energy_dyadic_bits": 60,
+    "fine_centered_integer_sum": 5127689154829400850363707305,
+    "fine_inverse_integer_sum": 89014786175209212383694570,
+    "fine_total_intervals_per_axis": 1536,
+    "green_convolution": "J_3=int_BZxBZ 1/[omega(q)*omega(r)*omega(q+r)]=sum_(x in Z^4) G(x)^3",
+    "integrand_dyadic_bits": 60,
+    "origin_bounds": "On [0,pi/n]^4, omega>=4*norm(k)^2/pi^2. Orthant-ball comparison gives normalized int(1/omega)<=pi^2/(16*n^2) and int(omega^(-3/2))<=pi^2/(32*n).",
+    "origin_refinement_per_axis": 16,
+    "pi_lower": {
+      "denominator": 14285930425185687206019820232301407162569483206527739115953848981580603764995895943457071552984416484832763671875,
+      "numerator": 44880574073458266257110239007875950379929145062565187472684481815514290072570858680029861890534727662408322483748
+    },
+    "pi_upper": {
+      "denominator": 381401654354933789485132015445451688922085780885397702278139733143859889386018124923793948255479335784912109375,
+      "numerator": 1198208635388453564224945545193726025969292336234597956792212939577094182854661753649453597965190159122573594008
+    },
+    "rounding": "Every sine endpoint, reciprocal, square root, box sum, and singular-origin remainder is rounded outward using Fraction, integer division, and integer square root.",
+    "status": "EXACT_OUTWARD_C7_UPPER_BOUND_BELOW_0_01613",
+    "walk_cutoff_half_steps": 300
+  },
+  "producer": "reverse_physics/bt_euclidean_complete_g4_two_pair_noncancellation.py",
+  "producer_sha256": "879a099334f66fb84e56806afde4a8f7081a205be6d4446557c9b2021c78db18",
+  "provenance": {
+    "assumptions": [
+      "The upstream pair-4/pair-7 normal forms and common normalization are imported unchanged by content hash.",
+      "The Brillouin-zone measure is normalized by (2*pi)^(-4) in each momentum variable.",
+      "The infinite-volume Green function is the zero-mass four-dimensional lattice Green function.",
+      "The result is perturbative and EUCLIDEAN-SPECTRAL only."
+    ],
+    "exact_arithmetic": "All pi and sine enclosures, walk returns, monotone box sums, reciprocal bounds, square-root ceilings, singular-origin remainders, and final comparisons use Fraction or integer arithmetic. Binary floating point is used only for the displayed decimal ceiling, never for a claim decision.",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_TWO_PAIR_COEFFICIENT_NORMAL_FORM_V1.json",
+        "sha256": "3736f60fbfa338ea2747b5be1ef8eabc9a90920df4f0815fbca4afb2c9d54b04"
+      },
+      {
+        "path": "reverse_physics/bt_euclidean_complete_g4_two_pair_noncancellation.py",
+        "sha256": "879a099334f66fb84e56806afde4a8f7081a205be6d4446557c9b2021c78db18"
+      },
+      {
+        "path": "reverse_physics/data/bt_euclidean_complete_g4_two_pair_noncancellation_v1.json",
+        "sha256": "0553f510b3d27b28d9cdff49aabd68238ad9bf6e5ce96897771adb380a864a2b"
+      }
+    ],
+    "repository_base_commit": "40d806bdbe7cd73205fed53ac2f2e17503f21ddb"
+  },
+  "question": "Can the positive pair-7 coefficient cancel the negative pair-4 coefficient on their common N*omega(p_L) scale?",
+  "report": "reverse_physics/reports/bt-euclidean-complete-g4-two-pair-noncancellation.md",
+  "result_kind": "sharp lattice dispersion theorem and exact outward two-pair coefficient separation",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-complete-g4-two-pair-noncancellation-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-complete-g4-two-pair-noncancellation-v1",
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_complete_g4_two_pair_noncancellation.py --check",
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_complete_g4_two_pair_noncancellation_decision.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_complete_g4_two_pair_noncancellation.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_complete_g4_two_pair_noncancellation"
+  ]
+}

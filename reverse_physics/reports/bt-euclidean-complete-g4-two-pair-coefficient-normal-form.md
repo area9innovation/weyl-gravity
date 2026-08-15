@@ -284,3 +284,11 @@ All Python checks ran under a 500 MB virtual-memory cap.
 A skipped higher tier is not recorded as a pass. The exact certificate commands
 are listed above; the claim map used its generator's `--check` mode and its
 independent verifier, and planning used the repository Science Forge importer.
+
+## Downstream disposition
+
+This checkpoint's open comparison is closed by
+`REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_TWO_PAIR_NONCANCELLATION_V1`.
+The successor proves the sharp lattice dispersion inequality, certifies
+`c_7<0.016103194`, and therefore proves `c_4+c_7<0`. Complete `M4` and the
+actual interacting `H^-1` estimate remain open.

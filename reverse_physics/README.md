@@ -256,6 +256,10 @@ bt_euclidean_complete_g4_two_pair_coefficient_normal_form.py
                                        proves common-scale limits for pairs 4
                                        and 7, an exact negative pair-4 gap,
                                        and the collapsed positive pair-7 integral
+bt_euclidean_complete_g4_two_pair_noncancellation.py
+                                       proves the sharp lattice vector-dispersion
+                                       inequality and an exact outward c7 bound,
+                                       hence c4+c7 is strictly negative
 bt_four_point_bubble_log_jet.py        first virtual coefficient: arbitrary-mass
                                        bubble logarithm and four-leg interference jet
 bt_triangle_box_log_jet.py             complete triangle and box logarithmic jets;

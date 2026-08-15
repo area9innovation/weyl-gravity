@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-complete-g4-two-pair-noncancellation-v1.schema.json",
+  "title": "BT complete-g4 two-pair noncancellation certificate",
+  "type": "object",
+  "required": ["certificate", "schema_version", "created", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "data", "data_sha256", "producer", "producer_sha256", "dispersion_theorem", "pair_seven_bound", "comparison", "method_disposition", "checks", "does_not_establish", "missing_object_ledger", "next_gate", "provenance", "schema", "report", "independent_verifier", "verification_commands"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_TWO_PAIR_NONCANCELLATION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-complete-g4-two-pair-noncancellation-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "TWO_PAIR_NONCANCELLATION_PROVED_COMPLETE_M4_OPEN"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "data": {"const": "reverse_physics/data/bt_euclidean_complete_g4_two_pair_noncancellation_v1.json"},
+    "data_sha256": {"$ref": "#/$defs/sha256"},
+    "producer": {"const": "reverse_physics/bt_euclidean_complete_g4_two_pair_noncancellation.py"},
+    "producer_sha256": {"$ref": "#/$defs/sha256"},
+    "dispersion_theorem": {"type": "object", "required": ["hypotheses", "claim", "scalar_lemma", "triangle_witness", "concavity_step", "boundary_matrix", "positive_matrix_minors", "rank_one_test", "trigonometric_closure", "summation", "sharpness", "status"], "properties": {"status": {"const": "EXACT_SHARP_LATTICE_VECTOR_DISPERSION_INEQUALITY_PROVED"}}, "additionalProperties": {"type": "string"}},
+    "pair_seven_bound": {"type": "object", "required": ["axis_symmetry", "green_convolution", "centered_hausdorff_young", "coarse_intervals_per_axis", "origin_refinement_per_axis", "fine_total_intervals_per_axis", "energy_dyadic_bits", "center_dyadic_bits", "integrand_dyadic_bits", "walk_cutoff_half_steps", "pi_lower", "pi_upper", "coarse_inverse_integer_sum", "fine_inverse_integer_sum", "coarse_centered_integer_sum", "fine_centered_integer_sum", "A_4_lower", "A_4_upper", "centered_M_upper", "J_3_upper", "c_7_upper", "c_7_upper_decimal_ceiling", "comparison_threshold", "origin_bounds", "rounding", "status"], "properties": {"coarse_intervals_per_axis": {"const": 96}, "origin_refinement_per_axis": {"const": 16}, "fine_total_intervals_per_axis": {"const": 1536}, "energy_dyadic_bits": {"const": 60}, "center_dyadic_bits": {"const": 40}, "integrand_dyadic_bits": {"const": 60}, "walk_cutoff_half_steps": {"const": 300}, "pi_lower": {"$ref": "#/$defs/rational"}, "pi_upper": {"$ref": "#/$defs/rational"}, "coarse_inverse_integer_sum": {"type": "integer", "minimum": 1}, "fine_inverse_integer_sum": {"type": "integer", "minimum": 1}, "coarse_centered_integer_sum": {"type": "integer", "minimum": 1}, "fine_centered_integer_sum": {"type": "integer", "minimum": 1}, "A_4_lower": {"$ref": "#/$defs/rational"}, "A_4_upper": {"$ref": "#/$defs/rational"}, "centered_M_upper": {"$ref": "#/$defs/rational"}, "J_3_upper": {"$ref": "#/$defs/rational"}, "c_7_upper": {"$ref": "#/$defs/rational"}, "comparison_threshold": {"const": {"numerator": 1613, "denominator": 100000}}, "status": {"const": "EXACT_OUTWARD_C7_UPPER_BOUND_BELOW_0_01613"}}, "additionalProperties": {"type": ["string", "integer", "object"]}},
+    "comparison": {"const": {"pair_four": "c_4<-0.01613", "pair_seven": "0<c_7<0.016103194<0.01613", "combined": "c_4+c_7<0", "status": "STRICT_TWO_PAIR_NONCANCELLATION_PROVED_NEGATIVE"}},
+    "method_disposition": {"type": "object", "properties": {"combined_pair_4_pair_7_coefficient": {"const": "PROVED_STRICTLY_NEGATIVE"}, "complete_M4_large_volume_sign_and_scaling": {"const": "OPEN"}, "actual_interacting_h_minus_one_second_moment": {"const": "OPEN"}, "continuum_limit": {"const": "NOT_ESTABLISHED"}, "born_rule": {"const": "NOT_ESTABLISHED"}, "krein_reconstruction": {"const": "NOT_ASSESSED"}, "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}}, "required": ["sharp_lattice_vector_dispersion_inequality", "pair_7_upper_interval", "combined_pair_4_pair_7_coefficient", "leading_two_loop_power_coefficient", "subleading_two_loop_remainder_under_tuned_g_L_four", "lower_loop_recombination_into_complete_M4", "complete_M4_large_volume_sign_and_scaling", "nonperturbative_annealed_score", "actual_interacting_h_minus_one_second_moment", "continuum_limit", "born_rule", "krein_reconstruction", "lorentzian_transfer"], "additionalProperties": {"type": "string"}},
+    "checks": {"type": "object", "minProperties": 7, "additionalProperties": {"const": true}},
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {"type": "object", "required": ["repository_base_commit", "inputs", "exact_arithmetic", "assumptions"], "properties": {"repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}, "inputs": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/input"}}, "exact_arithmetic": {"type": "string"}, "assumptions": {"type": "array", "minItems": 4, "items": {"type": "string"}}}, "additionalProperties": false},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-complete-g4-two-pair-noncancellation-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-complete-g4-two-pair-noncancellation.md"},
+    "independent_verifier": {"const": "reverse_physics/verify_bt_euclidean_complete_g4_two_pair_noncancellation.py"},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {"type": "object", "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}, "additionalProperties": false},
+    "input": {"type": "object", "required": ["path", "sha256"], "properties": {"path": {"type": "string"}, "sha256": {"$ref": "#/$defs/sha256"}}, "additionalProperties": false}
+  }
+}

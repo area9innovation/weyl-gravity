@@ -122,6 +122,7 @@ def main() -> int:
     bt_g4_subpower = json.loads((ROOT / data["authorities"]["bt_complete_g4_subpower_pair_bounds"]["path"]).read_text())
     bt_g4_linear = json.loads((ROOT / data["authorities"]["bt_complete_g4_linear_pair_bounds"]["path"]).read_text())
     bt_g4_two_pair = json.loads((ROOT / data["authorities"]["bt_complete_g4_two_pair_coefficient_normal_form"]["path"]).read_text())
+    bt_g4_two_pair_noncancellation = json.loads((ROOT / data["authorities"]["bt_complete_g4_two_pair_noncancellation"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -449,12 +450,14 @@ def main() -> int:
     require(flags["bt_complete_order_g_four_pair_three_O_L_established"] is True, "BT pair-3 O(L) bound omitted")
     require(flags["bt_complete_order_g_four_pair_six_O_L_log_L_established"] is True, "BT pair-6 O(L log L) bound omitted")
     require(flags["bt_complete_order_g_four_power_gate_reduced_to_pairs_4_7"] is True, "BT two-pair power gate omitted")
-    require(flags["bt_complete_order_g_four_pair_4_7_coefficient_established"] is False, "BT pair-4/pair-7 coefficient promoted")
+    require(flags["bt_complete_order_g_four_pair_4_7_coefficient_established"] is True, "BT pair-4/pair-7 coefficient omitted")
     require(flags["bt_complete_order_g_four_pair_4_limit_established"] is True, "BT pair-4 limit omitted")
     require(flags["bt_complete_order_g_four_pair_4_coefficient_below_minus_0_01613"] is True, "BT pair-4 rational gap omitted")
     require(flags["bt_complete_order_g_four_pair_7_limit_established"] is True, "BT pair-7 limit omitted")
     require(flags["bt_complete_order_g_four_pair_7_positive_finite"] is True, "BT pair-7 sign or finiteness omitted")
-    require(flags["bt_complete_order_g_four_pair_4_7_noncancellation_established"] is False, "BT two-pair noncancellation promoted")
+    require(flags["bt_complete_order_g_four_pair_4_7_noncancellation_established"] is True, "BT two-pair noncancellation omitted")
+    require(bt_g4_two_pair_noncancellation["comparison"]["combined"] == "c_4+c_7<0", "BT strict two-pair sign drift")
+    require(bt_g4_two_pair_noncancellation["method_disposition"]["complete_M4_large_volume_sign_and_scaling"] == "OPEN", "BT complete M4 promoted")
     require(flags["bt_complete_order_g_four_explicit_momentum_kernel_established"] is False, "BT expected-Hessian formula promoted to explicit momentum kernel")
     require(flags["bt_complete_order_g_four_effective_kernel_bound_established"] is False, "BT effective second-chaos kernel bound promoted")
     require(flags["bt_complete_order_g_four_power_survival_established"] is False, "BT chaos reduction promoted to whole-lattice power survival")
@@ -728,8 +731,10 @@ def main() -> int:
         r"REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_SUBPOWER_PAIR_BOUNDS_V1",
         r"REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_LINEAR_PAIR_BOUNDS_V1",
         r"REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_TWO_PAIR_COEFFICIENT_NORMAL_FORM_V1",
+        r"REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_TWO_PAIR_NONCANCELLATION_V1",
         r"negative pair 4 and positive pair 7",
         r"c_4<-0.01613",
+        r"c_7<0.016103194",
     ]:
         require(phrase in prose, f"required boundary missing from paper: {phrase}")
     for citation in [
