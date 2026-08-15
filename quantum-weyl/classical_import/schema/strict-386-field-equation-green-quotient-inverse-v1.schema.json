@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-386-field-equation-green-quotient-inverse-v1.schema.json",
+  "title": "Strict 386-row field-equation Green quotient inverse v1",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "result_kind", "result_state", "lifecycle", "dependency_tags",
+    "literature_context", "typed_complex", "green_field_equation_component",
+    "restricted_homotopy_identities", "full_inverse_obstruction", "nonlinear_consequence",
+    "foundational_strength", "authority_boundary", "typed_inverse_snapshot", "claim_flags",
+    "does_not_establish", "canonical_hashes", "provenance", "independent_checker"
+  ],
+  "properties": {
+    "schema": {"const": "strict-386-field-equation-green-quotient-inverse-v1"},
+    "result_id": {"const": "STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1"},
+    "result_kind": {"type": "string"},
+    "result_state": {"type": "string"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LORENTZIAN-CAUSAL"}},
+    "literature_context": {
+      "type": "object",
+      "required": ["artifact", "imported_statement", "application_boundary", "sha256"],
+      "properties": {
+        "artifact": {
+          "type": "object",
+          "required": ["status", "locator", "sha256"],
+          "properties": {"status": {"const": "CONTENT_PINNED"}, "sha256": {"$ref": "#/$defs/hash"}}
+        },
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "typed_complex": {
+      "type": "object",
+      "required": ["complex", "degree_counts", "field_space", "equation_space", "gauge_map", "field_equation_operator", "noether_map", "exact_complex_identities", "q1_degree_step_defects", "basis_sha256", "graph_q1_sha256", "sha256"],
+      "properties": {
+        "field_space": {"$ref": "#/$defs/space"},
+        "equation_space": {"$ref": "#/$defs/space"},
+        "gauge_map": {"$ref": "#/$defs/operator"},
+        "field_equation_operator": {"$ref": "#/$defs/operator"},
+        "noether_map": {"$ref": "#/$defs/operator"},
+        "q1_degree_step_defects": {"const": 0},
+        "basis_sha256": {"$ref": "#/$defs/hash"},
+        "graph_q1_sha256": {"$ref": "#/$defs/hash"},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "green_field_equation_component": {
+      "type": "object",
+      "required": ["definition", "type", "neighbor_components", "orientations", "support", "component_bytes_flattened", "definition_mode", "sha256"],
+      "properties": {
+        "component_bytes_flattened": {"const": false},
+        "orientations": {"type": "object", "required": ["plus", "minus"]},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "restricted_homotopy_identities": {
+      "type": "object",
+      "required": ["source_identity", "field_identity", "constrained_right_inverse", "quotient_left_inverse", "induced_isomorphism", "proof", "orientations_checked", "structural_defects", "sha256"],
+      "properties": {"orientations_checked": {"const": 2}, "structural_defects": {"const": 0}, "sha256": {"$ref": "#/$defs/hash"}}
+    },
+    "full_inverse_obstruction": {
+      "type": "object",
+      "required": ["full_left_inverse_of_K_on_C0", "left_inverse_contradiction", "full_right_inverse_of_K_on_C1", "right_inverse_contradiction", "scope", "nonzero_gauge_coefficients", "nonzero_noether_coefficients", "status", "sha256"],
+      "properties": {
+        "full_left_inverse_of_K_on_C0": {"const": false},
+        "full_right_inverse_of_K_on_C1": {"const": false},
+        "nonzero_gauge_coefficients": {"type": "integer", "minimum": 1},
+        "nonzero_noether_coefficients": {"type": "integer", "minimum": 1},
+        "status": {"const": "EXACT_GAUGE_COMPLEX_OBSTRUCTION"},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "nonlinear_consequence": {
+      "type": "object",
+      "required": ["candidate_q2_type", "first_order_source", "first_order_cocycle", "first_order_solution", "first_order_status", "all_order_criterion", "lambda_squared_diagnostic", "lambda_squared_source_cocycle_certified", "corrected_promotion_gate", "full_ungauge_fixed_two_sided_inverse_required", "meaning", "sha256"],
+      "properties": {
+        "lambda_squared_source_cocycle_certified": {"const": false},
+        "full_ungauge_fixed_two_sided_inverse_required": {"const": false},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "foundational_strength": {
+      "type": "object",
+      "required": ["classification", "finite_layer", "analytic_layer", "choice_operation_added", "quotient_requires_representative_selection", "reason", "weakest_complete_foundational_base", "sha256"],
+      "properties": {
+        "choice_operation_added": {"const": false},
+        "quotient_requires_representative_selection": {"const": false},
+        "weakest_complete_foundational_base": {"const": "NOT_ESTABLISHED"},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "authority_boundary": {
+      "type": "object",
+      "required": ["typed_field_equation_green_component", "constrained_and_quotient_inverse", "full_ungauge_fixed_two_sided_inverse", "candidate_q2_only", "authoritative_full_q2_imported", "q3_or_higher_operations_imported", "all_order_nonlinear_source_closure", "formal_moller_map_for_weyl_bv_certified", "classical_import_gate_a_status", "sha256"],
+      "properties": {
+        "typed_field_equation_green_component": {"const": true},
+        "constrained_and_quotient_inverse": {"const": true},
+        "full_ungauge_fixed_two_sided_inverse": {"const": false},
+        "all_order_nonlinear_source_closure": {"const": false},
+        "formal_moller_map_for_weyl_bv_certified": {"const": false},
+        "classical_import_gate_a_status": {"const": "FAIL_CLOSED"},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "typed_inverse_snapshot": {"type": "object", "required": ["kind", "receiver_status", "sha256"], "properties": {"sha256": {"$ref": "#/$defs/hash"}}},
+    "claim_flags": {"type": "object", "required": ["STRICT_386_FIELD_EQUATION_GREEN_COMPONENT_TYPED", "STRICT_386_FIELD_EQUATION_CONSTRAINED_RIGHT_INVERSE_CERTIFIED", "STRICT_386_FIELD_EQUATION_QUOTIENT_LEFT_INVERSE_CERTIFIED", "STRICT_386_UNGAUGE_FIXED_TWO_SIDED_GREEN_INVERSE_OBSTRUCTED", "STRICT_386_UNGAUGE_FIXED_TWO_SIDED_GREEN_INVERSE_CONSTRUCTED", "STRICT_386_ALL_ORDER_NONLINEAR_SOURCE_CLOSURE_CERTIFIED", "CLASSICAL_IMPORT_GATE_PASSED", "HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED"]},
+    "does_not_establish": {"type": "array", "minItems": 8, "items": {"type": "string"}},
+    "canonical_hashes": {"type": "object", "minProperties": 9, "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "provenance": {
+      "type": "object",
+      "required": ["inputs"],
+      "properties": {
+        "inputs": {
+          "type": "array",
+          "minItems": 6,
+          "items": {
+            "type": "object",
+            "required": ["path", "result_or_artifact_id", "sha256", "role"],
+            "properties": {"sha256": {"$ref": "#/$defs/hash"}}
+          }
+        }
+      }
+    },
+    "independent_checker": {"type": "object", "required": ["path", "checks"]}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "space": {"type": "object", "required": ["symbol", "rows"], "properties": {"rows": {"type": "integer", "minimum": 1}}},
+    "operator": {"type": "object", "required": ["symbol", "type", "nonzero_rational_jet_coefficients", "nonzero"], "properties": {"nonzero_rational_jet_coefficients": {"type": "integer", "minimum": 1}, "nonzero": {"const": true}}}
+  }
+}

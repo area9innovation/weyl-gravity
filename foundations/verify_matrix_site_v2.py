@@ -51,7 +51,7 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         "completion_branches": 7,
         "completion_stages": 11,
         "completion_cells": 77,
-        "completion_routes": 12,
+        "completion_routes": 11,
         "completion_decisions": 11,
         "theory_profiles": 36,
         "carrier_envelopes": 6,
@@ -88,7 +88,10 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
             errors.append("positive flag " + key)
     if flags.get("completion_atlas_exposed") is not True:
         errors.append("positive flag completion_atlas_exposed")
-    for key in ("scientific_claims_duplicated_by_hand", "literature_complete", "unmapped_means_absent", "reviewed_gap_means_absent", "reviewed_no_transfer_means_absent", "priority_score_is_theorem", "complete_observationally_valid_theory_identified", "strict_authoritative_q2_green_compatibility_exposed", "strict_recursive_nonlinear_green_trees_exposed", "strict_unrestricted_mixed_sign_trees_exposed", "strict_arbitrary_causal_difference_trees_exposed", "strict_infinite_tree_series_convergence_exposed"):
+    for key in ("strict_field_equation_green_component_exposed", "strict_field_equation_quotient_inverse_exposed", "strict_ungauge_fixed_full_inverse_obstruction_exposed"):
+        if flags.get(key) is not True:
+            errors.append("positive flag " + key)
+    for key in ("scientific_claims_duplicated_by_hand", "literature_complete", "unmapped_means_absent", "reviewed_gap_means_absent", "reviewed_no_transfer_means_absent", "priority_score_is_theorem", "complete_observationally_valid_theory_identified", "strict_authoritative_q2_green_compatibility_exposed", "strict_recursive_nonlinear_green_trees_exposed", "strict_unrestricted_mixed_sign_trees_exposed", "strict_arbitrary_causal_difference_trees_exposed", "strict_infinite_tree_series_convergence_exposed", "strict_typed_field_equation_green_inverse_exposed", "strict_all_order_source_closure_exposed"):
         if flags.get(key) is not False:
             errors.append("boundary flag " + key)
     checks.append("fail-closed claim flags")

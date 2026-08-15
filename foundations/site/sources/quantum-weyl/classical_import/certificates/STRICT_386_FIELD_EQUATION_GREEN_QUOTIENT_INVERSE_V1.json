@@ -1,0 +1,273 @@
+{
+  "$schema": "../schema/strict-386-field-equation-green-quotient-inverse-v1.schema.json",
+  "schema": "strict-386-field-equation-green-quotient-inverse-v1",
+  "schema_path": "quantum-weyl/classical_import/schema/strict-386-field-equation-green-quotient-inverse-v1.schema.json",
+  "result_id": "STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1",
+  "result_kind": "TYPED_BV_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_AND_FULL_INVERSE_NO_GO",
+  "result_state": "CONSTRAINED_RIGHT_AND_QUOTIENT_LEFT_INVERSE_CERTIFIED_FULL_UNGAUGE_FIXED_INVERSE_OBSTRUCTED",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "f828b7b249d8ce762e4cabec6f2bae2ee0f381c6",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "Does the accepted 386-row Green homotopy restrict to the field-equation inverse required by Yang-Feldman, and if not, what is the exact replacement?",
+  "answer": "The degree-one-to-zero component G_sigma of each accepted Green homotopy is now typed exactly. It is a right inverse of the 386-row field-equation operator K on Noether-compatible sources and a left inverse modulo gauge. A two-sided inverse on the full ungauge-fixed field and equation spaces is impossible: the exact complex has nonzero gauge and Noether maps with K R=0 and N K=0. Consequently the correct nonlinear gate is not a stronger unary inverse. It is coefficientwise proof that every q2/q3/higher nonlinear source is N-closed. The candidate first-order source passes; the lambda-squared source remains undecided. Gate A, Hadamard and QME remain fail closed.",
+  "scope": {
+    "theory": "strict pure-Weyl unary BV complex with candidate q2 diagnostic",
+    "background": "unit ultrastatic conformal cylinder R x S3",
+    "carrier": "accepted 386-row unary-causal graph snapshot",
+    "support": "compact source to retarded/advanced causal support"
+  },
+  "literature_context": {
+    "id": "benini-musante-schenkel-2023",
+    "citation": "Marco Benini, Giorgio Musante and Alexander Schenkel, Green hyperbolic complexes on Lorentzian manifolds, Communications in Mathematical Physics 405 (2024), Article 28.",
+    "stable_url": "https://arxiv.org/abs/2207.04069",
+    "artifact": {
+      "status": "CONTENT_PINNED",
+      "locator": "https://arxiv.org/pdf/2207.04069",
+      "sha256": "8f43ffd1d381743001914e56facbc11afa38d24a0476cd05ab38e90435d2cecc"
+    },
+    "imported_statement": "Definitions 3.5 and the introductory specialization distinguish a retarded/advanced Green homotopy of a gauge complex, delta Lambda=id, from a two-sided Green operator for a nondegenerate two-term field equation. Gauge degeneracy prevents the ungauge-fixed equation operator from being Green hyperbolic.",
+    "application_boundary": "The source supplies the homological type distinction. The Weyl-specific ranks, component counts, quotient identities and nonlinear gate are derived from repository certificates, not imported from the paper.",
+    "sha256": "7c065040b945e894393ba9737cdc2639571a8c45080674b8340d521a49423dd9"
+  },
+  "typed_complex": {
+    "complex": "... -> C^-1 --R--> C^0 --K--> C^1 --N--> C^2 -> ...",
+    "degree_counts": {
+      "-2": 14,
+      "-1": 63,
+      "0": 116,
+      "1": 116,
+      "2": 63,
+      "3": 14
+    },
+    "field_space": {
+      "symbol": "C^0",
+      "rows": 116,
+      "endpoint_metric_rows": 10
+    },
+    "equation_space": {
+      "symbol": "C^1",
+      "rows": 116,
+      "endpoint_metric_antifield_rows": 10
+    },
+    "gauge_map": {
+      "symbol": "R=q1|-1",
+      "type": "C^-1 -> C^0",
+      "nonzero_rational_jet_coefficients": 425,
+      "nonzero": true
+    },
+    "field_equation_operator": {
+      "symbol": "K=q1|0",
+      "type": "C^0 -> C^1",
+      "nonzero_rational_jet_coefficients": 3264,
+      "nonzero": true
+    },
+    "noether_map": {
+      "symbol": "N=q1|1",
+      "type": "C^1 -> C^2",
+      "nonzero_rational_jet_coefficients": 425,
+      "nonzero": true
+    },
+    "exact_complex_identities": [
+      "K R=0",
+      "N K=0"
+    ],
+    "q1_degree_step_defects": 0,
+    "basis_sha256": "8e29f0f2419d1086969fd1962c62bd5c185bff3772ebd247591bdea5ac2828c4",
+    "graph_q1_sha256": "5c23d4bc1228e9b065ec60f67f367785b9456c7a9401dedb85a44d3b6b32ff5f",
+    "sha256": "2038ddf2eaeea0194ec1e4436028c3274078cd4322a45d4a0ea58a38978c12cf"
+  },
+  "green_field_equation_component": {
+    "definition": "G_sigma=pr_C0 Lambda_graph,sigma inc_C1",
+    "type": "Gamma_c^infinity(M,C^1) -> Gamma^infinity_Jsigma(M,C^0)",
+    "neighbor_components": {
+      "C_sigma": "pr_C-1 Lambda_graph,sigma inc_C0 : C^0 -> C^-1",
+      "A_sigma": "pr_C1 Lambda_graph,sigma inc_C2 : C^2 -> C^1"
+    },
+    "orientations": {
+      "plus": {
+        "name": "retarded/future-supported",
+        "full_green_name_sha256": "74ba74bcd7d5ac3134eb9ec4f36c8908f6626c50c463bc22b0df037316807107"
+      },
+      "minus": {
+        "name": "advanced/past-supported",
+        "full_green_name_sha256": "698ade6e1e9eddefa13d3824e23e222ef745169ebbbad32ce75f4cd3542e80b6"
+      }
+    },
+    "support": "Each component inherits supp G_sigma(s) subset J_sigma(supp s).",
+    "component_bytes_flattened": false,
+    "definition_mode": "CONTENT_ADDRESSED_DEGREE_RESTRICTION_OF_REPRESENTED_OPERATOR_NAME",
+    "sha256": "3ba9ef6b40f0b2277e1e0dd7ba84b59fc00f16cbf5fd047b446e9fff653a6c35"
+  },
+  "restricted_homotopy_identities": {
+    "source_identity": "K G_sigma + A_sigma N = identity_C1",
+    "field_identity": "G_sigma K + R C_sigma = identity_C0",
+    "constrained_right_inverse": "For s in ker N, K G_sigma(s)=s.",
+    "quotient_left_inverse": "For [phi] in C^0/im R, [G_sigma K(phi)]=[phi].",
+    "induced_isomorphism": "K_bar:C^0/im R -> ker N has inverse [G_sigma] on each certified causal support class.",
+    "proof": [
+      "project q1 Lambda_sigma+Lambda_sigma q1=identity to total degree 1",
+      "project the same identity to total degree 0",
+      "use K R=0 and N K=0 from q1 squared zero",
+      "restrict the degree-1 identity to ker N and the degree-0 identity modulo im R"
+    ],
+    "orientations_checked": 2,
+    "structural_defects": 0,
+    "sha256": "bc6417434e50762b04222d4c89b047bd4a448af9fbd992f6efed91d0f041b2aa"
+  },
+  "full_inverse_obstruction": {
+    "full_left_inverse_of_K_on_C0": false,
+    "left_inverse_contradiction": "If L K=identity_C0, then R=L K R=0, contradicting the certified nonzero gauge map R.",
+    "full_right_inverse_of_K_on_C1": false,
+    "right_inverse_contradiction": "If K J=identity_C1, then N=N K J=0, contradicting the certified nonzero Noether map N.",
+    "scope": "No two-sided Green operator exists for the ungauge-fixed K on the full declared field/equation spaces. This does not obstruct a gauge-fixed operator, the certified complex Green homotopy, or the quotient/constrained inverse above.",
+    "nonzero_gauge_coefficients": 425,
+    "nonzero_noether_coefficients": 425,
+    "status": "EXACT_GAUGE_COMPLEX_OBSTRUCTION",
+    "sha256": "ed25a0596c9da4805f0f668d38c34cafa3bb35313ebe1fdffa503c51cc79d57c"
+  },
+  "nonlinear_consequence": {
+    "candidate_q2_type": "q2:C^0 x C^0 -> C^1 on ghost-number-zero inputs",
+    "first_order_source": "s_1=(1/2)q2(x,x)",
+    "first_order_cocycle": "q1(x)=0 and the arity-two identity imply N s_1=0",
+    "first_order_solution": "K G_sigma(s_1)=s_1",
+    "first_order_status": "TYPED_AND_CERTIFIED_FOR_THE_CANDIDATE",
+    "all_order_criterion": "At every coupling order m, the assembled nonlinear source S_m must satisfy N S_m=0; then phi_m=-G_sigma(S_m) solves K phi_m=-S_m modulo gauge.",
+    "lambda_squared_diagnostic": "(1/4)(B_sigma(x,q2(x,x))+B_sigma(q2(x,x),x))",
+    "lambda_squared_source_cocycle_certified": false,
+    "corrected_promotion_gate": "SOURCE_CERTIFIED_Q2_Q3_HIGHER_L_INFINITY_IDENTITIES_AND_COEFFICIENTWISE_NONLINEAR_SOURCE_COCYCLE_CLOSURE",
+    "full_ungauge_fixed_two_sided_inverse_required": false,
+    "meaning": "The previous request for a full field-equation inverse was overstrong. The complex homotopy supplies exactly the constrained/quotient inverse needed once nonlinear source closure is proved; the remaining obstruction is theory identity, not unary causal inversion.",
+    "sha256": "b7d5803a1084eb3c52a95cd6f6f9217a4044959ed1e5325aadbf630c573ae9d9"
+  },
+  "foundational_strength": {
+    "classification": "FINITE_EXACT_TYPED_RESTRICTION_OVER_IMPORTED_CLASSICAL_GREEN_HOMOTOPY",
+    "finite_layer": "Degree partition, coefficient census, block identities, quotient proof and no-go contradiction are primitive-recursive finite checks over pinned exact tables.",
+    "analytic_layer": "Existence, continuity and causal support of Lambda_sigma retain the classical smooth LF/Frechet and spectral assumptions of the accepted unary-causal snapshot.",
+    "choice_operation_added": false,
+    "quotient_requires_representative_selection": false,
+    "reason": "The induced quotient map is defined by equivalence classes; no global gauge representative or complement is selected.",
+    "weakest_complete_foundational_base": "NOT_ESTABLISHED",
+    "sha256": "61340c83a4386091d05120c37e1255f4ee777e114bbff9d9a91231350ecb233a"
+  },
+  "authority_boundary": {
+    "typed_field_equation_green_component": true,
+    "constrained_and_quotient_inverse": true,
+    "full_ungauge_fixed_two_sided_inverse": false,
+    "candidate_q2_only": true,
+    "authoritative_full_q2_imported": false,
+    "q3_or_higher_operations_imported": false,
+    "all_order_nonlinear_source_closure": false,
+    "formal_moller_map_for_weyl_bv_certified": false,
+    "classical_import_gate_a_status": "FAIL_CLOSED",
+    "sha256": "3e6d66c5b390d42e9b1114ad46ad57b22d31b5e900a15b8becc5108169318613"
+  },
+  "typed_inverse_snapshot": {
+    "kind": "STRICT_386_TYPED_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_SNAPSHOT",
+    "unary_causal_snapshot_sha256": "ffd018f8516d5a1547c235f17b37a03e1307990fb280b24efbfe37fc3ebd8344",
+    "typed_complex_sha256": "2038ddf2eaeea0194ec1e4436028c3274078cd4322a45d4a0ea58a38978c12cf",
+    "green_component_sha256": "3ba9ef6b40f0b2277e1e0dd7ba84b59fc00f16cbf5fd047b446e9fff653a6c35",
+    "restricted_identities_sha256": "bc6417434e50762b04222d4c89b047bd4a448af9fbd992f6efed91d0f041b2aa",
+    "full_inverse_obstruction_sha256": "ed25a0596c9da4805f0f668d38c34cafa3bb35313ebe1fdffa503c51cc79d57c",
+    "nonlinear_gate_sha256": "b7d5803a1084eb3c52a95cd6f6f9217a4044959ed1e5325aadbf630c573ae9d9",
+    "foundations_sha256": "61340c83a4386091d05120c37e1255f4ee777e114bbff9d9a91231350ecb233a",
+    "authority_sha256": "3e6d66c5b390d42e9b1114ad46ad57b22d31b5e900a15b8becc5108169318613",
+    "receiver_status": "QUOTIENT_INVERSE_ACCEPTED_FULL_INVERSE_REJECTED_NONLINEAR_SOURCE_CLOSURE_OPEN",
+    "sha256": "c456e4bca742312eaac71f014a433e254713ab291fd5681cfd318ebaddfb5ba8"
+  },
+  "claim_flags": {
+    "STRICT_386_FIELD_EQUATION_GREEN_COMPONENT_TYPED": true,
+    "STRICT_386_FIELD_EQUATION_CONSTRAINED_RIGHT_INVERSE_CERTIFIED": true,
+    "STRICT_386_FIELD_EQUATION_QUOTIENT_LEFT_INVERSE_CERTIFIED": true,
+    "STRICT_386_UNGAUGE_FIXED_TWO_SIDED_GREEN_INVERSE_OBSTRUCTED": true,
+    "STRICT_386_UNGAUGE_FIXED_TWO_SIDED_GREEN_INVERSE_CONSTRUCTED": false,
+    "STRICT_386_CANDIDATE_FIRST_ORDER_YANG_FELDMAN_SOURCE_TYPED": true,
+    "STRICT_386_ALL_ORDER_NONLINEAR_SOURCE_CLOSURE_CERTIFIED": false,
+    "STRICT_386_AUTHORITATIVE_FORMAL_MOLLER_MAP_CERTIFIED": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "RENORMALIZED_LORENTZIAN_PRODUCTS": false,
+    "QME_RESTORED": false,
+    "RESIDUAL_TRANSFERRED": false,
+    "LORENTZIAN_QUANTUM_THEORY": false
+  },
+  "does_not_establish": [
+    "a two-sided inverse of the ungauge-fixed field-equation operator on all fields and all equation sources",
+    "a selected gauge fixing, global gauge slice or representative-selection operation",
+    "flattened component bytes for the nonlocal Green kernel or an effective numerical solver",
+    "that the stabilized q2 candidate is the authoritative nonlinear Weyl BV operation",
+    "coefficientwise nonlinear source closure beyond first order",
+    "vanishing or nonvanishing of the lambda-squared B(q2) residual",
+    "q3 or higher source brackets or a Weyl-BV Maurer-Cartan/Moller theorem",
+    "the authoritative twenty-export classical import Gate A",
+    "a Hadamard state, positivity, renormalized Lorentzian products, QME restoration, residual transfer, unitarity or a Lorentzian quantum theory"
+  ],
+  "next_gate": "Retire the impossible full ungauge-fixed inverse target. Source-certify the authoritative q2 and any q3/higher brackets, then replay N S_m=0 coefficientwise, beginning with the displayed lambda-squared source. Only after nonlinear source closure and Gate-A identity may the formal response series be promoted toward a Weyl-BV Moller map.",
+  "canonical_hashes": {
+    "literature_context_sha256": "7c065040b945e894393ba9737cdc2639571a8c45080674b8340d521a49423dd9",
+    "typed_complex_sha256": "2038ddf2eaeea0194ec1e4436028c3274078cd4322a45d4a0ea58a38978c12cf",
+    "green_component_sha256": "3ba9ef6b40f0b2277e1e0dd7ba84b59fc00f16cbf5fd047b446e9fff653a6c35",
+    "restricted_identities_sha256": "bc6417434e50762b04222d4c89b047bd4a448af9fbd992f6efed91d0f041b2aa",
+    "full_inverse_obstruction_sha256": "ed25a0596c9da4805f0f668d38c34cafa3bb35313ebe1fdffa503c51cc79d57c",
+    "nonlinear_consequence_sha256": "b7d5803a1084eb3c52a95cd6f6f9217a4044959ed1e5325aadbf630c573ae9d9",
+    "foundational_strength_sha256": "61340c83a4386091d05120c37e1255f4ee777e114bbff9d9a91231350ecb233a",
+    "authority_boundary_sha256": "3e6d66c5b390d42e9b1114ad46ad57b22d31b5e900a15b8becc5108169318613",
+    "typed_inverse_snapshot_sha256": "c456e4bca742312eaac71f014a433e254713ab291fd5681cfd318ebaddfb5ba8"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+        "result_or_artifact_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+        "sha256": "3b9d8a2fc5a70d20770452eb0a2a4891f59314c21c83188bfb59de0941cac4b2",
+        "role": "fixed graded carrier and pairing"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1.json",
+        "result_or_artifact_id": "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1",
+        "sha256": "b805bd81b35f13325d938e93be91495e1d46aa5900fd168e55bdcde1afbfa8e2",
+        "role": "exact graph q1 component jets and homotopy identity"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_GREEN_ACTION_NAME_V1.json",
+        "result_or_artifact_id": "STRICT_386_GRAPH_GREEN_ACTION_NAME_V1",
+        "sha256": "8e1fc54c4820310457e22094dae7f6dd1c5a3c56724e6450d455700858f7ad64",
+        "role": "represented retarded/advanced Green homotopies"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1.json",
+        "result_or_artifact_id": "STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1",
+        "sha256": "08e4c12adb9183429f018d60574fdf0c1e21db40b25de10648247fdfd17bf6ab",
+        "role": "accepted unary-causal common hash"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1.json",
+        "result_or_artifact_id": "STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1",
+        "sha256": "d9ea0e618ff31a92dcb83459d0b0b491783569b0b25523776af92fe02fe4bfd5",
+        "role": "candidate q2 response identity"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1.json",
+        "result_or_artifact_id": "STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1",
+        "sha256": "583d8a8965c40fb4b8109520ae586c1bdc81ad4bcaadd23811a21dabb428ee6c",
+        "role": "formal recursion and lambda-squared diagnostic"
+      }
+    ]
+  },
+  "independent_checker": {
+    "path": "quantum-weyl/classical_import/check_strict_386_field_equation_green_quotient_inverse.py",
+    "checks": [
+      "six dependency identities and content hashes",
+      "independent degree partition and q1 coefficient census",
+      "degreewise restriction of q Lambda+Lambda q=identity",
+      "gauge and Noether no-go contradictions",
+      "first-order source cocycle and all-order closure boundary",
+      "foundational and Gate-A/Hadamard/QME firewalls",
+      "nine canonical section digests"
+    ]
+  },
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1.md"
+}

@@ -1,0 +1,82 @@
+{
+  "receipt_id": "STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Exact typing of the accepted strict 386-row Green homotopy on the 116-row field/equation sector, constrained-source right inverse, quotient-field left inverse, full ungauge-fixed inverse no-go, Atlas V21 projection, website exposure and paper integration.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <explicit typed-inverse, Atlas V21, site and paper generator/checker/verifier/test paths>",
+        "deno check foundations/matrix_site_v2_assets/app-v2.js",
+        "python3 -m json.tool <explicit typed-inverse schema/certificate/receipt and Atlas V21 schema/result paths>",
+        "git diff --check -- <explicit checkpoint paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 4.1,
+      "commands": [
+        "python3 quantum-weyl/classical_import/build_strict_386_field_equation_green_quotient_inverse.py --check",
+        "python3 quantum-weyl/classical_import/check_strict_386_field_equation_green_quotient_inverse.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_field_equation_green_quotient_inverse.py",
+        "PYTHONPATH=. python3 -m unittest quantum-weyl.classical_import.tests.test_strict_386_field_equation_green_quotient_inverse",
+        "python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v21.py --check",
+        "python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v21.py",
+        "python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v21.py",
+        "PYTHONPATH=. python3 foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v21.py",
+        "python3 foundations/build_matrix_site_v2.py --check && python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py",
+        "PYTHONPATH=. python3 foundations/tests/test_matrix_site.py",
+        "python3 paper/generate_21_reverse_foundations_appendices.py --check && python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+        "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (two passes)"
+      ],
+      "checks": {
+        "field_rows": 116,
+        "equation_rows": 116,
+        "gauge_field_equation_noether_nonzero_coefficients": "425/3264/425",
+        "causal_orientations": 2,
+        "structural_defects": 0,
+        "typed_inverse_mutation_tests": "14/14 PASS",
+        "atlas_mutation_tests": "10/10 PASS",
+        "site_tests": "10/10 PASS",
+        "completion_routes_after_retirement": 11,
+        "paper_pages": 67
+      }
+    },
+    "tier_2": {
+      "status": "PASS_WITH_RECORDED_ENVIRONMENT_LIMIT",
+      "commands": [
+        "python3 quantum-weyl/classical_import/check_strict_386_graph_green_action_name.py",
+        "python3 quantum-weyl/classical_import/check_strict_386_unary_causal_common_snapshot.py",
+        "python3 quantum-weyl/classical_import/check_strict_386_polarized_formal_moller_coefficients.py"
+      ],
+      "checks": "All three direct semantic predecessors passed. The older full-q1 checker could not start because the ambient Python lacks sympy; this is not recorded as a pass. Its unchanged content-addressed graph-q1 input and exact coefficient census were independently hash-bound and replayed by the new checker.",
+      "failed_command": "python3 quantum-weyl/classical_import/check_strict_386_full_q1_component_jet_table.py -> ModuleNotFoundError: sympy"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical/quantum freeze, release, shared core algebra change, theorem lifecycle promotion, Hadamard state, QME restoration or Lorentzian quantum completion is claimed. The Science Forge advisory shadow rail was run separately and reported bridge-audit FAIL because its stale bp2transformer target also lacked sympy, plus expected corpus-baseline drift; advisory exit zero is not counted as a scientific pass."
+    }
+  },
+  "artifact_sha256": {
+    "quantum-weyl/classical_import/certificates/STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1.json": "d9e64a9aaf41ec9041edf9d70bd85ab5600fc72c7ea8101a4fd16b61b95f5fb6",
+    "quantum-weyl/classical_import/REPORT_STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1.md": "08395bfb7f84a6c3cc3508756fddb8c2fdfea220a3a70641f7824ffae5238ebf",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V21.json": "56fc3be36610cb1a95a5d655540e544a7d1505177011500a946483fff7bdf8d3",
+    "foundations/reports/lorentzian-weyl-bv-completion-atlas-v21.md": "4e7b271f09c5bd58287b24ed75927d6366d00b4fd2ed38f3c768af7771400b62",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "a21e293f4b7fbbbcf557dc2ecb7efdab8e88760a4ea0df45a30c442642a2fbf9",
+    "foundations/site/manifest.json": "5da9d5610622aa1a9fa7b8a4c8aa10470366adbcd3ea1939f563d918451310ff",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "12d83217c1520ad0477e496796c8d8492d838d17ad53a9f9513e906264c09ac7",
+    "paper/21-reverse-foundations-of-physics.pdf": "5cf6c4bc2b5752455d0b968190b070f67bac3434bb5883e157b4ee75fabf29a1"
+  },
+  "literature_pin": {
+    "citation": "Marco Benini, Giorgio Musante and Alexander Schenkel, Green hyperbolic complexes on Lorentzian manifolds, Communications in Mathematical Physics 405 (2024), 28",
+    "url": "https://arxiv.org/abs/2207.04069",
+    "pdf_sha256": "8f43ffd1d381743001914e56facbc11afa38d24a0476cd05ab38e90435d2cecc",
+    "boundary": "The source supplies the homological type distinction and the ungauge-fixed gauge-degeneracy boundary. Weyl-specific ranks, exact identities, coefficient counts and nonlinear consequences are repository-derived."
+  },
+  "claim_boundary": "This establishes a constrained-source right inverse and quotient-field left inverse for each accepted causal orientation, and exactly obstructs a full ungauge-fixed inverse. It selects no gauge representative and does not establish authoritative q2/q3/higher operations, lambda-squared or all-order nonlinear source closure, Gate A, an analytic Moller map, Hadamard data, renormalized products, QME restoration or a Lorentzian quantum theory."
+}

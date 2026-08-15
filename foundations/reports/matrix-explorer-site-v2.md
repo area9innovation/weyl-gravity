@@ -39,6 +39,13 @@ eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
+Atlas V21 also resolves the field-equation type question.  The degree-one-to-zero
+Green component is an exact right inverse on Noether-compatible sources and a
+left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
+the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
+inverse route is replaced by the coefficientwise nonlinear-source test `N S_m=0`;
+first order passes for the candidate, while lambda squared remains open.
+
 The strict thirty-row endpoint is no longer a type-only match.  The Gate-V5 and
 causal-endpoint unary operators agree in all 80 multiindex tables, including all
 700 independent Bach four-jet columns.  The five-row transported ghost-pairing
@@ -134,12 +141,15 @@ This site does not establish:
 - uniqueness among arbitrary distributional solutions from energy-image uniqueness
 - a variable-coefficient, curved-spacetime, Weyl, or metric-BV Green operator from the scalar 1+1 benchmark
 - an effective strict 386-row Green solver or serialized distribution-kernel bytes
+- a full two-sided inverse on the ungauge-fixed Weyl field/equation spaces
+- a selected gauge representative from the quotient inverse
 - that the exact stabilized-q2 candidate is the authoritative nonlinear classical Weyl BV extension
 - authoritative q2/Green compatibility from candidate first-response compatibility
 - unrestricted mixed-sign or arbitrary causal-difference trees from the certified polarized finite recursion
 - a Weyl-BV Maurer-Cartan or Moller map from the candidate formal fixed-point coefficients
 - analytic convergence, a convergence radius, or a nonperturbative Moller inverse from lambda-adic stabilization
 - vanishing or nonvanishing of the lambda-squared B(q2) residual
+- all-order nonlinear source-cocycle closure
 - q3 or higher causal brackets
 - a weakest-base or choice-free proof of the infinite analytic Green layer
 - a source-certified cyclic L-infinity equivalence or accepted q2 Gate-A hash

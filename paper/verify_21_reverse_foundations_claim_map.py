@@ -129,6 +129,8 @@ def main() -> int:
     completion_atlas_v19 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v19"]["path"]).read_text())
     strict_386_formal = json.loads((ROOT / data["authorities"]["strict_386_polarized_formal_moller_coefficients"]["path"]).read_text())
     completion_atlas_v20 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v20"]["path"]).read_text())
+    strict_386_field_inverse = json.loads((ROOT / data["authorities"]["strict_386_field_equation_green_quotient_inverse"]["path"]).read_text())
+    completion_atlas_v21 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v21"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -431,6 +433,7 @@ def main() -> int:
         (45, "STRICT-WEYL-CANDIDATE-Q2-GREEN-FIRST-RESPONSE"),
         (46, "STRICT-WEYL-CANDIDATE-POLARIZED-CAUSAL-TREES"),
         (47, "STRICT-WEYL-POLARIZED-FORMAL-COEFFICIENTS-AND-BV-GATE"),
+        (48, "STRICT-WEYL-FIELD-EQUATION-GREEN-QUOTIENT-INVERSE"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -668,6 +671,15 @@ def main() -> int:
     require(formal_flags["STRICT_386_CANDIDATE_POLARIZED_FORMAL_COEFFICIENTS_CERTIFIED"] is True and formal_flags["STRICT_386_CANDIDATE_LAMBDA_ADIC_STABILIZATION_VERIFIED"] is True and formal_flags["STRICT_386_CANDIDATE_ANALYTIC_SERIES_CONVERGENCE_CERTIFIED"] is False and formal_flags["STRICT_386_WEYL_BV_MAURER_CARTAN_SERIES_CERTIFIED"] is False and formal_flags["STRICT_386_AUTHORITATIVE_FORMAL_MOLLER_MAP_CERTIFIED"] is False and formal_flags["QME_RESTORED"] is False, "formal coefficient lifecycle firewall drift")
     require(completion_atlas_v20["strict_polarized_formal_coefficients"]["largest_checked_tree_count"] == 1430 and completion_atlas_v20["strict_polarized_formal_coefficients"]["order_lambda_squared_bv_residual_zero_certified"] is False and completion_atlas_v20["strict_polarized_formal_coefficients"]["authoritative_weyl_bv_moller_map"] is False, "completion atlas V20 formal projection drift")
     require(len(completion_atlas_v20["route_selection"]) == 12 and [item["route"] for item in completion_atlas_v20["route_selection"][:3]] == ["STRICT_386_AUTHORITATIVE_Q2_IDENTITY", "STRICT_TYPED_FIELD_EQUATION_GREEN_INVERSE", "STRICT_Q2_Q3_MAURER_CARTAN_CLOSURE"], "completion atlas V20 frontier ordering drift")
+    typed = strict_386_field_inverse["typed_complex"]
+    identities = strict_386_field_inverse["restricted_homotopy_identities"]
+    obstruction = strict_386_field_inverse["full_inverse_obstruction"]
+    require(typed["degree_counts"]["0"] == 116 and typed["degree_counts"]["1"] == 116 and typed["gauge_map"]["nonzero_rational_jet_coefficients"] == 425 and typed["field_equation_operator"]["nonzero_rational_jet_coefficients"] == 3264 and typed["noether_map"]["nonzero_rational_jet_coefficients"] == 425, "typed field-equation census drift")
+    require(identities["source_identity"] == "K G_sigma + A_sigma N = identity_C1" and identities["field_identity"] == "G_sigma K + R C_sigma = identity_C0" and identities["structural_defects"] == 0, "typed field-equation identities drift")
+    require(obstruction["full_left_inverse_of_K_on_C0"] is False and obstruction["full_right_inverse_of_K_on_C1"] is False and obstruction["status"] == "EXACT_GAUGE_COMPLEX_OBSTRUCTION", "full ungauge-fixed inverse obstruction drift")
+    require(completion_atlas_v21["strict_field_equation_green_quotient_inverse"]["constrained_right_inverse"] is True and completion_atlas_v21["strict_field_equation_green_quotient_inverse"]["quotient_left_inverse"] is True and completion_atlas_v21["strict_field_equation_green_quotient_inverse"]["full_ungauge_fixed_two_sided_inverse"] is False, "completion atlas V21 typed inverse projection drift")
+    require(len(completion_atlas_v21["route_selection"]) == 11 and [item["route"] for item in completion_atlas_v21["route_selection"][:2]] == ["STRICT_386_AUTHORITATIVE_Q2_IDENTITY", "STRICT_Q2_Q3_SOURCE_COCYCLE_CLOSURE"], "completion atlas V21 frontier ordering drift")
+    require(flags["strict_386_field_equation_green_component_typed"] is True and flags["strict_386_field_equation_constrained_right_inverse_certified"] is True and flags["strict_386_field_equation_quotient_left_inverse_certified"] is True and flags["strict_386_ungauge_fixed_full_inverse_obstructed"] is True and flags["strict_386_all_order_nonlinear_source_closure_certified"] is False, "typed inverse lifecycle firewall drift")
     require(flags["static_atlas_appendix_generated"] is True, "static atlas appendix flag is not certified")
     require(flags["complete_evidence_register_generated"] is True, "complete evidence register flag is not certified")
     require(flags["complete_literature_register_generated"] is True, "complete literature register flag is not certified")
@@ -1104,13 +1116,14 @@ def main() -> int:
         r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V19",
         r"STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1",
         r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V20",
+        r"STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1",
+        r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V21",
         r"140 ordered-component channels",
         r"68 potentially nonzero block triples",
         r"cyclic \(L_\infty\) isomorphism",
         r"zero of seven authoritative hashes",
         r"STRICT_386_AUTHORITATIVE_Q2_IDENTITY",
-        r"STRICT_TYPED_FIELD_EQUATION_GREEN_INVERSE",
-        r"STRICT_Q2_Q3_MAURER_CARTAN_CLOSURE",
+        r"STRICT_Q2_Q3_SOURCE_COCYCLE_CLOSURE",
         r"Catalan",
         r"lambda squared",
         r"first nonlinear causal response",

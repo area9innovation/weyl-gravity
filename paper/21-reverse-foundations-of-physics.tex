@@ -2688,11 +2688,41 @@ equation at order \(\lambda\).  At lambda squared it leaves
  \frac14\bigl(B(x,q_2(x,x))+B(q_2(x,x),x)\bigr),
 \]
 whose vanishing is not certified and whose nonzero value is not claimed.
-Thus formal tree enumeration was the easy layer; the first real promotion
-gate is a typed inverse on the field-equation sector together with the
-source-certified $q_2,q_3,\ldots$ identities.  Atlas V20 accordingly ranks
-\cert{STRICT_TYPED_FIELD_EQUATION_GREEN_INVERSE} and
-\cert{STRICT_Q2_Q3_MAURER_CARTAN_CLOSURE} immediately after authoritative
+Thus formal tree enumeration was the easy layer.  The apparent next gate was
+a typed inverse on the field-equation sector together with source-certified
+$q_2,q_3,\ldots$ identities.
+
+The inverse question is now settled in its correct homological type
+(\cert{STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1},
+\cert{FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V21}).  Write the
+relevant part of the exact unary complex as
+\[
+ C^{-1}\xrightarrow{R}C^0\xrightarrow{K}C^1\xrightarrow{N}C^2,
+ \qquad KR=0,\quad NK=0,
+\]
+where the field and equation spaces each have 116 rows.  The accepted Green
+homotopy has a degree-one-to-zero component
+$G_\sigma:C^1\to C^0$.  Projecting
+$q_1\Lambda_\sigma+\Lambda_\sigma q_1=1$ to degrees one and zero gives
+\[
+ KG_\sigma+A_\sigma N=1_{C^1},\qquad
+ G_\sigma K+RC_\sigma=1_{C^0}.
+\]
+Consequently $G_\sigma$ is a right inverse on Noether-compatible sources
+$\ker N$ and a left inverse on fields modulo gauge, $C^0/\operatorname{im}R$.
+It selects no gauge representative.  This is the specialization to the
+strict Weyl carrier of the Green-hyperbolic-complex viewpoint of Benini,
+Musante and Schenkel \cite{BeniniMusanteSchenkel2024}.
+
+A full ungauge-fixed inverse is not merely missing; it is impossible on the
+declared spaces.  The exact tables contain 425 nonzero coefficients in each
+of $R$ and $N$.  If $LK=1_{C^0}$, then $R=LKR=0$; if $KJ=1_{C^1}$, then
+$N=NKJ=0$.  Both conclusions contradict the certified nonzero maps.  The
+correct nonlinear gate is therefore coefficientwise source closure
+$NS_m=0$, not a stronger unary inverse.  The candidate first-order source
+passes this test; the displayed lambda-squared source remains undecided.
+Atlas V21 retires the impossible inverse route and ranks
+\cert{STRICT_Q2_Q3_SOURCE_COCYCLE_CLOSURE} immediately after authoritative
 $q_2$ identity.  Analytic convergence, Hadamard data, renormalized products,
 and QME restoration remain later independent gates.
 
@@ -2959,6 +2989,8 @@ The principal machine-readable authorities are
 \cert{FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V19},
 \cert{STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1},
 \cert{FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V20},
+\cert{STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1},
+\cert{FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V21},
 \cert{REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1},
 \cert{REVERSE_PHYSICS_BT_EUCLIDEAN_OS_WITNESS_PREFLIGHT_V1},
 \cert{REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_TILT_JACOBIAN_CANCELLATION_V1},
@@ -3077,6 +3109,12 @@ E.~Hawkins and K.~Rejzner,
 ``The star product in interacting quantum field theory,''
 \emph{Letters in Mathematical Physics} \textbf{110} (2020), 1257--1313.
 \url{https://arxiv.org/abs/1612.09157}.
+
+\bibitem{BeniniMusanteSchenkel2024}
+M.~Benini, G.~Musante, and A.~Schenkel,
+``Green hyperbolic complexes on Lorentzian manifolds,''
+\emph{Communications in Mathematical Physics} \textbf{405} (2024), 28.
+\url{https://arxiv.org/abs/2207.04069}.
 
 \bibitem{HeunenLandsmanSpitters2009}
 C.~Heunen, N.~P.~Landsman, and B.~Spitters,

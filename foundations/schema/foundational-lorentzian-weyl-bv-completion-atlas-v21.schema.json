@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "foundational-lorentzian-weyl-bv-completion-atlas-v21.schema.json",
+  "title": "Foundational Lorentzian Weyl BV completion atlas v21",
+  "type": "object",
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit", "dependency_tags", "question", "answer", "predecessor", "status_vocabulary", "stages", "branches", "frontier_summary", "route_selection", "research_queue", "provenance", "claim_flags", "does_not_establish", "strict_polarized_formal_coefficients", "strict_field_equation_green_quotient_inverse", "independent_checker", "human_report"],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v21"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V21"},
+    "result_kind": {"type": "string"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "minLength": 8, "maxLength": 40, "pattern": "^[0-9a-f]+$"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LORENTZIAN-CAUSAL"}},
+    "predecessor": {"type": "object", "required": ["result_id", "path", "sha256", "preserved"], "properties": {"result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V20"}, "sha256": {"$ref": "#/$defs/hash"}, "preserved": {"const": true}}},
+    "stages": {"type": "array", "minItems": 11, "maxItems": 11},
+    "branches": {"type": "array", "minItems": 7, "maxItems": 7},
+    "route_selection": {"type": "array", "minItems": 11, "maxItems": 11},
+    "research_queue": {"type": "array", "minItems": 11, "maxItems": 11},
+    "does_not_establish": {"type": "array", "minItems": 8, "items": {"type": "string"}},
+    "strict_field_equation_green_quotient_inverse": {
+      "type": "object",
+      "required": ["result_id", "status", "field_rows", "equation_rows", "gauge_nonzero_coefficients", "field_equation_nonzero_coefficients", "noether_nonzero_coefficients", "green_component_typed", "constrained_right_inverse", "quotient_left_inverse", "source_identity", "field_identity", "full_ungauge_fixed_two_sided_inverse", "full_inverse_obstructed", "first_order_candidate_source_typed", "all_order_nonlinear_source_closure", "corrected_promotion_gate", "quotient_representative_selection_required", "foundational_classification", "weakest_complete_foundational_base", "next_gate"],
+      "properties": {
+        "result_id": {"const": "STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1"},
+        "status": {"type": "string"},
+        "field_rows": {"const": 116},
+        "equation_rows": {"const": 116},
+        "gauge_nonzero_coefficients": {"const": 425},
+        "field_equation_nonzero_coefficients": {"const": 3264},
+        "noether_nonzero_coefficients": {"const": 425},
+        "green_component_typed": {"const": true},
+        "constrained_right_inverse": {"const": true},
+        "quotient_left_inverse": {"const": true},
+        "source_identity": {"type": "string", "minLength": 1},
+        "field_identity": {"type": "string", "minLength": 1},
+        "full_ungauge_fixed_two_sided_inverse": {"const": false},
+        "full_inverse_obstructed": {"const": true},
+        "first_order_candidate_source_typed": {"const": true},
+        "all_order_nonlinear_source_closure": {"const": false},
+        "corrected_promotion_gate": {"type": "string", "minLength": 1},
+        "quotient_representative_selection_required": {"const": false},
+        "foundational_classification": {"type": "string", "minLength": 1},
+        "weakest_complete_foundational_base": {"const": "NOT_ESTABLISHED"},
+        "next_gate": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "independent_checker": {"type": "object"},
+    "human_report": {"type": "string"}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}
