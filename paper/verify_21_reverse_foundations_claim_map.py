@@ -131,6 +131,8 @@ def main() -> int:
     bt_g4_two_pair_noncancellation = json.loads((ROOT / data["authorities"]["bt_complete_g4_two_pair_noncancellation"]["path"]).read_text())
     bt_g4_lower_loops = json.loads((ROOT / data["authorities"]["bt_complete_g4_lower_loop_bounds"]["path"]).read_text())
     bt_tuned_remainder = json.loads((ROOT / data["authorities"]["bt_tuned_remainder_compensation"]["path"]).read_text())
+    bt_radial_convexity = json.loads((ROOT / data["authorities"]["bt_radial_convexity_obstruction"]["path"]).read_text())
+    bt_log_bubble = json.loads((ROOT / data["authorities"]["bt_log_bubble_virial_no_go"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -370,6 +372,7 @@ def main() -> int:
         (23, "SCALAR-BIWAVE-TO-WEYL-BV-DELTA"),
         (24, "STRICT-WEYL-LOCAL-Q1-Q2"),
         (25, "STRICT-WEYL-CAUSAL-CONVENTION-STABILITY"),
+        (26, "BT-HOMOGENEOUS-VIRIAL-NO-GO"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -504,6 +507,12 @@ def main() -> int:
     require(flags["bt_complete_order_g_four_tuned_perturbative_uniformity_established"] is False, "BT perturbative uniformity promoted")
     require(flags["bt_tuned_fixed_order_uniform_remainder_obstructed"] is True, "BT tuned uniform-remainder obstruction omitted")
     require(flags["bt_tuned_leading_power_compensation_required"] is True, "BT tuned compensation theorem omitted")
+    require(flags["bt_radial_convexity_obstructed"] is True, "BT radial-convexity obstruction omitted")
+    require(flags["bt_unit_homogeneous_virial_obstructed"] is True, "BT unit virial obstruction omitted")
+    require(flags["bt_subunit_positive_homogeneous_virial_established"] is False, "BT positive subunit virial promoted despite obstruction")
+    require(flags["bt_any_nonnegative_homogeneous_virial_obstructed"] is True, "BT complete nonnegative homogeneous virial no-go omitted")
+    require(flags["bt_pointwise_nonnegative_radial_virial_obstructed"] is True, "BT pointwise virial sign no-go omitted")
+    require(flags["bt_gibbs_weighted_block_estimate_established"] is False, "BT pointwise no-go promoted to Gibbs estimate")
     require(flags["bt_exact_interacting_score_scaling_established"] is False, "BT exact interacting score promoted")
     require(flags["bt_actual_interacting_H_minus_one_established"] is False, "BT interacting H-minus-one promoted")
     require(atlas["bt_g4_zero_loop_limit"] == bt_g4_lower_loops["zero_loop"]["large_volume_limit"] == "lim_(L->infinity) M4_zero(L)=111/(32*pi^4)", "BT zero-loop limit drift")
@@ -512,6 +521,13 @@ def main() -> int:
     require(atlas["bt_tuned_remainder_compensation_status"] == bt_tuned_remainder["exact_balance"]["status"] == "LEADING_POWER_COMPENSATION_FORCED", "BT tuned compensation drift")
     require(atlas["bt_tuned_remainder_gap"] == bt_tuned_remainder["coefficient_gap"]["gap"] == {"numerator": 13403, "denominator": 500000000}, "BT tuned gap drift")
     require(atlas["bt_tuned_exact_score_status"] == bt_tuned_remainder["method_disposition"]["sign_or_scaling_of_exact_interacting_score"] == "OPEN", "BT exact score promoted")
+    require(atlas["bt_radial_convexity_status"] == bt_radial_convexity["method_disposition"]["radial_convexity_of_A_rho_psi"] == "OBSTRUCTED", "BT radial-convexity obstruction drift")
+    require(atlas["bt_unit_virial_status"] == bt_radial_convexity["method_disposition"]["pointwise_D_ge_A"] == "OBSTRUCTED", "BT unit virial obstruction drift")
+    require(atlas["bt_subunit_positive_virial_status"] == bt_log_bubble["method_disposition"]["pointwise_D_ge_cA_for_any_c_ge_0"] == "OBSTRUCTED", "BT nonnegative homogeneous virial no-go drift")
+    require(atlas["bt_pointwise_nonnegative_virial_status"] == bt_log_bubble["method_disposition"]["pointwise_D_ge_0"] == "OBSTRUCTED", "BT pointwise virial sign no-go drift")
+    require(atlas["bt_gibbs_weighted_block_estimate_status"] == bt_log_bubble["method_disposition"]["nonpointwise_Gibbs_weighted_block_estimate"] == "OPEN", "BT log bubble promoted to Gibbs theorem")
+    require(bt_log_bubble["method_disposition"]["actual_interacting_H_minus_one_second_moment"] == "OPEN", "BT log bubble promoted to H-minus-one theorem")
+    require(bt_log_bubble["dependency_tags"] == ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], "BT log-bubble dependency boundary drift")
     require(atlas["bt_g4_interacting_H_minus_one_status"] == "OPEN", "BT interacting H-minus-one atlas promotion")
     require(flags["bt_complete_order_g_four_explicit_momentum_kernel_established"] is False, "BT expected-Hessian formula promoted to explicit momentum kernel")
     require(flags["bt_complete_order_g_four_effective_kernel_bound_established"] is False, "BT effective second-chaos kernel bound promoted")

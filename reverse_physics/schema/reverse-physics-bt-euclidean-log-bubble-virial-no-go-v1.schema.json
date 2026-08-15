@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-log-bubble-virial-no-go-v1.schema.json",
+  "title": "BT Euclidean logarithmic-bubble homogeneous-virial no-go certificate",
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "smooth_profile", "exact_radial_integrals", "finite_lattice_transfer",
+    "method_disposition", "checks", "does_not_establish",
+    "missing_object_ledger", "next_gate", "provenance", "schema", "report",
+    "independent_verifier", "verification_commands"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_LOG_BUBBLE_VIRIAL_NO_GO_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-log-bubble-virial-no-go-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "HOMOGENEOUS_RADIAL_VIRIAL_ARCHITECTURE_OBSTRUCTED"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "smooth_profile": {
+      "type": "object",
+      "required": [
+        "ambient_space", "inner_radius", "log_coordinate", "smoothstep",
+        "window", "field_derivative", "regularity", "constant_shift", "status"
+      ],
+      "properties": {
+        "ambient_space": {"type": "string", "minLength": 1},
+        "inner_radius": {"const": "r_minus=exp(-8)/8"},
+        "log_coordinate": {"const": "s=log(r/r_minus)"},
+        "smoothstep": {"const": "W(z)=10*z^3-15*z^4+6*z^5 on 0<=z<=1"},
+        "window": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string"}},
+        "field_derivative": {"type": "string", "minLength": 1},
+        "regularity": {"type": "string", "minLength": 1},
+        "constant_shift": {"type": "string", "minLength": 1},
+        "status": {"const": "EXPLICIT_FIXED_SMOOTH_PROFILE"}
+      },
+      "additionalProperties": false
+    },
+    "exact_radial_integrals": {
+      "type": "object",
+      "required": [
+        "dimension", "sphere_area_factor", "definitions", "change_of_variables",
+        "smoothstep_integrals", "parameters", "Q", "C", "P",
+        "reduced_action", "reduced_radial_virial",
+        "reduced_ratio_decimal_diagnostic", "status"
+      ],
+      "properties": {
+        "dimension": {"const": 4},
+        "sphere_area_factor": {"const": "|S^3|=2*pi^2>0"},
+        "definitions": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string"}},
+        "change_of_variables": {"type": "string", "minLength": 1},
+        "smoothstep_integrals": {
+          "type": "object",
+          "required": ["integral_W_squared", "integral_W_cubed", "integral_W_fourth", "integral_W_prime_squared"],
+          "properties": {
+            "integral_W_squared": {"$ref": "#/$defs/rational"},
+            "integral_W_cubed": {"$ref": "#/$defs/rational"},
+            "integral_W_fourth": {"$ref": "#/$defs/rational"},
+            "integral_W_prime_squared": {"$ref": "#/$defs/rational"}
+          },
+          "additionalProperties": false
+        },
+        "parameters": {
+          "type": "object",
+          "required": ["amplitude", "each_ramp_log_width", "plateau_log_width"],
+          "properties": {
+            "amplitude": {"$ref": "#/$defs/rational"},
+            "each_ramp_log_width": {"$ref": "#/$defs/rational"},
+            "plateau_log_width": {"$ref": "#/$defs/rational"}
+          },
+          "additionalProperties": false
+        },
+        "Q": {"$ref": "#/$defs/rational"},
+        "C": {"$ref": "#/$defs/rational"},
+        "P": {"$ref": "#/$defs/rational"},
+        "reduced_action": {"$ref": "#/$defs/rational"},
+        "reduced_radial_virial": {"$ref": "#/$defs/rational"},
+        "reduced_ratio_decimal_diagnostic": {"type": "string", "minLength": 1},
+        "status": {"const": "EXACT_RATIONAL_NEGATIVE_VIRIAL"}
+      },
+      "additionalProperties": false
+    },
+    "finite_lattice_transfer": {
+      "type": "object",
+      "required": [
+        "grid", "lattice_residual", "lattice_radial_derivative",
+        "uniform_expansions", "expansion_proof", "critical_dimension_step",
+        "limits", "finite_volume_consequence", "status"
+      ],
+      "properties": {
+        "grid": {"type": "string", "minLength": 1},
+        "lattice_residual": {"type": "string", "minLength": 1},
+        "lattice_radial_derivative": {"type": "string", "minLength": 1},
+        "uniform_expansions": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}},
+        "expansion_proof": {"type": "string", "minLength": 1},
+        "critical_dimension_step": {"type": "string", "minLength": 1},
+        "limits": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}},
+        "finite_volume_consequence": {"type": "string", "minLength": 1},
+        "status": {"const": "RIGOROUS_EVENTUAL_FINITE_LATTICE_SEQUENCE"}
+      },
+      "additionalProperties": false
+    },
+    "method_disposition": {
+      "type": "object",
+      "required": [
+        "pointwise_D_ge_2A", "pointwise_D_ge_A",
+        "pointwise_D_ge_cA_for_any_c_ge_0", "pointwise_D_ge_0",
+        "radial_convexity", "affine_virial_with_volume_defect",
+        "tuned_action_expectation_from_homogeneous_radial_Ward_identity",
+        "nonpointwise_Gibbs_weighted_block_estimate",
+        "annealed_zero_fiber_score_bound",
+        "actual_interacting_H_minus_one_second_moment", "continuum_limit",
+        "born_rule", "krein_reconstruction", "lorentzian_transfer"
+      ],
+      "additionalProperties": {"type": "string"}
+    },
+    "checks": {"type": "object", "minProperties": 18, "additionalProperties": {"const": true}},
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "required": ["repository_base_commit", "inputs", "exact_arithmetic", "analytic_arithmetic", "assumptions"],
+      "properties": {
+        "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "inputs": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/input"}},
+        "exact_arithmetic": {"type": "string", "minLength": 1},
+        "analytic_arithmetic": {"type": "string", "minLength": 1},
+        "assumptions": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-log-bubble-virial-no-go-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-log-bubble-virial-no-go.md"},
+    "independent_verifier": {"const": "reverse_physics/verify_bt_euclidean_log_bubble_virial_no_go.py"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "input": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    }
+  }
+}

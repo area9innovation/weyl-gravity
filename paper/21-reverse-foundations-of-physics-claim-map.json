@@ -144,6 +144,7 @@
     ],
     "bt_g4_whole_lattice_survival_status": "OPEN",
     "bt_g4_zero_loop_limit": "lim_(L->infinity) M4_zero(L)=111/(32*pi^4)",
+    "bt_gibbs_weighted_block_estimate_status": "OPEN",
     "bt_global_orthogonal_hessian_block_status": "OBSTRUCTED",
     "bt_integrated_lowest_mode_marginal_evenness_status": "PROVED",
     "bt_interacting_os_cross_sampler_z": -0.6439112862910602,
@@ -165,6 +166,7 @@
     },
     "bt_pointwise_action_weight_necessary_exponent": "AT_LEAST_ONE_HALF",
     "bt_pointwise_half_action_curvature_route_status": "OBSTRUCTED_AS_FORMULATED",
+    "bt_pointwise_nonnegative_virial_status": "OBSTRUCTED",
     "bt_pointwise_virial_constant_two_status": "POINTWISE_VIRIAL_CONSTANT_TWO_OBSTRUCTED",
     "bt_q_zero_uniform_lower_bound_status": "OBSTRUCTED",
     "bt_quartic_kernel_status": "PROVED",
@@ -220,7 +222,7 @@
     "bt_separable_conditional_variance_status": "PROVED",
     "bt_separable_lowest_mode_curvature_status": "PROVED",
     "bt_specific_zero_fiber_ward_status": "OPEN",
-    "bt_subunit_positive_virial_status": "OPEN",
+    "bt_subunit_positive_virial_status": "OBSTRUCTED",
     "bt_tuned_exact_score_status": "OPEN",
     "bt_tuned_remainder_compensation_status": "LEADING_POWER_COMPENSATION_FORCED",
     "bt_tuned_remainder_gap": {
@@ -558,6 +560,16 @@
       "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LAMBDA04_OS_KERNEL_OBSTRUCTION_V1.json",
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_LAMBDA04_OS_KERNEL_OBSTRUCTION_V1",
       "sha256": "9872d3d610daf5146fee84e19246319a7bcfa72748be116a2a8caa7b9f57f40b"
+    },
+    "bt_log_bubble_virial_no_go": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "HOMOGENEOUS_RADIAL_VIRIAL_ARCHITECTURE_OBSTRUCTED",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LOG_BUBBLE_VIRIAL_NO_GO_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_LOG_BUBBLE_VIRIAL_NO_GO_V1",
+      "sha256": "a181176f3a4a14c7e28405300f76e0733fe23dd0cdaa26f7f492871411e32e3f"
     },
     "bt_low_mode_uv_schur_obstruction": {
       "dependency_tags": [
@@ -974,7 +986,7 @@
       "sha256": "23a4316055d38694b937c17bb1e20f81241a4079cc7631420dc1e32e706fc93a"
     }
   },
-  "canonical_digest": "8f5392ef89a65259989955d1a9f5ed17fe20963d66b172a6ca441d91344a9986",
+  "canonical_digest": "2ee6084dfa4a7db3160e0527cca59fb614816caeccccbb390acd059b5437d4c8",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -987,6 +999,7 @@
     "bt_all_background_recentered_conditional_variance_established": true,
     "bt_annealed_center_second_moment_established": false,
     "bt_annealed_recentered_fiber_bound_established": false,
+    "bt_any_nonnegative_homogeneous_virial_obstructed": true,
     "bt_center_to_zero_fiber_score_reduction_established": true,
     "bt_centered_pointwise_fiber_domination_obstructed": true,
     "bt_complete_order_g_four_all_volume_zero_identity_obstructed": true,
@@ -1048,6 +1061,7 @@
     "bt_fixed_spacing_large_volume_score_established": false,
     "bt_free_h_minus_one_estimate_certified": true,
     "bt_free_os_obstruction_certified": true,
+    "bt_gibbs_weighted_block_estimate_established": false,
     "bt_global_orthogonal_hessian_block_obstructed": true,
     "bt_half_action_density_candidate_established": false,
     "bt_integrated_lowest_mode_marginal_evenness_established": true,
@@ -1059,6 +1073,7 @@
     "bt_normalized_lowest_mode_marginal_established": false,
     "bt_ordinary_eom_score_identity_established": true,
     "bt_pointwise_half_action_curvature_route_obstructed": true,
+    "bt_pointwise_nonnegative_radial_virial_obstructed": true,
     "bt_quartic_power_cancellation_established": false,
     "bt_quartic_score_kernel_established": true,
     "bt_radial_convexity_obstructed": true,
@@ -1461,6 +1476,18 @@
       ],
       "statement": "The Gate-V5 minimal ghost-antifield sign repair does not invalidate the certified strict 386-row unary causal Green-homotopy architecture. The 30 minimal components match its 5/10/10/5 endpoint blocks, and the pointwise involution I_356 direct-sum diag(I_5,I_10,I_10,-I_5) transports nilpotency, both Green-homotopy identities, causal support, orientation and the graded-adjoint relation with the transported pairing. The fixed finite wrapper is PRA, but common operator bytes, the full 386-row canonical pairing, q2/D causal compatibility and the weakest base of the imported analytic theorem remain open; Gate A is still fail closed.",
       "status": "SAME_THEORY_CAUSAL_CONVENTION_STABILITY_WITH_COMMON_BYTE_BOUNDARY"
+    },
+    {
+      "authorities": [
+        "bt_log_bubble_virial_no_go"
+      ],
+      "claim_id": "RF-26-BT-HOMOGENEOUS-VIRIAL-NO-GO",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "statement": "One fixed smooth logarithmic-annulus profile has positive continuum residual-square action and negative radial virial. Uniform Taylor--Peano transfer gives negative virial on every sufficiently fine finite four-torus, obstructing every homogeneous pointwise inequality D_L>=c*A_L with c>=0. This does not decide a Gibbs-weighted block estimate, the interacting H^-1 moment, or a continuum measure.",
+      "status": "EXACT_CONTINUUM_SIGN_WITH_EVENTUAL_FINITE_LATTICE_POINTWISE_METHOD_OBSTRUCTION"
     }
   ],
   "created": "2026-08-14",
@@ -1505,7 +1532,8 @@
     "the sign or scaling of the combined seven-kernel sum, complete M4, or the actual interacting H^-1 moment from the isolated negative L^2 carrier",
     "the common power coefficient of pairs 3, 4, 6, and 7, complete M4, or the actual interacting H^-1 moment from the three subpower-pair bounds",
     "the common power coefficient of pairs 4 and 7, tuned control of the subleading sector, complete M4, or the actual interacting H^-1 moment from the pair-3 and pair-6 bounds",
-    "noncancellation of the explicit pair-4 and pair-7 coefficient normal forms, tuned control, complete M4, or the actual interacting H^-1 moment from existence of the two limits alone"
+    "noncancellation of the explicit pair-4 and pair-7 coefficient normal forms, tuned control, complete M4, or the actual interacting H^-1 moment from existence of the two limits alone",
+    "failure of a Gibbs-weighted block estimate, divergence of the interacting moment, or nonexistence of a continuum measure from the logarithmic-bubble pointwise virial obstruction"
   ],
   "formal_object": {
     "coordinates": {
@@ -1658,13 +1686,13 @@
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
       "generator_sha256": "f46fd7cd15f93d83c0f2ec292fa9e0cbae6bdc9f7a503dd39ff61565424db364",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "ba621c56ab8073e637c1e1fc7b9130b077d8707097cd954c2186bdf65d622150",
+      "sha256": "608b82d2f8b78f2240f30b58af1e30b17addc5b659fdfb0614946f80ce8e81f9",
       "source_canonical_digest": "f9e3e05621daabf0824808c26c9ce9f2baffb8b5f689137592d21ce4ea003446",
       "source_path": "foundations/site/data.json",
       "source_sha256": "a9941dc6578aa395509968044f0cfb9bcb60486add8a6d8fd7cce2797967ba47"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "b813880bcf4239c37c6a865bc556b733f60d22944c07a60750defbbae76ffc6a"
+    "sha256": "bb907f571f4c5387a36b1723c9eb1ba7da47f51a0dc4ffd613e4ec52ed0c5a7b"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

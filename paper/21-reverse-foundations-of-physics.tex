@@ -1818,14 +1818,34 @@ four-torus it constructs a layered field with rational edge weights for which
  \left.\frac{d^2}{d\rho^2}A(\rho\psi)\right|_{\rho=1}<0.
 \]
 
-The signs follow from direct exact enumeration of all \(6^4\) sites and the
+The signs follow from direct enumeration of all \(6^4\) sites and the
 rational alternating bound
 \(\log(101/100)<29851/3000000\).  Hence radial convexity cannot imply
 \(D\geq A\), and \(D\geq A\) itself is false.  This strengthens the earlier
 coefficient-two counterexample without refuting the certified affine virial
-theorem.  A weaker pointwise inequality \(D\geq cA\) with \(0<c<1\), or a
-genuinely Gibbs-weighted block estimate for the whole score, remains open.
-In particular this method obstruction is not failure of the actual
+theorem.  At this stage a weaker pointwise inequality \(D\geq cA\) with
+\(0<c<1\) remained possible.
+
+Certificate
+
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_LOG_BUBBLE_VIRIAL_NO_GO_V1}
+
+closes that remaining homogeneous route.  It defines one fixed smooth radial
+profile on a logarithmic annulus in the flat four-torus.  With
+\(X=\Delta\psi\) and \(Y=|\nabla\psi|^2\), rational polynomial integration
+gives, after removing the positive factor \(2\pi^2\),
+
+\[
+ \frac12\int(X+Y)^2=\frac{19349691}{5173168}>0,
+ \qquad
+ \int(X+Y)(X+2Y)=-\frac{2896611}{1293292}<0.
+\]
+
+Uniform Taylor--Peano expansion transfers these limits to samples on the
+finite periodic \(L^4\) grids.  The sampled fields therefore have \(D_L<0\)
+for every sufficiently large \(L\).  No inequality \(D_L\geq cA_L\) with
+\(c\geq0\) can hold on all finite lattices.  The result obstructs a pointwise
+proof method; it does not decide a Gibbs-weighted block estimate or the actual
 interacting \(H^{-1}\) moment.
 
 \subsection{A finite BV contraction does not freeze the quantum theory}

@@ -61,6 +61,7 @@ AUTHORITY_PATHS = {
     "bt_complete_g4_lower_loop_bounds": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_LOWER_LOOP_BOUNDS_V1.json",
     "bt_tuned_remainder_compensation": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TUNED_REMAINDER_COMPENSATION_V1.json",
     "bt_radial_convexity_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RADIAL_CONVEXITY_OBSTRUCTION_V1.json",
+    "bt_log_bubble_virial_no_go": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LOG_BUBBLE_VIRIAL_NO_GO_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -155,6 +156,7 @@ def build() -> dict:
     bt_g4_lower_loops = loaded["bt_complete_g4_lower_loop_bounds"]
     bt_tuned_remainder = loaded["bt_tuned_remainder_compensation"]
     bt_radial_convexity = loaded["bt_radial_convexity_obstruction"]
+    bt_log_bubble = loaded["bt_log_bubble_virial_no_go"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -445,7 +447,9 @@ def build() -> dict:
             "bt_tuned_exact_score_status": bt_tuned_remainder["method_disposition"]["sign_or_scaling_of_exact_interacting_score"],
             "bt_radial_convexity_status": bt_radial_convexity["method_disposition"]["radial_convexity_of_A_rho_psi"],
             "bt_unit_virial_status": bt_radial_convexity["method_disposition"]["pointwise_D_ge_A"],
-            "bt_subunit_positive_virial_status": bt_radial_convexity["method_disposition"]["pointwise_D_ge_cA_for_0_lt_c_lt_1"],
+            "bt_subunit_positive_virial_status": bt_log_bubble["method_disposition"]["pointwise_D_ge_cA_for_any_c_ge_0"],
+            "bt_pointwise_nonnegative_virial_status": bt_log_bubble["method_disposition"]["pointwise_D_ge_0"],
+            "bt_gibbs_weighted_block_estimate_status": bt_log_bubble["method_disposition"]["nonpointwise_Gibbs_weighted_block_estimate"],
             "bt_g4_interacting_H_minus_one_status": "OPEN",
             "standard_reference_direct_obligations": next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")["coverage"]["direct"],
             "external_calibration_records": len(assembly_data["calibration_controls"][0]["records"]),
@@ -663,6 +667,13 @@ def build() -> dict:
                 "authorities": ["strict_386_causal_sign_transport", "lorentzian_weyl_bv_completion_atlas_v4", "classical_import_gate_v5"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
             },
+            {
+                "claim_id": "RF-26-BT-HOMOGENEOUS-VIRIAL-NO-GO",
+                "statement": "One fixed smooth logarithmic-annulus profile has positive continuum residual-square action and negative radial virial. Uniform Taylor--Peano transfer gives negative virial on every sufficiently fine finite four-torus, obstructing every homogeneous pointwise inequality D_L>=c*A_L with c>=0. This does not decide a Gibbs-weighted block estimate, the interacting H^-1 moment, or a continuum measure.",
+                "status": "EXACT_CONTINUUM_SIGN_WITH_EVENTUAL_FINITE_LATTICE_POINTWISE_METHOD_OBSTRUCTION",
+                "authorities": ["bt_log_bubble_virial_no_go"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -800,6 +811,9 @@ def build() -> dict:
             "bt_radial_convexity_obstructed": True,
             "bt_unit_homogeneous_virial_obstructed": True,
             "bt_subunit_positive_homogeneous_virial_established": False,
+            "bt_any_nonnegative_homogeneous_virial_obstructed": True,
+            "bt_pointwise_nonnegative_radial_virial_obstructed": True,
+            "bt_gibbs_weighted_block_estimate_established": False,
             "bt_exact_interacting_score_scaling_established": False,
             "bt_actual_interacting_H_minus_one_established": False,
             "bt_complete_order_g_four_explicit_momentum_kernel_established": False,
@@ -871,6 +885,7 @@ def build() -> dict:
             "the common power coefficient of pairs 3, 4, 6, and 7, complete M4, or the actual interacting H^-1 moment from the three subpower-pair bounds",
             "the common power coefficient of pairs 4 and 7, tuned control of the subleading sector, complete M4, or the actual interacting H^-1 moment from the pair-3 and pair-6 bounds",
             "noncancellation of the explicit pair-4 and pair-7 coefficient normal forms, tuned control, complete M4, or the actual interacting H^-1 moment from existence of the two limits alone",
+            "failure of a Gibbs-weighted block estimate, divergence of the interacting moment, or nonexistence of a continuum measure from the logarithmic-bubble pointwise virial obstruction",
         ],
         "authorities": authorities,
         "independent_checker": {

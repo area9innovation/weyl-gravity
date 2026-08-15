@@ -1,0 +1,194 @@
+{
+  "answer": "No. A fixed C2 radial logarithmic-annulus profile on the flat four-torus has positive continuum residual-square action but strictly negative radial virial. Its ramp polynomial and all reduced radial integrals are exact rationals. Sampling that fixed profile on the periodic L^4 grids gives uniform second-difference expansions r_L=h^2*(Delta psi+|grad psi|^2)+o(h^2) and t_L=h^2*(Delta psi+2|grad psi|^2)+o(h^2). Four-dimensional Riemann sums therefore give A_L -> 2*pi^2*(19349691/5173168)>0 and D_L -> 2*pi^2*(-2896611/1293292)<0. Hence D_L<0 for all sufficiently large finite L, which rules out D_L>=c*A_L for every c>=0. The affine bound with an additive volume defect remains valid, but it cannot produce the tuned low-temperature action estimate E[A]=O(g^2*N). This is a pointwise-method no-go, not divergence of the actual Gibbs moment.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_LOG_BUBBLE_VIRIAL_NO_GO_V1",
+  "checks": {
+    "C_is_minus_2781_over_77": true,
+    "P_is_886707_over_33592": true,
+    "Q_is_1173_over_22": true,
+    "actual_gibbs_H_minus_one_target_remains_open": true,
+    "affine_virial_theorem_is_not_refuted": true,
+    "amplitude_is_three_halves": true,
+    "continuum_action_is_strictly_positive": true,
+    "continuum_radial_virial_is_strictly_negative": true,
+    "eventual_finite_lattice_negative_virial_follows": true,
+    "every_nonnegative_homogeneous_constant_is_obstructed": true,
+    "lattice_sampling_converges_in_critical_dimension_four": true,
+    "no_continuum_born_krein_or_lorentzian_promotion": true,
+    "quintic_smoothstep_is_exact": true,
+    "ramp_and_plateau_widths_are_two_and_four": true,
+    "smoothstep_cube_integral_is_26_over_77": true,
+    "smoothstep_derivative_square_integral_is_10_over_7": true,
+    "smoothstep_fourth_integral_is_2549_over_8398": true,
+    "smoothstep_square_integral_is_181_over_462": true
+  },
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "divergence of the actual interacting action or H^-1 moment",
+    "failure of every Gibbs-weighted, block-spin, or multiscale estimate",
+    "failure of the certified affine virial/action-density theorem",
+    "a continuum Euclidean measure or its nonexistence",
+    "a Born rule, Krein reconstruction, or Lorentzian causal result"
+  ],
+  "exact_radial_integrals": {
+    "C": {
+      "denominator": 77,
+      "numerator": -2781
+    },
+    "P": {
+      "denominator": 33592,
+      "numerator": 886707
+    },
+    "Q": {
+      "denominator": 22,
+      "numerator": 1173
+    },
+    "change_of_variables": "With psi'(r)=-a*w(s)/r and s=log(r/r_minus), X=-a*(w'+2*w)/r^2 and Y=a^2*w^2/r^2; r^3*dr=r^4*ds cancels the denominator exactly.",
+    "definitions": [
+      "X=Delta psi, Y=|grad psi|^2",
+      "Q=integral X^2, C=integral X*Y, P=integral Y^2 after removing the common 2*pi^2 factor",
+      "A_cont/(2*pi^2)=(Q+2*C+P)/2",
+      "D_cont/(2*pi^2)=Q+3*C+2*P"
+    ],
+    "dimension": 4,
+    "parameters": {
+      "amplitude": {
+        "denominator": 2,
+        "numerator": 3
+      },
+      "each_ramp_log_width": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "plateau_log_width": {
+        "denominator": 1,
+        "numerator": 4
+      }
+    },
+    "reduced_action": {
+      "denominator": 5173168,
+      "numerator": 19349691
+    },
+    "reduced_radial_virial": {
+      "denominator": 1293292,
+      "numerator": -2896611
+    },
+    "reduced_ratio_decimal_diagnostic": "-0.5987921977 (not used to decide the sign)",
+    "smoothstep_integrals": {
+      "integral_W_cubed": {
+        "denominator": 77,
+        "numerator": 26
+      },
+      "integral_W_fourth": {
+        "denominator": 8398,
+        "numerator": 2549
+      },
+      "integral_W_prime_squared": {
+        "denominator": 7,
+        "numerator": 10
+      },
+      "integral_W_squared": {
+        "denominator": 462,
+        "numerator": 181
+      }
+    },
+    "sphere_area_factor": "|S^3|=2*pi^2>0",
+    "status": "EXACT_RATIONAL_NEGATIVE_VIRIAL"
+  },
+  "finite_lattice_transfer": {
+    "critical_dimension_step": "Because N=L^4=h^-4, A_L=(1/2)*sum r_L^2 and D_L=sum r_L*t_L are four-dimensional Riemann sums with no residual power of h.",
+    "expansion_proof": "Pair the plus and minus neighbor increments in each axis. C2 Taylor-Peano remainders are uniform on the compact torus; odd first-order terms cancel, while the exponential quadratic term supplies |grad psi|^2 for r_L and twice that term for t_L.",
+    "finite_volume_consequence": "There exists L0 such that every integer L>=L0 has A_L>0 and D_L<0 for this explicit sampled profile.",
+    "grid": "G_L=(Z/LZ)^4 with mesh h=1/L and sampled centered field psi_L(x)=psi(x/L)-mean(psi(x/L))",
+    "lattice_radial_derivative": "t_L(x)=sum_(y~x)exp(psi_L(y)-psi_L(x))*(psi_L(y)-psi_L(x))",
+    "lattice_residual": "r_L(x)=sum_(y~x)[exp(psi_L(y)-psi_L(x))-1]",
+    "limits": [
+      "A_L -> 2*pi^2*19349691/5173168 > 0",
+      "D_L -> -2*pi^2*2896611/1293292 < 0"
+    ],
+    "status": "RIGOROUS_EVENTUAL_FINITE_LATTICE_SEQUENCE",
+    "uniform_expansions": [
+      "h^-2*r_L -> Delta psi+|grad psi|^2 uniformly",
+      "h^-2*t_L -> Delta psi+2*|grad psi|^2 uniformly"
+    ]
+  },
+  "independent_verifier": "reverse_physics/verify_bt_euclidean_log_bubble_virial_no_go.py",
+  "lifecycle_state": "HOMOGENEOUS_RADIAL_VIRIAL_ARCHITECTURE_OBSTRUCTED",
+  "method_disposition": {
+    "actual_interacting_H_minus_one_second_moment": "OPEN",
+    "affine_virial_with_volume_defect": "PROVED_BY_PREDECESSOR",
+    "annealed_zero_fiber_score_bound": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "nonpointwise_Gibbs_weighted_block_estimate": "OPEN",
+    "pointwise_D_ge_0": "OBSTRUCTED",
+    "pointwise_D_ge_2A": "OBSTRUCTED_BY_PREDECESSOR",
+    "pointwise_D_ge_A": "OBSTRUCTED_BY_PREDECESSOR",
+    "pointwise_D_ge_cA_for_any_c_ge_0": "OBSTRUCTED",
+    "radial_convexity": "OBSTRUCTED_BY_PREDECESSOR",
+    "tuned_action_expectation_from_homogeneous_radial_Ward_identity": "OBSTRUCTED"
+  },
+  "missing_object_ledger": [
+    "a Gibbs-weighted estimate for the whole zero-fiber score that does not use a pointwise homogeneous virial inequality",
+    "a multiscale rarity estimate for logarithmic-bubble backgrounds under the actual normalized measure",
+    "the annealed lowest-mode center bound on the tuned refinement branch",
+    "after one-mode control, a dyadic Fourier-shell H^-1 estimate",
+    "tightness and continuum identification only after the actual moment theorem"
+  ],
+  "next_gate": "Abandon every homogeneous radial-virial proof, including attempts with a smaller positive constant. The negative bubbles are configurations, not yet probable backgrounds. The live question is their Gibbs rarity versus entropy: derive a block large-deviation estimate for the whole score or construct a weighted bubble gas that makes the actual normalized low-mode moment diverge.",
+  "provenance": {
+    "analytic_arithmetic": "The finite-lattice conclusion uses uniform C2 Taylor-Peano expansions and four-dimensional Riemann-sum convergence for one fixed explicit torus profile.",
+    "assumptions": [
+      "The finite periodic lattice action and radial derivative use the normalization fixed by the predecessor certificates.",
+      "The sampled profile is held fixed in physical torus coordinates while L tends to infinity.",
+      "Only LOCAL-ALGEBRAIC and EUCLIDEAN-SPECTRAL conclusions are drawn."
+    ],
+    "exact_arithmetic": "Fraction arithmetic evaluates W^2, W^3, W^4, (W')^2 and every reduced Q,C,P,A,D coefficient. No floating-point number decides a sign.",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RADIAL_CONVEXITY_OBSTRUCTION_V1.json",
+        "sha256": "b7570296184055d04f244ad1b8c095124990ddeaac33d6ba64c2ba87a61600ca"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_AFFINE_VIRIAL_ACTION_DENSITY_V1.json",
+        "sha256": "5ca8a2a7bc0d48300b0af031990e3c9c177fdec0d35f763666d2e397b495e1e0"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_SCHWINGER_DYSON_MODE_OBSTRUCTION_V1.json",
+        "sha256": "939bc4d65cd7c9c7e677eea2ac072cf9fe3efb2c91451a4ca5c9994fb1f90776"
+      }
+    ],
+    "repository_base_commit": "764cb8c99ccc80c9088b46e2ad9df2bd64bfc0b8"
+  },
+  "question": "Does any nonnegative volume-uniform homogeneous radial inequality D_L(psi)>=c*A_L(psi) survive on the four-dimensional periodic BT lattices?",
+  "report": "reverse_physics/reports/bt-euclidean-log-bubble-virial-no-go.md",
+  "result_kind": "exact smooth logarithmic-bubble continuum integral and rigorous eventual finite-lattice negative-virial sequence",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-log-bubble-virial-no-go-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-log-bubble-virial-no-go-v1",
+  "smooth_profile": {
+    "ambient_space": "unit flat four-torus, using a Euclidean ball of outer radius 1/8 inside its injectivity radius",
+    "constant_shift": "subtracting the torus mean changes no edge difference, action, or radial virial",
+    "field_derivative": "psi'(r)=-(3/2)*w(log(r/r_minus))/r; psi is constant inside and outside the annulus",
+    "inner_radius": "r_minus=exp(-8)/8",
+    "log_coordinate": "s=log(r/r_minus)",
+    "regularity": "W, W', and W'' match the constant pieces at both endpoints, so the radial field is C2 (indeed C3) on the torus",
+    "smoothstep": "W(z)=10*z^3-15*z^4+6*z^5 on 0<=z<=1",
+    "status": "EXPLICIT_FIXED_SMOOTH_PROFILE",
+    "window": [
+      "w(s)=0 for s<=0 and s>=8",
+      "w(s)=W(s/2) for 0<=s<=2",
+      "w(s)=1 for 2<=s<=6",
+      "w(s)=W((8-s)/2) for 6<=s<=8"
+    ]
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_log_bubble_virial_no_go.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_log_bubble_virial_no_go.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_log_bubble_virial_no_go"
+  ]
+}

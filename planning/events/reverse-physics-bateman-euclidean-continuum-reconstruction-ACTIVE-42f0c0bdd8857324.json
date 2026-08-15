@@ -1,0 +1,35 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-42f0c0bdd8857324",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {
+    "path": "planning/events/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-42f0c0bdd8857324.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "codex",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-15",
+    "seq": 25,
+    "predecessor": "sf:program/event/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-3a8f10c9b7246d51",
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-euclidean-continuum-reconstruction",
+      "to_state": "ACTIVE",
+      "note": "Logarithmic-bubble virial checkpoint: one fixed C3 radial profile on a logarithmic annulus in the flat four-torus has reduced residual-square action 19349691/5173168>0 and reduced radial virial -2896611/1293292<0, with both signs decided by exact rational smoothstep integration. Uniform C2 Taylor--Peano expansions and four-dimensional Riemann-sum convergence transfer the negative sign to samples on every sufficiently fine finite periodic L^4 lattice. Therefore D_L>=c*A_L is obstructed for every c>=0, including D_L>=0; the predecessor affine virial theorem with its additive volume defect remains valid. This is a pointwise-method no-go, not failure of the normalized Gibbs moment, interacting H^-1 control, a continuum measure, Born probability, Krein reconstruction, or Lorentzian physics. The live gate is a Gibbs-weighted block or large-deviation estimate comparing logarithmic-bubble rarity with entropy, with a weighted bubble-gas counterexample as the falsification branch."
+    },
+    "native": {
+      "authored_by": "exact rational polynomial producer, independent sparse-polynomial verifier, mutation tests, analytic finite-lattice transfer, and Paper 21 claim-map integration",
+      "policy": "append-only (SPEC 4.5); one content-addressed file per event; pointwise method failure is not promoted to failure of the actual Gibbs moment"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-euclidean-continuum-reconstruction"
+    }
+  ]
+}
