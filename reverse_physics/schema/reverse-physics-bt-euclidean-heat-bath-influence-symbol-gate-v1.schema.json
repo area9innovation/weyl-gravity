@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-heat-bath-influence-symbol-gate-v1.schema.json",
+  "title": "BT heat-bath influence symbol gate certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "mean_zero_geometry", "free_operator",
+    "free_scaling", "absolute_influence_obstruction", "exact_l4_fixture",
+    "interacting_response_identity", "method_disposition", "missing_object_ledger",
+    "next_gate", "does_not_establish", "provenance", "verification_commands",
+    "tier_receipt", "checks", "report", "schema", "verifier"
+  ],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "textArray": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "fraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "textObject": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/text"}}
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_HEAT_BATH_INFLUENCE_SYMBOL_GATE_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-heat-bath-influence-symbol-gate-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}, {"const": "EUCLIDEAN-SPECTRAL"}, {"const": "REDUCED-MODE"}],
+      "items": false
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/text"}, "question": {"$ref": "#/$defs/text"}, "answer": {"$ref": "#/$defs/text"},
+    "mean_zero_geometry": {
+      "type": "object", "additionalProperties": false,
+      "required": ["carrier", "site_direction", "orthogonal_split", "shift_equivalence", "summed_projectors"],
+      "properties": {
+        "carrier": {"$ref": "#/$defs/text"}, "site_direction": {"const": "h_o=delta_o-N^-1*1"},
+        "orthogonal_split": {"$ref": "#/$defs/text"}, "shift_equivalence": {"$ref": "#/$defs/text"},
+        "summed_projectors": {"$ref": "#/$defs/text"}
+      }
+    },
+    "free_operator": {
+      "type": "object", "additionalProperties": false,
+      "required": ["positive_laplacian", "free_precision", "fourier_dispersion", "bilaplacian_symbol", "site_curvature", "conditional_mean_coordinate", "summed_continuous_time_mean_generator", "simultaneous_response", "simultaneous_fourier_symbol"],
+      "properties": {
+        "positive_laplacian": {"$ref": "#/$defs/text"}, "free_precision": {"const": "K=L_G^2"},
+        "fourier_dispersion": {"$ref": "#/$defs/text"}, "bilaplacian_symbol": {"const": "K_hat(p)=omega(p)^2"},
+        "site_curvature": {"$ref": "#/$defs/text"}, "conditional_mean_coordinate": {"$ref": "#/$defs/text"},
+        "summed_continuous_time_mean_generator": {"const": "Markov drift=-K/72; positive relaxation operator R_HB=K/72 on H"},
+        "simultaneous_response": {"const": "T_HB=I-K/72"},
+        "simultaneous_fourier_symbol": {"const": "tau(p)=1-omega(p)^2/72"}
+      }
+    },
+    "free_scaling": {
+      "type": "object", "additionalProperties": false,
+      "required": ["lowest_axial_dispersion", "slow_heat_bath_rate", "asymptotic", "interpretation"],
+      "properties": {
+        "lowest_axial_dispersion": {"const": "omega_L=4*sin(pi/L)^2"},
+        "slow_heat_bath_rate": {"const": "gamma_L=omega_L^2/72=(2/9)*sin(pi/L)^4"},
+        "asymptotic": {"const": "gamma_L~(2*pi^4)/(9*L^4)"},
+        "interpretation": {"$ref": "#/$defs/text"}
+      }
+    },
+    "absolute_influence_obstruction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["nearest_neighbor_entries", "axial_distance_two_entries", "mixed_distance_two_entries", "total_off_diagonal_absolute_sum", "normalized_absolute_row_sum", "checkerboard_dispersion", "checkerboard_response", "conclusion"],
+      "properties": {
+        "nearest_neighbor_entries": {"$ref": "#/$defs/text"}, "axial_distance_two_entries": {"$ref": "#/$defs/text"},
+        "mixed_distance_two_entries": {"$ref": "#/$defs/text"}, "total_off_diagonal_absolute_sum": {"const": 184},
+        "normalized_absolute_row_sum": {"$ref": "#/$defs/fraction"}, "checkerboard_dispersion": {"const": 16},
+        "checkerboard_response": {"$ref": "#/$defs/fraction"}, "conclusion": {"$ref": "#/$defs/text"}
+      }
+    },
+    "exact_l4_fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sites", "nonzero_origin_row_entries", "diagonal", "off_diagonal_l1", "lowest_cosine_vector", "lowest_bilaplacian_eigenvalue", "lowest_heat_bath_rate", "checkerboard_bilaplacian_eigenvalue", "checkerboard_simultaneous_response"],
+      "properties": {
+        "sites": {"const": 256}, "nonzero_origin_row_entries": {"type": "integer", "minimum": 1},
+        "diagonal": {"const": 72}, "off_diagonal_l1": {"const": 184},
+        "lowest_cosine_vector": {"type": "array", "prefixItems": [{"const": 1}, {"const": 0}, {"const": -1}, {"const": 0}], "items": false},
+        "lowest_bilaplacian_eigenvalue": {"const": 4}, "lowest_heat_bath_rate": {"$ref": "#/$defs/fraction"},
+        "checkerboard_bilaplacian_eigenvalue": {"const": 256}, "checkerboard_simultaneous_response": {"$ref": "#/$defs/fraction"}
+      }
+    },
+    "interacting_response_identity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["conditional_law", "conditional_mean", "exact_derivative", "local_poincare_inputs", "response_bound", "status"],
+      "properties": {
+        "conditional_law": {"$ref": "#/$defs/text"}, "conditional_mean": {"$ref": "#/$defs/text"},
+        "exact_derivative": {"$ref": "#/$defs/text"}, "local_poincare_inputs": {"$ref": "#/$defs/textArray"},
+        "response_bound": {"$ref": "#/$defs/text"}, "status": {"const": "EXACT_REDUCTION_ESTIMATE_OPEN"}
+      }
+    },
+    "method_disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["uniform_quotient_site_poincare", "free_signed_heat_bath_symbol", "free_bilaplacian_slow_scaling", "absolute_dobrushin_contraction", "interacting_conditional_mean_response_identity", "conditional_mixed_hessian_square_bound", "signed_fourier_multiscale_influence", "volume_uniform_global_poincare", "volume_uniform_witten_coercivity", "normalized_lowest_mode_second_moment", "interacting_h_minus_one_bound", "interacting_tightness", "continuum_reconstruction", "ordinary_os_at_lambda_0p4", "born_rule", "krein_reconstruction", "lorentzian_transfer"],
+      "properties": {
+        "uniform_quotient_site_poincare": {"const": "IMPORTED_PROVED"}, "free_signed_heat_bath_symbol": {"const": "PROVED"},
+        "free_bilaplacian_slow_scaling": {"const": "PROVED"}, "absolute_dobrushin_contraction": {"const": "OBSTRUCTED_ALREADY_FREE"},
+        "interacting_conditional_mean_response_identity": {"const": "PROVED"}, "conditional_mixed_hessian_square_bound": {"const": "OPEN"},
+        "signed_fourier_multiscale_influence": {"const": "OPEN"}, "volume_uniform_global_poincare": {"const": "OPEN"},
+        "volume_uniform_witten_coercivity": {"const": "OPEN"}, "normalized_lowest_mode_second_moment": {"const": "OPEN"},
+        "interacting_h_minus_one_bound": {"const": "OPEN"}, "interacting_tightness": {"const": "NOT_ESTABLISHED"},
+        "continuum_reconstruction": {"const": "NOT_ESTABLISHED"},
+        "ordinary_os_at_lambda_0p4": {"const": "OBSTRUCTED_ON_DECLARED_L6_FIXTURE"},
+        "born_rule": {"const": "NOT_ESTABLISHED"}, "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"$ref": "#/$defs/textArray"}, "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/textArray"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "a1b8389ce74f60eb518d831e22e256ca225072e6"},
+        "inputs": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"$ref": "#/$defs/textArray"},
+    "tier_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "memory_policy", "elapsed_seconds_and_peak_kib", "repository_audits"],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/text"}, "tier_1": {"$ref": "#/$defs/text"}, "tier_2": {"$ref": "#/$defs/text"},
+        "tier_3": {"$ref": "#/$defs/text"}, "memory_policy": {"$ref": "#/$defs/text"},
+        "elapsed_seconds_and_peak_kib": {"$ref": "#/$defs/textObject"}, "repository_audits": {"$ref": "#/$defs/textObject"}
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true}, "passed": {"type": "integer", "minimum": 1}, "total": {"type": "integer", "minimum": 1},
+        "failures": {"type": "array", "maxItems": 0}, "details": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-heat-bath-influence-symbol-gate.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-heat-bath-influence-symbol-gate-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_heat_bath_influence_symbol_gate.py"}
+  }
+}
