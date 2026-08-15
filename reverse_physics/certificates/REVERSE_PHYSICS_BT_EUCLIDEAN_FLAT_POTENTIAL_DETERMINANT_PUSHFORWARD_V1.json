@@ -1,0 +1,522 @@
+{
+  "answer": "Yes. For every finite connected graph and every mean-zero diagonal potential u, let ell_0(u) be the simple lowest eigenvalue of H(u)=-Delta+diag(u), put c(u)=-ell_0(u)>=0, r(u)=u+c(u)*1, and K(u)=H(u)-ell_0(u)*I. This parametrizes the principal spectrahedral boundary globally. The graph surface Jacobian cancels the ground-state norm in the coarea factor, and the remaining tree factor is det_prime K. Hence the exact BT law is proportional to exp[-(||u||^2+N*ell_0(u)^2)/(2*lambda^2)]/det_prime K(u) du on the flat mean-zero potential space. The field observable is still the logarithm of K(u)'s positive ground state. On the three-vertex path at lambda=2/5, an exact rational fixture has negative directional curvature -5196641386825675/498983027333184 for the full negative-log density: the inverse-determinant curvature overcancels the positive Gaussian curvature. Thus global Brascamp--Lieb in the new coordinates is obstructed. The flat formula remains a sharper normalized reformulation, not a volume-uniform moment theorem.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_FLAT_POTENTIAL_DETERMINANT_PUSHFORWARD_V1",
+  "checks": {
+    "details": {
+      "centered_potential_has_zero_sum": true,
+      "coarea_jacobian_is_85_over_2": true,
+      "fixture_ground_vector_has_unit_geometric_mean": true,
+      "fixture_residual_is_exact": true,
+      "flat_density_factor_is_inverse_pseudodeterminant": true,
+      "flat_potential_pushforward_is_exact_reformulation_only": true,
+      "graph_surface_jacobian_is_34_over_25": true,
+      "ground_eigenvalue_is_minus_one_half": true,
+      "no_born_krein_or_lorentzian_promotion": true,
+      "orthogonal_norm_decomposition_is_exact": true,
+      "path_three_effective_curvature_is_strictly_negative": true,
+      "path_three_gaussian_curvature_is_positive": true,
+      "path_three_logdet_curvature_overcancels_gaussian": true,
+      "physical_exponent_is_275_over_16": true,
+      "principal_cofactors_are_exact": true,
+      "pseudodeterminant_equals_ground_norm_times_tree_density": true,
+      "pseudodeterminant_is_125_over_4": true,
+      "shifted_kinetic_kills_ground_vector": true,
+      "uniform_ground_state_moment_remains_open": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 19,
+    "total": 19
+  },
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "a volume-uniform inverse-determinant, spectral-gap, or ground-state-resolvent estimate",
+    "failure of every nonconvex integration-by-parts, localization, or resolvent estimate",
+    "the normalized lowest Fourier mode or actual interacting H^-1 moment",
+    "tightness, a continuum Euclidean BT measure, or limit identification",
+    "a Born rule or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_cycle_fixture": {
+    "boltzmann_exponent": {
+      "denominator": 16,
+      "numerator": 275
+    },
+    "centered_potential": [
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 2,
+        "numerator": -3
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 2,
+        "numerator": 3
+      }
+    ],
+    "coupling": {
+      "denominator": 5,
+      "numerator": 2
+    },
+    "flat_density_factor": {
+      "denominator": 125,
+      "numerator": 4
+    },
+    "graph": "four-cycle C4",
+    "graph_surface_jacobian": {
+      "denominator": 25,
+      "numerator": 34
+    },
+    "ground_eigenvalue": {
+      "denominator": 2,
+      "numerator": -1
+    },
+    "ground_norm_squared": {
+      "denominator": 4,
+      "numerator": 25
+    },
+    "mean_residual": {
+      "denominator": 2,
+      "numerator": 1
+    },
+    "omega": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 2
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      }
+    ],
+    "principal_cofactors": [
+      {
+        "denominator": 1,
+        "numerator": 5
+      },
+      {
+        "denominator": 1,
+        "numerator": 20
+      },
+      {
+        "denominator": 1,
+        "numerator": 5
+      },
+      {
+        "denominator": 4,
+        "numerator": 5
+      }
+    ],
+    "pseudodeterminant": {
+      "denominator": 4,
+      "numerator": 125
+    },
+    "residual": [
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": -1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 2
+      }
+    ],
+    "residual_coarea_jacobian": {
+      "denominator": 2,
+      "numerator": 85
+    },
+    "residual_norm_squared": {
+      "denominator": 2,
+      "numerator": 11
+    },
+    "shifted_kinetic_operator": [
+      [
+        {
+          "denominator": 2,
+          "numerator": 5
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 2,
+          "numerator": 5
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 4
+        }
+      ]
+    ],
+    "status": "EXACT_RATIONAL_FIXTURE",
+    "tree_density": {
+      "denominator": 1,
+      "numerator": 5
+    },
+    "unnormalized_flat_density": "(4/125)*exp(-275/16)",
+    "unshifted_operator": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 2,
+          "numerator": 7
+        }
+      ]
+    ]
+  },
+  "exact_path_three_convexity_obstruction": {
+    "centered_potential": [
+      {
+        "denominator": 300,
+        "numerator": -10361
+      },
+      {
+        "denominator": 300,
+        "numerator": 20779
+      },
+      {
+        "denominator": 150,
+        "numerator": -5209
+      }
+    ],
+    "conclusion": "The negative logarithm of the flat-potential density is not globally convex, already on P3 at lambda=2/5.",
+    "direction": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": -1
+      }
+    ],
+    "full_effective_potential_second_derivative": {
+      "denominator": 498983027333184,
+      "numerator": -5196641386825675
+    },
+    "full_effective_potential_second_derivative_decimal": -10.41446522660127,
+    "gaussian_effective_potential_second_derivative": {
+      "denominator": 298613421504,
+      "numerator": 28994309146675
+    },
+    "graph": "three-vertex path P3",
+    "ground_eigenvalue": {
+      "denominator": 300,
+      "numerator": -10121
+    },
+    "ground_norm_squared": {
+      "denominator": 1,
+      "numerator": 10026
+    },
+    "log_pseudodeterminant_second_derivative": {
+      "denominator": 31186439208324,
+      "numerator": -3352883248182475
+    },
+    "log_pseudodeterminant_second_derivative_terms": [
+      {
+        "denominator": 20790959472216,
+        "numerator": 11388224841875
+      },
+      {
+        "denominator": 866289978009,
+        "numerator": -94083796334600
+      },
+      {
+        "denominator": 62372878416648,
+        "numerator": 34102165200625
+      }
+    ],
+    "lowest_eigenvalue_first_derivative": {
+      "denominator": 3342,
+      "numerator": -3325
+    },
+    "lowest_eigenvalue_second_derivative": {
+      "denominator": 18663338844,
+      "numerator": -1948370375
+    },
+    "omega": [
+      {
+        "denominator": 1,
+        "numerator": 5
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 100
+      }
+    ],
+    "shifted_kinetic_operator": [
+      [
+        {
+          "denominator": 5,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 105
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 100,
+          "numerator": 1
+        }
+      ]
+    ],
+    "status": "EXACT_GLOBAL_CONVEXITY_OBSTRUCTION"
+  },
+  "flat_boundary_graph_theorem": {
+    "boundary_shift": "c(u)=-ell_0(u)>=0, r(u)=u+c(u)*1, K(u)=H(u)-ell_0(u)*I",
+    "carrier": "H={u in R^N: sum_x u_x=0}",
+    "global_parametrization": "u->r(u) is an analytic bijection from H onto the principal boundary of {-Delta+diag(r)>=0}; its inverse subtracts the arithmetic mean of r",
+    "lowest_eigenvalue": "ell_0(u) is simple with a strictly positive eigenvector; ell_0(u)<=0 by the constant-vector Rayleigh quotient",
+    "scope": "every finite connected undirected graph with N vertices",
+    "status": "PROVED",
+    "unshifted_operator": "H(u)=-Delta+diag(u)"
+  },
+  "flat_normalized_pushforward": {
+    "density": "dnu(u)=Z^(-1)*exp[-(||u||_2^2+N*ell_0(u)^2)/(2*lambda^2)]/det_prime(H(u)-ell_0(u)*I) du",
+    "interpretation": "the surface geometry and separate directed-tree weight are replaced by one explicit inverse spectral determinant on a flat Gaussian-confined potential carrier",
+    "observable": "psi(u)=log(Omega(u))-N^(-1)*sum_x log(Omega_x(u)); the continuum-normalized Fourier field is psi_hat/lambda",
+    "residual_norm": "||r(u)||_2^2=||u||_2^2+N*ell_0(u)^2",
+    "status": "EXACT_NORMALIZED_REFORMULATION_ONLY"
+  },
+  "independent_verifier": "reverse_physics/verify_bt_euclidean_flat_potential_determinant_pushforward.py",
+  "lifecycle_state": "FLAT_RANDOM_SCHRODINGER_REFORMULATION_PROVED_GLOBAL_CONVEXITY_OBSTRUCTED",
+  "method_disposition": {
+    "actual_interacting_h_minus_one_second_moment": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "flat_mean_zero_potential_parametrization": "PROVED",
+    "global_log_concavity_or_brascamp_lieb_in_flat_potential": "OBSTRUCTED_BY_EXACT_P3_NEGATIVE_CURVATURE",
+    "interacting_tightness": "NOT_ESTABLISHED",
+    "inverse_pseudodeterminant_ensemble": "PROVED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "nonconvex_determinant_or_resolvent_estimate": "OPEN",
+    "normalized_lowest_mode_second_moment": "OPEN",
+    "ordinary_os_at_lambda_0p4": "OBSTRUCTED_BY_PREDECESSOR",
+    "residual_spectrahedral_boundary_coordinates": "IMPORTED_PROVED",
+    "surface_ground_norm_tree_reduction": "PROVED"
+  },
+  "missing_object_ledger": [
+    "an L-uniform estimate for the log-ground-state Fourier observable under the inverse-pseudodeterminant ensemble",
+    "a nonconvex integration-by-parts, localization, or determinant-resolvent estimate replacing the obstructed global Brascamp-Lieb route",
+    "a dyadic-shell summation proving or obstructing the actual interacting H^-1 moment",
+    "tightness in a compactly weaker topology only after a positive moment theorem"
+  ],
+  "next_gate": "Use the exact flat density without assuming global convexity. Derive its nonconvex integration-by-parts identity and test whether the inverse determinant cancels the dangerous ground-state resolvent in the lowest log-ground-state Fourier moment; alternatively construct an exact volume sequence obstructing that combined estimate.",
+  "provenance": {
+    "arithmetic": "Exact Fraction arithmetic for the C4 graph, residual, operators, cofactors, pseudodeterminant, graph Jacobian, and density factor; the general proof uses simple-ground-eigenvalue perturbation, coarea, and the symmetric and directed matrix-tree identities.",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_SPECTRAHEDRAL_PUSHFORWARD_V1.json",
+        "sha256": "31bc26ff9822cdfc663b5fb0fc47e7970f592afbc6526f1aadf2e4447dd324e0"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_TILT_JACOBIAN_CANCELLATION_V1.json",
+        "sha256": "04f79c742344a615b82275850c7e90deb73cf81423847c985f166e0d5edda057"
+      }
+    ],
+    "repository_base_commit": "f7a096d2"
+  },
+  "question": "Can the normalized residual-boundary law be written over a flat linear carrier, eliminating the moving surface element and the separate ground-state/tree factors?",
+  "report": "reverse_physics/reports/bt-euclidean-flat-potential-determinant-pushforward.md",
+  "result_kind": "exact finite-graph flat-potential parametrization of the BT residual boundary measure by a ground-shifted Schrodinger pseudodeterminant ensemble, with an exact obstruction to global log-concavity at the physical coupling",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-flat-potential-determinant-pushforward-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-flat-potential-determinant-pushforward-v1",
+  "surface_and_tree_reduction": {
+    "directed_tree_identity": "cof_i(K)=Omega_i^2*tau",
+    "graph_surface_jacobian": "Jac_graph(u)=sqrt(N)*||Omega^2||_2/||Omega||_2^2",
+    "imported_residual_coarea_jacobian": "Jac_H=sqrt(N)*||Omega^2||_2*tau",
+    "measure_factor": "Jac_graph/Jac_H=1/(||Omega||_2^2*tau)=1/det_prime(K)",
+    "normalized_ground_state": "a_x=Omega_x^2/||Omega||_2^2 and D c(u)[h]=-<a,h> for h in H",
+    "pseudodeterminant_identity": "det_prime(K)=||Omega||_2^2*tau",
+    "status": "PROVED",
+    "symmetric_cofactor_identity": "cof_i(K)=det_prime(K)*Omega_i^2/||Omega||_2^2"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_flat_potential_determinant_pushforward.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_flat_potential_determinant_pushforward.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_flat_potential_determinant_pushforward"
+  ]
+}
