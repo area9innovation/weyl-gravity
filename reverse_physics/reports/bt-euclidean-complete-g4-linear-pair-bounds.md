@@ -285,6 +285,13 @@ soft/hard overlap, or proves \(c_4+c_7\ne0\). The proof gate is now sharply
 defined: establish both limits with a common region decomposition and obtain
 disjoint exact bounds for the two constants.
 
+The successor certificate
+`REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_TWO_PAIR_COEFFICIENT_NORMAL_FORM_V1`
+proves that both normalized limits exist. It gives an explicit negative
+integer-sum formula with \(c_4<-0.01613\), and it collapses \(c_7\) to one
+positive finite Brillouin-zone integral. A disjoint upper bound for \(c_7\),
+and hence noncancellation, remains open.
+
 ## Claim boundary
 
 This certificate does not establish boundedness or divergence after tuned

@@ -252,6 +252,10 @@ bt_euclidean_complete_g4_linear_pair_bounds.py
                                        proves O(L) and O(L log L) bounds for
                                        pairs 3 and 6, reducing the leading
                                        power gate to negative 4 versus positive 7
+bt_euclidean_complete_g4_two_pair_coefficient_normal_form.py
+                                       proves common-scale limits for pairs 4
+                                       and 7, an exact negative pair-4 gap,
+                                       and the collapsed positive pair-7 integral
 bt_four_point_bubble_log_jet.py        first virtual coefficient: arbitrary-mass
                                        bubble logarithm and four-leg interference jet
 bt_triangle_box_log_jet.py             complete triangle and box logarithmic jets;

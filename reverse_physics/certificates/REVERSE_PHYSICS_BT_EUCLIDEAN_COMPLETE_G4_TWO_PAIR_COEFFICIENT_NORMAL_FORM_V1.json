@@ -1,0 +1,146 @@
+{
+  "answer": "Both limits exist on the N*omega(p_L) normalization. Pair 4 has the exact negative coefficient c_4=-(2*A_4/pi^4)*S_4 and exact rational truncations prove c_4<-0.01613. Pair 7 has an exact positive finite Brillouin-zone coefficient; its six-term soft derivative collapses to [omega(q)sin(q_1)+omega(r)sin(r_1)+omega(-q-r)sin(-q_1-r_1)]/6. No certified upper bound below 0.01613 is yet available, so noncancellation, tuned control, complete M4, and the actual interacting H^-1 estimate remain open.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_TWO_PAIR_COEFFICIENT_NORMAL_FORM_V1",
+  "checks": {
+    "actual_interacting_H_minus_one_remains_open": true,
+    "combined_coefficient_remains_open": true,
+    "common_normalization_is_fixed": true,
+    "no_continuum_born_krein_or_lorentzian_promotion": true,
+    "pair_four_is_strictly_negative": true,
+    "pair_seven_is_strictly_positive_and_finite": true,
+    "producer_checks_all_pass": true
+  },
+  "comparison_gate": {
+    "conditional_reduction": "It is enough to prove c_7<0.01613. A sharper comparison may use axis symmetry and a lattice vector-dispersion inequality, but no such inequality is certified here.",
+    "noncancellation": "OPEN",
+    "pair_four_bound": "c_4<-0.01613",
+    "pair_seven_sign": "c_7>0",
+    "status": "TWO_EXPLICIT_CONSTANTS_PROVED_NUMERICAL_SEPARATION_OPEN"
+  },
+  "created": "2026-08-15",
+  "data": "reverse_physics/data/bt_euclidean_complete_g4_two_pair_coefficient_normal_form_v1.json",
+  "data_sha256": "f8108bf64678d8ae54307ea8acaa31f37ee232fdf0ba15153629a9982c28917d",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "that c_4+c_7 is nonzero or has either sign",
+    "a tuned-g_L^4 bound or divergence for the combined pair-4/pair-7 sector",
+    "the sign or scaling of complete M4 after lower-loop recombination",
+    "boundedness or divergence of the nonperturbative Gibbs score or actual interacting H^-1 moment",
+    "tightness, continuum identification, a Born rule, Krein reconstruction, or any LORENTZIAN-CAUSAL statement"
+  ],
+  "independent_verifier": "reverse_physics/verify_bt_euclidean_complete_g4_two_pair_coefficient_normal_form.py",
+  "lifecycle_state": "TWO_PAIR_COEFFICIENT_NORMAL_FORMS_PROVED_COMPARISON_OPEN",
+  "method_disposition": {
+    "actual_interacting_h_minus_one_second_moment": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "combined_pair_4_pair_7_coefficient": "OPEN",
+    "complete_M4_large_volume_sign_and_scaling": "OPEN",
+    "complete_seven_kernel_large_volume_sign_and_scaling": "OPEN",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "nonperturbative_annealed_score": "OPEN",
+    "pair_4_coefficient_normal_form": "PROVED_STRICTLY_NEGATIVE",
+    "pair_7_coefficient_normal_form": "PROVED_STRICTLY_POSITIVE_FINITE"
+  },
+  "missing_object_ledger": [
+    "a certified upper interval for c_7 with endpoint below 0.01613, or another proof that c_4+c_7 is nonzero",
+    "a signed subleading estimate if c_4+c_7 cancels",
+    "lower-loop recombination with the complete M4 coefficient",
+    "a volume-uniform nonperturbative center or score estimate",
+    "the actual interacting H^-1 second moment"
+  ],
+  "next_gate": "Prove an exact upper bound c_7<0.01613 (or a directly disjoint interval for c_7) while preserving the collapsed numerator. Then c_4+c_7<0 follows; only afterward restore lower-loop terms and test tuned complete M4.",
+  "normalization": {
+    "coefficient_scale": "I_j(L)/(N*omega(p_L))",
+    "external_mode": "p_L=(2*pi/L)*e_1",
+    "status": "COMMON_NORMALIZATION_FIXED",
+    "volume": "N=L^4"
+  },
+  "pair_four": {
+    "A_4_lower": {
+      "denominator": 187072209578355573530071658587684226515959365500928,
+      "numerator": 28829640846623716332512550184042564064138800872457
+    },
+    "A_4_lower_derivation": "A_4=(1/8)*sum_(m>=0) Prob(S_m=0); retain the nonnegative even returns through 60 steps.",
+    "S_4_cube_lower": {
+      "denominator": 62077398349330619161715322136515227326152381160967304004718397671181743754783193213789289227912886782424113266039516708896479963385115248400365124485554104017707198736747146117840325099031324497026155554618236273805571396595364369843727262725556227362970877909844110553957527574863076819442113107257608542302360354627534153375630056775553132937268451557444543766137903368809659054952673433920168309316379520770387176255952510532289622500000000,
+      "numerator": 317140284644175043538762616492904065624046378261972578842369942211519458152410310628475945203855134498005436817205438347075540747350852357751949258325102483554075998693383071918245861858660748464932507280254294487827682551665419920755846551691936045346646534263051884578572777249560190646301306763199608651747081426460158912780644419235622234553544407224116746606505813966000306117623234598510612886692110070405810680896576244025180983703956939
+    },
+    "coefficient": "c_4=-(2*A_4/pi^4)*S_4",
+    "cube_radius": 10,
+    "dominating_tail": "After division by N*omega(p), the absolute q=theta*n summand is bounded by a constant times [rho(n)^2*max(1,rho(n+e_1))^4]^(-1), which is summable in four dimensions.",
+    "finite_volume_definition": "I_4(L)=-(216/N)*sum_(q!=0,-p) K3(p,q,-p-q)^2*Y_L(q)/[omega(q)^4*omega(p+q)^2]",
+    "green_constant": "A_4=int_BZ d^4k/[(2*pi)^4*omega(k)]",
+    "integer_sum": "S_4=sum_(n in Z^4 minus {0,-e_1}) (abs(n)^2-n_1^2)^2/[abs(n)^6*abs(n+e_1)^4]",
+    "limit": "lim_(L->infinity) I_4(L)/(N*omega(p_L))=c_4",
+    "magnitude_lower": {
+      "denominator": 24631083408098668859277854577220875790063887517056792701215773828233825744099763048923622138142539074949179954507095750677436111820329349744518917977502324880824706773925530383574643893684608747878754443785485352436770660290596506706655455152329607937124810277874117042937059966111590867169133090931309157391936217666655199297534005224271590796025140875791172602232164128041913734924260614404079411761515292107675595166379548188966119323961273671762971955586445657548406273079750164480000000000,
+      "numerator": 397523500186416564626486530753273074389684425938029024062554636323880246362951257355729351089495226132607884866986408815432979266145528221374224331784523311007214782844603897326637261749713482272125524375852132276866368812836851086649857513187126198790194130938417632210086629706460937909169993462988272484003526231444136822232355105263836874610436960255838314541469935464465539852893813998182509624839295864562369364277947478290767663850301529233079011777920578489973922183490209501580831701
+    },
+    "magnitude_lower_decimal_floor": "0.01613",
+    "pi_upper": {
+      "denominator": 7,
+      "numerator": 22
+    },
+    "soft_cubic_limit": "theta^(-4)*K3(theta*e_1,theta*n,-theta*(n+e_1))=>(-2/3)*(abs(n)^2-n_1^2)",
+    "status": "EXACT_STRICTLY_NEGATIVE_COEFFICIENT_NORMAL_FORM_AND_RATIONAL_GAP",
+    "tadpole_limit": "Y_L(theta*n)/(N*theta^2)=>(A_4/3)*abs(n)^2",
+    "walk_cutoff_half_steps": 30
+  },
+  "pair_seven": {
+    "block_derivative_definition": "D(S)=d/dtheta B({theta*e_1} union S)|_(theta=0)",
+    "coefficient": "c_7=48*int_BZxBZ D_4(q,r)^2/[omega(q)^2*omega(r)^2*omega(q+r)^2] d^4q*d^4r/(2*pi)^8",
+    "collapsed_derivative": "D_4(q,r)=[omega(q)*sin(q_1)+omega(r)*sin(r_1)+omega(s)*sin(s_1)]/6, s=-q-r",
+    "domination": "The one-soft all-leg estimate abs(K4(p,q,r,s))<=(14/3)*sqrt(omega(p)*omega(q)*omega(r)*omega(s)) dominates the normalized Riemann summand by (196/9)/[omega(q)*omega(r)*omega(s)], an integrable three-Green convolution in eight dimensions.",
+    "finite_volume_definition": "I_7(L)=(48/N)*sum_(q,r) K4(-q-r-p,p,r,q)^2/[omega(q)^2*omega(r)^2*omega(q+r+p)^2]",
+    "limit": "lim_(L->infinity) I_7(L)/(N*omega(p_L))=c_7",
+    "positive_fixture": "At q=r=(pi/2)*e_1 and s=-pi*e_1, the collapsed numerator is nonzero; hence c_7>0.",
+    "six_term_derivative": "24*D_4=D(r,q)*omega(s)+D(s,q)*omega(r)+D(s,r)*omega(q)+D(s)*B(r,q)+D(q)*B(s,r)+D(r)*B(s,q), s=-q-r",
+    "status": "EXACT_STRICTLY_POSITIVE_FINITE_COEFFICIENT_NORMAL_FORM"
+  },
+  "producer": "reverse_physics/bt_euclidean_complete_g4_two_pair_coefficient_normal_form.py",
+  "producer_sha256": "e56269868fcd3d2eb6340665782c343f631ee2c7dca2810605c76092b9ded1db",
+  "provenance": {
+    "assumptions": [
+      "The certified complete-g4 atlas and two-pair reduction are imported unchanged by content hash.",
+      "The massless covariance zero mode is omitted before cancellations and limits.",
+      "The external mode is p_L=(2*pi/L)e_1 and L tends to infinity through integers.",
+      "The result is perturbative and EUCLIDEAN-SPECTRAL only."
+    ],
+    "exact_arithmetic": "All return probabilities, finite integer sums, coefficient prefactors, and the c_4 rational gap use fractions.Fraction; no binary floating point enters the certified decision.",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_LINEAR_PAIR_BOUNDS_V1.json",
+        "sha256": "abec9ada050994e7f7a7a76ad497f172d875cbfe6c32816ef552db48154f183d"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_SEVEN_KERNEL_REDUCTION_V1.json",
+        "sha256": "b31ee4ff3454290e4ca0bd5214226d9068c4598f4e57f4aab9011a8e34a789d8"
+      },
+      {
+        "path": "reverse_physics/bt_euclidean_complete_g4_two_pair_coefficient_normal_form.py",
+        "sha256": "e56269868fcd3d2eb6340665782c343f631ee2c7dca2810605c76092b9ded1db"
+      },
+      {
+        "path": "reverse_physics/data/bt_euclidean_complete_g4_two_pair_coefficient_normal_form_v1.json",
+        "sha256": "f8108bf64678d8ae54307ea8acaa31f37ee232fdf0ba15153629a9982c28917d"
+      }
+    ],
+    "repository_base_commit": "dd023eef41548ba8c3fa1c75ffc27dd754dfebfd"
+  },
+  "question": "Do the two surviving inversion pairs have rigorous common-scale limits, and can their coefficients yet be proved not to cancel?",
+  "report": "reverse_physics/reports/bt-euclidean-complete-g4-two-pair-coefficient-normal-form.md",
+  "result_kind": "exact large-volume coefficient normal forms for the two remaining complete-g4 inversion pairs",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-complete-g4-two-pair-coefficient-normal-form-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-complete-g4-two-pair-coefficient-normal-form-v1",
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_complete_g4_two_pair_coefficient_normal_form.py --check",
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_complete_g4_two_pair_coefficient_normal_form_decision.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_complete_g4_two_pair_coefficient_normal_form.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_complete_g4_two_pair_coefficient_normal_form"
+  ]
+}
