@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-canonical-radial-pointwise-obstruction-v1.schema.json",
+  "title": "BT Euclidean canonical radial pointwise obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer", "definitions",
+    "additive_contraction_fixture", "canonical_score_fixture",
+    "annealed_boundary", "method_disposition", "missing_object_ledger",
+    "next_gate", "does_not_establish", "provenance", "verification_commands",
+    "tier_receipt", "checks", "schema", "report", "verifier"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_CANONICAL_RADIAL_POINTWISE_OBSTRUCTION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-canonical-radial-pointwise-obstruction-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "POINTWISE_RADIAL_SCORE_METHODS_OBSTRUCTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "definitions": {
+      "type": "object", "additionalProperties": false,
+      "required": ["phase", "constant_frame", "canonical_score", "marginal_score", "exact_normalization", "radial_normalization"],
+      "properties": {
+        "phase": {"$ref": "#/$defs/text"},
+        "constant_frame": {"$ref": "#/$defs/text"},
+        "canonical_score": {"$ref": "#/$defs/text"},
+        "marginal_score": {"const": "bar_S(F)=E[S|F]=-grad_F log rho_F"},
+        "exact_normalization": {"const": "E[F_k*bar_S_i(F)]=delta_ik"},
+        "radial_normalization": {"const": "E[F dot bar_S(F)]=2"}
+      }
+    },
+    "additive_contraction_fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["lattice", "transverse_multiplicity", "log2_exponents", "reciprocal_integer_weights", "reciprocal_marginal", "phase_cosine", "phase_sine_sqrt3_coefficients", "field_phase_over_log2", "constant_frame_phase_derivative", "field_dot_derivative_over_log2", "sign", "disposition"],
+      "properties": {
+        "lattice": {"const": "periodic 6^4 torus, axial field repeated transversely"},
+        "transverse_multiplicity": {"const": 216},
+        "log2_exponents": {"$ref": "#/$defs/intVector6"},
+        "reciprocal_integer_weights": {"$ref": "#/$defs/positiveIntVector6"},
+        "reciprocal_marginal": {"$ref": "#/$defs/fractionVector6"},
+        "phase_cosine": {"$ref": "#/$defs/fractionVector6"},
+        "phase_sine_sqrt3_coefficients": {"$ref": "#/$defs/fractionVector6"},
+        "field_phase_over_log2": {"$ref": "#/$defs/fractionVector2"},
+        "constant_frame_phase_derivative": {"$ref": "#/$defs/fractionVector2"},
+        "field_dot_derivative_over_log2": {"$ref": "#/$defs/fraction"},
+        "sign": {"const": "F dot (X_1 F)=(540/17)*log(2)>0"},
+        "disposition": {"const": "POINTWISE_PHASE_NORM_CONTRACTION_FALSE"}
+      }
+    },
+    "canonical_score_fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["lattice", "transverse_multiplicity", "lambda", "log2_exponents", "omega_values", "reciprocal_integer_weights", "reciprocal_marginal", "residual", "gram", "gram_inverse", "ward_score", "connection", "canonical_score", "field_phase_over_log2", "field_dot_score_over_log2", "sign", "disposition"],
+      "properties": {
+        "lattice": {"const": "periodic 4^4 torus, axial field repeated transversely"},
+        "transverse_multiplicity": {"const": 64},
+        "lambda": {"$ref": "#/$defs/fraction"},
+        "log2_exponents": {"$ref": "#/$defs/intVector4"},
+        "omega_values": {"$ref": "#/$defs/fractionVector4"},
+        "reciprocal_integer_weights": {"$ref": "#/$defs/positiveIntVector4"},
+        "reciprocal_marginal": {"$ref": "#/$defs/fractionVector4"},
+        "residual": {"$ref": "#/$defs/fractionVector4"},
+        "gram": {"$ref": "#/$defs/fractionMatrix2"},
+        "gram_inverse": {"$ref": "#/$defs/fractionMatrix2"},
+        "ward_score": {"$ref": "#/$defs/fractionVector2"},
+        "connection": {"$ref": "#/$defs/fractionVector2"},
+        "canonical_score": {"$ref": "#/$defs/fractionVector2"},
+        "field_phase_over_log2": {"$ref": "#/$defs/fractionVector2"},
+        "field_dot_score_over_log2": {"$ref": "#/$defs/fraction"},
+        "sign": {"const": "F dot S=-(563/3)*log(2)<0"},
+        "disposition": {"const": "POINTWISE_FIELD_SCORE_RADIAL_MONOTONICITY_FALSE"}
+      }
+    },
+    "annealed_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["surviving_object", "surviving_identity", "why_fixture_is_not_marginal_no_go", "required_next_estimate", "status"],
+      "properties": {
+        "surviving_object": {"const": "bar_S(F)=E[S|F]"},
+        "surviving_identity": {"const": "E[F dot bar_S(F)]=2"},
+        "why_fixture_is_not_marginal_no_go": {"$ref": "#/$defs/text"},
+        "required_next_estimate": {"$ref": "#/$defs/text"},
+        "status": {"const": "ANNEALED_COERCIVITY_OPEN"}
+      }
+    },
+    "method_disposition": {"$ref": "#/$defs/textObject"},
+    "missing_object_ledger": {"$ref": "#/$defs/textArray"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/textArray"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "023cfc8abf180316fcf7e7f341335ac27677c5d5"},
+        "inputs": {
+          "type": "array", "minItems": 1, "maxItems": 1,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"const": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CANONICAL_PHASE_SCORE_CONNECTION_V1.json"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"$ref": "#/$defs/textArray"},
+    "tier_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "memory_policy", "elapsed_seconds_and_peak_kib", "repository_audits"],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/text"}, "tier_1": {"$ref": "#/$defs/text"},
+        "tier_2": {"$ref": "#/$defs/text"}, "tier_3": {"$ref": "#/$defs/text"},
+        "memory_policy": {"$ref": "#/$defs/text"},
+        "elapsed_seconds_and_peak_kib": {"$ref": "#/$defs/textObject"},
+        "repository_audits": {"$ref": "#/$defs/textObject"}
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true}, "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+      }
+    },
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-canonical-radial-pointwise-obstruction-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-canonical-radial-pointwise-obstruction.md"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_canonical_radial_pointwise_obstruction.py"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "textArray": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "textObject": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "fraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "fractionVector2": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/fraction"}},
+    "fractionVector4": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/fraction"}},
+    "fractionVector6": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/fraction"}},
+    "fractionMatrix2": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/fractionVector2"}},
+    "intVector4": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer"}},
+    "intVector6": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "integer"}},
+    "positiveIntVector4": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer", "minimum": 1}},
+    "positiveIntVector6": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "integer", "minimum": 1}}
+  }
+}
