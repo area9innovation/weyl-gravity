@@ -143,6 +143,7 @@ def main() -> int:
     bt_full_phase_current = json.loads((ROOT / data["authorities"]["bt_full_phase_current_gate"]["path"]).read_text())
     bt_weighted_current_v2 = json.loads((ROOT / data["authorities"]["bt_full_phase_weighted_current_gate_v2"]["path"]).read_text())
     bt_corrector_energy_no_go = json.loads((ROOT / data["authorities"]["bt_flux_corrector_pointwise_energy_no_go"]["path"]).read_text())
+    bt_corrector_slab_fiber = json.loads((ROOT / data["authorities"]["bt_corrector_slab_fiber_stability"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -389,6 +390,7 @@ def main() -> int:
         (30, "STRICT-WEYL-SUSPENDED-ADJOINT-BRIDGE"),
         (31, "STRICT-WEYL-COMPONENT-PAIRING-SERIALIZATION"),
         (32, "BT-CORRECTOR-POINTWISE-ENERGY-NO-GO"),
+        (33, "BT-CORRECTOR-SLAB-FIBER-STABILITY"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -583,6 +585,9 @@ def main() -> int:
     require(flags["bt_corrector_pointwise_action_route_obstructed"] is True, "BT corrector action-route no-go omitted")
     require(flags["bt_corrector_pointwise_dirichlet_route_obstructed"] is True, "BT corrector Dirichlet-route no-go omitted")
     require(flags["bt_corrector_Gibbs_hyperuniformity_established"] is False, "BT pointwise no-go promoted to Gibbs theorem")
+    require(flags["bt_corrector_slab_fiber_stability_established"] is True, "BT slab fiber stability omitted")
+    require(flags["bt_corrector_slab_point_density_suppression_established"] is True, "BT slab point-density suppression omitted")
+    require(flags["bt_corrector_slab_neighborhood_probability_established"] is False, "BT point-density suppression promoted to neighborhood probability")
     require(flags["bt_translation_invariant_flux_corrector_established"] is False, "BT flux corrector promoted")
     require(flags["bt_translation_invariant_current_susceptibility_established"] is False, "BT current susceptibility promoted")
     require(flags["bt_exact_interacting_score_scaling_established"] is False, "BT exact interacting score promoted")
@@ -623,6 +628,13 @@ def main() -> int:
     require(atlas["bt_corrector_action_ratio_linear_coefficient"] == bt_corrector_energy_no_go["diverging_ratios"]["action_ratio_linear_coefficient"] == {"numerator": 49, "denominator": 360096}, "BT corrector ratio coefficient drift")
     require(bt_corrector_energy_no_go["method_disposition"]["actual_interacting_H_minus_one_second_moment"] == "OPEN", "BT corrector no-go promoted to H-minus-one theorem")
     require(bt_corrector_energy_no_go["dependency_tags"] == ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], "BT corrector no-go dependency boundary drift")
+    require(atlas["bt_corrector_slab_fiber_action_escape_status"] == bt_corrector_slab_fiber["method_disposition"]["localized_slab_two_mode_fiber_action_escape"] == "OBSTRUCTED", "BT slab fiber stability drift")
+    require(atlas["bt_corrector_slab_point_density_escape_status"] == bt_corrector_slab_fiber["method_disposition"]["localized_slab_integrated_marginal_point_density_escape"] == "OBSTRUCTED", "BT slab point-density status drift")
+    require(atlas["bt_corrector_slab_neighborhood_probability_status"] == bt_corrector_slab_fiber["method_disposition"]["localized_slab_neighborhood_probability_bound"] == "OPEN", "BT point density promoted to neighborhood probability")
+    require(atlas["bt_corrector_slab_fiber_action_coefficient"] == bt_corrector_slab_fiber["fiber_action_lower_bound"]["coefficient"] == {"numerator": 2683, "denominator": 800}, "BT slab fiber coefficient drift")
+    require(bt_corrector_slab_fiber["method_disposition"]["Gibbs_corrector_hyperuniformity_bound"] == "OPEN", "BT slab stability promoted to Gibbs corrector theorem")
+    require(bt_corrector_slab_fiber["method_disposition"]["actual_interacting_H_minus_one_second_moment"] == "OPEN", "BT slab stability promoted to H-minus-one theorem")
+    require(bt_corrector_slab_fiber["dependency_tags"] == ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], "BT slab fiber dependency boundary drift")
     require(bt_full_phase_current["method_disposition"]["actual_interacting_H_minus_one_second_moment"] == "OPEN", "BT full-phase reduction promoted to H-minus-one theorem")
     require(bt_full_phase_current["dependency_tags"] == ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], "BT full-phase dependency boundary drift")
     require(atlas["bt_g4_interacting_H_minus_one_status"] == "OPEN", "BT interacting H-minus-one atlas promotion")
@@ -911,6 +923,9 @@ def main() -> int:
         r"REVERSE_PHYSICS_BT_EUCLIDEAN_FLUX_CORRECTOR_POINTWISE_ENERGY_NO_GO_V1",
         r"\frac{49}{360096}L",
         r"Gibbs rarity and correlation",
+        r"REVERSE_PHYSICS_BT_EUCLIDEAN_CORRECTOR_SLAB_FIBER_STABILITY_V1",
+        r"\frac{2683}{800}L^3",
+        r"not a neighborhood probability",
     ]:
         require(phrase in prose, f"required boundary missing from paper: {phrase}")
     for citation in [

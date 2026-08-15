@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-corrector-slab-fiber-stability-v1.schema.json",
+  "title": "BT Euclidean corrector slab fiber stability V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "created", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "row_cone_coercivity", "fiber_action_lower_bound", "integrated_background_density", "method_disposition", "does_not_establish", "missing_object_ledger", "next_gate", "checks", "provenance", "schema", "report", "independent_verifier", "verification_commands"],
+  "$defs": {
+    "rational": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "text": {"type": "string", "minLength": 1},
+    "rational_vector": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/rational"}},
+    "row": {"type": "object", "additionalProperties": false, "required": ["base", "left", "right", "decomposition", "lower_bound"], "properties": {"base": {"$ref": "#/$defs/rational_vector"}, "left": {"$ref": "#/$defs/rational_vector"}, "right": {"$ref": "#/$defs/rational_vector"}, "decomposition": {"$ref": "#/$defs/text"}, "lower_bound": {"$ref": "#/$defs/rational"}}},
+    "input": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_CORRECTOR_SLAB_FIBER_STABILITY_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-corrector-slab-fiber-stability-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "INTEGRATED_MARGINAL_POINT_DENSITY_SUPPRESSION_PROVED_NEIGHBORHOOD_GATE_OPEN"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "row_cone_coercivity": {"type": "object", "additionalProperties": false, "required": ["row_factor_relaxation", "residual_form", "common_positive_quadratic_form", "row_one", "row_two", "combined_residual_square_lower_bound", "status"], "properties": {"row_factor_relaxation": {"$ref": "#/$defs/text"}, "residual_form": {"$ref": "#/$defs/text"}, "common_positive_quadratic_form": {"$ref": "#/$defs/text"}, "row_one": {"$ref": "#/$defs/row"}, "row_two": {"$ref": "#/$defs/row"}, "combined_residual_square_lower_bound": {"$ref": "#/$defs/rational"}, "status": {"const": "EXACT_POSITIVE_CONE_COERCIVITY"}}},
+    "fiber_action_lower_bound": {"type": "object", "additionalProperties": false, "required": ["slab", "scope", "multiplicity", "calculation", "lower_bound", "coefficient", "strengthening", "status"], "properties": {"slab": {"$ref": "#/$defs/text"}, "scope": {"$ref": "#/$defs/text"}, "multiplicity": {"$ref": "#/$defs/text"}, "calculation": {"$ref": "#/$defs/text"}, "lower_bound": {"$ref": "#/$defs/text"}, "coefficient": {"$ref": "#/$defs/rational"}, "strengthening": {"$ref": "#/$defs/text"}, "status": {"const": "FIBER_INFIMUM_RETAINS_ORDER_L_CUBED"}}},
+    "integrated_background_density": {"type": "object", "additionalProperties": false, "required": ["measure", "background_density_ratio", "two_mode_strong_convexity", "slab_fiber_upper", "zero_background_lower", "general_ratio_bound", "lambda_point_four_ratio_bound", "lambda_point_four_prefactor", "lambda_point_four_action_exponent", "lambda_point_four_zero_constant", "analytic_lemmas", "status"], "properties": {"measure": {"$ref": "#/$defs/text"}, "background_density_ratio": {"$ref": "#/$defs/text"}, "two_mode_strong_convexity": {"$ref": "#/$defs/text"}, "slab_fiber_upper": {"$ref": "#/$defs/text"}, "zero_background_lower": {"$ref": "#/$defs/text"}, "general_ratio_bound": {"$ref": "#/$defs/text"}, "lambda_point_four_ratio_bound": {"$ref": "#/$defs/text"}, "lambda_point_four_prefactor": {"$ref": "#/$defs/rational"}, "lambda_point_four_action_exponent": {"$ref": "#/$defs/rational"}, "lambda_point_four_zero_constant": {"$ref": "#/$defs/rational"}, "analytic_lemmas": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/text"}}, "status": {"const": "EXACT_BOUND_ON_POINTWISE_MARGINAL_DENSITY_RATIO"}}},
+    "method_disposition": {"type": "object", "minProperties": 13, "additionalProperties": {"type": "string", "minLength": 1}},
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {"type": "object", "minProperties": 16, "additionalProperties": {"const": true}},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["repository_base_commit", "inputs", "exact_arithmetic", "analytic_arithmetic", "assumptions"], "properties": {"repository_base_commit": {"const": "2d92392e9840eed7a2da81551a25e33d7f0815d1"}, "inputs": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/input"}}, "exact_arithmetic": {"$ref": "#/$defs/text"}, "analytic_arithmetic": {"$ref": "#/$defs/text"}, "assumptions": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}}}},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-corrector-slab-fiber-stability-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-corrector-slab-fiber-stability.md"},
+    "independent_verifier": {"const": "reverse_physics/verify_bt_euclidean_corrector_slab_fiber_stability.py"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}}
+  }
+}

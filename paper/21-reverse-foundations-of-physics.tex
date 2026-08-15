@@ -1981,6 +1981,35 @@ This is not a Gibbs counterexample: Gibbs rarity and correlation of the slab
 environments may still prove the averaged hyperuniformity estimate.  The
 susceptibility, interacting \(H^{-1}\) bound, and continuum limit remain open.
 
+The pointwise counterexample must still be tested against the integrated
+background marginal.  Certificate
+
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_CORRECTOR_SLAB_FIBER_STABILITY_V1}
+
+does this for the exact slab.  It relaxes the removed cosine--sine plane to
+arbitrary positive time-row multipliers.  Two active rows retain an exact
+positive-cone gap, giving
+
+\[
+ \inf_{a,b\in\mathbb R}A(\eta_L+a h_c+b h_s)
+ \geq\frac{2683}{800}L^3.
+\]
+
+Thus fiber integration cannot cancel the slab's leading action.  Combining
+the gap with the all-phase strong-convexity theorem gives, at \(\lambda=2/5\),
+
+\[
+ \frac{Z_{\eta_L}}{Z_0}
+ \leq\frac{99}{5600}L^2
+ \exp\left[-\frac{2683}{128}L^3+\frac{96800}{49}\right].
+\]
+
+This is an exponential comparison of the actual integrated-background
+density at the slab with its value at zero.  It is not a neighborhood probability
+and does not control every large-corrector environment.  The next
+gate is a robust block version with entropy control, followed by the Gibbs
+corrector structure factor.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The

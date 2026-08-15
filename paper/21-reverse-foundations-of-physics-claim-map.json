@@ -62,6 +62,13 @@
     },
     "bt_corrector_pointwise_action_route_status": "OBSTRUCTED",
     "bt_corrector_pointwise_dirichlet_route_status": "OBSTRUCTED",
+    "bt_corrector_slab_fiber_action_coefficient": {
+      "denominator": 800,
+      "numerator": 2683
+    },
+    "bt_corrector_slab_fiber_action_escape_status": "OBSTRUCTED",
+    "bt_corrector_slab_neighborhood_probability_status": "OPEN",
+    "bt_corrector_slab_point_density_escape_status": "OBSTRUCTED",
     "bt_correlated_spatial_remainder_fixture": {
       "denominator": 262144,
       "numerator": -456623975
@@ -539,6 +546,16 @@
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_CONDITIONAL_MASS_ESCAPE_OBSTRUCTION_V1",
       "sha256": "3b5a231046ef56cd6d2459f5bd93b6785bf00463c9d3ddb9c5cc162a118dea76"
     },
+    "bt_corrector_slab_fiber_stability": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "INTEGRATED_MARGINAL_POINT_DENSITY_SUPPRESSION_PROVED_NEIGHBORHOOD_GATE_OPEN",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CORRECTOR_SLAB_FIBER_STABILITY_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_CORRECTOR_SLAB_FIBER_STABILITY_V1",
+      "sha256": "cbef5c1e3c8e4c019f3e6954a584853bc9ba1ddaa2706a05b5b99441f95cff34"
+    },
     "bt_cubic_score_log_obstruction": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -849,7 +866,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "2684539ea485cec397d8f074e58fba6f39facf7b83a10bcab8cea901f74dfe2f"
+      "sha256": "92dcb7061df224f0f45a2bd60a3160c269861c71d773a9d46d6869afe53db973"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -1117,10 +1134,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "ca8e11e33adb9a40b0e5e2cb05062fa6124dca7b59c16350b268538d42d233c5"
+      "sha256": "968860c80c2fcc837a7307ec1051de109f05de4a4cc4e5067352ef8ebd9592c5"
     }
   },
-  "canonical_digest": "e3dae6203540b1f3b169a9308b0252327a07c8f28736de144e5c85fdceeaf419",
+  "canonical_digest": "f5fec1e3285dec29e556d93f7a006da4165f9eb811f836802427bd342e65056f",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -1190,6 +1207,9 @@
     "bt_corrector_Gibbs_hyperuniformity_established": false,
     "bt_corrector_pointwise_action_route_obstructed": true,
     "bt_corrector_pointwise_dirichlet_route_obstructed": true,
+    "bt_corrector_slab_fiber_stability_established": true,
+    "bt_corrector_slab_neighborhood_probability_established": false,
+    "bt_corrector_slab_point_density_suppression_established": true,
     "bt_dilute_bubble_score_activity_vanishes": true,
     "bt_direct_action_fiber_bound_established": false,
     "bt_energy_only_bubble_rarity_obstructed": true,
@@ -1719,6 +1739,18 @@
       ],
       "statement": "An exact E_p-perpendicular localized slab on every L^4 torus with 4 dividing L has action and weighted Dirichlet energy of order L^3, while its lowest-mode conductance corrector has magnitude at least 3L^3/16 for multiples of four L>=300. Consequently the corrector-square ratios to N*omega_p times the action, weighted Dirichlet energy, or their sum diverge at least linearly. This obstructs deterministic pointwise energy proofs even with an extra volume loss; it does not decide the Gibbs hyperuniformity estimate, current susceptibility, interacting H^-1 moment, or continuum limit.",
       "status": "SLICE_VALID_POINTWISE_CORRECTOR_ENERGY_ROUTE_OBSTRUCTED_STATISTICAL_GATE_OPEN"
+    },
+    {
+      "authorities": [
+        "bt_corrector_slab_fiber_stability"
+      ],
+      "claim_id": "RF-33-BT-CORRECTOR-SLAB-FIBER-STABILITY",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "statement": "The exact slab that obstructs deterministic corrector-energy bounds retains action at least (2683/800)L^3 after adding any field in the complete removed lowest cosine-sine plane; the proof relaxes that plane to arbitrary positive time-row multipliers. At lambda=2/5, strong convexity then bounds its integrated-background density relative to zero by (99/5600)L^2 exp[-(2683/128)L^3+96800/49]. This excludes the specified slab as a marginal low-action escape but proves neither a neighborhood probability nor the Gibbs corrector moment.",
+      "status": "EXACT_FIBER_STABILITY_AND_POINT_DENSITY_SUPPRESSION_WITH_NEIGHBORHOOD_GATE_OPEN"
     }
   ],
   "created": "2026-08-14",
@@ -1914,19 +1946,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "678065ba94d98a76e92f326dbae80cca1c2695377c6ae2a51e3945c0df17db90",
+      "assembly_source_canonical_digest": "c3452086cd8f5de9f8ceaac8dacae227d8143a80cce4128816d8241e03f1a186",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "ca8e11e33adb9a40b0e5e2cb05062fa6124dca7b59c16350b268538d42d233c5",
+      "assembly_source_sha256": "968860c80c2fcc837a7307ec1051de109f05de4a4cc4e5067352ef8ebd9592c5",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
       "generator_sha256": "f46fd7cd15f93d83c0f2ec292fa9e0cbae6bdc9f7a503dd39ff61565424db364",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
       "sha256": "d8ee6bb393b53bd72eff3778a3f53a4ea164cf42dcfb9b4602ce98c236e2948b",
-      "source_canonical_digest": "c83ff6cddba8d587b4e647c7c533bb9fc5d020dcea27c1b23ad59f96bcd2dcad",
+      "source_canonical_digest": "f5a71b20e426c309d8c0ed291bb7967f69be1b5aeea57d5bf3d4ce579d71c7df",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "735063c38d7f53964a53631df718bbf09e658e9944b28497a13fba37a0c7ab8c"
+      "source_sha256": "06271ed77497dc8f1fdc10d8ee473f82c9ed91a60ea860e55bd1e52813f365d1"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "b22f0e8fd2bc628b1ab5aabb450a4842094e8e0300a48f4f2de08b824aaecb10"
+    "sha256": "5cf0547f6eb0ab17532e071f101eb5639972f197496b1104332990dc996d6151"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

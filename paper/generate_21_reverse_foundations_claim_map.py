@@ -66,6 +66,7 @@ AUTHORITY_PATHS = {
     "bt_full_phase_current_gate": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_CURRENT_GATE_V1.json",
     "bt_full_phase_weighted_current_gate_v2": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_WEIGHTED_CURRENT_GATE_V2.json",
     "bt_flux_corrector_pointwise_energy_no_go": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FLUX_CORRECTOR_POINTWISE_ENERGY_NO_GO_V1.json",
+    "bt_corrector_slab_fiber_stability": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CORRECTOR_SLAB_FIBER_STABILITY_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -171,6 +172,7 @@ def build() -> dict:
     bt_full_phase_current = loaded["bt_full_phase_current_gate"]
     bt_weighted_current_v2 = loaded["bt_full_phase_weighted_current_gate_v2"]
     bt_corrector_energy_no_go = loaded["bt_flux_corrector_pointwise_energy_no_go"]
+    bt_corrector_slab_fiber = loaded["bt_corrector_slab_fiber_stability"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -480,6 +482,10 @@ def build() -> dict:
             "bt_corrector_pointwise_dirichlet_route_status": bt_corrector_energy_no_go["method_disposition"]["pointwise_corrector_bound_by_N_omega_weighted_dirichlet_energy"],
             "bt_corrector_Gibbs_hyperuniformity_status": bt_corrector_energy_no_go["method_disposition"]["Gibbs_corrector_hyperuniformity_bound"],
             "bt_corrector_action_ratio_linear_coefficient": bt_corrector_energy_no_go["diverging_ratios"]["action_ratio_linear_coefficient"],
+            "bt_corrector_slab_fiber_action_escape_status": bt_corrector_slab_fiber["method_disposition"]["localized_slab_two_mode_fiber_action_escape"],
+            "bt_corrector_slab_point_density_escape_status": bt_corrector_slab_fiber["method_disposition"]["localized_slab_integrated_marginal_point_density_escape"],
+            "bt_corrector_slab_neighborhood_probability_status": bt_corrector_slab_fiber["method_disposition"]["localized_slab_neighborhood_probability_bound"],
+            "bt_corrector_slab_fiber_action_coefficient": bt_corrector_slab_fiber["fiber_action_lower_bound"]["coefficient"],
             "bt_g4_interacting_H_minus_one_status": "OPEN",
             "standard_reference_direct_obligations": next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")["coverage"]["direct"],
             "external_calibration_records": len(assembly_data["calibration_controls"][0]["records"]),
@@ -746,6 +752,13 @@ def build() -> dict:
                 "authorities": ["bt_flux_corrector_pointwise_energy_no_go"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
+            {
+                "claim_id": "RF-33-BT-CORRECTOR-SLAB-FIBER-STABILITY",
+                "statement": "The exact slab that obstructs deterministic corrector-energy bounds retains action at least (2683/800)L^3 after adding any field in the complete removed lowest cosine-sine plane; the proof relaxes that plane to arbitrary positive time-row multipliers. At lambda=2/5, strong convexity then bounds its integrated-background density relative to zero by (99/5600)L^2 exp[-(2683/128)L^3+96800/49]. This excludes the specified slab as a marginal low-action escape but proves neither a neighborhood probability nor the Gibbs corrector moment.",
+                "status": "EXACT_FIBER_STABILITY_AND_POINT_DENSITY_SUPPRESSION_WITH_NEIGHBORHOOD_GATE_OPEN",
+                "authorities": ["bt_corrector_slab_fiber_stability"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -906,6 +919,9 @@ def build() -> dict:
             "bt_corrector_pointwise_action_route_obstructed": True,
             "bt_corrector_pointwise_dirichlet_route_obstructed": True,
             "bt_corrector_Gibbs_hyperuniformity_established": False,
+            "bt_corrector_slab_fiber_stability_established": True,
+            "bt_corrector_slab_point_density_suppression_established": True,
+            "bt_corrector_slab_neighborhood_probability_established": False,
             "bt_translation_invariant_flux_corrector_established": False,
             "bt_translation_invariant_current_susceptibility_established": False,
             "bt_exact_interacting_score_scaling_established": False,
