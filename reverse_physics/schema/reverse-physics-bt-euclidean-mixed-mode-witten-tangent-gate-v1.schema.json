@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-mixed-mode-witten-tangent-gate-v1.schema.json",
+  "title": "BT Euclidean mixed-mode Witten-tangent gate certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "free_lattice_theorem", "reduced_interacting_theorem", "exact_free_fixture",
+    "exact_reduced_fixture", "method_disposition", "missing_object_ledger",
+    "next_gate", "does_not_establish", "provenance", "verification_commands",
+    "tier_receipt", "checks", "report", "schema", "verifier"
+  ],
+  "$defs": {
+    "fraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "string": {"type": "string", "minLength": 1}
+  },
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EUCLIDEAN_MIXED_MODE_WITTEN_TANGENT_GATE_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-euclidean-mixed-mode-witten-tangent-gate-v1"
+    },
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"},
+        {"const": "REDUCED-MODE"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/string"},
+    "question": {"$ref": "#/$defs/string"},
+    "answer": {"$ref": "#/$defs/string"},
+    "free_lattice_theorem": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "scope", "modes", "amplitude", "trial_one_form", "source_overlap",
+        "derivative_cost", "norm", "form", "rayleigh", "conclusion"
+      ],
+      "properties": {
+        "scope": {"$ref": "#/$defs/string"},
+        "modes": {"$ref": "#/$defs/string"},
+        "amplitude": {"$ref": "#/$defs/string"},
+        "trial_one_form": {"const": "v_q(psi)=h+q*a(psi)*m"},
+        "source_overlap": {"const": "<v_q,h>=N pointwise"},
+        "derivative_cost": {"const": "||D v_q||_HS^2=q^2/4"},
+        "norm": {"$ref": "#/$defs/string"},
+        "form": {"const": "Q_1(v_q)=N omega_L^2/lambda^2+5q^2/4"},
+        "rayleigh": {"$ref": "#/$defs/string"},
+        "conclusion": {
+          "const": "R_q>=omega_L^2/lambda^2, with equality iff q=0"
+        }
+      }
+    },
+    "reduced_interacting_theorem": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "scope", "action", "measure", "metric", "trial_one_form",
+        "exact_costs", "weak_expansion", "minimum", "deterministic_resonance"
+      ],
+      "properties": {
+        "scope": {"$ref": "#/$defs/string"},
+        "action": {"$ref": "#/$defs/string"},
+        "measure": {"$ref": "#/$defs/string"},
+        "metric": {"$ref": "#/$defs/string"},
+        "trial_one_form": {"const": "v_b=f+2*b*a*m"},
+        "exact_costs": {"$ref": "#/$defs/string"},
+        "weak_expansion": {
+          "const": "lambda^2 R_b(lambda)=1+4((b-1)^2+1)lambda^2+O(lambda^4)"
+        },
+        "minimum": {"const": "the lambda^2 coefficient is at least 4, attained at b=1"},
+        "deterministic_resonance": {"const": "at b=5/3 the coefficient is 52/9>0"}
+      }
+    },
+    "exact_free_fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "length", "volume", "omega", "coupling", "mixed_path_parameter_b",
+        "tangent_parameter_q_equals_2b", "x", "one_form_norm_squared",
+        "witten_form", "rayleigh_quotient", "free_source_rayleigh",
+        "relative_factor", "strict_increase"
+      ],
+      "properties": {
+        "length": {"const": 4},
+        "volume": {"const": 256},
+        "omega": {"$ref": "#/$defs/fraction"},
+        "coupling": {"$ref": "#/$defs/fraction"},
+        "mixed_path_parameter_b": {"$ref": "#/$defs/fraction"},
+        "tangent_parameter_q_equals_2b": {"$ref": "#/$defs/fraction"},
+        "x": {"$ref": "#/$defs/fraction"},
+        "one_form_norm_squared": {"$ref": "#/$defs/fraction"},
+        "witten_form": {"$ref": "#/$defs/fraction"},
+        "rayleigh_quotient": {"$ref": "#/$defs/fraction"},
+        "free_source_rayleigh": {"$ref": "#/$defs/fraction"},
+        "relative_factor": {"$ref": "#/$defs/fraction"},
+        "strict_increase": {"$ref": "#/$defs/fraction"}
+      }
+    },
+    "exact_reduced_fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "reduced_action", "field_metric", "tangent", "tangent_norm",
+        "derivative_cost", "gaussian_normalization_correction",
+        "general_relative_lambda_squared_coefficient", "minimizer",
+        "minimum_coefficient", "deterministic_resonance_b",
+        "coefficient_at_deterministic_resonance"
+      ],
+      "properties": {
+        "reduced_action": {"$ref": "#/$defs/string"},
+        "field_metric": {"$ref": "#/$defs/string"},
+        "tangent": {"const": "v_b=f+2*b*a*m"},
+        "tangent_norm": {"const": "||v_b||^2=1+b^2*a^2"},
+        "derivative_cost": {"const": "||D v_b||_HS^2=b^2"},
+        "gaussian_normalization_correction": {"$ref": "#/$defs/fraction"},
+        "general_relative_lambda_squared_coefficient": {
+          "const": "4(b^2-2b+2)=4((b-1)^2+1)"
+        },
+        "minimizer": {"$ref": "#/$defs/fraction"},
+        "minimum_coefficient": {"$ref": "#/$defs/fraction"},
+        "deterministic_resonance_b": {"$ref": "#/$defs/fraction"},
+        "coefficient_at_deterministic_resonance": {"$ref": "#/$defs/fraction"}
+      }
+    },
+    "method_disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "mixed_deterministic_coefficient_one", "canonical_mixed_tangent_free_low_rayleigh",
+        "canonical_mixed_tangent_reduced_weak_low_rayleigh",
+        "arbitrary_full_witten_low_rayleigh_sequence", "volume_uniform_witten_coercivity",
+        "normalized_lowest_mode_bound", "interacting_h_minus_one_bound",
+        "continuum_reconstruction", "born_rule", "krein_reconstruction",
+        "lorentzian_transfer"
+      ],
+      "properties": {
+        "mixed_deterministic_coefficient_one": {"const": "OBSTRUCTED_BY_PREDECESSOR"},
+        "canonical_mixed_tangent_free_low_rayleigh": {"const": "RULED_OUT"},
+        "canonical_mixed_tangent_reduced_weak_low_rayleigh": {
+          "const": "RULED_OUT_TO_FIRST_INTERACTING_ORDER"
+        },
+        "arbitrary_full_witten_low_rayleigh_sequence": {"const": "OPEN"},
+        "volume_uniform_witten_coercivity": {"const": "OPEN"},
+        "normalized_lowest_mode_bound": {"const": "OPEN"},
+        "interacting_h_minus_one_bound": {"const": "OPEN"},
+        "continuum_reconstruction": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {
+      "type": "array", "minItems": 1, "items": {"$ref": "#/$defs/string"}
+    },
+    "next_gate": {"$ref": "#/$defs/string"},
+    "does_not_establish": {
+      "type": "array", "minItems": 1, "items": {"$ref": "#/$defs/string"}
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {
+          "const": "36b2f0f099e88ea9f0325c625e869d0d398ce644"
+        },
+        "inputs": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/string"}
+      }
+    },
+    "verification_commands": {
+      "type": "array", "minItems": 3, "items": {"$ref": "#/$defs/string"}
+    },
+    "tier_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "memory_policy"],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/string"},
+        "tier_1": {"$ref": "#/$defs/string"},
+        "tier_2": {"$ref": "#/$defs/string"},
+        "tier_3": {"$ref": "#/$defs/string"},
+        "memory_policy": {"$ref": "#/$defs/string"}
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {
+          "type": "object", "minProperties": 1,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-euclidean-mixed-mode-witten-tangent-gate.md"
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-euclidean-mixed-mode-witten-tangent-gate-v1.schema.json"
+    },
+    "verifier": {
+      "const": "reverse_physics/verify_bt_euclidean_mixed_mode_witten_tangent_gate.py"
+    }
+  }
+}
