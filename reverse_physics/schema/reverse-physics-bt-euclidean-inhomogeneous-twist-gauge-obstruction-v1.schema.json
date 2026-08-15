@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-inhomogeneous-twist-gauge-obstruction-v1.schema.json",
+  "title": "BT inhomogeneous twist gauge obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "gauge_covariance_theorem", "longitudinal_ward_nullspace",
+    "harmonic_uniform_sector", "exact_cycle_four_fixture",
+    "route_disposition", "correct_next_object", "missing_object_ledger",
+    "next_gate", "does_not_establish", "provenance",
+    "verification_commands", "tier_receipt", "checks", "schema",
+    "report", "verifier"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_INHOMOGENEOUS_TWIST_GAUGE_OBSTRUCTION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-inhomogeneous-twist-gauge-obstruction-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "LONGITUDINAL_TWIST_RESPONSE_EXACTLY_NULL_ROUTE_OBSTRUCTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "gauge_covariance_theorem": {
+      "type": "object",
+      "required": ["oriented_edge_twist", "twisted_residual", "site_coboundary", "pointwise_identity", "action_identity", "mean_zero_translation", "partition_function_identity", "scope", "status"],
+      "properties": {
+        "oriented_edge_twist": {"const": "theta_yx=-theta_xy"},
+        "twisted_residual": {"$ref": "#/$defs/text"},
+        "site_coboundary": {"const": "(d chi)_xy=chi_y-chi_x"},
+        "pointwise_identity": {"const": "r_x^(theta+dchi)(psi)=r_x^theta(psi+chi)"},
+        "action_identity": {"const": "A_(theta+dchi)(psi)=A_theta(psi+chi)"},
+        "mean_zero_translation": {"$ref": "#/$defs/text"},
+        "partition_function_identity": {"const": "Z[theta+dchi]=Z[theta] for every periodic chi"},
+        "scope": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED_EXACTLY"}
+      },
+      "additionalProperties": false
+    },
+    "longitudinal_ward_nullspace": {
+      "type": "object",
+      "required": ["free_energy", "first_derivative", "response_hessian", "right_nullspace", "left_nullspace", "consequence", "status"],
+      "properties": {
+        "free_energy": {"$ref": "#/$defs/text"},
+        "first_derivative": {"const": "D F(theta)[dchi]=0"},
+        "response_hessian": {"const": "R_theta=D^2F(theta)"},
+        "right_nullspace": {"const": "R_theta*d=0"},
+        "left_nullspace": {"const": "d^*R_theta=0 by symmetry of the Hessian"},
+        "consequence": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED_EXACTLY"}
+      },
+      "additionalProperties": false
+    },
+    "harmonic_uniform_sector": {"type": "object"},
+    "exact_cycle_four_fixture": {"type": "object"},
+    "route_disposition": {
+      "type": "object",
+      "required": ["uniform_harmonic_twist_response_identity", "positive_uniform_harmonic_response_L6_L8", "longitudinal_inhomogeneous_twist_response", "twist_response_to_scalar_witten_coercivity", "twist_response_to_interacting_h_minus_one", "source_generating_functional_covariance", "conditioned_center_score_route", "full_witten_schur_route", "actual_interacting_h_minus_one_second_moment"],
+      "properties": {
+        "uniform_harmonic_twist_response_identity": {"const": "IMPORTED_PROVED"},
+        "positive_uniform_harmonic_response_L6_L8": {"const": "IMPORTED_OBSERVED_NOT_CERTIFIED"},
+        "longitudinal_inhomogeneous_twist_response": {"const": "EXACTLY_ZERO_BY_GAUGE_WARD"},
+        "twist_response_to_scalar_witten_coercivity": {"const": "OBSTRUCTED"},
+        "twist_response_to_interacting_h_minus_one": {"const": "OBSTRUCTED_AS_PROOF_ROUTE"},
+        "source_generating_functional_covariance": {"const": "LIVE"},
+        "conditioned_center_score_route": {"const": "LIVE"},
+        "full_witten_schur_route": {"const": "LIVE"},
+        "actual_interacting_h_minus_one_second_moment": {"const": "OPEN"}
+      },
+      "additionalProperties": false
+    },
+    "correct_next_object": {"type": "object"},
+    "missing_object_ledger": {"$ref": "#/$defs/textArray"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/textArray"},
+    "provenance": {"type": "object"},
+    "verification_commands": {"$ref": "#/$defs/textArray"},
+    "tier_receipt": {"type": "object"},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 16},
+        "total": {"const": 16},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 16, "maxProperties": 16, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-inhomogeneous-twist-gauge-obstruction-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-inhomogeneous-twist-gauge-obstruction.md"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_inhomogeneous_twist_gauge_obstruction.py"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "textArray": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}}
+  }
+}
