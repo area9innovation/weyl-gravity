@@ -1,0 +1,269 @@
+{
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_PAIR_BLOCK_RESPONSE_ONE_LOOP_V1",
+  "schema_version": "reverse-physics-bt-euclidean-pair-block-response-one-loop-v1",
+  "created": "2026-08-16",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "result_kind": "exact finite-volume and large-volume one-loop coefficient for the full-Gibbs annealed nearest-neighbour pair-block response",
+  "question": "Does conditioning and resampling a nearest-neighbour pair repair the negative long-wave one-loop coefficient that obstructs every single-site coefficientwise signed-response proof?",
+  "answer": "Yes at one loop. Normalize the continuous-time pair heat bath by averaging the eight nearest-neighbour pairs containing each site. Its free axial relaxation symbol is omega^2*(44-omega)/2464, with positive low-mode coefficient 1/56. The uniform-background order-lambda^2 omega coefficient is negative, -15643/1517824, but exact conditional normalization and full Gaussian-background annealing reverse the sign. On the 6^4 torus the coefficient is 956585197/10069092633600>0. The all-volume kernel reduces in the large-volume limit to -32629/1517824+W4/14+39*I4/1568. The first 101 positive walk terms and the certified return tail prove this limit is strictly greater than 1/10000. Thus the smallest genuine block repairs the single-site obstruction coefficientwise. No uniform higher-order remainder, lambda=0.4 response, Witten gap, or interacting H^-1 bound is established.",
+  "pair_block_definition": {
+    "block": "B={o,o+e_mu}, averaged over the eight unoriented nearest-neighbour pairs containing each site",
+    "normalization": "the sum of block generators is divided by eight, so every site has total update rate one",
+    "conditional_free_precision": "K_BB=[[72,-16],[-16,72]] for K=(-Delta)^2",
+    "conditional_free_covariance": [
+      [
+        {
+          "numerator": 9,
+          "denominator": 616
+        },
+        {
+          "numerator": 1,
+          "denominator": 308
+        }
+      ],
+      [
+        {
+          "numerator": 1,
+          "denominator": 308
+        },
+        {
+          "numerator": 9,
+          "denominator": 616
+        }
+      ]
+    ],
+    "free_relaxation_symbol": "R_pair,0(k)=omega(k)^2*(44-omega(k))/2464",
+    "free_low_momentum_coefficient": {
+      "numerator": 1,
+      "denominator": 56
+    },
+    "orientation_average": "beta_pair=(1/2)*[(1/4)*sum_y y_parallel^2 D_y M_o+(3/4)*sum_y y_perp^2 D_y M_o]"
+  },
+  "conditional_one_loop_derivation": {
+    "scaled_action": "S_lambda=S0+lambda*S1+lambda^2*S2+O(lambda^3), S1=(1/2)*sum_x A_x B_x, S2=sum_x[(1/8)B_x^2+(1/6)A_x C_x]",
+    "jets": "A_x=sum d, B_x=sum d^2, C_x=sum d^3 over the eight directed edge differences",
+    "local_subtraction": "terms independent of the two internal fields are subtracted before conditional normalization",
+    "affected_residual_sites": 16,
+    "cubic_term_count": 314,
+    "quartic_term_count": 701,
+    "second_order_center": "m2_a=(1/2)E_u[u_a U1^2]-E_u[u_a U2]-E_u[u_a U1]E_u[U1]",
+    "replica_rule": "the derivative of the last product is evaluated with two independent internal innovations sharing the same free external background",
+    "connected_degree_bound": "the combination (1/2)kappa(u_a,U1,U1)-Cov(u_a,U2) forces at least two innovation contractions in the cubic-square term; after one response derivative at most two external-background legs remain, so the averaged coefficient is affine in one Green covariance",
+    "marginal_order_lambda_term": "zero by Gaussian integration by parts, translation invariance, and constant-shift invariance, as in the single-site predecessor",
+    "raw_green_kernel_term_count": 202,
+    "raw_green_kernel_sha256": "f753a9f3dae36b118e6dfd4ec017fc174998aff7a8c4707d9953658cae65d08e",
+    "raw_green_kernel_coefficient_sum": {
+      "numerator": 0,
+      "denominator": 1
+    },
+    "green_independent_constant": {
+      "numerator": 12493,
+      "denominator": 1517824
+    }
+  },
+  "vacuum_pair_diagnostic": {
+    "longitudinal_second_moment_coefficient": {
+      "numerator": -7349,
+      "denominator": 379456
+    },
+    "transverse_second_moment_coefficient": {
+      "numerator": -7979,
+      "denominator": 379456
+    },
+    "beta_pair_vacuum_lambda2": {
+      "numerator": -15643,
+      "denominator": 1517824
+    },
+    "sign": "STRICTLY_NEGATIVE",
+    "meaning": "the internal pair edge alone does not repair the sign; the positive theorem genuinely uses annealing over the free background"
+  },
+  "all_volume_formula": {
+    "definition": "beta_pair,L(lambda)=b_pair_(2,L)*lambda^2+O_L(lambda^4)",
+    "formula": "b_pair_(2,L)=12493/1517824+(1/L^4)*sum_(k!=0) Q(x(k))/omega(k)^2",
+    "x_variables": "x_mu=2*(1-cos(k_mu)), e1=sum_mu x_mu=omega(k), e2=sum_(mu<nu) x_mu*x_nu",
+    "numerator": "Q=(3/56)e1-(39/1568)e1^2+(1/112)e2-(97/137984)e1^3+(572/137984)e1*e2+(51/551936)e1^4-(126/551936)e1^2*e2-(1/551936)e1^5+(2/551936)e1^3*e2",
+    "expanded_term_count": 125,
+    "expanded_sha256": "9529b994f645459aee86e048b16526d9b766acc351013c8da6993d792e16e5a4",
+    "exact_l6": {
+      "numerator": 956585197,
+      "denominator": 10069092633600
+    },
+    "exact_l6_sign": "STRICTLY_POSITIVE",
+    "binary64_orientation_diagnostics": [
+      {
+        "length": 5,
+        "binary64_b2": 9.13841589150928e-06
+      },
+      {
+        "length": 6,
+        "binary64_b2": 9.500212499866968e-05
+      },
+      {
+        "length": 8,
+        "binary64_b2": 0.000179402475195687
+      },
+      {
+        "length": 12,
+        "binary64_b2": 0.0002412749951931168
+      },
+      {
+        "length": 16,
+        "binary64_b2": 0.00026349996204290925
+      },
+      {
+        "length": 24,
+        "binary64_b2": 0.0002795864572676405
+      },
+      {
+        "length": 32,
+        "binary64_b2": 0.0002852602962958341
+      }
+    ]
+  },
+  "large_volume_decision": {
+    "moment_definitions": "W4=integral f^4, I4=integral f^2*(f')^2, f(t)=exp(-2t)*I0(2t)",
+    "integral_identities": [
+      "integral e2/omega^2=2*W4",
+      "integral e2/omega=6*I4",
+      "integral omega=8, integral omega^2=72, integral omega^3=704",
+      "integral e2=24, integral omega*e2=240"
+    ],
+    "limit_formula": "b_pair_(2,infinity)=-32629/1517824+W4/14+(39/1568)*I4",
+    "walk_truncation_n": 100,
+    "watson_partial": {
+      "numerator": 2507247113829287706859852009671141324738886415444701704801562215428638996973234739443695946789651564949397747165624296922117287548610739963423903423055457207270617398832067157767,
+      "denominator": 16209045190941378744189093217543598246142368094697019140608036444104112544581672446873855659949624196438272994575393707743731058888327247296433104820757670652582741419537146576896
+    },
+    "watson_partial_sha256": "99f64bd18e9a45bb8e9c9c004385e7c065e7e9d36c6c41feb5907405abe7759d",
+    "potential_partial": {
+      "numerator": 2305188999175123190186659015613315513175165662811469040405680954364117361696184188043453035507897452484712540554102252715215082592715375278734102544215132276597174315405765199337,
+      "denominator": 16209045190941378744189093217543598246142368094697019140608036444104112544581672446873855659949624196438272994575393707743731058888327247296433104820757670652582741419537146576896
+    },
+    "potential_partial_sha256": "ee6f57864e4aee0694e6b78b2d47434d94bcbf676b58d555d6c803ed4880f1fd",
+    "potential_tail_upper": {
+      "numerator": 121,
+      "denominator": 78400
+    },
+    "i4_strict_lower": {
+      "numerator": 2109518339672147788241019999381997093807409377377875985501539923008706360920711832032017444005305772619057132529569959691676169075263141066163543895891754627444386777864876352239631,
+      "denominator": 4964020089725797240407909797872726962881100229000962111811211161006884466778137186855118295859572410159221104588714322996517636784550219484532638351357036637353464559733251139174400
+    },
+    "substituted_strict_lower": {
+      "numerator": 114268302980678412831106073473131116760037720357293167733689437809861588009875490735304746771880309613162900765386203669211474048779777816322057925616660579219530205175048403584011589,
+      "denominator": 941813603583496058828111910130796741213505384247894539549717471155514176112882412187647884036844954234688701731407591073483298191859144042361408409126267847131798123989070272133280563200
+    },
+    "simple_strict_lower": {
+      "numerator": 1,
+      "denominator": 10000
+    },
+    "sign": "STRICTLY_POSITIVE",
+    "status": "LARGE_VOLUME_PAIR_BLOCK_ONE_LOOP_SIGN_CERTIFIED"
+  },
+  "method_consequence": {
+    "single_site_coefficientwise_route": "OBSTRUCTED_BY_PREDECESSOR",
+    "nearest_neighbour_pair_coefficientwise_route": "REVIVED_AT_LARGE_VOLUME_ONE_LOOP",
+    "formal_low_momentum_effect": "the order-lambda^2 pair relaxation contains a strictly positive omega coefficient in the large-volume limit",
+    "scope": "the pair block repairs the first perturbative sign obstruction; it does not control the all-order or fixed-coupling response"
+  },
+  "method_disposition": {
+    "finite_volume_os_reflection_positivity": "OBSTRUCTED_BY_IMPORTED_PROGRAM_RESULT",
+    "annealed_single_site_response_one_loop": "OBSTRUCTED_AT_LARGE_VOLUME",
+    "annealed_pair_block_response_one_loop": "POSITIVE_AT_L6_AND_LARGE_VOLUME",
+    "uniform_higher_order_pair_response": "OPEN",
+    "nonperturbative_pair_response_at_lambda_0_4": "OPEN",
+    "pair_response_to_witten_schur_bridge": "OPEN",
+    "interacting_h_minus_one_bound": "OPEN",
+    "continuum_measure": "NOT_ESTABLISHED",
+    "born_rule": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED"
+  },
+  "missing_object_ledger": [
+    "a volume-uniform bound on the order-lambda^4 and higher pair-block coefficients or a nonperturbative fixed-coupling replacement",
+    "a theorem transferring the annealed pair response to the lowest cyclic Witten/heat-bath Schur estimate",
+    "the normalized lowest-mode estimate and dyadic-shell interacting H^-1 sum or an actual Gibbs divergence sequence"
+  ],
+  "next_gate": "Keep the nearest-neighbour pair as the minimal live block. Derive the complete order-lambda^4 low-momentum coefficient and its large-volume power/logarithm, with conditional normalization and the background marginal retained. In parallel seek a nonperturbative pair-fiber response inequality at lambda=2/5. Only a uniform all-order or nonperturbative response-to-Witten bridge, followed by all Fourier shells, can establish the actual interacting H^-1 estimate.",
+  "does_not_establish": [
+    "a positive pair-block response at lambda=0.4 or any fixed nonzero coupling",
+    "a uniform bound on the perturbative remainder or convergence of its series",
+    "a positive heat-bath spectral gap, global Poincare inequality, or Witten coercivity theorem",
+    "the normalized lowest-mode or interacting Gibbs H^-1 bound",
+    "tightness, continuum identification, or restoration of ordinary Osterwalder-Schrader positivity",
+    "a new physical dimension, Born rule, Krein reconstruction, or anything LORENTZIAN-CAUSAL"
+  ],
+  "provenance": {
+    "repository_base_commit": "471e9ef71a08bb7150ea40104642969204e93808",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ANNEALED_RESPONSE_WATSON_BOUND_V1.json",
+        "sha256": "1893b85ada7b61045fa7e7833ca5de810cd6c120bae785d7b728028095b38a3c"
+      }
+    ],
+    "arithmetic": "exact Python Fraction sparse action jets, affine one-background-loop Wick contraction, exact Laurent/Chebyshev reduction, exact 6^4 momentum sum, and exact positive walk truncations; binary64 is used only for labelled orientation diagnostics"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_pair_block_response_one_loop.py --check",
+    "ulimit -v 500000; mise x python@3.12 -- python3 reverse_physics/verify_bt_euclidean_pair_block_response_one_loop.py",
+    "ulimit -v 500000; mise x python@3.12 -- python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_pair_block_response_one_loop"
+  ],
+  "tier_receipt": {
+    "tier_0": "Python compilation, strict JSON/schema parsing, exact input hash, scoped diff check, and staged-diff inspection required",
+    "tier_1": "deterministic producer, nonimporting action/Wick verifier, exact walk verifier, and adversarial mutation tests required",
+    "tier_2": "the content-addressed Watson input is checked by hash; no shared operator or actual H^-1 claim changes",
+    "tier_3": "not applicable: this is a one-loop method coefficient, not an H^-1, continuum, freeze, release, shared-core, or Lorentzian lifecycle promotion",
+    "memory_policy": "all Python commands run sequentially under a 500000 KiB virtual-memory ceiling; OpenBLAS threads are disabled when the Python 3.12 environment starts",
+    "elapsed_seconds_and_peak_kib": {},
+    "repository_audits": {
+      "planning_import": "PASS: 1699 nodes, 0 invalid items, 0 malformed events; 6.58 s, 201440 KiB",
+      "science_forge_shadow": "not run: no registered shadow input changes; this skip is not a pass"
+    },
+    "final_scoped_timings": {
+      "producer": "14.35 s, 168368 KiB",
+      "independent_verifier": "14.94 s, 159352 KiB",
+      "unit_tests": "34.05 s, 300528 KiB"
+    },
+    "exploratory_failures_not_counted_as_passes": [
+      "the default Python exploratory SymPy invocation stopped immediately because SymPy is absent",
+      "two exploratory inline scripts stopped before calculation on syntax errors; both were corrected and replayed from the start"
+    ]
+  },
+  "checks": {
+    "ok": true,
+    "passed": 22,
+    "total": 22,
+    "failures": [],
+    "details": {
+      "pair_precision_is_72_minus_16_offdiagonal": true,
+      "pair_covariance_is_exact_inverse": true,
+      "free_pair_low_momentum_rate_is_one_over_56": true,
+      "affected_residual_sites_are_16": true,
+      "conditional_interaction_term_counts": true,
+      "vacuum_longitudinal_moment": true,
+      "vacuum_transverse_moment": true,
+      "vacuum_pair_beta_is_negative": true,
+      "annealed_constant": true,
+      "annealed_kernel_has_202_terms": true,
+      "annealed_kernel_kills_green_gauge": true,
+      "annealed_symbol_matches_compact_formula": true,
+      "annealed_symbol_has_125_terms": true,
+      "annealed_symbol_has_degree_five": true,
+      "l6_coefficient_exact": true,
+      "l6_coefficient_positive": true,
+      "large_volume_reduction": true,
+      "walk_lower_bound_exceeds_one_over_10000": true,
+      "diagnostics_positive": true,
+      "nonperturbative_pair_response_remains_open": true,
+      "interacting_h_minus_one_remains_open": true,
+      "no_born_krein_or_lorentzian_promotion": true
+    }
+  },
+  "report": "reverse_physics/reports/bt-euclidean-pair-block-response-one-loop.md",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-pair-block-response-one-loop-v1.schema.json",
+  "verifier": "reverse_physics/verify_bt_euclidean_pair_block_response_one_loop.py"
+}

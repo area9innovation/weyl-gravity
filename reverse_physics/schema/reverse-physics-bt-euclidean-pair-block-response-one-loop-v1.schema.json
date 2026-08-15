@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-pair-block-response-one-loop-v1.schema.json",
+  "title": "BT Euclidean pair-block response one-loop certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "created",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "pair_block_definition",
+    "conditional_one_loop_derivation",
+    "vacuum_pair_diagnostic",
+    "all_volume_formula",
+    "large_volume_decision",
+    "method_consequence",
+    "method_disposition",
+    "missing_object_ledger",
+    "next_gate",
+    "does_not_establish",
+    "provenance",
+    "verification_commands",
+    "tier_receipt",
+    "checks",
+    "report",
+    "schema",
+    "verifier"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EUCLIDEAN_PAIR_BLOCK_RESPONSE_ONE_LOOP_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-euclidean-pair-block-response-one-loop-v1"
+    },
+    "created": {"const": "2026-08-16"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"type": "string", "minLength": 50},
+    "question": {"type": "string", "minLength": 60},
+    "answer": {"type": "string", "minLength": 300},
+    "pair_block_definition": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "block",
+        "normalization",
+        "conditional_free_precision",
+        "conditional_free_covariance",
+        "free_relaxation_symbol",
+        "free_low_momentum_coefficient",
+        "orientation_average"
+      ]
+    },
+    "conditional_one_loop_derivation": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "scaled_action",
+        "jets",
+        "local_subtraction",
+        "affected_residual_sites",
+        "cubic_term_count",
+        "quartic_term_count",
+        "second_order_center",
+        "replica_rule",
+        "marginal_order_lambda_term",
+        "raw_green_kernel_term_count",
+        "raw_green_kernel_sha256",
+        "raw_green_kernel_coefficient_sum",
+        "green_independent_constant"
+      ]
+    },
+    "vacuum_pair_diagnostic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "longitudinal_second_moment_coefficient",
+        "transverse_second_moment_coefficient",
+        "beta_pair_vacuum_lambda2",
+        "sign",
+        "meaning"
+      ],
+      "properties": {
+        "longitudinal_second_moment_coefficient": {"$ref": "#/$defs/fraction"},
+        "transverse_second_moment_coefficient": {"$ref": "#/$defs/fraction"},
+        "beta_pair_vacuum_lambda2": {"$ref": "#/$defs/fraction"},
+        "sign": {"const": "STRICTLY_NEGATIVE"},
+        "meaning": {"type": "string"}
+      }
+    },
+    "all_volume_formula": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "definition",
+        "formula",
+        "x_variables",
+        "numerator",
+        "expanded_term_count",
+        "expanded_sha256",
+        "exact_l6",
+        "exact_l6_sign",
+        "binary64_orientation_diagnostics"
+      ],
+      "properties": {
+        "definition": {"type": "string"},
+        "formula": {"type": "string"},
+        "x_variables": {"type": "string"},
+        "numerator": {"type": "string", "minLength": 100},
+        "expanded_term_count": {"const": 125},
+        "expanded_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "exact_l6": {"$ref": "#/$defs/fraction"},
+        "exact_l6_sign": {"const": "STRICTLY_POSITIVE"},
+        "binary64_orientation_diagnostics": {"type": "array", "minItems": 7}
+      }
+    },
+    "large_volume_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "moment_definitions",
+        "integral_identities",
+        "limit_formula",
+        "walk_truncation_n",
+        "watson_partial",
+        "watson_partial_sha256",
+        "potential_partial",
+        "potential_partial_sha256",
+        "potential_tail_upper",
+        "i4_strict_lower",
+        "substituted_strict_lower",
+        "simple_strict_lower",
+        "sign",
+        "status"
+      ],
+      "properties": {
+        "moment_definitions": {"type": "string"},
+        "integral_identities": {"type": "array", "minItems": 4},
+        "limit_formula": {
+          "const": "b_pair_(2,infinity)=-32629/1517824+W4/14+(39/1568)*I4"
+        },
+        "walk_truncation_n": {"const": 100},
+        "watson_partial": {"$ref": "#/$defs/fraction"},
+        "watson_partial_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "potential_partial": {"$ref": "#/$defs/fraction"},
+        "potential_partial_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "potential_tail_upper": {"$ref": "#/$defs/fraction"},
+        "i4_strict_lower": {"$ref": "#/$defs/fraction"},
+        "substituted_strict_lower": {"$ref": "#/$defs/fraction"},
+        "simple_strict_lower": {"$ref": "#/$defs/fraction"},
+        "sign": {"const": "STRICTLY_POSITIVE"},
+        "status": {"const": "LARGE_VOLUME_PAIR_BLOCK_ONE_LOOP_SIGN_CERTIFIED"}
+      }
+    },
+    "method_consequence": {"type": "object"},
+    "method_disposition": {"type": "object"},
+    "missing_object_ledger": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string"}
+    },
+    "next_gate": {"type": "string", "minLength": 200},
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"type": "string"}
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["repository_base_commit", "inputs", "arithmetic"]
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string"}
+    },
+    "tier_receipt": {"type": "object"},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"]
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-euclidean-pair-block-response-one-loop.md"
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-euclidean-pair-block-response-one-loop-v1.schema.json"
+    },
+    "verifier": {
+      "const": "reverse_physics/verify_bt_euclidean_pair_block_response_one_loop.py"
+    }
+  },
+  "$defs": {
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    }
+  }
+}
