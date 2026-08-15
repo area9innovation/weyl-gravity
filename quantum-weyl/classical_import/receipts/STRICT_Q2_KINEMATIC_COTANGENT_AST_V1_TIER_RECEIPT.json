@@ -1,0 +1,69 @@
+{
+  "receipt_id": "STRICT_Q2_KINEMATIC_COTANGENT_AST_V1_TIER_RECEIPT",
+  "result_ids": [
+    "STRICT_Q2_KINEMATIC_COTANGENT_AST_V1"
+  ],
+  "recorded_at": "2026-08-15",
+  "base_commit": "88dcdd26fc53b46db7ebe0300fe54e19e8365858",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "output_hashes": {
+    "certificate": "1927a795da01fc5fb06cdbe1ecd3de88f14abaab378f180f6b2ea5d486df81d2",
+    "human_report": "6dac369eafd69e624bd87fb1dfd43da85359df6c9005a9f6c43f746baa92ff3f",
+    "builder": "2ab6caf8292ef8861688bc84b801c3bc560579c2825e6da1c0bfd15b094e07a4",
+    "independent_checker": "b440f1a1b86b7941a76cccf9cdc488fc6672180705702fedbdf0142e271320f1",
+    "schema_verifier": "eac1b67b7a4e430d4861f68df1fb3711c3c73705b2643f34ab0761b4a445b963",
+    "schema": "636d19685647cb802cfdcac8f93bb6cc29cf9ee077f7277da3baad0db6aef519",
+    "mutation_tests": "7a7781f96f69ffcdc093b76c8de35715c2e29f741f255ad7a1b1b8b2af7abf8b"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile quantum-weyl/classical_import/build_strict_q2_kinematic_cotangent_ast.py quantum-weyl/classical_import/check_strict_q2_kinematic_cotangent_ast.py quantum-weyl/classical_import/verify_strict_q2_kinematic_cotangent_ast.py quantum-weyl/classical_import/tests/test_strict_q2_kinematic_cotangent_ast.py",
+      "elapsed_seconds": 0.05,
+      "status": "PASS"
+    },
+    {
+      "tier": 0,
+      "command": "jq empty quantum-weyl/classical_import/schema/strict-q2-kinematic-cotangent-ast-v1.schema.json quantum-weyl/classical_import/certificates/STRICT_Q2_KINEMATIC_COTANGENT_AST_V1.json",
+      "elapsed_seconds": 0.0,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/build_strict_q2_kinematic_cotangent_ast.py --check",
+      "elapsed_seconds": 0.06,
+      "status": "PASS_GENERATED_ARTIFACTS_CURRENT"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/check_strict_q2_kinematic_cotangent_ast.py",
+      "elapsed_seconds": 0.04,
+      "status": "PASS_NINE_OPERATORS_FIVE_ROWS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/verify_strict_q2_kinematic_cotangent_ast.py",
+      "elapsed_seconds": 0.14,
+      "status": "PASS_SCHEMA_PROVENANCE_AND_NO_PROMOTION_FIREWALL"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_q2_kinematic_cotangent_ast.py -v",
+      "elapsed_seconds": 0.22,
+      "status": "PASS_12_TESTS"
+    }
+  ],
+  "supplemental_attempts": [
+    {
+      "command": "cd quantum-weyl && python3 -m classical_import.verify_minimal_bv_antifield_import_v2",
+      "status": "NOT_COMPLETED_MISSING_OPTIONAL_SYMPY_DEPENDENCY",
+      "counted_as_pass": false,
+      "boundary": "The upstream input was not regenerated or promoted. Its checked-in receiver certificate and canonical hashes are content-pinned and independently crosschecked by this package."
+    }
+  ],
+  "tier_2_not_run": "No upstream mathematical input, shared operator or existing schema changed. The new partial export is not consumed by the complete q2/D chain, and its five content-pinned upstream inputs are unchanged. All new direct producer, checker, schema and mutation-test consumers ran.",
+  "tier_3_not_run": "No freeze, theorem lifecycle promotion, shared core algebra change, release or tag is made. The metric-antifield row, graded polarization and complete q2/D receiver remain open; Gate A remains FAIL_CLOSED.",
+  "claim_boundary": "This LOCAL-ALGEBRAIC CLASSIFIED result serializes nine exact tensor-natural coordinate operators for five diagonal quadratic Q rows and crosswalks their coefficients, source atoms, local tangent gradings and variational origins. It does not construct the h_star Bach row, replay suspended graded polarization, establish Koszul symmetry, q1q2=0, D derivation or BV cyclicity, pass Gate A, construct causal Green data or a Hadamard state, restore a QME, or establish a Lorentzian quantum theory."
+}

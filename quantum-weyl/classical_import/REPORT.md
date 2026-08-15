@@ -101,6 +101,18 @@ unary obstruction to the old weights-2,3,4 receiver, not an obstruction to the
 all-energy local `q2`. Consequently the next admissible construction is the
 all-energy component export, not projection into the finite receiver.
 
+The first such component package is
+[`STRICT_Q2_KINEMATIC_COTANGENT_AST_V1`](REPORT_STRICT_Q2_KINEMATIC_COTANGENT_AST_V1.md).
+It serializes nine exact tensor-natural operators covering five of the six
+minimal diagonal Taylor rows and binds every sign and coefficient to the
+independently replayed v2 antifield export. Each coordinate formula also names
+its master-action term and Euler variable. The package explicitly distinguishes
+local tangent degree from conventional BV ghost number; it does not feed the
+ghost diagonal through the older generic bilinear preflight, whose degree
+convention is not yet adequate for that row. The `h_star` Bach row and the
+suspended graded polarization therefore remain fail closed, as do all complete
+`q2/D` identities.
+
 ## Antifield/Koszul--Tate handoff contract
 
 The required shape of the local antifield export is now executable rather

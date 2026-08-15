@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-q2-kinematic-cotangent-ast-v1.schema.json",
+  "title": "Strict pure-Weyl five-row q2 diagonal AST candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "created", "repository_base_commit", "classical_commit", "dependency_tags", "scope", "generator_ledger", "source_crosswalk", "operator_definitions", "components", "row_ledger", "proof_gates", "next_hard_kernel", "canonical_hashes", "provenance", "claim_flags", "does_not_establish", "independent_checker", "human_report"],
+  "properties": {
+    "schema": {"const": "strict-q2-kinematic-cotangent-ast-v1"},
+    "result_id": {"const": "STRICT_Q2_KINEMATIC_COTANGENT_AST_V1"},
+    "result_kind": {"const": "PARTIAL_DIAGONAL_TAYLOR_COMPONENT_EXPORT"},
+    "result_state": {"const": "FIVE_OF_SIX_MINIMAL_ROWS_SERIALIZED_POLARIZATION_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"$ref": "#/$defs/commit"},
+    "classical_commit": {"$ref": "#/$defs/commit"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background", "carrier", "support_rule", "coefficient_field", "maximum_serialized_input_jet_order", "maximum_serialized_total_jet_order", "expression_schema_version", "taylor_boundary"],
+      "properties": {
+        "theory": {"type": "string", "minLength": 20},
+        "background": {"type": "string", "minLength": 80},
+        "carrier": {"type": "string", "minLength": 60},
+        "support_rule": {"type": "string", "minLength": 50},
+        "coefficient_field": {"const": "Q"},
+        "maximum_serialized_input_jet_order": {"const": 1},
+        "maximum_serialized_total_jet_order": {"const": 2},
+        "expression_schema_version": {"const": "strict-pure-weyl-tensor-natural-diagonal-v1"},
+        "taylor_boundary": {"type": "string", "minLength": 120}
+      }
+    },
+    "generator_ledger": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/generator"}},
+    "source_crosswalk": {"type": "object", "additionalProperties": false, "required": ["source_Q_rows", "source_canonical_hashes", "receiver_canonical_hashes", "master_action", "master_term_dictionary"], "properties": {"source_Q_rows": {"type": "object", "minProperties": 5, "maxProperties": 5}, "source_canonical_hashes": {"type": "object", "minProperties": 5}, "receiver_canonical_hashes": {"type": "object", "minProperties": 5}, "master_action": {"type": "array", "minItems": 4, "maxItems": 4}, "master_term_dictionary": {"type": "object", "minProperties": 4, "maxProperties": 4, "additionalProperties": {"type": "string", "minLength": 20}}}},
+    "operator_definitions": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"$ref": "#/$defs/operator"}},
+    "components": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"$ref": "#/$defs/component"}},
+    "row_ledger": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/row"}},
+    "proof_gates": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"$ref": "#/$defs/gate"}},
+    "next_hard_kernel": {"type": "object", "additionalProperties": false, "required": ["output", "required_terms", "maximum_metric_jet_order", "status"], "properties": {"output": {"const": "h_star"}, "required_terms": {"type": "array", "minItems": 3, "maxItems": 3}, "maximum_metric_jet_order": {"const": 4}, "status": {"const": "OPEN_NOT_SERIALIZED"}}},
+    "canonical_hashes": {"type": "object", "additionalProperties": false, "required": ["generator_ledger_sha256", "operator_definitions_sha256", "components_sha256", "row_ledger_sha256", "proof_gates_sha256", "source_crosswalk_sha256"], "properties": {"generator_ledger_sha256": {"$ref": "#/$defs/hash"}, "operator_definitions_sha256": {"$ref": "#/$defs/hash"}, "components_sha256": {"$ref": "#/$defs/hash"}, "row_ledger_sha256": {"$ref": "#/$defs/hash"}, "proof_gates_sha256": {"$ref": "#/$defs/hash"}, "source_crosswalk_sha256": {"$ref": "#/$defs/hash"}}},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["inputs"], "properties": {"inputs": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/input"}}}},
+    "claim_flags": {"type": "object", "additionalProperties": false, "required": ["FIVE_DIAGONAL_Q2_ROWS_PORTABLE", "SIXTH_METRIC_ANTIFIELD_ROW_PORTABLE", "SUSPENDED_GRADED_POLARIZATION_REPLAYED", "STRICT_SUPPORT_LOCAL_Q2_COMPLETE", "STRICT_FULL_LOCAL_D_ACTION_CERTIFIED", "CLASSICAL_IMPORT_GATE_PASSED", "QME_RESTORED", "LORENTZIAN_QUANTUM_THEORY"], "properties": {"FIVE_DIAGONAL_Q2_ROWS_PORTABLE": {"const": true}, "SIXTH_METRIC_ANTIFIELD_ROW_PORTABLE": {"const": false}, "SUSPENDED_GRADED_POLARIZATION_REPLAYED": {"const": false}, "STRICT_SUPPORT_LOCAL_Q2_COMPLETE": {"const": false}, "STRICT_FULL_LOCAL_D_ACTION_CERTIFIED": {"const": false}, "CLASSICAL_IMPORT_GATE_PASSED": {"const": false}, "QME_RESTORED": {"const": false}, "LORENTZIAN_QUANTUM_THEORY": {"const": false}}},
+    "does_not_establish": {"type": "array", "minItems": 7, "items": {"type": "string", "minLength": 25}},
+    "independent_checker": {"const": "quantum-weyl/classical_import/check_strict_q2_kinematic_cotangent_ast.py"},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_Q2_KINEMATIC_COTANGENT_AST_V1.md"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "generator": {"type": "object", "additionalProperties": false, "required": ["symbol", "role", "local_tangent_degree", "BV_ghost_number", "Grassmann_parity"], "properties": {"symbol": {"enum": ["h", "c", "omega", "h_star", "c_star", "omega_star"]}, "role": {"type": "string", "minLength": 5}, "local_tangent_degree": {"type": "integer"}, "BV_ghost_number": {"type": "integer"}, "Grassmann_parity": {"enum": [0, 1]}}},
+    "operator": {"type": "object", "additionalProperties": false, "required": ["operator_id", "output", "inputs", "maximum_input_jet_orders", "coordinate_formula", "source_atoms", "variational_origin", "support_rule"], "properties": {"operator_id": {"type": "string", "minLength": 3}, "output": {"type": "string", "minLength": 1}, "inputs": {"type": "array", "minItems": 2, "maxItems": 2}, "maximum_input_jet_orders": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0, "maximum": 1}}, "coordinate_formula": {"type": "string", "minLength": 15}, "source_atoms": {"type": "array", "minItems": 1}, "variational_origin": {"type": "object", "additionalProperties": false, "required": ["master_term_id", "Euler_variable", "BV_coordinate_sign"], "properties": {"master_term_id": {"enum": ["A_DIFF_METRIC", "A_WEYL_METRIC", "A_DIFF_GHOST", "A_DIFF_WEYL_GHOST"]}, "Euler_variable": {"enum": ["h_star", "c_star", "omega_star", "c", "omega"]}, "BV_coordinate_sign": {"const": "fixed by the receiver-replayed source Q row"}}}, "support_rule": {"const": "output support is contained in the intersection of all input supports"}}},
+    "component": {"type": "object", "additionalProperties": false, "required": ["component_id", "output", "inputs", "coefficient", "operator_id"], "properties": {"component_id": {"type": "string", "minLength": 5}, "output": {"enum": ["h", "c", "omega", "c_star", "omega_star"]}, "inputs": {"type": "array", "minItems": 2, "maxItems": 2}, "coefficient": {"type": "integer"}, "operator_id": {"type": "string", "minLength": 3}}},
+    "row": {"type": "object", "additionalProperties": false, "required": ["output", "status", "component_ids"], "properties": {"output": {"enum": ["h", "c", "omega", "h_star", "c_star", "omega_star"]}, "status": {"enum": ["DIAGONAL_POLYNOMIAL_SERIALIZED", "OPEN_HARD_BACH_AND_COTANGENT_ROW"]}, "component_ids": {"type": "array", "uniqueItems": true}}},
+    "gate": {"type": "object", "additionalProperties": false, "required": ["check_id", "status", "scope"], "properties": {"check_id": {"type": "string", "minLength": 5}, "status": {"enum": ["RECEIVER_REPLAYED", "NOT_REPLAYED"]}, "scope": {"type": "string", "minLength": 25}}},
+    "input": {"type": "object", "additionalProperties": false, "required": ["path", "result_or_artifact_id", "sha256", "role"], "properties": {"path": {"type": "string", "minLength": 5}, "result_or_artifact_id": {"type": "string", "minLength": 5}, "sha256": {"$ref": "#/$defs/hash"}, "role": {"type": "string", "minLength": 10}}}
+  }
+}

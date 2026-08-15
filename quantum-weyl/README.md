@@ -133,6 +133,13 @@ or quantum-master-equation result.
   energy-five obstruction belongs to the old finite time-slice receiver rather
   than to an all-energy support-local `q2`. No interaction identity or Gate-A
   promotion is inferred from this classification.
+- [`classical_import/REPORT_STRICT_Q2_KINEMATIC_COTANGENT_AST_V1.md`](classical_import/REPORT_STRICT_Q2_KINEMATIC_COTANGENT_AST_V1.md)
+  executes the first cut from that audit. Nine exact tensor-natural operators
+  serialize the diagonal Taylor polynomial for the Diff ghost, Weyl ghost,
+  metric, Diff-ghost-antifield and Weyl-ghost-antifield rows, with signs pinned
+  to the independently replayed minimal-BV export and variational origins in
+  the displayed master action. The metric-antifield/Bach row, suspended graded
+  polarization, arity-two identities, local `D` and cyclicity remain open.
 - [`reports/branch-a-local-bv-bootstrap.md`](reports/branch-a-local-bv-bootstrap.md)
   records the exact minimal jet/BRST substrate and its uncomputed quotients.
 - [`reports/local-curvature-canonicalization.md`](reports/local-curvature-canonicalization.md)
