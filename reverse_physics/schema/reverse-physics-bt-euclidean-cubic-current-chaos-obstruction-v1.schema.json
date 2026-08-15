@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-cubic-current-chaos-obstruction-v1.schema.json",
+  "title": "BT Euclidean cubic-current chaos obstruction V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "created", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "cubic_current_expansion", "compact_cubic_motif", "orthogonal_packing_and_chaos", "extensive_variance_obstruction", "method_disposition", "does_not_establish", "missing_object_ledger", "next_gate", "checks", "provenance", "schema", "report", "independent_verifier", "verification_commands"],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "rational": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "input": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "support": {"type": "object", "additionalProperties": false, "required": ["site", "value"], "properties": {"site": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer", "minimum": 0}}, "value": {"type": "integer", "minimum": -1, "maximum": 1}}}
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_CUBIC_CURRENT_CHAOS_OBSTRUCTION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-cubic-current-chaos-obstruction-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "FREE_CUBIC_CURRENT_TERM_HYPERUNIFORMITY_OBSTRUCTED_FULL_INTERACTING_CANCELLATION_OPEN"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "cubic_current_expansion": {"type": "object", "additionalProperties": false, "required": ["field_scaling", "linear_residual", "quadratic_residual", "cubic_residual", "edge_difference", "cubic_current", "zero_mode_after_telescoping", "status"], "properties": {"field_scaling": {"$ref": "#/$defs/text"}, "linear_residual": {"$ref": "#/$defs/text"}, "quadratic_residual": {"$ref": "#/$defs/text"}, "cubic_residual": {"$ref": "#/$defs/text"}, "edge_difference": {"$ref": "#/$defs/text"}, "cubic_current": {"$ref": "#/$defs/text"}, "zero_mode_after_telescoping": {"$ref": "#/$defs/text"}, "status": {"const": "EXACT_HOMOGENEOUS_EXPANSION"}}},
+    "compact_cubic_motif": {"type": "object", "additionalProperties": false, "required": ["scope", "exponent_support", "slice_proof", "free_action_inner_product_norm_squared", "cubic_current_row_profile", "fourier_profile", "fourier_profile_floor", "nonzero_laplacian_count", "nonzero_cubic_current_count", "status"], "properties": {"scope": {"const": "every L^4 torus with L>=5"}, "exponent_support": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/support"}}, "slice_proof": {"$ref": "#/$defs/text"}, "free_action_inner_product_norm_squared": {"$ref": "#/$defs/rational"}, "cubic_current_row_profile": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/rational"}}, "fourier_profile": {"$ref": "#/$defs/text"}, "fourier_profile_floor": {"$ref": "#/$defs/rational"}, "nonzero_laplacian_count": {"const": 28}, "nonzero_cubic_current_count": {"const": 45}, "status": {"const": "EXACT_LOCAL_CUBIC_CURRENT_WITNESS"}}},
+    "orthogonal_packing_and_chaos": {"type": "object", "additionalProperties": false, "required": ["volume_sequence", "translations", "packing_count", "orthogonality", "background_slice", "gaussian_coordinates", "third_chaos", "status"], "properties": {"volume_sequence": {"const": "L=5m, m>=1, N=L^4"}, "translations": {"$ref": "#/$defs/text"}, "packing_count": {"const": "M=(L/5)^4=N/625"}, "orthogonality": {"$ref": "#/$defs/text"}, "background_slice": {"$ref": "#/$defs/text"}, "gaussian_coordinates": {"$ref": "#/$defs/text"}, "third_chaos": {"$ref": "#/$defs/text"}, "status": {"const": "EXACT_ORTHOGONAL_HERMITE_LOWER_BOUND"}}},
+    "extensive_variance_obstruction": {"type": "object", "additionalProperties": false, "required": ["general_lower_bound", "general_variance_density", "lambda_point_four_lower_bound", "lambda_point_four_variance_density", "lowest_momentum", "normalized_divergence", "normalized_divergence_coefficient", "status"], "properties": {"general_lower_bound": {"$ref": "#/$defs/text"}, "general_variance_density": {"$ref": "#/$defs/rational"}, "lambda_point_four_lower_bound": {"$ref": "#/$defs/text"}, "lambda_point_four_variance_density": {"$ref": "#/$defs/rational"}, "lowest_momentum": {"$ref": "#/$defs/text"}, "normalized_divergence": {"$ref": "#/$defs/text"}, "normalized_divergence_coefficient": {"$ref": "#/$defs/rational"}, "status": {"const": "DIVERGES_QUADRATICALLY_TERM_BY_TERM_ON_L_IN_5N"}}},
+    "method_disposition": {"type": "object", "additionalProperties": false, "required": ["linear_current_second_soft_factor", "quadratic_current_zero_mode", "cubic_current_termwise_hyperuniformity", "homogeneous_order_by_order_absolute_current_bound", "cross_order_and_measure_Ward_cancellation", "complete_perturbative_current_susceptibility", "nonperturbative_background_marginal_susceptibility", "actual_interacting_H_minus_one_second_moment", "continuum_limit", "born_rule", "krein_reconstruction", "lorentzian_transfer"], "properties": {"linear_current_second_soft_factor": {"const": "PRESENT_ON_BACKGROUND_SLICE"}, "quadratic_current_zero_mode": {"const": "CANCELS_IDENTICALLY"}, "cubic_current_termwise_hyperuniformity": {"const": "OBSTRUCTED"}, "homogeneous_order_by_order_absolute_current_bound": {"const": "OBSTRUCTED"}, "cross_order_and_measure_Ward_cancellation": {"const": "OPEN"}, "complete_perturbative_current_susceptibility": {"const": "NOT_DECIDED"}, "nonperturbative_background_marginal_susceptibility": {"const": "OPEN"}, "actual_interacting_H_minus_one_second_moment": {"const": "OPEN"}, "continuum_limit": {"const": "NOT_ESTABLISHED"}, "born_rule": {"const": "NOT_ESTABLISHED"}, "krein_reconstruction": {"const": "NOT_ASSESSED"}, "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}}},
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {"type": "object", "minProperties": 20, "additionalProperties": {"const": true}},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["repository_base_commit", "inputs", "exact_arithmetic", "analytic_arithmetic", "assumptions"], "properties": {"repository_base_commit": {"const": "d13ef71a823fda09db0390c0e5479c17ccbed0cf"}, "inputs": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/input"}}, "exact_arithmetic": {"$ref": "#/$defs/text"}, "analytic_arithmetic": {"$ref": "#/$defs/text"}, "assumptions": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/text"}}}},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-cubic-current-chaos-obstruction-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-cubic-current-chaos-obstruction.md"},
+    "independent_verifier": {"const": "reverse_physics/verify_bt_euclidean_cubic_current_chaos_obstruction.py"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}}
+  }
+}
