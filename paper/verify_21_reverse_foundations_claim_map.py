@@ -146,6 +146,10 @@ def main() -> int:
     strict_identity_obstruction = json.loads((ROOT / data["authorities"]["strict_386_nonminimal_theory_identity_obstruction"]["path"]).read_text())
     gate_v8 = json.loads((ROOT / data["authorities"]["classical_import_gate_v8"]["path"]).read_text())
     completion_atlas_v26 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v26"]["path"]).read_text())
+    classical_quadratic_map = json.loads((ROOT / data["authorities"]["classical_quadratic_auxiliary_elimination_map"]["path"]).read_text())
+    strict_quadratic_channel = json.loads((ROOT / data["authorities"]["strict_386_quadratic_auxiliary_elimination_channel"]["path"]).read_text())
+    gate_v9 = json.loads((ROOT / data["authorities"]["classical_import_gate_v9"]["path"]).read_text())
+    completion_atlas_v27 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v27"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -455,6 +459,8 @@ def main() -> int:
         (52, "STRICT-WEYL-386-STABILIZED-Q3-PREFLIGHT"),
         (53, "STRICT-WEYL-NONMINIMAL-THEORY-IDENTITY-OBSTRUCTION"),
         (54, "STRICT-WEYL-GATE-V8-NONLINEAR-EQUIVALENCE-FRONTIER"),
+        (55, "STRICT-WEYL-QUADRATIC-AUXILIARY-ELIMINATION-COMPONENT"),
+        (56, "STRICT-WEYL-GATE-V9-COMPONENTWISE-PULLBACK-FRONTIER"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -749,6 +755,15 @@ def main() -> int:
     require(gate_v8_m2["source_value"] == "-1" and gate_v8_m2["candidate_value"] == "0" and gate_v8_m2["defect"] == "-1" and gate_v8_m2["nonlinear_equivalence_may_exist"] is True and gate_v8_m2["nonlinear_equivalence_constructed"] is False and gate_v8_m2["nonlinear_equivalence_obstructed"] is False, "Gate V8 nonlinear-equivalence disposition drift")
     require(completion_atlas_v26["strict_gate_v8_reconciliation"]["result_id"] == gate_v8["result_id"] and completion_atlas_v26["strict_gate_v8_reconciliation"]["accepted_top_level_hashes"] == 0, "completion atlas V26 Gate V8 projection drift")
     require([item["route"] for item in completion_atlas_v26["route_selection"][:4]] == ["STRICT_NONLINEAR_AUXILIARY_ELIMINATION_MAP_Q2", "STRICT_SOURCE_Q2_Q3_PULLBACK_IDENTITY", "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE", "STRICT_CANDIDATE_Q2_Q3_GREEN_LAMBDA2_RESPONSE"], "completion atlas V26 frontier ordering drift")
+    quadratic_fixture = classical_quadratic_map["quadratic_auxiliary_map"]["fixture"]
+    require(classical_quadratic_map["quadratic_auxiliary_map"]["source_to_split_homogeneous_quadratic_component"] == "F_(2)(v)=v tensor v-(1/2)g v^2" and quadratic_fixture["source_f_hat_v_v_mixed_polarization"] == "-1" and quadratic_fixture["inverse_shift_mass_cross_mixed_polarization"] == "1" and quadratic_fixture["corrected_channel_residual"] == "0", "authoritative quadratic auxiliary map drift")
+    channel_replay = strict_quadratic_channel["channel_pullback_replay"]
+    require(channel_replay["carrier_rows"] == 386 and channel_replay["pre_correction_source_value"] == "-1" and channel_replay["inverse_shift_mass_cross_correction"] == "1" and channel_replay["transformed_source_value"] == "0" and channel_replay["candidate_value"] == "0" and channel_replay["transformed_source_minus_candidate_residual"] == "0" and channel_replay["support_local"] is True and channel_replay["uses_green_operator"] is False and channel_replay["uses_choice_principle"] is False, "independent quadratic channel replay drift")
+    require(strict_quadratic_channel["equivalence_boundary"]["receiver_componentwise_386_cotangent_lift_serialized"] is False and strict_quadratic_channel["equivalence_boundary"]["complete_source_q2_pullback_replayed"] is False and strict_quadratic_channel["equivalence_boundary"]["complete_source_q3_pullback_replayed"] is False and strict_quadratic_channel["equivalence_boundary"]["full_cyclic_L_infinity_equivalence_constructed"] is False, "quadratic channel full-equivalence firewall drift")
+    require(gate_v9["gate_disposition"]["gate_a_status"] == "FAIL_CLOSED" and gate_v9["gate_disposition"]["accepted_common_snapshot_hashes"] == 0 and gate_v9["required_hash_disposition"]["q2_hash"]["accepted"] is None, "Gate V9 hash/Gate-A firewall drift")
+    v27_quadratic = completion_atlas_v27["strict_quadratic_auxiliary_elimination"]
+    require(v27_quadratic["source_before_correction"] == "-1" and v27_quadratic["inverse_shift_correction"] == "1" and v27_quadratic["transformed_source"] == "0" and v27_quadratic["candidate"] == "0" and v27_quadratic["residual"] == "0", "completion atlas V27 nonlinear-component projection drift")
+    require([item["route"] for item in completion_atlas_v27["route_selection"][:3]] == ["STRICT_NONLINEAR_SHIFT_CUBIC_CHANNEL_INVENTORY", "STRICT_386_BV_COTANGENT_LIFT_COMPONENTS", "STRICT_SOURCE_Q2_Q3_PULLBACK_IDENTITY"], "completion atlas V27 frontier ordering drift")
     require(flags["strict_386_field_equation_green_component_typed"] is True and flags["strict_386_field_equation_constrained_right_inverse_certified"] is True and flags["strict_386_field_equation_quotient_left_inverse_certified"] is True and flags["strict_386_ungauge_fixed_full_inverse_obstructed"] is True and flags["strict_386_q2_only_lambda2_source_obstructed"] is True and flags["strict_386_authoritative_q3_cancellation_target_exact"] is True and flags["strict_386_authoritative_q3_imported"] is False and flags["strict_386_full_weyl_lambda2_source_closure_certified"] is False and flags["strict_386_all_order_nonlinear_source_closure_certified"] is False, "typed inverse/nonlinear lifecycle firewall drift")
     require(flags["strict_pure_weyl_metric_q3_witness_derived"] is True and flags["strict_pure_weyl_q3_witness_cancellation_certified"] is True and flags["strict_386_lambda2_witness_full_source_closed"] is True and flags["strict_386_Berger_q3_direct_import_compatible"] is False and flags["strict_386_arbitrary_input_q3_certified"] is False and flags["strict_386_full_bv_arity_three_identity_certified"] is False, "paper cubic-witness authority firewall drift")
     require(flags["strict_authoritative_minimal_q3_imported"] is True and flags["strict_minimal_full_bv_arity_three_identity_certified"] is True and flags["strict_minimal_q3_cyclicity_certified"] is True and flags["strict_386_q3_stabilized"] is False, "paper minimal-q3/386 firewall drift")
@@ -757,6 +772,9 @@ def main() -> int:
     require(flags["strict_386_literal_trivial_stabilization_identity_refuted"] is True and flags["strict_386_linear_shear_theory_identity_refuted"] is True and flags["strict_386_candidate_internal_identities_preserved"] is True and flags["strict_386_nonlinear_equivalence_may_exist"] is True, "paper theory-identity obstruction flags missing")
     require(flags["strict_386_nonlinear_equivalence_constructed"] is False and flags["strict_386_nonlinear_equivalence_obstructed"] is False, "paper nonlinear-equivalence boundary drift")
     require(flags["classical_import_gate_v8_fail_closed"] is True, "paper Gate V8 fail-closed flag missing")
+    require(flags["strict_386_first_nonlinear_equivalence_component_constructed"] is True and flags["strict_386_f_hat_v_v_pullback_channel_closed"] is True and flags["strict_386_quadratic_auxiliary_map_support_local"] is True, "paper first nonlinear component flags missing")
+    require(flags["strict_386_quadratic_auxiliary_map_uses_green_operator"] is False and flags["strict_386_quadratic_auxiliary_map_uses_choice_principle"] is False, "paper auxiliary map foundations boundary drift")
+    require(flags["strict_386_full_cotangent_lift_serialized"] is False and flags["strict_386_full_source_q2_q3_pullback_replayed"] is False and flags["classical_import_gate_v9_fail_closed"] is True, "paper Gate V9/full-pullback firewall drift")
     require(flags["static_atlas_appendix_generated"] is True, "static atlas appendix flag is not certified")
     require(flags["complete_evidence_register_generated"] is True, "complete evidence register flag is not certified")
     require(flags["complete_literature_register_generated"] is True, "complete literature register flag is not certified")
@@ -1210,6 +1228,10 @@ def main() -> int:
         r"STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1",
         r"CLASSICAL_IMPORT_GATE_V8_RECONCILIATION",
         r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V26",
+        r"CLASSICAL_QUADRATIC_AUXILIARY_ELIMINATION_MAP_V1",
+        r"STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1",
+        r"CLASSICAL_IMPORT_GATE_V9_RECONCILIATION",
+        r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V27",
         r"41 exact rational",
         r"NO_CERTIFIED_SAME_THEORY_CARRIER_MAP",
         r"STRICT_NONMINIMAL_THEORY_IDENTITY",

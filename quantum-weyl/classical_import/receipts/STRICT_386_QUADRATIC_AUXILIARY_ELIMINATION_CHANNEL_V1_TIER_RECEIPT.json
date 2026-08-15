@@ -1,0 +1,126 @@
+{
+  "receipt_id": "STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1_TIER_RECEIPT",
+  "result_ids": [
+    "CLASSICAL_QUADRATIC_AUXILIARY_ELIMINATION_MAP_V1",
+    "STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1",
+    "CLASSICAL_IMPORT_GATE_V9_RECONCILIATION",
+    "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V27",
+    "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
+    "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1"
+  ],
+  "recorded_at": "2026-08-15",
+  "base_commit": "a004672f18a9011ff65b7e79b498d4a3f7985bec",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "output_hashes": {
+    "classical_quadratic_auxiliary_map": "0f5027c3e466fcbd5a7153cc1dac10be10ed7326cb501adc9cf644f50274515b",
+    "classical_quadratic_auxiliary_report": "3faf71a5d89644c0b0f20124b1aa2dd830de4b73acd36460581411d2517ebaba",
+    "strict_quadratic_channel": "5c3fa2a16bd60edc0891ce004d1fe7988647aa015185b6e4a901d867f1041b44",
+    "strict_quadratic_channel_report": "dcced7f4f3040bda46b41ca720d33a50018499e8af8c94ce4c6e57d0450d0442",
+    "classical_import_gate_v9": "6abb2ba1d3ad40c70dc996811de4ae64f85134fc885ae914eed1d64f5be9e099",
+    "classical_import_gate_v9_report": "59aacdb34e6f816f07c8335a0028e1cd01ee011af0afa0432ca1107d15922c0e",
+    "completion_atlas_v27": "52b83585189854b6d1bf5ddf734194192c7d730b4a60ca9a6a51d7ad2a8dc4d9",
+    "completion_atlas_v27_report": "795793ddd9a40160da4d5efa994117da7ba0258a165e0a4712cc0eb112cfff74",
+    "static_site_result": "56b7833479a068cdb8eb9d80e095215097633552796e88e36b301d189d5e197c",
+    "static_site_manifest": "704f26096a3eb74434268d8c1dc26792ebe92222977036c3154042860b15d7b9",
+    "paper_claim_map": "2acbfb59c4a5fdb682908797a1ed819b5b52ac566b7ce49c6862c388dde6a1a5",
+    "paper_pdf": "eded1799339c484023c78e89840c9d824b31f3b5eb683faafa3b4eb69319b48d"
+  },
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        {
+          "command": "python3 -m py_compile paper/generate_21_reverse_foundations_claim_map.py paper/verify_21_reverse_foundations_claim_map.py paper/generate_21_reverse_foundations_appendices.py foundations/build_matrix_site_v2.py",
+          "status": "PASS"
+        },
+        {
+          "command": "git diff --check -- <scoped paths>",
+          "status": "PASS",
+          "timing_note": "Run immediately before staging; recorded by the coherent commit inspection."
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS_WITH_NONCERTIFYING_TOOL_GAP_RECORDED",
+      "checks": [
+        {
+          "command": "python3 -m unittest d_quotient_classical.nonminimal_identity.tests.test_classical_quadratic_auxiliary_elimination_map_v1 quantum-weyl.classical_import.tests.test_strict_386_quadratic_auxiliary_elimination_channel quantum-weyl.classical_import.tests.test_classical_import_gate_v9_reconciliation foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v27 foundations.tests.test_matrix_site",
+          "elapsed_seconds": 3.17,
+          "status": "PASS_37_TESTS"
+        },
+        {
+          "command": "python3 foundations/check_matrix_site_v2.py",
+          "elapsed_seconds": 0.36,
+          "status": "PASS_576_CELLS_77_COMPLETION_CELLS_12_ROUTES"
+        },
+        {
+          "command": "python3 foundations/verify_matrix_site_v2.py",
+          "elapsed_seconds": 0.61,
+          "status": "PASS_SCHEMA_DETERMINISM_MANIFEST_AND_BOUNDARIES"
+        },
+        {
+          "command": "python3 paper/verify_21_reverse_foundations_claim_map.py",
+          "elapsed_seconds": 0.18,
+          "status": "PASS_56_CLAIMS_AUTHORITY_HASHES_AND_BOUNDARIES"
+        },
+        {
+          "command": "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (two passes)",
+          "elapsed_seconds": 2.36,
+          "status": "PASS_70_PAGES_WITH_NONFATAL_LAYOUT_WARNINGS"
+        },
+        {
+          "command": "node --check foundations/matrix_site_v2_assets/app-v2.js",
+          "status": "NOT_RUN_NOT_A_PASS",
+          "reason": "The node executable is unavailable. The independent Python static-site verifier passed its deterministic token, manifest and boundary checks, but this does not substitute for a JavaScript parser."
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "checks": [
+        {
+          "command": "python3 d_quotient_classical/nonminimal_identity/verify_classical_quadratic_auxiliary_elimination_map_v1.py",
+          "elapsed_seconds": 0.09,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 quantum-weyl/classical_import/verify_strict_386_quadratic_auxiliary_elimination_channel.py",
+          "elapsed_seconds": 0.10,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 quantum-weyl/classical_import/verify_classical_import_gate_v9_reconciliation.py",
+          "elapsed_seconds": 0.10,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v27.py",
+          "elapsed_seconds": 0.11,
+          "status": "PASS"
+        }
+      ],
+      "criterion": "The affected chain from the authoritative local auxiliary map through the independent receiver replay, Gate V9, Atlas V27, static explorer and Paper 21 was rebuilt and verified. Unchanged upstream classical and causal inputs remain content-addressed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, release or theorem lifecycle promotion is made, and no shared core algebra is changed. Gate A, Hadamard construction, renormalized products, QME restoration, residual transfer and Lorentzian certification remain false."
+    }
+  },
+  "science_forge_shadow": {
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": 3.25,
+    "maximum_resident_kib": 341476,
+    "process_exit": 0,
+    "certifying_status": "ADVISORY_NON_CERTIFYING_WITH_FINDINGS",
+    "findings": [
+      "The local bridge audit resolves through the bp2transformer tree rather than this repository.",
+      "That external bridge audit fails because SymPy is unavailable.",
+      "The corpus census reports 1836 certificates against the 2026-07-19 baseline of 976.",
+      "The Forge binary is an unpinned dirty development build whose embedded revision differs from the current forge/lib checkout."
+    ]
+  },
+  "claim_boundary": "The exact support-local quadratic auxiliary shift contributes +1 and cancels the pinned source channel Omega(f_hat,q2(v,v))=-1, matching the candidate value zero. This constructs the first nonlinear-equivalence component and closes one channel. It does not serialize the componentwise 386-row BV cotangent lift, enumerate the metric-dependent or ghost/antifield channel families, replay the complete source q2/q3 pullback, or establish a cyclic L-infinity equivalence. Gate V9 therefore remains FAIL_CLOSED with zero accepted authoritative hashes. No complete Lorentzian off-shell BV propagator, full-complex Hadamard state, renormalized Lorentzian time-ordered product, causal pAQFT construction, QME restoration, residual transfer or Lorentzian quantum theory is claimed."
+}

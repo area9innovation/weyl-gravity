@@ -846,6 +846,16 @@
       "result_id": "CLASSICAL_IMPORT_GATE_V8_RECONCILIATION",
       "sha256": "b10b11ed48ddf5ddffb3a959982d20fe473282aa9c4b2ba7ae76a2d403bf1b7f"
     },
+    "classical_import_gate_v9": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V9_RECONCILIATION.json",
+      "result_id": "CLASSICAL_IMPORT_GATE_V9_RECONCILIATION",
+      "sha256": "6abb2ba1d3ad40c70dc996811de4ae64f85134fc885ae914eed1d64f5be9e099"
+    },
     "classical_minimal_bv_q3_export": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC"
@@ -863,6 +873,15 @@
       "path": "d_quotient_classical/certificates/CLASSICAL_ORDINARY_DERIVATIVE_AUXILIARY_CUBIC_EXPORT_V1.json",
       "result_id": "CLASSICAL_ORDINARY_DERIVATIVE_AUXILIARY_CUBIC_EXPORT_V1",
       "sha256": "a5cb1c62136cfad58bcd589d3719e6349e0e9bdd8ef2ce381cd4a8f259fddf59"
+    },
+    "classical_quadratic_auxiliary_elimination_map": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "d_quotient_classical/certificates/CLASSICAL_QUADRATIC_AUXILIARY_ELIMINATION_MAP_V1.json",
+      "result_id": "CLASSICAL_QUADRATIC_AUXILIARY_ELIMINATION_MAP_V1",
+      "sha256": "0f5027c3e466fcbd5a7153cc1dac10be10ed7326cb501adc9cf644f50274515b"
     },
     "coded_local_weak_wave_test_class": {
       "dependency_tags": [
@@ -924,7 +943,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "a7159463d6a65ff90447256f780747a9495735021eda2ab17989d4131aeca34d"
+      "sha256": "56b7833479a068cdb8eb9d80e095215097633552796e88e36b301d189d5e197c"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -1203,6 +1222,18 @@
       "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V26",
       "sha256": "ef160fd219e212675bbd614f52831101cd2fdb43adf562e41dc9dca673eae85b"
     },
+    "lorentzian_weyl_bv_completion_atlas_v27": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V27.json",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V27",
+      "sha256": "52b83585189854b6d1bf5ddf734194192c7d730b4a60ca9a6a51d7ad2a8dc4d9"
+    },
     "lorentzian_weyl_bv_completion_atlas_v4": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -1448,6 +1479,15 @@
       "result_id": "STRICT_386_PURE_WEYL_Q3_WITNESS_V1",
       "sha256": "d088cf692d8da47f8295cbeffba6ac2a8371f76de3f9314f7f726d4e8162023e"
     },
+    "strict_386_quadratic_auxiliary_elimination_channel": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1.json",
+      "result_id": "STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1",
+      "sha256": "5c3fa2a16bd60edc0891ce004d1fe7988647aa015185b6e4a901d867f1041b44"
+    },
     "strict_386_quadratic_truncation_lambda2_source_obstruction": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -1592,10 +1632,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "e24680f6184ede243bc4b66f873fd6364b0466843c948801ee0542f782bd2340"
+      "sha256": "ca9b5322e0830ec2852285d8a7d2451a8ee9050f0b65c316419ef0a12fb10966"
     }
   },
-  "canonical_digest": "58ea04fd66efb455ac73f9afcd049acff05f58eec6779a336736a8860338f629",
+  "canonical_digest": "70aaa645678eb79189789ccdd5e0dc35cc5c78eb7e5ea9907f0e49ca4d4a4657",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -1725,6 +1765,7 @@
     "bt_weighted_random_conductance_current_identity_established": true,
     "case_study_authorities_pinned": true,
     "classical_import_gate_v8_fail_closed": true,
+    "classical_import_gate_v9_fail_closed": true,
     "coded_h2_arbitrary_distribution_uniqueness_proved": false,
     "coded_h2_causal_support_proved": false,
     "coded_h2_full_lf_topology_reconstructed": false,
@@ -1799,16 +1840,20 @@
     "strict_386_effective_numeric_green_solver": false,
     "strict_386_endpoint_all_700_bach_columns_match": true,
     "strict_386_endpoint_q1_content_identified": true,
+    "strict_386_f_hat_v_v_pullback_channel_closed": true,
     "strict_386_field_equation_constrained_right_inverse_certified": true,
     "strict_386_field_equation_green_component_typed": true,
     "strict_386_field_equation_quotient_left_inverse_certified": true,
     "strict_386_first_mixed_sign_domain_nondefinition_at_four_leaves": true,
+    "strict_386_first_nonlinear_equivalence_component_constructed": true,
     "strict_386_full_bv_arity_three_identity_certified": false,
     "strict_386_full_carrier_q2_certified": false,
+    "strict_386_full_cotangent_lift_serialized": false,
     "strict_386_full_local_d_action_certified": true,
     "strict_386_full_q1_component_bytes_serialized": true,
     "strict_386_full_q1_squared_zero_replayed": true,
     "strict_386_full_q1_suspended_cyclicity_replayed": true,
+    "strict_386_full_source_q2_q3_pullback_replayed": false,
     "strict_386_full_suspended_green_adjoint_replayed": true,
     "strict_386_full_weyl_lambda2_source_closure_certified": false,
     "strict_386_graph_suspension_transported": true,
@@ -1828,6 +1873,9 @@
     "strict_386_q2_only_lambda2_source_obstructed": true,
     "strict_386_q3_or_higher_causal_trees_certified": false,
     "strict_386_q3_stabilized": false,
+    "strict_386_quadratic_auxiliary_map_support_local": true,
+    "strict_386_quadratic_auxiliary_map_uses_choice_principle": false,
+    "strict_386_quadratic_auxiliary_map_uses_green_operator": false,
     "strict_386_recursive_nonlinear_green_trees_certified": false,
     "strict_386_represented_green_actions_serialized": true,
     "strict_386_stabilized_d_q2_derivation_verified": true,
@@ -2568,6 +2616,33 @@
       ],
       "statement": "Gate V8 propagates the exact auxiliary-cubic mismatch into the authoritative classical-import ledger. It preserves the twenty-export and ten-check inventories and the bounded receiver-verification counts, but records Omega(f_hat,q2(v,v))=-1 in the source against zero in the trivial stabilization. Literal zero-extension and the recorded linear shear are therefore rejected as the authoritative nonlinear import. The candidate q1/q2/q3 identities remain valid; a nonlinear auxiliary-elimination or cyclic L-infinity equivalence may exist but is neither constructed nor obstructed. Consequently no q2 or q3 hash is accepted, Gate A remains fail closed, and the next M2 object is the quadratic map followed by source q2/q3 pullback replay. No Hadamard or QME lifecycle state is promoted.",
       "status": "GATE_V8_LINEAR_IDENTITY_REFUTED_NONLINEAR_EQUIVALENCE_REQUIRED_GATE_A_FAIL_CLOSED"
+    },
+    {
+      "authorities": [
+        "classical_quadratic_auxiliary_elimination_map",
+        "strict_386_quadratic_auxiliary_elimination_channel",
+        "lorentzian_weyl_bv_completion_atlas_v27"
+      ],
+      "claim_id": "RF-55-STRICT-WEYL-QUADRATIC-AUXILIARY-ELIMINATION-COMPONENT",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "statement": "The authoritative exact auxiliary completion of the square gives the local quadratic source-to-split component F_(2)(v)=v tensor v-(1/2)g v^2, with no Green operator or choice principle. Its inverse shift contributes +1 to the pinned mass-cross channel and therefore cancels the source value Omega(f_hat,q2(v,v))=-1, producing transformed source zero equal to the trivial-stabilization candidate. An independent exact receiver replays this cancellation on the declared 386-row carrier. This constructs the first required nonlinear-equivalence component and closes one formerly mismatched cyclic channel only; it does not serialize the complete BV cotangent lift, metric-dependent h-f_hat-f_hat family, ghost/antifield channels, full q2/q3 pullback, or cyclic L-infinity equivalence.",
+      "status": "FIRST_QUADRATIC_NONLINEAR_EQUIVALENCE_COMPONENT_CONSTRUCTED_ONE_CHANNEL_CLOSED_FULL_PULLBACK_OPEN"
+    },
+    {
+      "authorities": [
+        "classical_import_gate_v9",
+        "strict_386_quadratic_auxiliary_elimination_channel",
+        "lorentzian_weyl_bv_completion_atlas_v27"
+      ],
+      "claim_id": "RF-56-STRICT-WEYL-GATE-V9-COMPONENTWISE-PULLBACK-FRONTIER",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "Gate V9 records the exact -1+1=0 cancellation as the first imported nonlinear component while preserving a fail-closed theory boundary. Zero authoritative top-level hashes are accepted because the componentwise 386-row BV cotangent lift and the complete source q2/q3 pullback have not been replayed; in particular the metric-dependent h-f_hat-f_hat and ghost/antifield channel families remain open. Atlas V27 therefore ranks the induced cubic-channel inventory, the full cotangent-lift serialization, and the source q2/q3 pullback identity as the first three successors. Gate A, general lambda-squared causal closure, Hadamard data, renormalized Lorentzian products, QME restoration, and residual transfer remain unpromoted.",
+      "status": "GATE_V9_FIRST_NONLINEAR_COMPONENT_IMPORTED_FULL_PULLBACK_OPEN_GATE_A_FAIL_CLOSED"
     }
   ],
   "created": "2026-08-15",
@@ -2787,19 +2862,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "00caf7e74a9f66da5438917bdbd5d638f66dd17743baa0ef90c998353f36423b",
+      "assembly_source_canonical_digest": "863b9ef3fac9f57c899afc2c7859707781d152b664ad1cf30d06d58cd6b16111",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "e24680f6184ede243bc4b66f873fd6364b0466843c948801ee0542f782bd2340",
+      "assembly_source_sha256": "ca9b5322e0830ec2852285d8a7d2451a8ee9050f0b65c316419ef0a12fb10966",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
-      "generator_sha256": "90fb09759a84a8e0ded216db45a3778c59dac0b3a1a0908f96e7de4f95b018c3",
+      "generator_sha256": "e1112ea94c4f5f771e496d10832b662c01ca7c72545a542724ca8f3e59de700c",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "85d6361ce09269adeced0f6fd2b1ea03aaae082666996411c539863a13ac6d0b",
-      "source_canonical_digest": "22e9ab3cbad8287507fe0c5969a952e968a9d885dbeac63a0c65d36a7af3514c",
+      "sha256": "2070d0c8d3676a12739346bc1c863c463056bafce62b8bf134fd2f8e7a7c9398",
+      "source_canonical_digest": "a92816c6ace5e8c4c76fb4cf0cd1c6a09c0b84fc21cba2a8841c56dc1fda66a9",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "f64ec6690368cf67fd53819fabef658ea903b5e31381140792b56e63c66f0e89"
+      "source_sha256": "929dcfdc36cf70092803f08fdc8f4348fc2479f93689cda10983444e297bf318"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "22ee7e64b07f1047bdf8182af7dd6ff510b414399614db853022a2c0a9aac4e4"
+    "sha256": "b3cd5cba5821bf9c2ddb93f2e82ac69f3351b59634519525f7ffa2875e2c779c"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

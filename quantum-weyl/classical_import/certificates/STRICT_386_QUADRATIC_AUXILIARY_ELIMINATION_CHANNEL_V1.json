@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "strict-386-quadratic-auxiliary-elimination-channel-v1",
+  "result_id": "STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1",
+  "result_kind": "INDEPENDENT_QUADRATIC_NONLINEAR_MAP_CHANNEL_PULLBACK_REPLAY",
+  "result_state": "FIRST_QUADRATIC_EQUIVALENCE_COMPONENT_IMPORTED_CHANNEL_CLOSED_FULL_SOURCE_PULLBACK_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "scope": {
+    "theory": "strict pure-Weyl ordinary-derivative auxiliary formulation",
+    "background": "normal frame at zero vector",
+    "carrier_rows": 386,
+    "coefficient_field": "Q",
+    "claim_scope": "one quadratic field-map component and one induced cubic cyclic channel"
+  },
+  "channel_pullback_replay": {
+    "carrier_rows": 386,
+    "source_to_split_map": "phi_hat=phi-A_g^{-1}G^b(g,b)",
+    "source_to_split_homogeneous_quadratic_component": "F_(2)(v)=v tensor v-(1/2)g v^2",
+    "source_to_split_second_Frechet_component": "D^2F(v,w)=v tensor w+w tensor v-g(v,w)g",
+    "split_to_source_inverse_quadratic_component": "-v tensor v+(1/2)g v^2",
+    "input_blocks": [
+      "AUX_V",
+      "AUX_V"
+    ],
+    "output_block": "AUX_F_HAT",
+    "cyclic_form_channel": "Omega(f_hat,q2(v,v))",
+    "pre_correction_source_value": "-1",
+    "candidate_value": "0",
+    "inverse_shift_mass_cross_correction": "1",
+    "transformed_source_value": "0",
+    "transformed_source_minus_candidate_residual": "0",
+    "exact_channel_cancellation": true,
+    "support_local": true,
+    "uses_green_operator": false,
+    "uses_choice_principle": false
+  },
+  "equivalence_boundary": {
+    "first_required_quadratic_component_imported": true,
+    "one_previously_obstructing_channel_closed": true,
+    "source_certified_local_BV_canonical_lift_available": true,
+    "receiver_componentwise_386_cotangent_lift_serialized": false,
+    "remaining_shifted_cubic_families": [
+      "h-f_hat-f_hat from metric dependence of sqrt(-g), A_g and the fibre pairing",
+      "ghost/antifield channels from the nonlinear BV cotangent lift"
+    ],
+    "complete_source_q2_pullback_replayed": false,
+    "complete_source_q3_pullback_replayed": false,
+    "full_cyclic_L_infinity_equivalence_constructed": false,
+    "nonlinear_equivalence_obstructed": false
+  },
+  "claim_flags": {
+    "AUTHORITATIVE_QUADRATIC_AUXILIARY_MAP_IMPORTED": true,
+    "F_HAT_V_V_PULLBACK_CHANNEL_CLOSED": true,
+    "FIRST_NONLINEAR_EQUIVALENCE_COMPONENT_CONSTRUCTED": true,
+    "CANDIDATE_INTERNAL_IDENTITIES_PRESERVED": true,
+    "FULL_386_COTANGENT_LIFT_SERIALIZED": false,
+    "FULL_SOURCE_Q2_PULLBACK_REPLAYED": false,
+    "FULL_SOURCE_Q3_PULLBACK_REPLAYED": false,
+    "FULL_CYCLIC_L_INFINITY_EQUIVALENCE_CONSTRUCTED": false,
+    "NONLINEAR_EQUIVALENCE_OBSTRUCTED": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "CAUSAL_LAMBDA2_SOURCE_CLOSURE_CERTIFIED": false,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "QME_RESTORED": false
+  },
+  "does_not_establish": [
+    "complete equality of source and candidate q2/q3",
+    "a componentwise 386-row BV cotangent lift",
+    "removal of metric-dependent f_hat-square interactions",
+    "general lambda-squared causal source closure",
+    "Gate A, Hadamard data, renormalized Lorentzian products, QME restoration, or residual transfer"
+  ],
+  "canonical_hashes": {
+    "channel_pullback_replay_sha256": "ef339cefd25f4b193e584ce8ff03e01572fc7972719ee9093e28ec28ac40a699",
+    "equivalence_boundary_sha256": "b81660b195fb2e5af72699b4868cc367fa0a302b243e9e9387075547dd981e6f"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_QUADRATIC_AUXILIARY_ELIMINATION_MAP_V1.json",
+        "result_id": "CLASSICAL_QUADRATIC_AUXILIARY_ELIMINATION_MAP_V1",
+        "sha256": "0f5027c3e466fcbd5a7153cc1dac10be10ed7326cb501adc9cf644f50274515b",
+        "role": "authoritative exact quadratic auxiliary map"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1.json",
+        "result_id": "STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1",
+        "sha256": "02f5a94d4cd33cad93b91dab7f11ce3bbedcf6c09e7e53910541b57b06cf0b64",
+        "role": "pre-correction source/candidate obstruction"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1.json",
+        "result_id": "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1",
+        "sha256": "ee6a88080cc13547c809f53b9c033da59138be73eff69c0654659c18ddd2c65b",
+        "role": "exact trivial-stabilization candidate"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+        "result_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+        "sha256": "3b9d8a2fc5a70d20770452eb0a2a4891f59314c21c83188bfb59de0941cac4b2",
+        "role": "common 386-row block and pairing carrier"
+      }
+    ]
+  },
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1.md",
+  "next_gate": "Enumerate and independently replay every cubic channel induced by the exact nonlinear shift and its BV cotangent lift, beginning with h-f_hat-f_hat, before promoting a complete q2 pullback or Gate-A hash."
+}

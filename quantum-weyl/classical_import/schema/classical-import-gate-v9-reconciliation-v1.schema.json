@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/classical-import-gate-v9-reconciliation-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "lifecycle", "dependency_tags", "export_reconciliation", "freeze_check_reconciliation", "required_hash_disposition", "minimal_missing_bundle", "gate_disposition", "m2_theory_identity_obstruction", "m2_quadratic_elimination_resolution", "claim_flags", "provenance", "independent_checker", "human_report", "next_gate"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-classical-import-gate-v9-reconciliation-v1"},
+    "result_id": {"const": "CLASSICAL_IMPORT_GATE_V9_RECONCILIATION"},
+    "result_state": {"const": "FIRST_NONLINEAR_COMPONENT_IMPORTED_ONE_CHANNEL_CLOSED_FULL_PULLBACK_OPEN_GATE_FAIL_CLOSED"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "export_reconciliation": {"type": "array", "minItems": 20, "maxItems": 20},
+    "freeze_check_reconciliation": {"type": "array", "minItems": 10, "maxItems": 10},
+    "m2_quadratic_elimination_resolution": {
+      "type": "object",
+      "required": ["carrier_rows", "source_before_correction", "inverse_shift_correction", "transformed_source", "candidate", "residual", "receiver_componentwise_386_cotangent_lift_serialized", "complete_source_q2_pullback_replayed", "complete_source_q3_pullback_replayed", "full_cyclic_L_infinity_equivalence_constructed"],
+      "properties": {
+        "carrier_rows": {"const": 386},
+        "source_before_correction": {"const": "-1"},
+        "inverse_shift_correction": {"const": "1"},
+        "transformed_source": {"const": "0"},
+        "candidate": {"const": "0"},
+        "residual": {"const": "0"},
+        "component_support_local": {"const": true},
+        "component_uses_green_operator": {"const": false},
+        "component_uses_choice_principle": {"const": false},
+        "receiver_componentwise_386_cotangent_lift_serialized": {"const": false},
+        "complete_source_q2_pullback_replayed": {"const": false},
+        "complete_source_q3_pullback_replayed": {"const": false},
+        "full_cyclic_L_infinity_equivalence_constructed": {"const": false},
+        "nonlinear_equivalence_obstructed": {"const": false}
+      }
+    },
+    "gate_disposition": {
+      "type": "object",
+      "properties": {
+        "gate_a_status": {"const": "FAIL_CLOSED"},
+        "accepted_common_snapshot_hashes": {"const": 0},
+        "claim_state": {"const": "CLASSICAL_IMPORT_FIRST_NONLINEAR_COMPONENT_CONSTRUCTED_FULL_PULLBACK_OPEN"}
+      }
+    },
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_GATE_V9.md"}
+  }
+}

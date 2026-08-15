@@ -1,0 +1,260 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "classical-quadratic-auxiliary-elimination-map-v1",
+  "result_id": "CLASSICAL_QUADRATIC_AUXILIARY_ELIMINATION_MAP_V1",
+  "result_kind": "AUTHORITATIVE_NONLINEAR_AUXILIARY_SHIFT_QUADRATIC_EXPORT",
+  "result_state": "QUADRATIC_VECTOR_COMPONENT_EXPORTED_ONE_CUBIC_CHANNEL_CANCELED_FULL_CYCLIC_EQUIVALENCE_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "scope": {
+    "theory": "four-dimensional ordinary-derivative strict pure-Weyl gravity",
+    "background": "normal frame at the zero-vector flat/cylinder tangent point",
+    "carrier_sector": "generalized auxiliary f_hat-v sector",
+    "coefficient_field": "Q",
+    "claim_scope": "quadratic vector component and its exact cancellation of one cubic cyclic channel"
+  },
+  "quadratic_auxiliary_map": {
+    "full_source_to_split_map": "phi_hat=phi-A_g^{-1}G^b(g,b)",
+    "full_split_to_source_inverse": "phi=phi_hat+A_g^{-1}G^b(g,b)",
+    "mass_map": "A_g(s)=-1/2(s-g tr_g(s))",
+    "mass_inverse": "A_g^{-1}(s)=-2s+(2/3)g tr_g(s)",
+    "quadratic_source": "G^b_(2)(v,v)=(1/2)v tensor v+(1/4)g v^2",
+    "source_to_split_homogeneous_quadratic_component": "F_(2)(v)=v tensor v-(1/2)g v^2",
+    "source_to_split_second_Frechet_component": "D^2F(v,w)=v tensor w+w tensor v-g(v,w)g",
+    "split_to_source_homogeneous_quadratic_component": "-v tensor v+(1/2)g v^2",
+    "normalization": "homogeneous Taylor coefficient; the displayed second Frechet component is twice its diagonal polarization",
+    "finite_order_local": true,
+    "pointwise_algebraic_mass_inverse": true,
+    "uses_green_operator": false,
+    "uses_choice_principle": false,
+    "local_BV_cotangent_lift_is_canonical": true,
+    "fixture": {
+      "normal_frame_metric": [
+        [
+          "-1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "normal_frame_inverse_metric": [
+        [
+          "-1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "v_direction_covariant": [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "f_hat_direction_contravariant": [
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "v_squared": "1",
+      "G_b_quadratic_tensor": [
+        [
+          "-1/4",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "3/4",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1/4",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1/4"
+        ]
+      ],
+      "trace_G_b_quadratic": "3/2",
+      "A_g_inverse_G_b_quadratic": [
+        [
+          "-1/2",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1/2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1/2",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1/2"
+        ]
+      ],
+      "source_to_split_quadratic_shift": [
+        [
+          "1/2",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1/2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-1/2",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1/2"
+        ]
+      ],
+      "A_g_of_A_g_inverse_G_b_quadratic_equals_G_b_quadratic": true,
+      "f_hat_pair_G_b_quadratic": "1/2",
+      "source_f_hat_v_v_mixed_polarization": "-1",
+      "inverse_shift_mass_cross_mixed_polarization": "1",
+      "corrected_channel_residual": "0"
+    }
+  },
+  "disposition": {
+    "first_required_quadratic_component_constructed": true,
+    "f_hat_v_v_channel_canceled_after_inverse_pullback": true,
+    "full_nonlinear_auxiliary_shift_known_exactly": true,
+    "full_candidate_L_infinity_equivalence_constructed": false,
+    "reason_full_equivalence_open": "The exact completion of the auxiliary square removes the f_hat-v-v channel, but the metric dependence of sqrt(-g), A_g and the BV cotangent lift leaves further h-f_hat-f_hat and antifield interaction channels to enumerate and compare with the trivial stabilization."
+  },
+  "claim_flags": {
+    "AUTHORITATIVE_QUADRATIC_AUXILIARY_MAP_EXPORTED": true,
+    "LOCAL_BV_CANONICAL_LIFT_AVAILABLE": true,
+    "F_HAT_V_V_CHANNEL_CANCELED_BY_PULLBACK": true,
+    "USES_GREEN_OPERATOR": false,
+    "USES_CHOICE_PRINCIPLE": false,
+    "FULL_NONMINIMAL_Q2_PULLBACK_REPLAYED": false,
+    "FULL_NONMINIMAL_Q3_PULLBACK_REPLAYED": false,
+    "FULL_CYCLIC_L_INFINITY_EQUIVALENCE_CONSTRUCTED": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "QME_RESTORED": false
+  },
+  "does_not_establish": [
+    "the complete q2 or q3 pullback on the 386-row carrier",
+    "that the metric-dependent auxiliary square is interaction-inert",
+    "a full cyclic L-infinity quasi-isomorphism to the trivial stabilization",
+    "causal Green compatibility, Gate A, Hadamard data, renormalized products, QME restoration, or residual transfer"
+  ],
+  "canonical_hashes": {
+    "quadratic_auxiliary_map_sha256": "69403dff0831ced8e60e53ea29d59b39fac32d39509d20c3e66860f1b6bd87fa",
+    "disposition_sha256": "e8cae72d4de82aae8c56cd507cc0bc66eb17c3501535775af2d29680d9ea15a5"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "covariant_completion/certificates/curved_auxiliary_action_definition.json",
+        "schema": "pure-weyl-covariant-auxiliary-action-definition-v1",
+        "sha256": "6acb586df9784c925fc994701ae910cc243e6898d635626513f4a1adfbdab4db",
+        "role": "authoritative ordinary-derivative action"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_auxiliary_canonical_split.json",
+        "schema": "pure-weyl-curved-auxiliary-canonical-split-v1",
+        "sha256": "e8326afd4f8cf919f2d3c20de8065a767a40f40f509968fb542efe43a6a80343",
+        "role": "exact nonlinear completion of square and local BV canonical lift"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_ORDINARY_DERIVATIVE_AUXILIARY_CUBIC_EXPORT_V1.json",
+        "result_id": "CLASSICAL_ORDINARY_DERIVATIVE_AUXILIARY_CUBIC_EXPORT_V1",
+        "sha256": "a5cb1c62136cfad58bcd589d3719e6349e0e9bdd8ef2ce381cd4a8f259fddf59",
+        "role": "exact source auxiliary cubic predecessor"
+      }
+    ]
+  },
+  "human_report": "d_quotient_classical/reports/classical-quadratic-auxiliary-elimination-map-v1.md",
+  "next_gate": "Import this quadratic map into the 386-row receiver, replay the f_hat-v-v cancellation independently, then enumerate the remaining shifted auxiliary and antifield cubic channels before claiming full q2/q3 equivalence."
+}

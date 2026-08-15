@@ -2828,6 +2828,31 @@ quadratic nonlinear equivalence map and its source pullback replay are now an
 explicit M2 obligation, not an assumed identification.  Gate A, Hadamard
 data, renormalized products, and QME restoration remain fail closed.
 
+The first part of that obligation is now constructive rather than merely
+diagnostic.  The authoritative exact completion of the auxiliary square
+(\cert{CLASSICAL_QUADRATIC_AUXILIARY_ELIMINATION_MAP_V1}) gives the local
+quadratic source-to-split component
+\[
+  F_{(2)}(v)=v\otimes v-\frac12 g\,v^2 .
+\]
+Its inverse shift contributes \(+1\) in the pinned mass-cross channel, so the
+source value \(-1\) becomes zero and agrees with the trivial-stabilization
+candidate.  An independent rational receiver replays this cancellation on the
+declared 386-row carrier
+(\cert{STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1}).  The map is
+pointwise algebraic and support-local; it uses neither a Green operator nor a
+choice principle.  This is one nonlinear component and one closed channel,
+not the complete equivalence.  The metric-dependent
+\(h\text{-}\widehat f\text{-}\widehat f\) family, the ghost/antifield channels,
+the componentwise BV cotangent lift, and the full source \(q_2/q_3\) pullback
+remain to be serialized and independently replayed.  Gate V9 therefore still
+accepts zero authoritative hashes
+(\cert{CLASSICAL_IMPORT_GATE_V9_RECONCILIATION}).  Atlas V27
+(\cert{FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V27}) ranks the induced
+cubic-channel inventory, the 386-row cotangent-lift components, and the full
+source-pullback identity as the next three certificates.  No Gate-A,
+Hadamard, renormalized-product, QME, or residual-transfer state is promoted.
+
 The corpus
 does contain a positive four-row metric Bach BV Green homotopy on unit Nariai
 and an exact but analytically incomplete Berger route.  Conversely, the
@@ -3108,6 +3133,10 @@ The principal machine-readable authorities are
 \cert{STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1},
 \cert{CLASSICAL_IMPORT_GATE_V8_RECONCILIATION},
 \cert{FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V26},
+\cert{CLASSICAL_QUADRATIC_AUXILIARY_ELIMINATION_MAP_V1},
+\cert{STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1},
+\cert{CLASSICAL_IMPORT_GATE_V9_RECONCILIATION},
+\cert{FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V27},
 \cert{REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1},
 \cert{REVERSE_PHYSICS_BT_EUCLIDEAN_OS_WITNESS_PREFLIGHT_V1},
 \cert{REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_TILT_JACOBIAN_CANCELLATION_V1},

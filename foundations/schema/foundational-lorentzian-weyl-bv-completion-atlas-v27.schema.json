@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/foundational-lorentzian-weyl-bv-completion-atlas-v27.schema.json",
+  "type": "object",
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "dependency_tags", "predecessor", "branches", "strict_quadratic_auxiliary_elimination", "strict_gate_v9_reconciliation", "route_selection", "research_queue", "claim_flags", "provenance", "independent_checker", "human_report"],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v27"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V27"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "branches": {"type": "array", "minItems": 7, "maxItems": 7},
+    "strict_quadratic_auxiliary_elimination": {
+      "type": "object",
+      "required": ["carrier_rows", "source_before_correction", "inverse_shift_correction", "transformed_source", "candidate", "residual", "first_nonlinear_component_constructed", "receiver_componentwise_386_cotangent_lift_serialized", "complete_source_q2_pullback_replayed", "complete_source_q3_pullback_replayed"],
+      "properties": {
+        "carrier_rows": {"const": 386},
+        "source_before_correction": {"const": "-1"},
+        "inverse_shift_correction": {"const": "1"},
+        "transformed_source": {"const": "0"},
+        "candidate": {"const": "0"},
+        "residual": {"const": "0"},
+        "first_nonlinear_component_constructed": {"const": true},
+        "component_support_local": {"const": true},
+        "component_uses_green_operator": {"const": false},
+        "component_uses_choice_principle": {"const": false},
+        "receiver_componentwise_386_cotangent_lift_serialized": {"const": false},
+        "complete_source_q2_pullback_replayed": {"const": false},
+        "complete_source_q3_pullback_replayed": {"const": false},
+        "full_cyclic_L_infinity_equivalence_constructed": {"const": false},
+        "nonlinear_equivalence_obstructed": {"const": false}
+      }
+    },
+    "strict_gate_v9_reconciliation": {
+      "type": "object",
+      "properties": {
+        "gate_a_status": {"const": "FAIL_CLOSED"},
+        "accepted_top_level_hashes": {"const": 0},
+        "first_nonlinear_component_constructed": {"const": true},
+        "full_bv_cotangent_lift_serialized": {"const": false}
+      }
+    },
+    "route_selection": {"type": "array", "minItems": 12, "maxItems": 12},
+    "research_queue": {"type": "array", "minItems": 12, "maxItems": 12},
+    "human_report": {"const": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v27.md"}
+  }
+}

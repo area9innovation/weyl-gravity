@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-386-quadratic-auxiliary-elimination-channel-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "dependency_tags", "scope", "channel_pullback_replay", "equivalence_boundary", "claim_flags", "does_not_establish", "canonical_hashes", "provenance", "human_report", "next_gate"],
+  "properties": {
+    "schema": {"const": "strict-386-quadratic-auxiliary-elimination-channel-v1"},
+    "result_id": {"const": "STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1"},
+    "result_kind": {"const": "INDEPENDENT_QUADRATIC_NONLINEAR_MAP_CHANNEL_PULLBACK_REPLAY"},
+    "result_state": {"const": "FIRST_QUADRATIC_EQUIVALENCE_COMPONENT_IMPORTED_CHANNEL_CLOSED_FULL_SOURCE_PULLBACK_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {
+      "type": "object",
+      "required": ["carrier_rows", "coefficient_field", "claim_scope"],
+      "properties": {
+        "carrier_rows": {"const": 386},
+        "coefficient_field": {"const": "Q"},
+        "claim_scope": {"const": "one quadratic field-map component and one induced cubic cyclic channel"}
+      }
+    },
+    "channel_pullback_replay": {
+      "type": "object",
+      "required": ["input_blocks", "output_block", "pre_correction_source_value", "candidate_value", "inverse_shift_mass_cross_correction", "transformed_source_value", "transformed_source_minus_candidate_residual", "exact_channel_cancellation", "support_local", "uses_green_operator", "uses_choice_principle"],
+      "properties": {
+        "input_blocks": {"const": ["AUX_V", "AUX_V"]},
+        "output_block": {"const": "AUX_F_HAT"},
+        "pre_correction_source_value": {"const": "-1"},
+        "candidate_value": {"const": "0"},
+        "inverse_shift_mass_cross_correction": {"const": "1"},
+        "transformed_source_value": {"const": "0"},
+        "transformed_source_minus_candidate_residual": {"const": "0"},
+        "exact_channel_cancellation": {"const": true},
+        "support_local": {"const": true},
+        "uses_green_operator": {"const": false},
+        "uses_choice_principle": {"const": false}
+      }
+    },
+    "equivalence_boundary": {
+      "type": "object",
+      "required": ["first_required_quadratic_component_imported", "one_previously_obstructing_channel_closed", "receiver_componentwise_386_cotangent_lift_serialized", "complete_source_q2_pullback_replayed", "complete_source_q3_pullback_replayed", "full_cyclic_L_infinity_equivalence_constructed", "nonlinear_equivalence_obstructed"],
+      "properties": {
+        "first_required_quadratic_component_imported": {"const": true},
+        "one_previously_obstructing_channel_closed": {"const": true},
+        "receiver_componentwise_386_cotangent_lift_serialized": {"const": false},
+        "complete_source_q2_pullback_replayed": {"const": false},
+        "complete_source_q3_pullback_replayed": {"const": false},
+        "full_cyclic_L_infinity_equivalence_constructed": {"const": false},
+        "nonlinear_equivalence_obstructed": {"const": false}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "properties": {
+        "FIRST_NONLINEAR_EQUIVALENCE_COMPONENT_CONSTRUCTED": {"const": true},
+        "FULL_386_COTANGENT_LIFT_SERIALIZED": {"const": false},
+        "FULL_SOURCE_Q2_PULLBACK_REPLAYED": {"const": false},
+        "FULL_SOURCE_Q3_PULLBACK_REPLAYED": {"const": false},
+        "FULL_CYCLIC_L_INFINITY_EQUIVALENCE_CONSTRUCTED": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "QME_RESTORED": {"const": false}
+      }
+    },
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1.md"}
+  }
+}

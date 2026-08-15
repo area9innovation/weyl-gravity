@@ -51,7 +51,7 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         "completion_branches": 7,
         "completion_stages": 11,
         "completion_cells": 77,
-        "completion_routes": 11,
+        "completion_routes": 12,
         "completion_decisions": 11,
         "theory_profiles": 36,
         "carrier_envelopes": 6,
@@ -98,7 +98,7 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         if flags.get(key) is not False:
             errors.append("boundary flag " + key)
     checks.append("fail-closed claim flags")
-    for token in ("576", "169 `REVIEWED_GAP`", "0\n`NOT_MAPPED`", "not a result", "selected priority", "literature-absence claim", "all 401 prior", "51 emitted blanks", "124", "without transferring evidence", "exactly twenty additional empty cells", "seventeen", "three pieces-only", "classification before QME restoration", "none of those toy-model statements is a Weyl-BV promotion", "two certified", "CONDITIONAL_BRIDGE", "unique normal", "coarse numerical reproduction", "not empirical validation", "conditional bridges remain open", "N(k)=k+ell(K)+1", "not the full field", "rank-10", "coefficient by coefficient", "not a theorem for\nevery smooth test function", "named H2 completion", "nonmetrizable LF test topology", "representation-to-causality", "retarded and\nadvanced Green maps", "scalar benchmark", "Atlas V26", "arbitrary-input", "386-row", "sixteen", "72", "212", "S4", "-75760/9", "not an authoritative", "Omega(f_hat,q2(v,v))=-1", "Literal", "Nonlinear", "separate coverage and migration", "Earlier cubes remain unchanged", "does not establish"):
+    for token in ("576", "169 `REVIEWED_GAP`", "0\n`NOT_MAPPED`", "not a result", "selected priority", "literature-absence claim", "all 401 prior", "51 emitted blanks", "124", "without transferring evidence", "exactly twenty additional empty cells", "seventeen", "three pieces-only", "classification before QME restoration", "none of those toy-model statements is a Weyl-BV promotion", "two certified", "CONDITIONAL_BRIDGE", "unique normal", "coarse numerical reproduction", "not empirical validation", "conditional bridges remain open", "N(k)=k+ell(K)+1", "not the full field", "rank-10", "coefficient by coefficient", "not a theorem for\nevery smooth test function", "named H2 completion", "nonmetrizable LF test topology", "representation-to-causality", "retarded and\nadvanced Green maps", "scalar benchmark", "Atlas V27", "arbitrary-input", "386-row", "twelve", "72", "212", "S4", "-75760/9", "not an authoritative", "Omega(f_hat,q2(v,v))=-1", "first nonlinear", "full source\npullback", "separate coverage and migration", "Earlier cubes remain unchanged", "does not establish"):
         if token not in text:
             errors.append("report token " + token)
     checks.append("human-readable migration and deployment report")
