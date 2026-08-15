@@ -1,0 +1,99 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V4_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V4",
+  "created": "2026-08-15",
+  "repository_base_commit": "6f1c5464f8fc2c2464d042c94024219339a4e0d4",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Reconcile Gate V5 and the strict 386-row causal sign transport into the seven-branch, eleven-stage completion atlas without promoting common-byte, full-pairing, nonlinear, Hadamard or QME claims.",
+  "content_hashes": {
+    "foundations/build_lorentzian_weyl_bv_completion_atlas_v4.py": "eb493106652773cf75358e2d48c8392b91e5b472cb1bced0be561fe830c8dcdf",
+    "foundations/check_lorentzian_weyl_bv_completion_atlas_v4.py": "b0ddaa12d7accd126d082cb2901806fdb86c792f0195ebc53e760524414403cd",
+    "foundations/verify_lorentzian_weyl_bv_completion_atlas_v4.py": "ddce2962bd3c9a3de3a39706fa9a8e18f342b61bf49061aa7774b655c43c55b8",
+    "foundations/schema/foundational-lorentzian-weyl-bv-completion-atlas-v4.schema.json": "4bed118580c982ad30fd143d7fa706ea44d346fe387b4d0ba6912f73c1bfc49e",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V4.json": "be8d08aa2f0afcca1e19a05ca1bbfab11dfefa0b7f2d6c36719ae5e83a46bbe0",
+    "foundations/reports/lorentzian-weyl-bv-completion-atlas-v4.md": "8eb01c7cef2a4e6a0c175dbf2cb9eb2a64eafdf586ee0ed1148d0fa4b739d6ec",
+    "foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v4.py": "d002282168517e9fd97c75a0d932dd5f380e2c2b7e15fc0178c8c48854723966"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile atlas V4 builder/checker/verifier/test",
+          "elapsed_seconds": 0.09,
+          "status": "PASS"
+        },
+        {
+          "command": "jq empty atlas V4 schema and result",
+          "elapsed_seconds": 0.03,
+          "status": "PASS"
+        },
+        {
+          "command": "git diff --check",
+          "elapsed_seconds": 0.04,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v4.py --check",
+          "elapsed_seconds": 0.04,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v4.py",
+          "elapsed_seconds": 0.03,
+          "status": "PASS",
+          "result": "Seven branches by eleven stages equals 77 classified gates; Gate V5 and sign transport reconcile across 38 pinned inputs."
+        },
+        {
+          "command": "python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v4.py",
+          "elapsed_seconds": 0.14,
+          "status": "PASS",
+          "independent_rail": "Checks V3 preservation, the Gate-V5 firewall, 386-row sign arithmetic, common-byte and nonlinear boundaries, the unchanged Berger chain, route ranking and deterministic outputs."
+        },
+        {
+          "command": "python3 -m unittest foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v4.py -v",
+          "elapsed_seconds": 0.5,
+          "status": "PASS",
+          "tests": 10
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "transport producer/checker/verifier/tests, atlas V4 producer/checker/verifier/tests, matrix-site producer/checker/verifier/tests, and paper claim-map producer/verifier",
+          "status": "PASS",
+          "result": "The affected content-addressed chain is byte-current and preserves all fail-closed boundaries."
+        }
+      ],
+      "broader_foundations_probe": {
+        "command": "python3 -m unittest discover -s foundations/tests -p 'test_*.py' -q",
+        "elapsed_seconds": 64.0,
+        "status": "FAIL_CLOSED",
+        "tests_run": 495,
+        "tests_passed": 493,
+        "failures": [
+          "Historical completion-atlas V1 pins pre-Gate-V5 bytes of CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2.json and REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY.json.",
+          "Historical low-hanging-cell audit V1 pins pre-Gate-V5 bytes of REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY.json."
+        ],
+        "boundary": "These two predecessor artifacts correctly detect live-input drift and are not used as current authority by V4. The probe is not reported as a pass; an append-only archival/supersession test migration remains open."
+      }
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "No full repository suite criterion applies; the scientific result does not promote a freeze, theorem lifecycle, QME, residual transfer, or Lorentzian certification."
+    }
+  },
+  "claim_boundary": "Atlas V4 classifies convention stability of the strict unary causal branch and ranks the content-addressed 30-row endpoint bridge first. Gate A still accepts zero common hashes; the full 386-row pairing and local D are not serialized; q2/Green compatibility, Hadamard, Ward, renormalized products, QME, residual transfer and Lorentzian certification remain unestablished."
+}

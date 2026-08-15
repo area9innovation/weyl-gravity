@@ -1,0 +1,104 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2_COMPLETION_ATLAS_V4_REFRESH_TIER_RECEIPT",
+  "created": "2026-08-15",
+  "repository_base_commit": "6f1c5464f8fc2c2464d042c94024219339a4e0d4",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Refresh the existing static explorer and Paper 21 in place with completion-atlas V4, Gate V5, the minimal cyclic repair, and the strict 386-row causal convention-stability result.",
+  "content_hashes": {
+    "foundations/build_matrix_site_v2.py": "89c77518bfc0c6918ddce33cbf971a2fa303701e8015c390274017a66f39a034",
+    "foundations/check_matrix_site_v2.py": "8f34ab0b3368bf5ef3894aaac604c35ebcc3caf2d4b5791a75a7fbd874f145db",
+    "foundations/matrix_site_v2_assets/app-v2.js": "caf3f07757ecc4c703921568d7230353bb9c563b6682034b8f445b0895b3efe4",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "590672e4331d44b16b763a6b1462e612ac7aac77da77e4f447c04505c62de70a",
+    "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json": "23a4316055d38694b937c17bb1e20f81241a4079cc7631420dc1e32e706fc93a",
+    "foundations/results/FOUNDATIONAL_THEORY_VIABILITY_ASSESSMENT_V1.json": "a3cedce80a319631c119cd0d52d4365364738a2b7135fbd80734a7eec9ef5842",
+    "foundations/site/data.json": "a9941dc6578aa395509968044f0cfb9bcb60486add8a6d8fd7cce2797967ba47",
+    "foundations/site/manifest.json": "411bcbd27d26e7585ba7594ede6c62299039fa6fcf099fb99b5dac9c64518993",
+    "paper/21-reverse-foundations-of-physics.tex": "b813880bcf4239c37c6a865bc556b733f60d22944c07a60750defbbae76ffc6a",
+    "paper/21-reverse-foundations-of-physics.pdf": "cfcd177b2ec0d7ab43bcb8fcf7936cd26fefd2fe45ef1edc83b675cec9158b40",
+    "paper/generate_21_reverse_foundations_claim_map.py": "f31ccafb5b8183ddea636cf9c5f13885bd7b21da6a5919d3bb1211385de2726c",
+    "paper/verify_21_reverse_foundations_claim_map.py": "9d338048b374c3efbf5dd11d4c3aaee8050f3e00d5e2be6947369fa79efa3c50",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "e9c069b89583d33b588b6fd864b81e271f2ec3b0653ce5b6e0f45f81021c6d72"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile site and paper claim-map producers/checkers; jq empty changed structured outputs; deno check app-v2.js and migration-review.js",
+          "elapsed_seconds": 0.17,
+          "status": "PASS"
+        },
+        {
+          "command": "git diff --check",
+          "elapsed_seconds": 0.04,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 foundations/build_matrix_site_v2.py --check && python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py",
+          "elapsed_seconds": 0.63,
+          "status": "PASS",
+          "result": "576 cells, seven completion branches, 77 completion cells, five ranked routes, zero pending migrations, and content digest f9e3e05621daabf0824808c26c9ce9f2baffb8b5f689137592d21ce4ea003446."
+        },
+        {
+          "command": "python3 -m unittest foundations/tests/test_matrix_site.py -v",
+          "elapsed_seconds": 1.13,
+          "status": "PASS",
+          "tests": 10
+        },
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+          "elapsed_seconds": 0.15,
+          "status": "PASS"
+        },
+        {
+          "command": "two-pass pdflatex -interaction=nonstopmode -halt-on-error paper/21-reverse-foundations-of-physics.tex in an external output directory",
+          "elapsed_seconds": 1.72,
+          "status": "PASS",
+          "artifact_sha256": "cfcd177b2ec0d7ab43bcb8fcf7936cd26fefd2fe45ef1edc83b675cec9158b40",
+          "artifact_bytes": 667948
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "reason": "The site generator content-addresses its bundled sources and manifest; the independent checker verifies the V4/Gate-V5/sign-transport boundaries and deterministic output. The paper claim-map verifier pins both new authorities and preserves all false lifecycle flags."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a presentation and claim-map refresh with no freeze, release, shared algebra change, or lifecycle promotion."
+    }
+  },
+  "advisories": {
+    "paper_prose": {
+      "command": "/home/alstrup/area9/tango/forge/tools/science-forge/paper_prose_advisory.sh paper/21-reverse-foundations-of-physics.tex",
+      "elapsed_seconds": 0.56,
+      "status": "ADVISORY_FINDINGS",
+      "findings": [
+        "parenthetical rate above heuristic budget",
+        "abstract-word rate above heuristic budget",
+        "one abstract numeric-ledger finding"
+      ]
+    },
+    "science_forge_shadow": {
+      "command": "bash ci/science-forge-shadow.sh",
+      "elapsed_seconds": 2.26,
+      "status": "ADVISORY_FINDINGS",
+      "findings": [
+        "Forge 0.0.2 standard-library hash mismatch",
+        "bridge audit failed closed at E9118 atomic memory-order literal",
+        "coverage census drift: 1728 certificates versus baseline 976"
+      ]
+    }
+  },
+  "claim_boundary": "The site and paper now expose the exact causal convention-stability result and its next-ranked bridge. They do not turn a role/dimension match into common bytes, do not pass Gate A, and do not promote nonlinear, Hadamard, QME, residual-transfer, positivity, observational-fit, or Lorentzian-completion claims."
+}

@@ -96,6 +96,8 @@ def main() -> int:
     strict_q1q2 = json.loads((ROOT / data["authorities"]["strict_local_q1_q2_identity"]["path"]).read_text())
     strict_cyclic = json.loads((ROOT / data["authorities"]["strict_minimal_bv_cyclic_sign_reconciliation"]["path"]).read_text())
     gate_v5 = json.loads((ROOT / data["authorities"]["classical_import_gate_v5"]["path"]).read_text())
+    strict_386_transport = json.loads((ROOT / data["authorities"]["strict_386_causal_sign_transport"]["path"]).read_text())
+    completion_atlas_v4 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v4"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -367,11 +369,13 @@ def main() -> int:
         (22, "SCALAR-MINKOWSKI-BIWAVE-GREEN"),
         (23, "SCALAR-BIWAVE-TO-WEYL-BV-DELTA"),
         (24, "STRICT-WEYL-LOCAL-Q1-Q2"),
+        (25, "STRICT-WEYL-CAUSAL-CONVENTION-STABILITY"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
     require(flags["strict_pure_weyl_local_q1_q2_certified"] is True, "strict pure-Weyl q1/q2 flag missing")
     require(flags["strict_minimal_bv_cyclicity_reconciled"] is True, "strict minimal BV cyclicity flag missing")
+    require(flags["strict_386_causal_convention_stability_certified"] is True, "strict 386 causal convention-stability flag missing")
     require(strict_q1["claim_flags"]["Q1_SQUARED_ZERO_CERTIFIED"] is True, "strict q1 square-zero authority drift")
     require(strict_q1q2["channel_inventory"]["channel_count"] == 18, "strict q1/q2 channel count drift")
     require(strict_q1q2["channel_inventory"]["composable_path_count"] == 51, "strict q1/q2 path count drift")
@@ -389,6 +393,15 @@ def main() -> int:
     require(gate_v5["gate_disposition"]["gate_a_status"] == "FAIL_CLOSED", "Gate-A v5 promoted")
     require(gate_v5["gate_disposition"]["accepted_common_snapshot_hashes"] == 0, "Gate-A v5 common hash promoted")
     require(gate_v5["claim_flags"]["STRICT_MINIMAL_Q1_Q2_CYCLICITY_SCOPED_REPLAY"] is True, "Gate-A v5 omitted scoped cyclicity repair")
+    require(strict_386_transport["transport"]["rank"] == 386, "strict causal transport rank drift")
+    require(strict_386_transport["transport"]["positive_eigenvalue_multiplicity"] == 381, "strict causal transport positive-sign count drift")
+    require(strict_386_transport["transport"]["negative_eigenvalue_multiplicity"] == 5, "strict causal transport negative-sign count drift")
+    require(strict_386_transport["claim_flags"]["STRICT_386_CAUSAL_GREEN_HOMOTOPY_PRESERVED"] is True, "strict causal Green homotopy was not transported")
+    require(strict_386_transport["claim_flags"]["GATE_V5_TO_386_COMMON_BYTES_IDENTIFIED"] is False, "strict type bridge promoted to common bytes")
+    require(strict_386_transport["claim_flags"]["STRICT_386_Q2_GREEN_COMPATIBILITY_CERTIFIED"] is False, "strict unary transport promoted to nonlinear compatibility")
+    require(completion_atlas_v4["strict_causal_sign_transport"]["causal_stage_preserved"] is True, "completion atlas omitted causal sign transport")
+    require(completion_atlas_v4["strict_causal_sign_transport"]["common_bytes_identified"] is False, "completion atlas promoted common bytes")
+    require(completion_atlas_v4["claim_flags"]["lorentzian_full_theory_certified"] is False, "completion atlas promoted a full Lorentzian theory")
     require(flags["static_atlas_appendix_generated"] is True, "static atlas appendix flag is not certified")
     require(flags["complete_evidence_register_generated"] is True, "complete evidence register flag is not certified")
     require(flags["complete_literature_register_generated"] is True, "complete literature register flag is not certified")

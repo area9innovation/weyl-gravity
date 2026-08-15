@@ -1,0 +1,79 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "STRICT_386_CAUSAL_SIGN_TRANSPORT_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_CAUSAL_SIGN_TRANSPORT_V1",
+  "created": "2026-08-15",
+  "repository_base_commit": "6f1c5464f8fc2c2464d042c94024219339a4e0d4",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Transport the certified minimal BV sign convention onto the endpoint blocks of the strict 386-row causal Green-homotopy architecture and test whether that convention change invalidates the unary causal result.",
+  "content_hashes": {
+    "quantum-weyl/classical_import/build_strict_386_causal_sign_transport.py": "4a56ae08b807dca31776bb933c19ab1118e9e043bb9e554c8c582e240f3a486b",
+    "quantum-weyl/classical_import/check_strict_386_causal_sign_transport.py": "e86db626ead9f057f0e963688756b5bf884dbaa5e646ab5c7fb4fbd54296830c",
+    "quantum-weyl/classical_import/verify_strict_386_causal_sign_transport.py": "7b8ded8fe09e10565065fa3745cf06f9db06c70580bd715f2283fb55a0914f4f",
+    "quantum-weyl/classical_import/schema/strict-386-causal-sign-transport-v1.schema.json": "caa6443b6df9d8bafeb00c91118de4c7ccef48770c88a447132521088943449e",
+    "quantum-weyl/classical_import/certificates/STRICT_386_CAUSAL_SIGN_TRANSPORT_V1.json": "5845c4170505e24c116249dfbdf4c8e2099c23adb9480fe2f65f8c1e3bff73cd",
+    "quantum-weyl/classical_import/REPORT_STRICT_386_CAUSAL_SIGN_TRANSPORT_V1.md": "0fc12744bf0c2059c83b5891c250bec2fb16650b89e8a69e9a919f7eee9a2113",
+    "quantum-weyl/classical_import/tests/test_strict_386_causal_sign_transport.py": "804febcf0f252e6c4d012a1685a1ba7f59c423c10f9bd91a719210421c684509"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile transport builder/checker/verifier/test",
+          "elapsed_seconds": 0.09,
+          "status": "PASS"
+        },
+        {
+          "command": "jq empty transport schema and certificate",
+          "elapsed_seconds": 0.03,
+          "status": "PASS"
+        },
+        {
+          "command": "git diff --check",
+          "elapsed_seconds": 0.04,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 quantum-weyl/classical_import/build_strict_386_causal_sign_transport.py --check",
+          "elapsed_seconds": 0.04,
+          "status": "PASS"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 quantum-weyl/classical_import/check_strict_386_causal_sign_transport.py",
+          "elapsed_seconds": 0.03,
+          "status": "PASS",
+          "independent_rail": "Checks 30=5+10+10+5, independently reduces the signed transport words, verifies 381 positive and five negative diagonal entries, and guards the common-byte, nonlinear, Hadamard and QME firewalls."
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 quantum-weyl/classical_import/verify_strict_386_causal_sign_transport.py",
+          "elapsed_seconds": 0.11,
+          "status": "PASS"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_causal_sign_transport.py -v",
+          "elapsed_seconds": 0.06,
+          "status": "PASS",
+          "tests": 7
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_EXACT_CONJUGATION_AND_CONTENT_ADDRESS",
+      "reason": "The source Gate-V5 sign involution and strict 386-row Green-homotopy certificate are SHA-pinned. The checker independently verifies the finite endpoint arithmetic and the formal cancellations TQT TQT = TQ^2T and Q'Lambda'+Lambda'Q'=I. Re-running the unchanged causal producer would be reproduction, not an independent rail."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "No freeze, release, shared core-algebra change, or lifecycle promotion applies. Gate A remains fail closed and no Hadamard, QME, residual-transfer or Lorentzian-certification state is promoted."
+    }
+  },
+  "claim_boundary": "This receipt certifies that the repaired minimal ghost-antifield convention does not invalidate the existing strict 386-row unary causal Green-homotopy architecture: the pointwise involution has endpoint profile 5/10/10/5, extends by the identity on 356 algebraically contracted rows, and preserves nilpotency, Green homotopy, causal support, advanced/retarded orientation, and the graded-adjoint relation with the transported pairing. It does not identify common operator bytes, serialize the full 386-row pairing, establish q2/D compatibility, pass Gate A, construct a Hadamard state, restore the QME, or certify a Lorentzian quantum theory."
+}

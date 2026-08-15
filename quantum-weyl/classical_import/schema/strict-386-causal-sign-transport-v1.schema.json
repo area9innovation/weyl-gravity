@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-386-causal-sign-transport-v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_kind",
+    "result_state",
+    "lifecycle",
+    "created",
+    "repository_base_commit",
+    "dependency_tags",
+    "question",
+    "answer",
+    "carrier_bridge",
+    "transport",
+    "proof_ledger",
+    "foundational_strength",
+    "architecture_disposition",
+    "canonical_hashes",
+    "provenance",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate",
+    "schema_path",
+    "independent_checker",
+    "human_report"
+  ],
+  "properties": {
+    "schema": {"const": "strict-386-causal-sign-transport-v1"},
+    "result_id": {"const": "STRICT_386_CAUSAL_SIGN_TRANSPORT_V1"},
+    "result_kind": {"const": "SAME_THEORY_CAUSAL_CONVENTION_STABILITY_CERTIFICATE"},
+    "result_state": {"const": "STRICT_386_CAUSAL_ARCHITECTURE_STABLE_UNDER_MINIMAL_SIGN_TRANSPORT_COMMON_HASH_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "minLength": 8},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]
+    },
+    "question": {"type": "string", "minLength": 20},
+    "answer": {"type": "string", "minLength": 200},
+    "carrier_bridge": {
+      "type": "object",
+      "required": ["gate_minimal_component_dimension", "causal_endpoint_dimension", "causal_algebraic_complement_dimension", "causal_full_dimension", "endpoint_blocks", "gate_to_endpoint_permutation", "compatibility_status"],
+      "properties": {
+        "gate_minimal_component_dimension": {"const": 30},
+        "causal_endpoint_dimension": {"const": 30},
+        "causal_algebraic_complement_dimension": {"const": 356},
+        "causal_full_dimension": {"const": 386},
+        "endpoint_blocks": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": ["cochain_block", "role", "gate_generators", "dimension", "transport_sign"],
+            "properties": {
+              "cochain_block": {"enum": ["G", "M", "E", "I"]},
+              "role": {"type": "string"},
+              "gate_generators": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+              "dimension": {"type": "integer", "minimum": 1},
+              "transport_sign": {"enum": [-1, 1]}
+            },
+            "additionalProperties": false
+          }
+        },
+        "gate_to_endpoint_permutation": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string"}},
+        "compatibility_status": {"const": "TYPE_DIMENSION_AND_COMPLEX_ROLE_MATCH_COMMON_CONTENT_HASH_NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "transport": {
+      "type": "object",
+      "required": ["formula", "positive_eigenvalue_multiplicity", "negative_eigenvalue_multiplicity", "rank", "determinant", "involutive", "differential_order", "support_effect", "changed_endpoint_block", "changed_gate_generators", "q1_rows_changed", "q2_rows_changed_but_not_causally_transferred", "transported_differential", "transported_green_homotopies", "transported_pairing"],
+      "properties": {
+        "positive_eigenvalue_multiplicity": {"const": 381},
+        "negative_eigenvalue_multiplicity": {"const": 5},
+        "rank": {"const": 386},
+        "determinant": {"const": -1},
+        "involutive": {"const": true},
+        "differential_order": {"const": 0},
+        "support_effect": {"const": "EXACTLY_PRESERVED"}
+      },
+      "additionalProperties": true
+    },
+    "proof_ledger": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["check_id", "status", "equation", "evidence"],
+        "properties": {
+          "check_id": {"type": "string"},
+          "status": {"enum": ["VERIFIED", "VERIFIED_BY_EXACT_CONJUGATION", "VERIFIED_ON_TRANSPORTED_PAIRING", "NOT_ESTABLISHED"]},
+          "equation": {"type": "string"},
+          "evidence": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "foundational_strength": {
+      "type": "object",
+      "required": ["fixed_carrier_transport_base", "reason", "choice_operation_added_by_transport", "infinite_selection_added_by_transport", "analytic_causal_input", "weakest_base_for_imported_causal_theorem", "reversal_or_choice_lower_bound"],
+      "properties": {
+        "fixed_carrier_transport_base": {"const": "PRA"},
+        "choice_operation_added_by_transport": {"const": false},
+        "infinite_selection_added_by_transport": {"const": false},
+        "weakest_base_for_imported_causal_theorem": {"const": "NOT_ESTABLISHED"},
+        "reversal_or_choice_lower_bound": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": true
+    },
+    "architecture_disposition": {"type": "object"},
+    "canonical_hashes": {"type": "object", "minProperties": 5, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "provenance": {
+      "type": "object",
+      "required": ["inputs"],
+      "properties": {
+        "inputs": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": ["path", "result_or_schema_id", "sha256", "role"],
+            "properties": {
+              "path": {"type": "string"},
+              "result_or_schema_id": {"type": "string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+              "role": {"type": "string"}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "claim_flags": {"type": "object", "minProperties": 12, "additionalProperties": {"type": "boolean"}},
+    "does_not_establish": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 100},
+    "schema_path": {"type": "string"},
+    "independent_checker": {"type": "string"},
+    "human_report": {"type": "string"}
+  },
+  "additionalProperties": true
+}

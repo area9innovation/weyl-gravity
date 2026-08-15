@@ -769,7 +769,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "14a024a1f94ac3d7c671c51cb2d514cef9247b77729f581868a6f230b3b05eb2"
+      "sha256": "590672e4331d44b16b763a6b1462e612ac7aac77da77e4f447c04505c62de70a"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -844,6 +844,18 @@
       "result_id": "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
       "sha256": "d1593c67e67a99c8b14b12dae5ac1364e26f34631c86b12cefaffd9ade9fd3ff"
     },
+    "lorentzian_weyl_bv_completion_atlas_v4": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V4.json",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V4",
+      "sha256": "be8d08aa2f0afcca1e19a05ca1bbfab11dfefa0b7f2d6c36719ae5e83a46bbe0"
+    },
     "mannheim_ngc3198_assembly": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC"
@@ -902,6 +914,16 @@
       "result_id": "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
       "sha256": "08389e96d349766e29a34cde8109d4b1271288b59d44f3b29fcb456065641998"
     },
+    "strict_386_causal_sign_transport": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_CAUSAL_SIGN_TRANSPORT_V1.json",
+      "result_id": "STRICT_386_CAUSAL_SIGN_TRANSPORT_V1",
+      "sha256": "5845c4170505e24c116249dfbdf4c8e2099c23adb9480fe2f65f8c1e3bff73cd"
+    },
     "strict_local_q1_q2_identity": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC"
@@ -949,10 +971,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "7619ce964d21c0057038b299a63c89c8f56a2a4f052bc8551baa14ca7de037ba"
+      "sha256": "23a4316055d38694b937c17bb1e20f81241a4079cc7631420dc1e32e706fc93a"
     }
   },
-  "canonical_digest": "785374684a12e862920edc09131e685f175b32350457ee2e7fc8fae48052505b",
+  "canonical_digest": "8f5392ef89a65259989955d1a9f5ed17fe20963d66b172a6ca441d91344a9986",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -1091,6 +1113,7 @@
     "scalar_minkowski_causal_support_proved": true,
     "scalar_minkowski_green_certified": true,
     "static_atlas_appendix_generated": true,
+    "strict_386_causal_convention_stability_certified": true,
     "strict_minimal_bv_cyclicity_reconciled": true,
     "strict_pure_weyl_local_q1_q2_certified": true,
     "support_indexed_full_lf_topology_reconstructed": false,
@@ -1424,6 +1447,20 @@
       ],
       "statement": "On the declared Bach-flat strict pure-Weyl minimal BV carrier, the portable unary complex is square zero and the arity-two master identity exhausts 18 typed channels and 51 composable paths using all five q1 and all twenty-two ordered q2 components. An exact 30-component receiver finds 540 canonical-cyclicity defects in the landed ghost-antifield convention and certifies an involutive sign translation that removes all defects in 932 expanded non-Bach coefficients while preserving q1 squared and the q1-q2 identity. Gate A remains fail closed because full local D and the nonminimal, auxiliary and residual carrier are not yet receiver-certified; causal propagation and quantum lifecycle promotions remain open.",
       "status": "LOCAL_ALGEBRAIC_MINIMAL_Q1_Q2_CYCLIC_RECONCILIATION_WITH_GATE_BOUNDARY"
+    },
+    {
+      "authorities": [
+        "strict_386_causal_sign_transport",
+        "lorentzian_weyl_bv_completion_atlas_v4",
+        "classical_import_gate_v5"
+      ],
+      "claim_id": "RF-25-STRICT-WEYL-CAUSAL-CONVENTION-STABILITY",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "The Gate-V5 minimal ghost-antifield sign repair does not invalidate the certified strict 386-row unary causal Green-homotopy architecture. The 30 minimal components match its 5/10/10/5 endpoint blocks, and the pointwise involution I_356 direct-sum diag(I_5,I_10,I_10,-I_5) transports nilpotency, both Green-homotopy identities, causal support, orientation and the graded-adjoint relation with the transported pairing. The fixed finite wrapper is PRA, but common operator bytes, the full 386-row canonical pairing, q2/D causal compatibility and the weakest base of the imported analytic theorem remain open; Gate A is still fail closed.",
+      "status": "SAME_THEORY_CAUSAL_CONVENTION_STABILITY_WITH_COMMON_BYTE_BOUNDARY"
     }
   ],
   "created": "2026-08-14",
@@ -1615,19 +1652,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "26ff28ccaf6bba3b9355d8d95da2ed731b958253a7d063ee71d9f941cbfccd86",
+      "assembly_source_canonical_digest": "0c5d8054243043ba3447d9e52eac61c8cd4542399016ad7780b5ad9eba95bf61",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "7619ce964d21c0057038b299a63c89c8f56a2a4f052bc8551baa14ca7de037ba",
+      "assembly_source_sha256": "23a4316055d38694b937c17bb1e20f81241a4079cc7631420dc1e32e706fc93a",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
       "generator_sha256": "f46fd7cd15f93d83c0f2ec292fa9e0cbae6bdc9f7a503dd39ff61565424db364",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
       "sha256": "ba621c56ab8073e637c1e1fc7b9130b077d8707097cd954c2186bdf65d622150",
-      "source_canonical_digest": "102a164cd77a7ea9edc5aa201fc4eb9614e681d652e4fec8a519c7bb950abfd3",
+      "source_canonical_digest": "f9e3e05621daabf0824808c26c9ce9f2baffb8b5f689137592d21ce4ea003446",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "e0ae0418b415f4a7b6cd8d0968316b537755fa091135d8d7cd35d6fc25927d2a"
+      "source_sha256": "a9941dc6578aa395509968044f0cfb9bcb60486add8a6d8fd7cce2797967ba47"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "85de8b52943b749526df13f2d47c2282d1d95bc88dc973f311f0ba2a79e0b337"
+    "sha256": "b813880bcf4239c37c6a865bc556b733f60d22944c07a60750defbbae76ffc6a"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

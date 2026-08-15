@@ -1,0 +1,227 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "strict-386-causal-sign-transport-v1",
+  "result_id": "STRICT_386_CAUSAL_SIGN_TRANSPORT_V1",
+  "result_kind": "SAME_THEORY_CAUSAL_CONVENTION_STABILITY_CERTIFICATE",
+  "result_state": "STRICT_386_CAUSAL_ARCHITECTURE_STABLE_UNDER_MINIMAL_SIGN_TRANSPORT_COMMON_HASH_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "2a9cee84",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "Does the canonical ghost-antifield sign repair invalidate the existing strict 386-row causal Green-homotopy architecture?",
+  "answer": "No. The repaired thirty-component minimal carrier has exactly the 5/10/10/5 endpoint type profile of the strict 386-row causal complex. Extending its sign involution by the identity on the 356 algebraically contracted rows gives an exact pointwise involution T_386. Simultaneously conjugating Q and both Green homotopies preserves nilpotency, the two-sided homotopy identity, causal support, advanced/retarded orientation and the graded-adjoint relation with the transported pairing. This is a convention-stability theorem, not a common-byte import theorem: Gate A still accepts zero common hashes, the complete full-carrier pairing is not serialized, and no nonlinear q2/Green, Hadamard or QME claim follows.",
+  "carrier_bridge": {
+    "gate_minimal_component_dimension": 30,
+    "causal_endpoint_dimension": 30,
+    "causal_algebraic_complement_dimension": 356,
+    "causal_full_dimension": 386,
+    "endpoint_blocks": [
+      {
+        "cochain_block": "G",
+        "role": "Diff plus Weyl ghosts",
+        "gate_generators": [
+          "c",
+          "omega"
+        ],
+        "dimension": 5,
+        "transport_sign": 1
+      },
+      {
+        "cochain_block": "M",
+        "role": "metric field",
+        "gate_generators": [
+          "h"
+        ],
+        "dimension": 10,
+        "transport_sign": 1
+      },
+      {
+        "cochain_block": "E",
+        "role": "metric antifield",
+        "gate_generators": [
+          "h_star"
+        ],
+        "dimension": 10,
+        "transport_sign": 1
+      },
+      {
+        "cochain_block": "I",
+        "role": "Diff plus Weyl ghost antifields",
+        "gate_generators": [
+          "c_star",
+          "omega_star"
+        ],
+        "dimension": 5,
+        "transport_sign": -1
+      }
+    ],
+    "gate_to_endpoint_permutation": [
+      "(c_0,c_1,c_2,c_3,omega) -> G[0:5]",
+      "h_(00,01,02,03,11,12,13,22,23,33) -> M[0:10]",
+      "h_star_(00,01,02,03,11,12,13,22,23,33) -> E[0:10]",
+      "(c_star_0,c_star_1,c_star_2,c_star_3,omega_star) -> I[0:5]"
+    ],
+    "compatibility_status": "TYPE_DIMENSION_AND_COMPLEX_ROLE_MATCH_COMMON_CONTENT_HASH_NOT_ESTABLISHED"
+  },
+  "transport": {
+    "formula": "T_386=I_356 direct-sum diag(I_5,I_10,I_10,-I_5)",
+    "positive_eigenvalue_multiplicity": 381,
+    "negative_eigenvalue_multiplicity": 5,
+    "rank": 386,
+    "determinant": -1,
+    "involutive": true,
+    "differential_order": 0,
+    "support_effect": "EXACTLY_PRESERVED",
+    "changed_endpoint_block": "I",
+    "changed_gate_generators": [
+      "c_star",
+      "omega_star"
+    ],
+    "q1_rows_changed": [
+      "q1_cstar_hstar",
+      "q1_omegastar_hstar"
+    ],
+    "q2_rows_changed_but_not_causally_transferred": [
+      "q2_cstar_hhstar__forward",
+      "q2_cstar_hhstar__reverse",
+      "q2_omegastar_hhstar__forward",
+      "q2_omegastar_hhstar__reverse"
+    ],
+    "transported_differential": "Q'=T_386 Q T_386",
+    "transported_green_homotopies": "Lambda'_plus/minus=T_386 Lambda_plus/minus T_386",
+    "transported_pairing": "omega'(x,y)=omega(T_386 x,T_386 y)"
+  },
+  "proof_ledger": [
+    {
+      "check_id": "endpoint_type_dimension_bridge",
+      "status": "VERIFIED",
+      "equation": "30=(4+1)+10+10+(4+1)=5+10+10+5",
+      "evidence": "the Gate-V5 generator groups match the causal endpoint G/M/E/I ranks"
+    },
+    {
+      "check_id": "full_transport_involution",
+      "status": "VERIFIED",
+      "equation": "T_386=I_356 direct-sum diag(I_5,I_10,I_10,-I_5); T_386^2=I_386",
+      "evidence": "381 positive and five negative diagonal entries over the integers"
+    },
+    {
+      "check_id": "transported_unary_nilpotency",
+      "status": "VERIFIED_BY_EXACT_CONJUGATION",
+      "equation": "Q'=T_386 Q T_386 and (Q')^2=T_386 Q^2 T_386=0",
+      "evidence": "T_386 is involutive and the source causal complex is a chain complex"
+    },
+    {
+      "check_id": "transported_green_homotopy",
+      "status": "VERIFIED_BY_EXACT_CONJUGATION",
+      "equation": "Lambda'_plus/minus=T_386 Lambda_plus/minus T_386; Q'Lambda'+Lambda'Q'=I_386",
+      "evidence": "conjugation transports the certified two-sided Green-homotopy identity"
+    },
+    {
+      "check_id": "causal_support_and_orientation",
+      "status": "VERIFIED",
+      "equation": "supp(T_386 u)=supp(u)",
+      "evidence": "T_386 is a pointwise order-zero signed bundle automorphism, so it neither enlarges support nor swaps advanced and retarded orientation"
+    },
+    {
+      "check_id": "transported_adjoint_relation",
+      "status": "VERIFIED_ON_TRANSPORTED_PAIRING",
+      "equation": "omega'(x,y)=omega(T_386 x,T_386 y) implies (Lambda'_plus)^sharp'=Lambda'_minus",
+      "evidence": "the source graded-adjoint theorem is invariant under simultaneous transport of operator and pairing"
+    },
+    {
+      "check_id": "common_byte_identification",
+      "status": "NOT_ESTABLISHED",
+      "equation": "Gate-V5 accepted common hashes=0",
+      "evidence": "matching dimensions and formula roles do not identify the Gate-V5 q1 bytes with the 386-row endpoint bytes"
+    },
+    {
+      "check_id": "nonlinear_causal_compatibility",
+      "status": "NOT_ESTABLISHED",
+      "equation": "no transported q2/Green compatibility theorem",
+      "evidence": "the four changed ordered q2 rows are local-algebraic data, while the 386 certificate is unary causal data"
+    }
+  ],
+  "foundational_strength": {
+    "fixed_carrier_transport_base": "PRA",
+    "reason": "the wrapper uses only finite signed permutations, integer dimension arithmetic and equational substitution on a fixed 386-row block decomposition",
+    "choice_operation_added_by_transport": false,
+    "infinite_selection_added_by_transport": false,
+    "analytic_causal_input": "inherited unchanged from the content-pinned LORENTZIAN-CAUSAL source certificate",
+    "weakest_base_for_imported_causal_theorem": "NOT_ESTABLISHED",
+    "reversal_or_choice_lower_bound": "NOT_ESTABLISHED"
+  },
+  "architecture_disposition": {
+    "strict_386_route_invalidated_by_sign_repair": false,
+    "strict_386_route_convention_stable": true,
+    "same_theory_role_match": true,
+    "same_operator_bytes_established": false,
+    "causal_stage_preserved": true,
+    "nonlinear_stage_preserved": false,
+    "next_decisive_object": "A content-addressed endpoint inclusion identifying the translated Gate-V5 q1 and canonical pairing with the 30 causal endpoint rows, followed by extension across all 356 algebraic/nonminimal/auxiliary rows and a same-carrier q2/D compatibility theorem."
+  },
+  "canonical_hashes": {
+    "carrier_bridge_sha256": "2464c205578c9dedafefe393f610149e1a837574d9e618aa3e94437f8130241e",
+    "transport_sha256": "99da2c1fe384d09de23748596bf10f7548e7a754cd958366a72274f6e7a10d7e",
+    "proof_ledger_sha256": "6d6310b7e5918e4b2243d330c9de9a25122f31df56769a4c0eaa919b71335dd6",
+    "foundational_strength_sha256": "35bd68da2f2018524a1b167c3f2b05345f1a9b2a3cacb7a237626cf440793879",
+    "architecture_disposition_sha256": "77cdf9b98717b4e75d5f6a286b2c5d07e19c7f5e27ae69eb397aedb68fa1e6dd"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V5_RECONCILIATION.json",
+        "result_or_schema_id": "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
+        "sha256": "3f06924664f8433a2332afb58edcf513723a889ef802298832b137b03608427f",
+        "role": "current fail-closed strict import disposition"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1.json",
+        "result_or_schema_id": "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
+        "sha256": "c4cd8b1399e176e9eb1eadbfa0c5b85901d7361f39c706a7e7d4469e945e5169",
+        "role": "canonical thirty-component endpoint sign convention"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_full_prolonged_green_homotopy_assembly.json",
+        "result_or_schema_id": "pure-weyl-full-prolonged-green-homotopy-assembly-v1",
+        "sha256": "1f8aae727a06fb82c70732f7207499d427894247d09fea22f677a0f9b38be0ee",
+        "role": "strict 386-row causal Green homotopy"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_deformation_retract_status.json",
+        "result_or_schema_id": "pure-weyl-curved-deformation-retract-status-v1",
+        "sha256": "4e09bec901e2863d430e0a158a893c95442e3ef387b6235f10cad34b1fa8c15d",
+        "role": "strict curved metric-core and auxiliary row decomposition"
+      }
+    ]
+  },
+  "claim_flags": {
+    "STRICT_386_SIGN_TRANSPORT_INVOLUTIVE": true,
+    "STRICT_386_UNARY_NILPOTENCY_PRESERVED": true,
+    "STRICT_386_CAUSAL_GREEN_HOMOTOPY_PRESERVED": true,
+    "STRICT_386_CAUSAL_SUPPORT_PRESERVED": true,
+    "STRICT_386_GRADED_ADJOINT_PRESERVED_ON_TRANSPORTED_PAIRING": true,
+    "STRICT_386_ARCHITECTURE_INVALIDATED_BY_GATE_V5": false,
+    "GATE_V5_TO_386_COMMON_BYTES_IDENTIFIED": false,
+    "FULL_386_CANONICAL_PAIRING_SERIALIZED": false,
+    "STRICT_386_Q2_GREEN_COMPATIBILITY_CERTIFIED": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "BRST_HADAMARD_STATE_CONSTRUCTED": false,
+    "LORENTZIAN_QME_RESTORED": false
+  },
+  "does_not_establish": [
+    "a common content hash between the Gate-V5 local q1 bytes and the 386-row causal endpoint",
+    "a serialized canonical odd pairing on all 386 rows",
+    "cyclic compatibility of the 356-row algebraic/nonminimal/auxiliary complement",
+    "compatibility of strict local q2 or D with the transported causal Green homotopy",
+    "a passed classical import Gate A",
+    "a Hadamard covariance, BRST Ward identity, positivity theorem, renormalized Lorentzian product or QME",
+    "a weakest-base or choice-principle classification of the imported analytic causal theorem"
+  ],
+  "next_gate": "Serialize the endpoint inclusion/permutation and pairing on the exact 386-row bytes, prove coefficientwise equality with translated Gate-V5 q1, extend the canonical sign/pairing convention over the 356-row complement, and only then test q2/D compatibility with the causal contraction.",
+  "schema_path": "quantum-weyl/classical_import/schema/strict-386-causal-sign-transport-v1.schema.json",
+  "independent_checker": "quantum-weyl/classical_import/check_strict_386_causal_sign_transport.py",
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_386_CAUSAL_SIGN_TRANSPORT_V1.md"
+}

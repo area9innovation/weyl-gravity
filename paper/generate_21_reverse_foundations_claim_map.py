@@ -83,6 +83,8 @@ AUTHORITY_PATHS = {
     "strict_local_q1_q2_identity": "quantum-weyl/classical_import/certificates/STRICT_LOCAL_Q1_Q2_IDENTITY_V1.json",
     "strict_minimal_bv_cyclic_sign_reconciliation": "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1.json",
     "classical_import_gate_v5": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V5_RECONCILIATION.json",
+    "strict_386_causal_sign_transport": "quantum-weyl/classical_import/certificates/STRICT_386_CAUSAL_SIGN_TRANSPORT_V1.json",
+    "lorentzian_weyl_bv_completion_atlas_v4": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V4.json",
     "finite_graph_causality": "foundations/results/FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1.json",
     "finite_bv": "foundations/results/FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1.json",
 }
@@ -654,6 +656,13 @@ def build() -> dict:
                 "authorities": ["strict_portable_local_q1", "strict_local_q1_q2_identity", "strict_minimal_bv_cyclic_sign_reconciliation", "classical_import_gate_v5"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC"],
             },
+            {
+                "claim_id": "RF-25-STRICT-WEYL-CAUSAL-CONVENTION-STABILITY",
+                "statement": "The Gate-V5 minimal ghost-antifield sign repair does not invalidate the certified strict 386-row unary causal Green-homotopy architecture. The 30 minimal components match its 5/10/10/5 endpoint blocks, and the pointwise involution I_356 direct-sum diag(I_5,I_10,I_10,-I_5) transports nilpotency, both Green-homotopy identities, causal support, orientation and the graded-adjoint relation with the transported pairing. The fixed finite wrapper is PRA, but common operator bytes, the full 386-row canonical pairing, q2/D causal compatibility and the weakest base of the imported analytic theorem remain open; Gate A is still fail closed.",
+                "status": "SAME_THEORY_CAUSAL_CONVENTION_STABILITY_WITH_COMMON_BYTE_BOUNDARY",
+                "authorities": ["strict_386_causal_sign_transport", "lorentzian_weyl_bv_completion_atlas_v4", "classical_import_gate_v5"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -684,6 +693,7 @@ def build() -> dict:
             "case_study_authorities_pinned": True,
             "strict_pure_weyl_local_q1_q2_certified": True,
             "strict_minimal_bv_cyclicity_reconciled": True,
+            "strict_386_causal_convention_stability_certified": True,
             "static_atlas_appendix_generated": True,
             "complete_evidence_register_generated": True,
             "complete_literature_register_generated": True,
