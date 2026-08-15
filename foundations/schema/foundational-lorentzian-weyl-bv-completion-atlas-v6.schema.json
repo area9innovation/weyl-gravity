@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/foundational-lorentzian-weyl-bv-completion-atlas-v6.schema.json",
+  "type": "object",
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit", "dependency_tags", "question", "answer", "predecessor", "status_vocabulary", "stages", "branches", "frontier_summary", "classical_import_reconciliation", "strict_gate_a_progress", "strict_causal_sign_transport", "strict_endpoint_q1_content_bridge", "strict_suspended_adjoint_bridge", "berger_h26_c26_decision_chain", "route_selection", "research_queue", "provenance", "claim_flags", "does_not_establish", "independent_checker", "human_report"],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v6"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V6"},
+    "result_kind": {"const": "BRANCH_BY_STAGE_COMPLETION_ATLAS"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{8,40}$"},
+    "dependency_tags": {"type": "array", "minItems": 4, "maxItems": 4, "uniqueItems": true},
+    "question": {"type": "string", "minLength": 100},
+    "answer": {"type": "string", "minLength": 1000},
+    "predecessor": {"type": "object", "required": ["result_id", "path", "sha256", "preserved"], "properties": {"result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V5"}, "path": {"const": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V5.json"}, "sha256": {"$ref": "#/$defs/hash"}, "preserved": {"const": true}}},
+    "status_vocabulary": {"type": "array", "minItems": 9, "maxItems": 9},
+    "stages": {"type": "array", "minItems": 11, "maxItems": 11},
+    "branches": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/branch"}},
+    "frontier_summary": {"type": "object", "minProperties": 4},
+    "classical_import_reconciliation": {"type": "object"},
+    "strict_gate_a_progress": {"type": "object", "required": ["status", "suspended_adjoint_control"], "properties": {"status": {"const": "FULL_SUSPENDED_GREEN_ADJOINT_REPLAYED_COMPONENT_PAIRING_D_Q2_OPEN"}, "suspended_adjoint_control": {"type": "object", "required": ["endpoint_pairing_entries", "R_386_positive", "R_386_negative", "full_green_suspended_adjoint_replayed", "full_component_pairing_serialized"], "properties": {"endpoint_pairing_entries": {"const": 54}, "R_386_positive": {"const": 376}, "R_386_negative": {"const": 10}, "full_green_suspended_adjoint_replayed": {"const": true}, "full_component_pairing_serialized": {"const": false}}}}},
+    "strict_causal_sign_transport": {"type": "object"},
+    "strict_endpoint_q1_content_bridge": {"type": "object"},
+    "strict_suspended_adjoint_bridge": {"type": "object", "required": ["result_id", "status", "endpoint_pairing_entries", "endpoint_T_negative", "endpoint_T_sharp_negative", "endpoint_R_negative", "full_R_positive", "full_R_negative", "full_suspended_green_adjoint_replayed", "full_component_pairing_serialized", "finite_bridge_base", "analytic_causal_weakest_base", "next_gate"], "properties": {"result_id": {"const": "STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1"}, "endpoint_pairing_entries": {"const": 54}, "endpoint_T_negative": {"const": 5}, "endpoint_T_sharp_negative": {"const": 5}, "endpoint_R_negative": {"const": 10}, "full_R_positive": {"const": 376}, "full_R_negative": {"const": 10}, "full_suspended_green_adjoint_replayed": {"const": true}, "full_component_pairing_serialized": {"const": false}, "finite_bridge_base": {"const": "PRA"}, "analytic_causal_weakest_base": {"const": "NOT_ESTABLISHED"}}},
+    "berger_h26_c26_decision_chain": {"type": "array", "minItems": 11, "maxItems": 11},
+    "route_selection": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/route"}},
+    "research_queue": {"type": "array", "minItems": 5, "maxItems": 5},
+    "provenance": {"type": "object", "required": ["inputs"], "properties": {"inputs": {"type": "array", "minItems": 43, "maxItems": 43}}},
+    "claim_flags": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "does_not_establish": {"type": "array", "minItems": 23, "items": {"type": "string", "minLength": 25}},
+    "independent_checker": {"type": "object", "required": ["path", "checks", "expected_digest"], "properties": {"path": {"const": "foundations/check_lorentzian_weyl_bv_completion_atlas_v6.py"}, "checks": {"type": "array", "minItems": 10, "maxItems": 10}, "expected_digest": {"$ref": "#/$defs/hash"}}},
+    "human_report": {"const": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v6.md"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "cell": {"type": "object", "required": ["stage", "status", "statement", "evidence", "boundary"], "properties": {"stage": {"type": "string"}, "status": {"type": "string"}, "statement": {"type": "string"}, "evidence": {"type": "array"}, "boundary": {"type": "string"}}},
+    "branch": {"type": "object", "required": ["id", "name", "relation_to_target", "scope", "stages", "first_unclosed_gate", "next_decisive_object"], "properties": {"stages": {"type": "array", "minItems": 11, "maxItems": 11, "items": {"$ref": "#/$defs/cell"}}}},
+    "route": {"type": "object", "required": ["rank", "route", "branch", "scientific_leverage", "tractability", "dependency_depth", "recommendation"], "properties": {"rank": {"type": "integer", "minimum": 1, "maximum": 5}, "route": {"type": "string"}, "recommendation": {"type": "string", "minLength": 70}}}
+  }
+}

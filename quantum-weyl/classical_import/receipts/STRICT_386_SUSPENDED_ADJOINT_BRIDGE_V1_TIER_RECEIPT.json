@@ -1,0 +1,58 @@
+{
+  "receipt_id": "STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1",
+  "created": "2026-08-15",
+  "repository_base_commit": "f2d898b68309a437d66b3efeec6307580a4fd269",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Exact rational reconstruction of the endpoint suspension character and its extension over the certified cyclic 356+30 projector splitting of the strict 386-row unary causal carrier.",
+  "claim_boundary": {
+    "established": "The 54-entry endpoint pairing gives T^sharp_G=diag(-I_5,I_10,I_10,I_5) and R=T^sharp_G T=diag(-I_5,I_10,I_10,-I_5). With A^ddagger=R A^sharp_G R, the transported Green adjoint replays. R_386 has 376 positive and 10 negative signs.",
+    "open": "The 356-row component basis and pairing coefficients are not serialized. Local D, same-carrier q2 compatibility, Gate A, Hadamard, renormalized Lorentzian products, QME and residual transfer remain open."
+  },
+  "tiers": [
+    {
+      "tier": 0,
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile quantum-weyl/classical_import/{build_strict_386_suspended_adjoint_bridge.py,check_strict_386_suspended_adjoint_bridge.py,verify_strict_386_suspended_adjoint_bridge.py,tests/test_strict_386_suspended_adjoint_bridge.py}",
+        "jq empty quantum-weyl/classical_import/certificates/STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1.json quantum-weyl/classical_import/schema/strict-386-suspended-adjoint-bridge-v1.schema.json",
+        "git diff --check -- <scoped suspended-adjoint paths>"
+      ],
+      "elapsed_seconds": 0.2,
+      "result": "Changed Python and JSON artifacts parse and the scoped whitespace audit passes."
+    },
+    {
+      "tier": 1,
+      "status": "PASS",
+      "commands": [
+        "python3 quantum-weyl/classical_import/build_strict_386_suspended_adjoint_bridge.py --check",
+        "python3 quantum-weyl/classical_import/check_strict_386_suspended_adjoint_bridge.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_suspended_adjoint_bridge.py",
+        "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_suspended_adjoint_bridge.py -v"
+      ],
+      "elapsed_seconds": 0.9,
+      "result": "Producer determinism, an independent Fraction-based pairing reconstruction, Draft 2020-12 schema/provenance verification and eight mutation tests pass."
+    },
+    {
+      "tier": 2,
+      "status": "PASS",
+      "commands": [
+        "strict minimal cyclic-sign, strict 386 causal-sign, strict endpoint-q1 bridge and completion-atlas V5 producer/checker/verifier/mutation chains"
+      ],
+      "elapsed_seconds": 8.35,
+      "result": "All direct predecessor artifacts remain current and independently verified; the endpoint witness digest, cyclic projector authority and causal pairing inputs are content-pinned."
+    },
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "No freeze, release, shared-core algebra change or Lorentzian quantum lifecycle promotion. The result remains CLASSIFIED."
+    }
+  ],
+  "content_hashes": {
+    "quantum-weyl/classical_import/certificates/STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1.json": "11e0533823321ca06b22d9ca85e82947b442276b4294f809a683ae5eac2a5a2e",
+    "quantum-weyl/classical_import/REPORT_STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1.md": "41156416e6626726837d83b10c636f9e529b9812aaa9b6bc5e5c4fa7f3d23fdf"
+  }
+}

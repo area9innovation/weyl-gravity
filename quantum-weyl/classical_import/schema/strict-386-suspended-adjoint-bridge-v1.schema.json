@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-386-suspended-adjoint-bridge-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "created", "repository_base_commit", "dependency_tags", "question", "answer", "scope", "endpoint_exact_algebra", "suspended_adjoint_theorem", "full_carrier_extension", "foundational_strength", "gate_disposition", "claim_flags", "does_not_establish", "next_gate", "canonical_hashes", "provenance", "independent_checker", "human_report"],
+  "properties": {
+    "schema": {"const": "strict-386-suspended-adjoint-bridge-v1"},
+    "result_id": {"const": "STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1"},
+    "result_kind": {"const": "SAME_THEORY_FULL_CARRIER_SUSPENSION_CONVENTION_BRIDGE"},
+    "result_state": {"const": "PAIRING_SIGN_IDENTIFIED_AS_SUSPENDED_ADJOINT_TWIST_FULL_COMPONENT_PAIRING_SERIALIZATION_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{8,40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "question": {"type": "string", "minLength": 100},
+    "answer": {"type": "string", "minLength": 1000},
+    "scope": {"type": "object", "required": ["theory", "background", "endpoint_dimension", "algebraic_complement_dimension", "full_dimension", "arithmetic"], "properties": {"endpoint_dimension": {"const": 30}, "algebraic_complement_dimension": {"const": 356}, "full_dimension": {"const": 386}}},
+    "endpoint_exact_algebra": {"type": "object", "required": ["ordered_blocks", "gate_pairing_nonzero_entries", "gate_pairing_sha256", "T_diagonal", "T_sharp_gate_diagonal", "R_diagonal", "identities"], "properties": {"gate_pairing_nonzero_entries": {"const": 54}, "gate_pairing_sha256": {"$ref": "#/$defs/hash"}, "T_diagonal": {"type": "array", "minItems": 30, "maxItems": 30}, "T_sharp_gate_diagonal": {"type": "array", "minItems": 30, "maxItems": 30}, "R_diagonal": {"type": "array", "minItems": 30, "maxItems": 30}, "identities": {"type": "object", "minProperties": 6}}},
+    "suspended_adjoint_theorem": {"type": "object", "required": ["gate_ordinary_adjoint", "suspension_character", "gate_suspended_adjoint", "universal_transport_formula", "recovered_formula", "q1_consequence", "green_consequence", "homotopy_consequence", "support_consequence"]},
+    "full_carrier_extension": {"type": "object", "required": ["orthogonal_decomposition_authority", "T_386", "T_386_positive", "T_386_negative", "T_386_sharp_gate_positive", "T_386_sharp_gate_negative", "R_386", "R_386_positive", "R_386_negative", "R_386_involutive", "full_green_suspended_adjoint_replayed", "full_component_pairing_coefficients_serialized"], "properties": {"T_386_positive": {"const": 381}, "T_386_negative": {"const": 5}, "T_386_sharp_gate_positive": {"const": 381}, "T_386_sharp_gate_negative": {"const": 5}, "R_386_positive": {"const": 376}, "R_386_negative": {"const": 10}, "R_386_involutive": {"const": true}, "full_green_suspended_adjoint_replayed": {"const": true}, "full_component_pairing_coefficients_serialized": {"const": false}}},
+    "foundational_strength": {"type": "object", "required": ["finite_suspension_bridge_base", "choice_operation_added", "infinite_selection_added", "weakest_base_for_imported_analytic_causal_theorem"], "properties": {"finite_suspension_bridge_base": {"const": "PRA"}, "choice_operation_added": {"const": false}, "infinite_selection_added": {"const": false}, "weakest_base_for_imported_analytic_causal_theorem": {"const": "NOT_ESTABLISHED"}}},
+    "gate_disposition": {"type": "object", "required": ["endpoint_pairing_sign_resolved_as_convention", "abstract_full_carrier_suspended_adjoint_replayed", "full_386_component_pairing_serialized", "classical_import_gate_a_status", "q2_d_same_carrier_established"], "properties": {"endpoint_pairing_sign_resolved_as_convention": {"const": true}, "abstract_full_carrier_suspended_adjoint_replayed": {"const": true}, "full_386_component_pairing_serialized": {"const": false}, "classical_import_gate_a_status": {"const": "FAIL_CLOSED"}, "q2_d_same_carrier_established": {"const": false}}},
+    "claim_flags": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "does_not_establish": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "string", "minLength": 25}},
+    "next_gate": {"type": "string", "minLength": 100},
+    "canonical_hashes": {"type": "object", "additionalProperties": {"$ref": "#/$defs/hash"}, "minProperties": 3, "maxProperties": 3},
+    "provenance": {"type": "object", "required": ["inputs"], "properties": {"inputs": {"type": "array", "minItems": 6, "maxItems": 6}}},
+    "independent_checker": {"type": "object", "required": ["path", "expected_digest"], "properties": {"path": {"const": "quantum-weyl/classical_import/check_strict_386_suspended_adjoint_bridge.py"}, "expected_digest": {"$ref": "#/$defs/hash"}}},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1.md"}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

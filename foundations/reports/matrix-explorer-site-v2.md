@@ -42,8 +42,10 @@ from being promoted to a general non-cone no-go.
 The strict thirty-row endpoint is no longer a type-only match.  The Gate-V5 and
 causal-endpoint unary operators agree in all 80 multiindex tables, including all
 700 independent Bach four-jet columns.  The remaining endpoint boundary is the
-five-row transported ghost-pairing sign; the full 386-row pairing, q2/D,
-Hadamard and QME gates remain open.
+five-row transported ghost-pairing sign.  It is now resolved as the exact Gate
+suspension character, and the full projector-level suspended Green adjoint
+replays.  The 356 component pairing bytes, q2/D, Hadamard and QME gates remain
+open.
 
 The new reconstruction import supplies the first explicit weak-arithmetic
 finite-approximant theorem for a declared bounded wave observable. Its rational

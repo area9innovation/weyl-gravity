@@ -100,6 +100,8 @@ def main() -> int:
     completion_atlas_v4 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v4"]["path"]).read_text())
     strict_386_endpoint = json.loads((ROOT / data["authorities"]["strict_386_endpoint_q1_content_bridge"]["path"]).read_text())
     completion_atlas_v5 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v5"]["path"]).read_text())
+    strict_386_suspension = json.loads((ROOT / data["authorities"]["strict_386_suspended_adjoint_bridge"]["path"]).read_text())
+    completion_atlas_v6 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v6"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -380,6 +382,7 @@ def main() -> int:
         (27, "BT-BUBBLE-ENTROPY-SOFT-SCORE-BALANCE"),
         (28, "STRICT-WEYL-ENDPOINT-Q1-CONTENT-BRIDGE"),
         (29, "BT-FULL-PHASE-CURRENT-GATE"),
+        (30, "STRICT-WEYL-SUSPENDED-ADJOINT-BRIDGE"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -388,7 +391,10 @@ def main() -> int:
     require(flags["strict_386_causal_convention_stability_certified"] is True, "strict 386 causal convention-stability flag missing")
     require(flags["strict_386_endpoint_q1_content_identified"] is True, "strict endpoint q1 content flag missing")
     require(flags["strict_386_endpoint_all_700_bach_columns_match"] is True, "strict endpoint Bach-column flag missing")
-    require(flags["strict_386_pairing_suspension_bridge_certified"] is False, "strict endpoint pairing suspension promoted")
+    require(flags["strict_386_pairing_suspension_bridge_certified"] is True, "strict endpoint pairing suspension bridge missing")
+    require(flags["strict_386_full_suspended_green_adjoint_replayed"] is True, "strict suspended Green adjoint replay missing")
+    require(flags["strict_386_component_pairing_serialized"] is False, "strict 386 component pairing promoted")
+    require(flags["strict_386_local_d_certified"] is False, "strict 386 local D promoted")
     require(strict_q1["claim_flags"]["Q1_SQUARED_ZERO_CERTIFIED"] is True, "strict q1 square-zero authority drift")
     require(strict_q1q2["channel_inventory"]["channel_count"] == 18, "strict q1/q2 channel count drift")
     require(strict_q1q2["channel_inventory"]["composable_path_count"] == 51, "strict q1/q2 path count drift")
@@ -424,6 +430,17 @@ def main() -> int:
     require(completion_atlas_v5["strict_endpoint_q1_content_bridge"]["arrow_tables_matching"] == 80, "completion atlas V5 omitted endpoint q1 bridge")
     require(completion_atlas_v5["claim_flags"]["strict_386_pairing_suspension_bridge_certified"] is False, "completion atlas V5 promoted pairing suspension")
     require(completion_atlas_v5["claim_flags"]["lorentzian_full_theory_certified"] is False, "completion atlas V5 promoted a full Lorentzian theory")
+    require(strict_386_suspension["endpoint_exact_algebra"]["gate_pairing_nonzero_entries"] == 54, "strict suspension endpoint pairing count drift")
+    require(strict_386_suspension["endpoint_exact_algebra"]["identities"]["R_equals_T_sharp_gate_T"] is True, "strict suspension character identity missing")
+    require(strict_386_suspension["full_carrier_extension"]["R_386_positive"] == 376, "strict suspension positive-sign count drift")
+    require(strict_386_suspension["full_carrier_extension"]["R_386_negative"] == 10, "strict suspension negative-sign count drift")
+    require(strict_386_suspension["claim_flags"]["FULL_386_SUSPENDED_GREEN_ADJOINT_REPLAYED"] is True, "strict suspended Green adjoint was not replayed")
+    require(strict_386_suspension["claim_flags"]["FULL_386_COMPONENT_PAIRING_SERIALIZED_IN_GATE_CONVENTION"] is False, "strict component pairing promoted")
+    require(strict_386_suspension["claim_flags"]["STRICT_386_Q2_GREEN_COMPATIBILITY_CERTIFIED"] is False, "strict suspended adjoint promoted to q2")
+    require(completion_atlas_v6["strict_suspended_adjoint_bridge"]["full_suspended_green_adjoint_replayed"] is True, "completion atlas V6 omitted suspended adjoint replay")
+    require(completion_atlas_v6["claim_flags"]["strict_386_component_pairing_serialized"] is False, "completion atlas V6 promoted component pairing")
+    require(completion_atlas_v6["claim_flags"]["strict_386_local_d_certified"] is False, "completion atlas V6 promoted local D")
+    require(completion_atlas_v6["claim_flags"]["lorentzian_full_theory_certified"] is False, "completion atlas V6 promoted a full Lorentzian theory")
     require(flags["static_atlas_appendix_generated"] is True, "static atlas appendix flag is not certified")
     require(flags["complete_evidence_register_generated"] is True, "complete evidence register flag is not certified")
     require(flags["complete_literature_register_generated"] is True, "complete literature register flag is not certified")

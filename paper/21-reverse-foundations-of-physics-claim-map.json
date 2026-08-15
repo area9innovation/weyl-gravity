@@ -820,7 +820,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "e57ab2a50c7a1c8a865fe20f1124e1dc37d69fa412e74b27770e9fd11e344f11"
+      "sha256": "bb75c0d69983e1436b56ec9c8f793ffc118568a5169cda28a655e1e33a44db78"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -919,6 +919,18 @@
       "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V5",
       "sha256": "51cbd8a422f328ee9e3aedc860bd81700f44b26d4eb12ab91b856f542b104397"
     },
+    "lorentzian_weyl_bv_completion_atlas_v6": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V6.json",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V6",
+      "sha256": "b7fcd520462bd32753eebac0ea1852c2e00bc27d08a44d460b4b19f9281bf825"
+    },
     "mannheim_ngc3198_assembly": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC"
@@ -997,6 +1009,16 @@
       "result_id": "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
       "sha256": "7dcafc995a0662f610d721d39b3255f5fae6e32105286cc05051e3b658e16032"
     },
+    "strict_386_suspended_adjoint_bridge": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1.json",
+      "result_id": "STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1",
+      "sha256": "11e0533823321ca06b22d9ca85e82947b442276b4294f809a683ae5eac2a5a2e"
+    },
     "strict_local_q1_q2_identity": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC"
@@ -1044,10 +1066,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "1e4db10a9a71c2182a9326f94987ff7b39e194fc55b1db321ec32169b53c3e6f"
+      "sha256": "f0d3d53b596433e21fedb6220d6716bbb1fb2959fafd689aef61e43bc2a6805c"
     }
   },
-  "canonical_digest": "8d3f358f3c84d49d996b7c73c6943b3687240a5af07d3894e7740fee5757cd0d",
+  "canonical_digest": "71e67e89b9769d442586b7994f2c561f5a961beee62342f1ff2a28f9599a6426",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -1198,9 +1220,12 @@
     "scalar_minkowski_green_certified": true,
     "static_atlas_appendix_generated": true,
     "strict_386_causal_convention_stability_certified": true,
+    "strict_386_component_pairing_serialized": false,
     "strict_386_endpoint_all_700_bach_columns_match": true,
     "strict_386_endpoint_q1_content_identified": true,
-    "strict_386_pairing_suspension_bridge_certified": false,
+    "strict_386_full_suspended_green_adjoint_replayed": true,
+    "strict_386_local_d_certified": false,
+    "strict_386_pairing_suspension_bridge_certified": true,
     "strict_minimal_bv_cyclicity_reconciled": true,
     "strict_pure_weyl_local_q1_q2_certified": true,
     "support_indexed_full_lf_topology_reconstructed": false,
@@ -1597,6 +1622,19 @@
       ],
       "statement": "Removing the full lowest axial cosine-sine eigenspace makes the exact orthogonal-background marginal translation invariant. The two-mode center problem then reduces to a translation-invariant canonical-current susceptibility bound, because the two real scores are exactly the Fourier divergence of one local current. This current supplies one external momentum factor. An exact rational 4^4 fixture has current zero mode -444, obstructing the shortcut that declares the canonical current to be a periodic gradient and extracts a second factor pointwise. The statistical current-susceptibility bound, interacting H^-1 estimate, and continuum limit remain open.",
       "status": "EXACT_FULL_PHASE_CURRENT_REDUCTION_WITH_CANONICAL_POINTWISE_SECOND_FACTOR_OBSTRUCTION"
+    },
+    {
+      "authorities": [
+        "strict_386_suspended_adjoint_bridge",
+        "lorentzian_weyl_bv_completion_atlas_v6"
+      ],
+      "claim_id": "RF-30-STRICT-WEYL-SUSPENDED-ADJOINT-BRIDGE",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "The thirty-row endpoint Gate pairing has 54 nonzero ordered entries and determines the exact suspension character R=diag(-I_5,I_10,I_10,-I_5). With A^ddagger=R A^{sharp_G} R, the transported advanced/retarded Green adjoint relation replays without a residual sign. Extending R as I_356 direct-sum R over the certified cyclic 356+30 projector split gives 376 positive and 10 negative signs and establishes the full projector-level suspended Green adjoint. The 356 component basis and pairing coefficients are not serialized, and local D, same-carrier q2 compatibility, Gate A, Hadamard and QME remain open.",
+      "status": "SAME_THEORY_FULL_PROJECTOR_SUSPENDED_ADJOINT_REPLAY_WITH_COMPONENT_SERIALIZATION_BOUNDARY"
     }
   ],
   "created": "2026-08-14",
@@ -1791,19 +1829,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "519a27c6bb0491c1e330debbb90592f7221e7e03d6e5fc20f81abf324142947b",
+      "assembly_source_canonical_digest": "4d4727add5d663f264b0fb216af5d3438e5e38f8b4d8dfddcf9c082de106c569",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "1e4db10a9a71c2182a9326f94987ff7b39e194fc55b1db321ec32169b53c3e6f",
+      "assembly_source_sha256": "f0d3d53b596433e21fedb6220d6716bbb1fb2959fafd689aef61e43bc2a6805c",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
       "generator_sha256": "f46fd7cd15f93d83c0f2ec292fa9e0cbae6bdc9f7a503dd39ff61565424db364",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "608b82d2f8b78f2240f30b58af1e30b17addc5b659fdfb0614946f80ce8e81f9",
-      "source_canonical_digest": "734be93e1729498f573035121c7cea3b70197307bb4311c3d2698206c40a2e84",
+      "sha256": "3b46286906853375d1c296110fae27aa6b0c39e0b1d07d09b96047c81bcf3e48",
+      "source_canonical_digest": "237025c8456b96ee667dd5a009cbe3300d611cee52c3a251a01a452358262ba8",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "c8778135a01e857d8823e875853bdf0bbd2d73f05830ca6f03b81852b189247c"
+      "source_sha256": "971e163a6480d340a0a915bc29ca7b7095c75fc0b3647c642380b0143d84a5f0"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "7db938cbea3cb983b960919b72f88d8ac9523153ed8ed28d207ba7b13f57a8d7"
+    "sha256": "eb17f07b01b81e1c0d7da0db59afcf68f574ae3c0a49f12cd2a37fab9c20330f"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

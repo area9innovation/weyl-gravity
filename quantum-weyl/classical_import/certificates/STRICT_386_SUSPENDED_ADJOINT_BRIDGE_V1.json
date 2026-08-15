@@ -1,0 +1,246 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "strict-386-suspended-adjoint-bridge-v1",
+  "result_id": "STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1",
+  "result_kind": "SAME_THEORY_FULL_CARRIER_SUSPENSION_CONVENTION_BRIDGE",
+  "result_state": "PAIRING_SIGN_IDENTIFIED_AS_SUSPENDED_ADJOINT_TWIST_FULL_COMPONENT_PAIRING_SERIALIZATION_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "f2d898b68309a437d66b3efeec6307580a4fd269",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "Is the five-row pairing sign found by the endpoint q1 bridge a causal obstruction, or the explicit difference between the causal and Gate BV suspension adjoints?",
+  "answer": "It is an exact suspension-adjoint twist, not a new obstruction to the unary causal architecture. On the thirty-row endpoint, let T=diag(I_5,I_10,I_10,-I_5) be the q1 sign transport and let sharp_G use the untransported endpoint pairing, which the content bridge pulls back to the Gate-canonical pairing. Exact rational matrix algebra gives T^{sharp_G}=U=diag(-I_5,I_10,I_10,I_5) and R=T^{sharp_G}T=diag(-I_5,I_10,I_10,-I_5). Therefore, for every transported operator A'=TAT, (A')^{sharp_G}=R T A^sharp T R. Defining the Gate suspended adjoint A^ddagger=R A^{sharp_G} R recovers the source adjoint exactly. In particular q' is odd cyclic in the certified Gate convention and (Lambda'_+)^ddagger=Lambda'_- while the two-sided causal homotopy and support identities stay unchanged. The cyclic self-adjoint 356+30 projector extends R by I_356, giving a full-carrier order-zero involution with 376 positive and ten negative signs. This resolves the endpoint sign conceptually and algebraically, but it does not serialize the 356-row pairing coefficients or produce a Gate-A common full-carrier hash. q2, D, Hadamard and QME remain open.",
+  "scope": {
+    "theory": "strict pure-Weyl unary BV complex",
+    "background": "unit conformal cylinder",
+    "endpoint_dimension": 30,
+    "algebraic_complement_dimension": 356,
+    "full_dimension": 386,
+    "arithmetic": "exact rational endpoint matrices plus finite involution algebra"
+  },
+  "endpoint_exact_algebra": {
+    "ordered_blocks": [
+      "G[5] degree -1",
+      "M[10] degree 0",
+      "E[10] degree 1",
+      "I[5] degree 2"
+    ],
+    "gate_pairing_nonzero_entries": 54,
+    "gate_pairing_sha256": "71f1ae3c9ab2b686939c3e0f51824b2e2f9760de1c4770e293aac66d7b6be0fe",
+    "T_diagonal": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "T_sharp_gate_diagonal": [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "R_diagonal": [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "identities": {
+      "T_involutive": true,
+      "T_sharp_gate_equals_U": true,
+      "R_equals_T_sharp_gate_T": true,
+      "R_involutive": true,
+      "R_commutes_with_T": true,
+      "transported_pairing_differs_on_G_I_only": true
+    }
+  },
+  "suspended_adjoint_theorem": {
+    "gate_ordinary_adjoint": "sharp_G is defined by the untransported endpoint pairing pulled back to the Gate-canonical pairing",
+    "suspension_character": "R=diag(-I_G,+I_M,+I_E,-I_I)",
+    "gate_suspended_adjoint": "A^ddagger=R A^{sharp_G} R",
+    "universal_transport_formula": "for A'=T A T, (A')^{sharp_G}=R T A^sharp T R",
+    "recovered_formula": "(A')^ddagger=T A^sharp T",
+    "q1_consequence": "source odd cyclicity transports to Gate suspended odd cyclicity of the common q1",
+    "green_consequence": "source Lambda_+^sharp=Lambda_- transports to (Lambda'_+)^ddagger=Lambda'_minus",
+    "homotopy_consequence": "q' Lambda'_plus/minus+Lambda'_plus/minus q'=I",
+    "support_consequence": "T and R are pointwise order-zero involutions and preserve advanced/retarded support"
+  },
+  "full_carrier_extension": {
+    "orthogonal_decomposition_authority": "cyclic_and_formally_self_adjoint P_alg/P_end on 356+30",
+    "T_386": "I_356 direct-sum T_30",
+    "T_386_positive": 381,
+    "T_386_negative": 5,
+    "T_386_sharp_gate_positive": 381,
+    "T_386_sharp_gate_negative": 5,
+    "R_386": "I_356 direct-sum R_30",
+    "R_386_positive": 376,
+    "R_386_negative": 10,
+    "R_386_involutive": true,
+    "full_green_suspended_adjoint_replayed": true,
+    "full_component_pairing_coefficients_serialized": false
+  },
+  "foundational_strength": {
+    "finite_suspension_bridge_base": "PRA",
+    "choice_operation_added": false,
+    "infinite_selection_added": false,
+    "weakest_base_for_imported_analytic_causal_theorem": "NOT_ESTABLISHED"
+  },
+  "gate_disposition": {
+    "endpoint_pairing_sign_resolved_as_convention": true,
+    "abstract_full_carrier_suspended_adjoint_replayed": true,
+    "full_386_component_pairing_serialized": false,
+    "classical_import_gate_a_status": "FAIL_CLOSED",
+    "q2_d_same_carrier_established": false
+  },
+  "claim_flags": {
+    "ENDPOINT_SUSPENSION_CHARACTER_EXACT": true,
+    "FULL_386_SUSPENSION_CHARACTER_EXTENDED": true,
+    "FULL_386_SUSPENDED_GREEN_ADJOINT_REPLAYED": true,
+    "FULL_386_COMPONENT_PAIRING_SERIALIZED_IN_GATE_CONVENTION": false,
+    "STRICT_386_Q2_GREEN_COMPATIBILITY_CERTIFIED": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "QME_RESTORED": false,
+    "LORENTZIAN_QUANTUM_THEORY": false
+  },
+  "does_not_establish": [
+    "the 356-row component pairing matrix or one accepted common full-carrier hash",
+    "a componentwise replay of every nonminimal, auxiliary and mapping-cylinder adjoint row",
+    "q2 cyclicity or q2/Green compatibility on the full causal carrier",
+    "the local D action or D equivariance on the causal carrier",
+    "a passed Gate A, Hadamard state, BRST Ward theorem, positivity result, renormalized Lorentzian product, QME, residual transfer or Lorentzian quantum theory",
+    "a weakest-base calibration of the imported analytic causal theorem"
+  ],
+  "next_gate": "Serialize the 356-row complement pairing and row basis in the Gate suspension convention, bind them to the existing cyclic P_alg/P_end maps, and replay every component adjoint identity. Then add local D and q2 on those same bytes.",
+  "canonical_hashes": {
+    "endpoint_exact_algebra_sha256": "cc2955bbab83eeb35bd67a71077d7cdacd305ee4722b5897c19edc89be728b86",
+    "suspended_adjoint_theorem_sha256": "95fc18ab38fbf8b798481476c7ec8eb624626ee19a446906fb461d48f2f702e5",
+    "full_carrier_extension_sha256": "d85dbfb56e5b1b063af195df1ffe773d3e4e2e1bbe4ebab65b7fe0689da2cce9"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1.json",
+        "result_or_schema_id": "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
+        "sha256": "7dcafc995a0662f610d721d39b3255f5fae6e32105286cc05051e3b658e16032",
+        "role": "common minimal q1 content and pairing-sign boundary"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1.json",
+        "result_or_schema_id": "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
+        "sha256": "c4cd8b1399e176e9eb1eadbfa0c5b85901d7361f39c706a7e7d4469e945e5169",
+        "role": "Gate-canonical suspended BV convention"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_prolonged_metric_endpoint_coefficients.json",
+        "result_or_schema_id": "pure-weyl-prolonged-metric-endpoint-coefficients-v1",
+        "sha256": "2d3e6857e42b38a7f68e0c1ecb90adfa621ffa87038fa44f3e37c14f6938e9f6",
+        "role": "exact endpoint pairings"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_full_prolonged_green_homotopy_assembly.json",
+        "result_or_schema_id": "pure-weyl-full-prolonged-green-homotopy-assembly-v1",
+        "sha256": "1f8aae727a06fb82c70732f7207499d427894247d09fea22f677a0f9b38be0ee",
+        "role": "full causal Green homotopy and adjoint relation"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_prolonged_hybrid_algebraic_projector.json",
+        "result_or_schema_id": "pure-weyl-prolonged-hybrid-algebraic-projector-v1",
+        "sha256": "ed35ee39859c5ada10414079e091ff73190e6dbe08e4a6d334bb77febfea250e",
+        "role": "cyclic orthogonal 356+30 decomposition"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_direct_causal_pairing_transport.json",
+        "result_or_schema_id": "pure-weyl-direct-causal-pairing-transport-v1",
+        "sha256": "5de7aa9abc9c5c276092cc9c8e61c1046c870fca3a528464410986535a14704b",
+        "role": "causal Green/current pairing theorem"
+      }
+    ]
+  },
+  "independent_checker": {
+    "path": "quantum-weyl/classical_import/check_strict_386_suspended_adjoint_bridge.py",
+    "expected_digest": "d2cdd267b2cd81edcacf0efa7d6a8eadac45c18f6a77eaba8f317a53ba291608"
+  },
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1.md"
+}

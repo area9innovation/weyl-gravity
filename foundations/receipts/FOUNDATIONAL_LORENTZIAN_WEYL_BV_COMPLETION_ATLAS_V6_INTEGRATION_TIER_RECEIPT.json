@@ -1,0 +1,66 @@
+{
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V6_INTEGRATION_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V6",
+  "created": "2026-08-15",
+  "repository_base_commit": "f21cc5b29b7f11a51006ec7f098a013e2fef9cc6",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Append-only atlas V6, in-place static explorer refresh and Paper 21 integration of the exact strict 386-row suspended-adjoint bridge.",
+  "claim_boundary": "The previous five-row pairing sign is now an exact suspension-convention theorem and the full projector-level Green adjoint replays. The 356 component pairing bytes, local D, q2, Gate A, Hadamard, renormalized products, QME and residual transfer remain fail closed.",
+  "advisory_rail": {
+    "command": "ci/science-forge-shadow.sh",
+    "status": "ADVISORY_FINDING",
+    "result": "The read-only corpus census completed. The bridge audit could not run because the installed Forge 0.0.2 binary and current FORGE_LIB hashes differ and the current source triggers E9118; this advisory failure is not recorded as a certificate pass. The census also reports expected corpus growth beyond the 2026-07-19 baseline."
+  },
+  "tiers": [
+    {
+      "tier": 0,
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <changed suspension, atlas, site and Paper-21 Python sources>",
+        "jq empty <changed certificate, atlas, site, claim-map, receipt and schema JSON artifacts>",
+        "git diff --check -- <scoped V6 integration paths>"
+      ],
+      "elapsed_seconds": 0.3,
+      "result": "Changed sources and structured artifacts parse; the scoped whitespace audit passes."
+    },
+    {
+      "tier": 1,
+      "status": "PASS",
+      "commands": [
+        "python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v6.py --check && python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v6.py && python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v6.py && python3 -m unittest foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v6.py -v",
+        "python3 foundations/build_matrix_site_v2.py --check && python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py && python3 -m unittest foundations/tests/test_matrix_site.py -v",
+        "python3 paper/generate_21_reverse_foundations_appendices.py --check && python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+        "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (two passes), followed by an Overfull/undefined-reference/rerun scan"
+      ],
+      "elapsed_seconds": 5.9,
+      "result": "Atlas V6 passes a 77-cell independent audit and seven mutations; the deterministic 174-artifact site passes its checker and ten tests; Paper 21 authority pins and the 59-page PDF pass."
+    },
+    {
+      "tier": 2,
+      "status": "PASS",
+      "commands": [
+        "strict minimal cyclic-sign, strict 386 causal-sign, strict endpoint-q1 bridge and completion-atlas V5 producer/checker/verifier/mutation chains"
+      ],
+      "elapsed_seconds": 8.35,
+      "result": "Every direct predecessor is current. Atlas V6 preserves all 77 cells and all negative lifecycle flags outside the new suspension theorem."
+    },
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "This is not a freeze, release, shared-core algebra change or Lorentzian quantum lifecycle promotion."
+    }
+  ],
+  "content_hashes": {
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V6.json": "b7fcd520462bd32753eebac0ea1852c2e00bc27d08a44d460b4b19f9281bf825",
+    "foundations/reports/lorentzian-weyl-bv-completion-atlas-v6.md": "12e8bb3f2d46e50f4db576189a73dc0783abbdc09ae83415bb3965c85bce7b10",
+    "foundations/site/manifest.json": "9a86da2b8c53224bbe18998c0a1fb0f4fed17bbb3874b82fb6f9cdd229c0247b",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "bb75c0d69983e1436b56ec9c8f793ffc118568a5169cda28a655e1e33a44db78",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "ec8388f43d20234d2f2f34744a234c231a5c80dfc4e6c73b0c96a60c7c1addbd",
+    "paper/21-reverse-foundations-of-physics.pdf": "3f6e52eccdd1c0151c16544c418e424746e565e36d793dfe7afd54cf7ad1eacf"
+  }
+}
