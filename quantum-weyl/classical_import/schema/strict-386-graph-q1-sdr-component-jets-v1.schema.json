@@ -1,0 +1,240 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-386-graph-q1-sdr-component-jets-v1.schema.json",
+  "title": "Strict 386-row graph q1 and SDR component jets v1",
+  "type": "object",
+  "required": [
+    "$schema", "schema", "schema_path", "result_id", "result_kind", "result_state",
+    "lifecycle", "created", "repository_base_commit", "dependency_tags", "question",
+    "answer", "scope", "graph_q1_serialization", "graph_sdr_component_maps",
+    "formal_transport_replay", "exact_replay", "graph_snapshot",
+    "support_and_foundations", "gate_disposition", "claim_flags", "does_not_establish",
+    "next_gate", "canonical_hashes", "provenance", "independent_checker", "human_report"
+  ],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "strict-386-graph-q1-sdr-component-jets-v1"},
+    "result_id": {"const": "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1"},
+    "result_state": {"const": "GRAPH_Q1_SDR_AND_SUSPENSION_SERIALIZED_REPRESENTED_GREEN_ACTIONS_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "scope": {
+      "type": "object",
+      "required": ["carrier_dimension", "retained_endpoint_dimension", "contracted_dimension", "arithmetic"],
+      "properties": {
+        "carrier_dimension": {"const": 386},
+        "retained_endpoint_dimension": {"const": 30},
+        "contracted_dimension": {"const": 356}
+      },
+      "additionalProperties": true
+    },
+    "graph_q1_serialization": {
+      "type": "object",
+      "required": ["format", "orientation", "coefficient_field", "carrier_dimension", "carrier_split", "maximum_order", "counts", "tables"],
+      "properties": {
+        "orientation": {"const": "entry[target_global_index,source_global_index]"},
+        "coefficient_field": {"const": "Q"},
+        "carrier_dimension": {"const": 386},
+        "carrier_split": {"const": "30+36+320"},
+        "maximum_order": {"const": 4},
+        "counts": {
+          "type": "object",
+          "required": ["operator_tables", "split_operator_tables", "graph_attachment_tables", "coefficient_multiindex_tables", "combined_derivative_multiindices", "nonzero_rational_coefficients"],
+          "properties": {
+            "operator_tables": {"const": 27},
+            "split_operator_tables": {"const": 18},
+            "graph_attachment_tables": {"const": 9},
+            "coefficient_multiindex_tables": {"const": 317},
+            "combined_derivative_multiindices": {"const": 70},
+            "nonzero_rational_coefficients": {"const": 4374}
+          },
+          "additionalProperties": false
+        },
+        "tables": {"type": "array", "minItems": 27, "maxItems": 27, "items": {"$ref": "#/$defs/table"}}
+      },
+      "additionalProperties": true
+    },
+    "graph_sdr_component_maps": {
+      "type": "object",
+      "required": ["H_alg_graph", "i_end_graph", "p_end_graph", "P_end_graph", "P_alg_graph", "R_graph"],
+      "properties": {
+        "H_alg_graph": {"allOf": [{"$ref": "#/$defs/map"}, {"properties": {"shape": {"const": [386, 386]}, "degree": {"const": -1}, "nonzero_coefficients": {"const": 190}}}]},
+        "i_end_graph": {"allOf": [{"$ref": "#/$defs/map"}, {"properties": {"shape": {"const": [386, 30]}, "degree": {"const": 0}, "nonzero_coefficients": {"const": 488}}}]},
+        "p_end_graph": {"allOf": [{"$ref": "#/$defs/map"}, {"properties": {"shape": {"const": [30, 386]}, "degree": {"const": 0}, "nonzero_coefficients": {"const": 488}}}]},
+        "P_end_graph": {"allOf": [{"$ref": "#/$defs/map"}, {"properties": {"shape": {"const": [386, 386]}, "degree": {"const": 0}, "nonzero_coefficients": {"const": 1756}}}]},
+        "P_alg_graph": {"allOf": [{"$ref": "#/$defs/map"}, {"properties": {"shape": {"const": [386, 386]}, "degree": {"const": 0}, "nonzero_coefficients": {"const": 2082}}}]},
+        "R_graph": {"allOf": [{"$ref": "#/$defs/map"}, {"properties": {"shape": {"const": [386, 386]}, "degree": {"const": 0}, "maximum_order": {"const": 0}, "nonzero_coefficients": {"const": 394}}}]}
+      },
+      "additionalProperties": false
+    },
+    "formal_transport_replay": {
+      "type": "object",
+      "required": ["formal_graph_q_sha256", "formal_graph_inclusion_sha256", "formal_graph_projection_sha256", "formal_graph_homotopy_sha256", "coefficientwise_complete_prolonged_Q", "all_16_blocks_q_squared_checked", "all_16_blocks_graph_SDR_checked", "primal_chain_relations", "formal_adjoint_chain_relations", "surviving_attachment_blocks", "surviving_attachment_block_count", "graph_q1_squared_zero", "graph_inclusion_chain_map", "graph_projection_chain_map", "proof_mode"],
+      "properties": {
+        "coefficientwise_complete_prolonged_Q": {"const": true},
+        "all_16_blocks_q_squared_checked": {"const": true},
+        "all_16_blocks_graph_SDR_checked": {"const": true},
+        "surviving_attachment_block_count": {"const": 9},
+        "graph_q1_squared_zero": {"const": true},
+        "graph_inclusion_chain_map": {"const": true},
+        "graph_projection_chain_map": {"const": true}
+      },
+      "additionalProperties": true
+    },
+    "exact_replay": {
+      "type": "object",
+      "required": ["qH_plus_Hq_equals_P_alg_graph", "qH_plus_Hq_defects", "derivative_multiindices_checked", "p_graph_i_graph_identity_defects", "i_graph_p_graph_equals_P_end_defects", "H_squared_defects", "H_i_graph_defects", "p_graph_H_defects", "P_end_squared_defects", "P_alg_squared_defects", "P_end_P_alg_defects", "P_alg_P_end_defects", "H_alg_graph_cyclicity_defects", "R_graph_squared_defects", "untransported_diagonal_R_cyclicity_defects", "transported_R_raw_parallel_cyclicity_residual_coefficients", "raw_N_A_minus_B_C_parallel_residual_coefficients", "transported_R_PBW_reduced_cyclicity_defects", "PBW_reduction_authority_exact", "forbidden_derivative_derivative_products_in_direct_SDR_replay"],
+      "properties": {
+        "qH_plus_Hq_equals_P_alg_graph": {"const": true},
+        "qH_plus_Hq_defects": {"const": 0},
+        "derivative_multiindices_checked": {"const": 70},
+        "p_graph_i_graph_identity_defects": {"const": 0},
+        "i_graph_p_graph_equals_P_end_defects": {"const": 0},
+        "H_squared_defects": {"const": 0},
+        "H_i_graph_defects": {"const": 0},
+        "p_graph_H_defects": {"const": 0},
+        "P_end_squared_defects": {"const": 0},
+        "P_alg_squared_defects": {"const": 0},
+        "P_end_P_alg_defects": {"const": 0},
+        "P_alg_P_end_defects": {"const": 0},
+        "H_alg_graph_cyclicity_defects": {"const": 0},
+        "R_graph_squared_defects": {"const": 0},
+        "untransported_diagonal_R_cyclicity_defects": {"const": 8},
+        "transported_R_raw_parallel_cyclicity_residual_coefficients": {"const": 32},
+        "raw_N_A_minus_B_C_parallel_residual_coefficients": {"const": 16},
+        "transported_R_PBW_reduced_cyclicity_defects": {"const": 0},
+        "PBW_reduction_authority_exact": {"const": true},
+        "forbidden_derivative_derivative_products_in_direct_SDR_replay": {"const": 0}
+      },
+      "additionalProperties": true
+    },
+    "graph_snapshot": {
+      "type": "object",
+      "required": ["kind", "basis_sha256", "pairing_sha256", "split_unary_snapshot_sha256", "split_local_sdr_snapshot_sha256", "canonical_shear_snapshot_sha256", "graph_q1_sha256", "graph_map_sha256", "snapshot_sha256"],
+      "properties": {"kind": {"const": "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JET_SNAPSHOT"}},
+      "additionalProperties": true
+    },
+    "support_and_foundations": {
+      "type": "object",
+      "required": ["maximum_differential_order", "finite_differential_orders_only", "support_local", "Green_operator_used", "choice_operation_added", "infinite_selection_added", "analytic_green_theorem_used"],
+      "properties": {
+        "maximum_differential_order": {"const": 4},
+        "finite_differential_orders_only": {"const": true},
+        "support_local": {"const": true},
+        "Green_operator_used": {"const": false},
+        "choice_operation_added": {"const": false},
+        "infinite_selection_added": {"const": false},
+        "analytic_green_theorem_used": {"const": false}
+      },
+      "additionalProperties": true
+    },
+    "gate_disposition": {
+      "type": "object",
+      "required": ["graph_coordinate_q1_component_replay_complete", "graph_coordinate_sdr_component_replay_complete", "transported_graph_suspension_serialized", "represented_advanced_retarded_actions_bound", "one_common_gate_a_snapshot_accepted", "classical_import_gate_a_status"],
+      "properties": {
+        "graph_coordinate_q1_component_replay_complete": {"const": true},
+        "graph_coordinate_sdr_component_replay_complete": {"const": true},
+        "transported_graph_suspension_serialized": {"const": true},
+        "represented_advanced_retarded_actions_bound": {"const": false},
+        "one_common_gate_a_snapshot_accepted": {"const": false},
+        "classical_import_gate_a_status": {"const": "FAIL_CLOSED"}
+      },
+      "additionalProperties": false
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["STRICT_386_GRAPH_Q1_COMPONENT_JET_TABLE_SERIALIZED", "STRICT_386_GRAPH_Q1_SQUARED_ZERO_REPLAYED", "STRICT_386_GRAPH_SDR_COMPONENT_MAPS_SERIALIZED", "STRICT_386_GRAPH_SDR_IDENTITIES_REPLAYED", "STRICT_386_GRAPH_SDR_CYCLICITY_REPLAYED", "STRICT_386_GRAPH_SUSPENSION_TRANSPORTED", "STRICT_386_REPRESENTED_GREEN_ACTIONS_SERIALIZED", "CLASSICAL_IMPORT_GATE_PASSED", "STRICT_386_LOCAL_D_CERTIFIED", "STRICT_386_Q2_GREEN_COMPATIBILITY_CERTIFIED", "HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED", "LORENTZIAN_QUANTUM_THEORY"],
+      "properties": {
+        "STRICT_386_GRAPH_Q1_COMPONENT_JET_TABLE_SERIALIZED": {"const": true},
+        "STRICT_386_GRAPH_Q1_SQUARED_ZERO_REPLAYED": {"const": true},
+        "STRICT_386_GRAPH_SDR_COMPONENT_MAPS_SERIALIZED": {"const": true},
+        "STRICT_386_GRAPH_SDR_IDENTITIES_REPLAYED": {"const": true},
+        "STRICT_386_GRAPH_SDR_CYCLICITY_REPLAYED": {"const": true},
+        "STRICT_386_GRAPH_SUSPENSION_TRANSPORTED": {"const": true},
+        "STRICT_386_REPRESENTED_GREEN_ACTIONS_SERIALIZED": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "STRICT_386_LOCAL_D_CERTIFIED": {"const": false},
+        "STRICT_386_Q2_GREEN_COMPATIBILITY_CERTIFIED": {"const": false},
+        "HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "LORENTZIAN_QUANTUM_THEORY": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 80},
+    "canonical_hashes": {"type": "object", "minProperties": 5, "additionalProperties": {"$ref": "#/$defs/sha256"}},
+    "provenance": {
+      "type": "object",
+      "required": ["inputs"],
+      "properties": {"inputs": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/provenance"}}},
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "coefficient": {
+      "type": "object",
+      "required": ["multiindex", "entries"],
+      "properties": {
+        "multiindex": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer", "minimum": 0}},
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "array", "minItems": 3, "maxItems": 3,
+            "prefixItems": [
+              {"type": "integer", "minimum": 0, "maximum": 385},
+              {"type": "integer", "minimum": 0, "maximum": 385},
+              {"type": "string", "pattern": "^-?[0-9]+(?:/[1-9][0-9]*)?$"}
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "table": {
+      "type": "object",
+      "required": ["table_id", "shape", "orientation", "maximum_order", "coefficient_multiindices", "nonzero_coefficients", "coefficients", "sha256"],
+      "properties": {
+        "shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}},
+        "degree": {"const": 1},
+        "orientation": {"const": "entry[target_global_index,source_global_index]"},
+        "maximum_order": {"type": "integer", "minimum": 0, "maximum": 4},
+        "coefficient_multiindices": {"type": "integer", "minimum": 1},
+        "nonzero_coefficients": {"type": "integer", "minimum": 1},
+        "coefficients": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/coefficient"}},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": true
+    },
+    "map": {
+      "type": "object",
+      "required": ["map_id", "shape", "degree", "orientation", "maximum_order", "coefficient_multiindices", "nonzero_coefficients", "role", "proof_mode", "coefficients", "sha256"],
+      "properties": {
+        "shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}},
+        "degree": {"type": "integer", "minimum": -1, "maximum": 0},
+        "orientation": {"const": "entry[target_global_index,source_global_index]"},
+        "maximum_order": {"type": "integer", "minimum": 0, "maximum": 3},
+        "coefficient_multiindices": {"type": "integer", "minimum": 1},
+        "nonzero_coefficients": {"type": "integer", "minimum": 1},
+        "coefficients": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/coefficient"}},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": true
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["path", "result_or_schema_id", "sha256", "role"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_or_schema_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "role": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

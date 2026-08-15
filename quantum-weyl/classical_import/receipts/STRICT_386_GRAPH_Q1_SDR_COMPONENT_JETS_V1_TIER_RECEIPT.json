@@ -1,0 +1,91 @@
+{
+  "receipt_id": "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Exact fixed-basis graph-coordinate q1, local SDR and transported suspension on the certified 386-row strict pure-Weyl unary carrier, with curved PBW reductions explicit and represented Green actions absent.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.2,
+      "commands": [
+        "python3 -m py_compile quantum-weyl/classical_import/build_strict_386_graph_q1_sdr_component_jets.py quantum-weyl/classical_import/check_strict_386_graph_q1_sdr_component_jets.py quantum-weyl/classical_import/verify_strict_386_graph_q1_sdr_component_jets.py quantum-weyl/classical_import/tests/test_strict_386_graph_q1_sdr_component_jets.py",
+        "python3 -m json.tool quantum-weyl/classical_import/schema/strict-386-graph-q1-sdr-component-jets-v1.schema.json",
+        "python3 -m json.tool quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1.json",
+        "git diff --check -- <explicit graph-q1-SDR paths>"
+      ],
+      "notes": [
+        "The exact staged diff and every imported content hash are inspected immediately before commit."
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 5.2,
+      "commands": [
+        "python3 quantum-weyl/classical_import/build_strict_386_graph_q1_sdr_component_jets.py --check",
+        "python3 quantum-weyl/classical_import/check_strict_386_graph_q1_sdr_component_jets.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_graph_q1_sdr_component_jets.py",
+        "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_graph_q1_sdr_component_jets.py"
+      ],
+      "checks": {
+        "operator_tables": 27,
+        "graph_attachment_tables": 9,
+        "combined_derivative_multiindices": 70,
+        "nonzero_rational_coefficients": 4374,
+        "homotopy_defects": 0,
+        "retract_defects": 0,
+        "side_condition_defects": 0,
+        "H_cyclicity_defects": 0,
+        "transported_suspension_entries": 394,
+        "transported_suspension_off_diagonal_entries": 8,
+        "transported_suspension_involution_defects": 0,
+        "obsolete_diagonal_suspension_cyclicity_defects": 8,
+        "raw_graph_cyclicity_residual_coefficients": 32,
+        "raw_second_chain_relation_residual_coefficients": 16,
+        "PBW_reduced_cyclicity_defects": 0,
+        "mutation_tests": "10/10 PASS"
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 78.49,
+      "command_prefix": "PYTHONPATH=/home/alstrup/area9/weyl-gravity:/tmp/weyl-scipy/root/usr/lib/python3/dist-packages:/tmp/weyl-sympy/root/usr/lib/python3/dist-packages",
+      "commands": [
+        "python3 symbolic/verify_conformal_curvature_mapping_cylinder_kernel.py --guards",
+        "python3 symbolic/verify_conformal_prolonged_hybrid_algebraic_projector.py --guards",
+        "python3 quantum-weyl/classical_import/verify_strict_386_full_q1_component_jet_table.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_local_sdr_component_maps.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_canonical_shear_component_jets.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_graph_q1_sdr_component_jets.py"
+      ],
+      "checks": {
+        "mapping_cylinder_guards": "22/22 PASS",
+        "hybrid_projector_guards": "12/12 PASS",
+        "full_q1_verifier": "PASS",
+        "local_sdr_verifier": "PASS",
+        "canonical_shear_verifier": "PASS",
+        "graph_q1_sdr_verifier": "PASS"
+      },
+      "criterion": "The graph certificate consumes exact mapping-cylinder, q1, split-SDR and shear inputs and changes their common graph-coordinate replay; the complete transitive producer/consumer chain was rerun."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No shared classical source/operator, freeze tag, release or quantum lifecycle state changed. The result is an exact consumer-side graph-coordinate serialization and preserves represented Green action, Gate A, Hadamard and QME as open."
+    }
+  },
+  "artifact_sha256": {
+    "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1.json": "b805bd81b35f13325d938e93be91495e1d46aa5900fd168e55bdcde1afbfa8e2",
+    "quantum-weyl/classical_import/REPORT_STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1.md": "ced31cbc341986631f89e52125b7b830da148c3c5f8f99deaf9470e58fe94af1"
+  },
+  "advisory_shadow_rail": {
+    "command": "ci/science-forge-shadow.sh",
+    "exit_status": 0,
+    "bridge_audit": "FAIL_CLOSED: cached Forge binary revision differs from the current stdlib and the external bp2transformer bridge verifier could not import sympy",
+    "coverage_census": "DRIFT: 1771 certificates observed versus the 2026-07-19 baseline of 976",
+    "disposition": "Advisory findings recorded without treating them as verification or as a failure of the scoped independent graph replay."
+  },
+  "claim_boundary": "This certifies finite local graph-coordinate q1/SDR component data and the transported suspension with exact curved PBW provenance. It does not serialize represented advanced/retarded actions, prove their analytic continuity/support/uniqueness, construct the full causal Green homotopy, pass Gate A, bind local D or q2, construct a Hadamard state, restore a QME, transfer a correction or certify a Lorentzian quantum theory."
+}

@@ -1,0 +1,2020 @@
+{
+  "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v14",
+  "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V14",
+  "result_kind": "BRANCH_BY_STAGE_COMPLETION_ATLAS",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "e96260407b1a665de31734018bd6c4cefd41590a",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "Can the V13 split unary complex, local SDR and canonical shear be assembled into one exact graph-coordinate component snapshot, including the changed suspension convention, while keeping represented Green actions and Gate A fail closed?",
+  "answer": "Atlas V14 closes the finite graph-coordinate q1/SDR route on the same fixed 386-row carrier. Exact conjugation by the certified T/A/B shear, followed by the pinned curved chain relations and their formal adjoints, leaves eighteen split differential tables plus nine graph attachments: twenty-seven operator tables, seventy combined derivative multiindices and 4,374 nonzero rational coefficients through order four. The graph inclusion and projection each contain 488 coefficients, the retained and contracted projectors contain 1,756 and 2,082, and the unchanged algebraic homotopy contains 190. Direct exact component replay gives q_graph H+H q_graph=P_alg, p_graph i_graph=I, both projector identities, every normalized side condition and H cyclicity with zero defects. Formal nilpotency and both chain maps are bound to the coefficient-complete mapping-cylinder source and its exact curved PBW reductions rather than inferred from a naive commutative jet product. The replay also exposes a convention that V13 could not see: the old diagonal suspension has eight graph-cyclicity defects. The transported R_graph=S R S^-1 is an exact order-zero involution with 394 entries, eight off diagonal. Its 32 raw parallel-coefficient cyclic residuals are the paired image of the 16 raw Ncurv A-B C residuals and reduce to zero only under the pinned exact curved relation. The next frontier is now analytic, not finite algebraic: declare endpoint test and distribution spaces, serialize represented advanced and retarded actions with topology, continuity, uniqueness, causal support and adjoint data, compose them through this graph SDR, and bind the result into one receiver-accepted Gate-A snapshot. Local D, q2, Hadamard, Ward, positivity, products, QME and residual transfer remain downstream and false.",
+  "predecessor": {
+    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V13",
+    "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V13.json",
+    "sha256": "3411349bde982e864171153cab569df78e205380dbeca14faacd3dd022b78f5b",
+    "preserved": true
+  },
+  "status_vocabulary": [
+    {
+      "id": "CERTIFIED",
+      "meaning": "The complete requirement is certified for the branch exactly as declared."
+    },
+    {
+      "id": "SCOPED_CERTIFIED",
+      "meaning": "The requirement is certified only on the named background, carrier, arity or theory variant."
+    },
+    {
+      "id": "PARTIAL_CERTIFIED",
+      "meaning": "Several required pieces are certified, but the complete stage is not."
+    },
+    {
+      "id": "CONDITIONAL",
+      "meaning": "A theorem exists only under an explicit unconstructed hypothesis."
+    },
+    {
+      "id": "OPEN_SEEDED",
+      "meaning": "Concrete inputs or a candidate exist, but the stage theorem is absent."
+    },
+    {
+      "id": "OBSTRUCTED_SCOPED",
+      "meaning": "An exact obstruction rules out the declared subclass, not all neighboring routes."
+    },
+    {
+      "id": "FAIL_CLOSED",
+      "meaning": "The acceptance conditions are not all met; no positive promotion is allowed."
+    },
+    {
+      "id": "FORBIDDEN_TRANSFER",
+      "meaning": "Earlier evidence is of the wrong type or lifecycle to justify this stage."
+    },
+    {
+      "id": "NOT_APPLICABLE",
+      "meaning": "The branch intentionally does not target this full-theory stage."
+    }
+  ],
+  "stages": [
+    {
+      "id": "S0_CLASSICAL_AUTHORITY",
+      "name": "Classical authority",
+      "completion_test": "A content-pinned classical BV snapshot passes the receiver's nilpotency, contraction, chain-map, cyclicity, residual-cohomology and pairing checks."
+    },
+    {
+      "id": "S1_OFF_SHELL_BV",
+      "name": "Off-shell BV carrier",
+      "completion_test": "The complete declared fields, ghosts, antifields and nonminimal rows carry exact differentials and pairings."
+    },
+    {
+      "id": "S2_CAUSAL_GREEN",
+      "name": "Causal Green homotopy",
+      "completion_test": "Advanced and retarded homotopies exist on every required row with declared support and two-sided chain identities."
+    },
+    {
+      "id": "S3_NONLINEAR_CARTAN",
+      "name": "Nonlinear cyclic compatibility",
+      "completion_test": "The causal contraction is compatible with support-local interactions and the cyclic D-Cartan recurrence to the declared arity."
+    },
+    {
+      "id": "S4_HADAMARD_CCR",
+      "name": "Hadamard/CCR carrier",
+      "completion_test": "A normalized global two-point distribution has the required singularity and commutator on the same carrier and background."
+    },
+    {
+      "id": "S5_BRST_WARD",
+      "name": "BRST Ward identity",
+      "completion_test": "The two-point distribution is compatible with the BV differential, or a valid smooth correction is constructed in a declared bikernel support class."
+    },
+    {
+      "id": "S6_PHYSICAL_POSITIVITY",
+      "name": "Physical positivity",
+      "completion_test": "Positivity is proved on the physical BRST quotient; an indefinite Krein covariance is kept distinct from a Hilbert state."
+    },
+    {
+      "id": "S7_RENORMALIZED_PRODUCTS",
+      "name": "Renormalized products",
+      "completion_test": "Lorentzian time-ordered products satisfying the required causal, microlocal and symmetry axioms are constructed."
+    },
+    {
+      "id": "S8_QME",
+      "name": "Quantum master equation",
+      "completion_test": "The anomaly class is classified, coefficients are computed in the same theory, and the local Lorentzian QME is restored."
+    },
+    {
+      "id": "S9_RESIDUAL_TRANSFER",
+      "name": "Residual transfer",
+      "completion_test": "Only after QME restoration is the quantum correction transferred through pi_cl to the certified residual complex."
+    },
+    {
+      "id": "S10_LORENTZIAN_CERTIFIED",
+      "name": "Lorentzian completion",
+      "completion_test": "The full declared theory, rather than a reduced mode or changed action, has passed the causal quantum lifecycle."
+    }
+  ],
+  "branches": [
+    {
+      "id": "STRICT_PURE_WEYL_386",
+      "name": "Strict pure-Weyl full BV",
+      "relation_to_target": "TARGET_THEORY",
+      "scope": "The fixed-field-content pure-Weyl action, including the certified 386-row prolonged vacuum-cylinder causal complex.",
+      "stages": [
+        {
+          "stage": "S0_CLASSICAL_AUTHORITY",
+          "status": "FAIL_CLOSED",
+          "statement": "The exact split unary/SDR, canonical shear, graph q1/SDR and transported graph suspension are now one content-addressed finite local chain. The graph differential has 27 tables and 4,374 rational coefficients; all direct retract, projector, homotopy and side-condition defects vanish. Gate A remains closed because represented advanced/retarded actions on declared analytic spaces have not been bound.",
+          "evidence": [
+            "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
+            "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
+            "STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1",
+            "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+            "STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1",
+            "STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1",
+            "STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1",
+            "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1",
+            "STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1",
+            "STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1",
+            "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1"
+          ],
+          "boundary": "Graph-coordinate unary and SDR algebra is certified, including the non-diagonal transported suspension and exact curved PBW boundary. Represented Green actions, the full causal homotopy and their common receiver snapshot are not; local D and q2 remain outside the accepted carrier."
+        },
+        {
+          "stage": "S1_OFF_SHELL_BV",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "A complete prolonged 386-row classical BV carrier is certified on the vacuum-cylinder architecture.",
+          "evidence": [
+            "pure-weyl-full-prolonged-green-homotopy-assembly-v1"
+          ],
+          "boundary": "This does not by itself pass the independent quantum import/freeze gate."
+        },
+        {
+          "stage": "S2_CAUSAL_GREEN",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "The causal Green-homotopy existence and support/adjoint transfer remain certified. Green maps are nonlocal analytic objects: the missing portable artifact is an action, convergent name or distribution kernel on declared represented spaces, not a finite jet table.",
+          "evidence": [
+            "pure-weyl-full-prolonged-green-homotopy-assembly-v1",
+            "STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1",
+            "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+            "STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1"
+          ],
+          "boundary": "No receiver-executable endpoint or full advanced/retarded action is serialized, so component action, homotopy and suspended-adjoint replay remain open; q2 and D are not established."
+        },
+        {
+          "stage": "S3_NONLINEAR_CARTAN",
+          "status": "OPEN_SEEDED",
+          "statement": "Local BV interaction and Cartan ingredients exist, but no coefficient-bearing closed strict Lorentzian D-Cartan defect is classified.",
+          "evidence": [
+            "QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION"
+          ],
+          "boundary": "A local source ledger is not a causal nonlinear contraction."
+        },
+        {
+          "stage": "S4_HADAMARD_CCR",
+          "status": "OPEN_SEEDED",
+          "statement": "Reduced physical-mode Hadamard evidence exists on the same vacuum cylinder, but no full 386-row BRST covariance is constructed.",
+          "evidence": [
+            "VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD"
+          ],
+          "boundary": "Reduced-mode kernels cannot be promoted to the off-shell BV carrier."
+        },
+        {
+          "stage": "S5_BRST_WARD",
+          "status": "FAIL_CLOSED",
+          "statement": "No full-carrier BRST-compatible Hadamard covariance is certified.",
+          "evidence": [],
+          "boundary": "A causal Green homotopy supplies the commutator, not a BRST Hadamard state."
+        },
+        {
+          "stage": "S6_PHYSICAL_POSITIVITY",
+          "status": "OPEN_SEEDED",
+          "statement": "The reduced E branch is positive, while A and L remain negative-Krein; no positive full physical quotient is certified.",
+          "evidence": [
+            "VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD"
+          ],
+          "boundary": "Krein covariance is not Hilbert-space positivity."
+        },
+        {
+          "stage": "S7_RENORMALIZED_PRODUCTS",
+          "status": "FAIL_CLOSED",
+          "statement": "No renormalized Lorentzian time-ordered products exist for the full theory.",
+          "evidence": [],
+          "boundary": "Euclidean determinants and local counterterm classifications are different objects."
+        },
+        {
+          "stage": "S8_QME",
+          "status": "OBSTRUCTED_SCOPED",
+          "statement": "The strict fixed-field-content local Euclidean BV QME is obstructed at one loop.",
+          "evidence": [
+            "REGULATED_SLAVNOV_QME_DISPOSITION"
+          ],
+          "boundary": "This does not rule out anomaly-cancelling matter or a genuinely different compensator theory, and it is not a Lorentzian QME theorem."
+        },
+        {
+          "stage": "S9_RESIDUAL_TRANSFER",
+          "status": "FORBIDDEN_TRANSFER",
+          "statement": "Residual quantum transfer is not authorized before QME restoration.",
+          "evidence": [],
+          "boundary": "The centered [W_+^2] and [W_-^2] classes remain deformation/vertex classes, not particle states."
+        },
+        {
+          "stage": "S10_LORENTZIAN_CERTIFIED",
+          "status": "FAIL_CLOSED",
+          "statement": "The strict target theory has not completed the Lorentzian quantum lifecycle.",
+          "evidence": [],
+          "boundary": "Classical causal completion is necessary but not sufficient."
+        }
+      ],
+      "first_unclosed_gate": "S0_CLASSICAL_AUTHORITY",
+      "next_decisive_object": "Declare endpoint test/distribution spaces and serialize represented advanced/retarded actions with topology, continuity, uniqueness, causal support and adjoint data; then compose them through the certified graph SDR."
+    },
+    {
+      "id": "PURE_WEYL_BACH_FLAT_RANK310",
+      "name": "Pure-Weyl Bach-flat rank-310",
+      "relation_to_target": "TARGET_THEORY_SCOPED_BACKGROUND",
+      "scope": "A relative-open Bach-flat ADM class and its natural curvature-corrected rank-310 mapping-cone carrier.",
+      "stages": [
+        {
+          "stage": "S0_CLASSICAL_AUTHORITY",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "The classical construction and cyclic transfer inputs are content-pinned inside the branch certificate.",
+          "evidence": [
+            "BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1"
+          ],
+          "boundary": "This is not the quantum programme's full repository freeze gate."
+        },
+        {
+          "stage": "S1_OFF_SHELL_BV",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "The natural rank-310 all-row mapping-cone carrier is exact on the declared class.",
+          "evidence": [
+            "BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1"
+          ],
+          "boundary": "No pure normal-tractor-parent-to-metric SDR is claimed."
+        },
+        {
+          "stage": "S2_CAUSAL_GREEN",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "Advanced and retarded all-row homotopies transfer from the metric Bach complex.",
+          "evidence": [
+            "BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1"
+          ],
+          "boundary": "The class is relative-open, not all smooth Lorentzian metrics."
+        },
+        {
+          "stage": "S3_NONLINEAR_CARTAN",
+          "status": "OPEN_SEEDED",
+          "statement": "Cyclic transfer machinery exists, but no branch-specific nonlinear D-Cartan closure is certified.",
+          "evidence": [
+            "BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1"
+          ],
+          "boundary": "Unary cyclic Green transfer is not interacting closure."
+        },
+        {
+          "stage": "S4_HADAMARD_CCR",
+          "status": "FAIL_CLOSED",
+          "statement": "No rank-310 Hadamard covariance is constructed.",
+          "evidence": [],
+          "boundary": "Causal support does not establish wavefront-set control."
+        },
+        {
+          "stage": "S5_BRST_WARD",
+          "status": "FAIL_CLOSED",
+          "statement": "No rank-310 BRST Ward covariance is constructed.",
+          "evidence": [],
+          "boundary": "No state exists here on which to impose the identity."
+        },
+        {
+          "stage": "S6_PHYSICAL_POSITIVITY",
+          "status": "FAIL_CLOSED",
+          "statement": "No physical quotient positivity theorem is present.",
+          "evidence": [],
+          "boundary": "No particle interpretation follows from the residual deformation complex."
+        },
+        {
+          "stage": "S7_RENORMALIZED_PRODUCTS",
+          "status": "FAIL_CLOSED",
+          "statement": "Lorentzian products are absent.",
+          "evidence": [],
+          "boundary": "Classical transfer is not renormalization."
+        },
+        {
+          "stage": "S8_QME",
+          "status": "FAIL_CLOSED",
+          "statement": "No Lorentzian QME is defined on this branch.",
+          "evidence": [],
+          "boundary": "Local or Euclidean coefficients cannot be transferred without common-theory typing."
+        },
+        {
+          "stage": "S9_RESIDUAL_TRANSFER",
+          "status": "FORBIDDEN_TRANSFER",
+          "statement": "Quantum residual transfer is not authorized.",
+          "evidence": [],
+          "boundary": "QME restoration must precede transfer."
+        },
+        {
+          "stage": "S10_LORENTZIAN_CERTIFIED",
+          "status": "FAIL_CLOSED",
+          "statement": "The branch is classically causal, not quantum-complete.",
+          "evidence": [],
+          "boundary": "The positive result ends at the classical causal stage."
+        }
+      ],
+      "first_unclosed_gate": "S3_NONLINEAR_CARTAN",
+      "next_decisive_object": "A support-local q2/q3 import and cyclic D-Cartan recurrence on the same rank-310 Bach-flat carrier, or a proof that the transfer preserves the required nonlinear brackets."
+    },
+    {
+      "id": "EINSTEIN_NARIAI_KS",
+      "name": "Einstein/Nariai metric and rank-310 controls",
+      "relation_to_target": "TARGET_THEORY_CONTROL_CLASS",
+      "scope": "Globally hyperbolic Einstein backgrounds with Ric=g, including certified common Kantowski--Sachs slabs and unit Nariai.",
+      "stages": [
+        {
+          "stage": "S0_CLASSICAL_AUTHORITY",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "Exact metric and transferred complexes are pinned by their branch certificates.",
+          "evidence": [
+            "EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1",
+            "NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1"
+          ],
+          "boundary": "This does not replace the repository-wide quantum import gate."
+        },
+        {
+          "stage": "S1_OFF_SHELL_BV",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "The complete gauge-fixed four-row metric Bach complex and a natural rank-310 common-slab transfer are certified.",
+          "evidence": [
+            "EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1",
+            "NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1"
+          ],
+          "boundary": "The rank-310 theorem is limited to certified common slabs."
+        },
+        {
+          "stage": "S2_CAUSAL_GREEN",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "Exact advanced and retarded homotopies exist on the four-row metric complex and transfer to the rank-310 common-slab carrier.",
+          "evidence": [
+            "EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1",
+            "NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1"
+          ],
+          "boundary": "No whole-cylinder nonzero KS family is claimed."
+        },
+        {
+          "stage": "S3_NONLINEAR_CARTAN",
+          "status": "OPEN_SEEDED",
+          "statement": "The branch supplies a curved causal control but no certified nonlinear D-Cartan recurrence.",
+          "evidence": [],
+          "boundary": "A free metric complex is not an interacting BV theory."
+        },
+        {
+          "stage": "S4_HADAMARD_CCR",
+          "status": "OPEN_SEEDED",
+          "statement": "Normally-hyperbolic factorization makes Hadamard construction plausible, but no branch covariance is serialized.",
+          "evidence": [
+            "EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1"
+          ],
+          "boundary": "Applicability of a theorem is not an explicit normalized state."
+        },
+        {
+          "stage": "S5_BRST_WARD",
+          "status": "FAIL_CLOSED",
+          "statement": "No BRST Ward covariance is constructed.",
+          "evidence": [],
+          "boundary": "Metric-sector Hadamard data would still require ghost and antifield compatibility."
+        },
+        {
+          "stage": "S6_PHYSICAL_POSITIVITY",
+          "status": "FAIL_CLOSED",
+          "statement": "No physical positivity theorem is present.",
+          "evidence": [],
+          "boundary": "Fourth-order factorization can carry indefinite sectors."
+        },
+        {
+          "stage": "S7_RENORMALIZED_PRODUCTS",
+          "status": "FAIL_CLOSED",
+          "statement": "Lorentzian products are absent.",
+          "evidence": [],
+          "boundary": "Free causal control is not pAQFT."
+        },
+        {
+          "stage": "S8_QME",
+          "status": "FAIL_CLOSED",
+          "statement": "No branch-specific Lorentzian QME is defined.",
+          "evidence": [],
+          "boundary": "Background trace anomalies are not BV master-equation breakings."
+        },
+        {
+          "stage": "S9_RESIDUAL_TRANSFER",
+          "status": "FORBIDDEN_TRANSFER",
+          "statement": "Quantum transfer is not authorized.",
+          "evidence": [],
+          "boundary": "The lifecycle has not reached QME restoration."
+        },
+        {
+          "stage": "S10_LORENTZIAN_CERTIFIED",
+          "status": "FAIL_CLOSED",
+          "statement": "The branch is a strong curved control, not a completed theory.",
+          "evidence": [],
+          "boundary": "Its value is analytic generality through the causal stage."
+        }
+      ],
+      "first_unclosed_gate": "S3_NONLINEAR_CARTAN",
+      "next_decisive_object": "A nonlinear support-local BV interaction and cyclic causal transfer theorem on the same Einstein/Nariai carrier; independently, serialize one normalized factorwise Hadamard covariance as the analytic control."
+    },
+    {
+      "id": "BERGER_POSITIVE_CLOCK_54",
+      "name": "Berger positive-clock 54-row BV",
+      "relation_to_target": "NEIGHBORING_CLOCK_ARCHITECTURE",
+      "scope": "The frozen rational Berger fixture with a positive clock, 26 retained rows and the complete 54-row gauge-fixed classical complex.",
+      "stages": [
+        {
+          "stage": "S0_CLASSICAL_AUTHORITY",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "The complete support-local q2 tensor is imported and independently replayed with exact Q(sqrt(10)) arithmetic.",
+          "evidence": [
+            "BERGER_SUPPORT_LOCAL_Q2_SCIENTIFIC_REPLAY"
+          ],
+          "boundary": "This is Berger-specific and not the strict pure-Weyl freeze."
+        },
+        {
+          "stage": "S1_OFF_SHELL_BV",
+          "status": "CERTIFIED",
+          "statement": "The declared 54-row gauge-fixed classical Berger BV carrier and pairing/Koszul structure are complete at the fixture.",
+          "evidence": [
+            "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+            "BERGER_ARITY_THREE_D_CARTAN_FULL_4D"
+          ],
+          "boundary": "Certification is fixture-specific."
+        },
+        {
+          "stage": "S2_CAUSAL_GREEN",
+          "status": "CERTIFIED",
+          "statement": "Advanced and retarded chain homotopies exist on all 26 retained and all 54 gauge-fixed rows.",
+          "evidence": [
+            "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+            "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2"
+          ],
+          "boundary": "This remains classical causal data."
+        },
+        {
+          "stage": "S3_NONLINEAR_CARTAN",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "The cyclic two-sided-causal D-Cartan recurrence closes through arity three on the complete 54-row four-dimensional complex.",
+          "evidence": [
+            "BERGER_ARITY_THREE_D_CARTAN_FULL_4D"
+          ],
+          "boundary": "Arity four and separately retarded higher primitives are not claimed."
+        },
+        {
+          "stage": "S4_HADAMARD_CCR",
+          "status": "PARTIAL_CERTIFIED",
+          "statement": "All endpoint factors and the exact CCR candidate exist, but the real stationary full-carrier normalization class is empty and no content-addressed nonstationary H26_plus is constructed.",
+          "evidence": [
+            "BERGER_RETAINED26_HADAMARD_WARD_REDUCTION",
+            "BERGER_HOMOGENEOUS_STATIONARY_HADAMARD_NORMALIZATION_OBSTRUCTION",
+            "BERGER_C26_BIKERNEL_SUPPORT_PROFILE_NONDEFINITION"
+          ],
+          "boundary": "This is a candidate-plus-scoped-no-go, not a normalized BRST Hadamard covariance and not a no-go for every nonstationary Krein representative."
+        },
+        {
+          "stage": "S5_BRST_WARD",
+          "status": "OBSTRUCTED_SCOPED",
+          "statement": "The smooth Ward defect is not serialized. The frozen 104-row Cauchy graph, every exactly six-row cyclic repair, canonical cone lifts, a fully mixed cone SDR and two fixed non-cone correction families are exactly obstructed; free-module closure forces at least 104 added rows.",
+          "evidence": [
+            "BERGER_C26_BIKERNEL_SUPPORT_PROFILE_NONDEFINITION",
+            "BERGER_Q26_CAUCHY_BV_CARRIER_OBSTRUCTION_V1",
+            "BERGER_Q26_MINIMAL_SIX_ROW_CYCLIC_OBSTRUCTION_V1",
+            "BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1",
+            "BERGER_Q26_104_ROW_CANONICAL_CONE_LIFT_OBSTRUCTION_V1",
+            "BERGER_Q26_104_ROW_CONE_NEXT_DEFECT_MODULE_V1",
+            "BERGER_Q26_104_ROW_FULLY_MIXED_CONE_SDR_OBSTRUCTION_V1",
+            "BERGER_Q26_104_ROW_NONCONE_RATIONAL_NILPOTENCE_FEASIBILITY_V1",
+            "BERGER_Q26_104_ROW_NONCONE_EVOLUTION_EXTENSION_OBSTRUCTION_V1",
+            "BERGER_Q26_104_ROW_MIXED_EVOLUTION_CORRECTION_ENDPOINT_OBSTRUCTION_V1"
+          ],
+          "boundary": "These theorems do not obstruct the complete general non-cone 104-row class, non-free/projective carriers, alternative companions or a direct spacetime q26-equivariant Hadamard selection."
+        },
+        {
+          "stage": "S6_PHYSICAL_POSITIVITY",
+          "status": "FAIL_CLOSED",
+          "statement": "No positive physical BRST quotient is certified.",
+          "evidence": [],
+          "boundary": "A Krein covariance is not positivity."
+        },
+        {
+          "stage": "S7_RENORMALIZED_PRODUCTS",
+          "status": "FAIL_CLOSED",
+          "statement": "Renormalized Lorentzian products are absent.",
+          "evidence": [],
+          "boundary": "A free covariance is only the input to renormalization."
+        },
+        {
+          "stage": "S8_QME",
+          "status": "FAIL_CLOSED",
+          "statement": "The coefficient-bearing Berger Cartan defect is analytically undefined and no Lorentzian QME is restored.",
+          "evidence": [
+            "QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION"
+          ],
+          "boundary": "Classical D-Cartan closure does not cancel the quantum anomaly."
+        },
+        {
+          "stage": "S9_RESIDUAL_TRANSFER",
+          "status": "FORBIDDEN_TRANSFER",
+          "statement": "Quantum residual transfer is not authorized.",
+          "evidence": [],
+          "boundary": "QME restoration must come first."
+        },
+        {
+          "stage": "S10_LORENTZIAN_CERTIFIED",
+          "status": "FAIL_CLOSED",
+          "statement": "The branch is the analytically most advanced full classical route, but not a Lorentzian quantum theory.",
+          "evidence": [],
+          "boundary": "The first quantum obstruction is explicit rather than absent."
+        }
+      ],
+      "first_unclosed_gate": "S4_HADAMARD_CCR",
+      "next_decisive_object": "Choose between two explicitly different high-risk routes: solve the complete non-cone 104-new-row simultaneous nilpotence/evolution/cyclic/SDR system with a characteristic-zero certificate, or bypass the rejected stationary Cauchy graph by constructing a direct spacetime q26-equivariant nonstationary Hadamard representative."
+    },
+    {
+      "id": "VACUUM_CYLINDER_REDUCED",
+      "name": "Vacuum-cylinder reduced physical modes",
+      "relation_to_target": "REDUCED_MODE_CONTROL",
+      "scope": "The free E/A/L physical cohomology carrier on the unit vacuum conformal cylinder.",
+      "stages": [
+        {
+          "stage": "S0_CLASSICAL_AUTHORITY",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "Normalized classical modes, reduced Green blocks and current pairing are imported on one background.",
+          "evidence": [
+            "VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD"
+          ],
+          "boundary": "This is reduced cohomology, not the off-shell BV snapshot."
+        },
+        {
+          "stage": "S1_OFF_SHELL_BV",
+          "status": "NOT_APPLICABLE",
+          "statement": "The branch intentionally omits ghosts, antifields and contractible rows.",
+          "evidence": [],
+          "boundary": "It cannot certify a full-BV claim."
+        },
+        {
+          "stage": "S2_CAUSAL_GREEN",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "Advanced and retarded reduced Green blocks are certified on the same background.",
+          "evidence": [
+            "VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD"
+          ],
+          "boundary": "Reduced propagation cannot be used as a full-complex homotopy."
+        },
+        {
+          "stage": "S3_NONLINEAR_CARTAN",
+          "status": "NOT_APPLICABLE",
+          "statement": "The result is free and reduced.",
+          "evidence": [],
+          "boundary": "No interacting D-Cartan claim is targeted."
+        },
+        {
+          "stage": "S4_HADAMARD_CCR",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "Global stationary spectral Krein two-point distributions are certified on the E/A/L carrier.",
+          "evidence": [
+            "VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD"
+          ],
+          "boundary": "This is a REDUCED-MODE plus LORENTZIAN-CAUSAL result."
+        },
+        {
+          "stage": "S5_BRST_WARD",
+          "status": "NOT_APPLICABLE",
+          "statement": "The off-shell BRST differential is absent from the carrier.",
+          "evidence": [],
+          "boundary": "Physical-cohomology construction does not prove the off-shell Ward identity."
+        },
+        {
+          "stage": "S6_PHYSICAL_POSITIVITY",
+          "status": "PARTIAL_CERTIFIED",
+          "statement": "The E sector is positive; A and L have negative Krein sign, so the direct sum is indefinite.",
+          "evidence": [
+            "VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD"
+          ],
+          "boundary": "No positive graviton Hilbert space is certified."
+        },
+        {
+          "stage": "S7_RENORMALIZED_PRODUCTS",
+          "status": "NOT_APPLICABLE",
+          "statement": "No interacting product construction is attempted.",
+          "evidence": [],
+          "boundary": "A free reduced quasifree functional is not pAQFT."
+        },
+        {
+          "stage": "S8_QME",
+          "status": "NOT_APPLICABLE",
+          "statement": "No off-shell BV Laplacian or interacting master equation exists on this reduced carrier.",
+          "evidence": [],
+          "boundary": "Reduced data cannot repair the strict QME."
+        },
+        {
+          "stage": "S9_RESIDUAL_TRANSFER",
+          "status": "FORBIDDEN_TRANSFER",
+          "statement": "This is already a classical/free reduced carrier, not a post-QME quantum transfer.",
+          "evidence": [],
+          "boundary": "The lifecycle order cannot be reversed."
+        },
+        {
+          "stage": "S10_LORENTZIAN_CERTIFIED",
+          "status": "NOT_APPLICABLE",
+          "statement": "The branch is a control for states, not a full theory completion.",
+          "evidence": [],
+          "boundary": "Its strength is the genuine Hadamard/Krein result at reduced scope."
+        }
+      ],
+      "first_unclosed_gate": "S1_OFF_SHELL_BV",
+      "next_decisive_object": "A same-background lift from the reduced E/A/L covariance to a complete off-shell BV covariance with ghost/antifield rows and a verified BRST Ward identity."
+    },
+    {
+      "id": "TAU_ADIC_COMPENSATOR",
+      "name": "Tau-adic compensator extension",
+      "relation_to_target": "CHANGED_THEORY_FORMAL_EXTENSION",
+      "scope": "A formal compensator theory used to study local anomaly cancellation; it is not strict pure Weyl gravity.",
+      "stages": [
+        {
+          "stage": "S0_CLASSICAL_AUTHORITY",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "The strict 386-row input and formal Wess--Zumino cotangent/Cartan data are pinned.",
+          "evidence": [
+            "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1"
+          ],
+          "boundary": "The combined tau-adic carrier does not pass the causal contraction gate."
+        },
+        {
+          "stage": "S1_OFF_SHELL_BV",
+          "status": "PARTIAL_CERTIFIED",
+          "statement": "A canonical scalar extension is assembled, but the dressed trace remains nontrivial unary homology in the declared finite differential class.",
+          "evidence": [
+            "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1"
+          ],
+          "boundary": "Formal local algebra does not supply a causal BV carrier."
+        },
+        {
+          "stage": "S2_CAUSAL_GREEN",
+          "status": "OBSTRUCTED_SCOPED",
+          "statement": "No all-row causal homotopy can exist in the declared tau-adic finite differential class because the compactly supported dressed trace survives.",
+          "evidence": [
+            "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1"
+          ],
+          "boundary": "Adding the missing conformal gauge generator or changing the action remains open."
+        },
+        {
+          "stage": "S3_NONLINEAR_CARTAN",
+          "status": "OPEN_SEEDED",
+          "statement": "Formal D-Cartan and compensator ingredients exist, but no common causal nonlinear contraction is certified.",
+          "evidence": [
+            "QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION"
+          ],
+          "boundary": "The raw generators and theories are not identified."
+        },
+        {
+          "stage": "S4_HADAMARD_CCR",
+          "status": "FAIL_CLOSED",
+          "statement": "No full tau-adic BRST Hadamard kernel exists.",
+          "evidence": [],
+          "boundary": "The causal carrier is already obstructed in the declared class."
+        },
+        {
+          "stage": "S5_BRST_WARD",
+          "status": "FAIL_CLOSED",
+          "statement": "No state exists on which to close the Ward identity.",
+          "evidence": [],
+          "boundary": "Local cohomology does not create a covariance."
+        },
+        {
+          "stage": "S6_PHYSICAL_POSITIVITY",
+          "status": "FAIL_CLOSED",
+          "statement": "No physical positivity theorem exists.",
+          "evidence": [],
+          "boundary": "The extension is formal and changed-theory."
+        },
+        {
+          "stage": "S7_RENORMALIZED_PRODUCTS",
+          "status": "CONDITIONAL",
+          "statement": "An all-order local induction assumes a suitable quantum action principle/regulator, which is not constructed.",
+          "evidence": [
+            "TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY"
+          ],
+          "boundary": "This is not a Lorentzian product construction."
+        },
+        {
+          "stage": "S8_QME",
+          "status": "CONDITIONAL",
+          "statement": "Formal local all-loop QME restoration is proved only under the declared quantum action principle and regular coupling-chart assumptions.",
+          "evidence": [
+            "TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY"
+          ],
+          "boundary": "It neither repairs strict pure Weyl nor establishes a Lorentzian QME."
+        },
+        {
+          "stage": "S9_RESIDUAL_TRANSFER",
+          "status": "FORBIDDEN_TRANSFER",
+          "statement": "No residual transfer is authorized.",
+          "evidence": [],
+          "boundary": "The conditional local theorem and causal obstruction prevent promotion."
+        },
+        {
+          "stage": "S10_LORENTZIAN_CERTIFIED",
+          "status": "FAIL_CLOSED",
+          "statement": "The formal extension is not Lorentzian-complete.",
+          "evidence": [],
+          "boundary": "Its local-QME strength and causal weakness must remain visibly separate."
+        }
+      ],
+      "first_unclosed_gate": "S2_CAUSAL_GREEN",
+      "next_decisive_object": "A new, explicitly chosen theory with either the missing conformal gauge generator or a dressed-trace kinetic term, followed by a fresh all-row causal BV certificate."
+    },
+    {
+      "id": "COMPLEX_COMPENSATOR_CHANGED_ACTION",
+      "name": "Complex compensator changed-action parent",
+      "relation_to_target": "CHANGED_CLASSICAL_ACTION",
+      "scope": "One exact unequal-kinetic polar compensator action on the unit vacuum cylinder, with 390 classical BV rows.",
+      "stages": [
+        {
+          "stage": "S0_CLASSICAL_AUTHORITY",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "The changed action, carrier and strict complement are content-pinned at one fixture.",
+          "evidence": [
+            "COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1"
+          ],
+          "boundary": "This is not strict pure Weyl gravity or the Berger theory."
+        },
+        {
+          "stage": "S1_OFF_SHELL_BV",
+          "status": "CERTIFIED",
+          "statement": "A complete 390-row classical BV parent is constructed; the dressed trace and phase have causal kinetic blocks.",
+          "evidence": [
+            "COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1"
+          ],
+          "boundary": "The negative R^2 coefficient is not claimed stable or positive."
+        },
+        {
+          "stage": "S2_CAUSAL_GREEN",
+          "status": "CERTIFIED",
+          "statement": "The changed carrier has complete classical causal Green data at the fixture.",
+          "evidence": [
+            "COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1"
+          ],
+          "boundary": "The result is action- and background-specific."
+        },
+        {
+          "stage": "S3_NONLINEAR_CARTAN",
+          "status": "OPEN_SEEDED",
+          "statement": "The exact action supplies a concrete nonlinear target, but raw D-Cartan closure is unproved.",
+          "evidence": [
+            "COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1"
+          ],
+          "boundary": "The classical causal parent is not yet a cyclic interacting contraction."
+        },
+        {
+          "stage": "S4_HADAMARD_CCR",
+          "status": "OPEN_SEEDED",
+          "statement": "The first analytic quantum gate is an all-row BRST-compatible Hadamard/Feynman selection.",
+          "evidence": [
+            "COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1"
+          ],
+          "boundary": "No state is constructed by the classical certificate."
+        },
+        {
+          "stage": "S5_BRST_WARD",
+          "status": "FAIL_CLOSED",
+          "statement": "No BRST covariance or smooth Ward correction is certified.",
+          "evidence": [],
+          "boundary": "It must be built on the exact 390-row carrier."
+        },
+        {
+          "stage": "S6_PHYSICAL_POSITIVITY",
+          "status": "FAIL_CLOSED",
+          "statement": "No positivity theorem exists and the scalar sector has an explicit stability concern.",
+          "evidence": [],
+          "boundary": "Causal propagation does not decide energy sign."
+        },
+        {
+          "stage": "S7_RENORMALIZED_PRODUCTS",
+          "status": "FAIL_CLOSED",
+          "statement": "No Lorentzian products are defined.",
+          "evidence": [],
+          "boundary": "Same-action quantum consumers must first be reissued."
+        },
+        {
+          "stage": "S8_QME",
+          "status": "FAIL_CLOSED",
+          "statement": "No anomaly classification or QME restoration exists for this exact changed action.",
+          "evidence": [],
+          "boundary": "The tau-adic formal theorem cannot be silently identified with this action."
+        },
+        {
+          "stage": "S9_RESIDUAL_TRANSFER",
+          "status": "FORBIDDEN_TRANSFER",
+          "statement": "No residual transfer is authorized.",
+          "evidence": [],
+          "boundary": "Changed residual cohomology has not been constructed and the QME is open."
+        },
+        {
+          "stage": "S10_LORENTZIAN_CERTIFIED",
+          "status": "FAIL_CLOSED",
+          "statement": "The branch is a viable classical causal parent, not a quantum completion.",
+          "evidence": [],
+          "boundary": "It is a neighboring theory rather than evidence that strict pure Weyl is complete."
+        }
+      ],
+      "first_unclosed_gate": "S3_NONLINEAR_CARTAN",
+      "next_decisive_object": "Reissue the nonlinear and quantum consumers against the exact 390-row action/carrier hash, then construct a BRST-compatible Hadamard/Feynman selection on that same carrier."
+    }
+  ],
+  "frontier_summary": {
+    "theory_identity_front": {
+      "branch": "STRICT_PURE_WEYL_386",
+      "first_gate": "S0_CLASSICAL_AUTHORITY",
+      "current_fact": "The complete finite graph-coordinate q1/SDR and transported suspension now replay exactly on the fixed 386 rows. The first missing theory-identity datum is represented endpoint Green action on declared analytic spaces.",
+      "best_next_object": "A content-addressed endpoint test/distribution-space declaration and advanced/retarded action serialization with continuity, uniqueness, causal support and suspended-adjoint witnesses."
+    },
+    "analytic_maturity_front": {
+      "branch": "BERGER_POSITIVE_CLOCK_54",
+      "first_gate": "S4_HADAMARD_CCR",
+      "current_fact": "Causal and arity-three classical control is strongest, while normalized BRST Hadamard completion has an 11-step scoped decision chain dominated by obstructions and containing one exact feasibility control.",
+      "best_next_object": "Direct spacetime nonstationary q26-equivariant selection or the complete general non-cone 104-row system."
+    },
+    "curved_generality_front": {
+      "branch": "PURE_WEYL_BACH_FLAT_RANK310",
+      "strength": "rank-310 all-row causal transfer on a relative-open Bach-flat ADM class",
+      "first_gate": "same-carrier nonlinear cyclic compatibility, followed by Hadamard data"
+    },
+    "state_control_front": {
+      "branch": "VACUUM_CYLINDER_REDUCED",
+      "strength": "genuine reduced-mode Lorentzian Hadamard/Krein construction with E positivity and explicit A/L negative signs",
+      "first_gate": "same-background full off-shell BRST lift"
+    }
+  },
+  "classical_import_reconciliation": {
+    "result_id": "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
+    "gate": "FAIL_CLOSED",
+    "claim_state": "CLASSICAL_IMPORT_MINIMAL_Q1_Q2_PAIRING_CYCLIC_REPAIRED_D_FULL_CARRIER_OPEN",
+    "standalone_history_replay": "VERIFIED_BY_EXACT_CONTENT",
+    "open_payload_families": [
+      "M1_COMMON_STRICT_SNAPSHOT",
+      "M2_STRICT_Q2_D",
+      "M3_RESIDUAL_SDR",
+      "M4_FULL_CYCLIC_PAIRING",
+      "M5_RESIDUAL_EXACT_PAYLOAD",
+      "M6_CENTERED_REPRESENTATIVES"
+    ],
+    "missing_portable_objects": 0,
+    "receiver_verified_scoped_exports": 10,
+    "receiver_verified_scoped_checks": 7,
+    "accepted_common_snapshot_hashes": 0,
+    "rule": "Gate A may become VERIFIED only when all twenty exports and seven hashes belong to one strict pure-Weyl snapshot and the receiver independently replays all ten identities on those exact bytes."
+  },
+  "berger_h26_c26_decision_chain": [
+    {
+      "sequence": 1,
+      "classification": "STATIONARY_NORMALIZATION_EMPTY",
+      "result_id": "BERGER_HOMOGENEOUS_STATIONARY_HADAMARD_NORMALIZATION_OBSTRUCTION",
+      "result_state": "FULL_RETAINED_STATIONARY_COMPLEX_STRUCTURE_CLASS_OBSTRUCTED_ON_POSITIVE_HOMOGENEOUS_FIXTURE",
+      "implication": "No real stationary compatible complex structure exists on the full homogeneous retained carrier.",
+      "does_not_imply": "Nonstationary Krein representatives remain open.",
+      "evidence": "BERGER_HOMOGENEOUS_STATIONARY_HADAMARD_NORMALIZATION_OBSTRUCTION"
+    },
+    {
+      "sequence": 2,
+      "classification": "REPRESENTATIVE_NOT_SERIALIZED",
+      "result_id": "BERGER_C26_BIKERNEL_SUPPORT_PROFILE_NONDEFINITION",
+      "result_state": "C26_SYMBOLIC_SMOOTHNESS_CERTIFIED_SUPPORT_AND_PAIRING_NULL_UNDEFINED_UNTIL_NORMALIZED_H26_IS_SERIALIZED",
+      "implication": "C26 support and pairing-null predicates are undefined without a fixed H26_plus.",
+      "does_not_imply": "Undefined support is not a support no-go.",
+      "evidence": "BERGER_C26_BIKERNEL_SUPPORT_PROFILE_NONDEFINITION"
+    },
+    {
+      "sequence": 3,
+      "classification": "FROZEN_CAUCHY_GRAPH_EMPTY",
+      "result_id": "BERGER_Q26_CAUCHY_BV_CARRIER_OBSTRUCTION_V1",
+      "result_state": "FROZEN_104_ROW_FORMAL_CAUCHY_GRAPH_LIFT_CLASS_EMPTY",
+      "implication": "The normalized frozen 104-row solution graph cannot carry the required q_Cauchy.",
+      "does_not_imply": "Alternative companions and enlarged carriers remain open.",
+      "evidence": "BERGER_Q26_CAUCHY_BV_CARRIER_OBSTRUCTION_V1"
+    },
+    {
+      "sequence": 4,
+      "classification": "SIX_ROW_CYCLIC_EMPTY",
+      "result_id": "BERGER_Q26_MINIMAL_SIX_ROW_CYCLIC_OBSTRUCTION_V1",
+      "result_state": "EXACT_SIX_ROW_EXTENSION_HAS_UNAVOIDABLE_FOUR_DIMENSIONAL_PAIRING_RADICAL",
+      "implication": "The first factorization-size repair has an unavoidable four-dimensional pairing radical.",
+      "does_not_imply": "Ten or more rows, or noncyclic carriers, remain open.",
+      "evidence": "BERGER_Q26_MINIMAL_SIX_ROW_CYCLIC_OBSTRUCTION_V1"
+    },
+    {
+      "sequence": 5,
+      "classification": "FREE_MODULE_BOUND_104",
+      "result_id": "BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1",
+      "result_state": "DEFECT_AND_FREE_DUAL_MODULE_CLOSURE_FORCES_AT_LEAST_104_ADDED_ROWS",
+      "implication": "Defect/free-dual closure fills the 936-dimensional spin-four representation and requires at least 104 added free rows.",
+      "does_not_imply": "The bound is not a construction and does not cover non-free/projective modules.",
+      "evidence": "BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1"
+    },
+    {
+      "sequence": 6,
+      "classification": "CANONICAL_CONE_EMPTY",
+      "result_id": "BERGER_Q26_104_ROW_CANONICAL_CONE_LIFT_OBSTRUCTION_V1",
+      "result_state": "CANONICAL_104_ROW_DOUBLED_CONE_EVOLUTION_LIFT_AND_FREE_ADJOINT_ORIENTATION_EMPTY",
+      "implication": "The rank-saturating doubled cone is nilpotent but has no accepted evolution/free-adjoint lift.",
+      "does_not_imply": "General non-cone 104-row completions remain open.",
+      "evidence": "BERGER_Q26_104_ROW_CANONICAL_CONE_LIFT_OBSTRUCTION_V1"
+    },
+    {
+      "sequence": 7,
+      "classification": "CANONICAL_TOWER_REGENERATES",
+      "result_id": "BERGER_Q26_104_ROW_CONE_NEXT_DEFECT_MODULE_V1",
+      "result_state": "CANONICAL_CONE_LIFT_DEFECT_REGENERATES_FULL_104_ROW_FREE_ORBIT",
+      "implication": "The canonical cone's next defect regenerates a full free orbit and forces another 104 rows in that architecture.",
+      "does_not_imply": "The global lower bound remains 104, not 208.",
+      "evidence": "BERGER_Q26_104_ROW_CONE_NEXT_DEFECT_MODULE_V1"
+    },
+    {
+      "sequence": 8,
+      "classification": "FULLY_MIXED_CONE_SDR_EMPTY",
+      "result_id": "BERGER_Q26_104_ROW_FULLY_MIXED_CONE_SDR_OBSTRUCTION_V1",
+      "result_state": "FULLY_MIXED_CONE_EVOLUTION_EXISTS_BUT_RETAINED_SDR_IS_COHOMOLOGICALLY_OBSTRUCTED",
+      "implication": "A fully mixed cone can be nilpotent and evolution compatible but has the wrong cohomology for a retained SDR.",
+      "does_not_imply": "General non-cone carriers with cohomology imposed from the start remain open.",
+      "evidence": "BERGER_Q26_104_ROW_FULLY_MIXED_CONE_SDR_OBSTRUCTION_V1"
+    },
+    {
+      "sequence": 9,
+      "classification": "RANK_ONLY_FEASIBLE",
+      "result_id": "BERGER_Q26_104_ROW_NONCONE_RATIONAL_NILPOTENCE_FEASIBILITY_V1",
+      "result_state": "RATIONAL_TRIVIAL_REPRESENTATION_NONCONE_NILPOTENCE_AND_RETAINED_COHOMOLOGY_FEASIBLE",
+      "implication": "An exact rational non-cone matrix has nilpotence and the correct cohomology ranks.",
+      "does_not_imply": "It is not a PBW operator, evolution lift, cyclic carrier or SDR.",
+      "evidence": "BERGER_Q26_104_ROW_NONCONE_RATIONAL_NILPOTENCE_FEASIBILITY_V1"
+    },
+    {
+      "sequence": 10,
+      "classification": "FIXED_NONCONE_EVOLUTION_EMPTY",
+      "result_id": "BERGER_Q26_104_ROW_NONCONE_EVOLUTION_EXTENSION_OBSTRUCTION_V1",
+      "result_state": "EXACT_RATIONAL_BOUNDARY_COKERNEL_OBSTRUCTS_A104_CHAIN_EXTENSION_ON_THE_NONCONE_FEASIBILITY_WITNESS",
+      "implication": "The selected non-cone feasibility witness has an exact boundary cokernel obstructing its A104 chain extension.",
+      "does_not_imply": "Other simultaneous non-cone differentials remain open.",
+      "evidence": "BERGER_Q26_104_ROW_NONCONE_EVOLUTION_EXTENSION_OBSTRUCTION_V1"
+    },
+    {
+      "sequence": 11,
+      "classification": "MIXED_CORRECTION_RANK_MISS",
+      "result_id": "BERGER_Q26_104_ROW_MIXED_EVOLUTION_CORRECTION_ENDPOINT_OBSTRUCTION_V1",
+      "result_state": "RATIONAL_FULLY_MIXED_CORRECTION_ANSATZ_MISSES_REQUIRED_LEFT_ENDPOINT_RANK",
+      "implication": "The declared mixed correction ansatz has endpoint rank 22 or 24 where rank 23 is required.",
+      "does_not_imply": "The complete two-free-differential non-cone class remains open.",
+      "evidence": "BERGER_Q26_104_ROW_MIXED_EVOLUTION_CORRECTION_ENDPOINT_OBSTRUCTION_V1"
+    }
+  ],
+  "route_selection": [
+    {
+      "rank": 1,
+      "route": "STRICT_ENDPOINT_ANALYTIC_GREEN_ACTION",
+      "branch": "STRICT_PURE_WEYL_386",
+      "scientific_leverage": "VERY_HIGH",
+      "tractability": "LOW",
+      "dependency_depth": "MEDIUM",
+      "recommendation": "Declare represented test/distribution spaces and import advanced/retarded endpoint actions with topology, continuity, uniqueness, causal support and suspended-adjoint data."
+    },
+    {
+      "rank": 2,
+      "route": "STRICT_FULL_GREEN_COMPONENT_ACTION_REPLAY",
+      "branch": "STRICT_PURE_WEYL_386",
+      "scientific_leverage": "VERY_HIGH",
+      "tractability": "MEDIUM",
+      "dependency_depth": "HIGH",
+      "recommendation": "Compose the represented endpoint action with the certified graph-coordinate SDR and replay the full 386-row homotopy, causal support and suspended adjointness."
+    },
+    {
+      "rank": 3,
+      "route": "STRICT_386_ACCEPTED_COMMON_SNAPSHOT",
+      "branch": "STRICT_PURE_WEYL_386",
+      "scientific_leverage": "VERY_HIGH",
+      "tractability": "HIGH",
+      "dependency_depth": "LOW",
+      "recommendation": "Bind basis, pairing, graph q1/SDR, transported suspension and represented Green actions into one receiver-accepted import snapshot without treating producer regeneration as independent verification."
+    },
+    {
+      "rank": 4,
+      "route": "STRICT_386_LOCAL_D",
+      "branch": "STRICT_PURE_WEYL_386",
+      "scientific_leverage": "VERY_HIGH",
+      "tractability": "LOW",
+      "dependency_depth": "MEDIUM",
+      "recommendation": "Serialize cylinder-time D on the accepted common carrier and verify its q1 commutator before any nonlinear promotion."
+    },
+    {
+      "rank": 5,
+      "route": "STRICT_386_Q2_GREEN_COMPATIBILITY",
+      "branch": "STRICT_PURE_WEYL_386",
+      "scientific_leverage": "HIGH",
+      "tractability": "LOW",
+      "dependency_depth": "HIGH",
+      "recommendation": "Bind target-action q2 to the same paired D-equivariant causal carrier and test contraction compatibility after the complete unary action replay."
+    },
+    {
+      "rank": 6,
+      "route": "DIRECT_SPACETIME_Q26_HADAMARD",
+      "branch": "BERGER_POSITIVE_CLOCK_54",
+      "scientific_leverage": "VERY_HIGH",
+      "tractability": "LOW",
+      "dependency_depth": "MEDIUM",
+      "recommendation": "Retain the analytically mature independent route through direct nonstationary q26-equivariant distributional state selection."
+    },
+    {
+      "rank": 7,
+      "route": "BACH_FLAT_NONLINEAR_CARTAN",
+      "branch": "PURE_WEYL_BACH_FLAT_RANK310",
+      "scientific_leverage": "HIGH",
+      "tractability": "MEDIUM",
+      "dependency_depth": "MEDIUM",
+      "recommendation": "Use the broad curved strict causal branch as an independent nonlinear compatibility control while the target-theory import route advances."
+    },
+    {
+      "rank": 8,
+      "route": "GRAPH_SUSPENSION_CONSUMER_AUDIT",
+      "branch": "STRICT_PURE_WEYL_386",
+      "scientific_leverage": "MEDIUM",
+      "tractability": "HIGH",
+      "dependency_depth": "LOW",
+      "recommendation": "Require every downstream graph-coordinate cyclic calculation to consume R_graph rather than the obsolete split diagonal suspension and reject unpinned raw PBW simplifications."
+    }
+  ],
+  "research_queue": [
+    {
+      "priority": 1,
+      "branch": "STRICT_PURE_WEYL_386",
+      "object": "STRICT_ENDPOINT_ANALYTIC_GREEN_ACTION",
+      "why": "Declare represented test/distribution spaces and import advanced/retarded endpoint actions with topology, continuity, uniqueness, causal support and suspended-adjoint data."
+    },
+    {
+      "priority": 2,
+      "branch": "STRICT_PURE_WEYL_386",
+      "object": "STRICT_FULL_GREEN_COMPONENT_ACTION_REPLAY",
+      "why": "Compose the represented endpoint action with the certified graph-coordinate SDR and replay the full 386-row homotopy, causal support and suspended adjointness."
+    },
+    {
+      "priority": 3,
+      "branch": "STRICT_PURE_WEYL_386",
+      "object": "STRICT_386_ACCEPTED_COMMON_SNAPSHOT",
+      "why": "Bind basis, pairing, graph q1/SDR, transported suspension and represented Green actions into one receiver-accepted import snapshot without treating producer regeneration as independent verification."
+    },
+    {
+      "priority": 4,
+      "branch": "STRICT_PURE_WEYL_386",
+      "object": "STRICT_386_LOCAL_D",
+      "why": "Serialize cylinder-time D on the accepted common carrier and verify its q1 commutator before any nonlinear promotion."
+    },
+    {
+      "priority": 5,
+      "branch": "STRICT_PURE_WEYL_386",
+      "object": "STRICT_386_Q2_GREEN_COMPATIBILITY",
+      "why": "Bind target-action q2 to the same paired D-equivariant causal carrier and test contraction compatibility after the complete unary action replay."
+    },
+    {
+      "priority": 6,
+      "branch": "BERGER_POSITIVE_CLOCK_54",
+      "object": "DIRECT_SPACETIME_Q26_HADAMARD",
+      "why": "Retain the analytically mature independent route through direct nonstationary q26-equivariant distributional state selection."
+    },
+    {
+      "priority": 7,
+      "branch": "PURE_WEYL_BACH_FLAT_RANK310",
+      "object": "BACH_FLAT_NONLINEAR_CARTAN",
+      "why": "Use the broad curved strict causal branch as an independent nonlinear compatibility control while the target-theory import route advances."
+    },
+    {
+      "priority": 8,
+      "branch": "STRICT_PURE_WEYL_386",
+      "object": "GRAPH_SUSPENSION_CONSUMER_AUDIT",
+      "why": "Require every downstream graph-coordinate cyclic calculation to consume R_graph rather than the obsolete split diagonal suspension and reject unpinned raw PBW simplifications."
+    }
+  ],
+  "provenance": {
+    "inputs": [
+      {
+        "path": "covariant_completion/certificates/curved_full_prolonged_green_homotopy_assembly.json",
+        "sha256": "1f8aae727a06fb82c70732f7207499d427894247d09fea22f677a0f9b38be0ee",
+        "role": "strict 386-row causal BV homotopy"
+      },
+      {
+        "path": "d_quotient_classical/certificates/BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1.json",
+        "sha256": "b7fc3559345c59a02686388d101d2db76d597949f77450de1083c65b289fb86e",
+        "role": "Bach-flat rank-310 causal branch"
+      },
+      {
+        "path": "d_quotient_classical/certificates/BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
+        "sha256": "61c0ce89045434676d99e723f7618da749f7208e5f49716b0ea9fc86bbaf7abb",
+        "role": "Berger retained causal homotopy"
+      },
+      {
+        "path": "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
+        "sha256": "e92642b3225ab87b6058987f73f9ade3909646f2d0d3b95cc45cc9c5712b9c3b",
+        "role": "Berger complete gauge-fixed causal homotopy"
+      },
+      {
+        "path": "d_quotient_classical/certificates/BERGER_ARITY_THREE_D_CARTAN_FULL_4D.json",
+        "sha256": "0c304ca0dced538c4514dd8efbf8bf9e33a415772944818f7dadec1e88b7a829",
+        "role": "Berger nonlinear cyclic compatibility"
+      },
+      {
+        "path": "d_quotient_classical/certificates/BERGER_Q26_104_ROW_CANONICAL_CONE_LIFT_OBSTRUCTION_V1.json",
+        "sha256": "9471e07167aff1aaa8abd1d46f148fd40fee9da4033dac8010c1bbb1df4f6c21",
+        "role": "canonical doubled-cone obstruction"
+      },
+      {
+        "path": "d_quotient_classical/certificates/BERGER_Q26_104_ROW_CONE_NEXT_DEFECT_MODULE_V1.json",
+        "sha256": "396d2c12abffc3ae86d448f10723b19d38a5abb03afb10da20f3f2da9226dd64",
+        "role": "canonical cone next-defect closure"
+      },
+      {
+        "path": "d_quotient_classical/certificates/BERGER_Q26_104_ROW_FULLY_MIXED_CONE_SDR_OBSTRUCTION_V1.json",
+        "sha256": "0a7a960ed84293c04477e4b80ccc601ca82e9ede577687ceff44ff0f8a07f32e",
+        "role": "fully mixed cone SDR obstruction"
+      },
+      {
+        "path": "d_quotient_classical/certificates/BERGER_Q26_104_ROW_MIXED_EVOLUTION_CORRECTION_ENDPOINT_OBSTRUCTION_V1.json",
+        "sha256": "5c2befec01ff08c4ab1eb9a5c0f120517738ab3b3ae839738226620e5b669fe5",
+        "role": "mixed-correction rank obstruction"
+      },
+      {
+        "path": "d_quotient_classical/certificates/BERGER_Q26_104_ROW_NONCONE_EVOLUTION_EXTENSION_OBSTRUCTION_V1.json",
+        "sha256": "40ec4fbd5acd0ec8bd59426fd7c195b4253f1ea0e0ec4c3023fd61c7217677e9",
+        "role": "fixed non-cone evolution obstruction"
+      },
+      {
+        "path": "d_quotient_classical/certificates/BERGER_Q26_104_ROW_NONCONE_RATIONAL_NILPOTENCE_FEASIBILITY_V1.json",
+        "sha256": "2574789469d366e30ee218c9e345caa32077080b8687bc9aad98659c3231e2c1",
+        "role": "non-cone nilpotence feasibility control"
+      },
+      {
+        "path": "d_quotient_classical/certificates/BERGER_Q26_CAUCHY_BV_CARRIER_OBSTRUCTION_V1.json",
+        "sha256": "076cbb907dde8ffe23a738c46cc984dabb726580f693dce54d72d4d97b2e7643",
+        "role": "frozen Cauchy-graph obstruction"
+      },
+      {
+        "path": "d_quotient_classical/certificates/BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1.json",
+        "sha256": "6b59cdc0c54978ef5a9bb07ff8b17dcbc6d9771ce631206cecc8b85686f2fb78",
+        "role": "104-new-row free-module lower bound"
+      },
+      {
+        "path": "d_quotient_classical/certificates/BERGER_Q26_MINIMAL_SIX_ROW_CYCLIC_OBSTRUCTION_V1.json",
+        "sha256": "9c7e4c6db7eb39274852ba3fe5b45e9e0e25c6442fe20bbc4091ec6afec0cda7",
+        "role": "six-row cyclic obstruction"
+      },
+      {
+        "path": "d_quotient_classical/certificates/COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1.json",
+        "sha256": "be7847102b7c219fd09865b68c4982c84e280e09c73364c509dcb9aaca91d6c4",
+        "role": "changed-action causal parent"
+      },
+      {
+        "path": "d_quotient_classical/certificates/EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json",
+        "sha256": "e2978cf23f577ab365729d139c8eabf0bcbc2277bc2a124d872c03c94b7b8a75",
+        "role": "Einstein metric biwave branch"
+      },
+      {
+        "path": "d_quotient_classical/certificates/NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1.json",
+        "sha256": "58a266aa66d3070816038f229346c0676c88cbb812790700f6fa7eb264750e0e",
+        "role": "Nariai/KS rank-310 transfer"
+      },
+      {
+        "path": "d_quotient_classical/certificates/TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1.json",
+        "sha256": "db1f998a0920adb94cf4fcbffb1b9eb2ea6537876aff9513aac4e4d9ec2b51b9",
+        "role": "tau-adic causal extension obstruction"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V1.json",
+        "sha256": "2f3eb34cac43c3d873946d9a48c70e1b3eb6c2ba6be89b36cd77c393a2be6c10",
+        "role": "immutable V1 predecessor"
+      },
+      {
+        "path": "quantum-weyl/anomalies/certificates/REGULATED_SLAVNOV_QME_DISPOSITION.json",
+        "sha256": "e05d88bf5671c1c090371f49909bfc82bd25d20c352ef9a757f82a5fb6badd23",
+        "role": "strict local Euclidean one-loop obstruction"
+      },
+      {
+        "path": "quantum-weyl/anomalies/certificates/TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY.json",
+        "sha256": "3649925e44d99bea0020f3d1c20a16c54a44f6c9714a3c273c20a6e6d8f84dbc",
+        "role": "conditional changed-theory local QME theorem"
+      },
+      {
+        "path": "quantum-weyl/cartan/certificates/QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION.json",
+        "sha256": "e5ef8ef2122d93ed40a74d62c1bd118b56d136ab0d34838eeec5fafb8386c2d9",
+        "role": "quantum D-Cartan coefficient disposition"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_CERTIFICATE.json",
+        "sha256": "eb48675fb36489e7d33724b2d06f1f0ebfe6867d043bf71d1536015f9862b2d6",
+        "role": "historical all-check import gate"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V2_RECONCILIATION.json",
+        "sha256": "3e7944f31a932b66bddfde23e319ed78e87c07510cdaab785969c6e19fffdd11",
+        "role": "replacement Gate-A reconciliation"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2.json",
+        "sha256": "7d3bb260a0da31b1d1e3323f9e20b96b43a07e7d54142a04f6975fd26f33c028",
+        "role": "successor minimal-BV import repair"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY.json",
+        "sha256": "07272161ca57a8e70bbbcaadda3ea7be892a58276e9d7d5694d7f5cbe184b096",
+        "role": "cross-commit classical snapshot bridge"
+      },
+      {
+        "path": "quantum-weyl/lorentzian/certificates/BERGER_C26_BIKERNEL_SUPPORT_PROFILE_NONDEFINITION.json",
+        "sha256": "b3a4058c83f5fc2dc77dc1e50a6b1f3624eebbbe049c43de0ce45d62d768184a",
+        "role": "unserialized Ward-remainder boundary"
+      },
+      {
+        "path": "quantum-weyl/lorentzian/certificates/BERGER_HOMOGENEOUS_STATIONARY_HADAMARD_NORMALIZATION_OBSTRUCTION.json",
+        "sha256": "016844933f79cdb275cb6d21d2de79f24fbbcdb549b09a0c8eba6715be302010",
+        "role": "stationary normalization no-go"
+      },
+      {
+        "path": "quantum-weyl/lorentzian/certificates/BERGER_RETAINED26_HADAMARD_WARD_REDUCTION.json",
+        "sha256": "35bb185bbc975bbad80a6a4a029815bbc07781fdaa08f654e7652f2b2f6c9218",
+        "role": "Berger Hadamard/CCR candidate and Ward defect"
+      },
+      {
+        "path": "quantum-weyl/lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
+        "sha256": "f49edce04b39d1e600d0072bfabc784b8ef6edf0d5a1fc39c8ad89f7fe031d48",
+        "role": "reduced physical-mode Hadamard control"
+      },
+      {
+        "path": "quantum-weyl/transfer/certificates/BERGER_SUPPORT_LOCAL_Q2_SCIENTIFIC_REPLAY.json",
+        "sha256": "5367b4d5b3dcea2cd63f8087de26722a7f624c072e2acd3a21bae2daead3de7f",
+        "role": "independent Berger q2 replay"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V2.json",
+        "sha256": "f33324484ac15569be78b1a4ff1371c2b103165a91a284ac81383f68c74036f9",
+        "role": "immutable V2 atlas predecessor"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V3_RECONCILIATION.json",
+        "sha256": "b57f9a80b8fbed5f49cebe9e160a09046a73e8882d6e5c066fe4150c2c2001c8",
+        "role": "append-only Gate-A V3 reconciliation"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json",
+        "sha256": "1816a7fb98cb7a844cade72fa8d2ee8de3e858540d5c932d93a5f68b37235c08",
+        "role": "exact finite residual-SDR map payload and receiver control"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V3.json",
+        "sha256": "71a1daa873437e4f786230fbd7117966ade64d886578314deffa27e324fe8fce",
+        "role": "immutable V3 atlas predecessor"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V5_RECONCILIATION.json",
+        "sha256": "3f06924664f8433a2332afb58edcf513723a889ef802298832b137b03608427f",
+        "role": "Gate-A V5 minimal cyclicity reconciliation"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1.json",
+        "sha256": "c4cd8b1399e176e9eb1eadbfa0c5b85901d7361f39c706a7e7d4469e945e5169",
+        "role": "exact canonical minimal pairing and cyclic sign repair"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_CAUSAL_SIGN_TRANSPORT_V1.json",
+        "sha256": "5845c4170505e24c116249dfbdf4c8e2099c23adb9480fe2f65f8c1e3bff73cd",
+        "role": "strict 386-row causal convention-stability theorem"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V4.json",
+        "sha256": "be8d08aa2f0afcca1e19a05ca1bbfab11dfefa0b7f2d6c36719ae5e83a46bbe0",
+        "role": "immutable V4 atlas predecessor"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1.json",
+        "sha256": "7dcafc995a0662f610d721d39b3255f5fae6e32105286cc05051e3b658e16032",
+        "role": "exact strict thirty-row endpoint q1 content bridge"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_WITNESS_V1.json",
+        "sha256": "cfd25e7f5b95c2f9b7828a81609004b2a1705962d580c4294367af114c59d364",
+        "role": "700-column coordinate-to-covariant proof witness"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V5.json",
+        "sha256": "51cbd8a422f328ee9e3aedc860bd81700f44b26d4eb12ab91b856f542b104397",
+        "role": "immutable V5 atlas predecessor"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1.json",
+        "sha256": "11e0533823321ca06b22d9ca85e82947b442276b4294f809a683ae5eac2a5a2e",
+        "role": "exact full-carrier suspended-adjoint bridge"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V6.json",
+        "sha256": "b7fcd520462bd32753eebac0ea1852c2e00bc27d08a44d460b4b19f9281bf825",
+        "role": "immutable V6 atlas predecessor"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+        "sha256": "e760565a08c4b551551ebff8ec5cdac26beb7715e976fe8612407278ee315303",
+        "role": "exact 386-row component basis and pairing serialization"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V7.json",
+        "sha256": "0151f9d2401b7a09e89487a83caff708cae86604d797c26150d1e6fda2b7cc64",
+        "role": "immutable V7 atlas predecessor"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1.json",
+        "sha256": "50c3a41250cad38ea49a8815da664a9b5608f568ab200f3489318a2d5b1117ad",
+        "role": "typed local/nonlocal strict-operator portability audit"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V8.json",
+        "sha256": "124a69a59443ea95d7752ad849f642c44e83aa82193fedc8aa0cd0e14aa10d4b",
+        "role": "immutable V8 atlas predecessor"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1.json",
+        "sha256": "385a9fe8802fbea9e687f7c09796744763ce45f7734ed9bdabffc15a135c55e7",
+        "role": "exact split-q1 auxiliary text/matrix sign gate"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V9.json",
+        "sha256": "019de2f4bd6864a0028c274b30eeae39265810999bf79c172b90f0abd2cd6f58",
+        "role": "immutable V9 atlas predecessor"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.json",
+        "sha256": "57c6dd9f5df7ae0e71af6150b154f95fa4f7b2baa849686d7c3cdada5138344f",
+        "role": "exact auxiliary-q sign repair and full classical-suite receipt"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V10.json",
+        "sha256": "af06563333cd56c40238341f9d5f7a1bfb2f9e5d959c9dff0d9efdfeef16102e",
+        "role": "immutable V10 atlas predecessor"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1.json",
+        "sha256": "9b0e9da9e8838a0ade6e1f1214e16457e9a94af981d9d020c137d105f9e9c21e",
+        "role": "complete exact 386-row unary snapshot and replay"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V11.json",
+        "sha256": "c9db8dcf36b201f3d856f042638a88e3ebf842fcc15245a0c9b0cc7531c12a4d",
+        "role": "immutable V11 atlas predecessor"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1.json",
+        "sha256": "f9da17b642571442a5785186ed587a7244e7549b57e3712ca01588381c88017f",
+        "role": "exact split local SDR component maps and replay"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V12.json",
+        "sha256": "43539a2c2ecf175263f7cbe12a7210129f5e1946593d2912fe6fa6519c301744",
+        "role": "immutable V12 atlas predecessor"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1.json",
+        "sha256": "5f9240a362ce8568f0ac502e25978a4675f9744cc750dee5b1378828033eb301",
+        "role": "exact fixed-basis canonical shear and inverse component jets"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V13.json",
+        "sha256": "3411349bde982e864171153cab569df78e205380dbeca14faacd3dd022b78f5b",
+        "role": "immutable V13 atlas predecessor"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1.json",
+        "sha256": "b805bd81b35f13325d938e93be91495e1d46aa5900fd168e55bdcde1afbfa8e2",
+        "role": "exact graph-coordinate q1, SDR and transported suspension component jets"
+      }
+    ]
+  },
+  "claim_flags": {
+    "v1_preserved": true,
+    "standalone_classical_import_replay_recorded": true,
+    "berger_h26_c26_decision_chain_classified": true,
+    "general_noncone_104_row_no_go": false,
+    "berger_brst_hadamard_state_constructed": false,
+    "strict_pure_weyl_classical_gate_passed": false,
+    "renormalized_lorentzian_products_constructed": false,
+    "strict_pure_weyl_qme_restored": false,
+    "residual_quantum_transfer_authorized": false,
+    "lorentzian_full_theory_certified": false,
+    "v2_preserved": true,
+    "strict_dfinite_residual_sdr_portable": true,
+    "strict_dfinite_sdr_identities_replayed": true,
+    "strict_full_support_local_residual_sdr_constructed": false,
+    "v3_preserved": true,
+    "strict_minimal_pairing_cyclicity_certified": true,
+    "strict_386_sign_transport_certified": true,
+    "strict_386_causal_stage_preserved_under_sign_transport": true,
+    "strict_386_common_bytes_identified": false,
+    "strict_full_386_pairing_serialized": true,
+    "strict_386_q2_green_compatibility_certified": false,
+    "v4_preserved": true,
+    "strict_386_endpoint_q1_content_identified": true,
+    "strict_386_all_700_bach_columns_match": true,
+    "strict_386_pairing_suspension_bridge_certified": true,
+    "v5_preserved": true,
+    "strict_386_full_suspended_green_adjoint_replayed": true,
+    "strict_386_component_pairing_serialized": true,
+    "strict_386_local_d_certified": false,
+    "v6_preserved": true,
+    "strict_386_component_basis_serialized": true,
+    "strict_386_componentwise_t_adjoint_replayed": true,
+    "strict_386_all_operator_component_adjoints_replayed": false,
+    "v7_preserved": true,
+    "strict_386_operator_portability_types_classified": true,
+    "strict_endpoint_q1_portable_component_bytes": true,
+    "strict_causal_green_homotopy_theorem_preserved": true,
+    "strict_full_386_q1_portable_component_bytes": true,
+    "strict_full_386_local_sdr_portable_component_bytes": false,
+    "strict_endpoint_green_portable_action_serialized": false,
+    "strict_full_green_portable_action_serialized": false,
+    "v8_preserved": true,
+    "strict_386_auxiliary_q_text_matrix_sign_conflict_certified": true,
+    "strict_386_executable_auxiliary_q_cyclic_with_serialized_pairing": true,
+    "strict_386_declared_minus_sign_cyclic_with_serialized_pairing": false,
+    "strict_386_split_coordinate_location_classified": true,
+    "strict_386_auxiliary_q_sign_repair_applied": true,
+    "v9_preserved": true,
+    "strict_386_auxiliary_q_source_ledger_pairing_consistent": true,
+    "strict_386_affected_classical_chain_verified": true,
+    "strict_386_full_classical_covariant_suite_passed": true,
+    "v10_preserved": true,
+    "strict_386_full_q1_squared_zero_replayed": true,
+    "strict_386_full_q1_suspended_cyclicity_replayed": true,
+    "strict_386_unary_snapshot_hash_established": true,
+    "strict_386_full_sdr_operator_tables_serialized": false,
+    "v11_preserved": true,
+    "strict_386_split_local_sdr_component_maps_serialized": true,
+    "strict_386_split_local_sdr_identities_replayed": true,
+    "strict_386_split_local_sdr_cyclicity_replayed": true,
+    "strict_386_canonical_shear_component_jets_serialized": true,
+    "strict_386_unshifted_graph_sdr_snapshot_complete": true,
+    "strict_386_represented_green_actions_serialized": false,
+    "v12_preserved": true,
+    "strict_386_canonical_shear_inverse_replayed": true,
+    "strict_386_canonical_shear_bv_canonicality_replayed": true,
+    "strict_386_unshifted_graph_q1_snapshot_complete": true,
+    "v13_preserved": true,
+    "strict_386_graph_suspension_transported": true
+  },
+  "does_not_establish": [
+    "a passed strict pure-Weyl classical import gate",
+    "a no-go theorem for every nonstationary Krein Hadamard representative",
+    "a no-go theorem for the complete general non-cone 104-row completion class",
+    "a no-finite-carrier theorem or a global lower bound above 104 added free rows",
+    "that non-free or projective carrier extensions obey the free-module lower bound",
+    "a normalized Berger H26_plus or serialized C26",
+    "a BRST-compatible Hadamard state on a complete off-shell carrier",
+    "physical positivity, particles, scattering or unitarity",
+    "renormalized Lorentzian time-ordered products",
+    "a Lorentzian QME theorem or residual quantum transfer",
+    "equivalence between strict pure Weyl and the positive-clock Berger theory",
+    "that a numerical route rank is a theorem or proof of eventual success",
+    "that the finite D x SO(4) residual contraction is an arbitrary-support or causal Green homotopy",
+    "that zero missing serialized objects means the common full-carrier Gate A has passed",
+    "that the PRA classification of the finite sign wrapper calibrates the imported analytic causal theorem",
+    "compatibility of strict q2 or D with the transported 386-row Green homotopy",
+    "that convention stability is a passed Gate A, Hadamard state or Lorentzian quantum completion",
+    "q2 or local D compatibility on the common causal bytes",
+    "a passed Gate A, Hadamard state, Ward theorem, QME restoration, residual transfer or Lorentzian quantum theory",
+    "local D or q2 compatibility on the common causal carrier",
+    "portable full prolonged q1, H_alg, endpoint inclusion/projection or Green operator component tables",
+    "an independent component-by-component replay of every operator adjoint and homotopy identity",
+    "one accepted common Gate-A operator hash, local D, q2, Hadamard, QME or Lorentzian quantum theory",
+    "portable full q1, H_alg, projector, inclusion or projection component tables",
+    "a receiver-executable endpoint or full advanced/retarded Green action or distribution kernel",
+    "that the existing causal Green-homotopy theorem is false or incomplete as an existence theorem",
+    "componentwise replay of every homotopy, projector and suspended-adjoint identity",
+    "the weakest foundational base for the imported analytic Green theorem",
+    "a passed Gate A, local D, q2 compatibility, Hadamard state, Ward theorem, QME restoration or Lorentzian quantum theory",
+    "that the preferred sign repair has been applied to the authoritative classical source and affected certificate chain",
+    "a receiver-readable full 386-row q1 component jet table or accepted common operator snapshot hash",
+    "componentwise nilpotency and cyclicity of the endpoint and curvature-cone blocks in one combined artifact",
+    "portable local SDR maps, endpoint/full Green actions, local D or q2 compatibility",
+    "a Hadamard state, Ward theorem, QME restoration, residual transfer or Lorentzian quantum theory",
+    "receiver-readable full 386-row q1 component bytes or an accepted common classical snapshot hash",
+    "portable support-local SDR component maps or represented endpoint and full Green actions",
+    "local D, q2 compatibility, a BRST-compatible Hadamard state, renormalized Lorentzian products, QME restoration, residual quantum transfer or a Lorentzian quantum theory",
+    "component tables for H_alg, endpoint inclusion/projection, the canonical T/A/B shear, or advanced/retarded Green actions",
+    "one accepted common Gate-A snapshot binding q1, q2, D, pairing, SDR and causal Green data",
+    "q2 or local D on the same 386-row causal carrier",
+    "a weakest-foundation calibration of the imported analytic Green theorem",
+    "a Hadamard state, BRST Ward theorem, positivity result, renormalized Lorentzian products, QME restoration, residual transfer or Lorentzian quantum theory",
+    "a serialized T/A/B canonical shear or its inverse in the 386-row Gate basis",
+    "an unshifted curvature-graph SDR snapshot",
+    "a represented advanced or retarded endpoint/full Green action",
+    "one accepted common Gate-A snapshot or a passed classical import gate",
+    "a Hadamard state, Ward theorem, positivity result, renormalized Lorentzian products, QME restoration, residual transfer or Lorentzian quantum theory",
+    "a flattened coefficientwise replay of q1_graph=S q1_split S^-1 in the curved PBW jet algebra",
+    "graph-coordinate H, inclusion, projection or all SDR identities on the same component bytes",
+    "represented advanced/retarded Green actions on declared analytic spaces",
+    "represented advanced/retarded endpoint actions on declared test and distribution spaces",
+    "the full causal Green homotopy, support theorem or adjoint theorem on the graph bytes",
+    "one receiver-accepted Gate-A snapshot binding q1, q2, D, pairing, SDR and represented Green data"
+  ],
+  "independent_checker": {
+    "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v14.py",
+    "checks": [
+      "V13 preservation",
+      "77-cell closure",
+      "strict S0-only mutation",
+      "graph q1/SDR projection",
+      "27-table and 4374-coefficient inventory",
+      "zero direct SDR defects",
+      "transported suspension inventory",
+      "eight-defect obsolete-suspension diagnostic",
+      "exact PBW boundary",
+      "represented-Green/import/quantum firewall",
+      "eight-route ranking",
+      "append-only provenance",
+      "content hashes",
+      "canonical digest"
+    ],
+    "expected_digest": "d7661061e12f7de3c3b7720e736e1c5186fc1a6c9fe1f893b7a8adee1e631453"
+  },
+  "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v14.md",
+  "strict_gate_a_progress": {
+    "status": "GRAPH_Q1_SDR_AND_SUSPENSION_SERIALIZED_REPRESENTED_GREEN_AND_COMMON_SNAPSHOT_REQUIRED",
+    "evidence": [
+      "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
+      "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
+      "STRICT_386_CAUSAL_SIGN_TRANSPORT_V1",
+      "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
+      "STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1",
+      "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1"
+    ],
+    "finite_control": {
+      "energies": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_coordinates": 4490,
+      "residual_coordinates": 470,
+      "portable_maps": [
+        "classical_inclusion_iota_cl",
+        "classical_projection_pi_cl",
+        "classical_homotopy_s_cl"
+      ],
+      "replayed_historical_checks": [
+        "pi_cl_iota_cl_identity",
+        "classical_contraction_identity",
+        "q0_iota_intertwining",
+        "pi_q0_intertwining"
+      ],
+      "all_sdr_identities": 8,
+      "foundational_strength": "FINITE_EXACT_INTEGER_SPARSE_LINEAR_ALGEBRA",
+      "choice_dependency": "No choice principle is used by the serialized finite matrices or receiver."
+    },
+    "minimal_cyclic_control": {
+      "basis_dimension": 30,
+      "pairing_rank": 30,
+      "source_defects": 540,
+      "expanded_coefficients": 932,
+      "translated_defects": 0,
+      "changed_q1_rows": [
+        "q1_cstar_hstar",
+        "q1_omegastar_hstar"
+      ],
+      "changed_q2_rows": [
+        "q2_cstar_hhstar__forward",
+        "q2_cstar_hhstar__reverse",
+        "q2_omegastar_hhstar__forward",
+        "q2_omegastar_hhstar__reverse"
+      ]
+    },
+    "remaining_common_carrier": "Declare the endpoint test/distribution spaces and serialize represented advanced/retarded endpoint actions with continuity, uniqueness, causal support and adjoint data; then compose them with this graph SDR and independently replay the full 386-row causal Green homotopy before Gate-A acceptance.",
+    "boundary": "Finite graph unary, SDR and suspension data pass exact producer and independent replays. Gate A still requires represented endpoint Green actions, the composed full causal homotopy and one receiver-accepted common snapshot before q2 or D are bound.",
+    "endpoint_q1_control": {
+      "dimension": 30,
+      "arrow_tables_matching": 80,
+      "bach_columns_matching": 700,
+      "common_nonzero_coefficients": 619,
+      "common_q1_sha256": "fc2bf578e09f12c0f55f745bf10966c94e338d3e14254fedb1ad68b544f25c48",
+      "full_pairing_open": false,
+      "full_operator_snapshot_open": true
+    },
+    "suspended_adjoint_control": {
+      "endpoint_pairing_entries": 30,
+      "R_386_positive": 376,
+      "R_386_negative": 10,
+      "full_green_suspended_adjoint_replayed": true,
+      "full_component_pairing_serialized": true,
+      "endpoint_pairing_entries_pre_pullback": 54,
+      "all_operator_component_adjoints_replayed": false
+    },
+    "component_pairing_control": {
+      "rows": 386,
+      "complement_split": "356=36+320",
+      "pairing_entries": 410,
+      "pairing_rank": 386,
+      "T_negative": 5,
+      "R_negative": 10
+    },
+    "operator_portability_control": {
+      "result_id": "STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1",
+      "status": "LOCAL_OPERATOR_SERIALIZATION_TRACTABLE_GREEN_ACTION_REPRESENTATION_OPEN",
+      "contracts": [
+        "FINITE_COMPONENT_JET_TABLE",
+        "FINITE_SPARSE_COMPONENT_MAP",
+        "ANALYTIC_GREEN_ACTION"
+      ],
+      "operator_families_classified": 6,
+      "status_counts": {
+        "EXACT_EXECUTABLE_AND_HASHED_RECEIVER_TABLE_ABSENT": 2,
+        "PORTABLE_COMPONENT_BYTES": 1,
+        "PRODUCER_COEFFICIENTWISE_COMPLETE_RECEIVER_TABLE_ABSENT": 1,
+        "THEOREM_CHARACTERIZED_PORTABLE_ACTION_ABSENT": 2
+      },
+      "endpoint_q1_arrow_tables": 80,
+      "endpoint_q1_nonzero_coefficients": 619,
+      "endpoint_q1_bach_columns": 700,
+      "full_q1_portable": false,
+      "local_sdr_portable": false,
+      "endpoint_green_action_portable": false,
+      "full_green_action_portable": false,
+      "causal_green_theorem_preserved": true,
+      "finite_local_upper_bound": "PRA",
+      "analytic_green_weakest_base": "NOT_ESTABLISHED",
+      "next_gate": "Emit one canonical full-q1 finite component jet table on the fixed 386-row basis from the existing generalized-auxiliary, curvature-cylinder and endpoint producers. Independently reconstruct q1 and replay q1 squared and pairing adjointness before serializing the local SDR maps. Treat Lambda_plus/minus under the separate ANALYTIC_GREEN_ACTION contract."
+    },
+    "full_q1_split_sign_control": {
+      "result_id": "STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1",
+      "status": "FULL_Q1_SERIALIZATION_BLOCKED_BY_AUXILIARY_COTANGENT_SIGN_CONFLICT",
+      "carrier_rows": 386,
+      "auxiliary_rows": 36,
+      "block": "AUX_V_STAR -> AUX_ETA_STAR",
+      "executable_sign": "+I_4",
+      "declared_sign": "-I_4",
+      "executable_cyclicity_defects": 0,
+      "declared_cyclicity_defects": 8,
+      "both_nilpotent": true,
+      "both_contractible": true,
+      "repair_applied": false,
+      "split_coordinate_classified": true,
+      "foundational_upper_bound": "PRA",
+      "choice_operation_added": false,
+      "next_gate": "Repair the factorized curved auxiliary dual-arrow sign to +I_4 or explicitly replace the auxiliary pairing convention, then regenerate and verify the affected classical certificate chain. Only after the repaired source and serialized pairing agree should the full split-basis q1 table be emitted."
+    },
+    "auxiliary_q_sign_repair_control": {
+      "result_id": "STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1",
+      "status": "REPAIR_CERTIFIED_FULL_Q1_SERIALIZATION_NEXT",
+      "block": "AUX_V_STAR -> AUX_ETA_STAR",
+      "old_declared_sign": "-I_4",
+      "authoritative_sign": "+I_4",
+      "repair_applied": true,
+      "source_and_ledgers_consistent": true,
+      "affected_chain_regenerated": true,
+      "plus_cyclicity_defects": 0,
+      "minus_regression_cyclicity_defects": 8,
+      "tier_3_status": "PASS",
+      "tier_3_elapsed_seconds": 1433.5,
+      "terminal_overclaim_guards": 82,
+      "full_q1_serialized": false,
+      "classical_import_gate_passed": false,
+      "next_gate": "Emit the endpoint, repaired auxiliary and curvature mapping-cylinder blocks as one canonical sparse 386-row q1 table; independently replay q1 squared and odd-pairing cyclicity; then bind the accepted bytes into one classical import snapshot."
+    },
+    "full_q1_component_jet_control": {
+      "result_id": "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1",
+      "status": "FULL_386_Q1_SERIALIZED_NILPOTENT_SUSPENDED_CYCLIC_SDR_AND_COMMON_GATE_SNAPSHOT_OPEN",
+      "carrier_dimension": 386,
+      "carrier_split": "30+36+320",
+      "operator_tables": 18,
+      "coefficient_multiindex_tables": 127,
+      "nonzero_rational_coefficients": 2193,
+      "sector_coefficients": {
+        "endpoint_30": 619,
+        "auxiliary_36": 30,
+        "mapping_cone_320": 1544
+      },
+      "maximum_order": 4,
+      "q1_squared_zero": true,
+      "suspended_cyclicity_defects": 0,
+      "derivative_multiindices_checked": 70,
+      "unary_snapshot_sha256": "34d0a3198d73a99111a1b91d9b642f8d890c4c479de00d056fe592c820f2e39a",
+      "full_sdr_tables_serialized": false,
+      "classical_import_gate_passed": false,
+      "next_gate": "Serialize H_alg, endpoint inclusion/projection, the degree-zero T/A/B shear and advanced/retarded Green actions against this unary snapshot, independently replay the SDR and suspended Green-adjoint identities componentwise, and only then accept a common Gate-A snapshot hash before binding q2 and local D."
+    },
+    "local_sdr_component_map_control": {
+      "result_id": "STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1",
+      "status": "LOCAL_SDR_SERIALIZED_CANONICAL_SHEAR_AND_REPRESENTED_GREEN_ACTIONS_OPEN",
+      "carrier_dimension": 386,
+      "retained_endpoint_dimension": 30,
+      "contracted_dimension": 356,
+      "map_count": 5,
+      "H_alg_nonzero_entries": 190,
+      "P_alg_nonzero_entries": 356,
+      "P_end_nonzero_entries": 30,
+      "i_end_nonzero_entries": 30,
+      "p_end_nonzero_entries": 30,
+      "maximum_order": 0,
+      "derivative_multiindices_checked": 70,
+      "homotopy_identity_defects": 0,
+      "cyclicity_defects": 0,
+      "local_sdr_snapshot_sha256": "177045b0bf639beda53c76aaf0a3c809c4fe7ba0c5b8ea18397642c8839dd520",
+      "split_SDR_complete": true,
+      "canonical_shear_serialized": false,
+      "represented_green_actions_serialized": false,
+      "classical_import_gate_passed": false,
+      "next_gate": "Serialize the finite-order degree-zero T/A/B canonical shear and inverse on the same 386-row basis, independently replay inverse, canonical-pairing and q1-conjugation identities, then import represented endpoint Green actions on declared test/distribution spaces."
+    },
+    "canonical_shear_component_jet_control": {
+      "result_id": "STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1",
+      "status": "CANONICAL_SHEAR_SERIALIZED_GRAPH_Q1_AND_SDR_REPLAY_OPEN",
+      "carrier_dimension": 386,
+      "forward_table_count": 7,
+      "inverse_table_count": 7,
+      "forward_nonzero_off_diagonal_coefficients": 1321,
+      "inverse_nonzero_off_diagonal_coefficients": 1321,
+      "maximum_order": 3,
+      "raw_T_A_B_hash_defects": 0,
+      "generalized_auxiliary_attachment_nonzero_coefficients": 0,
+      "elementary_BV_canonicality_defects": 0,
+      "left_inverse_defects": 0,
+      "right_inverse_defects": 0,
+      "forbidden_derivative_derivative_products": 0,
+      "forward_cross_terms": 1,
+      "inverse_cross_terms": 1,
+      "canonical_shear_snapshot_sha256": "2843eba9ce39e701f8b838437d58a53f3b71d6ffad9800311e137f971d9a1573",
+      "graph_q1_replay_complete": false,
+      "graph_sdr_replay_complete": false,
+      "represented_green_actions_serialized": false,
+      "classical_import_gate_passed": false,
+      "next_gate": "Conjugate the fixed split q1 and local SDR through these exact shear bytes, using the curved symmetrized-covariant-jet/PBW composition law wherever two positive-order operators meet; independently replay nilpotency, chain maps, homotopy and cyclicity before importing any represented Green action."
+    },
+    "graph_q1_sdr_component_jet_control": {
+      "result_id": "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1",
+      "status": "GRAPH_Q1_SDR_AND_SUSPENSION_SERIALIZED_REPRESENTED_GREEN_ACTIONS_OPEN",
+      "carrier_dimension": 386,
+      "retained_endpoint_dimension": 30,
+      "contracted_dimension": 356,
+      "operator_tables": 27,
+      "split_operator_tables": 18,
+      "graph_attachment_tables": 9,
+      "combined_derivative_multiindices": 70,
+      "nonzero_rational_coefficients": 4374,
+      "maximum_order": 4,
+      "H_alg_nonzero_entries": 190,
+      "inclusion_nonzero_entries": 488,
+      "projection_nonzero_entries": 488,
+      "retained_projector_nonzero_entries": 1756,
+      "contracted_projector_nonzero_entries": 2082,
+      "homotopy_defects": 0,
+      "retract_defects": 0,
+      "side_condition_defects": 0,
+      "H_cyclicity_defects": 0,
+      "transported_suspension_entries": 394,
+      "transported_suspension_off_diagonal_entries": 8,
+      "transported_suspension_involution_defects": 0,
+      "old_diagonal_suspension_cyclicity_defects": 8,
+      "raw_graph_suspension_cyclicity_residuals": 32,
+      "raw_second_chain_relation_residuals": 16,
+      "PBW_reduced_cyclicity_defects": 0,
+      "graph_snapshot_sha256": "a7412124624e38dc0e737a2fdc186eea9b8a5a2f5d9d495f4c962586cede6ecd",
+      "represented_green_actions_serialized": false,
+      "classical_import_gate_passed": false,
+      "next_gate": "Declare the endpoint test/distribution spaces and serialize represented advanced/retarded endpoint actions with continuity, uniqueness, causal support and adjoint data; then compose them with this graph SDR and independently replay the full 386-row causal Green homotopy before Gate-A acceptance."
+    }
+  },
+  "strict_causal_sign_transport": {
+    "result_id": "STRICT_386_CAUSAL_SIGN_TRANSPORT_V1",
+    "status": "STRICT_386_CAUSAL_ARCHITECTURE_STABLE_UNDER_MINIMAL_SIGN_TRANSPORT_COMMON_HASH_OPEN",
+    "endpoint_dimension": 30,
+    "algebraic_complement_dimension": 356,
+    "full_dimension": 386,
+    "positive_signs": 381,
+    "negative_signs": 5,
+    "causal_stage_preserved": true,
+    "common_bytes_identified": false,
+    "nonlinear_stage_preserved": false,
+    "fixed_carrier_transport_base": "PRA",
+    "analytic_causal_weakest_base": "NOT_ESTABLISHED",
+    "next_gate": "Serialize the endpoint inclusion/permutation and pairing on the exact 386-row bytes, prove coefficientwise equality with translated Gate-V5 q1, extend the canonical sign/pairing convention over the 356-row complement, and only then test q2/D compatibility with the causal contraction."
+  },
+  "strict_endpoint_q1_content_bridge": {
+    "result_id": "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
+    "status": "UNIT_CYLINDER_ENDPOINT_Q1_CONTENT_IDENTIFIED_CAUSAL_PAIRING_SIGN_AND_FULL_CARRIER_OPEN",
+    "endpoint_dimension": 30,
+    "full_causal_dimension": 386,
+    "arrow_tables_matching": 80,
+    "bach_columns_matching": 700,
+    "triangular_equations": 490000,
+    "common_nonzero_coefficients": 619,
+    "common_q1_sha256": "fc2bf578e09f12c0f55f745bf10966c94e338d3e14254fedb1ad68b544f25c48",
+    "field_pairing_canonical": true,
+    "original_ghost_pairing_canonical": true,
+    "transported_ghost_pairing_canonical": false,
+    "transported_ghost_pairing_negative_canonical": true,
+    "finite_bridge_base": "PRA",
+    "analytic_causal_weakest_base": "NOT_ESTABLISHED",
+    "next_gate": "Choose and serialize one Gate-canonical suspension/pairing convention on the exact 386-row carrier, extend it across the 356-row complement, and independently replay the full Green graded-adjoint identity on those same bytes. Only then bind q2 and local D to the carrier and test nonlinear compatibility."
+  },
+  "strict_suspended_adjoint_bridge": {
+    "result_id": "STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1",
+    "status": "PAIRING_SIGN_IDENTIFIED_AS_SUSPENDED_ADJOINT_TWIST_FULL_COMPONENT_PAIRING_SERIALIZATION_OPEN",
+    "endpoint_pairing_entries": 54,
+    "endpoint_T_negative": 5,
+    "endpoint_T_sharp_negative": 5,
+    "endpoint_R_negative": 10,
+    "full_R_positive": 376,
+    "full_R_negative": 10,
+    "full_suspended_green_adjoint_replayed": true,
+    "full_component_pairing_serialized": false,
+    "finite_bridge_base": "PRA",
+    "analytic_causal_weakest_base": "NOT_ESTABLISHED",
+    "next_gate": "Serialize the 356-row complement pairing and row basis in the Gate suspension convention, bind them to the existing cyclic P_alg/P_end maps, and replay every component adjoint identity. Then add local D and q2 on those same bytes."
+  },
+  "strict_component_pairing_serialization": {
+    "result_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+    "status": "FULL_386_COMPONENT_BASIS_AND_PAIRING_SERIALIZED_OPERATOR_ADJOINT_BYTES_OPEN",
+    "full_rows": 386,
+    "endpoint_rows": 30,
+    "algebraic_complement_rows": 356,
+    "algebraic_complement_split": "356=36+320",
+    "pairing_entries": 410,
+    "pairing_rank": 386,
+    "endpoint_pairing_entries_gate_coordinates": 30,
+    "endpoint_pairing_entries_pre_pullback": 54,
+    "componentwise_T_adjoint_replayed": true,
+    "all_operator_component_adjoints_replayed": false,
+    "finite_serialization_base": "PRA",
+    "next_gate": "Serialize the full prolonged q1, H_alg, endpoint inclusion/projection and advanced/retarded Green coefficient tables in this exact 386-row hybrid basis, then independently replay every component adjoint and homotopy identity before introducing local D or q2."
+  },
+  "strict_operator_portability": {
+    "result_id": "STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1",
+    "status": "LOCAL_OPERATOR_SERIALIZATION_TRACTABLE_GREEN_ACTION_REPRESENTATION_OPEN",
+    "contracts": [
+      "FINITE_COMPONENT_JET_TABLE",
+      "FINITE_SPARSE_COMPONENT_MAP",
+      "ANALYTIC_GREEN_ACTION"
+    ],
+    "operator_families_classified": 6,
+    "status_counts": {
+      "EXACT_EXECUTABLE_AND_HASHED_RECEIVER_TABLE_ABSENT": 2,
+      "PORTABLE_COMPONENT_BYTES": 1,
+      "PRODUCER_COEFFICIENTWISE_COMPLETE_RECEIVER_TABLE_ABSENT": 1,
+      "THEOREM_CHARACTERIZED_PORTABLE_ACTION_ABSENT": 2
+    },
+    "endpoint_q1_arrow_tables": 80,
+    "endpoint_q1_nonzero_coefficients": 619,
+    "endpoint_q1_bach_columns": 700,
+    "full_q1_portable": false,
+    "local_sdr_portable": false,
+    "endpoint_green_action_portable": false,
+    "full_green_action_portable": false,
+    "causal_green_theorem_preserved": true,
+    "finite_local_upper_bound": "PRA",
+    "analytic_green_weakest_base": "NOT_ESTABLISHED",
+    "next_gate": "Emit one canonical full-q1 finite component jet table on the fixed 386-row basis from the existing generalized-auxiliary, curvature-cylinder and endpoint producers. Independently reconstruct q1 and replay q1 squared and pairing adjointness before serializing the local SDR maps. Treat Lambda_plus/minus under the separate ANALYTIC_GREEN_ACTION contract."
+  },
+  "strict_full_q1_split_sign_gate": {
+    "result_id": "STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1",
+    "status": "FULL_Q1_SERIALIZATION_BLOCKED_BY_AUXILIARY_COTANGENT_SIGN_CONFLICT",
+    "carrier_rows": 386,
+    "auxiliary_rows": 36,
+    "block": "AUX_V_STAR -> AUX_ETA_STAR",
+    "executable_sign": "+I_4",
+    "declared_sign": "-I_4",
+    "executable_cyclicity_defects": 0,
+    "declared_cyclicity_defects": 8,
+    "both_nilpotent": true,
+    "both_contractible": true,
+    "repair_applied": false,
+    "split_coordinate_classified": true,
+    "foundational_upper_bound": "PRA",
+    "choice_operation_added": false,
+    "next_gate": "Repair the factorized curved auxiliary dual-arrow sign to +I_4 or explicitly replace the auxiliary pairing convention, then regenerate and verify the affected classical certificate chain. Only after the repaired source and serialized pairing agree should the full split-basis q1 table be emitted."
+  },
+  "strict_auxiliary_q_sign_repair": {
+    "result_id": "STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1",
+    "status": "REPAIR_CERTIFIED_FULL_Q1_SERIALIZATION_NEXT",
+    "block": "AUX_V_STAR -> AUX_ETA_STAR",
+    "old_declared_sign": "-I_4",
+    "authoritative_sign": "+I_4",
+    "repair_applied": true,
+    "source_and_ledgers_consistent": true,
+    "affected_chain_regenerated": true,
+    "plus_cyclicity_defects": 0,
+    "minus_regression_cyclicity_defects": 8,
+    "tier_3_status": "PASS",
+    "tier_3_elapsed_seconds": 1433.5,
+    "terminal_overclaim_guards": 82,
+    "full_q1_serialized": false,
+    "classical_import_gate_passed": false,
+    "next_gate": "Emit the endpoint, repaired auxiliary and curvature mapping-cylinder blocks as one canonical sparse 386-row q1 table; independently replay q1 squared and odd-pairing cyclicity; then bind the accepted bytes into one classical import snapshot."
+  },
+  "strict_full_q1_component_jet_table": {
+    "result_id": "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1",
+    "status": "FULL_386_Q1_SERIALIZED_NILPOTENT_SUSPENDED_CYCLIC_SDR_AND_COMMON_GATE_SNAPSHOT_OPEN",
+    "carrier_dimension": 386,
+    "carrier_split": "30+36+320",
+    "operator_tables": 18,
+    "coefficient_multiindex_tables": 127,
+    "nonzero_rational_coefficients": 2193,
+    "sector_coefficients": {
+      "endpoint_30": 619,
+      "auxiliary_36": 30,
+      "mapping_cone_320": 1544
+    },
+    "maximum_order": 4,
+    "q1_squared_zero": true,
+    "suspended_cyclicity_defects": 0,
+    "derivative_multiindices_checked": 70,
+    "unary_snapshot_sha256": "34d0a3198d73a99111a1b91d9b642f8d890c4c479de00d056fe592c820f2e39a",
+    "full_sdr_tables_serialized": false,
+    "classical_import_gate_passed": false,
+    "next_gate": "Serialize H_alg, endpoint inclusion/projection, the degree-zero T/A/B shear and advanced/retarded Green actions against this unary snapshot, independently replay the SDR and suspended Green-adjoint identities componentwise, and only then accept a common Gate-A snapshot hash before binding q2 and local D."
+  },
+  "strict_local_sdr_component_maps": {
+    "result_id": "STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1",
+    "status": "LOCAL_SDR_SERIALIZED_CANONICAL_SHEAR_AND_REPRESENTED_GREEN_ACTIONS_OPEN",
+    "carrier_dimension": 386,
+    "retained_endpoint_dimension": 30,
+    "contracted_dimension": 356,
+    "map_count": 5,
+    "H_alg_nonzero_entries": 190,
+    "P_alg_nonzero_entries": 356,
+    "P_end_nonzero_entries": 30,
+    "i_end_nonzero_entries": 30,
+    "p_end_nonzero_entries": 30,
+    "maximum_order": 0,
+    "derivative_multiindices_checked": 70,
+    "homotopy_identity_defects": 0,
+    "cyclicity_defects": 0,
+    "local_sdr_snapshot_sha256": "177045b0bf639beda53c76aaf0a3c809c4fe7ba0c5b8ea18397642c8839dd520",
+    "split_SDR_complete": true,
+    "canonical_shear_serialized": false,
+    "represented_green_actions_serialized": false,
+    "classical_import_gate_passed": false,
+    "next_gate": "Serialize the finite-order degree-zero T/A/B canonical shear and inverse on the same 386-row basis, independently replay inverse, canonical-pairing and q1-conjugation identities, then import represented endpoint Green actions on declared test/distribution spaces."
+  },
+  "strict_canonical_shear_component_jets": {
+    "result_id": "STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1",
+    "status": "CANONICAL_SHEAR_SERIALIZED_GRAPH_Q1_AND_SDR_REPLAY_OPEN",
+    "carrier_dimension": 386,
+    "forward_table_count": 7,
+    "inverse_table_count": 7,
+    "forward_nonzero_off_diagonal_coefficients": 1321,
+    "inverse_nonzero_off_diagonal_coefficients": 1321,
+    "maximum_order": 3,
+    "raw_T_A_B_hash_defects": 0,
+    "generalized_auxiliary_attachment_nonzero_coefficients": 0,
+    "elementary_BV_canonicality_defects": 0,
+    "left_inverse_defects": 0,
+    "right_inverse_defects": 0,
+    "forbidden_derivative_derivative_products": 0,
+    "forward_cross_terms": 1,
+    "inverse_cross_terms": 1,
+    "canonical_shear_snapshot_sha256": "2843eba9ce39e701f8b838437d58a53f3b71d6ffad9800311e137f971d9a1573",
+    "graph_q1_replay_complete": false,
+    "graph_sdr_replay_complete": false,
+    "represented_green_actions_serialized": false,
+    "classical_import_gate_passed": false,
+    "next_gate": "Conjugate the fixed split q1 and local SDR through these exact shear bytes, using the curved symmetrized-covariant-jet/PBW composition law wherever two positive-order operators meet; independently replay nilpotency, chain maps, homotopy and cyclicity before importing any represented Green action."
+  },
+  "strict_graph_q1_sdr_component_jets": {
+    "result_id": "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1",
+    "status": "GRAPH_Q1_SDR_AND_SUSPENSION_SERIALIZED_REPRESENTED_GREEN_ACTIONS_OPEN",
+    "carrier_dimension": 386,
+    "retained_endpoint_dimension": 30,
+    "contracted_dimension": 356,
+    "operator_tables": 27,
+    "split_operator_tables": 18,
+    "graph_attachment_tables": 9,
+    "combined_derivative_multiindices": 70,
+    "nonzero_rational_coefficients": 4374,
+    "maximum_order": 4,
+    "H_alg_nonzero_entries": 190,
+    "inclusion_nonzero_entries": 488,
+    "projection_nonzero_entries": 488,
+    "retained_projector_nonzero_entries": 1756,
+    "contracted_projector_nonzero_entries": 2082,
+    "homotopy_defects": 0,
+    "retract_defects": 0,
+    "side_condition_defects": 0,
+    "H_cyclicity_defects": 0,
+    "transported_suspension_entries": 394,
+    "transported_suspension_off_diagonal_entries": 8,
+    "transported_suspension_involution_defects": 0,
+    "old_diagonal_suspension_cyclicity_defects": 8,
+    "raw_graph_suspension_cyclicity_residuals": 32,
+    "raw_second_chain_relation_residuals": 16,
+    "PBW_reduced_cyclicity_defects": 0,
+    "graph_snapshot_sha256": "a7412124624e38dc0e737a2fdc186eea9b8a5a2f5d9d495f4c962586cede6ecd",
+    "represented_green_actions_serialized": false,
+    "classical_import_gate_passed": false,
+    "next_gate": "Declare the endpoint test/distribution spaces and serialize represented advanced/retarded endpoint actions with continuity, uniqueness, causal support and adjoint data; then compose them with this graph SDR and independently replay the full 386-row causal Green homotopy before Gate-A acceptance."
+  }
+}

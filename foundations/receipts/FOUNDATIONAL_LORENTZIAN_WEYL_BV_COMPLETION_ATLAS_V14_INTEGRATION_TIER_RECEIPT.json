@@ -1,0 +1,82 @@
+{
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V14_INTEGRATION_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V14",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Append-only V14 atlas projection of the exact strict 386-row graph-coordinate q1/SDR and transported suspension result into the researcher website and reverse-foundations paper.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.3,
+      "commands": [
+        "python3 -m py_compile foundations/build_lorentzian_weyl_bv_completion_atlas_v14.py foundations/check_lorentzian_weyl_bv_completion_atlas_v14.py foundations/verify_lorentzian_weyl_bv_completion_atlas_v14.py foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v14.py foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py paper/generate_21_reverse_foundations_claim_map.py paper/verify_21_reverse_foundations_claim_map.py paper/generate_21_reverse_foundations_appendices.py",
+        "python3 -m json.tool foundations/schema/foundational-lorentzian-weyl-bv-completion-atlas-v14.schema.json",
+        "python3 -m json.tool foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V14.json",
+        "git diff --check -- <explicit atlas/site/paper paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 8.0,
+      "commands": [
+        "python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v14.py --check",
+        "python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v14.py",
+        "python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v14.py",
+        "python3 -m unittest foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v14.py",
+        "python3 foundations/check_matrix_site_v2.py",
+        "python3 -m unittest foundations/tests/test_matrix_site.py",
+        "python3 paper/verify_21_reverse_foundations_claim_map.py",
+        "pdflatex -interaction=nonstopmode -halt-on-error -output-directory paper paper/21-reverse-foundations-of-physics.tex (two passes)"
+      ],
+      "checks": {
+        "atlas_cells_preserved": 77,
+        "atlas_mutation_tests": "8/8 PASS",
+        "site_status": "PASS",
+        "site_tests": "10/10 PASS",
+        "paper_claim_map": "PASS",
+        "paper_pdf_pages": 63,
+        "top_ranked_route": "STRICT_ENDPOINT_ANALYTIC_GREEN_ACTION"
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 78.49,
+      "commands": [
+        "python3 symbolic/verify_conformal_curvature_mapping_cylinder_kernel.py --guards",
+        "python3 symbolic/verify_conformal_prolonged_hybrid_algebraic_projector.py --guards",
+        "python3 quantum-weyl/classical_import/verify_strict_386_full_q1_component_jet_table.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_local_sdr_component_maps.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_canonical_shear_component_jets.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_graph_q1_sdr_component_jets.py",
+        "python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v14.py"
+      ],
+      "criterion": "V14 changes the public frontier using a new exact graph-coordinate consumer of the classical chain, so the transitive source and all direct consumers were replayed before integration."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze, theorem lifecycle promotion, release tag or shared core operator changed; Gate A and every quantum completion flag remain false."
+    }
+  },
+  "artifact_sha256": {
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V14.json": "6e2dc265eab02baa98fee5c87b96b5847c126f3f79afe762458fe2107a1ec3b6",
+    "foundations/reports/lorentzian-weyl-bv-completion-atlas-v14.md": "03676ef04fe92100634426ad821231e092bc4478307932bebb7302092a23ef1b",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "773382e994b7bcab8ba55dba0e177d49481a044c0179fa9db607da23139ef2bc",
+    "foundations/site/manifest.json": "c4710f2ed21cd092ec14195ee26ad91604506974fc142230c7375957f3d995e3",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "e25817691e0f438fb2ae32cc3dd51e750cfdc5ff3554fd0aebda59d744ab7170",
+    "paper/21-reverse-foundations-of-physics-appendices.tex": "b77160a79d354d685c3b1a1f50c922216045a39bffe589134659326560a268bd",
+    "paper/21-reverse-foundations-of-physics.pdf": "9a4d68ca1a1d7f7852f93fc7bd17a6a8a711fc374123879957a09d0276f9f8c5"
+  },
+  "advisory_shadow_rail": {
+    "command": "ci/science-forge-shadow.sh",
+    "exit_status": 0,
+    "bridge_audit": "FAIL_CLOSED: cached Forge binary revision differs from the current stdlib and the external bp2transformer bridge verifier could not import sympy",
+    "coverage_census": "DRIFT: 1771 certificates observed versus the 2026-07-19 baseline of 976",
+    "disposition": "Advisory findings are preserved as programme drift and do not promote or invalidate the scoped exact atlas integration."
+  },
+  "claim_boundary": "Atlas V14, the explorer and paper expose a certified finite graph-coordinate unary/SDR result and an analytic Green-action frontier. They do not assert represented Green actions, an accepted Gate-A snapshot, local D, q2 compatibility, a Hadamard state, positivity, renormalized products, QME restoration, residual transfer or a completed Lorentzian quantum theory."
+}

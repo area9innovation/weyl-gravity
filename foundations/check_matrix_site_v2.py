@@ -17,7 +17,7 @@ VIABILITY = ROOT / "foundations/site/viability.json"
 ASSEMBLIES = ROOT / "foundations/site/assemblies.json"
 CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V15.json"
 LADDER = ROOT / "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
-COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V13.json"
+COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V14.json"
 STATUSES = {"LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "REVIEWED_GAP", "NOT_MAPPED"}
 MIGRATIONS = {"EXACT_PARENT_TRANSFER", "CAPABILITY_QUALIFIED", "REVIEWED_OVERLAY", "REVIEWED_NO_TRANSFER", "REVIEWED_CHILD_GAP", "DIRECT_COORDINATE_REVIEW", "NOT_REVIEWED"}
 
@@ -160,7 +160,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     completion_flags = completion.get("claim_flags", {})
     if completion_flags.get("general_noncone_104_row_no_go") is not False or completion_flags.get("lorentzian_full_theory_certified") is not False:
         errors.append("Lorentzian completion fail-closed boundary")
-    if completion.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V13":
+    if completion.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V14":
         errors.append("Lorentzian completion atlas version")
     transport = completion.get("strict_causal_sign_transport", {})
     if transport.get("full_dimension") != 386 or transport.get("positive_signs") != 381 or transport.get("negative_signs") != 5 or transport.get("causal_stage_preserved") is not True:
@@ -235,7 +235,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("strict split local-SDR flags")
     if completion_flags.get("strict_386_canonical_shear_component_jets_serialized") is not True or completion_flags.get("strict_386_canonical_shear_inverse_replayed") is not True or completion_flags.get("strict_386_canonical_shear_bv_canonicality_replayed") is not True:
         errors.append("strict canonical-shear successor flags")
-    if completion_flags.get("strict_386_unshifted_graph_q1_snapshot_complete") is not False or completion_flags.get("strict_386_unshifted_graph_sdr_snapshot_complete") is not False or completion_flags.get("strict_386_represented_green_actions_serialized") is not False:
+    if completion_flags.get("strict_386_unshifted_graph_q1_snapshot_complete") is not True or completion_flags.get("strict_386_unshifted_graph_sdr_snapshot_complete") is not True or completion_flags.get("strict_386_graph_suspension_transported") is not True or completion_flags.get("strict_386_represented_green_actions_serialized") is not False:
         errors.append("strict split local-SDR successor firewall")
     canonical_shear = completion.get("strict_canonical_shear_component_jets", {})
     canonical_counts = (
@@ -250,6 +250,23 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("strict canonical-shear exact replay")
     if canonical_shear.get("graph_q1_replay_complete") is not False or canonical_shear.get("graph_sdr_replay_complete") is not False or canonical_shear.get("represented_green_actions_serialized") is not False or canonical_shear.get("classical_import_gate_passed") is not False:
         errors.append("strict canonical-shear graph/Green firewall")
+    graph_sdr = completion.get("strict_graph_q1_sdr_component_jets", {})
+    graph_counts = (
+        graph_sdr.get("carrier_dimension"), graph_sdr.get("operator_tables"),
+        graph_sdr.get("split_operator_tables"), graph_sdr.get("graph_attachment_tables"),
+        graph_sdr.get("combined_derivative_multiindices"), graph_sdr.get("nonzero_rational_coefficients"),
+        graph_sdr.get("maximum_order"), graph_sdr.get("H_alg_nonzero_entries"),
+        graph_sdr.get("inclusion_nonzero_entries"), graph_sdr.get("projection_nonzero_entries"),
+        graph_sdr.get("transported_suspension_entries"), graph_sdr.get("transported_suspension_off_diagonal_entries"),
+    )
+    if graph_counts != (386, 27, 18, 9, 70, 4374, 4, 190, 488, 488, 394, 8):
+        errors.append("strict graph q1/SDR component projection")
+    if any(graph_sdr.get(key) != 0 for key in ("homotopy_defects", "retract_defects", "side_condition_defects", "H_cyclicity_defects", "transported_suspension_involution_defects", "PBW_reduced_cyclicity_defects")):
+        errors.append("strict graph q1/SDR exact replay")
+    if graph_sdr.get("old_diagonal_suspension_cyclicity_defects") != 8 or graph_sdr.get("raw_graph_suspension_cyclicity_residuals") != 32 or graph_sdr.get("raw_second_chain_relation_residuals") != 16:
+        errors.append("strict graph suspension/PBW boundary")
+    if graph_sdr.get("represented_green_actions_serialized") is not False or graph_sdr.get("classical_import_gate_passed") is not False or completion.get("route_selection", [{}])[0].get("route") != "STRICT_ENDPOINT_ANALYTIC_GREEN_ACTION":
+        errors.append("strict graph analytic-Green frontier")
     if viability.get("source_atlas_digest") != data.get("canonical_digest") or viability.get("canonical_digest") != result.get("independent_checker", {}).get("expected_viability_digest"):
         errors.append("theory viability source/digest pin")
     if len(viability.get("profiles", [])) != 36 or len(viability.get("carrier_envelopes", [])) != 6:

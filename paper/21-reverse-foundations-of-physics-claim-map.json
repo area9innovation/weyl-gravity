@@ -876,7 +876,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "ecc513e1a670bfcaa3dc8b3ad41286d74cdf0d5efa2c38fa6421ee9a2a53af01"
+      "sha256": "773382e994b7bcab8ba55dba0e177d49481a044c0179fa9db607da23139ef2bc"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -998,6 +998,18 @@
       "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V13.json",
       "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V13",
       "sha256": "3411349bde982e864171153cab569df78e205380dbeca14faacd3dd022b78f5b"
+    },
+    "lorentzian_weyl_bv_completion_atlas_v14": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V14.json",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V14",
+      "sha256": "6e2dc265eab02baa98fee5c87b96b5847c126f3f79afe762458fe2107a1ec3b6"
     },
     "lorentzian_weyl_bv_completion_atlas_v4": {
       "dependency_tags": [
@@ -1165,6 +1177,16 @@
       "result_id": "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1",
       "sha256": "9b0e9da9e8838a0ade6e1f1214e16457e9a94af981d9d020c137d105f9e9c21e"
     },
+    "strict_386_graph_q1_sdr_component_jets": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1.json",
+      "result_id": "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1",
+      "sha256": "b805bd81b35f13325d938e93be91495e1d46aa5900fd168e55bdcde1afbfa8e2"
+    },
     "strict_386_local_sdr_component_maps": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -1232,10 +1254,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "ae59f4d8641a8e9ce6959f40c49e8857c665d0cae5d247e613fea85e069b9cc8"
+      "sha256": "98c3abc4229da069891007adb912531ac756c149437bcdbdce6f7395feaeffc0"
     }
   },
-  "canonical_digest": "877a878da55e48af1e64fc4bfe69b1113893d5721cedddc35fc95307c07d4451",
+  "canonical_digest": "d177b5f6d2944a4c95bc5f397954f2e06dacc93c648dbc83b323bb95643157e6",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -1409,14 +1431,15 @@
     "strict_386_full_q1_squared_zero_replayed": true,
     "strict_386_full_q1_suspended_cyclicity_replayed": true,
     "strict_386_full_suspended_green_adjoint_replayed": true,
+    "strict_386_graph_suspension_transported": true,
     "strict_386_local_d_certified": false,
     "strict_386_local_sdr_component_maps_serialized": true,
     "strict_386_local_sdr_cyclicity_replayed": true,
     "strict_386_local_sdr_identities_replayed": true,
     "strict_386_pairing_suspension_bridge_certified": true,
     "strict_386_represented_green_actions_serialized": false,
-    "strict_386_unshifted_graph_q1_snapshot_complete": false,
-    "strict_386_unshifted_graph_sdr_snapshot_complete": false,
+    "strict_386_unshifted_graph_q1_snapshot_complete": true,
+    "strict_386_unshifted_graph_sdr_snapshot_complete": true,
     "strict_minimal_bv_cyclicity_reconciled": true,
     "strict_pure_weyl_local_q1_q2_certified": true,
     "support_indexed_full_lf_topology_reconstructed": false,
@@ -1914,6 +1937,19 @@
       ],
       "statement": "On the same fixed 386-row Gate basis as q1 and the split SDR, the authoritative T_state, A_equation and B_identity attachment hashes are reconstructed exactly from endpoint graph maps and curved projections. The ordered 30+36 split makes all generalized-auxiliary attachment columns vanish. Gate transport and the fixed odd pairing determine three primal tables and three BV-forced partners. The flattened forward and inverse shears each contain seven off-diagonal tables and 1,321 nonzero rational coefficients through order three, including the genuine A(-Tsharp) and T(-Asharp) cross blocks. Both inverse directions, degree zero, and elementary BV canonicality replay with zero defects and no suppressed derivative/derivative composition. This certifies coordinate transport, not q1_graph, the graph SDR, represented Green actions, Gate A, local D, q2, Hadamard or QME.",
       "status": "EXACT_FIXED_BASIS_CANONICAL_SHEAR_WITH_GRAPH_GREEN_GATE_OPEN"
+    },
+    {
+      "authorities": [
+        "strict_386_graph_q1_sdr_component_jets",
+        "lorentzian_weyl_bv_completion_atlas_v14"
+      ],
+      "claim_id": "RF-38-STRICT-WEYL-GRAPH-Q1-SDR-COMPONENT-JETS",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "On the fixed 386-row strict pure-Weyl carrier, exact conjugation by the certified T/A/B shear and reduction by the pinned curved chain relations produce a graph-coordinate unary differential with 27 tables, 70 combined derivative multiindices and 4,374 nonzero rational coefficients through order four. The graph inclusion and projection each contain 488 coefficients, the two projectors 1,756 and 2,082, and the unchanged homotopy 190. Direct component replay gives q_graph H+H q_graph=P_alg, p_graph i_graph=I, the projector identities, normalized side conditions and H cyclicity with zero defects. The old diagonal suspension has eight graph-cyclicity defects; the transported 394-entry R_graph is an involution with eight off-diagonal entries. Its 32 raw cyclic residuals reduce to zero only under the pinned exact Ncurv A=B C relation whose raw residual has 16 entries. This closes finite graph-coordinate unary/SDR replay, not represented Green actions, Gate A, local D, q2, Hadamard or QME.",
+      "status": "EXACT_GRAPH_Q1_SDR_AND_TRANSPORTED_SUSPENSION_WITH_ANALYTIC_GREEN_GATE_OPEN"
     }
   ],
   "created": "2026-08-15",
@@ -2109,19 +2145,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "876c0582ac8c032ff06940df511eaae67c7bfe76b7acbfa03947da5a0e45a246",
+      "assembly_source_canonical_digest": "47bfb919687033f760dc620e3971b0e41f457f464ec4581ab44ecb9a36d237f6",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "ae59f4d8641a8e9ce6959f40c49e8857c665d0cae5d247e613fea85e069b9cc8",
+      "assembly_source_sha256": "98c3abc4229da069891007adb912531ac756c149437bcdbdce6f7395feaeffc0",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
-      "generator_sha256": "f984d8a1d2d0838ecd4e5b406bbad51b477721dbb2bdba0c5912dc5a0f3179ee",
+      "generator_sha256": "9e2bf5fa8942bc4c683b2911b71a66b000a66688d1ef47978fc07612a30c2b5c",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "428c2fd26aa88e62a67b629233b7f0fdb1c08b31bca3abb8495a6ffa0d23ac2d",
-      "source_canonical_digest": "dc9a51386a930e261398088ed95f8ffea70a8af83cc3a3959a49bbc40eb18c04",
+      "sha256": "b77160a79d354d685c3b1a1f50c922216045a39bffe589134659326560a268bd",
+      "source_canonical_digest": "19641f8f7bcdccc9c527948c7992e0a34da642121bf4efaa8dc75e08e9ebecfc",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "da0c5aea4c265a19044eed5e285e29f8c4785510ccc99b83de2975ac6ae91e32"
+      "source_sha256": "64a0242804189b8ba3bad511ca8c78134e0ae79d88133348e5126ee03eaee1a6"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "3973577ef8a3d0861411183b6be46e4428adc16e07ea56c7e218f292006dda7b"
+    "sha256": "911c1203d90fd20889eefac67829a256d773e73d7f0f99b6f589c66ed384c9c4"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

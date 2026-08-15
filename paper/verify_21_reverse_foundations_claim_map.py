@@ -112,6 +112,8 @@ def main() -> int:
     completion_atlas_v12 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v12"]["path"]).read_text())
     strict_386_canonical_shear = json.loads((ROOT / data["authorities"]["strict_386_canonical_shear_component_jets"]["path"]).read_text())
     completion_atlas_v13 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v13"]["path"]).read_text())
+    strict_386_graph_sdr = json.loads((ROOT / data["authorities"]["strict_386_graph_q1_sdr_component_jets"]["path"]).read_text())
+    completion_atlas_v14 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v14"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -404,6 +406,7 @@ def main() -> int:
         (35, "STRICT-WEYL-FULL-Q1-COMPONENT-SNAPSHOT"),
         (36, "STRICT-WEYL-SPLIT-LOCAL-SDR"),
         (37, "STRICT-WEYL-CANONICAL-SHEAR-COMPONENT-JETS"),
+        (38, "STRICT-WEYL-GRAPH-Q1-SDR-COMPONENT-JETS"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -426,8 +429,9 @@ def main() -> int:
     require(flags["strict_386_canonical_shear_component_jets_serialized"] is True, "strict canonical shear component jets missing")
     require(flags["strict_386_canonical_shear_inverse_replayed"] is True, "strict canonical shear inverse replay missing")
     require(flags["strict_386_canonical_shear_bv_canonicality_replayed"] is True, "strict canonical shear BV canonicality replay missing")
-    require(flags["strict_386_unshifted_graph_q1_snapshot_complete"] is False, "strict graph-coordinate q1 promoted")
-    require(flags["strict_386_unshifted_graph_sdr_snapshot_complete"] is False, "strict graph-coordinate SDR promoted")
+    require(flags["strict_386_unshifted_graph_q1_snapshot_complete"] is True, "strict graph-coordinate q1 snapshot missing")
+    require(flags["strict_386_unshifted_graph_sdr_snapshot_complete"] is True, "strict graph-coordinate SDR snapshot missing")
+    require(flags["strict_386_graph_suspension_transported"] is True, "strict graph suspension transport missing")
     require(flags["strict_386_represented_green_actions_serialized"] is False, "strict represented Green actions promoted")
     require(flags["strict_386_classical_import_gate_passed"] is False, "strict classical import gate promoted")
     require(flags["strict_386_all_operator_component_adjoints_replayed"] is False, "strict all-operator replay promoted")
@@ -541,6 +545,18 @@ def main() -> int:
     require(completion_atlas_v13["claim_flags"]["strict_386_canonical_shear_component_jets_serialized"] is True and completion_atlas_v13["claim_flags"]["strict_386_canonical_shear_inverse_replayed"] is True and completion_atlas_v13["claim_flags"]["strict_386_canonical_shear_bv_canonicality_replayed"] is True, "completion atlas V13 shear boundary drift")
     require(completion_atlas_v13["claim_flags"]["strict_386_unshifted_graph_q1_snapshot_complete"] is False and completion_atlas_v13["claim_flags"]["strict_386_unshifted_graph_sdr_snapshot_complete"] is False and completion_atlas_v13["claim_flags"]["strict_pure_weyl_classical_gate_passed"] is False and completion_atlas_v13["claim_flags"]["lorentzian_full_theory_certified"] is False, "completion atlas V13 promoted graph/Gate/quantum completion")
     require(len(completion_atlas_v13["route_selection"]) == 8 and completion_atlas_v13["route_selection"][0]["route"] == "STRICT_386_SPLIT_TO_GRAPH_SDR_REPLAY", "completion atlas V13 frontier ordering drift")
+    graph_counts = strict_386_graph_sdr["graph_q1_serialization"]["counts"]
+    require(graph_counts["operator_tables"] == 27 and graph_counts["graph_attachment_tables"] == 9 and graph_counts["combined_derivative_multiindices"] == 70 and graph_counts["nonzero_rational_coefficients"] == 4374, "strict graph q1 inventory drift")
+    graph_replay = strict_386_graph_sdr["exact_replay"]
+    require(graph_replay["qH_plus_Hq_defects"] == 0 and graph_replay["p_graph_i_graph_identity_defects"] == 0 and graph_replay["H_alg_graph_cyclicity_defects"] == 0 and graph_replay["R_graph_squared_defects"] == 0, "strict graph SDR direct replay drift")
+    require(graph_replay["untransported_diagonal_R_cyclicity_defects"] == 8 and graph_replay["transported_R_raw_parallel_cyclicity_residual_coefficients"] == 32 and graph_replay["raw_N_A_minus_B_C_parallel_residual_coefficients"] == 16 and graph_replay["transported_R_PBW_reduced_cyclicity_defects"] == 0, "strict graph suspension/PBW boundary drift")
+    require(strict_386_graph_sdr["claim_flags"]["STRICT_386_GRAPH_Q1_COMPONENT_JET_TABLE_SERIALIZED"] is True and strict_386_graph_sdr["claim_flags"]["STRICT_386_GRAPH_SDR_IDENTITIES_REPLAYED"] is True and strict_386_graph_sdr["claim_flags"]["STRICT_386_GRAPH_SUSPENSION_TRANSPORTED"] is True, "strict graph positive flags missing")
+    require(strict_386_graph_sdr["claim_flags"]["STRICT_386_REPRESENTED_GREEN_ACTIONS_SERIALIZED"] is False and strict_386_graph_sdr["claim_flags"]["CLASSICAL_IMPORT_GATE_PASSED"] is False and strict_386_graph_sdr["claim_flags"]["HADAMARD_STATE_CONSTRUCTED"] is False and strict_386_graph_sdr["claim_flags"]["QME_RESTORED"] is False, "strict graph result promoted downstream claims")
+    atlas_graph = completion_atlas_v14["strict_graph_q1_sdr_component_jets"]
+    require(atlas_graph["operator_tables"] == 27 and atlas_graph["nonzero_rational_coefficients"] == 4374 and atlas_graph["transported_suspension_entries"] == 394 and atlas_graph["old_diagonal_suspension_cyclicity_defects"] == 8, "completion atlas V14 omitted graph replay")
+    require(completion_atlas_v14["claim_flags"]["strict_386_unshifted_graph_q1_snapshot_complete"] is True and completion_atlas_v14["claim_flags"]["strict_386_unshifted_graph_sdr_snapshot_complete"] is True and completion_atlas_v14["claim_flags"]["strict_386_graph_suspension_transported"] is True, "completion atlas V14 graph flags missing")
+    require(completion_atlas_v14["claim_flags"]["strict_386_represented_green_actions_serialized"] is False and completion_atlas_v14["claim_flags"]["strict_pure_weyl_classical_gate_passed"] is False and completion_atlas_v14["claim_flags"]["lorentzian_full_theory_certified"] is False, "completion atlas V14 promoted Green/Gate/quantum completion")
+    require(len(completion_atlas_v14["route_selection"]) == 8 and completion_atlas_v14["route_selection"][0]["route"] == "STRICT_ENDPOINT_ANALYTIC_GREEN_ACTION", "completion atlas V14 frontier ordering drift")
     require(flags["static_atlas_appendix_generated"] is True, "static atlas appendix flag is not certified")
     require(flags["complete_evidence_register_generated"] is True, "complete evidence register flag is not certified")
     require(flags["complete_literature_register_generated"] is True, "complete literature register flag is not certified")

@@ -862,6 +862,20 @@ certificate: graph-coordinate `q1` and SDR replay, represented causal Green
 actions, Gate A, local `D`, `q2`, Hadamard and QME remain fail closed.  The
 rank-one successor is therefore the exact graph `q1`/SDR conjugation.
 
+The append-only
+[`V14 completion atlas`](reports/lorentzian-weyl-bv-completion-atlas-v14.md)
+closes that finite graph-coordinate successor.  It serializes 27 unary tables
+with 4,374 exact rational coefficients, the transported inclusion,
+projection, complementary projectors and 190-entry homotopy, and independently
+replays the direct retract identities with zero defects.  It also records a
+necessary convention change: the old diagonal suspension has eight exact
+graph-cyclicity defects, while the transported 394-entry `R_graph` is an
+involution with eight off-diagonal entries.  Its raw cyclic remainder is
+reduced only by the pinned curved `Ncurv A=B C` relation.  The first remaining
+gate is therefore analytic: represented advanced/retarded endpoint actions on
+declared test and distribution spaces.  Gate A, local `D`, `q2`, Hadamard and
+QME remain fail closed.
+
 ```bash
 python3 foundations/build_lorentzian_weyl_bv_completion_atlas.py --check
 python3 foundations/check_lorentzian_weyl_bv_completion_atlas.py
@@ -915,6 +929,10 @@ python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v13.py --check
 python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v13.py
 python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v13.py
 python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v13
+python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v14.py --check
+python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v14.py
+python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v14.py
+python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v14
 ```
 
 ## Lifecycle

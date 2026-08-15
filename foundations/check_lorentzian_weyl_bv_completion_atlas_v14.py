@@ -1,0 +1,243 @@
+#!/usr/bin/env python3
+"""Independent structural and claim-boundary checker for completion atlas V14."""
+
+from __future__ import annotations
+
+import hashlib
+import json
+from pathlib import Path
+from typing import Any
+
+
+ROOT = Path(__file__).resolve().parents[1]
+RESULT = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V14.json"
+PREDECESSOR = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V13.json"
+GRAPH = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1.json"
+STAGES = [f"S{i}_{name}" for i, name in enumerate((
+    "CLASSICAL_AUTHORITY", "OFF_SHELL_BV", "CAUSAL_GREEN", "NONLINEAR_CARTAN",
+    "HADAMARD_CCR", "BRST_WARD", "PHYSICAL_POSITIVITY", "RENORMALIZED_PRODUCTS",
+    "QME", "RESIDUAL_TRANSFER", "LORENTZIAN_CERTIFIED",
+))]
+BRANCHES = [
+    "STRICT_PURE_WEYL_386", "PURE_WEYL_BACH_FLAT_RANK310", "EINSTEIN_NARIAI_KS",
+    "BERGER_POSITIVE_CLOCK_54", "VACUUM_CYLINDER_REDUCED", "TAU_ADIC_COMPENSATOR",
+    "COMPLEX_COMPENSATOR_CHANGED_ACTION",
+]
+ROUTES = [
+    "STRICT_ENDPOINT_ANALYTIC_GREEN_ACTION", "STRICT_FULL_GREEN_COMPONENT_ACTION_REPLAY",
+    "STRICT_386_ACCEPTED_COMMON_SNAPSHOT", "STRICT_386_LOCAL_D",
+    "STRICT_386_Q2_GREEN_COMPATIBILITY", "DIRECT_SPACETIME_Q26_HADAMARD",
+    "BACH_FLAT_NONLINEAR_CARTAN", "GRAPH_SUSPENSION_CONSUMER_AUDIT",
+]
+
+
+def sha(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def digest(value: dict[str, Any]) -> str:
+    keys = (
+        "stages", "branches", "frontier_summary", "classical_import_reconciliation",
+        "strict_gate_a_progress", "strict_causal_sign_transport",
+        "strict_endpoint_q1_content_bridge", "strict_suspended_adjoint_bridge",
+        "strict_component_pairing_serialization", "strict_operator_portability",
+        "strict_full_q1_split_sign_gate", "strict_auxiliary_q_sign_repair",
+        "strict_full_q1_component_jet_table", "strict_local_sdr_component_maps",
+        "strict_canonical_shear_component_jets", "strict_graph_q1_sdr_component_jets",
+        "berger_h26_c26_decision_chain", "route_selection", "research_queue",
+    )
+    payload = json.dumps(
+        {key: value[key] for key in keys}, sort_keys=True,
+        separators=(",", ":"), ensure_ascii=False,
+    )
+    return hashlib.sha256(payload.encode()).hexdigest()
+
+
+def check(value: dict[str, Any] | None = None) -> list[str]:
+    value = json.loads(RESULT.read_text()) if value is None else value
+    previous, source = json.loads(PREDECESSOR.read_text()), json.loads(GRAPH.read_text())
+    errors: list[str] = []
+    if (
+        value.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V14"
+        or value.get("schema_version") != "foundational-lorentzian-weyl-bv-completion-atlas-v14"
+        or value.get("lifecycle") != "CLASSIFIED"
+    ):
+        errors.append("identity/lifecycle")
+    if [item.get("id") for item in value.get("stages", [])] != STAGES:
+        errors.append("stage axis identity/order")
+    if [item.get("id") for item in value.get("branches", [])] != BRANCHES:
+        errors.append("branch axis identity/order")
+
+    branches = {item.get("id"): item for item in value.get("branches", [])}
+    old_branches = {item.get("id"): item for item in previous.get("branches", [])}
+    for branch_id, item in branches.items():
+        if len(item.get("stages", [])) != 11:
+            errors.append("stage closure " + str(branch_id))
+        if branch_id != "STRICT_PURE_WEYL_386" and item != old_branches.get(branch_id):
+            errors.append("unlicensed branch mutation " + str(branch_id))
+    strict, old_strict = branches.get("STRICT_PURE_WEYL_386", {}), old_branches.get("STRICT_PURE_WEYL_386", {})
+    cells = {item.get("stage"): item for item in strict.get("stages", [])}
+    old_cells = {item.get("stage"): item for item in old_strict.get("stages", [])}
+    if strict.get("first_unclosed_gate") != "S0_CLASSICAL_AUTHORITY" or cells.get("S0_CLASSICAL_AUTHORITY", {}).get("status") != "FAIL_CLOSED":
+        errors.append("Gate-A firewall")
+    for stage_id in STAGES[1:]:
+        if cells.get(stage_id) != old_cells.get(stage_id):
+            errors.append("unlicensed strict stage mutation " + stage_id)
+    for key in set(old_strict) - {"stages", "next_decisive_object"}:
+        if strict.get(key) != old_strict.get(key):
+            errors.append("unlicensed strict branch mutation " + key)
+    expected_evidence = [*old_cells.get("S0_CLASSICAL_AUTHORITY", {}).get("evidence", []), source["result_id"]]
+    if cells.get("S0_CLASSICAL_AUTHORITY", {}).get("evidence") != expected_evidence:
+        errors.append("strict S0 evidence augmentation")
+
+    counts, maps, replay, flags = (
+        source["graph_q1_serialization"]["counts"], source["graph_sdr_component_maps"],
+        source["exact_replay"], source["claim_flags"],
+    )
+    expected_projection = {
+        "result_id": source["result_id"], "status": source["result_state"],
+        "carrier_dimension": 386, "retained_endpoint_dimension": 30, "contracted_dimension": 356,
+        "operator_tables": counts["operator_tables"], "split_operator_tables": counts["split_operator_tables"],
+        "graph_attachment_tables": counts["graph_attachment_tables"],
+        "combined_derivative_multiindices": counts["combined_derivative_multiindices"],
+        "nonzero_rational_coefficients": counts["nonzero_rational_coefficients"],
+        "maximum_order": source["graph_q1_serialization"]["maximum_order"],
+        "H_alg_nonzero_entries": maps["H_alg_graph"]["nonzero_coefficients"],
+        "inclusion_nonzero_entries": maps["i_end_graph"]["nonzero_coefficients"],
+        "projection_nonzero_entries": maps["p_end_graph"]["nonzero_coefficients"],
+        "retained_projector_nonzero_entries": maps["P_end_graph"]["nonzero_coefficients"],
+        "contracted_projector_nonzero_entries": maps["P_alg_graph"]["nonzero_coefficients"],
+        "homotopy_defects": replay["qH_plus_Hq_defects"],
+        "retract_defects": replay["p_graph_i_graph_identity_defects"],
+        "side_condition_defects": sum(replay[key] for key in (
+            "H_squared_defects", "H_i_graph_defects", "p_graph_H_defects",
+            "P_end_squared_defects", "P_alg_squared_defects", "P_end_P_alg_defects", "P_alg_P_end_defects",
+        )),
+        "H_cyclicity_defects": replay["H_alg_graph_cyclicity_defects"],
+        "transported_suspension_entries": maps["R_graph"]["nonzero_coefficients"],
+        "transported_suspension_off_diagonal_entries": 8,
+        "transported_suspension_involution_defects": replay["R_graph_squared_defects"],
+        "old_diagonal_suspension_cyclicity_defects": replay["untransported_diagonal_R_cyclicity_defects"],
+        "raw_graph_suspension_cyclicity_residuals": replay["transported_R_raw_parallel_cyclicity_residual_coefficients"],
+        "raw_second_chain_relation_residuals": replay["raw_N_A_minus_B_C_parallel_residual_coefficients"],
+        "PBW_reduced_cyclicity_defects": replay["transported_R_PBW_reduced_cyclicity_defects"],
+        "graph_snapshot_sha256": source["graph_snapshot"]["snapshot_sha256"],
+        "represented_green_actions_serialized": False,
+        "classical_import_gate_passed": False,
+        "next_gate": source["next_gate"],
+    }
+    if value.get("strict_graph_q1_sdr_component_jets") != expected_projection:
+        errors.append("graph q1/SDR projection")
+    if (
+        expected_projection["operator_tables"] != 27
+        or expected_projection["nonzero_rational_coefficients"] != 4374
+        or expected_projection["homotopy_defects"]
+        or expected_projection["retract_defects"]
+        or expected_projection["side_condition_defects"]
+        or expected_projection["H_cyclicity_defects"]
+        or expected_projection["transported_suspension_entries"] != 394
+        or expected_projection["old_diagonal_suspension_cyclicity_defects"] != 8
+        or expected_projection["raw_graph_suspension_cyclicity_residuals"] != 32
+        or expected_projection["raw_second_chain_relation_residuals"] != 16
+        or expected_projection["PBW_reduced_cyclicity_defects"]
+    ):
+        errors.append("graph exact inventory/replay")
+    progress = value.get("strict_gate_a_progress", {})
+    if (
+        progress.get("status") != "GRAPH_Q1_SDR_AND_SUSPENSION_SERIALIZED_REPRESENTED_GREEN_AND_COMMON_SNAPSHOT_REQUIRED"
+        or progress.get("graph_q1_sdr_component_jet_control") != expected_projection
+    ):
+        errors.append("Gate-A progress ledger")
+
+    inherited = (
+        "classical_import_reconciliation", "strict_causal_sign_transport",
+        "strict_endpoint_q1_content_bridge", "strict_suspended_adjoint_bridge",
+        "strict_component_pairing_serialization", "strict_operator_portability",
+        "strict_full_q1_split_sign_gate", "strict_auxiliary_q_sign_repair",
+        "strict_full_q1_component_jet_table", "strict_local_sdr_component_maps",
+        "strict_canonical_shear_component_jets", "berger_h26_c26_decision_chain",
+    )
+    for key in inherited:
+        if value.get(key) != previous.get(key):
+            errors.append("predecessor control mutation " + key)
+    if [item.get("route") for item in value.get("route_selection", [])] != ROUTES or [item.get("rank") for item in value.get("route_selection", [])] != list(range(1, 9)):
+        errors.append("graph-aware route ranking")
+    expected_queue = [
+        {"priority": item["rank"], "branch": item["branch"], "object": item["route"], "why": item["recommendation"]}
+        for item in value.get("route_selection", [])
+    ]
+    if value.get("research_queue") != expected_queue:
+        errors.append("research queue projection")
+
+    atlas_flags = value.get("claim_flags", {})
+    for key in (
+        "v13_preserved", "strict_386_unshifted_graph_q1_snapshot_complete",
+        "strict_386_unshifted_graph_sdr_snapshot_complete", "strict_386_graph_suspension_transported",
+    ):
+        if atlas_flags.get(key) is not True:
+            errors.append("missing positive flag " + key)
+    for key in (
+        "strict_386_represented_green_actions_serialized", "strict_pure_weyl_classical_gate_passed",
+        "strict_386_local_d_certified", "strict_386_q2_green_compatibility_certified",
+        "lorentzian_full_theory_certified",
+    ):
+        if atlas_flags.get(key) is not False:
+            errors.append("claim promotion " + key)
+    for key in (
+        "STRICT_386_GRAPH_Q1_COMPONENT_JET_TABLE_SERIALIZED", "STRICT_386_GRAPH_Q1_SQUARED_ZERO_REPLAYED",
+        "STRICT_386_GRAPH_SDR_COMPONENT_MAPS_SERIALIZED", "STRICT_386_GRAPH_SDR_IDENTITIES_REPLAYED",
+        "STRICT_386_GRAPH_SDR_CYCLICITY_REPLAYED", "STRICT_386_GRAPH_SUSPENSION_TRANSPORTED",
+    ):
+        if flags.get(key) is not True:
+            errors.append("source positive flag " + key)
+    for key in (
+        "STRICT_386_REPRESENTED_GREEN_ACTIONS_SERIALIZED", "CLASSICAL_IMPORT_GATE_PASSED",
+        "HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED", "LORENTZIAN_QUANTUM_THEORY",
+    ):
+        if flags.get(key) is not False:
+            errors.append("source downstream promotion " + key)
+
+    expected_predecessor = {
+        "result_id": previous["result_id"], "path": str(PREDECESSOR.relative_to(ROOT)),
+        "sha256": sha(PREDECESSOR), "preserved": True,
+    }
+    if value.get("predecessor") != expected_predecessor:
+        errors.append("predecessor")
+    expected_inputs = [
+        *previous["provenance"]["inputs"],
+        {"path": str(PREDECESSOR.relative_to(ROOT)), "sha256": sha(PREDECESSOR), "role": "immutable V13 atlas predecessor"},
+        {"path": str(GRAPH.relative_to(ROOT)), "sha256": sha(GRAPH), "role": "exact graph-coordinate q1, SDR and transported suspension component jets"},
+    ]
+    if value.get("provenance", {}).get("inputs") != expected_inputs:
+        errors.append("append-only provenance")
+    historical = {
+        "quantum-weyl/classical_import/certificates/STRICT_386_AUXILIARY_Q_SIGN_REPAIR_V1.json",
+        "quantum-weyl/classical_import/certificates/STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1.json",
+        "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+    }
+    for item in expected_inputs:
+        path = ROOT / item["path"]
+        if item["path"] in historical:
+            if len(item["sha256"]) != 64:
+                errors.append("historical repair provenance")
+        elif not path.is_file() or sha(path) != item["sha256"]:
+            errors.append("provenance " + item["path"])
+    if digest(value) != value.get("independent_checker", {}).get("expected_digest"):
+        errors.append("canonical digest")
+    return errors
+
+
+def main() -> int:
+    errors = check()
+    print("FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V14: " + ("PASS" if not errors else "FAIL"))
+    for error in errors:
+        print("  - " + error)
+    if not errors:
+        print("  - 77 cells preserved; only strict S0 receives graph q1/SDR evidence")
+        print("  - exact graph retract and transported suspension are independently projected")
+        print("  - represented Green actions, Gate A and every quantum lifecycle remain fail closed")
+    return bool(errors)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
