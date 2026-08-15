@@ -1,0 +1,201 @@
+{
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_ANNEALED_RESPONSE_ONE_LOOP_V1",
+  "schema_version": "reverse-physics-bt-euclidean-annealed-response-one-loop-v1",
+  "created": "2026-08-16",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "result_kind": "exact finite-volume full-Gibbs annealed signed-response one-loop coefficient and all-volume Fourier reduction",
+  "question": "Do actual Gibbs background fluctuations repair the negative weak-coupling vacuum coefficient beta_vac at the first nontrivial order?",
+  "answer": "Not completely. Expanding the exact conditional mean and the actual background marginal shows beta_L(lambda)=b_(2,L)*lambda^2+O_L(lambda^4). The order-lambda marginal reweighting drops out by translation and constant-shift symmetry. The surviving local Gaussian/Wick jet has an exact hypercubic Fourier numerator P. On the 6^4 torus its algebraic sum is b_(2,6)=-849547889/1849425177600<0. Thus annealing cancels most, but not all, of the negative vacuum defect at one loop. The exact all-volume formula and its Brillouin-zone limit are reduced below; a rigorous sign bound for that limit and a nonperturbative H^-1 estimate remain open.",
+  "corrected_distance_two_response": {
+    "axial_path": "D_y M_o=-(exp(psi_y-2*psi_v)/lambda^2)*Cov_q(z,exp(z)), with v the unique intermediate site",
+    "mixed_path": "sum the two coefficients exp(psi_y-2*psi_v) over the two intermediate sites",
+    "sign": "each coefficient and Cov_q(z,exp(z)) are strictly positive, so every distance-two response is negative"
+  },
+  "conditional_expansion": {
+    "scaled_field": "psi=lambda*phi",
+    "action": "S_lambda=S0+lambda*S1+lambda^2*S2+O(lambda^3)",
+    "residual_jets": "A=sum d, B=sum d^2, C=sum d^3; S1=(1/2)sum A*B and S2=sum(B^2/8+A*C/6)",
+    "free_conditional_precision": 72,
+    "free_conditional_variance": {
+      "numerator": 1,
+      "denominator": 72
+    },
+    "free_center_terms": 40,
+    "surviving_component_term_counts": {
+      "p1": 820,
+      "p2": 40,
+      "p3": 1,
+      "q1": 11480,
+      "q3": 40
+    },
+    "conditional_mean_coefficients": [
+      "m1=-E_u[u*S1]",
+      "m2=(1/2)E_u[u*S1^2]-E_u[u*S2]-E_u[u*S1]*E_u[S1]"
+    ],
+    "annealed_reweighting_cancellation": "D m1 is linear and E_0[phi_j*S1]=sum_i C_ji E_0[partial_i S1]=0 because translation makes E_0[partial_i S1] site-independent while constant-shift invariance makes its site sum zero",
+    "evenness": "S_(-lambda)(phi)=S_lambda(-phi), so beta_L is even in lambda and the next remainder is O_L(lambda^4)"
+  },
+  "one_loop_symbol": {
+    "variables": "x_mu=2*(1-cos(k_mu)), omega=e1=sum_mu x_mu, e2=sum_(mu<nu)x_mu*x_nu",
+    "P": "e1/24-5*e1^2/288+e2/144+5*e1^3/1296+5*e1*e2/1728-5*e1^4/31104-13*e1^2*e2/31104",
+    "vacuum_term": {
+      "numerator": -43,
+      "denominator": 5184
+    },
+    "covariance_kernel_terms": 161,
+    "covariance_kernel_sum": {
+      "numerator": 0,
+      "denominator": 1
+    },
+    "derived_x_monomials": 69,
+    "finite_volume_formula": "b_(2,L)=-43/5184+L^-4*sum_(k in (2*pi/L)Z_L^4, k!=0) P(x(k))/omega(k)^2, for nondegenerate L>=5"
+  },
+  "exact_l6_decision": {
+    "lattice": "periodic 6^4",
+    "one_axis_x_values": [
+      0,
+      1,
+      3,
+      4,
+      3,
+      1
+    ],
+    "coefficient": {
+      "numerator": -849547889,
+      "denominator": 1849425177600
+    },
+    "decimal_for_orientation_only": -0.00045935780440842634,
+    "sign": "STRICTLY_NEGATIVE",
+    "analytic_consequence": "there exists epsilon_6>0 such that beta_6(lambda)<0 for 0<|lambda|<epsilon_6"
+  },
+  "binary64_volume_diagnostic": {
+    "evidence_type": "NUMERICAL_FINITE_VOLUME_OBSERVED",
+    "rows": [
+      {
+        "length": 5,
+        "binary64_b2": -0.0005271605828564493
+      },
+      {
+        "length": 6,
+        "binary64_b2": -0.00045935780440849346
+      },
+      {
+        "length": 8,
+        "binary64_b2": -0.00039286791666969315
+      },
+      {
+        "length": 12,
+        "binary64_b2": -0.00034438539830821194
+      },
+      {
+        "length": 16,
+        "binary64_b2": -0.00032703583650101585
+      }
+    ],
+    "interpretation": "the exact formula is negative on every displayed volume and approaches a small negative value; these floating evaluations do not certify the large-volume sign"
+  },
+  "large_volume_reduction": {
+    "convergence": "P(x)/omega^2=O(|k|^-2) near k=0 and is integrable in four dimensions, so Riemann sums converge to the Brillouin-zone integral",
+    "definitions": [
+      "f(t)=exp(-2*t)*I_0(2*t)",
+      "W4=integral_0^infinity f(t)^4 dt",
+      "I4=integral_0^infinity f(t)^2*f'(t)^2 dt"
+    ],
+    "integration_by_parts": "the continuum Brillouin average of e2/omega^2 equals 2*W4, while the average of e2/omega equals 6*I4",
+    "limit_formula": "b_(2,infinity)=-85/5184+W4/18+5*I4/288",
+    "sign_status": "OPEN_PENDING_RIGOROUS_WATSON_BESSEL_INTERVAL"
+  },
+  "method_disposition": {
+    "pointwise_signed_response_contraction": "OBSTRUCTED_PREDECESSOR",
+    "annealed_beta_nonnegative_at_all_finite_volumes": "REFUTED_AT_ONE_LOOP_ON_L6",
+    "large_volume_annealed_beta_sign": "EXACT_INTEGRAL_REDUCTION_SIGN_OPEN",
+    "nonperturbative_annealed_response": "OPEN",
+    "block_or_multiscale_signed_response": "OPEN",
+    "volume_uniform_global_poincare_or_witten": "OPEN",
+    "interacting_h_minus_one_bound": "OPEN",
+    "continuum_measure": "NOT_ESTABLISHED",
+    "ordinary_os_reconstruction": "OBSTRUCTED_AT_FINITE_VOLUME_BY_PREDECESSOR",
+    "born_rule": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED"
+  },
+  "missing_object_ledger": [
+    "a rigorous upper interval for W4/18+5*I4/288 deciding the large-volume sign",
+    "uniform control of higher weak-coupling coefficients or a nonperturbative block-response replacement",
+    "a theorem connecting any surviving response estimate to the normalized lowest-mode and interacting H^-1 upper bound"
+  ],
+  "next_gate": "Certify rational upper bounds W4<31/200 and I4<54/125 (or any bounds strong enough for the displayed limit formula), using positive return-walk/Bessel series with an explicit tail. If the resulting b_(2,infinity) is negative, close single-site annealed signed contraction as a volume-uniform route and move to block conditional response or the direct score/Witten programme.",
+  "does_not_establish": [
+    "a negative beta_L at lambda=0.4 or at arbitrary coupling",
+    "a negative large-volume one-loop coefficient before the Watson/Bessel interval is certified",
+    "instability or a negative spectral gap for continuous-time heat-bath dynamics",
+    "failure of block conditioning, direct score estimates, or every Witten method",
+    "the normalized lowest-mode or interacting Gibbs H^-1 bound or its failure",
+    "an interacting continuum measure or ordinary OS reconstruction",
+    "a new physical dimension, Born rule, Krein reconstruction, or anything LORENTZIAN-CAUSAL"
+  ],
+  "provenance": {
+    "repository_base_commit": "f200473094f19981ad41566270c1fc7b4abbc20b",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_SIGNED_RESPONSE_AXIAL_GATE_V1.json",
+        "sha256": "e59f50430b812ac61fc734e0e8bc67e9148768a87609376adced04d76bf64a48"
+      }
+    ],
+    "arithmetic": "exact Python Fraction sparse conditional jets, centered Gaussian moments, Laurent/hypercubic symmetrization, and an exact rational 6^4 Fourier sum; displayed multi-volume diagnostics alone use binary64"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_annealed_response_one_loop.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_annealed_response_one_loop.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_annealed_response_one_loop"
+  ],
+  "tier_receipt": {
+    "tier_0": "Python compilation, strict JSON/schema parsing, exact input hashes, scoped diff check, and staged-diff inspection required",
+    "tier_1": "producer replay, independent symbolic verifier, and focused mutation tests required",
+    "tier_2": "the corrected signed-response predecessor is replayed; no shared operator or claimed continuum theorem changes",
+    "tier_3": "not applicable: this computes a finite-volume perturbative method coefficient but does not promote the interacting H^-1, continuum, freeze, release, or Lorentzian lifecycle",
+    "memory_policy": "all Python commands run sequentially under a 500000 KiB virtual-memory ceiling; Go uses GOMEMLIMIT=300MiB and GOGC=50",
+    "elapsed_seconds_and_peak_kib": {
+      "producer_check": "2.96 s, 36344 KiB",
+      "independent_verifier": "0.42 s, 30480 KiB",
+      "unit_tests": "5.68 s, 45276 KiB",
+      "corrected_predecessor_producer": "0.03 s, 21020 KiB",
+      "corrected_predecessor_verifier": "0.09 s, 30524 KiB",
+      "corrected_predecessor_tests": "0.12 s, 30884 KiB"
+    },
+    "repository_audits": {
+      "planning_import": "PASS: 1697 nodes, 0 invalid items, 0 malformed events; 6.63 s, 183084 KiB",
+      "science_forge_shadow": "not run: the earlier memory-capped external-indexing abort remains unresolved; this skip is not a pass"
+    }
+  },
+  "checks": {
+    "ok": true,
+    "passed": 14,
+    "total": 14,
+    "failures": [],
+    "details": {
+      "free_center_has_40_terms": true,
+      "free_center_coefficients_sum_to_one": true,
+      "surviving_jet_term_counts": true,
+      "vacuum_coefficient_is_minus_43_over_5184": true,
+      "covariance_kernel_has_161_terms": true,
+      "covariance_kernel_kills_constant_mode": true,
+      "conditional_wick_symbol_matches_elementary_formula": true,
+      "elementary_symbol_has_69_monomials": true,
+      "l6_coefficient_exact_value": true,
+      "l6_coefficient_strictly_negative": true,
+      "diagnostics_are_negative": true,
+      "large_volume_sign_remains_uncertified": true,
+      "interacting_h_minus_one_remains_open": true,
+      "no_born_krein_or_lorentzian_promotion": true
+    }
+  },
+  "report": "reverse_physics/reports/bt-euclidean-annealed-response-one-loop.md",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-annealed-response-one-loop-v1.schema.json",
+  "verifier": "reverse_physics/verify_bt_euclidean_annealed_response_one_loop.py"
+}

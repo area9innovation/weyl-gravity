@@ -17,8 +17,8 @@
     "range": "D_y M_o=0 when graph distance(o,y)>2",
     "shift_equivariance": "M_o(xi+c*1)=M_o(xi)+c, hence sum_(y!=o) D_y M_o=1",
     "strict_covariance_sign": "Cov_q(z,exp(z))>0 because z and exp(z) are strictly increasing under a nondegenerate positive density",
-    "axial_distance_two": "D_(o+2e) M_o=-(t_(o+e,o)*t_(o+e,o+2e)/lambda^2)*Cov_q(z,exp(z))<0",
-    "mixed_distance_two": "D_(o+e+f) M_o is the negative sum of the two positive path products times Cov_q(z,exp(z))/lambda^2"
+    "axial_distance_two": "D_y M_o=-(exp(psi_y-2*psi_v)/lambda^2)*Cov_q(z,exp(z))<0 for y=o+2e and v=o+e",
+    "mixed_distance_two": "D_y M_o is minus Cov_q(z,exp(z))/lambda^2 times the sum of exp(psi_y-2*psi_v) over the two intermediate sites"
   },
   "annealed_axial_symbol": {
     "averaging": "n_L,a_L,m_L are full-Gibbs expectations of D_y M_o on nearest, axial-distance-two, and mixed-distance-two hypercubic orbits",

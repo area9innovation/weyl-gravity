@@ -182,7 +182,8 @@ def verify(path: str) -> bool:
     response = certificate["conditional_response"]
     checks["distance_two_path_signs"] = (
         "<0" in response["axial_distance_two"]
-        and "negative sum of the two positive path products" in response["mixed_distance_two"]
+        and "exp(psi_y-2*psi_v)" in response["axial_distance_two"]
+        and "two intermediate sites" in response["mixed_distance_two"]
         and "Cov_q(z,exp(z))>0" in response["strict_covariance_sign"]
     )
     symbol = certificate["annealed_axial_symbol"]

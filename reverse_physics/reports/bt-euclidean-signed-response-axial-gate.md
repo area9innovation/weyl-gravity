@@ -67,19 +67,23 @@ For an axial endpoint \(y=o+2e\), only the residual at the intermediate site
 coordinate,
 
 \[
- D_{o+2e}M_o
- =-\frac{t_{o+e,o}t_{o+e,o+2e}}{\lambda^2}
-   \operatorname{Cov}_{q_\xi}(z,e^z)<0.
+ D_yM_o
+ =-\frac{e^{\psi_y-2\psi_v}}{\lambda^2}
+   \operatorname{Cov}_{q_\xi}(z,e^z)<0,
+ \qquad y=o+2e,\quad v=o+e.
 \]
 
-Both transfer factors are positive. The covariance is strictly positive
+The off-fiber path coefficient is positive. Equivalently, the varying
+Hessian path weight is
+\(t_{v,o}t_{v,y}=e^{z+\psi_y-2\psi_v}\); its factor \(e^z\) stays inside
+the covariance. The covariance is strictly positive
 because \(z\) and \(e^z\) are strictly increasing under a nondegenerate
 positive density.
 
 A mixed endpoint \(o+e+f\), with \(e,f\) in distinct axes, has two
-intermediate paths. Its derivative is the negative sum of the two positive
-path products times the same strictly positive covariance. It is also
-strictly negative.
+intermediate sites. Its derivative is minus the same strictly positive
+covariance divided by \(\lambda^2\), times the sum of the two positive
+off-fiber coefficients \(e^{\psi_y-2\psi_v}\). It is also strictly negative.
 
 ## Symmetry reduction of the annealed kernel
 

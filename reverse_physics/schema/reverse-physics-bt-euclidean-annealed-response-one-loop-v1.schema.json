@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-annealed-response-one-loop-v1.schema.json",
+  "title": "BT Euclidean annealed signed-response one-loop certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "created",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "corrected_distance_two_response",
+    "conditional_expansion",
+    "one_loop_symbol",
+    "exact_l6_decision",
+    "binary64_volume_diagnostic",
+    "large_volume_reduction",
+    "method_disposition",
+    "missing_object_ledger",
+    "next_gate",
+    "does_not_establish",
+    "provenance",
+    "verification_commands",
+    "tier_receipt",
+    "checks",
+    "report",
+    "schema",
+    "verifier"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EUCLIDEAN_ANNEALED_RESPONSE_ONE_LOOP_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-euclidean-annealed-response-one-loop-v1"
+    },
+    "created": {"const": "2026-08-16"},
+    "dependency_tags": {
+      "type": "array",
+      "minItems": 3,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "LOCAL-ALGEBRAIC",
+          "EUCLIDEAN-SPECTRAL",
+          "REDUCED-MODE",
+          "LORENTZIAN-CAUSAL"
+        ]
+      },
+      "not": {"contains": {"const": "LORENTZIAN-CAUSAL"}}
+    },
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"type": "string", "minLength": 20},
+    "question": {"type": "string", "minLength": 20},
+    "answer": {"type": "string", "minLength": 100},
+    "corrected_distance_two_response": {"type": "object"},
+    "conditional_expansion": {"type": "object"},
+    "one_loop_symbol": {
+      "type": "object",
+      "required": [
+        "variables",
+        "P",
+        "vacuum_term",
+        "covariance_kernel_terms",
+        "covariance_kernel_sum",
+        "derived_x_monomials",
+        "finite_volume_formula"
+      ]
+    },
+    "exact_l6_decision": {
+      "type": "object",
+      "required": [
+        "lattice",
+        "one_axis_x_values",
+        "coefficient",
+        "decimal_for_orientation_only",
+        "sign",
+        "analytic_consequence"
+      ],
+      "properties": {
+        "lattice": {"const": "periodic 6^4"},
+        "one_axis_x_values": {
+          "const": [0, 1, 3, 4, 3, 1]
+        },
+        "coefficient": {"$ref": "#/$defs/fraction"},
+        "decimal_for_orientation_only": {"type": "number"},
+        "sign": {"const": "STRICTLY_NEGATIVE"},
+        "analytic_consequence": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "binary64_volume_diagnostic": {"type": "object"},
+    "large_volume_reduction": {"type": "object"},
+    "method_disposition": {"type": "object"},
+    "missing_object_ledger": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string"}
+    },
+    "next_gate": {"type": "string", "minLength": 80},
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"type": "string"}
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["repository_base_commit", "inputs", "arithmetic"]
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string"}
+    },
+    "tier_receipt": {"type": "object"},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"]
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-euclidean-annealed-response-one-loop.md"
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-euclidean-annealed-response-one-loop-v1.schema.json"
+    },
+    "verifier": {
+      "const": "reverse_physics/verify_bt_euclidean_annealed_response_one_loop.py"
+    }
+  },
+  "$defs": {
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    }
+  }
+}
