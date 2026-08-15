@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-flux-corrector-pointwise-energy-no-go-v1.schema.json",
+  "title": "BT Euclidean flux-corrector pointwise-energy no-go V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "created", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "localized_slab_family", "cell_and_scaling_data", "fourier_bounds", "diverging_ratios", "method_disposition", "does_not_establish", "missing_object_ledger", "next_gate", "checks", "provenance", "schema", "report", "independent_verifier", "verification_commands"],
+  "$defs": {
+    "rational": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "text": {"type": "string", "minLength": 1},
+    "input": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_FLUX_CORRECTOR_POINTWISE_ENERGY_NO_GO_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-flux-corrector-pointwise-energy-no-go-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "POINTWISE_CORRECTOR_ENERGY_ROUTE_OBSTRUCTED_STATISTICAL_GATE_OPEN"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "localized_slab_family": {"type": "object", "additionalProperties": false, "required": ["scope", "lowest_momentum", "positive_field", "exponent_definition", "exponent_matrix_time_by_space", "seam_proof", "slice_proof", "active_cell_multiplier", "status"], "properties": {"scope": {"$ref": "#/$defs/text"}, "lowest_momentum": {"$ref": "#/$defs/text"}, "positive_field": {"$ref": "#/$defs/text"}, "exponent_definition": {"$ref": "#/$defs/text"}, "exponent_matrix_time_by_space": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer"}}}, "seam_proof": {"$ref": "#/$defs/text"}, "slice_proof": {"$ref": "#/$defs/text"}, "active_cell_multiplier": {"const": "(L/4)*L^2=L^3/4"}, "status": {"const": "EXACT_E_P_PERP_LOCALIZED_SLAB_SEQUENCE"}}},
+    "cell_and_scaling_data": {"type": "object", "additionalProperties": false, "required": ["forward_time_current_row_sums_at_t_0_1_2_3_L_minus_1", "weighted_potential_row_sums", "action_per_spatial_period_and_inert_site", "periodic_cell_weighted_dirichlet_energy_per_spatial_period_and_inert_site", "split_seam_weighted_dirichlet_correction_per_spatial_period_and_inert_site", "slab_weighted_dirichlet_energy_per_spatial_period_and_inert_site", "full_action", "full_weighted_dirichlet_energy", "status"], "properties": {"forward_time_current_row_sums_at_t_0_1_2_3_L_minus_1": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/rational"}}, "weighted_potential_row_sums": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/rational"}}, "action_per_spatial_period_and_inert_site": {"$ref": "#/$defs/rational"}, "periodic_cell_weighted_dirichlet_energy_per_spatial_period_and_inert_site": {"$ref": "#/$defs/rational"}, "split_seam_weighted_dirichlet_correction_per_spatial_period_and_inert_site": {"$ref": "#/$defs/rational"}, "slab_weighted_dirichlet_energy_per_spatial_period_and_inert_site": {"$ref": "#/$defs/rational"}, "full_action": {"$ref": "#/$defs/text"}, "full_weighted_dirichlet_energy": {"$ref": "#/$defs/text"}, "status": {"const": "EXACT_RATIONAL_SCALING"}}},
+    "fourier_bounds": {"type": "object", "additionalProperties": {"type": "string"}, "required": ["convention", "current_polynomial", "current_lower_bound", "potential_polynomial", "potential_upper_bound", "corrector_identity", "elementary_bounds", "corrector_intermediate_lower_bound", "corrector_large_L_lower_bound", "status"], "properties": {"status": {"const": "RIGOROUS_ELEMENTARY_FOURIER_BOUNDS"}}},
+    "diverging_ratios": {"type": "object", "additionalProperties": false, "required": ["volume", "action_ratio", "action_ratio_linear_coefficient", "dirichlet_ratio", "dirichlet_ratio_linear_coefficient", "combined_ratio", "combined_ratio_linear_coefficient", "conclusion", "status"], "properties": {"volume": {"const": "N=L^4"}, "action_ratio": {"$ref": "#/$defs/text"}, "action_ratio_linear_coefficient": {"$ref": "#/$defs/rational"}, "dirichlet_ratio": {"$ref": "#/$defs/text"}, "dirichlet_ratio_linear_coefficient": {"$ref": "#/$defs/rational"}, "combined_ratio": {"$ref": "#/$defs/text"}, "combined_ratio_linear_coefficient": {"$ref": "#/$defs/rational"}, "conclusion": {"$ref": "#/$defs/text"}, "status": {"const": "DIVERGES_AT_LEAST_LINEARLY_ON_L_IN_4N"}}},
+    "method_disposition": {"type": "object", "minProperties": 14, "additionalProperties": {"type": "string", "minLength": 1}},
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {"type": "object", "minProperties": 17, "additionalProperties": {"const": true}},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["repository_base_commit", "inputs", "exact_arithmetic", "analytic_arithmetic", "assumptions"], "properties": {"repository_base_commit": {"const": "07c96481526ef61fd32501005059c3cef68bfaed"}, "inputs": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"$ref": "#/$defs/input"}}, "exact_arithmetic": {"$ref": "#/$defs/text"}, "analytic_arithmetic": {"$ref": "#/$defs/text"}, "assumptions": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}}}},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-flux-corrector-pointwise-energy-no-go-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-flux-corrector-pointwise-energy-no-go.md"},
+    "independent_verifier": {"const": "reverse_physics/verify_bt_euclidean_flux_corrector_pointwise_energy_no_go.py"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}}
+  }
+}

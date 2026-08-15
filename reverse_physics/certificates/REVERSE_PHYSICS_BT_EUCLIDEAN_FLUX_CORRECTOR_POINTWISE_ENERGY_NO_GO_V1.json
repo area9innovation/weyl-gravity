@@ -1,0 +1,218 @@
+{
+  "answer": "No, even after allowing an extra factor of the volume N. A localized time slab built from the V2 slice-valid cell lies in E_p^perp on every L^4 torus with 4 dividing L. Its action and weighted Dirichlet energy are O(L^3), but its lowest axial corrector coefficient is at least 3L^3/16 for L>=300. Therefore |Khat_1(p)|^2/[N*omega_p*A] and |Khat_1(p)|^2/[N*omega_p*E_dir] both grow at least linearly in L. This obstructs deterministic energy-only proofs, not the Gibbs expectation: a successful theorem must retain the statistical rarity and correlations of these slab environments.",
+  "cell_and_scaling_data": {
+    "action_per_spatial_period_and_inert_site": {
+      "denominator": 32,
+      "numerator": 837
+    },
+    "forward_time_current_row_sums_at_t_0_1_2_3_L_minus_1": [
+      {
+        "denominator": 8,
+        "numerator": -69
+      },
+      {
+        "denominator": 8,
+        "numerator": 15
+      },
+      {
+        "denominator": 4,
+        "numerator": 21
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": -1
+      }
+    ],
+    "full_action": "A_L=(837/128)*L^3",
+    "full_weighted_dirichlet_energy": "E_dir,L=(290423/1024)*L^3",
+    "periodic_cell_weighted_dirichlet_energy_per_spatial_period_and_inert_site": {
+      "denominator": 256,
+      "numerator": 290295
+    },
+    "slab_weighted_dirichlet_energy_per_spatial_period_and_inert_site": {
+      "denominator": 256,
+      "numerator": 290423
+    },
+    "split_seam_weighted_dirichlet_correction_per_spatial_period_and_inert_site": {
+      "denominator": 2,
+      "numerator": 1
+    },
+    "status": "EXACT_RATIONAL_SCALING",
+    "weighted_potential_row_sums": [
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 16,
+        "numerator": 335
+      },
+      {
+        "denominator": 2,
+        "numerator": 27
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      }
+    ]
+  },
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_FLUX_CORRECTOR_POINTWISE_ENERGY_NO_GO_V1",
+  "checks": {
+    "L_at_least_300_yields_corrector_lower_bound": true,
+    "action_ratio_coefficient_is_exact": true,
+    "action_scaling_is_837_L_cubed_over_128": true,
+    "actual_Gibbs_corrector_bound_remains_open": true,
+    "actual_current_susceptibility_remains_open": true,
+    "combined_ratio_coefficient_is_exact": true,
+    "current_polynomial_real_part_gives_uniform_lower_bound": true,
+    "current_rows_reconstructed": true,
+    "dalzell_polynomial_identity_proves_pi_below_22_over_7": true,
+    "energy_ratio_coefficient_is_exact": true,
+    "energy_scaling_is_290423_L_cubed_over_1024": true,
+    "no_continuum_born_krein_or_lorentzian_promotion": true,
+    "periodic_cell_split_seam_correction_is_one_half": true,
+    "pi_upper_bound_yields_corrector_error_891_L_squared_over_16": true,
+    "pointwise_action_route_is_obstructed_even_with_N_loss": true,
+    "pointwise_dirichlet_route_is_obstructed_even_with_N_loss": true,
+    "potential_polynomial_triangle_bound_is_567": true,
+    "potential_rows_reconstructed": true,
+    "slice_orthogonality_is_rowwise_exact": true
+  },
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "diverging_ratios": {
+    "action_ratio": "|Khat_0(p_L)|^2/[N*omega_p*A_L]>=(49/360096)*L",
+    "action_ratio_linear_coefficient": {
+      "denominator": 360096,
+      "numerator": 49
+    },
+    "combined_ratio": "|Khat_0(p_L)|^2/[N*omega_p*(A_L+E_dir,L)]>=(441/143805596)*L",
+    "combined_ratio_linear_coefficient": {
+      "denominator": 143805596,
+      "numerator": 441
+    },
+    "conclusion": "No L-independent finite constant can make any of the three displayed pointwise inequalities hold on all slice backgrounds; the no-go already permits the generous extra factor N.",
+    "dirichlet_ratio": "|Khat_0(p_L)|^2/[N*omega_p*E_dir,L]>=(9/2868668)*L",
+    "dirichlet_ratio_linear_coefficient": {
+      "denominator": 2868668,
+      "numerator": 9
+    },
+    "status": "DIVERGES_AT_LEAST_LINEARLY_ON_L_IN_4N",
+    "volume": "N=L^4"
+  },
+  "does_not_establish": [
+    "divergence or boundedness of the corrector under the exact Gibbs background marginal",
+    "failure of the translation-invariant current-susceptibility estimate",
+    "failure of the annealed score or actual interacting H^-1 moment",
+    "tightness or identification of a continuum Euclidean measure",
+    "a Born rule, Krein reconstruction, or LORENTZIAN-CAUSAL result"
+  ],
+  "fourier_bounds": {
+    "convention": "fhat(p)=sum_x exp(i*p*x_0)*f_x and z=exp(i*p_L)",
+    "corrector_identity": "Khat_0(p_L)=Jhat_0(p_L)-(1-exp(-i*p_L))*uhat(p_L)",
+    "corrector_intermediate_lower_bound": "|Khat_0(p_L)|>=3*L^3/8-891*L^2/16",
+    "corrector_large_L_lower_bound": "|Khat_0(p_L)|>=3*L^3/16 for every multiple of four L>=300",
+    "current_lower_bound": "|Jhat_0(p_L)|>=3*L^3/8 because Re(-69+15*z+42*z^2+4*z^3-4*z^(-1))=-69+11*cos(p_L)+42*cos(2*p_L)+4*cos(3*p_L)<=-12",
+    "current_polynomial": "Jhat_0(p_L)=(L^3/32)*(-69+15*z+42*z^2+4*z^3-4*z^(-1))",
+    "elementary_bounds": "|1-exp(-i*p_L)|<=2*pi/L<44/(7*L) and omega_p=4*sin(pi/L)^2<1936/(49*L^2)",
+    "potential_polynomial": "uhat(p_L)=(L^3/64)*(8+335*z+216*z^2+8*z^3)",
+    "potential_upper_bound": "|uhat(p_L)|<=567*L^3/64",
+    "status": "RIGOROUS_ELEMENTARY_FOURIER_BOUNDS"
+  },
+  "independent_verifier": "reverse_physics/verify_bt_euclidean_flux_corrector_pointwise_energy_no_go.py",
+  "lifecycle_state": "POINTWISE_CORRECTOR_ENERGY_ROUTE_OBSTRUCTED_STATISTICAL_GATE_OPEN",
+  "localized_slab_family": {
+    "active_cell_multiplier": "(L/4)*L^2=L^3/4",
+    "exponent_definition": "n_L(t,s,x2,x3)=n_cell(t,s mod 4) for 0<=t<=3 and n_L=0 for 4<=t<L",
+    "exponent_matrix_time_by_space": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        -1
+      ],
+      [
+        0,
+        1,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "lowest_momentum": "p_L=(2*pi/L,0,0,0)",
+    "positive_field": "Omega_x=2^n_x in mean-log gauge",
+    "scope": "L^4 periodic tori with L divisible by 4 and L>=8",
+    "seam_proof": "Rows t=0 and t=3 have Omega=1, so the exponent has exact zero seams and the residual action remains the replicated V2-cell action. The residual potential is not zero there: the two surviving boundary flux rows are retained explicitly rather than discarded.",
+    "slice_proof": "Every active time row sums to zero over each four-site spatial period. Hence the spatial sum at each time is zero, which proves the mean and both lowest axial phase projections vanish exactly.",
+    "status": "EXACT_E_P_PERP_LOCALIZED_SLAB_SEQUENCE"
+  },
+  "method_disposition": {
+    "Gibbs_corrector_hyperuniformity_bound": "OPEN",
+    "Gibbs_probability_of_localised_slab_environments": "NOT_ESTIMATED",
+    "actual_annealed_zero_fiber_score_bound": "OPEN",
+    "actual_interacting_H_minus_one_second_moment": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "energy_only_deterministic_second_soft_factor_route": "OBSTRUCTED_AS_FORMULATED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "pointwise_corrector_bound_by_N_omega_action": "OBSTRUCTED",
+    "pointwise_corrector_bound_by_N_omega_sum_of_energies": "OBSTRUCTED",
+    "pointwise_corrector_bound_by_N_omega_weighted_dirichlet_energy": "OBSTRUCTED",
+    "translation_invariant_current_susceptibility_bound": "OPEN",
+    "weighted_potential_mass_structure_factor_bound": "OPEN"
+  },
+  "missing_object_ledger": [
+    "a Gibbs large-deviation or block estimate for localized high-conductance slab environments",
+    "a covariance-sensitive corrector estimate that preserves the external momentum after averaging",
+    "an L-uniform mass structure-factor estimate for the weighted potential u",
+    "the resulting current susceptibility and two-mode center theorem",
+    "the dyadic Fourier-shell bound required for the actual interacting H^-1 moment"
+  ],
+  "next_gate": "Work under the exact background Gibbs marginal and estimate joint conductance-potential blocks before Fourier summation. The deterministic action and weighted-Dirichlet routes are now fail-closed: any successful proof must use Gibbs rarity/correlation or a cancellation invisible to pointwise energy comparison. Alternatively, construct a rigorously Gibbs-weighted sequence whose normalized corrector structure factor diverges.",
+  "provenance": {
+    "analytic_arithmetic": "Rowwise cancellation proves E_p orthogonality. The exact identity x^4(1-x)^4=(1+x^2)(4-4x^2+5x^4-4x^5+x^6)-4 integrates to a positive integral equal to 22/7-pi. Together with the reverse triangle inequality and sin(x)<x, it gives the explicit Fourier lower bounds and rational diverging-ratio constants.",
+    "assumptions": [
+      "The current, potential, corrector, action, and Fourier conventions are those certified by the V2 weighted-current gate.",
+      "L is a multiple of four; the explicit asymptotic lower bound is asserted only for L>=300.",
+      "Only LOCAL-ALGEBRAIC and EUCLIDEAN-SPECTRAL conclusions are drawn."
+    ],
+    "exact_arithmetic": "Fraction arithmetic reconstructs the complete 4^4 weighted-current cell, action, potential, current, and conductance Dirichlet energy. The scalable family then uses exact replication counts.",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_WEIGHTED_CURRENT_GATE_V2.json",
+        "sha256": "b4888413276ea6572cfc8cbf6456c3927cada9205761cf84629dc46e958d828a"
+      }
+    ],
+    "repository_base_commit": "07c96481526ef61fd32501005059c3cef68bfaed"
+  },
+  "question": "Can the open corrector hyperuniformity estimate be reduced to a volume-uniform pointwise comparison with the BT action or the weighted Dirichlet energy?",
+  "report": "reverse_physics/reports/bt-euclidean-flux-corrector-pointwise-energy-no-go.md",
+  "result_kind": "exact slice-valid all-volume-sequence obstruction to deterministic lowest-mode flux-corrector bounds from action or weighted Dirichlet energy",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-flux-corrector-pointwise-energy-no-go-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-flux-corrector-pointwise-energy-no-go-v1",
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_flux_corrector_pointwise_energy_no_go.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_flux_corrector_pointwise_energy_no_go.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_flux_corrector_pointwise_energy_no_go"
+  ]
+}
