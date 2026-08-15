@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-bounded-oscillation-gradient-coercivity-v1.schema.json",
+  "title": "BT Euclidean bounded-oscillation gradient-coercivity certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer", "theorem",
+    "proof_chain", "exact_fixture", "method_disposition",
+    "missing_object_ledger", "next_gate", "does_not_establish", "provenance",
+    "verification_commands", "tier_receipt", "checks", "report", "schema",
+    "verifier"
+  ],
+  "$defs": {
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "nonempty_string": {"type": "string", "minLength": 1}
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_BOUNDED_OSCILLATION_GRADIENT_COERCIVITY_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-bounded-oscillation-gradient-coercivity-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/nonempty_string"},
+    "question": {"$ref": "#/$defs/nonempty_string"},
+    "answer": {"$ref": "#/$defs/nonempty_string"},
+    "theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scope", "definitions", "conclusion", "normalized_conclusion", "collapse_necessary_condition"],
+      "properties": {
+        "scope": {"const": "every finite connected undirected graph"},
+        "definitions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["field", "residual", "action", "spectral_scale", "operator"],
+          "properties": {
+            "field": {"$ref": "#/$defs/nonempty_string"},
+            "residual": {"$ref": "#/$defs/nonempty_string"},
+            "action": {"$ref": "#/$defs/nonempty_string"},
+            "spectral_scale": {"$ref": "#/$defs/nonempty_string"},
+            "operator": {"$ref": "#/$defs/nonempty_string"}
+          }
+        },
+        "conclusion": {"const": "||grad A||_2^2 >= omega_G^2 (m/M)^12 ||r||_2^2"},
+        "normalized_conclusion": {"$ref": "#/$defs/nonempty_string"},
+        "collapse_necessary_condition": {"$ref": "#/$defs/nonempty_string"}
+      }
+    },
+    "proof_chain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["jacobian", "ground_state", "conditioned_spectral_gap", "residual_hyperplane", "kernel_angle", "norm_conversion", "squaring"],
+      "properties": {
+        "jacobian": {"$ref": "#/$defs/nonempty_string"},
+        "ground_state": {"$ref": "#/$defs/nonempty_string"},
+        "conditioned_spectral_gap": {"$ref": "#/$defs/nonempty_string"},
+        "residual_hyperplane": {"$ref": "#/$defs/nonempty_string"},
+        "kernel_angle": {"$ref": "#/$defs/nonempty_string"},
+        "norm_conversion": {"$ref": "#/$defs/nonempty_string"},
+        "squaring": {"$ref": "#/$defs/nonempty_string"}
+      }
+    },
+    "exact_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["graph", "omega", "minimum", "maximum", "lowest_positive_laplacian_eigenvalue", "residual", "gradient", "weighted_residual_sum", "residual_norm_squared", "gradient_norm_squared", "certified_lower_bound", "strict_slack"],
+      "properties": {
+        "graph": {"const": "four-cycle C4"},
+        "omega": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/fraction"}},
+        "minimum": {"$ref": "#/$defs/fraction"},
+        "maximum": {"$ref": "#/$defs/fraction"},
+        "lowest_positive_laplacian_eigenvalue": {"$ref": "#/$defs/fraction"},
+        "residual": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/fraction"}},
+        "gradient": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/fraction"}},
+        "weighted_residual_sum": {"$ref": "#/$defs/fraction"},
+        "residual_norm_squared": {"$ref": "#/$defs/fraction"},
+        "gradient_norm_squared": {"$ref": "#/$defs/fraction"},
+        "certified_lower_bound": {"$ref": "#/$defs/fraction"},
+        "strict_slack": {"$ref": "#/$defs/fraction"}
+      }
+    },
+    "method_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bounded_oscillation_gradient_collapse", "unbounded_oscillation_gradient_collapse", "all_field_volume_uniform_gradient_bound", "witten_poincare_transfer", "interacting_h_minus_one_bound", "continuum_reconstruction", "born_rule", "krein_reconstruction", "lorentzian_transfer"],
+      "properties": {
+        "bounded_oscillation_gradient_collapse": {"const": "RULED_OUT"},
+        "unbounded_oscillation_gradient_collapse": {"const": "OPEN"},
+        "all_field_volume_uniform_gradient_bound": {"const": "OPEN"},
+        "witten_poincare_transfer": {"const": "OPEN"},
+        "interacting_h_minus_one_bound": {"const": "OPEN"},
+        "continuum_reconstruction": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/nonempty_string"}},
+    "next_gate": {"$ref": "#/$defs/nonempty_string"},
+    "does_not_establish": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/nonempty_string"}},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "229fd0f2147e8ed611c5147328459f7678b1f605"},
+        "inputs": {
+          "type": "array", "minItems": 1, "maxItems": 1,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/nonempty_string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/nonempty_string"}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/nonempty_string"}},
+    "tier_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "memory_policy"],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/nonempty_string"},
+        "tier_1": {"$ref": "#/$defs/nonempty_string"},
+        "tier_2": {"$ref": "#/$defs/nonempty_string"},
+        "tier_3": {"$ref": "#/$defs/nonempty_string"},
+        "memory_policy": {"$ref": "#/$defs/nonempty_string"}
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-bounded-oscillation-gradient-coercivity.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-bounded-oscillation-gradient-coercivity-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_bounded_oscillation_gradient_coercivity.py"}
+  }
+}

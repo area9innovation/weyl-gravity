@@ -1,0 +1,191 @@
+{
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_BOUNDED_OSCILLATION_GRADIENT_COERCIVITY_V1",
+  "schema_version": "reverse-physics-bt-euclidean-bounded-oscillation-gradient-coercivity-v1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "result_kind": "exact finite-graph oscillation-conditioned nonlinear gradient theorem",
+  "question": "Can the normalized BT action-gradient quotient collapse while the positive field remains in a fixed bounded-oscillation sector?",
+  "answer": "No. On every finite connected undirected graph, if 0<m<=Omega_x<=M, then ||grad A||_2^2 >= omega_G^2 (m/M)^12 ||r||_2^2. The coefficient is independent of graph size. Hence any sequence with normalized quotient tending to zero must have max(Omega)/min(Omega) tending to infinity. This localizes, but does not solve, the volume-uniform gate.",
+  "theorem": {
+    "scope": "every finite connected undirected graph",
+    "definitions": {
+      "field": "Omega_x=exp(psi_x)>0 and m=min_x Omega_x, M=max_x Omega_x",
+      "residual": "r=diag(Omega)^(-1) Delta Omega",
+      "action": "A=(1/2)||r||_2^2",
+      "spectral_scale": "omega_G is the smallest positive eigenvalue of -Delta",
+      "operator": "K=-Delta+diag(r) and D=diag(Omega)"
+    },
+    "conclusion": "||grad A||_2^2 >= omega_G^2 (m/M)^12 ||r||_2^2",
+    "normalized_conclusion": "gamma_G(Omega)=||grad A||_2^2/(omega_G^2||r||_2^2) >=(min Omega/max Omega)^12 for nonconstant Omega",
+    "collapse_necessary_condition": "gamma_Gn(Omega_n)->0 implies max(Omega_n)/min(Omega_n)->infinity"
+  },
+  "proof_chain": {
+    "jacobian": "Dr=-D^(-1) K D, so grad A=-D K q with q=D^(-1)r",
+    "ground_state": "K Omega=0 and f^T K f=sum_{edges} Omega_x Omega_y (f_x/Omega_x-f_y/Omega_y)^2",
+    "conditioned_spectral_gap": "for f perpendicular to Omega, write f=Omega h; weighted-mean-zero and graph Poincare give f^T K f >= omega_G (m/M)^2 ||f||_2^2",
+    "residual_hyperplane": "q is perpendicular to Omega^2 because <Omega,r>=sum Delta Omega=0",
+    "kernel_angle": "the projection f of q perpendicular to Omega obeys ||f||>=c||q||, where c=<Omega,Omega^2>/(||Omega|| ||Omega^2||)>=(m/M)^3",
+    "norm_conversion": "||D K q||>=m||Kq|| and ||q||>=||r||/M; multiplying the three factors gives ||grad A||>=omega_G (m/M)^6 ||r||",
+    "squaring": "squaring gives the exponent twelve in the theorem"
+  },
+  "exact_fixture": {
+    "graph": "four-cycle C4",
+    "omega": [
+      {
+        "numerator": 1,
+        "denominator": 1
+      },
+      {
+        "numerator": 2,
+        "denominator": 1
+      },
+      {
+        "numerator": 4,
+        "denominator": 1
+      },
+      {
+        "numerator": 2,
+        "denominator": 1
+      }
+    ],
+    "minimum": {
+      "numerator": 1,
+      "denominator": 1
+    },
+    "maximum": {
+      "numerator": 4,
+      "denominator": 1
+    },
+    "lowest_positive_laplacian_eigenvalue": {
+      "numerator": 2,
+      "denominator": 1
+    },
+    "residual": [
+      {
+        "numerator": 2,
+        "denominator": 1
+      },
+      {
+        "numerator": 1,
+        "denominator": 2
+      },
+      {
+        "numerator": -1,
+        "denominator": 1
+      },
+      {
+        "numerator": 1,
+        "denominator": 2
+      }
+    ],
+    "gradient": [
+      {
+        "numerator": -15,
+        "denominator": 2
+      },
+      {
+        "numerator": 9,
+        "denominator": 4
+      },
+      {
+        "numerator": 3,
+        "denominator": 1
+      },
+      {
+        "numerator": 9,
+        "denominator": 4
+      }
+    ],
+    "weighted_residual_sum": {
+      "numerator": 0,
+      "denominator": 1
+    },
+    "residual_norm_squared": {
+      "numerator": 11,
+      "denominator": 2
+    },
+    "gradient_norm_squared": {
+      "numerator": 603,
+      "denominator": 8
+    },
+    "certified_lower_bound": {
+      "numerator": 11,
+      "denominator": 8388608
+    },
+    "strict_slack": {
+      "numerator": 632291317,
+      "denominator": 8388608
+    }
+  },
+  "method_disposition": {
+    "bounded_oscillation_gradient_collapse": "RULED_OUT",
+    "unbounded_oscillation_gradient_collapse": "OPEN",
+    "all_field_volume_uniform_gradient_bound": "OPEN",
+    "witten_poincare_transfer": "OPEN",
+    "interacting_h_minus_one_bound": "OPEN",
+    "continuum_reconstruction": "NOT_ESTABLISHED",
+    "born_rule": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED"
+  },
+  "missing_object_ledger": [
+    "a volume-uniform control of the Gibbs probability of diverging log-field oscillation, or a controlled low-gradient sequence in that sector",
+    "a bridge from deterministic gradient domination to the scalar Witten/Poincare estimate",
+    "an actual volume-uniform interacting H^-1 moment estimate or controlled divergence"
+  ],
+  "next_gate": "Combine the exact range-action lower bound with the Gibbs measure and entropy of growing tori to test whether the unbounded-oscillation sector is uniformly rare. If that fails, search that sector for a sequence with both collapsing normalized action-gradient and full Witten Rayleigh quotients.",
+  "does_not_establish": [
+    "an all-field positive volume-uniform gradient constant",
+    "a Poincare inequality or Witten one-form coercivity",
+    "an interacting H^-1 bound or continuum BT measure",
+    "a Born rule or Krein-space reconstruction",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "provenance": {
+    "repository_base_commit": "229fd0f2147e8ed611c5147328459f7678b1f605",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_UNIQUE_CRITICAL_POINT_GRADIENT_GATE_V1.json",
+        "sha256": "606ef7f58477b9eab18b41a1e83eb11d6b298129a1f9da1e96099487d9209c56"
+      }
+    ],
+    "arithmetic": "exact Fraction arithmetic for the independent C4 residual, gradient, norms, theorem lower bound, and strict slack; the general proof uses finite-dimensional spectral and Cauchy-Schwarz inequalities"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_bounded_oscillation_gradient_coercivity.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_bounded_oscillation_gradient_coercivity.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_bounded_oscillation_gradient_coercivity"
+  ],
+  "tier_receipt": {
+    "tier_0": "Python compilation and strict JSON/schema parsing passed; the planning import accepted 1690 nodes with zero invalid items and zero malformed events in 6.61 s at 219660 KB peak RSS; scoped diff and staged-diff checks are required before commit",
+    "tier_1": "exact producer passed 10/10 in 0.03 s at 20268 KB, the nonimporting verifier passed 12/12 in 0.09 s at 30112 KB, and ten focused tests including mutation rejection passed in 0.10 s at 30768 KB",
+    "tier_2": "not run: the imported unique-critical-point certificate is unchanged and checked by content hash",
+    "tier_3": "not run: this is a scoped deterministic theorem without a paper/lifecycle promotion, freeze, release, or shared-core change",
+    "memory_policy": "all Python commands ran sequentially under a 500000 KiB virtual-memory ceiling; Go used GOMEMLIMIT=300MiB and GOGC=50 without ulimit because the Go runtime could not reserve its page summary under that address-space cap; the advisory Science Forge shadow attempt aborted inside external cbp indexing under the cap and produced no audit disposition, so it is recorded fail-closed and was not rerun"
+  },
+  "checks": {
+    "ok": true,
+    "passed": 10,
+    "total": 10,
+    "failures": [],
+    "details": {
+      "fixture_positive": true,
+      "weighted_residual_constraint_exact": true,
+      "fixture_nonconstant": true,
+      "fixture_bound_has_positive_slack": true,
+      "jacobian_factorization_imported_with_hash": true,
+      "ground_state_poincare_chain_closes": true,
+      "kernel_angle_chain_closes": true,
+      "constant_is_independent_of_graph_size": true,
+      "unbounded_oscillation_sector_remains_open": true,
+      "no_witten_or_lorentzian_promotion": true
+    }
+  },
+  "report": "reverse_physics/reports/bt-euclidean-bounded-oscillation-gradient-coercivity.md",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-bounded-oscillation-gradient-coercivity-v1.schema.json",
+  "verifier": "reverse_physics/verify_bt_euclidean_bounded_oscillation_gradient_coercivity.py"
+}
