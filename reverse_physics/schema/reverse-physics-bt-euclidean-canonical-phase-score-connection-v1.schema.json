@@ -1,0 +1,397 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-canonical-phase-score-connection-v1.schema.json",
+  "title": "BT Euclidean canonical phase-score connection certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer", "scope",
+    "canonical_lift", "canonical_score", "connection_derivation",
+    "connection_control", "weighted_residual_moment_hierarchy",
+    "inverse_phase_moment_hierarchy", "joint_canonical_score_control",
+    "exact_tensor_fixture", "method_disposition",
+    "missing_object_ledger", "next_gate", "does_not_establish",
+    "provenance", "verification_commands", "tier_receipt", "checks",
+    "schema", "report", "verifier"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EUCLIDEAN_CANONICAL_PHASE_SCORE_CONNECTION_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-euclidean-canonical-phase-score-connection-v1"
+    },
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {
+      "const": "CANONICAL_PHASE_SCORE_MOMENT_CONTROL_PROVED"
+    },
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lattice", "phase_vector", "observable", "normalized_frames",
+        "diffusion_matrix", "ward_scores"
+      ],
+      "properties": {
+        "lattice": {"$ref": "#/$defs/text"},
+        "phase_vector": {"$ref": "#/$defs/text"},
+        "observable": {"$ref": "#/$defs/text"},
+        "normalized_frames": {"$ref": "#/$defs/text"},
+        "diffusion_matrix": {
+          "const": "G_ij=X_i dot grad F_j=sum_x pi_x*h_i*h_j"
+        },
+        "ward_scores": {"const": "E[X_i dot grad f]=E[f*Y_i]"}
+      }
+    },
+    "canonical_lift": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "definition", "coordinate_identity", "lift_norm_bound",
+        "scaled_gibbs_bound", "lambda_two_fifths", "status"
+      ],
+      "properties": {
+        "definition": {"const": "Z_i=sum_j (G^-1)_ij*X_j"},
+        "coordinate_identity": {"const": "Z_i dot grad F_k=delta_ik"},
+        "lift_norm_bound": {
+          "const": "sum_i |Z_i|^2<=trace(G^-1)<=2*operator_norm(G^-1)"
+        },
+        "scaled_gibbs_bound": {
+          "const": "E[s_L^2*sum_i |Z_i|^2]<=4*sqrt(4+lambda^2)"
+        },
+        "lambda_two_fifths": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED_VOLUME_UNIFORM_CANONICAL_LIFT_COST"}
+      }
+    },
+    "canonical_score": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "field_score", "stein_identity", "centering",
+        "source_normalization", "marginal_score", "status"
+      ],
+      "properties": {
+        "field_score": {
+          "const": "S_i=sum_j (G^-1)_ij*Y_j-sum_j X_j[(G^-1)_ij]"
+        },
+        "stein_identity": {"const": "E[partial_i g(F)]=E[S_i*g(F)]"},
+        "centering": {"const": "E[S_i]=0"},
+        "source_normalization": {"const": "E[F_k*S_i]=delta_ik"},
+        "marginal_score": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED_EXACT_FINITE_VOLUME_CANONICALIZATION"}
+      }
+    },
+    "connection_derivation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "probability_derivative", "second_moment_vector",
+        "third_moment_matrix", "gram_derivative", "inverse_derivative",
+        "leverage", "connection_formula", "status"
+      ],
+      "properties": {
+        "probability_derivative": {
+          "const": "X_a*pi_x=pi_x*(sum_y a_y*pi_y^2-a_x*pi_x)"
+        },
+        "second_moment_vector": {"const": "t_j=sum_x pi_x^2*h_j(x)"},
+        "third_moment_matrix": {"$ref": "#/$defs/text"},
+        "gram_derivative": {"const": "X_j*G=t_j*G-T_j"},
+        "inverse_derivative": {
+          "const": "X_j*G^-1=-t_j*G^-1+G^-1*T_j*G^-1"
+        },
+        "leverage": {"const": "ell_x=h(x)^T*G^-1*h(x)"},
+        "connection_formula": {
+          "const": "C:=sum_j X_j[(G^-1)_.j]=sum_x pi_x^2*(ell_x-1)*G^-1*h(x)"
+        },
+        "status": {"const": "PROVED_EXACT_POINTWISE"}
+      }
+    },
+    "connection_control": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "matrix_order", "leverage_positivity", "leverage_trace",
+        "subprobability", "pointwise_bound", "scaled_second_moment",
+        "lambda_two_fifths", "status"
+      ],
+      "properties": {
+        "matrix_order": {"const": "0<G<=I and therefore G^-1>=I"},
+        "leverage_positivity": {"const": "ell_x-1>=0"},
+        "leverage_trace": {
+          "const": "sum_x pi_x*(ell_x-1)=trace(G^-1*G)-1=1"
+        },
+        "subprobability": {"const": "sum_x pi_x^2*(ell_x-1)<=1"},
+        "pointwise_bound": {"const": "|C|<=operator_norm(G^-1)"},
+        "scaled_second_moment": {
+          "const": "E[(s_L^2*|C|)^2]<=16*s_L^4+4*lambda^2*(1-1/N)<=16+4*lambda^2"
+        },
+        "lambda_two_fifths": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED_VOLUME_UNIFORM_CONNECTION_ESTIMATE"}
+      }
+    },
+    "weighted_residual_moment_hierarchy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "weighted_energy", "participation", "squared_weight_energy",
+        "constant_frame_derivatives", "constant_frame_score",
+        "exact_power_identity", "recursion", "general_bound",
+        "low_moments", "status"
+      ],
+      "properties": {
+        "weighted_energy": {"const": "R=sum_x pi_x*r_x^2"},
+        "participation": {"const": "S_2=sum_x pi_x^2"},
+        "squared_weight_energy": {"const": "P=sum_x pi_x^2*r_x^2"},
+        "constant_frame_derivatives": {"$ref": "#/$defs/text"},
+        "constant_frame_score": {"const": "Y_1=1-S_2-R/lambda^2"},
+        "exact_power_identity": {"$ref": "#/$defs/text"},
+        "recursion": {
+          "const": "E[R^(n+1)]<=lambda^2*(3*n+1)*E[R^n], n>=1"
+        },
+        "general_bound": {"$ref": "#/$defs/text"},
+        "low_moments": {"$ref": "#/$defs/text"},
+        "status": {
+          "const": "PROVED_VOLUME_UNIFORM_ALL_POLYNOMIAL_MOMENTS"
+        }
+      }
+    },
+    "inverse_phase_moment_hierarchy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pointwise_input", "defect_moments", "scaled_inverse_moments",
+        "second_bound", "fourth_bound", "status"
+      ],
+      "properties": {
+        "pointwise_input": {"$ref": "#/$defs/text"},
+        "defect_moments": {
+          "const": "E[delta^(-2*m)]<=4^m+E[R^m]/s_L^(4*m)"
+        },
+        "scaled_inverse_moments": {"$ref": "#/$defs/text"},
+        "second_bound": {"const": "K_2:=16+4*lambda^2"},
+        "fourth_bound": {"const": "K_4:=256+64*lambda^4"},
+        "status": {
+          "const": "PROVED_VOLUME_UNIFORM_ALL_EVEN_INVERSE_MOMENTS"
+        }
+      }
+    },
+    "joint_canonical_score_control": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ward_score_formula", "pointwise_score_bound", "frequency_bound",
+        "joint_drift_bound", "canonical_score_bound", "status"
+      ],
+      "properties": {
+        "ward_score_formula": {"$ref": "#/$defs/text"},
+        "pointwise_score_bound": {
+          "const": "|Y|<=1+lambda^-2*(R+omega_L*sqrt(R))"
+        },
+        "frequency_bound": {"const": "0<omega_L<=2 for integer L>=4"},
+        "joint_drift_bound": {"$ref": "#/$defs/text"},
+        "canonical_score_bound": {
+          "const": "E[(s_L^2*|S|)^2]<=2*B_Y+2*K_2"
+        },
+        "status": {"const": "PROVED_VOLUME_UNIFORM_SCALED_L2_SCORE"}
+      }
+    },
+    "exact_tensor_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lattice", "axial_marginal", "site_probability", "gram",
+        "gram_inverse", "t_vectors", "third_tensors", "gram_derivatives",
+        "inverse_derivatives", "connection_direct", "connection_leverage",
+        "leverage_values", "subprobability_weight", "lift_norms",
+        "lift_norm_sum", "inverse_trace", "inverse_operator_norm"
+      ],
+      "properties": {
+        "lattice": {"const": "periodic 4^4 torus"},
+        "axial_marginal": {"$ref": "#/$defs/fractionVector4"},
+        "site_probability": {"$ref": "#/$defs/fractionVector4"},
+        "gram": {"$ref": "#/$defs/fractionMatrix2"},
+        "gram_inverse": {"$ref": "#/$defs/fractionMatrix2"},
+        "t_vectors": {"$ref": "#/$defs/fractionVector2"},
+        "third_tensors": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/fractionMatrix2"}
+        },
+        "gram_derivatives": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/fractionMatrix2"}
+        },
+        "inverse_derivatives": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/fractionMatrix2"}
+        },
+        "connection_direct": {"$ref": "#/$defs/fractionVector2"},
+        "connection_leverage": {"$ref": "#/$defs/fractionVector2"},
+        "leverage_values": {"$ref": "#/$defs/fractionVector4"},
+        "subprobability_weight": {"$ref": "#/$defs/fraction"},
+        "lift_norms": {"$ref": "#/$defs/fractionVector2"},
+        "lift_norm_sum": {"$ref": "#/$defs/fraction"},
+        "inverse_trace": {"$ref": "#/$defs/fraction"},
+        "inverse_operator_norm": {"$ref": "#/$defs/fraction"}
+      }
+    },
+    "method_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonical_two_phase_lift", "canonical_marginal_score_identity",
+        "inverse_frame_connection_term", "correlated_inverse_times_ward_score",
+        "weighted_residual_all_polynomial_moments",
+        "scaled_inverse_all_even_moments",
+        "canonical_score_scaled_second_moment", "canonical_score_coercivity",
+        "normalized_lowest_mode_second_moment",
+        "actual_interacting_h_minus_one_second_moment", "continuum_limit",
+        "born_transfer", "krein_transfer", "lorentzian_transfer"
+      ],
+      "properties": {
+        "canonical_two_phase_lift": {"const": "PROVED"},
+        "canonical_marginal_score_identity": {"const": "PROVED"},
+        "inverse_frame_connection_term": {"const": "CONTROLLED"},
+        "weighted_residual_all_polynomial_moments": {"const": "PROVED"},
+        "scaled_inverse_all_even_moments": {"const": "PROVED"},
+        "correlated_inverse_times_ward_score": {
+          "const": "SCALED_L2_CONTROLLED"
+        },
+        "canonical_score_scaled_second_moment": {"const": "PROVED"},
+        "canonical_score_coercivity": {"const": "OPEN"},
+        "normalized_lowest_mode_second_moment": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment": {"const": "OPEN"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "born_transfer": {"const": "NOT_ASSESSED"},
+        "krein_transfer": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"$ref": "#/$defs/textArray"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/textArray"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {
+          "const": "d6ed622c77c88a6e3d1a1019affe3b07d0227e07"
+        },
+        "inputs": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"$ref": "#/$defs/textArray"},
+    "tier_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tier_0", "tier_1", "tier_2", "tier_3", "memory_policy",
+        "elapsed_seconds_and_peak_kib", "repository_audits"
+      ],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/text"},
+        "tier_1": {"$ref": "#/$defs/text"},
+        "tier_2": {"$ref": "#/$defs/text"},
+        "tier_3": {"$ref": "#/$defs/text"},
+        "memory_policy": {"$ref": "#/$defs/text"},
+        "elapsed_seconds_and_peak_kib": {"$ref": "#/$defs/textObject"},
+        "repository_audits": {"$ref": "#/$defs/textObject"}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-euclidean-canonical-phase-score-connection-v1.schema.json"
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-euclidean-canonical-phase-score-connection.md"
+    },
+    "verifier": {
+      "const": "reverse_physics/verify_bt_euclidean_canonical_phase_score_connection.py"
+    }
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "textArray": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "textObject": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/text"}
+    },
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "fractionVector2": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"$ref": "#/$defs/fraction"}
+    },
+    "fractionVector4": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/fraction"}
+    },
+    "fractionMatrix2": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"$ref": "#/$defs/fractionVector2"}
+    }
+  }
+}

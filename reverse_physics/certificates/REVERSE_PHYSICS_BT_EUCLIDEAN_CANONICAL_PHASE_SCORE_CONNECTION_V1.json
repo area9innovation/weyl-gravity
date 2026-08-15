@@ -1,0 +1,485 @@
+{
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_CANONICAL_PHASE_SCORE_CONNECTION_V1",
+  "schema_version": "reverse-physics-bt-euclidean-canonical-phase-score-connection-v1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "lifecycle_state": "CANONICAL_PHASE_SCORE_MOMENT_CONTROL_PROVED",
+  "result_kind": "exact canonical two-phase score lift, residual/inverse moment hierarchies, and volume-uniform scaled score estimate",
+  "question": "Can the normalized cosine-sine Ward frame be inverted with its connection and nonlinear Ward drift controlled in a volume-uniform scaled moment?",
+  "answer": "Yes. The derivative of G^-1 contracts to C=sum_x pi_x^2*(ell_x-1)*G^-1*h(x), where ell_x=h(x)^T*G^-1*h(x). Since G<=I, ell_x>=1, and sum_x pi_x*(ell_x-1)=1, the nonnegative coefficients have total mass at most one. Hence |C|<=operator_norm(G^-1) pointwise, and the preceding reciprocal-phase theorem gives the same volume-uniform scaled second moment for C. In addition, the constant normalized frame proves E[R^(n+1)]<=lambda^2*(3*n+1)*E[R^n] for R=sum pi*r^2. This all-moment hierarchy combines with reciprocal uncertainty to control every scaled inverse moment and, in particular, the scaled L2 norm of G^-1*Y. Thus the full canonical score S=G^-1*Y-C has a volume-uniform scaled second moment. Coercivity and the upper lowest-mode estimate remain open.",
+  "scope": {
+    "lattice": "periodic four-torus Lambda_L=(Z/LZ)^4 with integer L>=4",
+    "phase_vector": "h(x)=(cos(2*pi*x_mu/L+alpha),sin(2*pi*x_mu/L+alpha))",
+    "observable": "F_i=sum_x h_i(x)*psi_x",
+    "normalized_frames": "X_i=P_H(pi*h_i)",
+    "diffusion_matrix": "G_ij=X_i dot grad F_j=sum_x pi_x*h_i*h_j",
+    "ward_scores": "E[X_i dot grad f]=E[f*Y_i]"
+  },
+  "canonical_lift": {
+    "definition": "Z_i=sum_j (G^-1)_ij*X_j",
+    "coordinate_identity": "Z_i dot grad F_k=delta_ik",
+    "lift_norm_bound": "sum_i |Z_i|^2<=trace(G^-1)<=2*operator_norm(G^-1)",
+    "scaled_gibbs_bound": "E[s_L^2*sum_i |Z_i|^2]<=4*sqrt(4+lambda^2)",
+    "lambda_two_fifths": "at lambda=2/5 the scaled expected lift norm is <=8*sqrt(26)/5",
+    "status": "PROVED_VOLUME_UNIFORM_CANONICAL_LIFT_COST"
+  },
+  "canonical_score": {
+    "field_score": "S_i=sum_j (G^-1)_ij*Y_j-sum_j X_j[(G^-1)_ij]",
+    "stein_identity": "E[partial_i g(F)]=E[S_i*g(F)]",
+    "centering": "E[S_i]=0",
+    "source_normalization": "E[F_k*S_i]=delta_ik",
+    "marginal_score": "E[S|F] is the negative logarithmic score of the two-dimensional F marginal in the distributional sense",
+    "status": "PROVED_EXACT_FINITE_VOLUME_CANONICALIZATION"
+  },
+  "connection_derivation": {
+    "probability_derivative": "X_a*pi_x=pi_x*(sum_y a_y*pi_y^2-a_x*pi_x)",
+    "second_moment_vector": "t_j=sum_x pi_x^2*h_j(x)",
+    "third_moment_matrix": "T_j=sum_x pi_x^2*h_j(x)*h(x)*h(x)^T",
+    "gram_derivative": "X_j*G=t_j*G-T_j",
+    "inverse_derivative": "X_j*G^-1=-t_j*G^-1+G^-1*T_j*G^-1",
+    "leverage": "ell_x=h(x)^T*G^-1*h(x)",
+    "connection_formula": "C:=sum_j X_j[(G^-1)_.j]=sum_x pi_x^2*(ell_x-1)*G^-1*h(x)",
+    "status": "PROVED_EXACT_POINTWISE"
+  },
+  "connection_control": {
+    "matrix_order": "0<G<=I and therefore G^-1>=I",
+    "leverage_positivity": "ell_x-1>=0",
+    "leverage_trace": "sum_x pi_x*(ell_x-1)=trace(G^-1*G)-1=1",
+    "subprobability": "sum_x pi_x^2*(ell_x-1)<=1",
+    "pointwise_bound": "|C|<=operator_norm(G^-1)",
+    "scaled_second_moment": "E[(s_L^2*|C|)^2]<=16*s_L^4+4*lambda^2*(1-1/N)<=16+4*lambda^2",
+    "lambda_two_fifths": "at lambda=2/5 the scaled connection second moment is <=416/25",
+    "status": "PROVED_VOLUME_UNIFORM_CONNECTION_ESTIMATE"
+  },
+  "weighted_residual_moment_hierarchy": {
+    "weighted_energy": "R=sum_x pi_x*r_x^2",
+    "participation": "S_2=sum_x pi_x^2",
+    "squared_weight_energy": "P=sum_x pi_x^2*r_x^2",
+    "constant_frame_derivatives": "X_1*pi_x=pi_x*(S_2-pi_x), X_1*r_x=-pi_x*r_x, X_1*R=S_2*R-3*P",
+    "constant_frame_score": "Y_1=1-S_2-R/lambda^2",
+    "exact_power_identity": "E[R^(n+1)]/lambda^2=E[R^n*(1-(n+1)*S_2)+3*n*P*R^(n-1)]",
+    "recursion": "E[R^(n+1)]<=lambda^2*(3*n+1)*E[R^n], n>=1",
+    "general_bound": "E[R^n]<=lambda^(2*n)*A_n, A_1=1, A_n=product_(k=1)^(n-1)(3*k+1)",
+    "low_moments": "E[R^2]<=4*lambda^4, E[R^3]<=28*lambda^6, E[R^4]<=280*lambda^8",
+    "status": "PROVED_VOLUME_UNIFORM_ALL_POLYNOMIAL_MOMENTS"
+  },
+  "inverse_phase_moment_hierarchy": {
+    "pointwise_input": "R>=16*s_L^4*c^4/delta^2 and operator_norm(G^-1)=2/delta",
+    "defect_moments": "E[delta^(-2*m)]<=4^m+E[R^m]/s_L^(4*m)",
+    "scaled_inverse_moments": "E[(s_L^2*operator_norm(G^-1))^(2*m)]<=16^m+4^m*lambda^(2*m)*A_m",
+    "second_bound": "K_2:=16+4*lambda^2",
+    "fourth_bound": "K_4:=256+64*lambda^4",
+    "status": "PROVED_VOLUME_UNIFORM_ALL_EVEN_INVERSE_MOMENTS"
+  },
+  "joint_canonical_score_control": {
+    "ward_score_formula": "Y=-lambda^-2*sum_x pi_x*h(x)*(r_x^2+omega_L*r_x)+sum_x pi_x*(1-pi_x)*h(x)",
+    "pointwise_score_bound": "|Y|<=1+lambda^-2*(R+omega_L*sqrt(R))",
+    "frequency_bound": "0<omega_L<=2 for integer L>=4",
+    "joint_drift_bound": "E[(s_L^2*|G^-1*Y|)^2]<=B_Y:=3*(K_2+sqrt(280*K_4)+8*sqrt(K_4)/lambda^2)",
+    "canonical_score_bound": "E[(s_L^2*|S|)^2]<=2*B_Y+2*K_2",
+    "status": "PROVED_VOLUME_UNIFORM_SCALED_L2_SCORE"
+  },
+  "exact_tensor_fixture": {
+    "lattice": "periodic 4^4 torus",
+    "axial_marginal": [
+      {
+        "numerator": 2,
+        "denominator": 9
+      },
+      {
+        "numerator": 1,
+        "denominator": 9
+      },
+      {
+        "numerator": 2,
+        "denominator": 9
+      },
+      {
+        "numerator": 4,
+        "denominator": 9
+      }
+    ],
+    "site_probability": [
+      {
+        "numerator": 1,
+        "denominator": 288
+      },
+      {
+        "numerator": 1,
+        "denominator": 576
+      },
+      {
+        "numerator": 1,
+        "denominator": 288
+      },
+      {
+        "numerator": 1,
+        "denominator": 144
+      }
+    ],
+    "gram": [
+      [
+        {
+          "numerator": 4,
+          "denominator": 9
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        }
+      ],
+      [
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 5,
+          "denominator": 9
+        }
+      ]
+    ],
+    "gram_inverse": [
+      [
+        {
+          "numerator": 9,
+          "denominator": 4
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        }
+      ],
+      [
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 9,
+          "denominator": 5
+        }
+      ]
+    ],
+    "t_vectors": [
+      {
+        "numerator": 0,
+        "denominator": 1
+      },
+      {
+        "numerator": -5,
+        "denominator": 1728
+      }
+    ],
+    "third_tensors": [
+      [
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ]
+      ],
+      [
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": -5,
+            "denominator": 1728
+          }
+        ]
+      ]
+    ],
+    "gram_derivatives": [
+      [
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ]
+      ],
+      [
+        [
+          {
+            "numerator": -5,
+            "denominator": 3888
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 5,
+            "denominator": 3888
+          }
+        ]
+      ]
+    ],
+    "inverse_derivatives": [
+      [
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ]
+      ],
+      [
+        [
+          {
+            "numerator": 5,
+            "denominator": 768
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": -1,
+            "denominator": 240
+          }
+        ]
+      ]
+    ],
+    "connection_direct": [
+      {
+        "numerator": 0,
+        "denominator": 1
+      },
+      {
+        "numerator": -1,
+        "denominator": 240
+      }
+    ],
+    "connection_leverage": [
+      {
+        "numerator": 0,
+        "denominator": 1
+      },
+      {
+        "numerator": -1,
+        "denominator": 240
+      }
+    ],
+    "leverage_values": [
+      {
+        "numerator": 9,
+        "denominator": 4
+      },
+      {
+        "numerator": 9,
+        "denominator": 5
+      },
+      {
+        "numerator": 9,
+        "denominator": 4
+      },
+      {
+        "numerator": 9,
+        "denominator": 5
+      }
+    ],
+    "subprobability_weight": {
+      "numerator": 59,
+      "denominator": 12960
+    },
+    "lift_norms": [
+      {
+        "numerator": 1,
+        "denominator": 128
+      },
+      {
+        "numerator": 59,
+        "denominator": 6400
+      }
+    ],
+    "lift_norm_sum": {
+      "numerator": 109,
+      "denominator": 6400
+    },
+    "inverse_trace": {
+      "numerator": 81,
+      "denominator": 20
+    },
+    "inverse_operator_norm": {
+      "numerator": 9,
+      "denominator": 4
+    }
+  },
+  "method_disposition": {
+    "canonical_two_phase_lift": "PROVED",
+    "canonical_marginal_score_identity": "PROVED",
+    "inverse_frame_connection_term": "CONTROLLED",
+    "weighted_residual_all_polynomial_moments": "PROVED",
+    "scaled_inverse_all_even_moments": "PROVED",
+    "correlated_inverse_times_ward_score": "SCALED_L2_CONTROLLED",
+    "canonical_score_scaled_second_moment": "PROVED",
+    "canonical_score_coercivity": "OPEN",
+    "normalized_lowest_mode_second_moment": "OPEN",
+    "actual_interacting_h_minus_one_second_moment": "OPEN",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "born_transfer": "NOT_ASSESSED",
+    "krein_transfer": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED"
+  },
+  "missing_object_ledger": [
+    "coercivity of the canonical marginal score or full Witten form",
+    "a volume-uniform normalized lowest-mode second moment",
+    "the dyadic interacting H^-1 estimate or an actual BT divergence sequence"
+  ],
+  "next_gate": "Use the now-controlled full canonical score in the two-phase marginal or Witten form and prove a monotonicity/coercivity bound that prevents broad moving centers; alternatively construct an actual normalized BT low-Rayleigh sequence. A scaled upper score moment alone is not an upper field-variance estimate.",
+  "does_not_establish": [
+    "coercivity of the canonical two-phase marginal score",
+    "a normalized BT lowest-mode or field second moment",
+    "boundedness or divergence of the actual interacting H^-1 moment",
+    "tightness, a continuum Euclidean BT measure, or limit identification",
+    "a change to the existing scoped ordinary-OS obstruction",
+    "a Born rule, Krein reconstruction, gravitational lift, or anything LORENTZIAN-CAUSAL",
+    "a literature-priority claim"
+  ],
+  "provenance": {
+    "repository_base_commit": "d6ed622c77c88a6e3d1a1019affe3b07d0227e07",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_NORMALIZED_ADDITIVE_WARD_FRAME_V1.json",
+        "sha256": "d0e1432ac391b03f21cc5df55d65dfd3d8170e8ee95f93315d6150035f397bdc"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RECIPROCAL_PHASE_INVERSE_ELLIPTICITY_V1.json",
+        "sha256": "883a6633f0cfdae1f933c3b6287597540be27e7b389147e59b3fdbc3d30c956d"
+      }
+    ],
+    "arithmetic": "Exact Fraction arithmetic for the tensor fixture; the theorem uses exact differentiation of the reciprocal probability and matrix inverse, leverage-score trace identities, Euclidean projection contraction, and the content-pinned inverse-phase moment theorem"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_canonical_phase_score_connection.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_canonical_phase_score_connection.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_canonical_phase_score_connection"
+  ],
+  "tier_receipt": {
+    "tier_0": "Python compilation, strict JSON/schema validation, exact input hashes, scoped diff check, and staged-diff inspection required",
+    "tier_1": "producer replay, nonimporting tensor-fixture verifier, and focused adversarial mutation tests required",
+    "tier_2": "the normalized Ward-frame and reciprocal-phase inverse inputs are unchanged and checked by content hash; no shared operator changes",
+    "tier_3": "not applicable: lowest-mode, H^-1, and continuum lifecycle states remain open",
+    "memory_policy": "all Python commands run under ulimit -v 500000",
+    "elapsed_seconds_and_peak_kib": {
+      "producer_check": "0.04 s, 21164 KiB",
+      "independent_verifier": "0.10 s, 30452 KiB",
+      "unit_tests": "0.14 s, 30692 KiB",
+      "python_compile": "0.04 s, 16464 KiB"
+    },
+    "repository_audits": {
+      "planning_import": "PASS: 1673 nodes, 0 invalid items, 0 malformed events; 7.02 s, 222900 KiB",
+      "science_forge_shadow": "not run unless a registered shadow input changes; a skip is not a pass"
+    }
+  },
+  "checks": {
+    "ok": true,
+    "passed": 26,
+    "total": 26,
+    "failures": [],
+    "details": {
+      "fixture_marginal_is_exact": true,
+      "fixture_site_probability_is_normalized": true,
+      "fixture_gram_is_exact": true,
+      "fixture_inverse_is_exact": true,
+      "fixture_t_vectors_are_exact": true,
+      "fixture_cosine_derivative_vanishes": true,
+      "fixture_sine_gram_derivative_is_exact": true,
+      "fixture_sine_inverse_derivative_is_exact": true,
+      "fixture_connection_direct_is_exact": true,
+      "fixture_connection_reconstructions_agree": true,
+      "fixture_leverages_are_exact": true,
+      "fixture_subprobability_weight_is_exact": true,
+      "fixture_lift_norms_are_exact": true,
+      "fixture_lift_norm_sum_is_exact": true,
+      "fixture_lift_bound_closes": true,
+      "fixture_connection_bound_closes": true,
+      "canonical_score_identity_is_exact": true,
+      "connection_has_only_one_inverse_power": true,
+      "residual_second_moment_coefficient_is_four": true,
+      "residual_third_moment_coefficient_is_twenty_eight": true,
+      "residual_fourth_moment_coefficient_is_two_hundred_eighty": true,
+      "all_scaled_inverse_even_moments_are_controlled": true,
+      "volume_uniform_connection_moment_is_proved": true,
+      "joint_inverse_drift_second_moment_is_proved": true,
+      "canonical_score_coercivity_remains_open": true,
+      "no_born_krein_or_lorentzian_promotion": true
+    }
+  },
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-canonical-phase-score-connection-v1.schema.json",
+  "report": "reverse_physics/reports/bt-euclidean-canonical-phase-score-connection.md",
+  "verifier": "reverse_physics/verify_bt_euclidean_canonical_phase_score_connection.py"
+}
