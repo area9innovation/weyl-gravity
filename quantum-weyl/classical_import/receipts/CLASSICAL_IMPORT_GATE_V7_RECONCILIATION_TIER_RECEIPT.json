@@ -1,0 +1,69 @@
+{
+  "receipt_id": "CLASSICAL_IMPORT_GATE_V7_RECONCILIATION_TIER_RECEIPT",
+  "result_id": "CLASSICAL_IMPORT_GATE_V7_RECONCILIATION",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Append-only reconciliation of the exact stabilized q2 candidate into the classical import ledger while keeping its hash unaccepted until authoritative theory identity is certified.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <explicit Gate-V7, Atlas-V17, site and paper Python paths>",
+        "python3 -m json.tool quantum-weyl/classical_import/schema/classical-import-gate-v7-reconciliation-v1.schema.json",
+        "python3 -m json.tool quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V7_RECONCILIATION.json",
+        "git diff --check -- <explicit scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "python3 quantum-weyl/classical_import/build_classical_import_gate_v7_reconciliation.py --check",
+        "python3 quantum-weyl/classical_import/check_classical_import_gate_v7_reconciliation.py",
+        "python3 quantum-weyl/classical_import/verify_classical_import_gate_v7_reconciliation.py",
+        "python3 -m unittest quantum-weyl/classical_import/tests/test_classical_import_gate_v7_reconciliation.py"
+      ],
+      "checks": {
+        "exports_total": 20,
+        "receiver_verified_scoped_exports": 11,
+        "freeze_checks_total": 10,
+        "receiver_verified_scoped_checks": 8,
+        "supporting_evidence_checks": 1,
+        "blocked_checks": 1,
+        "accepted_top_level_hashes": 0,
+        "transitive_provenance_files_checked": 23,
+        "transitive_provenance_drifted_files": 5,
+        "gate_a": "FAIL_CLOSED",
+        "mutation_tests": "11/11 PASS"
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        "python3 quantum-weyl/classical_import/check_strict_386_stabilized_q2_lift_preflight.py",
+        "python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v17.py",
+        "python3 foundations/check_matrix_site_v2.py",
+        "python3 paper/verify_21_reverse_foundations_claim_map.py"
+      ],
+      "criterion": "Gate V7 consumes the q2 preflight and is consumed by Atlas V17, the static site and paper; the full changed certificate chain was independently checked."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "Gate A remains FAIL_CLOSED with zero accepted top-level hashes. No freeze/tag, theorem, QME, residual-transfer or Lorentzian lifecycle promotion occurred."
+    }
+  },
+  "artifact_sha256": {
+    "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V7_RECONCILIATION.json": "07bf0a7ffc23f9b2fe1a28aea84b04377d4b16dd5ed780d7cfc3106a86b469de",
+    "quantum-weyl/classical_import/REPORT_GATE_V7.md": "f7bacf9aeef93c75b8db2e08e66452fd11d26efc89a11a80dd6f33d3288ee731"
+  },
+  "advisory_shadow_rail": {
+    "command": "ci/science-forge-shadow.sh",
+    "exit_status": 0,
+    "bridge_audit": "FAIL_CLOSED: external bp2transformer verifier lacks sympy; Forge binary/stdlib revisions also differ",
+    "coverage_census": "DRIFT: 1790 certificates versus baseline 976",
+    "disposition": "Neither advisory finding is used to accept a source hash or promote Gate A."
+  },
+  "claim_boundary": "V7 records the strict-carrier q2 construction and D/q2 compatibility as supporting evidence only. It does not certify source-theory identity, accept any authoritative hash, close Gate A, or promote Hadamard, renormalization, QME, residual-transfer or Lorentzian quantum claims."
+}

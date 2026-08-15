@@ -120,6 +120,9 @@ def main() -> int:
     strict_386_full_d = json.loads((ROOT / data["authorities"]["strict_386_full_d_action"]["path"]).read_text())
     gate_v6 = json.loads((ROOT / data["authorities"]["classical_import_gate_v6"]["path"]).read_text())
     completion_atlas_v16 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v16"]["path"]).read_text())
+    strict_386_q2_preflight = json.loads((ROOT / data["authorities"]["strict_386_stabilized_q2_lift_preflight"]["path"]).read_text())
+    gate_v7 = json.loads((ROOT / data["authorities"]["classical_import_gate_v7"]["path"]).read_text())
+    completion_atlas_v17 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v17"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -417,6 +420,8 @@ def main() -> int:
         (40, "STRICT-WEYL-UNARY-CAUSAL-COMMON-SNAPSHOT"),
         (41, "STRICT-WEYL-FULL-CYLINDER-D-ACTION"),
         (42, "STRICT-WEYL-GATE-V6-RECONCILIATION"),
+        (43, "STRICT-WEYL-STABILIZED-Q2-LIFT-PREFLIGHT"),
+        (44, "STRICT-WEYL-GATE-V7-THEORY-IDENTITY-FRONTIER"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -456,6 +461,9 @@ def main() -> int:
     require(flags["strict_386_full_carrier_q2_certified"] is False, "strict full-carrier q2 promoted")
     require(flags["strict_386_d_q2_derivation_replayed"] is False, "strict D/q2 replay promoted")
     require(flags["strict_386_d_cartan_homotopy_constructed"] is False and flags["strict_d_gauge_or_charge_decided"] is False, "strict D Cartan/charge boundary promoted")
+    require(flags["strict_386_stabilized_q2_candidate_certified"] is True, "strict stabilized q2 candidate omitted")
+    require(flags["strict_386_stabilized_q1_q2_identity_verified"] is True and flags["strict_386_stabilized_q2_cyclicity_verified"] is True and flags["strict_386_stabilized_d_q2_derivation_verified"] is True, "strict stabilized q2 identities omitted")
+    require(flags["strict_386_authoritative_full_q2_imported"] is False and flags["strict_386_candidate_theory_identity_certified"] is False, "strict candidate promoted to authoritative q2")
     require(strict_q1["claim_flags"]["Q1_SQUARED_ZERO_CERTIFIED"] is True, "strict q1 square-zero authority drift")
     require(strict_q1q2["channel_inventory"]["channel_count"] == 18, "strict q1/q2 channel count drift")
     require(strict_q1q2["channel_inventory"]["composable_path_count"] == 51, "strict q1/q2 path count drift")
@@ -608,6 +616,17 @@ def main() -> int:
     require(completion_atlas_v16["strict_full_d_action"]["q1_coefficients_checked"] == 4374 and completion_atlas_v16["strict_gate_v6_reconciliation"]["transitive_provenance_drifted_files"] == 5, "completion atlas V16 D/Gate projection drift")
     require(completion_atlas_v16["claim_flags"]["strict_386_full_local_d_action_certified"] is True and completion_atlas_v16["claim_flags"]["strict_386_d_q1_commutator_replayed"] is True and completion_atlas_v16["claim_flags"]["strict_386_full_carrier_q2_certified"] is False and completion_atlas_v16["claim_flags"]["strict_pure_weyl_classical_gate_passed"] is False, "completion atlas V16 promotion boundary drift")
     require(len(completion_atlas_v16["route_selection"]) == 8 and completion_atlas_v16["route_selection"][0]["route"] == "STRICT_386_Q2_D_COMMON_CARRIER", "completion atlas V16 frontier ordering drift")
+    q2_flags = strict_386_q2_preflight["claim_flags"]
+    require((strict_386_q2_preflight["scope"]["carrier_rows"], strict_386_q2_preflight["scope"]["endpoint_rows"], strict_386_q2_preflight["scope"]["split_contractible_rows"]) == (386, 30, 356), "strict q2 preflight carrier drift")
+    require((strict_386_q2_preflight["graph_transport_dag"]["expanded_ordered_component_channels"], strict_386_q2_preflight["graph_transport_dag"]["unique_block_triples"], strict_386_q2_preflight["graph_transport_dag"]["active_input_row_envelope"], strict_386_q2_preflight["graph_transport_dag"]["active_output_row_envelope"], strict_386_q2_preflight["graph_transport_dag"]["interaction_inert_rows"]) == (140, 68, 110, 110, 196), "strict q2 preflight support envelope drift")
+    require(strict_386_q2_preflight["identity_transport"]["q1_q2_arity_two"]["defects"] == 0 and strict_386_q2_preflight["identity_transport"]["q2_koszul_symmetry"]["defects"] == 0 and strict_386_q2_preflight["identity_transport"]["q2_cyclicity"]["defects"] == 0 and strict_386_q2_preflight["identity_transport"]["D_q2_derivation"]["derivation_defects"] == 0, "strict q2 candidate identity drift")
+    require(q2_flags["STRICT_386_STABILIZED_Q2_CANDIDATE_CONSTRUCTED"] is True and q2_flags["STRICT_386_STABILIZED_D_Q2_DERIVATION_VERIFIED"] is True and q2_flags["STRICT_386_AUTHORITATIVE_FULL_Q2_IMPORTED"] is False and q2_flags["STRICT_386_CANDIDATE_AUTHORITATIVE_EQUIVALENCE_CERTIFIED"] is False and q2_flags["CLASSICAL_IMPORT_GATE_PASSED"] is False, "strict q2 preflight authority firewall drift")
+    require(gate_v7["gate_disposition"]["gate_a_status"] == "FAIL_CLOSED" and gate_v7["gate_disposition"]["same_theory_receiver_verified_scoped"] == 11 and gate_v7["gate_disposition"]["freeze_checks_receiver_verified_scoped"] == 8 and gate_v7["gate_disposition"]["freeze_checks_supporting_evidence_only"] == 1 and gate_v7["gate_disposition"]["accepted_common_snapshot_hashes"] == 0, "Gate V7 disposition drift")
+    require(gate_v7["required_hash_disposition"]["q2_hash"]["accepted"] is None and gate_v7["claim_flags"]["STRICT_386_STABILIZED_Q2_CANDIDATE"] is True and gate_v7["claim_flags"]["STRICT_386_AUTHORITATIVE_FULL_CARRIER_Q2"] is False and gate_v7["claim_flags"]["CLASSICAL_IMPORT_GATE_PASSED"] is False, "Gate V7 candidate/import firewall drift")
+    require(gate_v7["transitive_provenance_drift"]["files_checked"] == 23 and gate_v7["transitive_provenance_drift"]["drifted_files"] == 5, "Gate V7 provenance-drift ledger drift")
+    require(completion_atlas_v17["strict_stabilized_q2_lift_preflight"]["expanded_component_channels"] == 140 and completion_atlas_v17["strict_gate_v7_reconciliation"]["accepted_top_level_hashes"] == 0, "completion atlas V17 q2/Gate projection drift")
+    require(completion_atlas_v17["claim_flags"]["strict_386_stabilized_q2_candidate_certified"] is True and completion_atlas_v17["claim_flags"]["strict_386_authoritative_full_q2_imported"] is False and completion_atlas_v17["claim_flags"]["strict_pure_weyl_classical_gate_passed"] is False, "completion atlas V17 authority boundary drift")
+    require(len(completion_atlas_v17["route_selection"]) == 8 and completion_atlas_v17["route_selection"][0]["route"] == "STRICT_386_AUTHORITATIVE_Q2_IDENTITY", "completion atlas V17 frontier ordering drift")
     require(flags["static_atlas_appendix_generated"] is True, "static atlas appendix flag is not certified")
     require(flags["complete_evidence_register_generated"] is True, "complete evidence register flag is not certified")
     require(flags["complete_literature_register_generated"] is True, "complete literature register flag is not certified")
@@ -1035,6 +1054,14 @@ def main() -> int:
         r"4,374 rational coefficients",
         r"five of twenty-one files",
         r"full-carrier extension of strict \(q_2\)",
+        r"STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1",
+        r"CLASSICAL_IMPORT_GATE_V7_RECONCILIATION",
+        r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V17",
+        r"140 ordered-component channels",
+        r"68 potentially nonzero block triples",
+        r"cyclic \(L_\infty\) isomorphism",
+        r"zero of seven authoritative hashes",
+        r"STRICT_386_AUTHORITATIVE_Q2_IDENTITY",
         r"This is a genuine \rtype{LORENTZIAN-CAUSAL} result",
         r"not a Weyl/BV propagator or quantum causal construction",
         r"Exact finite causality is not continuum causality",

@@ -17,11 +17,12 @@ VIABILITY = ROOT / "foundations/site/viability.json"
 ASSEMBLIES = ROOT / "foundations/site/assemblies.json"
 CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V15.json"
 LADDER = ROOT / "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
-COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V16.json"
+COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V17.json"
 COMPLETION_GREEN_ACTION_NAME = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_GREEN_ACTION_NAME_V1.json"
 COMPLETION_UNARY_CAUSAL_SNAPSHOT = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1.json"
 COMPLETION_FULL_D = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_FULL_D_ACTION_V1.json"
-COMPLETION_GATE_V6 = ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V6_RECONCILIATION.json"
+COMPLETION_Q2_PREFLIGHT = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1.json"
+COMPLETION_GATE_V7 = ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V7_RECONCILIATION.json"
 STATUSES = {"LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "REVIEWED_GAP", "NOT_MAPPED"}
 MIGRATIONS = {"EXACT_PARENT_TRANSFER", "CAPABILITY_QUALIFIED", "REVIEWED_OVERLAY", "REVIEWED_NO_TRANSFER", "REVIEWED_CHILD_GAP", "DIRECT_COORDINATE_REVIEW", "NOT_REVIEWED"}
 
@@ -43,7 +44,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     data = load(DATA) if data is None else data
     cube, ladder, completion_source, result, manifest, viability, assemblies = load(CUBE), load(LADDER), load(COMPLETION_ATLAS), load(RESULT), load(MANIFEST), load(VIABILITY), load(ASSEMBLIES)
     green_source, unary_causal_source = load(COMPLETION_GREEN_ACTION_NAME), load(COMPLETION_UNARY_CAUSAL_SNAPSHOT)
-    full_d_source, gate_v6_source = load(COMPLETION_FULL_D), load(COMPLETION_GATE_V6)
+    full_d_source, q2_preflight_source, gate_v7_source = load(COMPLETION_FULL_D), load(COMPLETION_Q2_PREFLIGHT), load(COMPLETION_GATE_V7)
     errors: list[str] = []
     axes = {x.get("id"): x for x in data.get("axes", [])}
     keys = {axis_id: [x.get("id") for x in axes.get(axis_id, {}).get("keys", [])] for axis_id in ("FOUNDATION", "CARRIER", "REFINED_OBLIGATION")}
@@ -166,7 +167,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     completion_flags = completion.get("claim_flags", {})
     if completion_flags.get("general_noncone_104_row_no_go") is not False or completion_flags.get("lorentzian_full_theory_certified") is not False:
         errors.append("Lorentzian completion fail-closed boundary")
-    if completion.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V16":
+    if completion.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V17":
         errors.append("Lorentzian completion atlas version")
     transport = completion.get("strict_causal_sign_transport", {})
     if transport.get("full_dimension") != 386 or transport.get("positive_signs") != 381 or transport.get("negative_signs") != 5 or transport.get("causal_stage_preserved") is not True:
@@ -302,19 +303,28 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("strict full-D exact replay")
     if full_d.get("D_action_sha256") != full_d_source.get("canonical_hashes", {}).get("D_action_sha256") or full_d.get("full_q2_common_snapshot") is not False or full_d.get("D_q2_derivation") is not False or full_d.get("D_gauge_or_charge_decided") is not False:
         errors.append("strict full-D binding/boundary")
-    gate_v6 = completion.get("strict_gate_v6_reconciliation", {})
-    if (gate_v6.get("result_id"), gate_v6.get("exports_total"), gate_v6.get("exports_receiver_verified_scoped"), gate_v6.get("freeze_checks_total"), gate_v6.get("freeze_checks_receiver_verified_scoped"), gate_v6.get("accepted_top_level_hashes"), gate_v6.get("gate_a_status")) != (gate_v6_source.get("result_id"), 20, 11, 10, 8, 0, "FAIL_CLOSED"):
-        errors.append("strict Gate-V6 projection")
-    if (gate_v6.get("transitive_provenance_files_checked"), gate_v6.get("transitive_provenance_drifted_files")) != (21, 5) or gate_v6.get("D_candidate_hash_accepted") is not False:
-        errors.append("strict Gate-V6 drift/boundary")
+    q2_candidate = completion.get("strict_stabilized_q2_lift_preflight", {})
+    if (q2_candidate.get("result_id"), q2_candidate.get("carrier_rows"), q2_candidate.get("expanded_component_channels"), q2_candidate.get("unique_block_triples"), q2_candidate.get("input_row_envelope"), q2_candidate.get("output_row_envelope"), q2_candidate.get("interaction_inert_rows")) != (q2_preflight_source.get("result_id"), 386, 140, 68, 110, 110, 196):
+        errors.append("strict stabilized-q2 projection")
+    if any(q2_candidate.get(key) != 0 for key in ("q1_q2_defects", "koszul_defects", "cyclicity_defects", "D_q2_defects")) or q2_candidate.get("authoritative_full_q2_imported") is not False or q2_candidate.get("candidate_theory_identity_certified") is not False:
+        errors.append("strict stabilized-q2 candidate/authority boundary")
+    if q2_candidate.get("candidate_q2_sha256") != q2_preflight_source.get("canonical_hashes", {}).get("graph_transport_dag_sha256"):
+        errors.append("strict stabilized-q2 hash binding")
+    gate_v7 = completion.get("strict_gate_v7_reconciliation", {})
+    if (gate_v7.get("result_id"), gate_v7.get("exports_total"), gate_v7.get("exports_receiver_verified_scoped"), gate_v7.get("freeze_checks_total"), gate_v7.get("freeze_checks_receiver_verified_scoped"), gate_v7.get("freeze_checks_supporting_evidence_only"), gate_v7.get("freeze_checks_blocked"), gate_v7.get("accepted_top_level_hashes"), gate_v7.get("gate_a_status")) != (gate_v7_source.get("result_id"), 20, 11, 10, 8, 1, 1, 0, "FAIL_CLOSED"):
+        errors.append("strict Gate-V7 projection")
+    if (gate_v7.get("transitive_provenance_files_checked"), gate_v7.get("transitive_provenance_drifted_files")) != (23, 5) or gate_v7.get("candidate_q2_hash_accepted") is not False:
+        errors.append("strict Gate-V7 drift/boundary")
     if completion_flags.get("strict_386_full_local_d_action_certified") is not True or completion_flags.get("strict_386_d_q1_commutator_replayed") is not True or completion_flags.get("strict_386_d_formal_skew_adjoint_replayed") is not True or completion_flags.get("strict_386_unary_causal_d_scoped_snapshot_accepted") is not True:
         errors.append("strict V16 D successor flags")
-    if completion_flags.get("strict_386_full_carrier_q2_certified") is not False or completion_flags.get("strict_386_d_q2_derivation_replayed") is not False or completion_flags.get("strict_pure_weyl_classical_gate_passed") is not False:
-        errors.append("strict V16 q2/Gate firewall")
-    if completion.get("route_selection", [{}])[0].get("route") != "STRICT_386_Q2_D_COMMON_CARRIER":
-        errors.append("strict V16 route frontier")
+    if completion_flags.get("strict_386_stabilized_q2_candidate_certified") is not True or completion_flags.get("strict_386_stabilized_d_q2_derivation_verified") is not True:
+        errors.append("strict V17 candidate-q2 flags")
+    if completion_flags.get("strict_386_authoritative_full_q2_imported") is not False or completion_flags.get("strict_386_candidate_theory_identity_certified") is not False or completion_flags.get("strict_386_full_carrier_q2_certified") is not False or completion_flags.get("strict_386_d_q2_derivation_replayed") is not False or completion_flags.get("strict_pure_weyl_classical_gate_passed") is not False:
+        errors.append("strict V17 authoritative q2/Gate firewall")
+    if completion.get("route_selection", [{}])[0].get("route") != "STRICT_386_AUTHORITATIVE_Q2_IDENTITY":
+        errors.append("strict V17 route frontier")
     result_flags = result.get("claim_flags", {})
-    if result_flags.get("strict_graph_green_names_exposed") is not True or result_flags.get("strict_unary_causal_snapshot_exposed") is not True or result_flags.get("strict_full_d_action_exposed") is not True or result_flags.get("strict_d_q1_replay_exposed") is not True or result_flags.get("strict_full_carrier_q2_exposed") is not False or result_flags.get("strict_classical_gate_a_passed") is not False:
+    if result_flags.get("strict_graph_green_names_exposed") is not True or result_flags.get("strict_unary_causal_snapshot_exposed") is not True or result_flags.get("strict_full_d_action_exposed") is not True or result_flags.get("strict_d_q1_replay_exposed") is not True or result_flags.get("strict_stabilized_q2_candidate_exposed") is not True or result_flags.get("strict_stabilized_d_q2_derivation_exposed") is not True or result_flags.get("strict_authoritative_full_carrier_q2_exposed") is not False or result_flags.get("strict_full_carrier_q2_exposed") is not False or result_flags.get("strict_classical_gate_a_passed") is not False:
         errors.append("site completion exposure flags")
     if viability.get("source_atlas_digest") != data.get("canonical_digest") or viability.get("canonical_digest") != result.get("independent_checker", {}).get("expected_viability_digest"):
         errors.append("theory viability source/digest pin")
@@ -384,7 +394,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     for token in ("NGC 3198 head-to-head control", "Scoped winner: GR + NFW", "Why RMS and χ² disagree", "FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1"):
         if token not in app:
             errors.append("common-fit interface token " + token)
-    for token in ("completionView", "Weyl BV routes", "completionExplorer", "77 separately typed cells", "Where effort has the highest expected value", "RANK_ONLY_FEASIBLE", "general non-cone 104-row no-go", "Finite residual control", "Gate A still closed", "Gate V6", "Causal convention crosswalk", "Endpoint search completed", "arrow_tables_matching", "bach_columns_matching", "619", "Suspension question resolved", "54", "30", "376", "10", "Full component pairing serialized", "356=36+320", "410", "Three portability contracts", "FINITE_COMPONENT_JET_TABLE", "FINITE_SPARSE_COMPONENT_MAP", "ANALYTIC_GREEN_ACTION", "Complete unary snapshot", "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1", "Exact split local SDR", "STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1", "H_alg", "190", "Canonical coordinate bridge certified", "STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1", "1321", "A(-Tsharp)", "T(-Asharp)", "Represented Green action certified", "Hodge eigenspace projectors", "STRICT_386_GRAPH_GREEN_ACTION_NAME_V1", "Scoped common snapshot accepted", "hashes bind one unary-causal carrier", "STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1", "Full cylinder flow certified", "STRICT_386_FULL_D_ACTION_V1", "4,374", "Fourteen hashes", "STRICT_386_Q2_D_COMMON_CARRIER", "graph coordinates"):
+    for token in ("completionView", "Weyl BV routes", "completionExplorer", "77 separately typed cells", "Where effort has the highest expected value", "RANK_ONLY_FEASIBLE", "general non-cone 104-row no-go", "Finite residual control", "Gate A still closed", "Gate V7", "Causal convention crosswalk", "Endpoint search completed", "arrow_tables_matching", "bach_columns_matching", "619", "Suspension question resolved", "54", "30", "376", "10", "Full component pairing serialized", "356=36+320", "410", "Three portability contracts", "FINITE_COMPONENT_JET_TABLE", "FINITE_SPARSE_COMPONENT_MAP", "ANALYTIC_GREEN_ACTION", "Complete unary snapshot", "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1", "Exact split local SDR", "STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1", "H_alg", "190", "Canonical coordinate bridge certified", "STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1", "1321", "A(-Tsharp)", "T(-Asharp)", "Represented Green action certified", "Hodge eigenspace projectors", "STRICT_386_GRAPH_GREEN_ACTION_NAME_V1", "Scoped common snapshot accepted", "hashes bind one unary-causal carrier", "STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1", "Full cylinder flow certified", "STRICT_386_FULL_D_ACTION_V1", "4374", "Fourteen hashes", "Algebraic q2 lift certified", "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1", "140", "68", "STRICT_386_AUTHORITATIVE_Q2_IDENTITY", "graph coordinates"):
         if token not in html + app + json.dumps(data):
             errors.append("completion interface token " + token)
 

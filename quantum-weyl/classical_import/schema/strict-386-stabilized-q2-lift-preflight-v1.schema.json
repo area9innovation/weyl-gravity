@@ -1,0 +1,223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-386-stabilized-q2-lift-preflight-v1.schema.json",
+  "title": "Strict 386-row stabilized q2 lift preflight v1",
+  "type": "object",
+  "required": [
+    "$schema", "schema", "schema_path", "result_id", "result_kind", "result_state",
+    "lifecycle", "created", "repository_base_commit", "dependency_tags", "question",
+    "answer", "scope", "split_candidate", "graph_transport_dag", "identity_transport",
+    "candidate_snapshot", "theory_identity_boundary", "support_and_foundations",
+    "gate_disposition", "claim_flags", "does_not_establish", "next_gate",
+    "canonical_hashes", "provenance", "independent_checker", "human_report"
+  ],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "strict-386-stabilized-q2-lift-preflight-v1"},
+    "result_id": {"const": "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1"},
+    "result_kind": {"const": "EXACT_CYCLIC_TRIVIAL_STABILIZATION_AND_THEORY_IDENTITY_PREFLIGHT"},
+    "result_state": {"const": "STABILIZED_CANDIDATE_CERTIFIED_AUTHORITATIVE_IDENTITY_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"$ref": "#/$defs/gitsha"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "scope": {
+      "type": "object",
+      "required": ["carrier_rows", "endpoint_rows", "split_contractible_rows", "component_blocks"],
+      "properties": {
+        "carrier_rows": {"const": 386},
+        "endpoint_rows": {"const": 30},
+        "split_contractible_rows": {"const": 356},
+        "component_blocks": {"const": 22}
+      },
+      "additionalProperties": true
+    },
+    "split_candidate": {
+      "type": "object",
+      "required": [
+        "construction_kind", "formula", "carrier_rows", "minimal_endpoint_rows",
+        "contractible_rows_with_zero_split_interactions", "minimal_species_component_counts",
+        "minimal_primary_components", "minimal_ordered_components", "split_q1_tables_checked",
+        "split_q1_endpoint_complement_crossings", "split_pairing_entries_checked",
+        "split_pairing_endpoint_complement_crossings", "minimal_q2_ordered_components_sha256",
+        "minimal_q1_q2_receiver_sha256", "minimal_q2_cyclicity_receiver_sha256", "sha256"
+      ],
+      "properties": {
+        "construction_kind": {"const": "CYCLIC_TRIVIAL_STABILIZATION_CANDIDATE"},
+        "carrier_rows": {"const": 386},
+        "minimal_endpoint_rows": {"const": 30},
+        "contractible_rows_with_zero_split_interactions": {"const": 356},
+        "minimal_primary_components": {"const": 12},
+        "minimal_ordered_components": {"const": 22},
+        "split_q1_tables_checked": {"const": 18},
+        "split_q1_endpoint_complement_crossings": {"const": 0},
+        "split_pairing_entries_checked": {"const": 410},
+        "split_pairing_endpoint_complement_crossings": {"const": 0},
+        "minimal_q2_ordered_components_sha256": {"$ref": "#/$defs/sha256"},
+        "minimal_q1_q2_receiver_sha256": {"$ref": "#/$defs/sha256"},
+        "minimal_q2_cyclicity_receiver_sha256": {"$ref": "#/$defs/sha256"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": true
+    },
+    "graph_transport_dag": {
+      "type": "object",
+      "required": [
+        "construction_kind", "formula", "nodes", "forward_tables", "inverse_tables",
+        "input_origins_by_endpoint_block", "output_targets_by_endpoint_block",
+        "active_input_blocks", "active_output_blocks", "active_input_row_envelope",
+        "active_output_row_envelope", "expanded_ordered_component_channels",
+        "unique_block_triples", "total_ordered_carrier_block_triples",
+        "excluded_from_support_envelope_block_triples", "expanded_component_channel_ledger",
+        "block_triple_ledger", "interaction_inert_blocks", "interaction_inert_rows",
+        "support_envelope_warning", "sha256"
+      ],
+      "properties": {
+        "construction_kind": {"const": "EXACT_CANONICAL_BINARY_TRANSPORT_DAG"},
+        "nodes": {"type": "array", "minItems": 4, "maxItems": 4},
+        "forward_tables": {"type": "array", "minItems": 7, "maxItems": 7},
+        "inverse_tables": {"type": "array", "minItems": 7, "maxItems": 7},
+        "active_input_blocks": {"type": "array", "minItems": 7, "maxItems": 7},
+        "active_output_blocks": {"type": "array", "minItems": 7, "maxItems": 7},
+        "active_input_row_envelope": {"const": 110},
+        "active_output_row_envelope": {"const": 110},
+        "expanded_ordered_component_channels": {"const": 140},
+        "unique_block_triples": {"const": 68},
+        "total_ordered_carrier_block_triples": {"const": 10648},
+        "excluded_from_support_envelope_block_triples": {"const": 10580},
+        "expanded_component_channel_ledger": {"type": "array", "minItems": 140, "maxItems": 140},
+        "block_triple_ledger": {"type": "array", "minItems": 68, "maxItems": 68},
+        "interaction_inert_blocks": {"type": "array", "minItems": 12, "maxItems": 12},
+        "interaction_inert_rows": {"const": 196},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": true
+    },
+    "identity_transport": {
+      "type": "object",
+      "required": ["q1_q2_arity_two", "q2_koszul_symmetry", "q2_cyclicity", "D_q2_derivation", "naturality_ledger"],
+      "properties": {
+        "q1_q2_arity_two": {"$ref": "#/$defs/zero_defect_identity"},
+        "q2_koszul_symmetry": {"$ref": "#/$defs/zero_defect_identity"},
+        "q2_cyclicity": {"$ref": "#/$defs/zero_defect_identity"},
+        "D_q2_derivation": {
+          "type": "object",
+          "required": ["status", "real_generator", "minimal_primary_operators_checked", "stationary_natural_operator_defects", "shear_tables_checked", "shear_rational_coefficients_checked", "temporal_shear_commutator_defects", "derivation_defects", "proof_rule"],
+          "properties": {
+            "status": {"const": "VERIFIED_FOR_STABILIZED_CANDIDATE_BY_STATIONARY_NATURALITY_AND_CONJUGATION"},
+            "minimal_primary_operators_checked": {"const": 12},
+            "stationary_natural_operator_defects": {"const": 0},
+            "shear_tables_checked": {"const": 14},
+            "shear_rational_coefficients_checked": {"const": 2642},
+            "temporal_shear_commutator_defects": {"const": 0},
+            "derivation_defects": {"const": 0}
+          },
+          "additionalProperties": true
+        },
+        "naturality_ledger": {"type": "array", "minItems": 12, "maxItems": 12}
+      },
+      "additionalProperties": false
+    },
+    "candidate_snapshot": {
+      "type": "object",
+      "required": ["kind", "basis_sha256", "pairing_sha256", "graph_q1_sha256", "D_action_sha256", "split_candidate_sha256", "graph_transport_dag_sha256", "receiver_status", "accepted_gate_a_object_hashes", "sha256"],
+      "properties": {
+        "kind": {"const": "STRICT_386_STABILIZED_Q2_PREFLIGHT_SNAPSHOT"},
+        "receiver_status": {"const": "PREFLIGHT_ONLY_NOT_GATE_ACCEPTED"},
+        "accepted_gate_a_object_hashes": {"const": 0},
+        "basis_sha256": {"$ref": "#/$defs/sha256"},
+        "pairing_sha256": {"$ref": "#/$defs/sha256"},
+        "graph_q1_sha256": {"$ref": "#/$defs/sha256"},
+        "D_action_sha256": {"$ref": "#/$defs/sha256"},
+        "split_candidate_sha256": {"$ref": "#/$defs/sha256"},
+        "graph_transport_dag_sha256": {"$ref": "#/$defs/sha256"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "theory_identity_boundary": {
+      "type": "object",
+      "required": ["candidate_status", "authoritative_full_nonlinear_386_row_export_present", "authoritative_nonminimal_auxiliary_interaction_ledger_present", "source_to_candidate_cyclic_L_infinity_isomorphism_present", "candidate_equals_authoritative_classical_theory", "why_fail_closed", "acceptable_closure_routes"],
+      "properties": {
+        "candidate_status": {"const": "CERTIFIED_CONSTRUCTION_NOT_AUTHORITATIVE_IMPORT"},
+        "authoritative_full_nonlinear_386_row_export_present": {"const": false},
+        "authoritative_nonminimal_auxiliary_interaction_ledger_present": {"const": false},
+        "source_to_candidate_cyclic_L_infinity_isomorphism_present": {"const": false},
+        "candidate_equals_authoritative_classical_theory": {"const": "NOT_ESTABLISHED"},
+        "acceptable_closure_routes": {"type": "array", "minItems": 2, "maxItems": 2}
+      },
+      "additionalProperties": true
+    },
+    "gate_disposition": {
+      "type": "object",
+      "required": ["M2_D_action_status", "M2_D_q1_status", "M2_stabilized_candidate_q2_status", "M2_stabilized_candidate_D_q2_status", "M2_authoritative_full_carrier_q2_status", "M2_authoritative_D_q2_status", "top_level_gate_a_hashes_accepted_by_this_result", "classical_import_gate_a_status"],
+      "properties": {
+        "M2_stabilized_candidate_q2_status": {"const": "CERTIFIED_CONSTRUCTION"},
+        "M2_stabilized_candidate_D_q2_status": {"const": "VERIFIED_BY_STRUCTURAL_TRANSPORT"},
+        "M2_authoritative_full_carrier_q2_status": {"const": "OPEN_SOURCE_IDENTITY"},
+        "M2_authoritative_D_q2_status": {"const": "OPEN_SOURCE_IDENTITY"},
+        "top_level_gate_a_hashes_accepted_by_this_result": {"const": 0},
+        "classical_import_gate_a_status": {"const": "FAIL_CLOSED"}
+      },
+      "additionalProperties": true
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "STRICT_386_STABILIZED_Q2_CANDIDATE_CONSTRUCTED", "STRICT_386_STABILIZED_Q1_Q2_IDENTITY_VERIFIED",
+        "STRICT_386_STABILIZED_Q2_CYCLICITY_VERIFIED", "STRICT_386_STABILIZED_D_Q2_DERIVATION_VERIFIED",
+        "STRICT_386_AUTHORITATIVE_FULL_Q2_IMPORTED", "STRICT_386_CANDIDATE_AUTHORITATIVE_EQUIVALENCE_CERTIFIED",
+        "STRICT_386_FULL_Q2_D_COMMON_SNAPSHOT_ACCEPTED", "CLASSICAL_IMPORT_GATE_PASSED",
+        "HADAMARD_STATE_CONSTRUCTED", "RENORMALIZED_LORENTZIAN_PRODUCTS", "QME_RESTORED",
+        "RESIDUAL_TRANSFERRED", "LORENTZIAN_QUANTUM_THEORY"
+      ],
+      "properties": {
+        "STRICT_386_STABILIZED_Q2_CANDIDATE_CONSTRUCTED": {"const": true},
+        "STRICT_386_STABILIZED_Q1_Q2_IDENTITY_VERIFIED": {"const": true},
+        "STRICT_386_STABILIZED_Q2_CYCLICITY_VERIFIED": {"const": true},
+        "STRICT_386_STABILIZED_D_Q2_DERIVATION_VERIFIED": {"const": true},
+        "STRICT_386_AUTHORITATIVE_FULL_Q2_IMPORTED": {"const": false},
+        "STRICT_386_CANDIDATE_AUTHORITATIVE_EQUIVALENCE_CERTIFIED": {"const": false},
+        "STRICT_386_FULL_Q2_D_COMMON_SNAPSHOT_ACCEPTED": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "RENORMALIZED_LORENTZIAN_PRODUCTS": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "RESIDUAL_TRANSFERRED": {"const": false},
+        "LORENTZIAN_QUANTUM_THEORY": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "does_not_establish": {"type": "array", "minItems": 7, "items": {"type": "string", "minLength": 20}},
+    "next_gate": {"type": "string", "minLength": 200},
+    "canonical_hashes": {"type": "object", "minProperties": 7, "maxProperties": 7, "additionalProperties": {"$ref": "#/$defs/sha256"}},
+    "provenance": {
+      "type": "object",
+      "required": ["inputs"],
+      "properties": {"inputs": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"$ref": "#/$defs/provenance"}}},
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "gitsha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "zero_defect_identity": {
+      "type": "object",
+      "required": ["status", "defects"],
+      "properties": {"status": {"type": "string", "minLength": 20}, "defects": {"const": 0}},
+      "additionalProperties": true
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["path", "result_or_schema_id", "sha256", "role"],
+      "properties": {
+        "path": {"type": "string", "minLength": 3},
+        "result_or_schema_id": {"type": "string", "minLength": 3},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "role": {"type": "string", "minLength": 10}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

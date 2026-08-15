@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/foundational-lorentzian-weyl-bv-completion-atlas-v17.schema.json",
+  "title": "Foundational Lorentzian Weyl BV completion atlas V17",
+  "type": "object",
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit", "question", "answer", "predecessor", "stages", "branches", "frontier_summary", "strict_gate_a_progress", "strict_stabilized_q2_lift_preflight", "strict_gate_v7_reconciliation", "route_selection", "research_queue", "claim_flags", "does_not_establish", "provenance", "independent_checker", "human_report"],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v17"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V17"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "branches": {"type": "array", "minItems": 7, "maxItems": 7},
+    "strict_stabilized_q2_lift_preflight": {
+      "type": "object",
+      "required": ["result_id", "carrier_rows", "endpoint_rows", "split_contractible_rows", "expanded_component_channels", "unique_block_triples", "input_row_envelope", "output_row_envelope", "interaction_inert_rows", "q1_q2_defects", "koszul_defects", "cyclicity_defects", "D_q2_defects", "candidate_q2_sha256", "authoritative_full_q2_imported", "candidate_theory_identity_certified"],
+      "properties": {
+        "result_id": {"const": "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1"},
+        "carrier_rows": {"const": 386},
+        "endpoint_rows": {"const": 30},
+        "split_contractible_rows": {"const": 356},
+        "expanded_component_channels": {"const": 140},
+        "unique_block_triples": {"const": 68},
+        "input_row_envelope": {"const": 110},
+        "output_row_envelope": {"const": 110},
+        "interaction_inert_rows": {"const": 196},
+        "q1_q2_defects": {"const": 0},
+        "koszul_defects": {"const": 0},
+        "cyclicity_defects": {"const": 0},
+        "D_q2_defects": {"const": 0},
+        "candidate_q2_sha256": {"$ref": "#/$defs/sha256"},
+        "authoritative_full_q2_imported": {"const": false},
+        "candidate_theory_identity_certified": {"const": false}
+      },
+      "additionalProperties": true
+    },
+    "strict_gate_v7_reconciliation": {
+      "type": "object",
+      "required": ["result_id", "exports_total", "exports_receiver_verified_scoped", "freeze_checks_total", "freeze_checks_receiver_verified_scoped", "freeze_checks_supporting_evidence_only", "freeze_checks_blocked", "accepted_top_level_hashes", "gate_a_status", "candidate_q2_hash_accepted"],
+      "properties": {
+        "result_id": {"const": "CLASSICAL_IMPORT_GATE_V7_RECONCILIATION"},
+        "exports_total": {"const": 20},
+        "exports_receiver_verified_scoped": {"const": 11},
+        "freeze_checks_total": {"const": 10},
+        "freeze_checks_receiver_verified_scoped": {"const": 8},
+        "freeze_checks_supporting_evidence_only": {"const": 1},
+        "freeze_checks_blocked": {"const": 1},
+        "accepted_top_level_hashes": {"const": 0},
+        "gate_a_status": {"const": "FAIL_CLOSED"},
+        "candidate_q2_hash_accepted": {"const": false}
+      },
+      "additionalProperties": true
+    },
+    "route_selection": {"type": "array", "minItems": 8, "maxItems": 8},
+    "research_queue": {"type": "array", "minItems": 8, "maxItems": 8},
+    "claim_flags": {
+      "type": "object",
+      "required": ["v16_preserved", "strict_386_stabilized_q2_candidate_certified", "strict_386_stabilized_q1_q2_identity_verified", "strict_386_stabilized_q2_cyclicity_verified", "strict_386_stabilized_d_q2_derivation_verified", "strict_386_authoritative_full_q2_imported", "strict_386_candidate_theory_identity_certified", "strict_pure_weyl_classical_gate_passed", "strict_pure_weyl_qme_restored", "lorentzian_full_theory_certified"],
+      "properties": {
+        "v16_preserved": {"const": true},
+        "strict_386_stabilized_q2_candidate_certified": {"const": true},
+        "strict_386_stabilized_q1_q2_identity_verified": {"const": true},
+        "strict_386_stabilized_q2_cyclicity_verified": {"const": true},
+        "strict_386_stabilized_d_q2_derivation_verified": {"const": true},
+        "strict_386_authoritative_full_q2_imported": {"const": false},
+        "strict_386_candidate_theory_identity_certified": {"const": false},
+        "strict_pure_weyl_classical_gate_passed": {"const": false},
+        "strict_pure_weyl_qme_restored": {"const": false},
+        "lorentzian_full_theory_certified": {"const": false}
+      },
+      "additionalProperties": true
+    },
+    "does_not_establish": {"type": "array", "minItems": 20},
+    "human_report": {"const": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v17.md"}
+  },
+  "$defs": {"sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+  "additionalProperties": true
+}

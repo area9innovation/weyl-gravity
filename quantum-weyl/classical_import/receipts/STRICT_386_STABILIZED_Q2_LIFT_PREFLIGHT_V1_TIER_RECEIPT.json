@@ -1,0 +1,73 @@
+{
+  "receipt_id": "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Exact preflight construction of a split 386-row q2 from the certified 30-row minimal operation, followed by transport through the certified rational BV shear. This is a candidate construction, not an authoritative classical import.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <explicit q2-preflight Python paths>",
+        "python3 -m json.tool quantum-weyl/classical_import/schema/strict-386-stabilized-q2-lift-preflight-v1.schema.json",
+        "python3 -m json.tool quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1.json",
+        "git diff --check -- <explicit scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "python3 quantum-weyl/classical_import/build_strict_386_stabilized_q2_lift_preflight.py --check",
+        "python3 quantum-weyl/classical_import/check_strict_386_stabilized_q2_lift_preflight.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_stabilized_q2_lift_preflight.py",
+        "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_stabilized_q2_lift_preflight.py"
+      ],
+      "checks": {
+        "carrier_rows": 386,
+        "minimal_q2_ordered_components": 22,
+        "expanded_ordered_component_channels": 140,
+        "potentially_nonzero_block_triples": 68,
+        "active_input_rows": 110,
+        "active_output_rows": 110,
+        "inert_input_and_output_rows": 196,
+        "primary_q2_operators_checked": 12,
+        "shear_tables_checked": 14,
+        "rational_shear_coefficients_checked": 2642,
+        "q1_q2_defects": 0,
+        "koszul_defects": 0,
+        "cyclicity_defects": 0,
+        "d_q2_defects": 0,
+        "mutation_tests": "11/11 PASS"
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        "python3 quantum-weyl/classical_import/check_classical_import_gate_v7_reconciliation.py",
+        "python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v17.py",
+        "python3 foundations/check_matrix_site_v2.py",
+        "python3 paper/verify_21_reverse_foundations_claim_map.py"
+      ],
+      "criterion": "The exact candidate was checked through every changed receiver: Gate V7, Atlas V17, the existing static site and the paper claim map."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "The candidate is not a source-certified nonlinear export or a certified cyclic L-infinity equivalence. Gate A and every quantum lifecycle state remain unpromoted."
+    }
+  },
+  "artifact_sha256": {
+    "quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1.json": "ee6a88080cc13547c809f53b9c033da59138be73eff69c0654659c18ddd2c65b",
+    "quantum-weyl/classical_import/REPORT_STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1.md": "b343ffd7d7095c899abb928d8e8fa101835a72c09aa10aeb2dc7c5d80ecd3ae2"
+  },
+  "advisory_shadow_rail": {
+    "command": "ci/science-forge-shadow.sh",
+    "exit_status": 0,
+    "bridge_audit": "FAIL_CLOSED: external bp2transformer verifier lacks sympy; Forge binary/stdlib revisions also differ",
+    "coverage_census": "DRIFT: 1790 certificates versus baseline 976",
+    "disposition": "The advisory findings are recorded and are not used as positive evidence for the candidate or Gate A."
+  },
+  "claim_boundary": "The certificate establishes an exact algebraically valid candidate q2 on the strict 386-row carrier. It does not establish that this candidate is the source theory's nonlinear operation, a source-certified cyclic L-infinity equivalent replacement, an accepted Gate-A import, or any Lorentzian quantum lifecycle result."
+}

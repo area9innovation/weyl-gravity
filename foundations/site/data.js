@@ -18030,24 +18030,24 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "completion_atlas": {
-    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v16",
-    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V16",
+    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v17",
+    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V17",
     "result_kind": "BRANCH_BY_STAGE_COMPLETION_ATLAS",
     "lifecycle": "CLASSIFIED",
     "created": "2026-08-15",
-    "repository_base_commit": "3fa9c8cc37040960afbc5f6de7a0260389c2bd66",
+    "repository_base_commit": "2040f0c7964077686b7171b528be69cde62d4772",
     "dependency_tags": [
       "LOCAL-ALGEBRAIC",
       "EUCLIDEAN-SPECTRAL",
       "REDUCED-MODE",
       "LORENTZIAN-CAUSAL"
     ],
-    "question": "Can the V15 unary-causal graph snapshot be extended by a correctly typed full cylinder-flow action on all 386 rows, can its q1 equivariance be replayed independently, and how does that narrow the classical Gate-A frontier without promoting q2 or quantum completion?",
-    "answer": "Atlas V16 closes the first-ranked V15 route. The real compact-cylinder flow is T=Lie_{partial_t}; the Hermitian mode convention is D=iT after complexification. In a global frame Lie-dragged by partial_t on the stationary unit cylinder, T is one temporal derivative on every natural-bundle component, not a finite energy matrix, Minkowski dilation or Berger helical generator. The exact action table contains 386 rational first-order diagonal entries across all twenty-two graph blocks. An independent receiver constructs Tq1 and q1T separately for all twenty-seven graph-q1 tables, seventy derivative multiindices and 4,374 rational coefficients; their commutator has zero defects. Formal skew-adjointness replays against all 410 ordered pairing entries. The accepted scoped unary-causal snapshot therefore grows from thirteen to fourteen object hashes. Gate-A reconciliation V6 promotes the strict local-D export and D/q1 check to RECEIVER_VERIFIED_SCOPED, but accepts no top-level Gate hash. Five transitive V5 provenance files have drifted and are recorded without silent rebinding. M2 is narrowed to extending q2 over every required nonminimal, generalized-auxiliary and graph row, followed by D/q2 and full-carrier q2 cyclicity. The complete manifest, residual SDR, full residual pairing, SO(4,2) payload and centered representatives remain separate blockers. Hadamard, products, QME and residual quantum transfer remain false.",
+    "question": "Does the strict 386-row theory admit an exact q2 completion compatible with q1, cyclicity and D, and what remains once a receiver-constructed stabilization is distinguished from an authoritative classical import?",
+    "answer": "Atlas V17 resolves the algebraic part of the first-ranked V16 route while exposing a sharper import boundary. Extend the certified minimal q2 by zero on the 356 split contractible rows and transport it by the exact BV-canonical shear. The resulting compositional graph action has 140 ordered-component channels, 68 potentially nonzero block triples and 110-row input/output envelopes; 196 rows remain interaction-inert in both roles. The candidate satisfies q1/q2, Koszul symmetry, q2 cyclicity and D/q2 exactly by direct-sum reasoning, canonical conjugation and stationary tensor naturality. This is a valid cyclic L-infinity stabilization, but it is a quantum-receiver construction rather than an authoritative nonlinear classical export. Gate V7 therefore records its q2 hash as an unaccepted candidate and narrows M2 to source-certified theory identity: either export the intended full q2 or certify a cyclic L-infinity equivalence to the stabilization. All 77 typed atlas cells are preserved, Gate A still accepts zero hashes, and Hadamard, products, QME and residual transfer remain false.",
     "predecessor": {
-      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V15",
-      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V15.json",
-      "sha256": "daaa483f842e34d8735e518639437077b4f892c8687901f40d3c7e2fbaa7067a",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V16",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V16.json",
+      "sha256": "43edb517e421d10ac36a16a81193080f61421e123714936f31c591659e36f757",
       "preserved": true
     },
     "status_vocabulary": [
@@ -18155,7 +18155,7 @@ window.MATRIX_EXPLORER_DATA = {
           {
             "stage": "S0_CLASSICAL_AUTHORITY",
             "status": "FAIL_CLOSED",
-            "statement": "The accepted strict unary-causal graph now includes the full 386-row cylinder flow and a zero-defect D/q1 replay in a fourteen-hash scoped snapshot. Gate V6 promotes those two obligations only; full-carrier q2/D-q2 and five other Gate bundles remain open.",
+            "statement": "A cyclic 386-row q2 stabilization now exists and satisfies q1q2, Koszul, cyclicity and D/q2 exactly as a receiver construction. Gate V7 narrows M2 to authoritative classical theory identity; zero top-level hashes are accepted and five other Gate bundles remain open.",
             "evidence": [
               "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
               "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
@@ -18171,9 +18171,11 @@ window.MATRIX_EXPLORER_DATA = {
               "STRICT_386_GRAPH_GREEN_ACTION_NAME_V1",
               "STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1",
               "STRICT_386_FULL_D_ACTION_V1",
-              "CLASSICAL_IMPORT_GATE_V6_RECONCILIATION"
+              "CLASSICAL_IMPORT_GATE_V6_RECONCILIATION",
+              "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1",
+              "CLASSICAL_IMPORT_GATE_V7_RECONCILIATION"
             ],
-            "boundary": "The local D action is not a q2 extension, D/q2 theorem, D-Cartan homotopy, physical quotient decision, complete Gate-A manifest or quantum result. Zero top-level Gate hashes are accepted."
+            "boundary": "A receiver-constructed cyclic stabilization is not an authoritative classical import. No common q2 hash, Gate-A pass, Hadamard state or QME state follows."
           },
           {
             "stage": "S1_OFF_SHELL_BV",
@@ -18264,7 +18266,7 @@ window.MATRIX_EXPLORER_DATA = {
           }
         ],
         "first_unclosed_gate": "S0_CLASSICAL_AUTHORITY",
-        "next_decisive_object": "Extend strict q2 to every required row of the accepted 386-row unary-causal-D snapshot and independently replay q1q2, D/q2, Koszul symmetry, row completeness and q2 cyclicity."
+        "next_decisive_object": "Source-certify the strict nonlinear q2 theory identity by exporting the full 386-row interaction ledger or a cyclic L-infinity equivalence to the stabilized candidate."
       },
       {
         "id": "PURE_WEYL_BACH_FLAT_RANK310",
@@ -18869,8 +18871,8 @@ window.MATRIX_EXPLORER_DATA = {
       "theory_identity_front": {
         "branch": "STRICT_PURE_WEYL_386",
         "first_gate": "S0_CLASSICAL_AUTHORITY",
-        "current_fact": "Graph q1, local SDR, represented Green actions and the full cylinder flow now inhabit one fourteen-hash scoped snapshot; [D,q1] and formal D skew-adjointness are exact. The first missing same-carrier datum is full 386-row q2.",
-        "best_next_object": "A complete 386-row strict q2 payload in the canonical pairing convention, followed by independent q1q2, D/q2, Koszul, completeness and cyclicity replay."
+        "current_fact": "The algebraic 386-row q2 stabilization is exact and compatible with q1, cyclicity and D. What is missing is evidence that it is the authoritative nonlinear extension chosen by the classical programme.",
+        "best_next_object": "A source-certified full q2 export or cyclic L-infinity equivalence to STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1, followed by receiver comparison and common-hash binding."
       },
       "analytic_maturity_front": {
         "branch": "BERGER_POSITIVE_CLOCK_54",
@@ -19012,30 +19014,30 @@ window.MATRIX_EXPLORER_DATA = {
     "route_selection": [
       {
         "rank": 1,
-        "route": "STRICT_386_Q2_D_COMMON_CARRIER",
+        "route": "STRICT_386_AUTHORITATIVE_Q2_IDENTITY",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "HIGH",
-        "recommendation": "Extend canonical strict q2 to every required 386-row sector and replay q1q2, D/q2, Koszul symmetry, row completeness and q2 cyclicity on the accepted unary-causal-D snapshot."
+        "recommendation": "Export the authoritative full nonlinear q2 or a source-certified cyclic L-infinity equivalence to the exact stabilized candidate; independently compare it and bind the q2 hash."
       },
       {
         "rank": 2,
-        "route": "STRICT_FULL_CYCLIC_PAIRING",
-        "branch": "STRICT_PURE_WEYL_386",
-        "scientific_leverage": "VERY_HIGH",
-        "tractability": "MEDIUM",
-        "dependency_depth": "HIGH",
-        "recommendation": "Bind the full pairing/sign convention to all nonminimal, auxiliary and residual rows so the full-carrier q2 cyclic replay and residual-SDR side conditions share bytes."
-      },
-      {
-        "rank": 3,
         "route": "STRICT_RESIDUAL_SDR_COMMON_CARRIER",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "LOW",
         "dependency_depth": "HIGH",
         "recommendation": "Extend or reconstruct iota_cl, pi_cl and s_cl beyond the D-finite control on the same support-local carrier and replay every contraction and chain-map identity."
+      },
+      {
+        "rank": 3,
+        "route": "STRICT_FULL_CYCLIC_PAIRING",
+        "branch": "STRICT_PURE_WEYL_386",
+        "scientific_leverage": "VERY_HIGH",
+        "tractability": "MEDIUM",
+        "dependency_depth": "HIGH",
+        "recommendation": "Bind the full pairing/sign convention to all nonminimal, auxiliary and residual rows so residual-SDR side conditions share exact bytes."
       },
       {
         "rank": 4,
@@ -19066,41 +19068,41 @@ window.MATRIX_EXPLORER_DATA = {
       },
       {
         "rank": 7,
+        "route": "STRICT_D_CARTAN_AND_CHARGE_DECISION",
+        "branch": "STRICT_PURE_WEYL_386",
+        "scientific_leverage": "HIGH",
+        "tractability": "LOW",
+        "dependency_depth": "HIGH",
+        "recommendation": "With a candidate nonlinear q2 now available, classify whether D admits a Cartan homotopy and is proper gauge, charged or sector-dependent without confusing that question with D/q2 equivariance."
+      },
+      {
+        "rank": 8,
         "route": "STRICT_GREEN_NAME_EFFECTIVE_REFINEMENT",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "MEDIUM",
         "tractability": "LOW",
         "dependency_depth": "MEDIUM",
         "recommendation": "Optionally add effective projector/tail algorithms or kernel bytes without making them prerequisites for the certified classical convergent name."
-      },
-      {
-        "rank": 8,
-        "route": "STRICT_D_CARTAN_AND_CHARGE_DECISION",
-        "branch": "STRICT_PURE_WEYL_386",
-        "scientific_leverage": "HIGH",
-        "tractability": "LOW",
-        "dependency_depth": "HIGH",
-        "recommendation": "After q2 is common, distinguish local D equivariance from a nonlinear Cartan homotopy and independently decide the proper-gauge, charged or sector-dependent status of the cylinder generator."
       }
     ],
     "research_queue": [
       {
         "priority": 1,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_386_Q2_D_COMMON_CARRIER",
-        "why": "Extend canonical strict q2 to every required 386-row sector and replay q1q2, D/q2, Koszul symmetry, row completeness and q2 cyclicity on the accepted unary-causal-D snapshot."
+        "object": "STRICT_386_AUTHORITATIVE_Q2_IDENTITY",
+        "why": "Export the authoritative full nonlinear q2 or a source-certified cyclic L-infinity equivalence to the exact stabilized candidate; independently compare it and bind the q2 hash."
       },
       {
         "priority": 2,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_FULL_CYCLIC_PAIRING",
-        "why": "Bind the full pairing/sign convention to all nonminimal, auxiliary and residual rows so the full-carrier q2 cyclic replay and residual-SDR side conditions share bytes."
+        "object": "STRICT_RESIDUAL_SDR_COMMON_CARRIER",
+        "why": "Extend or reconstruct iota_cl, pi_cl and s_cl beyond the D-finite control on the same support-local carrier and replay every contraction and chain-map identity."
       },
       {
         "priority": 3,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_RESIDUAL_SDR_COMMON_CARRIER",
-        "why": "Extend or reconstruct iota_cl, pi_cl and s_cl beyond the D-finite control on the same support-local carrier and replay every contraction and chain-map identity."
+        "object": "STRICT_FULL_CYCLIC_PAIRING",
+        "why": "Bind the full pairing/sign convention to all nonminimal, auxiliary and residual rows so residual-SDR side conditions share exact bytes."
       },
       {
         "priority": 4,
@@ -19123,14 +19125,14 @@ window.MATRIX_EXPLORER_DATA = {
       {
         "priority": 7,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_GREEN_NAME_EFFECTIVE_REFINEMENT",
-        "why": "Optionally add effective projector/tail algorithms or kernel bytes without making them prerequisites for the certified classical convergent name."
+        "object": "STRICT_D_CARTAN_AND_CHARGE_DECISION",
+        "why": "With a candidate nonlinear q2 now available, classify whether D admits a Cartan homotopy and is proper gauge, charged or sector-dependent without confusing that question with D/q2 equivariance."
       },
       {
         "priority": 8,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_D_CARTAN_AND_CHARGE_DECISION",
-        "why": "After q2 is common, distinguish local D equivariance from a nonlinear Cartan homotopy and independently decide the proper-gauge, charged or sector-dependent status of the cylinder generator."
+        "object": "STRICT_GREEN_NAME_EFFECTIVE_REFINEMENT",
+        "why": "Optionally add effective projector/tail algorithms or kernel bytes without making them prerequisites for the certified classical convergent name."
       }
     ],
     "provenance": {
@@ -19459,6 +19461,21 @@ window.MATRIX_EXPLORER_DATA = {
           "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V6_RECONCILIATION.json",
           "sha256": "b3d0fa7c73ca25166c1c3b6356272d55b6b045ecb213b353ffafa4bcb3c9fe77",
           "role": "Gate-A V6 scoped D reconciliation and provenance drift ledger"
+        },
+        {
+          "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V16.json",
+          "sha256": "43edb517e421d10ac36a16a81193080f61421e123714936f31c591659e36f757",
+          "role": "immutable V16 atlas predecessor"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1.json",
+          "sha256": "ee6a88080cc13547c809f53b9c033da59138be73eff69c0654659c18ddd2c65b",
+          "role": "strict stabilized-q2 construction and theory-identity preflight"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V7_RECONCILIATION.json",
+          "sha256": "07bf0a7ffc23f9b2fe1a28aea84b04377d4b16dd5ed780d7cfc3106a86b469de",
+          "role": "Gate-A V7 candidate/import reconciliation"
         }
       ]
     },
@@ -19544,7 +19561,14 @@ window.MATRIX_EXPLORER_DATA = {
       "strict_386_full_carrier_q2_certified": false,
       "strict_386_d_q2_derivation_replayed": false,
       "strict_386_d_cartan_homotopy_constructed": false,
-      "strict_d_gauge_or_charge_decided": false
+      "strict_d_gauge_or_charge_decided": false,
+      "v16_preserved": true,
+      "strict_386_stabilized_q2_candidate_certified": true,
+      "strict_386_stabilized_q1_q2_identity_verified": true,
+      "strict_386_stabilized_q2_cyclicity_verified": true,
+      "strict_386_stabilized_d_q2_derivation_verified": true,
+      "strict_386_authoritative_full_q2_imported": false,
+      "strict_386_candidate_theory_identity_certified": false
     },
     "does_not_establish": [
       "a passed strict pure-Weyl classical import gate",
@@ -19616,26 +19640,27 @@ window.MATRIX_EXPLORER_DATA = {
       "a BRST-compatible Hadamard state, renormalized Lorentzian products, restored QME, residual quantum transfer or Lorentzian quantum theory",
       "a full-carrier strict q2 or D/q2 theorem from the unary D/q1 replay",
       "a nonlinear D-Cartan homotopy or a proper-gauge/charge decision for the cylinder generator",
-      "a silently rebound replay of the five drifted Gate-V5 transitive provenance files"
+      "a silently rebound replay of the five drifted Gate-V5 transitive provenance files",
+      "that the receiver-constructed q2 stabilization is the authoritative nonlinear classical extension",
+      "a source-certified cyclic L-infinity equivalence or an accepted q2 Gate-A hash"
     ],
     "independent_checker": {
-      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v16.py",
+      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v17.py",
       "checks": [
-        "V15 predecessor and 77-cell preservation",
-        "full-D exact inventory projection",
-        "Gate-V6 count/hash/provenance-drift projection",
-        "strict S0-only evidence augmentation",
-        "fourteen-hash scoped snapshot",
-        "q2/D-q2 fail-closed frontier",
+        "V16 predecessor and 77-cell preservation",
+        "q2 support-envelope projection",
+        "candidate q1q2/Koszul/cyclicity/Dq2 zero-defect projection",
+        "Gate-V7 count/hash firewall",
+        "authoritative theory-identity frontier",
         "eight-route deterministic ranking",
         "quantum lifecycle firewall",
         "append-only provenance"
       ],
-      "expected_digest": "a865dbe0a2410158b8c9e360ddf83b056304573d942b660b90c540ea622f524d"
+      "expected_digest": "a366b208b0366299adb6d15c64c209214d80f6ea067e449252111311869ad305"
     },
-    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v16.md",
+    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v17.md",
     "strict_gate_a_progress": {
-      "status": "UNARY_CAUSAL_D_COMMON_SNAPSHOT_ACCEPTED_FULL_Q2_AND_GATE_BUNDLES_REQUIRED",
+      "status": "STABILIZED_Q2_CANDIDATE_CERTIFIED_AUTHORITATIVE_IDENTITY_REQUIRED",
       "evidence": [
         "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
         "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
@@ -19686,8 +19711,8 @@ window.MATRIX_EXPLORER_DATA = {
           "q2_omegastar_hhstar__reverse"
         ]
       },
-      "remaining_common_carrier": "Extend the certified strict six-row q2 convention to every required nonminimal, generalized-auxiliary and graph row on this exact 386-row snapshot; then independently replay the D/q2 derivation identity and q2 cyclicity before promoting any M2 or Gate-A common hash.",
-      "boundary": "The scoped snapshot now includes D and D/q1, but Gate V6 accepts zero top-level hashes. Full-carrier q2/D-q2, residual SDR, full cyclic pairing, residual representation data and centered representatives remain independent required bundles.",
+      "remaining_common_carrier": "Move the q2 decision to the authoritative classical programme. Export either the full nonlinear 386-row q2, including every intended nonminimal and generalized-auxiliary interaction, or a cyclic L-infinity equivalence identifying that extension with STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1. The quantum receiver must independently compare the export, preserve the candidate q1q2/cyclicity/Dq2 identities, and only then bind an authoritative q2 hash into the complete Gate-A manifest. M1 and M3-M6 remain independent blockers; no Hadamard or QME lifecycle promotion is authorized.",
+      "boundary": "Candidate q2/q1q2/cyclicity/Dq2 are exact, but Gate V7 accepts zero hashes because the authoritative classical theory-identity bridge is absent. Residual SDR, full cyclic pairing, residual representation data and centered representatives remain independent required bundles.",
       "endpoint_q1_control": {
         "dimension": 30,
         "arrow_tables_matching": 80,
@@ -19971,6 +19996,53 @@ window.MATRIX_EXPLORER_DATA = {
           "M6_CENTERED_REPRESENTATIVES"
         ],
         "next_gate": "Use STRICT_386_FULL_D_ACTION_V1 as the fixed local cylinder-flow action on the accepted unary-causal graph snapshot. Transport or extend the canonical strict six-row q2 convention to every required nonminimal, generalized-auxiliary and graph row without importing Berger interactions. Independently replay q1q2, D/q2, Koszul symmetry, row completeness and q2 cyclicity on those exact 386-row bytes. Only then may M2 or the D_action/q2 candidate hashes be reconsidered for the complete twenty-export Gate-A manifest. M1, M3, M4, M5 and M6 remain independent and must still close before Gate A can pass; no causal quantum or QME lifecycle promotion is authorized."
+      },
+      "stabilized_q2_candidate_control": {
+        "result_id": "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1",
+        "status": "STABILIZED_CANDIDATE_CERTIFIED_AUTHORITATIVE_IDENTITY_OPEN",
+        "construction_kind": "CYCLIC_TRIVIAL_STABILIZATION_CANDIDATE",
+        "carrier_rows": 386,
+        "endpoint_rows": 30,
+        "split_contractible_rows": 356,
+        "minimal_primary_components": 12,
+        "minimal_ordered_components": 22,
+        "expanded_component_channels": 140,
+        "unique_block_triples": 68,
+        "input_row_envelope": 110,
+        "output_row_envelope": 110,
+        "interaction_inert_rows": 196,
+        "q1_q2_defects": 0,
+        "koszul_defects": 0,
+        "cyclicity_defects": 0,
+        "D_q2_defects": 0,
+        "candidate_q2_sha256": "779d9811a7d79d71c8c01d85ef42522274265920bda384ef16a87cb18e138808",
+        "authoritative_full_q2_imported": false,
+        "candidate_theory_identity_certified": false,
+        "next_gate": "Obtain authoritative classical theory identity: either import a source-certified full 386-row q2 interaction ledger and compare it with this candidate, or import a source-certified cyclic L-infinity equivalence to the trivial stabilization. Only then may the receiver bind q2 and D/q2 into the Gate-A common snapshot and proceed to q2/Green compatibility."
+      },
+      "gate_v7_reconciliation_control": {
+        "result_id": "CLASSICAL_IMPORT_GATE_V7_RECONCILIATION",
+        "status": "STABILIZED_Q2_CANDIDATE_CERTIFIED_AUTHORITATIVE_IDENTITY_OPEN",
+        "exports_total": 20,
+        "exports_receiver_verified_scoped": 11,
+        "freeze_checks_total": 10,
+        "freeze_checks_receiver_verified_scoped": 8,
+        "freeze_checks_supporting_evidence_only": 1,
+        "freeze_checks_blocked": 1,
+        "accepted_top_level_hashes": 0,
+        "gate_a_status": "FAIL_CLOSED",
+        "candidate_q2_hash_accepted": false,
+        "transitive_provenance_files_checked": 23,
+        "transitive_provenance_drifted_files": 5,
+        "missing_bundle_ids": [
+          "M1_COMMON_STRICT_SNAPSHOT",
+          "M2_STRICT_Q2_D",
+          "M3_RESIDUAL_SDR",
+          "M4_FULL_CYCLIC_PAIRING",
+          "M5_RESIDUAL_EXACT_PAYLOAD",
+          "M6_CENTERED_REPRESENTATIVES"
+        ],
+        "next_gate": "Move the q2 decision to the authoritative classical programme. Export either the full nonlinear 386-row q2, including every intended nonminimal and generalized-auxiliary interaction, or a cyclic L-infinity equivalence identifying that extension with STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1. The quantum receiver must independently compare the export, preserve the candidate q1q2/cyclicity/Dq2 identities, and only then bind an authoritative q2 hash into the complete Gate-A manifest. M1 and M3-M6 remain independent blockers; no Hadamard or QME lifecycle promotion is authorized."
       }
     },
     "strict_causal_sign_transport": {
@@ -20294,6 +20366,53 @@ window.MATRIX_EXPLORER_DATA = {
         "M6_CENTERED_REPRESENTATIVES"
       ],
       "next_gate": "Use STRICT_386_FULL_D_ACTION_V1 as the fixed local cylinder-flow action on the accepted unary-causal graph snapshot. Transport or extend the canonical strict six-row q2 convention to every required nonminimal, generalized-auxiliary and graph row without importing Berger interactions. Independently replay q1q2, D/q2, Koszul symmetry, row completeness and q2 cyclicity on those exact 386-row bytes. Only then may M2 or the D_action/q2 candidate hashes be reconsidered for the complete twenty-export Gate-A manifest. M1, M3, M4, M5 and M6 remain independent and must still close before Gate A can pass; no causal quantum or QME lifecycle promotion is authorized."
+    },
+    "strict_stabilized_q2_lift_preflight": {
+      "result_id": "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1",
+      "status": "STABILIZED_CANDIDATE_CERTIFIED_AUTHORITATIVE_IDENTITY_OPEN",
+      "construction_kind": "CYCLIC_TRIVIAL_STABILIZATION_CANDIDATE",
+      "carrier_rows": 386,
+      "endpoint_rows": 30,
+      "split_contractible_rows": 356,
+      "minimal_primary_components": 12,
+      "minimal_ordered_components": 22,
+      "expanded_component_channels": 140,
+      "unique_block_triples": 68,
+      "input_row_envelope": 110,
+      "output_row_envelope": 110,
+      "interaction_inert_rows": 196,
+      "q1_q2_defects": 0,
+      "koszul_defects": 0,
+      "cyclicity_defects": 0,
+      "D_q2_defects": 0,
+      "candidate_q2_sha256": "779d9811a7d79d71c8c01d85ef42522274265920bda384ef16a87cb18e138808",
+      "authoritative_full_q2_imported": false,
+      "candidate_theory_identity_certified": false,
+      "next_gate": "Obtain authoritative classical theory identity: either import a source-certified full 386-row q2 interaction ledger and compare it with this candidate, or import a source-certified cyclic L-infinity equivalence to the trivial stabilization. Only then may the receiver bind q2 and D/q2 into the Gate-A common snapshot and proceed to q2/Green compatibility."
+    },
+    "strict_gate_v7_reconciliation": {
+      "result_id": "CLASSICAL_IMPORT_GATE_V7_RECONCILIATION",
+      "status": "STABILIZED_Q2_CANDIDATE_CERTIFIED_AUTHORITATIVE_IDENTITY_OPEN",
+      "exports_total": 20,
+      "exports_receiver_verified_scoped": 11,
+      "freeze_checks_total": 10,
+      "freeze_checks_receiver_verified_scoped": 8,
+      "freeze_checks_supporting_evidence_only": 1,
+      "freeze_checks_blocked": 1,
+      "accepted_top_level_hashes": 0,
+      "gate_a_status": "FAIL_CLOSED",
+      "candidate_q2_hash_accepted": false,
+      "transitive_provenance_files_checked": 23,
+      "transitive_provenance_drifted_files": 5,
+      "missing_bundle_ids": [
+        "M1_COMMON_STRICT_SNAPSHOT",
+        "M2_STRICT_Q2_D",
+        "M3_RESIDUAL_SDR",
+        "M4_FULL_CYCLIC_PAIRING",
+        "M5_RESIDUAL_EXACT_PAYLOAD",
+        "M6_CENTERED_REPRESENTATIVES"
+      ],
+      "next_gate": "Move the q2 decision to the authoritative classical programme. Export either the full nonlinear 386-row q2, including every intended nonminimal and generalized-auxiliary interaction, or a cyclic L-infinity equivalence identifying that extension with STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1. The quantum receiver must independently compare the export, preserve the candidate q1q2/cyclicity/Dq2 identities, and only then bind an authoritative q2 hash into the complete Gate-A manifest. M1 and M3-M6 remain independent blockers; no Hadamard or QME lifecycle promotion is authorized."
     }
   },
   "cross_cell_interfaces": [
@@ -20463,10 +20582,10 @@ window.MATRIX_EXPLORER_DATA = {
     "ground_state_dynamics_interface_report": "sources/foundations/reports/krein-fock-ground-state-dynamics-interface.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md",
-    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V16.json",
-    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v16.md",
-    "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V6_RECONCILIATION.json",
-    "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V6.md",
+    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V17.json",
+    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v17.md",
+    "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V7_RECONCILIATION.json",
+    "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V7.md",
     "completion_sdr": "sources/quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json",
     "completion_sdr_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_DFINITE_RESIDUAL_SDR_V1.md",
     "completion_cyclic": "sources/quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1.json",
@@ -20496,7 +20615,9 @@ window.MATRIX_EXPLORER_DATA = {
     "completion_unary_causal_snapshot": "sources/quantum-weyl/classical_import/certificates/STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1.json",
     "completion_unary_causal_snapshot_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1.md",
     "completion_full_d": "sources/quantum-weyl/classical_import/certificates/STRICT_386_FULL_D_ACTION_V1.json",
-    "completion_full_d_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_FULL_D_ACTION_V1.md"
+    "completion_full_d_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_FULL_D_ACTION_V1.md",
+    "completion_q2_preflight": "sources/quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1.json",
+    "completion_q2_preflight_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1.md"
   },
-  "canonical_digest": "bf3979e3c54ee3924f77f120fed8651012843b002ffb7b57be2c36892fddaf5a"
+  "canonical_digest": "60a2015b58b3397a8af2fe8206b01c1e0e8927c59f8a4bf1fcb7ecd789081743"
 };

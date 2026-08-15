@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/classical-import-gate-v7-reconciliation-v1.schema.json",
+  "title": "Classical import Gate-A reconciliation v7",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "lifecycle", "created", "repository_base_commit", "export_reconciliation", "freeze_check_reconciliation", "required_hash_disposition", "minimal_missing_bundle", "gate_disposition", "m2_stabilized_candidate_resolution", "transitive_provenance_drift", "claim_flags", "does_not_establish", "next_gate", "provenance", "independent_checker", "human_report"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-classical-import-gate-v7-reconciliation-v1"},
+    "result_id": {"const": "CLASSICAL_IMPORT_GATE_V7_RECONCILIATION"},
+    "result_state": {"const": "STABILIZED_Q2_CANDIDATE_CERTIFIED_AUTHORITATIVE_IDENTITY_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "export_reconciliation": {"type": "array", "minItems": 20, "maxItems": 20},
+    "freeze_check_reconciliation": {"type": "array", "minItems": 10, "maxItems": 10},
+    "required_hash_disposition": {
+      "type": "object",
+      "required": ["q2_hash"],
+      "properties": {
+        "q2_hash": {
+          "type": "object",
+          "required": ["accepted", "candidate", "candidate_scope"],
+          "properties": {
+            "accepted": {"type": "null"},
+            "candidate": {"$ref": "#/$defs/sha256"},
+            "candidate_scope": {"const": "STRICT_386_STABILIZED_CONSTRUCTION_NOT_AUTHORITATIVE_IMPORT"}
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "gate_disposition": {
+      "type": "object",
+      "required": ["gate_a_status", "freeze_checks_receiver_verified_scoped", "freeze_checks_supporting_evidence_only", "freeze_checks_blocked", "accepted_common_snapshot_hashes"],
+      "properties": {
+        "gate_a_status": {"const": "FAIL_CLOSED"},
+        "freeze_checks_receiver_verified_scoped": {"const": 8},
+        "freeze_checks_supporting_evidence_only": {"const": 1},
+        "freeze_checks_blocked": {"const": 1},
+        "accepted_common_snapshot_hashes": {"const": 0}
+      },
+      "additionalProperties": true
+    },
+    "m2_stabilized_candidate_resolution": {
+      "type": "object",
+      "required": ["status", "evidence", "carrier_rows", "split_endpoint_rows", "split_contractible_rows", "graph_input_row_envelope", "graph_output_row_envelope", "expanded_component_channels", "unique_block_triples", "interaction_inert_rows", "q1_q2_defects", "q2_cyclicity_defects", "D_q2_derivation_defects", "candidate_q2_sha256", "remaining"],
+      "properties": {
+        "status": {"const": "CERTIFIED_CONSTRUCTION_NOT_AUTHORITATIVE_IMPORT"},
+        "evidence": {"const": "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1"},
+        "carrier_rows": {"const": 386},
+        "split_endpoint_rows": {"const": 30},
+        "split_contractible_rows": {"const": 356},
+        "graph_input_row_envelope": {"const": 110},
+        "graph_output_row_envelope": {"const": 110},
+        "expanded_component_channels": {"const": 140},
+        "unique_block_triples": {"const": 68},
+        "interaction_inert_rows": {"const": 196},
+        "q1_q2_defects": {"const": 0},
+        "q2_cyclicity_defects": {"const": 0},
+        "D_q2_derivation_defects": {"const": 0},
+        "candidate_q2_sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": true
+    },
+    "transitive_provenance_drift": {
+      "type": "object",
+      "required": ["files_checked", "drifted_files", "status", "entries"],
+      "properties": {
+        "files_checked": {"const": 23},
+        "drifted_files": {"type": "integer", "minimum": 0},
+        "status": {"const": "DRIFT_RECORDED_GATE_REMAINS_FAIL_CLOSED"},
+        "entries": {"type": "array"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["STRICT_386_STABILIZED_Q2_CANDIDATE", "STRICT_386_STABILIZED_Q1_Q2_IDENTITY", "STRICT_386_STABILIZED_Q2_CYCLICITY", "STRICT_386_STABILIZED_D_Q2_DERIVATION", "STRICT_386_AUTHORITATIVE_FULL_CARRIER_Q2", "STRICT_386_AUTHORITATIVE_D_Q2_DERIVATION", "STRICT_386_CANDIDATE_THEORY_IDENTITY", "CLASSICAL_IMPORT_GATE_PASSED", "QME_RESTORED"],
+      "properties": {
+        "STRICT_386_STABILIZED_Q2_CANDIDATE": {"const": true},
+        "STRICT_386_STABILIZED_Q1_Q2_IDENTITY": {"const": true},
+        "STRICT_386_STABILIZED_Q2_CYCLICITY": {"const": true},
+        "STRICT_386_STABILIZED_D_Q2_DERIVATION": {"const": true},
+        "STRICT_386_AUTHORITATIVE_FULL_CARRIER_Q2": {"const": false},
+        "STRICT_386_AUTHORITATIVE_D_Q2_DERIVATION": {"const": false},
+        "STRICT_386_CANDIDATE_THEORY_IDENTITY": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "QME_RESTORED": {"const": false}
+      },
+      "additionalProperties": true
+    },
+    "does_not_establish": {"type": "array", "minItems": 14},
+    "next_gate": {"type": "string", "minLength": 300},
+    "provenance": {"type": "object", "required": ["inputs"], "properties": {"inputs": {"type": "array", "minItems": 25, "maxItems": 25}}},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_GATE_V7.md"}
+  },
+  "$defs": {"sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+  "additionalProperties": true
+}

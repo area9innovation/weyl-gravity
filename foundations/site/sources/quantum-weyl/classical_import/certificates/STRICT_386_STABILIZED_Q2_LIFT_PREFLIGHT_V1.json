@@ -1,0 +1,1832 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "strict-386-stabilized-q2-lift-preflight-v1",
+  "schema_path": "quantum-weyl/classical_import/schema/strict-386-stabilized-q2-lift-preflight-v1.schema.json",
+  "result_id": "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1",
+  "result_kind": "EXACT_CYCLIC_TRIVIAL_STABILIZATION_AND_THEORY_IDENTITY_PREFLIGHT",
+  "result_state": "STABILIZED_CANDIDATE_CERTIFIED_AUTHORITATIVE_IDENTITY_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "2040f0c7964077686b7171b528be69cde62d4772",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "Does the existing exact minimal q2 admit a cyclic 386-row lift compatible with graph q1 and the cylinder D action, and if so does that close the authoritative classical import gate?",
+  "answer": "A precise lift exists: extend the minimal q2 by zero over the 356 split contractible rows and transport it through the exact BV-canonical shear. Its graph-coordinate support envelope contains 140 ordered-component channels and 68 distinct block triples, with 110 possible input rows and 110 possible output rows; all generalized auxiliaries and Y-cone rows remain interaction-inert. The q1/q2 identity, Koszul symmetry, cyclicity and D/q2 derivation follow exactly for this candidate by direct-sum reasoning, stationary tensor naturality and canonical conjugation. This does not close Gate A: no authoritative classical export or certified cyclic L-infinity equivalence identifies the candidate with the intended full nonlinear nonminimal/auxiliary Weyl BV theory.",
+  "scope": {
+    "carrier_rows": 386,
+    "endpoint_rows": 30,
+    "split_contractible_rows": 356,
+    "component_blocks": 22,
+    "coordinate_presentation": "unshifted curvature graph coordinates",
+    "background": "unit ultrastatic conformal cylinder"
+  },
+  "split_candidate": {
+    "construction_kind": "CYCLIC_TRIVIAL_STABILIZATION_CANDIDATE",
+    "formula": "q2_split(x,y)=i_end q2_min(pi_end x,pi_end y)",
+    "carrier_rows": 386,
+    "minimal_endpoint_rows": 30,
+    "contractible_rows_with_zero_split_interactions": 356,
+    "minimal_species_component_counts": {
+      "c": 4,
+      "omega": 1,
+      "h": 10,
+      "h_star": 10,
+      "c_star": 4,
+      "omega_star": 1
+    },
+    "minimal_primary_components": 12,
+    "minimal_ordered_components": 22,
+    "split_q1_tables_checked": 18,
+    "split_q1_endpoint_complement_crossings": 0,
+    "split_pairing_entries_checked": 410,
+    "split_pairing_endpoint_complement_crossings": 0,
+    "minimal_q2_ordered_components_sha256": "5d11498d8bccccb1fe37c2dc7f53402aa7f994f4facfaaea0a76b560674f7453",
+    "minimal_q1_q2_receiver_sha256": "f57075c7e703970396c5061b02193439f114273ddaebc4f88345bd7a28ca85f6",
+    "minimal_q2_cyclicity_receiver_sha256": "39b3f57a080c93f04250c4bca97967f38b5569b9f0c4cc2f2106c89d0e390d4f",
+    "sha256": "45fa9d55e05f26afdd40011b11f5854a3d6f6a5c2176370589e8cf3e82601161"
+  },
+  "graph_transport_dag": {
+    "construction_kind": "EXACT_CANONICAL_BINARY_TRANSPORT_DAG",
+    "formula": "q2_graph(x,y)=S q2_split(S^-1 x,S^-1 y)",
+    "nodes": [
+      {
+        "node_id": "inverse_left",
+        "operation": "S^-1",
+        "sha256": "2fa994b87f6e5abde799887af61f066f2d5762b3e4513a79560fc56c6bf08ffb"
+      },
+      {
+        "node_id": "inverse_right",
+        "operation": "S^-1",
+        "sha256": "2fa994b87f6e5abde799887af61f066f2d5762b3e4513a79560fc56c6bf08ffb"
+      },
+      {
+        "node_id": "minimal_q2",
+        "operation": "q2_min after endpoint projection",
+        "sha256": "5d11498d8bccccb1fe37c2dc7f53402aa7f994f4facfaaea0a76b560674f7453"
+      },
+      {
+        "node_id": "forward_output",
+        "operation": "S",
+        "sha256": "9514c1c78dd880ad039b4c9ea084ae7f91bedda24ff784088cd9a7bda52c157e"
+      }
+    ],
+    "forward_tables": [
+      {
+        "table_id": "T_PRIMAL",
+        "source_block": "ENDPOINT_M",
+        "target_block": "CONE_X_U",
+        "nonzero_coefficients": 439,
+        "maximum_order": 3,
+        "sha256": "71c6ad4fb3dcb7702ce813e7a9f0ad216682500539c803df7d0a46405532e0eb"
+      },
+      {
+        "table_id": "T_FORCED_PARTNER",
+        "source_block": "CONE_X_U_SHARP",
+        "target_block": "ENDPOINT_E",
+        "nonzero_coefficients": 439,
+        "maximum_order": 3,
+        "sha256": "96004d39daf16288a68383be5a3b9536920c418e3e809bb992c70122ffcf4afb"
+      },
+      {
+        "table_id": "A_PRIMAL",
+        "source_block": "ENDPOINT_E",
+        "target_block": "CONE_X_EQ",
+        "nonzero_coefficients": 15,
+        "maximum_order": 0,
+        "sha256": "82ac42170c50484289193fef7e25de19f120082ab462b6c6dcc7690564121d68"
+      },
+      {
+        "table_id": "A_FORCED_PARTNER",
+        "source_block": "CONE_X_EQ_SHARP",
+        "target_block": "ENDPOINT_M",
+        "nonzero_coefficients": 15,
+        "maximum_order": 0,
+        "sha256": "181715a5719895421dc6f650c65b6d910093c3f077819eece2065db16821d57c"
+      },
+      {
+        "table_id": "B_PRIMAL",
+        "source_block": "ENDPOINT_I",
+        "target_block": "CONE_X_ID",
+        "nonzero_coefficients": 4,
+        "maximum_order": 0,
+        "sha256": "57004c8b635c0021c883754ba26bbe0ff6b83c772bcf22a1d18d3ecdd36b5d6c"
+      },
+      {
+        "table_id": "B_FORCED_PARTNER",
+        "source_block": "CONE_X_ID_SHARP",
+        "target_block": "ENDPOINT_G",
+        "nonzero_coefficients": 4,
+        "maximum_order": 0,
+        "sha256": "43b1dc604a729eb7ecdffc11a4fa272d792b389a0ce16da8090a33729828da63"
+      },
+      {
+        "table_id": "FORWARD_CROSS_A_TSHARP",
+        "source_block": "CONE_X_U_SHARP",
+        "target_block": "CONE_X_EQ",
+        "nonzero_coefficients": 405,
+        "maximum_order": 3,
+        "sha256": "8040a31d865f47bb1099e9bb1a52f486a311b85ad544ce634dcb9a293fe0bfde"
+      }
+    ],
+    "inverse_tables": [
+      {
+        "table_id": "INVERSE_T_PRIMAL",
+        "source_block": "ENDPOINT_M",
+        "target_block": "CONE_X_U",
+        "nonzero_coefficients": 439,
+        "maximum_order": 3,
+        "sha256": "fbd3ebfae4d7163e4cc42bacdbcf65eff186aa88532acd2d0835ce6be1da6ba6"
+      },
+      {
+        "table_id": "INVERSE_T_FORCED_PARTNER",
+        "source_block": "CONE_X_U_SHARP",
+        "target_block": "ENDPOINT_E",
+        "nonzero_coefficients": 439,
+        "maximum_order": 3,
+        "sha256": "1f5e012da73418695067749a296c91807821f6a723595701c84fc0537e9f8ea8"
+      },
+      {
+        "table_id": "INVERSE_A_PRIMAL",
+        "source_block": "ENDPOINT_E",
+        "target_block": "CONE_X_EQ",
+        "nonzero_coefficients": 15,
+        "maximum_order": 0,
+        "sha256": "ac41ef920be65a8eac1e1351967ef76351fa45b09470c92ca77207c60ce7864e"
+      },
+      {
+        "table_id": "INVERSE_A_FORCED_PARTNER",
+        "source_block": "CONE_X_EQ_SHARP",
+        "target_block": "ENDPOINT_M",
+        "nonzero_coefficients": 15,
+        "maximum_order": 0,
+        "sha256": "7fc85ceaa9897546d8a82cb4518297e3786d8371de121a55284ba045b7a13096"
+      },
+      {
+        "table_id": "INVERSE_B_PRIMAL",
+        "source_block": "ENDPOINT_I",
+        "target_block": "CONE_X_ID",
+        "nonzero_coefficients": 4,
+        "maximum_order": 0,
+        "sha256": "97b368dd4907ff9637a8f1e03adb9c544985703361dcb6f048249dcd026fd218"
+      },
+      {
+        "table_id": "INVERSE_B_FORCED_PARTNER",
+        "source_block": "CONE_X_ID_SHARP",
+        "target_block": "ENDPOINT_G",
+        "nonzero_coefficients": 4,
+        "maximum_order": 0,
+        "sha256": "9b98eb1a25ebe89659ff2e6f2e94a939381b9137b730aa11a12ed0e4aaff5d9d"
+      },
+      {
+        "table_id": "INVERSE_CROSS_T_ASHARP",
+        "source_block": "CONE_X_EQ_SHARP",
+        "target_block": "CONE_X_U",
+        "nonzero_coefficients": 405,
+        "maximum_order": 3,
+        "sha256": "4b50ce3f6432f104a9fbeb9638030898d8ca77a21bf2ceb8a973e852aa023134"
+      }
+    ],
+    "input_origins_by_endpoint_block": {
+      "ENDPOINT_E": [
+        "CONE_X_U_SHARP",
+        "ENDPOINT_E"
+      ],
+      "ENDPOINT_G": [
+        "CONE_X_ID_SHARP",
+        "ENDPOINT_G"
+      ],
+      "ENDPOINT_I": [
+        "ENDPOINT_I"
+      ],
+      "ENDPOINT_M": [
+        "CONE_X_EQ_SHARP",
+        "ENDPOINT_M"
+      ]
+    },
+    "output_targets_by_endpoint_block": {
+      "ENDPOINT_E": [
+        "CONE_X_EQ",
+        "ENDPOINT_E"
+      ],
+      "ENDPOINT_G": [
+        "ENDPOINT_G"
+      ],
+      "ENDPOINT_I": [
+        "CONE_X_ID",
+        "ENDPOINT_I"
+      ],
+      "ENDPOINT_M": [
+        "CONE_X_U",
+        "ENDPOINT_M"
+      ]
+    },
+    "active_input_blocks": [
+      "CONE_X_EQ_SHARP",
+      "CONE_X_ID_SHARP",
+      "CONE_X_U_SHARP",
+      "ENDPOINT_E",
+      "ENDPOINT_G",
+      "ENDPOINT_I",
+      "ENDPOINT_M"
+    ],
+    "active_output_blocks": [
+      "CONE_X_EQ",
+      "CONE_X_ID",
+      "CONE_X_U",
+      "ENDPOINT_E",
+      "ENDPOINT_G",
+      "ENDPOINT_I",
+      "ENDPOINT_M"
+    ],
+    "active_input_row_envelope": 110,
+    "active_output_row_envelope": 110,
+    "expanded_ordered_component_channels": 140,
+    "unique_block_triples": 68,
+    "total_ordered_carrier_block_triples": 10648,
+    "excluded_from_support_envelope_block_triples": 10580,
+    "expanded_component_channel_ledger": [
+      {
+        "component_id": "q2_c_cc",
+        "primary_id": "q2_c_cc",
+        "output_block": "ENDPOINT_G",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_c_cc",
+        "primary_id": "q2_c_cc",
+        "output_block": "ENDPOINT_G",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_c_cc",
+        "primary_id": "q2_c_cc",
+        "output_block": "ENDPOINT_G",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_c_cc",
+        "primary_id": "q2_c_cc",
+        "output_block": "ENDPOINT_G",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_cstar_ccstar__forward",
+        "primary_id": "q2_cstar_ccstar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_I"
+      },
+      {
+        "component_id": "q2_cstar_ccstar__forward",
+        "primary_id": "q2_cstar_ccstar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_I"
+      },
+      {
+        "component_id": "q2_cstar_ccstar__forward",
+        "primary_id": "q2_cstar_ccstar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_I"
+      },
+      {
+        "component_id": "q2_cstar_ccstar__forward",
+        "primary_id": "q2_cstar_ccstar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_I"
+      },
+      {
+        "component_id": "q2_cstar_ccstar__reverse",
+        "primary_id": "q2_cstar_ccstar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_I",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_cstar_ccstar__reverse",
+        "primary_id": "q2_cstar_ccstar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_I",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_cstar_ccstar__reverse",
+        "primary_id": "q2_cstar_ccstar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_I",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_cstar_ccstar__reverse",
+        "primary_id": "q2_cstar_ccstar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_I",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_cstar_hhstar__forward",
+        "primary_id": "q2_cstar_hhstar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "component_id": "q2_cstar_hhstar__forward",
+        "primary_id": "q2_cstar_hhstar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "component_id": "q2_cstar_hhstar__forward",
+        "primary_id": "q2_cstar_hhstar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "component_id": "q2_cstar_hhstar__forward",
+        "primary_id": "q2_cstar_hhstar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "component_id": "q2_cstar_hhstar__forward",
+        "primary_id": "q2_cstar_hhstar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "component_id": "q2_cstar_hhstar__forward",
+        "primary_id": "q2_cstar_hhstar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "component_id": "q2_cstar_hhstar__forward",
+        "primary_id": "q2_cstar_hhstar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "component_id": "q2_cstar_hhstar__forward",
+        "primary_id": "q2_cstar_hhstar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "component_id": "q2_cstar_hhstar__reverse",
+        "primary_id": "q2_cstar_hhstar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "component_id": "q2_cstar_hhstar__reverse",
+        "primary_id": "q2_cstar_hhstar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "component_id": "q2_cstar_hhstar__reverse",
+        "primary_id": "q2_cstar_hhstar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "component_id": "q2_cstar_hhstar__reverse",
+        "primary_id": "q2_cstar_hhstar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "component_id": "q2_cstar_hhstar__reverse",
+        "primary_id": "q2_cstar_hhstar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "component_id": "q2_cstar_hhstar__reverse",
+        "primary_id": "q2_cstar_hhstar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "component_id": "q2_cstar_hhstar__reverse",
+        "primary_id": "q2_cstar_hhstar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "component_id": "q2_cstar_hhstar__reverse",
+        "primary_id": "q2_cstar_hhstar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "component_id": "q2_cstar_omegaomegastar__forward",
+        "primary_id": "q2_cstar_omegaomegastar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_I"
+      },
+      {
+        "component_id": "q2_cstar_omegaomegastar__forward",
+        "primary_id": "q2_cstar_omegaomegastar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_I"
+      },
+      {
+        "component_id": "q2_cstar_omegaomegastar__forward",
+        "primary_id": "q2_cstar_omegaomegastar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_I"
+      },
+      {
+        "component_id": "q2_cstar_omegaomegastar__forward",
+        "primary_id": "q2_cstar_omegaomegastar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_I"
+      },
+      {
+        "component_id": "q2_cstar_omegaomegastar__reverse",
+        "primary_id": "q2_cstar_omegaomegastar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_I",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_cstar_omegaomegastar__reverse",
+        "primary_id": "q2_cstar_omegaomegastar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_I",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_cstar_omegaomegastar__reverse",
+        "primary_id": "q2_cstar_omegaomegastar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_I",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_cstar_omegaomegastar__reverse",
+        "primary_id": "q2_cstar_omegaomegastar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_I",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_h_ch__forward",
+        "primary_id": "q2_h_ch",
+        "output_block": "CONE_X_U",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "component_id": "q2_h_ch__forward",
+        "primary_id": "q2_h_ch",
+        "output_block": "CONE_X_U",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "component_id": "q2_h_ch__forward",
+        "primary_id": "q2_h_ch",
+        "output_block": "CONE_X_U",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "component_id": "q2_h_ch__forward",
+        "primary_id": "q2_h_ch",
+        "output_block": "CONE_X_U",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "component_id": "q2_h_ch__forward",
+        "primary_id": "q2_h_ch",
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "component_id": "q2_h_ch__forward",
+        "primary_id": "q2_h_ch",
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "component_id": "q2_h_ch__forward",
+        "primary_id": "q2_h_ch",
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "component_id": "q2_h_ch__forward",
+        "primary_id": "q2_h_ch",
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "component_id": "q2_h_ch__reverse",
+        "primary_id": "q2_h_ch",
+        "output_block": "CONE_X_U",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_h_ch__reverse",
+        "primary_id": "q2_h_ch",
+        "output_block": "CONE_X_U",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_h_ch__reverse",
+        "primary_id": "q2_h_ch",
+        "output_block": "CONE_X_U",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_h_ch__reverse",
+        "primary_id": "q2_h_ch",
+        "output_block": "CONE_X_U",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_h_ch__reverse",
+        "primary_id": "q2_h_ch",
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_h_ch__reverse",
+        "primary_id": "q2_h_ch",
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_h_ch__reverse",
+        "primary_id": "q2_h_ch",
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_h_ch__reverse",
+        "primary_id": "q2_h_ch",
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_h_omegah__forward",
+        "primary_id": "q2_h_omegah",
+        "output_block": "CONE_X_U",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "component_id": "q2_h_omegah__forward",
+        "primary_id": "q2_h_omegah",
+        "output_block": "CONE_X_U",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "component_id": "q2_h_omegah__forward",
+        "primary_id": "q2_h_omegah",
+        "output_block": "CONE_X_U",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "component_id": "q2_h_omegah__forward",
+        "primary_id": "q2_h_omegah",
+        "output_block": "CONE_X_U",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "component_id": "q2_h_omegah__forward",
+        "primary_id": "q2_h_omegah",
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "component_id": "q2_h_omegah__forward",
+        "primary_id": "q2_h_omegah",
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "component_id": "q2_h_omegah__forward",
+        "primary_id": "q2_h_omegah",
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "component_id": "q2_h_omegah__forward",
+        "primary_id": "q2_h_omegah",
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "component_id": "q2_h_omegah__reverse",
+        "primary_id": "q2_h_omegah",
+        "output_block": "CONE_X_U",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_h_omegah__reverse",
+        "primary_id": "q2_h_omegah",
+        "output_block": "CONE_X_U",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_h_omegah__reverse",
+        "primary_id": "q2_h_omegah",
+        "output_block": "CONE_X_U",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_h_omegah__reverse",
+        "primary_id": "q2_h_omegah",
+        "output_block": "CONE_X_U",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_h_omegah__reverse",
+        "primary_id": "q2_h_omegah",
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_h_omegah__reverse",
+        "primary_id": "q2_h_omegah",
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_h_omegah__reverse",
+        "primary_id": "q2_h_omegah",
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_h_omegah__reverse",
+        "primary_id": "q2_h_omegah",
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_hstar_chstar__forward",
+        "primary_id": "q2_hstar_chstar",
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "component_id": "q2_hstar_chstar__forward",
+        "primary_id": "q2_hstar_chstar",
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "component_id": "q2_hstar_chstar__forward",
+        "primary_id": "q2_hstar_chstar",
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "component_id": "q2_hstar_chstar__forward",
+        "primary_id": "q2_hstar_chstar",
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "component_id": "q2_hstar_chstar__forward",
+        "primary_id": "q2_hstar_chstar",
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "component_id": "q2_hstar_chstar__forward",
+        "primary_id": "q2_hstar_chstar",
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "component_id": "q2_hstar_chstar__forward",
+        "primary_id": "q2_hstar_chstar",
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "component_id": "q2_hstar_chstar__forward",
+        "primary_id": "q2_hstar_chstar",
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "component_id": "q2_hstar_chstar__reverse",
+        "primary_id": "q2_hstar_chstar",
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_hstar_chstar__reverse",
+        "primary_id": "q2_hstar_chstar",
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_hstar_chstar__reverse",
+        "primary_id": "q2_hstar_chstar",
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_hstar_chstar__reverse",
+        "primary_id": "q2_hstar_chstar",
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_hstar_chstar__reverse",
+        "primary_id": "q2_hstar_chstar",
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_hstar_chstar__reverse",
+        "primary_id": "q2_hstar_chstar",
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_hstar_chstar__reverse",
+        "primary_id": "q2_hstar_chstar",
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_hstar_chstar__reverse",
+        "primary_id": "q2_hstar_chstar",
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_hstar_hh",
+        "primary_id": "q2_hstar_hh",
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "component_id": "q2_hstar_hh",
+        "primary_id": "q2_hstar_hh",
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "component_id": "q2_hstar_hh",
+        "primary_id": "q2_hstar_hh",
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "component_id": "q2_hstar_hh",
+        "primary_id": "q2_hstar_hh",
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "component_id": "q2_hstar_hh",
+        "primary_id": "q2_hstar_hh",
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "component_id": "q2_hstar_hh",
+        "primary_id": "q2_hstar_hh",
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "component_id": "q2_hstar_hh",
+        "primary_id": "q2_hstar_hh",
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "component_id": "q2_hstar_hh",
+        "primary_id": "q2_hstar_hh",
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "component_id": "q2_hstar_omegahstar__forward",
+        "primary_id": "q2_hstar_omegahstar",
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "component_id": "q2_hstar_omegahstar__forward",
+        "primary_id": "q2_hstar_omegahstar",
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "component_id": "q2_hstar_omegahstar__forward",
+        "primary_id": "q2_hstar_omegahstar",
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "component_id": "q2_hstar_omegahstar__forward",
+        "primary_id": "q2_hstar_omegahstar",
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "component_id": "q2_hstar_omegahstar__forward",
+        "primary_id": "q2_hstar_omegahstar",
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "component_id": "q2_hstar_omegahstar__forward",
+        "primary_id": "q2_hstar_omegahstar",
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "component_id": "q2_hstar_omegahstar__forward",
+        "primary_id": "q2_hstar_omegahstar",
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "component_id": "q2_hstar_omegahstar__forward",
+        "primary_id": "q2_hstar_omegahstar",
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "component_id": "q2_hstar_omegahstar__reverse",
+        "primary_id": "q2_hstar_omegahstar",
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_hstar_omegahstar__reverse",
+        "primary_id": "q2_hstar_omegahstar",
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_hstar_omegahstar__reverse",
+        "primary_id": "q2_hstar_omegahstar",
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_hstar_omegahstar__reverse",
+        "primary_id": "q2_hstar_omegahstar",
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_hstar_omegahstar__reverse",
+        "primary_id": "q2_hstar_omegahstar",
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_hstar_omegahstar__reverse",
+        "primary_id": "q2_hstar_omegahstar",
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_hstar_omegahstar__reverse",
+        "primary_id": "q2_hstar_omegahstar",
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_hstar_omegahstar__reverse",
+        "primary_id": "q2_hstar_omegahstar",
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_omega_comega__forward",
+        "primary_id": "q2_omega_comega",
+        "output_block": "ENDPOINT_G",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_omega_comega__forward",
+        "primary_id": "q2_omega_comega",
+        "output_block": "ENDPOINT_G",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_omega_comega__forward",
+        "primary_id": "q2_omega_comega",
+        "output_block": "ENDPOINT_G",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_omega_comega__forward",
+        "primary_id": "q2_omega_comega",
+        "output_block": "ENDPOINT_G",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_omega_comega__reverse",
+        "primary_id": "q2_omega_comega",
+        "output_block": "ENDPOINT_G",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_omega_comega__reverse",
+        "primary_id": "q2_omega_comega",
+        "output_block": "ENDPOINT_G",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_omega_comega__reverse",
+        "primary_id": "q2_omega_comega",
+        "output_block": "ENDPOINT_G",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_omega_comega__reverse",
+        "primary_id": "q2_omega_comega",
+        "output_block": "ENDPOINT_G",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_omegastar_comegastar__forward",
+        "primary_id": "q2_omegastar_comegastar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_I"
+      },
+      {
+        "component_id": "q2_omegastar_comegastar__forward",
+        "primary_id": "q2_omegastar_comegastar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_I"
+      },
+      {
+        "component_id": "q2_omegastar_comegastar__forward",
+        "primary_id": "q2_omegastar_comegastar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_I"
+      },
+      {
+        "component_id": "q2_omegastar_comegastar__forward",
+        "primary_id": "q2_omegastar_comegastar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_I"
+      },
+      {
+        "component_id": "q2_omegastar_comegastar__reverse",
+        "primary_id": "q2_omegastar_comegastar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_I",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_omegastar_comegastar__reverse",
+        "primary_id": "q2_omegastar_comegastar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_I",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_omegastar_comegastar__reverse",
+        "primary_id": "q2_omegastar_comegastar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_I",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "component_id": "q2_omegastar_comegastar__reverse",
+        "primary_id": "q2_omegastar_comegastar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_I",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "component_id": "q2_omegastar_hhstar__forward",
+        "primary_id": "q2_omegastar_hhstar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "component_id": "q2_omegastar_hhstar__forward",
+        "primary_id": "q2_omegastar_hhstar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "component_id": "q2_omegastar_hhstar__forward",
+        "primary_id": "q2_omegastar_hhstar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "component_id": "q2_omegastar_hhstar__forward",
+        "primary_id": "q2_omegastar_hhstar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "component_id": "q2_omegastar_hhstar__forward",
+        "primary_id": "q2_omegastar_hhstar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "component_id": "q2_omegastar_hhstar__forward",
+        "primary_id": "q2_omegastar_hhstar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "component_id": "q2_omegastar_hhstar__forward",
+        "primary_id": "q2_omegastar_hhstar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "component_id": "q2_omegastar_hhstar__forward",
+        "primary_id": "q2_omegastar_hhstar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "component_id": "q2_omegastar_hhstar__reverse",
+        "primary_id": "q2_omegastar_hhstar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "component_id": "q2_omegastar_hhstar__reverse",
+        "primary_id": "q2_omegastar_hhstar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "component_id": "q2_omegastar_hhstar__reverse",
+        "primary_id": "q2_omegastar_hhstar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "component_id": "q2_omegastar_hhstar__reverse",
+        "primary_id": "q2_omegastar_hhstar",
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "component_id": "q2_omegastar_hhstar__reverse",
+        "primary_id": "q2_omegastar_hhstar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "component_id": "q2_omegastar_hhstar__reverse",
+        "primary_id": "q2_omegastar_hhstar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "component_id": "q2_omegastar_hhstar__reverse",
+        "primary_id": "q2_omegastar_hhstar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "component_id": "q2_omegastar_hhstar__reverse",
+        "primary_id": "q2_omegastar_hhstar",
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "ENDPOINT_M"
+      }
+    ],
+    "block_triple_ledger": [
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_I"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_I"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_I",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_I",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "output_block": "CONE_X_U",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "CONE_X_U",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "CONE_X_U",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "CONE_X_U",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "CONE_X_U",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "CONE_X_U",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "CONE_X_U",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "CONE_X_U",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "ENDPOINT_G",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_G",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "ENDPOINT_G",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_G",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_I"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_I"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_I",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_I",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "ENDPOINT_G"
+      }
+    ],
+    "interaction_inert_blocks": [
+      "AUX_ETA",
+      "AUX_ETA_STAR",
+      "AUX_F_HAT",
+      "AUX_F_HAT_STAR",
+      "AUX_V",
+      "AUX_V_STAR",
+      "CONE_Y_EQ",
+      "CONE_Y_EQ_SHARP",
+      "CONE_Y_ID",
+      "CONE_Y_ID_SHARP",
+      "CONE_Y_U",
+      "CONE_Y_U_SHARP"
+    ],
+    "interaction_inert_rows": 196,
+    "support_envelope_warning": "A listed block channel is a potentially nonzero structural path, not a claim that every component coefficient in that block triple is nonzero.",
+    "sha256": "779d9811a7d79d71c8c01d85ef42522274265920bda384ef16a87cb18e138808"
+  },
+  "identity_transport": {
+    "q1_q2_arity_two": {
+      "status": "VERIFIED_BY_DIRECT_SUM_AND_EXACT_CONJUGATION",
+      "split_reason": "q1 preserves endpoint and complement, q2_split vanishes on every complement input, and the minimal 18-channel/51-path identity is exact",
+      "graph_reason": "q1_graph=S q1_split S^-1 and q2_graph=S q2_split(S^-1,S^-1)",
+      "defects": 0
+    },
+    "q2_koszul_symmetry": {
+      "status": "VERIFIED_BY_EXACT_CONJUGATION",
+      "ordered_components_checked": 22,
+      "defects": 0
+    },
+    "q2_cyclicity": {
+      "status": "VERIFIED_BY_ORTHOGONAL_DIRECT_SUM_AND_BV_CANONICAL_TRANSPORT",
+      "minimal_expanded_non_bach_coefficients_checked_by_source": 932,
+      "split_pairing_crossings": 0,
+      "canonical_shear_defects": 0,
+      "defects": 0
+    },
+    "D_q2_derivation": {
+      "status": "VERIFIED_FOR_STABILIZED_CANDIDATE_BY_STATIONARY_NATURALITY_AND_CONJUGATION",
+      "real_generator": "T=Lie_partial_t",
+      "minimal_primary_operators_checked": 12,
+      "stationary_natural_operator_defects": 0,
+      "shear_tables_checked": 14,
+      "shear_rational_coefficients_checked": 2642,
+      "temporal_shear_commutator_defects": 0,
+      "derivation_defects": 0,
+      "proof_rule": "On the stationary unit cylinder, Lie_partial_t is a derivation of tensor products and commutes with the natural covariant operators and the constant-coefficient shear jets; conjugation therefore transports the binary derivation identity."
+    },
+    "naturality_ledger": [
+      {
+        "primary_id": "q2_c_cc",
+        "operator_id": "vector_ghost_lie_bracket",
+        "maximum_total_derivative_order": 1,
+        "stationary_tensor_natural": true
+      },
+      {
+        "primary_id": "q2_omega_comega",
+        "operator_id": "scalar_lie_transport",
+        "maximum_total_derivative_order": 1,
+        "stationary_tensor_natural": true
+      },
+      {
+        "primary_id": "q2_h_ch",
+        "operator_id": "metric_lie_transport",
+        "maximum_total_derivative_order": 1,
+        "stationary_tensor_natural": true
+      },
+      {
+        "primary_id": "q2_h_omegah",
+        "operator_id": "weyl_metric_product",
+        "maximum_total_derivative_order": 0,
+        "stationary_tensor_natural": true
+      },
+      {
+        "primary_id": "q2_hstar_hh",
+        "operator_id": "polarized_bach_natural_operator",
+        "maximum_total_derivative_order": 4,
+        "stationary_tensor_natural": true
+      },
+      {
+        "primary_id": "q2_hstar_chstar",
+        "operator_id": "contravariant_density_lie_transport",
+        "maximum_total_derivative_order": 1,
+        "stationary_tensor_natural": true
+      },
+      {
+        "primary_id": "q2_hstar_omegahstar",
+        "operator_id": "weyl_metric_antifield_product",
+        "maximum_total_derivative_order": 0,
+        "stationary_tensor_natural": true
+      },
+      {
+        "primary_id": "q2_cstar_hhstar",
+        "operator_id": "metric_antifield_diff_noether",
+        "maximum_total_derivative_order": 1,
+        "stationary_tensor_natural": true
+      },
+      {
+        "primary_id": "q2_cstar_ccstar",
+        "operator_id": "covector_density_lie_transport",
+        "maximum_total_derivative_order": 1,
+        "stationary_tensor_natural": true
+      },
+      {
+        "primary_id": "q2_cstar_omegaomegastar",
+        "operator_id": "weyl_antifield_gradient",
+        "maximum_total_derivative_order": 1,
+        "stationary_tensor_natural": true
+      },
+      {
+        "primary_id": "q2_omegastar_hhstar",
+        "operator_id": "metric_antifield_trace_pair",
+        "maximum_total_derivative_order": 0,
+        "stationary_tensor_natural": true
+      },
+      {
+        "primary_id": "q2_omegastar_comegastar",
+        "operator_id": "scalar_density_lie_transport",
+        "maximum_total_derivative_order": 1,
+        "stationary_tensor_natural": true
+      }
+    ]
+  },
+  "candidate_snapshot": {
+    "kind": "STRICT_386_STABILIZED_Q2_PREFLIGHT_SNAPSHOT",
+    "basis_sha256": "8e29f0f2419d1086969fd1962c62bd5c185bff3772ebd247591bdea5ac2828c4",
+    "pairing_sha256": "912aecc758dfd5f0d9de815530a2fe1428442afe874343a08d90673e1f2f6381",
+    "graph_q1_sha256": "5c23d4bc1228e9b065ec60f67f367785b9456c7a9401dedb85a44d3b6b32ff5f",
+    "D_action_sha256": "b20def4d59de1f1f618ad022b89673206b5741daad7dda406ec2fe03e6e4d8da",
+    "split_candidate_sha256": "45fa9d55e05f26afdd40011b11f5854a3d6f6a5c2176370589e8cf3e82601161",
+    "graph_transport_dag_sha256": "779d9811a7d79d71c8c01d85ef42522274265920bda384ef16a87cb18e138808",
+    "receiver_status": "PREFLIGHT_ONLY_NOT_GATE_ACCEPTED",
+    "accepted_gate_a_object_hashes": 0,
+    "sha256": "1bd005d30ab86117b4512685f539fcab3d2dd8f26453f487c5c3a1ece234f1ce"
+  },
+  "theory_identity_boundary": {
+    "candidate_status": "CERTIFIED_CONSTRUCTION_NOT_AUTHORITATIVE_IMPORT",
+    "authoritative_full_nonlinear_386_row_export_present": false,
+    "authoritative_nonminimal_auxiliary_interaction_ledger_present": false,
+    "source_to_candidate_cyclic_L_infinity_isomorphism_present": false,
+    "candidate_equals_authoritative_classical_theory": "NOT_ESTABLISHED",
+    "why_fail_closed": "The quantum receiver may verify a mathematical stabilization but may not manufacture the authoritative classical nonlinear extension. The source must either export the full q2 or certify a cyclic L-infinity equivalence to this construction.",
+    "acceptable_closure_routes": [
+      "Import a source-certified 386-row nonlinear q2 and compare every declared nonminimal and auxiliary interaction.",
+      "Import a source-certified cyclic L-infinity isomorphism identifying the classical extension with this trivial stabilization and canonical shear."
+    ]
+  },
+  "support_and_foundations": {
+    "dependency_type": "finite exact local algebra plus stationary tensor naturality",
+    "coefficient_field": "Q for the carrier and shear tables",
+    "finite_exact_upper_bound": "PRA for the finite ledgers, conditional on the pinned differential-geometric naturality identities",
+    "choice_operation_added": false,
+    "infinite_selection_added": false,
+    "spectral_decomposition_used": false,
+    "Green_operator_used": false,
+    "positivity_assumption_used": false,
+    "weakest_full_analytic_base": "NOT_ESTABLISHED"
+  },
+  "gate_disposition": {
+    "M2_D_action_status": "RECEIVER_VERIFIED_SCOPED",
+    "M2_D_q1_status": "RECEIVER_VERIFIED_SCOPED",
+    "M2_stabilized_candidate_q2_status": "CERTIFIED_CONSTRUCTION",
+    "M2_stabilized_candidate_D_q2_status": "VERIFIED_BY_STRUCTURAL_TRANSPORT",
+    "M2_authoritative_full_carrier_q2_status": "OPEN_SOURCE_IDENTITY",
+    "M2_authoritative_D_q2_status": "OPEN_SOURCE_IDENTITY",
+    "top_level_gate_a_hashes_accepted_by_this_result": 0,
+    "classical_import_gate_a_status": "FAIL_CLOSED"
+  },
+  "claim_flags": {
+    "STRICT_386_STABILIZED_Q2_CANDIDATE_CONSTRUCTED": true,
+    "STRICT_386_STABILIZED_Q1_Q2_IDENTITY_VERIFIED": true,
+    "STRICT_386_STABILIZED_Q2_CYCLICITY_VERIFIED": true,
+    "STRICT_386_STABILIZED_D_Q2_DERIVATION_VERIFIED": true,
+    "STRICT_386_AUTHORITATIVE_FULL_Q2_IMPORTED": false,
+    "STRICT_386_CANDIDATE_AUTHORITATIVE_EQUIVALENCE_CERTIFIED": false,
+    "STRICT_386_FULL_Q2_D_COMMON_SNAPSHOT_ACCEPTED": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "RENORMALIZED_LORENTZIAN_PRODUCTS": false,
+    "QME_RESTORED": false,
+    "RESIDUAL_TRANSFERRED": false,
+    "LORENTZIAN_QUANTUM_THEORY": false
+  },
+  "does_not_establish": [
+    "that the certified stabilization is the authoritative nonlinear nonminimal or generalized-auxiliary classical Weyl BV extension",
+    "any nonzero split-coordinate q2 interaction on the 356 contractible rows",
+    "a flattened coefficientwise 386-row q2 jet tensor rather than an exact compositional action DAG",
+    "an accepted Gate-A common snapshot or a publishable classical freeze gate",
+    "q2 compatibility with represented advanced or retarded Green actions",
+    "a nonlinear D-Cartan homotopy or a decision that D is proper gauge",
+    "a BRST-compatible Hadamard state, renormalized Lorentzian products, QME restoration, residual transfer, positivity, unitarity or a Lorentzian quantum theory"
+  ],
+  "next_gate": "Obtain authoritative classical theory identity: either import a source-certified full 386-row q2 interaction ledger and compare it with this candidate, or import a source-certified cyclic L-infinity equivalence to the trivial stabilization. Only then may the receiver bind q2 and D/q2 into the Gate-A common snapshot and proceed to q2/Green compatibility.",
+  "canonical_hashes": {
+    "split_candidate_sha256": "45fa9d55e05f26afdd40011b11f5854a3d6f6a5c2176370589e8cf3e82601161",
+    "graph_transport_dag_sha256": "779d9811a7d79d71c8c01d85ef42522274265920bda384ef16a87cb18e138808",
+    "identity_transport_sha256": "6b4c001165a18787c6ffde54c6f0008bccaad3d96110a32c5e80e70d48cb5d70",
+    "candidate_snapshot_sha256": "1bd005d30ab86117b4512685f539fcab3d2dd8f26453f487c5c3a1ece234f1ce",
+    "theory_identity_boundary_sha256": "63424440897eef469a5b207cf6f0b8b65e61c90c913225f4b16274d22f9ec00a",
+    "gate_disposition_sha256": "f4265b459985c59ce7d95322dfd2634ee592305c0f4990ec9775cab0375156d5",
+    "support_and_foundations_sha256": "b333ec136213ed358e347bc1a1c66978080b2ac8f62497797ebe9accac302213"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1.json",
+        "result_or_schema_id": "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1",
+        "sha256": "9b0e9da9e8838a0ade6e1f1214e16457e9a94af981d9d020c137d105f9e9c21e",
+        "role": "split q1 and endpoint/complement invariance"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+        "result_or_schema_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+        "sha256": "3b9d8a2fc5a70d20770452eb0a2a4891f59314c21c83188bfb59de0941cac4b2",
+        "role": "fixed 386-row basis and split odd pairing"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1.json",
+        "result_or_schema_id": "STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1",
+        "sha256": "5f9240a362ce8568f0ac502e25978a4675f9744cc750dee5b1378828033eb301",
+        "role": "exact BV-canonical graph shear and inverse"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1.json",
+        "result_or_schema_id": "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1",
+        "sha256": "b805bd81b35f13325d938e93be91495e1d46aa5900fd168e55bdcde1afbfa8e2",
+        "role": "transported graph q1 and local SDR"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1.json",
+        "result_or_schema_id": "STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1",
+        "sha256": "513b43a90a936e1837947078e8f72da772f37461996b0b27b7df938ab355fbb3",
+        "role": "complete minimal six-species q2 AST"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_LOCAL_Q1_Q2_IDENTITY_V1.json",
+        "result_or_schema_id": "STRICT_LOCAL_Q1_Q2_IDENTITY_V1",
+        "sha256": "8300dddd6120632958a307e1924f27fb4e24ae6802e3163a825bd1dce54de738",
+        "role": "minimal arity-two q1/q2 identity"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1.json",
+        "result_or_schema_id": "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
+        "sha256": "c4cd8b1399e176e9eb1eadbfa0c5b85901d7361f39c706a7e7d4469e945e5169",
+        "role": "minimal canonical q2 cyclicity"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_D_ACTION_V1.json",
+        "result_or_schema_id": "STRICT_386_FULL_D_ACTION_V1",
+        "sha256": "c83c53250e3c8b8bc913f902a8cd4a4aff1a918c88b42167e9076e4aa96dc148",
+        "role": "full cylinder flow and stationary geometry"
+      }
+    ]
+  },
+  "independent_checker": {
+    "path": "quantum-weyl/classical_import/check_strict_386_stabilized_q2_lift_preflight.py",
+    "expected_digest": "eb284b5a61694d1b6901b3a5530b2a07dcd92a451dfb302ba461864526f75530"
+  },
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1.md"
+}
