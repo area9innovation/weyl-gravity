@@ -1,0 +1,115 @@
+{
+  "receipt_id": "STRICT_CYLINDER_BACH_UNIVERSAL_EXPORT_V1_TIER_RECEIPT",
+  "result_ids": [
+    "STRICT_CYLINDER_BACH_UNIVERSAL_EXPORT_V1"
+  ],
+  "recorded_at": "2026-08-15",
+  "base_commit": "1b4b935066a7380aed55f5c0a2550a31a03e15ca",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "output_hashes": {
+    "universal_engine": "65affb0053660b8c262615c4efddd42a84c62c96f41754a8a70faaa5780a0c9a",
+    "builder": "a86fc3c0c4f52f55c6497ba1961b4e8cc71e930afeeaf0ec1fa0809b1f0a22c5",
+    "independent_checker": "0850fcba4124f9409d2569aaa5e552122a88634308f6e51cf6d4e4270dcabc62",
+    "schema_verifier": "373ab689d2fac49f978e3e62da7a3a8865f1a1befa0960b3d6f408595f375987",
+    "mutation_tests": "a0966edf0551b963f7410b004e521a235f7315b845f8e9ed8ed78e9d1ddca51c",
+    "schema": "572536ea7af1783f6b8fc18ec760fbca7d71861edb1f27227192d5bfacc6b65a",
+    "certificate": "13489325f30825fc33ef178fad0f0f8ff150f2a353ce0b38db99e48c2016fefe",
+    "human_report": "e41e7835365dc9d00e213ce5602d3c69dfbc3ada98eba84b2bbad23bb2eb5794"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile on the nine universal-export and h-star-row Python sources/tests",
+      "elapsed_seconds": 0.07,
+      "status": "PASS"
+    },
+    {
+      "tier": 0,
+      "command": "jq empty on both universal-export and h-star-row schemas/certificates",
+      "elapsed_seconds": 0.04,
+      "status": "PASS"
+    },
+    {
+      "tier": 0,
+      "command": "git diff --cached --check on the explicit 18-path delivery",
+      "elapsed_seconds": 0.2,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/check_strict_cylinder_bach_universal_export.py",
+      "elapsed_seconds": 1.5,
+      "maximum_resident_kibibytes": 25884,
+      "status": "PASS_700_INPUTS_19401_SYMMETRIC_COEFFICIENTS_FULL_WEYL_IDENTITY_AND_THREE_POINT_COMPARISONS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/verify_strict_cylinder_bach_universal_export.py",
+      "elapsed_seconds": 1.7,
+      "maximum_resident_kibibytes": 34932,
+      "status": "PASS_SCHEMA_FAST_RECEIVER_REPORT_AND_BOUNDARY"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_cylinder_bach_universal_export.py -v",
+      "elapsed_seconds": 16.8,
+      "maximum_resident_kibibytes": 42080,
+      "status": "PASS_12_TESTS"
+    },
+    {
+      "tier": 2,
+      "command": "python3 quantum-weyl/classical_import/build_strict_cylinder_bach_universal_export.py --check",
+      "elapsed_seconds": 134.7,
+      "maximum_resident_kibibytes": 170848,
+      "status": "PASS_EXHAUSTIVE_EXACT_REBUILD_GENERATED_ARTIFACTS_CURRENT"
+    }
+  ],
+  "supplemental_attempts": [
+    {
+      "attempt": "first unoptimized universal natural-operator run",
+      "elapsed_seconds_before_interrupt": 222.0,
+      "status": "INTERRUPTED_NO_RESULT",
+      "counted_as_pass": false,
+      "boundary": "The unoptimized exploration produced no accepted artifact and is not evidence for the result."
+    },
+    {
+      "attempt": "first exhaustive builder run against the independent point evaluator",
+      "elapsed_seconds": 155.18,
+      "status": "FAILED_NORMALIZED_TAYLOR_FACTORIAL_SHIFT_MISSING",
+      "counted_as_pass": false,
+      "boundary": "The point-evaluator disagreement exposed a missing (alpha_i+1) derivative shift. The artifact was discarded before correction."
+    },
+    {
+      "attempt": "corrected generation after normalized-Taylor derivative repair",
+      "elapsed_seconds": 146.94,
+      "status": "PASS_HISTORICAL_PRODUCER_RUN",
+      "counted_as_current_pass": false,
+      "boundary": "Retained as development history; only the final current-source byte check is the authoritative Tier-2 pass."
+    },
+    {
+      "attempt": "final pre-receipt regeneration after certificate metadata stabilization",
+      "elapsed_seconds": 143.29,
+      "maximum_resident_kibibytes": 170656,
+      "status": "PASS_HISTORICAL_PRODUCER_RUN",
+      "counted_as_current_pass": false,
+      "boundary": "Superseded as the receipt authority by the later 134.70-second current-source byte check."
+    }
+  ],
+  "advisory_rails": [
+    {
+      "command": "ci/science-forge-shadow.sh",
+      "elapsed_seconds": 2.18,
+      "process_status": "ADVISORY_EXIT_0",
+      "certifying_status": "NOT_A_PASS",
+      "findings": [
+        "bridge audit failed because the cached Forge 0.0.2 binary and current FORGE_LIB disagree and current lib/prelude.forge triggers E9118",
+        "coverage census reports repository-wide drift: 1713 certificates versus the 2026-07-19 baseline of 976"
+      ],
+      "boundary": "This read-only shadow rail is advisory by repository policy. Its findings are retained and are not used as evidence for the mathematical result."
+    }
+  ],
+  "tier_3_not_run": "No classical/quantum freeze, theorem or lifecycle promotion, shared core-algebra change, release or tag is made. The result remains CLASSIFIED and LOCAL-ALGEBRAIC; tensor-natural globalization, the differentiated Diff identity, Gate A, causal Green data, Hadamard and QME remain open.",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC result exports the complete ten-output polarized Bach-Euler density at one homogeneous unit-cylinder frame as a 700-input, 19,401-term symmetric rational table. The independent fast rail checks hashes, shape, full differentiated Weyl trace and point-evaluator fixtures. It does not establish SO(4)-isotropy/coordinate globalization, the differentiated Diff identity, a portable h-star row, complete q2/D identities, Gate A, causal Green data, Hadamard, QME restoration or a Lorentzian quantum theory."
+}

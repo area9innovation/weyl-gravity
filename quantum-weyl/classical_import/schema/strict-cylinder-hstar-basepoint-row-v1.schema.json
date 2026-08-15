@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-cylinder-hstar-basepoint-row-v1.schema.json",
+  "title": "Exact homogeneous-cylinder metric-antifield diagonal Taylor row",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "created", "repository_base_commit", "dependency_tags", "scope", "source_crosswalk", "components", "universal_table_reference", "exact_checks", "gates", "canonical_hashes", "provenance", "claim_flags", "missing_object_ledger", "does_not_establish", "independent_checker", "human_report"],
+  "properties": {
+    "schema": {"const": "strict-cylinder-hstar-basepoint-row-v1"},
+    "result_id": {"const": "STRICT_CYLINDER_HSTAR_BASEPOINT_ROW_V1"},
+    "result_kind": {"const": "EXACT_HOMOGENEOUS_BASEPOINT_DIAGONAL_TAYLOR_ROW_ASSEMBLY"},
+    "result_state": {"const": "HSTAR_BASEPOINT_ROW_ASSEMBLED_PORTABLE_GLOBALIZATION_AND_INTERACTION_IDENTITIES_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{8,40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background", "basepoint_chart", "output", "coefficient_field", "diagonal_Taylor_convention", "row_formula", "metric_kernel_boundary", "support_locality"],
+      "properties": {
+        "theory": {"const": "strict pure-Weyl minimal Diff x Weyl BV theory"},
+        "background": {"const": "unit conformal cylinder R x S3"},
+        "basepoint_chart": {"type": "string", "minLength": 60},
+        "output": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["symbol", "component_count", "tensor_type", "form_degree", "Weyl_weight"],
+          "properties": {
+            "symbol": {"const": "h_star"},
+            "component_count": {"const": 10},
+            "tensor_type": {"$ref": "#/$defs/tensor"},
+            "form_degree": {"const": 4},
+            "Weyl_weight": {"const": -2}
+          }
+        },
+        "coefficient_field": {"const": "Q"},
+        "diagonal_Taylor_convention": {"type": "string", "minLength": 120},
+        "row_formula": {"const": "q2_diagonal(h_star)^{mu nu}=(1/2)K^{mu nu}[h,h]+Lie_c(h_star)^{mu nu}-2 omega h_star^{mu nu}"},
+        "metric_kernel_boundary": {"type": "string", "minLength": 120},
+        "support_locality": {"type": "string", "minLength": 90}
+      }
+    },
+    "source_crosswalk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authoritative_Q_g_star_terms", "source_canonical_hashes", "receiver_canonical_hashes", "metric_antifield_tensor_type", "Euler_coordinate", "minimal_metric_master_term", "BV_antifield_coordinate_rule"],
+      "properties": {
+        "authoritative_Q_g_star_terms": {"type": "array", "minItems": 3, "maxItems": 3},
+        "source_canonical_hashes": {"$ref": "#/$defs/hash_map"},
+        "receiver_canonical_hashes": {"$ref": "#/$defs/hash_map"},
+        "metric_antifield_tensor_type": {"$ref": "#/$defs/tensor"},
+        "Euler_coordinate": {"const": "E_g^{mu nu}:=delta S/delta g_{mu nu}=-2 sqrt(abs(g)) B^{mu nu}"},
+        "minimal_metric_master_term": {"const": "integral g_star^{mu nu}(L_xi g_{mu nu}+2 omega g_{mu nu})"},
+        "BV_antifield_coordinate_rule": {"type": "string", "minLength": 90}
+      }
+    },
+    "components": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/component"}},
+    "universal_table_reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "universal_table_sha256", "input_basis_count", "symmetric_bilinear_term_count", "polarized_coefficient_convention", "diagonal_Taylor_multiplier"],
+      "properties": {
+        "result_id": {"const": "STRICT_CYLINDER_BACH_UNIVERSAL_EXPORT_V1"},
+        "universal_table_sha256": {"$ref": "#/$defs/hash"},
+        "input_basis_count": {"const": 700},
+        "symmetric_bilinear_term_count": {"const": 19401},
+        "polarized_coefficient_convention": {"type": "string", "minLength": 40},
+        "diagonal_Taylor_multiplier": {"const": "1/2"}
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_and_receiver_antifield_hashes_agree", "authoritative_g_star_row_replayed", "three_diff_and_weyl_variational_cotangent_checks", "three_exact_hessian_diagonal_checks", "all_component_coefficients_exact_rationals", "all_components_support_local"],
+      "properties": {
+        "source_and_receiver_antifield_hashes_agree": {"const": true},
+        "authoritative_g_star_row_replayed": {"const": true},
+        "three_diff_and_weyl_variational_cotangent_checks": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/cotangent_check"}},
+        "three_exact_hessian_diagonal_checks": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/diagonal_check"}},
+        "all_component_coefficients_exact_rationals": {"const": true},
+        "all_components_support_local": {"const": true}
+      }
+    },
+    "gates": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/gate"}},
+    "canonical_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_crosswalk_sha256", "components_sha256", "exact_checks_sha256", "gates_sha256", "missing_object_ledger_sha256"],
+      "properties": {
+        "source_crosswalk_sha256": {"$ref": "#/$defs/hash"},
+        "components_sha256": {"$ref": "#/$defs/hash"},
+        "exact_checks_sha256": {"$ref": "#/$defs/hash"},
+        "gates_sha256": {"$ref": "#/$defs/hash"},
+        "missing_object_ledger_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["inputs"], "properties": {"inputs": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/input"}}}},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["HSTAR_BASEPOINT_DIAGONAL_ROW_ASSEMBLED", "METRIC_ANTIFIELD_DIFF_COTANGENT_TERM_CERTIFIED", "METRIC_ANTIFIELD_WEYL_COTANGENT_TERM_CERTIFIED", "PORTABLE_TENSOR_NATURAL_HSTAR_ROW", "DIFFERENTIATED_DIFF_NOETHER_REPLAYED", "SUSPENDED_GRADED_POLARIZATION_REPLAYED", "STRICT_SUPPORT_LOCAL_Q2_COMPLETE", "CLASSICAL_IMPORT_GATE_PASSED", "LORENTZIAN_CAUSAL_CERTIFIED", "QME_RESTORED"],
+      "properties": {
+        "HSTAR_BASEPOINT_DIAGONAL_ROW_ASSEMBLED": {"const": true},
+        "METRIC_ANTIFIELD_DIFF_COTANGENT_TERM_CERTIFIED": {"const": true},
+        "METRIC_ANTIFIELD_WEYL_COTANGENT_TERM_CERTIFIED": {"const": true},
+        "PORTABLE_TENSOR_NATURAL_HSTAR_ROW": {"const": false},
+        "DIFFERENTIATED_DIFF_NOETHER_REPLAYED": {"const": false},
+        "SUSPENDED_GRADED_POLARIZATION_REPLAYED": {"const": false},
+        "STRICT_SUPPORT_LOCAL_Q2_COMPLETE": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "LORENTZIAN_CAUSAL_CERTIFIED": {"const": false},
+        "QME_RESTORED": {"const": false}
+      }
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/missing"}},
+    "does_not_establish": {"type": "array", "minItems": 6, "items": {"type": "string", "minLength": 60}},
+    "independent_checker": {"const": "quantum-weyl/classical_import/check_strict_cylinder_hstar_basepoint_row.py"},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_CYLINDER_HSTAR_BASEPOINT_ROW_V1.md"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "hash_map": {"type": "object", "minProperties": 5, "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "tensor": {"type": "object", "additionalProperties": false, "required": ["contravariant_rank", "covariant_rank", "symmetry"], "properties": {"contravariant_rank": {"const": 2}, "covariant_rank": {"const": 0}, "symmetry": {"const": "symmetric_contravariant_density"}}},
+    "component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["component_id", "inputs", "operator", "coefficient", "coordinate_formula", "maximum_input_jet_orders", "maximum_total_derivative_order", "source_atom", "support_rule", "portability"],
+      "properties": {
+        "component_id": {"enum": ["q2_hstar_hh_basepoint", "q2_hstar_chstar", "q2_hstar_omegahstar"]},
+        "inputs": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"enum": ["h", "c", "omega", "h_star"]}},
+        "operator": {"type": "string", "minLength": 10},
+        "coefficient": {"enum": ["1/2", "1", "-2"]},
+        "coordinate_formula": {"type": "string", "minLength": 15},
+        "maximum_input_jet_orders": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0, "maximum": 4}},
+        "maximum_total_derivative_order": {"type": "integer", "minimum": 0, "maximum": 4},
+        "source_atom": {"enum": ["E_g", "Lie_g_star", "omega*g_star"]},
+        "support_rule": {"type": "string", "minLength": 75},
+        "portability": {"enum": ["HOMOGENEOUS_BASEPOINT_ONLY", "TENSOR_NATURAL"]}
+      }
+    },
+    "cotangent_check": {"type": "object", "additionalProperties": false, "required": ["seed", "diff_output_sha256", "weyl_output_sha256", "negative_euler_equals_declared_cotangent"], "properties": {"seed": {"type": "integer"}, "diff_output_sha256": {"$ref": "#/$defs/hash"}, "weyl_output_sha256": {"$ref": "#/$defs/hash"}, "negative_euler_equals_declared_cotangent": {"const": true}}},
+    "diagonal_check": {"type": "object", "additionalProperties": false, "required": ["seed", "quadratic_diagonal_output", "output_sha256", "coefficient_relative_to_polarized_table"], "properties": {"seed": {"type": "integer"}, "quadratic_diagonal_output": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "string", "pattern": "^-?[0-9]+(/[1-9][0-9]*)?$"}}, "output_sha256": {"$ref": "#/$defs/hash"}, "coefficient_relative_to_polarized_table": {"const": "1/2"}}},
+    "gate": {"type": "object", "additionalProperties": false, "required": ["gate", "status", "evidence"], "properties": {"gate": {"enum": ["HSTAR_BASEPOINT_DIAGONAL_ASSEMBLY", "TENSOR_NATURAL_GLOBALIZATION", "DIFFERENTIATED_DIFF_NOETHER", "SUSPENDED_GRADED_POLARIZATION", "SIX_ROW_INTERACTION_IDENTITIES"]}, "status": {"enum": ["PASS", "OPEN"]}, "evidence": {"type": "string", "minLength": 70}}},
+    "input": {"type": "object", "additionalProperties": false, "required": ["path", "result_or_artifact_id", "sha256", "role"], "properties": {"path": {"type": "string", "minLength": 15}, "result_or_artifact_id": {"type": "string", "minLength": 8}, "sha256": {"$ref": "#/$defs/hash"}, "role": {"type": "string", "minLength": 20}}},
+    "missing": {"type": "object", "additionalProperties": false, "required": ["object", "status", "blocks"], "properties": {"object": {"type": "string", "minLength": 35}, "status": {"const": "MISSING"}, "blocks": {"type": "string", "minLength": 15}}}
+  }
+}

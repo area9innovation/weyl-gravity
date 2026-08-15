@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-cylinder-bach-universal-export-v1.schema.json",
+  "title": "Universal exact homogeneous-cylinder Bach-Hessian component table",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "created", "repository_base_commit", "dependency_tags", "scope", "construction", "universal_table", "exact_checks", "canonical_hashes", "implementation", "provenance", "independent_receiver", "next_gates", "claim_flags", "does_not_establish", "independent_checker", "human_report"],
+  "properties": {
+    "schema": {"const": "strict-cylinder-bach-universal-export-v1"},
+    "result_id": {"const": "STRICT_CYLINDER_BACH_UNIVERSAL_EXPORT_V1"},
+    "result_kind": {"const": "EXACT_UNIVERSAL_HOMOGENEOUS_BASEPOINT_COMPONENT_TABLE"},
+    "result_state": {"const": "UNIVERSAL_CYLINDER_TABLE_FAST_RECEIVER_READY_GLOBAL_AST_AND_DIFF_IDENTITY_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{8,40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["theory", "background", "basepoint_chart", "inputs", "output", "taylor_convention", "action_normalization", "maximum_total_input_derivative_order", "coefficient_field", "support_locality", "globalization_boundary"],
+      "properties": {
+        "theory": {"type": "string", "minLength": 50},
+        "background": {"const": "unit conformal cylinder R x S3"},
+        "basepoint_chart": {"type": "string", "minLength": 60},
+        "inputs": {"type": "string", "minLength": 80},
+        "output": {"type": "object", "additionalProperties": false, "required": ["component_count", "tensor_type", "form_degree", "Weyl_weight"], "properties": {"component_count": {"const": 10}, "tensor_type": {"type": "object", "additionalProperties": false, "required": ["contravariant_rank", "covariant_rank", "symmetry"], "properties": {"contravariant_rank": {"const": 2}, "covariant_rank": {"const": 0}, "symmetry": {"const": "symmetric_contravariant_density"}}}, "form_degree": {"const": 4}, "Weyl_weight": {"const": -2}}},
+        "taylor_convention": {"type": "string", "minLength": 45},
+        "action_normalization": {"const": "B_action=-2 B_standard"},
+        "maximum_total_input_derivative_order": {"const": 4},
+        "coefficient_field": {"const": "Q"},
+        "support_locality": {"type": "string", "minLength": 90},
+        "globalization_boundary": {"type": "string", "minLength": 120}
+      }
+    },
+    "construction": {"type": "object", "additionalProperties": false, "required": ["algorithm", "coefficient_method", "input_slots", "producer_cost_class"], "properties": {"algorithm": {"type": "array", "minItems": 8, "maxItems": 8}, "coefficient_method": {"type": "string", "minLength": 100}, "input_slots": {"type": "string", "minLength": 70}, "producer_cost_class": {"const": "TIER_2_EXHAUSTIVE_NOT_PER_COMMIT"}}},
+    "universal_table": {
+      "type": "object", "additionalProperties": false,
+      "required": ["input_basis", "coefficient_dictionary", "rows", "counts"],
+      "properties": {
+        "input_basis": {"type": "array", "minItems": 700, "maxItems": 700, "items": {"$ref": "#/$defs/basis"}},
+        "coefficient_dictionary": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^-?[0-9]+(/[1-9][0-9]*)?$"}},
+        "rows": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"$ref": "#/$defs/row"}},
+        "counts": {"type": "object", "additionalProperties": false, "required": ["input_basis", "coefficient_dictionary", "linear_terms", "ordered_bilinear_terms", "symmetric_bilinear_terms"], "properties": {"input_basis": {"const": 700}, "coefficient_dictionary": {"type": "integer", "minimum": 1}, "linear_terms": {"type": "integer", "minimum": 1}, "ordered_bilinear_terms": {"type": "integer", "minimum": 1}, "symmetric_bilinear_terms": {"type": "integer", "minimum": 1}}}
+      }
+    },
+    "exact_checks": {"type": "object", "additionalProperties": false, "required": ["all_ten_output_rows_present", "all_700_metric_four_jet_basis_inputs_named", "maximum_total_derivative_order_four", "input_swap_symmetry_defect_count", "universal_weyl_trace_defects", "three_independent_point_evaluator_crosschecks", "compact_table_reproduces_unreduced_operator"], "properties": {"all_ten_output_rows_present": {"const": true}, "all_700_metric_four_jet_basis_inputs_named": {"const": true}, "maximum_total_derivative_order_four": {"const": true}, "input_swap_symmetry_defect_count": {"const": 0}, "universal_weyl_trace_defects": {"type": "object", "additionalProperties": false, "required": ["background", "linear_term_count", "bilinear_term_count"], "properties": {"background": {"const": "0"}, "linear_term_count": {"const": 0}, "bilinear_term_count": {"const": 0}}}, "three_independent_point_evaluator_crosschecks": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/crosscheck"}}, "compact_table_reproduces_unreduced_operator": {"const": true}}},
+    "canonical_hashes": {"type": "object", "additionalProperties": false, "required": ["input_basis_sha256", "coefficient_dictionary_sha256", "row_sha256", "universal_table_sha256", "point_crosschecks_sha256"], "properties": {"input_basis_sha256": {"$ref": "#/$defs/hash"}, "coefficient_dictionary_sha256": {"$ref": "#/$defs/hash"}, "row_sha256": {"type": "object", "minProperties": 10, "maxProperties": 10, "additionalProperties": {"$ref": "#/$defs/hash"}}, "universal_table_sha256": {"$ref": "#/$defs/hash"}, "point_crosschecks_sha256": {"$ref": "#/$defs/hash"}}},
+    "implementation": {"type": "object", "additionalProperties": false, "required": ["universal_engine", "point_engine"], "properties": {"universal_engine": {"$ref": "#/$defs/artifact"}, "point_engine": {"$ref": "#/$defs/artifact"}}},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["inputs"], "properties": {"inputs": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/input"}}}},
+    "independent_receiver": {"type": "object", "additionalProperties": false, "required": ["path", "cost_class", "replays"], "properties": {"path": {"const": "quantum-weyl/classical_import/check_strict_cylinder_bach_universal_export.py"}, "cost_class": {"const": "TIER_1_FAST_REPLAY"}, "replays": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string", "minLength": 20}}}},
+    "next_gates": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/gate"}},
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["UNIVERSAL_BASEPOINT_METRIC_HESSIAN_TABLE_EXPORTED", "EXHAUSTIVE_INPUT_SWAP_AND_WEYL_TRACE_REPLAYED", "FAST_INDEPENDENT_TABLE_RECEIVER_IMPLEMENTED", "PORTABLE_TENSOR_NATURAL_HSTAR_ROW", "DIFFERENTIATED_DIFF_NOETHER_REPLAYED", "HT1B_NONZERO_CHANNELS_REPLAYED_BY_TABLE", "STRICT_SUPPORT_LOCAL_Q2_COMPLETE", "CLASSICAL_IMPORT_GATE_PASSED", "LORENTZIAN_CAUSAL_CERTIFIED", "QME_RESTORED"],
+      "properties": {"UNIVERSAL_BASEPOINT_METRIC_HESSIAN_TABLE_EXPORTED": {"const": true}, "EXHAUSTIVE_INPUT_SWAP_AND_WEYL_TRACE_REPLAYED": {"const": true}, "FAST_INDEPENDENT_TABLE_RECEIVER_IMPLEMENTED": {"const": true}, "PORTABLE_TENSOR_NATURAL_HSTAR_ROW": {"const": false}, "DIFFERENTIATED_DIFF_NOETHER_REPLAYED": {"const": false}, "HT1B_NONZERO_CHANNELS_REPLAYED_BY_TABLE": {"const": false}, "STRICT_SUPPORT_LOCAL_Q2_COMPLETE": {"const": false}, "CLASSICAL_IMPORT_GATE_PASSED": {"const": false}, "LORENTZIAN_CAUSAL_CERTIFIED": {"const": false}, "QME_RESTORED": {"const": false}}
+    },
+    "does_not_establish": {"type": "array", "minItems": 7, "items": {"type": "string", "minLength": 45}},
+    "independent_checker": {"const": "quantum-weyl/classical_import/check_strict_cylinder_bach_universal_export.py"},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_CYLINDER_BACH_UNIVERSAL_EXPORT_V1.md"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "basis": {"type": "object", "additionalProperties": false, "required": ["index", "component", "component_pair", "word", "order"], "properties": {"index": {"type": "integer", "minimum": 0, "maximum": 699}, "component": {"type": "integer", "minimum": 0, "maximum": 9}, "component_pair": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0, "maximum": 3}}, "word": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer", "minimum": 0, "maximum": 4}}, "order": {"type": "integer", "minimum": 0, "maximum": 4}}},
+    "row": {"type": "object", "additionalProperties": false, "required": ["output_component", "output_pair", "linear_entries", "symmetric_bilinear_entries", "ordered_term_count_before_symmetry"], "properties": {"output_component": {"type": "integer", "minimum": 0, "maximum": 9}, "output_pair": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0, "maximum": 3}}, "linear_entries": {"type": "array", "items": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0}}}, "symmetric_bilinear_entries": {"type": "array", "items": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 0}}}, "ordered_term_count_before_symmetry": {"type": "integer", "minimum": 1}}},
+    "crosscheck": {"type": "object", "additionalProperties": false, "required": ["left_seed", "right_seed", "output", "nonzero_output_count", "output_sha256", "universal_equals_compact_equals_point"], "properties": {"left_seed": {"type": "integer"}, "right_seed": {"type": "integer"}, "output": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "string", "pattern": "^-?[0-9]+(/[1-9][0-9]*)?$"}}, "nonzero_output_count": {"type": "integer", "minimum": 1, "maximum": 10}, "output_sha256": {"$ref": "#/$defs/hash"}, "universal_equals_compact_equals_point": {"const": true}}},
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 15}, "sha256": {"$ref": "#/$defs/hash"}}},
+    "input": {"type": "object", "additionalProperties": false, "required": ["path", "result_or_artifact_id", "sha256", "role"], "properties": {"path": {"type": "string", "minLength": 15}, "result_or_artifact_id": {"type": "string", "minLength": 8}, "sha256": {"$ref": "#/$defs/hash"}, "role": {"type": "string", "minLength": 15}}},
+    "gate": {"type": "object", "additionalProperties": false, "required": ["gate", "status", "required"], "properties": {"gate": {"enum": ["DIFFERENTIATED_DIFF_NOETHER", "HT1B_MODE_ADAPTERS", "TENSOR_NATURAL_GLOBALIZATION", "STRICT_HSTAR_ROW_INTEGRATION"]}, "status": {"const": "OPEN"}, "required": {"type": "string", "minLength": 55}}}
+  }
+}

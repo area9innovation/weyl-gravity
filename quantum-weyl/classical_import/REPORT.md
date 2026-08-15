@@ -131,11 +131,29 @@ dependencies and evaluates the full inverse-metric, connection, curvature,
 Weyl, Bach, action-normalization and Euler-density pipeline on any supplied
 rational metric four-jets. Exact cylinder, polarization, nonlinear Weyl-trace,
 local conformal and pp-wave checks pass, including a non-special trial with
-nine nonzero outputs. This materially constructs the missing coefficient
-kernel as an evaluator, but it is not yet the portable universal component
-AST: the differentiated Diff identity, HT1B mode adapters, exhaustive unary
-comparison and independent coefficient-table replay remain open. Gate A and
-the complete `h_star` row therefore remain fail closed.
+nine nonzero outputs.
+
+The exhaustive successor
+[`STRICT_CYLINDER_BACH_UNIVERSAL_EXPORT_V1`](REPORT_STRICT_CYLINDER_BACH_UNIVERSAL_EXPORT_V1.md)
+turns that evaluator into an exact homogeneous-frame table: 700 normalized
+metric four-jet inputs, ten contravariant-density outputs and 19,401 nonzero
+symmetric bilinear coefficients. The producer checks the unreduced input swap
+and the complete differentiated Weyl trace identity; a separate fast receiver
+reconstructs the compact table and agrees with the point evaluator on three
+exact fixtures. This closes coefficient enumeration at the chosen cylinder
+frame, not the tensor-natural globalization or differentiated Diff identity.
+
+The source-fixed cotangent completion is now recorded separately in
+[`STRICT_CYLINDER_HSTAR_BASEPOINT_ROW_V1`](REPORT_STRICT_CYLINDER_HSTAR_BASEPOINT_ROW_V1.md).
+The authoritative classical export gives
+`Q(g_star)=E_g+Lie_c(g_star)-2 omega g_star`. Since the universal table stores
+the polarized `a*b` coefficient, the diagonal quadratic row is exactly
+`(1/2)K[h,h]+Lie_c(h_star)-2 omega h_star`. Independent variational-adjoint
+checks recover both cotangent signs and the density-divergence term. The sixth
+row is therefore assembled at the declared basepoint, but the portable
+six-row `q2`, suspended graded polarization, differentiated Diff identity,
+`q1q2=0`, `D` derivation and BV cyclicity remain fail closed. Consequently
+Gate A remains closed.
 
 ## Antifield/Koszul--Tate handoff contract
 

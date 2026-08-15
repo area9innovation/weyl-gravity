@@ -1,0 +1,91 @@
+{
+  "receipt_id": "STRICT_CYLINDER_HSTAR_BASEPOINT_ROW_V1_TIER_RECEIPT",
+  "result_ids": [
+    "STRICT_CYLINDER_HSTAR_BASEPOINT_ROW_V1"
+  ],
+  "recorded_at": "2026-08-15",
+  "base_commit": "1b4b935066a7380aed55f5c0a2550a31a03e15ca",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "output_hashes": {
+    "builder": "45626a9fdf40b639a14d1504887b83f3e7eecfdeb85bb358581f25b9f152f007",
+    "independent_checker": "0d92ca00a54f393c28ee2b00ec3d923ae924b3968f55ac07192700e76c5ef62f",
+    "schema_verifier": "ba138a518818c9d2cb55abf9a4a01965351a3e0a7915cd52a010f45e79ad17f5",
+    "mutation_tests": "38dbd4e5738961911d663ccbce787ba0e56d4b4964c3dbdea0869ce335ae400c",
+    "schema": "0ba56c45b863946a63f471f17ce98e9e0ede274e671169a76b81c0789f6fabcb",
+    "certificate": "8ecc2ec6850c7d4c38f8225cf7612f3e46fdb32865a79e3a4360b45006540714",
+    "human_report": "2cec56319d21f16b00bdff74f3b73e157d2525a3ebce59a60b95bacccf0b5e10",
+    "central_import_report": "fd43d1c6a49945da9eb5a020cc3c29163ec1baf22902cb5b8f742b1bc3da98ef"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile on the nine universal-export and h-star-row Python sources/tests",
+      "elapsed_seconds": 0.07,
+      "status": "PASS"
+    },
+    {
+      "tier": 0,
+      "command": "jq empty on both universal-export and h-star-row schemas/certificates",
+      "elapsed_seconds": 0.04,
+      "status": "PASS"
+    },
+    {
+      "tier": 0,
+      "command": "git diff --cached --check on the explicit 18-path delivery",
+      "elapsed_seconds": 0.2,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/build_strict_cylinder_hstar_basepoint_row.py --check",
+      "elapsed_seconds": 0.31,
+      "maximum_resident_kibibytes": 26696,
+      "status": "PASS_GENERATED_ARTIFACTS_CURRENT"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/check_strict_cylinder_hstar_basepoint_row.py",
+      "elapsed_seconds": 5.67,
+      "maximum_resident_kibibytes": 29812,
+      "status": "PASS_HESSIAN_HALF_FACTOR_AND_DIFF_WEYL_VARIATIONAL_COTANGENT_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/verify_strict_cylinder_hstar_basepoint_row.py",
+      "elapsed_seconds": 5.74,
+      "maximum_resident_kibibytes": 38628,
+      "status": "PASS_SCHEMA_PROVENANCE_REPORT_AND_NO_PROMOTION_FIREWALL"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_cylinder_hstar_basepoint_row.py -v",
+      "elapsed_seconds": 36.06,
+      "maximum_resident_kibibytes": 42020,
+      "status": "PASS_12_TESTS"
+    },
+    {
+      "tier": 2,
+      "command": "python3 quantum-weyl/classical_import/build_strict_cylinder_bach_universal_export.py --check",
+      "elapsed_seconds": 134.7,
+      "maximum_resident_kibibytes": 170848,
+      "status": "PASS_TRANSITIVE_METRIC_KERNEL_EXHAUSTIVE_REBUILD_CURRENT"
+    }
+  ],
+  "advisory_rails": [
+    {
+      "command": "ci/science-forge-shadow.sh",
+      "elapsed_seconds": 2.18,
+      "process_status": "ADVISORY_EXIT_0",
+      "certifying_status": "NOT_A_PASS",
+      "findings": [
+        "bridge audit failed because the cached Forge 0.0.2 binary and current FORGE_LIB disagree and current lib/prelude.forge triggers E9118",
+        "coverage census reports repository-wide drift: 1713 certificates versus the 2026-07-19 baseline of 976"
+      ],
+      "boundary": "This read-only shadow rail is advisory by repository policy. Its findings are retained and are not used as evidence for the h-star result."
+    }
+  ],
+  "tier_3_not_run": "No freeze, theorem/lifecycle promotion, release, tag or shared core algebra change is made. The h-star result is a CLASSIFIED homogeneous-basepoint diagonal assembly. Globalization, polarization, all six-row identities, Gate A, causal Green data, Hadamard and QME remain open.",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC result assembles the strict metric-antifield diagonal Taylor row at one homogeneous cylinder frame as (1/2)K[h,h]+Lie_c(h_star)-2 omega h_star. It independently recovers both cotangent terms from the negative metric Euler derivative and pins the universal metric-kernel table. It does not establish a tensor-natural global h-star row, suspended graded q2, q1q2=0, Koszul symmetry, D derivation, BV cyclicity, Gate A, a Lorentzian causal Green homotopy, Hadamard state, restored QME or Lorentzian quantum theory."
+}
