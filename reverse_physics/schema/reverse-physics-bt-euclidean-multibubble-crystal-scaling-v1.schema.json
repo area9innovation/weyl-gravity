@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-multibubble-crystal-scaling-v1.schema.json",
+  "title": "BT multibubble crystal scaling certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "family", "operator_scaling", "consequences",
+    "exact_fixture_K3", "method_disposition", "missing_object_ledger", "next_gate",
+    "does_not_establish", "provenance", "verification_commands", "tier_receipt",
+    "checks", "report", "schema", "verifier"
+  ],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "fraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "textArray": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}}
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_MULTIBUBBLE_CRYSTAL_SCALING_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-multibubble-crystal-scaling-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"},
+        {"const": "REDUCED-MODE"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "family": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "base_denominator", "scaled_denominator", "positive_field", "rescaled_parameter",
+        "field_identity", "zero_count", "local_jet"
+      ],
+      "properties": {
+        "base_denominator": {"$ref": "#/$defs/text"},
+        "scaled_denominator": {"const": "F_K(x)=K^-2*F_16(K*x), integer K>=1"},
+        "positive_field": {"const": "Omega_K,m(x)=1/(m+F_K(x))"},
+        "rescaled_parameter": {"const": "M=m*K^2"},
+        "field_identity": {"const": "Omega_K,m(x)=K^2*Omega_16,M(K*x)"},
+        "zero_count": {"const": "|Z_K|=(2*K)^4=16*K^4"},
+        "local_jet": {"$ref": "#/$defs/text"}
+      }
+    },
+    "operator_scaling": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "residual", "q_scalar", "euler", "covering_identity", "residual_norm",
+        "euler_norm", "quotient"
+      ],
+      "properties": {
+        "residual": {"const": "R_K,m(x)=K^2*R_16,M(K*x)"},
+        "q_scalar": {"const": "q_K,m(x)=K^-2*q_16,M(K*x)"},
+        "euler": {"const": "E_K,m(x)=K^4*E_16,M(K*x)"},
+        "covering_identity": {"$ref": "#/$defs/text"},
+        "residual_norm": {"const": "||R_K,m||_2^2=K^4*||R_16,M||_2^2"},
+        "euler_norm": {"const": "||E_K,m||_2^2=K^8*||E_16,M||_2^2"},
+        "quotient": {"const": "Q_K(m)=K^4*Q_16(m*K^2)"}
+      }
+    },
+    "consequences": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "uniform_lower_bound", "normalized_infimum", "shrinking_concentration",
+        "weak_endpoint", "interpretation"
+      ],
+      "properties": {
+        "uniform_lower_bound": {"const": "Q_K(m)>=K^4*c_16 for all integer K>=1 and m>0"},
+        "normalized_infimum": {"const": "inf_m Q_K(m)/K^4=c_16>0"},
+        "shrinking_concentration": {"$ref": "#/$defs/text"},
+        "weak_endpoint": {"const": "Q_K(infinity)=(512/17)*K^4"},
+        "interpretation": {"$ref": "#/$defs/text"}
+      }
+    },
+    "exact_fixture_K3": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "K", "zero_count", "residual_norm_factor", "euler_norm_factor",
+        "quotient_factor", "concentration_coefficient", "weak_quotient",
+        "sextic_jet_coefficient"
+      ],
+      "properties": {
+        "K": {"const": 3},
+        "zero_count": {"const": 1296},
+        "residual_norm_factor": {"const": 81},
+        "euler_norm_factor": {"const": 6561},
+        "quotient_factor": {"const": 81},
+        "concentration_coefficient": {"$ref": "#/$defs/fraction"},
+        "weak_quotient": {"$ref": "#/$defs/fraction"},
+        "sextic_jet_coefficient": {"$ref": "#/$defs/fraction"}
+      }
+    },
+    "method_disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "fixed_finite_repaired_multibubbles", "synchronized_dense_crystal_gas",
+        "irregular_or_correlated_growing_gas", "same_point_towers_and_necks",
+        "delocalized_transverse_current", "positive_all_field_gradient_bound",
+        "volume_uniform_witten_coercivity", "interacting_h_minus_one_bound",
+        "continuum_reconstruction", "born_rule", "krein_reconstruction", "lorentzian_transfer"
+      ],
+      "properties": {
+        "fixed_finite_repaired_multibubbles": {"const": "RULED_OUT_BY_PREDECESSOR"},
+        "synchronized_dense_crystal_gas": {"const": "RULED_OUT"},
+        "irregular_or_correlated_growing_gas": {"const": "OPEN"},
+        "same_point_towers_and_necks": {"const": "OPEN"},
+        "delocalized_transverse_current": {"const": "OPEN"},
+        "positive_all_field_gradient_bound": {"const": "OPEN"},
+        "volume_uniform_witten_coercivity": {"const": "OPEN"},
+        "interacting_h_minus_one_bound": {"const": "OPEN"},
+        "continuum_reconstruction": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"$ref": "#/$defs/textArray"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/textArray"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "bc60069f2787e5f944ac9730c5e3d4af64a25cbe"},
+        "inputs": {
+          "type": "array", "minItems": 1, "maxItems": 1,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"$ref": "#/$defs/textArray"},
+    "tier_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "tier_0", "tier_1", "tier_2", "tier_3", "memory_policy",
+        "elapsed_seconds_and_peak_kib", "repository_audits"
+      ],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/text"},
+        "tier_1": {"$ref": "#/$defs/text"},
+        "tier_2": {"$ref": "#/$defs/text"},
+        "tier_3": {"$ref": "#/$defs/text"},
+        "memory_policy": {"$ref": "#/$defs/text"},
+        "elapsed_seconds_and_peak_kib": {
+          "type": "object", "additionalProperties": false,
+          "required": ["producer_check", "independent_verifier", "unit_tests"],
+          "properties": {
+            "producer_check": {"$ref": "#/$defs/text"},
+            "independent_verifier": {"$ref": "#/$defs/text"},
+            "unit_tests": {"$ref": "#/$defs/text"}
+          }
+        },
+        "repository_audits": {
+          "type": "object", "additionalProperties": false,
+          "required": ["planning_import", "science_forge_shadow"],
+          "properties": {
+            "planning_import": {"$ref": "#/$defs/text"},
+            "science_forge_shadow": {"$ref": "#/$defs/text"}
+          }
+        }
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-multibubble-crystal-scaling.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-multibubble-crystal-scaling-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_multibubble_crystal_scaling.py"}
+  }
+}
