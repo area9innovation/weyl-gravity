@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-signed-response-axial-gate-v1.schema.json",
+  "title": "BT signed conditional-response axial gate certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "conditional_response", "annealed_axial_symbol",
+    "vacuum_fiber", "exact_weak_coupling_expansion", "method_disposition",
+    "missing_object_ledger", "next_gate", "does_not_establish", "provenance",
+    "verification_commands", "tier_receipt", "checks", "report", "schema", "verifier"
+  ],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "textArray": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "fraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "fractionArray5": {
+      "type": "array", "minItems": 5, "maxItems": 5,
+      "items": {"$ref": "#/$defs/fraction"}
+    },
+    "textObject": {
+      "type": "object", "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/text"}
+    }
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_SIGNED_RESPONSE_AXIAL_GATE_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-signed-response-axial-gate-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"},
+        {"const": "REDUCED-MODE"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "conditional_response": {
+      "type": "object", "additionalProperties": false,
+      "required": ["conditional_mean", "derivative_identity", "range", "shift_equivariance", "strict_covariance_sign", "axial_distance_two", "mixed_distance_two"],
+      "properties": {
+        "conditional_mean": {"$ref": "#/$defs/text"},
+        "derivative_identity": {"$ref": "#/$defs/text"},
+        "range": {"$ref": "#/$defs/text"},
+        "shift_equivariance": {"$ref": "#/$defs/text"},
+        "strict_covariance_sign": {"$ref": "#/$defs/text"},
+        "axial_distance_two": {"$ref": "#/$defs/text"},
+        "mixed_distance_two": {"$ref": "#/$defs/text"}
+      }
+    },
+    "annealed_axial_symbol": {
+      "type": "object", "additionalProperties": false,
+      "required": ["averaging", "row_sum", "simultaneous_response", "positive_relaxation_convention", "relaxation_symbol", "omega", "beta", "proved_signs", "unresolved_scalar", "status"],
+      "properties": {
+        "averaging": {"$ref": "#/$defs/text"},
+        "row_sum": {"const": "8*n_L+8*a_L+24*m_L=1"},
+        "simultaneous_response": {"const": "Jhat_L(p*e_1)=1-beta_L*omega(p)+a_L*omega(p)^2"},
+        "positive_relaxation_convention": {"const": "R_L=I-J_L"},
+        "relaxation_symbol": {"const": "Rhat_L(p*e_1)=beta_L*omega(p)-a_L*omega(p)^2"},
+        "omega": {"const": "omega(p)=2*(1-cos(p))"},
+        "beta": {"const": "beta_L=n_L+4*a_L+6*m_L=1/8+3*(a_L+m_L)"},
+        "proved_signs": {"const": "a_L<0 and m_L<0, so -a_L>0"},
+        "unresolved_scalar": {"const": "the sign and volume scaling of beta_L under the actual full Gibbs measure"},
+        "status": {"const": "EXACT_SYMBOL_AND_DISTANCE_TWO_SIGNS_PROVED_ANNEALED_BETA_OPEN"}
+      }
+    },
+    "vacuum_fiber": {
+      "type": "object", "additionalProperties": false,
+      "required": ["off_site_background", "coordinate", "action", "conditional_density", "unique_minimum", "axial_response", "mixed_response", "nearest_from_row_sum", "beta"],
+      "properties": {
+        "off_site_background": {"$ref": "#/$defs/text"},
+        "coordinate": {"const": "z=psi_o"},
+        "action": {"const": "F(z)=32*(exp(-z)-1)^2+4*(exp(z)-1)^2"},
+        "conditional_density": {"$ref": "#/$defs/text"},
+        "unique_minimum": {"const": "z=0 with F''(0)=72"},
+        "axial_response": {"const": "a_vac(lambda)=-Cov_q(z,exp(z))/lambda^2"},
+        "mixed_response": {"const": "m_vac(lambda)=2*a_vac(lambda)"},
+        "nearest_from_row_sum": {"const": "n_vac(lambda)=1/8-7*a_vac(lambda)"},
+        "beta": {"const": "beta_vac(lambda)=1/8-9*Cov_q(z,exp(z))/lambda^2"}
+      }
+    },
+    "exact_weak_coupling_expansion": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "method", "fiber_coefficients_z2_to_z6", "normalizer_coefficients_lambda0_to_lambda4",
+        "mean_z_coefficients_lambda0_to_lambda4", "mean_exp_z_coefficients_lambda0_to_lambda4",
+        "mean_z_exp_z_coefficients_lambda0_to_lambda4", "covariance_coefficients_lambda0_to_lambda4",
+        "covariance_formula", "axial_response_formula", "mixed_response_formula", "beta_formula",
+        "axial_lambda2_correction", "mixed_lambda2_correction", "beta_lambda2_coefficient", "consequence"
+      ],
+      "properties": {
+        "method": {"$ref": "#/$defs/text"},
+        "fiber_coefficients_z2_to_z6": {"$ref": "#/$defs/fractionArray5"},
+        "normalizer_coefficients_lambda0_to_lambda4": {"$ref": "#/$defs/fractionArray5"},
+        "mean_z_coefficients_lambda0_to_lambda4": {"$ref": "#/$defs/fractionArray5"},
+        "mean_exp_z_coefficients_lambda0_to_lambda4": {"$ref": "#/$defs/fractionArray5"},
+        "mean_z_exp_z_coefficients_lambda0_to_lambda4": {"$ref": "#/$defs/fractionArray5"},
+        "covariance_coefficients_lambda0_to_lambda4": {"$ref": "#/$defs/fractionArray5"},
+        "covariance_formula": {"const": "Cov_q(z,exp(z))=lambda^2/72+(43/46656)*lambda^4+O(lambda^6)"},
+        "axial_response_formula": {"const": "a_vac=-1/72-(43/46656)*lambda^2+O(lambda^4)"},
+        "mixed_response_formula": {"const": "m_vac=-1/36-(43/23328)*lambda^2+O(lambda^4)"},
+        "beta_formula": {"const": "beta_vac=-(43/5184)*lambda^2+O(lambda^4)"},
+        "axial_lambda2_correction": {"$ref": "#/$defs/fraction"},
+        "mixed_lambda2_correction": {"$ref": "#/$defs/fraction"},
+        "beta_lambda2_coefficient": {"$ref": "#/$defs/fraction"},
+        "consequence": {"$ref": "#/$defs/text"}
+      }
+    },
+    "method_disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "absolute_dobrushin_contraction", "pointwise_mixed_hessian_square_bilaplacian_bound",
+        "pointwise_signed_conditional_response_contraction", "annealed_signed_response_symbol",
+        "annealed_beta_nonnegative_or_lower_bound", "block_or_multiscale_signed_response",
+        "volume_uniform_global_poincare", "volume_uniform_witten_coercivity",
+        "interacting_h_minus_one_bound", "continuum_measure", "born_rule",
+        "krein_reconstruction", "lorentzian_transfer"
+      ],
+      "properties": {
+        "absolute_dobrushin_contraction": {"const": "OBSTRUCTED_ALREADY_FREE"},
+        "pointwise_mixed_hessian_square_bilaplacian_bound": {"const": "OBSTRUCTED"},
+        "pointwise_signed_conditional_response_contraction": {"const": "OBSTRUCTED_AT_WEAK_COUPLING_AND_LARGE_VOLUME"},
+        "annealed_signed_response_symbol": {"const": "PROVED_REDUCED_TO_BETA_L"},
+        "annealed_beta_nonnegative_or_lower_bound": {"const": "OPEN"},
+        "block_or_multiscale_signed_response": {"const": "OPEN"},
+        "volume_uniform_global_poincare": {"const": "OPEN"},
+        "volume_uniform_witten_coercivity": {"const": "OPEN"},
+        "interacting_h_minus_one_bound": {"const": "OPEN"},
+        "continuum_measure": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"$ref": "#/$defs/textArray"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/textArray"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "89b139803a4a14d05727d480d56c063bef986cbc"},
+        "inputs": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"$ref": "#/$defs/textArray"},
+    "tier_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "memory_policy", "elapsed_seconds_and_peak_kib", "repository_audits"],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/text"}, "tier_1": {"$ref": "#/$defs/text"},
+        "tier_2": {"$ref": "#/$defs/text"}, "tier_3": {"$ref": "#/$defs/text"},
+        "memory_policy": {"$ref": "#/$defs/text"},
+        "elapsed_seconds_and_peak_kib": {"$ref": "#/$defs/textObject"},
+        "repository_audits": {"$ref": "#/$defs/textObject"}
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true}, "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-signed-response-axial-gate.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-signed-response-axial-gate-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_signed_response_axial_gate.py"}
+  }
+}
