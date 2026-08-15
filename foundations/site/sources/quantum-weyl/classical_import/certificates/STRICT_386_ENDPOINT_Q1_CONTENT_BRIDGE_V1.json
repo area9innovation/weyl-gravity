@@ -1,0 +1,722 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "strict-386-endpoint-q1-content-bridge-v1",
+  "result_id": "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
+  "result_kind": "SCOPED_SAME_THEORY_ENDPOINT_OPERATOR_CONTENT_BRIDGE",
+  "result_state": "UNIT_CYLINDER_ENDPOINT_Q1_CONTENT_IDENTIFIED_CAUSAL_PAIRING_SIGN_AND_FULL_CARRIER_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "764cb8c9",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "Do the canonically translated Gate-V5 minimal q1 rows equal the actual thirty-row endpoint operator used by the strict 386-row causal architecture?",
+  "answer": "Yes on the unit conformal cylinder, after an explicit exact change from Gate component coordinates to the endpoint DeWitt/ghost coordinates and the certified sign flip on the endpoint identity block. All five gauge-arrow tables, all 700 Bach input columns, and all five Noether-arrow tables agree coefficientwise, producing one common q1 digest. This resolves the earlier type-only bridge for the minimal unary operator. It does not yet identify a common full causal BV datum: when the causal pairing is transported simultaneously with the identity-block sign, its ghost/identity pullback is the negative of the Gate-canonical block. The full 386-row pairing, 356-row complement, q2/D compatibility, Gate A, Hadamard and QME therefore remain open.",
+  "scope": {
+    "theory": "strict pure-Weyl minimal unary BV complex",
+    "background": "unit conformal cylinder",
+    "gate_carrier_dimension": 30,
+    "causal_endpoint_dimension": 30,
+    "causal_full_dimension": 386,
+    "coefficient_field": "Q",
+    "maximum_q1_order": 4,
+    "normal_form": "symmetrized covariant derivatives at a homogeneous orthonormal cylinder frame",
+    "globality": "The endpoint coefficients are parallel natural tensors on the homogeneous cylinder; the Gate coordinate table is converted through the exact triangular coordinate-to-covariant four-jet map at the same frame."
+  },
+  "ordered_gate_basis": {
+    "G": [
+      "c^0",
+      "c^1",
+      "c^2",
+      "c^3",
+      "omega"
+    ],
+    "M": [
+      "h_00",
+      "h_01",
+      "h_02",
+      "h_03",
+      "h_11",
+      "h_12",
+      "h_13",
+      "h_22",
+      "h_23",
+      "h_33"
+    ],
+    "E": [
+      "h_star^00",
+      "h_star^01",
+      "h_star^02",
+      "h_star^03",
+      "h_star^11",
+      "h_star^12",
+      "h_star^13",
+      "h_star^22",
+      "h_star^23",
+      "h_star^33"
+    ],
+    "I": [
+      "c_star_0",
+      "c_star_1",
+      "c_star_2",
+      "c_star_3",
+      "omega_star"
+    ]
+  },
+  "basis_bridge": {
+    "formulae": {
+      "A_G": "(xi_0,xi_1,xi_2,xi_3,sigma)=(-c^0,c^1,c^2,c^3,2 omega)",
+      "A_M": "h_endpoint=h_gate",
+      "A_E": "Ebar_endpoint=J_met^-1 W_component h_star_gate",
+      "A_I": "I_endpoint=(A_G^T Y_met)^-1 I_gate",
+      "endpoint_q_transport": "C_met is replaced by -C_met, the I-block of T_386 Q T_386"
+    },
+    "matrices": {
+      "A_G": [
+        [
+          "-1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "2"
+        ]
+      ],
+      "A_M": [
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "A_E": [
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "1",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "-2",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-2",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-2",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "-1",
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "2",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "2",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "-1",
+          "0",
+          "0",
+          "1",
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "2",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "-1",
+          "0",
+          "0",
+          "-1",
+          "0",
+          "1"
+        ]
+      ],
+      "A_I": [
+        [
+          "-1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1/2"
+        ]
+      ],
+      "W_M": [
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "2",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "2",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "2",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "2",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "2",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "2",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "W_G": [
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    "ranks": {
+      "A_G": 5,
+      "A_M": 10,
+      "A_E": 10,
+      "A_I": 5,
+      "W_M": 10,
+      "W_G": 5
+    },
+    "witness_path": "quantum-weyl/classical_import/certificates/STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_WITNESS_V1.json",
+    "witness_sha256": "cfd25e7f5b95c2f9b7828a81609004b2a1705962d580c4294367af114c59d364",
+    "witness_columns": 700,
+    "witness_coordinate_entries": 1514,
+    "triangular_equations": 490000
+  },
+  "coefficientwise_identification": {
+    "arrow_table_counts": {
+      "G_to_M": 5,
+      "M_to_E": 70,
+      "E_to_I": 5,
+      "total": 80
+    },
+    "gate_bach_input_columns": 700,
+    "gate_bach_columns_matching": 700,
+    "arrow_defect_counts": {
+      "G_to_M": 0,
+      "M_to_E": 0,
+      "E_to_I": 0
+    },
+    "common_nonzero_coefficients": 619,
+    "endpoint_coordinate_nonzero_coefficients": 631,
+    "gate_arrow_sha256": {
+      "G_to_M": "2a0749dc2b30cf03ddaae0833c8d4fdaa5531657587e7cd38da29bfc9d37464e",
+      "M_to_E": "9e2e2767a7b84d8eec0daddf51bc1d59522efefd2cec2732e31bec7e0cf318b4",
+      "E_to_I": "02dd9af265e256646f221ca68234a8fcf4ca193ed54b258c8abcc95c2de5567b"
+    },
+    "endpoint_in_gate_coordinates_sha256": {
+      "G_to_M": "2a0749dc2b30cf03ddaae0833c8d4fdaa5531657587e7cd38da29bfc9d37464e",
+      "M_to_E": "9e2e2767a7b84d8eec0daddf51bc1d59522efefd2cec2732e31bec7e0cf318b4",
+      "E_to_I": "02dd9af265e256646f221ca68234a8fcf4ca193ed54b258c8abcc95c2de5567b"
+    },
+    "common_q1_sha256": "fc2bf578e09f12c0f55f745bf10966c94e338d3e14254fedb1ad68b544f25c48",
+    "same_operator_content_identified": true
+  },
+  "pairing_disposition": {
+    "field_pullback_equals_gate_canonical": true,
+    "original_endpoint_ghost_pullback_equals_gate_canonical": true,
+    "simultaneously_transported_causal_ghost_pullback_equals_gate_canonical": false,
+    "simultaneously_transported_causal_ghost_pullback_equals_negative_gate_canonical": true,
+    "field_block": "J_met A_E=W_component exactly",
+    "ghost_block_before_simultaneous_causal_pairing_transport": "A_G^T Y_met A_I=I_5",
+    "ghost_block_after_simultaneous_causal_pairing_transport": "A_G^T (-Y_met) A_I=-I_5",
+    "conclusion": "The q1 content bridge and the causal paired-transport theorem cannot yet be collapsed into one common canonical BV-pairing certificate. A suspension/pairing convention must be selected and the graded-adjoint Green theorem replayed on those same bytes."
+  },
+  "foundational_strength": {
+    "finite_content_bridge_base": "PRA",
+    "reason": "The bridge is a fixed finite calculation over exact rational matrices and a 700-column triangular jet table.",
+    "choice_operation_added": false,
+    "infinite_selection_added": false,
+    "weakest_base_for_imported_analytic_causal_theorem": "NOT_ESTABLISHED"
+  },
+  "gate_disposition": {
+    "gate_a_status": "FAIL_CLOSED",
+    "accepted_common_snapshot_hashes": 0,
+    "scoped_common_minimal_q1_digest_established": true,
+    "full_common_carrier_established": false,
+    "full_common_pairing_established": false,
+    "q2_d_same_carrier_established": false
+  },
+  "claim_flags": {
+    "UNIT_CYLINDER_30_ROW_ENDPOINT_Q1_COMMON_CONTENT_IDENTIFIED": true,
+    "ALL_700_BACH_COLUMNS_MATCH": true,
+    "TRANSPORTED_ENDPOINT_Q1_MATCHES_GATE_CANONICAL_Q1": true,
+    "STRICT_386_CAUSAL_ENDPOINT_OPERATOR_LINKED": true,
+    "SIMULTANEOUSLY_TRANSPORTED_CAUSAL_PAIRING_EQUALS_GATE_CANONICAL": false,
+    "FULL_386_PAIRING_SERIALIZED_IN_GATE_CONVENTION": false,
+    "STRICT_386_Q2_GREEN_COMPATIBILITY_CERTIFIED": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "QME_RESTORED": false,
+    "LORENTZIAN_QUANTUM_THEORY": false
+  },
+  "does_not_establish": [
+    "a common Gate-canonical pairing on all 386 causal rows",
+    "a resolution of the ghost/identity sign between simultaneous causal pairing transport and the Gate suspension convention",
+    "cyclic compatibility of the 356-row algebraic/nonminimal/auxiliary complement",
+    "q2 or local D on the same causal carrier",
+    "a passed classical import Gate A or a complete common snapshot",
+    "a Hadamard state, BRST Ward identity, positivity theorem, renormalized Lorentzian product, QME, residual transfer or Lorentzian quantum theory",
+    "a weakest-base calibration of the imported analytic Green theorem"
+  ],
+  "next_gate": "Choose and serialize one Gate-canonical suspension/pairing convention on the exact 386-row carrier, extend it across the 356-row complement, and independently replay the full Green graded-adjoint identity on those same bytes. Only then bind q2 and local D to the carrier and test nonlinear compatibility.",
+  "canonical_hashes": {
+    "basis_bridge_sha256": "5089c5fb62496a31a2ea7171f280b9ec47cc3c51e0387705d456a07a1dfe0046",
+    "coefficientwise_identification_sha256": "894b344b67d43f6356b95f6ec6b242b255d4dd4ab54b620ec701c0310c509f32",
+    "pairing_disposition_sha256": "b4346c03e969ece4a3b4f5b24312d481d5acb7d6958499dd779bdd94cf1eb21d"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_PORTABLE_LOCAL_Q1_AST_V1.json",
+        "result_or_schema_id": "STRICT_PORTABLE_LOCAL_Q1_AST_V1",
+        "sha256": "bcd78cf73f494517304f1ae5aedffa48036443a9c45566a94b3ed972de83b338",
+        "role": "portable strict minimal q1 AST"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1.json",
+        "result_or_schema_id": "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
+        "sha256": "c4cd8b1399e176e9eb1eadbfa0c5b85901d7361f39c706a7e7d4469e945e5169",
+        "role": "canonical minimal pairing and antifield sign translation"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V5_RECONCILIATION.json",
+        "result_or_schema_id": "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
+        "sha256": "3f06924664f8433a2332afb58edcf513723a889ef802298832b137b03608427f",
+        "role": "current fail-closed Gate-A disposition"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_CAUSAL_SIGN_TRANSPORT_V1.json",
+        "result_or_schema_id": "STRICT_386_CAUSAL_SIGN_TRANSPORT_V1",
+        "sha256": "5845c4170505e24c116249dfbdf4c8e2099c23adb9480fe2f65f8c1e3bff73cd",
+        "role": "causal convention-stability predecessor"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_CYLINDER_BACH_UNIVERSAL_EXPORT_V1.json",
+        "result_or_schema_id": "STRICT_CYLINDER_BACH_UNIVERSAL_EXPORT_V1",
+        "sha256": "0935383606b6213db25762603fe45faa570babc32baa16b39afe4a7bb88293d9",
+        "role": "independent 700-column coordinate-jet Bach table"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_prolonged_metric_endpoint_complex.json",
+        "result_or_schema_id": "pure-weyl-prolonged-metric-endpoint-complex-v1",
+        "sha256": "870621ae6750b1e66e3f3316c5a2680d1244c7fca3be4d6aeaabbfdc2178fd79",
+        "role": "exact thirty-row covariant endpoint"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_prolonged_metric_endpoint_coefficients.json",
+        "result_or_schema_id": "pure-weyl-prolonged-metric-endpoint-coefficients-v1",
+        "sha256": "2d3e6857e42b38a7f68e0c1ecb90adfa621ffa87038fa44f3e37c14f6938e9f6",
+        "role": "endpoint q1 and pairing coefficient bytes"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_full_prolonged_green_homotopy_assembly.json",
+        "result_or_schema_id": "pure-weyl-full-prolonged-green-homotopy-assembly-v1",
+        "sha256": "1f8aae727a06fb82c70732f7207499d427894247d09fea22f677a0f9b38be0ee",
+        "role": "strict 386-row causal Green homotopy"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_WITNESS_V1.json",
+        "result_or_schema_id": "strict-cylinder-coordinate-to-covariant-symmetric-four-jet-v1",
+        "sha256": "cfd25e7f5b95c2f9b7828a81609004b2a1705962d580c4294367af114c59d364",
+        "role": "exact 700-column coordinate-to-covariant proof witness"
+      }
+    ]
+  },
+  "independent_checker": {
+    "path": "quantum-weyl/classical_import/check_strict_386_endpoint_q1_content_bridge.py",
+    "checks": [
+      "witness identity, exact rationality and triangular normalization",
+      "five gauge-arrow coefficient tables",
+      "all 700 Bach input columns",
+      "five canonically translated Noether-arrow coefficient tables",
+      "common q1 digest",
+      "pairing sign firewall",
+      "provenance hashes and canonical digest"
+    ],
+    "expected_digest": "6a39322c357caeea3626080280d0b7c1fd5b89eb5767158372377e51bfde6c48"
+  },
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1.md"
+}

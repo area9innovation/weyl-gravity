@@ -759,6 +759,25 @@ support-local `q2`/`D` first, the full-carrier residual-SDR lift second, and
 the direct nonstationary Berger selection third.  The existing explorer is
 regenerated in place and presents both the progress and its boundary.
 
+The
+[`V4 completion atlas`](reports/lorentzian-weyl-bv-completion-atlas-v4.md)
+then transports the repaired minimal sign convention through the 386-row
+unary causal architecture.  The exact 381-plus/5-minus involution preserves
+the causal Green identities, but V4 deliberately records only a type and
+dimension bridge to the thirty-row endpoint.
+
+The append-only
+[`V5 completion atlas`](reports/lorentzian-weyl-bv-completion-atlas-v5.md)
+closes that endpoint-content question.  An exact rational basis bridge matches
+all 80 unary multiindex tables, including all 700 independent Bach four-jet
+columns, and produces one common 619-coefficient `q1` digest.  The remaining
+endpoint boundary is localized to the simultaneously transported five-row
+ghost/identity pairing, which pulls back to `-I_5` rather than the
+Gate-canonical `I_5`.  The full 386-row paired Green replay, 356-row
+complement, local `D`, `q2`, Hadamard and QME gates remain open.  The existing
+explorer is again regenerated in place and ranks the pairing/suspension bridge
+first.
+
 ```bash
 python3 foundations/build_lorentzian_weyl_bv_completion_atlas.py --check
 python3 foundations/check_lorentzian_weyl_bv_completion_atlas.py
@@ -772,6 +791,14 @@ python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v3.py --check
 python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v3.py
 python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v3.py
 python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v3
+python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v4.py --check
+python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v4.py
+python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v4.py
+python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v4
+python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v5.py --check
+python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v5.py
+python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v5.py
+python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v5
 ```
 
 ## Lifecycle

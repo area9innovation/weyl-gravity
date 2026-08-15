@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/weyl-gravity/strict-386-endpoint-q1-content-bridge-v1.schema.json",
+  "title": "Strict 386 endpoint q1 content bridge v1",
+  "type": "object",
+  "required": [
+    "$schema",
+    "schema",
+    "result_id",
+    "result_kind",
+    "result_state",
+    "lifecycle",
+    "created",
+    "repository_base_commit",
+    "dependency_tags",
+    "question",
+    "answer",
+    "scope",
+    "ordered_gate_basis",
+    "basis_bridge",
+    "coefficientwise_identification",
+    "pairing_disposition",
+    "foundational_strength",
+    "gate_disposition",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate",
+    "canonical_hashes",
+    "provenance",
+    "independent_checker",
+    "human_report"
+  ],
+  "properties": {
+    "schema": {"const": "strict-386-endpoint-q1-content-bridge-v1"},
+    "result_id": {"const": "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "minLength": 8},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]
+    },
+    "scope": {
+      "type": "object",
+      "required": ["gate_carrier_dimension", "causal_endpoint_dimension", "causal_full_dimension", "maximum_q1_order"],
+      "properties": {
+        "gate_carrier_dimension": {"const": 30},
+        "causal_endpoint_dimension": {"const": 30},
+        "causal_full_dimension": {"const": 386},
+        "maximum_q1_order": {"const": 4}
+      },
+      "additionalProperties": true
+    },
+    "coefficientwise_identification": {
+      "type": "object",
+      "required": ["arrow_table_counts", "gate_bach_input_columns", "gate_bach_columns_matching", "arrow_defect_counts", "common_q1_sha256", "same_operator_content_identified"],
+      "properties": {
+        "gate_bach_input_columns": {"const": 700},
+        "gate_bach_columns_matching": {"const": 700},
+        "same_operator_content_identified": {"const": true},
+        "common_q1_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": true
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "UNIT_CYLINDER_30_ROW_ENDPOINT_Q1_COMMON_CONTENT_IDENTIFIED",
+        "ALL_700_BACH_COLUMNS_MATCH",
+        "TRANSPORTED_ENDPOINT_Q1_MATCHES_GATE_CANONICAL_Q1",
+        "STRICT_386_CAUSAL_ENDPOINT_OPERATOR_LINKED",
+        "SIMULTANEOUSLY_TRANSPORTED_CAUSAL_PAIRING_EQUALS_GATE_CANONICAL",
+        "FULL_386_PAIRING_SERIALIZED_IN_GATE_CONVENTION",
+        "STRICT_386_Q2_GREEN_COMPATIBILITY_CERTIFIED",
+        "CLASSICAL_IMPORT_GATE_PASSED",
+        "HADAMARD_STATE_CONSTRUCTED",
+        "QME_RESTORED",
+        "LORENTZIAN_QUANTUM_THEORY"
+      ],
+      "additionalProperties": {"type": "boolean"}
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 7,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "additionalProperties": true
+}

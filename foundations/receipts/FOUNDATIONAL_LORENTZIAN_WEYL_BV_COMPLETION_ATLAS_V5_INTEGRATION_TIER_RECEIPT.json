@@ -1,0 +1,57 @@
+{
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V5_INTEGRATION_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V5",
+  "created": "2026-08-15",
+  "repository_base_commit": "d07ce6c0c0d621b704e319e636839bf5510b13e5",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "scope": "Append-only atlas V5, in-place static explorer refresh and Paper 21 integration of the exact strict endpoint q1 bridge and its five-row pairing-sign boundary.",
+  "tiers": [
+    {
+      "tier": 0,
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <changed atlas, site and Paper-21 Python sources>",
+        "jq empty <changed atlas, site, claim-map and schema JSON artifacts>",
+        "git diff --check -- <scoped integration paths>"
+      ],
+      "elapsed_seconds": 0.2,
+      "result": "Changed sources and structured artifacts parse; scoped whitespace audit passes."
+    },
+    {
+      "tier": 1,
+      "status": "PASS",
+      "commands": [
+        "python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v5.py --check && python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v5.py && python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v5.py && python3 -m unittest foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v5.py -v",
+        "python3 foundations/build_matrix_site_v2.py --check && python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py && python3 -m unittest foundations/tests/test_matrix_site.py -v",
+        "python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+        "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (two passes), followed by an Overfull/undefined-reference/rerun scan"
+      ],
+      "elapsed_seconds": 7.8,
+      "result": "Atlas V5 passes an independent 77-cell audit and eight mutation tests; the deterministic 171-artifact site passes its full checker and ten tests; Paper 21 claim map and 59-page PDF pass."
+    },
+    {
+      "tier": 2,
+      "status": "PASS",
+      "commands": [
+        "Gate-V5 reconciliation, strict-386 sign transport and completion-atlas V4 affected predecessor chains",
+        "exact endpoint bridge producer/checker/verifier/mutation suite"
+      ],
+      "elapsed_seconds": 10.5,
+      "result": "Every direct predecessor and consumer remains current. No non-strict branch or later quantum lifecycle cell was promoted."
+    },
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "This is not a freeze, theorem lifecycle promotion, release or shared-core algebra change."
+    }
+  ],
+  "content_hashes": {
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V5.json": "51cbd8a422f328ee9e3aedc860bd81700f44b26d4eb12ab91b856f542b104397",
+    "foundations/reports/lorentzian-weyl-bv-completion-atlas-v5.md": "12d71d5c53066ac82e977c07afe585280d5b03535b0fd4b1ea625a7af644ada2",
+    "foundations/site/manifest.json": "ca126ad00ac1c2bc158c4261093946dfe1b1b245948cd6aad2764770924c64dd",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "e57ab2a50c7a1c8a865fe20f1124e1dc37d69fa412e74b27770e9fd11e344f11",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "831e05ecdc4692b54b058c5b09ab39d6559c6dcd35a8e64ae41ae2581f92a7f8",
+    "paper/21-reverse-foundations-of-physics.pdf": "59b8418c04c4fbc39c65b3f63dd4358c90d66f63a26e68bf5291a89b433dae91"
+  },
+  "claim_boundary": "The exact endpoint q1 equality supersedes the V4 type-only boundary. It does not certify a common full 386-row pairing, resolve the five-row suspension sign, bind q2 or D, pass Gate A, or promote Hadamard/QME lifecycle states."
+}

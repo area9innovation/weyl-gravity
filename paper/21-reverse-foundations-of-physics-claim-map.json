@@ -802,7 +802,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "590672e4331d44b16b763a6b1462e612ac7aac77da77e4f447c04505c62de70a"
+      "sha256": "e57ab2a50c7a1c8a865fe20f1124e1dc37d69fa412e74b27770e9fd11e344f11"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -889,6 +889,18 @@
       "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V4",
       "sha256": "be8d08aa2f0afcca1e19a05ca1bbfab11dfefa0b7f2d6c36719ae5e83a46bbe0"
     },
+    "lorentzian_weyl_bv_completion_atlas_v5": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V5.json",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V5",
+      "sha256": "51cbd8a422f328ee9e3aedc860bd81700f44b26d4eb12ab91b856f542b104397"
+    },
     "mannheim_ngc3198_assembly": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC"
@@ -957,6 +969,16 @@
       "result_id": "STRICT_386_CAUSAL_SIGN_TRANSPORT_V1",
       "sha256": "5845c4170505e24c116249dfbdf4c8e2099c23adb9480fe2f65f8c1e3bff73cd"
     },
+    "strict_386_endpoint_q1_content_bridge": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1.json",
+      "result_id": "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
+      "sha256": "7dcafc995a0662f610d721d39b3255f5fae6e32105286cc05051e3b658e16032"
+    },
     "strict_local_q1_q2_identity": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC"
@@ -1004,10 +1026,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "23a4316055d38694b937c17bb1e20f81241a4079cc7631420dc1e32e706fc93a"
+      "sha256": "1e4db10a9a71c2182a9326f94987ff7b39e194fc55b1db321ec32169b53c3e6f"
     }
   },
-  "canonical_digest": "72ef8f44b3e33b9cff6b93a759e5c3fc3e781443db154c85926058de52488d68",
+  "canonical_digest": "5e6db319e352e19b436977d7fd07da08a52c81bc9a23506cc010714d244b7c56",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -1154,6 +1176,9 @@
     "scalar_minkowski_green_certified": true,
     "static_atlas_appendix_generated": true,
     "strict_386_causal_convention_stability_certified": true,
+    "strict_386_endpoint_all_700_bach_columns_match": true,
+    "strict_386_endpoint_q1_content_identified": true,
+    "strict_386_pairing_suspension_bridge_certified": false,
     "strict_minimal_bv_cyclicity_reconciled": true,
     "strict_pure_weyl_local_q1_q2_certified": true,
     "support_indexed_full_lf_topology_reconstructed": false,
@@ -1525,6 +1550,19 @@
       ],
       "statement": "An exact negative-virial logarithmic wall has reduced action below the tuned four-dimensional position-entropy threshold, obstructing action-only bubble-rarity proofs. Radial reflection gives its lowest-mode score insertion two powers of the bubble radius, so the squared insertion cancels positional entropy and the dilute score-weighted activity vanishes. Multibubble interactions and the actual Gibbs score remain open.",
       "status": "EXACT_SUBCRITICAL_ACTIVITY_OBSTRUCTION_WITH_DILUTE_OBSERVABLE_SOFTNESS"
+    },
+    {
+      "authorities": [
+        "strict_386_endpoint_q1_content_bridge",
+        "lorentzian_weyl_bv_completion_atlas_v5"
+      ],
+      "claim_id": "RF-28-STRICT-WEYL-ENDPOINT-Q1-CONTENT-BRIDGE",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "On the unit conformal cylinder, an exact rational basis bridge identifies the Gate-V5 minimal unary complex with the actual thirty-row endpoint of the certified 386-row causal architecture: 80/80 multiindex tables, including 700/700 independent Bach four-jet columns, agree and define one common q1 digest with 619 nonzero coefficients. The simultaneously transported causal ghost pairing pulls back to -I_5 rather than Gate-canonical I_5, so the full 386-row paired Green replay, q2/D compatibility, Gate A, Hadamard and QME remain open.",
+      "status": "SAME_THEORY_ENDPOINT_Q1_CONTENT_IDENTIFIED_WITH_PAIRING_SUSPENSION_BOUNDARY"
     }
   ],
   "created": "2026-08-14",
@@ -1718,19 +1756,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "0c5d8054243043ba3447d9e52eac61c8cd4542399016ad7780b5ad9eba95bf61",
+      "assembly_source_canonical_digest": "519a27c6bb0491c1e330debbb90592f7221e7e03d6e5fc20f81abf324142947b",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "23a4316055d38694b937c17bb1e20f81241a4079cc7631420dc1e32e706fc93a",
+      "assembly_source_sha256": "1e4db10a9a71c2182a9326f94987ff7b39e194fc55b1db321ec32169b53c3e6f",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
       "generator_sha256": "f46fd7cd15f93d83c0f2ec292fa9e0cbae6bdc9f7a503dd39ff61565424db364",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
       "sha256": "608b82d2f8b78f2240f30b58af1e30b17addc5b659fdfb0614946f80ce8e81f9",
-      "source_canonical_digest": "f9e3e05621daabf0824808c26c9ce9f2baffb8b5f689137592d21ce4ea003446",
+      "source_canonical_digest": "734be93e1729498f573035121c7cea3b70197307bb4311c3d2698206c40a2e84",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "a9941dc6578aa395509968044f0cfb9bcb60486add8a6d8fd7cce2797967ba47"
+      "source_sha256": "c8778135a01e857d8823e875853bdf0bbd2d73f05830ca6f03b81852b189247c"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "77eb8b071434eaa6153d35695ef5ddd11b173036bbfd0e106730c7a44ede3554"
+    "sha256": "82c491e4aa1ac5e9376be85970b4224f80ec6f0d801baa83e01da783b6c47b9c"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

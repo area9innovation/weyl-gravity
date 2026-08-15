@@ -87,6 +87,8 @@ AUTHORITY_PATHS = {
     "classical_import_gate_v5": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V5_RECONCILIATION.json",
     "strict_386_causal_sign_transport": "quantum-weyl/classical_import/certificates/STRICT_386_CAUSAL_SIGN_TRANSPORT_V1.json",
     "lorentzian_weyl_bv_completion_atlas_v4": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V4.json",
+    "strict_386_endpoint_q1_content_bridge": "quantum-weyl/classical_import/certificates/STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1.json",
+    "lorentzian_weyl_bv_completion_atlas_v5": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V5.json",
     "finite_graph_causality": "foundations/results/FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1.json",
     "finite_bv": "foundations/results/FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1.json",
 }
@@ -688,6 +690,13 @@ def build() -> dict:
                 "authorities": ["bt_log_bubble_entropy_soft_score_balance"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
+            {
+                "claim_id": "RF-28-STRICT-WEYL-ENDPOINT-Q1-CONTENT-BRIDGE",
+                "statement": "On the unit conformal cylinder, an exact rational basis bridge identifies the Gate-V5 minimal unary complex with the actual thirty-row endpoint of the certified 386-row causal architecture: 80/80 multiindex tables, including 700/700 independent Bach four-jet columns, agree and define one common q1 digest with 619 nonzero coefficients. The simultaneously transported causal ghost pairing pulls back to -I_5 rather than Gate-canonical I_5, so the full 386-row paired Green replay, q2/D compatibility, Gate A, Hadamard and QME remain open.",
+                "status": "SAME_THEORY_ENDPOINT_Q1_CONTENT_IDENTIFIED_WITH_PAIRING_SUSPENSION_BOUNDARY",
+                "authorities": ["strict_386_endpoint_q1_content_bridge", "lorentzian_weyl_bv_completion_atlas_v5"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -719,6 +728,9 @@ def build() -> dict:
             "strict_pure_weyl_local_q1_q2_certified": True,
             "strict_minimal_bv_cyclicity_reconciled": True,
             "strict_386_causal_convention_stability_certified": True,
+            "strict_386_endpoint_q1_content_identified": True,
+            "strict_386_endpoint_all_700_bach_columns_match": True,
+            "strict_386_pairing_suspension_bridge_certified": False,
             "static_atlas_appendix_generated": True,
             "complete_evidence_register_generated": True,
             "complete_literature_register_generated": True,

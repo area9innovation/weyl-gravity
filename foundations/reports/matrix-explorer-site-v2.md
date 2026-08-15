@@ -39,6 +39,12 @@ eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
+The strict thirty-row endpoint is no longer a type-only match.  The Gate-V5 and
+causal-endpoint unary operators agree in all 80 multiindex tables, including all
+700 independent Bach four-jet columns.  The remaining endpoint boundary is the
+five-row transported ghost-pairing sign; the full 386-row pairing, q2/D,
+Hadamard and QME gates remain open.
+
 The new reconstruction import supplies the first explicit weak-arithmetic
 finite-approximant theorem for a declared bounded wave observable. Its rational
 dyadic interpolants converge uniformly on every rational bounded time interval

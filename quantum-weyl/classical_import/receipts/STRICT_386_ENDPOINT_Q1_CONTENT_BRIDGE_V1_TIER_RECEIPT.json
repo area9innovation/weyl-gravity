@@ -1,0 +1,57 @@
+{
+  "receipt_id": "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
+  "created": "2026-08-15",
+  "repository_base_commit": "d07ce6c0c0d621b704e319e636839bf5510b13e5",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "scope": "Exact coefficientwise identification of the Gate-V5 minimal q1 with the thirty-row endpoint of the strict 386-row causal architecture on the unit conformal cylinder, with a fail-closed pairing-sign disposition.",
+  "claim_boundary": {
+    "established": "All 5 gauge, 70 Bach and 5 Noether multiindex tables match after the exact basis bridge; all 700 Bach four-jet input columns match; the common q1 has 619 nonzero rational coefficients.",
+    "open": "The simultaneously transported five-row causal ghost pairing is negative Gate-canonical. The full 386-row pairing, 356-row complement, local D, q2/Green compatibility, Gate A, Hadamard and QME remain open."
+  },
+  "tiers": [
+    {
+      "tier": 0,
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile quantum-weyl/classical_import/{strict_386_endpoint_q1_content_bridge.py,build_strict_386_endpoint_q1_content_bridge.py,check_strict_386_endpoint_q1_content_bridge.py,verify_strict_386_endpoint_q1_content_bridge.py,tests/test_strict_386_endpoint_q1_content_bridge.py}",
+        "jq empty quantum-weyl/classical_import/certificates/STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_{V1,WITNESS_V1}.json quantum-weyl/classical_import/schema/strict-386-endpoint-q1-content-bridge-v1.schema.json",
+        "git diff --check -- <scoped endpoint-bridge paths>"
+      ],
+      "elapsed_seconds": 0.2,
+      "result": "Changed Python and JSON artifacts parse; whitespace audit passes on the scoped snapshot."
+    },
+    {
+      "tier": 1,
+      "status": "PASS",
+      "commands": [
+        "PYTHONPATH=quantum-weyl/classical_import python3 quantum-weyl/classical_import/build_strict_386_endpoint_q1_content_bridge.py --check",
+        "python3 quantum-weyl/classical_import/check_strict_386_endpoint_q1_content_bridge.py",
+        "PYTHONPATH=quantum-weyl/classical_import python3 quantum-weyl/classical_import/verify_strict_386_endpoint_q1_content_bridge.py",
+        "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_endpoint_q1_content_bridge.py -v"
+      ],
+      "elapsed_seconds": 7.7,
+      "result": "Producer determinism, independent exact receiver, Draft 2020-12 schema/provenance verifier and eight mutation tests pass."
+    },
+    {
+      "tier": 2,
+      "status": "PASS",
+      "commands": [
+        "PYTHONPATH=quantum-weyl/classical_import python3 quantum-weyl/classical_import/build_strict_386_endpoint_q1_content_bridge.py --exhaustive-witness",
+        "Gate-V5 reconciliation build/check/verify/tests; strict-386 sign-transport build/check/verify/tests; completion-atlas V4 build/check/verify/tests"
+      ],
+      "elapsed_seconds": 248.7,
+      "result": "The expensive independent witness solved 490000 exact triangular equations for all 700 columns with 1514 nonzero coordinate entries in 247.30 seconds. The affected predecessor chain then passed in 1.4 seconds."
+    },
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "No freeze, release, lifecycle promotion or shared-core algebra change. The result remains CLASSIFIED and all Lorentzian quantum claims remain false."
+    }
+  ],
+  "content_hashes": {
+    "quantum-weyl/classical_import/certificates/STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1.json": "7dcafc995a0662f610d721d39b3255f5fae6e32105286cc05051e3b658e16032",
+    "quantum-weyl/classical_import/certificates/STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_WITNESS_V1.json": "cfd25e7f5b95c2f9b7828a81609004b2a1705962d580c4294367af114c59d364",
+    "quantum-weyl/classical_import/REPORT_STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1.md": "63498cb147c90aa5d2b5325769cd80d62666cef23e0c1c277f5c38b5feab9d62"
+  }
+}

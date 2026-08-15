@@ -98,6 +98,8 @@ def main() -> int:
     gate_v5 = json.loads((ROOT / data["authorities"]["classical_import_gate_v5"]["path"]).read_text())
     strict_386_transport = json.loads((ROOT / data["authorities"]["strict_386_causal_sign_transport"]["path"]).read_text())
     completion_atlas_v4 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v4"]["path"]).read_text())
+    strict_386_endpoint = json.loads((ROOT / data["authorities"]["strict_386_endpoint_q1_content_bridge"]["path"]).read_text())
+    completion_atlas_v5 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v5"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -375,12 +377,16 @@ def main() -> int:
         (25, "STRICT-WEYL-CAUSAL-CONVENTION-STABILITY"),
         (26, "BT-HOMOGENEOUS-VIRIAL-NO-GO"),
         (27, "BT-BUBBLE-ENTROPY-SOFT-SCORE-BALANCE"),
+        (28, "STRICT-WEYL-ENDPOINT-Q1-CONTENT-BRIDGE"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
     require(flags["strict_pure_weyl_local_q1_q2_certified"] is True, "strict pure-Weyl q1/q2 flag missing")
     require(flags["strict_minimal_bv_cyclicity_reconciled"] is True, "strict minimal BV cyclicity flag missing")
     require(flags["strict_386_causal_convention_stability_certified"] is True, "strict 386 causal convention-stability flag missing")
+    require(flags["strict_386_endpoint_q1_content_identified"] is True, "strict endpoint q1 content flag missing")
+    require(flags["strict_386_endpoint_all_700_bach_columns_match"] is True, "strict endpoint Bach-column flag missing")
+    require(flags["strict_386_pairing_suspension_bridge_certified"] is False, "strict endpoint pairing suspension promoted")
     require(strict_q1["claim_flags"]["Q1_SQUARED_ZERO_CERTIFIED"] is True, "strict q1 square-zero authority drift")
     require(strict_q1q2["channel_inventory"]["channel_count"] == 18, "strict q1/q2 channel count drift")
     require(strict_q1q2["channel_inventory"]["composable_path_count"] == 51, "strict q1/q2 path count drift")
@@ -407,6 +413,15 @@ def main() -> int:
     require(completion_atlas_v4["strict_causal_sign_transport"]["causal_stage_preserved"] is True, "completion atlas omitted causal sign transport")
     require(completion_atlas_v4["strict_causal_sign_transport"]["common_bytes_identified"] is False, "completion atlas promoted common bytes")
     require(completion_atlas_v4["claim_flags"]["lorentzian_full_theory_certified"] is False, "completion atlas promoted a full Lorentzian theory")
+    require(strict_386_endpoint["coefficientwise_identification"]["arrow_table_counts"]["total"] == 80, "strict endpoint q1 table count drift")
+    require(strict_386_endpoint["coefficientwise_identification"]["gate_bach_columns_matching"] == 700, "strict endpoint Bach-column count drift")
+    require(strict_386_endpoint["coefficientwise_identification"]["common_nonzero_coefficients"] == 619, "strict endpoint common coefficient count drift")
+    require(strict_386_endpoint["pairing_disposition"]["simultaneously_transported_causal_ghost_pullback_equals_gate_canonical"] is False, "strict endpoint pairing sign promoted")
+    require(strict_386_endpoint["pairing_disposition"]["simultaneously_transported_causal_ghost_pullback_equals_negative_gate_canonical"] is True, "strict endpoint negative pairing sign omitted")
+    require(strict_386_endpoint["claim_flags"]["STRICT_386_Q2_GREEN_COMPATIBILITY_CERTIFIED"] is False, "strict endpoint q1 bridge promoted to q2")
+    require(completion_atlas_v5["strict_endpoint_q1_content_bridge"]["arrow_tables_matching"] == 80, "completion atlas V5 omitted endpoint q1 bridge")
+    require(completion_atlas_v5["claim_flags"]["strict_386_pairing_suspension_bridge_certified"] is False, "completion atlas V5 promoted pairing suspension")
+    require(completion_atlas_v5["claim_flags"]["lorentzian_full_theory_certified"] is False, "completion atlas V5 promoted a full Lorentzian theory")
     require(flags["static_atlas_appendix_generated"] is True, "static atlas appendix flag is not certified")
     require(flags["complete_evidence_register_generated"] is True, "complete evidence register flag is not certified")
     require(flags["complete_literature_register_generated"] is True, "complete literature register flag is not certified")
