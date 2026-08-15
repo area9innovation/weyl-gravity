@@ -1,0 +1,715 @@
+{
+  "answer": "There is a stronger positive operator. For the normalized finite-volume BT law exp(-S)dpsi on the mean-zero carrier, the one-form Witten operator L1=L0 tensor I+Hess S obeys L1*d=d*L0 and has quadratic form ||d_mu_star v||^2+||dv||^2. It is nonnegative even where Hess S is indefinite. Hence the old pointwise orthogonal-Hessian and new low-action flat-Hessian witnesses do not obstruct this route. Splitting spatial one-forms into the lowest Fourier sector and its complement replaces the invalid pointwise Schur complement by the operator Schur complement of L1. A volume-uniform lower bound for that operator, or a controlled low-Rayleigh sequence, is now the precise undecided gate. No such bound is claimed here.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_WITTEN_ONE_FORM_SCHUR_GATE_V1",
+  "checks": {
+    "details": {
+      "actual_interacting_moment_remains_open": true,
+      "conditional_curvature_import_is_current": true,
+      "fixture_potential_is_pointwise_nonconvex": true,
+      "flat_low_action_curvature_import_is_negative": true,
+      "no_born_krein_or_lorentzian_promotion": true,
+      "pointwise_negative_hessian_does_not_obstruct_witten_operator": true,
+      "pointwise_orthogonal_schur_import_is_obstructed": true,
+      "symbolic_commutator_first_component": true,
+      "symbolic_commutator_second_component": true,
+      "witten_one_form_quadratic_form_is_nonnegative_by_factorization": true,
+      "witten_schur_coercivity_remains_open": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 11,
+    "total": 11
+  },
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "a volume-uniform coercivity bound for the BT one-form operator",
+    "a controlled low-Rayleigh or actual bad-volume sequence",
+    "the annealed center, lowest-mode, or interacting H^-1 estimate",
+    "tightness, a continuum Gibbs measure, or continuum identification",
+    "Born probabilities, Krein reconstruction, or Lorentzian dynamics"
+  ],
+  "exact_symbolic_fixture": {
+    "L1_gradient": [
+      [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -3
+          },
+          "powers": [
+            0,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -6
+          },
+          "powers": [
+            0,
+            1
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 5,
+            "numerator": 11
+          },
+          "powers": [
+            0,
+            2
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 3,
+            "numerator": 8
+          },
+          "powers": [
+            1,
+            1
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "powers": [
+            1,
+            2
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -3
+          },
+          "powers": [
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -6
+          },
+          "powers": [
+            2,
+            1
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 6
+          },
+          "powers": [
+            2,
+            2
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 3,
+            "numerator": 4
+          },
+          "powers": [
+            3,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 15
+          },
+          "powers": [
+            4,
+            1
+          ]
+        }
+      ],
+      [
+        {
+          "coefficient": {
+            "denominator": 15,
+            "numerator": -23
+          },
+          "powers": [
+            0,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 5,
+            "numerator": 19
+          },
+          "powers": [
+            0,
+            2
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -6
+          },
+          "powers": [
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 5,
+            "numerator": 22
+          },
+          "powers": [
+            1,
+            1
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 3,
+            "numerator": 4
+          },
+          "powers": [
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "powers": [
+            2,
+            1
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -2
+          },
+          "powers": [
+            3,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "powers": [
+            3,
+            1
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 3
+          },
+          "powers": [
+            5,
+            0
+          ]
+        }
+      ]
+    ],
+    "commutator_components_agree": [
+      true,
+      true
+    ],
+    "gradient": [
+      [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "powers": [
+            0,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "powers": [
+            0,
+            2
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 3
+          },
+          "powers": [
+            2,
+            1
+          ]
+        }
+      ],
+      [
+        {
+          "coefficient": {
+            "denominator": 5,
+            "numerator": 3
+          },
+          "powers": [
+            0,
+            2
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "powers": [
+            1,
+            1
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "powers": [
+            3,
+            0
+          ]
+        }
+      ]
+    ],
+    "gradient_L0": [
+      [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -3
+          },
+          "powers": [
+            0,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -6
+          },
+          "powers": [
+            0,
+            1
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 5,
+            "numerator": 11
+          },
+          "powers": [
+            0,
+            2
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 3,
+            "numerator": 8
+          },
+          "powers": [
+            1,
+            1
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "powers": [
+            1,
+            2
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -3
+          },
+          "powers": [
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -6
+          },
+          "powers": [
+            2,
+            1
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 6
+          },
+          "powers": [
+            2,
+            2
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 3,
+            "numerator": 4
+          },
+          "powers": [
+            3,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 15
+          },
+          "powers": [
+            4,
+            1
+          ]
+        }
+      ],
+      [
+        {
+          "coefficient": {
+            "denominator": 15,
+            "numerator": -23
+          },
+          "powers": [
+            0,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 5,
+            "numerator": 19
+          },
+          "powers": [
+            0,
+            2
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -6
+          },
+          "powers": [
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 5,
+            "numerator": 22
+          },
+          "powers": [
+            1,
+            1
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 3,
+            "numerator": 4
+          },
+          "powers": [
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "powers": [
+            2,
+            1
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -2
+          },
+          "powers": [
+            3,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "powers": [
+            3,
+            1
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 3
+          },
+          "powers": [
+            5,
+            0
+          ]
+        }
+      ]
+    ],
+    "hessian_at_origin": [
+      [
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        }
+      ],
+      [
+        {
+          "denominator": 3,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ]
+    ],
+    "hessian_determinant_at_origin": {
+      "denominator": 9,
+      "numerator": -10
+    },
+    "potential": [
+      {
+        "coefficient": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "powers": [
+          0,
+          2
+        ]
+      },
+      {
+        "coefficient": {
+          "denominator": 3,
+          "numerator": 1
+        },
+        "powers": [
+          1,
+          1
+        ]
+      },
+      {
+        "coefficient": {
+          "denominator": 2,
+          "numerator": -1
+        },
+        "powers": [
+          2,
+          0
+        ]
+      },
+      {
+        "coefficient": {
+          "denominator": 4,
+          "numerator": 1
+        },
+        "powers": [
+          4,
+          0
+        ]
+      }
+    ],
+    "scalar": [
+      {
+        "coefficient": {
+          "denominator": 5,
+          "numerator": 1
+        },
+        "powers": [
+          0,
+          3
+        ]
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": -1
+        },
+        "powers": [
+          1,
+          0
+        ]
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "powers": [
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "powers": [
+          3,
+          1
+        ]
+      }
+    ],
+    "status": "EXACT_NONCONVEX_POLYNOMIAL_FIXTURE",
+    "variables": [
+      "x",
+      "y"
+    ]
+  },
+  "finite_volume_witten_theorem": {
+    "carrier": "H={psi in R^N: sum psi=0}, with normalized BT density dmu=Z^(-1) exp(-S(psi)) dpsi",
+    "commutator": "L1(d f)=d(L0 f)",
+    "covariance": "for centered F, Cov_mu(F,F)=<dF,L1^(-1)dF>_(L2(mu;H)) on the gradient cyclic subspace",
+    "one_form_operator": "L1=d*d_mu_star+d_mu_star*d=L0 tensor I+Hess_H(S)",
+    "quadratic_form": "<v,L1 v>_mu=E_mu[||D_H v||_HS^2+v dot Hess(S) v]=||d_mu_star v||_mu^2+||d v||_mu^2>=0",
+    "scalar_operator": "L0=d_mu_star*d=-Delta_H+grad_H(S) dot grad_H",
+    "status": "PROVED_FINITE_VOLUME_IDENTITY",
+    "weighted_adjoint": "d_mu_star v=-div_H(v)+grad_H(S) dot v"
+  },
+  "imported_boundary": {
+    "all_background_fiber_curvature_coefficient": {
+      "denominator": 9,
+      "numerator": 2
+    },
+    "conditional_center_score_target": "E_nu[V_eta'(0)^2]<=C_s*N*omega_L^2",
+    "interpretation": "the conditional P block is controlled, while pointwise Q Hessian positivity fails; only the full one-form B block and its operator Schur complement remain undecided",
+    "low_action_flat_curvature_upper_bound": {
+      "denominator": 59081288175090511897125080246062762727536819609,
+      "numerator": -172511934113812002844255298492122939661512764763404478974825
+    },
+    "pointwise_orthogonal_hessian_block": "OBSTRUCTED",
+    "status": "CURRENT_CERTIFIED_INPUTS"
+  },
+  "independent_verifier": "reverse_physics/verify_bt_euclidean_witten_one_form_schur_gate.py",
+  "lifecycle_state": "EXACT_ONE_FORM_REPRESENTATION_COERCIVITY_OPEN",
+  "literature_interface": {
+    "imported_method_only": "Helffer-Sjostrand one-form covariance representation and variational viewpoint",
+    "nonapplicable_hypothesis": "Thoma assumes a uniformly convex single-site potential in the Laplacian field; the BT action is not of that class and has certified pointwise Hessian obstructions",
+    "novelty_boundary": "no literature novelty is claimed for the general Witten identity; the result here is its exact BT gate and boundary",
+    "source": "Eric Thoma, Thermodynamic and Scaling Limits of the non-Gaussian Membrane Model, arXiv:2112.07584v2",
+    "source_url": "https://arxiv.org/abs/2112.07584",
+    "status": "METHOD_GUIDE_NOT_THEOREM_IMPORT"
+  },
+  "lowest_mode_operator_schur_gate": {
+    "blocks": "A=P L1 P, B=Q L1 Q, C=Q L1 P on L2(mu;H)",
+    "equivalent_outcomes": "prove the required K_W coercivity on the dT cyclic sector, or construct a normalized low-Rayleigh sequence coupled to dT",
+    "existing_pointwise_block": "Q Hess(S) Q is not positive on all fields and cannot be used as B",
+    "inverse_identity": "P L1^(-1) P=K_W^(-1)",
+    "new_positive_block": "B contains the field-space operator Q L0 Q; positivity is controlled by the full Witten factorization, not Hess(S) pointwise",
+    "schur_operator": "K_W=A-C_star*B^(-1)*C",
+    "split": "P is the spatial projection onto the complete lowest axial cosine-sine sector and Q=I-P, both acting on one-forms",
+    "status": "EXACT_REDUCTION_ESTIMATE_OPEN",
+    "uniform_target": "for the amplitude coordinate T used by the predecessor, <dT,L1^(-1)dT><=C/(N*omega_L^2) uniformly in L"
+  },
+  "method_disposition": {
+    "actual_interacting_h_minus_one_second_moment": "OPEN",
+    "all_background_lowest_mode_conditional_curvature": "IMPORTED_PROVED",
+    "annealed_zero_fiber_score_bound": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "controlled_low_rayleigh_sequence": "OPEN",
+    "flat_good_action_global_convexity_route": "OBSTRUCTED",
+    "interacting_tightness": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "lowest_mode_witten_operator_schur_reduction": "PROVED",
+    "normalized_lowest_mode_second_moment": "OPEN",
+    "pointwise_negative_hessian_as_witten_no_go": "REFUTED",
+    "pointwise_orthogonal_hessian_schur_route": "OBSTRUCTED",
+    "volume_uniform_witten_schur_coercivity": "OPEN",
+    "witten_one_form_factorization": "PROVED"
+  },
+  "missing_object_ledger": [
+    "a coercive lower bound for the Witten Schur operator on the dT cyclic sector",
+    "or a normalized low-Rayleigh sequence with nonvanishing dT overlap",
+    "a dyadic-shell transfer after a positive lowest-mode result"
+  ],
+  "next_gate": "Estimate the operator Schur complement K_W using the exact conditional P curvature and the field-space Dirichlet term in B. A failure must be a normalized low-Rayleigh sequence coupled to dT, not another pointwise negative Hessian.",
+  "provenance": {
+    "arithmetic": "exact rational polynomial algebra for the commutator fixture and exact content-addressed imports",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ALL_BACKGROUND_LOWEST_MODE_CURVATURE_V1.json",
+        "sha256": "49e2d144667818f57e4d994a7e41534e6ded204b52eaa6f35b8923f30907e6d0"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ORTHOGONAL_HESSIAN_BLOCK_OBSTRUCTION_V1.json",
+        "sha256": "f984df873bb6f41476b15acb7bc01e9737fa1438782ddd970d1d62033e5a430e"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ANNEALED_CENTER_SCORE_REDUCTION_V1.json",
+        "sha256": "16b72c5b3976f5eecea27d3e40b89b7318f08d9116c4d845826a30aa334483e4"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LOW_ACTION_FLAT_CONVEXITY_OBSTRUCTION_V1.json",
+        "sha256": "e7102830bb47da919e5678b33cbafd65591d1a5389ce23859f2c94ec457eb4a6"
+      }
+    ],
+    "repository_base_commit": "06df41da"
+  },
+  "question": "Does the pointwise Hessian obstruction also rule out a Helffer-Sjostrand covariance estimate, or is there a stronger positive operator whose coercivity remains available?",
+  "report": "reverse_physics/reports/bt-euclidean-witten-one-form-schur-gate.md",
+  "result_kind": "exact finite-volume Helffer-Sjostrand/Witten one-form representation of the BT covariance and its lowest-mode operator Schur-complement gate",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-witten-one-form-schur-gate-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-witten-one-form-schur-gate-v1",
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_witten_one_form_schur_gate.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_witten_one_form_schur_gate.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_witten_one_form_schur_gate"
+  ]
+}
