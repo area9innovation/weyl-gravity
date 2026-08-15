@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-full-phase-g6-current-reconciliation-v1.schema.json",
+  "title": "BT Euclidean full-phase g6 current reconciliation V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "created", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "coupling_order_dictionary", "exact_lattice_bridge_fixture", "complete_full_phase_M4", "conditioning_scope", "supersession", "method_disposition", "checks", "does_not_establish", "missing_object_ledger", "next_gate", "provenance", "schema", "report", "independent_verifier", "verification_commands"],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "rational": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "input": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_G6_CURRENT_RECONCILIATION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-full-phase-g6-current-reconciliation-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "CURRENT_G6_MAPPED_TO_FULL_PHASE_SCORE_G4_WICK_DECISION_OPEN"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "coupling_order_dictionary": {"type": "object", "additionalProperties": false, "required": ["field_rescaling", "current_expansion", "directional_identity", "coefficient_matching", "full_phase_score_current_identity", "variance_order_map", "status"], "properties": {"field_rescaling": {"$ref": "#/$defs/text"}, "current_expansion": {"$ref": "#/$defs/text"}, "directional_identity": {"$ref": "#/$defs/text"}, "coefficient_matching": {"$ref": "#/$defs/text"}, "full_phase_score_current_identity": {"$ref": "#/$defs/text"}, "variance_order_map": {"$ref": "#/$defs/text"}, "status": {"const": "EXACT_ORDER_AND_OBSERVABLE_BRIDGE"}}},
+    "exact_lattice_bridge_fixture": {"type": "object", "additionalProperties": false, "required": ["lattice", "field", "direction", "values", "status"], "properties": {"lattice": {"const": "5^4 periodic torus"}, "field": {"$ref": "#/$defs/text"}, "direction": {"$ref": "#/$defs/text"}, "values": {"type": "object", "additionalProperties": false, "required": ["D_h_S0", "D_h_S1", "D_h_S2", "flux_J1", "flux_J2", "flux_J3"], "properties": {"D_h_S0": {"$ref": "#/$defs/rational"}, "D_h_S1": {"$ref": "#/$defs/rational"}, "D_h_S2": {"$ref": "#/$defs/rational"}, "flux_J1": {"$ref": "#/$defs/rational"}, "flux_J2": {"$ref": "#/$defs/rational"}, "flux_J3": {"$ref": "#/$defs/rational"}}}, "status": {"const": "EXACT_RATIONAL_THREE_ORDER_CURRENT_ACTION_MATCH"}}},
+    "complete_full_phase_M4": {"type": "object", "additionalProperties": false, "required": ["score_vectors", "fiber_effective_action", "density_normalization", "direct_formula", "square_root_formula", "exact_vector_fixture", "status"], "properties": {"score_vectors": {"$ref": "#/$defs/text"}, "fiber_effective_action": {"$ref": "#/$defs/text"}, "density_normalization": {"$ref": "#/$defs/text"}, "direct_formula": {"$ref": "#/$defs/text"}, "square_root_formula": {"$ref": "#/$defs/text"}, "exact_vector_fixture": {"type": "object", "additionalProperties": false, "required": ["z2", "M4_direct", "M4_square_root"], "properties": {"z2": {"$ref": "#/$defs/rational"}, "M4_direct": {"$ref": "#/$defs/rational"}, "M4_square_root": {"$ref": "#/$defs/rational"}}}, "status": {"const": "COMPLETE_SYMBOLIC_FORMULA_WICK_EVALUATION_OPEN"}}},
+    "conditioning_scope": {"type": "object", "additionalProperties": false, "required": ["live_background", "full_phase_free_covariance", "translation_invariance", "older_M4_scope", "nontransfer", "status"], "properties": {"live_background": {"$ref": "#/$defs/text"}, "full_phase_free_covariance": {"$ref": "#/$defs/text"}, "translation_invariance": {"$ref": "#/$defs/text"}, "older_M4_scope": {"$ref": "#/$defs/text"}, "nontransfer": {"$ref": "#/$defs/text"}, "status": {"const": "SCOPE_SPLIT_CERTIFIED"}}},
+    "supersession": {"type": "object", "additionalProperties": false, "required": ["predecessor", "retained", "corrected_next_gate", "status"], "properties": {"predecessor": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_CUBIC_CURRENT_CHAOS_OBSTRUCTION_V1"}, "retained": {"$ref": "#/$defs/text"}, "corrected_next_gate": {"$ref": "#/$defs/text"}, "status": {"const": "COUPLING_ORDER_AND_CONDITIONING_SCOPE_CORRECTED"}}},
+    "method_disposition": {"type": "object", "additionalProperties": false, "required": ["cubic_current_free_third_chaos", "cubic_current_identification_with_quartic_score", "complete_full_phase_M4_formula", "complete_full_phase_M4_finite_volume_value", "complete_full_phase_M4_large_volume_scaling", "one_cosine_M4_sign_transfer_to_full_phase", "nonperturbative_background_current_susceptibility", "actual_interacting_H_minus_one_second_moment", "continuum_limit", "born_rule", "krein_reconstruction", "lorentzian_transfer"], "properties": {"cubic_current_free_third_chaos": {"const": "EXTENSIVE_POSITIVE"}, "cubic_current_identification_with_quartic_score": {"const": "PROVED"}, "complete_full_phase_M4_formula": {"const": "PROVED"}, "complete_full_phase_M4_finite_volume_value": {"const": "OPEN"}, "complete_full_phase_M4_large_volume_scaling": {"const": "OPEN"}, "one_cosine_M4_sign_transfer_to_full_phase": {"const": "FORBIDDEN_SCOPE_MISMATCH"}, "nonperturbative_background_current_susceptibility": {"const": "OPEN"}, "actual_interacting_H_minus_one_second_moment": {"const": "OPEN"}, "continuum_limit": {"const": "NOT_ESTABLISHED"}, "born_rule": {"const": "NOT_ESTABLISHED"}, "krein_reconstruction": {"const": "NOT_ASSESSED"}, "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}}},
+    "checks": {"type": "object", "minProperties": 17, "additionalProperties": {"const": true}},
+    "does_not_establish": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["repository_base_commit", "inputs", "exact_arithmetic", "analytic_arithmetic", "assumptions"], "properties": {"repository_base_commit": {"const": "87f69bfb5efa42f15decac9d14caae2345cbdd2f"}, "inputs": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/input"}}, "exact_arithmetic": {"$ref": "#/$defs/text"}, "analytic_arithmetic": {"$ref": "#/$defs/text"}, "assumptions": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}}}},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-full-phase-g6-current-reconciliation-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-full-phase-g6-current-reconciliation.md"},
+    "independent_verifier": {"const": "reverse_physics/verify_bt_euclidean_full_phase_g6_current_reconciliation.py"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}}
+  }
+}
