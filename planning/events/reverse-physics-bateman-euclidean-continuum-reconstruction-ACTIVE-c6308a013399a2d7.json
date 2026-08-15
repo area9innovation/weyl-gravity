@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-c6308a013399a2d7",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-c6308a013399a2d7.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "codex", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-08-15", "seq": 46, "predecessor": "sf:program/event/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-e8b7683cd96a1e17", "payload": {"target": "sf:program/work/reverse-physics-bateman-euclidean-continuum-reconstruction", "to_state": "ACTIVE", "note": "Periodic-bubble jet checkpoint: the naive chord denominator F2=2 sum(1-cos x_mu) has quartic harmonic defect Q4=|x|^4-2 sum x_mu^4. Exact S3 moments give ||E_m||^2=(128 pi^2/5) log(1/m)+O(1), while the residual norm remains bounded with the round-bubble core, so this periodization's quotient diverges rather than collapses. The two-harmonic fourth-order stencil F4=sum[(8/3)(1-cos x_mu)-(1/6)(1-cos 2x_mu)] is positive, cancels the quartic jet, and makes the local Euler contribution uniformly square-integrable; its weak-field quotient is exactly 32/17. The finite global repaired-stencil quotient, deterministic gap, Witten coercivity, interacting H^-1, continuum, Born, Krein, and Lorentzian claims remain open."}, "native": {"authored_by": "sfc work-event", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/reverse-physics-bateman-euclidean-continuum-reconstruction"}]
+}

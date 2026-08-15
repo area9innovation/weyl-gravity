@@ -1,0 +1,167 @@
+{
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_PERIODIC_BUBBLE_JET_GATE_V1",
+  "schema_version": "reverse-physics-bt-euclidean-periodic-bubble-jet-gate-v1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "result_kind": "exact local periodic-bubble jet obstruction, logarithmic coefficient, and fourth-order stencil repair",
+  "question": "Can the noncompact round-sphere BT bubble be periodized by replacing squared radius with the standard chordal torus distance, and what local jet condition is required to remove any new Euler-gradient divergence?",
+  "answer": "The standard chord periodization fails: its quartic harmonic defect forces ||E_m||_2^2=(128*pi^2/5)*log(1/m)+O(1), while ||R_m||_2^2 stays bounded and retains the round-bubble concentration. The unique two-harmonic fourth-order stencil cancels the quartic defect and makes the local Euler-gradient contribution uniformly square-integrable. This repairs the local bubble but does not decide the complete global torus quotient or the Witten/Gibbs estimate.",
+  "radial_denominator_identity": {
+    "ansatz": "Omega_m=1/h_m, h_m=m+F, m>0",
+    "definitions": "D=Delta F, G=|grad F|^2, q=R/Omega_m^2",
+    "weighted_scalar": "q=-h_m*D+2*G",
+    "residual": "R=q/h_m^2",
+    "euler_gradient": "E=div(h_m^(-2)*grad q)",
+    "homogeneous_defect_rule": "if F=|x|^2+P_d+O(|x|^(d+2)) with homogeneous even P_d, then q at m=0 has leading defect Q_d=8*(d-1)*P_d-|x|^2*Delta P_d",
+    "euler_defect_rule": "the leading E is div(|x|^(-4)*grad Q_d), homogeneous of degree d-6"
+  },
+  "naive_chord_obstruction": {
+    "torus": "(R/(2*pi*Z))^4",
+    "denominator": "F_2(x)=2*sum_{mu=1}^4(1-cos x_mu)",
+    "local_expansion": "F_2=|x|^2-(1/12)*sum_mu x_mu^4+O(|x|^6)",
+    "quartic_profile": "P_4=-(1/12)*sum_mu x_mu^4",
+    "weighted_scalar_defect": "Q_4=|x|^4-2*sum_mu x_mu^4",
+    "harmonicity": "Delta Q_4=0",
+    "euler_singular_term": "E_m=-16*Q_4/|x|^6+lower-order terms for sqrt(m)<<|x|<<1",
+    "sphere_moments": {
+      "average_omega_1_fourth": {
+        "numerator": 1,
+        "denominator": 8
+      },
+      "average_omega_1_eighth": {
+        "numerator": 7,
+        "denominator": 128
+      },
+      "average_omega_1_fourth_omega_2_fourth": {
+        "numerator": 3,
+        "denominator": 640
+      },
+      "average_Q_4_squared": {
+        "numerator": 1,
+        "denominator": 10
+      },
+      "integral_S3_Q_4_squared": "pi^2/5"
+    },
+    "gradient_asymptotic": "||E_m||_2^2=(128*pi^2/5)*log(1/m)+O(1)",
+    "residual_behavior": "||R_m||_2^2=O(1), and the shrinking core carries limiting residual norm squared (32/3)*pi^2",
+    "quotient_conclusion": "||E_m||_2^2/||R_m||_2^2 tends to infinity",
+    "status": "OBSTRUCTED"
+  },
+  "fourth_order_local_repair": {
+    "denominator": "F_4(x)=sum_mu[(8/3)*(1-cos x_mu)-(1/6)*(1-cos(2*x_mu))]",
+    "positivity_identity": "one-coordinate term=(1/3)*(1-cos x)*(7-cos x)>0 for x not congruent to zero",
+    "local_expansion": "F_4=|x|^2-(1/90)*sum_mu x_mu^6+O(|x|^8)",
+    "quartic_defect": "P_4=0",
+    "sixth_profile": "P_6=-(1/90)*sum_mu x_mu^6",
+    "weighted_scalar_defect": "Q_6=(1/3)*|x|^2*sum_mu x_mu^4-(4/9)*sum_mu x_mu^6",
+    "local_integrability": "the leading Euler defect is homogeneous of degree zero; hence sup_{0<m<=m_0} integral_{|x|<delta}|E_m|^2 dx is finite",
+    "what_is_repaired": "the quartic-harmonic logarithmic divergence of the naive chord bubble",
+    "what_remains": "the finite global contribution from the whole torus and its comparison with the free lowest scale",
+    "status": "LOCAL_REPAIR_PROVED"
+  },
+  "weak_field_endpoint": {
+    "regime": "m tends to infinity for Omega_m=1/(m+F_4)",
+    "linearized_residual": "R_m=-(Delta F_4)/m+O(m^(-2))",
+    "linearized_gradient": "E_m=-(Delta^2 F_4)/m+O(m^(-2))",
+    "exact_fourier_quotient": "lim ||E_m||_2^2/||R_m||_2^2=32/17",
+    "value": {
+      "numerator": 32,
+      "denominator": 17
+    },
+    "interpretation": "the repaired family does not approach the sharp free lowest-mode coefficient at its weak-field endpoint because its repair uses the second harmonic"
+  },
+  "method_disposition": {
+    "naive_chord_periodic_bubble": "OBSTRUCTED",
+    "quartic_harmonic_divergence_mechanism": "PROVED",
+    "fourth_order_local_jet_repair": "PROVED",
+    "repaired_global_torus_quotient": "OPEN",
+    "positive_volume_uniform_deterministic_gradient_bound": "OPEN",
+    "volume_uniform_witten_coercivity": "OPEN",
+    "interacting_h_minus_one_bound": "OPEN",
+    "continuum_reconstruction": "NOT_ESTABLISHED",
+    "born_rule": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED"
+  },
+  "missing_object_ledger": [
+    "a rigorous full-torus integral or interval enclosure for the repaired family",
+    "an optimization over globally smooth positive periodic bubble denominators",
+    "a positive global gradient gap or a normalized collapsing periodic sequence",
+    "a transfer from deterministic geometry to the Witten operator and actual Gibbs H^-1 moment"
+  ],
+  "next_gate": "Compute a rigorous interval enclosure of the complete repaired-stencil quotient as a function of m. If it remains positive, stop treating a single shrinking bubble as a collapse candidate and return to the connection-corrected Witten Schur problem; if it approaches zero, certify that sequence and evaluate its full Witten Rayleigh quotient.",
+  "does_not_establish": [
+    "a collapsing smooth periodic bubble sequence",
+    "a positive volume-uniform torus gradient inequality",
+    "a Poincare inequality or Witten one-form theorem or obstruction",
+    "an interacting residual, field, or H^-1 Gibbs moment estimate",
+    "tightness, a continuum BT measure, or limit identification",
+    "a Born rule or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "provenance": {
+    "repository_base_commit": "6e0d76f4e2774cef873b46e19ca3d7137695b438",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CONFORMAL_CURVATURE_BUBBLE_GATE_V1.json",
+        "sha256": "ea963a18030e4bc0452ff94a6547e86cae76f010bf242c3a7690a8eef8c05e3d"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ADDITIVE_CONTRACTION_AXIAL_COERCIVITY_V1.json",
+        "sha256": "60f282068257f75edccc61292b6834148c1e9404a4b3f070a46debe95e04bb2f"
+      }
+    ],
+    "arithmetic": "Python Fraction arithmetic for Taylor coefficients, S^3 moments, the logarithmic coefficient, and the weak-field Fourier quotient; analytic remainder estimates use homogeneous local scaling"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_periodic_bubble_jet_gate.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_periodic_bubble_jet_gate.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_periodic_bubble_jet_gate"
+  ],
+  "tier_receipt": {
+    "tier_0": "parse, strict schema, deterministic generation, diff check, and staged-diff inspection",
+    "tier_1": "exact producer, independent multivariate-polynomial verifier, unit tests, and decisive-field mutation rejection",
+    "tier_2": "predecessor certificates checked by content hash; no shared operator or generated transitive chain changed",
+    "tier_3": "not run: no global torus or Witten/H^-1 theorem, reconstruction promotion, freeze, release, or shared-core change",
+    "memory_policy": "all Python commands run sequentially under a 500000 KiB virtual-memory ceiling",
+    "elapsed_seconds_and_peak_kib": {
+      "producer_check": "0.04 seconds, 20560 KiB",
+      "independent_verifier": "0.10 seconds, 30184 KiB",
+      "unit_tests": "0.13 seconds, 30936 KiB"
+    },
+    "repository_audits": {
+      "planning_conformance": "REFUSED (exit 3, 8.50 seconds, 220068 KiB): the new seq-46 event is OK; 10 pre-existing forge-request lifecycle nonconformances remain",
+      "science_forge_shadow": "not rerun: this checkpoint changes no registered shadow input; the immediately preceding bounded attempt produced no disposition after unrelated cbp subprocesses aborted, and is not a pass"
+    }
+  },
+  "checks": {
+    "ok": true,
+    "passed": 14,
+    "total": 14,
+    "failures": [],
+    "details": {
+      "sphere_omega_fourth": true,
+      "sphere_omega_eighth": true,
+      "sphere_mixed_fourth_fourth": true,
+      "chord_harmonic_angular_average": true,
+      "chord_log_coefficient": true,
+      "fourth_stencil_quadratic_normalization": true,
+      "fourth_stencil_quartic_cancellation": true,
+      "fourth_stencil_sixth_coefficient": true,
+      "weak_field_repaired_quotient": true,
+      "naive_chord_route_obstructed": true,
+      "local_jet_repair_proved": true,
+      "global_periodic_quotient_stays_open": true,
+      "witten_and_gibbs_gates_stay_open": true,
+      "no_born_krein_or_lorentzian_promotion": true
+    }
+  },
+  "report": "reverse_physics/reports/bt-euclidean-periodic-bubble-jet-gate.md",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-periodic-bubble-jet-gate-v1.schema.json",
+  "verifier": "reverse_physics/verify_bt_euclidean_periodic_bubble_jet_gate.py"
+}
