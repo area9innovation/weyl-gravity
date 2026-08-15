@@ -1,0 +1,192 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-repaired-bubble-family-compactness-v1.schema.json",
+  "title": "BT repaired bubble family compactness certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "family", "zero_endpoint",
+    "interior_nonvanishing", "infinite_endpoint", "compactness_conclusion",
+    "method_disposition", "missing_object_ledger", "next_gate", "does_not_establish",
+    "provenance", "verification_commands", "tier_receipt", "checks", "report", "schema", "verifier"
+  ],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "fraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    }
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_REPAIRED_BUBBLE_FAMILY_COMPACTNESS_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-repaired-bubble-family-compactness-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"},
+        {"const": "REDUCED-MODE"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "family": {
+      "type": "object", "additionalProperties": false,
+      "required": ["torus", "denominator", "positive_field", "quotient", "compact_parameter"],
+      "properties": {
+        "torus": {"const": "(R/(2*pi*Z))^4"},
+        "denominator": {"$ref": "#/$defs/text"},
+        "positive_field": {"const": "Omega_m=1/(m+F_4), m>0"},
+        "quotient": {"const": "Q(m)=||E_m||_2^2/||R_m||_2^2"},
+        "compact_parameter": {"const": "t=m/(1+m) in (0,1)"}
+      }
+    },
+    "zero_endpoint": {
+      "type": "object", "additionalProperties": false,
+      "required": ["local_jet", "strong_euler_limit", "residual_concentration", "nonzero_fixture", "nonzero_argument", "limit_quotient", "status"],
+      "properties": {
+        "local_jet": {"$ref": "#/$defs/text"},
+        "strong_euler_limit": {"const": "E_m converges to E_0 in L^2(T^4) as m tends to zero"},
+        "residual_concentration": {"$ref": "#/$defs/text"},
+        "nonzero_fixture": {
+          "type": "object", "additionalProperties": false,
+          "required": ["point", "F_4", "Delta_F_4", "gradient_norm_squared", "q_0"],
+          "properties": {
+            "point": {"const": "(pi,0,0,0)"},
+            "F_4": {"$ref": "#/$defs/fraction"},
+            "Delta_F_4": {"$ref": "#/$defs/fraction"},
+            "gradient_norm_squared": {"$ref": "#/$defs/fraction"},
+            "q_0": {"$ref": "#/$defs/fraction"}
+          }
+        },
+        "nonzero_argument": {"$ref": "#/$defs/text"},
+        "limit_quotient": {"$ref": "#/$defs/text"},
+        "status": {"const": "POSITIVE_FINITE_LIMIT_PROVED"}
+      }
+    },
+    "interior_nonvanishing": {
+      "type": "object", "additionalProperties": false,
+      "required": ["current", "energy_test", "periodic_integral", "harmonic_conclusion", "family_exclusion", "conclusion"],
+      "properties": {
+        "current": {"const": "E=div(Omega^2*grad q), q=R/Omega^2"},
+        "energy_test": {"$ref": "#/$defs/text"},
+        "periodic_integral": {"$ref": "#/$defs/text"},
+        "harmonic_conclusion": {"$ref": "#/$defs/text"},
+        "family_exclusion": {"$ref": "#/$defs/text"},
+        "conclusion": {"const": "Q(m)>0 for every m in (0,infinity)"}
+      }
+    },
+    "infinite_endpoint": {
+      "type": "object", "additionalProperties": false,
+      "required": ["linearization", "limit", "value", "status"],
+      "properties": {
+        "linearization": {"$ref": "#/$defs/text"},
+        "limit": {"const": "Q(infinity)=32/17"},
+        "value": {"$ref": "#/$defs/fraction"},
+        "status": {"const": "POSITIVE_LIMIT_PROVED"}
+      }
+    },
+    "compactness_conclusion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["continuity", "positivity", "theorem", "constant_status", "scope"],
+      "properties": {
+        "continuity": {"$ref": "#/$defs/text"},
+        "positivity": {"$ref": "#/$defs/text"},
+        "theorem": {"const": "there exists c_F4>0 such that Q(m)>=c_F4 for every m>0"},
+        "constant_status": {"const": "EXISTS_NOT_COMPUTED"},
+        "scope": {"const": "only the declared one-parameter repaired periodic bubble family"}
+      }
+    },
+    "method_disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["naive_chord_periodic_bubble", "repaired_one_bubble_family_collapse", "repaired_family_uniform_positive_quotient", "arbitrary_smooth_periodic_bubble_collapse", "positive_all_field_deterministic_gradient_bound", "volume_uniform_witten_coercivity", "interacting_h_minus_one_bound", "continuum_reconstruction", "born_rule", "krein_reconstruction", "lorentzian_transfer"],
+      "properties": {
+        "naive_chord_periodic_bubble": {"const": "OBSTRUCTED_BY_PREDECESSOR"},
+        "repaired_one_bubble_family_collapse": {"const": "RULED_OUT"},
+        "repaired_family_uniform_positive_quotient": {"const": "PROVED_NONQUANTITATIVELY"},
+        "arbitrary_smooth_periodic_bubble_collapse": {"const": "OPEN"},
+        "positive_all_field_deterministic_gradient_bound": {"const": "OPEN"},
+        "volume_uniform_witten_coercivity": {"const": "OPEN"},
+        "interacting_h_minus_one_bound": {"const": "OPEN"},
+        "continuum_reconstruction": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "597e04b4e8e396e31e70edb85491ba61f4ed57ab"},
+        "inputs": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "tier_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "memory_policy", "elapsed_seconds_and_peak_kib", "repository_audits"],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/text"},
+        "tier_1": {"$ref": "#/$defs/text"},
+        "tier_2": {"$ref": "#/$defs/text"},
+        "tier_3": {"$ref": "#/$defs/text"},
+        "memory_policy": {"$ref": "#/$defs/text"},
+        "elapsed_seconds_and_peak_kib": {
+          "type": "object", "additionalProperties": false,
+          "required": ["producer_check", "independent_verifier", "unit_tests"],
+          "properties": {
+            "producer_check": {"const": "0.03 seconds, 20416 KiB"},
+            "independent_verifier": {"const": "0.09 seconds, 30152 KiB"},
+            "unit_tests": {"const": "0.10 seconds, 30628 KiB"}
+          }
+        },
+        "repository_audits": {
+          "type": "object", "additionalProperties": false,
+          "required": ["planning_conformance", "science_forge_shadow"],
+          "properties": {
+            "planning_conformance": {"$ref": "#/$defs/text"},
+            "science_forge_shadow": {"$ref": "#/$defs/text"}
+          }
+        }
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-repaired-bubble-family-compactness.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-repaired-bubble-family-compactness-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_repaired_bubble_family_compactness.py"}
+  }
+}
