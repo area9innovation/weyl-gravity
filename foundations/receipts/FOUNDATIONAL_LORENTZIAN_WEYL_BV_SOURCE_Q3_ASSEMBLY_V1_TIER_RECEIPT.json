@@ -1,0 +1,97 @@
+{
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_SOURCE_Q3_ASSEMBLY_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1",
+  "created": "2026-08-16",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Exact shifted-auxiliary quartic mass tensor, fixed-pairing 386-row q3 lift, exhaustive common source-q3 assembly, full arity-three/cyclicity/D-q3 replay, append-only Gate V15 reconciliation, Atlas V33 projection, static-site refresh, and Paper 21 RF-63 integration.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.29,
+      "commands": [
+        "python3 -m py_compile <explicit classical quartic, q3 lift, source q3, Gate V15, Atlas V33, site and Paper 21 paths>",
+        "python3 -c <parse nine explicit generated JSON artifacts>",
+        "deno check foundations/matrix_site_v2_assets/app-v2.js",
+        "git diff --check"
+      ],
+      "checks": "Python parsing, nine structured-data parses, JavaScript static checking, and worktree whitespace validation passed."
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 95.42,
+      "commands": [
+        "python3 d_quotient_classical/nonminimal_identity/classical_shifted_auxiliary_quartic_mass_v1.py --check && python3 d_quotient_classical/nonminimal_identity/check_classical_shifted_auxiliary_quartic_mass_v1.py && python3 d_quotient_classical/nonminimal_identity/verify_classical_shifted_auxiliary_quartic_mass_v1.py",
+        "python3 quantum-weyl/classical_import/build_strict_386_shifted_mass_bv_q3_lift.py --check && python3 quantum-weyl/classical_import/check_strict_386_shifted_mass_bv_q3_lift.py && python3 quantum-weyl/classical_import/verify_strict_386_shifted_mass_bv_q3_lift.py",
+        "python3 quantum-weyl/classical_import/build_strict_386_source_q3_common_assembly.py --check && python3 quantum-weyl/classical_import/check_strict_386_source_q3_common_assembly.py && python3 quantum-weyl/classical_import/verify_strict_386_source_q3_common_assembly.py",
+        "python3 quantum-weyl/classical_import/build_classical_import_gate_v15_reconciliation.py --check && python3 quantum-weyl/classical_import/check_classical_import_gate_v15_reconciliation.py && python3 quantum-weyl/classical_import/verify_classical_import_gate_v15_reconciliation.py",
+        "python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v33.py --check && python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v33.py && python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v33.py",
+        "python3 -m unittest <five explicit q3-chain test modules>"
+      ],
+      "checks": {
+        "new_tests": "26/26 PASS",
+        "possible_independent_quartic_slots": 3025,
+        "nonzero_independent_quartic_monomials": 321,
+        "ordered_fourth_variations": 912,
+        "ordered_auxiliary_q3_coefficients": 5952,
+        "q3_cyclic_equalities": 40000,
+        "conformal_Ward_checks": 605,
+        "source_q3_families": 2,
+        "arity_three_defects": 0,
+        "q3_cyclicity_defects_mod_d": 0,
+        "D_q3_defects": 0,
+        "accepted_source_q3_sha256": "2c2032011400463419fb7427f38746e6fa14d0fe0cbfe754e9b0023de5387f8a",
+        "gate_a_status": "FAIL_CLOSED"
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 7.5,
+      "commands": [
+        "python3 foundations/build_matrix_site_v2.py && python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py",
+        "python3 -m unittest foundations.tests.test_matrix_site",
+        "python3 paper/generate_21_reverse_foundations_appendices.py --check && python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+        "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (two passes)",
+        "scan Paper 21 log for overfull boxes, undefined references/citations, and rerun warnings"
+      ],
+      "checks": {
+        "site_cells": 576,
+        "completion_cells": 77,
+        "site_consumer_tests": "10/10 PASS",
+        "paper_claim": "RF-63",
+        "paper_pages": 71,
+        "paper_log_findings": 0
+      }
+    },
+    "tier_3": {
+      "status": "NOT_RUN_NOT_A_PASS",
+      "criterion": "This delivery promotes a local arity-three source assembly but no classical freeze or quantum lifecycle state, changes no shared core algebra, and leaves Gate A fail closed at CLASSIFIED. The affected certificate chain was run at Tier 2; the full repository suite remains reserved for a freeze/tag, shared-core algebra change, lifecycle promotion, release, or explicit request."
+    }
+  },
+  "artifact_sha256": {
+    "d_quotient_classical/certificates/CLASSICAL_SHIFTED_AUXILIARY_QUARTIC_MASS_V1.json": "eb47c67ea3aabc068003d1ee1be53030bccfbe69969179f88a0b6f5a4016a862",
+    "quantum-weyl/classical_import/certificates/STRICT_386_SHIFTED_MASS_BV_Q3_LIFT_V1.json": "a826f8b3eb9598855aa33ff32b256e2adc4124e37b9f94b7469780a9e40d9901",
+    "quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.json": "d2fb66beec9f77bd24487f13406aa5a179f332d113b8b1ca7052547df7e3b696",
+    "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V15_RECONCILIATION.json": "7be52fe2cbb0123ae978bc9f1e31dff90bcd92c6ad0934e67eaa12707e93f158",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V33.json": "4510c35e0902109d49ce59500f26d45e14f4166d3ef44345c2cffc5c0cc132ff",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "7512fea3ad46c65463af33fb799c9d3e4560bae132b54db7b1a0a328d338c7d9",
+    "foundations/site/manifest.json": "9d65219c2f23fc45a9f6b90904346c800dcae047f1a0a9d5ce83e8ee1f778417",
+    "paper/21-reverse-foundations-of-physics.tex": "83a663ebbd6d555af2f576e14332707917cceec2cc05c4b7046f0a43088ed158",
+    "paper/21-reverse-foundations-of-physics-appendices.tex": "63c9a2c1d1092069d0f46378b78e26e0b29baa25f166fa1b06d404f89de83369",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "d94ccf72caaa8646d93d234586bbb52fb0f073938f726b430ef508e05ca4e4ae",
+    "paper/21-reverse-foundations-of-physics.pdf": "a7156e5a8c8009e586f11aa8ce12ce5992aa49fb041b4ecd1db5e4f3cf92f48d"
+  },
+  "paper_prose_advisory": {
+    "status": "ADVISORY_FINDING_NOT_A_GATE",
+    "command": "/home/alstrup/area9/tango/forge/tools/science-forge/paper_prose_advisory.sh --json paper/21-reverse-foundations-of-physics.tex",
+    "finding": "The 21,824-word working paper remains above the advisory parenthesis-density and abstract-length budgets. Emphasis, em-dash, mean-sentence and novelty budgets remain within thresholds. No prose heuristic is counted as scientific verification."
+  },
+  "science_forge_shadow": {
+    "status": "FAIL_RECORDED_NOT_A_PASS",
+    "command": "ci/science-forge-shadow.sh",
+    "finding": "The advisory wrapper exited zero by design, but its bridge audit failed closed because the configured stale bp2transformer target lacks sympy. The Forge binary also reports a source/build revision mismatch, and the corpus census reports drift: 1,882 certificates versus the 976-certificate 2026-07-19 baseline. None of these findings is counted as a scientific pass."
+  },
+  "claim_boundary": "The authoritative local source q3 and its full arity-three, cyclicity modulo horizontal boundary, and stationary D/q3 identities are exact on the declared 386-row carrier. This does not pass the remaining six-hash and final-contraction classical freeze gate, prove q2/q3 compatibility with advanced or retarded Green homotopies, construct a full-complex Hadamard state, define renormalized Lorentzian products, restore the QME, or authorize residual quantum transfer."
+}

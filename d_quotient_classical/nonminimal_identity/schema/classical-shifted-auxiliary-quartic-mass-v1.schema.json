@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/classical-shifted-auxiliary-quartic-mass-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "dependency_tags", "scope", "shifted_auxiliary_quartic_mass_vertex", "exact_replay", "foundational_strength", "claim_flags", "does_not_establish", "canonical_hashes", "provenance", "schema_path", "independent_checker", "human_report", "next_gate"],
+  "properties": {
+    "schema": {"const": "classical-shifted-auxiliary-quartic-mass-v1"},
+    "result_id": {"const": "CLASSICAL_SHIFTED_AUXILIARY_QUARTIC_MASS_V1"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "shifted_auxiliary_quartic_mass_vertex": {
+      "type": "object",
+      "required": ["source_density", "variation", "block_family", "possible_independent_symmetric_component_monomials", "nonzero_independent_component_monomials", "nonzero_ordered_fourth_variation_coefficients", "maximum_input_jet_order", "entries"],
+      "properties": {
+        "possible_independent_symmetric_component_monomials": {"const": 3025},
+        "nonzero_independent_component_monomials": {"const": 321},
+        "nonzero_ordered_fourth_variation_coefficients": {"const": 912},
+        "entries": {"type": "array", "minItems": 321, "maxItems": 321}
+      }
+    },
+    "exact_replay": {
+      "type": "object",
+      "required": ["cubic_predecessor_component_defects", "pure_trace_second_variation_defects", "mixed_conformal_recursion_defects", "input_pair_symmetry_defects"],
+      "properties": {
+        "cubic_predecessor_component_defects": {"const": 0},
+        "pure_trace_second_variation_defects": {"const": 0},
+        "mixed_conformal_recursion_defects": {"const": 0},
+        "input_pair_symmetry_defects": {"const": 0}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["SHIFTED_AUXILIARY_H_H_F_HAT_F_HAT_COMPONENTS_SERIALIZED", "FOURTH_VARIATION_INDEPENDENTLY_REPLAYED", "AUTHORITATIVE_AUXILIARY_Q3_BV_LIFTED", "FULL_SOURCE_Q3_ASSEMBLED", "ARITY_THREE_IDENTITY_REPLAYED", "CLASSICAL_IMPORT_GATE_PASSED", "HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED"]
+    },
+    "schema_path": {"const": "d_quotient_classical/nonminimal_identity/schema/classical-shifted-auxiliary-quartic-mass-v1.schema.json"},
+    "human_report": {"const": "d_quotient_classical/reports/classical-shifted-auxiliary-quartic-mass-v1.md"}
+  },
+  "additionalProperties": true
+}

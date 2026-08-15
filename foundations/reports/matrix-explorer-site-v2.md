@@ -39,7 +39,7 @@ eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
-Atlas V32 preserves the field-equation type result.  The degree-one-to-zero
+Atlas V33 preserves the field-equation type result.  The degree-one-to-zero
 Green component is an exact right inverse on Noether-compatible sources and a
 left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
 the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
@@ -93,8 +93,12 @@ certified `T(c_star)=-c_star` translation in append-only V2 removes all 336.
 The accepted common q2 snapshot now binds 22 minimal operations with 2,064
 auxiliary coefficients, extends by zero over the receiver-added split cone,
 and transports canonically to graph coordinates.  Its q1/q2, cyclicity and
-stationary D/q2 defect counts are all zero.  Gate V14 therefore accepts one q2
-hash, while remaining fail closed because auxiliary q3, six other hashes and
+stationary D/q2 defect counts are all zero.  The exact auxiliary quartic mass
+then supplies 321 independent monomials, 912 ordered fourth variations and
+5,952 paired q3 coefficients.  Together with minimal Bach q3 these exhaust the
+two source families; arity three, cyclicity modulo horizontal boundary and
+stationary D/q3 have zero split/graph defects.  Gate V15 retains the accepted
+q2 hash and closes M2, while remaining fail closed because six other hashes and
 the final common cyclic contraction remain open.
 The complete Berger q3 remains a different-theory Weyl-plus-clock result on a fixed
 54-row carrier; no certified same-theory cyclic map authorizes its direct import.
@@ -113,8 +117,8 @@ overclaim guards. The full q1 is now a content-addressed unary snapshot:
 18 operator tables, 127 jet tables and 2,193 rational coefficients on all
 386 rows, with exact nilpotency and zero suspended-cyclicity defects. Local
 The unary SDR, canonical shear and represented Green actions are serialized.
-What remains open at the nonlinear frontier is auxiliary q3, q2/Green
-compatibility, the complete Gate-A freeze, Hadamard and QME.
+What remains open at the nonlinear frontier is q2/q3 Green compatibility,
+the complete Gate-A freeze, Hadamard and QME.
 
 The new reconstruction import supplies the first explicit weak-arithmetic
 finite-approximant theorem for a declared bounded wave observable. Its rational
@@ -202,15 +206,12 @@ This site does not establish:
 - unrestricted mixed-sign or arbitrary causal-difference trees from the certified polarized finite recursion
 - a Weyl-BV Maurer-Cartan or Moller map from the candidate formal fixed-point coefficients
 - analytic convergence, a convergence radius, or a nonperturbative Moller inverse from lambda-adic stabilization
-- a 386-row cyclic q3 stabilization or general source closure from the completed minimal q3 package
 - a direct strict pure-Weyl import of the complete Berger-plus-clock q3
 - a no-go theorem for full Weyl gravity from the quadratic-only obstruction
 - all-order nonlinear source-cocycle closure
 - q3 or higher causal brackets
 - a weakest-base or choice-free proof of the infinite analytic Green layer
-- the metric-dependent auxiliary q3, full arity-three source assembly, or q2/Green compatibility
 - a D-Cartan homotopy or physical charge classification from the stabilized D/q2 derivation
-- the complete twenty-export, seven-hash classical Gate A from the one accepted q2 hash
 - a Hadamard state, causal perturbative AQFT construction, or Lorentzian quantum master equation
 - continuum renormalized products from finite regulated-product closure
 - a Weyl QME or Weyl residual transfer from a finite toy BRST complex
@@ -219,5 +220,7 @@ This site does not establish:
 - composition beyond the two certified scoped cross-cell interfaces
 - precision sampler equivalence, continuum reconstruction, or empirical support from the BT finite lattice
 - a complete observationally validated theory
+- the complete twenty-export, seven-hash classical Gate A from the linked source-q2/q3 snapshots
+- q2/q3 compatibility with an advanced or retarded Green homotopy
 - that the exact stabilized-q3 candidate is the authoritative nonminimal pure-Weyl BV interaction
 - general lambda-squared causal source closure from the candidate q3 stabilization

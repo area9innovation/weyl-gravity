@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/foundational-lorentzian-weyl-bv-completion-atlas-v33.schema.json",
+  "type": "object",
+  "required": ["schema_version", "result_id", "lifecycle", "dependency_tags", "stages", "branches", "frontier_summary", "classical_import_reconciliation", "strict_gate_v15_reconciliation", "strict_source_q2_common_assembly", "strict_source_q3_common_assembly", "route_selection", "research_queue", "claim_flags", "provenance", "independent_checker"],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v33"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V33"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"contains": {"const": "LORENTZIAN-CAUSAL"}},
+    "stages": {"type": "array", "minItems": 11, "maxItems": 11},
+    "branches": {"type": "array", "minItems": 7, "maxItems": 7},
+    "route_selection": {"type": "array", "minItems": 10, "maxItems": 10},
+    "research_queue": {"type": "array", "minItems": 10, "maxItems": 10},
+    "strict_source_q3_common_assembly": {"type": "object", "required": ["accepted_source_q3_sha256", "source_q3_families", "classical_independent_monomials", "classical_ordered_fourth_variations", "auxiliary_ordered_q3_coefficients", "arity_three_defects", "q3_cyclicity_defects_mod_d", "D_q3_defects", "full_source_q3_assembled"], "properties": {"source_q3_families": {"const": 2}, "classical_independent_monomials": {"const": 321}, "classical_ordered_fourth_variations": {"const": 912}, "auxiliary_ordered_q3_coefficients": {"const": 5952}, "arity_three_defects": {"const": 0}, "q3_cyclicity_defects_mod_d": {"const": 0}, "D_q3_defects": {"const": 0}, "full_source_q3_assembled": {"const": true}}},
+    "strict_gate_v15_reconciliation": {"type": "object", "required": ["gate_a_status", "accepted_top_level_hashes", "remaining_top_level_hashes", "minimal_missing_bundle", "full_source_q3_assembled"], "properties": {"gate_a_status": {"const": "FAIL_CLOSED"}, "accepted_top_level_hashes": {"const": 1}, "remaining_top_level_hashes": {"const": 6}, "minimal_missing_bundle": {"type": "array", "minItems": 5, "maxItems": 5}, "full_source_q3_assembled": {"const": true}}},
+    "independent_checker": {"type": "object", "required": ["path", "checks", "expected_digest"]}
+  }
+}

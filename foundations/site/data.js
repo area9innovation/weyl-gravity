@@ -18030,11 +18030,11 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "completion_atlas": {
-    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v32",
-    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V32",
+    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v33",
+    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V33",
     "result_kind": "BRANCH_BY_STAGE_COMPLETION_ATLAS",
     "lifecycle": "CLASSIFIED",
-    "created": "2026-08-15",
+    "created": "2026-08-16",
     "repository_base_commit": "95decea291a6a12c7f0cdab017d4bcd0da9aaf92",
     "dependency_tags": [
       "LOCAL-ALGEBRAIC",
@@ -18042,12 +18042,12 @@ window.MATRIX_EXPLORER_DATA = {
       "REDUCED-MODE",
       "LORENTZIAN-CAUSAL"
     ],
-    "question": "After accepting one common source-q2 hash, what is the strongest next Lorentzian Weyl BV completion route?",
-    "answer": "Atlas V32 closes the arity-two assembly route. The authoritative shifted-source q2 now combines 22 minimal operations with 2,064 auxiliary component coefficients, extends by zero over the 320 receiver-added split-cone rows, and transports exactly to graph coordinates. Common q1/q2, cyclicity and stationary D/q2 defects all vanish. The highest-value next route is therefore the metric-dependent auxiliary q3: compute the h-h-f_hat-f_hat quartic action variation, pair-lift it, assemble it with minimal q3 and replay arity three. Gate A remains fail closed with one of seven hashes accepted.",
+    "question": "After completing the authoritative source q3 and arity-three identities, what is the strongest next Lorentzian Weyl BV route?",
+    "answer": "Atlas V33 closes the local nonlinear source through arity three. The exact shifted mass supplies 321 independent quartic monomials, 912 ordered fourth variations and 5,952 paired q3 coefficients. Together with minimal Bach q3 they exhaust the two source families; arity three, cyclicity modulo horizontal boundary and stationary D/q3 have zero split/graph defects. The priority now shifts from constructing brackets to freezing one common classical snapshot: accept the six remaining hashes, residual SDR/payload and final cyclic contraction. Gate A remains fail closed until that work is done.",
     "predecessor": {
-      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V31",
-      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V31.json",
-      "sha256": "badced1365cf584b2fd78f8a188a2c66514439c5ba4d689ae20d5f8933a27004",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V32",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V32.json",
+      "sha256": "ba121944001a7dd24bd95b1d8a187f2283cfb5d46583577579021036f91411b1",
       "preserved": true
     },
     "status_vocabulary": [
@@ -18155,7 +18155,7 @@ window.MATRIX_EXPLORER_DATA = {
           {
             "stage": "S0_CLASSICAL_AUTHORITY",
             "status": "FAIL_CLOSED",
-            "statement": "The authoritative shifted-source q2 is assembled and one common q2 hash is accepted. Its split and graph q1/q2, cyclicity and D/q2 identities have zero defects. Auxiliary q3 and six remaining freeze hashes remain open.",
+            "statement": "The authoritative shifted-source q2/q3 are assembled on linked common snapshots. Arity three, q2/q3 cyclicity and stationary D derivations are closed. Gate A remains open only at the common freeze, residual and final cyclic-contraction layer.",
             "evidence": [
               "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
               "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
@@ -18179,9 +18179,13 @@ window.MATRIX_EXPLORER_DATA = {
               "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2",
               "STRICT_386_SHIFTED_MASS_BV_Q2_LIFT_V1",
               "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1",
-              "CLASSICAL_IMPORT_GATE_V14_RECONCILIATION"
+              "CLASSICAL_IMPORT_GATE_V14_RECONCILIATION",
+              "CLASSICAL_SHIFTED_AUXILIARY_QUARTIC_MASS_V1",
+              "STRICT_386_SHIFTED_MASS_BV_Q3_LIFT_V1",
+              "STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1",
+              "CLASSICAL_IMPORT_GATE_V15_RECONCILIATION"
             ],
-            "boundary": "Arity-two source completion is not auxiliary q3, a full Gate-A freeze, q2/Green compatibility, Hadamard or QME."
+            "boundary": "Local q2/q3 completion is not the six missing freeze hashes, the full residual contraction, Green compatibility, Hadamard data or QME."
           },
           {
             "stage": "S1_OFF_SHELL_BV",
@@ -18208,8 +18212,8 @@ window.MATRIX_EXPLORER_DATA = {
           },
           {
             "stage": "S3_NONLINEAR_CARTAN",
-            "status": "PARTIAL_CERTIFIED_FULL_SOURCE_Q2_IDENTITIES_ZERO_AUXILIARY_Q3_OPEN",
-            "statement": "All sixteen shifted-source q2 families are bound on common bytes and transported canonically to the graph carrier. The first missing nonlinear operation is the metric-dependent auxiliary q3 from the quartic h-h-f_hat-f_hat action variation.",
+            "status": "CERTIFIED_FULL_SOURCE_Q2_Q3_ARITY_THREE_AND_CYCLICITY_ZERO",
+            "statement": "The complete shifted-source q2/q3 Taylor data are bound on common bytes and transported canonically to the graph carrier. Exactly two q3 families occur, and the full arity-three identity has zero defects.",
             "evidence": [
               "QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION",
               "STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1",
@@ -18233,9 +18237,13 @@ window.MATRIX_EXPLORER_DATA = {
               "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2",
               "STRICT_386_SHIFTED_MASS_BV_Q2_LIFT_V1",
               "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1",
-              "CLASSICAL_IMPORT_GATE_V14_RECONCILIATION"
+              "CLASSICAL_IMPORT_GATE_V14_RECONCILIATION",
+              "CLASSICAL_SHIFTED_AUXILIARY_QUARTIC_MASS_V1",
+              "STRICT_386_SHIFTED_MASS_BV_Q3_LIFT_V1",
+              "STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1",
+              "CLASSICAL_IMPORT_GATE_V15_RECONCILIATION"
             ],
-            "boundary": "q2 completion does not establish arity three, causal lambda-squared closure, Hadamard data or QME restoration."
+            "boundary": "This does not establish q2/q3 compatibility with a causal Green homotopy, analytic Moller convergence, Hadamard data or QME restoration."
           },
           {
             "stage": "S4_HADAMARD_CCR",
@@ -18896,20 +18904,21 @@ window.MATRIX_EXPLORER_DATA = {
       }
     ],
     "frontier_summary": {
-      "highest_value_next_route": "STRICT_AUXILIARY_Q3_COMMON_ASSEMBLY_AND_ARITY3_IDENTITIES",
+      "highest_value_next_route": "STRICT_COMMON_FREEZE_SNAPSHOT_AND_FINAL_CYCLIC_CONTRACTION",
       "route_count": 10,
-      "completed_since_v31": [
-        "STRICT_386_SHIFTED_MASS_BV_Q2_LIFT",
-        "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2",
-        "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_AND_IDENTITIES"
+      "completed_since_v32": [
+        "CLASSICAL_SHIFTED_AUXILIARY_QUARTIC_MASS",
+        "STRICT_386_SHIFTED_MASS_BV_Q3_LIFT",
+        "STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_AND_ARITY_THREE",
+        "GATE_V15_M2_RECONCILIATION"
       ],
-      "new_positive_result": "One common 386-row source-q2 hash is accepted; q1/q2, cyclicity and stationary D/q2 all have zero defects in split and graph coordinates.",
-      "surprise": "The V1 auxiliary momentum-map convention left 336 exact q1/q2 coefficients. The previously certified T(c_star)=-c_star translation removes all 336 and is now part of the accepted q2 snapshot.",
-      "hard_boundary": "Auxiliary q3, six Gate-A hashes, the final common cyclic contraction, q2/Green compatibility, Hadamard and QME remain open."
+      "new_positive_result": "The authoritative source q3 is complete: two exhaustive families, 5,952 auxiliary coefficients and zero arity-three/cyclicity/D-q3 defects in split and graph coordinates.",
+      "surprise": "The supposedly missing q3 is entirely forced by the second metric variation of the algebraic shifted mass; 605 conformal Ward checks close its Weyl channels without any Hilbert completion, Green inverse or choice operation.",
+      "hard_boundary": "Six Gate-A hashes, the final common cyclic contraction, q2/q3 Green compatibility, Hadamard and QME remain open."
     },
     "classical_import_reconciliation": {
-      "result_id": "CLASSICAL_IMPORT_GATE_V14_RECONCILIATION",
-      "status": "SOURCE_Q2_COMMON_HASH_ACCEPTED_IDENTITIES_ZERO_AUXILIARY_Q3_AND_FREEZE_OBJECTS_OPEN_GATE_FAIL_CLOSED",
+      "result_id": "CLASSICAL_IMPORT_GATE_V15_RECONCILIATION",
+      "status": "SOURCE_Q2_Q3_ACCEPTED_ARITY_THREE_ZERO_SIX_HASHES_AND_FINAL_FREEZE_OPEN_GATE_FAIL_CLOSED",
       "exports_receiver_verified_scoped": 14,
       "exports_total": 20,
       "freeze_checks_receiver_verified_scoped": 9,
@@ -18918,7 +18927,6 @@ window.MATRIX_EXPLORER_DATA = {
       "gate_a_status": "FAIL_CLOSED",
       "minimal_missing_bundle": [
         "M1_COMMON_STRICT_SNAPSHOT",
-        "M2_STRICT_Q2_D",
         "M3_RESIDUAL_SDR",
         "M4_FULL_CYCLIC_PAIRING",
         "M5_RESIDUAL_EXACT_PAYLOAD",
@@ -19029,12 +19037,12 @@ window.MATRIX_EXPLORER_DATA = {
     "route_selection": [
       {
         "rank": 1,
-        "route": "STRICT_AUXILIARY_Q3_COMMON_ASSEMBLY_AND_ARITY3_IDENTITIES",
+        "route": "STRICT_COMMON_FREEZE_SNAPSHOT_AND_FINAL_CYCLIC_CONTRACTION",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "MEDIUM",
-        "recommendation": "Differentiate the exact shifted auxiliary mass density twice in the metric direction, lift the resulting quartic vertex to q3 with the fixed pairing, assemble with minimal q3, then replay arity three and cyclicity."
+        "recommendation": "Bind the field dictionary, differential, D action, residual SDR, pairing, exact residual payload and centered representatives to one manifest; accept the remaining six hashes and replay the tenth freeze identity."
       },
       {
         "rank": 2,
@@ -19122,8 +19130,8 @@ window.MATRIX_EXPLORER_DATA = {
       {
         "priority": 1,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_AUXILIARY_Q3_COMMON_ASSEMBLY_AND_ARITY3_IDENTITIES",
-        "why": "The common q2 hash and all arity-two identities are closed; the quartic auxiliary action is now the first explicit source-level gap."
+        "object": "STRICT_COMMON_FREEZE_SNAPSHOT_AND_FINAL_CYCLIC_CONTRACTION",
+        "why": "The source q2/q3 and all local identities are complete; the classical import gate is now blocked only by the shared freeze/residual package rather than a missing nonlinear bracket."
       },
       {
         "priority": 2,
@@ -19739,6 +19747,36 @@ window.MATRIX_EXPLORER_DATA = {
           "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V14_RECONCILIATION",
           "sha256": "5732c4d04bc96592dd5a8e2b3fec1f199f4c9d8464c619cf3d4ff94020d82313",
           "role": "Gate-A V14 reconciliation"
+        },
+        {
+          "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V32.json",
+          "result_or_artifact_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V32",
+          "sha256": "ba121944001a7dd24bd95b1d8a187f2283cfb5d46583577579021036f91411b1",
+          "role": "immutable V32 predecessor"
+        },
+        {
+          "path": "d_quotient_classical/certificates/CLASSICAL_SHIFTED_AUXILIARY_QUARTIC_MASS_V1.json",
+          "result_or_artifact_id": "CLASSICAL_SHIFTED_AUXILIARY_QUARTIC_MASS_V1",
+          "sha256": "eb47c67ea3aabc068003d1ee1be53030bccfbe69969179f88a0b6f5a4016a862",
+          "role": "authoritative classical quartic auxiliary tensor"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_SHIFTED_MASS_BV_Q3_LIFT_V1.json",
+          "result_or_artifact_id": "STRICT_386_SHIFTED_MASS_BV_Q3_LIFT_V1",
+          "sha256": "a826f8b3eb9598855aa33ff32b256e2adc4124e37b9f94b7469780a9e40d9901",
+          "role": "fixed-pairing auxiliary q3 lift"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.json",
+          "result_or_artifact_id": "STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1",
+          "sha256": "d2fb66beec9f77bd24487f13406aa5a179f332d113b8b1ca7052547df7e3b696",
+          "role": "authoritative common source-q3 snapshot and identities"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V15_RECONCILIATION.json",
+          "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V15_RECONCILIATION",
+          "sha256": "7be52fe2cbb0123ae978bc9f1e31dff90bcd92c6ad0934e67eaa12707e93f158",
+          "role": "Gate-A V15 reconciliation"
         }
       ]
     },
@@ -19914,7 +19952,7 @@ window.MATRIX_EXPLORER_DATA = {
       "strict_386_component_uses_choice_principle": false,
       "strict_386_full_bv_cotangent_lift_serialized": true,
       "strict_386_full_source_q2_pullback_replayed": true,
-      "strict_386_full_source_q3_pullback_replayed": false,
+      "strict_386_full_source_q3_pullback_replayed": true,
       "v27_preserved": true,
       "strict_386_known_required_cubic_families_enumerated": true,
       "strict_386_h_f_hat_f_hat_components_imported": true,
@@ -19934,7 +19972,13 @@ window.MATRIX_EXPLORER_DATA = {
       "v31_preserved": true,
       "strict_386_full_q1_q2_identity_replayed": true,
       "strict_386_full_q2_cyclicity_replayed": true,
-      "strict_386_full_D_q2_derivation_replayed": true
+      "strict_386_full_D_q2_derivation_replayed": true,
+      "v32_preserved": true,
+      "strict_386_authoritative_full_q3_imported": true,
+      "strict_386_full_arity_three_identity_replayed": true,
+      "strict_386_full_q3_cyclicity_replayed_mod_d": true,
+      "strict_386_full_D_q3_derivation_replayed": true,
+      "strict_386_q2_q3_green_compatibility_certified": false
     },
     "does_not_establish": [
       "a passed strict pure-Weyl classical import gate",
@@ -20052,19 +20096,19 @@ window.MATRIX_EXPLORER_DATA = {
       "the assembled source q2/q3, accepted nonlinear hashes, or cyclic L-infinity equivalence"
     ],
     "independent_checker": {
-      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v32.py",
+      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v33.py",
       "checks": [
-        "V31 predecessor and 77-cell preservation",
-        "assembly and Gate V14 pins",
-        "one accepted q2 hash",
-        "zero common q2 identity defects",
-        "336-to-zero sign-repair history",
-        "ten-route q3 frontier",
-        "Gate-A/Hadamard/QME firewalls"
+        "V32 predecessor and 77-cell preservation",
+        "q3/Gate V15 pins",
+        "321/912/5952 coefficient chain",
+        "two-family census",
+        "zero arity-three/cyclicity/D-q3 defects",
+        "five-item freeze bundle",
+        "Gate-A/Green/Hadamard/QME firewalls"
       ],
-      "expected_digest": "546f28dd8e5821b27e452854a0a63a88823b70ed45fc062fe3f111a6bcae870b"
+      "expected_digest": "334282fc3d2924820ea07a7e26cef34d0a931b64dc475fe23587e0a0f42413d4"
     },
-    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v32.md",
+    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v33.md",
     "strict_gate_a_progress": {
       "status": "STABILIZED_Q2_CANDIDATE_CERTIFIED_AUTHORITATIVE_IDENTITY_REQUIRED",
       "evidence": [
@@ -21296,23 +21340,47 @@ window.MATRIX_EXPLORER_DATA = {
       "q1_q2_defects": 0,
       "q2_cyclicity_defects": 0,
       "D_q2_defects": 0,
-      "full_source_q3_assembled": false,
+      "full_source_q3_assembled": true,
       "first_missing_q3_vertex": "D_h^2 D_f_hat^2 S_aux, equivalently q3(h,h,f_hat) and q3(h,f_hat,f_hat) paired outputs",
       "rejected_v1_q1_q2_defects": 336,
       "accepted_v2_q1_q2_defects": 0,
       "shifted_mass_cyclicity_equalities": 3000
     },
-    "strict_gate_v14_reconciliation": {
-      "result_id": "CLASSICAL_IMPORT_GATE_V14_RECONCILIATION",
-      "status": "SOURCE_Q2_COMMON_HASH_ACCEPTED_IDENTITIES_ZERO_AUXILIARY_Q3_AND_FREEZE_OBJECTS_OPEN_GATE_FAIL_CLOSED",
+    "strict_source_q3_common_assembly": {
+      "result_id": "STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1",
+      "accepted_source_q2_sha256": "0f1e23a5653db0666cbd02dea49f8961927d03ff4c72ed402fd24ba8f2ba4800",
+      "accepted_source_q3_sha256": "2c2032011400463419fb7427f38746e6fa14d0fe0cbfe754e9b0023de5387f8a",
+      "source_q3_families": 2,
+      "classical_independent_monomials": 321,
+      "classical_ordered_fourth_variations": 912,
+      "auxiliary_ordered_q3_coefficients": 5952,
+      "cyclic_equalities_checked": 40000,
+      "Weyl_Ward_checks": 605,
+      "graph_block_quadruples": 40,
+      "arity_three_defects": 0,
+      "q3_cyclicity_defects_mod_d": 0,
+      "D_q3_defects": 0,
+      "full_source_q3_assembled": true
+    },
+    "strict_gate_v15_reconciliation": {
+      "result_id": "CLASSICAL_IMPORT_GATE_V15_RECONCILIATION",
+      "status": "SOURCE_Q2_Q3_ACCEPTED_ARITY_THREE_ZERO_SIX_HASHES_AND_FINAL_FREEZE_OPEN_GATE_FAIL_CLOSED",
       "exports_total": 20,
       "exports_receiver_verified_scoped": 14,
       "freeze_checks_total": 10,
       "freeze_checks_receiver_verified_scoped": 9,
       "accepted_top_level_hashes": 1,
+      "remaining_top_level_hashes": 6,
+      "minimal_missing_bundle": [
+        "M1_COMMON_STRICT_SNAPSHOT",
+        "M3_RESIDUAL_SDR",
+        "M4_FULL_CYCLIC_PAIRING",
+        "M5_RESIDUAL_EXACT_PAYLOAD",
+        "M6_CENTERED_REPRESENTATIVES"
+      ],
       "gate_a_status": "FAIL_CLOSED",
       "full_source_q2_assembled": true,
-      "full_source_q3_assembled": false
+      "full_source_q3_assembled": true
     }
   },
   "cross_cell_interfaces": [
@@ -21482,10 +21550,10 @@ window.MATRIX_EXPLORER_DATA = {
     "ground_state_dynamics_interface_report": "sources/foundations/reports/krein-fock-ground-state-dynamics-interface.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md",
-    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V32.json",
-    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v32.md",
-    "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V14_RECONCILIATION.json",
-    "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V14.md",
+    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V33.json",
+    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v33.md",
+    "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V15_RECONCILIATION.json",
+    "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V15.md",
     "completion_sdr": "sources/quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json",
     "completion_sdr_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_DFINITE_RESIDUAL_SDR_V1.md",
     "completion_cyclic": "sources/quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1.json",
@@ -21555,7 +21623,13 @@ window.MATRIX_EXPLORER_DATA = {
     "completion_diff_auxiliary_v2": "sources/quantum-weyl/classical_import/certificates/STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2.json",
     "completion_diff_auxiliary_v2_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2.md",
     "completion_source_q2": "sources/quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1.json",
-    "completion_source_q2_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1.md"
+    "completion_source_q2_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1.md",
+    "completion_classical_quartic": "sources/d_quotient_classical/certificates/CLASSICAL_SHIFTED_AUXILIARY_QUARTIC_MASS_V1.json",
+    "completion_classical_quartic_report": "sources/d_quotient_classical/reports/classical-shifted-auxiliary-quartic-mass-v1.md",
+    "completion_shifted_mass_q3": "sources/quantum-weyl/classical_import/certificates/STRICT_386_SHIFTED_MASS_BV_Q3_LIFT_V1.json",
+    "completion_shifted_mass_q3_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_SHIFTED_MASS_BV_Q3_LIFT_V1.md",
+    "completion_source_q3": "sources/quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.json",
+    "completion_source_q3_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.md"
   },
-  "canonical_digest": "2fa90b1628056b7b751af3f95f4164e901bcef82567c8f55726a545dba4177a2"
+  "canonical_digest": "2e571afc576b9a64bed39a39a3dbe5641a1e36aadf19d2155f3623cb484cccc9"
 };

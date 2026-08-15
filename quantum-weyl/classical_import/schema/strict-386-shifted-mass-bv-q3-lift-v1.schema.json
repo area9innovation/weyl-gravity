@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-386-shifted-mass-bv-q3-lift-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "dependency_tags", "scope", "pairing_coordinates", "shifted_mass_q3_lift", "exact_replay", "claim_flags", "does_not_establish", "canonical_hashes", "provenance", "schema_path", "independent_checker", "human_report", "next_gate"],
+  "properties": {
+    "schema": {"const": "strict-386-shifted-mass-bv-q3-lift-v1"},
+    "result_id": {"const": "STRICT_386_SHIFTED_MASS_BV_Q3_LIFT_V1"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"type": "object", "required": ["carrier_rows", "source_rows", "coefficient_field", "arity"], "properties": {"carrier_rows": {"const": 386}, "source_rows": {"const": 66}, "coefficient_field": {"const": "Q"}, "arity": {"const": 3}}},
+    "shifted_mass_q3_lift": {
+      "type": "object",
+      "required": ["family_id", "metric_antifield_output_entries", "auxiliary_antifield_output_entries", "component_counts"],
+      "properties": {
+        "family_id": {"const": "SHIFTED_MASS_H_H_F_HAT_F_HAT"},
+        "metric_antifield_output_entries": {"type": "array", "minItems": 2736, "maxItems": 2736},
+        "auxiliary_antifield_output_entries": {"type": "array", "minItems": 3216, "maxItems": 3216},
+        "component_counts": {"type": "object", "required": ["total_ordered_q3_coefficients"], "properties": {"total_ordered_q3_coefficients": {"const": 5952}}}
+      }
+    },
+    "exact_replay": {"type": "object", "required": ["cyclicity_equalities_checked", "cyclicity_defects", "S3_input_symmetry_defects"], "properties": {"cyclicity_equalities_checked": {"const": 40000}, "cyclicity_defects": {"const": 0}, "S3_input_symmetry_defects": {"const": 0}}},
+    "claim_flags": {"type": "object", "required": ["AUTHORITATIVE_AUXILIARY_Q3_BV_LIFTED", "AUXILIARY_Q3_CYCLICITY_REPLAYED", "FULL_SOURCE_Q3_ASSEMBLED", "FULL_386_ARITY_THREE_IDENTITY_REPLAYED", "CLASSICAL_IMPORT_GATE_PASSED", "HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED"]},
+    "schema_path": {"const": "quantum-weyl/classical_import/schema/strict-386-shifted-mass-bv-q3-lift-v1.schema.json"},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_386_SHIFTED_MASS_BV_Q3_LIFT_V1.md"}
+  },
+  "additionalProperties": true
+}

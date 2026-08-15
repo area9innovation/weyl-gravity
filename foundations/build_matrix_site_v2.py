@@ -64,10 +64,10 @@ BT_EUCLIDEAN_IMPORT = FOUNDATIONS / "results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_I
 AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json"
 FULL_SURFACE_AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json"
 LADDER = FOUNDATIONS / "results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
-COMPLETION_ATLAS = FOUNDATIONS / "results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V32.json"
-COMPLETION_REPORT = FOUNDATIONS / "reports/lorentzian-weyl-bv-completion-atlas-v32.md"
-COMPLETION_GATE = ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V14_RECONCILIATION.json"
-COMPLETION_GATE_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_GATE_V14.md"
+COMPLETION_ATLAS = FOUNDATIONS / "results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V33.json"
+COMPLETION_REPORT = FOUNDATIONS / "reports/lorentzian-weyl-bv-completion-atlas-v33.md"
+COMPLETION_GATE = ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V15_RECONCILIATION.json"
+COMPLETION_GATE_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_GATE_V15.md"
 COMPLETION_SDR = ROOT / "quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json"
 COMPLETION_SDR_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_DFINITE_RESIDUAL_SDR_V1.md"
 COMPLETION_CYCLIC = ROOT / "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1.json"
@@ -138,6 +138,12 @@ COMPLETION_DIFF_AUXILIARY_V2 = ROOT / "quantum-weyl/classical_import/certificate
 COMPLETION_DIFF_AUXILIARY_V2_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2.md"
 COMPLETION_SOURCE_Q2 = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1.json"
 COMPLETION_SOURCE_Q2_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1.md"
+COMPLETION_CLASSICAL_QUARTIC = ROOT / "d_quotient_classical/certificates/CLASSICAL_SHIFTED_AUXILIARY_QUARTIC_MASS_V1.json"
+COMPLETION_CLASSICAL_QUARTIC_REPORT = ROOT / "d_quotient_classical/reports/classical-shifted-auxiliary-quartic-mass-v1.md"
+COMPLETION_SHIFTED_MASS_Q3 = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_SHIFTED_MASS_BV_Q3_LIFT_V1.json"
+COMPLETION_SHIFTED_MASS_Q3_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_386_SHIFTED_MASS_BV_Q3_LIFT_V1.md"
+COMPLETION_SOURCE_Q3 = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.json"
+COMPLETION_SOURCE_Q3_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.md"
 LEDGERS = v1.LEDGERS
 CREATED = "2026-08-15"
 BASE_COMMIT = "229fd0f2147e8ed611c5147328459f7678b1f605"
@@ -434,6 +440,12 @@ def build_dataset() -> dict[str, Any]:
             "completion_diff_auxiliary_v2_report": site_link(rel(COMPLETION_DIFF_AUXILIARY_V2_REPORT)),
             "completion_source_q2": site_link(rel(COMPLETION_SOURCE_Q2)),
             "completion_source_q2_report": site_link(rel(COMPLETION_SOURCE_Q2_REPORT)),
+            "completion_classical_quartic": site_link(rel(COMPLETION_CLASSICAL_QUARTIC)),
+            "completion_classical_quartic_report": site_link(rel(COMPLETION_CLASSICAL_QUARTIC_REPORT)),
+            "completion_shifted_mass_q3": site_link(rel(COMPLETION_SHIFTED_MASS_Q3)),
+            "completion_shifted_mass_q3_report": site_link(rel(COMPLETION_SHIFTED_MASS_Q3_REPORT)),
+            "completion_source_q3": site_link(rel(COMPLETION_SOURCE_Q3)),
+            "completion_source_q3_report": site_link(rel(COMPLETION_SOURCE_Q3_REPORT)),
         },
     }
     dataset["canonical_digest"] = canonical_digest(dataset)
@@ -483,7 +495,7 @@ eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
-Atlas V32 preserves the field-equation type result.  The degree-one-to-zero
+Atlas V33 preserves the field-equation type result.  The degree-one-to-zero
 Green component is an exact right inverse on Noether-compatible sources and a
 left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
 the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
@@ -537,8 +549,12 @@ certified `T(c_star)=-c_star` translation in append-only V2 removes all 336.
 The accepted common q2 snapshot now binds 22 minimal operations with 2,064
 auxiliary coefficients, extends by zero over the receiver-added split cone,
 and transports canonically to graph coordinates.  Its q1/q2, cyclicity and
-stationary D/q2 defect counts are all zero.  Gate V14 therefore accepts one q2
-hash, while remaining fail closed because auxiliary q3, six other hashes and
+stationary D/q2 defect counts are all zero.  The exact auxiliary quartic mass
+then supplies 321 independent monomials, 912 ordered fourth variations and
+5,952 paired q3 coefficients.  Together with minimal Bach q3 these exhaust the
+two source families; arity three, cyclicity modulo horizontal boundary and
+stationary D/q3 have zero split/graph defects.  Gate V15 retains the accepted
+q2 hash and closes M2, while remaining fail closed because six other hashes and
 the final common cyclic contraction remain open.
 The complete Berger q3 remains a different-theory Weyl-plus-clock result on a fixed
 54-row carrier; no certified same-theory cyclic map authorizes its direct import.
@@ -557,8 +573,8 @@ overclaim guards. The full q1 is now a content-addressed unary snapshot:
 18 operator tables, 127 jet tables and 2,193 rational coefficients on all
 386 rows, with exact nilpotency and zero suspended-cyclicity defects. Local
 The unary SDR, canonical shear and represented Green actions are serialized.
-What remains open at the nonlinear frontier is auxiliary q3, q2/Green
-compatibility, the complete Gate-A freeze, Hadamard and QME.
+What remains open at the nonlinear frontier is q2/q3 Green compatibility,
+the complete Gate-A freeze, Hadamard and QME.
 
 The new reconstruction import supplies the first explicit weak-arithmetic
 finite-approximant theorem for a declared bounded wave observable. Its rational
@@ -881,9 +897,12 @@ def generated() -> dict[Path, bytes]:
         COMPLETION_SHIFTED_MASS_Q2_REPORT,
         COMPLETION_DIFF_AUXILIARY_V2_REPORT,
         COMPLETION_SOURCE_Q2_REPORT,
+        COMPLETION_CLASSICAL_QUARTIC_REPORT,
+        COMPLETION_SHIFTED_MASS_Q3_REPORT,
+        COMPLETION_SOURCE_Q3_REPORT,
     ]
     bundled_sources = sorted(set([CUBE, *PREVIOUS_CUBES, FULL_SURFACE_AUDIT, CORNER_BORN_INTERFACE, GROUND_STATE_DYNAMICS_INTERFACE, BT_EUCLIDEAN_IMPORT, GR_CASSINI_RESULT, GR_CASSINI_SCHEMA, MANNHEIM_NGC3198_RESULT, MANNHEIM_NGC3198_SCHEMA, MANNHEIM_NGC3198_PARAMETERS, MANNHEIM_NGC3198_SPARC, MANNHEIM_NGC3198_CPP, NGC3198_COMMON_FIT_RESULT, NGC3198_COMMON_FIT_SCHEMA, NGC3198_COMMON_FIT_PROTOCOL, NGC3198_COMMON_FIT_CPP, AUDIT, LADDER, COMPLETION_ATLAS, COMPLETION_REPORT, COMPLETION_GATE, COMPLETION_GATE_REPORT, COMPLETION_SDR, COMPLETION_SDR_REPORT, COMPLETION_CYCLIC, COMPLETION_CYCLIC_REPORT, COMPLETION_TRANSPORT, COMPLETION_TRANSPORT_REPORT, COMPLETION_ENDPOINT, COMPLETION_ENDPOINT_REPORT, COMPLETION_SUSPENSION, COMPLETION_SUSPENSION_REPORT, COMPLETION_COMPONENT_PAIRING, COMPLETION_COMPONENT_PAIRING_REPORT, COMPLETION_OPERATOR_PORTABILITY, COMPLETION_OPERATOR_PORTABILITY_REPORT, COMPLETION_Q1_SIGN_GATE, COMPLETION_Q1_SIGN_GATE_REPORT, COMPLETION_Q1_SIGN_REPAIR, COMPLETION_Q1_SIGN_REPAIR_REPORT, COMPLETION_FULL_Q1, COMPLETION_FULL_Q1_REPORT, COMPLETION_LOCAL_SDR, COMPLETION_LOCAL_SDR_REPORT, COMPLETION_CANONICAL_SHEAR, COMPLETION_CANONICAL_SHEAR_REPORT, COMPLETION_GREEN_ACTION_NAME, COMPLETION_GREEN_ACTION_NAME_REPORT, COMPLETION_UNARY_CAUSAL_SNAPSHOT, COMPLETION_UNARY_CAUSAL_SNAPSHOT_REPORT, COMPLETION_FULL_D, COMPLETION_FULL_D_REPORT, COMPLETION_Q2_PREFLIGHT, COMPLETION_Q2_PREFLIGHT_REPORT, COMPLETION_Q2_GREEN, COMPLETION_Q2_GREEN_REPORT, COMPLETION_RECURSIVE_TREES, COMPLETION_RECURSIVE_TREES_REPORT, COMPLETION_FORMAL_COEFFICIENTS, COMPLETION_FORMAL_COEFFICIENTS_REPORT, COMPLETION_FIELD_EQUATION_QUOTIENT_INVERSE, COMPLETION_FIELD_EQUATION_QUOTIENT_INVERSE_REPORT, COMPLETION_QUADRATIC_OBSTRUCTION, COMPLETION_QUADRATIC_OBSTRUCTION_REPORT, COMPLETION_Q3_WITNESS, COMPLETION_Q3_WITNESS_REPORT, COMPLETION_MINIMAL_Q3, COMPLETION_MINIMAL_Q3_REPORT, COMPLETION_ARITY3, COMPLETION_ARITY3_REPORT, COMPLETION_Q3_CYCLICITY, COMPLETION_Q3_CYCLICITY_REPORT, COMPLETION_CUBIC_INVENTORY, COMPLETION_CUBIC_INVENTORY_REPORT, COMPLETION_HH_HV_LIFT, COMPLETION_HH_HV_LIFT_REPORT, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
-    bundled_sources = sorted(set([*bundled_sources, COMPLETION_DIFF_AUXILIARY, COMPLETION_DIFF_AUXILIARY_REPORT, COMPLETION_GHOST_MANIFEST, COMPLETION_GHOST_MANIFEST_REPORT, *completion_evidence_paths]))
+    bundled_sources = sorted(set([*bundled_sources, COMPLETION_DIFF_AUXILIARY, COMPLETION_DIFF_AUXILIARY_REPORT, COMPLETION_GHOST_MANIFEST, COMPLETION_GHOST_MANIFEST_REPORT, COMPLETION_CLASSICAL_QUARTIC, COMPLETION_CLASSICAL_QUARTIC_REPORT, COMPLETION_SHIFTED_MASS_Q3, COMPLETION_SHIFTED_MASS_Q3_REPORT, COMPLETION_SOURCE_Q3, COMPLETION_SOURCE_Q3_REPORT, *completion_evidence_paths]))
     for source in bundled_sources:
         outputs[SITE / "sources" / source.relative_to(ROOT)] = source.read_bytes()
     input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", FOUNDATIONS / "theory_assembly.py", FOUNDATIONS / "build_gr_cassini_assembly.py", FOUNDATIONS / "check_gr_cassini_assembly.py", FOUNDATIONS / "verify_gr_cassini_assembly.py", FOUNDATIONS / "build_mannheim_ngc3198_assembly.py", FOUNDATIONS / "check_mannheim_ngc3198_assembly.py", FOUNDATIONS / "verify_mannheim_ngc3198_assembly.py", FOUNDATIONS / "build_ngc3198_common_fit_comparison.py", FOUNDATIONS / "check_ngc3198_common_fit_comparison.py", FOUNDATIONS / "verify_ngc3198_common_fit_comparison.py", FOUNDATIONS / "standard-gr-observational-control-v1.json", FOUNDATIONS / "schema/standard-gr-observational-control-v1.schema.json", *bundled_sources, ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js", V2_ASSETS / "styles-v2.css"]))
@@ -915,7 +934,7 @@ def generated() -> dict[Path, bytes]:
         "human_report": "foundations/reports/matrix-explorer-site-v2.md",
     }
     result["features"] = [item for item in result["features"] if not item.startswith("Gate V11 reconciliation")]
-    result["features"].append("Gate V14 reconciliation with one accepted common source-q2 hash and an explicit auxiliary-q3 firewall")
+    result["features"].append("Gate V15 reconciliation with linked common source-q2/q3 snapshots and six remaining freeze hashes")
     result["features"].append("exact 386-row candidate q3 stabilization with 16 ternary block channels and strict authority firewall")
     result["features"].append("exact source-versus-candidate auxiliary cubic witness refuting literal and linear-shear theory identity")
     result["features"].append("exact first nonlinear auxiliary-elimination component closing the f-hat-v-v channel with full BV pullback still open")
@@ -924,6 +943,17 @@ def generated() -> dict[Path, bytes]:
     result["features"].append("three exact auxiliary Diff BV lifts with 264 master-density, 336 field, 632 antifield and 704 c-star coefficients")
     result["features"].append("append-only canonical c-star V2 repair reducing 336 exact q1/q2 defects to zero")
     result["features"].append("accepted 386-row common source-q2 snapshot with 22 minimal operations, 2064 auxiliary coefficients, and zero q1/q2, cyclicity, and D/q2 defects")
+    result["features"].append("authoritative common source-q3 snapshot with two exhaustive families, 5952 auxiliary coefficients, and zero arity-three, cyclicity, and D/q3 defects")
+    result["does_not_establish"] = [
+        item for item in result["does_not_establish"]
+        if "metric-dependent auxiliary q3" not in item
+        and "386-row cyclic q3 stabilization" not in item
+        and "complete twenty-export, seven-hash classical Gate A from the one accepted q2 hash" not in item
+    ]
+    result["does_not_establish"].extend([
+        "the complete twenty-export, seven-hash classical Gate A from the linked source-q2/q3 snapshots",
+        "q2/q3 compatibility with an advanced or retarded Green homotopy",
+    ])
     result["does_not_establish"].extend([
         "that the exact stabilized-q3 candidate is the authoritative nonminimal pure-Weyl BV interaction",
         "general lambda-squared causal source closure from the candidate q3 stabilization",
@@ -938,6 +968,10 @@ def generated() -> dict[Path, bytes]:
     result["claim_flags"]["strict_386_candidate_arity_three_identity_exposed"] = True
     result["claim_flags"]["strict_386_candidate_q3_cyclicity_exposed"] = True
     result["claim_flags"]["strict_386_candidate_D_q3_derivation_exposed"] = True
+    result["claim_flags"]["strict_386_authoritative_full_q3_imported"] = True
+    result["claim_flags"]["strict_386_full_arity_three_identity_exposed"] = True
+    result["claim_flags"]["strict_386_full_q3_cyclicity_exposed"] = True
+    result["claim_flags"]["strict_386_full_D_q3_derivation_exposed"] = True
     result["claim_flags"]["strict_386_literal_trivial_stabilization_identity_refuted"] = True
     result["claim_flags"]["strict_386_linear_shear_theory_identity_refuted"] = True
     result["claim_flags"]["strict_386_candidate_internal_identities_preserved"] = True
@@ -947,7 +981,7 @@ def generated() -> dict[Path, bytes]:
     result["claim_flags"]["strict_386_q3_stabilized"] = False
     result["claim_flags"]["strict_386_authoritative_nonminimal_equivalence_exposed"] = False
     result["claim_flags"]["strict_386_candidate_causal_lambda2_source_closure_exposed"] = False
-    result["claim_flags"]["strict_authoritative_q3_imported"] = False
+    result["claim_flags"]["strict_authoritative_q3_imported"] = True
     result["claim_flags"]["strict_full_weyl_lambda2_source_closure_exposed"] = False
     result["claim_flags"]["strict_pure_weyl_q3_witness_cancellation_exposed"] = True
     result["claim_flags"]["strict_lambda2_witness_full_source_closure_exposed"] = True
@@ -972,7 +1006,7 @@ def generated() -> dict[Path, bytes]:
     result["claim_flags"]["strict_authoritative_full_carrier_q2_exposed"] = True
     result["claim_flags"]["strict_full_carrier_q2_exposed"] = True
     result["claim_flags"]["strict_386_full_source_q2_pullback_replayed"] = True
-    result["claim_flags"]["strict_386_full_source_q3_pullback_replayed"] = False
+    result["claim_flags"]["strict_386_full_source_q3_pullback_replayed"] = True
     outputs[RESULT] = (json.dumps(result, indent=2) + "\n").encode()
     outputs[REPORT] = render_report(result).encode()
     outputs[VIABILITY_RESULT] = viability_json

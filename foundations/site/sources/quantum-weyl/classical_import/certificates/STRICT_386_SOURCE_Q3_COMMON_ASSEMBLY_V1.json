@@ -1,0 +1,637 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "strict-386-source-q3-common-assembly-v1",
+  "result_id": "STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1",
+  "result_kind": "AUTHORITATIVE_SHIFTED_SOURCE_Q3_COMMON_SNAPSHOT_AND_ARITY_THREE_TAYLOR_CERTIFICATE",
+  "result_state": "FULL_SOURCE_Q3_ASSEMBLED_ARITY_THREE_AND_CYCLICITY_ZERO_GATE_FREEZE_STILL_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-16",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": {
+    "theory": "strict pure-Weyl ordinary-derivative generalized-auxiliary BV theory",
+    "background": "unit ultrastatic conformal cylinder",
+    "carrier_rows": 386,
+    "source_rows": 66,
+    "receiver_added_split_cone_rows": 320,
+    "coefficient_field": "Q plus smooth natural local operator semantics",
+    "arity": 3
+  },
+  "family_census": {
+    "minimal_q3_families": 1,
+    "auxiliary_q3_families": 1,
+    "total_source_q3_families": 2,
+    "families": [
+      {
+        "family_id": "MINIMAL_BACH_H_H_H_TO_H_STAR",
+        "authority": "STRICT_PURE_WEYL_MINIMAL_BV_Q3_IMPORT_V1",
+        "input_jet_order": 4,
+        "serialization": "natural-operator AST"
+      },
+      {
+        "family_id": "SHIFTED_MASS_H_H_F_HAT_F_HAT",
+        "authority": "STRICT_386_SHIFTED_MASS_BV_Q3_LIFT_V1",
+        "input_jet_order": 0,
+        "serialization": "exact component ledger"
+      }
+    ],
+    "additional_quartic_ghost_antifield_families": 0,
+    "reason": "In shifted variables the only auxiliary BRST nonlinearity is the bilinear Diff representation; internal Weyl/boost rows are unary or zero. The exact action modulo d is minimal plus the metric-dependent quadratic f_hat mass. Therefore its fourth Taylor coefficient has exactly the two displayed families.",
+    "source_q3_family_census_exhaustive": true,
+    "higher_q4_and_above_excluded_from_claim": true
+  },
+  "source_q3_snapshot": {
+    "coordinate_presentation": "SHIFTED_SPLIT_SOURCE_COORDINATES",
+    "carrier_rows": 386,
+    "source_theory_rows": 66,
+    "receiver_added_split_cone_rows_extended_by_zero": 320,
+    "minimal_natural_operator_components": 1,
+    "auxiliary_ordered_component_coefficients": 5952,
+    "auxiliary_component_collisions": 0,
+    "minimal_q3_import_sha256": "3c1f0bf9cab39f765a6f8d3a10f20e9f9bc3d32779197431d6d2180c8d240837",
+    "auxiliary_component_ledger_sha256": "ba68ffe732d8201cfe4a598543ff7cd73c4423c7235711192162df873a712919",
+    "family_census_sha256": "f174da78fc15ee2df3136b3e3004f12879aea6194cd02849020a42ac81fa993a",
+    "accepted_q2_snapshot_sha256": "0f1e23a5653db0666cbd02dea49f8961927d03ff4c72ed402fd24ba8f2ba4800",
+    "source_q3_complete_at_arity_three": true,
+    "sha256": "2c2032011400463419fb7427f38746e6fa14d0fe0cbfe754e9b0023de5387f8a"
+  },
+  "arity_three_replay": {
+    "identity": "q1 q3 + q3 q1 + sum_(2,1)-unshuffles q2(q2(.,.),.) = 0",
+    "proof_kind": "EXHAUSTIVE_SOURCE_TAYLOR_FAMILY_PARTITION_AND_DIFFERENTIATED_CLASSICAL_MASTER_EQUATION",
+    "minimal_sector": {
+      "typed_channels": 72,
+      "composable_paths": 212,
+      "exact_receiver_defects": 0,
+      "authority": "STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1"
+    },
+    "auxiliary_Diff_sector": {
+      "status": "CERTIFIED_BY_NATURALITY_OF_THE_WEIGHT_ONE_SCALAR_DENSITY_AND_COTANGENT_LIFT",
+      "statement": "The shifted mass density and its variational derivatives commute with pullback; differentiating the Diff master identity supplies all mixed c/h/f_hat arity-three channels.",
+      "defects": 0
+    },
+    "auxiliary_Weyl_sector": {
+      "status": "CERTIFIED_BY_EXACT_COMPONENT_WARD_RECURSION",
+      "pure_trace_checks": 55,
+      "mixed_recursion_checks": 550,
+      "defects": 0
+    },
+    "auxiliary_boost_sector": {
+      "status": "ZERO_BY_SHIFTED_FIELD_INVARIANCE",
+      "f_hat_boost_invariant": true,
+      "additional_internal_ghost_families": 0,
+      "defects": 0
+    },
+    "common_snapshot_family_coverage": 2,
+    "unclassified_arity_three_families": 0,
+    "split_386_arity_three_defects": 0,
+    "graph_386_arity_three_defects": 0,
+    "graph_reason": "exact conjugation by the certified BV-canonical shear transports the Taylor identity"
+  },
+  "q3_cyclicity_replay": {
+    "minimal_q3_status": "PASS_MOD_HORIZONTAL_BOUNDARY",
+    "minimal_q3_defects_mod_d": "0",
+    "auxiliary_q3_equalities_checked": 40000,
+    "auxiliary_q3_pointwise_defects": 0,
+    "orthogonal_family_cross_pairings": 0,
+    "split_386_q3_cyclicity_defects_mod_d": 0,
+    "graph_386_q3_cyclicity_defects_mod_d": 0,
+    "graph_reason": "the shear is exactly BV-canonical"
+  },
+  "D_q3_replay": {
+    "background": "unit stationary ultrastatic conformal cylinder",
+    "D_generator": "Lie_partial_t",
+    "minimal_natural_q3_families": 1,
+    "auxiliary_zero_jet_q3_families": 1,
+    "stationary_coefficient_defects": 0,
+    "split_D_q3_derivation_defects": 0,
+    "graph_D_q3_derivation_defects": 0,
+    "proof_rule": "Lie_partial_t commutes with the natural minimal q3 and the stationary algebraic auxiliary tensor; canonical shear conjugation transports the derivation identity."
+  },
+  "graph_transport": {
+    "source_block_quadruples": 7,
+    "source_block_quadruple_ledger": [
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "input_blocks": [
+          "AUX_F_HAT",
+          "ENDPOINT_M",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "AUX_F_HAT",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "ENDPOINT_M",
+          "AUX_F_HAT"
+        ]
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "AUX_F_HAT",
+          "AUX_F_HAT",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "AUX_F_HAT",
+          "ENDPOINT_M",
+          "AUX_F_HAT"
+        ]
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "AUX_F_HAT",
+          "AUX_F_HAT"
+        ]
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "ENDPOINT_M",
+          "ENDPOINT_M"
+        ]
+      }
+    ],
+    "graph_block_quadruples": 40,
+    "graph_block_quadruple_ledger": [
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "input_blocks": [
+          "AUX_F_HAT",
+          "CONE_X_EQ_SHARP",
+          "CONE_X_EQ_SHARP"
+        ]
+      },
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "input_blocks": [
+          "AUX_F_HAT",
+          "CONE_X_EQ_SHARP",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "input_blocks": [
+          "AUX_F_HAT",
+          "ENDPOINT_M",
+          "CONE_X_EQ_SHARP"
+        ]
+      },
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "input_blocks": [
+          "AUX_F_HAT",
+          "ENDPOINT_M",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "input_blocks": [
+          "CONE_X_EQ_SHARP",
+          "AUX_F_HAT",
+          "CONE_X_EQ_SHARP"
+        ]
+      },
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "input_blocks": [
+          "CONE_X_EQ_SHARP",
+          "AUX_F_HAT",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "input_blocks": [
+          "CONE_X_EQ_SHARP",
+          "CONE_X_EQ_SHARP",
+          "AUX_F_HAT"
+        ]
+      },
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "input_blocks": [
+          "CONE_X_EQ_SHARP",
+          "ENDPOINT_M",
+          "AUX_F_HAT"
+        ]
+      },
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "AUX_F_HAT",
+          "CONE_X_EQ_SHARP"
+        ]
+      },
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "AUX_F_HAT",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "CONE_X_EQ_SHARP",
+          "AUX_F_HAT"
+        ]
+      },
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "ENDPOINT_M",
+          "AUX_F_HAT"
+        ]
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "input_blocks": [
+          "AUX_F_HAT",
+          "AUX_F_HAT",
+          "CONE_X_EQ_SHARP"
+        ]
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "input_blocks": [
+          "AUX_F_HAT",
+          "AUX_F_HAT",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "input_blocks": [
+          "AUX_F_HAT",
+          "CONE_X_EQ_SHARP",
+          "AUX_F_HAT"
+        ]
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "input_blocks": [
+          "AUX_F_HAT",
+          "ENDPOINT_M",
+          "AUX_F_HAT"
+        ]
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "input_blocks": [
+          "CONE_X_EQ_SHARP",
+          "AUX_F_HAT",
+          "AUX_F_HAT"
+        ]
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "input_blocks": [
+          "CONE_X_EQ_SHARP",
+          "CONE_X_EQ_SHARP",
+          "CONE_X_EQ_SHARP"
+        ]
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "input_blocks": [
+          "CONE_X_EQ_SHARP",
+          "CONE_X_EQ_SHARP",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "input_blocks": [
+          "CONE_X_EQ_SHARP",
+          "ENDPOINT_M",
+          "CONE_X_EQ_SHARP"
+        ]
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "input_blocks": [
+          "CONE_X_EQ_SHARP",
+          "ENDPOINT_M",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "AUX_F_HAT",
+          "AUX_F_HAT"
+        ]
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "CONE_X_EQ_SHARP",
+          "CONE_X_EQ_SHARP"
+        ]
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "CONE_X_EQ_SHARP",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "ENDPOINT_M",
+          "CONE_X_EQ_SHARP"
+        ]
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "ENDPOINT_M",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "AUX_F_HAT",
+          "AUX_F_HAT",
+          "CONE_X_EQ_SHARP"
+        ]
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "AUX_F_HAT",
+          "AUX_F_HAT",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "AUX_F_HAT",
+          "CONE_X_EQ_SHARP",
+          "AUX_F_HAT"
+        ]
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "AUX_F_HAT",
+          "ENDPOINT_M",
+          "AUX_F_HAT"
+        ]
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "CONE_X_EQ_SHARP",
+          "AUX_F_HAT",
+          "AUX_F_HAT"
+        ]
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "CONE_X_EQ_SHARP",
+          "CONE_X_EQ_SHARP",
+          "CONE_X_EQ_SHARP"
+        ]
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "CONE_X_EQ_SHARP",
+          "CONE_X_EQ_SHARP",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "CONE_X_EQ_SHARP",
+          "ENDPOINT_M",
+          "CONE_X_EQ_SHARP"
+        ]
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "CONE_X_EQ_SHARP",
+          "ENDPOINT_M",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "AUX_F_HAT",
+          "AUX_F_HAT"
+        ]
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "CONE_X_EQ_SHARP",
+          "CONE_X_EQ_SHARP"
+        ]
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "CONE_X_EQ_SHARP",
+          "ENDPOINT_M"
+        ]
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "ENDPOINT_M",
+          "CONE_X_EQ_SHARP"
+        ]
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "input_blocks": [
+          "ENDPOINT_M",
+          "ENDPOINT_M",
+          "ENDPOINT_M"
+        ]
+      }
+    ],
+    "active_graph_input_blocks": [
+      "AUX_F_HAT",
+      "CONE_X_EQ_SHARP",
+      "ENDPOINT_M"
+    ],
+    "active_graph_output_blocks": [
+      "AUX_F_HAT_STAR",
+      "CONE_X_EQ",
+      "ENDPOINT_E"
+    ],
+    "active_graph_input_row_envelope": 60,
+    "active_graph_output_row_envelope": 60,
+    "transport_formula": "q3_graph(x,y,z)=S q3_shifted_split(S^-1 x,S^-1 y,S^-1 z)",
+    "flattened_graph_tensor_exported": false,
+    "exact_compositional_DAG_exported": true
+  },
+  "gate_boundary": {
+    "authoritative_source_q2_and_q3_common_bytes": true,
+    "full_arity_three_identity": true,
+    "full_q3_cyclicity_mod_d": true,
+    "classical_import_gate_a": "FAIL_CLOSED",
+    "reason": "The q3 blocker is closed, but Gate A still requires the remaining six top-level hashes and the final common cyclic-contraction freeze checks."
+  },
+  "foundational_strength": {
+    "finite_exact_component_layer": true,
+    "smooth_natural_operator_layer": true,
+    "support_local": true,
+    "choice_principle_used": false,
+    "infinite_sum_used": false,
+    "Hilbert_completion_used": false,
+    "Green_operator_used": false,
+    "weakest_complete_foundational_base": "finite exact ledgers plus smooth local variational and natural-operator calculus modulo horizontal boundary"
+  },
+  "claim_flags": {
+    "FULL_SHIFTED_SOURCE_Q3_COMMON_UNION_ASSEMBLED": true,
+    "FULL_386_GRAPH_Q3_COMPOSITIONAL_DAG_ASSEMBLED": true,
+    "FULL_386_ARITY_THREE_IDENTITY_REPLAYED": true,
+    "FULL_386_Q3_CYCLICITY_REPLAYED_MOD_D": true,
+    "FULL_386_D_Q3_DERIVATION_REPLAYED": true,
+    "FULL_SOURCE_Q3_ASSEMBLED": true,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "LORENTZIAN_GREEN_Q3_COMPATIBILITY_CERTIFIED": false,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "QME_RESTORED": false
+  },
+  "does_not_establish": [
+    "a flattened graph-coordinate 386^4 q3 tensor; the exact graph object is a compositional DAG",
+    "pointwise minimal-sector cyclicity rather than cyclicity of integrated local functionals modulo horizontal boundary",
+    "q2/q3 compatibility with advanced or retarded Green homotopies or lambda-squared causal source closure",
+    "the six remaining top-level Gate-A hashes or final common cyclic contraction",
+    "Hadamard data, renormalized Lorentzian products, QME restoration, residual transfer, positivity, particles, or unitarity"
+  ],
+  "canonical_hashes": {
+    "family_census_sha256": "f174da78fc15ee2df3136b3e3004f12879aea6194cd02849020a42ac81fa993a",
+    "source_q3_snapshot_sha256": "3408f0a5d80c3b39b1a3becaad4a23cfe9ab32afad4c7f3e58a48d8f32f1ac02",
+    "arity_three_replay_sha256": "bca6d09e07f9ea81a312658ba32e129ae3c2f58a6e2ade8dcb5c71b6d99aecb2",
+    "q3_cyclicity_replay_sha256": "1c33b275a9635ba45121adece06cf301a38ceb300cef1f1802cc306b3c4747e3",
+    "D_q3_replay_sha256": "a2e9675ec43ae6b986528e79888ee0afde7ccd8c411fbec6b5aab1c305be7726",
+    "graph_transport_sha256": "a1057f818fe27efbee6d562573c48758ddf95e95321351d71f85afe2730dbf91",
+    "gate_boundary_sha256": "90651f3d24c7ddb8504565990e7cc0baf661faa65396928ba89fc165b12c4546",
+    "foundational_strength_sha256": "93d47d069dee218aab2d66a5caa555955c3600a1e4795d5341ebb87c5ca720bf"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1.json",
+        "result_id": "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1",
+        "sha256": "9b0e9da9e8838a0ade6e1f1214e16457e9a94af981d9d020c137d105f9e9c21e",
+        "role": "same-carrier unary source table"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+        "result_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+        "sha256": "3b9d8a2fc5a70d20770452eb0a2a4891f59314c21c83188bfb59de0941cac4b2",
+        "role": "fixed basis and canonical odd pairing"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1.json",
+        "result_id": "STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1",
+        "sha256": "5f9240a362ce8568f0ac502e25978a4675f9744cc750dee5b1378828033eb301",
+        "role": "exact BV-canonical graph transport"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1.json",
+        "result_id": "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1",
+        "sha256": "2a93236ba5ae929bde285339286fbc24ceb98415b6b1750b90b546f921f658ed",
+        "role": "accepted common source q2 snapshot"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_PURE_WEYL_MINIMAL_BV_Q3_IMPORT_V1.json",
+        "result_id": "STRICT_PURE_WEYL_MINIMAL_BV_Q3_IMPORT_V1",
+        "sha256": "358268300bc11670e24a0dd849b82f482f63f23efa33fcb4a47d11dd5bde7afb",
+        "role": "authoritative arbitrary-input minimal q3"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1.json",
+        "result_id": "STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1",
+        "sha256": "ec51e447914516164b0caa51cbecbf12f1a4b2c8b7ecfbd1303f56d17cc095b5",
+        "role": "exhaustive minimal arity-three identity"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_Q3_CYCLICITY_V1.json",
+        "result_id": "STRICT_MINIMAL_BV_Q3_CYCLICITY_V1",
+        "sha256": "61af401f4f5664164d93e8e945790708131c7e41d5ec2db9bb9dfad0c9406793",
+        "role": "minimal quartic cyclicity modulo horizontal boundary"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_SHIFTED_MASS_BV_Q3_LIFT_V1.json",
+        "result_id": "STRICT_386_SHIFTED_MASS_BV_Q3_LIFT_V1",
+        "sha256": "a826f8b3eb9598855aa33ff32b256e2adc4124e37b9f94b7469780a9e40d9901",
+        "role": "exact paired auxiliary q3 component ledger"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_SHIFTED_AUXILIARY_QUARTIC_MASS_V1.json",
+        "result_id": "CLASSICAL_SHIFTED_AUXILIARY_QUARTIC_MASS_V1",
+        "sha256": "eb47c67ea3aabc068003d1ee1be53030bccfbe69969179f88a0b6f5a4016a862",
+        "role": "independently replayed classical fourth variation and Weyl recursion"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1.json",
+        "result_id": "CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1",
+        "sha256": "b4cea7dc000aea74e4fb466d9b98da1786df8c03b4a1ebb614d5e8c275a295ba",
+        "role": "exhaustive shifted internal ghost-family manifest"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_presymplectic_potentials.json",
+        "result_id": "pure-weyl-curved-presymplectic-potential-status-v1",
+        "sha256": "46a2eb6f9882bc6960aaf27175fbec553dac0352b19f58e9cf1a6f31eb36da78",
+        "role": "exact shifted action decomposition modulo horizontal boundary"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_D_ACTION_V1.json",
+        "result_id": "STRICT_386_FULL_D_ACTION_V1",
+        "sha256": "c83c53250e3c8b8bc913f902a8cd4a4aff1a918c88b42167e9076e4aa96dc148",
+        "role": "stationary cylinder derivation"
+      }
+    ]
+  },
+  "schema_path": "quantum-weyl/classical_import/schema/strict-386-source-q3-common-assembly-v1.schema.json",
+  "independent_checker": "quantum-weyl/classical_import/check_strict_386_source_q3_common_assembly.py",
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.md",
+  "next_gate": "Reconcile the new q3 snapshot hash into Gate V15, then assemble the remaining six freeze hashes and final cyclic contraction before composing q2/q3 with a viable causal Green homotopy."
+}

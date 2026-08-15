@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-classical-import-gate-v15-reconciliation-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "lifecycle", "dependency_tags", "export_reconciliation", "freeze_check_reconciliation", "required_hash_disposition", "minimal_missing_bundle", "gate_disposition", "m2_source_q2_assembly_resolution", "m2_source_q3_assembly_resolution", "claim_flags", "does_not_establish", "provenance", "human_report", "next_gate", "independent_checker"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-classical-import-gate-v15-reconciliation-v1"},
+    "result_id": {"const": "CLASSICAL_IMPORT_GATE_V15_RECONCILIATION"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "export_reconciliation": {"type": "array", "minItems": 20, "maxItems": 20},
+    "freeze_check_reconciliation": {"type": "array", "minItems": 10, "maxItems": 10},
+    "minimal_missing_bundle": {"type": "array", "minItems": 5, "maxItems": 5},
+    "m2_source_q3_assembly_resolution": {"type": "object", "required": ["status", "accepted_q2_sha256", "accepted_q3_sha256", "auxiliary_ordered_component_coefficients", "source_q3_family_count", "arity_three_defects", "cyclicity_defects_mod_d", "D_q3_defects", "gate_a_status"], "properties": {"status": {"const": "ACCEPTED_ARITY_THREE_COMMON_SNAPSHOT"}, "auxiliary_ordered_component_coefficients": {"const": 5952}, "source_q3_family_count": {"const": 2}, "arity_three_defects": {"const": 0}, "cyclicity_defects_mod_d": {"const": 0}, "D_q3_defects": {"const": 0}, "gate_a_status": {"const": "FAIL_CLOSED"}}},
+    "gate_disposition": {"type": "object", "required": ["gate_a_status", "accepted_common_snapshot_hashes", "freeze_checks_blocked"], "properties": {"gate_a_status": {"const": "FAIL_CLOSED"}, "accepted_common_snapshot_hashes": {"const": 1}, "freeze_checks_blocked": {"const": 1}}},
+    "claim_flags": {"type": "object", "required": ["STRICT_386_AUTHORITATIVE_FULL_CARRIER_Q3", "STRICT_386_FULL_SOURCE_Q3_PULLBACK_REPLAYED", "STRICT_386_FULL_ARITY_THREE_IDENTITY_REPLAYED", "CLASSICAL_IMPORT_GATE_PASSED", "HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED"]},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_GATE_V15.md"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,1252 @@
+{
+  "schema": "quantum-weyl-classical-import-gate-v15-reconciliation-v1",
+  "result_id": "CLASSICAL_IMPORT_GATE_V15_RECONCILIATION",
+  "result_state": "SOURCE_Q2_Q3_ACCEPTED_ARITY_THREE_ZERO_SIX_HASHES_AND_FINAL_FREEZE_OPEN_GATE_FAIL_CLOSED",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-16",
+  "repository_base_commit": "95decea291a6a12c7f0cdab017d4bcd0da9aaf92",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "Does the authoritative common source q3 assembly close Gate A?",
+  "answer": "It closes the nonlinear M2 source-operation obligation, not Gate A. The accepted q2 snapshot is now linked to a complete q3 snapshot containing the minimal Bach natural operator and 5,952 exact auxiliary coefficients. The complete arity-three identity, q3 cyclicity modulo horizontal boundary, and stationary D/q3 derivation have zero defects in split and graph coordinates. Six top-level hashes and the final common cyclic contraction remain open, so Gate A stays fail closed.",
+  "supersedes_for_current_status": "CLASSICAL_IMPORT_GATE_V14_RECONCILIATION",
+  "historical_certificate_preserved": true,
+  "standalone_history_replay": {
+    "status": "VERIFIED_BY_EXACT_CONTENT",
+    "historical_commits": [
+      "a3fc926cc289e5a545933a43331e395328580e0e",
+      "318589ffae21fb1ae1abfd046b2f367b05c52bab",
+      "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca"
+    ],
+    "proof_strategy": "Resolve each historical path against the filtered standalone Git history and accept only a blob whose SHA-256 equals the immutable certificate pin.",
+    "historical_identifiers_preserved": true,
+    "historical_paths_preserved": true,
+    "verifier_sources": [
+      {
+        "path": "ci/standalone_provenance.py",
+        "sha256": "e19fa7a838c756cc58cf6fbcf52181a6a22bb1b16911a50367d993fbfa281e05"
+      },
+      {
+        "path": "reports/standalone-history-crosswalk.json",
+        "sha256": "a3c63b4c4b1801972114e89100fff9937eaf6c2feaf7e653fd01fca8dde206cd"
+      },
+      {
+        "path": "quantum-weyl/classical_import/verify_snapshot.py",
+        "sha256": "a7e2caf68092cca68905b7625c589b864afd9834199d2ae0937f0c1e5635bfc3"
+      },
+      {
+        "path": "quantum-weyl/classical_import/verify_antifield_export.py",
+        "sha256": "173e4ea7f5662289553f83205a8bbfb9b63bb13943c8e8d7c72a060c8c627c85"
+      },
+      {
+        "path": "quantum-weyl/classical_import/verify_antifield_export_v2.py",
+        "sha256": "52bb19e111aedff2c6053ae02adfb22f1415b4214cef6b4f5a4c38f551d94947"
+      },
+      {
+        "path": "quantum-weyl/classical_import/verify_support_local_q2_export.py",
+        "sha256": "cb83dfaca3aa9e75b569c4611b45fc4b0feebb038528986c0c43b2e8bf0def3d"
+      },
+      {
+        "path": "quantum-weyl/classical_import/analytic_operator_snapshot_attribution.py",
+        "sha256": "a685fdbc95703d032cde345bf8248dea960bcba24ed7c9c7f6b21088377e0aed"
+      }
+    ],
+    "replayed_results": [
+      "CLASSICAL_IMPORT_CERTIFICATE",
+      "ANTIFIELD_EXPORT_V2_EXECUTABLE_CONTRACT",
+      "CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2",
+      "ANALYTIC_OPERATOR_CLASSICAL_SNAPSHOT_ATTESTATION",
+      "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY"
+    ],
+    "boundary": "This repairs standalone provenance lookup only. It neither changes the authenticated bytes nor promotes any Gate-A export, identity, lifecycle state, or quantum claim."
+  },
+  "status_vocabulary": [
+    {
+      "id": "RECEIVER_VERIFIED_SCOPED",
+      "meaning": "The quantum receiver independently replayed a same-theory object or identity, but only in a narrower declared scope than complete Gate A."
+    },
+    {
+      "id": "CERTIFIED_DIFFERENT_THEORY",
+      "meaning": "A complete result exists for Berger or another changed theory and is recorded only as a control; it cannot enter the strict pure-Weyl snapshot."
+    },
+    {
+      "id": "LEGACY_ACCEPTED_SCOPED",
+      "meaning": "The historical bootstrap accepted a portable bounded ledger, but it was never sufficient for the complete freeze by itself."
+    },
+    {
+      "id": "SUPPORTING_EVIDENCE_ONLY",
+      "meaning": "Same-theory certificates establish related structure, names, transport or internal hashes without serializing the exact portable Gate-A payload."
+    },
+    {
+      "id": "MISSING_PORTABLE_OBJECT",
+      "meaning": "No current certificate serializes the exact same-theory object required for independent receiver replay."
+    },
+    {
+      "id": "BLOCKED_MISSING_COMMON_SNAPSHOT",
+      "meaning": "The identity cannot be replayed because its exact maps are absent from one common accepted strict pure-Weyl snapshot."
+    }
+  ],
+  "export_reconciliation": [
+    {
+      "export_id": "field_ghost_antifield_dictionary",
+      "status": "RECEIVER_VERIFIED_SCOPED",
+      "evidence": [
+        "CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2",
+        "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY"
+      ],
+      "established": "Six strict minimal generators and eighteen covariant atoms are imported with exact roles and hashes.",
+      "remaining_for_gate_a": "One common full minimal, nonminimal, auxiliary and residual dictionary at the replacement snapshot commit.",
+      "boundary": "The accepted import is a bounded minimal-BV filtration, not the complete Gate-A carrier."
+    },
+    {
+      "export_id": "field_gradings",
+      "status": "RECEIVER_VERIFIED_SCOPED",
+      "evidence": [
+        "CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2"
+      ],
+      "established": "Ghost, antifield, form, parity, dimension and derivative bounds are enforced on the imported minimal atoms.",
+      "remaining_for_gate_a": "The same grading fields on every generator in the common full carrier.",
+      "boundary": "Scope projection to a bounded window is not an unrestricted local export."
+    },
+    {
+      "export_id": "local_classical_bv_differential_q0",
+      "status": "RECEIVER_VERIFIED_SCOPED",
+      "evidence": [
+        "CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2",
+        "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1"
+      ],
+      "established": "The strict minimal q1 payload and its canonical ghost-antifield sign translation are exact conjugates, so q1 squared remains zero in the pairing-compatible convention.",
+      "remaining_for_gate_a": "Extend the translated convention and q0 to every nonminimal, auxiliary and residual row on the common full Gate-A carrier.",
+      "boundary": "An exact minimal-sector conjugation does not serialize the full nonminimal/residual differential or its common snapshot hash."
+    },
+    {
+      "export_id": "support_local_classical_bv_q2",
+      "status": "RECEIVER_VERIFIED_SCOPED",
+      "evidence": [
+        "STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1",
+        "STRICT_LOCAL_Q1_Q2_IDENTITY_V1",
+        "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
+        "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1",
+        "CLASSICAL_ORDINARY_DERIVATIVE_AUXILIARY_CUBIC_EXPORT_V1",
+        "STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1",
+        "CLASSICAL_QUADRATIC_AUXILIARY_ELIMINATION_MAP_V1",
+        "STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1",
+        "CLASSICAL_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1",
+        "STRICT_386_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1",
+        "CLASSICAL_HH_HV_AUXILIARY_SHIFT_V1",
+        "STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1",
+        "CLASSICAL_DIFF_AUXILIARY_BV_REPRESENTATION_V1",
+        "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1",
+        "CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1",
+        "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2",
+        "STRICT_386_SHIFTED_MASS_BV_Q2_LIFT_V1",
+        "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1",
+        "STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1",
+        "STRICT_386_SHIFTED_MASS_BV_Q3_LIFT_V1",
+        "CLASSICAL_SHIFTED_AUXILIARY_QUARTIC_MASS_V1"
+      ],
+      "established": "The common nonlinear source snapshot now includes complete authoritative q2 and q3, exact graph transport, the full arity-three Taylor identity, q2/q3 cyclicity, and stationary D derivations.",
+      "remaining_for_gate_a": "Reconcile the six unaccepted field/differential/D/residual/pairing/representative hashes and replay the final full cyclic contraction on one frozen manifest.",
+      "boundary": "Local q2/q3 closure does not itself supply the residual payload, common freeze, Green compatibility, Hadamard data, or QME."
+    },
+    {
+      "export_id": "local_D_action_on_bv_generators",
+      "status": "RECEIVER_VERIFIED_SCOPED",
+      "evidence": [
+        "STRICT_386_FULL_D_ACTION_V1"
+      ],
+      "established": "The real cylinder flow T=Lie_partial_t is serialized as 386 exact first-order diagonal entries on all strict graph rows and is formally skew against the complete 410-entry odd pairing.",
+      "remaining_for_gate_a": "Bind the full-carrier strict q2 extension and D/q2 derivation replay to this fourteen-object unary-causal-D snapshot, then include it in the complete twenty-export Gate-A manifest.",
+      "boundary": "A local D action and unary equivariance do not construct q2, a D-Cartan homotopy, a physical D quotient, or an accepted Gate-A top-level hash."
+    },
+    {
+      "export_id": "gauge_fixed_nonminimal_contractions",
+      "status": "RECEIVER_VERIFIED_SCOPED",
+      "evidence": [
+        "GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION"
+      ],
+      "established": "Ten Diff x Weyl nonminimal pointwise doublets and their jet-prolonged contraction are independently checked on the regular Bach locus.",
+      "remaining_for_gate_a": "Bind these rows into the common full Gate-A snapshot and its residual SDR.",
+      "boundary": "The local nonminimal theorem does not provide causal Green data or residual homological projection."
+    },
+    {
+      "export_id": "trace_sector_contraction",
+      "status": "RECEIVER_VERIFIED_SCOPED",
+      "evidence": [
+        "PURE_WEYL_CURVED_DEFORMATION_RETRACT_STATUS_V1",
+        "PURE_WEYL_FULL_PROLONGED_GREEN_HOMOTOPY_ASSEMBLY_V1"
+      ],
+      "established": "Strict trace/Weyl and auxiliary rows have exact local contractions in the declared curved prolonged architecture.",
+      "remaining_for_gate_a": "Serialize the precise trace projector and homotopy in the common Gate-A carrier and replay its compatibility with pi_cl and iota_cl.",
+      "boundary": "Auxiliary and causal endpoint contractions are not the residual SDR maps."
+    },
+    {
+      "export_id": "conformal_killing_zero_modes_15",
+      "status": "SUPPORTING_EVIDENCE_ONLY",
+      "evidence": [
+        "PURE_WEYL_COVARIANT_CKV_RECOVERY_V1"
+      ],
+      "established": "All fifteen conformal generators and their covariant endpoint recovery are certified.",
+      "remaining_for_gate_a": "Portable exact primal and dual zero-mode basis vectors with a canonical ordering and common-snapshot hash.",
+      "boundary": "Dimension, labels and transported action do not serialize the required basis vectors."
+    },
+    {
+      "export_id": "residual_representation_matrices",
+      "status": "SUPPORTING_EVIDENCE_ONLY",
+      "evidence": [
+        "PURE_WEYL_SO42_CAUSAL_TRANSPORT_RECOGNITION_V1"
+      ],
+      "established": "A strict SO(4,2) action on cohomology and exact generator brackets are recognized.",
+      "remaining_for_gate_a": "Explicit exact rho(G_a) matrices on the complete declared residual complex.",
+      "boundary": "A cohomological recognition theorem is not a portable matrix payload."
+    },
+    {
+      "export_id": "so42_structure_constants",
+      "status": "SUPPORTING_EVIDENCE_ONLY",
+      "evidence": [
+        "PURE_WEYL_SO42_CAUSAL_TRANSPORT_RECOGNITION_V1"
+      ],
+      "established": "The proper conformal brackets are exact for all fifteen generators.",
+      "remaining_for_gate_a": "The ordered exact structure-constant tensor serialized independently of implementation code.",
+      "boundary": "Verified bracket relations do not expose the tensor required by the receiver contract."
+    },
+    {
+      "export_id": "classical_inclusion_iota_cl",
+      "status": "RECEIVER_VERIFIED_SCOPED",
+      "evidence": [
+        "STRICT_DFINITE_RESIDUAL_SDR_V1"
+      ],
+      "established": "The exact inclusion is serialized from 470 ordered W+/W- residual coordinates into 4,490 ordered full coordinates over energies two through six.",
+      "remaining_for_gate_a": "Construct the inclusion on the one common full support-local strict carrier, including every required nonminimal and local row.",
+      "boundary": "A D-finite split inclusion is not an arbitrary-support field-theory inclusion and is not noncompact-equivariant as a chosen representative map."
+    },
+    {
+      "export_id": "classical_projection_pi_cl",
+      "status": "RECEIVER_VERIFIED_SCOPED",
+      "evidence": [
+        "STRICT_DFINITE_RESIDUAL_SDR_V1"
+      ],
+      "established": "The exact homological projection is serialized from the same 4,490-coordinate finite carrier onto the ordered 470-coordinate residual carrier.",
+      "remaining_for_gate_a": "Construct pi_cl on the one common full support-local strict carrier and bind it to the common pairing and residual payload.",
+      "boundary": "The certified finite projection cannot be promoted to a continuum or distributional projection."
+    },
+    {
+      "export_id": "classical_homotopy_s_cl",
+      "status": "RECEIVER_VERIFIED_SCOPED",
+      "evidence": [
+        "STRICT_DFINITE_RESIDUAL_SDR_V1"
+      ],
+      "established": "The exact normalized contracting homotopy is serialized on all five finite split blocks and independently replayed.",
+      "remaining_for_gate_a": "Construct s_cl on the one common full support-local strict carrier with the complete nonminimal field domain and shared conventions.",
+      "boundary": "This finite algebraic s_cl is neither an advanced/retarded Green homotopy nor the still-missing support-local full-carrier contraction."
+    },
+    {
+      "export_id": "cyclic_pairing",
+      "status": "RECEIVER_VERIFIED_SCOPED",
+      "evidence": [
+        "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1"
+      ],
+      "established": "The canonical support-local odd cotangent pairing is serialized on all thirty independent components of the six minimal generators, has rank thirty, and makes translated q1/q2 cyclic.",
+      "remaining_for_gate_a": "Extend the pairing and sign convention to every nonminimal, auxiliary and residual common-snapshot row and replay SDR cyclic side conditions.",
+      "boundary": "A nondegenerate cyclic minimal pairing is not the full common-carrier pairing and does not establish cyclicity of the residual SDR."
+    },
+    {
+      "export_id": "taub_moment_map_normalization",
+      "status": "LEGACY_ACCEPTED_SCOPED",
+      "evidence": [
+        "CLASSICAL_IMPORT_CERTIFICATE"
+      ],
+      "established": "The historical receiver accepted the exact D-finite E/A/L normalization ledger.",
+      "remaining_for_gate_a": "Re-pin it in the common replacement snapshot without broadening its D-finite scope.",
+      "boundary": "This bounded normalization never established full Gate A."
+    },
+    {
+      "export_id": "bfv_suspension_convention",
+      "status": "LEGACY_ACCEPTED_SCOPED",
+      "evidence": [
+        "CLASSICAL_IMPORT_CERTIFICATE"
+      ],
+      "established": "The historical receiver accepted the selected closed-cylinder lambda=+1 convention.",
+      "remaining_for_gate_a": "Re-pin the same convention in the common replacement snapshot.",
+      "boundary": "Selection is explicit but uniqueness is not claimed."
+    },
+    {
+      "export_id": "positive_frequency_state_ledger",
+      "status": "LEGACY_ACCEPTED_SCOPED",
+      "evidence": [
+        "CLASSICAL_IMPORT_CERTIFICATE"
+      ],
+      "established": "The historical receiver accepted a D-finite algebraic polarization ledger.",
+      "remaining_for_gate_a": "Keep it typed as a bounded state ledger; no analytic state is required to pass the local classical freeze.",
+      "boundary": "This ledger is neither Hadamard data nor a full off-shell state."
+    },
+    {
+      "export_id": "normalized_weyl_square_representatives",
+      "status": "SUPPORTING_EVIDENCE_ONLY",
+      "evidence": [
+        "PURE_WEYL_COVARIANT_H4_TRANSPORT_V1",
+        "PURE_WEYL_COVARIANT_GRAM_TRANSPORT_V1"
+      ],
+      "established": "The named classes W_+^2 and W_-^2 and their identity Gram form transport covariantly.",
+      "remaining_for_gate_a": "Exact normalized coefficient vectors for W_+^2 v_- and W_-^2 v_- in a declared common residual basis.",
+      "boundary": "Names, parity and Gram normalization do not serialize representatives."
+    },
+    {
+      "export_id": "centered_cohomology_bases_h3_h4_h5",
+      "status": "SUPPORTING_EVIDENCE_ONLY",
+      "evidence": [
+        "PURE_WEYL_COVARIANT_H4_TRANSPORT_V1",
+        "PURE_WEYL_COVARIANT_CKV_RECOVERY_V1"
+      ],
+      "established": "The two centered H4 names and residual endpoint recovery are certified.",
+      "remaining_for_gate_a": "Explicit exact centered H3 and H5 bases together with H4 in one ordered payload.",
+      "boundary": "H4 transport and adjacent cochain dimensions do not provide H3/H5 bases."
+    },
+    {
+      "export_id": "residual_differential_q_res_0",
+      "status": "SUPPORTING_EVIDENCE_ONLY",
+      "evidence": [
+        "PURE_WEYL_SO42_CAUSAL_TRANSPORT_RECOGNITION_V1",
+        "PURE_WEYL_COVARIANT_CKV_RECOVERY_V1"
+      ],
+      "established": "Strict residual action and endpoint recovery are certified at the cohomological level.",
+      "remaining_for_gate_a": "A portable exact q_res^(0) matrix/action payload on the complete residual basis.",
+      "boundary": "Cohomological action recognition is not the residual differential serialization."
+    }
+  ],
+  "freeze_check_reconciliation": [
+    {
+      "check_id": "q0_squared_zero",
+      "status": "RECEIVER_VERIFIED_SCOPED",
+      "evidence": [
+        "CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2"
+      ],
+      "established": "Q squared is independently replayed on every atom in the bounded strict minimal export.",
+      "remaining_for_gate_a": "Replay q0 squared on every row of the common full Gate-A snapshot.",
+      "boundary": "The bounded minimal result cannot be promoted to omitted nonminimal, auxiliary or residual rows."
+    },
+    {
+      "check_id": "q1_q2_arity_two_nilpotency",
+      "status": "RECEIVER_VERIFIED_SCOPED",
+      "evidence": [
+        "STRICT_LOCAL_Q1_Q2_IDENTITY_V1",
+        "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
+        "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1",
+        "STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1",
+        "STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1",
+        "STRICT_386_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1",
+        "STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1",
+        "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1",
+        "CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1",
+        "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2",
+        "STRICT_386_SHIFTED_MASS_BV_Q2_LIFT_V1",
+        "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1"
+      ],
+      "established": "The minimal 18-channel/51-path theorem and all 926 auxiliary component channels combine with zero residual; exact shear conjugation gives zero graph-coordinate defects.",
+      "remaining_for_gate_a": "This identity is closed for q2; auxiliary q3, the remaining common hashes and the final full cyclic contraction remain independent obligations.",
+      "boundary": "An arity-two identity replay does not promote arity three, Green compatibility, Hadamard or QME."
+    },
+    {
+      "check_id": "D_q1_commutator_zero",
+      "status": "RECEIVER_VERIFIED_SCOPED",
+      "evidence": [
+        "STRICT_386_FULL_D_ACTION_V1"
+      ],
+      "established": "Independent left/right temporal-index compositions agree for all 4,374 graph-q1 rational coefficients, so [T,q1]=0 on every one of the 386 strict rows.",
+      "remaining_for_gate_a": "Retain this exact replay while binding full-carrier q2, residual maps and all seven top-level hashes into the complete Gate-A snapshot.",
+      "boundary": "Unary cylinder-flow equivariance does not imply the nonlinear D/q2 derivation identity or decide whether the residual D symmetry is proper gauge."
+    },
+    {
+      "check_id": "D_q2_derivation",
+      "status": "RECEIVER_VERIFIED_SCOPED",
+      "evidence": [
+        "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1",
+        "STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1",
+        "STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1",
+        "STRICT_386_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1",
+        "STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1",
+        "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1",
+        "CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1",
+        "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2",
+        "STRICT_386_SHIFTED_MASS_BV_Q2_LIFT_V1",
+        "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1"
+      ],
+      "established": "All sixteen shifted-source q2 families are stationary tensor-natural on the unit cylinder; the exact shear commutes with D, so the split and graph derivation defects vanish.",
+      "remaining_for_gate_a": "This identity is closed for q2; auxiliary q3, the remaining common hashes and the final full cyclic contraction remain independent obligations.",
+      "boundary": "An arity-two identity replay does not promote arity three, Green compatibility, Hadamard or QME."
+    },
+    {
+      "check_id": "q2_cyclic_compatibility",
+      "status": "RECEIVER_VERIFIED_SCOPED",
+      "evidence": [
+        "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
+        "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1",
+        "STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1",
+        "STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1",
+        "STRICT_386_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1",
+        "STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1",
+        "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1",
+        "CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1",
+        "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2",
+        "STRICT_386_SHIFTED_MASS_BV_Q2_LIFT_V1",
+        "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1"
+      ],
+      "established": "Minimal cyclicity, 3,000 shifted-mass equalities and the translated 264-term auxiliary Diff Hamiltonian reconstruction combine with zero defects and are preserved by the BV-canonical shear.",
+      "remaining_for_gate_a": "This identity is closed for q2; auxiliary q3, the remaining common hashes and the final full cyclic contraction remain independent obligations.",
+      "boundary": "An arity-two identity replay does not promote arity three, Green compatibility, Hadamard or QME."
+    },
+    {
+      "check_id": "pi_cl_iota_cl_identity",
+      "status": "RECEIVER_VERIFIED_SCOPED",
+      "evidence": [
+        "STRICT_DFINITE_RESIDUAL_SDR_V1"
+      ],
+      "established": "The receiver proves pi_cl iota_cl=1 on all 470 residual coordinates in the five-block D-finite direct sum.",
+      "remaining_for_gate_a": "Replay the same identity on maps belonging to the common full support-local snapshot.",
+      "boundary": "Exact finite-block identity does not imply a common support-local carrier exists."
+    },
+    {
+      "check_id": "classical_contraction_identity",
+      "status": "RECEIVER_VERIFIED_SCOPED",
+      "evidence": [
+        "STRICT_DFINITE_RESIDUAL_SDR_V1"
+      ],
+      "established": "The receiver proves iota_cl pi_cl=1-q0 s_cl-s_cl q0 on all 4,490 finite full coordinates.",
+      "remaining_for_gate_a": "Replay the contraction identity on q0 and SDR maps from the common full support-local snapshot.",
+      "boundary": "The finite split contraction omits the complete nonminimal field domain and cannot be relabelled as a causal Green homotopy."
+    },
+    {
+      "check_id": "q0_iota_intertwining",
+      "status": "RECEIVER_VERIFIED_SCOPED",
+      "evidence": [
+        "STRICT_DFINITE_RESIDUAL_SDR_V1"
+      ],
+      "established": "The receiver proves q0 iota_cl=iota_cl q_res^(0), with q_res^(0)=0, on every declared energy block.",
+      "remaining_for_gate_a": "Replay the inclusion chain map on the common full support-local q0 and complete residual differential.",
+      "boundary": "A zero finite positive-energy residual differential is not the complete residual CE/BFV action."
+    },
+    {
+      "check_id": "pi_q0_intertwining",
+      "status": "RECEIVER_VERIFIED_SCOPED",
+      "evidence": [
+        "STRICT_DFINITE_RESIDUAL_SDR_V1"
+      ],
+      "established": "The receiver proves pi_cl q0=q_res^(0) pi_cl on every declared energy block.",
+      "remaining_for_gate_a": "Replay the projection chain map on the common full support-local q0 and complete residual differential.",
+      "boundary": "The finite split projection does not serialize the full SO(4,2) residual action or centered complex."
+    },
+    {
+      "check_id": "cyclic_compatibility",
+      "status": "BLOCKED_MISSING_COMMON_SNAPSHOT",
+      "evidence": [
+        "PURE_WEYL_COVARIANT_GRAM_TRANSPORT_V1"
+      ],
+      "established": "Scoped pairing transport reaches the correct residual H4 Gram form.",
+      "remaining_for_gate_a": "Serialize the full cyclic pairing and residual SDR maps, then replay all adjointness and cyclic side conditions.",
+      "boundary": "A two-class Gram result does not prove cyclicity on every BV row."
+    }
+  ],
+  "required_hash_disposition": {
+    "field_dictionary_hash": {
+      "accepted": null,
+      "candidate": "5c80b9d4a0f9a62588c6fb7cf1b6f7d4dbbe60c3b6a47aff17e480b75eb9a3ed",
+      "candidate_scope": "BOUNDED_MINIMAL_BV_ONLY"
+    },
+    "differential_hash": {
+      "accepted": null,
+      "candidate": "151e26d6922356f9ad63a0dc40fa6d216d0949e63e4633bd51f1af660dca73d1",
+      "candidate_scope": "BOUNDED_MINIMAL_BV_ONLY"
+    },
+    "q2_hash": {
+      "accepted": "0f1e23a5653db0666cbd02dea49f8961927d03ff4c72ed402fd24ba8f2ba4800",
+      "candidate": "0f1e23a5653db0666cbd02dea49f8961927d03ff4c72ed402fd24ba8f2ba4800",
+      "candidate_scope": "COMMON_386_SHIFTED_SOURCE_Q2_AND_EXACT_GRAPH_DAG"
+    },
+    "D_action_hash": {
+      "accepted": null,
+      "candidate": "b20def4d59de1f1f618ad022b89673206b5741daad7dda406ec2fe03e6e4d8da",
+      "candidate_scope": "STRICT_386_UNARY_CAUSAL_D_SCOPED_NOT_GATE_A_COMMON_MANIFEST"
+    },
+    "zero_mode_basis_hash": {
+      "accepted": null,
+      "candidate": null,
+      "candidate_scope": "LABELS_AND_TRANSPORT_ONLY"
+    },
+    "pairing_hash": {
+      "accepted": null,
+      "candidate": "9fa9ebf4fd8137c871801f37bb4d2e238b9740367b57291f81ecf900b3af82bd",
+      "candidate_scope": "SCOPED_TRANSPORT_NOT_FULL_PAIRING_PAYLOAD"
+    },
+    "representative_hash": {
+      "accepted": null,
+      "candidate": "d06c2e92d539b94b44d680959fc3821cf357db50785fc373c18602734a4205f6",
+      "candidate_scope": "NAMES_AND_GRAM_NOT_COEFFICIENT_VECTORS"
+    }
+  },
+  "minimal_missing_bundle": [
+    {
+      "id": "M1_COMMON_STRICT_SNAPSHOT",
+      "object": "One versioned strict pure-Weyl manifest and commit containing every Gate-A carrier, map and ordered basis, with no Berger or compensator rows.",
+      "unlocks": [
+        "all seven accepted top-level hashes",
+        "independent common-domain replay"
+      ]
+    },
+    {
+      "id": "M3_RESIDUAL_SDR",
+      "object": "Extend or reconstruct the certified D-finite iota_cl, pi_cl and s_cl on the one common full support-local strict pure-Weyl carrier, including complete nonminimal rows and shared pairing conventions; the finite payload remains the exact receiver control.",
+      "unlocks": [
+        "common-snapshot residual intertwiners",
+        "full-carrier contraction identity",
+        "M4 cyclic side conditions"
+      ]
+    },
+    {
+      "id": "M4_FULL_CYCLIC_PAIRING",
+      "object": "Extend the rank-thirty minimal canonical pairing and sign translation to every common-carrier nonminimal, auxiliary and residual row, then replay q1/q2 and residual-SDR cyclic side conditions.",
+      "unlocks": [
+        "full-carrier cyclic_pairing",
+        "cyclic_compatibility",
+        "full-carrier q2_cyclic_compatibility"
+      ]
+    },
+    {
+      "id": "M5_RESIDUAL_EXACT_PAYLOAD",
+      "object": "Primal and dual fifteen-mode bases, exact SO(4,2) structure constants and representation matrices, and q_res^(0) on one ordered residual carrier.",
+      "unlocks": [
+        "zero_mode_basis_hash",
+        "residual intertwiners",
+        "independent residual action"
+      ]
+    },
+    {
+      "id": "M6_CENTERED_REPRESENTATIVES",
+      "object": "Exact normalized coefficient vectors for W_+^2 v_- and W_-^2 v_- plus explicit centered H3, H4 and H5 bases.",
+      "unlocks": [
+        "representative_hash",
+        "independent centered-cohomology audit"
+      ]
+    }
+  ],
+  "gate_disposition": {
+    "gate_a_status": "FAIL_CLOSED",
+    "claim_state": "CLASSICAL_IMPORT_SOURCE_Q2_Q3_ACCEPTED_SIX_HASHES_AND_FINAL_CONTRACTION_OPEN",
+    "publishable_quantum_results_allowed_by_gate_a": false,
+    "exports_total": 20,
+    "same_theory_receiver_verified_scoped": 14,
+    "different_theory_controls": 0,
+    "legacy_accepted_scoped": 3,
+    "supporting_evidence_only": 6,
+    "missing_portable_objects": 0,
+    "freeze_checks_total": 10,
+    "freeze_checks_receiver_verified_scoped": 9,
+    "freeze_checks_different_theory": 0,
+    "freeze_checks_blocked": 1,
+    "accepted_common_snapshot_hashes": 1,
+    "rule": "Gate A may become VERIFIED only when all twenty exports and seven hashes belong to one strict pure-Weyl snapshot and the receiver independently replays all ten identities on those exact bytes.",
+    "freeze_checks_supporting_evidence_only": 0
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_CERTIFICATE.json",
+        "result_or_artifact_id": "CLASSICAL_IMPORT_CERTIFICATE",
+        "sha256": "eb48675fb36489e7d33724b2d06f1f0ebfe6867d043bf71d1536015f9862b2d6",
+        "role": "historical receiver Gate A"
+      },
+      {
+        "path": "quantum-weyl/classical_import/snapshots/bootstrap-v1.json",
+        "result_or_artifact_id": "CLASSICAL_IMPORT_BOOTSTRAP_V1",
+        "sha256": "459f46e3a8d233754ceec2593c858b1996ead38ec52622678bf5a7c7ec3a61e9",
+        "role": "twenty-export and ten-check contract"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2.json",
+        "result_or_artifact_id": "CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2",
+        "sha256": "7d3bb260a0da31b1d1e3323f9e20b96b43a07e7d54142a04f6975fd26f33c028",
+        "role": "same-theory bounded minimal-BV receiver replay"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY.json",
+        "result_or_artifact_id": "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY",
+        "sha256": "07272161ca57a8e70bbbcaadda3ea7be892a58276e9d7d5694d7f5cbe184b096",
+        "role": "same-theory local-BV content bridge"
+      },
+      {
+        "path": "quantum-weyl/local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json",
+        "result_or_artifact_id": "GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION",
+        "sha256": "4513be48247605774f02aaba69faf3a2a9c9a65eb8a3550c36a873a85c87da1a",
+        "role": "same-theory regular-locus nonminimal contraction"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_deformation_retract_status.json",
+        "result_or_artifact_id": "PURE_WEYL_CURVED_DEFORMATION_RETRACT_STATUS_V1",
+        "sha256": "4e09bec901e2863d430e0a158a893c95442e3ef387b6235f10cad34b1fa8c15d",
+        "role": "strict auxiliary-to-metric retract; not residual SDR"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_full_prolonged_green_homotopy_assembly.json",
+        "result_or_artifact_id": "PURE_WEYL_FULL_PROLONGED_GREEN_HOMOTOPY_ASSEMBLY_V1",
+        "sha256": "1f8aae727a06fb82c70732f7207499d427894247d09fea22f677a0f9b38be0ee",
+        "role": "strict 386-row causal homotopy; not residual SDR"
+      },
+      {
+        "path": "covariant_completion/certificates/covariant_CKV_recovery.json",
+        "result_or_artifact_id": "PURE_WEYL_COVARIANT_CKV_RECOVERY_V1",
+        "sha256": "a74f86a1cd85f4073765a332ac25df3d85ba98c2df3a7a93ebb360c6f0dfaf20",
+        "role": "same-theory fifteen-generator endpoint recovery"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_SO42_causal_transport_recognition.json",
+        "result_or_artifact_id": "PURE_WEYL_SO42_CAUSAL_TRANSPORT_RECOGNITION_V1",
+        "sha256": "826d45d9bfbca0776cb55b9369363402fe2902644a8b3d526779654f107df3f9",
+        "role": "same-theory cohomological SO(4,2) action"
+      },
+      {
+        "path": "covariant_completion/certificates/covariant_gram_transport.json",
+        "result_or_artifact_id": "PURE_WEYL_COVARIANT_GRAM_TRANSPORT_V1",
+        "sha256": "9fa9ebf4fd8137c871801f37bb4d2e238b9740367b57291f81ecf900b3af82bd",
+        "role": "same-theory scoped pairing transport"
+      },
+      {
+        "path": "covariant_completion/certificates/covariant_H4_transport.json",
+        "result_or_artifact_id": "PURE_WEYL_COVARIANT_H4_TRANSPORT_V1",
+        "sha256": "d06c2e92d539b94b44d680959fc3821cf357db50785fc373c18602734a4205f6",
+        "role": "same-theory named H4 transport"
+      },
+      {
+        "path": "quantum-weyl/transfer/certificates/BERGER_SUPPORT_LOCAL_Q2_SCIENTIFIC_REPLAY.json",
+        "result_or_artifact_id": "BERGER_SUPPORT_LOCAL_Q2_SCIENTIFIC_REPLAY",
+        "sha256": "5367b4d5b3dcea2cd63f8087de26722a7f624c072e2acd3a21bae2daead3de7f",
+        "role": "different-theory q1/q2/D/cyclicity replay"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
+        "result_or_artifact_id": "CLASSICAL_D_QUOTIENT_STATUS",
+        "sha256": "35d75f22d9cb6703b2cd4283c5e1ccde296045dc42fcc3bf177308c9ce76f5b3",
+        "role": "scope-separating classical status synthesis"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V2_RECONCILIATION.json",
+        "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V2_RECONCILIATION",
+        "sha256": "3e7944f31a932b66bddfde23e319ed78e87c07510cdaab785969c6e19fffdd11",
+        "role": "immutable Gate-A V2 predecessor"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json",
+        "result_or_artifact_id": "STRICT_DFINITE_RESIDUAL_SDR_V1",
+        "sha256": "1816a7fb98cb7a844cade72fa8d2ee8de3e858540d5c932d93a5f68b37235c08",
+        "role": "same-theory scoped portable residual SDR and independent identity replay"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V3_RECONCILIATION.json",
+        "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V3_RECONCILIATION",
+        "sha256": "b57f9a80b8fbed5f49cebe9e160a09046a73e8882d6e5c066fe4150c2c2001c8",
+        "role": "immutable Gate-A V3 predecessor"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_PORTABLE_LOCAL_Q1_AST_V1.json",
+        "result_or_artifact_id": "STRICT_PORTABLE_LOCAL_Q1_AST_V1",
+        "sha256": "bcd78cf73f494517304f1ae5aedffa48036443a9c45566a94b3ed972de83b338",
+        "role": "portable strict minimal q1 and q1-square theorem"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1.json",
+        "result_or_artifact_id": "STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1",
+        "sha256": "513b43a90a936e1837947078e8f72da772f37461996b0b27b7df938ab355fbb3",
+        "role": "portable six-row ordered strict minimal q2 ledger"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_LOCAL_Q1_Q2_IDENTITY_V1.json",
+        "result_or_artifact_id": "STRICT_LOCAL_Q1_Q2_IDENTITY_V1",
+        "sha256": "8300dddd6120632958a307e1924f27fb4e24ae6802e3163a825bd1dce54de738",
+        "role": "independent strict minimal arity-two receiver theorem"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V4_RECONCILIATION.json",
+        "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V4_RECONCILIATION",
+        "sha256": "a36b3bf8dcc8539a1f40d06a93bf073157bdab3866d16eecdafaa51d93754fca",
+        "role": "immutable Gate-A V4 predecessor"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1.json",
+        "result_or_artifact_id": "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
+        "sha256": "c4cd8b1399e176e9eb1eadbfa0c5b85901d7361f39c706a7e7d4469e945e5169",
+        "role": "canonical minimal pairing and cyclic sign reconciliation"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V5_RECONCILIATION.json",
+        "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
+        "sha256": "3f06924664f8433a2332afb58edcf513723a889ef802298832b137b03608427f",
+        "role": "immutable Gate-A V5 predecessor"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_D_ACTION_V1.json",
+        "result_or_artifact_id": "STRICT_386_FULL_D_ACTION_V1",
+        "sha256": "c83c53250e3c8b8bc913f902a8cd4a4aff1a918c88b42167e9076e4aa96dc148",
+        "role": "strict 386-row full D action and D/q1 receiver replay"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V6_RECONCILIATION.json",
+        "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V6_RECONCILIATION",
+        "sha256": "b3d0fa7c73ca25166c1c3b6356272d55b6b045ecb213b353ffafa4bcb3c9fe77",
+        "role": "immutable Gate-A V6 predecessor"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1.json",
+        "result_or_artifact_id": "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1",
+        "sha256": "ee6a88080cc13547c809f53b9c033da59138be73eff69c0654659c18ddd2c65b",
+        "role": "strict 386-row stabilized-q2 construction and theory-identity preflight"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V7_RECONCILIATION.json",
+        "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V7_RECONCILIATION",
+        "sha256": "07bf0a7ffc23f9b2fe1a28aea84b04377d4b16dd5ed780d7cfc3106a86b469de",
+        "role": "immutable Gate-A V7 predecessor"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_ORDINARY_DERIVATIVE_AUXILIARY_CUBIC_EXPORT_V1.json",
+        "result_or_artifact_id": "CLASSICAL_ORDINARY_DERIVATIVE_AUXILIARY_CUBIC_EXPORT_V1",
+        "sha256": "a5cb1c62136cfad58bcd589d3719e6349e0e9bdd8ef2ce381cd4a8f259fddf59",
+        "role": "authoritative auxiliary cubic source export"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1.json",
+        "result_or_artifact_id": "STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1",
+        "sha256": "02f5a94d4cd33cad93b91dab7f11ce3bbedcf6c09e7e53910541b57b06cf0b64",
+        "role": "independent source/candidate theory-identity comparison"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V8_RECONCILIATION.json",
+        "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V8_RECONCILIATION",
+        "sha256": "b10b11ed48ddf5ddffb3a959982d20fe473282aa9c4b2ba7ae76a2d403bf1b7f",
+        "role": "immutable Gate-A V8 predecessor"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_QUADRATIC_AUXILIARY_ELIMINATION_MAP_V1.json",
+        "result_or_artifact_id": "CLASSICAL_QUADRATIC_AUXILIARY_ELIMINATION_MAP_V1",
+        "sha256": "0f5027c3e466fcbd5a7153cc1dac10be10ed7326cb501adc9cf644f50274515b",
+        "role": "authoritative exact quadratic auxiliary map"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1.json",
+        "result_or_artifact_id": "STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1",
+        "sha256": "5c3fa2a16bd60edc0891ce004d1fe7988647aa015185b6e4a901d867f1041b44",
+        "role": "independent 386-row channel pullback replay"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V9_RECONCILIATION.json",
+        "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V9_RECONCILIATION",
+        "sha256": "6abb2ba1d3ad40c70dc996811de4ae64f85134fc885ae914eed1d64f5be9e099",
+        "role": "immutable Gate-A V9 predecessor"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1.json",
+        "result_or_artifact_id": "CLASSICAL_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1",
+        "sha256": "676890b3caec7d49ed968b8ca4eff5b946e74ddc1cfa2c709bcd1efb11be8820",
+        "role": "authoritative exact shifted-cubic inventory"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1.json",
+        "result_or_artifact_id": "STRICT_386_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1",
+        "sha256": "44a14783bd7b6d778bca53d5994f9d7a6f5c2e975d0785d568553ec4cc667895",
+        "role": "independent 386-row cubic import and vv cotangent lift"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V10_RECONCILIATION.json",
+        "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V10_RECONCILIATION",
+        "sha256": "eb099ba510bb5ede9509c330e4628241e10c7240cc331e1225a0dcb8984805cd",
+        "role": "immutable Gate-A V10 predecessor"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_HH_HV_AUXILIARY_SHIFT_V1.json",
+        "result_or_artifact_id": "CLASSICAL_HH_HV_AUXILIARY_SHIFT_V1",
+        "sha256": "81f2373e018214e8491140747db6fc54d0fc66a8107240df5598f302d68048af",
+        "role": "authoritative curved hh/hv second-Frechet field jets"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1.json",
+        "result_or_artifact_id": "STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1",
+        "sha256": "fa911ad8bf926f60ff3f8896ac09a05f738e0f95ac9279433b20145ba5b9a77b",
+        "role": "independent 386-row formal-adjoint cotangent lift"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V11_RECONCILIATION.json",
+        "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V11_RECONCILIATION",
+        "sha256": "6401cc9deeacdabd9d959c0b1752c60b42ddb4060ac84c52d8ece3b972d93205",
+        "role": "immutable Gate-A V11 predecessor"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_DIFF_AUXILIARY_BV_REPRESENTATION_V1.json",
+        "result_or_artifact_id": "CLASSICAL_DIFF_AUXILIARY_BV_REPRESENTATION_V1",
+        "sha256": "56383354a3a2237c78ef3e0f9e009da57f665be945850651582ca1b4d9581d37",
+        "role": "authoritative source-forced auxiliary Diff field actions"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1.json",
+        "result_or_artifact_id": "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1",
+        "sha256": "c605f06ddc237c7984c8ad48909285399a397e78917a373b9a4c178d1ad88dab",
+        "role": "independent 386-row cotangent and Diff momentum-map lift"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V12_RECONCILIATION.json",
+        "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V12_RECONCILIATION",
+        "sha256": "6cc2a98d1cf81ec12a38e02bc5d1959907240a6c06e51aae92911be8f243c6db",
+        "role": "immutable Gate-A V12 predecessor"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1.json",
+        "result_or_artifact_id": "CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1",
+        "sha256": "b4cea7dc000aea74e4fb466d9b98da1786df8c03b4a1ebb614d5e8c275a295ba",
+        "role": "primary-source-complete nonlinear Weyl/boost ghost manifest"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V13_RECONCILIATION.json",
+        "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V13_RECONCILIATION",
+        "sha256": "ba9ac1a3452eb5e16f5f589eaef40fd8c4ca08864d817cd6d2d7842e5d78aa14",
+        "role": "immutable Gate-A V13 predecessor"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1.json",
+        "result_or_artifact_id": "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1",
+        "sha256": "2a93236ba5ae929bde285339286fbc24ceb98415b6b1750b90b546f921f658ed",
+        "role": "accepted common source-q2 snapshot and identities"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2.json",
+        "result_or_artifact_id": "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2",
+        "sha256": "93c29efd0bdd34ed80452ec9ceb18b95147b8cbae248fca1ce11652bf7096d76",
+        "role": "append-only canonical c-star repair"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_SHIFTED_MASS_BV_Q2_LIFT_V1.json",
+        "result_or_artifact_id": "STRICT_386_SHIFTED_MASS_BV_Q2_LIFT_V1",
+        "sha256": "485b23a2274ef99197ef69d0906b5eef2f8e1bbd4105145dcd4b3a2805519d17",
+        "role": "exact cyclic shifted-mass q2 lift"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V14_RECONCILIATION.json",
+        "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V14_RECONCILIATION",
+        "sha256": "5732c4d04bc96592dd5a8e2b3fec1f199f4c9d8464c619cf3d4ff94020d82313",
+        "role": "immutable Gate-A V14 predecessor"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.json",
+        "result_or_artifact_id": "STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1",
+        "sha256": "d2fb66beec9f77bd24487f13406aa5a179f332d113b8b1ca7052547df7e3b696",
+        "role": "accepted common source-q3 snapshot and identities"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_SHIFTED_MASS_BV_Q3_LIFT_V1.json",
+        "result_or_artifact_id": "STRICT_386_SHIFTED_MASS_BV_Q3_LIFT_V1",
+        "sha256": "a826f8b3eb9598855aa33ff32b256e2adc4124e37b9f94b7469780a9e40d9901",
+        "role": "independently replayed paired auxiliary q3 ledger"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_SHIFTED_AUXILIARY_QUARTIC_MASS_V1.json",
+        "result_or_artifact_id": "CLASSICAL_SHIFTED_AUXILIARY_QUARTIC_MASS_V1",
+        "sha256": "eb47c67ea3aabc068003d1ee1be53030bccfbe69969179f88a0b6f5a4016a862",
+        "role": "authoritative classical fourth variation and conformal Ward rail"
+      }
+    ]
+  },
+  "claim_flags": {
+    "HISTORICAL_GATE_RECONCILED": true,
+    "STANDALONE_HISTORY_REPLAY_VERIFIED": true,
+    "LATER_REPAIRS_RECORDED": true,
+    "STRICT_AND_BERGER_SCOPES_SEPARATED": true,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "PUBLISHABLE_QUANTUM_RESULTS_ALLOWED_BY_GATE_A": false,
+    "LORENTZIAN_QUANTUM_THEORY": false,
+    "QME_RESTORED": false,
+    "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": false,
+    "STRICT_DFINITE_M3_SCOPED_REPLAY": true,
+    "STRICT_MINIMAL_LOCAL_Q1_Q2_SCOPED_REPLAY": true,
+    "STRICT_MINIMAL_Q1_Q2_ARITY_TWO_IDENTITY": true,
+    "STRICT_MINIMAL_CANONICAL_PAIRING_SCOPED_REPLAY": true,
+    "STRICT_MINIMAL_Q1_Q2_CYCLICITY_SCOPED_REPLAY": true,
+    "CANONICAL_GHOST_ANTIFIELD_SIGN_TRANSLATION": true,
+    "STRICT_386_FULL_LOCAL_D_ACTION_SCOPED_REPLAY": true,
+    "STRICT_386_D_Q1_COMMUTATOR_SCOPED_REPLAY": true,
+    "STRICT_386_D_FORMAL_SKEW_ADJOINT_SCOPED_REPLAY": true,
+    "STRICT_386_FULL_CARRIER_Q2": true,
+    "STRICT_386_D_Q2_DERIVATION": true,
+    "STRICT_386_STABILIZED_Q2_CANDIDATE": true,
+    "STRICT_386_STABILIZED_Q1_Q2_IDENTITY": true,
+    "STRICT_386_STABILIZED_Q2_CYCLICITY": true,
+    "STRICT_386_STABILIZED_D_Q2_DERIVATION": true,
+    "STRICT_386_AUTHORITATIVE_FULL_CARRIER_Q2": true,
+    "STRICT_386_AUTHORITATIVE_D_Q2_DERIVATION": true,
+    "STRICT_386_CANDIDATE_THEORY_IDENTITY": false,
+    "STRICT_386_LITERAL_TRIVIAL_STABILIZATION_IDENTITY_REFUTED": true,
+    "STRICT_386_LINEAR_SHEAR_THEORY_IDENTITY_REFUTED": true,
+    "STRICT_386_CANDIDATE_INTERNAL_IDENTITIES_PRESERVED": true,
+    "STRICT_386_NONLINEAR_EQUIVALENCE_MAY_EXIST": true,
+    "STRICT_386_NONLINEAR_EQUIVALENCE_CONSTRUCTED": false,
+    "STRICT_386_NONLINEAR_EQUIVALENCE_OBSTRUCTED": false,
+    "STRICT_386_AUTHORITATIVE_FULL_CARRIER_Q3": true,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "STRICT_386_FIRST_NONLINEAR_EQUIVALENCE_COMPONENT_CONSTRUCTED": true,
+    "STRICT_386_F_HAT_V_V_PULLBACK_CHANNEL_CLOSED": true,
+    "STRICT_386_COMPONENT_SUPPORT_LOCAL": true,
+    "STRICT_386_COMPONENT_USES_GREEN_OPERATOR": false,
+    "STRICT_386_COMPONENT_USES_CHOICE_PRINCIPLE": false,
+    "STRICT_386_FULL_BV_COTANGENT_LIFT_SERIALIZED": true,
+    "STRICT_386_FULL_SOURCE_Q2_PULLBACK_REPLAYED": true,
+    "STRICT_386_FULL_SOURCE_Q3_PULLBACK_REPLAYED": true,
+    "STRICT_386_KNOWN_REQUIRED_CUBIC_FAMILIES_ENUMERATED": true,
+    "STRICT_386_SHIFTED_MASS_H_F_HAT_F_HAT_COMPONENTS_IMPORTED": true,
+    "STRICT_386_VV_FIELD_MAP_COMPONENTS_IMPORTED": true,
+    "STRICT_386_VV_COTANGENT_PARTNER_COMPONENTS_SERIALIZED": true,
+    "STRICT_386_VV_BV_COTANGENT_LIFT_CANONICAL": true,
+    "STRICT_386_EXHAUSTIVE_FULL_NONLINEAR_BV_FAMILY_CENSUS": true,
+    "STRICT_386_HH_HV_BV_COTANGENT_LIFT_COMPONENT_COMPLETE": true,
+    "STRICT_386_DIFF_BV_REPRESENTATION_COMPONENT_COMPLETE": true,
+    "STRICT_386_HH_HV_FIELD_COMPONENT_JETS_IMPORTED": true,
+    "STRICT_386_FULL_QUADRATIC_BV_COTANGENT_LIFT_SERIALIZED": true,
+    "STRICT_386_SEVEN_KNOWN_REQUIRED_CUBIC_FAMILIES_COMPONENT_COMPLETE": true,
+    "STRICT_386_SEVEN_AUXILIARY_CUBIC_FAMILIES_COMPONENT_COMPLETE": true,
+    "STRICT_386_FULL_SOURCE_Q2_ASSEMBLED": true,
+    "STRICT_386_FULL_Q1_Q2_IDENTITY_REPLAYED": true,
+    "STRICT_386_FULL_Q2_CYCLICITY_REPLAYED": true,
+    "STRICT_386_FULL_D_Q2_DERIVATION_REPLAYED": true,
+    "STRICT_386_FULL_ARITY_THREE_IDENTITY_REPLAYED": true,
+    "STRICT_386_FULL_Q3_CYCLICITY_REPLAYED_MOD_D": true,
+    "STRICT_386_FULL_D_Q3_DERIVATION_REPLAYED": true
+  },
+  "does_not_establish": [
+    "a passed classical freeze gate",
+    "a new scientific identity from the standalone-history migration repair",
+    "that Berger q2 or D belongs to strict pure-Weyl gravity",
+    "that an auxiliary deformation retract is the residual SDR",
+    "that a causal Green homotopy is s_cl",
+    "a portable full cyclic pairing",
+    "normalized Weyl-square representative coefficient vectors",
+    "explicit centered H3 and H5 bases",
+    "a BRST-compatible Hadamard state",
+    "renormalized Lorentzian products",
+    "QME restoration or residual quantum transfer",
+    "that the D-finite split residual SDR is the common full support-local Gate-A residual contraction",
+    "that finite exact arithmetic proves the all-energy direct sum or continuum carrier",
+    "that the strict minimal local q1/q2 carrier is already the complete common full support-local Gate-A carrier",
+    "a local D action, D equivariance, BV cyclicity, causal Green homotopy, Hadamard state, or Lorentzian QME",
+    "that the minimal rank-thirty pairing already includes every nonminimal, auxiliary or residual Gate-A row",
+    "that the source receiver convention is cyclic without the explicit ghost-antifield sign translation",
+    "that the strict full-carrier q2 or D/q2 identity follows from the unary D/q1 replay",
+    "that the cylinder generator D is proper gauge rather than charged or sector-dependent",
+    "that the receiver-constructed cyclic trivial stabilization is the authoritative classical nonlinear q2",
+    "a source-certified cyclic L-infinity equivalence between the intended classical extension and the stabilized candidate",
+    "nonexistence of a nonlinear auxiliary-elimination or cyclic L-infinity equivalence",
+    "that the internally certified candidate q1/q2/q3 identities are false",
+    "an authoritative full-carrier q2/q3 hash, causal lambda-squared source closure, Hadamard data, or QME restoration",
+    "a componentwise 386-row BV cotangent lift or complete source q2/q3 pullback",
+    "elimination or agreement of the metric-dependent h-f_hat-f_hat and ghost/antifield channel families",
+    "a full cyclic L-infinity equivalence, authoritative q2/q3 hash, causal lambda-squared source closure, Hadamard data, or QME restoration",
+    "an exhaustive nonlinear BV family census or complete hh/hv, Diff, Weyl and boost component inventory",
+    "that the 72 h-f_hat-f_hat source coefficients are an obstruction to a further metric-dependent canonical or L-infinity normalization",
+    "a full 386-row BV cotangent lift, source q2/q3 pullback, causal lambda-squared closure, Hadamard state, or QME restoration",
+    "the complete source q2/q3 pullback, accepted nonlinear hashes, cyclic L-infinity equivalence, or Gate A",
+    "causal lambda-squared closure, a Hadamard state, renormalized Lorentzian products, QME restoration, or residual transfer",
+    "the six remaining top-level Gate-A hashes or the final common cyclic contraction",
+    "q2/Green compatibility, causal lambda-squared closure, Hadamard data, QME restoration, or residual transfer",
+    "q2/q3 compatibility with an advanced or retarded Green homotopy or causal lambda-squared closure",
+    "Hadamard data, renormalized Lorentzian products, QME restoration, or residual transfer"
+  ],
+  "next_gate": "Build the common strict freeze manifest for the field dictionary, differential, D action, residual SDR, pairing, exact residual basis and centered representatives; accept the remaining six hashes and replay the final cyclic contraction before composing q2/q3 with Green homotopies.",
+  "independent_checker": {
+    "path": "quantum-weyl/classical_import/check_classical_import_gate_v15_reconciliation.py",
+    "checks": [
+      "V14 and q2/q3 common-byte pins",
+      "5,952-entry auxiliary q3 ledger",
+      "two-family q3 census",
+      "zero arity-three/cyclicity/D-q3 defects",
+      "M2 removal",
+      "six-hash and final-contraction firewalls"
+    ],
+    "expected_digest": "0b89488b08bfaa4cf8b26f2c86f558ccfea542cff602ddd94462f9674665033c"
+  },
+  "human_report": "quantum-weyl/classical_import/REPORT_GATE_V15.md",
+  "m3_scoped_resolution": {
+    "status": "SCOPED_PORTABILITY_AND_IDENTITIES_CERTIFIED",
+    "evidence": "STRICT_DFINITE_RESIDUAL_SDR_V1",
+    "full_coordinates": 4490,
+    "residual_coordinates": 470,
+    "energies": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "residual_sdr_hash": "a366f8f816ffe9964d7f08acfc209d38a47d89ba53b7763de3015d87a1be0cde",
+    "remaining": "Extend or reconstruct these maps on the one common authoritative support-local strict carrier, including the complete nonminimal sector and common pairing conventions.",
+    "boundary": "This resolves the missing portable object in a finite split scope, not the common full support-local M3 gate."
+  },
+  "m2_minimal_resolution": {
+    "status": "CLOSED_AUTHORITATIVE_COMMON_Q2_Q3_ARITY_THREE",
+    "evidence": [
+      "STRICT_PORTABLE_LOCAL_Q1_AST_V1",
+      "STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1",
+      "STRICT_LOCAL_Q1_Q2_IDENTITY_V1",
+      "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1"
+    ],
+    "generator_count": 6,
+    "q1_component_count": 5,
+    "q2_primary_component_count": 12,
+    "q2_ordered_component_count": 22,
+    "q1q2_channel_count": 18,
+    "q1q2_path_count": 51,
+    "remaining": "No source-operation Taylor coefficient remains at q2/q3. The six other top-level hashes and final common cyclic contraction are separate Gate-A obligations.",
+    "boundary": "This local Taylor closure does not establish causal Green compatibility or an accepted freeze."
+  },
+  "m4_minimal_resolution": {
+    "status": "STRICT_MINIMAL_CANONICAL_PAIRING_AND_Q1_Q2_CYCLICITY_CERTIFIED",
+    "evidence": "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
+    "component_basis_dimension": 30,
+    "pairing_rank": 30,
+    "expanded_non_Bach_q2_coefficient_count": 932,
+    "source_convention_defect_coefficient_count": 540,
+    "translated_convention_defect_coefficient_count": 0,
+    "remaining": "Nonminimal, auxiliary and residual pairing rows plus common-SDR adjointness and cyclic side conditions remain open.",
+    "boundary": "The minimal rank-thirty pairing is a proper scoped subcarrier result, accepts no top-level Gate-A hash, and supplies no full residual-SDR cyclicity theorem."
+  },
+  "m2_d_resolution": {
+    "status": "STRICT_386_FULL_D_AND_D_Q1_RECEIVER_VERIFIED_SCOPED",
+    "evidence": "STRICT_386_FULL_D_ACTION_V1",
+    "carrier_rows": 386,
+    "component_blocks": 22,
+    "D_component_coefficients": 386,
+    "q1_operator_tables_checked": 27,
+    "q1_rational_coefficients_checked": 4374,
+    "D_q1_commutator_defects": 0,
+    "pairing_entries_checked": 410,
+    "scoped_snapshot_hashes": 14,
+    "D_action_sha256": "b20def4d59de1f1f618ad022b89673206b5741daad7dda406ec2fe03e6e4d8da",
+    "remaining": "Extend q2 to all required 386-row sectors and replay D/q2 plus full-carrier q2 cyclicity on this exact snapshot.",
+    "boundary": "This is a support-local unary equivariance result. It is neither a D-Cartan homotopy nor a physical charge/quotient decision and accepts no Gate-A top-level hash."
+  },
+  "transitive_provenance_drift": {
+    "files_checked": 46,
+    "drifted_files": 5,
+    "status": "DRIFT_RECORDED_GATE_REMAINS_FAIL_CLOSED",
+    "entries": [
+      {
+        "path": "covariant_completion/certificates/curved_deformation_retract_status.json",
+        "historical_v14_sha256": "4e09bec901e2863d430e0a158a893c95442e3ef387b6235f10cad34b1fa8c15d",
+        "current_worktree_sha256": "fbbaa1a1118110cfbc56974b684883fc89de1cd964a8d47abe4822cf15210271",
+        "status": "RECORDED_NOT_SILENTLY_REBOUND"
+      },
+      {
+        "path": "covariant_completion/certificates/covariant_CKV_recovery.json",
+        "historical_v14_sha256": "a74f86a1cd85f4073765a332ac25df3d85ba98c2df3a7a93ebb360c6f0dfaf20",
+        "current_worktree_sha256": "afa0d7c50e192eda271f9006afd57e175a20d392ec112cc746e6f3b825519eb2",
+        "status": "RECORDED_NOT_SILENTLY_REBOUND"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_SO42_causal_transport_recognition.json",
+        "historical_v14_sha256": "826d45d9bfbca0776cb55b9369363402fe2902644a8b3d526779654f107df3f9",
+        "current_worktree_sha256": "ea155acd9de80bdb1b4d5e236020cf4580899773aaf630cb4a4e806a1007be82",
+        "status": "RECORDED_NOT_SILENTLY_REBOUND"
+      },
+      {
+        "path": "covariant_completion/certificates/covariant_gram_transport.json",
+        "historical_v14_sha256": "9fa9ebf4fd8137c871801f37bb4d2e238b9740367b57291f81ecf900b3af82bd",
+        "current_worktree_sha256": "e63e31bc03f62911a21f144a1a23e904c91c5a543266b1621a6eda35a445b593",
+        "status": "RECORDED_NOT_SILENTLY_REBOUND"
+      },
+      {
+        "path": "covariant_completion/certificates/covariant_H4_transport.json",
+        "historical_v14_sha256": "d06c2e92d539b94b44d680959fc3821cf357db50785fc373c18602734a4205f6",
+        "current_worktree_sha256": "8535fb91580856e614ec13f2d23c2610ba163ccc748229bb495edcfd13e15592",
+        "status": "RECORDED_NOT_SILENTLY_REBOUND"
+      }
+    ]
+  },
+  "m2_stabilized_candidate_resolution": {
+    "status": "CERTIFIED_CONSTRUCTION_NOT_AUTHORITATIVE_IMPORT",
+    "evidence": "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1",
+    "carrier_rows": 386,
+    "split_endpoint_rows": 30,
+    "split_contractible_rows": 356,
+    "graph_input_row_envelope": 110,
+    "graph_output_row_envelope": 110,
+    "expanded_component_channels": 140,
+    "unique_block_triples": 68,
+    "interaction_inert_rows": 196,
+    "q1_q2_defects": 0,
+    "q2_cyclicity_defects": 0,
+    "D_q2_derivation_defects": 0,
+    "candidate_q2_sha256": "779d9811a7d79d71c8c01d85ef42522274265920bda384ef16a87cb18e138808",
+    "remaining": "Source-certify theory identity by a full nonlinear export or cyclic L-infinity equivalence; only then can the candidate hash be considered for Gate A."
+  },
+  "m2_theory_identity_obstruction": {
+    "status": "LITERAL_AND_LINEAR_IDENTITY_REFUTED_NONLINEAR_EQUIVALENCE_OPEN",
+    "classical_evidence": "CLASSICAL_ORDINARY_DERIVATIVE_AUXILIARY_CUBIC_EXPORT_V1",
+    "receiver_evidence": "STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1",
+    "carrier_rows": 386,
+    "cyclic_form_channel": "Omega(f_hat,q2(v,v))",
+    "source_value": "-1",
+    "candidate_value": "0",
+    "defect": "-1",
+    "candidate_internal_identities_preserved": true,
+    "nonlinear_equivalence_may_exist": true,
+    "nonlinear_equivalence_constructed": false,
+    "nonlinear_equivalence_obstructed": false,
+    "first_required_correction": "a quadratic auxiliary-elimination component whose pullback reproduces Omega(f_hat,q2(v,v))=-1"
+  },
+  "m2_quadratic_elimination_resolution": {
+    "status": "FIRST_QUADRATIC_COMPONENT_IMPORTED_ONE_CUBIC_CHANNEL_CLOSED_FULL_PULLBACK_OPEN",
+    "classical_evidence": "CLASSICAL_QUADRATIC_AUXILIARY_ELIMINATION_MAP_V1",
+    "receiver_evidence": "STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1",
+    "carrier_rows": 386,
+    "field_map_component": "F_(2)(v)=v tensor v-(1/2)g v^2",
+    "cyclic_form_channel": "Omega(f_hat,q2(v,v))",
+    "source_before_correction": "-1",
+    "inverse_shift_correction": "1",
+    "transformed_source": "0",
+    "candidate": "0",
+    "residual": "0",
+    "component_support_local": true,
+    "component_uses_green_operator": false,
+    "component_uses_choice_principle": false,
+    "source_local_BV_canonical_lift_available": true,
+    "receiver_componentwise_386_cotangent_lift_serialized": false,
+    "complete_source_q2_pullback_replayed": false,
+    "complete_source_q3_pullback_replayed": false,
+    "full_cyclic_L_infinity_equivalence_constructed": false,
+    "nonlinear_equivalence_obstructed": false,
+    "remaining_shifted_cubic_families": [
+      "h-f_hat-f_hat from metric dependence of sqrt(-g), A_g and the fibre pairing",
+      "ghost/antifield channels from the nonlinear BV cotangent lift"
+    ]
+  },
+  "m2_shifted_cubic_inventory_resolution": {
+    "status": "SHIFTED_SOURCE_Q2_Q3_FAMILY_CENSUS_COMPLETE_AT_ARITY_THREE",
+    "classical_evidence": "CLASSICAL_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1",
+    "receiver_evidence": "STRICT_386_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1",
+    "carrier_rows": 386,
+    "known_required_cubic_block_families": 7,
+    "component_complete_families": 7,
+    "component_open_families": 0,
+    "family_ids": [
+      "SHIFTED_MASS_H_F_HAT_F_HAT",
+      "TYPE_II_F_HAT_STAR_V_V",
+      "TYPE_II_F_HAT_STAR_H_H",
+      "TYPE_II_F_HAT_STAR_H_V",
+      "DIFF_C_F_HAT_F_HAT_STAR",
+      "DIFF_C_V_V_STAR",
+      "DIFF_C_ETA_ETA_STAR"
+    ],
+    "h_f_hat_f_hat_source_coefficients": 72,
+    "h_f_hat_f_hat_candidate_coefficients": 0,
+    "vv_field_map_coefficients": 22,
+    "vv_cotangent_partner_coefficients": 16,
+    "vv_canonicality_slices": 4,
+    "vv_canonicality_defects": 0,
+    "quadratic_active_output_rows": 24,
+    "quadratic_zero_output_rows": 362,
+    "hh_hv_component_complete": true,
+    "diffeomorphism_representation_component_complete": true,
+    "exhaustive_full_nonlinear_BV_family_census": true,
+    "full_386_BV_cotangent_lift_serialized": true,
+    "complete_source_q2_q3_pullback_replayed": true,
+    "shift_alone_identifies_trivial_stabilization": false,
+    "further_normalization_may_exist": true,
+    "full_nonlinear_equivalence_obstructed": false,
+    "classical_hh_hv_evidence": "CLASSICAL_HH_HV_AUXILIARY_SHIFT_V1",
+    "receiver_hh_hv_evidence": "STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1",
+    "hh_field_coefficients": 1392,
+    "hv_field_coefficients": 76,
+    "combined_cotangent_coefficients": 3907,
+    "classical_diff_evidence": "CLASSICAL_DIFF_AUXILIARY_BV_REPRESENTATION_V1",
+    "receiver_diff_evidence": "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1",
+    "ghost_manifest_evidence": "CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1",
+    "source_q2_family_count": 16,
+    "shifted_source_auxiliary_q2_family_count": 4,
+    "type_II_coordinate_map_families_not_source_q2": 3,
+    "complete_source_q2_pullback_replayed": true,
+    "source_q3_family_count": 2,
+    "auxiliary_ordered_q3_component_coefficients": 5952
+  },
+  "m2_hh_hv_cotangent_resolution": {
+    "status": "CURVED_HH_HV_FIELD_AND_COTANGENT_COMPONENT_JETS_EXACT",
+    "classical_evidence": "CLASSICAL_HH_HV_AUXILIARY_SHIFT_V1",
+    "receiver_evidence": "STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1",
+    "carrier_rows": 386,
+    "hh_field_coefficients": 1392,
+    "hv_field_coefficients": 76,
+    "vv_field_coefficients": 22,
+    "hh_to_h_star_coefficients": 3411,
+    "hv_to_h_star_coefficients": 320,
+    "hv_to_v_star_coefficients": 160,
+    "vv_to_v_star_coefficients": 16,
+    "combined_cotangent_coefficients": 3907,
+    "metric_variation_slices_declared": 150,
+    "vector_variation_slices": 4,
+    "formal_adjoint_defects": 0,
+    "full_quadratic_BV_cotangent_lift_serialized": true,
+    "full_source_q2_q3_pullback_replayed": false
+  },
+  "m2_diff_auxiliary_resolution": {
+    "status": "CANONICAL_C_STAR_V2_REPAIR_AND_COUPLED_Q1_Q2_REPLAYED",
+    "classical_evidence": "CLASSICAL_DIFF_AUXILIARY_BV_REPRESENTATION_V1",
+    "receiver_evidence": "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1",
+    "carrier_rows": 386,
+    "completed_families": 3,
+    "master_density_coefficients": 264,
+    "field_output_coefficients": 336,
+    "antifield_output_coefficients": 632,
+    "c_star_output_coefficients": 704,
+    "formal_variational_defects": 0,
+    "Koszul_symmetry_defects": 0,
+    "known_required_cubic_families": 7,
+    "known_required_component_complete_families": 7,
+    "exhaustive_full_nonlinear_BV_family_census": false,
+    "full_source_q2_q3_pullback_replayed": false,
+    "receiver_evidence_v2": "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2",
+    "translated_c_star_coefficients": 704,
+    "unrepaired_q1_q2_defects": 336,
+    "repaired_q1_q2_defects": 0
+  },
+  "m2_nonlinear_ghost_manifest_resolution": {
+    "status": "PRIMARY_SOURCE_IMPORTED_AND_INDEPENDENTLY_REPLAYED",
+    "evidence": "CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1",
+    "nonzero_ghost_antifield_families": 3,
+    "minimal_families": 2,
+    "auxiliary_families": 1,
+    "certified_zero_candidate_families": 4,
+    "additional_nonlinear_Weyl_boost_ghost_antifield_families": 0,
+    "Weyl_boost_internal_algebra_abelian": true,
+    "shifted_f_hat_internal_invariant": true,
+    "exhaustive_in_declared_scope": true,
+    "full_386_source_q2_assembled": true
+  },
+  "m2_source_q2_assembly_resolution": {
+    "status": "ACCEPTED_ARITY_TWO_COMMON_SNAPSHOT",
+    "evidence": "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1",
+    "accepted_q2_sha256": "0f1e23a5653db0666cbd02dea49f8961927d03ff4c72ed402fd24ba8f2ba4800",
+    "minimal_ordered_symbolic_components": 22,
+    "auxiliary_ordered_component_coefficients": 2064,
+    "graph_block_triples": 110,
+    "q1_q2_defects": 0,
+    "cyclicity_defects": 0,
+    "D_q2_defects": 0,
+    "full_source_q3_assembled": true
+  },
+  "m2_source_q3_assembly_resolution": {
+    "status": "ACCEPTED_ARITY_THREE_COMMON_SNAPSHOT",
+    "evidence": "STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1",
+    "accepted_q2_sha256": "0f1e23a5653db0666cbd02dea49f8961927d03ff4c72ed402fd24ba8f2ba4800",
+    "accepted_q3_sha256": "2c2032011400463419fb7427f38746e6fa14d0fe0cbfe754e9b0023de5387f8a",
+    "minimal_natural_operator_components": 1,
+    "auxiliary_ordered_component_coefficients": 5952,
+    "source_q3_family_count": 2,
+    "graph_block_quadruples": 40,
+    "arity_three_defects": 0,
+    "cyclicity_defects_mod_d": 0,
+    "D_q3_defects": 0,
+    "gate_a_status": "FAIL_CLOSED"
+  }
+}

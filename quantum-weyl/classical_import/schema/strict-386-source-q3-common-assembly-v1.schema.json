@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-386-source-q3-common-assembly-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "dependency_tags", "scope", "family_census", "source_q3_snapshot", "arity_three_replay", "q3_cyclicity_replay", "D_q3_replay", "graph_transport", "gate_boundary", "foundational_strength", "claim_flags", "does_not_establish", "canonical_hashes", "provenance", "schema_path", "independent_checker", "human_report", "next_gate"],
+  "properties": {
+    "schema": {"const": "strict-386-source-q3-common-assembly-v1"},
+    "result_id": {"const": "STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "family_census": {"type": "object", "required": ["total_source_q3_families", "source_q3_family_census_exhaustive"], "properties": {"total_source_q3_families": {"const": 2}, "source_q3_family_census_exhaustive": {"const": true}}},
+    "source_q3_snapshot": {"type": "object", "required": ["carrier_rows", "source_theory_rows", "auxiliary_ordered_component_coefficients", "source_q3_complete_at_arity_three", "sha256"], "properties": {"carrier_rows": {"const": 386}, "source_theory_rows": {"const": 66}, "auxiliary_ordered_component_coefficients": {"const": 5952}, "source_q3_complete_at_arity_three": {"const": true}}},
+    "arity_three_replay": {"type": "object", "required": ["unclassified_arity_three_families", "split_386_arity_three_defects", "graph_386_arity_three_defects"], "properties": {"unclassified_arity_three_families": {"const": 0}, "split_386_arity_three_defects": {"const": 0}, "graph_386_arity_three_defects": {"const": 0}}},
+    "q3_cyclicity_replay": {"type": "object", "required": ["auxiliary_q3_equalities_checked", "split_386_q3_cyclicity_defects_mod_d", "graph_386_q3_cyclicity_defects_mod_d"], "properties": {"auxiliary_q3_equalities_checked": {"const": 40000}, "split_386_q3_cyclicity_defects_mod_d": {"const": 0}, "graph_386_q3_cyclicity_defects_mod_d": {"const": 0}}},
+    "graph_transport": {"type": "object", "required": ["source_block_quadruples", "graph_block_quadruples", "exact_compositional_DAG_exported"], "properties": {"source_block_quadruples": {"const": 7}, "graph_block_quadruples": {"const": 40}, "exact_compositional_DAG_exported": {"const": true}}},
+    "claim_flags": {"type": "object", "required": ["FULL_SOURCE_Q3_ASSEMBLED", "FULL_386_ARITY_THREE_IDENTITY_REPLAYED", "FULL_386_Q3_CYCLICITY_REPLAYED_MOD_D", "CLASSICAL_IMPORT_GATE_PASSED", "LORENTZIAN_GREEN_Q3_COMPATIBILITY_CERTIFIED", "HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED"]},
+    "schema_path": {"const": "quantum-weyl/classical_import/schema/strict-386-source-q3-common-assembly-v1.schema.json"},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.md"}
+  },
+  "additionalProperties": true
+}
