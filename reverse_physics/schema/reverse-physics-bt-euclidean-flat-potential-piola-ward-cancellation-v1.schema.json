@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-flat-potential-piola-ward-cancellation-v1.schema.json",
+  "title": "BT Euclidean flat-potential Piola Ward cancellation certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "flat_jacobian_theorem", "piola_ward_theorem",
+    "ground_state_resolvent_interface", "exact_cycle_fixture",
+    "method_disposition", "checks", "does_not_establish",
+    "missing_object_ledger", "next_gate", "provenance", "schema",
+    "report", "independent_verifier", "verification_commands"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_FLAT_POTENTIAL_PIOLA_WARD_CANCELLATION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-flat-potential-piola-ward-cancellation-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "EXACT_PIOLA_WARD_REDUCTION_METHOD_OBSTRUCTION"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "flat_jacobian_theorem": {
+      "type": "object",
+      "required": ["carriers", "differential", "absolute_determinant", "proof_interface", "status"],
+      "properties": {"status": {"const": "PROVED"}},
+      "additionalProperties": {"$ref": "#/$defs/text"}
+    },
+    "piola_ward_theorem": {
+      "type": "object",
+      "required": ["induced_vector_field", "piola_identity", "flat_effective_potential", "pointwise_cancellation", "integrated_identity", "linear_field_ward", "score_hessian_ward", "disposition", "status"],
+      "properties": {"status": {"const": "PROVED_METHOD_REDUCTION"}},
+      "additionalProperties": {"$ref": "#/$defs/text"}
+    },
+    "ground_state_resolvent_interface": {
+      "type": "object",
+      "required": ["setup", "eigenvector_derivative", "potential_gradient", "inverse_jacobian_identity", "remaining_estimate", "status"],
+      "properties": {"status": {"const": "EXACT_INTERFACE_ESTIMATE_OPEN"}},
+      "additionalProperties": {"$ref": "#/$defs/text"}
+    },
+    "exact_cycle_fixture": {
+      "type": "object",
+      "required": ["graph", "omega", "direction", "residual", "flat_coordinate_jacobian", "flat_coordinate_jacobian_directional_derivative", "oriented_jacobian_determinant", "pseudodeterminant", "induced_vector", "piola_divergence", "log_pseudodeterminant_directional_derivative", "action_score", "effective_potential_directional_derivative", "effective_minus_divergence", "linear_observable_directional_derivative", "status"],
+      "properties": {"status": {"const": "EXACT_RATIONAL_PIOLA_FIXTURE"}},
+      "additionalProperties": true
+    },
+    "method_disposition": {
+      "type": "object",
+      "required": ["flat_potential_determinant_pushforward", "flat_jacobian_equals_pseudodeterminant", "induced_vector_piola_identity", "induced_determinant_ward_as_new_estimate", "ground_state_resolvent_gradient", "noninduced_determinant_resolvent_stein_estimate", "normalized_lowest_mode_second_moment", "actual_interacting_h_minus_one_second_moment", "interacting_tightness", "continuum_limit", "ordinary_os_at_lambda_0p4", "born_rule", "krein_reconstruction", "lorentzian_transfer"],
+      "properties": {
+        "flat_jacobian_equals_pseudodeterminant": {"const": "PROVED"},
+        "induced_vector_piola_identity": {"const": "PROVED"},
+        "induced_determinant_ward_as_new_estimate": {"const": "OBSTRUCTED_BY_EXACT_CANCELLATION"},
+        "ground_state_resolvent_gradient": {"const": "PROVED"},
+        "noninduced_determinant_resolvent_stein_estimate": {"const": "OPEN"},
+        "normalized_lowest_mode_second_moment": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment": {"const": "OPEN"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": {"$ref": "#/$defs/text"}
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+      }
+    },
+    "does_not_establish": {"$ref": "#/$defs/text_list"},
+    "missing_object_ledger": {"$ref": "#/$defs/text_list"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "a3c8619d"},
+        "inputs": {"type": "array", "minItems": 2, "maxItems": 2},
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-flat-potential-piola-ward-cancellation-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-flat-potential-piola-ward-cancellation.md"},
+    "independent_verifier": {"const": "reverse_physics/verify_bt_euclidean_flat_potential_piola_ward_cancellation.py"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "text_list": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}}
+  }
+}
