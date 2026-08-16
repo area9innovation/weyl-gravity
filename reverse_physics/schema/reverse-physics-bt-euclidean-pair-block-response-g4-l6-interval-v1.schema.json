@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-pair-block-response-g4-l6-interval-v1.schema.json",
+  "title": "BT pair-block g4 L6 certified interval",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "created",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "coefficient",
+    "calibration",
+    "arithmetic_certificate",
+    "resource_receipt",
+    "method_disposition",
+    "next_gate",
+    "does_not_establish",
+    "provenance",
+    "verification_commands",
+    "tier_receipt",
+    "checks",
+    "report",
+    "schema",
+    "verifier"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_PAIR_BLOCK_RESPONSE_G4_L6_INTERVAL_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-pair-block-response-g4-l6-interval-v1"},
+    "created": {"type": "string"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"type": "string"},
+    "question": {"type": "string"},
+    "answer": {"type": "string"},
+    "coefficient": {
+      "type": "object",
+      "required": ["lattice_length", "volume", "order", "term_order", "terms", "total", "real_lower_endpoint", "real_upper_endpoint", "sign", "numeric_type"],
+      "properties": {
+        "lattice_length": {"const": 6},
+        "volume": {"const": 1296},
+        "order": {"const": "lambda^4"},
+        "term_order": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "string"}},
+        "terms": {"type": "object", "minProperties": 6, "maxProperties": 6},
+        "total": {"type": "object"},
+        "real_lower_endpoint": {"type": "string"},
+        "real_upper_endpoint": {"type": "string"},
+        "sign": {"const": "STRICTLY_POSITIVE_CERTIFIED_INTERVAL"},
+        "numeric_type": {"const": "CERTIFIED_COMPLEX_DISK_INTERVAL"}
+      },
+      "additionalProperties": false
+    },
+    "calibration": {"type": "object", "required": ["F20", "F40", "b2"]},
+    "arithmetic_certificate": {"type": "object"},
+    "resource_receipt": {"type": "object"},
+    "method_disposition": {"type": "object"},
+    "next_gate": {"type": "string"},
+    "does_not_establish": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+    "provenance": {
+      "type": "object",
+      "required": ["repository_base_commit", "inputs", "assumptions"],
+      "properties": {
+        "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "inputs": {"type": "array", "minItems": 4, "items": {"type": "object", "required": ["path", "sha256"]}},
+        "assumptions": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "tier_receipt": {"type": "object"},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer"},
+        "total": {"type": "integer"},
+        "failures": {"const": []},
+        "details": {"type": "object"}
+      }
+    },
+    "report": {"type": "string"},
+    "schema": {"type": "string"},
+    "verifier": {"type": "string"}
+  }
+}

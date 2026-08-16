@@ -1,0 +1,248 @@
+{
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_PAIR_BLOCK_RESPONSE_G4_L6_INTERVAL_V1",
+  "schema_version": "reverse-physics-bt-euclidean-pair-block-response-g4-l6-interval-v1",
+  "created": "2026-08-16",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "result_kind": "certified complex-disk interval for the full-Gibbs BT nearest-neighbour pair-block order-lambda^4 coefficient on the periodic 6^4 lattice",
+  "question": "Does the exact six-topology coefficient T_(4,6) have a rigorously decided sign?",
+  "answer": "Yes. Conservative long-double complex-disk arithmetic encloses the complete coefficient in [0.000821636134836984048978, 0.000821636147436984048978], strictly above zero. The computation streamed all 1296^2 momentum pairs under the memory ceiling and separately enclosed the three certified exact calibration values. This computes the finite-volume coefficient's sign, but it does not control L tending to infinity, the perturbative remainder, the fixed-coupling response, or the interacting H^-1 moment.",
+  "coefficient": {
+    "lattice_length": 6,
+    "volume": 1296,
+    "order": "lambda^4",
+    "term_order": [
+      "F_4_0",
+      "F_4_2",
+      "F_4_4",
+      "minus_F_3_3_Gamma_3",
+      "minus_F_2_2_Gamma_4",
+      "plus_F_2_2_Gamma_3_squared"
+    ],
+    "terms": {
+      "F_4_0": {
+        "midpoint": "0.000503375490622672053164",
+        "radius": "2.40e-16",
+        "raw_printed_radius": "2.371e-16",
+        "imaginary_midpoint": "0.000e+00"
+      },
+      "F_4_2": {
+        "midpoint": "0.00216496945607622996544",
+        "radius": "6.08e-12",
+        "raw_printed_radius": "6.018e-12",
+        "imaginary_midpoint": "0.000e+00"
+      },
+      "F_4_4": {
+        "midpoint": "-0.00105646796008433114247",
+        "radius": "1.50e-13",
+        "raw_printed_radius": "1.480e-13",
+        "imaginary_midpoint": "-4.768e-44"
+      },
+      "minus_F_3_3_Gamma_3": {
+        "midpoint": "1.11719445283249415006e-05",
+        "radius": "3.84e-15",
+        "raw_printed_radius": "3.800e-15",
+        "imaginary_midpoint": "-7.934e-26"
+      },
+      "minus_F_2_2_Gamma_4": {
+        "midpoint": "-0.00166025264114145040832",
+        "radius": "1.52e-16",
+        "raw_printed_radius": "1.501e-16",
+        "imaginary_midpoint": "0.000e+00"
+      },
+      "plus_F_2_2_Gamma_3_squared": {
+        "midpoint": "0.000858839851135538639699",
+        "radius": "7.39e-17",
+        "raw_printed_radius": "7.311e-17",
+        "imaginary_midpoint": "0.000e+00"
+      }
+    },
+    "total": {
+      "midpoint": "0.000821636141136984048978",
+      "radius": "6.30e-12",
+      "raw_printed_radius": "6.171e-12",
+      "imaginary_midpoint": "-7.934e-26",
+      "binary64_preflight": "0.00082163614113612996"
+    },
+    "real_lower_endpoint": "0.000821636134836984048978",
+    "real_upper_endpoint": "0.000821636147436984048978",
+    "sign": "STRICTLY_POSITIVE_CERTIFIED_INTERVAL",
+    "numeric_type": "CERTIFIED_COMPLEX_DISK_INTERVAL"
+  },
+  "calibration": {
+    "F20": {
+      "exact": {
+        "numerator": -15643,
+        "denominator": 1517824
+      },
+      "computed_interval": {
+        "midpoint": "-0.0103062015095294316088",
+        "radius": "1.57e-16",
+        "raw_printed_radius": "1.551e-16",
+        "imaginary_midpoint": "0.000e+00"
+      },
+      "status": "EXACT_VALUE_ENCLOSED"
+    },
+    "F40": {
+      "exact": {
+        "numerator": 41416831,
+        "denominator": 82278203392
+      },
+      "computed_interval": {
+        "midpoint": "0.000503375490622672053164",
+        "radius": "2.40e-16",
+        "raw_printed_radius": "2.371e-16",
+        "imaginary_midpoint": "0.000e+00"
+      },
+      "status": "EXACT_VALUE_ENCLOSED"
+    },
+    "b2": {
+      "exact": {
+        "numerator": 956585197,
+        "denominator": 10069092633600
+      },
+      "computed_interval": {
+        "midpoint": "9.50021249986248662994e-05",
+        "radius": "8.90e-16",
+        "raw_printed_radius": "8.799e-16",
+        "imaginary_midpoint": "0.000e+00"
+      },
+      "status": "EXACT_VALUE_ENCLOSED"
+    }
+  },
+  "arithmetic_certificate": {
+    "model": "conservative complex disks with long-double midpoints and propagated Euclidean radii",
+    "error_allowance": "1.0e-17",
+    "long_double_mantissa_bits": 64,
+    "long_double_max_exponent": 16384,
+    "float_radix": 2,
+    "float_eval_method": 0,
+    "rounding_mode": "FE_TONEAREST",
+    "sizeof_long_double_bytes": 16,
+    "phase_midpoint_hex": "0xd.db3d742c265539dp-4",
+    "phase_seed_radius": "2.0e-19",
+    "recorded_radius_policy": "Every displayed raw radius was rounded upward again by at least one percent; the total radius was enlarged to contain the sum of all six enlarged term disks and midpoint-decimalization error.",
+    "compiler_flags": "-std=c11 -O2 -fopenmp -D_DEFAULT_SOURCE -ffp-contract=off -fexcess-precision=standard -Wall -Wextra -Werror",
+    "disk_model": "Each complex scalar is a midpoint m and a nonnegative radius r denoting |z-m|<=r.",
+    "forward_error_lemma": "For radix-2 round-to-nearest long double with at least 64 mantissa bits, normal finite intermediates, disabled contraction, and standard excess precision, the addition and complex-multiplication midpoint errors are bounded by the explicit ERR terms. Radius-expression rounding is absorbed by the final (1+4 ERR) and (1+8 ERR) inflations. ERR exceeds 128 unit roundoffs on the recorded platform.",
+    "exact_numeric_boundary": "CERTIFIED_INTERVAL_NOT_EXACT_RATIONAL"
+  },
+  "resource_receipt": {
+    "threads": 8,
+    "elapsed_seconds": 9126.0,
+    "user_seconds": 72523.27,
+    "system_seconds": 4.61,
+    "peak_kib": 5200,
+    "memory_limit_kib": 500000,
+    "compiler": "cc (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+    "architecture": "x86_64; streamed 1296-by-1296 momentum pairs with row-local disks and deterministic index-order final reduction",
+    "exit_status": 0
+  },
+  "method_disposition": {
+    "exact_six_topology_formula": "IMPORTED_CERTIFIED",
+    "binary64_preflight": "INDEPENDENT_MIDPOINT_CROSSCHECK",
+    "complex_disk_interval_rail": "PASS_STRICT_POSITIVE",
+    "finite_volume_g4_coefficient": "COEFFICIENT_COMPUTED_AS_INTERVAL",
+    "large_volume_g4_power_or_log": "OPEN",
+    "uniform_pair_response": "OPEN",
+    "response_to_witten_schur_bridge": "OPEN",
+    "actual_interacting_h_minus_one": "OPEN",
+    "continuum_measure": "NOT_ESTABLISHED",
+    "born_rule": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED"
+  },
+  "next_gate": "Use the six local Laurent-polynomial vertices to split each two-loop sum into hard-hard, hard-soft, and soft-soft regions. Prove its leading power or logarithm uniformly in L before attempting any fixed-coupling remainder or response-to-Witten transfer.",
+  "does_not_establish": [
+    "an exact rational value for T_(4,6)",
+    "the sign or size of the order-lambda^4 coefficient uniformly in volume",
+    "a uniform perturbative remainder or fixed-coupling pair-response inequality",
+    "a heat-bath gap, Witten estimate, or actual interacting H^-1 bound",
+    "tightness, continuum identification, a Born rule, or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "provenance": {
+    "repository_base_commit": "a59f636f73a4bc75c2c8103bc85e47f1fd9e06bd",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_PAIR_BLOCK_RESPONSE_G4_TOPOLOGY_REDUCTION_V1.json",
+        "sha256": "677faa9d47c21b24ea5c2a7ea60faa8cdcd93016608e7830aada0a2c6530dfd5"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_PAIR_BLOCK_RESPONSE_G4_L6_PREFLIGHT_V1.json",
+        "sha256": "812c20d33ba3fcee4850a246c8688d5791ea2424e277334ac237d3efbe3c7cfd"
+      },
+      {
+        "path": "reverse_physics/bt_euclidean_pair_block_response_g4_l6_interval.c",
+        "sha256": "075139dc1f7c01a75f4c01ed854a9bb963e21cc58ca76b0c2c21f04e714df647"
+      },
+      {
+        "path": "reverse_physics/data/bt_euclidean_pair_block_response_g4_l6_interval_v1.json",
+        "sha256": "27aab3f98db2b4352dd55bb3f3f95ad9a0ccd14fd4b8748ac2990c9e62d41a4c"
+      }
+    ],
+    "assumptions": [
+      "the imported certified six-topology Fourier formula and its factorial and volume normalizations are correct",
+      "the recorded x86_64 GCC/glibc platform evaluates the direct x87 long-double operations in radix 2, round-to-nearest, with at least 64 mantissa bits and the stated compiler flags",
+      "all arithmetic intermediates are finite normal long doubles and all integer products stay within their declared types",
+      "the complex-disk addition and multiplication forward-error lemma applies recursively to every scalar operation in the evaluator",
+      "the exact sixth-root imaginary part lies in the phase seed disk; the verifier checks this with rational squared bounds",
+      "the enlarged recorded radii, rather than the shorter raw printed radii, define the certified intervals",
+      "the advisory OpenMP progress counter has no role in any row value or in the deterministic index-order final reduction"
+    ]
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_pair_block_response_g4_l6_interval.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_pair_block_response_g4_l6_interval.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_pair_block_response_g4_l6_interval",
+    "cc -std=c11 -O2 -fopenmp -D_DEFAULT_SOURCE -ffp-contract=off -fexcess-precision=standard -Wall -Wextra -Werror reverse_physics/bt_euclidean_pair_block_response_g4_l6_interval.c -lm -o /tmp/bt-pair-g4-l6-interval",
+    "ulimit -v 500000; OMP_NUM_THREADS=8 /tmp/bt-pair-g4-l6-interval"
+  ],
+  "tier_receipt": {
+    "tier_0": "C and Python compilation, strict JSON/schema parsing, scoped git diff check, content hashes, and exact staged-diff inspection required",
+    "tier_1": "deterministic producer, nonimporting interval verifier, platform probe, and focused mutation tests required",
+    "tier_2": "the complete six-topology interval chain was affected and the exhaustive 1296-row run passed in 9126.0 seconds under the memory cap",
+    "tier_3": "not triggered: finite-volume coefficient enclosure only; no paper theorem, H^-1, continuum, freeze, release, shared-core, or Lorentzian lifecycle is promoted",
+    "memory_policy": "all commands run under a 500000 KiB virtual-memory ceiling; the exhaustive run peaked at 5200 KiB RSS",
+    "scoped_command_receipts": {
+      "producer_check": "PASS; 0.03 s; 20924 KiB peak",
+      "independent_verifier": "PASS; 0.10 s; 31436 KiB peak",
+      "nine_focused_and_mutation_tests": "PASS; 0.11 s; 31652 KiB peak",
+      "exhaustive_interval_producer": "PASS; 9126.0 s; 5200 KiB peak",
+      "planning_event": "PASS on retry with GOMEMLIMIT=300MiB; 5.54 s; 238236 KiB peak",
+      "planning_import": "PASS: 1703 nodes, 0 invalid items, 0 malformed events; 6.53 s; 242528 KiB peak",
+      "science_forge_shadow": "ADVISORY exit 0; 2.86 s; 339448 KiB peak; reported pre-existing unpinned-toolchain/stdlib drift, missing SymPy in the bp2 bridge audit, and corpus-baseline drift; not a scientific pass",
+      "failed_go_ulimit_attempt": "FAIL before event creation: Go runtime could not reserve page-summary virtual address space under ulimit -v 500000; not counted as a pass"
+    }
+  },
+  "checks": {
+    "ok": true,
+    "passed": 15,
+    "total": 15,
+    "failures": [],
+    "details": {
+      "lattice_is_L6": true,
+      "all_momentum_pairs_evaluated": true,
+      "six_terms_recorded": true,
+      "term_sum_is_enclosed": true,
+      "strict_positive_lower_endpoint": true,
+      "imaginary_interval_contains_zero": true,
+      "exact_F20_is_enclosed": true,
+      "exact_F40_is_enclosed": true,
+      "exact_b2_is_enclosed": true,
+      "roundoff_allowance_exceeds_128_units": true,
+      "phase_seed_radius_is_conservative": true,
+      "memory_ceiling_respected": true,
+      "numeric_interval_type_is_explicit": true,
+      "large_volume_and_uniform_remainder_open": true,
+      "no_continuum_born_krein_or_lorentzian_promotion": true
+    }
+  },
+  "report": "reverse_physics/reports/bt-euclidean-pair-block-response-g4-l6-interval.md",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-pair-block-response-g4-l6-interval-v1.schema.json",
+  "verifier": "reverse_physics/verify_bt_euclidean_pair_block_response_g4_l6_interval.py"
+}

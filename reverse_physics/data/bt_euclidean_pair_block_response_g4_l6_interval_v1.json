@@ -1,0 +1,122 @@
+{
+  "result_type": "CERTIFIED_COMPLEX_DISK_INTERVAL",
+  "lattice_length": 6,
+  "volume": 1296,
+  "outer_momentum_rows": 1296,
+  "calibration": {
+    "F20": {
+      "midpoint": "-0.0103062015095294316088",
+      "radius": "1.57e-16",
+      "raw_printed_radius": "1.551e-16",
+      "imaginary_midpoint": "0.000e+00"
+    },
+    "F40": {
+      "midpoint": "0.000503375490622672053164",
+      "radius": "2.40e-16",
+      "raw_printed_radius": "2.371e-16",
+      "imaginary_midpoint": "0.000e+00"
+    },
+    "b2": {
+      "midpoint": "9.50021249986248662994e-05",
+      "radius": "8.90e-16",
+      "raw_printed_radius": "8.799e-16",
+      "imaginary_midpoint": "0.000e+00"
+    }
+  },
+  "terms": {
+    "F_4_0": {
+      "midpoint": "0.000503375490622672053164",
+      "radius": "2.40e-16",
+      "raw_printed_radius": "2.371e-16",
+      "imaginary_midpoint": "0.000e+00"
+    },
+    "F_4_2": {
+      "midpoint": "0.00216496945607622996544",
+      "radius": "6.08e-12",
+      "raw_printed_radius": "6.018e-12",
+      "imaginary_midpoint": "0.000e+00"
+    },
+    "F_4_4": {
+      "midpoint": "-0.00105646796008433114247",
+      "radius": "1.50e-13",
+      "raw_printed_radius": "1.480e-13",
+      "imaginary_midpoint": "-4.768e-44"
+    },
+    "minus_F_3_3_Gamma_3": {
+      "midpoint": "1.11719445283249415006e-05",
+      "radius": "3.84e-15",
+      "raw_printed_radius": "3.800e-15",
+      "imaginary_midpoint": "-7.934e-26"
+    },
+    "minus_F_2_2_Gamma_4": {
+      "midpoint": "-0.00166025264114145040832",
+      "radius": "1.52e-16",
+      "raw_printed_radius": "1.501e-16",
+      "imaginary_midpoint": "0.000e+00"
+    },
+    "plus_F_2_2_Gamma_3_squared": {
+      "midpoint": "0.000858839851135538639699",
+      "radius": "7.39e-17",
+      "raw_printed_radius": "7.311e-17",
+      "imaginary_midpoint": "0.000e+00"
+    }
+  },
+  "total": {
+    "midpoint": "0.000821636141136984048978",
+    "radius": "6.30e-12",
+    "raw_printed_radius": "6.171e-12",
+    "imaginary_midpoint": "-7.934e-26",
+    "binary64_preflight": "0.00082163614113612996"
+  },
+  "arithmetic": {
+    "model": "conservative complex disks with long-double midpoints and propagated Euclidean radii",
+    "error_allowance": "1.0e-17",
+    "long_double_mantissa_bits": 64,
+    "long_double_max_exponent": 16384,
+    "float_radix": 2,
+    "float_eval_method": 0,
+    "rounding_mode": "FE_TONEAREST",
+    "sizeof_long_double_bytes": 16,
+    "phase_midpoint_hex": "0xd.db3d742c265539dp-4",
+    "phase_seed_radius": "2.0e-19",
+    "recorded_radius_policy": "Every displayed raw radius was rounded upward again by at least one percent; the total radius was enlarged to contain the sum of all six enlarged term disks and midpoint-decimalization error.",
+    "compiler_flags": "-std=c11 -O2 -fopenmp -D_DEFAULT_SOURCE -ffp-contract=off -fexcess-precision=standard -Wall -Wextra -Werror"
+  },
+  "resource_receipt": {
+    "threads": 8,
+    "elapsed_seconds": 9126.0,
+    "user_seconds": 72523.27,
+    "system_seconds": 4.61,
+    "peak_kib": 5200,
+    "memory_limit_kib": 500000,
+    "compiler": "cc (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+    "architecture": "x86_64; streamed 1296-by-1296 momentum pairs with row-local disks and deterministic index-order final reduction",
+    "exit_status": 0
+  },
+  "assumptions": [
+    "the imported certified six-topology Fourier formula and its factorial and volume normalizations are correct",
+    "the recorded x86_64 GCC/glibc platform evaluates the direct x87 long-double operations in radix 2, round-to-nearest, with at least 64 mantissa bits and the stated compiler flags",
+    "all arithmetic intermediates are finite normal long doubles and all integer products stay within their declared types",
+    "the complex-disk addition and multiplication forward-error lemma applies recursively to every scalar operation in the evaluator",
+    "the exact sixth-root imaginary part lies in the phase seed disk; the verifier checks this with rational squared bounds",
+    "the enlarged recorded radii, rather than the shorter raw printed radii, define the certified intervals",
+    "the advisory OpenMP progress counter has no role in any row value or in the deterministic index-order final reduction"
+  ],
+  "tier_receipt": {
+    "tier_0": "C and Python compilation, strict JSON/schema parsing, scoped git diff check, content hashes, and exact staged-diff inspection required",
+    "tier_1": "deterministic producer, nonimporting interval verifier, platform probe, and focused mutation tests required",
+    "tier_2": "the complete six-topology interval chain was affected and the exhaustive 1296-row run passed in 9126.0 seconds under the memory cap",
+    "tier_3": "not triggered: finite-volume coefficient enclosure only; no paper theorem, H^-1, continuum, freeze, release, shared-core, or Lorentzian lifecycle is promoted",
+    "memory_policy": "all commands run under a 500000 KiB virtual-memory ceiling; the exhaustive run peaked at 5200 KiB RSS",
+    "scoped_command_receipts": {
+      "producer_check": "PASS; 0.03 s; 20924 KiB peak",
+      "independent_verifier": "PASS; 0.10 s; 31436 KiB peak",
+      "nine_focused_and_mutation_tests": "PASS; 0.11 s; 31652 KiB peak",
+      "exhaustive_interval_producer": "PASS; 9126.0 s; 5200 KiB peak",
+      "planning_event": "PASS on retry with GOMEMLIMIT=300MiB; 5.54 s; 238236 KiB peak",
+      "planning_import": "PASS: 1703 nodes, 0 invalid items, 0 malformed events; 6.53 s; 242528 KiB peak",
+      "science_forge_shadow": "ADVISORY exit 0; 2.86 s; 339448 KiB peak; reported pre-existing unpinned-toolchain/stdlib drift, missing SymPy in the bp2 bridge audit, and corpus-baseline drift; not a scientific pass",
+      "failed_go_ulimit_attempt": "FAIL before event creation: Go runtime could not reserve page-summary virtual address space under ulimit -v 500000; not counted as a pass"
+    }
+  }
+}
