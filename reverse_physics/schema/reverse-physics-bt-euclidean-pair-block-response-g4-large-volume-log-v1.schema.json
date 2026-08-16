@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-pair-block-response-g4-large-volume-log-v1.schema.json",
+  "title": "BT pair-block g4 large-volume logarithm",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "created",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "exact_action_vertex_identities",
+    "response_soft_lemma",
+    "tadpole_reduction",
+    "lattice_sum_lemmas",
+    "topology_disposition",
+    "leading_log_theorem",
+    "method_disposition",
+    "next_gate",
+    "does_not_establish",
+    "provenance",
+    "tier_receipt",
+    "checks",
+    "report",
+    "schema",
+    "verifier",
+    "verification_commands"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_PAIR_BLOCK_RESPONSE_G4_LARGE_VOLUME_LOG_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-pair-block-response-g4-large-volume-log-v1"},
+    "created": {"type": "string"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"type": "string"},
+    "question": {"type": "string"},
+    "answer": {"type": "string"},
+    "exact_action_vertex_identities": {"type": "object"},
+    "response_soft_lemma": {
+      "type": "object",
+      "required": ["general", "pair_quadratic_expansion", "exact_linear_coefficient", "source", "status"]
+    },
+    "tadpole_reduction": {
+      "type": "object",
+      "required": ["definition", "hypercubic_expansion", "C_L_axial_formula", "C_L_limit", "W4_definition", "limit_derivation", "exact_L6_C", "exact_L6_quartic_remainder_average", "positivity"]
+    },
+    "lattice_sum_lemmas": {"type": "object"},
+    "topology_disposition": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["term", "soft_majorant", "normalized_sum", "large_volume_disposition"],
+        "properties": {
+          "term": {"type": "string"},
+          "soft_majorant": {"type": "string"},
+          "normalized_sum": {"type": "string"},
+          "large_volume_disposition": {"enum": ["O(1)", "UNIQUE_NEGATIVE_LOG"]}
+        }
+      }
+    },
+    "leading_log_theorem": {
+      "type": "object",
+      "required": ["formula", "rational_prefactor_of_W4_over_pi_squared", "derivation", "sign", "consequence", "status"],
+      "properties": {
+        "formula": {"type": "string"},
+        "rational_prefactor_of_W4_over_pi_squared": {"type": "object"},
+        "derivation": {"type": "string"},
+        "sign": {"const": "STRICTLY_NEGATIVE"},
+        "consequence": {"type": "string"},
+        "status": {"const": "VOLUME_UNIFORM_COEFFICIENTWISE_PAIR_RESPONSE_OBSTRUCTED_AT_ORDER_LAMBDA4"}
+      }
+    },
+    "method_disposition": {"type": "object"},
+    "next_gate": {"type": "string"},
+    "does_not_establish": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+    "provenance": {
+      "type": "object",
+      "required": ["repository_base_commit", "inputs", "exact_arithmetic", "analytic_arithmetic", "assumptions"],
+      "properties": {
+        "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "inputs": {"type": "array", "minItems": 4, "items": {"type": "object", "required": ["path", "sha256"]}},
+        "exact_arithmetic": {"type": "string"},
+        "analytic_arithmetic": {"type": "string"},
+        "assumptions": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+      }
+    },
+    "tier_receipt": {"type": "object"},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer"},
+        "total": {"type": "integer"},
+        "failures": {"const": []},
+        "details": {"type": "object"}
+      }
+    },
+    "report": {"type": "string"},
+    "schema": {"type": "string"},
+    "verifier": {"type": "string"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+  }
+}

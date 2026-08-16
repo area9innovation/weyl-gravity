@@ -1,0 +1,203 @@
+{
+  "answer": "No at fixed perturbative order. The exact six-topology formula has one and only one logarithmic term. Its quartic-action tadpole contributes -(3*W4)/(112*pi^2)*log L+o(log L), where W4=integral_BZ 1/omega is strictly positive. Every other topology is O(1). Hence T_(4,L)/log L tends to the displayed strictly negative coefficient and T_(4,L) tends to minus infinity. The positive L=6 interval is a finite-volume fact, but pair conditioning does not yield a coefficientwise volume-uniform perturbative response. This does not decide the resummed fixed-coupling response or the actual interacting H^-1 moment.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_PAIR_BLOCK_RESPONSE_G4_LARGE_VOLUME_LOG_V1",
+  "checks": {
+    "details": {
+      "F22_soft_coefficient_is_three_over_28": true,
+      "exact_L6_tadpole_leading_is_positive": true,
+      "exact_L6_tadpole_remainder_is_positive": true,
+      "exactly_one_log_topology": true,
+      "final_W4_over_pi_squared_coefficient_is_minus_three_over_112": true,
+      "fixed_coupling_and_actual_H_minus_one_remain_open": true,
+      "formal_pair_response_uniformity_is_obstructed": true,
+      "gamma3_dispersion_identity": true,
+      "gamma4_axial_tadpole_identity": true,
+      "green_square_log_coefficient_is_one_over_eight_pi_squared": true,
+      "no_continuum_born_krein_or_lorentzian_promotion": true,
+      "one_loop_numerator_contains_exact_linear_term": true,
+      "other_five_topologies_are_uniformly_bounded": true,
+      "six_topologies_imported": true,
+      "tadpole_limit_is_eight_W4": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 15,
+    "total": 15
+  },
+  "created": "2026-08-16",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "the sign of the resummed pair response at lambda=2/5",
+    "a uniform perturbative remainder or convergence radius",
+    "failure or success of a heat-bath gap or Witten estimate",
+    "divergence or boundedness of the actual interacting H^-1 moment",
+    "tightness, continuum identification, a Born rule, or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_action_vertex_identities": {
+    "gamma3": "Gamma3(a,b,c)=a^2+b^2+c^2-2ab-2ac-2bc=(c-a-b)^2-4ab for a=omega(k), b=omega(l), c=omega(k-l)",
+    "gamma4_axial": "Gamma4(-k,k,l,-l)=a*[4*b*(2-cos(l1))+8*sin(l1)^2+4*a*(1-cos(l1))^2] for axial k and a=omega(k), b=omega(l)",
+    "gamma4_bracket_sign": "NONNEGATIVE_TERM_BY_TERM_AND_STRICTLY_POSITIVE_OFF_THE_ZERO_MODE",
+    "status": "EXACT_POLYNOMIAL_IDENTITIES"
+  },
+  "lattice_sum_lemmas": {
+    "G2": "G2_L=(1/N)*sum omega^(-2)=(1/(8*pi^2))*log L+O(1)",
+    "W1": "W1_L=(1/N)*sum omega^(-1)=O(1) by four-dimensional shell count",
+    "sunset": "Sunset_L=(1/N^2)*sum 1/[omega(k)omega(l)omega(k+l)]=O(1)",
+    "sunset_proof": "Order the three geodesic momentum radii. Conservation makes the two largest comparable. In dyadic sectors with smallest radius s and largest radius R, the normalized contribution is O(s^2/L^2); summing s<=R<=L is bounded.",
+    "zero_mode_policy": "every summand containing omega(0)^(-1) is defined as zero, matching the primed bilaplacian covariance"
+  },
+  "leading_log_theorem": {
+    "consequence": "T_(4,L) tends to minus infinity and is eventually negative",
+    "derivation": "-(1/4)*(3/28)*(8*W4)*(1/(8*pi^2))",
+    "formula": "lim_(L->infinity) T_(4,L)/log L=-(3*W4)/(112*pi^2)<0",
+    "rational_prefactor_of_W4_over_pi_squared": {
+      "denominator": 112,
+      "numerator": -3
+    },
+    "sign": "STRICTLY_NEGATIVE",
+    "status": "VOLUME_UNIFORM_COEFFICIENTWISE_PAIR_RESPONSE_OBSTRUCTED_AT_ORDER_LAMBDA4"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "method_disposition": {
+    "actual_interacting_h_minus_one": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "coefficientwise_pair_block_uniformity": "OBSTRUCTED",
+    "continuum_measure": "NOT_ESTABLISHED",
+    "finite_volume_L6_g4": "STRICTLY_POSITIVE_CERTIFIED_INTERVAL",
+    "fixed_coupling_pair_response": "OPEN_NONUNIFORM_SERIES_CANNOT_DECIDE",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "large_volume_g4": "STRICTLY_NEGATIVE_LOGARITHMIC_DIVERGENCE",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "ordinary_OS_finite_volume": "OBSTRUCTED_BY_PREDECESSOR",
+    "response_to_witten_schur_bridge": "NOT_ACTIVATED"
+  },
+  "next_gate": "Retire coefficientwise perturbative pair-response positivity as a volume-uniform route. Attack the normalized fixed-coupling pair response or the centered conditional score nonperturbatively, with a response-to-Witten bridge only after a genuinely uniform inequality is proved.",
+  "provenance": {
+    "analytic_arithmetic": "finite-range soft-factor division, hypercubic Taylor expansion, dominated Brillouin-zone limits, periodic integration by parts, and four-dimensional dyadic shell counting",
+    "assumptions": [
+      "the imported six-topology formula and one-loop Fourier numerator are correct",
+      "all response vertices have the certified fixed finite support and constant-shift invariance used by the per-leg soft-factor lemma",
+      "L tends through periodic four-dimensional lattices with the primed zero mode removed",
+      "a fixed-order divergent coefficient is not promoted through an unproved nonuniform perturbation series"
+    ],
+    "exact_arithmetic": "Python Fraction polynomial algebra, exact L6 sixth-root trigonometric data, and exact exponent ledgers",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_PAIR_BLOCK_RESPONSE_ONE_LOOP_V1.json",
+        "sha256": "593c77094c35d44d066775a2f7a13c5002ce8bebd7c594efc0e56af4400496e0"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_PAIR_BLOCK_RESPONSE_G4_TOPOLOGY_REDUCTION_V1.json",
+        "sha256": "677faa9d47c21b24ea5c2a7ea60faa8cdcd93016608e7830aada0a2c6530dfd5"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_PAIR_BLOCK_RESPONSE_G4_L6_INTERVAL_V1.json",
+        "sha256": "4425028468618548e02bb08ceeebf7986ed8b32b08da384e4ab98b3126648ab1"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_SUBPOWER_PAIR_BOUNDS_V1.json",
+        "sha256": "6cd549635616e635ce5bcba5e492e9c5b19d1be9542babf2685fc8dae12c42a6"
+      }
+    ],
+    "repository_base_commit": "351de7d729155a280c9d2f763df8baadcc55cae0"
+  },
+  "question": "Does the positive finite-volume pair-block response coefficient remain nonnegative uniformly as the four-dimensional periodic volume grows?",
+  "report": "reverse_physics/reports/bt-euclidean-pair-block-response-g4-large-volume-log.md",
+  "response_soft_lemma": {
+    "exact_linear_coefficient": {
+      "denominator": 28,
+      "numerator": 3
+    },
+    "general": "Every fixed-range local response vertex is a trigonometric polynomial. Constant-shift invariance in each background argument gives |F_(i,r)(k1,...,kr)|<=C_(i,r)*product_j sqrt(omega(kj)), with C independent of L.",
+    "pair_quadratic_expansion": "F_(2,2)(k,-k)=(3/28)*omega(k)+O(omega(k)^2)",
+    "source": "twice the exact (3/56)e1 term in the certified one-loop Fourier numerator because the topology formula carries 1/(2N)",
+    "status": "EXACT_SOFT_COEFFICIENT_AND_UNIFORM_LOCAL_REMAINDER"
+  },
+  "result_kind": "exact leading logarithm and uniform topology disposition for the BT nearest-neighbour pair-block order-lambda^4 response coefficient",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-pair-block-response-g4-large-volume-log-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-pair-block-response-g4-large-volume-log-v1",
+  "tadpole_reduction": {
+    "C_L_axial_formula": "C_L=(1/N)*sum_(l!=0)[4*(2-cos(l1))/omega(l)+8*sin(l1)^2/omega(l)^2]",
+    "C_L_limit": "8*W4",
+    "W4_definition": "W4=integral_[-pi,pi]^4 d^4l/(2*pi)^4 * omega(l)^(-1)",
+    "definition": "A_L(k)=(1/N)*sum_l Gamma4(-k,k,l,-l)*omega(l)^(-2)",
+    "exact_L6_C": {
+      "denominator": 12843230400,
+      "numerator": 15611139211
+    },
+    "exact_L6_quartic_remainder_average": {
+      "denominator": 29355955200,
+      "numerator": 701304949
+    },
+    "hypercubic_expansion": "A_L(k)=C_L*omega(k)+O(omega(k)^2) uniformly in L",
+    "limit_derivation": [
+      "integral cos(l1)/omega=W4-1/8 by sum_mu x_mu/omega=1",
+      "integral sin(l1)^2/omega^2=(1/2)*integral cos(l1)/omega by periodic integration by parts",
+      "therefore integral [4*(2-cos(l1))/omega+8*sin(l1)^2/omega^2]=8*W4"
+    ],
+    "positivity": "C_L>0 for every L with a nonzero mode and W4>0"
+  },
+  "tier_receipt": {
+    "scoped_command_receipts": {
+      "independent_verifier": "PASS; 0.10 s; 30048 KiB peak",
+      "planning_event": "PASS; 5.59 s; 212048 KiB peak",
+      "planning_import": "PASS: 1704 nodes, 0 invalid items, 0 malformed events; 6.18 s; 249556 KiB peak",
+      "producer_check": "PASS; 0.05 s; 21056 KiB peak",
+      "science_forge_shadow": "ADVISORY exit 0; 2.99 s; 331016 KiB peak; reported pre-existing unpinned-toolchain/stdlib drift, missing SymPy in the bp2 bridge audit, and corpus-baseline drift; not a scientific pass",
+      "thirteen_focused_and_mutation_tests": "PASS; 0.18 s; 30652 KiB peak"
+    },
+    "tier_0": "Python compilation, strict JSON/schema parsing, content hashes, scoped diff check, and exact staged-diff inspection required",
+    "tier_1": "exact polynomial producer, method-distinct interpolation verifier, independent L6 tadpole sum, and thirteen focused/mutation tests required",
+    "tier_2": "affected chain imports the exact one-loop numerator, six-topology formula, L6 interval, and shared action-vertex shell bounds by content hash; all are checked by the independent verifier",
+    "tier_3": "not triggered: coefficientwise perturbative method obstruction only; no fixed-coupling, H^-1, continuum, paper theorem, freeze, release, shared-core, or Lorentzian lifecycle promotion"
+  },
+  "topology_disposition": [
+    {
+      "large_volume_disposition": "O(1)",
+      "normalized_sum": "none",
+      "soft_majorant": "constant local vertex",
+      "term": "F_4_0"
+    },
+    {
+      "large_volume_disposition": "O(1)",
+      "normalized_sum": "W1_L=(1/N)*sum_(k!=0) omega(k)^(-1)",
+      "soft_majorant": "C*omega(k)",
+      "term": "F_4_2"
+    },
+    {
+      "large_volume_disposition": "O(1)",
+      "normalized_sum": "W1_L^2",
+      "soft_majorant": "C*omega(k)*omega(l)",
+      "term": "F_4_4"
+    },
+    {
+      "large_volume_disposition": "O(1)",
+      "normalized_sum": "Sunset_L=(1/N^2)*sum 1/[omega(k)omega(l)omega(k+l)]",
+      "soft_majorant": "C*omega(k)*omega(l)*omega(k+l)",
+      "term": "minus_F_3_3_Gamma_3"
+    },
+    {
+      "large_volume_disposition": "UNIQUE_NEGATIVE_LOG",
+      "normalized_sum": "G2_L=(1/N)*sum_(k!=0) omega(k)^(-2)",
+      "soft_majorant": "F_2_2=(3/28)*omega+O(omega^2); tadpole=C_L*omega+O(omega^2)",
+      "term": "minus_F_2_2_Gamma_4"
+    },
+    {
+      "large_volume_disposition": "O(1)",
+      "normalized_sum": "Sunset_L",
+      "soft_majorant": "Gamma_3^2<=C*omega(k)^2*omega(l)*omega(k-l)",
+      "term": "plus_F_2_2_Gamma_3_squared"
+    }
+  ],
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_pair_block_response_g4_large_volume_log.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_pair_block_response_g4_large_volume_log.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_pair_block_response_g4_large_volume_log"
+  ],
+  "verifier": "reverse_physics/verify_bt_euclidean_pair_block_response_g4_large_volume_log.py"
+}
