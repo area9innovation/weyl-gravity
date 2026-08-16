@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-m1c-common-snapshot-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "schema_path", "result_id", "result_kind", "result_state", "lifecycle", "dependency_tags", "scope", "snapshot_id", "snapshot_sha256", "carrier_manifest", "artifact_pins", "export_bindings", "accepted_top_level_hashes", "hash_composition_witnesses", "gate_a_replay", "supplemental_replay", "receiver_replay", "foundational_strength", "independent_checker", "human_report", "does_not_establish", "claim_flags", "content_sha256"],
+  "properties": {
+    "schema": {"const": "strict-m1c-common-snapshot-v1"},
+    "result_id": {"const": "STRICT_M1C_COMMON_SNAPSHOT_V1"},
+    "result_kind": {"const": "IMMUTABLE_AUTHORITATIVE_CLASSICAL_BV_SNAPSHOT"},
+    "result_state": {"const": "M1C_COMPLETE_GATE_A_READY_FOR_INDEPENDENT_DECISION"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "snapshot_id": {"type": "string", "pattern": "^STRICT_PURE_WEYL_BV_SNAPSHOT_[0-9a-f]{16}$"},
+    "snapshot_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "carrier_manifest": {"type": "object", "properties": {"authoritative_rows": {"const": 17779}, "authoritative_carrier_objects": {"const": 6}, "excluded_test_rows": {"const": 410}, "excluded_formal_cotangent_rows": {"const": 8980}, "distinct_categories_not_identified": {"const": true}}, "required": ["shape", "typed_diagram_sha256", "authoritative_rows", "authoritative_carrier_objects", "component_payloads", "excluded_test_rows", "excluded_formal_cotangent_rows", "distinct_categories_not_identified"]},
+    "artifact_pins": {"type": "array", "minItems": 16, "maxItems": 16},
+    "export_bindings": {"type": "array", "minItems": 20, "maxItems": 20, "items": {"type": "object", "properties": {"status": {"const": "BOUND_IN_COMMON_IMMUTABLE_MANIFEST"}}, "required": ["export_id", "status", "category", "objects", "boundary"]}},
+    "accepted_top_level_hashes": {"type": "object", "minProperties": 7, "maxProperties": 7, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "gate_a_replay": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "object", "properties": {"status": {"const": "PASS_ON_COMMON_BYTES"}, "defects": {"const": 0}}, "required": ["check_id", "status", "defects", "pins", "witness"]}},
+    "supplemental_replay": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "properties": {"status": {"const": "PASS_ON_COMMON_BYTES"}, "defects": {"const": 0}}, "required": ["check_id", "status", "defects", "pin"]}},
+    "receiver_replay": {"type": "object", "properties": {"independent_checkers": {"type": "array", "minItems": 11, "maxItems": 11}, "all_required_checkers_passed": {"const": true}, "gate_checks_passed": {"const": 10}, "gate_checks_failed": {"const": 0}, "supplemental_checks_passed": {"const": 3}}, "required": ["independent_checkers", "all_required_checkers_passed", "gate_checks_passed", "gate_checks_failed", "supplemental_checks_passed"]},
+    "claim_flags": {
+      "type": "object",
+      "properties": {
+        "M1A_FULL_TYPED_CARRIER_LEDGER_COMPLETE": {"const": true},
+        "M1B_REPRESENTED_COMPOSITE_CONTRACTION_COMPLETE": {"const": true},
+        "M1C_COMMON_MANIFEST_REPLAY_COMPLETE": {"const": true},
+        "M1_COMMON_STRICT_SNAPSHOT_COMPLETE": {"const": true},
+        "ALL_20_EXPORTS_COMMON_BOUND": {"const": true},
+        "ALL_7_TOP_LEVEL_HASHES_COMMON_BOUND": {"const": true},
+        "ALL_10_GATE_A_CHECKS_COMMON_REPLAYED": {"const": true},
+        "FORMAL_8980_SOURCE_IS_AUTHORITATIVE_ORIGINAL_BV_COMPLEX": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "NONLINEAR_GREEN_COMPATIBILITY_CERTIFIED": {"const": false},
+        "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "RENORMALIZED_LORENTZIAN_PRODUCTS_CONSTRUCTED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": {"const": false}
+      },
+      "required": ["M1A_FULL_TYPED_CARRIER_LEDGER_COMPLETE", "M1B_REPRESENTED_COMPOSITE_CONTRACTION_COMPLETE", "M1C_COMMON_MANIFEST_REPLAY_COMPLETE", "M1_COMMON_STRICT_SNAPSHOT_COMPLETE", "ALL_20_EXPORTS_COMMON_BOUND", "ALL_7_TOP_LEVEL_HASHES_COMMON_BOUND", "ALL_10_GATE_A_CHECKS_COMMON_REPLAYED", "FORMAL_8980_SOURCE_IS_AUTHORITATIVE_ORIGINAL_BV_COMPLEX", "CLASSICAL_IMPORT_GATE_PASSED", "NONLINEAR_GREEN_COMPATIBILITY_CERTIFIED", "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED", "RENORMALIZED_LORENTZIAN_PRODUCTS_CONSTRUCTED", "QME_RESTORED", "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED"]
+    },
+    "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

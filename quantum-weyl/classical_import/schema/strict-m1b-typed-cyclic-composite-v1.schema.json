@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-m1b-typed-cyclic-composite-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "schema_path", "result_id", "result_kind", "result_state", "lifecycle", "dependency_tags", "scope", "typed_cyclic_dag", "exact_cyclic_replay", "legacy_comparison_boundary", "foundational_strength", "provenance", "independent_checker", "human_report", "does_not_establish", "claim_flags", "content_sha256"],
+  "properties": {
+    "schema": {"const": "strict-m1b-typed-cyclic-composite-v1"},
+    "result_id": {"const": "STRICT_M1B_TYPED_CYCLIC_COMPOSITE_V1"},
+    "result_kind": {"const": "TYPED_ACTION_CYCLIC_COMPOSITE_CONTRACTION"},
+    "result_state": {"const": "M1B_REPRESENTED_COMPOSITE_CONTRACTION_COMPLETE_M1C_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "typed_cyclic_dag": {"type": "object", "properties": {"nodes": {"type": "array", "minItems": 6, "maxItems": 6}, "arrows": {"type": "array", "minItems": 4, "maxItems": 4}, "identities": {"type": "array", "minItems": 13, "maxItems": 13}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "required": ["nodes", "arrows", "identities", "sha256"]},
+    "exact_cyclic_replay": {
+      "type": "object",
+      "properties": {
+        "blocks": {"type": "array", "minItems": 5, "maxItems": 5},
+        "aggregate": {
+          "type": "object",
+          "properties": {
+            "energy_blocks": {"const": 5},
+            "represented_primal_coordinates": {"const": 4080},
+            "represented_action_test_dual_check_coordinates": {"const": 4080},
+            "finite_verification_core_coordinates": {"const": 8160},
+            "excluded_formal_comparison_coordinates": {"const": 820},
+            "residual_primal_coordinates": {"const": 470},
+            "residual_action_dual_coordinates": {"const": 470},
+            "action_residual_coordinates": {"const": 940},
+            "action_residual_pairing_rank": {"const": 940},
+            "all_identity_defects": {"const": 0}
+          },
+          "required": ["energy_blocks", "represented_primal_coordinates", "represented_action_test_dual_check_coordinates", "finite_verification_core_coordinates", "excluded_formal_comparison_coordinates", "residual_primal_coordinates", "residual_action_dual_coordinates", "action_residual_coordinates", "action_residual_pairing_rank", "all_identity_defects"]
+        },
+        "identity_totals": {"type": "object", "minProperties": 13, "maxProperties": 13, "additionalProperties": {"const": 0}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "required": ["blocks", "aggregate", "identity_totals", "sha256"]
+    },
+    "legacy_comparison_boundary": {"type": "object", "properties": {"formal_comparison_source_coordinates": {"const": 8980}, "current_verification_core_coordinates": {"const": 8160}, "deleted_test_doublet_cotangent_coordinates": {"const": 820}, "same_action_residual_coordinates": {"const": true}, "same_action_residual_pairing_rank": {"const": true}, "legacy_all_identity_defects": {"const": 0}, "formal_8980_source_promoted": {"const": false}}, "required": ["formal_comparison_source_coordinates", "current_verification_core_coordinates", "deleted_test_doublet_cotangent_coordinates", "same_action_residual_coordinates", "same_action_residual_pairing_rank", "legacy_all_identity_defects", "formal_8980_source_promoted"]},
+    "provenance": {"type": "object", "properties": {"inputs": {"type": "array", "minItems": 5, "maxItems": 5}}, "required": ["inputs"]},
+    "claim_flags": {
+      "type": "object",
+      "properties": {
+        "M1B_PRIMAL_COMPOSITE_CONTRACTION_COMPLETE": {"const": true},
+        "M1B_ACTION_DUAL_LIFT_COMPLETE": {"const": true},
+        "M1B_TYPED_CYCLIC_REPLAY_COMPLETE": {"const": true},
+        "M1B_REPRESENTED_COMPOSITE_CONTRACTION_COMPLETE": {"const": true},
+        "ACTION_RESIDUAL_PAIRING_RANK_940": {"const": true},
+        "ALL_THIRTEEN_TYPED_CYCLIC_IDENTITIES_REPLAYED": {"const": true},
+        "FINITE_8160_CHECK_CORE_IS_AUTHORITATIVE_FULL_BV_SOURCE": {"const": false},
+        "FORMAL_8980_SOURCE_IS_AUTHORITATIVE_ORIGINAL_BV_COMPLEX": {"const": false},
+        "M1C_COMMON_MANIFEST_REPLAY_COMPLETE": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "NONLINEAR_GREEN_COMPATIBILITY_CERTIFIED": {"const": false},
+        "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "RENORMALIZED_LORENTZIAN_PRODUCTS_CONSTRUCTED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": {"const": false}
+      },
+      "required": ["M1B_PRIMAL_COMPOSITE_CONTRACTION_COMPLETE", "M1B_ACTION_DUAL_LIFT_COMPLETE", "M1B_TYPED_CYCLIC_REPLAY_COMPLETE", "M1B_REPRESENTED_COMPOSITE_CONTRACTION_COMPLETE", "ACTION_RESIDUAL_PAIRING_RANK_940", "ALL_THIRTEEN_TYPED_CYCLIC_IDENTITIES_REPLAYED", "FINITE_8160_CHECK_CORE_IS_AUTHORITATIVE_FULL_BV_SOURCE", "FORMAL_8980_SOURCE_IS_AUTHORITATIVE_ORIGINAL_BV_COMPLEX", "M1C_COMMON_MANIFEST_REPLAY_COMPLETE", "CLASSICAL_IMPORT_GATE_PASSED", "NONLINEAR_GREEN_COMPATIBILITY_CERTIFIED", "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED", "RENORMALIZED_LORENTZIAN_PRODUCTS_CONSTRUCTED", "QME_RESTORED", "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED"]
+    },
+    "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

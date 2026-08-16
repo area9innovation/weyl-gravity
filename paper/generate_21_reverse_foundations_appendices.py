@@ -151,7 +151,11 @@ def build(data: dict, assemblies: dict) -> str:
     m1a_represented = completion["strict_m1a_represented_crosswalk"]
     m1a_ledger = completion["strict_m1a_immutable_typed_ledger"]
     gate_v29 = completion["strict_gate_v29_reconciliation"]
+    gate_v30 = completion["strict_gate_v30_reconciliation"]
     m1b_primal = completion["strict_m1b_primal_composite_contraction"]
+    m1b_dual = completion["strict_m1b_action_dual_lift"]
+    m1b_cyclic = completion["strict_m1b_typed_cyclic_composite"]
+    m1c = completion["strict_m1c_common_snapshot"]
     local_cyclic_pairing = data["completion_local_cyclic_pairing"]
     residual_zero_modes = data["completion_residual_zero_modes"]
     centered = data["completion_centered_cohomology"]
@@ -737,7 +741,32 @@ def build(data: dict, assemblies: dict) -> str:
             "",
         ]
     )
-    return "\n".join(lines)
+    rendered = "\n".join(lines)
+    rendered = rendered.replace(
+        "M1B, M1C, Gate A and q2/q3 Green compatibility remain fail closed.",
+        "M1B and M1C now close on one immutable snapshot and Gate A is verified.  The q2/q3 Green compatibility and Hadamard layers remain fail closed.",
+    )
+    rendered = rendered.replace(
+        f"Gate V29 accepts {gate_v29['accepted_top_level_hashes']} top-level common hash and leaves {gate_v29['remaining_top_level_hashes']} hashes open.",
+        f"Gate V30 verifies all {gate_v30['accepted_top_level_hashes']} top-level hashes, all {gate_v30['exports_receiver_verified']} exports, and all {gate_v30['freeze_checks_receiver_verified']} required checks on one immutable snapshot.",
+    )
+    rendered = rendered.replace(
+        "The action-dual lift is the immediate classical construction; nonlinear Green compatibility, full-complex Hadamard data, renormalized products and QME work remain open.",
+        "The first route is now typed q2/q3 Green compatibility; full-complex Hadamard data, renormalized products and QME work remain open.",
+    )
+    rendered = rendered.replace(
+        "Atlas V47 records the complete local and represented M1A typed diagram and the M1B primal composite",
+        "Atlas V48 records the immutable M1A/M1B/M1C classical snapshot",
+    )
+    rendered = rendered.replace(
+        "Its graph factor is support-local but its harmonic restriction is not.",
+        f"Its graph factor is support-local but its harmonic restriction is not.  The action-derived dual supplies {m1b_dual['compact_source_action_duals']} compact-source residual duals, and the rank-{m1b_cyclic['residual_action_pairing_rank']} cyclic composite replays {m1b_cyclic['typed_identities_replayed']} identities with zero defects on a {m1b_cyclic['verification_core_coordinates']:,}-coordinate check core that is not promoted to the full BV source.  M1C pins {m1c['artifact_pins']} artifacts and binds {m1c['exports_bound']} exports, {m1c['top_level_hashes_bound']} hashes, {m1c['gate_checks_replayed']} required checks, and {m1c['supplemental_checks_replayed']} supplemental audits.",
+    )
+    rendered = rendered.replace(
+        "Gate V29 remains fail closed until M1B supplies the action-dual lift and typed cyclic replay and M1C replays all ten checks on the common bytes.",
+        f"Gate V30 verifies Gate A on snapshot {tex(m1c['snapshot_id'])}; this classical import decision does not certify nonlinear Green compatibility or a BRST-compatible Hadamard two-point function.",
+    )
+    return rendered
 
 
 def main() -> int:

@@ -34,12 +34,12 @@ all-real BT/Krein path integral; controlled conditional bridges remain open.
 
 The **Weyl BV routes** view projects the current audited Lorentzian completion atlas as
 seven architectures across eleven ordered gates, for 77 separately typed cells.
-It exposes the finite residual-SDR repair, nine ranked next constructions and the
+It exposes the finite residual-SDR repair, seven ranked next constructions and the
 eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a theorem; in particular,
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
-Atlas V47 preserves the field-equation type result.  The degree-one-to-zero
+Atlas V48 preserves the field-equation type result.  The degree-one-to-zero
 Green component is an exact right inverse on Noether-compatible sources and a
 left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
 the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
@@ -141,10 +141,11 @@ and 940, and every declared SDR and cyclicity defect is zero.  Gate V24 then
 closes M3RC-B on represented energies two through six: the causal cutoff
 inverse gives all 470 formal duals compact-source representatives, and the
 action-derived Cauchy/Green form agrees with the canonical rank-940 cotangent
-pairing.  Gate V29 preserves M4R on that represented carrier, completes
-M1A.  Its independent sparse receiver reconstructs all five cotangent blocks
-and finds zero defects in q-res cyclicity, projection-adjointness, homotopy
-skewness, inclusion isometry, contraction and normalized side conditions.  The
+pairing.  The classical-freeze chain preserves M4R on that represented carrier
+and completes M1A.  Its independent sparse receivers reconstruct all five
+cotangent blocks and find zero defects in q-res cyclicity,
+projection-adjointness, homotopy skewness, inclusion isometry, contraction and
+normalized side conditions.  The
 immutable typed diagram now content-addresses 17,779 authoritative rows across
 six deliberately distinct objects: 386 local rows, 4,080 represented endpoint
 rows, 470 primal and 470 action-dual residual rows, thirty zero modes, and
@@ -154,16 +155,21 @@ represented and residual crosswalk, and M1A4 froze the content-addressed
 diagram.  The 410 extra comparison coordinates are exactly
 205 test antighost/multiplier doublets and are excluded rather than assigned
 invented local semantics.  The formal 8,980-coordinate cotangent remains a
-non-authoritative comparison fixture.  The M1B primal sublayer now restricts
+non-authoritative comparison fixture.  The M1B primal sublayer restricts
 the represented endpoint complex to 4,080 coordinates, retracts exactly to 470
 residual coordinates, and composes with the local 386-to-30 graph SDR by a
 typed normalized-contraction lemma.  All represented and formal-composition
 defects are zero.  This is not a 386-by-470 component matrix: only the local
 graph factor is support-local, while harmonic restriction is global and
-support-expanding.  M1B must next construct the compact-source action-dual lift
-and typed rank-940 cyclic contraction; M1C must bind and replay the common
-manifest.  Gate A therefore remains fail closed with only
-one of seven top-level hashes accepted.
+support-expanding.  The action pairing then forces the compact-source dual maps
+on all 470 residual modes.  Together, the 4,080 primal and 4,080 check-only dual
+coordinates replay thirteen typed contraction and cyclic identities with zero
+defects against the rank-940 residual action pairing.  M1C pins sixteen
+artifacts in one immutable six-object snapshot, binds all twenty exports and all
+seven top-level hashes, and replays ten Gate-A plus three supplemental audits.
+Gate V30 therefore verifies Gate A.  This is a classical import decision only:
+q2/q3 compatibility with both Lorentzian Green orientations and the
+BRST-compatible Hadamard two-point function remain open.
 The complete Berger q3 remains a different-theory Weyl-plus-clock result on a fixed
 54-row carrier; no certified same-theory cyclic map authorizes its direct import.
 
@@ -182,7 +188,7 @@ overclaim guards. The full q1 is now a content-addressed unary snapshot:
 386 rows, with exact nilpotency and zero suspended-cyclicity defects. Local
 The unary SDR, canonical shear and represented Green actions are serialized.
 What remains open at the nonlinear frontier is q2/q3 Green compatibility,
-the complete Gate-A freeze, Hadamard and QME.
+the BRST-compatible Hadamard two-point function, renormalization and QME.
 
 The new reconstruction import supplies the first explicit weak-arithmetic
 finite-approximant theorem for a declared bounded wave observable. Its rational
@@ -285,11 +291,7 @@ This site does not establish:
 - precision sampler equivalence, continuum reconstruction, or empirical support from the BT finite lattice
 - a complete observationally validated theory
 - support-locality or all-energy smooth completion of the represented finite M3R harmonic comparison
-- the complete twenty-export, seven-hash classical Gate A from the linked source-q2/q3 snapshots and the unbound residual and centered payloads
-- a common-snapshot zero-mode hash from the portable residual coefficient package
-- a common-snapshot representative hash from the portable centered coefficient package
 - H3 or H5 cohomology from the adjacent centered C3 and C5 carrier bases
-- the M1B action-dual/cyclic completion, final M1C common freeze, or a promotion of the formal 8,980-coordinate comparison source to the authoritative full BV source
 - that the formal 8,980-coordinate cotangent completion is the unchanged authoritative classical BV source
 - q2/q3 compatibility with an advanced or retarded Green homotopy
 - that the exact stabilized-q3 candidate is the authoritative nonminimal pure-Weyl BV interaction

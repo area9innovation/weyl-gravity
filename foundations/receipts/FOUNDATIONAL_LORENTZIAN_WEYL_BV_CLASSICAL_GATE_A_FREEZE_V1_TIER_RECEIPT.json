@@ -1,0 +1,152 @@
+{
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_CLASSICAL_GATE_A_FREEZE_V1_TIER_RECEIPT",
+  "result_id": "CLASSICAL_IMPORT_GATE_V30_RECONCILIATION",
+  "generated_at": "2026-08-16",
+  "source_commit_before_change": "c4a9cc45829bd02ea723f47a2565b042d841c118",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Construct the action-derived dual and typed cyclic M1B composite, bind M1A/M1B/M1C into one immutable six-object strict pure-Weyl BV snapshot, independently replay every declared Gate-A export/hash/check on the same bytes, and propagate the scoped Gate-A decision to Atlas V48, the existing static explorer, and Paper 21.",
+  "artifact_hashes": {
+    "quantum-weyl/classical_import/certificates/STRICT_M1B_ACTION_DUAL_LIFT_V1.json": "614e704b943fe2f3727a3d00ea270d5cdba8c1502eecf22ab5a2b701031a5731",
+    "quantum-weyl/classical_import/certificates/STRICT_M1B_TYPED_CYCLIC_COMPOSITE_V1.json": "77aef0a134bc6672fca3e4c54c60700cbdce0e49ca6ca6e69408989637693257",
+    "quantum-weyl/classical_import/certificates/STRICT_M1C_COMMON_SNAPSHOT_V1.json": "7d2838b32f543c5ed6a1d39d44811a4982563cacba831b24e2253b4554ac68a6",
+    "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V30_RECONCILIATION.json": "95cfe49e134064f8e8d25cb2ad1a01bc84ff0bf921676486316e8ec72a390263",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V48.json": "89a5c2b1026ed1e019c7cbe69152ef363b0aa3b6b68c30d88c93e6a5a72bd4d0",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "e4b0db896c519c09faa7f105942730d080bf2108795f2fe3fbbef898deb41f72",
+    "foundations/site/data.json": "ab9bf463dde4349669a3f58db67f59ca56a5ff28768987b7eea80cb875db71b9",
+    "paper/21-reverse-foundations-of-physics.tex": "ee0fa82de4cdc0f595d41064a40a86cf18960df96b57ff386e0bedc15e272e4b",
+    "paper/21-reverse-foundations-of-physics-appendices.tex": "8a885b5066b06658bd66201c584069b49431eadbf69b501e3291a1c12e2845d8",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "6efb42204b52d2bb8b987ddc9c4af958347c3791b187f0663a9dd2840f0ae306",
+    "paper/21-reverse-foundations-of-physics.pdf": "f5e50a9ff3b385dc23acd66dcfcbc929484c60a6be1f584711bd2f8d02e531bd"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3.12 -m py_compile on 22 scoped Python files",
+          "status": "PASS"
+        },
+        {
+          "command": "jq empty on 23 scoped JSON and schema files",
+          "status": "PASS"
+        },
+        {
+          "command": "deno check foundations/matrix_site_v2_assets/app-v2.js foundations/site/app.js",
+          "status": "PASS"
+        },
+        {
+          "command": "pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (three passes from paper/), followed by fatal/undefined-reference/overfull scan",
+          "elapsed_seconds": 2.63,
+          "status": "PASS",
+          "output": "77 pages; no fatal, undefined-reference, rerun, or overfull findings"
+        },
+        {
+          "command": "git diff --check on the working tree",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "M1B action-dual and cyclic builders --check plus independent checkers",
+          "status": "PASS"
+        },
+        {
+          "command": "M1C and Gate V30 builders --check plus independent receiver-chain checkers",
+          "status": "PASS"
+        },
+        {
+          "command": "Atlas V48 builder --check plus independent checker",
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 -m unittest on M1B, M1C, Gate V30, and Atlas V48 suites",
+          "elapsed_seconds": 25.60,
+          "status": "PASS",
+          "output": "41 tests"
+        },
+        {
+          "command": "static-site builder --check, independent checker, verifier, and matrix/assembly/viability unit suites",
+          "elapsed_seconds": 13.68,
+          "status": "PASS",
+          "output": "22 tests; 345 generated artifacts; canonical digest 28a50f89bc7cdeaadad165aee83015d3e6d7ebd7ad593ba8a713296da3c2ed78"
+        },
+        {
+          "command": "Paper 21 appendix --check, claim-map --check, independent claim-map verifier, and manuscript-pin audit",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The complete affected chain was rebuilt from M1B through M1C, Gate V30, Atlas V48, all static-site projections, generated paper appendices, the claim map, manuscript pins, and the rendered PDF. Independent receivers replay the 20 exports, seven top-level hashes, ten mandatory checks, and three supplemental audits on the identical immutable snapshot."
+    },
+    "tier_3": {
+      "status": "FAIL",
+      "command": "python3.12 -m unittest discover",
+      "elapsed_seconds": 918.19,
+      "output": "4,688 tests; 33 failures; 9 skips",
+      "failure_scope": {
+        "covariant_completion_failures": 1,
+        "reverse_physics_failures": 32,
+        "affected_classical_import_chain_failures": 0,
+        "representative_failures": [
+          "covariant_completion.final_transport.tests.test_proof_ledger.ProofLedgerTests.test_generated_outputs_match_live_evidence",
+          "reverse_physics.tests.test_bt_cross_krein_trace_limit.CrossKreinTraceLimitTests.test_producer",
+          "reverse_physics.tests.test_bt_five_point_tree_jet.TestExecutableRails.test_independent_verifier_accepts_recorded_certificate",
+          "reverse_physics.tests.test_chain_imports.TestTheConditionsHold.test_all_checks_pass"
+        ]
+      },
+      "baseline_adjudication": "The failing paths do not overlap the affected classical-import chain, but a complete clean-base reproduction was not obtained. An attempted partial archive reproduction was invalid because omitted cross-tree provenance inputs caused additional missing-file errors. The 33 failures therefore remain real unadjudicated repository findings, not asserted pre-existing exceptions.",
+      "promotion_effect": "FAIL_CLOSED: no repository release tag or final classical/quantum freeze promotion is authorized by this receipt. The scoped Gate-A receiver decision and immutable snapshot are recorded, but the repository-wide release rail remains red."
+    }
+  },
+  "science_forge_advisory": {
+    "command": "bash ci/science-forge-shadow.sh",
+    "elapsed_seconds": 3.01,
+    "exit_status": 0,
+    "disposition": "ADVISORY_WITH_FINDINGS",
+    "findings": [
+      "The configured bridge audit resolved into the separate bp2transformer tree and failed there because sympy was unavailable.",
+      "The Forge binary revision differs from the checked-out stdlib revision.",
+      "The corpus census reports 1,959 certificates against the 976-certificate 2026-07-19 baseline."
+    ]
+  },
+  "scientific_result": {
+    "snapshot_id": "STRICT_PURE_WEYL_BV_SNAPSHOT_07dc7271b95b263a",
+    "snapshot_sha256": "07dc7271b95b263a079446479596a87bd849c2520c1b8ba275afc6eca8e21a5a",
+    "authoritative_carrier_objects": 6,
+    "authoritative_rows": 17779,
+    "artifact_pins": 16,
+    "exports_receiver_verified": 20,
+    "top_level_hashes_receiver_verified": 7,
+    "mandatory_gate_checks_receiver_verified": 10,
+    "supplemental_checks_receiver_verified": 3,
+    "m1b_typed_identities_replayed": 13,
+    "m1b_identity_defects": 0,
+    "gate_v30_internal_status_contradictions": 0,
+    "next_gate": "Certify q2/q3 compatibility with both typed Lorentzian Green orientations on the immutable snapshot."
+  },
+  "claim_flags": {
+    "immutable_classical_snapshot_constructed": true,
+    "m1b_represented_composite_contraction_complete": true,
+    "m1c_common_manifest_replay_complete": true,
+    "scoped_gate_a_receiver_decision_verified": true,
+    "repository_tier_3_passed": false,
+    "repository_release_promotion_authorized": false,
+    "nonlinear_green_compatibility_certified": false,
+    "full_complex_hadamard_state_constructed": false,
+    "renormalized_lorentzian_products_constructed": false,
+    "qme_restored": false,
+    "residual_quantum_transfer_authorized": false
+  },
+  "unrelated_work_excluded": [
+    "reverse_physics/bt_euclidean_polynomial_contrast_hierarchy_obstruction.py"
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-m1b-action-dual-lift-v1.schema.json",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "result_id", "result_kind", "result_state",
+    "lifecycle", "dependency_tags", "scope", "typed_adjoint_dag",
+    "represented_dual_lift", "action_residual_coordinate_actions",
+    "action_pairing_bridge", "foundational_strength", "provenance",
+    "independent_checker", "human_report", "does_not_establish",
+    "claim_flags", "content_sha256"
+  ],
+  "properties": {
+    "schema": {"const": "strict-m1b-action-dual-lift-v1"},
+    "result_id": {"const": "STRICT_M1B_ACTION_DUAL_LIFT_V1"},
+    "result_kind": {"const": "TYPED_ACTION_DUAL_COMPOSITE_LIFT"},
+    "result_state": {"const": "M1B_ACTION_DUAL_LIFT_COMPLETE_TYPED_CYCLIC_REPLAY_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "typed_adjoint_dag": {
+      "type": "object",
+      "required": ["nodes", "arrows", "formula", "sha256"],
+      "properties": {
+        "nodes": {"type": "array", "minItems": 6, "maxItems": 6},
+        "arrows": {"type": "array", "minItems": 6, "maxItems": 6},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "represented_dual_lift": {
+      "type": "object",
+      "required": ["blocks", "aggregate", "exact_replay", "sha256"],
+      "properties": {
+        "blocks": {"type": "array", "minItems": 5, "maxItems": 5},
+        "aggregate": {
+          "type": "object",
+          "properties": {
+            "represented_action_test_coordinates": {"const": 4080},
+            "action_residual_dual_coordinates": {"const": 470},
+            "q_dual_nonzero_entries": {"const": 1805},
+            "iota_dual_nonzero_entries": {"const": 470},
+            "pi_dual_nonzero_entries": {"const": 470},
+            "s_dual_nonzero_entries": {"const": 1805}
+          },
+          "required": ["represented_action_test_coordinates", "action_residual_dual_coordinates", "q_dual_nonzero_entries", "iota_dual_nonzero_entries", "pi_dual_nonzero_entries", "s_dual_nonzero_entries"]
+        },
+        "exact_replay": {"type": "object", "minProperties": 8, "maxProperties": 8, "additionalProperties": {"const": 0}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "action_residual_coordinate_actions": {"type": "array", "minItems": 470, "maxItems": 470},
+    "action_pairing_bridge": {
+      "type": "object",
+      "properties": {
+        "local_action_pairing_rank": {"const": 386},
+        "residual_action_pairing_rank": {"const": 940},
+        "compact_source_dual_classes": {"const": 470},
+        "compact_source_support_defects": {"const": 0},
+        "action_pairing_identification_defects": {"const": 0},
+        "m1a_action_dual_crosswalk_defects": {"const": 0},
+        "adjoint_uniqueness_defects": {"const": 0},
+        "full_4080_algebraic_dual_identified_with_compact_sources": {"const": false},
+        "verification_core_is_authoritative_full_bv_source": {"const": false}
+      },
+      "required": ["local_action_pairing_rank", "residual_action_pairing_rank", "compact_source_dual_classes", "compact_source_support_defects", "action_pairing_identification_defects", "m1a_action_dual_crosswalk_defects", "adjoint_uniqueness_defects", "full_4080_algebraic_dual_identified_with_compact_sources", "verification_core_is_authoritative_full_bv_source"]
+    },
+    "provenance": {"type": "object", "properties": {"inputs": {"type": "array", "minItems": 6, "maxItems": 6}}, "required": ["inputs"]},
+    "claim_flags": {
+      "type": "object",
+      "properties": {
+        "M1B_PRIMAL_COMPOSITE_CONTRACTION_COMPLETE": {"const": true},
+        "M1B_ACTION_DUAL_LIFT_COMPLETE": {"const": true},
+        "ALL_470_RESIDUAL_DUALS_ACTION_DERIVED_COMPACT_SOURCE": {"const": true},
+        "ACTION_DUAL_MAPS_FORCED_BY_LOCAL_AND_RESIDUAL_PAIRINGS": {"const": true},
+        "FULL_4080_ALGEBRAIC_DUAL_COMPACT_SOURCE_IDENTIFIED": {"const": false},
+        "FINITE_8160_CHECK_CORE_IS_AUTHORITATIVE_FULL_BV_SOURCE": {"const": false},
+        "M1B_TYPED_CYCLIC_REPLAY_COMPLETE": {"const": false},
+        "M1B_REPRESENTED_COMPOSITE_CONTRACTION_COMPLETE": {"const": false},
+        "M1C_COMMON_MANIFEST_REPLAY_COMPLETE": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "RENORMALIZED_LORENTZIAN_PRODUCTS_CONSTRUCTED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": {"const": false}
+      },
+      "required": ["M1B_PRIMAL_COMPOSITE_CONTRACTION_COMPLETE", "M1B_ACTION_DUAL_LIFT_COMPLETE", "ALL_470_RESIDUAL_DUALS_ACTION_DERIVED_COMPACT_SOURCE", "ACTION_DUAL_MAPS_FORCED_BY_LOCAL_AND_RESIDUAL_PAIRINGS", "FULL_4080_ALGEBRAIC_DUAL_COMPACT_SOURCE_IDENTIFIED", "FINITE_8160_CHECK_CORE_IS_AUTHORITATIVE_FULL_BV_SOURCE", "M1B_TYPED_CYCLIC_REPLAY_COMPLETE", "M1B_REPRESENTED_COMPOSITE_CONTRACTION_COMPLETE", "M1C_COMMON_MANIFEST_REPLAY_COMPLETE", "CLASSICAL_IMPORT_GATE_PASSED", "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED", "RENORMALIZED_LORENTZIAN_PRODUCTS_CONSTRUCTED", "QME_RESTORED", "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED"]
+    },
+    "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

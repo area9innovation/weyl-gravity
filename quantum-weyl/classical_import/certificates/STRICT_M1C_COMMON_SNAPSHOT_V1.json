@@ -1,0 +1,692 @@
+{
+  "$schema": "../schema/strict-m1c-common-snapshot-v1.schema.json",
+  "schema": "strict-m1c-common-snapshot-v1",
+  "schema_path": "quantum-weyl/classical_import/schema/strict-m1c-common-snapshot-v1.schema.json",
+  "result_id": "STRICT_M1C_COMMON_SNAPSHOT_V1",
+  "result_kind": "IMMUTABLE_AUTHORITATIVE_CLASSICAL_BV_SNAPSHOT",
+  "result_state": "M1C_COMPLETE_GATE_A_READY_FOR_INDEPENDENT_DECISION",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-16",
+  "repository_base_commit": "c4a9cc45829bd02ea723f47a2565b042d841c118",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "Can all twenty Gate-A exports, seven top-level hashes, and ten required identities be bound and replayed on one immutable strict pure-Weyl typed snapshot?",
+  "answer": "Yes. The manifest content-addresses sixteen source artifacts, twenty typed exports and seven top-level hashes under one six-object carrier diagram. All ten Gate-A identities replay with zero defects on those exact pins; q3, residual representation and centered H4 replays also pass as supplemental classical-import audits. The manifest preserves local, represented, compact-source dual, zero-mode and centered-cochain categories and excludes the 410 test rows and 8,980 formal cotangent comparison rows from source authority. This completes M1C and makes Gate A ready for an independent decision, but does not certify nonlinear Green compatibility or construct Hadamard data.",
+  "scope": {
+    "theory": "strict pure-Weyl classical BV-BFV complex",
+    "background": "unit Lorentzian conformal cylinder R x S3",
+    "local_source": "authoritative 386-row graph BV bundle",
+    "represented_domain": "energy-two-through-six D-finite harmonic realization",
+    "residual_target": "470 primal plus 470 compact-source action-dual classes, with separate zero-mode and centered payloads"
+  },
+  "snapshot_id": "STRICT_PURE_WEYL_BV_SNAPSHOT_07dc7271b95b263a",
+  "snapshot_sha256": "07dc7271b95b263a079446479596a87bd849c2520c1b8ba275afc6eca8e21a5a",
+  "carrier_manifest": {
+    "shape": "CONTENT_ADDRESSED_TYPED_DIAGRAM_NOT_ONE_VECTOR_SPACE",
+    "typed_diagram_sha256": "6fc2f2c0ab0ace839cc96f1cc3ca5a86635f93d8f2e284d69b136d9d3af8c3d8",
+    "authoritative_rows": 17779,
+    "authoritative_carrier_objects": 6,
+    "component_payloads": [
+      {
+        "carrier_id": "LOCAL_GRAPH_BV_386",
+        "category": "LOCAL_COMPONENT_JET",
+        "row_count": 386,
+        "authority": "embedded:local_386_rows",
+        "row_payload_sha256": "a8aa64b59ce248a64e8756fb95060b79120babaaa22fa5357a48735718092666",
+        "status": "AUTHORITATIVE_TYPED_SOURCE"
+      },
+      {
+        "carrier_id": "REPRESENTED_ENDPOINT_DFINITE_4080",
+        "category": "REDUCED_MODE_GLOBAL_HARMONIC",
+        "row_count": 4080,
+        "authority": "quantum-weyl/classical_import/certificates/STRICT_M1A_REPRESENTED_CARRIER_CROSSWALK_V1.json#/represented_endpoint_rows",
+        "row_payload_sha256": "dbee5cbdf6c0e2585d7c29f030e2316de1c677aa8a0dd36bdb3548dd71a86a23",
+        "status": "AUTHORITATIVE_TYPED_REPRESENTED_DOMAIN"
+      },
+      {
+        "carrier_id": "ACTION_RESIDUAL_PRIMAL_470",
+        "category": "REDUCED_MODE_CAUSAL_COHOMOLOGY",
+        "row_count": 470,
+        "authority": "quantum-weyl/classical_import/certificates/STRICT_M1A_REPRESENTED_CARRIER_CROSSWALK_V1.json#/action_residual_primal_rows",
+        "row_payload_sha256": "839ffc180387ff2da725020f28667b12456d662bf6423d5e9f111c1247308b9b",
+        "status": "AUTHORITATIVE_TYPED_REPRESENTED_TARGET"
+      },
+      {
+        "carrier_id": "ACTION_RESIDUAL_DUAL_470",
+        "category": "COMPACT_SOURCE_ACTION_DUAL",
+        "row_count": 470,
+        "authority": "quantum-weyl/classical_import/certificates/STRICT_M1A_REPRESENTED_CARRIER_CROSSWALK_V1.json#/action_residual_dual_rows",
+        "row_payload_sha256": "e4150d73acba556173f5000af058465669ced6347ee7bb8e377caafcef82105d",
+        "status": "AUTHORITATIVE_TYPED_REPRESENTED_ACTION_DUAL"
+      },
+      {
+        "carrier_id": "ZERO_MODE_15_PLUS_15",
+        "category": "RESIDUAL_ZERO_MODE",
+        "row_count": 30,
+        "authority": "embedded:zero_mode_rows",
+        "row_payload_sha256": "8ddb0687145bd48fcc6b00ebabaec8bc750aca5e8d6a0917cf13ce49d1e53908",
+        "status": "AUTHORITATIVE_TYPED_SCOPED_PAYLOAD"
+      },
+      {
+        "carrier_id": "CENTERED_C3_C4_C5",
+        "category": "RESIDUAL_COCHAIN",
+        "row_count": 12343,
+        "authority": "embedded:centered_cochain_row_index+semantic_templates",
+        "row_payload_sha256": "680b744d6eec5534b8f18e8d67f9411112e25e866118e1ce92a608f5a8fff16a",
+        "status": "AUTHORITATIVE_TYPED_SCOPED_PAYLOAD"
+      }
+    ],
+    "excluded_test_rows": 410,
+    "excluded_formal_cotangent_rows": 8980,
+    "distinct_categories_not_identified": true
+  },
+  "artifact_pins": [
+    {
+      "pin_id": "m1a",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_M1A_IMMUTABLE_TYPED_LEDGER_V1.json",
+      "sha256": "7b1e0de5d525b535de30f1a21123375e7dc698deda82fa0668e545e7ed01a614",
+      "result_or_schema_id": "STRICT_M1A_IMMUTABLE_TYPED_LEDGER_V1",
+      "role": "authoritative six-object typed carrier diagram and exclusions"
+    },
+    {
+      "pin_id": "graph_q1",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1.json",
+      "sha256": "b805bd81b35f13325d938e93be91495e1d46aa5900fd168e55bdcde1afbfa8e2",
+      "result_or_schema_id": "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1",
+      "role": "local graph q0, graph SDR, and exact unary replay"
+    },
+    {
+      "pin_id": "source_q2",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1.json",
+      "sha256": "2a93236ba5ae929bde285339286fbc24ceb98415b6b1750b90b546f921f658ed",
+      "result_or_schema_id": "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1",
+      "role": "support-local full 386-row q2 and arity-two/cyclicity/D replay"
+    },
+    {
+      "pin_id": "source_q3",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.json",
+      "sha256": "d2fb66beec9f77bd24487f13406aa5a179f332d113b8b1ca7052547df7e3b696",
+      "result_or_schema_id": "STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1",
+      "role": "support-local full 386-row q3 and arity-three/cyclicity/D replay"
+    },
+    {
+      "pin_id": "D_action",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_D_ACTION_V1.json",
+      "sha256": "c83c53250e3c8b8bc913f902a8cd4a4aff1a918c88b42167e9076e4aa96dc148",
+      "result_or_schema_id": "STRICT_386_FULL_D_ACTION_V1",
+      "role": "local cylinder-flow action on all 386 rows"
+    },
+    {
+      "pin_id": "zero_modes",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1.json",
+      "sha256": "85a889aca3b2dcdcae06a0cbd99107401c2ec66461fbdf0f2c20bc26bda1b61f",
+      "result_or_schema_id": "STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1",
+      "role": "exact zero-mode basis, structure constants, representations, and q_res=0"
+    },
+    {
+      "pin_id": "centered",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1.json",
+      "sha256": "21400beeac1def4ba3b9e43d5e8222e106192a1ccfb504e5b0455859ad7fd286",
+      "result_or_schema_id": "STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1",
+      "role": "ordered centered C3/C4/C5 bases and normalized H4 representatives"
+    },
+    {
+      "pin_id": "m1b_primal",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_M1B_PRIMAL_COMPOSITE_CONTRACTION_V1.json",
+      "sha256": "f95655fc847d6d5ada7dfb6bef6571003792a0d7264c2a8e8bd2a65df9a197c5",
+      "result_or_schema_id": "STRICT_M1B_PRIMAL_COMPOSITE_CONTRACTION_V1",
+      "role": "typed primal graph-to-action-residual contraction"
+    },
+    {
+      "pin_id": "m1b_dual",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_M1B_ACTION_DUAL_LIFT_V1.json",
+      "sha256": "614e704b943fe2f3727a3d00ea270d5cdba8c1502eecf22ab5a2b701031a5731",
+      "result_or_schema_id": "STRICT_M1B_ACTION_DUAL_LIFT_V1",
+      "role": "compact-source action-derived dual lift"
+    },
+    {
+      "pin_id": "m1b_cyclic",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_M1B_TYPED_CYCLIC_COMPOSITE_V1.json",
+      "sha256": "77aef0a134bc6672fca3e4c54c60700cbdce0e49ca6ca6e69408989637693257",
+      "result_or_schema_id": "STRICT_M1B_TYPED_CYCLIC_COMPOSITE_V1",
+      "role": "rank-940 typed action-cyclic contraction replay"
+    },
+    {
+      "pin_id": "local_cyclic",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_LOCAL_CYCLIC_PAIRING_CLOSURE_V1.json",
+      "sha256": "c4d0060539335a761ae95af6adf25263f3e851f09838bbb046b5ab3caabdf39c",
+      "result_or_schema_id": "STRICT_386_LOCAL_CYCLIC_PAIRING_CLOSURE_V1",
+      "role": "rank-386 local action pairing and nonlinear cyclicity"
+    },
+    {
+      "pin_id": "taub",
+      "path": "bridge/certificates/taub_moment_map.json",
+      "sha256": "84fb8d94043f89fcd70e8fdd2940b266ea6f9006c3ff94cb55884b1b4ceb46e1",
+      "result_or_schema_id": "pure-weyl-taub-moment-map-all-energy-v1",
+      "role": "legacy accepted Taub moment-map normalization"
+    },
+    {
+      "pin_id": "suspension",
+      "path": "field_bv_identification/polarized_state/certificates/zero_mode_transgression.json",
+      "sha256": "dfe70f8bf6ad6820178e67247a06b1c27fefba3c5b7396ba42fd14e96db82b53",
+      "result_or_schema_id": "pure-weyl-algebraic-zero-mode-transgression-v1",
+      "role": "legacy accepted BFV suspension convention"
+    },
+    {
+      "pin_id": "polarization",
+      "path": "field_bv_identification/polarized_state/certificates/polarized_state_complex.json",
+      "sha256": "efe492946333578e91d880fde0008166ba8960bc366840413883e5c0e39d0ec1",
+      "result_or_schema_id": "pure-weyl-polarized-state-complex-v1",
+      "role": "legacy accepted positive-frequency ledger"
+    },
+    {
+      "pin_id": "nonminimal_contraction",
+      "path": "field_bv_identification/gauge_fixed_equivalence/certificates/contraction.json",
+      "sha256": "e8fac79d9737fc565d5b1ae0e6b32ed8ef5931a50b982cd21d781a112c5adccf",
+      "result_or_schema_id": "pure-weyl-gauge-fixed-contraction-v1",
+      "role": "portable nonminimal contraction payload"
+    },
+    {
+      "pin_id": "nonminimal_pairs",
+      "path": "field_bv_identification/gauge_fixed_equivalence/certificates/nonminimal_pairs.json",
+      "sha256": "07836a183fc8dbf020713a1dde52eb605f6b1057563920b080657377aa1aa889",
+      "result_or_schema_id": "pure-weyl-nonminimal-pairs-v1",
+      "role": "portable nonminimal pair dictionary"
+    }
+  ],
+  "export_bindings": [
+    {
+      "export_id": "field_ghost_antifield_dictionary",
+      "status": "BOUND_IN_COMMON_IMMUTABLE_MANIFEST",
+      "category": "LOCAL-ALGEBRAIC",
+      "objects": [
+        {
+          "pin_id": "m1a",
+          "json_pointer_or_role": "/typed_field_dictionary"
+        },
+        {
+          "pin_id": "m1a",
+          "json_pointer_or_role": "/local_386_rows"
+        }
+      ],
+      "boundary": "Six carrier categories remain distinct."
+    },
+    {
+      "export_id": "field_gradings",
+      "status": "BOUND_IN_COMMON_IMMUTABLE_MANIFEST",
+      "category": "LOCAL-ALGEBRAIC",
+      "objects": [
+        {
+          "pin_id": "m1a",
+          "json_pointer_or_role": "/local_386_rows"
+        },
+        {
+          "pin_id": "m1a",
+          "json_pointer_or_role": "/semantic_templates"
+        }
+      ],
+      "boundary": "Global residual rows use their separately typed grading templates."
+    },
+    {
+      "export_id": "local_classical_bv_differential_q0",
+      "status": "BOUND_IN_COMMON_IMMUTABLE_MANIFEST",
+      "category": "LOCAL-ALGEBRAIC",
+      "objects": [
+        {
+          "pin_id": "graph_q1",
+          "json_pointer_or_role": "/graph_q1_serialization"
+        },
+        {
+          "pin_id": "graph_q1",
+          "json_pointer_or_role": "/canonical_hashes/graph_q1_serialization_sha256"
+        }
+      ],
+      "boundary": "The represented restriction is a verification image, not the definition."
+    },
+    {
+      "export_id": "support_local_classical_bv_q2",
+      "status": "BOUND_IN_COMMON_IMMUTABLE_MANIFEST",
+      "category": "LOCAL-ALGEBRAIC",
+      "objects": [
+        {
+          "pin_id": "source_q2",
+          "json_pointer_or_role": "/source_q2_snapshot"
+        },
+        {
+          "pin_id": "source_q3",
+          "json_pointer_or_role": "/source_q3_snapshot"
+        }
+      ],
+      "boundary": "q3 is pinned because nonlinear BV closure is not exhausted by q2."
+    },
+    {
+      "export_id": "local_D_action_on_bv_generators",
+      "status": "BOUND_IN_COMMON_IMMUTABLE_MANIFEST",
+      "category": "LOCAL-ALGEBRAIC",
+      "objects": [
+        {
+          "pin_id": "D_action",
+          "json_pointer_or_role": "/D_action"
+        }
+      ],
+      "boundary": "No D-Cartan homotopy or quotient is inferred."
+    },
+    {
+      "export_id": "gauge_fixed_nonminimal_contractions",
+      "status": "BOUND_IN_COMMON_IMMUTABLE_MANIFEST",
+      "category": "LOCAL-ALGEBRAIC",
+      "objects": [
+        {
+          "pin_id": "nonminimal_contraction",
+          "json_pointer_or_role": "complete payload"
+        },
+        {
+          "pin_id": "nonminimal_pairs",
+          "json_pointer_or_role": "complete pair ledger"
+        },
+        {
+          "pin_id": "graph_q1",
+          "json_pointer_or_role": "/graph_sdr_component_maps"
+        }
+      ],
+      "boundary": "Finite and local graph presentations are both pinned without identifying them."
+    },
+    {
+      "export_id": "trace_sector_contraction",
+      "status": "BOUND_IN_COMMON_IMMUTABLE_MANIFEST",
+      "category": "LOCAL-ALGEBRAIC",
+      "objects": [
+        {
+          "pin_id": "graph_q1",
+          "json_pointer_or_role": "/graph_sdr_component_maps"
+        },
+        {
+          "pin_id": "m1b_primal",
+          "json_pointer_or_role": "/local_graph_factor"
+        }
+      ],
+      "boundary": "The local endpoint contraction is not the global residual projector."
+    },
+    {
+      "export_id": "conformal_killing_zero_modes_15",
+      "status": "BOUND_IN_COMMON_IMMUTABLE_MANIFEST",
+      "category": "REDUCED-MODE",
+      "objects": [
+        {
+          "pin_id": "zero_modes",
+          "json_pointer_or_role": "/zero_mode_basis"
+        }
+      ],
+      "boundary": "These modes are separate from the W+/W- energy-two-through-six carrier."
+    },
+    {
+      "export_id": "residual_representation_matrices",
+      "status": "BOUND_IN_COMMON_IMMUTABLE_MANIFEST",
+      "category": "REDUCED-MODE",
+      "objects": [
+        {
+          "pin_id": "zero_modes",
+          "json_pointer_or_role": "/residual_representation"
+        }
+      ],
+      "boundary": "Finite exact representation only."
+    },
+    {
+      "export_id": "so42_structure_constants",
+      "status": "BOUND_IN_COMMON_IMMUTABLE_MANIFEST",
+      "category": "REDUCED-MODE",
+      "objects": [
+        {
+          "pin_id": "zero_modes",
+          "json_pointer_or_role": "/so42_structure_constants"
+        }
+      ],
+      "boundary": "No analytic group integration is claimed."
+    },
+    {
+      "export_id": "classical_inclusion_iota_cl",
+      "status": "BOUND_IN_COMMON_IMMUTABLE_MANIFEST",
+      "category": "REDUCED-MODE",
+      "objects": [
+        {
+          "pin_id": "m1b_primal",
+          "json_pointer_or_role": "/typed_operator_dag/formula/inclusion"
+        },
+        {
+          "pin_id": "m1b_dual",
+          "json_pointer_or_role": "/typed_adjoint_dag/formula/inclusion"
+        }
+      ],
+      "boundary": "Primal and action-dual halves retain distinct domains."
+    },
+    {
+      "export_id": "classical_projection_pi_cl",
+      "status": "BOUND_IN_COMMON_IMMUTABLE_MANIFEST",
+      "category": "REDUCED-MODE",
+      "objects": [
+        {
+          "pin_id": "m1b_primal",
+          "json_pointer_or_role": "/typed_operator_dag/formula/projection"
+        },
+        {
+          "pin_id": "m1b_dual",
+          "json_pointer_or_role": "/typed_adjoint_dag/formula/projection"
+        }
+      ],
+      "boundary": "Harmonic projection is global and support-expanding."
+    },
+    {
+      "export_id": "classical_homotopy_s_cl",
+      "status": "BOUND_IN_COMMON_IMMUTABLE_MANIFEST",
+      "category": "REDUCED-MODE",
+      "objects": [
+        {
+          "pin_id": "m1b_primal",
+          "json_pointer_or_role": "/typed_operator_dag/formula/homotopy"
+        },
+        {
+          "pin_id": "m1b_dual",
+          "json_pointer_or_role": "/typed_adjoint_dag/formula/homotopy"
+        }
+      ],
+      "boundary": "The algebraic contraction is not itself an advanced/retarded Green homotopy."
+    },
+    {
+      "export_id": "cyclic_pairing",
+      "status": "BOUND_IN_COMMON_IMMUTABLE_MANIFEST",
+      "category": "LOCAL-ALGEBRAIC+REDUCED-MODE+LORENTZIAN-CAUSAL",
+      "objects": [
+        {
+          "pin_id": "local_cyclic",
+          "json_pointer_or_role": "/pairing_replay"
+        },
+        {
+          "pin_id": "m1b_cyclic",
+          "json_pointer_or_role": "/exact_cyclic_replay"
+        }
+      ],
+      "boundary": "Local action density and represented residual action form are typed parts of one diagram."
+    },
+    {
+      "export_id": "taub_moment_map_normalization",
+      "status": "BOUND_IN_COMMON_IMMUTABLE_MANIFEST",
+      "category": "REDUCED-MODE",
+      "objects": [
+        {
+          "pin_id": "taub",
+          "json_pointer_or_role": "complete payload"
+        }
+      ],
+      "boundary": "Legacy exact bounded normalization."
+    },
+    {
+      "export_id": "bfv_suspension_convention",
+      "status": "BOUND_IN_COMMON_IMMUTABLE_MANIFEST",
+      "category": "LOCAL-ALGEBRAIC",
+      "objects": [
+        {
+          "pin_id": "suspension",
+          "json_pointer_or_role": "complete payload"
+        }
+      ],
+      "boundary": "Convention selected, not proven unique."
+    },
+    {
+      "export_id": "positive_frequency_state_ledger",
+      "status": "BOUND_IN_COMMON_IMMUTABLE_MANIFEST",
+      "category": "REDUCED-MODE",
+      "objects": [
+        {
+          "pin_id": "polarization",
+          "json_pointer_or_role": "complete payload"
+        }
+      ],
+      "boundary": "Algebraic polarization is not a full Hadamard state."
+    },
+    {
+      "export_id": "normalized_weyl_square_representatives",
+      "status": "BOUND_IN_COMMON_IMMUTABLE_MANIFEST",
+      "category": "REDUCED-MODE",
+      "objects": [
+        {
+          "pin_id": "centered",
+          "json_pointer_or_role": "/normalized_H4_representatives"
+        }
+      ],
+      "boundary": "These are deformation/vertex classes, not one-particle states."
+    },
+    {
+      "export_id": "centered_cohomology_bases_h3_h4_h5",
+      "status": "BOUND_IN_COMMON_IMMUTABLE_MANIFEST",
+      "category": "REDUCED-MODE",
+      "objects": [
+        {
+          "pin_id": "centered",
+          "json_pointer_or_role": "/ordered_centered_cochain_basis"
+        },
+        {
+          "pin_id": "centered",
+          "json_pointer_or_role": "/centered_differential_summary"
+        }
+      ],
+      "boundary": "C3 and C5 are cochain carriers used to certify H4."
+    },
+    {
+      "export_id": "residual_differential_q_res_0",
+      "status": "BOUND_IN_COMMON_IMMUTABLE_MANIFEST",
+      "category": "REDUCED-MODE",
+      "objects": [
+        {
+          "pin_id": "zero_modes",
+          "json_pointer_or_role": "/residual_differential_q_res_0"
+        }
+      ],
+      "boundary": "Unary q_res=0 does not replace nonlinear residual operations."
+    }
+  ],
+  "accepted_top_level_hashes": {
+    "field_dictionary_hash": "7a734e85d1970e178bc6025a8760e80e4de977a0386f953d15f7bc1848025556",
+    "differential_hash": "455225a19345e7d5bd1d9f4879a76c1517c9305639aa290f49382eeeedb02a7f",
+    "q2_hash": "0f1e23a5653db0666cbd02dea49f8961927d03ff4c72ed402fd24ba8f2ba4800",
+    "D_action_hash": "b20def4d59de1f1f618ad022b89673206b5741daad7dda406ec2fe03e6e4d8da",
+    "zero_mode_basis_hash": "f36ec93f8df729db27d6bf8c76695fad8338bf61d3cfcfc33d3089d33588a44f",
+    "pairing_hash": "f8f69084c6c976933e42403672270bd9aab32e9b34c749340a9d7d0a0d690761",
+    "representative_hash": "92bde00dd977da8587f1227a9c510c8a7d799d4b8fc2410cc1aa65c33d77dfab"
+  },
+  "hash_composition_witnesses": {
+    "differential_hash": {
+      "typed_field_dictionary_sha256": "7a734e85d1970e178bc6025a8760e80e4de977a0386f953d15f7bc1848025556",
+      "local_graph_q1_sha256": "5c23d4bc1228e9b065ec60f67f367785b9456c7a9401dedb85a44d3b6b32ff5f",
+      "represented_q0_sha256": "13ddcfe3b7dd55c018c579868a5497b4571e044489b07b796f81c44eb26d21b8",
+      "residual_q0_sha256": "a8c2aed3e101471fd8136b2c2eaf7b1de8a7ce825a75a6c5f91be879c2e36510"
+    },
+    "pairing_hash": {
+      "local_pairing_sha256": "912aecc758dfd5f0d9de815530a2fe1428442afe874343a08d90673e1f2f6381",
+      "typed_cyclic_composite_sha256": "3a8d3ce4241b9c1f6a1576664761de034325631f347c2ece9eac8ee725a931d8",
+      "action_residual_pairing_rank": 940
+    }
+  },
+  "gate_a_replay": [
+    {
+      "check_id": "q0_squared_zero",
+      "status": "PASS_ON_COMMON_BYTES",
+      "defects": 0,
+      "pins": [
+        "graph_q1",
+        "m1b_primal",
+        "zero_modes"
+      ],
+      "witness": "local graph and represented q0 squares plus q_res=0"
+    },
+    {
+      "check_id": "q1_q2_arity_two_nilpotency",
+      "status": "PASS_ON_COMMON_BYTES",
+      "defects": 0,
+      "pins": [
+        "graph_q1",
+        "source_q2"
+      ],
+      "witness": "full 386-row common q1/q2 replay"
+    },
+    {
+      "check_id": "D_q1_commutator_zero",
+      "status": "PASS_ON_COMMON_BYTES",
+      "defects": 0,
+      "pins": [
+        "graph_q1",
+        "D_action"
+      ],
+      "witness": "full local D/q1 replay"
+    },
+    {
+      "check_id": "D_q2_derivation",
+      "status": "PASS_ON_COMMON_BYTES",
+      "defects": 0,
+      "pins": [
+        "source_q2",
+        "D_action"
+      ],
+      "witness": "full 386-row D/q2 replay"
+    },
+    {
+      "check_id": "q2_cyclic_compatibility",
+      "status": "PASS_ON_COMMON_BYTES",
+      "defects": 0,
+      "pins": [
+        "source_q2",
+        "local_cyclic"
+      ],
+      "witness": "action-derived local q2 cyclicity"
+    },
+    {
+      "check_id": "pi_cl_iota_cl_identity",
+      "status": "PASS_ON_COMMON_BYTES",
+      "defects": 0,
+      "pins": [
+        "m1b_primal",
+        "m1b_dual",
+        "m1b_cyclic"
+      ],
+      "witness": "typed rank-940 cyclic composite"
+    },
+    {
+      "check_id": "classical_contraction_identity",
+      "status": "PASS_ON_COMMON_BYTES",
+      "defects": 0,
+      "pins": [
+        "m1b_primal",
+        "m1b_dual",
+        "m1b_cyclic"
+      ],
+      "witness": "typed rank-940 cyclic composite"
+    },
+    {
+      "check_id": "q0_iota_intertwining",
+      "status": "PASS_ON_COMMON_BYTES",
+      "defects": 0,
+      "pins": [
+        "graph_q1",
+        "m1b_cyclic"
+      ],
+      "witness": "typed inclusion chain map"
+    },
+    {
+      "check_id": "pi_q0_intertwining",
+      "status": "PASS_ON_COMMON_BYTES",
+      "defects": 0,
+      "pins": [
+        "graph_q1",
+        "m1b_cyclic"
+      ],
+      "witness": "typed projection chain map"
+    },
+    {
+      "check_id": "cyclic_compatibility",
+      "status": "PASS_ON_COMMON_BYTES",
+      "defects": 0,
+      "pins": [
+        "local_cyclic",
+        "m1b_dual",
+        "m1b_cyclic"
+      ],
+      "witness": "local rank-386 and residual rank-940 action pairings"
+    }
+  ],
+  "supplemental_replay": [
+    {
+      "check_id": "q3_arity_three_and_cyclicity",
+      "status": "PASS_ON_COMMON_BYTES",
+      "defects": 0,
+      "pin": "source_q3"
+    },
+    {
+      "check_id": "residual_zero_mode_and_representation",
+      "status": "PASS_ON_COMMON_BYTES",
+      "defects": 0,
+      "pin": "zero_modes"
+    },
+    {
+      "check_id": "centered_H4_cohomology_and_representatives",
+      "status": "PASS_ON_COMMON_BYTES",
+      "defects": 0,
+      "pin": "centered"
+    }
+  ],
+  "receiver_replay": {
+    "independent_checkers": [
+      "check_strict_m1a_immutable_typed_ledger.py",
+      "check_strict_386_graph_q1_sdr_component_jets.py",
+      "check_strict_386_source_q2_common_assembly.py",
+      "check_strict_386_source_q3_common_assembly.py",
+      "check_strict_386_full_d_action.py",
+      "check_strict_residual_zero_mode_payload.py",
+      "check_strict_centered_cohomology_payload.py",
+      "check_strict_m1b_primal_composite_contraction.py",
+      "check_strict_m1b_action_dual_lift.py",
+      "check_strict_m1b_typed_cyclic_composite.py",
+      "check_strict_386_local_cyclic_pairing_closure.py"
+    ],
+    "all_required_checkers_passed": true,
+    "gate_checks_passed": 10,
+    "gate_checks_failed": 0,
+    "supplemental_checks_passed": 3
+  },
+  "foundational_strength": {
+    "manifest_and_exact_replay": "finite content hashing and exact sparse rational/integer receivers",
+    "analytic_inputs": "previously certified local differential operators, causal compact-source duality, and action-current pairing",
+    "choice_principle_added_by_M1C": false,
+    "Hilbert_or_Krein_completion_added_by_M1C": false,
+    "scope_boundary": "The freeze is authoritative only for its typed local and represented objects; it is not an all-energy smooth or distributional completion."
+  },
+  "independent_checker": "quantum-weyl/classical_import/check_strict_m1c_common_snapshot.py",
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_M1C_COMMON_SNAPSHOT_V1.md",
+  "next_gate": "Run the independent Gate-A decision on this exact snapshot, then audit q2/q3 compatibility with the typed Lorentzian Green homotopy before any Hadamard construction.",
+  "does_not_establish": [
+    "that the finite harmonic or algebraic-dual verification cores are the authoritative local source",
+    "an arbitrary-smooth, all-energy, distributional, Hilbert, Krein, Sobolev, LF, or Frechet completion",
+    "q2/q3 compatibility with advanced and retarded Green homotopies",
+    "a complete Lorentzian off-shell BV propagator",
+    "a BRST-compatible Hadamard two-point function or renormalized Lorentzian products",
+    "QME restoration, residual quantum transfer, physical positivity, or a Lorentzian quantum theory"
+  ],
+  "claim_flags": {
+    "M1A_FULL_TYPED_CARRIER_LEDGER_COMPLETE": true,
+    "M1B_REPRESENTED_COMPOSITE_CONTRACTION_COMPLETE": true,
+    "M1C_COMMON_MANIFEST_REPLAY_COMPLETE": true,
+    "M1_COMMON_STRICT_SNAPSHOT_COMPLETE": true,
+    "ALL_20_EXPORTS_COMMON_BOUND": true,
+    "ALL_7_TOP_LEVEL_HASHES_COMMON_BOUND": true,
+    "ALL_10_GATE_A_CHECKS_COMMON_REPLAYED": true,
+    "FORMAL_8980_SOURCE_IS_AUTHORITATIVE_ORIGINAL_BV_COMPLEX": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "NONLINEAR_GREEN_COMPATIBILITY_CERTIFIED": false,
+    "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED": false,
+    "RENORMALIZED_LORENTZIAN_PRODUCTS_CONSTRUCTED": false,
+    "QME_RESTORED": false,
+    "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": false
+  },
+  "content_sha256": "36df1b273f97812c32a4a98e8cb9aebaae56c783292c071a7d211d90b12044c0"
+}

@@ -18030,8 +18030,8 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "completion_atlas": {
-    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v47",
-    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V47",
+    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v48",
+    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V48",
     "result_kind": "BRANCH_BY_STAGE_COMPLETION_ATLAS",
     "lifecycle": "CLASSIFIED",
     "created": "2026-08-16",
@@ -18042,12 +18042,12 @@ window.MATRIX_EXPLORER_DATA = {
       "REDUCED-MODE",
       "LORENTZIAN-CAUSAL"
     ],
-    "question": "What is the highest-leverage route after completing the M1B primal composite contraction?",
-    "answer": "Atlas V47 closes the primal sublayer of M1B on the declared energy-2-through-6 D-finite domain. The exact 4,080-to-470 endpoint contraction composes with the support-local 386-to-30 graph contraction by a typed normalized-contraction lemma; it is neither a 386-by-470 component matrix nor an arbitrary-smooth support-local result. The immediate frontier is now the compact-source action-dual lift, followed by rank-940 cyclic replay and M1C common-manifest binding. Gate A remains fail closed.",
+    "question": "What becomes the highest-leverage route once one immutable strict pure-Weyl classical BV snapshot passes Gate A?",
+    "answer": "Atlas V48 closes M1B, M1C and classical import Gate A on one immutable six-object typed snapshot. It retires the three classical-freeze routes and promotes the first genuinely quantum-facing problem: certify q2/q3 compatibility with both typed Lorentzian Green orientations. The following decision route is an explicit BRST-compatible Hadamard two-point function or a scoped obstruction theorem. No such compatibility or Hadamard result is claimed here.",
     "predecessor": {
-      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V46",
-      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V46.json",
-      "sha256": "fc72ae4be5a03158dd84382b3b6c6aa17f9cd61f1aba352e6bd9afe957c0f9d0",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V47",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V47.json",
+      "sha256": "996c351c4ce71f161b04e45d7889d780dd1c4985881aec4e44c00abe4ca40ca6",
       "preserved": true
     },
     "status_vocabulary": [
@@ -18154,8 +18154,8 @@ window.MATRIX_EXPLORER_DATA = {
         "stages": [
           {
             "stage": "S0_CLASSICAL_AUTHORITY",
-            "status": "FAIL_CLOSED",
-            "statement": "M1A and the M1B primal sublayer are complete. The frozen typed carrier diagram now supports an exact 4,080-to-470 normalized represented contraction and its typed lift through the local 386-to-30 graph contraction. The remaining authority gate is the compact-source action-dual lift, rank-940 cyclic replay and M1C common-byte replay.",
+            "status": "CERTIFIED",
+            "statement": "One immutable strict pure-Weyl classical BV snapshot now passes Gate A. Its six typed carrier objects bind all twenty exports and seven top-level hashes; independent receivers replay ten required and three supplemental exact audits. M1B includes the action-derived compact-source dual and rank-940 cyclic contraction.",
             "evidence": [
               "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
               "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
@@ -18212,9 +18212,13 @@ window.MATRIX_EXPLORER_DATA = {
               "STRICT_M1A_IMMUTABLE_TYPED_LEDGER_V1",
               "CLASSICAL_IMPORT_GATE_V28_RECONCILIATION",
               "STRICT_M1B_PRIMAL_COMPOSITE_CONTRACTION_V1",
-              "CLASSICAL_IMPORT_GATE_V29_RECONCILIATION"
+              "CLASSICAL_IMPORT_GATE_V29_RECONCILIATION",
+              "STRICT_M1B_ACTION_DUAL_LIFT_V1",
+              "STRICT_M1B_TYPED_CYCLIC_COMPOSITE_V1",
+              "STRICT_M1C_COMMON_SNAPSHOT_V1",
+              "CLASSICAL_IMPORT_GATE_V30_RECONCILIATION"
             ],
-            "boundary": "The result is restricted to the declared D-finite energy-2-through-6 domain. Harmonic restriction is global and support-expanding; no 386-by-470 component matrix, arbitrary-smooth contraction, action-dual lift or complete M1B package is claimed. Gate A remains fail closed at one of seven hashes."
+            "boundary": "This certifies the classical import source. The 8,160-coordinate verification core is not the authoritative full BV source, harmonic projection remains support-expanding, and q2/q3 Green compatibility, a full-complex Hadamard two-point function, renormalization and QME restoration remain open."
           },
           {
             "stage": "S1_OFF_SHELL_BV",
@@ -18933,28 +18937,30 @@ window.MATRIX_EXPLORER_DATA = {
       }
     ],
     "frontier_summary": {
-      "highest_value_next_route": "STRICT_M1B_ACTION_DUAL_LIFT",
-      "route_count": 9,
-      "completed_since_v46": [
-        "STRICT_M1B_PRIMAL_COMPOSITE_CONTRACTION",
-        "GATE_V29_M1B_PRIMAL_RECONCILIATION"
+      "highest_value_next_route": "STRICT_Q2_Q3_TYPED_GREEN_COMPATIBILITY",
+      "route_count": 7,
+      "completed_since_v47": [
+        "STRICT_M1B_ACTION_DUAL_LIFT",
+        "STRICT_M1B_TYPED_CYCLIC_REPLAY",
+        "STRICT_M1C_COMMON_MANIFEST_REPLAY",
+        "CLASSICAL_IMPORT_GATE_A"
       ],
-      "new_positive_result": "The exact represented endpoint contraction has dimension 4,080-to-470 with 1,805 q0 and homotopy entries and 470 inclusion/projection entries; all represented and formal composite identities have zero defects.",
-      "surprise": "The scientifically correct composite is a typed operator DAG on a restricted graph-section domain. A seemingly natural 386-by-470 matrix would identify local species with global modes and is therefore not merely unavailable but ill-typed.",
-      "hard_boundary": "Only the local graph factor is support-local. The harmonic restriction is global and support-expanding; action-dual, rank-940 cyclic, M1C, Gate A and arbitrary-smooth claims remain open."
+      "new_positive_result": "Gate A is verified on immutable snapshot STRICT_PURE_WEYL_BV_SNAPSHOT_07dc7271b95b263a: 16 content pins, 20 exports, seven hashes, ten Gate-A checks and three supplemental checks.",
+      "surprise": "The compact-source action dual is determined by adjointness on 470 residual modes even though the other 4,080 algebraic dual coordinates remain check-only. The resulting rank-940 cyclic replay closes M1B without promoting the finite verification core into a continuous BV model.",
+      "hard_boundary": "The classical source is frozen, but the nonlinear vertices have not yet been certified against both Lorentzian Green orientations. Therefore no full-complex Hadamard, renormalization, QME or residual quantum claim follows."
     },
     "classical_import_reconciliation": {
-      "result_id": "CLASSICAL_IMPORT_GATE_V29_RECONCILIATION",
-      "status": "M1B_PRIMAL_COMPOSITE_COMPLETE_ACTION_DUAL_CYCLIC_AND_M1C_OPEN_GATE_FAIL_CLOSED",
-      "exports_receiver_verified_scoped": 17,
+      "result_id": "CLASSICAL_IMPORT_GATE_V30_RECONCILIATION",
+      "status": "CLASSICAL_IMPORT_GATE_A_VERIFIED_ON_IMMUTABLE_STRICT_PURE_WEYL_SNAPSHOT",
+      "exports_receiver_verified_scoped": 20,
       "exports_total": 20,
-      "freeze_checks_receiver_verified_scoped": 9,
+      "freeze_checks_receiver_verified_scoped": 10,
       "freeze_checks_total": 10,
-      "accepted_top_level_hashes": 1,
-      "gate_a_status": "FAIL_CLOSED",
-      "minimal_missing_bundle": [
-        "M1_COMMON_STRICT_SNAPSHOT"
-      ]
+      "accepted_top_level_hashes": 7,
+      "gate_a_status": "VERIFIED",
+      "minimal_missing_bundle": [],
+      "snapshot_id": "STRICT_PURE_WEYL_BV_SNAPSHOT_07dc7271b95b263a",
+      "snapshot_sha256": "07dc7271b95b263a079446479596a87bd849c2520c1b8ba275afc6eca8e21a5a"
     },
     "berger_h26_c26_decision_chain": [
       {
@@ -19060,33 +19066,15 @@ window.MATRIX_EXPLORER_DATA = {
     "route_selection": [
       {
         "rank": 1,
-        "route": "STRICT_M1B_ACTION_DUAL_LIFT",
+        "route": "STRICT_Q2_Q3_TYPED_GREEN_COMPATIBILITY",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
-        "dependency_depth": "MEDIUM",
-        "recommendation": "Lift the primal composite through the action-derived compact-source dual, retaining the distinction between the represented 470-dimensional dual and any full continuous dual."
+        "dependency_depth": "HIGH",
+        "recommendation": "On the immutable Gate-A snapshot, type both advanced and retarded Green actions and replay the q2/q3 homotopy, chain, cyclic and causal-support identities without importing Berger data."
       },
       {
         "rank": 2,
-        "route": "STRICT_M1B_TYPED_CYCLIC_REPLAY",
-        "branch": "STRICT_PURE_WEYL_386",
-        "scientific_leverage": "VERY_HIGH",
-        "tractability": "MEDIUM",
-        "dependency_depth": "MEDIUM",
-        "recommendation": "Assemble pi_cl, iota_cl, s_cl and the rank-940 action pairing as one typed contraction and replay chain, side-condition, adjoint and cyclic identities on the frozen M1A hashes."
-      },
-      {
-        "rank": 3,
-        "route": "STRICT_M1C_COMMON_MANIFEST_REPLAY",
-        "branch": "STRICT_PURE_WEYL_386",
-        "scientific_leverage": "VERY_HIGH",
-        "tractability": "HIGH",
-        "dependency_depth": "MEDIUM",
-        "recommendation": "Bind all twenty exports and seven hashes, then replay all ten Gate-A checks on exactly one immutable manifest."
-      },
-      {
-        "rank": 4,
         "route": "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
@@ -19095,25 +19083,16 @@ window.MATRIX_EXPLORER_DATA = {
         "recommendation": "After nonlinear identity, prove Noether closure of the general lambda-squared source."
       },
       {
-        "rank": 5,
-        "route": "STRICT_CANDIDATE_Q2_Q3_GREEN_LAMBDA2_RESPONSE",
+        "rank": 3,
+        "route": "STRICT_BRST_HADAMARD_TWO_POINT_OR_OBSTRUCTION",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
-        "tractability": "MEDIUM",
-        "dependency_depth": "HIGH",
-        "recommendation": "Compose accepted q2/q3 with both Green orientations and verify response identities."
-      },
-      {
-        "rank": 6,
-        "route": "DIRECT_SPACETIME_Q26_HADAMARD",
-        "branch": "BERGER_POSITIVE_CLOCK_54",
-        "scientific_leverage": "VERY_HIGH",
         "tractability": "LOW",
-        "dependency_depth": "MEDIUM",
-        "recommendation": "Keep the analytically mature Berger Hadamard route as a different-theory control, not as the strict pure-Weyl carrier map."
+        "dependency_depth": "HIGH",
+        "recommendation": "After nonlinear Green compatibility, either construct a full-complex BRST-compatible Hadamard two-point function or isolate an incompatible subset of field-equation, wavefront, BRST, pairing and positivity conditions and prove a scoped obstruction."
       },
       {
-        "rank": 7,
+        "rank": 4,
         "route": "STRICT_D_CARTAN_AND_CHARGE_DECISION",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "HIGH",
@@ -19122,7 +19101,16 @@ window.MATRIX_EXPLORER_DATA = {
         "recommendation": "Classify the nonlinear D-Cartan homotopy and proper-gauge/charge status on the strict carrier."
       },
       {
-        "rank": 8,
+        "rank": 5,
+        "route": "DIRECT_SPACETIME_Q26_HADAMARD",
+        "branch": "BERGER_POSITIVE_CLOCK_54",
+        "scientific_leverage": "VERY_HIGH",
+        "tractability": "LOW",
+        "dependency_depth": "MEDIUM",
+        "recommendation": "Keep the analytically mature Berger Hadamard route as a different-theory control, not as the strict pure-Weyl carrier map."
+      },
+      {
+        "rank": 6,
         "route": "STRICT_ANALYTIC_MOLLER_CONVERGENCE",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "MEDIUM",
@@ -19131,7 +19119,7 @@ window.MATRIX_EXPLORER_DATA = {
         "recommendation": "Only after all-order source closure, derive seminorm majorants and a nonzero convergence domain."
       },
       {
-        "rank": 9,
+        "rank": 7,
         "route": "STRICT_MIXED_WEIGHTED_CAUSAL_DOMAIN",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "MEDIUM",
@@ -19144,53 +19132,41 @@ window.MATRIX_EXPLORER_DATA = {
       {
         "priority": 1,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_M1B_ACTION_DUAL_LIFT",
-        "why": "Lift the primal composite through the action-derived compact-source dual, retaining the distinction between the represented 470-dimensional dual and any full continuous dual."
+        "object": "STRICT_Q2_Q3_TYPED_GREEN_COMPATIBILITY",
+        "why": "On the immutable Gate-A snapshot, type both advanced and retarded Green actions and replay the q2/q3 homotopy, chain, cyclic and causal-support identities without importing Berger data."
       },
       {
         "priority": 2,
-        "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_M1B_TYPED_CYCLIC_REPLAY",
-        "why": "Assemble pi_cl, iota_cl, s_cl and the rank-940 action pairing as one typed contraction and replay chain, side-condition, adjoint and cyclic identities on the frozen M1A hashes."
-      },
-      {
-        "priority": 3,
-        "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_M1C_COMMON_MANIFEST_REPLAY",
-        "why": "Bind all twenty exports and seven hashes, then replay all ten Gate-A checks on exactly one immutable manifest."
-      },
-      {
-        "priority": 4,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE",
         "why": "After nonlinear identity, prove Noether closure of the general lambda-squared source."
       },
       {
-        "priority": 5,
+        "priority": 3,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_CANDIDATE_Q2_Q3_GREEN_LAMBDA2_RESPONSE",
-        "why": "Compose accepted q2/q3 with both Green orientations and verify response identities."
+        "object": "STRICT_BRST_HADAMARD_TWO_POINT_OR_OBSTRUCTION",
+        "why": "After nonlinear Green compatibility, either construct a full-complex BRST-compatible Hadamard two-point function or isolate an incompatible subset of field-equation, wavefront, BRST, pairing and positivity conditions and prove a scoped obstruction."
       },
       {
-        "priority": 6,
-        "branch": "BERGER_POSITIVE_CLOCK_54",
-        "object": "DIRECT_SPACETIME_Q26_HADAMARD",
-        "why": "Keep the analytically mature Berger Hadamard route as a different-theory control, not as the strict pure-Weyl carrier map."
-      },
-      {
-        "priority": 7,
+        "priority": 4,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_D_CARTAN_AND_CHARGE_DECISION",
         "why": "Classify the nonlinear D-Cartan homotopy and proper-gauge/charge status on the strict carrier."
       },
       {
-        "priority": 8,
+        "priority": 5,
+        "branch": "BERGER_POSITIVE_CLOCK_54",
+        "object": "DIRECT_SPACETIME_Q26_HADAMARD",
+        "why": "Keep the analytically mature Berger Hadamard route as a different-theory control, not as the strict pure-Weyl carrier map."
+      },
+      {
+        "priority": 6,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_ANALYTIC_MOLLER_CONVERGENCE",
         "why": "Only after all-order source closure, derive seminorm majorants and a nonzero convergence domain."
       },
       {
-        "priority": 9,
+        "priority": 7,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_MIXED_WEIGHTED_CAUSAL_DOMAIN",
         "why": "Test weighted opposite-polarity domains against the scalar zero-mode witness; polarized recursion does not require this."
@@ -20043,6 +20019,36 @@ window.MATRIX_EXPLORER_DATA = {
           "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V29_RECONCILIATION",
           "sha256": "7c46fea05dad0d62c9c7d49b8bc095bf4dd44edf9901a07da1390e9ec8b61423",
           "role": "Gate-A V29 primal reconciliation"
+        },
+        {
+          "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V47.json",
+          "result_or_artifact_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V47",
+          "sha256": "996c351c4ce71f161b04e45d7889d780dd1c4985881aec4e44c00abe4ca40ca6",
+          "role": "immutable Atlas V47 predecessor"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_M1B_ACTION_DUAL_LIFT_V1.json",
+          "result_or_artifact_id": "STRICT_M1B_ACTION_DUAL_LIFT_V1",
+          "sha256": "614e704b943fe2f3727a3d00ea270d5cdba8c1502eecf22ab5a2b701031a5731",
+          "role": "exact action-derived compact-source dual lift"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_M1B_TYPED_CYCLIC_COMPOSITE_V1.json",
+          "result_or_artifact_id": "STRICT_M1B_TYPED_CYCLIC_COMPOSITE_V1",
+          "sha256": "77aef0a134bc6672fca3e4c54c60700cbdce0e49ca6ca6e69408989637693257",
+          "role": "exact rank-940 typed cyclic composite"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_M1C_COMMON_SNAPSHOT_V1.json",
+          "result_or_artifact_id": "STRICT_M1C_COMMON_SNAPSHOT_V1",
+          "sha256": "7d2838b32f543c5ed6a1d39d44811a4982563cacba831b24e2253b4554ac68a6",
+          "role": "immutable common classical snapshot"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V30_RECONCILIATION.json",
+          "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V30_RECONCILIATION",
+          "sha256": "95cfe49e134064f8e8d25cb2ad1a01bc84ff0bf921676486316e8ec72a390263",
+          "role": "independently verified classical Gate-A decision"
         }
       ]
     },
@@ -20052,7 +20058,7 @@ window.MATRIX_EXPLORER_DATA = {
       "berger_h26_c26_decision_chain_classified": true,
       "general_noncone_104_row_no_go": false,
       "berger_brst_hadamard_state_constructed": false,
-      "strict_pure_weyl_classical_gate_passed": false,
+      "strict_pure_weyl_classical_gate_passed": true,
       "renormalized_lorentzian_products_constructed": false,
       "strict_pure_weyl_qme_restored": false,
       "residual_quantum_transfer_authorized": false,
@@ -20310,14 +20316,14 @@ window.MATRIX_EXPLORER_DATA = {
       "strict_M4R_represented_projection_equals_inclusion_sharp": true,
       "strict_M4R_represented_homotopy_skew_adjoint": true,
       "strict_represented_residual_cyclic_pairing_certified": true,
-      "strict_M1_common_strict_snapshot_complete": false,
+      "strict_M1_common_strict_snapshot_complete": true,
       "v43_preserved": true,
       "strict_M1_preflight_complete": true,
       "strict_M1_typed_diagram_required": true,
       "strict_M1_is_clerical_hash_bundle": false,
       "strict_M1A_full_typed_carrier_ledger_complete": true,
-      "strict_M1B_represented_composite_contraction_complete": false,
-      "strict_M1C_common_manifest_replay_complete": false,
+      "strict_M1B_represented_composite_contraction_complete": true,
+      "strict_M1C_common_manifest_replay_complete": true,
       "v44_preserved": true,
       "strict_M1A2_local_semantic_extension_complete": true,
       "strict_local_386_fully_typed": true,
@@ -20326,156 +20332,42 @@ window.MATRIX_EXPLORER_DATA = {
       "v45_preserved": true,
       "v46_preserved": true,
       "strict_M1B_primal_composite_contraction_complete": true,
-      "strict_M1B_action_dual_lift_complete": false,
-      "strict_M1B_typed_cyclic_replay_complete": false
+      "strict_M1B_action_dual_lift_complete": true,
+      "strict_M1B_typed_cyclic_replay_complete": true,
+      "v47_preserved": true
     },
     "does_not_establish": [
-      "a passed strict pure-Weyl classical import gate",
       "a no-go theorem for every nonstationary Krein Hadamard representative",
       "a no-go theorem for the complete general non-cone 104-row completion class",
       "a no-finite-carrier theorem or a global lower bound above 104 added free rows",
-      "that non-free or projective carrier extensions obey the free-module lower bound",
-      "a normalized Berger H26_plus or serialized C26",
-      "a BRST-compatible Hadamard state on a complete off-shell carrier",
-      "physical positivity, particles, scattering or unitarity",
-      "renormalized Lorentzian time-ordered products",
-      "a Lorentzian QME theorem or residual quantum transfer",
+      "a normalized Berger H26_plus carrier or serialized Berger C26 two-point function",
       "equivalence between strict pure Weyl and the positive-clock Berger theory",
       "that a numerical route rank is a theorem or proof of eventual success",
       "that the finite D x SO(4) residual contraction is an arbitrary-support or causal Green homotopy",
-      "that zero missing serialized objects means the common full-carrier Gate A has passed",
-      "that the PRA classification of the finite sign wrapper calibrates the imported analytic causal theorem",
-      "compatibility of strict q2 or D with the transported 386-row Green homotopy",
-      "that convention stability is a passed Gate A, Hadamard state or Lorentzian quantum completion",
-      "q2 or local D compatibility on the common causal bytes",
-      "a passed Gate A, Hadamard state, Ward theorem, QME restoration, residual transfer or Lorentzian quantum theory",
-      "local D or q2 compatibility on the common causal carrier",
-      "portable full prolonged q1, H_alg, endpoint inclusion/projection or Green operator component tables",
-      "an independent component-by-component replay of every operator adjoint and homotopy identity",
-      "one accepted common Gate-A operator hash, local D, q2, Hadamard, QME or Lorentzian quantum theory",
-      "portable full q1, H_alg, projector, inclusion or projection component tables",
-      "a receiver-executable endpoint or full advanced/retarded Green action or distribution kernel",
-      "that the existing causal Green-homotopy theorem is false or incomplete as an existence theorem",
-      "componentwise replay of every homotopy, projector and suspended-adjoint identity",
-      "the weakest foundational base for the imported analytic Green theorem",
-      "a passed Gate A, local D, q2 compatibility, Hadamard state, Ward theorem, QME restoration or Lorentzian quantum theory",
-      "that the preferred sign repair has been applied to the authoritative classical source and affected certificate chain",
-      "a receiver-readable full 386-row q1 component jet table or accepted common operator snapshot hash",
-      "componentwise nilpotency and cyclicity of the endpoint and curvature-cone blocks in one combined artifact",
-      "portable local SDR maps, endpoint/full Green actions, local D or q2 compatibility",
-      "a Hadamard state, Ward theorem, QME restoration, residual transfer or Lorentzian quantum theory",
-      "receiver-readable full 386-row q1 component bytes or an accepted common classical snapshot hash",
-      "portable support-local SDR component maps or represented endpoint and full Green actions",
-      "local D, q2 compatibility, a BRST-compatible Hadamard state, renormalized Lorentzian products, QME restoration, residual quantum transfer or a Lorentzian quantum theory",
-      "component tables for H_alg, endpoint inclusion/projection, the canonical T/A/B shear, or advanced/retarded Green actions",
-      "one accepted common Gate-A snapshot binding q1, q2, D, pairing, SDR and causal Green data",
-      "q2 or local D on the same 386-row causal carrier",
-      "a weakest-foundation calibration of the imported analytic Green theorem",
-      "a Hadamard state, BRST Ward theorem, positivity result, renormalized Lorentzian products, QME restoration, residual transfer or Lorentzian quantum theory",
-      "a serialized T/A/B canonical shear or its inverse in the 386-row Gate basis",
-      "an unshifted curvature-graph SDR snapshot",
-      "a represented advanced or retarded endpoint/full Green action",
-      "one accepted common Gate-A snapshot or a passed classical import gate",
-      "a Hadamard state, Ward theorem, positivity result, renormalized Lorentzian products, QME restoration, residual transfer or Lorentzian quantum theory",
-      "a flattened coefficientwise replay of q1_graph=S q1_split S^-1 in the curved PBW jet algebra",
-      "graph-coordinate H, inclusion, projection or all SDR identities on the same component bytes",
-      "represented advanced/retarded Green actions on declared analytic spaces",
-      "represented advanced/retarded endpoint actions on declared test and distribution spaces",
-      "the full causal Green homotopy, support theorem or adjoint theorem on the graph bytes",
-      "one receiver-accepted Gate-A snapshot binding q1, q2, D, pairing, SDR and represented Green data",
-      "an effective or complexity-bounded numerical solver for arbitrary source names",
-      "serialized distribution-kernel coordinate bytes",
-      "a choice-free, constructive, reverse-mathematical, or weakest-base proof of the Green theorem",
-      "an independently formalized weak-base proof of completeness for the S3 Hodge spectral branches",
-      "the complete twenty-export, seven-hash classical Gate-A snapshot required by the authoritative V5 reconciliation",
-      "local D or q2 compatibility on that accepted snapshot",
-      "a BRST-compatible Hadamard state, positivity, Ward identity, or renormalized Lorentzian time-ordered products",
-      "QME restoration, residual transfer, or a Lorentzian quantum theory",
-      "the authoritative twenty-export, seven-hash, ten-identity classical Gate A",
-      "a full-carrier strict q2 and local D common snapshot or their D identities",
-      "a continuum residual SDR or complete full-carrier cyclic pairing",
-      "exact SO(4,2) residual matrices, centered H3/H4/H5 bases or normalized representative vectors",
+      "support-locality of the D-finite W+/W- harmonic projector",
+      "that the formal 8,980-coordinate comparison source is the authoritative classical BV source",
       "an effective numerical Green solver or serialized distribution-kernel bytes",
-      "a BRST-compatible Hadamard state, renormalized Lorentzian products, restored QME, residual quantum transfer or Lorentzian quantum theory",
-      "a full-carrier strict q2 or D/q2 theorem from the unary D/q1 replay",
+      "a constructive, choice-free, or weakest-base proof of the imported analytic Green theorem",
+      "q2/q3 compatibility with both typed advanced and retarded Lorentzian Green homotopies",
+      "general lambda-squared source-cocycle closure or an analytic Moller inverse",
       "a nonlinear D-Cartan homotopy or a proper-gauge/charge decision for the cylinder generator",
-      "a silently rebound replay of the five drifted Gate-V5 transitive provenance files",
-      "that the receiver-constructed q2 stabilization is the authoritative nonlinear classical extension",
-      "a source-certified cyclic L-infinity equivalence or an accepted q2 Gate-A hash",
-      "authoritative strict q2/Green compatibility rather than candidate first-response compatibility",
-      "recursive nonlinear causal trees or closure when two noncompact causal outputs re-enter q2",
-      "a weakest reverse-mathematical or choice-free proof of the analytic Green layer",
-      "uniform definition of all mixed-sign or arbitrary causal-difference candidate trees",
-      "a formal or convergent infinite polarized Møller series",
-      "q3 or higher causal brackets on the strict carrier",
-      "authoritative recursive Weyl interaction rather than candidate binary recursion",
-      "that coefficientwise formal fixed-point inversion is a Weyl-BV Maurer-Cartan or Moller theorem",
-      "vanishing or nonvanishing of the lambda-squared B(q2) residual",
-      "a typed field-equation Green inverse or source q3/higher brackets",
-      "analytic convergence or a nonperturbative Moller inverse",
-      "a full two-sided inverse of the ungauge-fixed field-equation operator",
-      "a selected gauge fixing or quotient representative",
-      "all-order nonlinear source-cocycle closure",
-      "authoritative q2, q3 or higher source identities",
-      "that the q2-only receiver obstruction is a no-go theorem for full Weyl gravity",
-      "an authoritative q3 or arity-three carrier bridge",
-      "lambda-squared source closure after the full Weyl q3 term is included",
-      "general lambda-squared source closure from one exact diagonal metric witness",
-      "a direct import of the Berger-plus-clock q3 into the strict pure-Weyl carrier",
-      "nonexistence of every possible future relation between the Berger and strict theories",
-      "a source-certified cyclic stabilization or L-infinity equivalence from the minimal carrier to all 386 graph rows",
-      "the authoritative nonminimal/auxiliary interaction theory from the mathematically valid trivial stabilization alone",
-      "the 386-row arity-three identity or general lambda-squared source closure from the completed minimal package",
-      "q3 compatibility with a causal Green homotopy, an analytic Moller map, Hadamard data, or QME restoration",
-      "that the exact 386-row q3 candidate is the authoritative nonminimal pure-Weyl BV interaction",
-      "a source-certified cyclic L-infinity equivalence from the authoritative nonminimal action to the candidate",
-      "general lambda-squared causal source closure or q2/q3/Green compatibility from local arity three alone",
-      "nonexistence of a nonlinear auxiliary-elimination or cyclic L-infinity equivalence",
-      "that the internally certified q1/q2/q3 candidate algebra is inconsistent",
-      "the complete authoritative 386-row q2/q3 or its causal lambda-squared source closure",
-      "a componentwise 386-row BV cotangent lift or complete source q2/q3 pullback",
-      "agreement of the metric-dependent h-f_hat-f_hat and ghost/antifield channel families",
-      "a full cyclic L-infinity equivalence, authoritative q2/q3 hashes, or causal lambda-squared closure",
-      "an exhaustive nonlinear BV family census or complete hh/hv, Diff, Weyl and boost component inventory",
-      "that the 72 h-f_hat-f_hat comparison obstructs a further metric-dependent canonical or L-infinity normalization",
-      "a complete source q2/q3 pullback, causal lambda-squared closure, Hadamard state, renormalized Lorentzian products, or QME restoration",
-      "the complete source q2/q3 pullback, accepted nonlinear hashes, or cyclic L-infinity equivalence",
-      "causal lambda-squared closure, a Hadamard state, renormalized Lorentzian products, QME restoration, or residual transfer",
-      "an exhaustive nonlinear Weyl/conformal-boost ghost-antifield manifest or proof that the seven known families exhaust the source theory",
-      "the assembled source q2/q3, accepted nonlinear hashes, or cyclic L-infinity equivalence",
-      "that the formal 8,980-coordinate shifted cotangent complex is the unchanged authoritative classical BV source",
-      "a selected continuous action/support dual or harmonic integration identification",
-      "M3RC-B, M4R, M1, a passed Gate A, Hadamard data, renormalized products, QME restoration or residual transfer",
-      "the full continuous dual of every smooth or all-energy solution space",
-      "that the formal 8,980-coordinate source is the unchanged authoritative classical BV source",
-      "M4R, M1, a passed Gate A, Hadamard data, renormalized products, QME restoration or residual transfer",
-      "that the formal 8,980-coordinate comparison source is the authoritative full classical BV source",
-      "M1, a passed Gate A, a full-complex Hadamard state, renormalized products, QME restoration or residual quantum transfer",
-      "completion of M1A, M1B or M1C merely from their exact preflight classification",
-      "a passed Gate A, full-complex Hadamard state, renormalized products, QME restoration or residual transfer",
-      "M1A completion from local 386-row coverage without the represented and action-residual crosswalk",
-      "a scalar nonlinear Weyl weight for the fixed-background Cotton resolution rows",
-      "M1B composite contraction or M1C common replay from a typed row freeze alone",
-      "a componentwise identification of local species with global harmonic or residual coordinates",
-      "that the test-doublet or formal-cotangent comparison carriers are authoritative source fields",
-      "the M1B action-dual lift, rank-940 cyclic replay, complete M1B package or M1C common replay",
-      "a 386-by-470 component matrix, support-local harmonic restriction or arbitrary-smooth contraction"
+      "a full-complex BRST-compatible Hadamard two-point function or a no-go theorem for one",
+      "renormalized Lorentzian products, QME restoration, residual quantum transfer or a Lorentzian quantum theory"
     ],
     "independent_checker": {
-      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v47.py",
+      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v48.py",
       "checks": [
-        "V46 predecessor and 77-cell preservation",
-        "Gate V29 and M1B-primal independent replay",
-        "4,080-to-470 exact contraction census",
-        "typed category and support boundary",
-        "action-dual/cyclic/M1C route ordering",
-        "one accepted hash and fail-closed Gate A",
-        "Hadamard/QME firewalls",
+        "V47 predecessor and 77-cell preservation",
+        "independent Gate V30 receiver replay",
+        "M1B action-dual and thirteen cyclic identities",
+        "M1C snapshot identity and census",
+        "retirement of three classical-freeze routes",
+        "nonlinear Green and Hadamard firewalls",
         "canonical atlas digest"
       ],
-      "expected_digest": "797587e8c20254f746f386763ecc112525398d21e986bc91567b3217897d2cc5"
+      "expected_digest": "97affed2f2acbafa570fa33348cbfe327e613f65e549d60436b855d9b28ff418"
     },
-    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v47.md",
+    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v48.md",
     "strict_gate_a_progress": {
       "status": "STABILIZED_Q2_CANDIDATE_CERTIFIED_AUTHORITATIVE_IDENTITY_REQUIRED",
       "evidence": [
@@ -22068,6 +21960,54 @@ window.MATRIX_EXPLORER_DATA = {
       "raw_component_matrix_constructed": false,
       "M1B_primal_complete": true,
       "M1B_complete": false
+    },
+    "strict_gate_v30_reconciliation": {
+      "result_id": "CLASSICAL_IMPORT_GATE_V30_RECONCILIATION",
+      "status": "CLASSICAL_IMPORT_GATE_A_VERIFIED_ON_IMMUTABLE_STRICT_PURE_WEYL_SNAPSHOT",
+      "exports_total": 20,
+      "exports_receiver_verified": 20,
+      "freeze_checks_total": 10,
+      "freeze_checks_receiver_verified": 10,
+      "accepted_top_level_hashes": 7,
+      "remaining_top_level_hashes": 0,
+      "M1B_complete": true,
+      "M1C_complete": true,
+      "gate_a_status": "VERIFIED",
+      "nonlinear_green_compatibility_certified": false,
+      "full_complex_hadamard_state_constructed": false
+    },
+    "strict_m1b_action_dual_lift": {
+      "result_id": "STRICT_M1B_ACTION_DUAL_LIFT_V1",
+      "content_sha256": "d6cced63dc8d9f3ac5f3a2d925bccf5e95c20ff6c692be4520df70c40c2d8b79",
+      "compact_source_action_duals": 470,
+      "represented_check_coordinates": 4080,
+      "local_pairing_rank": 386,
+      "residual_action_pairing_rank": 940,
+      "identity_defects": 0,
+      "M1B_action_dual_complete": true,
+      "full_algebraic_dual_identified_with_compact_sources": false
+    },
+    "strict_m1b_typed_cyclic_composite": {
+      "result_id": "STRICT_M1B_TYPED_CYCLIC_COMPOSITE_V1",
+      "content_sha256": "3a8d3ce4241b9c1f6a1576664761de034325631f347c2ece9eac8ee725a931d8",
+      "verification_core_coordinates": 8160,
+      "residual_action_pairing_rank": 940,
+      "typed_identities_replayed": 13,
+      "identity_defects": 0,
+      "M1B_complete": true,
+      "verification_core_is_authoritative_full_bv_source": false
+    },
+    "strict_m1c_common_snapshot": {
+      "result_id": "STRICT_M1C_COMMON_SNAPSHOT_V1",
+      "content_sha256": "36df1b273f97812c32a4a98e8cb9aebaae56c783292c071a7d211d90b12044c0",
+      "snapshot_id": "STRICT_PURE_WEYL_BV_SNAPSHOT_07dc7271b95b263a",
+      "snapshot_sha256": "07dc7271b95b263a079446479596a87bd849c2520c1b8ba275afc6eca8e21a5a",
+      "artifact_pins": 16,
+      "exports_bound": 20,
+      "top_level_hashes_bound": 7,
+      "gate_checks_replayed": 10,
+      "supplemental_checks_replayed": 3,
+      "M1C_complete": true
     }
   },
   "completion_common_endpoint_sdr_binding": {
@@ -231277,12 +231217,18 @@ window.MATRIX_EXPLORER_DATA = {
     "ground_state_dynamics_interface_report": "sources/foundations/reports/krein-fock-ground-state-dynamics-interface.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md",
-    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V47.json",
-    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v47.md",
-    "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V29_RECONCILIATION.json",
-    "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V29.md",
+    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V48.json",
+    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v48.md",
+    "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V30_RECONCILIATION.json",
+    "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V30.md",
     "completion_m1b_primal": "sources/quantum-weyl/classical_import/certificates/STRICT_M1B_PRIMAL_COMPOSITE_CONTRACTION_V1.json",
     "completion_m1b_primal_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_M1B_PRIMAL_COMPOSITE_CONTRACTION_V1.md",
+    "completion_m1b_dual": "sources/quantum-weyl/classical_import/certificates/STRICT_M1B_ACTION_DUAL_LIFT_V1.json",
+    "completion_m1b_dual_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_M1B_ACTION_DUAL_LIFT_V1.md",
+    "completion_m1b_cyclic": "sources/quantum-weyl/classical_import/certificates/STRICT_M1B_TYPED_CYCLIC_COMPOSITE_V1.json",
+    "completion_m1b_cyclic_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_M1B_TYPED_CYCLIC_COMPOSITE_V1.md",
+    "completion_m1c_snapshot": "sources/quantum-weyl/classical_import/certificates/STRICT_M1C_COMMON_SNAPSHOT_V1.json",
+    "completion_m1c_snapshot_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_M1C_COMMON_SNAPSHOT_V1.md",
     "completion_m1a_local": "sources/quantum-weyl/classical_import/certificates/STRICT_M1A_LOCAL_SEMANTIC_EXTENSION_V1.json",
     "completion_m1a_local_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_M1A_LOCAL_SEMANTIC_EXTENSION_V1.md",
     "completion_m1a_represented": "sources/quantum-weyl/classical_import/certificates/STRICT_M1A_REPRESENTED_CARRIER_CROSSWALK_V1.json",
@@ -231388,5 +231334,5 @@ window.MATRIX_EXPLORER_DATA = {
     "completion_source_q3": "sources/quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.json",
     "completion_source_q3_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.md"
   },
-  "canonical_digest": "5fe7faa8ba4cf9bd60e56b2f261d62a28e6d089c9c1aa542970aed2f3cf916a9"
+  "canonical_digest": "28a50f89bc7cdeaadad165aee83015d3e6d7ebd7ad593ba8a713296da3c2ed78"
 };

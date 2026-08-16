@@ -1,0 +1,419 @@
+{
+  "$schema": "../schema/strict-m1b-typed-cyclic-composite-v1.schema.json",
+  "schema": "strict-m1b-typed-cyclic-composite-v1",
+  "schema_path": "quantum-weyl/classical_import/schema/strict-m1b-typed-cyclic-composite-v1.schema.json",
+  "result_id": "STRICT_M1B_TYPED_CYCLIC_COMPOSITE_V1",
+  "result_kind": "TYPED_ACTION_CYCLIC_COMPOSITE_CONTRACTION",
+  "result_state": "M1B_REPRESENTED_COMPOSITE_CONTRACTION_COMPLETE_M1C_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-16",
+  "repository_base_commit": "c4a9cc45829bd02ea723f47a2565b042d841c118",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "Do the primal composite and its action-derived dual form one typed rank-940 cyclic contraction on the frozen M1A carriers?",
+  "answer": "Yes on the declared represented energies two through six. The primal composite and uniquely forced action-adjoint dual assemble into a typed contraction onto the rank-940 action residual. An independent 8,160-coordinate finite verification core replays thirteen contraction, chain, side-condition, action-adjoint and pairing identities with zero defects. The core deletes the 820 cotangent coordinates belonging to the 410 comparison-only test rows and is not promoted to the authoritative local BV source. M1B is complete as a typed operator diagram; M1C must now bind the actual local, nonlinear, causal and residual artifacts and replay Gate A on one immutable manifest.",
+  "scope": {
+    "spacetime": "unit Lorentzian cylinder R x S3",
+    "energies": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "authoritative_source": "the frozen 386-row local graph BV bundle with its rank-386 action pairing",
+    "represented_verification_core": "4,080 primal harmonic coordinates plus a 4,080-coordinate algebraic action-test dual check core",
+    "target": "470 primal plus 470 compact-source action-dual residual classes"
+  },
+  "typed_cyclic_dag": {
+    "nodes": [
+      {
+        "id": "LOCAL_GRAPH_BV_386",
+        "category": "LOCAL_COMPONENT_JET_BUNDLE",
+        "authority": "AUTHORITATIVE_LOCAL_SOURCE"
+      },
+      {
+        "id": "LOCAL_GRAPH_ACTION_PAIRING",
+        "category": "LOCAL_ACTION_DENSITY",
+        "authority": "AUTHORITATIVE_RANK_386"
+      },
+      {
+        "id": "REPRESENTED_PRIMAL_4080",
+        "category": "REDUCED_MODE_GLOBAL_HARMONIC",
+        "authority": "AUTHORITATIVE_REPRESENTED_DOMAIN"
+      },
+      {
+        "id": "ACTION_TEST_DUAL_CHECK_4080",
+        "category": "FINITE_ALGEBRAIC_DUAL_VERIFICATION_CORE",
+        "authority": "CHECK_ONLY"
+      },
+      {
+        "id": "ACTION_RESIDUAL_940",
+        "category": "REDUCED_MODE_CAUSAL_COHOMOLOGY_PLUS_COMPACT_SOURCE_DUAL",
+        "authority": "AUTHORITATIVE_REPRESENTED_TARGET"
+      },
+      {
+        "id": "FORMAL_COTANGENT_COMPARISON_8980",
+        "category": "FORMAL_SHIFTED_COTANGENT",
+        "authority": "EXCLUDED_COMPARISON_ONLY"
+      }
+    ],
+    "arrows": [
+      {
+        "id": "primal_composite",
+        "source": "LOCAL_GRAPH_BV_386",
+        "target": "ACTION_RESIDUAL_940",
+        "kind": "TYPED_PRIMAL_HALF",
+        "sha256": "227714a90e03b62b85d5b61f47ace23650b265c8f00011a409711902c79a2c14"
+      },
+      {
+        "id": "action_dual_composite",
+        "source": "ACTION_RESIDUAL_940",
+        "target": "LOCAL_GRAPH_BV_386",
+        "kind": "ACTION_ADJOINT_DUAL_HALF",
+        "sha256": "d6cced63dc8d9f3ac5f3a2d925bccf5e95c20ff6c692be4520df70c40c2d8b79"
+      },
+      {
+        "id": "local_pairing",
+        "source": "LOCAL_GRAPH_BV_386",
+        "target": "LOCAL_GRAPH_ACTION_PAIRING",
+        "kind": "NONDEGENERATE_ODD_ACTION_DENSITY",
+        "sha256": "912aecc758dfd5f0d9de815530a2fe1428442afe874343a08d90673e1f2f6381"
+      },
+      {
+        "id": "finite_exact_replay",
+        "source": "REPRESENTED_PRIMAL_4080",
+        "target": "ACTION_TEST_DUAL_CHECK_4080",
+        "kind": "DIRECT_SUM_TRANSPOSE_VERIFICATION_WITHOUT_AUTHORITY_PROMOTION",
+        "sha256": "8b37d83092f61aff777a8aadb96843de080f0ff2edbd6d70b4ada134e42e74d3"
+      }
+    ],
+    "identities": [
+      "q_cyclic^2=0",
+      "pi_cyclic iota_cyclic=1_res",
+      "iota_cyclic pi_cyclic+q_cyclic s_cyclic+s_cyclic q_cyclic=1_source",
+      "q_cyclic iota_cyclic=0",
+      "pi_cyclic q_cyclic=0",
+      "s_cyclic^2=0",
+      "s_cyclic iota_cyclic=0",
+      "pi_cyclic s_cyclic=0",
+      "q_cyclic is action-cyclic",
+      "q_res=0 is action-cyclic",
+      "pi_cyclic=iota_cyclic^sharp",
+      "s_cyclic=-s_cyclic^sharp",
+      "iota_cyclic preserves the rank-940 action pairing"
+    ],
+    "sha256": "debc4f22655f75af8e5c89ad8d0b34b27380bffa1ca837d060a282f0bc1ce241"
+  },
+  "exact_cyclic_replay": {
+    "blocks": [
+      {
+        "energy": 2,
+        "verification_core_primal_dimension": 210,
+        "verification_core_action_test_dual_dimension": 210,
+        "verification_core_total_dimension": 420,
+        "residual_primal_dimension": 10,
+        "residual_action_dual_dimension": 10,
+        "residual_total_dimension": 20,
+        "verification_core_pairing_rank": 420,
+        "action_residual_pairing_rank": 20,
+        "map_nonzero_entries": {
+          "q_cyclic": 200,
+          "iota_cyclic": 20,
+          "pi_cyclic": 20,
+          "s_cyclic": 200
+        },
+        "map_hashes": {
+          "q_cyclic": "97597a1c7d66cd4f09512ad0317126273b07eb58fa48a7c51c0510410c4a825b",
+          "iota_cyclic": "44b15ff827e97347eb524f9e34e0d83c0714101ec37421b8ff60296ecd56eb26",
+          "pi_cyclic": "4ae7aeeb7e65454a54a96d62867dfcc05e06cd55a5ea491534053357527ab2f3",
+          "s_cyclic": "b009492e826a72a7aa75af15b9bdbaf118dc027342d7f6e09c2396f7a96c8309",
+          "verification_core_pairing": "dd5db2a5bcdd01385100e11d1ca9eb4d1a3c884361cec834d57e787ff256934a",
+          "action_residual_pairing": "f788930a84fdf832686e35e7fc948f0296faddacc2812abc3f53d7ef4785fd01"
+        },
+        "identity_defects": {
+          "q_squared_defects": 0,
+          "projection_inclusion_identity_defects": 0,
+          "contraction_identity_defects": 0,
+          "inclusion_chain_map_defects": 0,
+          "projection_chain_map_defects": 0,
+          "homotopy_squared_defects": 0,
+          "homotopy_inclusion_defects": 0,
+          "projection_homotopy_defects": 0,
+          "source_q_cyclicity_defects": 0,
+          "residual_q_cyclicity_defects": 0,
+          "projection_equals_inclusion_sharp_defects": 0,
+          "homotopy_skew_adjoint_defects": 0,
+          "inclusion_isometry_defects": 0
+        }
+      },
+      {
+        "energy": 3,
+        "verification_core_primal_dimension": 400,
+        "verification_core_action_test_dual_dimension": 400,
+        "verification_core_total_dimension": 800,
+        "residual_primal_dimension": 40,
+        "residual_action_dual_dimension": 40,
+        "residual_total_dimension": 80,
+        "verification_core_pairing_rank": 800,
+        "action_residual_pairing_rank": 80,
+        "map_nonzero_entries": {
+          "q_cyclic": 360,
+          "iota_cyclic": 80,
+          "pi_cyclic": 80,
+          "s_cyclic": 360
+        },
+        "map_hashes": {
+          "q_cyclic": "33c5c00ad431bf13aa66be0741bf1f1a836e43328ca1e8fd3ba82a99beb13658",
+          "iota_cyclic": "079fbc860053a0866f06ddc000cef48828e9fa9c23939d0e82533aba89d9a978",
+          "pi_cyclic": "ff002f9138b49d578e186af62b3a93c73335da66679d6ced9a2795031d6a8624",
+          "s_cyclic": "49b9f571a9d3589bcba5256340073782728db566ee7ddf76285056e82c7eb4fe",
+          "verification_core_pairing": "2a44169bec6e8d1f9d1ef7234a3a74713da7778c8514f2af10cf0b745d835e10",
+          "action_residual_pairing": "183536a09c422122759f66fdd84222f407cddca04f6f91bbf2e73ddb1344c16d"
+        },
+        "identity_defects": {
+          "q_squared_defects": 0,
+          "projection_inclusion_identity_defects": 0,
+          "contraction_identity_defects": 0,
+          "inclusion_chain_map_defects": 0,
+          "projection_chain_map_defects": 0,
+          "homotopy_squared_defects": 0,
+          "homotopy_inclusion_defects": 0,
+          "projection_homotopy_defects": 0,
+          "source_q_cyclicity_defects": 0,
+          "residual_q_cyclicity_defects": 0,
+          "projection_equals_inclusion_sharp_defects": 0,
+          "homotopy_skew_adjoint_defects": 0,
+          "inclusion_isometry_defects": 0
+        }
+      },
+      {
+        "energy": 4,
+        "verification_core_primal_dimension": 688,
+        "verification_core_action_test_dual_dimension": 688,
+        "verification_core_total_dimension": 1376,
+        "residual_primal_dimension": 82,
+        "residual_action_dual_dimension": 82,
+        "residual_total_dimension": 164,
+        "verification_core_pairing_rank": 1376,
+        "action_residual_pairing_rank": 164,
+        "map_nonzero_entries": {
+          "q_cyclic": 606,
+          "iota_cyclic": 164,
+          "pi_cyclic": 164,
+          "s_cyclic": 606
+        },
+        "map_hashes": {
+          "q_cyclic": "77c5cd6e9e92963c0fd89267aed0d60b60ea2cb7b2ee4a92cc01b7e2be6fb4ec",
+          "iota_cyclic": "f204a6653a7e45e387c362425d5e303aeb88f98a4e91a21ae541ea43be28ff87",
+          "pi_cyclic": "05e2f44d8591b784e4810d0ffb5825bc20eaee7038b6342f442aacc56a9a5798",
+          "s_cyclic": "7ef864ccd4a03a2806356ec14ac60e247d481e4d2d0d162a78630c3b62d6a0ac",
+          "verification_core_pairing": "7a66eef2cd4a4b51155c22a0642cd4e23a71f31efe5dec9df96af23301c268f5",
+          "action_residual_pairing": "1c9e129b3cb8b60f4605ae7eddee6243a2c704422103520e3d00590520b5b64e"
+        },
+        "identity_defects": {
+          "q_squared_defects": 0,
+          "projection_inclusion_identity_defects": 0,
+          "contraction_identity_defects": 0,
+          "inclusion_chain_map_defects": 0,
+          "projection_chain_map_defects": 0,
+          "homotopy_squared_defects": 0,
+          "homotopy_inclusion_defects": 0,
+          "projection_homotopy_defects": 0,
+          "source_q_cyclicity_defects": 0,
+          "residual_q_cyclicity_defects": 0,
+          "projection_equals_inclusion_sharp_defects": 0,
+          "homotopy_skew_adjoint_defects": 0,
+          "inclusion_isometry_defects": 0
+        }
+      },
+      {
+        "energy": 5,
+        "verification_core_primal_dimension": 1104,
+        "verification_core_action_test_dual_dimension": 1104,
+        "verification_core_total_dimension": 2208,
+        "residual_primal_dimension": 136,
+        "residual_action_dual_dimension": 136,
+        "residual_total_dimension": 272,
+        "verification_core_pairing_rank": 2208,
+        "action_residual_pairing_rank": 272,
+        "map_nonzero_entries": {
+          "q_cyclic": 968,
+          "iota_cyclic": 272,
+          "pi_cyclic": 272,
+          "s_cyclic": 968
+        },
+        "map_hashes": {
+          "q_cyclic": "7948183bd7a2ca0ee4912f943a75cf78d9e5d6c3f2aa0c4c060a62b5a1e9fd69",
+          "iota_cyclic": "e1dde3969927bb63404d5702507a125d3b97652990fb5b5cb9759d8d1bb90bb1",
+          "pi_cyclic": "c0ebcbb192d3f0745042ae2e04a44cab5902d0bf6148bdff132e4ebd72e1ecc1",
+          "s_cyclic": "eb6c1a08f0d2b3078dcba4a7135ef6a31c0052bc8bf8dd624c216d6545480e8c",
+          "verification_core_pairing": "5293bebd14c956c20a38b7a96a8a8febcea38e50fffb149e43f8f3fcff6ddb96",
+          "action_residual_pairing": "c33117f779bf122602f45896d3b62f3591c1e9bc12012d01b75a9b3f305f0378"
+        },
+        "identity_defects": {
+          "q_squared_defects": 0,
+          "projection_inclusion_identity_defects": 0,
+          "contraction_identity_defects": 0,
+          "inclusion_chain_map_defects": 0,
+          "projection_chain_map_defects": 0,
+          "homotopy_squared_defects": 0,
+          "homotopy_inclusion_defects": 0,
+          "projection_homotopy_defects": 0,
+          "source_q_cyclicity_defects": 0,
+          "residual_q_cyclicity_defects": 0,
+          "projection_equals_inclusion_sharp_defects": 0,
+          "homotopy_skew_adjoint_defects": 0,
+          "inclusion_isometry_defects": 0
+        }
+      },
+      {
+        "energy": 6,
+        "verification_core_primal_dimension": 1678,
+        "verification_core_action_test_dual_dimension": 1678,
+        "verification_core_total_dimension": 3356,
+        "residual_primal_dimension": 202,
+        "residual_action_dual_dimension": 202,
+        "residual_total_dimension": 404,
+        "verification_core_pairing_rank": 3356,
+        "action_residual_pairing_rank": 404,
+        "map_nonzero_entries": {
+          "q_cyclic": 1476,
+          "iota_cyclic": 404,
+          "pi_cyclic": 404,
+          "s_cyclic": 1476
+        },
+        "map_hashes": {
+          "q_cyclic": "c2f19a5fc4f2725d8f8701a0d0e118c7cef8fee8818fb0ef1c31963f4717ae2e",
+          "iota_cyclic": "b5f3b2cf092ac2af2e0095fbd5f6f5011e0beadf90e97dceabad0ec0ebcd9269",
+          "pi_cyclic": "f0108dd109439d1fe241836707fcca55636a3f8ddc04d0854d57f9a27bbc51d1",
+          "s_cyclic": "63e47b48a244d0207c4c9368ea138f0a7e07844fe08b186cee5bdc82d089a3ce",
+          "verification_core_pairing": "5a0d99c529f63fa5ec6e8ac72658d80fbfd6caad57ec4f217c3d86ec39f73bed",
+          "action_residual_pairing": "c68c2c19949cc0aabcc75ebfd49d2c91bc84c07db82bff6db1c2488ecaf706b5"
+        },
+        "identity_defects": {
+          "q_squared_defects": 0,
+          "projection_inclusion_identity_defects": 0,
+          "contraction_identity_defects": 0,
+          "inclusion_chain_map_defects": 0,
+          "projection_chain_map_defects": 0,
+          "homotopy_squared_defects": 0,
+          "homotopy_inclusion_defects": 0,
+          "projection_homotopy_defects": 0,
+          "source_q_cyclicity_defects": 0,
+          "residual_q_cyclicity_defects": 0,
+          "projection_equals_inclusion_sharp_defects": 0,
+          "homotopy_skew_adjoint_defects": 0,
+          "inclusion_isometry_defects": 0
+        }
+      }
+    ],
+    "aggregate": {
+      "energy_blocks": 5,
+      "represented_primal_coordinates": 4080,
+      "represented_action_test_dual_check_coordinates": 4080,
+      "finite_verification_core_coordinates": 8160,
+      "excluded_formal_comparison_coordinates": 820,
+      "residual_primal_coordinates": 470,
+      "residual_action_dual_coordinates": 470,
+      "action_residual_coordinates": 940,
+      "action_residual_pairing_rank": 940,
+      "all_identity_defects": 0
+    },
+    "identity_totals": {
+      "q_squared_defects": 0,
+      "projection_inclusion_identity_defects": 0,
+      "contraction_identity_defects": 0,
+      "inclusion_chain_map_defects": 0,
+      "projection_chain_map_defects": 0,
+      "homotopy_squared_defects": 0,
+      "homotopy_inclusion_defects": 0,
+      "projection_homotopy_defects": 0,
+      "source_q_cyclicity_defects": 0,
+      "residual_q_cyclicity_defects": 0,
+      "projection_equals_inclusion_sharp_defects": 0,
+      "homotopy_skew_adjoint_defects": 0,
+      "inclusion_isometry_defects": 0
+    },
+    "sha256": "8b37d83092f61aff777a8aadb96843de080f0ff2edbd6d70b4ada134e42e74d3"
+  },
+  "legacy_comparison_boundary": {
+    "formal_comparison_source_coordinates": 8980,
+    "current_verification_core_coordinates": 8160,
+    "deleted_test_doublet_cotangent_coordinates": 820,
+    "same_action_residual_coordinates": true,
+    "same_action_residual_pairing_rank": true,
+    "legacy_all_identity_defects": 0,
+    "formal_8980_source_promoted": false
+  },
+  "foundational_strength": {
+    "finite_exact_kernel": "PRA-formalizable sparse rational arithmetic on the fixed five-block verification core",
+    "operator_claim": "typed action-adjoint identities on the local bundle, verified after the declared finite harmonic realization",
+    "choice_principle_used": false,
+    "Hilbert_or_Krein_completion_used": false,
+    "arbitrary_smooth_or_all_energy_extension_claimed": false
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_M1B_PRIMAL_COMPOSITE_CONTRACTION_V1.json",
+        "sha256": "f95655fc847d6d5ada7dfb6bef6571003792a0d7264c2a8e8bd2a65df9a197c5",
+        "result_id": "STRICT_M1B_PRIMAL_COMPOSITE_CONTRACTION_V1"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_M1B_ACTION_DUAL_LIFT_V1.json",
+        "sha256": "614e704b943fe2f3727a3d00ea270d5cdba8c1502eecf22ab5a2b701031a5731",
+        "result_id": "STRICT_M1B_ACTION_DUAL_LIFT_V1"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_M1A_IMMUTABLE_TYPED_LEDGER_V1.json",
+        "sha256": "7b1e0de5d525b535de30f1a21123375e7dc698deda82fa0668e545e7ed01a614",
+        "result_id": "STRICT_M1A_IMMUTABLE_TYPED_LEDGER_V1"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_LOCAL_CYCLIC_PAIRING_CLOSURE_V1.json",
+        "sha256": "c4d0060539335a761ae95af6adf25263f3e851f09838bbb046b5ab3caabdf39c",
+        "result_id": "STRICT_386_LOCAL_CYCLIC_PAIRING_CLOSURE_V1"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_TYPED_RESIDUAL_CYCLICITY_V1.json",
+        "sha256": "2d5a2ba94776559e396ac79e0d10a54608d3736763ac4360ff71792f56152324",
+        "result_id": "STRICT_TYPED_RESIDUAL_CYCLICITY_V1"
+      }
+    ]
+  },
+  "independent_checker": "quantum-weyl/classical_import/check_strict_m1b_typed_cyclic_composite.py",
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_M1B_TYPED_CYCLIC_COMPOSITE_V1.md",
+  "next_gate": [
+    "STRICT_M1C_COMMON_MANIFEST_REPLAY"
+  ],
+  "does_not_establish": [
+    "that the 8,160-coordinate verification core is the authoritative full local BV source",
+    "that the old 8,980-coordinate formal cotangent comparison is authoritative",
+    "a support-local harmonic restriction, all-energy completion, or full continuous dual",
+    "M1C common-byte binding or classical import Gate A",
+    "q2/q3 compatibility with advanced and retarded Green homotopies",
+    "a BRST-compatible Hadamard two-point function, Lorentzian products, QME restoration, or residual transfer"
+  ],
+  "claim_flags": {
+    "M1B_PRIMAL_COMPOSITE_CONTRACTION_COMPLETE": true,
+    "M1B_ACTION_DUAL_LIFT_COMPLETE": true,
+    "M1B_TYPED_CYCLIC_REPLAY_COMPLETE": true,
+    "M1B_REPRESENTED_COMPOSITE_CONTRACTION_COMPLETE": true,
+    "ACTION_RESIDUAL_PAIRING_RANK_940": true,
+    "ALL_THIRTEEN_TYPED_CYCLIC_IDENTITIES_REPLAYED": true,
+    "FINITE_8160_CHECK_CORE_IS_AUTHORITATIVE_FULL_BV_SOURCE": false,
+    "FORMAL_8980_SOURCE_IS_AUTHORITATIVE_ORIGINAL_BV_COMPLEX": false,
+    "M1C_COMMON_MANIFEST_REPLAY_COMPLETE": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "NONLINEAR_GREEN_COMPATIBILITY_CERTIFIED": false,
+    "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED": false,
+    "RENORMALIZED_LORENTZIAN_PRODUCTS_CONSTRUCTED": false,
+    "QME_RESTORED": false,
+    "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": false
+  },
+  "content_sha256": "3a8d3ce4241b9c1f6a1576664761de034325631f347c2ece9eac8ee725a931d8"
+}
