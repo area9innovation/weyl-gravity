@@ -949,6 +949,17 @@
       "result_id": "CLASSICAL_IMPORT_GATE_V20_RECONCILIATION",
       "sha256": "6cce5ee1614c41e759eb6da167b10a21cfb0c32c744a16e82b8cc57fab1d6794"
     },
+    "classical_import_gate_v21": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V21_RECONCILIATION.json",
+      "result_id": "CLASSICAL_IMPORT_GATE_V21_RECONCILIATION",
+      "sha256": "67188b31073634fbd54d31f46ca25f1a9f99c660fad34094138f3df490e4cd87"
+    },
     "classical_import_gate_v5": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -1113,7 +1124,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "2f9a35312ab07215a3a651886980c1a522b1d110069f4978bfe020fca97bde3d"
+      "sha256": "a74f69497217dbaabc104f17d5518ec5c7f9841210dbcd3ce4ab2ef3d4e9ef26"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -1535,6 +1546,18 @@
       "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V38.json",
       "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V38",
       "sha256": "4635ca77bcabfd0edbd997f5dc0d41990e22b2eb6ccfd2e8083f8057548b4762"
+    },
+    "lorentzian_weyl_bv_completion_atlas_v39": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V39.json",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V39",
+      "sha256": "d3c5b1e239aefef6329707341c1fb6fa6d22321dbbc097b975092d62d8c11fb6"
     },
     "lorentzian_weyl_bv_completion_atlas_v4": {
       "dependency_tags": [
@@ -1965,6 +1988,16 @@
       "result_id": "STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1",
       "sha256": "21400beeac1def4ba3b9e43d5e8222e106192a1ccfb504e5b0455859ad7fd286"
     },
+    "strict_endpoint_to_residual_spectral_comparison": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1.json",
+      "result_id": "STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1",
+      "sha256": "2716713554ccba14c4d3549b2493c5c7c4032e2491333d2a4edb15cad69cd812"
+    },
     "strict_local_q1_q2_identity": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC"
@@ -2060,10 +2093,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "addd17d38a4e36ad5c37a5eeeee3a56663514492fbc02b0294ad5072064b1521"
+      "sha256": "490c71b0ed43a535ff0a60337e7555cc313f109ef9aa928f2c69f3772f7003a9"
     }
   },
-  "canonical_digest": "e806d12842082d5d488ba17b0e6f8c55e377fb9b9fd3905752d059c594a36dfd",
+  "canonical_digest": "99bddb867f84a7e5d41a2e05433f6f4c8abb79da3e02caa78a34fb3c6677c59e",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -2205,6 +2238,7 @@
     "classical_import_gate_v18_fail_closed": true,
     "classical_import_gate_v19_fail_closed": true,
     "classical_import_gate_v20_fail_closed": true,
+    "classical_import_gate_v21_fail_closed": true,
     "classical_import_gate_v8_fail_closed": true,
     "classical_import_gate_v9_fail_closed": true,
     "coded_h2_arbitrary_distribution_uniqueness_proved": false,
@@ -2358,6 +2392,7 @@
     "strict_386_vv_cotangent_partner_components_serialized": true,
     "strict_386_vv_field_map_components_imported": true,
     "strict_386_weyl_bv_maurer_cartan_series_certified": false,
+    "strict_all_energy_or_smooth_completion_certified": false,
     "strict_authoritative_minimal_q3_imported": true,
     "strict_centered_c3_c4_c5_bases_serialized": true,
     "strict_centered_differential_reconstructed": true,
@@ -2366,9 +2401,12 @@
     "strict_dfinite_residual_projector_support_local": false,
     "strict_full_residual_cyclic_pairing_certified": false,
     "strict_graph_endpoint_sdr_support_local": true,
+    "strict_harmonic_analysis_support_local": false,
     "strict_m3_typed_split_required": true,
     "strict_m3l_common_endpoint_sdr_bound": true,
-    "strict_m3r_typed_residual_comparison_constructed": false,
+    "strict_m3r_chain_identities_replayed": true,
+    "strict_m3r_ordered_470_mode_crosswalk_bijective": true,
+    "strict_m3r_typed_residual_comparison_constructed": true,
     "strict_m4l_local_graph_cyclic_pairing_complete": true,
     "strict_m4r_typed_residual_cyclicity_complete": false,
     "strict_m5_residual_exact_payload_complete": true,
@@ -3307,6 +3345,20 @@
       ],
       "statement": "The former M4 full-cyclic-pairing requirement conflated local graph rows with harmonic residual coefficients. On the common M3L manifest, the 386-row local graph carrier has an exact rank-386 odd pairing with 410 ordered rational entries and every row paired. Suspended q1 cyclicity, endpoint-SDR cyclicity, D formal skew-adjointness, q2 cyclicity, and q3 cyclicity modulo horizontal boundary all replay with zero defects. This completes M4L in the LOCAL-ALGEBRAIC category. The local carrier contains no W+/W- residual coefficient rows, so M4R is a separate REDUCED-MODE induced-cyclicity problem that is not defined before the M3R endpoint-to-residual comparison. Gate V20 accepts no new top-level hash and remains fail closed with one of seven hashes accepted and M1, M3R, and M4R open. Atlas V38 ranks M3R first, M4R second, and the unified freeze third. No full-complex Hadamard state, renormalized Lorentzian products, QME restoration, or residual quantum transfer is established.",
       "status": "M4L_LOCAL_CYCLIC_PAIRING_COMPLETE_M3R_M4R_M1_AND_GATE_A_OPEN"
+    },
+    {
+      "authorities": [
+        "strict_endpoint_to_residual_spectral_comparison",
+        "classical_import_gate_v21",
+        "lorentzian_weyl_bv_completion_atlas_v39"
+      ],
+      "claim_id": "RF-69-STRICT-WEYL-ENDPOINT-TO-RESIDUAL-SPECTRAL-COMPARISON",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "statement": "M3R is constructed on the represented D-finite global cylinder domain at energies 2 through 6. The comparison refines all 470 generic W+/W- residual coordinates by energy, chirality, E/A/L family, and exact doubled SU(2)_L x SU(2)_R magnetic weights. Normalized lowering from coordinate-verified highest-weight metric preimages supplies synthesis names, while the exact BGG split and portable residual SDR supply analysis. The ordered crosswalk is bijective, pi_M3R iota_M3R is the identity, and both q0 chain identities replay with zero exact defects. This closes M3R only in the finite REDUCED-MODE category. Harmonic restriction expands support; raw unsplit coordinate matrices for every magnetic mode and arbitrary smooth or all-energy completion are not certified. Energies zero and one remain in the separate conformal-Killing payload. The fixed finite core uses no Hilbert or Krein completion and no choice principle. Gate V21 accepts no new top-level hash and remains fail closed with M4R residual cyclicity and M1 common freeze open. Atlas V39 ranks M4R first and M1 second. No Lorentzian off-shell propagator, Hadamard state, renormalized product, QME restoration, or residual quantum transfer is established.",
+      "status": "M3R_REPRESENTED_DFINITE_ENDPOINT_TO_RESIDUAL_COMPARISON_COMPLETE_M4R_M1_AND_GATE_A_OPEN"
     }
   ],
   "created": "2026-08-16",
@@ -3533,19 +3585,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "c5e64096c89985af8f3a7d50160eeb3b2c15d967bff6faf53811f93fed48eccf",
+      "assembly_source_canonical_digest": "560bef3e560aa45e742746f252f275e12fb54be7fb362f341188f2c14aba24fc",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "addd17d38a4e36ad5c37a5eeeee3a56663514492fbc02b0294ad5072064b1521",
+      "assembly_source_sha256": "490c71b0ed43a535ff0a60337e7555cc313f109ef9aa928f2c69f3772f7003a9",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
-      "generator_sha256": "20529c04cd9d17e139668e44b992c89015831560fb313e2be9c44f59cdae9c27",
+      "generator_sha256": "5e84e4ba4d1b1be8c5cb18f1325504cd2be1fae760fe44f6a7738659cfbbaaa9",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "c2ca763b43c0c9e2738be959a131433a6e84baa121f46a1150785a624bf19f83",
-      "source_canonical_digest": "56b5ffc933c80d3942e4a69d1d993e5e87629ff8b15d97308b81f27a38c7e59d",
+      "sha256": "8cdefafd336b5850acddee8d31bd24306e2bad15cb2bdba5a9ab1e5f4dafae32",
+      "source_canonical_digest": "2a7b176015d98fe38e1cf635b22c1cce58bc8a0b453779ee6f2a2b2d2e158032",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "3a6480d9eaaf181b7672ecbacdf21ce6116b22cb7d6e334217366f8f85f1aaca"
+      "source_sha256": "b8659d37dba17387c38b1760bf7bedaf2d0b1d874edfaf797459cb918aa32963"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "125bceeef13b80d957dd8cf456b5dfa44b8f8e5d6b50e56d89b67fc5d633bbf8"
+    "sha256": "e8fb588cc1f3bebb2ec94a0293f32bccc8502e3a78fff814f4b7035b70cb7128"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

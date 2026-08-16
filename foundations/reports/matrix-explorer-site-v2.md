@@ -34,12 +34,12 @@ all-real BT/Krein path integral; controlled conditional bridges remain open.
 
 The **Weyl BV routes** view projects the current audited Lorentzian completion atlas as
 seven architectures across eleven ordered gates, for 77 separately typed cells.
-It exposes the finite residual-SDR repair, nine ranked next constructions and the
+It exposes the finite residual-SDR repair, eight ranked next constructions and the
 eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a theorem; in particular,
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
-Atlas V38 preserves the field-equation type result.  The degree-one-to-zero
+Atlas V39 preserves the field-equation type result.  The degree-one-to-zero
 Green component is an exact right inverse on Noether-compatible sources and a
 left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
 the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
@@ -125,8 +125,12 @@ and zero projected identity defects.  Gate V20 now closes M4L: all 386 local
 rows carry a rank-386 odd pairing with 410 ordered rational entries, and the
 q1/endpoint-SDR/D/q2/q3 cyclicity defects vanish.  The old M4 requirement is
 split because these rows contain no W+/W- harmonic residual coefficients.
-M4R remains a REDUCED-MODE obligation blocked by M3R.  No new top-level hash
-is accepted; M1, M3R and M4R remain open.
+Gate V21 now closes M3R on the represented D-finite domain: all 470
+positive-energy residual coordinates have explicit E/A/L magnetic labels,
+normalized synthesis names, an exact bijective crosswalk, and zero retraction
+or q0-chain defects.  The harmonic restriction is global and is not promoted
+to a support-local or all-energy map.  No new top-level hash is accepted; M1
+and M4R remain open.
 The complete Berger q3 remains a different-theory Weyl-plus-clock result on a fixed
 54-row carrier; no certified same-theory cyclic map authorizes its direct import.
 
@@ -247,11 +251,12 @@ This site does not establish:
 - composition beyond the two certified scoped cross-cell interfaces
 - precision sampler equivalence, continuum reconstruction, or empirical support from the BT finite lattice
 - a complete observationally validated theory
+- support-locality or all-energy smooth completion of the represented finite M3R harmonic comparison
 - the complete twenty-export, seven-hash classical Gate A from the linked source-q2/q3 snapshots and the unbound residual and centered payloads
 - a common-snapshot zero-mode hash from the portable residual coefficient package
 - a common-snapshot representative hash from the portable centered coefficient package
 - H3 or H5 cohomology from the adjacent centered C3 and C5 carrier bases
-- the typed endpoint-to-residual spectral comparison, its induced residual pairing/cyclicity, or the final all-object freeze
+- the induced residual pairing/cyclicity M4R or the final all-object freeze M1
 - q2/q3 compatibility with an advanced or retarded Green homotopy
 - that the exact stabilized-q3 candidate is the authoritative nonminimal pure-Weyl BV interaction
 - general lambda-squared causal source closure from the candidate q3 stabilization

@@ -1,0 +1,107 @@
+{
+  "result_id": "STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1",
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_M3R_REPRESENTED_COMPARISON_V1_TIER_RECEIPT",
+  "generated_at": "2026-08-16",
+  "source_commit_before_change": "a9e72163907537e6dd2b9f36ec36fed64b3c617c",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "scope": "Construct and independently replay the finite represented endpoint-to-residual spectral comparison at cylinder energies two through six; refine all 470 residual coordinates by chirality, E/A/L family and doubled magnetic weights; verify the exact D-finite retraction and q0 side identities; close only M3R in its declared finite reduced-mode category; propagate the result through Gate V21, Atlas V39, the static explorer and Paper 21 without promoting Gate A or a Lorentzian quantum lifecycle state.",
+  "artifact_hashes": {
+    "quantum-weyl/classical_import/certificates/STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1.json": "2716713554ccba14c4d3549b2493c5c7c4032e2491333d2a4edb15cad69cd812",
+    "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V21_RECONCILIATION.json": "67188b31073634fbd54d31f46ca25f1a9f99c660fad34094138f3df490e4cd87",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V39.json": "d3c5b1e239aefef6329707341c1fb6fa6d22321dbbc097b975092d62d8c11fb6",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "a74f69497217dbaabc104f17d5518ec5c7f9841210dbcd3ce4ab2ef3d4e9ef26",
+    "foundations/site/data.json": "b8659d37dba17387c38b1760bf7bedaf2d0b1d874edfaf797459cb918aa32963",
+    "paper/21-reverse-foundations-of-physics-appendices.tex": "8cdefafd336b5850acddee8d31bd24306e2bad15cb2bdba5a9ab1e5f4dafae32",
+    "paper/21-reverse-foundations-of-physics.pdf": "e6942fcaf6aeb709eccb9cd5dcb1fd7ad41504a7ed3cdb7e73c89043b4a2cf19",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "76554d079e1aa1c2f102f1b7ede5028ab7f7e264ec15c0d77ebb3b8a92b5bce7"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3.12 -m py_compile <scoped M3R, Gate V21, Atlas V39, static-site and Paper 21 Python files>",
+          "status": "PASS"
+        },
+        {
+          "command": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3.12 -m json.tool <scoped certificates, schemas, results, site data, claim map and receipt>",
+          "status": "PASS"
+        },
+        {
+          "command": "pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (two passes from paper/)",
+          "elapsed_seconds": 4.22,
+          "status": "PASS",
+          "output": "74 pages; no fatal error. Existing non-fatal typesetting notices remain."
+        },
+        {
+          "command": "git diff --check -- <explicit scoped M3R, Gate V21, Atlas V39, site, Paper 21 and receipt paths>",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3.12 M3R builder --check; independent coefficient-sensitive checker; six unit tests",
+          "elapsed_seconds": 0.64,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Gate V21 builder --check; independent checker; six unit tests",
+          "elapsed_seconds": 0.35,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Atlas V39 builder --check; independent checker; five unit tests",
+          "elapsed_seconds": 0.27,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 static-site builder --check; independent checker; verifier; ten unit tests",
+          "elapsed_seconds": 19.87,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Paper 21 appendix --check; claim-map --check; independent claim-map verifier",
+          "elapsed_seconds": 1.02,
+          "status": "PASS",
+          "note": "A first currentness invocation found the claim map stale after the final PDF regeneration and stopped before later commands. The claim map was regenerated, and the complete currentness and independent-verification rail then passed; the stale invocation is not counted as evidence."
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The new finite comparison is consumed transitively by Gate V21, Atlas V39, the content-addressed static explorer and Paper 21. Every producer currentness check and every independent receiver/checker in that affected chain passed. Upstream D-finite and coordinate-preimage artifacts are unchanged and are pinned by content hash in the M3R certificate."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze/tag, QME lifecycle promotion, shared core algebra change, or release preparation occurred. Gate A remains FAIL_CLOSED and no LORENTZIAN_CERTIFIED claim is promoted."
+    }
+  },
+  "scientific_result": {
+    "represented_source_coefficients": 4080,
+    "residual_coordinates": 470,
+    "energies": [2, 3, 4, 5, 6],
+    "basis_resolution": "energy, chirality, E/A/L family, doubled SU(2)_L and SU(2)_R magnetic weights",
+    "exact_identities": [
+      "pi_M3R iota_M3R = 1",
+      "q0 iota_M3R = 0",
+      "pi_M3R q0 = 0"
+    ],
+    "category_boundary": "Finite represented D-finite global cylinder harmonics only; the restriction is support-expanding and supplies neither raw all-magnetic coordinate matrices nor an all-energy smooth completion."
+  },
+  "claim_flags": {
+    "m3r_represented_finite_comparison_constructed": true,
+    "m3r_all_energy_smooth_comparison_constructed": false,
+    "m3r_projection_support_local": false,
+    "m4r_typed_residual_cyclicity_constructed": false,
+    "classical_import_gate_a_passed": false,
+    "full_complex_hadamard_state_constructed": false,
+    "qme_restored": false,
+    "residual_quantum_transfer_authorized": false
+  }
+}

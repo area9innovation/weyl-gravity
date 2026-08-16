@@ -3112,6 +3112,41 @@ freeze third
 constructs neither a Hadamard state nor renormalized Lorentzian products, and
 it does not restore the QME or authorize residual quantum transfer.
 
+The typed comparison is now constructed at fixed positive-energy cutoff
+(\cert{STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1}).  Its source is
+the represented \(D\)-finite global endpoint complex at energies two through
+six, with the test antighost--multiplier doublet excluded, and its target is
+the 470-dimensional \(W_+\oplus W_-\) residual coefficient space.  Every
+generic residual coordinate is refined by energy, chirality, E/A/L family,
+and doubled \(SU(2)_L\times SU(2)_R\) magnetic weights.  Normalized lowering
+from the coordinate-verified highest-weight metric preimages names all
+magnetic representatives.  The resulting crosswalk is bijective, and the
+receiver replays
+
+\[
+  \pi_{\mathrm{M3R}}\iota_{\mathrm{M3R}}=1,
+  \qquad
+  q_0\iota_{\mathrm{M3R}}=0,
+  \qquad
+  \pi_{\mathrm{M3R}}q_0=0
+\]
+
+with exact finite arithmetic.  This closes M3R only in the declared
+\rtype{REDUCED-MODE} category.  The harmonic restriction expands support;
+raw unsplit coordinate tensors for all magnetic states and the all-energy
+smooth completion are not certified.  The fixed-cutoff construction uses no
+Hilbert or Krein completion and no choice principle.  Energies zero and one
+remain in the separate conformal-Killing zero-mode payload.
+
+Gate V21 therefore removes M3R from the missing bundle while accepting no new
+top-level freeze hash
+(\cert{CLASSICAL_IMPORT_GATE_V21_RECONCILIATION}).  Gate A still accepts one
+of seven hashes and remains fail closed with M4R residual cyclicity and the M1
+common freeze open.  Atlas V39 ranks M4R first and M1 second
+(\cert{FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V39}).  Neither result
+constructs a Lorentzian off-shell propagator, a full-complex Hadamard state,
+renormalized time-ordered products, or a restored QME.
+
 The corpus
 does contain a positive four-row metric Bach BV Green homotopy on unit Nariai
 and an exact but analytically incomplete Berger route.  Conversely, the

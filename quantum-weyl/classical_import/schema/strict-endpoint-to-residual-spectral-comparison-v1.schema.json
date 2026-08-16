@@ -1,0 +1,203 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-endpoint-to-residual-spectral-comparison-v1.schema.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_kind",
+    "result_state",
+    "lifecycle",
+    "dependency_tags",
+    "scope",
+    "comparison",
+    "representation_conventions",
+    "level_blocks",
+    "ordered_residual_basis",
+    "exact_replay",
+    "support_and_zero_mode_policy",
+    "foundational_strength",
+    "gate_disposition",
+    "provenance",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate",
+    "independent_checker"
+  ],
+  "properties": {
+    "schema": {"const": "strict-endpoint-to-residual-spectral-comparison-v1"},
+    "result_id": {"const": "STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1"},
+    "result_kind": {"const": "CLASSICAL_IMPORT_TYPED_REPRESENTED_RESIDUAL_COMPARISON"},
+    "result_state": {"const": "M3R_REPRESENTED_DFINITE_COMPARISON_CONSTRUCTED_M4R_AND_GATE_A_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "scope": {
+      "type": "object",
+      "required": ["theory", "background", "energies", "source_category", "target_category", "support"],
+      "properties": {
+        "energies": {"const": [2, 3, 4, 5, 6]},
+        "source_category": {"const": "represented D-finite globally smooth endpoint harmonics"},
+        "target_category": {"const": "finite W+/W- residual coefficient space"}
+      }
+    },
+    "comparison": {
+      "type": "object",
+      "required": ["comparison_id", "source", "target", "harmonic_restriction", "analysis", "synthesis", "retraction", "physical_offsets", "sha256"],
+      "properties": {
+        "comparison_id": {"const": "STRICT_REPRESENTED_DFINITE_M3R_COMPARISON_V1"},
+        "source": {
+          "type": "object",
+          "required": ["object", "meaning", "coordinate_model", "level_dimensions", "total_dimension", "compact_support", "arbitrary_smooth_completion"],
+          "properties": {
+            "total_dimension": {"const": 4080},
+            "compact_support": {"const": false},
+            "arbitrary_smooth_completion": {"const": false}
+          }
+        },
+        "target": {
+          "type": "object",
+          "required": ["object", "dimension", "differential", "ordered_basis_hash"],
+          "properties": {
+            "dimension": {"const": 470},
+            "differential": {"const": "q_res_0=0"},
+            "ordered_basis_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        },
+        "harmonic_restriction": {
+          "type": "object",
+          "required": ["name", "definition", "map_type", "position_space_support_local"],
+          "properties": {
+            "map_type": {"const": "GLOBAL_SUPPORT_EXPANDING_REDUCED_MODE"},
+            "position_space_support_local": {"const": false}
+          }
+        },
+        "physical_offsets": {"type": "array", "minItems": 5, "maxItems": 5},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "level_blocks": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "prefixItems": [
+        {"type": "object", "properties": {"energy": {"const": 2}, "dimension": {"const": 10}}},
+        {"type": "object", "properties": {"energy": {"const": 3}, "dimension": {"const": 40}}},
+        {"type": "object", "properties": {"energy": {"const": 4}, "dimension": {"const": 82}}},
+        {"type": "object", "properties": {"energy": {"const": 5}, "dimension": {"const": 136}}},
+        {"type": "object", "properties": {"energy": {"const": 6}, "dimension": {"const": 202}}}
+      ]
+    },
+    "ordered_residual_basis": {
+      "type": "array",
+      "minItems": 470,
+      "maxItems": 470,
+      "items": {
+        "type": "object",
+        "required": [
+          "global_index", "energy", "chirality", "chirality_sign", "family",
+          "two_j_left", "two_j_right", "two_m_left", "two_m_right",
+          "left_lowering_steps", "right_lowering_steps",
+          "unnormalized_lowering_norm_squared", "normalization", "chirality_index",
+          "dfinite_residual_label", "represented_residual_label",
+          "metric_preimage_name", "curvature_basis_name"
+        ],
+        "properties": {
+          "global_index": {"type": "integer", "minimum": 0, "maximum": 469},
+          "energy": {"type": "integer", "minimum": 2, "maximum": 6},
+          "chirality": {"enum": ["W_PLUS", "W_MINUS"]},
+          "chirality_sign": {"enum": ["+", "-"]},
+          "family": {"enum": ["E", "A", "L"]},
+          "unnormalized_lowering_norm_squared": {"type": "integer", "minimum": 1}
+        }
+      }
+    },
+    "exact_replay": {
+      "type": "object",
+      "required": [
+        "energy_blocks", "represented_residual_coordinates", "ordered_crosswalk_defects",
+        "duplicate_represented_labels", "level_dimension_defects",
+        "dfinite_pi_iota_identity_defects", "dfinite_q0_iota_chain_defects",
+        "dfinite_pi_q0_chain_defects", "nonzero_highest_weight_pivot_failures",
+        "zero_mode_overlap_defects"
+      ],
+      "properties": {
+        "energy_blocks": {"const": 5},
+        "represented_residual_coordinates": {"const": 470}
+      },
+      "patternProperties": {
+        ".*_defects$": {"const": 0},
+        ".*_failures$": {"const": 0}
+      }
+    },
+    "support_and_zero_mode_policy": {
+      "type": "object",
+      "required": ["harmonic_analysis_support_local", "analysis_and_synthesis_dependency_tag", "positive_energy_domain", "excluded_energies", "zero_mode_receiver", "zero_mode_generator_dimension", "zero_mode_dual_dimension", "zero_modes_are_not_inserted_into_the_470_basis"],
+      "properties": {
+        "harmonic_analysis_support_local": {"const": false},
+        "analysis_and_synthesis_dependency_tag": {"const": "REDUCED-MODE"},
+        "positive_energy_domain": {"const": [2, 6]},
+        "excluded_energies": {"const": [0, 1]},
+        "zero_mode_generator_dimension": {"const": 15},
+        "zero_mode_dual_dimension": {"const": 15},
+        "zero_modes_are_not_inserted_into_the_470_basis": {"const": true}
+      }
+    },
+    "gate_disposition": {
+      "type": "object",
+      "required": ["M3L_COMMON_ENDPOINT_SDR_BINDING", "M3R_TYPED_RESIDUAL_COMPARISON", "M4R_TYPED_RESIDUAL_CYCLICITY", "M1_COMMON_STRICT_SNAPSHOT", "top_level_gate_a_hashes_accepted_by_this_result", "classical_import_gate_a_status"],
+      "properties": {
+        "M3L_COMMON_ENDPOINT_SDR_BINDING": {"const": "COMPLETE"},
+        "M3R_TYPED_RESIDUAL_COMPARISON": {"const": "COMPLETE_IN_REPRESENTED_DFINITE_ENERGIES_2_THROUGH_6"},
+        "M4R_TYPED_RESIDUAL_CYCLICITY": {"const": "OPEN"},
+        "M1_COMMON_STRICT_SNAPSHOT": {"const": "OPEN"},
+        "top_level_gate_a_hashes_accepted_by_this_result": {"const": 0},
+        "classical_import_gate_a_status": {"const": "FAIL_CLOSED"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "M3L_COMMON_ENDPOINT_SDR_BOUND", "M3R_TYPED_RESIDUAL_COMPARISON_CONSTRUCTED",
+        "M3R_ORDERED_470_MODE_CROSSWALK_BIJECTIVE", "M3R_CHAIN_IDENTITIES_REPLAYED",
+        "M3R_ZERO_MODE_POLICY_EXPLICIT", "HARMONIC_ANALYSIS_SUPPORT_LOCAL",
+        "RAW_ALL_MAGNETIC_COORDINATE_MATRICES_SERIALIZED",
+        "ALL_ENERGY_OR_SMOOTH_COMPLETION_CERTIFIED", "M4R_TYPED_RESIDUAL_CYCLICITY_COMPLETE",
+        "NEW_GATE_A_TOP_LEVEL_HASH_ACCEPTED", "CLASSICAL_IMPORT_GATE_PASSED",
+        "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED",
+        "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED"
+      ],
+      "properties": {
+        "M3L_COMMON_ENDPOINT_SDR_BOUND": {"const": true},
+        "M3R_TYPED_RESIDUAL_COMPARISON_CONSTRUCTED": {"const": true},
+        "M3R_ORDERED_470_MODE_CROSSWALK_BIJECTIVE": {"const": true},
+        "M3R_CHAIN_IDENTITIES_REPLAYED": {"const": true},
+        "M3R_ZERO_MODE_POLICY_EXPLICIT": {"const": true},
+        "HARMONIC_ANALYSIS_SUPPORT_LOCAL": {"const": false},
+        "RAW_ALL_MAGNETIC_COORDINATE_MATRICES_SERIALIZED": {"const": false},
+        "ALL_ENERGY_OR_SMOOTH_COMPLETION_CERTIFIED": {"const": false},
+        "M4R_TYPED_RESIDUAL_CYCLICITY_COMPLETE": {"const": false},
+        "NEW_GATE_A_TOP_LEVEL_HASH_ACCEPTED": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": {"const": false}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["inputs"],
+      "properties": {
+        "inputs": {"type": "array", "minItems": 9, "maxItems": 9}
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 7},
+    "next_gate": {"type": "string", "minLength": 1},
+    "independent_checker": {
+      "type": "object",
+      "required": ["path", "checks", "expected_digest"],
+      "properties": {
+        "expected_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}
