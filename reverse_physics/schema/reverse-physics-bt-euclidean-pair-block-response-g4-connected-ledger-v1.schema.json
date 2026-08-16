@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-pair-block-response-g4-connected-ledger-v1.schema.json",
+  "title": "BT Euclidean pair-block order-lambda4 connected ledger certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "created",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "scaled_action",
+    "conditional_center_cumulants",
+    "annealed_connected_g4",
+    "two_loop_theorem",
+    "zero_background_checkpoint",
+    "method_disposition",
+    "missing_object_ledger",
+    "next_gate",
+    "does_not_establish",
+    "provenance",
+    "verification_commands",
+    "tier_receipt",
+    "checks",
+    "report",
+    "schema",
+    "verifier"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_PAIR_BLOCK_RESPONSE_G4_CONNECTED_LEDGER_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-pair-block-response-g4-connected-ledger-v1"},
+    "created": {"const": "2026-08-16"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 80},
+    "question": {"type": "string", "minLength": 80},
+    "answer": {"type": "string", "minLength": 500},
+    "scaled_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["definition", "jets", "S1", "S2", "S3", "S4", "affected_residual_sites", "zero_fiber_monomial_counts"],
+      "properties": {
+        "definition": {"type": "string"},
+        "jets": {"type": "string"},
+        "S1": {"type": "string"},
+        "S2": {"type": "string"},
+        "S3": {"type": "string"},
+        "S4": {"type": "string"},
+        "affected_residual_sites": {"const": 16},
+        "zero_fiber_monomial_counts": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer", "minimum": 1}}
+      }
+    },
+    "conditional_center_cumulants": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["general_formula", "m1", "m2", "m3", "m4", "labeled_partition_table", "status"],
+      "properties": {
+        "general_formula": {"type": "string"},
+        "m1": {"type": "string"},
+        "m2": {"type": "string"},
+        "m3": {"type": "string"},
+        "m4": {"type": "string"},
+        "labeled_partition_table": {"type": "array", "minItems": 11},
+        "status": {"const": "EXACT_CONDITIONAL_NORMALIZATION_PROVED"}
+      }
+    },
+    "annealed_connected_g4": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["formula", "equivalent_weight_ledger", "normalization_rule", "labeled_partition_table", "term_count", "status"],
+      "properties": {
+        "formula": {"type": "string", "minLength": 120},
+        "equivalent_weight_ledger": {"type": "string", "minLength": 100},
+        "normalization_rule": {"type": "string"},
+        "labeled_partition_table": {"type": "array", "minItems": 7, "maxItems": 7},
+        "term_count": {"const": 7},
+        "status": {"const": "EXACT_FULL_GIBBS_NORMALIZATION_LEDGER_PROVED"}
+      }
+    },
+    "two_loop_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["conditional_count", "outer_count", "maximum_free_background_loop_rank", "consequence", "status"],
+      "properties": {
+        "conditional_count": {"type": "string", "minLength": 150},
+        "outer_count": {"type": "string", "minLength": 120},
+        "maximum_free_background_loop_rank": {"const": 2},
+        "consequence": {"type": "string"},
+        "status": {"const": "PROVED_BY_EXACT_DEGREE_AND_CONNECTEDNESS_COUNT"}
+      }
+    },
+    "zero_background_checkpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["meaning", "longitudinal_lambda2", "transverse_lambda2", "orientation_averaged_lambda2", "longitudinal_lambda4", "transverse_lambda4", "orientation_averaged_lambda4", "lambda_two_sign", "lambda_four_sign", "lambda_two_plus_four_at_two_fifths", "truncated_sign_at_two_fifths", "status"],
+      "properties": {
+        "meaning": {"type": "string", "minLength": 100},
+        "longitudinal_lambda2": {"$ref": "#/$defs/fraction"},
+        "transverse_lambda2": {"$ref": "#/$defs/fraction"},
+        "orientation_averaged_lambda2": {"$ref": "#/$defs/fraction"},
+        "longitudinal_lambda4": {"$ref": "#/$defs/fraction"},
+        "transverse_lambda4": {"$ref": "#/$defs/fraction"},
+        "orientation_averaged_lambda4": {"$ref": "#/$defs/fraction"},
+        "lambda_two_sign": {"const": "STRICTLY_NEGATIVE"},
+        "lambda_four_sign": {"const": "STRICTLY_POSITIVE"},
+        "lambda_two_plus_four_at_two_fifths": {"$ref": "#/$defs/fraction"},
+        "truncated_sign_at_two_fifths": {"const": "STRICTLY_NEGATIVE"},
+        "status": {"const": "EXACT_ZERO_BACKGROUND_DIAGNOSTIC_ONLY"}
+      }
+    },
+    "method_disposition": {"type": "object"},
+    "missing_object_ledger": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 300},
+    "does_not_establish": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic", "assumptions"],
+      "properties": {
+        "repository_base_commit": {"const": "a5bb8313d71f0906b2544f52c4f3e96c1ee55817"},
+        "inputs": {"type": "array", "minItems": 2},
+        "arithmetic": {"type": "string"},
+        "assumptions": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+    "tier_receipt": {"type": "object"},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 15},
+        "total": {"type": "integer", "minimum": 15},
+        "failures": {"const": []},
+        "details": {"type": "object"}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-pair-block-response-g4-connected-ledger.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-pair-block-response-g4-connected-ledger-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_pair_block_response_g4_connected_ledger.py"}
+  },
+  "$defs": {
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    }
+  }
+}
