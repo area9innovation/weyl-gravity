@@ -90,6 +90,7 @@ class MatrixSiteTests(unittest.TestCase):
         self.assertIn("no evidence-grade change", app)
         self.assertIn("What Lean proves", app)
         self.assertIn("Premises still imported", app)
+        self.assertIn("What is no longer assumed", app)
         self.assertIn("Represented Green action certified", app)
         self.assertIn("Scoped common snapshot accepted", app)
         self.assertIn("Full cylinder flow certified", app)
@@ -118,13 +119,14 @@ class MatrixSiteTests(unittest.TestCase):
         self.assertEqual({item["evidence_effect"] for item in passports}, {"NONE"})
         self.assertEqual(
             {item["formalization_scope"] for item in passports},
-            {"CONCLUSION_ONLY", "FINITE_SERIALIZED_RECEIVER"},
+            {"CONCLUSION_ONLY", "FINITE_GRADED_OPERATION_EVALUATOR"},
         )
         for path in (
             "foundations/site/sources/physlib-demo/certificates/PHYSLIB_STRICT_WEYL_SECOND_SOURCE_BRIDGE_V1.json",
             "foundations/site/sources/physlib-demo/certificates/PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1.json",
             "foundations/site/sources/physlib-demo/WeylPhyslibBridge/StrictWeylSecondSource.lean",
             "foundations/site/sources/physlib-demo/WeylPhyslibBridge/MinimalArityThree.lean",
+            "foundations/site/sources/physlib-demo/WeylPhyslibBridge/FiniteGradedEvaluator.lean",
         ):
             self.assertTrue((ROOT / path).is_file(), path)
         self.assertEqual(site_data["completion_atlas"]["strict_minimal_q3_completion"]["arity_three_channels"], 72)

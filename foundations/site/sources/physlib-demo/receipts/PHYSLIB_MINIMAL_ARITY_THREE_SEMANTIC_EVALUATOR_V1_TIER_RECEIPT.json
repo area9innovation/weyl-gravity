@@ -1,0 +1,120 @@
+{
+  "receipt_id": "PHYSLIB_MINIMAL_ARITY_THREE_SEMANTIC_EVALUATOR_V1_TIER_RECEIPT",
+  "result_id": "PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1",
+  "result_kind": "LEAN_KERNEL_FINITE_GRADED_OPERATION_EVALUATOR",
+  "recorded_at": "2026-08-16",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "environment": {
+    "lean": "4.32.0",
+    "lake": "5.0.0-src+8c9756b",
+    "physlib_commit": "ba2a946586c7de1ff394607afd1dd7fe8539a364",
+    "mathlib_commit": "81a5d257c8e410db227a6665ed08f64fea08e997"
+  },
+  "commands": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile physlib-demo/generate_finite_graded_evaluator.py physlib-demo/generate_minimal_arity_three.py physlib-demo/check_bridge.py physlib-demo/tests/test_bridge.py foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py foundations/verify_matrix_site_v2.py foundations/tests/test_matrix_site.py && jq empty physlib-demo/certificates/PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1.json physlib-demo/receipts/PHYSLIB_MINIMAL_ARITY_THREE_SEMANTIC_EVALUATOR_V1_TIER_RECEIPT.json foundations/schema/foundational-matrix-explorer-site-v2.schema.json foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json foundations/site/data.json foundations/site/manifest.json && deno eval 'new Function(await Deno.readTextFile(\"foundations/matrix_site_v2_assets/app-v2.js\")); new Function(await Deno.readTextFile(\"foundations/site/migration-review.js\")); console.log(\"JS_PARSE_PASS\")'",
+      "elapsed_seconds": 1.59,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 physlib-demo/generate_finite_graded_evaluator.py --check",
+      "elapsed_seconds": 21.86,
+      "status": "PASS",
+      "notes": "Recomputed all 212 unweighted raw path values and reproduced the generated Lean source byte for byte."
+    },
+    {
+      "tier": 1,
+      "command": "cd physlib-demo && PATH=/home/alstrup/.elan/bin:$PATH lake build",
+      "elapsed_seconds": 19.84,
+      "status": "PASS",
+      "notes": "Built 803 targets. The semantic path-inventory theorem reports propext and Quot.sound; rational aggregation additionally reports Classical.choice."
+    },
+    {
+      "tier": 1,
+      "command": "PATH=/home/alstrup/.elan/bin:$PATH python3 physlib-demo/check_bridge.py --run-lean",
+      "elapsed_seconds": 22.96,
+      "status": "PASS",
+      "notes": "Content hashes, premise replacement, overclaim guards and all three Lean modules passed."
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest discover -s physlib-demo/tests -v",
+      "elapsed_seconds": 0.12,
+      "status": "PASS",
+      "tests": 12
+    },
+    {
+      "tier": 2,
+      "command": "python3 foundations/build_matrix_site_v2.py --check && python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py",
+      "elapsed_seconds": 6.31,
+      "status": "PASS",
+      "notes": "The deterministic site, independent projection checker, schema, manifest, claim flags and proof-passport boundaries passed."
+    },
+    {
+      "tier": 2,
+      "command": "python3 -m unittest foundations.tests.test_matrix_site -v",
+      "elapsed_seconds": 14.92,
+      "status": "PASS",
+      "tests": 11
+    }
+  ],
+  "diagnostic_attempts": [
+    {
+      "status": "FAILED_NOT_A_PASS",
+      "reason": "The first generator guard looked for a nonexistent q3 output field instead of the authoritative minimal_q3_support row; the source contract was corrected before generation."
+    },
+    {
+      "status": "TERMINATED_NOT_A_PASS",
+      "reason": "A monolithic reduction over all 1296 output/input coordinates caused excessive Lean memory use. All diagnostic compiler processes were terminated, and the proof was factored into six exact output-sector certificates."
+    },
+    {
+      "command": "cd physlib-demo && PATH=/home/alstrup/.elan/bin:$PATH lake build",
+      "elapsed_seconds": 16.37,
+      "status": "FAILED_NOT_A_PASS",
+      "reason": "The first generated Lake build lacked a scoped recursion-depth annotation on the typed-path count theorem; the annotation was added before the passing build."
+    },
+    {
+      "command": "cd physlib-demo && python3 check_bridge.py --run-lean",
+      "status": "FAILED_NOT_A_PASS",
+      "reason": "A final audit shell omitted the pinned Lean toolchain directory from PATH, so the replay could not start lake. The replay was rerun with PATH=/home/alstrup/.elan/bin:$PATH and passed with all three Lean exit codes zero."
+    },
+    {
+      "status": "FAILED_NOT_A_PASS",
+      "reason": "A direct norm_num proof over the newly derived paths expanded the 22-by-22 constructor into an oversized term and left reduction goals. It was not accepted as a proof."
+    },
+    {
+      "status": "REJECTED_NOT_A_CLAIM",
+      "reason": "A native_decide diagnostic compiled the direct evaluator but introduced six native-decide axiom boundaries. It was rejected and replaced by a kernel-checked path-equality transfer proof."
+    },
+    {
+      "status": "FAILED_NOT_A_PASS",
+      "reason": "Plain decide could not reduce the rational evaluator proposition definitionally. The accepted proof instead derives path equality, proves the exact source arithmetic, and transfers zero to the derived-path evaluator without native-decide axioms."
+    }
+  ],
+  "premise_transition": {
+    "status": "REPLACED_WITH_NARROWER_IMPORTED_BOUNDARY",
+    "removed": "precomputed typed path inventory, suspended Koszul multipliers, signed aggregation and pre-summed defect vectors",
+    "formalized": "finite operation-signature path construction, grading signs, raw-value arity and rational aggregation",
+    "still_imported": "natural differential-operator formulas, their unweighted exact fixture evaluations, Taylor-coefficient identification and arbitrary-input differentiated nilpotency"
+  },
+  "affected_chain": {
+    "status": "PASS_BY_CONTENT_ADDRESS_AND_SCOPED_REPLAY",
+    "source_certificate_sha256": "ec51e447914516164b0caa51cbecbf12f1a4b2c8b7ecfbd1303f56d17cc095b5",
+    "reason": "The authoritative Forge source and q1/q2/q3 inputs are unchanged and independently pinned. Re-running their producers would be reproduction rather than independent verification."
+  },
+  "higher_tiers": {
+    "tier_3": "NOT_RUN",
+    "criterion": "No freeze, lifecycle promotion, shared core algebra change, release preparation, or request for the exhaustive repository suite."
+  },
+  "claim_flags": {
+    "SCOPED_TESTS_PASS": true,
+    "FINITE_GRADED_EVALUATOR_PASS": true,
+    "PRECOMPUTED_SIGNED_AGGREGATION_STILL_IMPORTED": false,
+    "NATURAL_DIFFERENTIAL_OPERATOR_EVALUATION_FORMALIZED": false,
+    "FULL_REPOSITORY_SUITE_PASS": false
+  }
+}

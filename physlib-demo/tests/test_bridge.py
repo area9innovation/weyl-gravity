@@ -3,6 +3,7 @@ from __future__ import annotations
 import copy
 import importlib.util
 import json
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -61,6 +62,49 @@ class PhyslibBridgeCertificateTests(unittest.TestCase):
         mutated["provenance"]["forge_source_certificate"]["sha256"] = "0" * 64
         errors, _ = CHECKER.check_arity_three(mutated)
         self.assertIn("arity forge_source_certificate hash", errors)
+
+    def test_semantic_evaluator_hash_mutation_is_rejected(self) -> None:
+        mutated = copy.deepcopy(self.arity)
+        mutated["provenance"]["semantic_lean_source"]["sha256"] = "0" * 64
+        errors, _ = CHECKER.check_arity_three(mutated)
+        self.assertIn("arity semantic_lean_source hash", errors)
+
+    def test_replaced_premise_cannot_be_reimported(self) -> None:
+        mutated = copy.deepcopy(self.arity)
+        mutated["imported_premises"].append("the pre-summed signed aggregation")
+        errors, _ = CHECKER.check_arity_three(mutated)
+        self.assertIn("replaced arity premise still imported", errors)
+
+    def test_source_path_aggregation_is_rejected(self) -> None:
+        source = CHECKER.SEMANTIC_SOURCE.read_text()
+        mutated_source = source.replace(
+            "(outputPairs output).all pairDerivedZero",
+            "(outputPairs output).all pairSourceZero",
+            1,
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "FiniteGradedEvaluator.lean"
+            path.write_text(mutated_source)
+            original = CHECKER.SEMANTIC_SOURCE
+            try:
+                CHECKER.SEMANTIC_SOURCE = path
+                errors, _ = CHECKER.check_arity_three(self.arity)
+            finally:
+                CHECKER.SEMANTIC_SOURCE = original
+        self.assertIn("semantic zero theorem does not target derived paths", errors)
+
+    def test_native_decide_boundary_is_rejected(self) -> None:
+        source = CHECKER.SEMANTIC_SOURCE.read_text() + "\n-- native_decide diagnostic\n"
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "FiniteGradedEvaluator.lean"
+            path.write_text(source)
+            original = CHECKER.SEMANTIC_SOURCE
+            try:
+                CHECKER.SEMANTIC_SOURCE = path
+                errors, _ = CHECKER.check_arity_three(self.arity)
+            finally:
+                CHECKER.SEMANTIC_SOURCE = original
+        self.assertIn("semantic evaluator introduced a native_decide axiom boundary", errors)
 
 
 if __name__ == "__main__":

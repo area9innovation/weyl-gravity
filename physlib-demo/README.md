@@ -11,12 +11,15 @@ source together with the diagonal arity-three identity forces exact closure
 because `1/2 - 3/6 = 0`.
 
 The finite-receiver bridge starts from
-`STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1`. A deterministic generator imports
-all 72 serialized channels, all 212 composable paths, their exact rational
-defects, and three sign-mutation witnesses. Lean checks the inventory and the
-finite zero/nonzero claims. Forge continues to own the natural differential
-operators, their evaluation, the arbitrary-input identity, geometry, Green
-homotopies, and causal support.
+`STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1`. Its first layer replays the
+serialized certificate. Its semantic layer imports five unary, twenty-two
+ordered binary, and one ternary operation signatures. Lean then constructs all
+212 typed composites, derives their suspended Koszul multipliers, matches all
+72 source channels, and recomputes every zero defect by aggregating unweighted
+raw path values. The pre-summed defects and signed path inventory are no longer
+premises. Forge continues to own the natural differential formulas, their raw
+fixture evaluation, the arbitrary-input identity, geometry, Green homotopies,
+and causal support.
 
 ## Installation
 
@@ -49,9 +52,11 @@ silently change its dependency graph.
 ```bash
 cd physlib-demo
 python3 generate_minimal_arity_three.py --check
+python3 generate_finite_graded_evaluator.py --check
 lake build
 lake env lean WeylPhyslibBridge/StrictWeylSecondSource.lean
 lake env lean WeylPhyslibBridge/MinimalArityThree.lean
+lake env lean WeylPhyslibBridge/FiniteGradedEvaluator.lean
 python3 check_bridge.py --run-lean
 ```
 
@@ -68,8 +73,8 @@ homotopies, support-indexed function spaces, Hadamard wavefront sets, or
 physical positivity. It establishes a small but real two-rail result:
 
 - Forge verifies the scientific premises and their scope;
-- Lean's kernel verifies either a final implication or a complete finite
-  serialization from those premises.
+- Lean's kernel verifies a final implication, a finite serialization, and the
+  graded finite evaluator that derives and aggregates its `q₁/q₂/q₃` paths.
 
 The generated proof passports shown by the Reverse Physics Atlas report this
 scope, the imported premises, and the current axiom footprint. They are an

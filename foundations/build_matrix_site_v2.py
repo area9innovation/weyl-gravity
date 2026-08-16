@@ -190,9 +190,12 @@ PHYSLIB_BRIDGE_REPORT = ROOT / "physlib-demo/REPORT.md"
 PHYSLIB_SECOND_SOURCE_LEAN = ROOT / "physlib-demo/WeylPhyslibBridge/StrictWeylSecondSource.lean"
 PHYSLIB_ARITY_THREE_LEAN = ROOT / "physlib-demo/WeylPhyslibBridge/MinimalArityThree.lean"
 PHYSLIB_ARITY_THREE_GENERATOR = ROOT / "physlib-demo/generate_minimal_arity_three.py"
+PHYSLIB_GRADED_EVALUATOR_LEAN = ROOT / "physlib-demo/WeylPhyslibBridge/FiniteGradedEvaluator.lean"
+PHYSLIB_GRADED_EVALUATOR_GENERATOR = ROOT / "physlib-demo/generate_finite_graded_evaluator.py"
 PHYSLIB_BRIDGE_CHECKER = ROOT / "physlib-demo/check_bridge.py"
 PHYSLIB_SECOND_SOURCE_RECEIPT = ROOT / "physlib-demo/receipts/PHYSLIB_STRICT_WEYL_SECOND_SOURCE_BRIDGE_V1_TIER_RECEIPT.json"
-PHYSLIB_ARITY_THREE_RECEIPT = ROOT / "physlib-demo/receipts/PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1_TIER_RECEIPT.json"
+PHYSLIB_ARITY_THREE_REPLAY_RECEIPT = ROOT / "physlib-demo/receipts/PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1_TIER_RECEIPT.json"
+PHYSLIB_ARITY_THREE_RECEIPT = ROOT / "physlib-demo/receipts/PHYSLIB_MINIMAL_ARITY_THREE_SEMANTIC_EVALUATOR_V1_TIER_RECEIPT.json"
 LEDGERS = v1.LEDGERS
 CREATED = "2026-08-16"
 BASE_COMMIT = "278f63816b6e71192a7a03ac4e028ab912f4eafe"
@@ -344,7 +347,7 @@ def build_dataset() -> dict[str, Any]:
     proof_bridges = []
     lean_sources = {
         "PHYSLIB_STRICT_WEYL_SECOND_SOURCE_BRIDGE_V1": PHYSLIB_SECOND_SOURCE_LEAN,
-        "PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1": PHYSLIB_ARITY_THREE_LEAN,
+        "PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1": PHYSLIB_GRADED_EVALUATOR_LEAN,
     }
     receipts = {
         "PHYSLIB_STRICT_WEYL_SECOND_SOURCE_BRIDGE_V1": PHYSLIB_SECOND_SOURCE_RECEIPT,
@@ -365,6 +368,7 @@ def build_dataset() -> dict[str, Any]:
             "axiom_footprint": bridge.get("axiom_footprint", bridge.get("axiom_footprints")),
             "formal_claims": bridge["formal_claims"],
             "imported_premises": bridge["imported_premises"],
+            "premise_replacement": bridge.get("premise_replacement"),
             "does_not_establish": bridge["does_not_establish"],
             "evidence_effect": passport["evidence_effect"],
             "target_view": passport["target_view"],
@@ -802,11 +806,13 @@ renormalized Lorentzian products and QME restoration.
 
 The explorer also exposes two Lean/Physlib proof passports as a separate
 formal-assurance rail. One kernel-checks the final second-source implication;
-the other checks all 72 finite arity-three channels, all 212 serialized paths,
-the zero-defect census and three mutation witnesses. The passports identify
-their imported premises and current axiom footprints. They do this without
-changing evidence grades or completion gates, and they do not formalize the
-natural differential-operator evaluator or establish a minimal axiom base.
+the other now derives all 212 finite arity-three paths and their suspended
+Koszul multipliers from q1/q2/q3 operation signatures, matches all 72 source
+channels, and aggregates unweighted raw path values to zero in every output
+sector. Pre-summed defects and the signed path inventory are no longer
+premises. The passports identify the remaining natural-operator evaluation
+premise and current axiom footprints. They do this without changing evidence grades
+or completion gates, and they do not establish a minimal axiom base.
 
 The new reconstruction import supplies the first explicit weak-arithmetic
 finite-approximant theorem for a declared bounded wave observable. Its rational
@@ -1170,8 +1176,11 @@ def generated() -> dict[Path, bytes]:
         PHYSLIB_SECOND_SOURCE_LEAN,
         PHYSLIB_ARITY_THREE_LEAN,
         PHYSLIB_ARITY_THREE_GENERATOR,
+        PHYSLIB_GRADED_EVALUATOR_LEAN,
+        PHYSLIB_GRADED_EVALUATOR_GENERATOR,
         PHYSLIB_BRIDGE_CHECKER,
         PHYSLIB_SECOND_SOURCE_RECEIPT,
+        PHYSLIB_ARITY_THREE_REPLAY_RECEIPT,
         PHYSLIB_ARITY_THREE_RECEIPT,
     ]))
     for source in bundled_sources:
@@ -1345,10 +1354,11 @@ def generated() -> dict[Path, bytes]:
     result["claim_flags"]["strict_386_physical_cohomology_positivity_exposed"] = False
     result["does_not_establish"].append("a positive full-complex Hadamard state or positive physical-cohomology covariance")
     result["does_not_establish"].append("renormalized Lorentzian products, QME restoration, residual transfer or a complete interacting Lorentzian quantum theory")
-    result["features"].append("two generated Lean/Physlib proof passports that expose formalized scope, imported premises, axiom footprints and replay links without changing evidence grades")
+    result["features"].append("two generated Lean/Physlib proof passports, including a finite graded q1/q2/q3 evaluator that derives 212 paths and signed aggregation from operation signatures without changing evidence grades")
     result["claim_flags"]["proof_passports_exposed"] = True
     result["claim_flags"]["proof_passports_change_evidence_grades"] = False
     result["claim_flags"]["minimal_arity_three_finite_replay_exposed"] = True
+    result["claim_flags"]["minimal_arity_three_finite_graded_evaluator_exposed"] = True
     result["claim_flags"]["minimal_arity_three_natural_operator_proof_formalized"] = False
     result["does_not_establish"].append("that a Lean proof passport strengthens a matrix evidence grade or supplies a missing physical premise")
     result["does_not_establish"].append("that the displayed Lean axiom footprints are reverse-mathematically minimal")

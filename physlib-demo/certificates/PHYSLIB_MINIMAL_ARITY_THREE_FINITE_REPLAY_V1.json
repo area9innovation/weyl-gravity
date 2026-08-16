@@ -1,12 +1,12 @@
 {
   "result_id": "PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1",
   "schema_version": "1.0.0",
-  "result_kind": "LEAN_KERNEL_FINITE_CERTIFICATE_REPLAY",
+  "result_kind": "LEAN_KERNEL_FINITE_GRADED_OPERATION_EVALUATOR",
   "generated_at": "2026-08-16",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC"
   ],
-  "formalization_scope": "FINITE_SERIALIZED_RECEIVER",
+  "formalization_scope": "FINITE_GRADED_OPERATION_EVALUATOR",
   "kernel_status": "COMPILES",
   "foundational_portability": "PROOF_METHOD_NOT_MINIMIZED",
   "toolchain": {
@@ -42,6 +42,18 @@
     {
       "theorem": "WeylPhyslibBridge.MinimalArityThree.allThreeMutationsDetected",
       "establishes": "Each of the three serialized sign-mutation witnesses contains a nonzero exact rational defect."
+    },
+    {
+      "theorem": "WeylPhyslibBridge.MinimalArityThree.semanticPathInventoryCertified",
+      "establishes": "Five unary, twenty-two ordered binary and one ternary operation signatures generate exactly 212 typed q1-q3, q2-q2 and q3-q1 paths, with every source-channel path and suspended Koszul multiplier reproduced."
+    },
+    {
+      "theorem": "WeylPhyslibBridge.MinimalArityThree.semanticRawValueArityCertified",
+      "establishes": "Every derived channel path has exactly one unweighted raw natural-operator value of the correct output width."
+    },
+    {
+      "theorem": "WeylPhyslibBridge.MinimalArityThree.semanticEvaluatorDefectsZero",
+      "establishes": "Lean applies its derived graded multipliers, aggregates all 212 unweighted raw path values, and obtains zero in all six output sectors and all 72 channels."
     }
   ],
   "axiom_footprints": {
@@ -53,14 +65,32 @@
       "propext",
       "Classical.choice",
       "Quot.sound"
+    ],
+    "finite_graded_path_inventory": [
+      "propext",
+      "Quot.sound"
+    ],
+    "finite_graded_rational_aggregation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
     ]
   },
   "imported_premises": [
-    "the q1, q2 and q3 natural differential-operator semantics",
+    "the q1, q2 and q3 natural differential-operator definitions and their unweighted exact raw values on the declared rational five-jet fixture",
     "the identification of those operators as Taylor coefficients of one BV vector field",
-    "the arbitrary-input differentiated-nilpotency argument",
-    "the exact receiver's evaluation of the differential operators before serialization"
+    "the arbitrary-input differentiated-nilpotency argument"
   ],
+  "premise_replacement": {
+    "previously_imported": "the receiver's typed q1/q2/q3 composition inventory, suspended Koszul multipliers, signed aggregation and pre-summed defect vectors",
+    "now_formalized": "Lean derives the typed paths and multipliers from finite operation signatures and recomputes every defect from unweighted raw path values",
+    "remaining_boundary": "the natural differential-operator definitions and their unweighted raw fixture evaluations remain imported",
+    "proofs": [
+      "WeylPhyslibBridge.MinimalArityThree.semanticPathInventoryCertified",
+      "WeylPhyslibBridge.MinimalArityThree.semanticRawValueArityCertified",
+      "WeylPhyslibBridge.MinimalArityThree.semanticEvaluatorDefectsZero"
+    ]
+  },
   "provenance": {
     "lean_source": {
       "path": "physlib-demo/WeylPhyslibBridge/MinimalArityThree.lean",
@@ -69,6 +99,14 @@
     "generator": {
       "path": "physlib-demo/generate_minimal_arity_three.py",
       "sha256": "5f64f5276518b2f27dca0eb2028ef2e2be650dca9a571a391de0d9a6dd85bddb"
+    },
+    "semantic_lean_source": {
+      "path": "physlib-demo/WeylPhyslibBridge/FiniteGradedEvaluator.lean",
+      "sha256": "756ac53449a41163599497a20071efb7856a5db459625e4a7f22d03fb4f363cb"
+    },
+    "semantic_generator": {
+      "path": "physlib-demo/generate_finite_graded_evaluator.py",
+      "sha256": "915d46d2faefaa61538f1addb8056c974acf90e4bd9d3677ab61f569497f8e3b"
     },
     "forge_source_certificate": {
       "path": "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1.json",
@@ -84,27 +122,32 @@
     "PATH_KIND_PARTITION_FORMALIZED": true,
     "EXACT_RECEIVER_ZERO_DEFECTS_FORMALIZED": true,
     "THREE_MUTATION_WITNESSES_FORMALIZED": true,
+    "FINITE_GRADED_Q1_Q2_Q3_EVALUATOR_FORMALIZED": true,
+    "PATH_INVENTORY_DERIVED_FROM_OPERATION_SIGNATURES": true,
+    "KOSZUL_MULTIPLIERS_DERIVED_IN_LEAN": true,
+    "SIGNED_DEFECT_AGGREGATION_FORMALIZED": true,
+    "PRECOMPUTED_DEFECT_VECTORS_REQUIRED_BY_SEMANTIC_PROOF": false,
     "NATURAL_OPERATOR_EVALUATOR_FORMALIZED": false,
     "ARBITRARY_INPUT_NATURAL_IDENTITY_FORMALIZED": false,
     "CAUSAL_SUPPORT_FORMALIZED": false,
     "LORENTZIAN_QUANTUM_THEORY": false
   },
   "does_not_establish": [
-    "a Lean definition or evaluation of the q1, q2 or q3 natural differential operators",
+    "a Lean definition or evaluation of the natural differential formulas underlying each raw q1, q2 or q3 path value",
     "the arbitrary-input arity-three identity from differentiated BV nilpotency",
     "quartic q3 cyclicity or a 386-row stabilization",
     "Green compatibility, causal support, Hadamard properties or positivity",
     "that the reported axiom footprint is minimal"
   ],
   "web_passport": {
-    "title": "Minimal BV arity-three finite replay",
-    "summary": "Lean checks all 72 serialized channels, all 212 typed paths, every zero receiver defect, and three nonzero sign-mutation witnesses.",
+    "title": "Minimal BV finite graded evaluator",
+    "summary": "Lean derives all 212 typed q1/q2/q3 paths and Koszul multipliers from operation signatures, then recomputes zero defects in all 72 channels from unweighted raw path values.",
     "evidence_effect": "NONE",
     "target_view": "completion",
     "source_result_id": "STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1"
   },
   "independent_checker": {
     "command": "python3 physlib-demo/check_bridge.py --run-lean",
-    "certificate_digest_sha256": "f4629bd189f3bbeebb20a8d6bd1408d1cd82bc8dbf03de57b6c8440f23184767"
+    "certificate_digest_sha256": "dda7f7b93b10a65af95980c8cf63698530fedfa7e50a73a969ca1d2fcb843c21"
   }
 }

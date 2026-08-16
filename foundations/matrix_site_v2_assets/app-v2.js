@@ -28,11 +28,12 @@
     const claims = passport.formal_claims.map(item => `<li><code>${esc(item.theorem.split(".").at(-1))}</code> — ${esc(item.establishes)}</li>`).join("");
     const imported = passport.imported_premises.map(item => `<li>${esc(item)}</li>`).join("");
     const boundaries = passport.does_not_establish.map(item => `<li>${esc(item)}</li>`).join("");
+    const replacement = passport.premise_replacement ? `<details class="premise-replacement"><summary>What is no longer assumed</summary><p><b>Previously imported:</b> ${esc(passport.premise_replacement.previously_imported)}</p><p><b>Now checked by Lean:</b> ${esc(passport.premise_replacement.now_formalized)}</p><p><b>Still imported:</b> ${esc(passport.premise_replacement.remaining_boundary)}</p></details>` : "";
     return `<article class="proof-passport ${compact ? "compact" : ""}">
       <div class="proof-passport-head"><div><p class="eyebrow">Formal assurance · no evidence-grade change</p><h3>${esc(passport.title)}</h3></div><span class="kernel-badge">Lean kernel checked</span></div>
       <p>${esc(passport.summary)}</p>
       <div class="proof-passport-status"><span><b>Scope</b>${esc(words(passport.formalization_scope))}</span><span><b>Portability</b>${esc(words(passport.foundational_portability))}</span><span><b>Source result</b><code>${esc(passport.source_result_id)}</code></span></div>
-      ${compact ? "" : `<details><summary>What Lean proves</summary><ul>${claims}</ul></details><details><summary>Premises still imported</summary><ul>${imported}</ul></details><details><summary>Axiom footprint</summary><div class="axiom-footprint">${axiomFootprint(passport.axiom_footprint)}</div><p class="muted">This reports the present proof implementation; it is not a minimal reverse-mathematics classification.</p></details><details><summary>Claim boundary</summary><ul>${boundaries}</ul></details>`}
+      ${compact ? "" : `<details><summary>What Lean proves</summary><ul>${claims}</ul></details>${replacement}<details><summary>Premises still imported</summary><ul>${imported}</ul></details><details><summary>Axiom footprint</summary><div class="axiom-footprint">${axiomFootprint(passport.axiom_footprint)}</div><p class="muted">This reports the present proof implementation; it is not a minimal reverse-mathematics classification.</p></details><details><summary>Claim boundary</summary><ul>${boundaries}</ul></details>`}
       <p class="proof-links"><a href="${esc(passport.links.certificate)}">Proof certificate</a> · <a href="${esc(passport.links.lean_source)}">Lean source</a> · <a href="${esc(passport.links.report)}">Report</a> · <a href="${esc(passport.links.checker)}">Replay checker</a> · <a href="${esc(passport.links.receipt)}">Test receipt</a></p>
     </article>`;
   }

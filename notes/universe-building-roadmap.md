@@ -40,16 +40,19 @@ renormalized time-ordered products before attempting local QME restoration.
 Two Lean/Physlib pilots now exercise the Forge-to-kernel interface on Lean
 4.32. The first proves that the declared reduction and arity-three identities
 imply `q1(S2)=0`. The second imports the complete finite receiver for the
-minimal arity-three certificate and kernel-checks all 72 channels, all 212
-paths, every serialized zero defect, and three nonzero mutation witnesses.
-Both results carry only `LOCAL-ALGEBRAIC`: the second is a complete replay of
-the finite serialization, not a Lean construction of the natural `q1/q2/q3`
-operators or an arbitrary-input theorem. The Atlas exposes both proof
-passports on a separate assurance axis and explicitly gives them no evidence-
-grade effect. The next formalization target is the smallest semantic step that
-removes one imported premise—a natural-operator evaluator or a generic graded
-arity-three identity. Stop if the work merely serializes more rows without
-closing that interface, and do not move an analytic layer into Lean first.
+minimal arity-three certificate. Its first layer replays all 72 channels, 212
+paths, zero defects, and three mutation witnesses. Its new semantic layer
+starts instead from five q1, twenty-two ordered q2, and one q3 signatures:
+Lean derives the typed composites and Koszul multipliers, matches the complete
+path inventory, and aggregates 212 unweighted raw path values to zero in all
+six output sectors. This removes the pre-summed defect and signed-inventory
+premise while retaining the natural differential formulas and their raw
+fixture evaluations as imported data. Both results carry only
+`LOCAL-ALGEBRAIC`, and the Atlas gives their proof passports no evidence-grade
+effect. The next formalization target is one natural differential-operator
+path end to end or the generic arbitrary-input differentiated-nilpotency
+identity. Stop if the work merely serializes more rows, and do not move an
+analytic layer into Lean first.
 
 ## Planning authority and document roles
 

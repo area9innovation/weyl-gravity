@@ -88,7 +88,7 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
             errors.append("positive flag " + key)
     if flags.get("completion_atlas_exposed") is not True:
         errors.append("positive flag completion_atlas_exposed")
-    for key in ("proof_passports_exposed", "minimal_arity_three_finite_replay_exposed"):
+    for key in ("proof_passports_exposed", "minimal_arity_three_finite_replay_exposed", "minimal_arity_three_finite_graded_evaluator_exposed"):
         if flags.get(key) is not True:
             errors.append("positive flag " + key)
     for key in (

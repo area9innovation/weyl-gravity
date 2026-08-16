@@ -197,11 +197,13 @@ renormalized Lorentzian products and QME restoration.
 
 The explorer also exposes two Lean/Physlib proof passports as a separate
 formal-assurance rail. One kernel-checks the final second-source implication;
-the other checks all 72 finite arity-three channels, all 212 serialized paths,
-the zero-defect census and three mutation witnesses. The passports identify
-their imported premises and current axiom footprints. They do this without
-changing evidence grades or completion gates, and they do not formalize the
-natural differential-operator evaluator or establish a minimal axiom base.
+the other now derives all 212 finite arity-three paths and their suspended
+Koszul multipliers from q1/q2/q3 operation signatures, matches all 72 source
+channels, and aggregates unweighted raw path values to zero in every output
+sector. Pre-summed defects and the signed path inventory are no longer
+premises. The passports identify the remaining natural-operator evaluation
+premise and current axiom footprints. They do this without changing evidence grades
+or completion gates, and they do not establish a minimal axiom base.
 
 The new reconstruction import supplies the first explicit weak-arithmetic
 finite-approximant theorem for a declared bounded wave observable. Its rational

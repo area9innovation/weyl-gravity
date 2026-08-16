@@ -231154,6 +231154,7 @@ window.MATRIX_EXPLORER_DATA = {
         "the diagonal arity-three q1(q3) identity",
         "the Green and causal-support construction supplying those identities"
       ],
+      "premise_replacement": null,
       "does_not_establish": [
         "the source q2 and q3 identities",
         "a Green homotopy or causal-support theorem",
@@ -231174,9 +231175,9 @@ window.MATRIX_EXPLORER_DATA = {
     {
       "bridge_result_id": "PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1",
       "source_result_id": "STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1",
-      "title": "Minimal BV arity-three finite replay",
-      "summary": "Lean checks all 72 serialized channels, all 212 typed paths, every zero receiver defect, and three nonzero sign-mutation witnesses.",
-      "formalization_scope": "FINITE_SERIALIZED_RECEIVER",
+      "title": "Minimal BV finite graded evaluator",
+      "summary": "Lean derives all 212 typed q1/q2/q3 paths and Koszul multipliers from operation signatures, then recomputes zero defects in all 72 channels from unweighted raw path values.",
+      "formalization_scope": "FINITE_GRADED_OPERATION_EVALUATOR",
       "kernel_status": "COMPILES",
       "foundational_portability": "PROOF_METHOD_NOT_MINIMIZED",
       "dependency_tags": [
@@ -231188,6 +231189,15 @@ window.MATRIX_EXPLORER_DATA = {
           "Quot.sound"
         ],
         "rational_mutation_witnesses": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "finite_graded_path_inventory": [
+          "propext",
+          "Quot.sound"
+        ],
+        "finite_graded_rational_aggregation": [
           "propext",
           "Classical.choice",
           "Quot.sound"
@@ -231221,16 +231231,37 @@ window.MATRIX_EXPLORER_DATA = {
         {
           "theorem": "WeylPhyslibBridge.MinimalArityThree.allThreeMutationsDetected",
           "establishes": "Each of the three serialized sign-mutation witnesses contains a nonzero exact rational defect."
+        },
+        {
+          "theorem": "WeylPhyslibBridge.MinimalArityThree.semanticPathInventoryCertified",
+          "establishes": "Five unary, twenty-two ordered binary and one ternary operation signatures generate exactly 212 typed q1-q3, q2-q2 and q3-q1 paths, with every source-channel path and suspended Koszul multiplier reproduced."
+        },
+        {
+          "theorem": "WeylPhyslibBridge.MinimalArityThree.semanticRawValueArityCertified",
+          "establishes": "Every derived channel path has exactly one unweighted raw natural-operator value of the correct output width."
+        },
+        {
+          "theorem": "WeylPhyslibBridge.MinimalArityThree.semanticEvaluatorDefectsZero",
+          "establishes": "Lean applies its derived graded multipliers, aggregates all 212 unweighted raw path values, and obtains zero in all six output sectors and all 72 channels."
         }
       ],
       "imported_premises": [
-        "the q1, q2 and q3 natural differential-operator semantics",
+        "the q1, q2 and q3 natural differential-operator definitions and their unweighted exact raw values on the declared rational five-jet fixture",
         "the identification of those operators as Taylor coefficients of one BV vector field",
-        "the arbitrary-input differentiated-nilpotency argument",
-        "the exact receiver's evaluation of the differential operators before serialization"
+        "the arbitrary-input differentiated-nilpotency argument"
       ],
+      "premise_replacement": {
+        "previously_imported": "the receiver's typed q1/q2/q3 composition inventory, suspended Koszul multipliers, signed aggregation and pre-summed defect vectors",
+        "now_formalized": "Lean derives the typed paths and multipliers from finite operation signatures and recomputes every defect from unweighted raw path values",
+        "remaining_boundary": "the natural differential-operator definitions and their unweighted raw fixture evaluations remain imported",
+        "proofs": [
+          "WeylPhyslibBridge.MinimalArityThree.semanticPathInventoryCertified",
+          "WeylPhyslibBridge.MinimalArityThree.semanticRawValueArityCertified",
+          "WeylPhyslibBridge.MinimalArityThree.semanticEvaluatorDefectsZero"
+        ]
+      },
       "does_not_establish": [
-        "a Lean definition or evaluation of the q1, q2 or q3 natural differential operators",
+        "a Lean definition or evaluation of the natural differential formulas underlying each raw q1, q2 or q3 path value",
         "the arbitrary-input arity-three identity from differentiated BV nilpotency",
         "quartic q3 cyclicity or a 386-row stabilization",
         "Green compatibility, causal support, Hadamard properties or positivity",
@@ -231240,10 +231271,10 @@ window.MATRIX_EXPLORER_DATA = {
       "target_view": "completion",
       "links": {
         "certificate": "sources/physlib-demo/certificates/PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1.json",
-        "lean_source": "sources/physlib-demo/WeylPhyslibBridge/MinimalArityThree.lean",
+        "lean_source": "sources/physlib-demo/WeylPhyslibBridge/FiniteGradedEvaluator.lean",
         "report": "sources/physlib-demo/REPORT.md",
         "checker": "sources/physlib-demo/check_bridge.py",
-        "receipt": "sources/physlib-demo/receipts/PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1_TIER_RECEIPT.json"
+        "receipt": "sources/physlib-demo/receipts/PHYSLIB_MINIMAL_ARITY_THREE_SEMANTIC_EVALUATOR_V1_TIER_RECEIPT.json"
       }
     }
   ],
@@ -231538,5 +231569,5 @@ window.MATRIX_EXPLORER_DATA = {
     "physlib_arity_three_bridge": "sources/physlib-demo/certificates/PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1.json",
     "physlib_bridge_report": "sources/physlib-demo/REPORT.md"
   },
-  "canonical_digest": "08f1dcb716d43586ce7ab14baf18ce2773e018048682f3e78e8f2a13d6734cde"
+  "canonical_digest": "43d2b9ee8e05de803f63f27df4130c591ae698f4482c97336703c010beb67c7a"
 };

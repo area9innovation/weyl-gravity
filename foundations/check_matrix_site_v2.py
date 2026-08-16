@@ -919,10 +919,14 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
                 or not passport.get("does_not_establish")
             ):
                 errors.append("proof-passport boundary " + passport["bridge_result_id"])
+            if passport["bridge_result_id"] == "PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1":
+                replacement = passport.get("premise_replacement", {})
+                if passport.get("formalization_scope") != "FINITE_GRADED_OPERATION_EVALUATOR" or "Lean derives" not in replacement.get("now_formalized", ""):
+                    errors.append("finite graded evaluator passport")
     if any(item.get("evidence_effect") != "NONE" for item in proof_bridges):
         errors.append("proof passport changed evidence state")
     result_flags = result.get("claim_flags", {})
-    if result_flags.get("proof_passports_exposed") is not True or result_flags.get("proof_passports_change_evidence_grades") is not False or result_flags.get("minimal_arity_three_finite_replay_exposed") is not True or result_flags.get("minimal_arity_three_natural_operator_proof_formalized") is not False:
+    if result_flags.get("proof_passports_exposed") is not True or result_flags.get("proof_passports_change_evidence_grades") is not False or result_flags.get("minimal_arity_three_finite_replay_exposed") is not True or result_flags.get("minimal_arity_three_finite_graded_evaluator_exposed") is not True or result_flags.get("minimal_arity_three_natural_operator_proof_formalized") is not False:
         errors.append("site proof-passport exposure flags")
     if result_flags.get("strict_residual_zero_mode_payload_exposed") is not True or result_flags.get("strict_residual_zero_mode_common_freeze_exposed") is not True:
         errors.append("site residual zero-mode exposure flags")

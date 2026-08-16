@@ -19,25 +19,32 @@ declared `axiom` tokens in the source.  The independent checker pins the Lean,
 Mathlib, and Physlib revisions, verifies both source hashes, enforces the
 `LOCAL-ALGEBRAIC` boundary, rejects promoted causal claims, and can replay Lean.
 
-The second pilot crosses the next useful boundary without overstating it. A
-deterministic source generator translates the authoritative minimal
-arity-three receiver into typed Lean data. The kernel checks exactly 72
-channels and 212 paths, including the `2 + 204 + 6` path-kind partition, every
-serialized zero defect, and three nonzero rational mutation witnesses. The
-census/zero-defect proofs currently report `propext` and `Quot.sound`; the
-mutation proof additionally reports `Classical.choice`. These are footprints
-of the present implementation, not minimal-foundation theorems.
+The second pilot now crosses the finite semantic boundary. A deterministic
+source generator imports five unary, twenty-two ordered binary, and one
+ternary operation signatures. Lean constructs the `q1-q3`, `q2-q2`, and
+`q3-q1` composites, derives their suspended Koszul multipliers, and proves
+that the result matches all 72 source channels and all 212 paths. A second
+kernel calculation applies those derived multipliers to 212 unweighted raw
+natural-operator values and obtains zero in every channel across all six
+outputs. The pre-summed defect vectors and signed path inventory are therefore
+no longer premises. The older serialized replay and three mutation witnesses
+remain useful as an independent regression layer.
 
-The finite replay does **not** define or evaluate the natural `q1`, `q2`, and
-`q3` differential operators. It imports their receiver evaluation and does not
-prove the arbitrary-input identity obtained from differentiated BV
-nilpotency. It also does not formalize Green homotopies, causal support,
-Hadamard conditions, positivity, or a Lorentzian quantum theory.
+The path-inventory theorem reports `propext` and `Quot.sound`; rational
+aggregation additionally reports `Classical.choice`. These are footprints of
+the present implementation, not minimal-foundation theorems.
+
+The finite evaluator does **not** define or evaluate the natural differential
+formulas underlying each raw `q1`, `q2`, or `q3` value. It imports those
+unweighted fixture values and does not prove the arbitrary-input identity
+obtained from differentiated BV nilpotency. It also does not formalize Green
+homotopies, causal support, Hadamard conditions, positivity, or a Lorentzian
+quantum theory.
 
 The two proof passports are exposed in the Reverse Physics Atlas as a separate
 formal-assurance rail. Their evidence effect is explicitly `NONE`: kernel
 checking does not supply a missing physical premise and does not promote a
-matrix cell or completion gate. The next high-value target is therefore the
-semantic interface rather than a larger data dump: formalize a small natural
-operator evaluator or a generic graded arity-three identity, and stop unless
-it removes a named imported premise.
+matrix cell or completion gate. The next high-value target is the next named
+premise: either formalize one natural differential-operator path end to end or
+prove the generic arbitrary-input differentiated-nilpotency identity. More
+serialized rows alone would not advance this interface.
