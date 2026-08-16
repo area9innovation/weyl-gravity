@@ -1,0 +1,27 @@
+{
+  "evidence_type": "NUMERICAL_FINITE_VOLUME_PREFLIGHT",
+  "lattice_length": 6,
+  "volume": 1296,
+  "outer_momentum_rows": 1296,
+  "threads": 8,
+  "compiler": "cc -std=c11 -O3 -fopenmp -D_DEFAULT_SOURCE -Wall -Wextra -Werror",
+  "memory_limit_kib": 500000,
+  "one_loop_calibration": {
+    "computed": 0.00009500212499864366,
+    "exact_reference_decimal": 0.00009500212499862486,
+    "absolute_error": 1.88e-17
+  },
+  "terms": {
+    "F_4_0": 0.000503375490622674,
+    "F_4_2": 0.002164969456075357,
+    "F_4_4": -0.0010564679600843152,
+    "minus_F_3_3_Gamma_3": 0.000011171944528325162,
+    "minus_F_2_2_Gamma_4": -0.0016602526411414497,
+    "plus_F_2_2_Gamma_3_squared": 0.0008588398511355388
+  },
+  "sum": 0.00082163614113613,
+  "observed_sign": "POSITIVE_BINARY64",
+  "elapsed_seconds": 2330.4,
+  "peak_kib": 3172,
+  "status": "SUPPORTING_ONLY_EXACT_OR_RIGOROUS_SIGN_REQUIRED"
+}

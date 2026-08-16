@@ -224,8 +224,8 @@ def build() -> dict:
         "conventions": {
             "volume": "N=L^4",
             "propagator": "G_L(k)=omega(k)^(-2) for k!=0 and G_L(0)=0",
-            "action_vertices": "Gamma_n=D^n S_(n-2)|_(phi=0), so Gamma_3 is the S1 vertex and Gamma_4 is the S2 vertex",
-            "response_vertices": "F_(i,r)=D_background^r(Dm_i)|_(background=0), with Taylor coefficient F_(i,r)/r!",
+            "action_vertices": "Gamma_n is the translation-stripped kernel defined by D^n S_(n-2)[N^(-1/2)e_k1,...,N^(-1/2)e_kn]=N^(1-n/2)*delta_(sum k,0)*Gamma_n(k1,...,kn)",
+            "response_vertices": "F_(i,r) is the local kernel defined by D_background^r(Dm_i)[N^(-1/2)e_k1,...,N^(-1/2)e_kr]=N^(-r/2)*F_(i,r)(k1,...,kr), with Taylor coefficient 1/r!",
             "fourier_normalization": "phi_x=N^(-1/2)*sum_k exp(i*k*x)*phi_k",
         },
         "enumeration": {

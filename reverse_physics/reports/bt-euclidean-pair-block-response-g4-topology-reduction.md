@@ -116,20 +116,26 @@ Let \(N=L^4\), and use
  \phi_x=N^{-1/2}\sum_k e^{ikx}\phi_k.
 \]
 
-Let
+Let the translation-stripped action kernel \(\Gamma_n\) be defined by
 
 \[
- \Gamma_n=D^nS_{n-2}\big|_{\phi=0}
+ D^nS_{n-2}[N^{-1/2}e_{k_1},\ldots,N^{-1/2}e_{k_n}]
+ =N^{1-n/2}\delta_{\sum k_a,0}\,
+ \Gamma_n(k_1,\ldots,k_n),
 \]
 
-be the symmetric action vertex, and let
+and define the local response kernel by
 
 \[
- F_{i,r}=D_{\rm background}^r(Dm_i)\big|_{0}
+ D_{\rm background}^r(Dm_i)
+ [N^{-1/2}e_{k_1},\ldots,N^{-1/2}e_{k_r}]
+ =N^{-r/2}F_{i,r}(k_1,\ldots,k_r).
 \]
 
-be the symmetric degree-\(r\) response vertex. Polynomial Taylor
-coefficients are therefore \(\Gamma_n/n!\) and \(F_{i,r}/r!\).
+Both kernels are symmetric. Their polynomial Taylor coefficients carry the
+usual \(1/n!\) and \(1/r!\) factors. Keeping the volume and conservation
+delta outside \(\Gamma_n\) is what produces the explicit powers of \(N\)
+below.
 
 The complete coefficient is
 

@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-pair-block-response-g4-l6-preflight-v1.schema.json",
+  "title": "BT pair-block order-lambda4 L6 numerical preflight certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer", "calibration",
+    "six_term_result", "resource_receipt", "method_disposition", "next_gate",
+    "does_not_establish", "provenance", "verification_commands", "tier_receipt",
+    "checks", "report", "schema", "verifier"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_PAIR_BLOCK_RESPONSE_G4_L6_PREFLIGHT_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-pair-block-response-g4-l6-preflight-v1"},
+    "created": {"const": "2026-08-16"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 100},
+    "question": {"type": "string", "minLength": 100},
+    "answer": {"type": "string", "minLength": 600},
+    "calibration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["exact_one_loop", "computed_binary64", "absolute_error", "status"],
+      "properties": {
+        "exact_one_loop": {
+          "const": {"numerator": 956585197, "denominator": 10069092633600}
+        },
+        "computed_binary64": {"type": "number"},
+        "absolute_error": {"type": "number", "exclusiveMinimum": 0, "maximum": 2e-16},
+        "status": {"const": "MATCHES_EXACT_REFERENCE_WITHIN_2E_MINUS_16"}
+      }
+    },
+    "six_term_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["terms", "sum", "sum_of_absolute_terms", "cancellation_ratio", "observed_sign", "status"],
+      "properties": {
+        "terms": {"type": "object", "minProperties": 6, "maxProperties": 6},
+        "sum": {"type": "number", "exclusiveMinimum": 0},
+        "sum_of_absolute_terms": {"type": "number", "exclusiveMinimum": 0},
+        "cancellation_ratio": {"type": "number", "exclusiveMinimum": 0.1},
+        "observed_sign": {"const": "POSITIVE_BINARY64"},
+        "status": {"const": "SUPPORTING_ONLY_EXACT_OR_RIGOROUS_SIGN_REQUIRED"}
+      }
+    },
+    "resource_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["threads", "elapsed_seconds", "peak_kib", "memory_limit_kib", "compiler", "architecture"],
+      "properties": {
+        "threads": {"const": 8},
+        "elapsed_seconds": {"type": "number", "minimum": 2000},
+        "peak_kib": {"type": "integer", "maximum": 500000},
+        "memory_limit_kib": {"const": 500000},
+        "compiler": {"type": "string"},
+        "architecture": {"type": "string"}
+      }
+    },
+    "method_disposition": {"type": "object"},
+    "next_gate": {"type": "string", "minLength": 350},
+    "does_not_establish": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "numerical_arithmetic", "assumptions"],
+      "properties": {
+        "repository_base_commit": {"const": "b349a24e91dcd60151fed7050ad63a45b902706d"},
+        "inputs": {"type": "array", "minItems": 3, "maxItems": 3},
+        "numerical_arithmetic": {"type": "string"},
+        "assumptions": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "tier_receipt": {"type": "object"},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 12},
+        "total": {"type": "integer", "minimum": 12},
+        "failures": {"const": []},
+        "details": {"type": "object"}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-pair-block-response-g4-l6-preflight.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-pair-block-response-g4-l6-preflight-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_pair_block_response_g4_l6_preflight.py"}
+  }
+}
