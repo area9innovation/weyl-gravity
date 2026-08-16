@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-pair-block-response-g4-topology-reduction-v1.schema.json",
+  "title": "BT pair-block order-lambda4 topology reduction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer", "conventions",
+    "enumeration", "bridge_zero_mode_theorem", "six_term_fourier_reduction",
+    "volume_selection", "method_disposition", "missing_object_ledger",
+    "next_gate", "does_not_establish", "provenance", "verification_commands",
+    "tier_receipt", "checks", "report", "schema", "verifier"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_PAIR_BLOCK_RESPONSE_G4_TOPOLOGY_REDUCTION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-pair-block-response-g4-topology-reduction-v1"},
+    "created": {"const": "2026-08-16"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 80},
+    "question": {"type": "string", "minLength": 80},
+    "answer": {"type": "string", "minLength": 500},
+    "conventions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["volume", "propagator", "action_vertices", "response_vertices", "fourier_normalization"],
+      "properties": {
+        "volume": {"const": "N=L^4"},
+        "propagator": {"type": "string"},
+        "action_vertices": {"type": "string"},
+        "response_vertices": {"type": "string"},
+        "fourier_normalization": {"type": "string"}
+      }
+    },
+    "enumeration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["raw_pairings", "connected_pairings", "connected_topologies", "bridge_killed_topologies", "momentum_admissible_topologies", "rows", "status"],
+      "properties": {
+        "raw_pairings": {"const": 1226},
+        "connected_pairings": {"const": 1046},
+        "connected_topologies": {"const": 27},
+        "bridge_killed_topologies": {"const": 21},
+        "momentum_admissible_topologies": {"const": 6},
+        "rows": {"type": "array", "minItems": 7, "maxItems": 7},
+        "status": {"const": "EXHAUSTIVE_EXACT_LABELED_PAIRING_ENUMERATION"}
+      }
+    },
+    "bridge_zero_mode_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["statement", "scope", "status"],
+      "properties": {
+        "statement": {"type": "string", "minLength": 200},
+        "scope": {"type": "string"},
+        "status": {"const": "PROVED"}
+      }
+    },
+    "six_term_fourier_reduction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["formula", "live_topologies", "zero_mode_convention", "status"],
+      "properties": {
+        "formula": {"type": "string", "minLength": 300},
+        "live_topologies": {"type": "array", "minItems": 6, "maxItems": 6},
+        "zero_mode_convention": {"type": "string"},
+        "status": {"const": "EXACT_REDUCTION_PROVED_COEFFICIENT_OPEN"}
+      }
+    },
+    "volume_selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["exact_target", "reason", "arithmetic", "status"],
+      "properties": {
+        "exact_target": {"const": "L=6 periodic lattice"},
+        "reason": {"type": "string", "minLength": 150},
+        "arithmetic": {"type": "string"},
+        "status": {"const": "L6_SELECTED_L4_SUPERSEDED"}
+      }
+    },
+    "method_disposition": {"type": "object"},
+    "missing_object_ledger": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 300},
+    "does_not_establish": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic", "assumptions"],
+      "properties": {
+        "repository_base_commit": {"const": "389cccc029a73c4a5ae82851583b32b864054a75"},
+        "inputs": {"type": "array", "minItems": 1},
+        "arithmetic": {"type": "string"},
+        "assumptions": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+    "tier_receipt": {"type": "object"},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 15},
+        "total": {"type": "integer", "minimum": 15},
+        "failures": {"const": []},
+        "details": {"type": "object"}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-pair-block-response-g4-topology-reduction.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-pair-block-response-g4-topology-reduction-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_pair_block_response_g4_topology_reduction.py"}
+  }
+}
