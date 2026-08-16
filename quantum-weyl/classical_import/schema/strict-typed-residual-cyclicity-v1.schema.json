@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9innovation.github.io/weyl-gravity/strict-typed-residual-cyclicity-v1.schema.json",
+  "title": "Strict typed residual cyclicity v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema", "schema", "schema_path", "result_id", "result_kind",
+    "result_state", "lifecycle", "created", "repository_base_commit",
+    "dependency_tags", "question", "answer", "scope", "typed_carrier",
+    "exact_cyclic_replay", "m4r_disposition", "foundational_strength",
+    "provenance", "claim_flags", "does_not_establish", "next_gate",
+    "human_report", "independent_checker"
+  ],
+  "properties": {
+    "$schema": {"const": "../schema/strict-typed-residual-cyclicity-v1.schema.json"},
+    "schema": {"const": "strict-typed-residual-cyclicity-v1"},
+    "schema_path": {"const": "quantum-weyl/classical_import/schema/strict-typed-residual-cyclicity-v1.schema.json"},
+    "result_id": {"const": "STRICT_TYPED_RESIDUAL_CYCLICITY_V1"},
+    "result_kind": {"const": "CLASSICAL_IMPORT_FINITE_REPRESENTED_TYPED_RESIDUAL_CYCLIC_CONTRACTION"},
+    "result_state": {"const": "M4R_COMPLETE_ON_ACTION_IDENTIFIED_ENERGIES_2_THROUGH_6_M1_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"const": "2026-08-16"},
+    "repository_base_commit": {"$ref": "#/$defs/commit"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background", "energies", "source_category", "residual_category", "pairing_category"],
+      "properties": {
+        "theory": {"type": "string"},
+        "background": {"type": "string"},
+        "energies": {"const": [2, 3, 4, 5, 6]},
+        "source_category": {"type": "string"},
+        "residual_category": {"type": "string"},
+        "pairing_category": {"type": "string"}
+      }
+    },
+    "typed_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primal_residual_coordinates", "compact_source_dual_coordinates",
+        "total_residual_coordinates", "action_pairing_rank",
+        "action_pairing_identification_defects",
+        "positive_krein_inertia_before_BV_suspension",
+        "formal_source_coordinates", "formal_source_is_authoritative_full_BV_source",
+        "full_continuous_all_energy_dual_identified"
+      ],
+      "properties": {
+        "primal_residual_coordinates": {"const": 470},
+        "compact_source_dual_coordinates": {"const": 470},
+        "total_residual_coordinates": {"const": 940},
+        "action_pairing_rank": {"const": 940},
+        "action_pairing_identification_defects": {"const": 0},
+        "positive_krein_inertia_before_BV_suspension": {"const": {"positive": 230, "negative": 240, "zero": 0}},
+        "formal_source_coordinates": {"const": 8980},
+        "formal_source_is_authoritative_full_BV_source": {"const": false},
+        "full_continuous_all_energy_dual_identified": {"const": false}
+      }
+    },
+    "exact_cyclic_replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "coordinate_convention", "formal_source", "action_identified_residual",
+        "formal_source_dimension", "residual_dimension", "residual_pairing_rank",
+        "residual_differential", "block_replays", "all_identity_defects", "identities"
+      ],
+      "properties": {
+        "coordinate_convention": {"type": "string"},
+        "formal_source": {"type": "string"},
+        "action_identified_residual": {"type": "string"},
+        "formal_source_dimension": {"const": 8980},
+        "residual_dimension": {"const": 940},
+        "residual_pairing_rank": {"const": 940},
+        "residual_differential": {"const": "q_res=0"},
+        "block_replays": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/block"}},
+        "all_identity_defects": {"const": 0},
+        "identities": {"type": "array", "minItems": 9, "items": {"type": "string"}}
+      }
+    },
+    "m4r_disposition": {
+      "const": {
+        "M4L_LOCAL_GRAPH_CYCLIC_PAIRING": "COMPLETE",
+        "M3RC_A_FORMAL_COTANGENT_DUAL_COMPARISON": "COMPLETE",
+        "M3RC_B_ACTION_SUPPORT_DUAL_IDENTIFICATION": "COMPLETE_ON_REPRESENTED_ENERGIES_2_THROUGH_6",
+        "M4R_TYPED_RESIDUAL_CYCLICITY": "COMPLETE_ON_REPRESENTED_ENERGIES_2_THROUGH_6",
+        "M1_COMMON_STRICT_SNAPSHOT": "OPEN_AND_REQUIRED_FOR_GATE_A"
+      }
+    },
+    "foundational_strength": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["finite_replay", "analytic_input", "choice_principle_added_by_M4R", "Hilbert_or_Krein_completion_added_by_M4R", "infinite_extension_boundary"],
+      "properties": {
+        "finite_replay": {"type": "string"},
+        "analytic_input": {"type": "string"},
+        "choice_principle_added_by_M4R": {"const": false},
+        "Hilbert_or_Krein_completion_added_by_M4R": {"const": false},
+        "infinite_extension_boundary": {"type": "string"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inputs"],
+      "properties": {"inputs": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/input"}}}
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": {"type": "boolean"},
+      "required": [
+        "M4L_LOCAL_GRAPH_CYCLIC_PAIRING_COMPLETE", "M3RC_REPRESENTED_DUAL_COMPLETE",
+        "M4R_REPRESENTED_Q_RES_CYCLIC", "M4R_REPRESENTED_PROJECTION_EQUALS_INCLUSION_SHARP",
+        "M4R_REPRESENTED_HOMOTOPY_SKEW_ADJOINT",
+        "M4R_REPRESENTED_NORMALIZED_CYCLIC_CONTRACTION_COMPLETE",
+        "M4R_TYPED_RESIDUAL_CYCLICITY_COMPLETE",
+        "FORMAL_8980_SOURCE_IS_AUTHORITATIVE_ORIGINAL_BV_COMPLEX",
+        "M1_COMMON_STRICT_SNAPSHOT_COMPLETE", "CLASSICAL_IMPORT_GATE_PASSED",
+        "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED",
+        "RENORMALIZED_LORENTZIAN_PRODUCTS_CONSTRUCTED", "QME_RESTORED",
+        "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED"
+      ]
+    },
+    "does_not_establish": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_TYPED_RESIDUAL_CYCLICITY_V1.md"},
+    "independent_checker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "checks", "expected_digest"],
+      "properties": {
+        "path": {"const": "quantum-weyl/classical_import/check_strict_typed_residual_cyclicity.py"},
+        "checks": {"type": "array", "minItems": 11, "items": {"type": "string"}},
+        "expected_digest": {"$ref": "#/$defs/hash"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "input": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_or_artifact_id", "sha256", "role"],
+      "properties": {
+        "path": {"type": "string"}, "result_or_artifact_id": {"type": "string"},
+        "sha256": {"$ref": "#/$defs/hash"}, "role": {"type": "string"}
+      }
+    },
+    "block": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "energy", "formal_source_dimension", "action_identified_residual_dimension",
+        "residual_primal_dimension", "residual_dual_dimension", "source_pairing_rank",
+        "residual_pairing_rank", "map_hashes", "identity_defects", "total_identity_defects"
+      ],
+      "properties": {
+        "energy": {"type": "integer", "minimum": 2, "maximum": 6},
+        "formal_source_dimension": {"type": "integer", "minimum": 1},
+        "action_identified_residual_dimension": {"type": "integer", "minimum": 1},
+        "residual_primal_dimension": {"type": "integer", "minimum": 1},
+        "residual_dual_dimension": {"type": "integer", "minimum": 1},
+        "source_pairing_rank": {"type": "integer", "minimum": 1},
+        "residual_pairing_rank": {"type": "integer", "minimum": 1},
+        "map_hashes": {
+          "type": "object", "additionalProperties": false,
+          "required": ["q_cotangent", "iota_cotangent", "projection_cotangent", "homotopy_cotangent", "source_pairing", "residual_pairing"],
+          "properties": {
+            "q_cotangent": {"$ref": "#/$defs/hash"}, "iota_cotangent": {"$ref": "#/$defs/hash"},
+            "projection_cotangent": {"$ref": "#/$defs/hash"}, "homotopy_cotangent": {"$ref": "#/$defs/hash"},
+            "source_pairing": {"$ref": "#/$defs/hash"}, "residual_pairing": {"$ref": "#/$defs/hash"}
+          }
+        },
+        "identity_defects": {"type": "object", "minProperties": 13, "additionalProperties": {"const": 0}},
+        "total_identity_defects": {"const": 0}
+      }
+    }
+  }
+}

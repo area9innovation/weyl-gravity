@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9innovation.github.io/weyl-gravity/strict-m3rc-action-support-dual-identification-v1.schema.json",
+  "title": "Strict M3RC action/support dual identification v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema", "schema", "schema_path", "result_id", "result_kind",
+    "result_state", "lifecycle", "created", "repository_base_commit",
+    "dependency_tags", "question", "answer", "scope",
+    "support_dual_identification", "action_pairing_identification",
+    "exact_replay", "m3rc_disposition", "foundational_strength",
+    "provenance", "claim_flags", "does_not_establish", "next_gate",
+    "human_report", "independent_checker"
+  ],
+  "properties": {
+    "$schema": {"const": "../schema/strict-m3rc-action-support-dual-identification-v1.schema.json"},
+    "schema": {"const": "strict-m3rc-action-support-dual-identification-v1"},
+    "schema_path": {"const": "quantum-weyl/classical_import/schema/strict-m3rc-action-support-dual-identification-v1.schema.json"},
+    "result_id": {"const": "STRICT_M3RC_ACTION_SUPPORT_DUAL_IDENTIFICATION_V1"},
+    "result_kind": {"const": "CLASSICAL_IMPORT_REPRESENTED_CAUSAL_ACTION_DUAL_IDENTIFICATION"},
+    "result_state": {"const": "M3RC_B_COMPLETE_ON_REPRESENTED_ENERGIES_2_THROUGH_6_M4R_READY"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"const": "2026-08-16"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background", "energies", "primal_category", "dual_category", "pairing_category"],
+      "properties": {
+        "theory": {"type": "string"},
+        "background": {"type": "string"},
+        "energies": {"const": [2, 3, 4, 5, 6]},
+        "primal_category": {"type": "string"},
+        "dual_category": {"type": "string"},
+        "pairing_category": {"type": "string"}
+      }
+    },
+    "support_dual_identification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status", "solution_space", "source_space", "cylinder_identity",
+        "causal_map", "cutoff_quasi_inverse", "support_exact_sequence",
+        "support_exact_sequence_defects", "compact_source_representatives",
+        "compact_source_support_defects", "causal_recovery_defects",
+        "topology_claim", "full_continuous_dual_of_all_smooth_sections_claimed"
+      ],
+      "properties": {
+        "status": {"const": "COMPLETE_ON_REPRESENTED_ENERGIES_2_THROUGH_6"},
+        "solution_space": {"type": "string"},
+        "source_space": {"type": "string"},
+        "cylinder_identity": {"type": "string"},
+        "causal_map": {"type": "string"},
+        "cutoff_quasi_inverse": {"type": "string"},
+        "support_exact_sequence": {"type": "string"},
+        "support_exact_sequence_defects": {"const": 0},
+        "compact_source_representatives": {"const": 470},
+        "compact_source_support_defects": {"const": 0},
+        "causal_recovery_defects": {"const": 0},
+        "topology_claim": {"type": "string"},
+        "full_continuous_dual_of_all_smooth_sections_claimed": {"const": false}
+      }
+    },
+    "action_pairing_identification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status", "current_pipeline", "green_pairing_equals_action_current_pairing",
+        "cauchy_surface", "spatial_boundary", "all_energy_family_gram",
+        "positive_frequency_dimension", "negative_frequency_dual_dimension",
+        "positive_family_counts", "positive_krein_inertia", "phase_space_dimension",
+        "phase_pairing_rank", "formal_cotangent_pairing_rank",
+        "pairing_identification_defects", "basis_crosswalk_defects",
+        "normalization_rule", "dual_dictionary_sha256", "dual_dictionary"
+      ],
+      "properties": {
+        "status": {"const": "COMPLETE_ON_REPRESENTED_ENERGIES_2_THROUGH_6"},
+        "current_pipeline": {"type": "string"},
+        "green_pairing_equals_action_current_pairing": {"const": true},
+        "cauchy_surface": {"const": "S3"},
+        "spatial_boundary": {"const": "empty"},
+        "all_energy_family_gram": {"const": "+I_E direct-sum (-I_A) direct-sum (-I_L)"},
+        "positive_frequency_dimension": {"const": 470},
+        "negative_frequency_dual_dimension": {"const": 470},
+        "positive_family_counts": {"const": {"A": 164, "E": 230, "L": 76}},
+        "positive_krein_inertia": {"const": {"positive": 230, "negative": 240, "zero": 0}},
+        "phase_space_dimension": {"const": 940},
+        "phase_pairing_rank": {"const": 940},
+        "formal_cotangent_pairing_rank": {"const": 940},
+        "pairing_identification_defects": {"const": 0},
+        "basis_crosswalk_defects": {"const": 0},
+        "normalization_rule": {"type": "string"},
+        "dual_dictionary_sha256": {"$ref": "#/$defs/hash"},
+        "dual_dictionary": {
+          "type": "array",
+          "minItems": 470,
+          "maxItems": 470,
+          "items": {"$ref": "#/$defs/dual"}
+        }
+      }
+    },
+    "exact_replay": {
+      "const": {
+        "represented_modes": 470,
+        "formal_duals": 470,
+        "compact_source_classes": 470,
+        "phase_space_coordinates": 940,
+        "phase_pairing_rank": 940,
+        "support_exact_sequence_defects": 0,
+        "compact_support_defects": 0,
+        "causal_recovery_defects": 0,
+        "basis_crosswalk_defects": 0,
+        "pairing_identification_defects": 0
+      }
+    },
+    "m3rc_disposition": {
+      "const": {
+        "M3RC_A_FORMAL_COTANGENT_DUAL_COMPARISON": "COMPLETE",
+        "M3RC_B_ACTION_SUPPORT_DUAL_IDENTIFICATION": "COMPLETE_ON_REPRESENTED_ENERGIES_2_THROUGH_6",
+        "M4R_TYPED_RESIDUAL_CYCLICITY": "READY",
+        "M1_COMMON_STRICT_SNAPSHOT": "OPEN_AFTER_M4R"
+      }
+    },
+    "foundational_strength": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixed_cutoff_core", "support_input", "topology_used", "choice_principle_used", "Hilbert_or_Krein_completion_used", "distributional_extension_used", "infinite_extension_boundary"],
+      "properties": {
+        "fixed_cutoff_core": {"type": "string"},
+        "support_input": {"type": "string"},
+        "topology_used": {"type": "string"},
+        "choice_principle_used": {"const": false},
+        "Hilbert_or_Krein_completion_used": {"const": false},
+        "distributional_extension_used": {"const": false},
+        "infinite_extension_boundary": {"type": "string"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inputs"],
+      "properties": {
+        "inputs": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"$ref": "#/$defs/input"}}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": {"type": "boolean"},
+      "required": [
+        "M3RC_A_FORMAL_COTANGENT_DUAL_COMPARISON_COMPLETE",
+        "M3RC_B_REPRESENTED_ACTION_SUPPORT_DUAL_IDENTIFICATION_COMPLETE",
+        "ALL_470_FORMAL_DUALS_HAVE_COMPACT_SOURCE_REPRESENTATIVES",
+        "ACTION_PAIRING_EQUALS_CANONICAL_940_COTANGENT_PAIRING",
+        "M4R_TYPED_RESIDUAL_CYCLICITY_READY",
+        "M4R_TYPED_RESIDUAL_CYCLICITY_COMPLETE",
+        "FULL_ALL_ENERGY_CONTINUOUS_DUAL_IDENTIFIED",
+        "FORMAL_8980_SOURCE_IS_AUTHORITATIVE_ORIGINAL_BV_COMPLEX",
+        "CLASSICAL_IMPORT_GATE_PASSED", "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED",
+        "QME_RESTORED", "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED"
+      ]
+    },
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_M3RC_ACTION_SUPPORT_DUAL_IDENTIFICATION_V1.md"},
+    "independent_checker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "checks", "expected_digest"],
+      "properties": {
+        "path": {"const": "quantum-weyl/classical_import/check_strict_m3rc_action_support_dual_identification.py"},
+        "checks": {"type": "array", "minItems": 9, "items": {"type": "string"}},
+        "expected_digest": {"$ref": "#/$defs/hash"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_or_artifact_id", "sha256", "role"],
+      "properties": {
+        "path": {"type": "string"},
+        "result_or_artifact_id": {"type": "string"},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "role": {"type": "string"}
+      }
+    },
+    "dual": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pair_index", "energy", "chirality", "family", "two_m_left", "two_m_right",
+        "primal_index", "primal_degree", "primal_label", "formal_dual_index",
+        "formal_dual_degree", "formal_dual_label", "negative_frequency_solution_label",
+        "action_krein_sign", "phase_normalization", "action_dual_solution_label",
+        "compact_source_representative", "compact_source_support", "causal_recovery",
+        "action_pairing_on_primal", "formal_forward_pairing", "formal_reverse_pairing"
+      ],
+      "properties": {
+        "pair_index": {"type": "integer", "minimum": 0, "maximum": 469},
+        "energy": {"type": "integer", "minimum": 2, "maximum": 6},
+        "chirality": {"enum": ["W_PLUS", "W_MINUS"]},
+        "family": {"enum": ["E", "A", "L"]},
+        "two_m_left": {"type": "integer"},
+        "two_m_right": {"type": "integer"},
+        "primal_index": {"type": "integer", "minimum": 0, "maximum": 469},
+        "primal_degree": {"const": 0},
+        "primal_label": {"type": "string"},
+        "formal_dual_index": {"type": "integer", "minimum": 470, "maximum": 939},
+        "formal_dual_degree": {"const": 1},
+        "formal_dual_label": {"type": "string"},
+        "negative_frequency_solution_label": {"type": "string"},
+        "action_krein_sign": {"enum": [-1, 1]},
+        "phase_normalization": {"enum": ["-i", "+i"]},
+        "action_dual_solution_label": {"type": "string"},
+        "compact_source_representative": {"type": "string"},
+        "compact_source_support": {"const": true},
+        "causal_recovery": {"type": "string"},
+        "action_pairing_on_primal": {"const": "1"},
+        "formal_forward_pairing": {"const": "1"},
+        "formal_reverse_pairing": {"const": "-1"}
+      }
+    }
+  }
+}

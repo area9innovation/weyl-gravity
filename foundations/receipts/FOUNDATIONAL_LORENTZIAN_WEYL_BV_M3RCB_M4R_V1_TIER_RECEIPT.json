@@ -1,0 +1,154 @@
+{
+  "result_id": "STRICT_TYPED_RESIDUAL_CYCLICITY_V1",
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_M3RCB_M4R_V1_TIER_RECEIPT",
+  "generated_at": "2026-08-16",
+  "source_commit_before_change": "24a4d9458375e66706d234a92017035f050b044c",
+  "integration_head_before_commit": "57f752f6377877019b8a9aaaf25c8ce6cb75976f",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Complete the represented residual-dual and cyclicity chain: identify all 470 formal residual duals with explicit compact-source action/Green classes, replay the exact 8,980-to-940 shifted-cotangent cyclic contraction in five energy blocks, reconcile Gate A through V25, advance the completion atlas through V43, and propagate the result and its finite-scope boundary through the static explorer and Paper 21.",
+  "artifact_hashes": {
+    "quantum-weyl/classical_import/certificates/STRICT_M3RC_ACTION_SUPPORT_DUAL_IDENTIFICATION_V1.json": "849cf880d2bcece12bb7436cc79a7b5b985ac7e48ce09b998723a1692556da76",
+    "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V24_RECONCILIATION.json": "c6ec5cb87fb5a8578124af7bd6b64071634ce36c3acdbb4722ef96d1730e172e",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V42.json": "e03a4cd8d917b82647e6a69045a5b72ababeeba6e45b106495ca22dfeee7ddfe",
+    "quantum-weyl/classical_import/certificates/STRICT_TYPED_RESIDUAL_CYCLICITY_V1.json": "2d5a2ba94776559e396ac79e0d10a54608d3736763ac4360ff71792f56152324",
+    "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V25_RECONCILIATION.json": "d3d9076156a763a8ca48fea4609878bb61cbb268a64c86a34ee3f00b524f92b3",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V43.json": "4bd8d4b140b555d1603bd0a76cecca4f7cdeddf89ea440126f56f1f61d6c5f90",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "035767603a5e52e269ed1f5186278f1a124be6d89a6d7d57efde6d14cc63fcc1",
+    "foundations/site/data.json": "56ebb785543b74a7b4dd65ae7d9bc19a93c68a82dc6148f8466a4145cc76da3c",
+    "paper/21-reverse-foundations-of-physics.tex": "c48d0ac9d09d4762efce25c4f5648d92dd1af09c1eb7b253d04aa04bcbfafd9e",
+    "paper/21-reverse-foundations-of-physics-appendices.tex": "b3ece064fe009065377d920395d593b7669e6c32b84fea67f59c5d756066eb5a",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "b2557899f703b3fb4c5098c9a53e51cc65706ea08ec7404516aa07c786323467",
+    "paper/21-reverse-foundations-of-physics.pdf": "7e7857e2fec9dc864decdfbd8945ace8e2eb5c6902bd898562b4dd79bdf9dc98"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3.12 -m py_compile <scoped M3RC-B, M4R, Gate V24/V25, Atlas V42/V43, static-site and Paper 21 Python files>",
+          "status": "PASS"
+        },
+        {
+          "command": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3.12 -m json.tool <scoped certificates, schemas, results, site data, claim map and receipt>",
+          "status": "PASS"
+        },
+        {
+          "command": "node --check <changed JavaScript files>",
+          "status": "NOT_RUN_TOOL_UNAVAILABLE",
+          "output": "node: command not found; this is not counted as a pass"
+        },
+        {
+          "command": "/home/alstrup/.deno/bin/deno check <changed JavaScript files>",
+          "status": "PASS"
+        },
+        {
+          "command": "pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (three passes from paper/), followed by fatal/undefined-reference/rerun scan",
+          "elapsed_seconds": 2.59,
+          "status": "PASS",
+          "output": "76 pages"
+        },
+        {
+          "command": "git diff --check on the scoped worktree",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3.12 M3RC-B builder --check; independent checker; seven unit tests",
+          "elapsed_seconds": 0.46,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Gate V24 builder --check; independent checker; six unit tests",
+          "elapsed_seconds": 0.21,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Atlas V42 builder --check; independent checker; five unit tests",
+          "elapsed_seconds": 0.37,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 M4R builder --check; independent checker; six unit tests",
+          "elapsed_seconds": 0.83,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Gate V25 builder --check; independent checker; six unit tests",
+          "elapsed_seconds": 0.56,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Atlas V43 builder --check; independent checker; five unit tests",
+          "elapsed_seconds": 1.12,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 static-site builder --check; independent checker; verifier; ten unit tests",
+          "elapsed_seconds": 15.2,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Paper 21 appendix --check; claim-map --check; independent claim-map verifier; manuscript-pin audit",
+          "elapsed_seconds": 0.67,
+          "status": "PASS"
+        }
+      ],
+      "elapsed_seconds": 19.42
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "M3RC-B changes the semantic type of the residual dual and M4R changes the final residual-cyclicity prerequisite. Their entire transitive consumer chain through Gate V24/V25, Atlas V42/V43, the content-addressed static explorer, generated appendices, claim map, manuscript pins and rendered PDF was rebuilt or independently checked."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze/tag, shared core algebra change, QME lifecycle promotion, release preparation or explicit full-suite request occurred. Gate A remains FAIL_CLOSED, M1 remains open, and no LORENTZIAN_CERTIFIED claim is promoted."
+    }
+  },
+  "scientific_result": {
+    "represented_energies": [2, 3, 4, 5, 6],
+    "represented_primal_modes": 470,
+    "compact_source_dual_classes": 470,
+    "action_identified_residual_dimension": 940,
+    "action_pairing_rank": 940,
+    "pre_suspension_krein_inertia": {
+      "positive": 230,
+      "negative": 240,
+      "zero": 0
+    },
+    "formal_comparison_source_dimension": 8980,
+    "energy_blocks_replayed": 5,
+    "declared_identity_defects": 0,
+    "gate_a_exports_receiver_verified_scoped": 17,
+    "gate_a_exports_total": 20,
+    "gate_a_checks_receiver_verified_scoped": 9,
+    "gate_a_checks_total": 10,
+    "accepted_common_snapshot_hashes": 1,
+    "required_common_snapshot_hashes": 7,
+    "minimal_missing_packages": [
+      "M1_COMMON_STRICT_SNAPSHOT"
+    ],
+    "category_boundary": "M3RC-B and M4R are exact on the finite action-identified represented carrier. They do not identify the full continuous all-energy dual, promote the formal 8,980-coordinate comparison source to the authoritative full BV source, or pass Gate A."
+  },
+  "claim_flags": {
+    "m3rc_b_represented_action_support_dual_identification_complete": true,
+    "all_470_formal_duals_have_compact_source_representatives": true,
+    "action_pairing_equals_canonical_940_cotangent_pairing": true,
+    "m4r_represented_normalized_cyclic_contraction_complete": true,
+    "full_all_energy_continuous_dual_identified": false,
+    "formal_8980_source_is_authoritative_full_bv_source": false,
+    "m1_common_strict_snapshot_complete": false,
+    "classical_import_gate_a_passed": false,
+    "full_complex_hadamard_state_constructed": false,
+    "renormalized_lorentzian_products_constructed": false,
+    "qme_restored": false,
+    "residual_quantum_transfer_authorized": false
+  }
+}

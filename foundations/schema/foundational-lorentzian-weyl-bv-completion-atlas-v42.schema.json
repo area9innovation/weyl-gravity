@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/foundational-lorentzian-weyl-bv-completion-atlas-v42.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version", "result_id", "lifecycle", "dependency_tags", "stages",
+    "branches", "frontier_summary", "classical_import_reconciliation",
+    "strict_gate_v24_reconciliation", "strict_dfinite_cotangent_dual_comparison",
+    "strict_m3rc_action_support_dual_identification", "route_selection",
+    "research_queue", "claim_flags", "provenance", "independent_checker"
+  ],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v42"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V42"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"contains": {"const": "LORENTZIAN-CAUSAL"}},
+    "stages": {"type": "array", "minItems": 11, "maxItems": 11},
+    "branches": {"type": "array", "minItems": 7, "maxItems": 7},
+    "route_selection": {"type": "array", "minItems": 8, "maxItems": 8},
+    "research_queue": {"type": "array", "minItems": 8, "maxItems": 8},
+    "strict_gate_v24_reconciliation": {
+      "type": "object",
+      "required": ["gate_a_status", "accepted_top_level_hashes", "remaining_top_level_hashes", "minimal_missing_bundle", "M3RC_A_formal_cotangent_dual_comparison_complete", "M3RC_B_action_support_dual_identification_complete", "M4R_typed_residual_cyclicity_ready", "M4R_typed_residual_cyclicity_complete"],
+      "properties": {
+        "gate_a_status": {"const": "FAIL_CLOSED"},
+        "accepted_top_level_hashes": {"const": 1},
+        "remaining_top_level_hashes": {"const": 6},
+        "minimal_missing_bundle": {"const": ["M4R_TYPED_RESIDUAL_CYCLICITY", "M1_COMMON_STRICT_SNAPSHOT"]},
+        "M3RC_A_formal_cotangent_dual_comparison_complete": {"const": true},
+        "M3RC_B_action_support_dual_identification_complete": {"const": true},
+        "M4R_typed_residual_cyclicity_ready": {"const": true},
+        "M4R_typed_residual_cyclicity_complete": {"const": false}
+      }
+    },
+    "strict_m3rc_action_support_dual_identification": {
+      "type": "object",
+      "required": ["result_id", "represented_primal_modes", "compact_source_dual_classes", "phase_space_dimension", "action_pairing_rank", "positive_krein_inertia", "support_exact_sequence_defects", "compact_source_support_defects", "causal_recovery_defects", "basis_crosswalk_defects", "pairing_identification_defects", "full_continuous_dual_identified", "M3RC_B_status", "M4R_status"],
+      "properties": {
+        "result_id": {"const": "STRICT_M3RC_ACTION_SUPPORT_DUAL_IDENTIFICATION_V1"},
+        "represented_primal_modes": {"const": 470},
+        "compact_source_dual_classes": {"const": 470},
+        "phase_space_dimension": {"const": 940},
+        "action_pairing_rank": {"const": 940},
+        "positive_krein_inertia": {"const": {"positive": 230, "negative": 240, "zero": 0}},
+        "support_exact_sequence_defects": {"const": 0},
+        "compact_source_support_defects": {"const": 0},
+        "causal_recovery_defects": {"const": 0},
+        "basis_crosswalk_defects": {"const": 0},
+        "pairing_identification_defects": {"const": 0},
+        "full_continuous_dual_identified": {"const": false},
+        "M3RC_B_status": {"const": "COMPLETE_ON_REPRESENTED_ENERGIES_2_THROUGH_6"},
+        "M4R_status": {"const": "READY"}
+      }
+    },
+    "frontier_summary": {
+      "type": "object",
+      "required": ["highest_value_next_route", "route_count", "completed_since_v41", "new_positive_result", "surprise", "hard_boundary"],
+      "properties": {
+        "highest_value_next_route": {"const": "STRICT_TYPED_RESIDUAL_CYCLICITY"},
+        "route_count": {"const": 8}
+      }
+    },
+    "independent_checker": {"type": "object", "required": ["path", "checks", "expected_digest"]}
+  }
+}
