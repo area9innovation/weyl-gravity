@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-m1a-immutable-typed-ledger-v1.schema.json",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "result_kind", "result_state", "lifecycle",
+    "dependency_tags", "namespace_contract", "semantic_templates",
+    "local_386_rows", "zero_mode_rows", "centered_cochain_row_index",
+    "component_payloads", "exclusion_ledger", "typed_field_dictionary",
+    "diagram_freeze", "counts", "foundational_strength", "gate_a_effect",
+    "claim_flags", "does_not_establish", "independent_checker"
+  ],
+  "properties": {
+    "schema": {"const": "strict-m1a-immutable-typed-ledger-v1"},
+    "result_id": {"const": "STRICT_M1A_IMMUTABLE_TYPED_LEDGER_V1"},
+    "result_kind": {"const": "M1A4_CONTENT_ADDRESSED_TYPED_CARRIER_DIAGRAM_FREEZE"},
+    "result_state": {"const": "M1A_TYPED_LEDGER_COMPLETE_M1B_M1C_AND_GATE_A_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "local_386_rows": {"type": "array", "minItems": 386, "maxItems": 386},
+    "zero_mode_rows": {"type": "array", "minItems": 30, "maxItems": 30},
+    "centered_cochain_row_index": {"type": "array", "minItems": 12343, "maxItems": 12343},
+    "component_payloads": {"type": "array", "minItems": 6, "maxItems": 6},
+    "exclusion_ledger": {"type": "array", "minItems": 2, "maxItems": 2},
+    "typed_field_dictionary": {
+      "type": "object",
+      "required": ["namespace_contract_sha256", "ordered_authoritative_carriers", "component_row_hashes", "semantic_templates_sha256", "exclusion_ledger_sha256", "sha256"],
+      "properties": {"sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    },
+    "diagram_freeze": {
+      "type": "object",
+      "required": ["shape", "authoritative_row_count", "comparison_excluded_row_count", "component_payloads", "typed_field_dictionary_sha256", "all_component_hashes_nonempty", "all_authoritative_rows_have_a_materialization_rule", "distinct_categories_not_identified", "sha256"],
+      "properties": {
+        "shape": {"const": "CONTENT_ADDRESSED_TYPED_DIAGRAM_NOT_ONE_VECTOR_SPACE"},
+        "authoritative_row_count": {"const": 17779},
+        "comparison_excluded_row_count": {"const": 9390},
+        "all_component_hashes_nonempty": {"const": true},
+        "all_authoritative_rows_have_a_materialization_rule": {"const": true},
+        "distinct_categories_not_identified": {"const": true},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "counts": {
+      "type": "object",
+      "required": ["local_rows", "represented_endpoint_rows", "action_residual_primal_rows", "action_residual_dual_rows", "zero_mode_rows", "centered_cochain_rows", "authoritative_rows_total", "excluded_test_rows", "excluded_formal_comparison_rows", "untyped_authoritative_rows", "category_identification_defects"],
+      "properties": {
+        "local_rows": {"const": 386},
+        "represented_endpoint_rows": {"const": 4080},
+        "action_residual_primal_rows": {"const": 470},
+        "action_residual_dual_rows": {"const": 470},
+        "zero_mode_rows": {"const": 30},
+        "centered_cochain_rows": {"const": 12343},
+        "authoritative_rows_total": {"const": 17779},
+        "excluded_test_rows": {"const": 410},
+        "excluded_formal_comparison_rows": {"const": 8980},
+        "untyped_authoritative_rows": {"const": 0},
+        "category_identification_defects": {"const": 0}
+      }
+    },
+    "gate_a_effect": {
+      "type": "object",
+      "required": ["M1A_status", "field_dictionary_candidate_sha256", "typed_diagram_candidate_sha256", "accepted_common_snapshot_hash", "reason_not_accepted"],
+      "properties": {"M1A_status": {"const": "COMPLETE"}, "accepted_common_snapshot_hash": {"const": false}}
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["M1A4_IMMUTABLE_LEDGER_FREEZE_COMPLETE", "M1A_FULL_TYPED_CARRIER_LEDGER_COMPLETE", "M1B_REPRESENTED_COMPOSITE_CONTRACTION_COMPLETE", "M1C_COMMON_MANIFEST_REPLAY_COMPLETE", "CLASSICAL_IMPORT_GATE_PASSED", "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED"],
+      "properties": {
+        "M1A4_IMMUTABLE_LEDGER_FREEZE_COMPLETE": {"const": true},
+        "M1A_FULL_TYPED_CARRIER_LEDGER_COMPLETE": {"const": true},
+        "M1B_REPRESENTED_COMPOSITE_CONTRACTION_COMPLETE": {"const": false},
+        "M1C_COMMON_MANIFEST_REPLAY_COMPLETE": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "QME_RESTORED": {"const": false}
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 7},
+    "independent_checker": {
+      "type": "object",
+      "required": ["path", "method", "expected_digest"],
+      "properties": {"expected_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    }
+  }
+}

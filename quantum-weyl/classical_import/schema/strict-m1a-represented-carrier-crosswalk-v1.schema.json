@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-m1a-represented-carrier-crosswalk-v1.schema.json",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "result_kind", "result_state", "lifecycle",
+    "dependency_tags", "crosswalk_contract", "sector_to_local_species",
+    "test_nonminimal_disposition", "exact_partition_replay", "counts",
+    "represented_endpoint_rows", "test_nonminimal_rows",
+    "action_residual_primal_rows", "action_residual_dual_rows",
+    "row_payload_hashes", "foundational_strength", "claim_flags",
+    "does_not_establish", "independent_checker"
+  ],
+  "properties": {
+    "schema": {"const": "strict-m1a-represented-carrier-crosswalk-v1"},
+    "result_id": {"const": "STRICT_M1A_REPRESENTED_CARRIER_CROSSWALK_V1"},
+    "result_kind": {"const": "M1A3_REPRESENTED_ENDPOINT_TEST_EXCLUSION_AND_ACTION_RESIDUAL_CROSSWALK"},
+    "result_state": {"const": "REPRESENTED_4080_TYPED_TEST_410_EXCLUDED_ACTION_RESIDUAL_940_TYPED"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "sector_to_local_species": {"type": "array", "minItems": 8, "maxItems": 8},
+    "test_nonminimal_disposition": {
+      "type": "object",
+      "required": ["status", "coordinate_count", "doublet_count", "source_dictionary_found", "authoritative_local_source_member", "reason", "effect"],
+      "properties": {
+        "status": {"const": "EXCLUDED_COMPARISON_FIXTURE"},
+        "coordinate_count": {"const": 410},
+        "doublet_count": {"const": 205},
+        "source_dictionary_found": {"const": false},
+        "authoritative_local_source_member": {"const": false}
+      }
+    },
+    "exact_partition_replay": {
+      "type": "object",
+      "required": ["dfinite_total", "authoritative_represented", "excluded_test_fixture", "partition_exhaustive", "partition_disjoint", "q0_cross_partition_defects", "q0_chain_degree_defects"],
+      "properties": {
+        "dfinite_total": {"const": 4490},
+        "authoritative_represented": {"const": 4080},
+        "excluded_test_fixture": {"const": 410},
+        "partition_exhaustive": {"const": true},
+        "partition_disjoint": {"const": true},
+        "q0_cross_partition_defects": {"const": 0},
+        "q0_chain_degree_defects": {"const": 0}
+      }
+    },
+    "counts": {
+      "type": "object",
+      "required": ["represented_endpoint_coordinates", "test_nonminimal_coordinates_excluded", "test_nonminimal_doublets", "action_residual_primal_coordinates", "action_residual_dual_coordinates", "action_residual_total_coordinates", "rows_with_unresolved_disposition"],
+      "properties": {
+        "represented_endpoint_coordinates": {"const": 4080},
+        "test_nonminimal_coordinates_excluded": {"const": 410},
+        "test_nonminimal_doublets": {"const": 205},
+        "action_residual_primal_coordinates": {"const": 470},
+        "action_residual_dual_coordinates": {"const": 470},
+        "action_residual_total_coordinates": {"const": 940},
+        "rows_with_unresolved_disposition": {"const": 0}
+      }
+    },
+    "represented_endpoint_rows": {
+      "type": "array", "minItems": 4080, "maxItems": 4080,
+      "items": {"type": "object", "required": ["represented_index", "source_label", "energy", "dfinite_global_index", "dfinite_sector", "chain_degree", "bv_ghost_number", "antifield_number", "Grassmann_parity", "conformal_compact_weight", "local_species_id", "local_endpoint_row_ids", "semantic_state", "authority"]}
+    },
+    "test_nonminimal_rows": {
+      "type": "array", "minItems": 410, "maxItems": 410,
+      "items": {"type": "object", "required": ["comparison_index", "source_label", "energy", "dfinite_global_index", "dfinite_sector", "chain_degree", "bv_ghost_number", "Grassmann_parity", "doublet_partner_label", "q0_doublet_role", "source_disposition", "semantic_state", "authority"]}
+    },
+    "action_residual_primal_rows": {
+      "type": "array", "minItems": 470, "maxItems": 470,
+      "items": {"type": "object", "required": ["residual_index", "residual_label", "carrier_role", "pair_index", "energy", "chirality", "family", "source_represented_endpoint_index", "source_coordinate_label", "chain_degree", "bv_ghost_number", "conformal_compact_weight", "local_species_id", "semantic_state", "authority"]}
+    },
+    "action_residual_dual_rows": {
+      "type": "array", "minItems": 470, "maxItems": 470,
+      "items": {"type": "object", "required": ["residual_index", "residual_label", "carrier_role", "pair_index", "energy", "chirality", "family", "source_represented_endpoint_index", "chain_degree", "bv_ghost_number", "conformal_compact_weight", "local_species_id", "compact_source_representative", "compact_source_support", "semantic_state", "authority"]}
+    },
+    "row_payload_hashes": {
+      "type": "object",
+      "required": ["represented_endpoint_rows_sha256", "test_nonminimal_rows_sha256", "action_residual_primal_rows_sha256", "action_residual_dual_rows_sha256", "combined_typed_crosswalk_sha256"],
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["M1A3_REPRESENTED_CROSSWALK_COMPLETE", "M1A4_IMMUTABLE_LEDGER_FREEZE_COMPLETE", "M1A_FULL_TYPED_CARRIER_LEDGER_COMPLETE", "CLASSICAL_IMPORT_GATE_PASSED", "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED"],
+      "properties": {
+        "M1A3_REPRESENTED_CROSSWALK_COMPLETE": {"const": true},
+        "M1A4_IMMUTABLE_LEDGER_FREEZE_COMPLETE": {"const": false},
+        "M1A_FULL_TYPED_CARRIER_LEDGER_COMPLETE": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "QME_RESTORED": {"const": false}
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 7},
+    "independent_checker": {
+      "type": "object",
+      "required": ["path", "method", "expected_digest"],
+      "properties": {"expected_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-classical-import-gate-v28-reconciliation-v1.schema.json",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle", "dependency_tags",
+    "m1a_completion_resolution", "m1_common_snapshot_preflight_resolution",
+    "export_reconciliation", "freeze_check_reconciliation",
+    "required_hash_disposition", "gate_disposition", "claim_flags",
+    "does_not_establish", "independent_checker"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-classical-import-gate-v28-reconciliation-v1"},
+    "result_id": {"const": "CLASSICAL_IMPORT_GATE_V28_RECONCILIATION"},
+    "result_state": {"const": "M1A_TYPED_DIAGRAM_COMPLETE_M1B_COMPOSITE_OPEN_GATE_FAIL_CLOSED"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "m1a_completion_resolution": {
+      "type": "object",
+      "required": ["represented_endpoint_rows", "test_nonminimal_rows_excluded", "test_nonminimal_doublets", "action_residual_primal_rows", "action_residual_dual_rows", "authoritative_rows_total", "authoritative_carrier_objects", "untyped_authoritative_rows", "category_identification_defects", "typed_field_dictionary_candidate_sha256", "typed_diagram_candidate_sha256", "M1A_complete", "remaining_M1_packages"],
+      "properties": {
+        "represented_endpoint_rows": {"const": 4080},
+        "test_nonminimal_rows_excluded": {"const": 410},
+        "test_nonminimal_doublets": {"const": 205},
+        "action_residual_primal_rows": {"const": 470},
+        "action_residual_dual_rows": {"const": 470},
+        "authoritative_rows_total": {"const": 17779},
+        "authoritative_carrier_objects": {"const": 6},
+        "untyped_authoritative_rows": {"const": 0},
+        "category_identification_defects": {"const": 0},
+        "M1A_complete": {"const": true}
+      }
+    },
+    "export_reconciliation": {"type": "array", "minItems": 20, "maxItems": 20},
+    "freeze_check_reconciliation": {"type": "array", "minItems": 10, "maxItems": 10},
+    "gate_disposition": {
+      "type": "object",
+      "required": ["gate_a_status", "claim_state", "accepted_common_snapshot_hashes", "publishable_quantum_results_allowed_by_gate_a"],
+      "properties": {
+        "gate_a_status": {"const": "FAIL_CLOSED"},
+        "claim_state": {"const": "CLASSICAL_IMPORT_M1A_COMPLETE_M1B_COMPOSITE_OPEN"},
+        "accepted_common_snapshot_hashes": {"const": 1},
+        "publishable_quantum_results_allowed_by_gate_a": {"const": false}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["M1A_FULL_TYPED_CARRIER_LEDGER_COMPLETE", "M1B_REPRESENTED_COMPOSITE_CONTRACTION_COMPLETE", "M1C_COMMON_MANIFEST_REPLAY_COMPLETE", "CLASSICAL_IMPORT_GATE_PASSED", "HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED"],
+      "properties": {
+        "M1A_FULL_TYPED_CARRIER_LEDGER_COMPLETE": {"const": true},
+        "M1B_REPRESENTED_COMPOSITE_CONTRACTION_COMPLETE": {"const": false},
+        "M1C_COMMON_MANIFEST_REPLAY_COMPLETE": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "QME_RESTORED": {"const": false}
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 5},
+    "independent_checker": {
+      "type": "object",
+      "required": ["path", "checks", "expected_digest"],
+      "properties": {"expected_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    }
+  }
+}

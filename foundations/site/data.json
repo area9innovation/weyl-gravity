@@ -18030,8 +18030,8 @@
     ]
   },
   "completion_atlas": {
-    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v45",
-    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V45",
+    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v46",
+    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V46",
     "result_kind": "BRANCH_BY_STAGE_COMPLETION_ATLAS",
     "lifecycle": "CLASSIFIED",
     "created": "2026-08-16",
@@ -18042,12 +18042,12 @@
       "REDUCED-MODE",
       "LORENTZIAN-CAUSAL"
     ],
-    "question": "What remains after exact semantic classification of every local row in the strict M1 carrier ledger?",
-    "answer": "Atlas V45 closes local M1A2: all 386 local graph rows are fully namespaced, including an exact proof that scalar nonlinear Weyl weight is not applicable to the fixed-background Cotton resolution rows. M1A now splits into a represented-coordinate crosswalk and an immutable ledger freeze. The next construction must crosswalk 4,080 endpoint-harmonic coordinates, classify 410 scalar test-nonminimal coordinates, and type the 470+470 action-residual carrier. M1B, M1C and Gate A remain downstream and fail closed.",
+    "question": "What is the highest-leverage route after the complete M1A typed-carrier freeze?",
+    "answer": "Atlas V46 closes M1A. The 386 local rows, 4,080 represented endpoint rows, 470+470 action-residual rows, thirty zero modes and 12,343 centered cochains are content-addressed as six distinct authoritative objects. The 410 test coordinates are exactly 205 comparison-only doublets, and the formal 8,980-coordinate cotangent remains non-authoritative. The frontier is now M1B: construct the composite contraction as typed arrows through the local endpoint and harmonic realization, not as a false 386-by-940 matrix. M1C and Gate A remain downstream and fail closed.",
     "predecessor": {
-      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V44",
-      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V44.json",
-      "sha256": "c9a7c671680db5b72a39e75a26726c41bf3b4a16a5db244b1ea63ba9032de280",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V45",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V45.json",
+      "sha256": "2d4708dedcf4e345917b0e72a075bceeeae1ea05112d9db5f11645cc698ef49c",
       "preserved": true
     },
     "status_vocabulary": [
@@ -18155,7 +18155,7 @@
           {
             "stage": "S0_CLASSICAL_AUTHORITY",
             "status": "FAIL_CLOSED",
-            "statement": "Local M1A2 is complete: all 386 graph rows carry explicit semantics. The remaining authority gate is the represented crosswalk, ledger freeze, represented composite contraction and final common-byte replay.",
+            "statement": "M1A is complete: 17,779 rows across six distinct authoritative carrier objects are content-addressed with zero untyped rows. The remaining authority gate is the M1B typed composite contraction followed by the M1C common-byte replay.",
             "evidence": [
               "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
               "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
@@ -18207,9 +18207,12 @@
               "STRICT_M1_COMMON_SNAPSHOT_PREFLIGHT_V1",
               "CLASSICAL_IMPORT_GATE_V26_RECONCILIATION",
               "STRICT_M1A_LOCAL_SEMANTIC_EXTENSION_V1",
-              "CLASSICAL_IMPORT_GATE_V27_RECONCILIATION"
+              "CLASSICAL_IMPORT_GATE_V27_RECONCILIATION",
+              "STRICT_M1A_REPRESENTED_CARRIER_CROSSWALK_V1",
+              "STRICT_M1A_IMMUTABLE_TYPED_LEDGER_V1",
+              "CLASSICAL_IMPORT_GATE_V28_RECONCILIATION"
             ],
-            "boundary": "The represented and action-residual carriers are not yet crosswalked into the same frozen typed ledger. Gate A remains fail closed at one of seven hashes."
+            "boundary": "A typed diagram is not yet a composite contraction. The local 386-to-30 support-local arrow and global harmonic/action-residual arrows must be composed without identifying their source categories. Gate A remains fail closed at one of seven hashes."
           },
           {
             "stage": "S1_OFF_SHELL_BV",
@@ -18928,19 +18931,20 @@
       }
     ],
     "frontier_summary": {
-      "highest_value_next_route": "STRICT_M1A3_REPRESENTED_CROSSWALK",
+      "highest_value_next_route": "STRICT_M1B_PRIMAL_COMPOSITE_CONTRACTION",
       "route_count": 10,
-      "completed_since_v44": [
-        "STRICT_M1A2_LOCAL_SEMANTIC_EXTENSION",
-        "GATE_V27_LOCAL_SEMANTIC_RECONCILIATION"
+      "completed_since_v45": [
+        "STRICT_M1A3_REPRESENTED_CROSSWALK",
+        "STRICT_M1A4_IMMUTABLE_TYPED_LEDGER",
+        "GATE_V28_M1A_RECONCILIATION"
       ],
-      "new_positive_result": "Every local row is now semantically explicit: 30 endpoint, 36 shifted auxiliary and 320 fixed-background mapping-cone rows, with zero unresolved local fields.",
-      "surprise": "The Cotton resolution slot is provably not a nonlinear Weyl eigenrow. Its exact triangular transformation makes scalar row weight not applicable, rather than missing data.",
-      "hard_boundary": "M1A is not complete until the represented endpoint, test-nonminimal and 940 action-residual coordinates are crosswalked and frozen. The formal 8,980-coordinate comparison remains non-authoritative."
+      "new_positive_result": "M1A is complete: 17,779 authoritative rows are content-addressed across six category-distinct carriers with zero untyped rows or category-identification defects.",
+      "surprise": "The historical 410-coordinate ambiguity is exactly 205 isolated q0 test doublets. Exclusion, not guessed BV typing, yields the authoritative 4,080-coordinate represented endpoint.",
+      "hard_boundary": "M1B must be a typed composition of local, harmonic and compact-source arrows. No single finite matrix may identify 386 local component species with 940 global residual coordinates, and the formal 8,980-coordinate comparison remains non-authoritative."
     },
     "classical_import_reconciliation": {
-      "result_id": "CLASSICAL_IMPORT_GATE_V27_RECONCILIATION",
-      "status": "M1A_LOCAL_386_TYPED_REPRESENTED_CROSSWALK_OPEN_GATE_FAIL_CLOSED",
+      "result_id": "CLASSICAL_IMPORT_GATE_V28_RECONCILIATION",
+      "status": "M1A_TYPED_DIAGRAM_COMPLETE_M1B_COMPOSITE_OPEN_GATE_FAIL_CLOSED",
       "exports_receiver_verified_scoped": 17,
       "exports_total": 20,
       "freeze_checks_receiver_verified_scoped": 9,
@@ -19055,30 +19059,30 @@
     "route_selection": [
       {
         "rank": 1,
-        "route": "STRICT_M1A3_REPRESENTED_CROSSWALK",
+        "route": "STRICT_M1B_PRIMAL_COMPOSITE_CONTRACTION",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "LOW",
-        "recommendation": "Crosswalk the 4,080 endpoint-harmonic coordinates, classify the separate 410 scalar test-nonminimal coordinates, and type the 470 primal plus 470 action-dual residual rows without identifying distinct carriers."
+        "recommendation": "Materialize the typed primal composite from the 386-row graph through the thirty endpoint species and finite harmonic realization to all 470 residual classes; serialize operator formulas and exact coordinate actions without inventing a 386-by-470 component matrix."
       },
       {
         "rank": 2,
-        "route": "STRICT_M1A4_LEDGER_FREEZE",
-        "branch": "STRICT_PURE_WEYL_386",
-        "scientific_leverage": "VERY_HIGH",
-        "tractability": "HIGH",
-        "dependency_depth": "LOW",
-        "recommendation": "Freeze the represented crosswalk and the completed 386-row local semantics as one versioned typed diagram with explicit inclusion and exclusion ledgers."
-      },
-      {
-        "rank": 3,
-        "route": "STRICT_M1B_REPRESENTED_COMPOSITE_CONTRACTION",
+        "route": "STRICT_M1B_ACTION_DUAL_LIFT",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "MEDIUM",
-        "recommendation": "Materialize and independently replay pi_cl, iota_cl, s_cl and the action pairing across the frozen typed carriers."
+        "recommendation": "Lift the primal composite through the action-derived compact-source dual, retaining the distinction between the represented 470-dimensional dual and any full continuous dual."
+      },
+      {
+        "rank": 3,
+        "route": "STRICT_M1B_TYPED_CYCLIC_REPLAY",
+        "branch": "STRICT_PURE_WEYL_386",
+        "scientific_leverage": "VERY_HIGH",
+        "tractability": "MEDIUM",
+        "dependency_depth": "MEDIUM",
+        "recommendation": "Assemble pi_cl, iota_cl, s_cl and the rank-940 action pairing as one typed contraction and replay chain, side-condition, adjoint and cyclic identities on the frozen M1A hashes."
       },
       {
         "rank": 4,
@@ -19148,20 +19152,20 @@
       {
         "priority": 1,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_M1A3_REPRESENTED_CROSSWALK",
-        "why": "Crosswalk the 4,080 endpoint-harmonic coordinates, classify the separate 410 scalar test-nonminimal coordinates, and type the 470 primal plus 470 action-dual residual rows without identifying distinct carriers."
+        "object": "STRICT_M1B_PRIMAL_COMPOSITE_CONTRACTION",
+        "why": "Materialize the typed primal composite from the 386-row graph through the thirty endpoint species and finite harmonic realization to all 470 residual classes; serialize operator formulas and exact coordinate actions without inventing a 386-by-470 component matrix."
       },
       {
         "priority": 2,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_M1A4_LEDGER_FREEZE",
-        "why": "Freeze the represented crosswalk and the completed 386-row local semantics as one versioned typed diagram with explicit inclusion and exclusion ledgers."
+        "object": "STRICT_M1B_ACTION_DUAL_LIFT",
+        "why": "Lift the primal composite through the action-derived compact-source dual, retaining the distinction between the represented 470-dimensional dual and any full continuous dual."
       },
       {
         "priority": 3,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_M1B_REPRESENTED_COMPOSITE_CONTRACTION",
-        "why": "Materialize and independently replay pi_cl, iota_cl, s_cl and the action pairing across the frozen typed carriers."
+        "object": "STRICT_M1B_TYPED_CYCLIC_REPLAY",
+        "why": "Assemble pi_cl, iota_cl, s_cl and the rank-940 action pairing as one typed contraction and replay chain, side-condition, adjoint and cyclic identities on the frozen M1A hashes."
       },
       {
         "priority": 4,
@@ -20011,6 +20015,30 @@
           "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V27_RECONCILIATION",
           "sha256": "73e4366fd7a6becc27318e703068cc001aea94951325b41d00672e776943cf9e",
           "role": "Gate-A V27 local-semantic reconciliation"
+        },
+        {
+          "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V45.json",
+          "result_or_artifact_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V45",
+          "sha256": "2d4708dedcf4e345917b0e72a075bceeeae1ea05112d9db5f11645cc698ef49c",
+          "role": "immutable V45 predecessor"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_M1A_REPRESENTED_CARRIER_CROSSWALK_V1.json",
+          "result_or_artifact_id": "STRICT_M1A_REPRESENTED_CARRIER_CROSSWALK_V1",
+          "sha256": "c715c138a94af0681ad6674e49bc2b8c82ee2924d30f5e0a9b04b65c1163dc2f",
+          "role": "represented and action-residual crosswalk"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_M1A_IMMUTABLE_TYPED_LEDGER_V1.json",
+          "result_or_artifact_id": "STRICT_M1A_IMMUTABLE_TYPED_LEDGER_V1",
+          "sha256": "7b1e0de5d525b535de30f1a21123375e7dc698deda82fa0668e545e7ed01a614",
+          "role": "immutable M1A typed diagram"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V28_RECONCILIATION.json",
+          "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V28_RECONCILIATION",
+          "sha256": "679ebb14ad5b53a53e569012aa7b079896ee8db5db724020890b8072666f71a7",
+          "role": "Gate-A V28 M1A reconciliation"
         }
       ]
     },
@@ -20283,14 +20311,15 @@
       "strict_M1_preflight_complete": true,
       "strict_M1_typed_diagram_required": true,
       "strict_M1_is_clerical_hash_bundle": false,
-      "strict_M1A_full_typed_carrier_ledger_complete": false,
+      "strict_M1A_full_typed_carrier_ledger_complete": true,
       "strict_M1B_represented_composite_contraction_complete": false,
       "strict_M1C_common_manifest_replay_complete": false,
       "v44_preserved": true,
       "strict_M1A2_local_semantic_extension_complete": true,
       "strict_local_386_fully_typed": true,
-      "strict_M1A3_represented_crosswalk_complete": false,
-      "strict_M1A4_ledger_freeze_complete": false
+      "strict_M1A3_represented_crosswalk_complete": true,
+      "strict_M1A4_ledger_freeze_complete": true,
+      "v45_preserved": true
     },
     "does_not_establish": [
       "a passed strict pure-Weyl classical import gate",
@@ -20417,23 +20446,26 @@
       "completion of M1A, M1B or M1C merely from their exact preflight classification",
       "a passed Gate A, full-complex Hadamard state, renormalized products, QME restoration or residual transfer",
       "M1A completion from local 386-row coverage without the represented and action-residual crosswalk",
-      "a scalar nonlinear Weyl weight for the fixed-background Cotton resolution rows"
+      "a scalar nonlinear Weyl weight for the fixed-background Cotton resolution rows",
+      "M1B composite contraction or M1C common replay from a typed row freeze alone",
+      "a componentwise identification of local species with global harmonic or residual coordinates",
+      "that the test-doublet or formal-cotangent comparison carriers are authoritative source fields"
     ],
     "independent_checker": {
-      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v45.py",
+      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v46.py",
       "checks": [
-        "V44 predecessor and 77-cell preservation",
-        "Gate V27 and M1A2 independent replay",
-        "36+320+30 equals 386 complete local rows",
-        "2,560-component Cotton non-eigen witness",
-        "M1A3/M1A4/M1B/M1C route ordering",
+        "V45 predecessor and 77-cell preservation",
+        "Gate V28 and M1A3/M1A4 independent replay",
+        "4,080+410 D-finite partition and 470+470 action residual",
+        "17,779-row six-carrier freeze",
+        "M1B primal/dual/cyclic route decomposition",
         "one accepted hash and fail-closed Gate A",
         "formal-source/Hadamard/QME firewalls",
         "canonical atlas digest"
       ],
-      "expected_digest": "32cb5516802d1beb25e8d24930c7803c9d760beb9cd74e1a8f6ff4a9fd8b3ae6"
+      "expected_digest": "548708b17b2cd030cf8916d51d041b9b802bd1dd2e3c6310207dea990ec97941"
     },
-    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v45.md",
+    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v46.md",
     "strict_gate_a_progress": {
       "status": "STABILIZED_Q2_CANDIDATE_CERTIFIED_AUTHORITATIVE_IDENTITY_REQUIRED",
       "evidence": [
@@ -21950,6 +21982,48 @@
       "cotton_component_defects": 0,
       "M1A2_complete": true,
       "M1A_complete": false
+    },
+    "strict_gate_v28_reconciliation": {
+      "result_id": "CLASSICAL_IMPORT_GATE_V28_RECONCILIATION",
+      "status": "M1A_TYPED_DIAGRAM_COMPLETE_M1B_COMPOSITE_OPEN_GATE_FAIL_CLOSED",
+      "exports_total": 20,
+      "exports_receiver_verified_scoped": 17,
+      "freeze_checks_total": 10,
+      "freeze_checks_receiver_verified_scoped": 9,
+      "accepted_top_level_hashes": 1,
+      "remaining_top_level_hashes": 6,
+      "authoritative_rows_total": 17779,
+      "M1A_complete": true,
+      "M1B_represented_composite_contraction_complete": false,
+      "M1C_common_manifest_replay_complete": false,
+      "gate_a_status": "FAIL_CLOSED"
+    },
+    "strict_m1a_represented_crosswalk": {
+      "result_id": "STRICT_M1A_REPRESENTED_CARRIER_CROSSWALK_V1",
+      "status": "REPRESENTED_4080_TYPED_TEST_410_EXCLUDED_ACTION_RESIDUAL_940_TYPED",
+      "represented_endpoint_rows": 4080,
+      "represented_endpoint_sectors": 8,
+      "local_endpoint_species_crosswalked": 6,
+      "excluded_test_rows": 410,
+      "excluded_test_doublets": 205,
+      "action_residual_primal_rows": 470,
+      "action_residual_dual_rows": 470,
+      "q0_cross_partition_defects": 0,
+      "q0_chain_degree_defects": 0,
+      "residual_crosswalk_defects": 0,
+      "M1A3_complete": true
+    },
+    "strict_m1a_immutable_typed_ledger": {
+      "result_id": "STRICT_M1A_IMMUTABLE_TYPED_LEDGER_V1",
+      "status": "M1A_TYPED_LEDGER_COMPLETE_M1B_M1C_AND_GATE_A_OPEN",
+      "authoritative_rows_total": 17779,
+      "authoritative_carrier_objects": 6,
+      "untyped_authoritative_rows": 0,
+      "category_identification_defects": 0,
+      "typed_field_dictionary_sha256": "7a734e85d1970e178bc6025a8760e80e4de977a0386f953d15f7bc1848025556",
+      "typed_diagram_sha256": "6fc2f2c0ab0ace839cc96f1cc3ca5a86635f93d8f2e284d69b136d9d3af8c3d8",
+      "M1A4_complete": true,
+      "M1A_complete": true
     }
   },
   "completion_common_endpoint_sdr_binding": {
@@ -231159,12 +231233,16 @@
     "ground_state_dynamics_interface_report": "sources/foundations/reports/krein-fock-ground-state-dynamics-interface.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md",
-    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V45.json",
-    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v45.md",
-    "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V27_RECONCILIATION.json",
-    "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V27.md",
+    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V46.json",
+    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v46.md",
+    "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V28_RECONCILIATION.json",
+    "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V28.md",
     "completion_m1a_local": "sources/quantum-weyl/classical_import/certificates/STRICT_M1A_LOCAL_SEMANTIC_EXTENSION_V1.json",
     "completion_m1a_local_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_M1A_LOCAL_SEMANTIC_EXTENSION_V1.md",
+    "completion_m1a_represented": "sources/quantum-weyl/classical_import/certificates/STRICT_M1A_REPRESENTED_CARRIER_CROSSWALK_V1.json",
+    "completion_m1a_represented_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_M1A_REPRESENTED_CARRIER_CROSSWALK_V1.md",
+    "completion_m1a_ledger": "sources/quantum-weyl/classical_import/certificates/STRICT_M1A_IMMUTABLE_TYPED_LEDGER_V1.json",
+    "completion_m1a_ledger_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_M1A_IMMUTABLE_TYPED_LEDGER_V1.md",
     "completion_m1_preflight": "sources/quantum-weyl/classical_import/certificates/STRICT_M1_COMMON_SNAPSHOT_PREFLIGHT_V1.json",
     "completion_m1_preflight_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_M1_COMMON_SNAPSHOT_PREFLIGHT_V1.md",
     "completion_common_endpoint_sdr_binding": "sources/quantum-weyl/classical_import/certificates/STRICT_386_COMMON_ENDPOINT_SDR_BINDING_V1.json",
@@ -231264,5 +231342,5 @@
     "completion_source_q3": "sources/quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.json",
     "completion_source_q3_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.md"
   },
-  "canonical_digest": "29eb2f6bb5f6329bea02fc6d11600b5ef36f6064151d26bb5d2d424514d66040"
+  "canonical_digest": "e52e34ce18da9ed21c2adbb86c91d20ccb4e183e3420f4a53fc98ea9036501bd"
 }
