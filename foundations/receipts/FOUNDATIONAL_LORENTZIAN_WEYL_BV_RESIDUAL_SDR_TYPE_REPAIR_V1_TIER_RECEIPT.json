@@ -1,0 +1,103 @@
+{
+  "result_id": "STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT_V1",
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_RESIDUAL_SDR_TYPE_REPAIR_V1_TIER_RECEIPT",
+  "generated_at": "2026-08-16",
+  "source_commit_before_change": "0e0e5670576da72bcaaf2b6d6189cc1d25287ce5",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "scope": "Separate the exact support-local 386-to-30 graph endpoint SDR, the 4490-to-470 D-finite harmonic residual SDR, and the 15+15 global symmetry-cotangent payload; replay exact support-expansion witnesses; replace the type-conflated M3 gate item by M3L local endpoint binding and M3R typed spectral comparison; project the repair through Gate V18, Atlas V36, the existing static explorer and Paper 21 without promoting Gate A or a Lorentzian quantum lifecycle state.",
+  "artifact_hashes": {
+    "quantum-weyl/classical_import/certificates/STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT_V1.json": "423f462839c3f0c12cbb65e507e3d1d43443c84f4ec3bb7da532d8338be698f5",
+    "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V18_RECONCILIATION.json": "2fd87beeb6e1098f3c8d6d5473f1a67a5362e66ea5cd82a1fc7ce866d6252642",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V36.json": "4901f12cf6c89565f684266c623c9ea612c5337786b5738536c10a36223faee1",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "083fd17e5ebf2028c5d174dd215ee46a56ad1d6a75d1a016423be0e9fb2c15b4",
+    "foundations/site/data.json": "0f73c08d731d3455f66f96bc44f6b598fa6eef06ff009654b71bcd383a50194e",
+    "paper/21-reverse-foundations-of-physics-appendices.tex": "8cbeafa278acd1e3dcef284f8aab2ad2ec6bcca966379b737bada3bb55df20be",
+    "paper/21-reverse-foundations-of-physics.pdf": "598d7c463625b9b88f77da9e38d315426285094bdf0990cd5bc141d58a290afa",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "515b90023750a60dde88f02c975b5f95862beef083bfe6a4f2168cfee3ab8982"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3.12 -m py_compile <scoped residual audit, Gate V18, Atlas V36, static-site and Paper 21 Python files>",
+          "status": "PASS"
+        },
+        {
+          "command": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3.12 -m json.tool <scoped certificates, schemas, results, site data, claim map and receipt>",
+          "status": "PASS"
+        },
+        {
+          "command": "pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (three passes from paper/)",
+          "elapsed_seconds": 6.6,
+          "status": "PASS",
+          "output": "73 pages; no fatal error. Existing generated longtable glue and underfull-box notices remain non-fatal."
+        },
+        {
+          "command": "git diff --check -- <explicit scoped residual-audit, Gate V18, Atlas V36, site, Paper 21 and receipt paths>",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3.12 residual type-audit builder --check; independent checker; six unit tests",
+          "elapsed_seconds": 0.23,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Gate V18 builder --check; independent checker; five unit tests",
+          "elapsed_seconds": 0.13,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Atlas V36 builder --check; independent checker; JSON-schema verifier; five unit tests",
+          "status": "PASS",
+          "note": "An initial invocation used a nonexistent filename ending in _schema.py and failed before validation. The actual verifier foundations/verify_lorentzian_weyl_bv_completion_atlas_v36.py was then run and passed; the failed invocation was not counted as evidence."
+        },
+        {
+          "command": "python3.12 static-site builder --check; independent checker; verifier; ten unit tests",
+          "elapsed_seconds": 15.26,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Paper 21 appendix --check; claim-map --check; independent claim-map verifier",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The changed type/locality decision is consumed transitively by Gate V18, Atlas V36, the content-addressed static explorer and Paper 21. Every producer currentness check and every actual independent receiver/verifier in that affected chain passed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze/tag, QME lifecycle promotion, shared core algebra change, or release preparation occurred. Gate A remains FAIL_CLOSED and no LORENTZIAN_CERTIFIED claim is promoted."
+    }
+  },
+  "scientific_result": {
+    "graph_endpoint_carrier": "386 local BV component species to 30 local endpoint field-component species",
+    "dfinite_residual_carrier": "4490 harmonic coefficients to 470 W+/W- residual coefficients",
+    "zero_mode_carrier": "15 conformal-Killing generators plus 15 normalized dual coefficients",
+    "support_locality": "The exact graph endpoint SDR is support-local. Nonzero constant and harmonic projectors expand support on the audited exact witness and are not support-local.",
+    "gate_repair": "M3 is split into M3L_COMMON_ENDPOINT_SDR_BINDING and M3R_TYPED_RESIDUAL_COMPARISON."
+  },
+  "claim_flags": {
+    "strict_graph_endpoint_sdr_support_local": true,
+    "dfinite_residual_projector_support_local": false,
+    "zero_mode_projector_support_local": false,
+    "graph_endpoint_30_identified_with_symmetry_cotangent_30": false,
+    "m3_typed_split_required": true,
+    "m3l_common_endpoint_sdr_bound": false,
+    "m3r_typed_residual_comparison_constructed": false,
+    "classical_import_gate_a_passed": false,
+    "full_complex_hadamard_state_constructed": false,
+    "qme_restored": false,
+    "residual_quantum_transfer_authorized": false
+  }
+}

@@ -34,12 +34,12 @@ all-real BT/Krein path integral; controlled conditional bridges remain open.
 
 The **Weyl BV routes** view projects the current audited Lorentzian completion atlas as
 seven architectures across eleven ordered gates, for 77 separately typed cells.
-It exposes the finite residual-SDR repair, nine ranked next constructions and the
+It exposes the finite residual-SDR repair, ten ranked next constructions and the
 eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a theorem; in particular,
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
-Atlas V35 preserves the field-equation type result.  The degree-one-to-zero
+Atlas V36 preserves the field-equation type result.  The degree-one-to-zero
 Green component is an exact right inverse on Noether-compatible sources and a
 left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
 the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
@@ -111,6 +111,15 @@ coefficient-level M5 and M6 packages and retains the accepted q2 hash.  It
 remains fail closed because neither new candidate hash is bound to the common
 snapshot: six of seven top-level hashes, the common support-local residual SDR,
 the full cyclic pairing and the final common contraction remain open.
+The next audit finds that this last phrase hid three carrier types.  The graph
+SDR contracts 386 local component species to 30 local endpoint field species;
+the D-finite residual SDR contracts 4,490 harmonic coefficients to 470 W+/W-
+coefficients; and M5's separate 30 counts conformal-Killing cotangent
+coefficients.  A constant or harmonic projector expands support, so the
+reduced-mode receivers cannot be inserted as support-local maps in causal
+Green transfer.  Gate V18 replaces the old M3 item by M3L common endpoint-SDR
+binding and M3R typed spectral comparison.  It accepts no new hash and leaves
+M1, M3L, M3R and M4 open.
 The complete Berger q3 remains a different-theory Weyl-plus-clock result on a fixed
 54-row carrier; no certified same-theory cyclic map authorizes its direct import.
 
@@ -235,7 +244,7 @@ This site does not establish:
 - a common-snapshot zero-mode hash from the portable residual coefficient package
 - a common-snapshot representative hash from the portable centered coefficient package
 - H3 or H5 cohomology from the adjacent centered C3 and C5 carrier bases
-- a common support-local residual SDR or the final full cyclic contraction
+- common binding of the support-local endpoint SDR, the typed endpoint-to-residual spectral comparison, or the final full cyclic contraction
 - q2/q3 compatibility with an advanced or retarded Green homotopy
 - that the exact stabilized-q3 candidate is the authoritative nonminimal pure-Weyl BV interaction
 - general lambda-squared causal source closure from the candidate q3 stabilization

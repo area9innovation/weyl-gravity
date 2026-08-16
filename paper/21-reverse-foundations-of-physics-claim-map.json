@@ -916,6 +916,17 @@
       "result_id": "CLASSICAL_IMPORT_GATE_V17_RECONCILIATION",
       "sha256": "1ce44731dafd153145246c530762ad6569fefae8e726f6597e5e62a0c53efcb3"
     },
+    "classical_import_gate_v18": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V18_RECONCILIATION.json",
+      "result_id": "CLASSICAL_IMPORT_GATE_V18_RECONCILIATION",
+      "sha256": "2fd87beeb6e1098f3c8d6d5473f1a67a5362e66ea5cd82a1fc7ce866d6252642"
+    },
     "classical_import_gate_v5": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -1080,7 +1091,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "88047c919fca3f4fd3db5957ec107458a41babe19f6fd8f3788de46fa90e3366"
+      "sha256": "083fd17e5ebf2028c5d174dd215ee46a56ad1d6a75d1a016423be0e9fb2c15b4"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -1466,6 +1477,18 @@
       "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V35.json",
       "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V35",
       "sha256": "ba062a1544bddc19979d2843c03dc35ed063c6e90a43761bf0827f0de5d3a2b2"
+    },
+    "lorentzian_weyl_bv_completion_atlas_v36": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V36.json",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V36",
+      "sha256": "4901f12cf6c89565f684266c623c9ea612c5337786b5738536c10a36223faee1"
     },
     "lorentzian_weyl_bv_completion_atlas_v4": {
       "dependency_tags": [
@@ -1929,6 +1952,17 @@
       "result_id": "STRICT_PURE_WEYL_MINIMAL_BV_Q3_IMPORT_V1",
       "sha256": "358268300bc11670e24a0dd849b82f482f63f23efa33fcb4a47d11dd5bde7afb"
     },
+    "strict_residual_sdr_type_audit": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT_V1.json",
+      "result_id": "STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT_V1",
+      "sha256": "423f462839c3f0c12cbb65e507e3d1d43443c84f4ec3bb7da532d8338be698f5"
+    },
     "strict_residual_zero_mode_payload": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -1959,10 +1993,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "ac4cc76797e2f1eaa1c80520efa021e1f972a4faaa28b3486ea67c9a73f5f17b"
+      "sha256": "cb868d59921f21304deda5e5b07cd2f6b8ae73b307788bd957a722a1db1fc3aa"
     }
   },
-  "canonical_digest": "826d7a541123b14af738180266ffc6840bfc4948db31a10584b48d7cb3c12b13",
+  "canonical_digest": "b8d4c4aa06875094b7fcf034f2249705ef670a28052339bc2cf69ff4f82a2e2f",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -2101,6 +2135,7 @@
     "classical_import_gate_v15_fail_closed": true,
     "classical_import_gate_v16_fail_closed": true,
     "classical_import_gate_v17_fail_closed": true,
+    "classical_import_gate_v18_fail_closed": true,
     "classical_import_gate_v8_fail_closed": true,
     "classical_import_gate_v9_fail_closed": true,
     "coded_h2_arbitrary_distribution_uniqueness_proved": false,
@@ -2254,6 +2289,11 @@
     "strict_centered_differential_reconstructed": true,
     "strict_centered_h4_cohomology_replayed": true,
     "strict_d_gauge_or_charge_decided": false,
+    "strict_dfinite_residual_projector_support_local": false,
+    "strict_graph_endpoint_sdr_support_local": true,
+    "strict_m3_typed_split_required": true,
+    "strict_m3l_common_endpoint_sdr_bound": false,
+    "strict_m3r_typed_residual_comparison_constructed": false,
     "strict_m5_residual_exact_payload_complete": true,
     "strict_m6_centered_representatives_complete": true,
     "strict_minimal_bv_cyclicity_reconciled": true,
@@ -2265,9 +2305,11 @@
     "strict_pure_weyl_metric_q3_witness_derived": true,
     "strict_pure_weyl_q3_witness_cancellation_certified": true,
     "strict_representative_hash_common_bound": false,
+    "strict_residual_sdr_type_audit_complete": true,
     "strict_residual_zero_mode_hash_common_bound": false,
     "strict_residual_zero_mode_identities_replayed": true,
     "strict_residual_zero_mode_payload_serialized": true,
+    "strict_zero_mode_projector_support_local": false,
     "support_indexed_full_lf_topology_reconstructed": false,
     "support_indexed_name_equivalence_certified": true,
     "typed_relations_supplied": true,
@@ -3145,6 +3187,20 @@
       ],
       "statement": "The strict centered cohomology package serializes ordered C3, C4, and C5 cochain bases of dimensions 727, 3,084, and 8,532 and finite coefficient actions from which an independent receiver reconstructs 85,091 nonzero rational differential coefficients. It replays d3 d4 = 0 and obtains ranks 636 and 2,446 over GF(1009); the resulting modular lower bounds saturate the rational nilpotency upper bound after two independent non-boundary cocycles are exhibited, proving exact dimension H4 = 2. The normalized sparse representatives W_+^2 v_- and W_-^2 v_- lie over Q(sqrt(10)), have Gram matrix I2, and are exchanged by parity. C3 and C5 are cochain carriers, not claims that H3 and H5 have been computed. Gate V17 therefore marks the coefficient-level M6 payload complete and receiver-verifies seventeen of twenty exports and nine of ten freeze checks in bounded scopes, but accepts no additional common hash. Gate A remains fail closed with only one of seven common-snapshot hashes accepted and M1 common freeze, M3 support-local residual SDR, and M4 full cyclic pairing open. Atlas V35 ranks the support-local residual SDR first, followed by full cyclic pairing and common-freeze binding. These centered classes are deformation/vertex classes, not one-particle graviton states. This LOCAL-ALGEBRAIC and REDUCED-MODE result does not construct a full-complex Hadamard state, renormalized Lorentzian products, restore the QME, or authorize residual quantum transfer.",
       "status": "CENTERED_C3_C4_C5_PAYLOAD_EXACT_H4_DIMENSION_TWO_AND_NORMALIZED_CHIRAL_REPRESENTATIVES_RECEIVER_REPLAYED_COMMON_FREEZE_OPEN_GATE_A_FAIL_CLOSED"
+    },
+    {
+      "authorities": [
+        "strict_residual_sdr_type_audit",
+        "classical_import_gate_v18",
+        "lorentzian_weyl_bv_completion_atlas_v36"
+      ],
+      "claim_id": "RF-66-STRICT-WEYL-RESIDUAL-SDR-TYPE-AND-LOCALITY-REPAIR",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "statement": "An exact carrier and locality audit shows that the former single M3 residual-SDR obligation conflated three typed objects. The graph SDR is a support-local contraction from 386 local BV component species to 30 local endpoint field-component species. The D-finite SDR acts instead on 4,490 harmonic coefficients and projects to 470 W+/W- residual coefficients at energies 2 through 6. The zero-mode payload contains 15 global conformal-Killing generators and 15 dual coefficients. The two occurrences of the number 30 count different spaces and define no identification. Exact three-site witnesses show that a nonzero constant or harmonic projector expands support, so neither the D-finite residual projector nor the zero-mode projector can supply a support-nonincreasing map in the causal Green-transfer premise. This does not invalidate the exact local graph SDR or the reduced-mode packages in their declared scopes, and it does not rule out a new infinite-dimensional local curvature or equation-level carrier. Gate V18 therefore replaces M3 by M3L common endpoint-SDR binding and M3R typed endpoint-to-residual spectral comparison, accepts no new hash, and remains fail closed with M1, M3L, M3R, and M4 open. Atlas V36 ranks M3L first, full cyclic pairing second, and M3R third. This LOCAL-ALGEBRAIC and REDUCED-MODE result does not construct a full-complex Hadamard state, renormalized Lorentzian products, restore the QME, or authorize residual quantum transfer.",
+      "status": "RESIDUAL_SDR_CARRIERS_TYPE_SEPARATED_SUPPORT_EXPANSION_EXACTLY_WITNESSED_M3L_AND_M3R_OPEN_GATE_A_FAIL_CLOSED"
     }
   ],
   "created": "2026-08-16",
@@ -3371,19 +3427,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "2f2d948d1a3656eb1042660edaa76d7994fd49b2a6444b64f2661405d50ee51d",
+      "assembly_source_canonical_digest": "896b80b030da14a71d8032963d4c2691baa192274ea0d8b56b5a6ceb6fc5ae79",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "ac4cc76797e2f1eaa1c80520efa021e1f972a4faaa28b3486ea67c9a73f5f17b",
+      "assembly_source_sha256": "cb868d59921f21304deda5e5b07cd2f6b8ae73b307788bd957a722a1db1fc3aa",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
-      "generator_sha256": "6ae43c816c19a6938b427813508dcbfc5eae1a8b7350fceca75e1c827da38a1f",
+      "generator_sha256": "58cbed0598fe3a8bab042dccdcdcde774b8fae8f1848ea944862fb182cd77bbc",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "155a72460f651699a83abf612eb31a1e511ee86f9573df97f162ba735cbedec1",
-      "source_canonical_digest": "ede3472fda9eca651106bdf16218262ec3b0c60e64fe54f869b45d67be18f079",
+      "sha256": "8cbeafa278acd1e3dcef284f8aab2ad2ec6bcca966379b737bada3bb55df20be",
+      "source_canonical_digest": "a64282a1573d8f4d164991d438b9cf6837b519398adba9cab945205376a58aaa",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "7455863ebf794595e2888d4c1fb5fda5c3b48180f53b5eb458c479745337721c"
+      "source_sha256": "0f73c08d731d3455f66f96bc44f6b598fa6eef06ff009654b71bcd383a50194e"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "da077d7b7cec88c674698aee0b1cde1541d7adcbe2bb12c00a6b97953c10f57f"
+    "sha256": "0df567d57e8d005482301744ef4abe35a80a026749177f5fd4cfa63776fc6f75"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

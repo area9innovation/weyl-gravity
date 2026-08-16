@@ -18030,8 +18030,8 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "completion_atlas": {
-    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v35",
-    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V35",
+    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v36",
+    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V36",
     "result_kind": "BRANCH_BY_STAGE_COMPLETION_ATLAS",
     "lifecycle": "CLASSIFIED",
     "created": "2026-08-16",
@@ -18042,12 +18042,12 @@ window.MATRIX_EXPLORER_DATA = {
       "REDUCED-MODE",
       "LORENTZIAN-CAUSAL"
     ],
-    "question": "After exporting the centered C3/C4/C5 complex and normalized H4 representatives, what is the strongest route toward a common Lorentzian Weyl BV freeze?",
-    "answer": "Atlas V35 removes M6 from the construction frontier. The finite centered complex and its two normalized degree-four classes are portable and independently replayed, but their hash is not common-bound. Gate A still accepts only one of seven hashes. The highest-value dependency is now the common support-local residual SDR; it is needed before the full cyclic pairing can be closed and before the final all-object freeze can honestly accept hashes.",
+    "question": "After separating local endpoint contraction from global residual projection, what is the strongest viable route toward a Lorentzian Weyl BV completion?",
+    "answer": "Atlas V36 rejects the former single M3 route as ill-typed. The exact support-local 386-to-30 endpoint SDR is preserved and now needs common-hash binding, while the W+/W- harmonic comparison is a distinct REDUCED-MODE construction whose global projections must not be used as local Green-transfer maps. The strongest route is therefore to bind the existing graph endpoint SDR, close its full cyclic pairing, construct the typed endpoint-to-residual spectral comparison in parallel, and only then perform the all-object freeze. This removes a false shortcut without rejecting the surviving local causal architecture.",
     "predecessor": {
-      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V34",
-      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V34.json",
-      "sha256": "1aae2e7cb2b7953e58c0fae9edf35f136cb72a9f19b733b10e06d7f3a56bb7cc",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V35",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V35.json",
+      "sha256": "ba062a1544bddc19979d2843c03dc35ed063c6e90a43761bf0827f0de5d3a2b2",
       "preserved": true
     },
     "status_vocabulary": [
@@ -18155,7 +18155,7 @@ window.MATRIX_EXPLORER_DATA = {
           {
             "stage": "S0_CLASSICAL_AUTHORITY",
             "status": "FAIL_CLOSED",
-            "statement": "The authoritative q1/q2/q3/D/pairing bytes, exact residual zero modes and the centered C3/C4/C5 plus normalized H4 payload now exist. M5 and M6 are constructed; Gate A remains open at the common binding, support-local residual SDR and final full cyclic pairing layer.",
+            "statement": "The q1/q2/q3/D/pairing, exact local graph endpoint SDR, residual zero modes and centered H4 payload all exist in scoped exact forms. The local endpoint SDR, finite W+/W- residual SDR and symmetry cotangent payload are now explicitly separated by type; common binding, a typed spectral comparison and full cyclic freeze remain open.",
             "evidence": [
               "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
               "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
@@ -18187,9 +18187,11 @@ window.MATRIX_EXPLORER_DATA = {
               "STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1",
               "CLASSICAL_IMPORT_GATE_V16_RECONCILIATION",
               "STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1",
-              "CLASSICAL_IMPORT_GATE_V17_RECONCILIATION"
+              "CLASSICAL_IMPORT_GATE_V17_RECONCILIATION",
+              "STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT_V1",
+              "CLASSICAL_IMPORT_GATE_V18_RECONCILIATION"
             ],
-            "boundary": "Exact finite centered coefficients do not bind the six unaccepted hashes, construct the common support-local residual SDR, close full-carrier cyclicity, or establish Hadamard data or QME."
+            "boundary": "A global harmonic or zero-mode projector is not support-local. It cannot be substituted for the local endpoint SDR in Green-homotopy transfer, and no common hash, Hadamard state or QME is promoted."
           },
           {
             "stage": "S1_OFF_SHELL_BV",
@@ -18908,19 +18910,20 @@ window.MATRIX_EXPLORER_DATA = {
       }
     ],
     "frontier_summary": {
-      "highest_value_next_route": "STRICT_RESIDUAL_SDR_COMMON_CARRIER",
-      "route_count": 9,
-      "completed_since_v34": [
-        "STRICT_CENTERED_COHOMOLOGY_PAYLOAD",
-        "GATE_V17_M6_RECONCILIATION"
+      "highest_value_next_route": "STRICT_COMMON_ENDPOINT_SDR_BINDING",
+      "route_count": 10,
+      "completed_since_v35": [
+        "STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT",
+        "GATE_V18_M3_TYPED_REPAIR"
       ],
-      "new_positive_result": "The centered C3/C4/C5 carrier and normalized W_+^2 v_- and W_-^2 v_- vectors are exact portable data, with reconstructed nilpotent differentials and H4 dimension two.",
-      "surprise": "The representative gap was also primarily an export gap: the existing transferred metric-to-residual engine already generated the needed kernel, but discarded its ordered coordinates.",
-      "hard_boundary": "The representative hash is not common-bound; M1, M3 and M4, six accepted hashes, the final cyclic contraction, nonlinear Green compatibility, Hadamard and QME remain open."
+      "new_positive_result": "The exact support-local graph endpoint SDR survives unchanged and is now cleanly separated from both finite W+/W- harmonic cohomology and conformal-Killing cotangent data.",
+      "new_no_go": "The specified global harmonic and zero-mode projectors expand support, so they cannot be promoted directly to support-local maps in the Green-homotopy transfer premise.",
+      "surprise": "The leading M3 task was partly a type error: the two occurrences of dimension thirty counted local field species and global symmetry-cotangent coefficients, not the same vector space.",
+      "hard_boundary": "M3L common binding, M3R typed spectral comparison, M4 pairing, M1 freeze, six hashes, nonlinear Green compatibility, Hadamard and QME remain open."
     },
     "classical_import_reconciliation": {
-      "result_id": "CLASSICAL_IMPORT_GATE_V17_RECONCILIATION",
-      "status": "M5_AND_M6_EXACT_PAYLOADS_COMPLETE_COMMON_FREEZE_AND_THREE_PACKAGES_OPEN_GATE_FAIL_CLOSED",
+      "result_id": "CLASSICAL_IMPORT_GATE_V18_RECONCILIATION",
+      "status": "M3_TYPE_REPAIRED_LOCAL_ENDPOINT_BINDING_AND_TYPED_RESIDUAL_COMPARISON_OPEN_GATE_FAIL_CLOSED",
       "exports_receiver_verified_scoped": 17,
       "exports_total": 20,
       "freeze_checks_receiver_verified_scoped": 9,
@@ -18929,7 +18932,8 @@ window.MATRIX_EXPLORER_DATA = {
       "gate_a_status": "FAIL_CLOSED",
       "minimal_missing_bundle": [
         "M1_COMMON_STRICT_SNAPSHOT",
-        "M3_RESIDUAL_SDR",
+        "M3L_COMMON_ENDPOINT_SDR_BINDING",
+        "M3R_TYPED_RESIDUAL_COMPARISON",
         "M4_FULL_CYCLIC_PAIRING"
       ]
     },
@@ -19036,13 +19040,13 @@ window.MATRIX_EXPLORER_DATA = {
     ],
     "route_selection": [
       {
-        "rank": 1,
-        "route": "STRICT_RESIDUAL_SDR_COMMON_CARRIER",
+        "route": "STRICT_COMMON_ENDPOINT_SDR_BINDING",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
-        "tractability": "LOW",
-        "dependency_depth": "HIGH",
-        "recommendation": "Extend or reconstruct iota_cl, pi_cl and s_cl on the complete support-local 386-row carrier, including residual and nonminimal rows, and replay every contraction and intertwining identity against the M5/M6 bytes."
+        "tractability": "HIGH",
+        "dependency_depth": "LOW",
+        "recommendation": "Bind the already exact graph-coordinate i_end, p_end and H_alg, transported suspension and q1 bytes to the same strict manifest used by q2/q3/D; replay the contraction and intertwiners without rebuilding a different SDR.",
+        "rank": 1
       },
       {
         "rank": 2,
@@ -19051,19 +19055,28 @@ window.MATRIX_EXPLORER_DATA = {
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "HIGH",
-        "recommendation": "Once the common residual SDR carrier exists, extend the pairing/sign convention to every row and replay q1/q2/q3 adjointness plus all SDR cyclic side conditions."
+        "recommendation": "On the common endpoint SDR carrier, replay the serialized 386-row pairing against q1/q2/q3 and every SDR cyclic side condition; do not couple it to global-mode projection until M3R is separately typed."
       },
       {
-        "rank": 3,
+        "route": "STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON",
+        "branch": "STRICT_PURE_WEYL_386",
+        "scientific_leverage": "VERY_HIGH",
+        "tractability": "LOW",
+        "dependency_depth": "HIGH",
+        "recommendation": "Construct a typed harmonic restriction/comparison from endpoint sections to W+/W- residual coefficients, declare test/distribution domains and zero-mode policy, and label every support-expanding projection REDUCED-MODE rather than local.",
+        "rank": 3
+      },
+      {
+        "rank": 4,
         "route": "STRICT_COMMON_FREEZE_SNAPSHOT_AND_FINAL_CYCLIC_CONTRACTION",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "MEDIUM",
-        "recommendation": "Bind q1/q2/q3/D, zero modes, centered representatives, SDR and full pairing to one manifest; accept hashes only after all ten identities and the final cyclic contraction replay on those exact bytes."
+        "recommendation": "After M3L, M3R and M4, bind q1/q2/q3/D, endpoint SDR, residual comparison, zero modes, centered representatives and pairing to one manifest; accept hashes only after all identities replay in their declared categories."
       },
       {
-        "rank": 4,
+        "rank": 5,
         "route": "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
@@ -19072,7 +19085,7 @@ window.MATRIX_EXPLORER_DATA = {
         "recommendation": "After nonlinear identity, prove Noether closure of the general lambda-squared source."
       },
       {
-        "rank": 5,
+        "rank": 6,
         "route": "STRICT_CANDIDATE_Q2_Q3_GREEN_LAMBDA2_RESPONSE",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
@@ -19081,7 +19094,7 @@ window.MATRIX_EXPLORER_DATA = {
         "recommendation": "Compose accepted q2/q3 with both Green orientations and verify response identities."
       },
       {
-        "rank": 6,
+        "rank": 7,
         "route": "DIRECT_SPACETIME_Q26_HADAMARD",
         "branch": "BERGER_POSITIVE_CLOCK_54",
         "scientific_leverage": "VERY_HIGH",
@@ -19090,7 +19103,7 @@ window.MATRIX_EXPLORER_DATA = {
         "recommendation": "Keep the analytically mature Berger Hadamard route as a different-theory control, not as the strict pure-Weyl carrier map."
       },
       {
-        "rank": 7,
+        "rank": 8,
         "route": "STRICT_D_CARTAN_AND_CHARGE_DECISION",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "HIGH",
@@ -19099,7 +19112,7 @@ window.MATRIX_EXPLORER_DATA = {
         "recommendation": "Classify the nonlinear D-Cartan homotopy and proper-gauge/charge status on the strict carrier."
       },
       {
-        "rank": 8,
+        "rank": 9,
         "route": "STRICT_ANALYTIC_MOLLER_CONVERGENCE",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "MEDIUM",
@@ -19108,7 +19121,7 @@ window.MATRIX_EXPLORER_DATA = {
         "recommendation": "Only after all-order source closure, derive seminorm majorants and a nonzero convergence domain."
       },
       {
-        "rank": 9,
+        "rank": 10,
         "route": "STRICT_MIXED_WEIGHTED_CAUSAL_DOMAIN",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "MEDIUM",
@@ -19121,53 +19134,59 @@ window.MATRIX_EXPLORER_DATA = {
       {
         "priority": 1,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_RESIDUAL_SDR_COMMON_CARRIER",
-        "why": "M5 and M6 are exact; M3 is now the first dependency needed to connect finite residual coefficients to the complete support-local field carrier."
+        "object": "STRICT_COMMON_ENDPOINT_SDR_BINDING",
+        "why": "The exact support-local graph SDR already exists; the next task is a common-byte binding and replay, not a speculative reconstruction of a finite residual projector."
       },
       {
         "priority": 2,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_FULL_CYCLIC_PAIRING",
-        "why": "M4 depends on the common SDR carrier and is required for the final contraction and QME-compatible classical freeze."
+        "why": "The full 386-row pairing is already serialized and can be closed against the common endpoint SDR while the harder spectral comparison proceeds independently."
       },
       {
         "priority": 3,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_COMMON_FREEZE_SNAPSHOT_AND_FINAL_CYCLIC_CONTRACTION",
-        "why": "M1 becomes honest only after M3 and M4 share one manifest with every already-certified object."
+        "object": "STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON",
+        "why": "Residual and centered data become relevant to the field theory only through a typed harmonic restriction that admits its nonlocality."
       },
       {
         "priority": 4,
+        "branch": "STRICT_PURE_WEYL_386",
+        "object": "STRICT_COMMON_FREEZE_SNAPSHOT_AND_FINAL_CYCLIC_CONTRACTION",
+        "why": "The freeze becomes honest only after local and reduced-mode maps are distinct, manifest-bound and independently replayed."
+      },
+      {
+        "priority": 5,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE",
         "why": "After nonlinear identity, prove Noether closure of the general lambda-squared source."
       },
       {
-        "priority": 5,
+        "priority": 6,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_CANDIDATE_Q2_Q3_GREEN_LAMBDA2_RESPONSE",
         "why": "Compose accepted q2/q3 with both Green orientations and verify response identities."
       },
       {
-        "priority": 6,
+        "priority": 7,
         "branch": "BERGER_POSITIVE_CLOCK_54",
         "object": "DIRECT_SPACETIME_Q26_HADAMARD",
         "why": "Keep the analytically mature Berger Hadamard route as a different-theory control, not as the strict pure-Weyl carrier map."
       },
       {
-        "priority": 7,
+        "priority": 8,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_D_CARTAN_AND_CHARGE_DECISION",
         "why": "Classify the nonlinear D-Cartan homotopy and proper-gauge/charge status on the strict carrier."
       },
       {
-        "priority": 8,
+        "priority": 9,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_ANALYTIC_MOLLER_CONVERGENCE",
         "why": "Only after all-order source closure, derive seminorm majorants and a nonzero convergence domain."
       },
       {
-        "priority": 9,
+        "priority": 10,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_MIXED_WEIGHTED_CAUSAL_DOMAIN",
         "why": "Test weighted opposite-polarity domains against the scalar zero-mode witness; polarized recursion does not require this."
@@ -19798,6 +19817,24 @@ window.MATRIX_EXPLORER_DATA = {
           "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V17_RECONCILIATION",
           "sha256": "1ce44731dafd153145246c530762ad6569fefae8e726f6597e5e62a0c53efcb3",
           "role": "Gate-A V17 M6 reconciliation"
+        },
+        {
+          "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V35.json",
+          "result_or_artifact_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V35",
+          "sha256": "ba062a1544bddc19979d2843c03dc35ed063c6e90a43761bf0827f0de5d3a2b2",
+          "role": "immutable V35 predecessor"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT_V1.json",
+          "result_or_artifact_id": "STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT_V1",
+          "sha256": "423f462839c3f0c12cbb65e507e3d1d43443c84f4ec3bb7da532d8338be698f5",
+          "role": "M3 carrier-type and locality decision"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V18_RECONCILIATION.json",
+          "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V18_RECONCILIATION",
+          "sha256": "2fd87beeb6e1098f3c8d6d5473f1a67a5362e66ea5cd82a1fc7ce866d6252642",
+          "role": "Gate-A V18 typed M3 reconciliation"
         }
       ]
     },
@@ -20013,7 +20050,15 @@ window.MATRIX_EXPLORER_DATA = {
       "strict_normalized_weyl_square_representatives_serialized": true,
       "strict_centered_H4_cohomology_replayed": true,
       "strict_M6_centered_representatives_complete": true,
-      "strict_representative_hash_common_bound": false
+      "strict_representative_hash_common_bound": false,
+      "v35_preserved": true,
+      "strict_386_graph_endpoint_sdr_support_local": true,
+      "strict_graph_endpoint_30_is_finite_residual_30": false,
+      "strict_dfinite_residual_projector_support_local": false,
+      "strict_zero_mode_projector_support_local": false,
+      "strict_M3_typed_split_required": true,
+      "strict_M3L_common_endpoint_sdr_bound": false,
+      "strict_M3R_typed_residual_comparison_constructed": false
     },
     "does_not_establish": [
       "a passed strict pure-Weyl classical import gate",
@@ -20131,19 +20176,19 @@ window.MATRIX_EXPLORER_DATA = {
       "the assembled source q2/q3, accepted nonlinear hashes, or cyclic L-infinity equivalence"
     ],
     "independent_checker": {
-      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v35.py",
+      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v36.py",
       "checks": [
-        "V34 predecessor and 77-cell preservation",
-        "Gate V17 and centered payload pins",
-        "C3/C4/C5 dimensions, exact ranks and normalized H4 Gram",
-        "M5/M6 complete and common-bind false boundary",
-        "three-package remaining bundle",
-        "nine-route reranking",
+        "V35 predecessor and 77-cell preservation",
+        "Gate V18 and type-audit pins",
+        "386/30 local, 4,490/470 harmonic and 30 symmetry-cotangent type census",
+        "M3L/M3R split and support-locality firewall",
+        "four-package Gate remainder",
+        "ten-route reranking",
         "Gate-A/Green/Hadamard/QME firewalls"
       ],
-      "expected_digest": "84c7016d5f8f3aeed9db1b3e20b3c9b9519f05ed74967e62e8f32c7a564f2b8d"
+      "expected_digest": "dc563abce58f01da6ca13fe78ea415e93b52f7db250135753ee62e463476eaf9"
     },
-    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v35.md",
+    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v36.md",
     "strict_gate_a_progress": {
       "status": "STABILIZED_Q2_CANDIDATE_CERTIFIED_AUTHORITATIVE_IDENTITY_REQUIRED",
       "evidence": [
@@ -21410,26 +21455,6 @@ window.MATRIX_EXPLORER_DATA = {
       "M5_payload_complete": true,
       "common_freeze_bound": false
     },
-    "strict_gate_v17_reconciliation": {
-      "result_id": "CLASSICAL_IMPORT_GATE_V17_RECONCILIATION",
-      "status": "M5_AND_M6_EXACT_PAYLOADS_COMPLETE_COMMON_FREEZE_AND_THREE_PACKAGES_OPEN_GATE_FAIL_CLOSED",
-      "exports_total": 20,
-      "exports_receiver_verified_scoped": 17,
-      "exports_supporting_only": 0,
-      "freeze_checks_total": 10,
-      "freeze_checks_receiver_verified_scoped": 9,
-      "accepted_top_level_hashes": 1,
-      "remaining_top_level_hashes": 6,
-      "minimal_missing_bundle": [
-        "M1_COMMON_STRICT_SNAPSHOT",
-        "M3_RESIDUAL_SDR",
-        "M4_FULL_CYCLIC_PAIRING"
-      ],
-      "M5_payload_complete": true,
-      "M6_payload_complete": true,
-      "representative_hash_common_bound": false,
-      "gate_a_status": "FAIL_CLOSED"
-    },
     "strict_centered_cohomology_payload": {
       "result_id": "STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1",
       "centered_snapshot_sha256": "ac91c549cc1a70bf364920f495d6a5e22220505385893877f6cd05a362109365",
@@ -21459,6 +21484,39 @@ window.MATRIX_EXPLORER_DATA = {
       "identity_defects": 0,
       "M6_payload_complete": true,
       "common_freeze_bound": false
+    },
+    "strict_gate_v18_reconciliation": {
+      "result_id": "CLASSICAL_IMPORT_GATE_V18_RECONCILIATION",
+      "status": "M3_TYPE_REPAIRED_LOCAL_ENDPOINT_BINDING_AND_TYPED_RESIDUAL_COMPARISON_OPEN_GATE_FAIL_CLOSED",
+      "exports_total": 20,
+      "exports_receiver_verified_scoped": 17,
+      "freeze_checks_total": 10,
+      "freeze_checks_receiver_verified_scoped": 9,
+      "accepted_top_level_hashes": 1,
+      "remaining_top_level_hashes": 6,
+      "minimal_missing_bundle": [
+        "M1_COMMON_STRICT_SNAPSHOT",
+        "M3L_COMMON_ENDPOINT_SDR_BINDING",
+        "M3R_TYPED_RESIDUAL_COMPARISON",
+        "M4_FULL_CYCLIC_PAIRING"
+      ],
+      "M3_typed_split_required": true,
+      "M3L_common_endpoint_sdr_bound": false,
+      "M3R_typed_residual_comparison_constructed": false,
+      "gate_a_status": "FAIL_CLOSED"
+    },
+    "strict_residual_sdr_type_audit": {
+      "result_id": "STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT_V1",
+      "type_census_sha256": "108626a3033cdd9b2e3885caa2399685eab725dd76f45a716f26b5e1ec4b1d8c",
+      "architecture_decision_sha256": "456724b9ce097079d340489ed90ee46262b50e2754d521bfd02e2fdec59df774",
+      "graph_carrier_component_species": 386,
+      "graph_endpoint_component_species": 30,
+      "dfinite_full_coordinates": 4490,
+      "dfinite_residual_coordinates": 470,
+      "symmetry_cotangent_coordinates": 30,
+      "graph_endpoint_is_symmetry_cotangent": false,
+      "dfinite_projector_support_local": false,
+      "M3_typed_split_required": true
     }
   },
   "completion_residual_zero_modes": {
@@ -200539,6 +200597,343 @@ window.MATRIX_EXPLORER_DATA = {
     },
     "human_report": "quantum-weyl/classical_import/REPORT_STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1.md"
   },
+  "completion_residual_sdr_type_audit": {
+    "$schema": "../schema/strict-residual-sdr-type-and-locality-audit-v1.schema.json",
+    "schema": "strict-residual-sdr-type-and-locality-audit-v1",
+    "schema_path": "quantum-weyl/classical_import/schema/strict-residual-sdr-type-and-locality-audit-v1.schema.json",
+    "result_id": "STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT_V1",
+    "result_kind": "CLASSICAL_IMPORT_ARCHITECTURE_TYPE_AUDIT",
+    "result_state": "ORIGINAL_M3_SPLIT_INTO_LOCAL_ENDPOINT_SDR_AND_NONLOCAL_RESIDUAL_COMPARISON",
+    "lifecycle": "CLASSIFIED",
+    "created": "2026-08-16",
+    "repository_base_commit": "0e0e5670576da72bcaaf2b6d6189cc1d25287ce5",
+    "dependency_tags": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE",
+      "LORENTZIAN-CAUSAL"
+    ],
+    "question": "Can the 386-row graph SDR, D-finite W+/W- residual SDR and thirty-dimensional conformal-Killing cotangent payload be treated as one support-local residual contraction?",
+    "answer": "No. The graph object retracts 386 local component species onto 30 local endpoint field species. The D-finite object retracts 4,490 harmonic coefficients onto 470 W+/W- coefficients, and M5 contains 30 global symmetry-cotangent coefficients. The repeated number 30 is a type collision, not a basis bridge. A nonzero projector onto a global constant or harmonic mode expands support, so the declared reduced-mode projections cannot be used as support-local maps in the Green-homotopy transfer theorem. M3 must split into a common binding of the already exact local endpoint SDR and a separately typed, explicitly nonlocal residual comparison.",
+    "scope": {
+      "theory": "strict pure-Weyl free BV complex",
+      "background": "unit conformal cylinder",
+      "audit_surface": "graph endpoint fields, finite W+/W- harmonics, conformal-Killing cotangent modes and centered CE cochains",
+      "claim_type": "architecture classification and scoped support obstruction"
+    },
+    "carrier_ledger": [
+      {
+        "id": "GRAPH_ENDPOINT_FIELDS",
+        "kind": "SECTION_SHEAF_COMPONENT_CARRIER",
+        "coordinates": 30,
+        "coordinate_meaning": "local BV field-component species c, omega, h, h_star, c_star and omega_star; each coordinate is a spacetime-dependent section",
+        "map": "the exact graph SDR contracts 386 component species onto these 30 endpoint species",
+        "locality": "FINITE_ORDER_SUPPORT_LOCAL",
+        "basis_sample": [
+          "c_0",
+          "c_1",
+          "c_2",
+          "c_3",
+          "omega",
+          "h_00"
+        ]
+      },
+      {
+        "id": "DFINITE_WEYL_RESIDUAL",
+        "kind": "FINITE_HARMONIC_COEFFICIENT_CARRIER",
+        "coordinates": 470,
+        "coordinate_meaning": "W+ and W- cohomology coefficients at energies 2 through 6",
+        "map": "a blockwise finite harmonic SDR from 4,490 split coefficients",
+        "locality": "REDUCED_MODE_NOT_ARBITRARY_SUPPORT",
+        "basis_sample": [
+          "E2:W_PLUS:0",
+          "E2:W_PLUS:1",
+          "E2:W_PLUS:2",
+          "E2:W_PLUS:3",
+          "E2:W_PLUS:4",
+          "E2:W_MINUS:0"
+        ]
+      },
+      {
+        "id": "CONFORMAL_KILLING_COTANGENT",
+        "kind": "FINITE_LIE_COTANGENT_CARRIER",
+        "coordinates": 30,
+        "coordinate_meaning": "fifteen conformal-Killing generators and fifteen normalized dual coefficients",
+        "map": "the exact M5 residual zero-mode representation",
+        "locality": "GLOBAL_ZERO_MODE_COEFFICIENTS",
+        "basis_sample": [
+          "D",
+          "R01",
+          "R02",
+          "R03",
+          "R12",
+          "R13"
+        ]
+      },
+      {
+        "id": "CENTERED_CE_COCHAINS",
+        "kind": "FINITE_CENTERED_CE_COCHAIN_CARRIER",
+        "coordinates": 12343,
+        "coordinate_meaning": "ordered C3, C4 and C5 centered Chevalley-Eilenberg cochains used to compute H4",
+        "map": "finite transferred coefficient complex",
+        "locality": "LOCAL_ALGEBRAIC_AND_REDUCED_MODE_ONLY",
+        "basis_sample": [
+          "C3",
+          "C4",
+          "C5"
+        ]
+      }
+    ],
+    "type_census": {
+      "endpoint_row_ids": [
+        "c_0",
+        "c_1",
+        "c_2",
+        "c_3",
+        "omega",
+        "h_00",
+        "h_01",
+        "h_02",
+        "h_03",
+        "h_11",
+        "h_12",
+        "h_13",
+        "h_22",
+        "h_23",
+        "h_33",
+        "h_star_00",
+        "h_star_01",
+        "h_star_02",
+        "h_star_03",
+        "h_star_11",
+        "h_star_12",
+        "h_star_13",
+        "h_star_22",
+        "h_star_23",
+        "h_star_33",
+        "c_star_0",
+        "c_star_1",
+        "c_star_2",
+        "c_star_3",
+        "omega_star"
+      ],
+      "dfinite_energies": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "dfinite_full_dimensions": [
+        230,
+        440,
+        758,
+        1216,
+        1846
+      ],
+      "dfinite_residual_dimensions": [
+        10,
+        40,
+        82,
+        136,
+        202
+      ],
+      "dfinite_total_full_coordinates": 4490,
+      "dfinite_total_residual_coordinates": 470,
+      "zero_mode_generator_coordinates": 15,
+      "zero_mode_dual_coordinates": 15,
+      "centered_dimensions_C3_C4_C5": [
+        727,
+        3084,
+        8532
+      ],
+      "dimension_collision": "GRAPH_ENDPOINT_FIELDS and CONFORMAL_KILLING_COTANGENT both display 30, but the first counts section species and the second counts global coefficients; their declared labels are disjoint and no identification is defined.",
+      "sha256": "108626a3033cdd9b2e3885caa2399685eab725dd76f45a716f26b5e1ec4b1d8c"
+    },
+    "support_locality_obstruction": {
+      "lemma": "For a nonzero global mode phi, choose a cutoff chi supported in a proper open set with nonzero pairing against phi. The mode projector sends chi phi to a nonzero global multiple of phi, so its output support is not contained in the input support.",
+      "projector_consequence": "If pi iota=1 on a nonzero finite global-mode carrier, P=iota pi is a nonzero projector. The specified harmonic or zero-mode P cannot be support-nonincreasing and therefore cannot be one of the finite-order support-local maps assumed by the causal-transfer theorem.",
+      "peetre_context": "Peetre's theorem identifies linear local operators on smooth section sheaves with differential operators; the support-expansion witness already refutes locality for the specified mode projector without requiring a classification of every alternative carrier.",
+      "finite_exact_fixture": {
+        "constant_projector": [
+          [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          [
+            "1/3",
+            "1/3",
+            "1/3"
+          ]
+        ],
+        "harmonic_projector": [
+          [
+            "1/14",
+            "1/7",
+            "3/14"
+          ],
+          [
+            "1/7",
+            "2/7",
+            "3/7"
+          ],
+          [
+            "3/14",
+            "3/7",
+            "9/14"
+          ]
+        ],
+        "localized_input": [
+          "1",
+          "0",
+          "0"
+        ],
+        "constant_output": [
+          "1/3",
+          "1/3",
+          "1/3"
+        ],
+        "harmonic_output": [
+          "1/14",
+          "1/7",
+          "3/14"
+        ],
+        "checks": {
+          "zero_projector_idempotent": true,
+          "mode_projector_idempotent": true,
+          "localized_input_support": true,
+          "zero_projector_expands_support": true,
+          "mode_projector_expands_support": true
+        }
+      },
+      "prior_repository_control": "CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1"
+    },
+    "architecture_decision": {
+      "original_M3_disposition": "REJECT_AS_SINGLE_UNTYPED_SUPPORT_LOCAL_RESIDUAL_SDR_REQUIREMENT",
+      "M3L_COMMON_ENDPOINT_SDR_BINDING": {
+        "category": "LOCAL-ALGEBRAIC",
+        "available_scoped_object": "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1",
+        "object": "bind q1, the 386-to-30 graph endpoint SDR and its cyclic suspension to the common strict manifest",
+        "status": "EXACT_OBJECT_EXISTS_COMMON_HASH_BINDING_OPEN"
+      },
+      "M3R_TYPED_RESIDUAL_COMPARISON": {
+        "category": "REDUCED-MODE with a separately declared analytic domain",
+        "available_control": "STRICT_DFINITE_RESIDUAL_SDR_V1",
+        "object": "construct a harmonic restriction/comparison diagram from the endpoint section complex to the W+/W- residual coefficient complex, with nonlocal projections labeled explicitly",
+        "status": "NOT_CONSTRUCTED"
+      },
+      "causal_transfer_rule": "Use only support-local bundle-complex SDR maps in the Green-homotopy transfer formula. A harmonic or zero-mode projection may enter a later reduced-mode comparison or residual transfer, not the support-local premise.",
+      "gate_effect": "Gate A remains fail closed. The repair changes the type of the missing evidence, not the number of accepted common hashes.",
+      "sha256": "456724b9ce097079d340489ed90ee46262b50e2754d521bfd02e2fdec59df774"
+    },
+    "foundational_strength": {
+      "exact_fixture": "finite rational arithmetic formalizable in PRA",
+      "choice_dependency": "none for the exact fixture or the explicit support witness",
+      "smooth_locality_context": "classical smooth section sheaves and support; Peetre-type locality is used only as context, not to promote a causal theorem",
+      "infinite_or_spectral_dependency": "the actual W+/W- comparison is global harmonic analysis and must remain separately typed"
+    },
+    "literature_scope": [
+      {
+        "source_id": "navarro-sancho-2016",
+        "title": "Peetre-Slovak's theorem revisited",
+        "url": "https://arxiv.org/abs/1411.7499",
+        "role": "local operators on smooth section sheaves are differential operators"
+      },
+      {
+        "source_id": "benini-musante-schenkel-2023",
+        "title": "Green hyperbolic complexes on Lorentzian manifolds",
+        "url": "https://doi.org/10.1007/s00220-023-04807-5",
+        "role": "typed retarded/advanced Green homotopies for differential complexes"
+      }
+    ],
+    "provenance": {
+      "inputs": [
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1.json",
+          "result_or_artifact_id": "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1",
+          "sha256": "b805bd81b35f13325d938e93be91495e1d46aa5900fd168e55bdcde1afbfa8e2",
+          "role": "exact support-local 386-to-30 endpoint graph SDR"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+          "result_or_artifact_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+          "sha256": "3b9d8a2fc5a70d20770452eb0a2a4891f59314c21c83188bfb59de0941cac4b2",
+          "role": "386-row component species and pairing dictionary"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json",
+          "result_or_artifact_id": "STRICT_DFINITE_RESIDUAL_SDR_V1",
+          "sha256": "1816a7fb98cb7a844cade72fa8d2ee8de3e858540d5c932d93a5f68b37235c08",
+          "role": "finite harmonic W+/W- residual SDR control"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1.json",
+          "result_or_artifact_id": "STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1",
+          "sha256": "85a889aca3b2dcdcae06a0cbd99107401c2ec66461fbdf0f2c20bc26bda1b61f",
+          "role": "finite conformal-Killing cotangent payload"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1.json",
+          "result_or_artifact_id": "STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1",
+          "sha256": "21400beeac1def4ba3b9e43d5e8222e106192a1ccfb504e5b0455859ad7fd286",
+          "role": "finite centered CE cochain payload"
+        },
+        {
+          "path": "d_quotient_classical/certificates/CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1.json",
+          "result_or_artifact_id": "CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1",
+          "sha256": "de3e5be077ee2c474a5e40e6ec222a128b659f326412ec65050ef574dc8b4eaf",
+          "role": "independent repository support-expansion precedent"
+        },
+        {
+          "path": "d_quotient_classical/certificates/GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1.json",
+          "result_or_artifact_id": "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1",
+          "sha256": "98c57a89861ce198e8ad072bc43859f84b5c6d96df85d0013f729d24dd1d1df7",
+          "role": "support-local cyclic Green-homotopy transfer contract"
+        }
+      ]
+    },
+    "claim_flags": {
+      "STRICT_386_GRAPH_ENDPOINT_SDR_SUPPORT_LOCAL": true,
+      "GRAPH_ENDPOINT_30_IS_FINITE_RESIDUAL_30": false,
+      "DFINITE_RESIDUAL_PROJECTOR_SUPPORT_LOCAL": false,
+      "ZERO_MODE_PROJECTOR_SUPPORT_LOCAL": false,
+      "ORIGINAL_M3_SINGLE_OBJECT_TYPE_CORRECT": false,
+      "M3_TYPED_SPLIT_REQUIRED": true,
+      "M3L_COMMON_ENDPOINT_SDR_BOUND": false,
+      "M3R_TYPED_RESIDUAL_COMPARISON_CONSTRUCTED": false,
+      "CLASSICAL_IMPORT_GATE_PASSED": false,
+      "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED": false,
+      "QME_RESTORED": false,
+      "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": false
+    },
+    "does_not_establish": [
+      "nonexistence of every possible infinite-dimensional local equation-level residual or curvature carrier",
+      "nonexistence of a typed harmonic restriction or nonlocal reduced-mode comparison",
+      "failure of the certified support-local 386-to-30 graph endpoint SDR",
+      "common-snapshot binding of that endpoint SDR",
+      "a new causal Green homotopy, Hadamard state, renormalized product, QME restoration or residual quantum transfer"
+    ],
+    "next_gate": "Bind the exact graph endpoint SDR to the common strict carrier as M3L, and independently construct M3R as a typed harmonic restriction/comparison with every nonlocal projection and function-space domain explicit.",
+    "independent_checker": {
+      "path": "quantum-weyl/classical_import/check_strict_residual_sdr_type_audit.py",
+      "checks": [
+        "all input content hashes",
+        "386/30 endpoint map shapes and row-species labels",
+        "4,490/470 D-finite harmonic dimensions and W+/W- labels",
+        "thirty conformal-Killing cotangent labels and disjoint type dictionaries",
+        "exact rational projector idempotency and support expansion",
+        "M3L/M3R split and every fail-closed claim flag",
+        "canonical audit digest"
+      ],
+      "expected_digest": "61e9abc37c0e8c4b92c360a86da56ab59dfa1e422c274e88c6b87843d714fec3"
+    },
+    "human_report": "quantum-weyl/classical_import/REPORT_STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT_V1.md"
+  },
   "cross_cell_interfaces": [
     {
       "id": "STATE_TO_PROBABILITY",
@@ -200706,14 +201101,16 @@ window.MATRIX_EXPLORER_DATA = {
     "ground_state_dynamics_interface_report": "sources/foundations/reports/krein-fock-ground-state-dynamics-interface.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md",
-    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V35.json",
-    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v35.md",
-    "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V17_RECONCILIATION.json",
-    "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V17.md",
+    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V36.json",
+    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v36.md",
+    "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V18_RECONCILIATION.json",
+    "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V18.md",
     "completion_residual_zero_modes": "sources/quantum-weyl/classical_import/certificates/STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1.json",
     "completion_residual_zero_modes_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1.md",
     "completion_centered_cohomology": "sources/quantum-weyl/classical_import/certificates/STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1.json",
     "completion_centered_cohomology_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1.md",
+    "completion_residual_sdr_type_audit": "sources/quantum-weyl/classical_import/certificates/STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT_V1.json",
+    "completion_residual_sdr_type_audit_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT_V1.md",
     "completion_sdr": "sources/quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json",
     "completion_sdr_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_DFINITE_RESIDUAL_SDR_V1.md",
     "completion_cyclic": "sources/quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1.json",
@@ -200791,5 +201188,5 @@ window.MATRIX_EXPLORER_DATA = {
     "completion_source_q3": "sources/quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.json",
     "completion_source_q3_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.md"
   },
-  "canonical_digest": "ede3472fda9eca651106bdf16218262ec3b0c60e64fe54f869b45d67be18f079"
+  "canonical_digest": "a64282a1573d8f4d164991d438b9cf6837b519398adba9cab945205376a58aaa"
 };

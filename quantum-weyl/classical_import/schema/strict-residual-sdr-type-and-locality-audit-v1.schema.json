@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-residual-sdr-type-and-locality-audit-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "dependency_tags", "scope", "carrier_ledger", "type_census", "support_locality_obstruction", "architecture_decision", "foundational_strength", "literature_scope", "provenance", "claim_flags", "does_not_establish", "independent_checker"],
+  "properties": {
+    "schema": {"const": "strict-residual-sdr-type-and-locality-audit-v1"},
+    "result_id": {"const": "STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT_V1"},
+    "result_kind": {"const": "CLASSICAL_IMPORT_ARCHITECTURE_TYPE_AUDIT"},
+    "result_state": {"const": "ORIGINAL_M3_SPLIT_INTO_LOCAL_ENDPOINT_SDR_AND_NONLOCAL_RESIDUAL_COMPARISON"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "carrier_ledger": {"type": "array", "minItems": 4, "maxItems": 4},
+    "type_census": {
+      "type": "object",
+      "required": ["endpoint_row_ids", "dfinite_energies", "dfinite_full_dimensions", "dfinite_residual_dimensions", "dfinite_total_full_coordinates", "dfinite_total_residual_coordinates", "zero_mode_generator_coordinates", "zero_mode_dual_coordinates", "centered_dimensions_C3_C4_C5", "dimension_collision", "sha256"],
+      "properties": {
+        "endpoint_row_ids": {"type": "array", "minItems": 30, "maxItems": 30},
+        "dfinite_energies": {"const": [2, 3, 4, 5, 6]},
+        "dfinite_full_dimensions": {"const": [230, 440, 758, 1216, 1846]},
+        "dfinite_residual_dimensions": {"const": [10, 40, 82, 136, 202]},
+        "dfinite_total_full_coordinates": {"const": 4490},
+        "dfinite_total_residual_coordinates": {"const": 470},
+        "zero_mode_generator_coordinates": {"const": 15},
+        "zero_mode_dual_coordinates": {"const": 15},
+        "centered_dimensions_C3_C4_C5": {"const": [727, 3084, 8532]},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "architecture_decision": {
+      "type": "object",
+      "required": ["original_M3_disposition", "M3L_COMMON_ENDPOINT_SDR_BINDING", "M3R_TYPED_RESIDUAL_COMPARISON", "causal_transfer_rule", "gate_effect", "sha256"],
+      "properties": {
+        "original_M3_disposition": {"const": "REJECT_AS_SINGLE_UNTYPED_SUPPORT_LOCAL_RESIDUAL_SDR_REQUIREMENT"},
+        "M3L_COMMON_ENDPOINT_SDR_BINDING": {"type": "object"},
+        "M3R_TYPED_RESIDUAL_COMPARISON": {"type": "object"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["STRICT_386_GRAPH_ENDPOINT_SDR_SUPPORT_LOCAL", "GRAPH_ENDPOINT_30_IS_FINITE_RESIDUAL_30", "DFINITE_RESIDUAL_PROJECTOR_SUPPORT_LOCAL", "ZERO_MODE_PROJECTOR_SUPPORT_LOCAL", "ORIGINAL_M3_SINGLE_OBJECT_TYPE_CORRECT", "M3_TYPED_SPLIT_REQUIRED", "M3L_COMMON_ENDPOINT_SDR_BOUND", "M3R_TYPED_RESIDUAL_COMPARISON_CONSTRUCTED", "CLASSICAL_IMPORT_GATE_PASSED", "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED", "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED"],
+      "properties": {
+        "STRICT_386_GRAPH_ENDPOINT_SDR_SUPPORT_LOCAL": {"const": true},
+        "GRAPH_ENDPOINT_30_IS_FINITE_RESIDUAL_30": {"const": false},
+        "DFINITE_RESIDUAL_PROJECTOR_SUPPORT_LOCAL": {"const": false},
+        "ZERO_MODE_PROJECTOR_SUPPORT_LOCAL": {"const": false},
+        "ORIGINAL_M3_SINGLE_OBJECT_TYPE_CORRECT": {"const": false},
+        "M3_TYPED_SPLIT_REQUIRED": {"const": true},
+        "M3L_COMMON_ENDPOINT_SDR_BOUND": {"const": false},
+        "M3R_TYPED_RESIDUAL_COMPARISON_CONSTRUCTED": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": {"const": false}
+      }
+    },
+    "independent_checker": {"type": "object", "required": ["path", "checks", "expected_digest"]}
+  }
+}

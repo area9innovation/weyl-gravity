@@ -1,0 +1,337 @@
+{
+  "$schema": "../schema/strict-residual-sdr-type-and-locality-audit-v1.schema.json",
+  "schema": "strict-residual-sdr-type-and-locality-audit-v1",
+  "schema_path": "quantum-weyl/classical_import/schema/strict-residual-sdr-type-and-locality-audit-v1.schema.json",
+  "result_id": "STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT_V1",
+  "result_kind": "CLASSICAL_IMPORT_ARCHITECTURE_TYPE_AUDIT",
+  "result_state": "ORIGINAL_M3_SPLIT_INTO_LOCAL_ENDPOINT_SDR_AND_NONLOCAL_RESIDUAL_COMPARISON",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-16",
+  "repository_base_commit": "0e0e5670576da72bcaaf2b6d6189cc1d25287ce5",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "Can the 386-row graph SDR, D-finite W+/W- residual SDR and thirty-dimensional conformal-Killing cotangent payload be treated as one support-local residual contraction?",
+  "answer": "No. The graph object retracts 386 local component species onto 30 local endpoint field species. The D-finite object retracts 4,490 harmonic coefficients onto 470 W+/W- coefficients, and M5 contains 30 global symmetry-cotangent coefficients. The repeated number 30 is a type collision, not a basis bridge. A nonzero projector onto a global constant or harmonic mode expands support, so the declared reduced-mode projections cannot be used as support-local maps in the Green-homotopy transfer theorem. M3 must split into a common binding of the already exact local endpoint SDR and a separately typed, explicitly nonlocal residual comparison.",
+  "scope": {
+    "theory": "strict pure-Weyl free BV complex",
+    "background": "unit conformal cylinder",
+    "audit_surface": "graph endpoint fields, finite W+/W- harmonics, conformal-Killing cotangent modes and centered CE cochains",
+    "claim_type": "architecture classification and scoped support obstruction"
+  },
+  "carrier_ledger": [
+    {
+      "id": "GRAPH_ENDPOINT_FIELDS",
+      "kind": "SECTION_SHEAF_COMPONENT_CARRIER",
+      "coordinates": 30,
+      "coordinate_meaning": "local BV field-component species c, omega, h, h_star, c_star and omega_star; each coordinate is a spacetime-dependent section",
+      "map": "the exact graph SDR contracts 386 component species onto these 30 endpoint species",
+      "locality": "FINITE_ORDER_SUPPORT_LOCAL",
+      "basis_sample": [
+        "c_0",
+        "c_1",
+        "c_2",
+        "c_3",
+        "omega",
+        "h_00"
+      ]
+    },
+    {
+      "id": "DFINITE_WEYL_RESIDUAL",
+      "kind": "FINITE_HARMONIC_COEFFICIENT_CARRIER",
+      "coordinates": 470,
+      "coordinate_meaning": "W+ and W- cohomology coefficients at energies 2 through 6",
+      "map": "a blockwise finite harmonic SDR from 4,490 split coefficients",
+      "locality": "REDUCED_MODE_NOT_ARBITRARY_SUPPORT",
+      "basis_sample": [
+        "E2:W_PLUS:0",
+        "E2:W_PLUS:1",
+        "E2:W_PLUS:2",
+        "E2:W_PLUS:3",
+        "E2:W_PLUS:4",
+        "E2:W_MINUS:0"
+      ]
+    },
+    {
+      "id": "CONFORMAL_KILLING_COTANGENT",
+      "kind": "FINITE_LIE_COTANGENT_CARRIER",
+      "coordinates": 30,
+      "coordinate_meaning": "fifteen conformal-Killing generators and fifteen normalized dual coefficients",
+      "map": "the exact M5 residual zero-mode representation",
+      "locality": "GLOBAL_ZERO_MODE_COEFFICIENTS",
+      "basis_sample": [
+        "D",
+        "R01",
+        "R02",
+        "R03",
+        "R12",
+        "R13"
+      ]
+    },
+    {
+      "id": "CENTERED_CE_COCHAINS",
+      "kind": "FINITE_CENTERED_CE_COCHAIN_CARRIER",
+      "coordinates": 12343,
+      "coordinate_meaning": "ordered C3, C4 and C5 centered Chevalley-Eilenberg cochains used to compute H4",
+      "map": "finite transferred coefficient complex",
+      "locality": "LOCAL_ALGEBRAIC_AND_REDUCED_MODE_ONLY",
+      "basis_sample": [
+        "C3",
+        "C4",
+        "C5"
+      ]
+    }
+  ],
+  "type_census": {
+    "endpoint_row_ids": [
+      "c_0",
+      "c_1",
+      "c_2",
+      "c_3",
+      "omega",
+      "h_00",
+      "h_01",
+      "h_02",
+      "h_03",
+      "h_11",
+      "h_12",
+      "h_13",
+      "h_22",
+      "h_23",
+      "h_33",
+      "h_star_00",
+      "h_star_01",
+      "h_star_02",
+      "h_star_03",
+      "h_star_11",
+      "h_star_12",
+      "h_star_13",
+      "h_star_22",
+      "h_star_23",
+      "h_star_33",
+      "c_star_0",
+      "c_star_1",
+      "c_star_2",
+      "c_star_3",
+      "omega_star"
+    ],
+    "dfinite_energies": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "dfinite_full_dimensions": [
+      230,
+      440,
+      758,
+      1216,
+      1846
+    ],
+    "dfinite_residual_dimensions": [
+      10,
+      40,
+      82,
+      136,
+      202
+    ],
+    "dfinite_total_full_coordinates": 4490,
+    "dfinite_total_residual_coordinates": 470,
+    "zero_mode_generator_coordinates": 15,
+    "zero_mode_dual_coordinates": 15,
+    "centered_dimensions_C3_C4_C5": [
+      727,
+      3084,
+      8532
+    ],
+    "dimension_collision": "GRAPH_ENDPOINT_FIELDS and CONFORMAL_KILLING_COTANGENT both display 30, but the first counts section species and the second counts global coefficients; their declared labels are disjoint and no identification is defined.",
+    "sha256": "108626a3033cdd9b2e3885caa2399685eab725dd76f45a716f26b5e1ec4b1d8c"
+  },
+  "support_locality_obstruction": {
+    "lemma": "For a nonzero global mode phi, choose a cutoff chi supported in a proper open set with nonzero pairing against phi. The mode projector sends chi phi to a nonzero global multiple of phi, so its output support is not contained in the input support.",
+    "projector_consequence": "If pi iota=1 on a nonzero finite global-mode carrier, P=iota pi is a nonzero projector. The specified harmonic or zero-mode P cannot be support-nonincreasing and therefore cannot be one of the finite-order support-local maps assumed by the causal-transfer theorem.",
+    "peetre_context": "Peetre's theorem identifies linear local operators on smooth section sheaves with differential operators; the support-expansion witness already refutes locality for the specified mode projector without requiring a classification of every alternative carrier.",
+    "finite_exact_fixture": {
+      "constant_projector": [
+        [
+          "1/3",
+          "1/3",
+          "1/3"
+        ],
+        [
+          "1/3",
+          "1/3",
+          "1/3"
+        ],
+        [
+          "1/3",
+          "1/3",
+          "1/3"
+        ]
+      ],
+      "harmonic_projector": [
+        [
+          "1/14",
+          "1/7",
+          "3/14"
+        ],
+        [
+          "1/7",
+          "2/7",
+          "3/7"
+        ],
+        [
+          "3/14",
+          "3/7",
+          "9/14"
+        ]
+      ],
+      "localized_input": [
+        "1",
+        "0",
+        "0"
+      ],
+      "constant_output": [
+        "1/3",
+        "1/3",
+        "1/3"
+      ],
+      "harmonic_output": [
+        "1/14",
+        "1/7",
+        "3/14"
+      ],
+      "checks": {
+        "zero_projector_idempotent": true,
+        "mode_projector_idempotent": true,
+        "localized_input_support": true,
+        "zero_projector_expands_support": true,
+        "mode_projector_expands_support": true
+      }
+    },
+    "prior_repository_control": "CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1"
+  },
+  "architecture_decision": {
+    "original_M3_disposition": "REJECT_AS_SINGLE_UNTYPED_SUPPORT_LOCAL_RESIDUAL_SDR_REQUIREMENT",
+    "M3L_COMMON_ENDPOINT_SDR_BINDING": {
+      "category": "LOCAL-ALGEBRAIC",
+      "available_scoped_object": "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1",
+      "object": "bind q1, the 386-to-30 graph endpoint SDR and its cyclic suspension to the common strict manifest",
+      "status": "EXACT_OBJECT_EXISTS_COMMON_HASH_BINDING_OPEN"
+    },
+    "M3R_TYPED_RESIDUAL_COMPARISON": {
+      "category": "REDUCED-MODE with a separately declared analytic domain",
+      "available_control": "STRICT_DFINITE_RESIDUAL_SDR_V1",
+      "object": "construct a harmonic restriction/comparison diagram from the endpoint section complex to the W+/W- residual coefficient complex, with nonlocal projections labeled explicitly",
+      "status": "NOT_CONSTRUCTED"
+    },
+    "causal_transfer_rule": "Use only support-local bundle-complex SDR maps in the Green-homotopy transfer formula. A harmonic or zero-mode projection may enter a later reduced-mode comparison or residual transfer, not the support-local premise.",
+    "gate_effect": "Gate A remains fail closed. The repair changes the type of the missing evidence, not the number of accepted common hashes.",
+    "sha256": "456724b9ce097079d340489ed90ee46262b50e2754d521bfd02e2fdec59df774"
+  },
+  "foundational_strength": {
+    "exact_fixture": "finite rational arithmetic formalizable in PRA",
+    "choice_dependency": "none for the exact fixture or the explicit support witness",
+    "smooth_locality_context": "classical smooth section sheaves and support; Peetre-type locality is used only as context, not to promote a causal theorem",
+    "infinite_or_spectral_dependency": "the actual W+/W- comparison is global harmonic analysis and must remain separately typed"
+  },
+  "literature_scope": [
+    {
+      "source_id": "navarro-sancho-2016",
+      "title": "Peetre-Slovak's theorem revisited",
+      "url": "https://arxiv.org/abs/1411.7499",
+      "role": "local operators on smooth section sheaves are differential operators"
+    },
+    {
+      "source_id": "benini-musante-schenkel-2023",
+      "title": "Green hyperbolic complexes on Lorentzian manifolds",
+      "url": "https://doi.org/10.1007/s00220-023-04807-5",
+      "role": "typed retarded/advanced Green homotopies for differential complexes"
+    }
+  ],
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1.json",
+        "result_or_artifact_id": "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1",
+        "sha256": "b805bd81b35f13325d938e93be91495e1d46aa5900fd168e55bdcde1afbfa8e2",
+        "role": "exact support-local 386-to-30 endpoint graph SDR"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+        "result_or_artifact_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+        "sha256": "3b9d8a2fc5a70d20770452eb0a2a4891f59314c21c83188bfb59de0941cac4b2",
+        "role": "386-row component species and pairing dictionary"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json",
+        "result_or_artifact_id": "STRICT_DFINITE_RESIDUAL_SDR_V1",
+        "sha256": "1816a7fb98cb7a844cade72fa8d2ee8de3e858540d5c932d93a5f68b37235c08",
+        "role": "finite harmonic W+/W- residual SDR control"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1.json",
+        "result_or_artifact_id": "STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1",
+        "sha256": "85a889aca3b2dcdcae06a0cbd99107401c2ec66461fbdf0f2c20bc26bda1b61f",
+        "role": "finite conformal-Killing cotangent payload"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1.json",
+        "result_or_artifact_id": "STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1",
+        "sha256": "21400beeac1def4ba3b9e43d5e8222e106192a1ccfb504e5b0455859ad7fd286",
+        "role": "finite centered CE cochain payload"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1.json",
+        "result_or_artifact_id": "CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1",
+        "sha256": "de3e5be077ee2c474a5e40e6ec222a128b659f326412ec65050ef574dc8b4eaf",
+        "role": "independent repository support-expansion precedent"
+      },
+      {
+        "path": "d_quotient_classical/certificates/GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1.json",
+        "result_or_artifact_id": "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1",
+        "sha256": "98c57a89861ce198e8ad072bc43859f84b5c6d96df85d0013f729d24dd1d1df7",
+        "role": "support-local cyclic Green-homotopy transfer contract"
+      }
+    ]
+  },
+  "claim_flags": {
+    "STRICT_386_GRAPH_ENDPOINT_SDR_SUPPORT_LOCAL": true,
+    "GRAPH_ENDPOINT_30_IS_FINITE_RESIDUAL_30": false,
+    "DFINITE_RESIDUAL_PROJECTOR_SUPPORT_LOCAL": false,
+    "ZERO_MODE_PROJECTOR_SUPPORT_LOCAL": false,
+    "ORIGINAL_M3_SINGLE_OBJECT_TYPE_CORRECT": false,
+    "M3_TYPED_SPLIT_REQUIRED": true,
+    "M3L_COMMON_ENDPOINT_SDR_BOUND": false,
+    "M3R_TYPED_RESIDUAL_COMPARISON_CONSTRUCTED": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED": false,
+    "QME_RESTORED": false,
+    "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": false
+  },
+  "does_not_establish": [
+    "nonexistence of every possible infinite-dimensional local equation-level residual or curvature carrier",
+    "nonexistence of a typed harmonic restriction or nonlocal reduced-mode comparison",
+    "failure of the certified support-local 386-to-30 graph endpoint SDR",
+    "common-snapshot binding of that endpoint SDR",
+    "a new causal Green homotopy, Hadamard state, renormalized product, QME restoration or residual quantum transfer"
+  ],
+  "next_gate": "Bind the exact graph endpoint SDR to the common strict carrier as M3L, and independently construct M3R as a typed harmonic restriction/comparison with every nonlocal projection and function-space domain explicit.",
+  "independent_checker": {
+    "path": "quantum-weyl/classical_import/check_strict_residual_sdr_type_audit.py",
+    "checks": [
+      "all input content hashes",
+      "386/30 endpoint map shapes and row-species labels",
+      "4,490/470 D-finite harmonic dimensions and W+/W- labels",
+      "thirty conformal-Killing cotangent labels and disjoint type dictionaries",
+      "exact rational projector idempotency and support expansion",
+      "M3L/M3R split and every fail-closed claim flag",
+      "canonical audit digest"
+    ],
+    "expected_digest": "61e9abc37c0e8c4b92c360a86da56ab59dfa1e422c274e88c6b87843d714fec3"
+  },
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT_V1.md"
+}
