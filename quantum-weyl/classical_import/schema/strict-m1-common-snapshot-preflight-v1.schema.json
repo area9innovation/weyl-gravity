@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9innovation.github.io/weyl-gravity/strict-m1-common-snapshot-preflight-v1.schema.json",
+  "title": "Strict M1 common-snapshot preflight v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema", "schema", "schema_path", "result_id", "result_kind",
+    "result_state", "lifecycle", "created", "repository_base_commit",
+    "dependency_tags", "question", "answer", "authoritative_source_decision",
+    "carrier_inventory", "cross_category_edges", "local_row_ledger_audit",
+    "export_inventory", "hash_inventory", "freeze_check_inventory", "counts",
+    "m1_work_packages", "foundational_strength", "claim_flags",
+    "does_not_establish", "next_gate", "human_report", "provenance",
+    "independent_checker"
+  ],
+  "properties": {
+    "$schema": {"const": "../schema/strict-m1-common-snapshot-preflight-v1.schema.json"},
+    "schema": {"const": "strict-m1-common-snapshot-preflight-v1"},
+    "schema_path": {"const": "quantum-weyl/classical_import/schema/strict-m1-common-snapshot-preflight-v1.schema.json"},
+    "result_id": {"const": "STRICT_M1_COMMON_SNAPSHOT_PREFLIGHT_V1"},
+    "result_kind": {"const": "CLASSICAL_IMPORT_COMMON_TYPED_DIAGRAM_PREFLIGHT"},
+    "result_state": {"const": "M1_SPLIT_INTO_TYPED_LEDGER_COMPOSITE_CONTRACTION_AND_FINAL_BINDING"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"const": "2026-08-16"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "authoritative_source_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["local_source", "snapshot_shape", "formal_8980_source_authoritative", "action_residual_940_is_target_not_local_source", "category_equalities_forbidden"],
+      "properties": {
+        "local_source": {"const": "LOCAL_GRAPH_BV_386"},
+        "snapshot_shape": {"const": "CONTENT_ADDRESSED_TYPED_DIAGRAM_NOT_ONE_VECTOR_SPACE"},
+        "formal_8980_source_authoritative": {"const": false},
+        "action_residual_940_is_target_not_local_source": {"const": true},
+        "category_equalities_forbidden": {"type": "array", "minItems": 3, "uniqueItems": true, "items": {"type": "string"}}
+      }
+    },
+    "carrier_inventory": {
+      "type": "array", "minItems": 8, "maxItems": 8,
+      "items": {"$ref": "#/$defs/carrier"}
+    },
+    "cross_category_edges": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "items": {"$ref": "#/$defs/edge"}
+    },
+    "local_row_ledger_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rows", "serialized_fields", "required_explicit_fields", "missing_explicit_fields", "all_rows_have_required_explicit_fields", "boundary"],
+      "properties": {
+        "rows": {"const": 386},
+        "serialized_fields": {"const": ["basis_source", "block", "degree", "index", "local_index", "row_id", "sector"]},
+        "required_explicit_fields": {"const": ["ghost_number", "antifield_number", "form_degree", "Grassmann_parity", "mass_dimension", "Weyl_weight", "compact_degree", "derivative_order_bound"]},
+        "missing_explicit_fields": {"const": ["ghost_number", "antifield_number", "form_degree", "Grassmann_parity", "mass_dimension", "Weyl_weight", "compact_degree", "derivative_order_bound"]},
+        "all_rows_have_required_explicit_fields": {"const": false},
+        "boundary": {"type": "string", "minLength": 1}
+      }
+    },
+    "export_inventory": {
+      "type": "array", "minItems": 20, "maxItems": 20,
+      "items": {"$ref": "#/$defs/export"}
+    },
+    "hash_inventory": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "items": {"$ref": "#/$defs/hash_item"}
+    },
+    "freeze_check_inventory": {
+      "type": "array", "minItems": 10, "maxItems": 10,
+      "items": {"$ref": "#/$defs/freeze_check"}
+    },
+    "counts": {
+      "const": {
+        "exports_total": 20,
+        "exports_common_object_ready": 14,
+        "exports_blocked_full_typed_ledger": 2,
+        "exports_blocked_composite_contraction": 4,
+        "hashes_total": 7,
+        "hash_objects_ready_await_binding": 4,
+        "hashes_blocked_before_binding": 3,
+        "freeze_checks_total": 10,
+        "freeze_checks_common_snapshot_replayed": 0
+      }
+    },
+    "m1_work_packages": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {"$ref": "#/$defs/package"}
+    },
+    "foundational_strength": {
+      "type": "object", "additionalProperties": false,
+      "required": ["exact_finite_inventory", "analytic_dependency", "choice_principle_used_by_preflight", "weakest_foundation_proved"],
+      "properties": {
+        "exact_finite_inventory": {"type": "string"},
+        "analytic_dependency": {"type": "string"},
+        "choice_principle_used_by_preflight": {"const": false},
+        "weakest_foundation_proved": {"const": false}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "M1_PREFLIGHT_COMPLETE", "M1_IS_CLERICAL_HASH_BUNDLE", "M1_TYPED_DIAGRAM_REQUIRED",
+        "M1A_FULL_TYPED_CARRIER_LEDGER_COMPLETE", "M1B_REPRESENTED_COMPOSITE_CONTRACTION_COMPLETE",
+        "M1C_COMMON_MANIFEST_REPLAY_COMPLETE", "FORMAL_8980_SOURCE_IS_AUTHORITATIVE_ORIGINAL_BV_COMPLEX",
+        "M1_COMMON_STRICT_SNAPSHOT_COMPLETE", "CLASSICAL_IMPORT_GATE_PASSED",
+        "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED", "RENORMALIZED_LORENTZIAN_PRODUCTS_CONSTRUCTED",
+        "QME_RESTORED", "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED"
+      ],
+      "properties": {
+        "M1_PREFLIGHT_COMPLETE": {"const": true},
+        "M1_IS_CLERICAL_HASH_BUNDLE": {"const": false},
+        "M1_TYPED_DIAGRAM_REQUIRED": {"const": true},
+        "M1A_FULL_TYPED_CARRIER_LEDGER_COMPLETE": {"const": false},
+        "M1B_REPRESENTED_COMPOSITE_CONTRACTION_COMPLETE": {"const": false},
+        "M1C_COMMON_MANIFEST_REPLAY_COMPLETE": {"const": false},
+        "FORMAL_8980_SOURCE_IS_AUTHORITATIVE_ORIGINAL_BV_COMPLEX": {"const": false},
+        "M1_COMMON_STRICT_SNAPSHOT_COMPLETE": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "RENORMALIZED_LORENTZIAN_PRODUCTS_CONSTRUCTED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": {"const": false}
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_M1_COMMON_SNAPSHOT_PREFLIGHT_V1.md"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["inputs"],
+      "properties": {"inputs": {"type": "array", "minItems": 15, "maxItems": 15, "items": {"$ref": "#/$defs/input"}}}
+    },
+    "independent_checker": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "checks", "expected_digest"],
+      "properties": {
+        "path": {"const": "quantum-weyl/classical_import/check_strict_m1_common_snapshot_preflight.py"},
+        "checks": {"type": "array", "minItems": 7, "items": {"type": "string"}},
+        "expected_digest": {"$ref": "#/$defs/hash"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "input": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_or_artifact_id", "sha256", "role"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_or_artifact_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "role": {"type": "string", "minLength": 1}
+      }
+    },
+    "carrier": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "category", "dimension", "authoritative_role", "status"],
+      "properties": {
+        "id": {"type": "string"}, "category": {"type": "string"},
+        "dimension": {"type": "integer", "minimum": 1},
+        "authoritative_role": {"type": "string"}, "status": {"type": "string"}
+      }
+    },
+    "edge": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "source", "target", "status"],
+      "properties": {"id": {"type": "string"}, "source": {"type": "string"}, "target": {"type": "string"}, "status": {"type": "string"}}
+    },
+    "export": {
+      "type": "object", "additionalProperties": false,
+      "required": ["export_id", "gate_v25_status", "m1_preflight_status", "blocker", "evidence", "boundary"],
+      "properties": {
+        "export_id": {"type": "string"}, "gate_v25_status": {"type": "string"},
+        "m1_preflight_status": {"enum": ["MISSING_FULL_TYPED_ROW_LEDGER", "TYPED_STAGES_READY_COMPOSITE_MAP_MISSING", "LOCAL_AND_RESIDUAL_FORMS_READY_COMMON_COMPOSITE_MISSING", "COMMON_OBJECT_READY_FOR_BINDING"]},
+        "blocker": {"type": ["string", "null"]}, "evidence": {}, "boundary": {}
+      }
+    },
+    "hash_item": {
+      "type": "object", "additionalProperties": false,
+      "required": ["hash_id", "status", "candidate", "candidate_scope"],
+      "properties": {"hash_id": {"type": "string"}, "status": {"type": "string"}, "candidate": {}, "candidate_scope": {"type": "string"}}
+    },
+    "freeze_check": {
+      "type": "object", "additionalProperties": false,
+      "required": ["check_id", "gate_v25_status", "common_snapshot_replay_status", "evidence"],
+      "properties": {
+        "check_id": {"type": "string"}, "gate_v25_status": {"type": "string"},
+        "common_snapshot_replay_status": {"const": "WAITING_FOR_M1C_AFTER_M1A_M1B"}, "evidence": {}
+      }
+    },
+    "package": {
+      "type": "object", "additionalProperties": false,
+      "required": ["order", "id", "status", "deliverable", "unlocks"],
+      "properties": {
+        "order": {"type": "integer", "minimum": 1, "maximum": 3},
+        "id": {"type": "string"}, "status": {"type": "string"},
+        "deliverable": {"type": "string", "minLength": 1},
+        "unlocks": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      }
+    }
+  }
+}

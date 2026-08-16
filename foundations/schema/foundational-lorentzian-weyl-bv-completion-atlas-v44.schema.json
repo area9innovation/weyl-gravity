@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9innovation.github.io/weyl-gravity/foundational-lorentzian-weyl-bv-completion-atlas-v44.schema.json",
+  "title": "Foundational Lorentzian Weyl BV completion atlas v44",
+  "type": "object",
+  "required": [
+    "schema_version", "result_id", "result_kind", "lifecycle", "created",
+    "dependency_tags", "question", "answer", "predecessor", "stages", "branches",
+    "frontier_summary", "classical_import_reconciliation", "strict_gate_v26_reconciliation",
+    "strict_m1_common_snapshot_preflight", "route_selection", "research_queue",
+    "claim_flags", "does_not_establish", "provenance", "independent_checker", "human_report"
+  ],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v44"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V44"},
+    "result_kind": {"type": "string"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"const": "2026-08-16"},
+    "dependency_tags": {"contains": {"const": "LORENTZIAN-CAUSAL"}},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "predecessor": {
+      "type": "object", "required": ["result_id", "path", "sha256", "preserved"],
+      "properties": {
+        "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V43"},
+        "path": {"const": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V43.json"},
+        "sha256": {"$ref": "#/$defs/hash"}, "preserved": {"const": true}
+      }
+    },
+    "stages": {"type": "array", "minItems": 11, "maxItems": 11},
+    "branches": {"type": "array", "minItems": 7, "maxItems": 7},
+    "frontier_summary": {
+      "type": "object", "required": ["highest_value_next_route", "route_count", "completed_since_v43", "new_positive_result", "surprise", "hard_boundary"],
+      "properties": {
+        "highest_value_next_route": {"const": "STRICT_M1A_FULL_TYPED_CARRIER_LEDGER"},
+        "route_count": {"const": 9},
+        "completed_since_v43": {"const": ["STRICT_M1_COMMON_SNAPSHOT_PREFLIGHT", "GATE_V26_M1_PREFLIGHT_RECONCILIATION"]}
+      }
+    },
+    "classical_import_reconciliation": {
+      "type": "object", "required": ["result_id", "accepted_top_level_hashes", "gate_a_status", "minimal_missing_bundle"],
+      "properties": {
+        "result_id": {"const": "CLASSICAL_IMPORT_GATE_V26_RECONCILIATION"},
+        "accepted_top_level_hashes": {"const": 1}, "gate_a_status": {"const": "FAIL_CLOSED"},
+        "minimal_missing_bundle": {"const": ["M1_COMMON_STRICT_SNAPSHOT"]}
+      }
+    },
+    "strict_gate_v26_reconciliation": {
+      "type": "object", "required": ["result_id", "accepted_top_level_hashes", "remaining_top_level_hashes", "minimal_missing_bundle", "M1_preflight_complete", "M1_common_strict_snapshot_complete", "gate_a_status"],
+      "properties": {
+        "result_id": {"const": "CLASSICAL_IMPORT_GATE_V26_RECONCILIATION"},
+        "accepted_top_level_hashes": {"const": 1}, "remaining_top_level_hashes": {"const": 6},
+        "minimal_missing_bundle": {"const": ["M1_COMMON_STRICT_SNAPSHOT"]},
+        "M1_preflight_complete": {"const": true}, "M1_common_strict_snapshot_complete": {"const": false},
+        "gate_a_status": {"const": "FAIL_CLOSED"}
+      }
+    },
+    "strict_m1_common_snapshot_preflight": {
+      "type": "object", "required": ["result_id", "snapshot_shape", "carrier_count", "typed_edge_count", "exports_total", "exports_object_ready", "exports_blocked_typed_ledger", "exports_blocked_composite", "hashes_total", "hash_objects_ready", "hashes_blocked", "freeze_checks_common_snapshot_replayed", "work_packages", "formal_8980_source_authoritative"],
+      "properties": {
+        "result_id": {"const": "STRICT_M1_COMMON_SNAPSHOT_PREFLIGHT_V1"},
+        "snapshot_shape": {"const": "CONTENT_ADDRESSED_TYPED_DIAGRAM_NOT_ONE_VECTOR_SPACE"},
+        "carrier_count": {"const": 8}, "typed_edge_count": {"const": 7},
+        "exports_total": {"const": 20}, "exports_object_ready": {"const": 14},
+        "exports_blocked_typed_ledger": {"const": 2}, "exports_blocked_composite": {"const": 4},
+        "hashes_total": {"const": 7}, "hash_objects_ready": {"const": 4}, "hashes_blocked": {"const": 3},
+        "freeze_checks_common_snapshot_replayed": {"const": 0},
+        "work_packages": {"const": ["M1A_FULL_TYPED_CARRIER_LEDGER", "M1B_REPRESENTED_COMPOSITE_CONTRACTION", "M1C_COMMON_MANIFEST_REPLAY"]},
+        "formal_8980_source_authoritative": {"const": false}
+      }
+    },
+    "route_selection": {
+      "type": "array", "minItems": 9, "maxItems": 9,
+      "prefixItems": [
+        {"type": "object", "required": ["route", "rank"], "properties": {"route": {"const": "STRICT_M1A_FULL_TYPED_CARRIER_LEDGER"}, "rank": {"const": 1}}},
+        {"type": "object", "required": ["route", "rank"], "properties": {"route": {"const": "STRICT_M1B_REPRESENTED_COMPOSITE_CONTRACTION"}, "rank": {"const": 2}}},
+        {"type": "object", "required": ["route", "rank"], "properties": {"route": {"const": "STRICT_M1C_COMMON_MANIFEST_REPLAY"}, "rank": {"const": 3}}}
+      ]
+    },
+    "research_queue": {"type": "array", "minItems": 9, "maxItems": 9},
+    "claim_flags": {
+      "type": "object", "required": ["strict_M1_preflight_complete", "strict_M1_typed_diagram_required", "strict_M1A_full_typed_carrier_ledger_complete", "strict_M1B_represented_composite_contraction_complete", "strict_M1C_common_manifest_replay_complete", "strict_M1_common_strict_snapshot_complete", "strict_pure_weyl_classical_gate_passed", "strict_386_full_bv_hadamard_state_constructed", "strict_pure_weyl_qme_restored", "lorentzian_full_theory_certified"],
+      "properties": {
+        "strict_M1_preflight_complete": {"const": true}, "strict_M1_typed_diagram_required": {"const": true},
+        "strict_M1A_full_typed_carrier_ledger_complete": {"const": false},
+        "strict_M1B_represented_composite_contraction_complete": {"const": false},
+        "strict_M1C_common_manifest_replay_complete": {"const": false},
+        "strict_M1_common_strict_snapshot_complete": {"const": false},
+        "strict_pure_weyl_classical_gate_passed": {"const": false},
+        "strict_386_full_bv_hadamard_state_constructed": {"const": false},
+        "strict_pure_weyl_qme_restored": {"const": false}, "lorentzian_full_theory_certified": {"const": false}
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "provenance": {"type": "object", "required": ["inputs"]},
+    "independent_checker": {
+      "type": "object", "required": ["path", "checks", "expected_digest"],
+      "properties": {
+        "path": {"const": "foundations/check_lorentzian_weyl_bv_completion_atlas_v44.py"},
+        "checks": {"type": "array", "minItems": 8}, "expected_digest": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "human_report": {"const": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v44.md"}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

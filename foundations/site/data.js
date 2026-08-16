@@ -18030,8 +18030,8 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "completion_atlas": {
-    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v43",
-    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V43",
+    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v44",
+    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V44",
     "result_kind": "BRANCH_BY_STAGE_COMPLETION_ATLAS",
     "lifecycle": "CLASSIFIED",
     "created": "2026-08-16",
@@ -18042,12 +18042,12 @@ window.MATRIX_EXPLORER_DATA = {
       "REDUCED-MODE",
       "LORENTZIAN-CAUSAL"
     ],
-    "question": "What remains after exact residual cyclicity is replayed on the action-identified represented carrier?",
-    "answer": "Atlas V43 closes M4R on represented energies two through six. An independent sparse receiver reconstructs all five shifted-cotangent comparison blocks and verifies q_res cyclicity, projection equals inclusion-adjoint, homotopy skew-adjointness, inclusion isometry, contraction and normalized side conditions with zero defects. M3RC-B identifies the rank-940 residual form with compact-source action/Green classes. M1 is now the sole minimal classical import package: one authoritative source snapshot must bind all local, nonlinear, causal and residual objects and support replay of all twenty exports, ten checks and seven hashes. Gate A remains fail closed at one accepted hash.",
+    "question": "What is the executable route through the sole remaining M1 classical-import package?",
+    "answer": "Atlas V44 resolves M1 into three ordered construction routes. M1A must add explicit type and grading data to the authoritative carriers; M1B must serialize the actual represented inclusion, projection, homotopy and action pairing from the 386-row local graph architecture to the rank-940 residual target; M1C must freeze the resulting typed diagram and replay twenty exports, seven hashes and ten checks. Fourteen exports and four hash objects are ready, but Gate A remains fail closed at one accepted hash.",
     "predecessor": {
-      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V42",
-      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V42.json",
-      "sha256": "e03a4cd8d917b82647e6a69045a5b72ababeeba6e45b106495ca22dfeee7ddfe",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V43",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V43.json",
+      "sha256": "4bd8d4b140b555d1603bd0a76cecca4f7cdeddf89ea440126f56f1f61d6c5f90",
       "preserved": true
     },
     "status_vocabulary": [
@@ -18155,7 +18155,7 @@ window.MATRIX_EXPLORER_DATA = {
           {
             "stage": "S0_CLASSICAL_AUTHORITY",
             "status": "FAIL_CLOSED",
-            "statement": "M3L, M4L, M3R, M3RC-A, represented M3RC-B and represented M4R are complete. The 940-coordinate action-identified residual carrier has an exact normalized cyclic contraction. M1 is the sole minimal classical import package.",
+            "statement": "All scoped M3/M4 prerequisites are complete. M1 is now an explicit three-step construction: typed carrier ledger, actual represented composite contraction, and final immutable manifest replay.",
             "evidence": [
               "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
               "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
@@ -18203,9 +18203,11 @@ window.MATRIX_EXPLORER_DATA = {
               "STRICT_M3RC_ACTION_SUPPORT_DUAL_IDENTIFICATION_V1",
               "CLASSICAL_IMPORT_GATE_V24_RECONCILIATION",
               "STRICT_TYPED_RESIDUAL_CYCLICITY_V1",
-              "CLASSICAL_IMPORT_GATE_V25_RECONCILIATION"
+              "CLASSICAL_IMPORT_GATE_V25_RECONCILIATION",
+              "STRICT_M1_COMMON_SNAPSHOT_PREFLIGHT_V1",
+              "CLASSICAL_IMPORT_GATE_V26_RECONCILIATION"
             ],
-            "boundary": "M4R is finite and represented. The formal 8,980-coordinate comparison source is not authoritative until M1 binds the actual full classical source and every Gate-A object."
+            "boundary": "The preflight classifies missing data but completes none of M1A, M1B or M1C. Gate A remains fail closed at one of seven hashes."
           },
           {
             "stage": "S1_OFF_SHELL_BV",
@@ -18924,19 +18926,19 @@ window.MATRIX_EXPLORER_DATA = {
       }
     ],
     "frontier_summary": {
-      "highest_value_next_route": "STRICT_COMMON_FREEZE_SNAPSHOT_AND_FINAL_CYCLIC_CONTRACTION",
-      "route_count": 7,
-      "completed_since_v42": [
-        "M4R_TYPED_RESIDUAL_CYCLICITY",
-        "GATE_V25_M4R_RECONCILIATION"
+      "highest_value_next_route": "STRICT_M1A_FULL_TYPED_CARRIER_LEDGER",
+      "route_count": 9,
+      "completed_since_v43": [
+        "STRICT_M1_COMMON_SNAPSHOT_PREFLIGHT",
+        "GATE_V26_M1_PREFLIGHT_RECONCILIATION"
       ],
-      "new_positive_result": "The five represented shifted-cotangent blocks give an exact rank-940 action-identified cyclic contraction: q_res cyclicity, projection-adjointness, homotopy skewness, inclusion isometry, contraction and normalized side conditions all have zero defects.",
-      "surprise": "Once M3RC-B supplied the action/support semantics, M4R contained no further analytic obstruction; it reduced to a finite exact sparse receiver replay.",
-      "hard_boundary": "M1 is not clerical aggregation. It must decide and freeze the authoritative common full source without equating the formal 8,980-coordinate comparison source, the local 386-row carrier and the residual 940-coordinate carrier by name alone."
+      "new_positive_result": "The sole M1 bundle now has a receiver-checked blocker partition: fourteen exports and four hash objects ready; two ledger exports, four composite exports and three hash objects blocked.",
+      "surprise": "The apparent final packaging task contains two missing mathematical objects: an explicit full grading ledger and an actual cross-category composite contraction.",
+      "hard_boundary": "No M1 work package is complete. The formal 8,980-coordinate comparison source remains non-authoritative, and zero final common-snapshot checks have been replayed."
     },
     "classical_import_reconciliation": {
-      "result_id": "CLASSICAL_IMPORT_GATE_V25_RECONCILIATION",
-      "status": "M4R_COMPLETE_ON_ACTION_IDENTIFIED_REPRESENTED_CARRIER_M1_ONLY_GATE_FAIL_CLOSED",
+      "result_id": "CLASSICAL_IMPORT_GATE_V26_RECONCILIATION",
+      "status": "M1_PREFLIGHT_COMPLETE_THREE_CONSTRUCTION_PACKAGES_OPEN_GATE_FAIL_CLOSED",
       "exports_receiver_verified_scoped": 17,
       "exports_total": 20,
       "freeze_checks_receiver_verified_scoped": 9,
@@ -19051,15 +19053,33 @@ window.MATRIX_EXPLORER_DATA = {
     "route_selection": [
       {
         "rank": 1,
-        "route": "STRICT_COMMON_FREEZE_SNAPSHOT_AND_FINAL_CYCLIC_CONTRACTION",
+        "route": "STRICT_M1A_FULL_TYPED_CARRIER_LEDGER",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "HIGH",
         "dependency_depth": "LOW",
-        "recommendation": "Build M1 as one immutable manifest over the actual strict source: bind the twenty exports, seven hashes, ten checks, local and residual maps, represented Green actions and the compact-source M4R dual dictionary; reject every category or basis mismatch."
+        "recommendation": "Serialize authoritative role, ghost number, antifield number, form degree, parity, mass dimension, Weyl weight, compact degree and derivative bounds without inferring them from row names."
       },
       {
         "rank": 2,
+        "route": "STRICT_M1B_REPRESENTED_COMPOSITE_CONTRACTION",
+        "branch": "STRICT_PURE_WEYL_386",
+        "scientific_leverage": "VERY_HIGH",
+        "tractability": "MEDIUM",
+        "dependency_depth": "MEDIUM",
+        "recommendation": "After M1A, materialize and independently replay pi_cl, iota_cl, s_cl and the action pairing from the 386-row local carrier through the endpoint/harmonic stages to the 940 residual target."
+      },
+      {
+        "rank": 3,
+        "route": "STRICT_M1C_COMMON_MANIFEST_REPLAY",
+        "branch": "STRICT_PURE_WEYL_386",
+        "scientific_leverage": "VERY_HIGH",
+        "tractability": "HIGH",
+        "dependency_depth": "MEDIUM",
+        "recommendation": "After M1A and M1B, freeze one typed diagram, bind all twenty exports and seven hashes, and replay all ten Gate-A checks on exactly those bytes."
+      },
+      {
+        "rank": 4,
         "route": "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
@@ -19068,7 +19088,7 @@ window.MATRIX_EXPLORER_DATA = {
         "recommendation": "After nonlinear identity, prove Noether closure of the general lambda-squared source."
       },
       {
-        "rank": 3,
+        "rank": 5,
         "route": "STRICT_CANDIDATE_Q2_Q3_GREEN_LAMBDA2_RESPONSE",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
@@ -19077,7 +19097,7 @@ window.MATRIX_EXPLORER_DATA = {
         "recommendation": "Compose accepted q2/q3 with both Green orientations and verify response identities."
       },
       {
-        "rank": 4,
+        "rank": 6,
         "route": "DIRECT_SPACETIME_Q26_HADAMARD",
         "branch": "BERGER_POSITIVE_CLOCK_54",
         "scientific_leverage": "VERY_HIGH",
@@ -19086,7 +19106,7 @@ window.MATRIX_EXPLORER_DATA = {
         "recommendation": "Keep the analytically mature Berger Hadamard route as a different-theory control, not as the strict pure-Weyl carrier map."
       },
       {
-        "rank": 5,
+        "rank": 7,
         "route": "STRICT_D_CARTAN_AND_CHARGE_DECISION",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "HIGH",
@@ -19095,7 +19115,7 @@ window.MATRIX_EXPLORER_DATA = {
         "recommendation": "Classify the nonlinear D-Cartan homotopy and proper-gauge/charge status on the strict carrier."
       },
       {
-        "rank": 6,
+        "rank": 8,
         "route": "STRICT_ANALYTIC_MOLLER_CONVERGENCE",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "MEDIUM",
@@ -19104,7 +19124,7 @@ window.MATRIX_EXPLORER_DATA = {
         "recommendation": "Only after all-order source closure, derive seminorm majorants and a nonzero convergence domain."
       },
       {
-        "rank": 7,
+        "rank": 9,
         "route": "STRICT_MIXED_WEIGHTED_CAUSAL_DOMAIN",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "MEDIUM",
@@ -19117,41 +19137,53 @@ window.MATRIX_EXPLORER_DATA = {
       {
         "priority": 1,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_COMMON_FREEZE_SNAPSHOT_AND_FINAL_CYCLIC_CONTRACTION",
-        "why": "M4R removes the last residual cyclicity dependency. M1 is now the only missing classical import package and the mandatory gateway to any full-complex Hadamard work."
+        "object": "STRICT_M1A_FULL_TYPED_CARRIER_LEDGER",
+        "why": "The missing explicit row semantics block the field dictionary and differential hashes and must precede every composite map."
       },
       {
         "priority": 2,
+        "branch": "STRICT_PURE_WEYL_386",
+        "object": "STRICT_M1B_REPRESENTED_COMPOSITE_CONTRACTION",
+        "why": "Four required exports and the pairing hash remain only as separate typed stages until the actual composite is serialized."
+      },
+      {
+        "priority": 3,
+        "branch": "STRICT_PURE_WEYL_386",
+        "object": "STRICT_M1C_COMMON_MANIFEST_REPLAY",
+        "why": "Only a final same-byte replay can decide Gate A and unlock full-complex Hadamard work."
+      },
+      {
+        "priority": 4,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE",
         "why": "After nonlinear identity, prove Noether closure of the general lambda-squared source."
       },
       {
-        "priority": 3,
+        "priority": 5,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_CANDIDATE_Q2_Q3_GREEN_LAMBDA2_RESPONSE",
         "why": "Compose accepted q2/q3 with both Green orientations and verify response identities."
       },
       {
-        "priority": 4,
+        "priority": 6,
         "branch": "BERGER_POSITIVE_CLOCK_54",
         "object": "DIRECT_SPACETIME_Q26_HADAMARD",
-        "why": "Begin only after M1: a Hadamard two-point function must live on the accepted full metric BV complex, not merely on the finite residual carrier."
+        "why": "Begin only after M1C passes Gate A; a full-complex state cannot live on a preflight inventory."
       },
       {
-        "priority": 5,
+        "priority": 7,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_D_CARTAN_AND_CHARGE_DECISION",
         "why": "Classify the nonlinear D-Cartan homotopy and proper-gauge/charge status on the strict carrier."
       },
       {
-        "priority": 6,
+        "priority": 8,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_ANALYTIC_MOLLER_CONVERGENCE",
         "why": "Only after all-order source closure, derive seminorm majorants and a nonzero convergence domain."
       },
       {
-        "priority": 7,
+        "priority": 9,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_MIXED_WEIGHTED_CAUSAL_DOMAIN",
         "why": "Test weighted opposite-polarity domains against the scalar zero-mode witness; polarized recursion does not require this."
@@ -19926,6 +19958,24 @@ window.MATRIX_EXPLORER_DATA = {
           "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V25_RECONCILIATION",
           "sha256": "d3d9076156a763a8ca48fea4609878bb61cbb268a64c86a34ee3f00b524f92b3",
           "role": "Gate-A V25 M4R reconciliation"
+        },
+        {
+          "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V43.json",
+          "result_or_artifact_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V43",
+          "sha256": "4bd8d4b140b555d1603bd0a76cecca4f7cdeddf89ea440126f56f1f61d6c5f90",
+          "role": "immutable V43 predecessor"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_M1_COMMON_SNAPSHOT_PREFLIGHT_V1.json",
+          "result_or_artifact_id": "STRICT_M1_COMMON_SNAPSHOT_PREFLIGHT_V1",
+          "sha256": "be9d505bd7494bb677da23d08088711a7583de0a57de5cb12d3b51d824b461fb",
+          "role": "receiver-checked M1 typed-diagram preflight"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V26_RECONCILIATION.json",
+          "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V26_RECONCILIATION",
+          "sha256": "f291dce70498ab8992d5c56a23f1838f86451e1bc88fac4757a3ce80adc84d64",
+          "role": "Gate-A V26 M1 preflight reconciliation"
         }
       ]
     },
@@ -20193,7 +20243,14 @@ window.MATRIX_EXPLORER_DATA = {
       "strict_M4R_represented_projection_equals_inclusion_sharp": true,
       "strict_M4R_represented_homotopy_skew_adjoint": true,
       "strict_represented_residual_cyclic_pairing_certified": true,
-      "strict_M1_common_strict_snapshot_complete": false
+      "strict_M1_common_strict_snapshot_complete": false,
+      "v43_preserved": true,
+      "strict_M1_preflight_complete": true,
+      "strict_M1_typed_diagram_required": true,
+      "strict_M1_is_clerical_hash_bundle": false,
+      "strict_M1A_full_typed_carrier_ledger_complete": false,
+      "strict_M1B_represented_composite_contraction_complete": false,
+      "strict_M1C_common_manifest_replay_complete": false
     },
     "does_not_establish": [
       "a passed strict pure-Weyl classical import gate",
@@ -20316,23 +20373,25 @@ window.MATRIX_EXPLORER_DATA = {
       "that the formal 8,980-coordinate source is the unchanged authoritative classical BV source",
       "M4R, M1, a passed Gate A, Hadamard data, renormalized products, QME restoration or residual transfer",
       "that the formal 8,980-coordinate comparison source is the authoritative full classical BV source",
-      "M1, a passed Gate A, a full-complex Hadamard state, renormalized products, QME restoration or residual quantum transfer"
+      "M1, a passed Gate A, a full-complex Hadamard state, renormalized products, QME restoration or residual quantum transfer",
+      "completion of M1A, M1B or M1C merely from their exact preflight classification",
+      "a passed Gate A, full-complex Hadamard state, renormalized products, QME restoration or residual transfer"
     ],
     "independent_checker": {
-      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v43.py",
+      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v44.py",
       "checks": [
-        "V42 predecessor and 77-cell preservation",
-        "Gate V25 and M4R independent receiver replay",
-        "exact five-block 8,980-to-940 cyclic contraction projection",
-        "M4R removal and sole M1 route",
-        "one accepted hash and one-package dependency remainder",
-        "formal comparison source versus authoritative full source firewall",
-        "Gate-A/Hadamard/QME firewalls",
+        "V43 predecessor and 77-cell preservation",
+        "Gate V26 and M1 preflight independent replay",
+        "eight-carrier/seven-edge typed-diagram projection",
+        "twenty-export and seven-hash blocker partition",
+        "M1A/M1B/M1C route ordering",
+        "one accepted hash and zero final replay checks",
+        "formal-source/Gate-A/Hadamard/QME firewalls",
         "canonical atlas digest"
       ],
-      "expected_digest": "7e3109af6b6e9671137214fd0a188229afd9f08ac9e94d21032cf195f0a394bb"
+      "expected_digest": "f8e29750c320be90db4bdad3b4f99f6c986af8b1c66b75ac96f13b25a0d3b542"
     },
-    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v43.md",
+    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v44.md",
     "strict_gate_a_progress": {
       "status": "STABILIZED_Q2_CANDIDATE_CERTIFIED_AUTHORITATIVE_IDENTITY_REQUIRED",
       "evidence": [
@@ -21780,6 +21839,44 @@ window.MATRIX_EXPLORER_DATA = {
       "formal_source_authoritative": false,
       "M4R_status": "COMPLETE_ON_REPRESENTED_ENERGIES_2_THROUGH_6",
       "M1_status": "SOLE_MINIMAL_MISSING_PACKAGE"
+    },
+    "strict_gate_v26_reconciliation": {
+      "result_id": "CLASSICAL_IMPORT_GATE_V26_RECONCILIATION",
+      "status": "M1_PREFLIGHT_COMPLETE_THREE_CONSTRUCTION_PACKAGES_OPEN_GATE_FAIL_CLOSED",
+      "exports_total": 20,
+      "exports_receiver_verified_scoped": 17,
+      "freeze_checks_total": 10,
+      "freeze_checks_receiver_verified_scoped": 9,
+      "accepted_top_level_hashes": 1,
+      "remaining_top_level_hashes": 6,
+      "minimal_missing_bundle": [
+        "M1_COMMON_STRICT_SNAPSHOT"
+      ],
+      "M1_preflight_complete": true,
+      "M1_common_strict_snapshot_complete": false,
+      "gate_a_status": "FAIL_CLOSED"
+    },
+    "strict_m1_common_snapshot_preflight": {
+      "result_id": "STRICT_M1_COMMON_SNAPSHOT_PREFLIGHT_V1",
+      "status": "M1_SPLIT_INTO_TYPED_LEDGER_COMPOSITE_CONTRACTION_AND_FINAL_BINDING",
+      "snapshot_shape": "CONTENT_ADDRESSED_TYPED_DIAGRAM_NOT_ONE_VECTOR_SPACE",
+      "authoritative_local_source": "LOCAL_GRAPH_BV_386",
+      "carrier_count": 8,
+      "typed_edge_count": 7,
+      "exports_total": 20,
+      "exports_object_ready": 14,
+      "exports_blocked_typed_ledger": 2,
+      "exports_blocked_composite": 4,
+      "hashes_total": 7,
+      "hash_objects_ready": 4,
+      "hashes_blocked": 3,
+      "freeze_checks_common_snapshot_replayed": 0,
+      "work_packages": [
+        "M1A_FULL_TYPED_CARRIER_LEDGER",
+        "M1B_REPRESENTED_COMPOSITE_CONTRACTION",
+        "M1C_COMMON_MANIFEST_REPLAY"
+      ],
+      "formal_8980_source_authoritative": false
     }
   },
   "completion_common_endpoint_sdr_binding": {
@@ -230989,10 +231086,12 @@ window.MATRIX_EXPLORER_DATA = {
     "ground_state_dynamics_interface_report": "sources/foundations/reports/krein-fock-ground-state-dynamics-interface.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md",
-    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V43.json",
-    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v43.md",
-    "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V25_RECONCILIATION.json",
-    "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V25.md",
+    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V44.json",
+    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v44.md",
+    "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V26_RECONCILIATION.json",
+    "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V26.md",
+    "completion_m1_preflight": "sources/quantum-weyl/classical_import/certificates/STRICT_M1_COMMON_SNAPSHOT_PREFLIGHT_V1.json",
+    "completion_m1_preflight_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_M1_COMMON_SNAPSHOT_PREFLIGHT_V1.md",
     "completion_common_endpoint_sdr_binding": "sources/quantum-weyl/classical_import/certificates/STRICT_386_COMMON_ENDPOINT_SDR_BINDING_V1.json",
     "completion_common_endpoint_sdr_binding_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_COMMON_ENDPOINT_SDR_BINDING_V1.md",
     "completion_endpoint_to_residual_comparison": "sources/quantum-weyl/classical_import/certificates/STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1.json",
@@ -231090,5 +231189,5 @@ window.MATRIX_EXPLORER_DATA = {
     "completion_source_q3": "sources/quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.json",
     "completion_source_q3_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.md"
   },
-  "canonical_digest": "3a92e3e5c1a550ac79a7664bc5f804bbb02c8034d8f5b1a8b4f0b631c823c8c9"
+  "canonical_digest": "bd8fbba366226eb729865b01417b7e87649fea3d0901769c8d96a35a4a5a6644"
 };

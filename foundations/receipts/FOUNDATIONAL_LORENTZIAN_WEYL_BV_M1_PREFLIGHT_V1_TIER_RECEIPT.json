@@ -1,0 +1,126 @@
+{
+  "result_id": "STRICT_M1_COMMON_SNAPSHOT_PREFLIGHT_V1",
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_M1_PREFLIGHT_V1_TIER_RECEIPT",
+  "generated_at": "2026-08-16",
+  "source_commit_before_change": "89652649493e7a816aa43df642be878362f3b65b",
+  "integration_head_before_commit": "71749bc54730aa86ee31785c911b654749d6772c",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Resolve the apparent M1 packaging frontier into receiver-checked mathematical work packages: audit the strict common-snapshot inventory, distinguish object-ready exports from missing typed-ledger and represented-composite objects, reconcile the classical import through Gate V26, advance the completion atlas through V44, and propagate the fail-closed result through the static explorer and Paper 21.",
+  "artifact_hashes": {
+    "quantum-weyl/classical_import/certificates/STRICT_M1_COMMON_SNAPSHOT_PREFLIGHT_V1.json": "be9d505bd7494bb677da23d08088711a7583de0a57de5cb12d3b51d824b461fb",
+    "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V26_RECONCILIATION.json": "f291dce70498ab8992d5c56a23f1838f86451e1bc88fac4757a3ce80adc84d64",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V44.json": "c9a7c671680db5b72a39e75a26726c41bf3b4a16a5db244b1ea63ba9032de280",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "7d07009b7b8a48ec1f79b90d8c9c391518d1729bc864176ac3e462ea2487c0ac",
+    "foundations/site/data.json": "56dfb96a1062d92d0491a7e9872fef880a45df86b6063494d9d0bc2003cba281",
+    "paper/21-reverse-foundations-of-physics.tex": "7f911a9d99e7ccb72f2cd61904edc179d3aedf6ce6860dae9777c523d38c88ca",
+    "paper/21-reverse-foundations-of-physics-appendices.tex": "9d67828104cbc56cc70ee3cb0b75379b4006fade146e6e1fa0797400cd031086",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "a3c634125c0baa210464651981b1ce6e51e6c3acd77db7c016cdf66bd072eccd",
+    "paper/21-reverse-foundations-of-physics.pdf": "aa9f09e8fec5ecf886dac9990ee35656c0eea2ee1f12ddc4e34e6955762a483a"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3.12 -m py_compile <scoped M1 preflight, Gate V26, Atlas V44, static-site and Paper 21 Python files>",
+          "status": "PASS"
+        },
+        {
+          "command": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3.12 -m json.tool <scoped certificates, schemas, results, site data, claim map and receipt>",
+          "status": "PASS"
+        },
+        {
+          "command": "/home/alstrup/.deno/bin/deno check <changed JavaScript files>",
+          "status": "PASS"
+        },
+        {
+          "command": "pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (three passes from paper/), followed by fatal/undefined-reference/rerun scan",
+          "elapsed_seconds": 2.9,
+          "status": "PASS",
+          "output": "76 pages"
+        },
+        {
+          "command": "git diff --check on the scoped worktree",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3.12 M1 preflight builder --check; independent checker; seven unit tests with ten subtests",
+          "elapsed_seconds": 0.96,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Gate V26 builder --check; independent checker; five unit tests with nine subtests",
+          "elapsed_seconds": 1.42,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Atlas V44 builder --check; independent checker; five unit tests with eight subtests",
+          "elapsed_seconds": 1.69,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 static-site builder --check; independent checker; verifier; ten unit tests",
+          "elapsed_seconds": 17.48,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Paper 21 appendix --check; claim-map --check; independent claim-map verifier",
+          "elapsed_seconds": 0.79,
+          "status": "PASS"
+        }
+      ],
+      "elapsed_seconds": 22.34
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The M1 preflight changes the semantic classification of the final classical import frontier. Its entire transitive consumer chain through Gate V26, Atlas V44, the content-addressed static explorer, generated appendices, claim map, manuscript pins and rendered PDF was rebuilt or independently checked. The intervening integration commit changes only reverse-physics Bateman artifacts and does not alter any M1 input."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze/tag, shared core algebra change, lifecycle promotion, release preparation or explicit full-suite request occurred. Gate A remains FAIL_CLOSED, all three M1 work packages remain open, and no LORENTZIAN_CERTIFIED claim is promoted."
+    }
+  },
+  "scientific_result": {
+    "distinct_carrier_objects": 8,
+    "typed_cross_category_edges": 7,
+    "exports_total": 20,
+    "exports_common_object_ready": 14,
+    "exports_blocked_full_typed_ledger": 2,
+    "exports_blocked_composite_contraction": 4,
+    "hashes_total": 7,
+    "hash_objects_ready_await_binding": 4,
+    "hashes_blocked_before_binding": 3,
+    "freeze_checks_total": 10,
+    "freeze_checks_common_snapshot_replayed": 0,
+    "ordered_work_packages": [
+      "M1A_FULL_TYPED_CARRIER_LEDGER",
+      "M1B_REPRESENTED_COMPOSITE_CONTRACTION",
+      "M1C_COMMON_MANIFEST_REPLAY"
+    ],
+    "category_boundary": "The preflight certifies the inventory and blocker partition, not any M1 work package. The formal 8,980-coordinate comparison source remains non-authoritative; no final common-snapshot check has been replayed and Gate A remains fail closed."
+  },
+  "claim_flags": {
+    "m1_preflight_complete": true,
+    "m1_is_clerical_hash_bundle": false,
+    "m1_typed_diagram_required": true,
+    "m1a_full_typed_carrier_ledger_complete": false,
+    "m1b_represented_composite_contraction_complete": false,
+    "m1c_common_manifest_replay_complete": false,
+    "formal_8980_source_is_authoritative_original_bv_complex": false,
+    "m1_common_strict_snapshot_complete": false,
+    "classical_import_gate_a_passed": false,
+    "full_complex_hadamard_state_constructed": false,
+    "renormalized_lorentzian_products_constructed": false,
+    "qme_restored": false,
+    "residual_quantum_transfer_authorized": false
+  }
+}

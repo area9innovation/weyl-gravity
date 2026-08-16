@@ -64,10 +64,12 @@ BT_EUCLIDEAN_IMPORT = FOUNDATIONS / "results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_I
 AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json"
 FULL_SURFACE_AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json"
 LADDER = FOUNDATIONS / "results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
-COMPLETION_ATLAS = FOUNDATIONS / "results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V43.json"
-COMPLETION_REPORT = FOUNDATIONS / "reports/lorentzian-weyl-bv-completion-atlas-v43.md"
-COMPLETION_GATE = ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V25_RECONCILIATION.json"
-COMPLETION_GATE_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_GATE_V25.md"
+COMPLETION_ATLAS = FOUNDATIONS / "results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V44.json"
+COMPLETION_REPORT = FOUNDATIONS / "reports/lorentzian-weyl-bv-completion-atlas-v44.md"
+COMPLETION_GATE = ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V26_RECONCILIATION.json"
+COMPLETION_GATE_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_GATE_V26.md"
+COMPLETION_M1_PREFLIGHT = ROOT / "quantum-weyl/classical_import/certificates/STRICT_M1_COMMON_SNAPSHOT_PREFLIGHT_V1.json"
+COMPLETION_M1_PREFLIGHT_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_M1_COMMON_SNAPSHOT_PREFLIGHT_V1.md"
 COMPLETION_DFINITE_COTANGENT_DUAL = ROOT / "quantum-weyl/classical_import/certificates/STRICT_DFINITE_COTANGENT_DUAL_COMPARISON_V1.json"
 COMPLETION_DFINITE_COTANGENT_DUAL_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_DFINITE_COTANGENT_DUAL_COMPARISON_V1.md"
 COMPLETION_M3RC_ACTION_SUPPORT_DUAL = ROOT / "quantum-weyl/classical_import/certificates/STRICT_M3RC_ACTION_SUPPORT_DUAL_IDENTIFICATION_V1.json"
@@ -410,6 +412,8 @@ def build_dataset() -> dict[str, Any]:
             "completion_atlas_report": site_link(rel(COMPLETION_REPORT)),
             "completion_gate": site_link(rel(COMPLETION_GATE)),
             "completion_gate_report": site_link(rel(COMPLETION_GATE_REPORT)),
+            "completion_m1_preflight": site_link(rel(COMPLETION_M1_PREFLIGHT)),
+            "completion_m1_preflight_report": site_link(rel(COMPLETION_M1_PREFLIGHT_REPORT)),
             "completion_common_endpoint_sdr_binding": site_link(rel(COMPLETION_ENDPOINT_SDR_BINDING)),
             "completion_common_endpoint_sdr_binding_report": site_link(rel(COMPLETION_ENDPOINT_SDR_BINDING_REPORT)),
             "completion_endpoint_to_residual_comparison": site_link(rel(COMPLETION_RESIDUAL_COMPARISON)),
@@ -550,12 +554,12 @@ all-real BT/Krein path integral; controlled conditional bridges remain open.
 
 The **Weyl BV routes** view projects the current audited Lorentzian completion atlas as
 seven architectures across eleven ordered gates, for 77 separately typed cells.
-It exposes the finite residual-SDR repair, seven ranked next constructions and the
+It exposes the finite residual-SDR repair, nine ranked next constructions and the
 eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a theorem; in particular,
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
-Atlas V43 preserves the field-equation type result.  The degree-one-to-zero
+Atlas V44 preserves the field-equation type result.  The degree-one-to-zero
 Green component is an exact right inverse on Noether-compatible sources and a
 left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
 the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
@@ -657,11 +661,13 @@ and 940, and every declared SDR and cyclicity defect is zero.  Gate V24 then
 closes M3RC-B on represented energies two through six: the causal cutoff
 inverse gives all 470 formal duals compact-source representatives, and the
 action-derived Cauchy/Green form agrees with the canonical rank-940 cotangent
-pairing.  Gate V25 closes M4R on that represented carrier.  Its independent
+pairing.  Gate V26 preserves M4R on that represented carrier and classifies
+M1.  Its independent
 sparse receiver reconstructs all five cotangent blocks and finds zero defects
 in q-res cyclicity, projection-adjointness, homotopy skewness, inclusion
 isometry, contraction and normalized side conditions.  M1 is now the sole
-minimal missing package.  No new top-level hash is accepted because the formal
+minimal missing package, split into M1A typed-ledger, M1B composite-contraction,
+and M1C final-replay constructions.  No new top-level hash is accepted because the formal
 8,980-coordinate comparison source is not declared to be the authoritative
 full BV source.
 The complete Berger q3 remains a different-theory Weyl-plus-clock result on a fixed
@@ -1018,7 +1024,7 @@ def generated() -> dict[Path, bytes]:
         COMPLETION_SHIFTED_MASS_Q3_REPORT,
         COMPLETION_SOURCE_Q3_REPORT,
     ]
-    bundled_sources = sorted(set([CUBE, *PREVIOUS_CUBES, FULL_SURFACE_AUDIT, CORNER_BORN_INTERFACE, GROUND_STATE_DYNAMICS_INTERFACE, BT_EUCLIDEAN_IMPORT, GR_CASSINI_RESULT, GR_CASSINI_SCHEMA, MANNHEIM_NGC3198_RESULT, MANNHEIM_NGC3198_SCHEMA, MANNHEIM_NGC3198_PARAMETERS, MANNHEIM_NGC3198_SPARC, MANNHEIM_NGC3198_CPP, NGC3198_COMMON_FIT_RESULT, NGC3198_COMMON_FIT_SCHEMA, NGC3198_COMMON_FIT_PROTOCOL, NGC3198_COMMON_FIT_CPP, AUDIT, LADDER, COMPLETION_ATLAS, COMPLETION_REPORT, COMPLETION_GATE, COMPLETION_GATE_REPORT, COMPLETION_ENDPOINT_SDR_BINDING, COMPLETION_ENDPOINT_SDR_BINDING_REPORT, COMPLETION_LOCAL_CYCLIC_PAIRING, COMPLETION_LOCAL_CYCLIC_PAIRING_REPORT, COMPLETION_RESIDUAL_ZERO_MODES, COMPLETION_RESIDUAL_ZERO_MODES_REPORT, COMPLETION_CENTERED_COHOMOLOGY, COMPLETION_CENTERED_COHOMOLOGY_REPORT, COMPLETION_RESIDUAL_SDR_TYPE_AUDIT, COMPLETION_RESIDUAL_SDR_TYPE_AUDIT_REPORT, COMPLETION_SDR, COMPLETION_SDR_REPORT, COMPLETION_CYCLIC, COMPLETION_CYCLIC_REPORT, COMPLETION_TRANSPORT, COMPLETION_TRANSPORT_REPORT, COMPLETION_ENDPOINT, COMPLETION_ENDPOINT_REPORT, COMPLETION_SUSPENSION, COMPLETION_SUSPENSION_REPORT, COMPLETION_COMPONENT_PAIRING, COMPLETION_COMPONENT_PAIRING_REPORT, COMPLETION_OPERATOR_PORTABILITY, COMPLETION_OPERATOR_PORTABILITY_REPORT, COMPLETION_Q1_SIGN_GATE, COMPLETION_Q1_SIGN_GATE_REPORT, COMPLETION_Q1_SIGN_REPAIR, COMPLETION_Q1_SIGN_REPAIR_REPORT, COMPLETION_FULL_Q1, COMPLETION_FULL_Q1_REPORT, COMPLETION_LOCAL_SDR, COMPLETION_LOCAL_SDR_REPORT, COMPLETION_CANONICAL_SHEAR, COMPLETION_CANONICAL_SHEAR_REPORT, COMPLETION_GREEN_ACTION_NAME, COMPLETION_GREEN_ACTION_NAME_REPORT, COMPLETION_UNARY_CAUSAL_SNAPSHOT, COMPLETION_UNARY_CAUSAL_SNAPSHOT_REPORT, COMPLETION_FULL_D, COMPLETION_FULL_D_REPORT, COMPLETION_Q2_PREFLIGHT, COMPLETION_Q2_PREFLIGHT_REPORT, COMPLETION_Q2_GREEN, COMPLETION_Q2_GREEN_REPORT, COMPLETION_RECURSIVE_TREES, COMPLETION_RECURSIVE_TREES_REPORT, COMPLETION_FORMAL_COEFFICIENTS, COMPLETION_FORMAL_COEFFICIENTS_REPORT, COMPLETION_FIELD_EQUATION_QUOTIENT_INVERSE, COMPLETION_FIELD_EQUATION_QUOTIENT_INVERSE_REPORT, COMPLETION_QUADRATIC_OBSTRUCTION, COMPLETION_QUADRATIC_OBSTRUCTION_REPORT, COMPLETION_Q3_WITNESS, COMPLETION_Q3_WITNESS_REPORT, COMPLETION_MINIMAL_Q3, COMPLETION_MINIMAL_Q3_REPORT, COMPLETION_ARITY3, COMPLETION_ARITY3_REPORT, COMPLETION_Q3_CYCLICITY, COMPLETION_Q3_CYCLICITY_REPORT, COMPLETION_CUBIC_INVENTORY, COMPLETION_CUBIC_INVENTORY_REPORT, COMPLETION_HH_HV_LIFT, COMPLETION_HH_HV_LIFT_REPORT, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
+    bundled_sources = sorted(set([CUBE, *PREVIOUS_CUBES, FULL_SURFACE_AUDIT, CORNER_BORN_INTERFACE, GROUND_STATE_DYNAMICS_INTERFACE, BT_EUCLIDEAN_IMPORT, GR_CASSINI_RESULT, GR_CASSINI_SCHEMA, MANNHEIM_NGC3198_RESULT, MANNHEIM_NGC3198_SCHEMA, MANNHEIM_NGC3198_PARAMETERS, MANNHEIM_NGC3198_SPARC, MANNHEIM_NGC3198_CPP, NGC3198_COMMON_FIT_RESULT, NGC3198_COMMON_FIT_SCHEMA, NGC3198_COMMON_FIT_PROTOCOL, NGC3198_COMMON_FIT_CPP, AUDIT, LADDER, COMPLETION_ATLAS, COMPLETION_REPORT, COMPLETION_GATE, COMPLETION_GATE_REPORT, COMPLETION_M1_PREFLIGHT, COMPLETION_M1_PREFLIGHT_REPORT, COMPLETION_ENDPOINT_SDR_BINDING, COMPLETION_ENDPOINT_SDR_BINDING_REPORT, COMPLETION_LOCAL_CYCLIC_PAIRING, COMPLETION_LOCAL_CYCLIC_PAIRING_REPORT, COMPLETION_RESIDUAL_ZERO_MODES, COMPLETION_RESIDUAL_ZERO_MODES_REPORT, COMPLETION_CENTERED_COHOMOLOGY, COMPLETION_CENTERED_COHOMOLOGY_REPORT, COMPLETION_RESIDUAL_SDR_TYPE_AUDIT, COMPLETION_RESIDUAL_SDR_TYPE_AUDIT_REPORT, COMPLETION_SDR, COMPLETION_SDR_REPORT, COMPLETION_CYCLIC, COMPLETION_CYCLIC_REPORT, COMPLETION_TRANSPORT, COMPLETION_TRANSPORT_REPORT, COMPLETION_ENDPOINT, COMPLETION_ENDPOINT_REPORT, COMPLETION_SUSPENSION, COMPLETION_SUSPENSION_REPORT, COMPLETION_COMPONENT_PAIRING, COMPLETION_COMPONENT_PAIRING_REPORT, COMPLETION_OPERATOR_PORTABILITY, COMPLETION_OPERATOR_PORTABILITY_REPORT, COMPLETION_Q1_SIGN_GATE, COMPLETION_Q1_SIGN_GATE_REPORT, COMPLETION_Q1_SIGN_REPAIR, COMPLETION_Q1_SIGN_REPAIR_REPORT, COMPLETION_FULL_Q1, COMPLETION_FULL_Q1_REPORT, COMPLETION_LOCAL_SDR, COMPLETION_LOCAL_SDR_REPORT, COMPLETION_CANONICAL_SHEAR, COMPLETION_CANONICAL_SHEAR_REPORT, COMPLETION_GREEN_ACTION_NAME, COMPLETION_GREEN_ACTION_NAME_REPORT, COMPLETION_UNARY_CAUSAL_SNAPSHOT, COMPLETION_UNARY_CAUSAL_SNAPSHOT_REPORT, COMPLETION_FULL_D, COMPLETION_FULL_D_REPORT, COMPLETION_Q2_PREFLIGHT, COMPLETION_Q2_PREFLIGHT_REPORT, COMPLETION_Q2_GREEN, COMPLETION_Q2_GREEN_REPORT, COMPLETION_RECURSIVE_TREES, COMPLETION_RECURSIVE_TREES_REPORT, COMPLETION_FORMAL_COEFFICIENTS, COMPLETION_FORMAL_COEFFICIENTS_REPORT, COMPLETION_FIELD_EQUATION_QUOTIENT_INVERSE, COMPLETION_FIELD_EQUATION_QUOTIENT_INVERSE_REPORT, COMPLETION_QUADRATIC_OBSTRUCTION, COMPLETION_QUADRATIC_OBSTRUCTION_REPORT, COMPLETION_Q3_WITNESS, COMPLETION_Q3_WITNESS_REPORT, COMPLETION_MINIMAL_Q3, COMPLETION_MINIMAL_Q3_REPORT, COMPLETION_ARITY3, COMPLETION_ARITY3_REPORT, COMPLETION_Q3_CYCLICITY, COMPLETION_Q3_CYCLICITY_REPORT, COMPLETION_CUBIC_INVENTORY, COMPLETION_CUBIC_INVENTORY_REPORT, COMPLETION_HH_HV_LIFT, COMPLETION_HH_HV_LIFT_REPORT, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
     bundled_sources = sorted(set([*bundled_sources, COMPLETION_DIFF_AUXILIARY, COMPLETION_DIFF_AUXILIARY_REPORT, COMPLETION_GHOST_MANIFEST, COMPLETION_GHOST_MANIFEST_REPORT, COMPLETION_CLASSICAL_QUARTIC, COMPLETION_CLASSICAL_QUARTIC_REPORT, COMPLETION_SHIFTED_MASS_Q3, COMPLETION_SHIFTED_MASS_Q3_REPORT, COMPLETION_SOURCE_Q3, COMPLETION_SOURCE_Q3_REPORT, *completion_evidence_paths]))
     bundled_sources = sorted(set([
         *bundled_sources,
@@ -1064,7 +1070,7 @@ def generated() -> dict[Path, bytes]:
         "human_report": "foundations/reports/matrix-explorer-site-v2.md",
     }
     result["features"] = [item for item in result["features"] if not item.startswith("Gate V11 reconciliation")]
-    result["features"].append("Gate V25 closes represented M3RC-B and M4R with one accepted common hash and M1 as the sole minimal missing package")
+    result["features"].append("Gate V26 preserves represented M3RC-B/M4R and splits sole-package M1 into typed-ledger, composite-contraction, and final-replay construction routes")
     result["features"].append("M3L content-addressed 386-to-30 local endpoint contraction across 10 artifacts, 17 canonical object hashes, 15 compatibility links, and zero projected defects")
     result["features"].append("M4L complete rank-386 local odd pairing with 410 ordered entries and zero q1/SDR/D/q2/q3 cyclicity defects")
     result["features"].append("M3R represented finite endpoint-to-residual comparison with 470 E/A/L magnetic names, exact crosswalk and zero retraction or q0-chain defects")
@@ -1103,8 +1109,14 @@ def generated() -> dict[Path, bytes]:
     result["claim_flags"]["strict_M4R_projection_equals_inclusion_sharp_exposed"] = True
     result["claim_flags"]["strict_M4R_homotopy_skew_adjoint_exposed"] = True
     result["claim_flags"]["strict_M1_common_strict_snapshot_exposed"] = False
+    result["claim_flags"]["strict_M1_preflight_exposed"] = True
+    result["claim_flags"]["strict_M1_typed_diagram_exposed"] = True
+    result["claim_flags"]["strict_M1A_full_typed_carrier_ledger_exposed"] = False
+    result["claim_flags"]["strict_M1B_represented_composite_contraction_exposed"] = False
+    result["claim_flags"]["strict_M1C_common_manifest_replay_exposed"] = False
     result["features"].append("exact M3RC-A formal 8980-to-940 cotangent SDR plus represented M3RC-B compact-source action dual identification")
     result["features"].append("exact represented M4R rank-940 cyclic contraction with q-res cyclicity, projection-adjointness, homotopy skewness and normalized SDR side conditions")
+    result["features"].append("receiver-checked M1 typed-diagram preflight: fourteen of twenty exports and four of seven hash objects ready, with M1A/M1B/M1C construction order exposed")
     result["does_not_establish"].extend([
         "the complete twenty-export, seven-hash classical Gate A from the linked source-q2/q3 snapshots and the unbound residual and centered payloads",
         "a common-snapshot zero-mode hash from the portable residual coefficient package",

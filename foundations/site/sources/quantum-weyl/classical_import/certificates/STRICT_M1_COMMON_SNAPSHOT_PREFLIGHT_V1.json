@@ -1,0 +1,758 @@
+{
+  "$schema": "../schema/strict-m1-common-snapshot-preflight-v1.schema.json",
+  "schema": "strict-m1-common-snapshot-preflight-v1",
+  "schema_path": "quantum-weyl/classical_import/schema/strict-m1-common-snapshot-preflight-v1.schema.json",
+  "result_id": "STRICT_M1_COMMON_SNAPSHOT_PREFLIGHT_V1",
+  "result_kind": "CLASSICAL_IMPORT_COMMON_TYPED_DIAGRAM_PREFLIGHT",
+  "result_state": "M1_SPLIT_INTO_TYPED_LEDGER_COMPOSITE_CONTRACTION_AND_FINAL_BINDING",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-16",
+  "repository_base_commit": "89652649493e7a816aa43df642be878362f3b65b",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "Can M1 be completed by hashing the existing objects, or does the common strict snapshot still require new typed mathematical data?",
+  "answer": "M1 is not a clerical hash bundle. Fourteen of twenty exports are object-ready, but the full 386-row field/ghost/antifield grading ledger is absent and four residual-map/pairing exports exist only as separate local, D-finite, formal-cotangent and action-residual stages. The formal 8,980-coordinate cotangent comparison source cannot be declared the authoritative local BV source. M1 therefore splits into M1A, a full typed carrier ledger; M1B, an exact represented composite contraction from the actual 386-row graph architecture through the 30 endpoint species to the 940 action residual; and M1C, final seven-hash and ten-check binding. Gate A remains fail closed.",
+  "authoritative_source_decision": {
+    "local_source": "LOCAL_GRAPH_BV_386",
+    "snapshot_shape": "CONTENT_ADDRESSED_TYPED_DIAGRAM_NOT_ONE_VECTOR_SPACE",
+    "formal_8980_source_authoritative": false,
+    "action_residual_940_is_target_not_local_source": true,
+    "category_equalities_forbidden": [
+      "LOCAL_GRAPH_BV_386=FORMAL_COTANGENT_COMPARISON_8980",
+      "LOCAL_ENDPOINT_30=ZERO_MODE_15_PLUS_15",
+      "LOCAL_ENDPOINT_30=ACTION_RESIDUAL_940"
+    ]
+  },
+  "carrier_inventory": [
+    {
+      "id": "LOCAL_GRAPH_BV_386",
+      "category": "LOCAL_COMPONENT_JET",
+      "dimension": 386,
+      "authoritative_role": "actual strict local unary/nonlinear/causal BV carrier",
+      "status": "AUTHORITATIVE_LOCAL_SOURCE"
+    },
+    {
+      "id": "LOCAL_ENDPOINT_30",
+      "category": "LOCAL_COMPONENT_JET",
+      "dimension": 30,
+      "authoritative_role": "support-local endpoint of the 386-row algebraic contraction",
+      "status": "AUTHORITATIVE_LOCAL_ENDPOINT"
+    },
+    {
+      "id": "REPRESENTED_ENDPOINT_DFINITE_4080",
+      "category": "REDUCED_MODE_GLOBAL_HARMONIC",
+      "dimension": 4080,
+      "authoritative_role": "energy-2-through-6 represented harmonic realization of the thirty endpoint species",
+      "status": "AUTHORITATIVE_REPRESENTED_DOMAIN"
+    },
+    {
+      "id": "DFINITE_COMPARISON_4490",
+      "category": "REDUCED_MODE_GLOBAL_HARMONIC",
+      "dimension": 4490,
+      "authoritative_role": "finite harmonic SDR comparison including the test nonminimal doublet",
+      "status": "SCOPED_COMPARISON_SOURCE"
+    },
+    {
+      "id": "FORMAL_COTANGENT_COMPARISON_8980",
+      "category": "FORMAL_SHIFTED_COTANGENT",
+      "dimension": 8980,
+      "authoritative_role": "formal algebraic M3RC-A/M4R comparison source",
+      "status": "NOT_AUTHORITATIVE_FULL_BV_SOURCE"
+    },
+    {
+      "id": "ACTION_RESIDUAL_940",
+      "category": "REDUCED_MODE_CAUSAL_COHOMOLOGY",
+      "dimension": 940,
+      "authoritative_role": "represented primal plus compact-source action-dual residual target",
+      "status": "AUTHORITATIVE_REPRESENTED_RESIDUAL_TARGET"
+    },
+    {
+      "id": "ZERO_MODE_15_PLUS_15",
+      "category": "RESIDUAL_ZERO_MODE",
+      "dimension": 30,
+      "authoritative_role": "separate conformal-Killing generator/cotangent payload at energies zero and one",
+      "status": "AUTHORITATIVE_SCOPED_PAYLOAD"
+    },
+    {
+      "id": "CENTERED_C3_C4_C5",
+      "category": "RESIDUAL_COCHAIN",
+      "dimension": 12343,
+      "authoritative_role": "centered cochain bases and normalized H4 representatives",
+      "status": "AUTHORITATIVE_SCOPED_PAYLOAD"
+    }
+  ],
+  "cross_category_edges": [
+    {
+      "id": "M3L_LOCAL_ENDPOINT_SDR",
+      "source": "LOCAL_GRAPH_BV_386",
+      "target": "LOCAL_ENDPOINT_30",
+      "status": "EXACT_SUPPORT_LOCAL_COMPLETE"
+    },
+    {
+      "id": "FINITE_HARMONIC_REALIZATION",
+      "source": "LOCAL_ENDPOINT_30",
+      "target": "REPRESENTED_ENDPOINT_DFINITE_4080",
+      "status": "EXACT_GLOBAL_REPRESENTATION_FUNCTOR_NOT_POSITION_LOCAL"
+    },
+    {
+      "id": "M3R_ANALYSIS_SYNTHESIS",
+      "source": "REPRESENTED_ENDPOINT_DFINITE_4080",
+      "target": "ACTION_RESIDUAL_940",
+      "status": "PRIMAL_470_STAGE_COMPLETE_DUAL_STAGE_ACTION_IDENTIFIED"
+    },
+    {
+      "id": "M3RCA_FORMAL_COTANGENT_SDR",
+      "source": "FORMAL_COTANGENT_COMPARISON_8980",
+      "target": "ACTION_RESIDUAL_940",
+      "status": "EXACT_COMPARISON_ONLY_NOT_AUTHORITATIVE_SOURCE"
+    },
+    {
+      "id": "M3RCB_COMPACT_SOURCE_DUAL",
+      "source": "REPRESENTED_ENDPOINT_DFINITE_4080",
+      "target": "ACTION_RESIDUAL_940",
+      "status": "EXACT_ON_REPRESENTED_ACTION_DUAL"
+    },
+    {
+      "id": "M4R_FORMAL_CYCLIC_CONTRACTION",
+      "source": "FORMAL_COTANGENT_COMPARISON_8980",
+      "target": "ACTION_RESIDUAL_940",
+      "status": "EXACT_COMPARISON_ONLY"
+    },
+    {
+      "id": "M1B_ACTUAL_REPRESENTED_COMPOSITE_CONTRACTION",
+      "source": "LOCAL_GRAPH_BV_386",
+      "target": "ACTION_RESIDUAL_940",
+      "status": "MISSING_SERIALIZED_TYPED_COMPOSITE"
+    }
+  ],
+  "local_row_ledger_audit": {
+    "rows": 386,
+    "serialized_fields": [
+      "basis_source",
+      "block",
+      "degree",
+      "index",
+      "local_index",
+      "row_id",
+      "sector"
+    ],
+    "required_explicit_fields": [
+      "ghost_number",
+      "antifield_number",
+      "form_degree",
+      "Grassmann_parity",
+      "mass_dimension",
+      "Weyl_weight",
+      "compact_degree",
+      "derivative_order_bound"
+    ],
+    "missing_explicit_fields": [
+      "ghost_number",
+      "antifield_number",
+      "form_degree",
+      "Grassmann_parity",
+      "mass_dimension",
+      "Weyl_weight",
+      "compact_degree",
+      "derivative_order_bound"
+    ],
+    "all_rows_have_required_explicit_fields": false,
+    "boundary": "Cohomological degree, block and row names do not by themselves certify antifield number, form degree, parity, mass dimension, Weyl weight, compact degree or derivative bounds."
+  },
+  "export_inventory": [
+    {
+      "export_id": "field_ghost_antifield_dictionary",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "m1_preflight_status": "MISSING_FULL_TYPED_ROW_LEDGER",
+      "blocker": "M1A_FULL_TYPED_CARRIER_LEDGER",
+      "evidence": [
+        "CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2",
+        "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY"
+      ],
+      "boundary": "The accepted import is a bounded minimal-BV filtration, not the complete Gate-A carrier."
+    },
+    {
+      "export_id": "field_gradings",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "m1_preflight_status": "MISSING_FULL_TYPED_ROW_LEDGER",
+      "blocker": "M1A_FULL_TYPED_CARRIER_LEDGER",
+      "evidence": [
+        "CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2"
+      ],
+      "boundary": "Scope projection to a bounded window is not an unrestricted local export."
+    },
+    {
+      "export_id": "local_classical_bv_differential_q0",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "m1_preflight_status": "COMMON_OBJECT_READY_FOR_BINDING",
+      "blocker": null,
+      "evidence": [
+        "CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2",
+        "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1"
+      ],
+      "boundary": "An exact minimal-sector conjugation does not serialize the full nonminimal/residual differential or its common snapshot hash."
+    },
+    {
+      "export_id": "support_local_classical_bv_q2",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "m1_preflight_status": "COMMON_OBJECT_READY_FOR_BINDING",
+      "blocker": null,
+      "evidence": [
+        "STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1",
+        "STRICT_LOCAL_Q1_Q2_IDENTITY_V1",
+        "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
+        "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1",
+        "CLASSICAL_ORDINARY_DERIVATIVE_AUXILIARY_CUBIC_EXPORT_V1",
+        "STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1",
+        "CLASSICAL_QUADRATIC_AUXILIARY_ELIMINATION_MAP_V1",
+        "STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1",
+        "CLASSICAL_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1",
+        "STRICT_386_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1",
+        "CLASSICAL_HH_HV_AUXILIARY_SHIFT_V1",
+        "STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1",
+        "CLASSICAL_DIFF_AUXILIARY_BV_REPRESENTATION_V1",
+        "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1",
+        "CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1",
+        "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2",
+        "STRICT_386_SHIFTED_MASS_BV_Q2_LIFT_V1",
+        "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1",
+        "STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1",
+        "STRICT_386_SHIFTED_MASS_BV_Q3_LIFT_V1",
+        "CLASSICAL_SHIFTED_AUXILIARY_QUARTIC_MASS_V1"
+      ],
+      "boundary": "Local q2/q3 closure does not itself supply the residual payload, common freeze, Green compatibility, Hadamard data, or QME."
+    },
+    {
+      "export_id": "local_D_action_on_bv_generators",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "m1_preflight_status": "COMMON_OBJECT_READY_FOR_BINDING",
+      "blocker": null,
+      "evidence": [
+        "STRICT_386_FULL_D_ACTION_V1"
+      ],
+      "boundary": "A local D action and unary equivariance do not construct q2, a D-Cartan homotopy, a physical D quotient, or an accepted Gate-A top-level hash."
+    },
+    {
+      "export_id": "gauge_fixed_nonminimal_contractions",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "m1_preflight_status": "COMMON_OBJECT_READY_FOR_BINDING",
+      "blocker": null,
+      "evidence": [
+        "GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION"
+      ],
+      "boundary": "The local nonminimal theorem does not provide causal Green data or residual homological projection."
+    },
+    {
+      "export_id": "trace_sector_contraction",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "m1_preflight_status": "COMMON_OBJECT_READY_FOR_BINDING",
+      "blocker": null,
+      "evidence": [
+        "PURE_WEYL_CURVED_DEFORMATION_RETRACT_STATUS_V1",
+        "PURE_WEYL_FULL_PROLONGED_GREEN_HOMOTOPY_ASSEMBLY_V1"
+      ],
+      "boundary": "Auxiliary and causal endpoint contractions are not the residual SDR maps."
+    },
+    {
+      "export_id": "conformal_killing_zero_modes_15",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "m1_preflight_status": "COMMON_OBJECT_READY_FOR_BINDING",
+      "blocker": null,
+      "evidence": [
+        "PURE_WEYL_COVARIANT_CKV_RECOVERY_V1",
+        "STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1"
+      ],
+      "boundary": "A finite polynomial zero-mode chart is not itself a support-local residual SDR or a common freeze."
+    },
+    {
+      "export_id": "residual_representation_matrices",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "m1_preflight_status": "COMMON_OBJECT_READY_FOR_BINDING",
+      "blocker": null,
+      "evidence": [
+        "PURE_WEYL_SO42_CAUSAL_TRANSPORT_RECOGNITION_V1",
+        "STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1"
+      ],
+      "boundary": "An exact finite residual representation does not construct the full-field intertwining maps."
+    },
+    {
+      "export_id": "so42_structure_constants",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "m1_preflight_status": "COMMON_OBJECT_READY_FOR_BINDING",
+      "blocker": null,
+      "evidence": [
+        "PURE_WEYL_SO42_CAUSAL_TRANSPORT_RECOGNITION_V1",
+        "STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1"
+      ],
+      "boundary": "The Lie algebra payload does not establish analytic group integration or a Hadamard representation."
+    },
+    {
+      "export_id": "classical_inclusion_iota_cl",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "m1_preflight_status": "TYPED_STAGES_READY_COMPOSITE_MAP_MISSING",
+      "blocker": "M1B_REPRESENTED_COMPOSITE_CONTRACTION",
+      "evidence": [
+        "STRICT_DFINITE_RESIDUAL_SDR_V1",
+        "STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1"
+      ],
+      "boundary": "The M3R comparison is global and D-finite. It is not a support-local map on compactly supported sections and does not certify smooth completion."
+    },
+    {
+      "export_id": "classical_projection_pi_cl",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "m1_preflight_status": "TYPED_STAGES_READY_COMPOSITE_MAP_MISSING",
+      "blocker": "M1B_REPRESENTED_COMPOSITE_CONTRACTION",
+      "evidence": [
+        "STRICT_DFINITE_RESIDUAL_SDR_V1",
+        "STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1"
+      ],
+      "boundary": "The M3R comparison is global and D-finite. It is not a support-local map on compactly supported sections and does not certify smooth completion."
+    },
+    {
+      "export_id": "classical_homotopy_s_cl",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "m1_preflight_status": "TYPED_STAGES_READY_COMPOSITE_MAP_MISSING",
+      "blocker": "M1B_REPRESENTED_COMPOSITE_CONTRACTION",
+      "evidence": [
+        "STRICT_DFINITE_RESIDUAL_SDR_V1"
+      ],
+      "boundary": "This finite algebraic s_cl is neither an advanced/retarded Green homotopy nor the still-missing support-local full-carrier contraction."
+    },
+    {
+      "export_id": "cyclic_pairing",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "m1_preflight_status": "LOCAL_AND_RESIDUAL_FORMS_READY_COMMON_COMPOSITE_MISSING",
+      "blocker": "M1B_REPRESENTED_COMPOSITE_CONTRACTION",
+      "evidence": [
+        "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
+        "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+        "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1",
+        "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1",
+        "STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1",
+        "STRICT_386_LOCAL_CYCLIC_PAIRING_CLOSURE_V1",
+        "STRICT_DFINITE_COTANGENT_DUAL_COMPARISON_V1",
+        "STRICT_M3RC_ACTION_SUPPORT_DUAL_IDENTIFICATION_V1",
+        "STRICT_TYPED_RESIDUAL_CYCLICITY_V1"
+      ],
+      "boundary": "The M4R theorem is finite and represented; it does not make the 8,980-coordinate formal comparison source authoritative or identify an all-energy continuous dual."
+    },
+    {
+      "export_id": "taub_moment_map_normalization",
+      "gate_v25_status": "LEGACY_ACCEPTED_SCOPED",
+      "m1_preflight_status": "COMMON_OBJECT_READY_FOR_BINDING",
+      "blocker": null,
+      "evidence": [
+        "CLASSICAL_IMPORT_CERTIFICATE"
+      ],
+      "boundary": "This bounded normalization never established full Gate A."
+    },
+    {
+      "export_id": "bfv_suspension_convention",
+      "gate_v25_status": "LEGACY_ACCEPTED_SCOPED",
+      "m1_preflight_status": "COMMON_OBJECT_READY_FOR_BINDING",
+      "blocker": null,
+      "evidence": [
+        "CLASSICAL_IMPORT_CERTIFICATE"
+      ],
+      "boundary": "Selection is explicit but uniqueness is not claimed."
+    },
+    {
+      "export_id": "positive_frequency_state_ledger",
+      "gate_v25_status": "LEGACY_ACCEPTED_SCOPED",
+      "m1_preflight_status": "COMMON_OBJECT_READY_FOR_BINDING",
+      "blocker": null,
+      "evidence": [
+        "CLASSICAL_IMPORT_CERTIFICATE"
+      ],
+      "boundary": "This ledger is neither Hadamard data nor a full off-shell state."
+    },
+    {
+      "export_id": "normalized_weyl_square_representatives",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "m1_preflight_status": "COMMON_OBJECT_READY_FOR_BINDING",
+      "blocker": null,
+      "evidence": [
+        "PURE_WEYL_COVARIANT_H4_TRANSPORT_V1",
+        "PURE_WEYL_COVARIANT_GRAM_TRANSPORT_V1",
+        "STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1"
+      ],
+      "boundary": "These are degree-four deformation/vertex classes in a finite transferred coefficient complex, not one-particle states or a full-field Lorentzian quantum construction."
+    },
+    {
+      "export_id": "centered_cohomology_bases_h3_h4_h5",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "m1_preflight_status": "COMMON_OBJECT_READY_FOR_BINDING",
+      "blocker": null,
+      "evidence": [
+        "PURE_WEYL_COVARIANT_H4_TRANSPORT_V1",
+        "PURE_WEYL_COVARIANT_CKV_RECOVERY_V1",
+        "STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1"
+      ],
+      "boundary": "The adjacent degree-three and degree-five exports are cochain bases used to audit H4; no H3 or H5 cohomology group is claimed."
+    },
+    {
+      "export_id": "residual_differential_q_res_0",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "m1_preflight_status": "COMMON_OBJECT_READY_FOR_BINDING",
+      "blocker": null,
+      "evidence": [
+        "PURE_WEYL_SO42_CAUSAL_TRANSPORT_RECOGNITION_V1",
+        "PURE_WEYL_COVARIANT_CKV_RECOVERY_V1",
+        "STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1"
+      ],
+      "boundary": "The unary zero matrix does not replace the nonlinear CE/BFV differential or the missing residual SDR."
+    }
+  ],
+  "hash_inventory": [
+    {
+      "hash_id": "field_dictionary_hash",
+      "status": "BLOCKED_M1A_FULL_TYPED_CARRIER_LEDGER",
+      "candidate": "5c80b9d4a0f9a62588c6fb7cf1b6f7d4dbbe60c3b6a47aff17e480b75eb9a3ed",
+      "candidate_scope": "BOUNDED_MINIMAL_BV_ONLY"
+    },
+    {
+      "hash_id": "differential_hash",
+      "status": "LOCAL_OBJECT_READY_COMMON_HASH_BLOCKED_M1A",
+      "candidate": "5c23d4bc1228e9b065ec60f67f367785b9456c7a9401dedb85a44d3b6b32ff5f",
+      "candidate_scope": "STRICT_386_GRAPH_Q1_READY_BUT_COMMON_TYPED_ROW_LEDGER_ABSENT"
+    },
+    {
+      "hash_id": "q2_hash",
+      "status": "OBJECT_READY_AWAIT_M1C_COMMON_BINDING",
+      "candidate": "0f1e23a5653db0666cbd02dea49f8961927d03ff4c72ed402fd24ba8f2ba4800",
+      "candidate_scope": "COMMON_386_SHIFTED_SOURCE_Q2_AND_EXACT_GRAPH_DAG"
+    },
+    {
+      "hash_id": "D_action_hash",
+      "status": "OBJECT_READY_AWAIT_M1C_COMMON_BINDING",
+      "candidate": "b20def4d59de1f1f618ad022b89673206b5741daad7dda406ec2fe03e6e4d8da",
+      "candidate_scope": "STRICT_386_UNARY_CAUSAL_D_SCOPED_NOT_GATE_A_COMMON_MANIFEST"
+    },
+    {
+      "hash_id": "zero_mode_basis_hash",
+      "status": "OBJECT_READY_AWAIT_M1C_COMMON_BINDING",
+      "candidate": "f36ec93f8df729db27d6bf8c76695fad8338bf61d3cfcfc33d3089d33588a44f",
+      "candidate_scope": "EXACT_PRIMAL_DUAL_RESIDUAL_PAYLOAD_READY_NOT_BOUND_TO_COMMON_GATE_A_FREEZE"
+    },
+    {
+      "hash_id": "pairing_hash",
+      "status": "LOCAL_AND_RESIDUAL_OBJECTS_READY_COMPOSITE_HASH_BLOCKED_M1B",
+      "candidate": "311e7c1056ab8368d7ee31065560c2f50e24e0df98a1e6013883aa7460a20a06",
+      "candidate_scope": "TYPED_PAIR_OF_LOCAL_AND_REPRESENTED_FORMS_NOT_A_COMMON_COMPOSITE_CONTRACTION"
+    },
+    {
+      "hash_id": "representative_hash",
+      "status": "OBJECT_READY_AWAIT_M1C_COMMON_BINDING",
+      "candidate": "92bde00dd977da8587f1227a9c510c8a7d799d4b8fc2410cc1aa65c33d77dfab",
+      "candidate_scope": "EXACT_CENTERED_C3_C4_C5_AND_NORMALIZED_H4_PAYLOAD_READY_NOT_BOUND_TO_COMMON_GATE_A_FREEZE"
+    }
+  ],
+  "freeze_check_inventory": [
+    {
+      "check_id": "q0_squared_zero",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "common_snapshot_replay_status": "WAITING_FOR_M1C_AFTER_M1A_M1B",
+      "evidence": [
+        "CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2"
+      ]
+    },
+    {
+      "check_id": "q1_q2_arity_two_nilpotency",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "common_snapshot_replay_status": "WAITING_FOR_M1C_AFTER_M1A_M1B",
+      "evidence": [
+        "STRICT_LOCAL_Q1_Q2_IDENTITY_V1",
+        "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
+        "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1",
+        "STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1",
+        "STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1",
+        "STRICT_386_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1",
+        "STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1",
+        "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1",
+        "CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1",
+        "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2",
+        "STRICT_386_SHIFTED_MASS_BV_Q2_LIFT_V1",
+        "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1"
+      ]
+    },
+    {
+      "check_id": "D_q1_commutator_zero",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "common_snapshot_replay_status": "WAITING_FOR_M1C_AFTER_M1A_M1B",
+      "evidence": [
+        "STRICT_386_FULL_D_ACTION_V1"
+      ]
+    },
+    {
+      "check_id": "D_q2_derivation",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "common_snapshot_replay_status": "WAITING_FOR_M1C_AFTER_M1A_M1B",
+      "evidence": [
+        "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1",
+        "STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1",
+        "STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1",
+        "STRICT_386_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1",
+        "STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1",
+        "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1",
+        "CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1",
+        "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2",
+        "STRICT_386_SHIFTED_MASS_BV_Q2_LIFT_V1",
+        "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1"
+      ]
+    },
+    {
+      "check_id": "q2_cyclic_compatibility",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "common_snapshot_replay_status": "WAITING_FOR_M1C_AFTER_M1A_M1B",
+      "evidence": [
+        "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
+        "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1",
+        "STRICT_386_NONMINIMAL_THEORY_IDENTITY_OBSTRUCTION_V1",
+        "STRICT_386_QUADRATIC_AUXILIARY_ELIMINATION_CHANNEL_V1",
+        "STRICT_386_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1",
+        "STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1",
+        "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1",
+        "CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1",
+        "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2",
+        "STRICT_386_SHIFTED_MASS_BV_Q2_LIFT_V1",
+        "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1"
+      ]
+    },
+    {
+      "check_id": "pi_cl_iota_cl_identity",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "common_snapshot_replay_status": "WAITING_FOR_M1C_AFTER_M1A_M1B",
+      "evidence": [
+        "STRICT_DFINITE_RESIDUAL_SDR_V1"
+      ]
+    },
+    {
+      "check_id": "classical_contraction_identity",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "common_snapshot_replay_status": "WAITING_FOR_M1C_AFTER_M1A_M1B",
+      "evidence": [
+        "STRICT_DFINITE_RESIDUAL_SDR_V1"
+      ]
+    },
+    {
+      "check_id": "q0_iota_intertwining",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "common_snapshot_replay_status": "WAITING_FOR_M1C_AFTER_M1A_M1B",
+      "evidence": [
+        "STRICT_DFINITE_RESIDUAL_SDR_V1",
+        "STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1"
+      ]
+    },
+    {
+      "check_id": "pi_q0_intertwining",
+      "gate_v25_status": "RECEIVER_VERIFIED_SCOPED",
+      "common_snapshot_replay_status": "WAITING_FOR_M1C_AFTER_M1A_M1B",
+      "evidence": [
+        "STRICT_DFINITE_RESIDUAL_SDR_V1",
+        "STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1"
+      ]
+    },
+    {
+      "check_id": "cyclic_compatibility",
+      "gate_v25_status": "BLOCKED_MISSING_COMMON_SNAPSHOT",
+      "common_snapshot_replay_status": "WAITING_FOR_M1C_AFTER_M1A_M1B",
+      "evidence": [
+        "PURE_WEYL_COVARIANT_GRAM_TRANSPORT_V1",
+        "STRICT_386_LOCAL_CYCLIC_PAIRING_CLOSURE_V1",
+        "STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1",
+        "STRICT_RESIDUAL_CYCLIC_CARRIER_OBSTRUCTION_V1",
+        "STRICT_DFINITE_COTANGENT_DUAL_COMPARISON_V1",
+        "STRICT_M3RC_ACTION_SUPPORT_DUAL_IDENTIFICATION_V1",
+        "STRICT_TYPED_RESIDUAL_CYCLICITY_V1"
+      ]
+    }
+  ],
+  "counts": {
+    "exports_total": 20,
+    "exports_common_object_ready": 14,
+    "exports_blocked_full_typed_ledger": 2,
+    "exports_blocked_composite_contraction": 4,
+    "hashes_total": 7,
+    "hash_objects_ready_await_binding": 4,
+    "hashes_blocked_before_binding": 3,
+    "freeze_checks_total": 10,
+    "freeze_checks_common_snapshot_replayed": 0
+  },
+  "m1_work_packages": [
+    {
+      "order": 1,
+      "id": "M1A_FULL_TYPED_CARRIER_LEDGER",
+      "status": "OPEN",
+      "deliverable": "Serialize every local 386 row and every represented/residual row with explicit role and grading fields, preserving distinct local, harmonic, formal-dual, action-dual, zero-mode and centered categories.",
+      "unlocks": [
+        "field_ghost_antifield_dictionary",
+        "field_gradings",
+        "field_dictionary_hash",
+        "differential_hash"
+      ]
+    },
+    {
+      "order": 2,
+      "id": "M1B_REPRESENTED_COMPOSITE_CONTRACTION",
+      "status": "OPEN_AFTER_M1A",
+      "deliverable": "Materialize and independently replay the represented composite inclusion, projection, homotopy and action pairing from the actual 386-row graph architecture through the 30 endpoint bundle and finite harmonic realization to the 940 action residual.",
+      "unlocks": [
+        "classical_inclusion_iota_cl",
+        "classical_projection_pi_cl",
+        "classical_homotopy_s_cl",
+        "cyclic_pairing",
+        "pairing_hash"
+      ]
+    },
+    {
+      "order": 3,
+      "id": "M1C_COMMON_MANIFEST_REPLAY",
+      "status": "OPEN_AFTER_M1A_M1B",
+      "deliverable": "Freeze the typed diagram at one commit, bind all twenty exports and seven hashes, and independently replay all ten Gate-A checks on exactly those bytes.",
+      "unlocks": [
+        "CLASSICAL_IMPORT_GATE_A_DECISION"
+      ]
+    }
+  ],
+  "foundational_strength": {
+    "exact_finite_inventory": "PRA-suitable hashing, counting and finite equality checks once authorities are supplied",
+    "analytic_dependency": "M3RC-B imports the existing LORENTZIAN-CAUSAL compact-source/action-pairing theorem",
+    "choice_principle_used_by_preflight": false,
+    "weakest_foundation_proved": false
+  },
+  "claim_flags": {
+    "M1_PREFLIGHT_COMPLETE": true,
+    "M1_IS_CLERICAL_HASH_BUNDLE": false,
+    "M1_TYPED_DIAGRAM_REQUIRED": true,
+    "M1A_FULL_TYPED_CARRIER_LEDGER_COMPLETE": false,
+    "M1B_REPRESENTED_COMPOSITE_CONTRACTION_COMPLETE": false,
+    "M1C_COMMON_MANIFEST_REPLAY_COMPLETE": false,
+    "FORMAL_8980_SOURCE_IS_AUTHORITATIVE_ORIGINAL_BV_COMPLEX": false,
+    "M1_COMMON_STRICT_SNAPSHOT_COMPLETE": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED": false,
+    "RENORMALIZED_LORENTZIAN_PRODUCTS_CONSTRUCTED": false,
+    "QME_RESTORED": false,
+    "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": false
+  },
+  "does_not_establish": [
+    "a full typed 386-row field, ghost, antifield and auxiliary grading ledger",
+    "a represented composite contraction from the actual local graph BV carrier to the action residual",
+    "that the formal 8,980-coordinate comparison source is the authoritative full classical BV source",
+    "acceptance of any additional Gate-A hash",
+    "a passed classical import gate",
+    "a full-complex Hadamard state, renormalized Lorentzian products, QME restoration or residual quantum transfer"
+  ],
+  "next_gate": "Construct M1A from authoritative row semantics, not name inference; then build M1B on that typed carrier and only afterward attempt M1C hash acceptance and ten-check replay.",
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_M1_COMMON_SNAPSHOT_PREFLIGHT_V1.md",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/snapshots/bootstrap-v1.json",
+        "result_or_artifact_id": "CLASSICAL_IMPORT_BOOTSTRAP_V1",
+        "sha256": "459f46e3a8d233754ceec2593c858b1996ead38ec52622678bf5a7c7ec3a61e9",
+        "role": "bootstrap"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V25_RECONCILIATION.json",
+        "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V25_RECONCILIATION",
+        "sha256": "d3d9076156a763a8ca48fea4609878bb61cbb268a64c86a34ee3f00b524f92b3",
+        "role": "gate_v25"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+        "result_or_artifact_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+        "sha256": "3b9d8a2fc5a70d20770452eb0a2a4891f59314c21c83188bfb59de0941cac4b2",
+        "role": "component_pairing"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1.json",
+        "result_or_artifact_id": "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1",
+        "sha256": "9b0e9da9e8838a0ade6e1f1214e16457e9a94af981d9d020c137d105f9e9c21e",
+        "role": "full_q1"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMMON_ENDPOINT_SDR_BINDING_V1.json",
+        "result_or_artifact_id": "STRICT_386_COMMON_ENDPOINT_SDR_BINDING_V1",
+        "sha256": "f61855e6693120f8c93109fadd0415a8b3369c3ea55caaa7fe0035e913d89b73",
+        "role": "common_endpoint"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1.json",
+        "result_or_artifact_id": "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1",
+        "sha256": "2a93236ba5ae929bde285339286fbc24ceb98415b6b1750b90b546f921f658ed",
+        "role": "source_q2"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.json",
+        "result_or_artifact_id": "STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1",
+        "sha256": "d2fb66beec9f77bd24487f13406aa5a179f332d113b8b1ca7052547df7e3b696",
+        "role": "source_q3"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_D_ACTION_V1.json",
+        "result_or_artifact_id": "STRICT_386_FULL_D_ACTION_V1",
+        "sha256": "c83c53250e3c8b8bc913f902a8cd4a4aff1a918c88b42167e9076e4aa96dc148",
+        "role": "D_action"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json",
+        "result_or_artifact_id": "STRICT_DFINITE_RESIDUAL_SDR_V1",
+        "sha256": "1816a7fb98cb7a844cade72fa8d2ee8de3e858540d5c932d93a5f68b37235c08",
+        "role": "dfinite"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1.json",
+        "result_or_artifact_id": "STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1",
+        "sha256": "2716713554ccba14c4d3549b2493c5c7c4032e2491333d2a4edb15cad69cd812",
+        "role": "m3r"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_DFINITE_COTANGENT_DUAL_COMPARISON_V1.json",
+        "result_or_artifact_id": "STRICT_DFINITE_COTANGENT_DUAL_COMPARISON_V1",
+        "sha256": "0564f4d41fb8593a3320c70317b184b70d1f195957b2b97b40c80fb7ced81c7e",
+        "role": "m3rc_a"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_M3RC_ACTION_SUPPORT_DUAL_IDENTIFICATION_V1.json",
+        "result_or_artifact_id": "STRICT_M3RC_ACTION_SUPPORT_DUAL_IDENTIFICATION_V1",
+        "sha256": "849cf880d2bcece12bb7436cc79a7b5b985ac7e48ce09b998723a1692556da76",
+        "role": "m3rc_b"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_TYPED_RESIDUAL_CYCLICITY_V1.json",
+        "result_or_artifact_id": "STRICT_TYPED_RESIDUAL_CYCLICITY_V1",
+        "sha256": "2d5a2ba94776559e396ac79e0d10a54608d3736763ac4360ff71792f56152324",
+        "role": "m4r"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1.json",
+        "result_or_artifact_id": "STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1",
+        "sha256": "85a889aca3b2dcdcae06a0cbd99107401c2ec66461fbdf0f2c20bc26bda1b61f",
+        "role": "zero_modes"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1.json",
+        "result_or_artifact_id": "STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1",
+        "sha256": "21400beeac1def4ba3b9e43d5e8222e106192a1ccfb504e5b0455859ad7fd286",
+        "role": "centered"
+      }
+    ]
+  },
+  "independent_checker": {
+    "path": "quantum-weyl/classical_import/check_strict_m1_common_snapshot_preflight.py",
+    "checks": [
+      "authority identities and content hashes",
+      "twenty-export and seven-hash census",
+      "386-row serialized versus required grading fields",
+      "carrier dimensions and category inequalities",
+      "M1A/M1B/M1C blocker partition",
+      "formal-source, Gate-A, Hadamard and QME firewalls",
+      "canonical preflight digest"
+    ],
+    "expected_digest": "61194e772b7e0f3934f015feb5e3afd8c9ed4976278819fb5b3827d256a5d5b2"
+  }
+}
