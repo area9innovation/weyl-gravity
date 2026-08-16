@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/foundational-lorentzian-weyl-bv-completion-atlas-v38.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version", "result_id", "lifecycle", "dependency_tags", "stages", "branches",
+    "frontier_summary", "classical_import_reconciliation", "strict_gate_v20_reconciliation",
+    "strict_local_cyclic_pairing_closure", "strict_common_endpoint_sdr_binding",
+    "strict_residual_sdr_type_audit", "strict_source_q2_common_assembly",
+    "strict_source_q3_common_assembly", "strict_residual_zero_mode_payload",
+    "strict_centered_cohomology_payload", "route_selection", "research_queue",
+    "claim_flags", "provenance", "independent_checker"
+  ],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v38"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V38"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"contains": {"const": "LORENTZIAN-CAUSAL"}},
+    "stages": {"type": "array", "minItems": 11, "maxItems": 11},
+    "branches": {"type": "array", "minItems": 7, "maxItems": 7},
+    "route_selection": {"type": "array", "minItems": 9, "maxItems": 9},
+    "research_queue": {"type": "array", "minItems": 9, "maxItems": 9},
+    "strict_local_cyclic_pairing_closure": {
+      "type": "object",
+      "required": ["result_id", "carrier_rows", "pairing_entries", "exact_pairing_rank", "local_cyclicity_defects", "M4L_status", "M4R_status", "residual_rows_in_local_carrier"],
+      "properties": {
+        "result_id": {"const": "STRICT_386_LOCAL_CYCLIC_PAIRING_CLOSURE_V1"},
+        "carrier_rows": {"const": 386},
+        "pairing_entries": {"const": 410},
+        "exact_pairing_rank": {"const": 386},
+        "local_cyclicity_defects": {"const": 0},
+        "M4L_status": {"const": "COMPLETE"},
+        "M4R_status": {"const": "OPEN_BLOCKED_BY_M3R"},
+        "residual_rows_in_local_carrier": {"const": 0}
+      }
+    },
+    "strict_gate_v20_reconciliation": {
+      "type": "object",
+      "required": ["gate_a_status", "accepted_top_level_hashes", "remaining_top_level_hashes", "minimal_missing_bundle", "M4L_local_graph_cyclic_pairing_complete", "M3R_typed_residual_comparison_constructed", "M4R_typed_residual_cyclicity_complete"],
+      "properties": {
+        "gate_a_status": {"const": "FAIL_CLOSED"},
+        "accepted_top_level_hashes": {"const": 1},
+        "remaining_top_level_hashes": {"const": 6},
+        "minimal_missing_bundle": {"type": "array", "minItems": 3, "maxItems": 3},
+        "M4L_local_graph_cyclic_pairing_complete": {"const": true},
+        "M3R_typed_residual_comparison_constructed": {"const": false},
+        "M4R_typed_residual_cyclicity_complete": {"const": false}
+      }
+    },
+    "independent_checker": {"type": "object", "required": ["path", "checks", "expected_digest"]}
+  }
+}

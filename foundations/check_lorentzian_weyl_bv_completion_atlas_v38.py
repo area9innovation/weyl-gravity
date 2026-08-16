@@ -1,0 +1,115 @@
+#!/usr/bin/env python3
+"""Independently check Lorentzian Weyl BV completion Atlas V38."""
+
+from __future__ import annotations
+
+import hashlib
+import json
+from pathlib import Path
+from typing import Any
+
+
+ROOT = Path(__file__).resolve().parents[1]
+RESULT = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V38.json"
+PREDECESSOR = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V37.json"
+GATE = ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V20_RECONCILIATION.json"
+M4L = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_LOCAL_CYCLIC_PAIRING_CLOSURE_V1.json"
+
+
+def digest(value: dict[str, Any]) -> str:
+    keys = (
+        "stages", "branches", "frontier_summary", "classical_import_reconciliation",
+        "strict_gate_v20_reconciliation", "strict_local_cyclic_pairing_closure",
+        "strict_common_endpoint_sdr_binding", "strict_residual_sdr_type_audit",
+        "strict_source_q2_common_assembly", "strict_source_q3_common_assembly",
+        "strict_residual_zero_mode_payload", "strict_centered_cohomology_payload",
+        "route_selection", "research_queue",
+    )
+    return hashlib.sha256(json.dumps(
+        {key: value[key] for key in keys}, sort_keys=True, separators=(",", ":"), ensure_ascii=False
+    ).encode()).hexdigest()
+
+
+def check(value: dict[str, Any]) -> list[str]:
+    previous = json.loads(PREDECESSOR.read_text())
+    gate = json.loads(GATE.read_text())
+    closure = json.loads(M4L.read_text())
+    errors: list[str] = []
+    if value.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V38" or value.get("predecessor", {}).get("result_id") != previous.get("result_id"):
+        errors.append("result identity or predecessor")
+    if value.get("stages") != previous.get("stages"):
+        errors.append("global stage vocabulary changed")
+    if len(value.get("branches", [])) != 7 or sum(len(branch.get("stages", [])) for branch in value.get("branches", [])) != 77:
+        errors.append("77-cell preservation")
+    gate_projection = value.get("strict_gate_v20_reconciliation", {})
+    if (
+        gate_projection.get("result_id") != gate.get("result_id")
+        or gate_projection.get("minimal_missing_bundle") != ["M1_COMMON_STRICT_SNAPSHOT", "M3R_TYPED_RESIDUAL_COMPARISON", "M4R_TYPED_RESIDUAL_CYCLICITY"]
+        or (gate_projection.get("accepted_top_level_hashes"), gate_projection.get("remaining_top_level_hashes"), gate_projection.get("exports_receiver_verified_scoped"), gate_projection.get("freeze_checks_receiver_verified_scoped")) != (1, 6, 17, 9)
+        or gate_projection.get("M4L_local_graph_cyclic_pairing_complete") is not True
+        or gate_projection.get("M3R_typed_residual_comparison_constructed") is not False
+        or gate_projection.get("M4R_typed_residual_cyclicity_complete") is not False
+    ):
+        errors.append("Gate V20 projection")
+    projected = value.get("strict_local_cyclic_pairing_closure", {})
+    if projected != {
+        "result_id": closure["result_id"], "carrier_rows": 386, "pairing_entries": 410,
+        "exact_pairing_rank": 386, "local_cyclicity_defects": 0,
+        "M4L_status": "COMPLETE", "M4R_status": "OPEN_BLOCKED_BY_M3R",
+        "residual_rows_in_local_carrier": 0,
+    }:
+        errors.append("M4L projection")
+    expected_routes = [
+        "STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON", "STRICT_TYPED_RESIDUAL_CYCLICITY",
+        "STRICT_COMMON_FREEZE_SNAPSHOT_AND_FINAL_CYCLIC_CONTRACTION",
+        "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE",
+        "STRICT_CANDIDATE_Q2_Q3_GREEN_LAMBDA2_RESPONSE", "DIRECT_SPACETIME_Q26_HADAMARD",
+        "STRICT_D_CARTAN_AND_CHARGE_DECISION", "STRICT_ANALYTIC_MOLLER_CONVERGENCE",
+        "STRICT_MIXED_WEIGHTED_CAUSAL_DOMAIN",
+    ]
+    routes = value.get("route_selection", [])
+    if [row.get("route") for row in routes] != expected_routes or [row.get("rank") for row in routes] != list(range(1, 10)):
+        errors.append("route completion or ordering")
+    if [row.get("priority") for row in value.get("research_queue", [])] != list(range(1, 10)):
+        errors.append("queue priorities")
+    flags = value.get("claim_flags", {})
+    for key in (
+        "v37_preserved", "strict_386_full_local_odd_pairing_nondegenerate",
+        "strict_386_local_q1_sdr_D_q2_q3_cyclicity_complete",
+        "strict_M4L_local_graph_cyclic_pairing_complete",
+    ):
+        if flags.get(key) is not True:
+            errors.append("positive flag " + key)
+    for key in (
+        "strict_M4R_typed_residual_cyclicity_complete", "strict_M3R_typed_residual_comparison_constructed",
+        "strict_full_residual_cyclic_pairing_certified", "strict_pure_weyl_classical_gate_passed",
+        "strict_386_q2_q3_green_compatibility_certified", "strict_386_full_bv_hadamard_state_constructed",
+        "strict_pure_weyl_qme_restored", "lorentzian_full_theory_certified",
+    ):
+        if flags.get(key) is not False:
+            errors.append("fail-closed flag " + key)
+    pins = {item.get("path"): item.get("sha256") for item in value.get("provenance", {}).get("inputs", [])}
+    for path in (PREDECESSOR, GATE, M4L):
+        if pins.get(str(path.relative_to(ROOT))) != hashlib.sha256(path.read_bytes()).hexdigest():
+            errors.append("provenance " + path.name)
+    try:
+        expected = digest(value)
+    except KeyError as error:
+        errors.append("canonical projection missing " + str(error))
+    else:
+        if value.get("independent_checker", {}).get("expected_digest") != expected:
+            errors.append("independent digest")
+    return errors
+
+
+def main() -> int:
+    value = json.loads(RESULT.read_text())
+    errors = check(value)
+    print("FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V38: " + ("PASS" if not errors else "FAIL"))
+    for error in errors:
+        print("  - " + error)
+    return bool(errors)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

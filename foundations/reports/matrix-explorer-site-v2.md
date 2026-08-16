@@ -39,7 +39,7 @@ eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
-Atlas V37 preserves the field-equation type result.  The degree-one-to-zero
+Atlas V38 preserves the field-equation type result.  The degree-one-to-zero
 Green component is an exact right inverse on Noether-compatible sources and a
 left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
 the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
@@ -118,11 +118,15 @@ coefficients; and M5's separate 30 counts conformal-Killing cotangent
 coefficients.  A constant or harmonic projector expands support, so the
 reduced-mode receivers cannot be inserted as support-local maps in causal
 Green transfer.  Gate V18 replaced the old M3 item by M3L common endpoint-SDR
-binding and M3R typed spectral comparison.  Gate V19 now closes M3L: ten
+binding and M3R typed spectral comparison.  Gate V19 closed M3L: ten
 artifacts and seventeen canonical object hashes bind the exact 386-to-30 local
 endpoint SDR to the common q1/q2/q3/D carrier, with fifteen compatibility links
-and zero projected identity defects.  It accepts no new top-level hash and
-leaves M1, M3R and M4 open.
+and zero projected identity defects.  Gate V20 now closes M4L: all 386 local
+rows carry a rank-386 odd pairing with 410 ordered rational entries, and the
+q1/endpoint-SDR/D/q2/q3 cyclicity defects vanish.  The old M4 requirement is
+split because these rows contain no W+/W- harmonic residual coefficients.
+M4R remains a REDUCED-MODE obligation blocked by M3R.  No new top-level hash
+is accepted; M1, M3R and M4R remain open.
 The complete Berger q3 remains a different-theory Weyl-plus-clock result on a fixed
 54-row carrier; no certified same-theory cyclic map authorizes its direct import.
 
@@ -247,7 +251,7 @@ This site does not establish:
 - a common-snapshot zero-mode hash from the portable residual coefficient package
 - a common-snapshot representative hash from the portable centered coefficient package
 - H3 or H5 cohomology from the adjacent centered C3 and C5 carrier bases
-- the typed endpoint-to-residual spectral comparison or the final full cyclic contraction from the completed local endpoint binding
+- the typed endpoint-to-residual spectral comparison, its induced residual pairing/cyclicity, or the final all-object freeze
 - q2/q3 compatibility with an advanced or retarded Green homotopy
 - that the exact stabilized-q3 candidate is the authoritative nonminimal pure-Weyl BV interaction
 - general lambda-squared causal source closure from the candidate q3 stabilization

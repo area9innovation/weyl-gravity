@@ -938,6 +938,17 @@
       "result_id": "CLASSICAL_IMPORT_GATE_V19_RECONCILIATION",
       "sha256": "3e00c7f65061f311e5a97c14717ea081fe540a46225d75c42771468ce7c31a3f"
     },
+    "classical_import_gate_v20": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V20_RECONCILIATION.json",
+      "result_id": "CLASSICAL_IMPORT_GATE_V20_RECONCILIATION",
+      "sha256": "6cce5ee1614c41e759eb6da167b10a21cfb0c32c744a16e82b8cc57fab1d6794"
+    },
     "classical_import_gate_v5": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -1102,7 +1113,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "28841ce5d37b07d75d0e51a119347b8bd8da0a1fd023ce6a6c38b76e781621ba"
+      "sha256": "2f9a35312ab07215a3a651886980c1a522b1d110069f4978bfe020fca97bde3d"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -1513,6 +1524,18 @@
       "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V37",
       "sha256": "82c8cddf5e8d5df483c9375bf9ca6117a4a1aafc22c8378f9b8850a4b104afc7"
     },
+    "lorentzian_weyl_bv_completion_atlas_v38": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V38.json",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V38",
+      "sha256": "4635ca77bcabfd0edbd997f5dc0d41990e22b2eb6ccfd2e8083f8057548b4762"
+    },
     "lorentzian_weyl_bv_completion_atlas_v4": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -1755,6 +1778,17 @@
       "path": "quantum-weyl/classical_import/certificates/STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1.json",
       "result_id": "STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1",
       "sha256": "fa911ad8bf926f60ff3f8896ac09a05f738e0f95ac9279433b20145ba5b9a77b"
+    },
+    "strict_386_local_cyclic_pairing_closure": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_LOCAL_CYCLIC_PAIRING_CLOSURE_V1.json",
+      "result_id": "STRICT_386_LOCAL_CYCLIC_PAIRING_CLOSURE_V1",
+      "sha256": "c4d0060539335a761ae95af6adf25263f3e851f09838bbb046b5ab3caabdf39c"
     },
     "strict_386_local_sdr_component_maps": {
       "dependency_tags": [
@@ -2026,10 +2060,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "e35a1e512775d229a368992d385b14058a595d3c27c4fbc416c8d2998337d0a1"
+      "sha256": "addd17d38a4e36ad5c37a5eeeee3a56663514492fbc02b0294ad5072064b1521"
     }
   },
-  "canonical_digest": "fad9b0a3ef8ef627775a75264216d504c785906abdf4035317829a161f84c63d",
+  "canonical_digest": "e806d12842082d5d488ba17b0e6f8c55e377fb9b9fd3905752d059c594a36dfd",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -2170,6 +2204,7 @@
     "classical_import_gate_v17_fail_closed": true,
     "classical_import_gate_v18_fail_closed": true,
     "classical_import_gate_v19_fail_closed": true,
+    "classical_import_gate_v20_fail_closed": true,
     "classical_import_gate_v8_fail_closed": true,
     "classical_import_gate_v9_fail_closed": true,
     "coded_h2_arbitrary_distribution_uniqueness_proved": false,
@@ -2265,6 +2300,7 @@
     "strict_386_full_d_q2_derivation_replayed": true,
     "strict_386_full_d_q3_derivation_replayed": true,
     "strict_386_full_local_d_action_certified": true,
+    "strict_386_full_local_odd_pairing_nondegenerate": true,
     "strict_386_full_q1_component_bytes_serialized": true,
     "strict_386_full_q1_q2_identity_replayed": true,
     "strict_386_full_q1_squared_zero_replayed": true,
@@ -2286,6 +2322,7 @@
     "strict_386_linear_shear_theory_identity_refuted": true,
     "strict_386_literal_trivial_stabilization_identity_refuted": true,
     "strict_386_local_d_certified": true,
+    "strict_386_local_q1_sdr_d_q2_q3_cyclicity_complete": true,
     "strict_386_local_sdr_component_maps_serialized": true,
     "strict_386_local_sdr_cyclicity_replayed": true,
     "strict_386_local_sdr_identities_replayed": true,
@@ -2327,10 +2364,13 @@
     "strict_centered_h4_cohomology_replayed": true,
     "strict_d_gauge_or_charge_decided": false,
     "strict_dfinite_residual_projector_support_local": false,
+    "strict_full_residual_cyclic_pairing_certified": false,
     "strict_graph_endpoint_sdr_support_local": true,
     "strict_m3_typed_split_required": true,
     "strict_m3l_common_endpoint_sdr_bound": true,
     "strict_m3r_typed_residual_comparison_constructed": false,
+    "strict_m4l_local_graph_cyclic_pairing_complete": true,
+    "strict_m4r_typed_residual_cyclicity_complete": false,
     "strict_m5_residual_exact_payload_complete": true,
     "strict_m6_centered_representatives_complete": true,
     "strict_minimal_bv_cyclicity_reconciled": true,
@@ -3252,6 +3292,21 @@
       ],
       "statement": "The local half of the typed M3 contract is complete. A content-addressed receiver manifest binds ten source artifacts and seventeen canonical object hashes for the 386-row graph basis, odd pairing, split and graph q1, canonical shear, local endpoint inclusion, projection and homotopy, complementary projectors, transported suspension, represented Green names, D, and exact compositional q2/q3 transport DAGs. All fifteen cross-certificate compatibility links agree. The projected endpoint contraction, normalized side conditions, cyclicity, D/q1, q1/q2, D/q2, arity-three, q3 cyclicity modulo horizontal boundary, and D/q3 defect counts are zero. This proves common-carrier binding of the support-local 386-to-30 endpoint SDR; it does not identify endpoint species with the 470 W+/W- harmonic coefficients or the 15+15 global symmetry-cotangent coefficients, and it does not make a global projector local. Gate V19 removes M3L from the missing bundle without accepting another top-level hash: M1, M3R, and M4 remain, one of seven hashes is accepted, and Gate A remains fail closed. Atlas V37 ranks full cyclic pairing first, the REDUCED-MODE spectral comparison second, and the final common freeze third. No nonlinear Green compatibility, full-complex Hadamard state, renormalized Lorentzian products, QME restoration, or residual transfer is promoted.",
       "status": "M3L_COMMON_LOCAL_ENDPOINT_SDR_BOUND_M3R_M4_M1_AND_GATE_A_OPEN"
+    },
+    {
+      "authorities": [
+        "strict_386_local_cyclic_pairing_closure",
+        "classical_import_gate_v20",
+        "lorentzian_weyl_bv_completion_atlas_v38"
+      ],
+      "claim_id": "RF-68-STRICT-WEYL-TYPED-LOCAL-CYCLIC-CLOSURE",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "The former M4 full-cyclic-pairing requirement conflated local graph rows with harmonic residual coefficients. On the common M3L manifest, the 386-row local graph carrier has an exact rank-386 odd pairing with 410 ordered rational entries and every row paired. Suspended q1 cyclicity, endpoint-SDR cyclicity, D formal skew-adjointness, q2 cyclicity, and q3 cyclicity modulo horizontal boundary all replay with zero defects. This completes M4L in the LOCAL-ALGEBRAIC category. The local carrier contains no W+/W- residual coefficient rows, so M4R is a separate REDUCED-MODE induced-cyclicity problem that is not defined before the M3R endpoint-to-residual comparison. Gate V20 accepts no new top-level hash and remains fail closed with one of seven hashes accepted and M1, M3R, and M4R open. Atlas V38 ranks M3R first, M4R second, and the unified freeze third. No full-complex Hadamard state, renormalized Lorentzian products, QME restoration, or residual quantum transfer is established.",
+      "status": "M4L_LOCAL_CYCLIC_PAIRING_COMPLETE_M3R_M4R_M1_AND_GATE_A_OPEN"
     }
   ],
   "created": "2026-08-16",
@@ -3478,19 +3533,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "69f0d452e61aa2cb04015abbfc1a573eb8900f916578fc822e87693a12a7ee33",
+      "assembly_source_canonical_digest": "c5e64096c89985af8f3a7d50160eeb3b2c15d967bff6faf53811f93fed48eccf",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "e35a1e512775d229a368992d385b14058a595d3c27c4fbc416c8d2998337d0a1",
+      "assembly_source_sha256": "addd17d38a4e36ad5c37a5eeeee3a56663514492fbc02b0294ad5072064b1521",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
-      "generator_sha256": "84b0403948c40e5199f68afa968708da596c7e8091a7cefb3a20dc12f716a4da",
+      "generator_sha256": "20529c04cd9d17e139668e44b992c89015831560fb313e2be9c44f59cdae9c27",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "d59c67aa719aedd31f7d59b740909e85bf450436a20d5ea1635e1a0f2dc280d1",
-      "source_canonical_digest": "830fffc8a59fbb44adde5d0eccac286e9c8d24bb19130844acccf23452dab2be",
+      "sha256": "c2ca763b43c0c9e2738be959a131433a6e84baa121f46a1150785a624bf19f83",
+      "source_canonical_digest": "56b5ffc933c80d3942e4a69d1d993e5e87629ff8b15d97308b81f27a38c7e59d",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "3130361d84cacfc34c73897e590975e56c9ea102285f4300cfd73cd6c21e5c20"
+      "source_sha256": "3a6480d9eaaf181b7672ecbacdf21ce6116b22cb7d6e334217366f8f85f1aaca"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "dacc1e8c159ac0377136425714aa0d011faeea3aec872eeec5e038c61b9f3014"
+    "sha256": "125bceeef13b80d957dd8cf456b5dfa44b8f8e5d6b50e56d89b67fc5d633bbf8"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

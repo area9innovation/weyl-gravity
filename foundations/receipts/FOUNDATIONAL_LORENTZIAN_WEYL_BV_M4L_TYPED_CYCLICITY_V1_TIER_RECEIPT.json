@@ -1,0 +1,121 @@
+{
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_M4L_TYPED_CYCLICITY_V1_TIER_RECEIPT",
+  "result_ids": [
+    "STRICT_386_LOCAL_CYCLIC_PAIRING_CLOSURE_V1",
+    "CLASSICAL_IMPORT_GATE_V20_RECONCILIATION",
+    "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V38",
+    "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
+    "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1"
+  ],
+  "created": "2026-08-16",
+  "repository_base_commit": "e8d8b3e8c9870074ffe8122ac49e926880919c91",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Audit the former M4 full-cyclic-pairing requirement by carrier type; independently replay the complete exact local pairing and q1/endpoint-SDR/D/q2/q3 cyclicity obligations on the M3L common manifest; split completed LOCAL-ALGEBRAIC M4L from the REDUCED-MODE M4R obligation that depends on M3R; reconcile the fail-closed Gate V20 and Atlas V38 frontier; and project the result through the existing static explorer and Paper 21 without promoting residual cyclicity, Gate A, Hadamard, renormalized-product or QME claims.",
+  "artifact_sha256": {
+    "quantum-weyl/classical_import/certificates/STRICT_386_LOCAL_CYCLIC_PAIRING_CLOSURE_V1.json": "c4d0060539335a761ae95af6adf25263f3e851f09838bbb046b5ab3caabdf39c",
+    "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V20_RECONCILIATION.json": "6cce5ee1614c41e759eb6da167b10a21cfb0c32c744a16e82b8cc57fab1d6794",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V38.json": "4635ca77bcabfd0edbd997f5dc0d41990e22b2eb6ccfd2e8083f8057548b4762",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "2f9a35312ab07215a3a651886980c1a522b1d110069f4978bfe020fca97bde3d",
+    "foundations/site/data.json": "3a6480d9eaaf181b7672ecbacdf21ce6116b22cb7d6e334217366f8f85f1aaca",
+    "foundations/site/manifest.json": "d0adc0f9552574f118df0a4a0705ad28cedc449725b82f8e1524adfb49442d7d",
+    "paper/21-reverse-foundations-of-physics-appendices.tex": "c2ca763b43c0c9e2738be959a131433a6e84baa121f46a1150785a624bf19f83",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "919adc5e975bc902e69170ca498551d849063b978a47a6acd7c3adc8e41825e4",
+    "paper/21-reverse-foundations-of-physics.pdf": "ca17f0e39f4d06aba50e443a4933c3d28b4a1cff70706c89bae19e137fa29ac5"
+  },
+  "pre_evidence_failure": {
+    "status": "CORRECTED_BEFORE_EVIDENCE",
+    "command": "python3.12 quantum-weyl/classical_import/build_strict_386_local_cyclic_pairing_closure.py",
+    "failure": "The initial new builder invocation used JSON spellings false/true as Python literals and raised NameError.",
+    "repair": "The literals were corrected to False/True with an explicit source patch; the builder, independent checker, schema validation and all mutation tests were then rerun successfully. The failed invocation is not counted as passing evidence."
+  },
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3.12 -m py_compile <explicit M4L, Gate V20, Atlas V38, explorer and Paper 21 Python paths>",
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 -m json.tool <explicit changed schema, certificate, atlas, site, claim-map and receipt JSON paths>",
+          "status": "PASS"
+        },
+        {
+          "command": "git diff --check -- foundations quantum-weyl/classical_import paper",
+          "status": "PASS"
+        },
+        {
+          "command": "pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (two passes from paper/), followed by fatal/undefined-reference/rerun scan",
+          "elapsed_seconds": 2.92,
+          "maximum_resident_kib": 53980,
+          "status": "PASS",
+          "output": "74 pages, 762714 bytes; no fatal error, undefined reference or rerun request."
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 15.29,
+      "commands": [
+        "python3.12 <M4L, Gate V20, Atlas V38, explorer and Paper 21 producer-currentness and independent-verifier rails>",
+        "python3.12 -m unittest -v quantum-weyl/classical_import/tests/test_strict_386_local_cyclic_pairing_closure.py quantum-weyl/classical_import/tests/test_classical_import_gate_v20_reconciliation.py foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v38.py foundations/tests/test_matrix_site.py"
+      ],
+      "checks": {
+        "unit_and_mutation_tests": "27/27 PASS",
+        "local_graph_rows": 386,
+        "local_endpoint_rows": 30,
+        "generalized_auxiliary_rows": 36,
+        "mapping_cone_and_cotangent_rows": 320,
+        "exact_local_pairing_rank": 386,
+        "ordered_rational_pairing_entries": 410,
+        "rows_with_nonzero_partner": 386,
+        "q2_cyclicity_equalities_checked": 3264,
+        "q3_cyclicity_equalities_checked": 40000,
+        "combined_declared_local_cyclicity_defects": 0,
+        "residual_rows_in_local_carrier": 0,
+        "classical_exports_receiver_verified_scoped": "17/20",
+        "classical_freeze_checks_receiver_verified_scoped": "9/10",
+        "accepted_top_level_hashes": "1/7",
+        "completion_atlas_cells": 77,
+        "completion_atlas_routes": 9,
+        "site_foundational_cells": 576,
+        "site_migration_pending": 0,
+        "paper_pdf_pages": 74
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 1.48,
+      "command": "Replay the independent component-pairing, graph-q1/SDR, full-D, source-q2, source-q3, common-endpoint-SDR, residual-SDR-type and Gate-V19 checkers, followed by the changed M4L, Gate V20, Atlas V38, explorer and Paper 21 rails.",
+      "criterion": "Every transitive certificate directly consumed by the M4L closure replayed successfully, its hashes remained pinned, and all changed downstream representations preserved the LOCAL-ALGEBRAIC versus REDUCED-MODE boundary."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze/tag, shared core algebra change, release preparation, QME lifecycle promotion or LORENTZIAN_CERTIFIED result occurred. Gate A remains FAIL_CLOSED, so a repository-wide Tier-3 run is not applicable."
+    }
+  },
+  "advisory_science_forge_shadow": {
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": 4.96,
+    "exit_status": 0,
+    "toolchain": "INFO: unpinned dirty development Forge build whose embedded revision differs from the current Forge stdlib checkout",
+    "bridge_audit": "FAIL_CLOSED: the external bp2transformer bridge verifier cannot import sympy in its selected environment",
+    "coverage_census": "DRIFT: 1907 certificates versus the 2026-07-19 baseline of 976",
+    "disposition": "The rail is advisory. Its findings are recorded without treating the failed external bridge audit or stale corpus baseline as evidence for this scoped result."
+  },
+  "scientific_result": {
+    "m3l": "COMPLETE_LOCAL_ENDPOINT_BINDING",
+    "m3r": "OPEN_REDUCED_MODE_ENDPOINT_TO_RESIDUAL_COMPARISON",
+    "m4l": "COMPLETE_LOCAL_GRAPH_CYCLIC_PAIRING",
+    "m4r": "OPEN_REDUCED_MODE_CYCLICITY_BLOCKED_BY_M3R",
+    "m1": "OPEN_COMMON_STRICT_SNAPSHOT",
+    "classical_import_gate_a": "FAIL_CLOSED",
+    "highest_value_next_route": "STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON"
+  },
+  "claim_boundary": "The complete exact odd pairing and all declared q1, endpoint-SDR, D, q2 and q3 cyclicity identities now close on the 386-row local graph carrier. This does not identify local endpoint sections with W+/W- harmonic residual coefficients, construct the typed M3R spectral comparison, define or certify M4R residual cyclicity, bind the final M1 snapshot, accept the six missing Gate-A hashes, construct a full Lorentzian off-shell BV propagator or Hadamard state, define renormalized Lorentzian products, restore the QME, authorize residual quantum transfer, establish positivity, or certify a Lorentzian quantum theory."
+}

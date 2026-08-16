@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-386-local-cyclic-pairing-closure-v1.schema.json",
+  "title": "Strict 386-row local cyclic-pairing closure",
+  "type": "object",
+  "required": [
+    "$schema", "schema", "schema_path", "result_id", "result_kind", "result_state",
+    "lifecycle", "created", "repository_base_commit", "dependency_tags", "question",
+    "answer", "scope", "artifact_pins", "pairing_replay", "local_cyclicity_replay",
+    "obligation_ledger", "type_split", "foundational_strength", "gate_disposition",
+    "claim_flags", "does_not_establish", "provenance", "next_gate", "human_report",
+    "independent_checker"
+  ],
+  "properties": {
+    "result_id": {"const": "STRICT_386_LOCAL_CYCLIC_PAIRING_CLOSURE_V1"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]
+    },
+    "pairing_replay": {
+      "type": "object",
+      "required": [
+        "carrier_rows", "unique_row_ids", "endpoint_rows", "auxiliary_rows",
+        "mapping_cone_and_cotangent_rows", "nonzero_ordered_pairing_entries",
+        "exact_rational_rank", "rows_with_nonzero_partner", "odd_skew_defects",
+        "pairing_degree_defects", "basis_sha256", "pairing_sha256"
+      ]
+    },
+    "local_cyclicity_replay": {"type": "object"},
+    "obligation_ledger": {"type": "array", "minItems": 7, "maxItems": 7},
+    "type_split": {
+      "type": "object",
+      "required": [
+        "old_requirement", "old_requirement_disposition",
+        "M4L_LOCAL_GRAPH_CYCLIC_PAIRING", "M4R_TYPED_RESIDUAL_CYCLICITY",
+        "row_type_fact", "gate_rule"
+      ]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "STRICT_386_FULL_LOCAL_ODD_PAIRING_NONDEGENERATE",
+        "STRICT_386_LOCAL_Q1_SDR_D_Q2_Q3_CYCLICITY_COMPLETE",
+        "M4L_LOCAL_GRAPH_CYCLIC_PAIRING_COMPLETE",
+        "M4R_TYPED_RESIDUAL_CYCLICITY_COMPLETE",
+        "M3R_TYPED_RESIDUAL_COMPARISON_CONSTRUCTED",
+        "FULL_RESIDUAL_CYCLIC_PAIRING_CERTIFIED",
+        "CLASSICAL_IMPORT_GATE_PASSED", "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED",
+        "QME_RESTORED", "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED"
+      ]
+    },
+    "does_not_establish": {"type": "array", "minItems": 7},
+    "artifact_pins": {"type": "array", "minItems": 8, "maxItems": 8}
+  },
+  "additionalProperties": true
+}
