@@ -1,0 +1,370 @@
+{
+  "$schema": "../schema/strict-m2-q2-q3-typed-green-compatibility-v1.schema.json",
+  "schema": "strict-m2-q2-q3-typed-green-compatibility-v1",
+  "schema_path": "quantum-weyl/classical_import/schema/strict-m2-q2-q3-typed-green-compatibility-v1.schema.json",
+  "result_id": "STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1",
+  "result_kind": "AUTHORITATIVE_GATE_A_TYPED_NONLINEAR_LORENTZIAN_GREEN_COMPATIBILITY_THEOREM",
+  "result_state": "NONLINEAR_GREEN_COMPATIBILITY_AND_SECOND_SOURCE_COCYCLE_CERTIFIED_HADAMARD_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-16",
+  "repository_base_commit": "278f63816b6e71192a7a03ac4e028ab912f4eafe",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "Do the authoritative Gate-A q2 and q3 operations compose with both typed Lorentzian Green homotopies, including cyclicity, causal support and the first q3-dependent source closure?",
+  "answer": "Yes, with explicit scope. The immutable Gate-A snapshot's authoritative q2 and q3 are finite-order support-local operations on the same 386-row graph carrier as the separately content-addressed advanced and retarded Green homotopies. Their binary and ternary Green responses are typed on compact and matching past-/future-compact support classes; the q1/q2 and arity-three identities, local cyclicity and advanced/retarded adjoint relation replay with zero defects. Every finite same-orientation q2/q3 response tree is defined. For a general compact q1-closed degree-zero field, the q3 term cancels the q2 Jacobiator in the second nonlinear source, making it a cocycle and hence solvable modulo gauge by the constrained Green inverse. Mixed-sign trees, infinite-series convergence and Hadamard data remain open.",
+  "scope": {
+    "theory": "strict pure-Weyl ordinary-derivative generalized-auxiliary BV theory",
+    "background": "unit ultrastatic conformal cylinder R x S3",
+    "carrier_rows": 386,
+    "snapshot_id": "STRICT_PURE_WEYL_BV_SNAPSHOT_07dc7271b95b263a",
+    "snapshot_sha256": "07dc7271b95b263a079446479596a87bd849c2520c1b8ba275afc6eca8e21a5a",
+    "orientations": [
+      "plus/retarded",
+      "minus/advanced"
+    ],
+    "nonlinear_arities": [
+      2,
+      3
+    ]
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "input_id": "m1c",
+        "path": "quantum-weyl/classical_import/certificates/STRICT_M1C_COMMON_SNAPSHOT_V1.json",
+        "result_or_artifact_id": "STRICT_M1C_COMMON_SNAPSHOT_V1",
+        "sha256": "7d2838b32f543c5ed6a1d39d44811a4982563cacba831b24e2253b4554ac68a6",
+        "role": "immutable authoritative strict pure-Weyl BV snapshot"
+      },
+      {
+        "input_id": "gate",
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V30_RECONCILIATION.json",
+        "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V30_RECONCILIATION",
+        "sha256": "95cfe49e134064f8e8d25cb2ad1a01bc84ff0bf921676486316e8ec72a390263",
+        "role": "independent Gate-A decision on the immutable snapshot"
+      },
+      {
+        "input_id": "green",
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_GREEN_ACTION_NAME_V1.json",
+        "result_or_artifact_id": "STRICT_386_GRAPH_GREEN_ACTION_NAME_V1",
+        "sha256": "8e1fc54c4820310457e22094dae7f6dd1c5a3c56724e6450d455700858f7ad64",
+        "role": "typed convergent advanced/retarded graph Green operator names"
+      },
+      {
+        "input_id": "field_inverse",
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1.json",
+        "result_or_artifact_id": "STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1",
+        "sha256": "d9e64a9aaf41ec9041edf9d70bd85ab5600fc72c7ea8101a4fd16b61b95f5fb6",
+        "role": "degree-restricted constrained and quotient field-equation inverse"
+      },
+      {
+        "input_id": "q2",
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1.json",
+        "result_or_artifact_id": "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1",
+        "sha256": "2a93236ba5ae929bde285339286fbc24ceb98415b6b1750b90b546f921f658ed",
+        "role": "authoritative common-snapshot binary BV operation"
+      },
+      {
+        "input_id": "q3",
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.json",
+        "result_or_artifact_id": "STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1",
+        "sha256": "d2fb66beec9f77bd24487f13406aa5a179f332d113b8b1ca7052547df7e3b696",
+        "role": "authoritative common-snapshot ternary BV operation and arity-three identity"
+      },
+      {
+        "input_id": "cyclic",
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_LOCAL_CYCLIC_PAIRING_CLOSURE_V1.json",
+        "result_or_artifact_id": "STRICT_386_LOCAL_CYCLIC_PAIRING_CLOSURE_V1",
+        "sha256": "c4d0060539335a761ae95af6adf25263f3e851f09838bbb046b5ab3caabdf39c",
+        "role": "rank-386 local odd pairing and q1/q2/q3 cyclic replay"
+      },
+      {
+        "input_id": "literature",
+        "path": "foundations/literature-causal-green-atlas-v1.json",
+        "result_or_artifact_id": "FOUNDATIONAL_CAUSAL_GREEN_LITERATURE_V1",
+        "sha256": "3d332cfb759819581dae7ec6a01f2a2776df8f27184723f53688056609024c58",
+        "role": "content-pinned support-space extension theorem"
+      }
+    ]
+  },
+  "snapshot_binding": {
+    "immutable_snapshot": true,
+    "snapshot_modified": false,
+    "q2_and_q3_are_snapshot_pins": true,
+    "green_is_post_freeze_typed_envelope": true,
+    "gate_a_status": "VERIFIED",
+    "snapshot_id": "STRICT_PURE_WEYL_BV_SNAPSHOT_07dc7271b95b263a",
+    "snapshot_sha256": "07dc7271b95b263a079446479596a87bd849c2520c1b8ba275afc6eca8e21a5a"
+  },
+  "type_ledger": {
+    "carrier": "the 386-row suspended strict pure-Weyl graph BV bundle E_386 on M=R x S3",
+    "degree_convention": "q1, q2 and q3 have suspended degree +1; Lambda_sigma has degree -1",
+    "spaces": {
+      "C": "Gamma_c^infinity(M,E_386), compact support",
+      "PC": "Gamma_pc^infinity(M,E_386), past-compact support (bounded below in cylinder time)",
+      "FC": "Gamma_fc^infinity(M,E_386), future-compact support (bounded above in cylinder time)"
+    },
+    "q1": "q1:X_S^k -> X_S^(k+1) for S in {C,PC,FC}",
+    "q2": "q2:X_S^k x X_T^l -> X_(S intersection T)^(k+l+1)",
+    "q3": "q3:X_S^k x X_T^l x X_U^m -> X_(S intersection T intersection U)^(k+l+m+1)",
+    "plus": "Lambda_plus:X_C^k -> X_PC^(k-1), continuously extended X_PC^k -> X_PC^(k-1)",
+    "minus": "Lambda_minus:X_C^k -> X_FC^(k-1), continuously extended X_FC^k -> X_FC^(k-1)",
+    "homotopy": "q1 Lambda_sigma + Lambda_sigma q1 = identity on the matching support class",
+    "field_component": "G_sigma=pr_C0 Lambda_graph,sigma inc_C1",
+    "field_inverse": "K G_sigma(s)=s for s in ker N; [G_sigma K(phi)]=[phi] modulo im R",
+    "distribution_kernel_status": "exists by continuity and the Schwartz kernel theorem; coordinate kernel bytes are not serialized",
+    "sha256": "002857c68b2d620343052bd0880d32409fd803e9f8aea7fe7302f00d7272963a"
+  },
+  "support_and_continuity": {
+    "q2_locality": {
+      "source_families": 16,
+      "graph_compositional_DAG": true,
+      "rule": "finite-order local differential operations and the support-local canonical shear preserve support intersections",
+      "fixed_step_continuity": true
+    },
+    "q3_locality": {
+      "source_families": 2,
+      "minimal_maximum_input_jet_order": 4,
+      "auxiliary_maximum_input_jet_order": 0,
+      "graph_compositional_DAG": true,
+      "rule": "the natural differential q3, algebraic auxiliary q3 and support-local canonical shear preserve triple support intersections",
+      "fixed_step_continuity": true
+    },
+    "intersection_table_on_cylinder": {
+      "C*C": "C",
+      "C*PC": "C",
+      "C*FC": "C",
+      "PC*PC": "PC",
+      "FC*FC": "FC",
+      "PC*FC": "C",
+      "PC*PC*PC": "PC",
+      "FC*FC*FC": "FC"
+    },
+    "analytic_extension": {
+      "source_id": "baer-2015",
+      "source_pdf_sha256": "879948318de8b4a5a74b52179f78120d074bc7773734b82495b6db4c363f4c99",
+      "retarded": "Lambda_plus:X_PC -> X_PC",
+      "advanced": "Lambda_minus:X_FC -> X_FC",
+      "support": "supp Lambda_sigma(f) subset J_sigma(supp f)",
+      "import_boundary": "This is a classical smooth/distributional theorem. It does not code the proof in second-order arithmetic, eliminate Choice, give a Bishop-constructive proof, or construct the Weyl metric BV propagator."
+    },
+    "global_unindexed_joint_LF_continuity_claimed": false,
+    "sha256": "dd6f08971c6d0fc6380ad9b29a8151712a4ca0b257159a5c25bef405e4b578db"
+  },
+  "causal_response_names": {
+    "plus": {
+      "orientation": "retarded/future-supported",
+      "responses": {
+        "B2": {
+          "formula": "B2_plus=Lambda_plus o q2",
+          "compact_input_type": "X_C^2 -> X_PC",
+          "matching_support_type": "X_PC^2 -> X_PC",
+          "support": "supp B2_plus(u_1,...,u_2) subset J_plus(intersection_i supp u_i)",
+          "continuous_on_fixed_support_steps": true,
+          "operator_name": {
+            "node": "COMPOSE_NARY_CAUSAL_RESPONSE",
+            "arity": 2,
+            "operation": {
+              "id": "AUTHORITATIVE_Q2_GATE_A",
+              "sha256": "0f1e23a5653db0666cbd02dea49f8961927d03ff4c72ed402fd24ba8f2ba4800"
+            },
+            "green": {
+              "id": "STRICT_386_GRAPH_GREEN_ACTION_NAME",
+              "sign": "plus",
+              "sha256": "74ba74bcd7d5ac3134eb9ec4f36c8908f6626c50c463bc22b0df037316807107"
+            }
+          },
+          "canonical_name_sha256": "2a7921635abcd524bb7485fca12314281c7b71a1c8102fb5e4deacc60b2b9902"
+        },
+        "B3": {
+          "formula": "B3_plus=Lambda_plus o q3",
+          "compact_input_type": "X_C^3 -> X_PC",
+          "matching_support_type": "X_PC^3 -> X_PC",
+          "support": "supp B3_plus(u_1,...,u_3) subset J_plus(intersection_i supp u_i)",
+          "continuous_on_fixed_support_steps": true,
+          "operator_name": {
+            "node": "COMPOSE_NARY_CAUSAL_RESPONSE",
+            "arity": 3,
+            "operation": {
+              "id": "AUTHORITATIVE_Q3_GATE_A",
+              "sha256": "2c2032011400463419fb7427f38746e6fa14d0fe0cbfe754e9b0023de5387f8a"
+            },
+            "green": {
+              "id": "STRICT_386_GRAPH_GREEN_ACTION_NAME",
+              "sign": "plus",
+              "sha256": "74ba74bcd7d5ac3134eb9ec4f36c8908f6626c50c463bc22b0df037316807107"
+            }
+          },
+          "canonical_name_sha256": "166fa876d655ab9dd221a5198192805aed429c6eddd313191f60343039c209c8"
+        }
+      }
+    },
+    "minus": {
+      "orientation": "advanced/past-supported",
+      "responses": {
+        "B2": {
+          "formula": "B2_minus=Lambda_minus o q2",
+          "compact_input_type": "X_C^2 -> X_FC",
+          "matching_support_type": "X_FC^2 -> X_FC",
+          "support": "supp B2_minus(u_1,...,u_2) subset J_minus(intersection_i supp u_i)",
+          "continuous_on_fixed_support_steps": true,
+          "operator_name": {
+            "node": "COMPOSE_NARY_CAUSAL_RESPONSE",
+            "arity": 2,
+            "operation": {
+              "id": "AUTHORITATIVE_Q2_GATE_A",
+              "sha256": "0f1e23a5653db0666cbd02dea49f8961927d03ff4c72ed402fd24ba8f2ba4800"
+            },
+            "green": {
+              "id": "STRICT_386_GRAPH_GREEN_ACTION_NAME",
+              "sign": "minus",
+              "sha256": "698ade6e1e9eddefa13d3824e23e222ef745169ebbbad32ce75f4cd3542e80b6"
+            }
+          },
+          "canonical_name_sha256": "8e4230a01bfc5d6045db4b500a7e69c21c4b222f5d3c947f2eb311314b307d06"
+        },
+        "B3": {
+          "formula": "B3_minus=Lambda_minus o q3",
+          "compact_input_type": "X_C^3 -> X_FC",
+          "matching_support_type": "X_FC^3 -> X_FC",
+          "support": "supp B3_minus(u_1,...,u_3) subset J_minus(intersection_i supp u_i)",
+          "continuous_on_fixed_support_steps": true,
+          "operator_name": {
+            "node": "COMPOSE_NARY_CAUSAL_RESPONSE",
+            "arity": 3,
+            "operation": {
+              "id": "AUTHORITATIVE_Q3_GATE_A",
+              "sha256": "2c2032011400463419fb7427f38746e6fa14d0fe0cbfe754e9b0023de5387f8a"
+            },
+            "green": {
+              "id": "STRICT_386_GRAPH_GREEN_ACTION_NAME",
+              "sign": "minus",
+              "sha256": "698ade6e1e9eddefa13d3824e23e222ef745169ebbbad32ce75f4cd3542e80b6"
+            }
+          },
+          "canonical_name_sha256": "40790d8b3d3e43c97a3ff4085e794a7715b20befa5be748633be603ff3ba93b0"
+        }
+      }
+    },
+    "sha256": "80080753b44bb09cbfd26eeca0eed3590f0bcea27465fedc9965a5a984333807"
+  },
+  "compatibility_replay": {
+    "q1_q2_identity": 0,
+    "q1_q3_plus_q2_q2_identity": 0,
+    "q2_cyclicity": 0,
+    "q3_cyclicity_mod_horizontal_boundary": 0,
+    "green_homotopy_orientations_checked": 2,
+    "green_homotopy_defects": 0,
+    "advanced_retarded_adjoint_defects": 0,
+    "q2_response_identity": "q1 B2_sigma - B2_sigma(q1 tensor 1 + 1 tensor q1) = q2, with the certified Koszul signs",
+    "q3_response_identity": "q1 B3_sigma - B3_sigma q1^(3) = q3 + Lambda_sigma sum_(2,1)-unshuffles q2(q2(.,.),.), with certified Koszul signs",
+    "cyclic_chain": "For a compact test leg, Lambda_plus^sharp=Lambda_minus composes with the rank-386 q2/q3 cyclic identities; every pairing integral has compact intersection support.",
+    "cyclic_noncompact_boundary": "No pairing of two unrestricted PC or two unrestricted FC outputs is asserted.",
+    "total_exact_or_structural_defects": 0,
+    "sha256": "b52ff54332f963336646ef222010c20f7166a20fd249d3cede5576e7993c4f2f"
+  },
+  "polarized_finite_tree_theorem": {
+    "grammar": "T_sigma ::= compact leaf | Lambda_sigma q2(T_sigma,T_sigma) | Lambda_sigma q3(T_sigma,T_sigma,T_sigma)",
+    "retarded": "Every finite plus tree is defined and lies in X_PC; its lower time bound is the maximum lower bound of its leaves.",
+    "advanced": "Every finite minus tree is defined and lies in X_FC; its upper time bound is the minimum upper bound of its leaves.",
+    "proof": [
+      "compact leaves lie in both orientation domains",
+      "finite-order q2 and q3 preserve intersections and fixed support steps",
+      "an intersection of finitely many PC supports is PC, and similarly for FC",
+      "the matching Green extension preserves PC for plus and FC for minus",
+      "structural induction proves type, support and fixed-step continuity for every finite tree"
+    ],
+    "q2_and_q3_vertices_included": true,
+    "all_finite_same_orientation_trees": true,
+    "infinite_tree_sum_or_convergence": false,
+    "arbitrary_mixed_orientation_trees": false,
+    "mixed_boundary": "A plus node is not uniformly defined on an FC source and a minus node is not uniformly defined on a PC source; weighted or decaying mixed domains remain separate work.",
+    "sha256": "71fc68b141bc006312e1a9ba7ca8baf90c82ef705093ba4b3b5052611aa7f26c"
+  },
+  "lambda2_general_source_cocycle": {
+    "input": "q1-closed compactly supported suspended-degree-zero field x",
+    "first_response": "r1_sigma=-(1/2)Lambda_sigma q2(x,x)",
+    "first_response_equation": "q1 r1_sigma=-(1/2)q2(x,x)",
+    "second_source": "S2_sigma=(1/2)(q2(x,r1_sigma)+q2(r1_sigma,x))+(1/6)q3(x,x,x)",
+    "support": "S2_sigma is compact because every term contains the compact leg x, so G_sigma(S2_sigma) is defined",
+    "closure_reduction": "q1 S2_sigma=(1/2)J_q2(x)+(1/6)q1 q3(x,x,x)",
+    "arity_three_diagonal_identity": "q1 q3(x,x,x)=-3 J_q2(x)",
+    "coefficients": {
+      "q2_Jacobiator": "1/2",
+      "q3_image": "1/6",
+      "arity_three_factor": "-3",
+      "total": "0"
+    },
+    "general_source_cocycle": "q1 S2_sigma=0 (equivalently N S2_sigma=0 in the field-equation sector)",
+    "solution": "r2_sigma=-G_sigma(S2_sigma) solves K r2_sigma=-S2_sigma modulo gauge",
+    "orientations_checked": 2,
+    "structural_defects": 0,
+    "scope": "general through the second nonlinear source for the certified q1/q2/q3 Taylor data; not an all-order or convergent Moller theorem",
+    "sha256": "87ab3aca24d726ad0a57468008cdc9505d31a5c35c72f33aa4e150e482d6c0a0"
+  },
+  "causal_envelope": {
+    "kind": "STRICT_GATE_A_POST_FREEZE_TYPED_CAUSAL_ENVELOPE",
+    "snapshot_id": "STRICT_PURE_WEYL_BV_SNAPSHOT_07dc7271b95b263a",
+    "snapshot_sha256": "07dc7271b95b263a079446479596a87bd849c2520c1b8ba275afc6eca8e21a5a",
+    "gate_certificate_sha256": "95cfe49e134064f8e8d25cb2ad1a01bc84ff0bf921676486316e8ec72a390263",
+    "green_plus_sha256": "74ba74bcd7d5ac3134eb9ec4f36c8908f6626c50c463bc22b0df037316807107",
+    "green_minus_sha256": "698ade6e1e9eddefa13d3824e23e222ef745169ebbbad32ce75f4cd3542e80b6",
+    "q2_snapshot_sha256": "0f1e23a5653db0666cbd02dea49f8961927d03ff4c72ed402fd24ba8f2ba4800",
+    "q3_snapshot_sha256": "2c2032011400463419fb7427f38746e6fa14d0fe0cbfe754e9b0023de5387f8a",
+    "pairing_sha256": "912aecc758dfd5f0d9de815530a2fe1428442afe874343a08d90673e1f2f6381",
+    "field_inverse_sha256": "c456e4bca742312eaac71f014a433e254713ab291fd5681cfd318ebaddfb5ba8",
+    "type_ledger_sha256": "002857c68b2d620343052bd0880d32409fd803e9f8aea7fe7302f00d7272963a",
+    "support_and_continuity_sha256": "dd6f08971c6d0fc6380ad9b29a8151712a4ca0b257159a5c25bef405e4b578db",
+    "responses_sha256": "80080753b44bb09cbfd26eeca0eed3590f0bcea27465fedc9965a5a984333807",
+    "compatibility_replay_sha256": "b52ff54332f963336646ef222010c20f7166a20fd249d3cede5576e7993c4f2f",
+    "tree_theorem_sha256": "71fc68b141bc006312e1a9ba7ca8baf90c82ef705093ba4b3b5052611aa7f26c",
+    "second_source_sha256": "87ab3aca24d726ad0a57468008cdc9505d31a5c35c72f33aa4e150e482d6c0a0",
+    "immutable_snapshot_modified": false,
+    "sha256": "3d21d69778f9645f9358c8edd16d399e2998accdef1e22c41d1c02782f14fb7c"
+  },
+  "foundational_strength": {
+    "exact_part": "content hashes, rational Taylor coefficients, exact q1/q2/q3 identities, cyclicity defects and coefficient cancellation",
+    "analytic_part": "classical smooth Green-hyperbolic support-space theorem and convergent spectral operator names",
+    "choice_free_or_weakest_base_proof": false,
+    "effective_numeric_solver": false,
+    "Hilbert_or_Krein_completion_added": false,
+    "boundary": "Exact local algebra and classical causal functional analysis remain distinct evidence types."
+  },
+  "independent_checker": "quantum-weyl/classical_import/check_strict_m2_q2_q3_typed_green_compatibility.py",
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1.md",
+  "next_gate": "Construct a full-complex BRST-compatible Hadamard two-point function on this causal envelope, or isolate an explicitly incompatible subset of bisolution, CCR, wavefront, BRST Ward, pairing and positivity requirements and prove a scoped obstruction.",
+  "does_not_establish": [
+    "a mutation of or additional object inside the immutable Gate-A snapshot",
+    "arbitrary mixed advanced/retarded response trees on the current support classes",
+    "convergence, summability or a nonperturbative realization of the infinite response-tree series",
+    "absence of q4 or higher Taylor operations or all-order nonlinear source closure",
+    "serialized distribution-kernel coordinates or an effective numerical Green solver",
+    "a complete Lorentzian off-shell BV propagator",
+    "a BRST-compatible Hadamard two-point function, positive state or particle interpretation",
+    "renormalized Lorentzian products, QME restoration, residual quantum transfer or a Lorentzian quantum theory"
+  ],
+  "claim_flags": {
+    "CLASSICAL_IMPORT_GATE_PASSED": true,
+    "STRICT_386_TYPED_LORENTZIAN_GREEN_HOMOTOPY_CERTIFIED": true,
+    "STRICT_386_AUTHORITATIVE_Q2_GREEN_COMPATIBILITY_CERTIFIED": true,
+    "STRICT_386_AUTHORITATIVE_Q3_GREEN_COMPATIBILITY_CERTIFIED": true,
+    "STRICT_386_Q2_Q3_CYCLIC_GREEN_CHAIN_CERTIFIED": true,
+    "STRICT_386_POLARIZED_FINITE_Q2_Q3_TREES_CERTIFIED": true,
+    "STRICT_386_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE_CERTIFIED": true,
+    "NONLINEAR_GREEN_COMPATIBILITY_CERTIFIED": true,
+    "STRICT_386_ARBITRARY_MIXED_SIGN_TREES_CERTIFIED": false,
+    "STRICT_386_INFINITE_TREE_SERIES_CONVERGENCE_CERTIFIED": false,
+    "STRICT_386_ALL_ORDER_MOLLER_MAP_CERTIFIED": false,
+    "STRICT_386_DISTRIBUTION_KERNEL_BYTES_SERIALIZED": false,
+    "COMPLETE_LORENTZIAN_OFFSHELL_BV_PROPAGATOR_CONSTRUCTED": false,
+    "FULL_COMPLEX_BRST_HADAMARD_TWO_POINT_FUNCTION_CONSTRUCTED": false,
+    "RENORMALIZED_LORENTZIAN_PRODUCTS_CONSTRUCTED": false,
+    "QME_RESTORED": false,
+    "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": false,
+    "PHYSICAL_POSITIVITY_CERTIFIED": false,
+    "LORENTZIAN_QUANTUM_THEORY": false
+  },
+  "content_sha256": "8ab0867e05c24ea28bdfca269d92ff21490b72974b03399fe276fbcbda2d28a2"
+}

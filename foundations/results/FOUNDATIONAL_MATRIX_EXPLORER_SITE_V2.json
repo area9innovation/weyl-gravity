@@ -3,8 +3,8 @@
   "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
   "result_kind": "STATIC_EVIDENCE_EXPLORER",
   "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
-  "created": "2026-08-15",
-  "repository_base_commit": "229fd0f2147e8ed611c5147328459f7678b1f605",
+  "created": "2026-08-16",
+  "repository_base_commit": "278f63816b6e71192a7a03ac4e028ab912f4eafe",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "EUCLIDEAN-SPECTRAL",
@@ -153,15 +153,17 @@
     "exact M1B primal typed composite: 4080 represented endpoint coordinates retract to 470 residual coordinates with zero matrix and formal-composition defects; harmonic restriction remains global and support-expanding",
     "action-derived M1B dual lift: all 470 residual duals have compact-source representatives, with zero defects in the forced adjoint maps",
     "complete M1B rank-940 cyclic composite: thirteen typed identities replay with zero defects on an 8,160-coordinate finite verification core that is explicitly not the full BV source",
-    "immutable M1C snapshot and Gate-A decision: all twenty exports, seven hashes, ten required checks and three supplemental audits replay on the exact pinned bytes"
+    "immutable M1C snapshot and Gate-A decision: all twenty exports, seven hashes, ten required checks and three supplemental audits replay on the exact pinned bytes",
+    "post-freeze strict q2/q3 compatibility with both typed Lorentzian Green orientations, all finite same-orientation trees, and general second-source cocycle closure",
+    "full 386-row BRST Hadamard pseudo-state pair with exact graded CCR, both Ward identities, retained scalar zero mode, stationarity, and vector-valued microlocal spectrum condition"
   ],
   "provenance": {
     "manifest": "foundations/site/manifest.json",
-    "manifest_sha256": "7b35944f44be8d6130bf13d36b5653cd4f14b4421596123cbb037a20b7b9c8e6",
-    "canonical_data_digest": "28a50f89bc7cdeaadad165aee83015d3e6d7ebd7ad593ba8a713296da3c2ed78",
-    "viability_digest": "173e03c4fe6c2b9a7facde8811e4858f2cff30e85192aec097ed830cf913d5cf",
-    "assembly_digest": "b55e7bf525f0c28498ca436fe505e8444a7b66ba7aa4034127dfed68c38b7876",
-    "completion_atlas_sha256": "89a5c2b1026ed1e019c7cbe69152ef363b0aa3b6b68c30d88c93e6a5a72bd4d0"
+    "manifest_sha256": "e4300470b8e90b85f5564c57c5ee2921bb29209f1f8139750535f09a2ca78e1d",
+    "canonical_data_digest": "0cdc2be777962634ed320344fa8d4a468169d64ecb1e8f8ef9e5abbc81da6c5e",
+    "viability_digest": "4eb58096452a45602032e85b89aeec09b835d73b98fc0d0693e7d60e17e278c8",
+    "assembly_digest": "e257e047befcf2b7e6fe1125c8cf6b5a58767c04b2cd6710d07063b4ff63ee55",
+    "completion_atlas_sha256": "5dd450b6186f41508407829f7f00983c604b809e0b51f5af161883fa1e5519ce"
   },
   "independent_checker": {
     "path": "foundations/check_matrix_site_v2.py",
@@ -171,9 +173,9 @@
     "expected_total_not_mapped": 0,
     "expected_reviewed_gaps": 169,
     "expected_evidence_records": 83,
-    "expected_digest": "28a50f89bc7cdeaadad165aee83015d3e6d7ebd7ad593ba8a713296da3c2ed78",
-    "expected_viability_digest": "173e03c4fe6c2b9a7facde8811e4858f2cff30e85192aec097ed830cf913d5cf",
-    "expected_assembly_digest": "b55e7bf525f0c28498ca436fe505e8444a7b66ba7aa4034127dfed68c38b7876"
+    "expected_digest": "0cdc2be777962634ed320344fa8d4a468169d64ecb1e8f8ef9e5abbc81da6c5e",
+    "expected_viability_digest": "4eb58096452a45602032e85b89aeec09b835d73b98fc0d0693e7d60e17e278c8",
+    "expected_assembly_digest": "e257e047befcf2b7e6fe1125c8cf6b5a58767c04b2cd6710d07063b4ff63ee55"
   },
   "claim_flags": {
     "static_site_generated": true,
@@ -209,8 +211,8 @@
     "strict_field_equation_quotient_inverse_exposed": true,
     "strict_ungauge_fixed_full_inverse_obstruction_exposed": true,
     "strict_all_order_source_closure_exposed": false,
-    "strict_authoritative_q2_green_compatibility_exposed": false,
-    "strict_recursive_nonlinear_green_trees_exposed": false,
+    "strict_authoritative_q2_green_compatibility_exposed": true,
+    "strict_recursive_nonlinear_green_trees_exposed": true,
     "strict_unrestricted_mixed_sign_trees_exposed": false,
     "strict_arbitrary_causal_difference_trees_exposed": false,
     "strict_infinite_tree_series_convergence_exposed": false,
@@ -316,7 +318,11 @@
     "strict_386_full_q2_cyclicity_exposed": true,
     "strict_386_full_D_q2_derivation_exposed": true,
     "strict_386_full_source_q2_pullback_replayed": true,
-    "strict_386_full_source_q3_pullback_replayed": true
+    "strict_386_full_source_q3_pullback_replayed": true,
+    "strict_386_full_brst_hadamard_two_point_exposed": true,
+    "strict_386_full_brst_ward_exposed": true,
+    "strict_386_positive_hadamard_state_exposed": false,
+    "strict_386_physical_cohomology_positivity_exposed": false
   },
   "does_not_establish": [
     "literature completeness",
@@ -356,9 +362,10 @@
     "support-locality or all-energy smooth completion of the represented finite M3R harmonic comparison",
     "H3 or H5 cohomology from the adjacent centered C3 and C5 carrier bases",
     "that the formal 8,980-coordinate cotangent completion is the unchanged authoritative classical BV source",
-    "q2/q3 compatibility with an advanced or retarded Green homotopy",
     "that the exact stabilized-q3 candidate is the authoritative nonminimal pure-Weyl BV interaction",
-    "general lambda-squared causal source closure from the candidate q3 stabilization"
+    "general lambda-squared causal source closure from the candidate q3 stabilization",
+    "a positive full-complex Hadamard state or positive physical-cohomology covariance",
+    "renormalized Lorentzian products, QME restoration, residual transfer or a complete interacting Lorentzian quantum theory"
   ],
   "human_report": "foundations/reports/matrix-explorer-site-v2.md"
 }

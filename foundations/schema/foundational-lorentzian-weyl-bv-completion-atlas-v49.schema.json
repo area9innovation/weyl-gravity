@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9innovation.github.io/weyl-gravity/foundational-lorentzian-weyl-bv-completion-atlas-v49.schema.json",
+  "title": "Foundational Lorentzian Weyl BV completion atlas v49",
+  "type": "object",
+  "required": [
+    "schema_version", "result_id", "result_kind", "lifecycle", "created",
+    "dependency_tags", "predecessor", "stages", "branches", "frontier_summary",
+    "classical_import_reconciliation", "strict_gate_v30_reconciliation",
+    "strict_m1b_action_dual_lift", "strict_m1b_typed_cyclic_composite",
+    "strict_m1c_common_snapshot", "strict_m2_q2_q3_typed_green_compatibility",
+    "strict_386_brst_hadamard_two_point", "route_selection", "research_queue",
+    "claim_flags", "does_not_establish", "provenance", "independent_checker",
+    "human_report"
+  ],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v49"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V49"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"contains": {"const": "LORENTZIAN-CAUSAL"}},
+    "predecessor": {
+      "type": "object",
+      "required": ["result_id", "path", "sha256", "preserved"],
+      "properties": {
+        "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V48"},
+        "path": {"const": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V48.json"},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "preserved": {"const": true}
+      }
+    },
+    "stages": {"type": "array", "minItems": 11, "maxItems": 11},
+    "branches": {"type": "array", "minItems": 7, "maxItems": 7},
+    "frontier_summary": {
+      "type": "object",
+      "required": ["highest_value_next_route", "route_count", "completed_since_v48", "new_positive_result", "surprise", "hard_boundary"],
+      "properties": {
+        "highest_value_next_route": {"const": "STRICT_PHYSICAL_COHOMOLOGY_POSITIVITY_DECISION"},
+        "route_count": {"const": 7},
+        "completed_since_v48": {
+          "const": [
+            "STRICT_Q2_Q3_TYPED_GREEN_COMPATIBILITY",
+            "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE",
+            "STRICT_BRST_HADAMARD_TWO_POINT",
+            "STRICT_FULL_386_BRST_WARD"
+          ]
+        }
+      }
+    },
+    "strict_m2_q2_q3_typed_green_compatibility": {
+      "type": "object",
+      "required": ["result_id", "content_sha256", "snapshot_id", "snapshot_sha256", "carrier_rows", "orientations_checked", "nonlinear_arities", "exact_or_structural_defects", "all_finite_same_orientation_q2_q3_trees", "general_second_source_cocycle_closed", "arbitrary_mixed_orientation_trees", "infinite_tree_series_convergence"],
+      "properties": {
+        "result_id": {"const": "STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1"},
+        "content_sha256": {"$ref": "#/$defs/hash"},
+        "snapshot_sha256": {"$ref": "#/$defs/hash"},
+        "carrier_rows": {"const": 386},
+        "orientations_checked": {"const": 2},
+        "nonlinear_arities": {"const": [2, 3]},
+        "exact_or_structural_defects": {"const": 0},
+        "all_finite_same_orientation_q2_q3_trees": {"const": true},
+        "general_second_source_cocycle_closed": {"const": true},
+        "arbitrary_mixed_orientation_trees": {"const": false},
+        "infinite_tree_series_convergence": {"const": false}
+      }
+    },
+    "strict_386_brst_hadamard_two_point": {
+      "type": "object",
+      "required": ["result_id", "content_sha256", "hadamard_snapshot_sha256", "classical_snapshot_id", "classical_snapshot_sha256", "carrier_rows", "parent_rank_profile", "proof_obligations", "proof_defects", "zero_mode_retained", "BRST_Ward_exact", "graded_CCR_exact", "Hadamard_wavefront_exact", "object_type", "positive_state_constructed", "physical_cohomology_positivity"],
+      "properties": {
+        "result_id": {"const": "STRICT_386_BRST_HADAMARD_TWO_POINT_V1"},
+        "content_sha256": {"$ref": "#/$defs/hash"},
+        "hadamard_snapshot_sha256": {"$ref": "#/$defs/hash"},
+        "classical_snapshot_sha256": {"$ref": "#/$defs/hash"},
+        "carrier_rows": {"const": 386},
+        "parent_rank_profile": {"const": [15, 60, 60, 15]},
+        "proof_obligations": {"const": 11},
+        "proof_defects": {"const": 0},
+        "zero_mode_retained": {"const": true},
+        "BRST_Ward_exact": {"const": true},
+        "graded_CCR_exact": {"const": true},
+        "Hadamard_wavefront_exact": {"const": true},
+        "object_type": {"const": "BRST_HADAMARD_PSEUDO_STATE_TWO_POINT_PAIR"},
+        "positive_state_constructed": {"const": false},
+        "physical_cohomology_positivity": {"const": false}
+      }
+    },
+    "route_selection": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "prefixItems": [
+        {"properties": {"route": {"const": "STRICT_PHYSICAL_COHOMOLOGY_POSITIVITY_DECISION"}, "rank": {"const": 1}}},
+        {"properties": {"route": {"const": "STRICT_LORENTZIAN_RENORMALIZED_TIME_ORDERED_PRODUCTS"}, "rank": {"const": 2}}},
+        {"properties": {"route": {"const": "STRICT_LOCAL_ANOMALY_CLASSIFICATION_AND_QME_RESTORATION"}, "rank": {"const": 3}}}
+      ]
+    },
+    "research_queue": {"type": "array", "minItems": 7, "maxItems": 7},
+    "claim_flags": {
+      "type": "object",
+      "required": ["v48_preserved", "strict_386_q2_q3_green_compatibility_certified", "strict_386_lambda2_general_source_cocycle_closed", "strict_386_full_bv_hadamard_two_point_constructed", "strict_386_full_bv_brst_ward_certified", "strict_386_full_bv_hadamard_state_constructed", "strict_386_physical_cohomology_positivity_certified", "renormalized_lorentzian_products_constructed", "strict_pure_weyl_qme_restored", "residual_quantum_transfer_authorized", "lorentzian_full_theory_certified"],
+      "properties": {
+        "v48_preserved": {"const": true},
+        "strict_386_q2_q3_green_compatibility_certified": {"const": true},
+        "strict_386_lambda2_general_source_cocycle_closed": {"const": true},
+        "strict_386_full_bv_hadamard_two_point_constructed": {"const": true},
+        "strict_386_full_bv_brst_ward_certified": {"const": true},
+        "strict_386_full_bv_hadamard_state_constructed": {"const": false},
+        "strict_386_physical_cohomology_positivity_certified": {"const": false},
+        "renormalized_lorentzian_products_constructed": {"const": false},
+        "strict_pure_weyl_qme_restored": {"const": false},
+        "residual_quantum_transfer_authorized": {"const": false},
+        "lorentzian_full_theory_certified": {"const": false}
+      }
+    },
+    "independent_checker": {
+      "type": "object",
+      "required": ["path", "checks", "expected_digest"],
+      "properties": {
+        "path": {"const": "foundations/check_lorentzian_weyl_bv_completion_atlas_v49.py"},
+        "expected_digest": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "human_report": {"const": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v49.md"}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

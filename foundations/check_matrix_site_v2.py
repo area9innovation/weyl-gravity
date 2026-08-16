@@ -17,7 +17,7 @@ VIABILITY = ROOT / "foundations/site/viability.json"
 ASSEMBLIES = ROOT / "foundations/site/assemblies.json"
 CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V15.json"
 LADDER = ROOT / "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
-COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V48.json"
+COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V49.json"
 COMPLETION_ENDPOINT_SDR_BINDING = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_COMMON_ENDPOINT_SDR_BINDING_V1.json"
 COMPLETION_RESIDUAL_COMPARISON = ROOT / "quantum-weyl/classical_import/certificates/STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1.json"
 COMPLETION_RESIDUAL_CYCLIC_OBSTRUCTION = ROOT / "quantum-weyl/classical_import/certificates/STRICT_RESIDUAL_CYCLIC_CARRIER_OBSTRUCTION_V1.json"
@@ -218,7 +218,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     completion_flags = completion.get("claim_flags", {})
     if completion_flags.get("general_noncone_104_row_no_go") is not False or completion_flags.get("lorentzian_full_theory_certified") is not False:
         errors.append("Lorentzian completion fail-closed boundary")
-    if completion.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V48":
+    if completion.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V49":
         errors.append("Lorentzian completion atlas version")
     transport = completion.get("strict_causal_sign_transport", {})
     if transport.get("full_dimension") != 386 or transport.get("positive_signs") != 381 or transport.get("negative_signs") != 5 or transport.get("causal_stage_preserved") is not True:
@@ -449,13 +449,16 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         or completion_flags.get("strict_386_full_arity_three_identity_replayed") is not True
         or completion_flags.get("strict_386_full_q3_cyclicity_replayed_mod_d") is not True
         or completion_flags.get("strict_386_full_D_q3_derivation_replayed") is not True
-        or completion_flags.get("strict_386_q2_q3_green_compatibility_certified") is not False
+        or completion_flags.get("strict_386_q2_q3_green_compatibility_certified") is not True
+        or completion_flags.get("strict_386_full_bv_hadamard_two_point_constructed") is not True
+        or completion_flags.get("strict_386_full_bv_brst_ward_certified") is not True
+        or completion_flags.get("strict_386_full_bv_hadamard_state_constructed") is not False
         or completion_flags.get("strict_pure_weyl_classical_gate_passed") is not True
     ):
-        errors.append("strict V33 authoritative q3/causal-promotion firewall")
+        errors.append("strict V49 authoritative q3/causal/Hadamard projection")
     route_names = [item.get("route") for item in completion.get("route_selection", [])]
-    if route_names[:3] != ["STRICT_Q2_Q3_TYPED_GREEN_COMPATIBILITY", "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE", "STRICT_BRST_HADAMARD_TWO_POINT_OR_OBSTRUCTION"]:
-        errors.append("strict V48 nonlinear-Green/Hadamard route frontier")
+    if route_names[:3] != ["STRICT_PHYSICAL_COHOMOLOGY_POSITIVITY_DECISION", "STRICT_LORENTZIAN_RENORMALIZED_TIME_ORDERED_PRODUCTS", "STRICT_LOCAL_ANOMALY_CLASSIFICATION_AND_QME_RESTORATION"]:
+        errors.append("strict V49 post-Hadamard route frontier")
     if "STRICT_M3RC_ACTION_SUPPORT_DUAL_IDENTIFICATION" in route_names or "STRICT_TYPED_RESIDUAL_CYCLICITY" in route_names:
         errors.append("strict V44 completed M3RC-B/M4R routes retained")
     if "STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON" in route_names:
@@ -892,8 +895,8 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     m1 = completion.get("strict_m1_common_snapshot_preflight", {})
     if (m1.get("carrier_count"), m1.get("typed_edge_count"), m1.get("exports_object_ready"), m1.get("exports_blocked_typed_ledger"), m1.get("exports_blocked_composite"), m1.get("hash_objects_ready"), m1.get("hashes_blocked"), m1.get("freeze_checks_common_snapshot_replayed")) != (8, 7, 14, 2, 4, 4, 3, 0):
         errors.append("strict M1 preflight projection")
-    if [item.get("route") for item in completion.get("route_selection", [])[:3]] != ["STRICT_Q2_Q3_TYPED_GREEN_COMPATIBILITY", "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE", "STRICT_BRST_HADAMARD_TWO_POINT_OR_OBSTRUCTION"]:
-        errors.append("strict V48 route frontier")
+    if [item.get("route") for item in completion.get("route_selection", [])[:3]] != ["STRICT_PHYSICAL_COHOMOLOGY_POSITIVITY_DECISION", "STRICT_LORENTZIAN_RENORMALIZED_TIME_ORDERED_PRODUCTS", "STRICT_LOCAL_ANOMALY_CLASSIFICATION_AND_QME_RESTORATION"]:
+        errors.append("strict V49 route frontier")
     result_flags = result.get("claim_flags", {})
     if result_flags.get("strict_residual_zero_mode_payload_exposed") is not True or result_flags.get("strict_residual_zero_mode_common_freeze_exposed") is not True:
         errors.append("site residual zero-mode exposure flags")
@@ -913,7 +916,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("site M4L/M4R exposure flags")
     if result_flags.get("strict_M1_preflight_exposed") is not True or result_flags.get("strict_M1_typed_diagram_exposed") is not True or result_flags.get("strict_M1A3_represented_crosswalk_exposed") is not True or result_flags.get("strict_M1A4_ledger_freeze_exposed") is not True or result_flags.get("strict_M1A_full_typed_carrier_ledger_exposed") is not True or result_flags.get("strict_M1B_represented_composite_contraction_exposed") is not True or result_flags.get("strict_M1C_common_manifest_replay_exposed") is not True:
         errors.append("site M1 preflight exposure flags")
-    if result_flags.get("strict_graph_green_names_exposed") is not True or result_flags.get("strict_unary_causal_snapshot_exposed") is not True or result_flags.get("strict_full_d_action_exposed") is not True or result_flags.get("strict_d_q1_replay_exposed") is not True or result_flags.get("strict_stabilized_q2_candidate_exposed") is not True or result_flags.get("strict_stabilized_d_q2_derivation_exposed") is not True or result_flags.get("strict_candidate_q2_green_first_response_exposed") is not True or result_flags.get("strict_candidate_q2_green_foundations_exposed") is not True or result_flags.get("strict_candidate_polarized_finite_trees_exposed") is not True or result_flags.get("strict_first_mixed_sign_domain_nondefinition_exposed") is not True or result_flags.get("strict_candidate_polarized_formal_coefficients_exposed") is not True or result_flags.get("strict_lambda_adic_stabilization_exposed") is not True or result_flags.get("strict_lambda_squared_bv_promotion_gate_exposed") is not True or result_flags.get("strict_field_equation_green_component_exposed") is not True or result_flags.get("strict_field_equation_quotient_inverse_exposed") is not True or result_flags.get("strict_ungauge_fixed_full_inverse_obstruction_exposed") is not True or result_flags.get("strict_all_order_source_closure_exposed") is not False or result_flags.get("strict_authoritative_q2_green_compatibility_exposed") is not False or result_flags.get("strict_recursive_nonlinear_green_trees_exposed") is not False or result_flags.get("strict_unrestricted_mixed_sign_trees_exposed") is not False or result_flags.get("strict_arbitrary_causal_difference_trees_exposed") is not False or result_flags.get("strict_infinite_tree_series_convergence_exposed") is not False or result_flags.get("strict_typed_field_equation_green_inverse_exposed") is not False or result_flags.get("strict_weyl_bv_maurer_cartan_series_exposed") is not False or result_flags.get("strict_authoritative_formal_moller_map_exposed") is not False or result_flags.get("strict_analytic_moller_convergence_exposed") is not False or result_flags.get("strict_nonperturbative_moller_map_exposed") is not False or result_flags.get("strict_authoritative_full_carrier_q2_exposed") is not True or result_flags.get("strict_full_carrier_q2_exposed") is not True or result_flags.get("strict_classical_gate_a_passed") is not True:
+    if result_flags.get("strict_graph_green_names_exposed") is not True or result_flags.get("strict_unary_causal_snapshot_exposed") is not True or result_flags.get("strict_full_d_action_exposed") is not True or result_flags.get("strict_d_q1_replay_exposed") is not True or result_flags.get("strict_stabilized_q2_candidate_exposed") is not True or result_flags.get("strict_stabilized_d_q2_derivation_exposed") is not True or result_flags.get("strict_candidate_q2_green_first_response_exposed") is not True or result_flags.get("strict_candidate_q2_green_foundations_exposed") is not True or result_flags.get("strict_candidate_polarized_finite_trees_exposed") is not True or result_flags.get("strict_first_mixed_sign_domain_nondefinition_exposed") is not True or result_flags.get("strict_candidate_polarized_formal_coefficients_exposed") is not True or result_flags.get("strict_lambda_adic_stabilization_exposed") is not True or result_flags.get("strict_lambda_squared_bv_promotion_gate_exposed") is not True or result_flags.get("strict_field_equation_green_component_exposed") is not True or result_flags.get("strict_field_equation_quotient_inverse_exposed") is not True or result_flags.get("strict_ungauge_fixed_full_inverse_obstruction_exposed") is not True or result_flags.get("strict_all_order_source_closure_exposed") is not False or result_flags.get("strict_authoritative_q2_green_compatibility_exposed") is not True or result_flags.get("strict_recursive_nonlinear_green_trees_exposed") is not True or result_flags.get("strict_386_full_brst_hadamard_two_point_exposed") is not True or result_flags.get("strict_386_full_brst_ward_exposed") is not True or result_flags.get("strict_386_positive_hadamard_state_exposed") is not False or result_flags.get("strict_386_physical_cohomology_positivity_exposed") is not False or result_flags.get("strict_unrestricted_mixed_sign_trees_exposed") is not False or result_flags.get("strict_arbitrary_causal_difference_trees_exposed") is not False or result_flags.get("strict_infinite_tree_series_convergence_exposed") is not False or result_flags.get("strict_typed_field_equation_green_inverse_exposed") is not False or result_flags.get("strict_weyl_bv_maurer_cartan_series_exposed") is not False or result_flags.get("strict_authoritative_formal_moller_map_exposed") is not False or result_flags.get("strict_analytic_moller_convergence_exposed") is not False or result_flags.get("strict_nonperturbative_moller_map_exposed") is not False or result_flags.get("strict_authoritative_full_carrier_q2_exposed") is not True or result_flags.get("strict_full_carrier_q2_exposed") is not True or result_flags.get("strict_classical_gate_a_passed") is not True:
         errors.append("site completion exposure flags")
     if result_flags.get("strict_q2_only_lambda2_source_obstruction_exposed") is not True or result_flags.get("strict_authoritative_q3_cancellation_target_exposed") is not True or result_flags.get("strict_pure_weyl_q3_witness_cancellation_exposed") is not True or result_flags.get("strict_lambda2_witness_full_source_closure_exposed") is not True or result_flags.get("strict_authoritative_minimal_q3_imported") is not True or result_flags.get("strict_minimal_arity_three_identity_exposed") is not True or result_flags.get("strict_minimal_q3_cyclicity_exposed") is not True or result_flags.get("strict_386_candidate_q3_stabilized") is not True or result_flags.get("strict_386_candidate_arity_three_identity_exposed") is not True or result_flags.get("strict_386_candidate_q3_cyclicity_exposed") is not True or result_flags.get("strict_386_candidate_D_q3_derivation_exposed") is not True or result_flags.get("strict_386_literal_trivial_stabilization_identity_refuted") is not True or result_flags.get("strict_386_linear_shear_theory_identity_refuted") is not True or result_flags.get("strict_386_candidate_internal_identities_preserved") is not True or result_flags.get("strict_386_nonlinear_equivalence_may_exist") is not True or result_flags.get("strict_386_nonlinear_equivalence_constructed") is not False or result_flags.get("strict_386_nonlinear_equivalence_obstructed") is not False or result_flags.get("strict_386_q3_stabilized") is not False or result_flags.get("strict_authoritative_q3_imported") is not True or result_flags.get("strict_386_authoritative_nonminimal_equivalence_exposed") is not False or result_flags.get("strict_386_candidate_causal_lambda2_source_closure_exposed") is not False or result_flags.get("strict_full_weyl_lambda2_source_closure_exposed") is not False or result_flags.get("strict_Berger_q3_direct_import_compatible") is not False:
         errors.append("site V26 nonlinear q3 frontier flags")
@@ -1025,16 +1028,20 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
             "Gate V29": "Gate V30",
             "Exact is not yet common-bound": "Now common-bound",
             "STRICT_CANDIDATE_Q2_Q3_GREEN_LAMBDA2_RESPONSE": "STRICT_Q2_Q3_TYPED_GREEN_COMPATIBILITY",
+            "4,080": "4080",
+            "STRICT_M1B_TYPED_CYCLIC_REPLAY": "M1B typed cyclic composite completed",
+            "STRICT_M1C_COMMON_MANIFEST_REPLAY": "M1C immutable common snapshot completed",
         }.get(token, token)
         if token not in html + app + json.dumps(data):
             errors.append("completion interface token " + token)
     for token in (
         "M1B action dual completed", "M1B typed cyclic composite completed",
         "M1C immutable common snapshot completed", "contraction and cyclic identities close at rank",
-        "BRST-compatible Hadamard two-point function", "Read the audited V48 report",
+        "Classical-to-Hadamard bridge closed", "Read the audited V49 report",
+        "Pseudo-state, not positive state", "Nonlinear causal gate closed",
     ):
         if token not in html + app + json.dumps(data):
-            errors.append("V48 completion interface token " + token)
+            errors.append("V49 completion interface token " + token)
 
     status_counts = Counter(x.get("status") for x in cells)
     all_migrations = Counter(x.get("migration_status") for x in cells)

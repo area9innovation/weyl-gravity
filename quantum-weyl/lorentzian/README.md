@@ -4,6 +4,34 @@ This package contains fail-closed interfaces for causal Green operators,
 Hadamard data, and later causal products.  Interface readiness is not an
 analytic existence theorem.
 
+## Current strict pure-Weyl frontier (2026-08-16)
+
+The immutable Gate-A snapshot
+`STRICT_PURE_WEYL_BV_SNAPSHOT_07dc7271b95b263a` now has a certified
+post-freeze nonlinear causal envelope.  Both advanced and retarded typed
+Green homotopies compose with the authoritative `q2` and `q3`; exact response,
+cyclicity, arity-three, and general second-source cocycle checks have zero
+defects.  Every finite same-orientation `q2`/`q3` tree is covered.  Mixed
+orientations, infinite-series convergence, and an all-order Møller inverse
+are not.  See
+`STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1`.
+
+The next free layer is also certified on the complete 386-row off-shell BV
+carrier.  Whole Hodge eigenspace projectors give a graded Hadamard two-point
+pair; the scalar zero mode is retained by the smooth stationary split
+`+/- i(t-t')/2`.  Transfer through the cyclic BGG maps, trace/Weyl shear, and
+graph retract passes eleven bisolution, graded-CCR, wavefront, BRST-Ward,
+adjoint, zero-mode, and coverage obligations with zero defects.  The object is
+an indefinite BRST-Hadamard **pseudo-state pair**, not a positive state.  See
+`STRICT_386_BRST_HADAMARD_TWO_POINT_V1`.
+
+The ranked frontier is therefore physical-cohomology positivity, then
+renormalized Lorentzian time-ordered products, then local anomaly
+classification and QME restoration.  None of positivity, interacting causal
+pAQFT, QME restoration, or residual quantum transfer is promoted.  The
+machine-readable overview is
+`FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V49`.
+
 The first contract is the retained 26-row Berger endpoint.  It requires both
 advanced and retarded chain-homotopy identities, causal support, cyclic
 adjointness, `D`-equivariance, row completeness, and an explicit zero-mode

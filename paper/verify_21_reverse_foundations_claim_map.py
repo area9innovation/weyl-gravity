@@ -223,6 +223,9 @@ def main() -> int:
     m1c = json.loads((ROOT / data["authorities"]["strict_m1c_common_snapshot"]["path"]).read_text())
     gate_v30 = json.loads((ROOT / data["authorities"]["classical_import_gate_v30"]["path"]).read_text())
     completion_atlas_v48 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v48"]["path"]).read_text())
+    nonlinear_green = json.loads((ROOT / data["authorities"]["strict_m2_q2_q3_typed_green_compatibility"]["path"]).read_text())
+    hadamard = json.loads((ROOT / data["authorities"]["strict_386_brst_hadamard_two_point"]["path"]).read_text())
+    completion_atlas_v49 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v49"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -560,6 +563,8 @@ def main() -> int:
         (77, "STRICT-WEYL-M1B-PRIMAL-COMPOSITE-CONTRACTION"),
         (78, "STRICT-WEYL-M1B-ACTION-DUAL-AND-CYCLIC-COMPOSITE"),
         (79, "STRICT-WEYL-IMMUTABLE-M1C-SNAPSHOT-AND-GATE-A"),
+        (80, "STRICT-WEYL-POST-FREEZE-NONLINEAR-GREEN-COMPATIBILITY"),
+        (81, "STRICT-WEYL-FULL-BRST-HADAMARD-PSEUDO-STATE-PAIR"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -596,18 +601,18 @@ def main() -> int:
     require(flags["strict_386_d_q1_commutator_replayed"] is True, "strict D/q1 replay omitted")
     require(flags["strict_386_d_formal_skew_adjoint_replayed"] is True, "strict D formal adjoint replay omitted")
     require(flags["strict_386_unary_causal_d_scoped_snapshot_accepted"] is True, "strict unary-causal-D scope omitted")
-    require(flags["strict_386_full_carrier_q2_certified"] is False, "strict full-carrier q2 promoted")
-    require(flags["strict_386_d_q2_derivation_replayed"] is False, "strict D/q2 replay promoted")
+    require(flags["strict_386_full_carrier_q2_certified"] is True, "strict full-carrier q2 omitted")
+    require(flags["strict_386_d_q2_derivation_replayed"] is True, "strict D/q2 replay omitted")
     require(flags["strict_386_d_cartan_homotopy_constructed"] is False and flags["strict_d_gauge_or_charge_decided"] is False, "strict D Cartan/charge boundary promoted")
     require(flags["strict_386_stabilized_q2_candidate_certified"] is True, "strict stabilized q2 candidate omitted")
     require(flags["strict_386_stabilized_q1_q2_identity_verified"] is True and flags["strict_386_stabilized_q2_cyclicity_verified"] is True and flags["strict_386_stabilized_d_q2_derivation_verified"] is True, "strict stabilized q2 identities omitted")
-    require(flags["strict_386_authoritative_full_q2_imported"] is False and flags["strict_386_candidate_theory_identity_certified"] is False, "strict candidate promoted to authoritative q2")
+    require(flags["strict_386_authoritative_full_q2_imported"] is True and flags["strict_386_candidate_theory_identity_certified"] is False, "strict authoritative/candidate q2 boundary drift")
     require(flags["strict_386_candidate_q2_green_same_carrier_verified"] is True and flags["strict_386_candidate_first_nonlinear_causal_response_certified"] is True, "strict candidate q2/Green first response omitted")
     require(flags["strict_386_candidate_q2_green_causal_support_certified"] is True and flags["strict_386_candidate_q2_green_response_identity_verified"] is True and flags["strict_386_q2_green_foundations_stratified"] is True, "strict candidate q2/Green support, identity, or foundations omitted")
-    require(flags["strict_386_authoritative_q2_green_compatibility_certified"] is False and flags["strict_386_recursive_nonlinear_green_trees_certified"] is False, "strict candidate q2/Green promoted to authority or recursive completion")
+    require(flags["strict_386_authoritative_q2_green_compatibility_certified"] is True and flags["strict_386_recursive_nonlinear_green_trees_certified"] is True, "strict authoritative q2/q3 Green result omitted")
     require(flags["strict_386_candidate_retarded_all_finite_q2_trees_certified"] is True and flags["strict_386_candidate_advanced_all_finite_q2_trees_certified"] is True and flags["strict_386_candidate_fixed_step_tree_continuity_certified"] is True, "strict polarized finite-tree theorem omitted")
     require(flags["strict_386_first_mixed_sign_domain_nondefinition_at_four_leaves"] is True, "strict mixed-sign boundary omitted")
-    require(flags["strict_386_unrestricted_mixed_sign_trees_certified"] is False and flags["strict_386_arbitrary_causal_difference_trees_certified"] is False and flags["strict_386_infinite_tree_series_convergence_certified"] is False and flags["strict_386_authoritative_q2_recursive_trees_certified"] is False and flags["strict_386_q3_or_higher_causal_trees_certified"] is False, "strict recursive-tree result over-promoted")
+    require(flags["strict_386_unrestricted_mixed_sign_trees_certified"] is False and flags["strict_386_arbitrary_causal_difference_trees_certified"] is False and flags["strict_386_infinite_tree_series_convergence_certified"] is False and flags["strict_386_authoritative_q2_recursive_trees_certified"] is True and flags["strict_386_q3_or_higher_causal_trees_certified"] is True, "strict finite-tree/infinite-or-mixed boundary drift")
     require(flags["strict_386_candidate_polarized_formal_coefficients_certified"] is True, "strict formal coefficient theorem omitted")
     require(flags["strict_386_weyl_bv_maurer_cartan_series_certified"] is False and flags["strict_386_authoritative_formal_moller_map_certified"] is False and flags["strict_386_analytic_moller_convergence_certified"] is False, "strict formal coefficients over-promoted")
     require(strict_q1["claim_flags"]["Q1_SQUARED_ZERO_CERTIFIED"] is True, "strict q1 square-zero authority drift")
@@ -1028,7 +1033,15 @@ def main() -> int:
     require(m1c["snapshot_id"] == "STRICT_PURE_WEYL_BV_SNAPSHOT_07dc7271b95b263a" and len(m1c["artifact_pins"]) == 16 and len(m1c["export_bindings"]) == 20 and len(m1c["accepted_top_level_hashes"]) == 7 and len(m1c["gate_a_replay"]) == 10 and len(m1c["supplemental_replay"]) == 3 and m1c["claim_flags"]["M1_COMMON_STRICT_SNAPSHOT_COMPLETE"] is True and m1c["claim_flags"]["CLASSICAL_IMPORT_GATE_PASSED"] is False, "M1C immutable snapshot/decision separation drift")
     require(gate_v30["gate_disposition"]["gate_a_status"] == "VERIFIED" and gate_v30["gate_disposition"]["accepted_common_snapshot_hashes"] == 7 and gate_v30["claim_flags"]["CLASSICAL_IMPORT_GATE_PASSED"] is True and gate_v30["claim_flags"]["NONLINEAR_GREEN_COMPATIBILITY_CERTIFIED"] is False and gate_v30["claim_flags"]["HADAMARD_STATE_CONSTRUCTED"] is False and gate_v30["claim_flags"]["QME_RESTORED"] is False, "Gate V30 classical/quantum boundary drift")
     require([row["route"] for row in completion_atlas_v48["route_selection"][:3]] == ["STRICT_Q2_Q3_TYPED_GREEN_COMPATIBILITY", "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE", "STRICT_BRST_HADAMARD_TWO_POINT_OR_OBSTRUCTION"] and completion_atlas_v48["claim_flags"]["strict_M1B_represented_composite_contraction_complete"] is True and completion_atlas_v48["claim_flags"]["strict_M1C_common_manifest_replay_complete"] is True and completion_atlas_v48["claim_flags"]["strict_pure_weyl_classical_gate_passed"] is True and completion_atlas_v48["claim_flags"]["strict_386_q2_q3_green_compatibility_certified"] is False and completion_atlas_v48["claim_flags"]["strict_386_full_bv_hadamard_state_constructed"] is False, "completion atlas V48 frontier/firewall drift")
-    require(flags["strict_386_field_equation_green_component_typed"] is True and flags["strict_386_field_equation_constrained_right_inverse_certified"] is True and flags["strict_386_field_equation_quotient_left_inverse_certified"] is True and flags["strict_386_ungauge_fixed_full_inverse_obstructed"] is True and flags["strict_386_q2_only_lambda2_source_obstructed"] is True and flags["strict_386_authoritative_q3_cancellation_target_exact"] is True and flags["strict_386_authoritative_q3_imported"] is True and flags["strict_386_full_weyl_lambda2_source_closure_certified"] is False and flags["strict_386_all_order_nonlinear_source_closure_certified"] is False, "typed inverse/nonlinear lifecycle firewall drift")
+    require(nonlinear_green["snapshot_binding"]["snapshot_id"] == "STRICT_PURE_WEYL_BV_SNAPSHOT_07dc7271b95b263a" and nonlinear_green["causal_envelope"]["immutable_snapshot_modified"] is False, "post-freeze nonlinear Green snapshot binding drift")
+    require(nonlinear_green["compatibility_replay"]["green_homotopy_orientations_checked"] == 2 and nonlinear_green["compatibility_replay"]["total_exact_or_structural_defects"] == 0 and nonlinear_green["polarized_finite_tree_theorem"]["all_finite_same_orientation_trees"] is True and nonlinear_green["polarized_finite_tree_theorem"]["arbitrary_mixed_orientation_trees"] is False and nonlinear_green["polarized_finite_tree_theorem"]["infinite_tree_sum_or_convergence"] is False, "post-freeze nonlinear Green theorem boundary drift")
+    require(nonlinear_green["lambda2_general_source_cocycle"]["structural_defects"] == 0 and nonlinear_green["claim_flags"]["NONLINEAR_GREEN_COMPATIBILITY_CERTIFIED"] is True and nonlinear_green["claim_flags"]["STRICT_386_ALL_ORDER_MOLLER_MAP_CERTIFIED"] is False, "post-freeze lambda2/all-order boundary drift")
+    hadamard_obligations = [value for key, value in hadamard["proof_obligations"].items() if key != "sha256"]
+    require(len(hadamard_obligations) == 11 and all(row["defects"] == 0 and row["status"] in {"PASS", "PASS_WITH_DECLARED_PSEUDO_STATE"} for row in hadamard_obligations), "BRST Hadamard obligation replay drift")
+    require(hadamard["state_and_positivity_boundary"]["object_type"] == "BRST_HADAMARD_PSEUDO_STATE_TWO_POINT_PAIR" and hadamard["state_and_positivity_boundary"]["positivity"] == "NOT_SATISFIED_OR_CLAIMED" and hadamard["claim_flags"]["STRICT_386_FULL_COMPLEX_BRST_HADAMARD_TWO_POINT_FUNCTION_CONSTRUCTED"] is True and hadamard["claim_flags"]["STRICT_386_POSITIVE_HADAMARD_STATE_CONSTRUCTED"] is False and hadamard["claim_flags"]["LORENTZIAN_QME_RESTORED"] is False, "BRST Hadamard pseudo-state/positivity/QME boundary drift")
+    require(hadamard["modal_exact_checks"]["all_modal_defects"] == 0 and hadamard["graph_transfer_proof"]["defects"] == 0, "BRST Hadamard modal or graph-transfer replay drift")
+    require([row["route"] for row in completion_atlas_v49["route_selection"][:3]] == ["STRICT_PHYSICAL_COHOMOLOGY_POSITIVITY_DECISION", "STRICT_LORENTZIAN_RENORMALIZED_TIME_ORDERED_PRODUCTS", "STRICT_LOCAL_ANOMALY_CLASSIFICATION_AND_QME_RESTORATION"] and completion_atlas_v49["claim_flags"]["strict_386_q2_q3_green_compatibility_certified"] is True and completion_atlas_v49["claim_flags"]["strict_386_full_bv_hadamard_two_point_constructed"] is True and completion_atlas_v49["claim_flags"]["strict_386_full_bv_hadamard_state_constructed"] is False and completion_atlas_v49["claim_flags"]["strict_386_physical_cohomology_positivity_certified"] is False and completion_atlas_v49["claim_flags"]["strict_pure_weyl_qme_restored"] is False, "completion atlas V49 frontier/firewall drift")
+    require(flags["strict_386_field_equation_green_component_typed"] is True and flags["strict_386_field_equation_constrained_right_inverse_certified"] is True and flags["strict_386_field_equation_quotient_left_inverse_certified"] is True and flags["strict_386_ungauge_fixed_full_inverse_obstructed"] is True and flags["strict_386_q2_only_lambda2_source_obstructed"] is True and flags["strict_386_authoritative_q3_cancellation_target_exact"] is True and flags["strict_386_authoritative_q3_imported"] is True and flags["strict_386_full_weyl_lambda2_source_closure_certified"] is True and flags["strict_386_all_order_nonlinear_source_closure_certified"] is False, "typed inverse/nonlinear lifecycle firewall drift")
     require(flags["strict_pure_weyl_metric_q3_witness_derived"] is True and flags["strict_pure_weyl_q3_witness_cancellation_certified"] is True and flags["strict_386_lambda2_witness_full_source_closed"] is True and flags["strict_386_Berger_q3_direct_import_compatible"] is False and flags["strict_386_arbitrary_input_q3_certified"] is True and flags["strict_386_full_bv_arity_three_identity_certified"] is True, "paper authoritative cubic completion flags drift")
     require(flags["strict_authoritative_minimal_q3_imported"] is True and flags["strict_minimal_full_bv_arity_three_identity_certified"] is True and flags["strict_minimal_q3_cyclicity_certified"] is True and flags["strict_386_q3_stabilized"] is False, "paper minimal-q3/386 firewall drift")
     require(flags["strict_386_candidate_q3_stabilized"] is True and flags["strict_386_candidate_full_bv_arity_three_identity_certified"] is True and flags["strict_386_candidate_q3_cyclicity_mod_d_certified"] is True and flags["strict_386_candidate_d_q3_derivation_certified"] is True, "paper candidate q3 stabilization flags missing")
@@ -1057,7 +1070,8 @@ def main() -> int:
     require(flags["strict_m4r_represented_q_res_cyclic"] is True and flags["strict_m4r_represented_projection_equals_inclusion_sharp"] is True and flags["strict_m4r_represented_homotopy_skew_adjoint"] is True and flags["strict_m4r_represented_normalized_cyclic_contraction_complete"] is True and flags["strict_m1_common_strict_snapshot_complete"] is True, "paper M4R/M1 flags drift")
     require(flags["strict_m1_preflight_complete"] is True and flags["strict_m1_typed_diagram_required"] is True and flags["strict_m1_is_clerical_hash_bundle"] is False and flags["strict_m1a_full_typed_carrier_ledger_complete"] is True and flags["strict_m1b_primal_composite_contraction_complete"] is True and flags["strict_m1b_action_dual_lift_complete"] is True and flags["strict_m1b_typed_cyclic_replay_complete"] is True and flags["strict_m1b_represented_composite_contraction_complete"] is True and flags["strict_m1c_common_manifest_replay_complete"] is True, "paper M1 preflight/package flags drift")
     require(flags["strict_m1a2_local_semantic_extension_complete"] is True and flags["strict_local_386_fully_typed"] is True and flags["strict_m1a3_represented_crosswalk_complete"] is True and flags["strict_m1a4_ledger_freeze_complete"] is True, "paper M1A2/M1A3/M1A4 flags drift")
-    require(flags["strict_386_authoritative_full_q3_imported"] is True and flags["strict_386_full_arity_three_identity_replayed"] is True and flags["strict_386_full_q3_cyclicity_replayed_mod_d"] is True and flags["strict_386_full_d_q3_derivation_replayed"] is True and flags["strict_386_q2_q3_green_compatibility_certified"] is False, "paper authoritative q3/local-to-causal firewall drift")
+    require(flags["strict_386_authoritative_full_q3_imported"] is True and flags["strict_386_full_arity_three_identity_replayed"] is True and flags["strict_386_full_q3_cyclicity_replayed_mod_d"] is True and flags["strict_386_full_d_q3_derivation_replayed"] is True and flags["strict_386_q2_q3_green_compatibility_certified"] is True, "paper authoritative q3/local-to-causal bridge omitted")
+    require(flags["strict_386_full_bv_hadamard_two_point_constructed"] is True and flags["strict_386_brst_ward_identities_certified"] is True and flags["strict_386_graded_ccr_certified"] is True and flags["strict_386_hadamard_wavefront_condition_certified"] is True and flags["strict_386_positive_hadamard_state_constructed"] is False and flags["strict_386_physical_cohomology_positivity_certified"] is False and flags["renormalized_lorentzian_products_constructed"] is False and flags["strict_pure_weyl_qme_restored"] is False, "paper Hadamard pseudo-state/interaction firewall drift")
     require(flags["static_atlas_appendix_generated"] is True, "static atlas appendix flag is not certified")
     require(flags["complete_evidence_register_generated"] is True, "complete evidence register flag is not certified")
     require(flags["complete_literature_register_generated"] is True, "complete literature register flag is not certified")
@@ -1593,10 +1607,13 @@ def main() -> int:
         r"STRICT_M1B_TYPED_CYCLIC_COMPOSITE_V1",
         r"STRICT_M1C_COMMON_SNAPSHOT_V1",
         r"CLASSICAL_IMPORT_GATE_V30_RECONCILIATION",
-        r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V48",
+        r"STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1",
+        r"STRICT_386_BRST_HADAMARD_TWO_POINT_V1",
+        r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V49",
         r"thirteen nilpotency",
         r"all twenty exports and all seven",
-        r"nonlinear Green compatibility gate does not",
+        r"free BRST-Hadamard-two-point gates now pass",
+        r"not a positive state",
         r"ten source artifacts and seventeen canonical object hashes",
         r"All fifteen cross-certificate",
         r"4,490 harmonic coefficients",

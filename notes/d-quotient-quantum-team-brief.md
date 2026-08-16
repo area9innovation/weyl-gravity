@@ -42,6 +42,25 @@ right-hand side receives no operator, boundary, or central correction.
 The centered classical classes \([W_+^2]\) and \([W_-^2]\) are
 deformation/vertex classes, not one-particle gravitons.
 
+## Current strict pure-Weyl handoff (2026-08-16)
+
+The authoritative Gate-A snapshot now has both a post-freeze typed nonlinear
+Green envelope and a full-386-row BRST-Hadamard two-point pair.  The former
+closes both causal orientations through finite same-orientation `q2`/`q3`
+trees and the general second nonlinear source cocycle.  The latter closes
+eleven free bisolution, graded-CCR, microlocal, Ward, adjoint, zero-mode, and
+coverage obligations.  Import
+`STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1` and
+`STRICT_386_BRST_HADAMARD_TWO_POINT_V1`; do not reconstruct their classical
+source or silently replace their zero-mode policy.
+
+The selected covariance is an indefinite Hadamard pseudo-state pair, not a
+positive state.  The active quantum work is therefore: decide positivity on
+physical cohomology; construct local covariant Wick and time-ordered products;
+then reconcile the already classified local anomaly complex with that
+Lorentzian product scheme and restore or obstruct the QME.  Residual transfer
+is forbidden until the QME lifecycle gate passes.
+
 ## Paper IX quantum claim-boundary signoff commission
 
 Issue the machine-readable result

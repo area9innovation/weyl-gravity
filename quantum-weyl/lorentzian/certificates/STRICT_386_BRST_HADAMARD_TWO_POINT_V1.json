@@ -1,0 +1,702 @@
+{
+  "$schema": "../schema/strict-386-brst-hadamard-two-point-v1.schema.json",
+  "schema": "strict-386-brst-hadamard-two-point-v1",
+  "schema_path": "quantum-weyl/lorentzian/schema/strict-386-brst-hadamard-two-point-v1.schema.json",
+  "result_id": "STRICT_386_BRST_HADAMARD_TWO_POINT_V1",
+  "result_kind": "FULL_COMPLEX_BRST_HADAMARD_TWO_POINT_DISTRIBUTION_WITH_PSEUDO_STATE_BOUNDARY",
+  "result_state": "FULL_386_BRST_HADAMARD_TWO_POINT_CERTIFIED_POSITIVE_STATE_OPEN",
+  "lifecycle": "LORENTZIAN_CERTIFIED",
+  "created": "2026-08-16",
+  "repository_base_commit": "278f63816b6e71192a7a03ac4e028ab912f4eafe",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "Can the strict Gate-A causal complex carry a full off-shell BRST-compatible Hadamard two-point distribution without importing reduced or Berger state data?",
+  "answer": "Yes, as a graded Hadamard pseudo-state pair, not as a positive state. Split the rank-15 parent Hodge-wave causal kernel by whole S3 spectral projectors. For every positive eigenvalue use -exp(∓i sqrt(lambda)(t-t'))/(2 sqrt(lambda)); retain the scalar zero mode with the scale-free smooth split ±i(t-t')/2. The pair is an exact wave bisolution, is stationary, has the vector-valued Hadamard frequency wavefront relation and differs by i times the parent causal kernel. Applying W_parent and the same cyclic BGG, trace/Weyl shear and graph-retract maps as the Green homotopy transports the pair to the complete 386-row BV carrier. All eleven bisolution, CCR, microlocal, Ward, adjoint, zero-mode and coverage checks pass. The selected normalization is indefinite and the zero-mode symmetric part vanishes, so positivity and a Hadamard state remain explicitly unclaimed.",
+  "scope": {
+    "theory": "free strict pure-Weyl generalized-auxiliary BV complex",
+    "background": "unit ultrastatic conformal cylinder R x S3",
+    "carrier": "complete 386-row off-shell graph BV test/distribution complex",
+    "classical_snapshot_id": "STRICT_PURE_WEYL_BV_SNAPSHOT_07dc7271b95b263a",
+    "classical_snapshot_sha256": "07dc7271b95b263a079446479596a87bd849c2520c1b8ba275afc6eca8e21a5a",
+    "excluded": "interacting products, positivity, residual transfer and QME"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "input_id": "causal_envelope",
+        "path": "quantum-weyl/classical_import/certificates/STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1.json",
+        "result_id": "STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1",
+        "sha256": "2f3dd4b5ca58c53a1676b1a46ff31991d281359d0988fce4acfd53147c863445",
+        "role": "Gate-A q2/q3 typed causal envelope and immutable snapshot binding"
+      },
+      {
+        "input_id": "green",
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_GREEN_ACTION_NAME_V1.json",
+        "result_id": "STRICT_386_GRAPH_GREEN_ACTION_NAME_V1",
+        "sha256": "8e1fc54c4820310457e22094dae7f6dd1c5a3c56724e6450d455700858f7ad64",
+        "role": "canonical parent, endpoint and full-graph advanced/retarded names"
+      },
+      {
+        "input_id": "graph_q1",
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1.json",
+        "result_id": "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1",
+        "sha256": "b805bd81b35f13325d938e93be91495e1d46aa5900fd168e55bdcde1afbfa8e2",
+        "role": "exact graph q1, endpoint projector and graph SDR maps"
+      },
+      {
+        "input_id": "cyclic",
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_LOCAL_CYCLIC_PAIRING_CLOSURE_V1.json",
+        "result_id": "STRICT_386_LOCAL_CYCLIC_PAIRING_CLOSURE_V1",
+        "sha256": "c4d0060539335a761ae95af6adf25263f3e851f09838bbb046b5ab3caabdf39c",
+        "role": "rank-386 odd pairing and common cyclic identities"
+      },
+      {
+        "input_id": "suspension",
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1.json",
+        "result_id": "STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1",
+        "sha256": "3c5a954fba4fc174bc995da0d1fc26164c1f2e816bd30a800d0c9e7c525f1cbc",
+        "role": "full-carrier suspended adjoint and grading character"
+      },
+      {
+        "input_id": "field_inverse",
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1.json",
+        "result_id": "STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1",
+        "sha256": "d9e64a9aaf41ec9041edf9d70bd85ab5600fc72c7ea8101a4fd16b61b95f5fb6",
+        "role": "typed degree ledger and constrained field-equation Green component"
+      }
+    ],
+    "analytic_sources": [
+      {
+        "id": "wrochna-zahn-2017",
+        "citation": "Michał Wrochna and Jochen Zahn, Classical phase space and Hadamard states in the BRST formalism for gauge field theories on curved spacetime, Rev. Math. Phys. 29 (2017) 1750014.",
+        "stable_url": "https://arxiv.org/abs/1407.8079",
+        "artifact": {
+          "locator": "https://arxiv.org/pdf/1407.8079",
+          "sha256": "3e579a80745d1c15287c9395f1dbc670289604408acde9b519c0115bcbc6d0f0"
+        },
+        "imported_statement": "Hadamard two-point functions in BRST form are separated from positivity; the latter is an additional state condition. The microlocal condition may be stated as the appropriate frequency-cone part of the causal propagator wavefront set.",
+        "boundary": "The paper treats its abstract BRST framework and standard gauge examples; the strict pure-Weyl transport below is proved from repository-specific chain data.",
+        "sha256": "ae189ab69609f416c01f13f00b582a3969914e5979387b933a736b0e9582e63b"
+      },
+      {
+        "id": "sahlmann-verch-2001",
+        "citation": "Hanno Sahlmann and Rainer Verch, Microlocal spectrum condition and Hadamard form for vector-valued quantum fields in curved spacetime, Rev. Math. Phys. 13 (2001) 1203-1246.",
+        "stable_url": "https://arxiv.org/abs/math-ph/0008029",
+        "artifact": {
+          "locator": "https://arxiv.org/pdf/math-ph/0008029",
+          "sha256": "517bb1ca09a5d36bf446854ab20c9f4472c0b51a468e8d489e4b73a78d49a540"
+        },
+        "imported_statement": "For vector-bundle wave equations, the wavefront-set spectrum condition is equivalent to Hadamard form.",
+        "boundary": "This theorem supplies the vector-valued microlocal criterion, not the Weyl-BV Ward or transport identities.",
+        "sha256": "a513ca43243a60e551fcbafbe51542b5eaf4a5241b13a663c2dcb8b7e5a6c690"
+      },
+      {
+        "id": "gerard-oulghazi-wrochna-2017",
+        "citation": "Christian Gérard, Omar Oulghazi and Michał Wrochna, Hadamard states for the Klein-Gordon equation on Lorentzian manifolds of bounded geometry, Commun. Math. Phys. 352 (2017) 519-583.",
+        "stable_url": "https://arxiv.org/abs/1602.00930",
+        "artifact": {
+          "locator": "https://arxiv.org/pdf/1602.00930",
+          "sha256": "041ad10f38d62097bc525843e631b3e3f7f948ba0ac5393a8bd3246f3da5bc81"
+        },
+        "imported_statement": "Pseudodifferential positive/negative-frequency splittings of normally hyperbolic evolution give Hadamard two-point functions; the ultrastatic compact-cylinder spectral splitting is the explicit special case used here.",
+        "boundary": "The source does not provide the strict graph transfer, zero-mode convention or positivity verdict.",
+        "sha256": "f9a3176daaa2a7fb0090267040046d6df24f7a7971e75eaeb64b0838cdfc5fed"
+      }
+    ]
+  },
+  "modal_exact_checks": {
+    "positive_lambda": {
+      "kernel_plus": "-exp(-i omega tau)/(2 omega)",
+      "kernel_minus": "-exp(+i omega tau)/(2 omega)",
+      "omega": "sqrt(lambda)>0",
+      "P_left_multiplier": "(-i omega)^2+omega^2=0",
+      "P_right_multiplier": "(+i omega)^2+omega^2=0",
+      "graded_CCR": "w_plus-w_minus=i sin(omega tau)/omega",
+      "hermiticity": "w_sign(t,t')=conjugate(w_sign(t',t))",
+      "wavefront": "plus has N_plus and minus has N_minus frequency orientation; the overall minus scalar does not change wavefront set",
+      "symbolic_replay": {
+        "left_wave_bisolution": true,
+        "right_wave_bisolution": true,
+        "CCR_difference": true,
+        "plus_Hermitian_kernel": true,
+        "minus_Hermitian_kernel": true,
+        "opposite_frequency_reality": true,
+        "stationarity": true
+      },
+      "defects": 0
+    },
+    "zero_lambda": {
+      "kernel_plus": "+i(t-t')/2",
+      "kernel_minus": "-i(t-t')/2",
+      "P_left": "partial_t^2 w_sign=0",
+      "P_right": "partial_t'^2 w_sign=0",
+      "graded_CCR": "w_plus-w_minus=i(t-t')=i Delta_0",
+      "hermiticity": "w_sign(t,t')=conjugate(w_sign(t',t))",
+      "stationarity": "(partial_t+partial_t')w_sign=0",
+      "microlocal_effect": "smooth finite-rank term; adds no wavefront directions",
+      "positivity": "not positive: its symmetric part vanishes",
+      "arbitrary_scale_or_zero_mode_deletion": false,
+      "symbolic_replay": {
+        "left_wave_bisolution": true,
+        "right_wave_bisolution": true,
+        "CCR_difference": true,
+        "plus_Hermitian_kernel": true,
+        "minus_Hermitian_kernel": true,
+        "opposite_frequency_reality": true,
+        "stationarity": true,
+        "smooth_finite_rank": true
+      },
+      "defects": 0
+    },
+    "all_modal_defects": 0,
+    "sha256": "39ed64b5291ad4aba5ad0886982f9fc7c889a22a572c475af08f045a791adb35"
+  },
+  "two_point_operator_names": {
+    "plus": {
+      "sign": "plus",
+      "parent_wave_name": {
+        "node": "HODGE_PROJECTOR_HADAMARD_BISOLUTION_SERIES",
+        "sign": "plus",
+        "operator": "partial_t^2+Delta_A,S3",
+        "spatial_spectrum_sha256": "42e15c75be78c8670a9bbb727c30b83fdac7b8cfd928dfcc96b8dad4e845cc8e",
+        "tractor_rank": 15,
+        "positive_eigenvalue_kernel": "-exp(-i*sqrt(lambda)*(t-t'))/(2*sqrt(lambda))",
+        "zero_eigenvalue_kernel": "+i*(t-t')/2",
+        "frequency_cone": "N_plus/future covector",
+        "basis_choice": "none; whole finite-rank Hodge eigenspace projectors"
+      },
+      "parent_BRST_name": {
+        "node": "COMPOSE",
+        "children": [
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "W_parent"
+          },
+          {
+            "node": "HODGE_PROJECTOR_HADAMARD_BISOLUTION_SERIES",
+            "sign": "plus",
+            "operator": "partial_t^2+Delta_A,S3",
+            "spatial_spectrum_sha256": "42e15c75be78c8670a9bbb727c30b83fdac7b8cfd928dfcc96b8dad4e845cc8e",
+            "tractor_rank": 15,
+            "positive_eigenvalue_kernel": "-exp(-i*sqrt(lambda)*(t-t'))/(2*sqrt(lambda))",
+            "zero_eigenvalue_kernel": "+i*(t-t')/2",
+            "frequency_cone": "N_plus/future covector",
+            "basis_choice": "none; whole finite-rank Hodge eigenspace projectors"
+          }
+        ]
+      },
+      "tracefree_endpoint_name": {
+        "node": "COMPOSE",
+        "children": [
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "p_BGG"
+          },
+          {
+            "node": "COMPOSE",
+            "children": [
+              {
+                "node": "LOCAL_MAP",
+                "map_id": "W_parent"
+              },
+              {
+                "node": "HODGE_PROJECTOR_HADAMARD_BISOLUTION_SERIES",
+                "sign": "plus",
+                "operator": "partial_t^2+Delta_A,S3",
+                "spatial_spectrum_sha256": "42e15c75be78c8670a9bbb727c30b83fdac7b8cfd928dfcc96b8dad4e845cc8e",
+                "tractor_rank": 15,
+                "positive_eigenvalue_kernel": "-exp(-i*sqrt(lambda)*(t-t'))/(2*sqrt(lambda))",
+                "zero_eigenvalue_kernel": "+i*(t-t')/2",
+                "frequency_cone": "N_plus/future covector",
+                "basis_choice": "none; whole finite-rank Hodge eigenspace projectors"
+              }
+            ]
+          },
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "i_BGG"
+          }
+        ]
+      },
+      "endpoint_30_name": {
+        "node": "COMPOSE",
+        "children": [
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "U_trace_Weyl"
+          },
+          {
+            "node": "DIRECT_SUM",
+            "children": [
+              {
+                "node": "COMPOSE",
+                "children": [
+                  {
+                    "node": "LOCAL_MAP",
+                    "map_id": "p_BGG"
+                  },
+                  {
+                    "node": "COMPOSE",
+                    "children": [
+                      {
+                        "node": "LOCAL_MAP",
+                        "map_id": "W_parent"
+                      },
+                      {
+                        "node": "HODGE_PROJECTOR_HADAMARD_BISOLUTION_SERIES",
+                        "sign": "plus",
+                        "operator": "partial_t^2+Delta_A,S3",
+                        "spatial_spectrum_sha256": "42e15c75be78c8670a9bbb727c30b83fdac7b8cfd928dfcc96b8dad4e845cc8e",
+                        "tractor_rank": 15,
+                        "positive_eigenvalue_kernel": "-exp(-i*sqrt(lambda)*(t-t'))/(2*sqrt(lambda))",
+                        "zero_eigenvalue_kernel": "+i*(t-t')/2",
+                        "frequency_cone": "N_plus/future covector",
+                        "basis_choice": "none; whole finite-rank Hodge eigenspace projectors"
+                      }
+                    ]
+                  },
+                  {
+                    "node": "LOCAL_MAP",
+                    "map_id": "i_BGG"
+                  }
+                ]
+              },
+              {
+                "node": "ZERO_TWO_POINT",
+                "summand": "trace_Weyl_contractible"
+              }
+            ]
+          },
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "U_trace_Weyl_inverse"
+          }
+        ]
+      },
+      "full_graph_386_name": {
+        "node": "COMPOSE",
+        "children": [
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "i_end_graph"
+          },
+          {
+            "node": "COMPOSE",
+            "children": [
+              {
+                "node": "LOCAL_MAP",
+                "map_id": "U_trace_Weyl"
+              },
+              {
+                "node": "DIRECT_SUM",
+                "children": [
+                  {
+                    "node": "COMPOSE",
+                    "children": [
+                      {
+                        "node": "LOCAL_MAP",
+                        "map_id": "p_BGG"
+                      },
+                      {
+                        "node": "COMPOSE",
+                        "children": [
+                          {
+                            "node": "LOCAL_MAP",
+                            "map_id": "W_parent"
+                          },
+                          {
+                            "node": "HODGE_PROJECTOR_HADAMARD_BISOLUTION_SERIES",
+                            "sign": "plus",
+                            "operator": "partial_t^2+Delta_A,S3",
+                            "spatial_spectrum_sha256": "42e15c75be78c8670a9bbb727c30b83fdac7b8cfd928dfcc96b8dad4e845cc8e",
+                            "tractor_rank": 15,
+                            "positive_eigenvalue_kernel": "-exp(-i*sqrt(lambda)*(t-t'))/(2*sqrt(lambda))",
+                            "zero_eigenvalue_kernel": "+i*(t-t')/2",
+                            "frequency_cone": "N_plus/future covector",
+                            "basis_choice": "none; whole finite-rank Hodge eigenspace projectors"
+                          }
+                        ]
+                      },
+                      {
+                        "node": "LOCAL_MAP",
+                        "map_id": "i_BGG"
+                      }
+                    ]
+                  },
+                  {
+                    "node": "ZERO_TWO_POINT",
+                    "summand": "trace_Weyl_contractible"
+                  }
+                ]
+              },
+              {
+                "node": "LOCAL_MAP",
+                "map_id": "U_trace_Weyl_inverse"
+              }
+            ]
+          },
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "p_end_graph"
+          }
+        ]
+      },
+      "algebraic_graph_summand": "zero; H_alg is identical in both Green orientations and cancels from Delta_Lambda",
+      "canonical_name_sha256": "14096bd25f1b9d900820181ae333c82c856d8e140aa8626abbdd513703e72036"
+    },
+    "minus": {
+      "sign": "minus",
+      "parent_wave_name": {
+        "node": "HODGE_PROJECTOR_HADAMARD_BISOLUTION_SERIES",
+        "sign": "minus",
+        "operator": "partial_t^2+Delta_A,S3",
+        "spatial_spectrum_sha256": "42e15c75be78c8670a9bbb727c30b83fdac7b8cfd928dfcc96b8dad4e845cc8e",
+        "tractor_rank": 15,
+        "positive_eigenvalue_kernel": "-exp(+i*sqrt(lambda)*(t-t'))/(2*sqrt(lambda))",
+        "zero_eigenvalue_kernel": "-i*(t-t')/2",
+        "frequency_cone": "N_minus/past covector",
+        "basis_choice": "none; whole finite-rank Hodge eigenspace projectors"
+      },
+      "parent_BRST_name": {
+        "node": "COMPOSE",
+        "children": [
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "W_parent"
+          },
+          {
+            "node": "HODGE_PROJECTOR_HADAMARD_BISOLUTION_SERIES",
+            "sign": "minus",
+            "operator": "partial_t^2+Delta_A,S3",
+            "spatial_spectrum_sha256": "42e15c75be78c8670a9bbb727c30b83fdac7b8cfd928dfcc96b8dad4e845cc8e",
+            "tractor_rank": 15,
+            "positive_eigenvalue_kernel": "-exp(+i*sqrt(lambda)*(t-t'))/(2*sqrt(lambda))",
+            "zero_eigenvalue_kernel": "-i*(t-t')/2",
+            "frequency_cone": "N_minus/past covector",
+            "basis_choice": "none; whole finite-rank Hodge eigenspace projectors"
+          }
+        ]
+      },
+      "tracefree_endpoint_name": {
+        "node": "COMPOSE",
+        "children": [
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "p_BGG"
+          },
+          {
+            "node": "COMPOSE",
+            "children": [
+              {
+                "node": "LOCAL_MAP",
+                "map_id": "W_parent"
+              },
+              {
+                "node": "HODGE_PROJECTOR_HADAMARD_BISOLUTION_SERIES",
+                "sign": "minus",
+                "operator": "partial_t^2+Delta_A,S3",
+                "spatial_spectrum_sha256": "42e15c75be78c8670a9bbb727c30b83fdac7b8cfd928dfcc96b8dad4e845cc8e",
+                "tractor_rank": 15,
+                "positive_eigenvalue_kernel": "-exp(+i*sqrt(lambda)*(t-t'))/(2*sqrt(lambda))",
+                "zero_eigenvalue_kernel": "-i*(t-t')/2",
+                "frequency_cone": "N_minus/past covector",
+                "basis_choice": "none; whole finite-rank Hodge eigenspace projectors"
+              }
+            ]
+          },
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "i_BGG"
+          }
+        ]
+      },
+      "endpoint_30_name": {
+        "node": "COMPOSE",
+        "children": [
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "U_trace_Weyl"
+          },
+          {
+            "node": "DIRECT_SUM",
+            "children": [
+              {
+                "node": "COMPOSE",
+                "children": [
+                  {
+                    "node": "LOCAL_MAP",
+                    "map_id": "p_BGG"
+                  },
+                  {
+                    "node": "COMPOSE",
+                    "children": [
+                      {
+                        "node": "LOCAL_MAP",
+                        "map_id": "W_parent"
+                      },
+                      {
+                        "node": "HODGE_PROJECTOR_HADAMARD_BISOLUTION_SERIES",
+                        "sign": "minus",
+                        "operator": "partial_t^2+Delta_A,S3",
+                        "spatial_spectrum_sha256": "42e15c75be78c8670a9bbb727c30b83fdac7b8cfd928dfcc96b8dad4e845cc8e",
+                        "tractor_rank": 15,
+                        "positive_eigenvalue_kernel": "-exp(+i*sqrt(lambda)*(t-t'))/(2*sqrt(lambda))",
+                        "zero_eigenvalue_kernel": "-i*(t-t')/2",
+                        "frequency_cone": "N_minus/past covector",
+                        "basis_choice": "none; whole finite-rank Hodge eigenspace projectors"
+                      }
+                    ]
+                  },
+                  {
+                    "node": "LOCAL_MAP",
+                    "map_id": "i_BGG"
+                  }
+                ]
+              },
+              {
+                "node": "ZERO_TWO_POINT",
+                "summand": "trace_Weyl_contractible"
+              }
+            ]
+          },
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "U_trace_Weyl_inverse"
+          }
+        ]
+      },
+      "full_graph_386_name": {
+        "node": "COMPOSE",
+        "children": [
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "i_end_graph"
+          },
+          {
+            "node": "COMPOSE",
+            "children": [
+              {
+                "node": "LOCAL_MAP",
+                "map_id": "U_trace_Weyl"
+              },
+              {
+                "node": "DIRECT_SUM",
+                "children": [
+                  {
+                    "node": "COMPOSE",
+                    "children": [
+                      {
+                        "node": "LOCAL_MAP",
+                        "map_id": "p_BGG"
+                      },
+                      {
+                        "node": "COMPOSE",
+                        "children": [
+                          {
+                            "node": "LOCAL_MAP",
+                            "map_id": "W_parent"
+                          },
+                          {
+                            "node": "HODGE_PROJECTOR_HADAMARD_BISOLUTION_SERIES",
+                            "sign": "minus",
+                            "operator": "partial_t^2+Delta_A,S3",
+                            "spatial_spectrum_sha256": "42e15c75be78c8670a9bbb727c30b83fdac7b8cfd928dfcc96b8dad4e845cc8e",
+                            "tractor_rank": 15,
+                            "positive_eigenvalue_kernel": "-exp(+i*sqrt(lambda)*(t-t'))/(2*sqrt(lambda))",
+                            "zero_eigenvalue_kernel": "-i*(t-t')/2",
+                            "frequency_cone": "N_minus/past covector",
+                            "basis_choice": "none; whole finite-rank Hodge eigenspace projectors"
+                          }
+                        ]
+                      },
+                      {
+                        "node": "LOCAL_MAP",
+                        "map_id": "i_BGG"
+                      }
+                    ]
+                  },
+                  {
+                    "node": "ZERO_TWO_POINT",
+                    "summand": "trace_Weyl_contractible"
+                  }
+                ]
+              },
+              {
+                "node": "LOCAL_MAP",
+                "map_id": "U_trace_Weyl_inverse"
+              }
+            ]
+          },
+          {
+            "node": "LOCAL_MAP",
+            "map_id": "p_end_graph"
+          }
+        ]
+      },
+      "algebraic_graph_summand": "zero; H_alg is identical in both Green orientations and cancels from Delta_Lambda",
+      "canonical_name_sha256": "23c3887a73bb5b0eed8c1b5a3e66ede9d0dd624a5ac8de8aea5f4c059f1a47b1"
+    },
+    "causal_difference": "Delta_Lambda=Lambda_graph,plus-Lambda_graph,minus",
+    "normalization": "lambda_plus-lambda_minus=i Delta_Lambda with lambda_minus=lambda_plus^sharp_graded in the Gate suspended convention",
+    "complex_conjugation": "conjugate(lambda_plus)=lambda_minus",
+    "sha256": "b01ea244be3199304315acaf03db1111f1c28366576aab1103dab464982e8a52"
+  },
+  "parent_BRST_proof": {
+    "wave_bisolution": "P H_wave,sign=H_wave,sign P=0 modewise, including lambda=0",
+    "parent_definition": "lambda_parent,sign=W_parent H_wave,sign",
+    "spectral_intertwining": "whole Hodge eigenspace projectors intertwine d_A and delta_A at equal eigenvalue; therefore [Q,H_wave]=[W_parent,H_wave]=0",
+    "parent_Ward_derivation": "Q W_parent+W_parent Q=P and [Q,H_wave]=0 imply Q lambda_parent+lambda_parent Q=P H_wave=0",
+    "parent_CCR_derivation": "H_wave,+-H_wave,-=i(G_parent,+-G_parent,-), hence lambda_parent,+-lambda_parent,-=i(Lambda_parent,+-Lambda_parent,-)",
+    "graded_transpose": "lambda_parent,minus=lambda_parent,plus^sharp_graded; the Gate suspension character is part of sharp_graded",
+    "parent_hadamard": "the whole-projector nonzero spectral sum has the vector-valued Hadamard frequency wavefront relation; the finite-rank zero mode is smooth",
+    "parent_rank_profile": [
+      15,
+      60,
+      60,
+      15
+    ],
+    "defects": 0,
+    "sha256": "f98858ac3c7b588cddb74432c28ce8274d4a39072ba5c2db3fe7058ac2759496"
+  },
+  "graph_transfer_proof": {
+    "tracefree": "p_BGG lambda_parent i_BGG",
+    "trace_Weyl": "zero on the split algebraic doublet, then conjugate by U_trace_Weyl",
+    "full_graph": "i_end_graph lambda_endpoint p_end_graph; zero on the P_alg summand",
+    "chain_maps": "q p=p Q, Q i=i q, p i=1 on the endpoint and graph retracts",
+    "cyclic_maps": "i^ddagger=p and U^ddagger=U^-1 in the Gate suspended convention",
+    "Ward_transport": "chain-map conjugation transports the left and right parent Ward identities",
+    "CCR_transport": "the same maps transport both lambda signs and Delta_Lambda; identical H_alg and trace contractions cancel from the causal difference",
+    "wavefront_transport": "finite-order differential maps do not enlarge wavefront sets; disjoint frequency cones prevent plus/minus cancellation, giving WF'(lambda_sign)=(N_sign x N_sign) intersection WF'(Delta_Lambda)",
+    "full_row_domain": "the operator names accept and return the complete 386-row test/distribution carrier; vanishing on the algebraic retract summand is a certified value, not omitted coverage",
+    "defects": 0,
+    "sha256": "0c8eededc684d3244ed3301ba1c083b723e32291e19b18a24b4392bc45599193"
+  },
+  "proof_obligations": {
+    "left_bisolution": {
+      "status": "PASS",
+      "defects": 0,
+      "witness": "parent wave equation plus chain-map transfer"
+    },
+    "right_bisolution": {
+      "status": "PASS",
+      "defects": 0,
+      "witness": "suspended adjoint of the left equation"
+    },
+    "graded_CCR_antisymmetric_part": {
+      "status": "PASS",
+      "defects": 0,
+      "witness": "lambda_plus-lambda_plus^sharp_graded=lambda_plus-lambda_minus=i Delta_Lambda"
+    },
+    "Hadamard_wavefront_set": {
+      "status": "PASS",
+      "defects": 0,
+      "witness": "vector-valued spectral Hadamard theorem plus differential wavefront transport"
+    },
+    "BRST_compatibility_left": {
+      "status": "PASS",
+      "defects": 0,
+      "witness": "q lambda_sign+lambda_sign q=0"
+    },
+    "BRST_compatibility_right": {
+      "status": "PASS",
+      "defects": 0,
+      "witness": "kernel-adjoint Ward identity"
+    },
+    "graded_hermiticity_and_reality": {
+      "status": "PASS",
+      "defects": 0,
+      "witness": "modewise Hermiticity, conjugate frequency signs, Gate suspended transpose and cyclic transfer"
+    },
+    "D_stationarity": {
+      "status": "PASS",
+      "defects": 0,
+      "witness": "all kernels depend on t-t'; all spatial projectors and local transport maps are stationary"
+    },
+    "zero_mode_policy": {
+      "status": "PASS",
+      "defects": 0,
+      "witness": "retained scale-free smooth split +/- i(t-t')/2"
+    },
+    "positivity_or_Krein_policy": {
+      "status": "PASS_WITH_DECLARED_PSEUDO_STATE",
+      "defects": 0,
+      "witness": "no positivity claim; zero-mode symmetric part is zero and the nonzero parent normalization is indefinite"
+    },
+    "complete_386_row_coverage": {
+      "status": "PASS",
+      "defects": 0,
+      "witness": "386-row graph operator domain with explicit zero algebraic summand"
+    },
+    "sha256": "2b043a90de0a74faa2afdcceae37899aee32d360ae2f8b146c72d38d7b85164f"
+  },
+  "state_and_positivity_boundary": {
+    "Hadamard_two_point_function": "CONSTRUCTED_ON_FULL_386_ROW_OFFSHELL_BV_COMPLEX",
+    "BRST_Ward_identity": "EXACT_IN_BOTH_ARGUMENTS",
+    "graded_CCR": "EXACT_FOR_DELTA_LAMBDA=LAMBDA_PLUS-LAMBDA_MINUS",
+    "positivity": "NOT_SATISFIED_OR_CLAIMED",
+    "object_type": "BRST_HADAMARD_PSEUDO_STATE_TWO_POINT_PAIR",
+    "reason": "Hadamard two-point functions do not require positivity; a positive state is a separate condition. The scale-free stationary zero-mode split has zero symmetric part, so this selected pair is not positive.",
+    "physical_cohomology_positivity": "NOT_INFERRED",
+    "renormalized_products": "NOT_CONSTRUCTED",
+    "QME": "NOT_RESTORED",
+    "sha256": "76c3b9a273cf2d4bdcb657de261edcbe32a4ff8b122f8557b482b233b1ebcd6d"
+  },
+  "hadamard_snapshot": {
+    "kind": "STRICT_386_FULL_COMPLEX_BRST_HADAMARD_TWO_POINT_SNAPSHOT",
+    "classical_snapshot_id": "STRICT_PURE_WEYL_BV_SNAPSHOT_07dc7271b95b263a",
+    "classical_snapshot_sha256": "07dc7271b95b263a079446479596a87bd849c2520c1b8ba275afc6eca8e21a5a",
+    "causal_envelope_sha256": "3d21d69778f9645f9358c8edd16d399e2998accdef1e22c41d1c02782f14fb7c",
+    "pairing_sha256": "912aecc758dfd5f0d9de815530a2fe1428442afe874343a08d90673e1f2f6381",
+    "graph_q1_sha256": "5c23d4bc1228e9b065ec60f67f367785b9456c7a9401dedb85a44d3b6b32ff5f",
+    "suspension_sha256": "95fc18ab38fbf8b798481476c7ec8eb624626ee19a446906fb461d48f2f702e5",
+    "plus_name_sha256": "14096bd25f1b9d900820181ae333c82c856d8e140aa8626abbdd513703e72036",
+    "minus_name_sha256": "23c3887a73bb5b0eed8c1b5a3e66ede9d0dd624a5ac8de8aea5f4c059f1a47b1",
+    "modal_checks_sha256": "39ed64b5291ad4aba5ad0886982f9fc7c889a22a572c475af08f045a791adb35",
+    "parent_proof_sha256": "f98858ac3c7b588cddb74432c28ce8274d4a39072ba5c2db3fe7058ac2759496",
+    "transfer_proof_sha256": "0c8eededc684d3244ed3301ba1c083b723e32291e19b18a24b4392bc45599193",
+    "proof_checks_sha256": "2b043a90de0a74faa2afdcceae37899aee32d360ae2f8b146c72d38d7b85164f",
+    "state_boundary_sha256": "76c3b9a273cf2d4bdcb657de261edcbe32a4ff8b122f8557b482b233b1ebcd6d",
+    "sha256": "5fea44144688a1ea13e82cb1d730731fd4ba396e35cb2ae2e9d1ec653a60af22"
+  },
+  "foundational_strength": {
+    "exact_part": "modal ODE/CCR algebra, zero-mode identities, chain/adjoint transport and content hashes",
+    "analytic_part": "S3 Hodge spectral completeness and vector-valued microlocal Hadamard theorems",
+    "projector_basis_choice": false,
+    "zero_mode_choice": "canonical scale-free stationary pseudo-state split; no zero-mode deletion",
+    "Hilbert_completion": false,
+    "Krein_or_indefinite_policy": "indefinite graded pseudo-state only",
+    "weakest_base_or_constructive_microlocal_proof": false
+  },
+  "independent_checker": "quantum-weyl/lorentzian/check_strict_386_brst_hadamard_two_point.py",
+  "human_report": "quantum-weyl/lorentzian/REPORT_STRICT_386_BRST_HADAMARD_TWO_POINT_V1.md",
+  "next_gate": "Classify the local Lorentzian counterterm/anomaly complex and construct renormalized time-ordered products on this Hadamard pair before attempting the local QME; independently decide whether any Hadamard-frequency split can be positive on physical cohomology.",
+  "does_not_establish": [
+    "a positive quasifree Hadamard state or positive physical graviton Hilbert space",
+    "that the scale-free stationary pseudo-state is the unique zero-mode policy",
+    "distribution-kernel coordinate bytes or an effective projector algorithm",
+    "a Feynman propagator, renormalized Lorentzian time-ordered product or causal perturbative AQFT construction",
+    "QME restoration, anomaly cancellation, residual quantum transfer, particles, scattering or unitarity",
+    "a complete interacting Lorentzian quantum theory"
+  ],
+  "claim_flags": {
+    "CLASSICAL_IMPORT_GATE_PASSED": true,
+    "NONLINEAR_GREEN_COMPATIBILITY_CERTIFIED": true,
+    "STRICT_PARENT_HODGE_HADAMARD_TWO_POINT_PAIR_CONSTRUCTED": true,
+    "STRICT_386_FULL_COMPLEX_BRST_HADAMARD_TWO_POINT_FUNCTION_CONSTRUCTED": true,
+    "STRICT_386_HADAMARD_WAVEFRONT_CONDITION_CERTIFIED": true,
+    "STRICT_386_BRST_WARD_IDENTITIES_CERTIFIED": true,
+    "STRICT_386_GRADED_CCR_CERTIFIED": true,
+    "STRICT_386_ZERO_MODE_RETAINED_AND_SPLIT": true,
+    "STRICT_386_D_STATIONARY_TWO_POINT_PAIR": true,
+    "STRICT_386_POSITIVE_HADAMARD_STATE_CONSTRUCTED": false,
+    "STRICT_386_PHYSICAL_COHOMOLOGY_POSITIVITY_CERTIFIED": false,
+    "RENORMALIZED_LORENTZIAN_PRODUCTS_CONSTRUCTED": false,
+    "CAUSAL_PERTURBATIVE_AQFT_CONSTRUCTED": false,
+    "LORENTZIAN_QME_RESTORED": false,
+    "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": false,
+    "LORENTZIAN_QUANTUM_THEORY": false
+  },
+  "content_sha256": "a787ffed47fb4758ab7a5936c7e9f793349b73bef882d65e55b64b514a7063a1"
+}

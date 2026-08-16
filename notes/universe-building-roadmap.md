@@ -17,6 +17,26 @@ The shared scientific question remains:
 The universe-building language is a map of consequences of that question, not
 a replacement for its charge, Cartan, causal, and pairing tests.
 
+## Current strict pure-Weyl quantum bridge (2026-08-16)
+
+The classical-to-free-quantum bridge is now closed in a sharply scoped sense.
+One immutable rank-386 Gate-A snapshot supports both typed Green orientations,
+the authoritative `q2` and `q3`, every finite same-orientation nonlinear tree,
+and the general second nonlinear source cocycle.  On that same carrier a
+graded BRST-Hadamard two-point pair satisfies both bisolution equations, the
+graded CCR, the vector-valued Hadamard wavefront relation, both Ward
+identities, stationarity, the explicit scalar-zero-mode policy, and complete
+row coverage.  The corresponding receipts are
+`STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1`,
+`STRICT_386_BRST_HADAMARD_TWO_POINT_V1`, and Atlas V49.
+
+This bridge ends at an indefinite pseudo-state pair.  It does not establish a
+positive state or positive physical BRST quotient, convergence of the full
+nonlinear Møller series, renormalized Lorentzian products, causal pAQFT, a
+restored Lorentzian QME, or residual quantum transfer.  The next broad goal is
+to decide physical-cohomology positivity and, independently, build the first
+renormalized time-ordered products before attempting local QME restoration.
+
 ## Planning authority and document roles
 
 This file is the single authority for forward-looking programme sequencing.

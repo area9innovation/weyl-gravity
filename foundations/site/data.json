@@ -1,7 +1,7 @@
 {
   "schema_version": "foundational-matrix-explorer-data-v2",
   "title": "Reverse Physics Atlas",
-  "created": "2026-08-15",
+  "created": "2026-08-16",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "EUCLIDEAN-SPECTRAL",
@@ -18030,8 +18030,8 @@
     ]
   },
   "completion_atlas": {
-    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v48",
-    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V48",
+    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v49",
+    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V49",
     "result_kind": "BRANCH_BY_STAGE_COMPLETION_ATLAS",
     "lifecycle": "CLASSIFIED",
     "created": "2026-08-16",
@@ -18042,12 +18042,12 @@
       "REDUCED-MODE",
       "LORENTZIAN-CAUSAL"
     ],
-    "question": "What becomes the highest-leverage route once one immutable strict pure-Weyl classical BV snapshot passes Gate A?",
-    "answer": "Atlas V48 closes M1B, M1C and classical import Gate A on one immutable six-object typed snapshot. It retires the three classical-freeze routes and promotes the first genuinely quantum-facing problem: certify q2/q3 compatibility with both typed Lorentzian Green orientations. The following decision route is an explicit BRST-compatible Hadamard two-point function or a scoped obstruction theorem. No such compatibility or Hadamard result is claimed here.",
+    "question": "What becomes the strict pure-Weyl frontier after nonlinear typed Green compatibility and a full-complex BRST Hadamard pair are certified?",
+    "answer": "Atlas V49 closes the classical-to-Hadamard bridge on the same immutable 386-row Gate-A snapshot. Both q2 and q3 compose with the retarded and advanced Green homotopies; every finite same-orientation q2/q3 tree is typed, and the general second nonlinear source is closed. A whole-projector cylinder spectral split then gives a full-row BRST-compatible Hadamard two-point pair with exact graded CCR, both Ward identities, retained scalar zero mode and the required wavefront relation. The result is deliberately a pseudo-state: positivity on physical cohomology is neither satisfied by the selected split nor inferred. Renormalized Lorentzian products, QME restoration, residual transfer and a complete quantum theory remain open.",
     "predecessor": {
-      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V47",
-      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V47.json",
-      "sha256": "996c351c4ce71f161b04e45d7889d780dd1c4985881aec4e44c00abe4ca40ca6",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V48",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V48.json",
+      "sha256": "89a5c2b1026ed1e019c7cbe69152ef363b0aa3b6b68c30d88c93e6a5a72bd4d0",
       "preserved": true
     },
     "status_vocabulary": [
@@ -18245,8 +18245,8 @@
           },
           {
             "stage": "S3_NONLINEAR_CARTAN",
-            "status": "CERTIFIED_FULL_SOURCE_Q2_Q3_ARITY_THREE_AND_CYCLICITY_ZERO",
-            "statement": "The complete shifted-source q2/q3 Taylor data are bound on common bytes and transported canonically to the graph carrier. Exactly two q3 families occur, and the full arity-three identity has zero defects.",
+            "status": "CERTIFIED_TYPED_Q2_Q3_GREEN_COMPATIBILITY",
+            "statement": "The complete Gate-A q2/q3 operations compose with both typed Lorentzian Green orientations. Exact q1/q2, arity-three, cyclic and adjoint defects vanish; all finite same-orientation trees are defined and the general second nonlinear source is a cocycle.",
             "evidence": [
               "QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION",
               "STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1",
@@ -18274,25 +18274,29 @@
               "CLASSICAL_SHIFTED_AUXILIARY_QUARTIC_MASS_V1",
               "STRICT_386_SHIFTED_MASS_BV_Q3_LIFT_V1",
               "STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1",
-              "CLASSICAL_IMPORT_GATE_V15_RECONCILIATION"
+              "CLASSICAL_IMPORT_GATE_V15_RECONCILIATION",
+              "STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1"
             ],
-            "boundary": "This does not establish q2/q3 compatibility with a causal Green homotopy, analytic Moller convergence, Hadamard data or QME restoration."
+            "boundary": "Arbitrary mixed-sign trees, an infinite convergent Moller series and a nonperturbative inverse remain open."
           },
           {
             "stage": "S4_HADAMARD_CCR",
-            "status": "OPEN_SEEDED",
-            "statement": "Reduced physical-mode Hadamard evidence exists on the same vacuum cylinder, but no full 386-row BRST covariance is constructed.",
+            "status": "CERTIFIED_FULL_386_HADAMARD_CCR_PSEUDO_STATE",
+            "statement": "A whole-Hodge-projector spectral split constructs a Hadamard two-point pair on all 386 BV rows. Both modal wave equations, the graded CCR, the vector-valued Hadamard wavefront relation, stationarity and the retained scalar zero mode are certified.",
             "evidence": [
-              "VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD"
+              "VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD",
+              "STRICT_386_BRST_HADAMARD_TWO_POINT_V1"
             ],
-            "boundary": "Reduced-mode kernels cannot be promoted to the off-shell BV carrier."
+            "boundary": "The pair is an indefinite BRST pseudo-state. It is not a positive Hadamard state and does not decide positivity on physical cohomology."
           },
           {
             "stage": "S5_BRST_WARD",
-            "status": "FAIL_CLOSED",
-            "statement": "No full-carrier BRST-compatible Hadamard covariance is certified.",
-            "evidence": [],
-            "boundary": "A causal Green homotopy supplies the commutator, not a BRST Hadamard state."
+            "status": "CERTIFIED_EXACT_FULL_386_BRST_WARD",
+            "statement": "Whole-projector Hodge spectral calculus intertwines the parent BRST differential and witness. Exact chain and cyclic transport therefore give both BRST Ward identities on the complete graph carrier.",
+            "evidence": [
+              "STRICT_386_BRST_HADAMARD_TWO_POINT_V1"
+            ],
+            "boundary": "Free Ward compatibility does not construct renormalized time-ordered products or restore the interacting local QME."
           },
           {
             "stage": "S6_PHYSICAL_POSITIVITY",
@@ -18328,10 +18332,13 @@
           },
           {
             "stage": "S10_LORENTZIAN_CERTIFIED",
-            "status": "FAIL_CLOSED",
-            "statement": "The strict target theory has not completed the Lorentzian quantum lifecycle.",
-            "evidence": [],
-            "boundary": "Classical causal completion is necessary but not sufficient."
+            "status": "FREE_HADAMARD_LAYER_CERTIFIED_FULL_THEORY_FAIL_CLOSED",
+            "statement": "The free full-complex causal and BRST Hadamard layer is Lorentzian-certified on the unit cylinder. The complete interacting Lorentzian quantum lifecycle is not certified.",
+            "evidence": [
+              "STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1",
+              "STRICT_386_BRST_HADAMARD_TWO_POINT_V1"
+            ],
+            "boundary": "Physical positivity, renormalized products, QME restoration, residual quantum transfer and a complete Lorentzian theory remain open."
           }
         ],
         "first_unclosed_gate": "S0_CLASSICAL_AUTHORITY",
@@ -18937,17 +18944,17 @@
       }
     ],
     "frontier_summary": {
-      "highest_value_next_route": "STRICT_Q2_Q3_TYPED_GREEN_COMPATIBILITY",
+      "highest_value_next_route": "STRICT_PHYSICAL_COHOMOLOGY_POSITIVITY_DECISION",
       "route_count": 7,
-      "completed_since_v47": [
-        "STRICT_M1B_ACTION_DUAL_LIFT",
-        "STRICT_M1B_TYPED_CYCLIC_REPLAY",
-        "STRICT_M1C_COMMON_MANIFEST_REPLAY",
-        "CLASSICAL_IMPORT_GATE_A"
+      "completed_since_v48": [
+        "STRICT_Q2_Q3_TYPED_GREEN_COMPATIBILITY",
+        "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE",
+        "STRICT_BRST_HADAMARD_TWO_POINT",
+        "STRICT_FULL_386_BRST_WARD"
       ],
-      "new_positive_result": "Gate A is verified on immutable snapshot STRICT_PURE_WEYL_BV_SNAPSHOT_07dc7271b95b263a: 16 content pins, 20 exports, seven hashes, ten Gate-A checks and three supplemental checks.",
-      "surprise": "The compact-source action dual is determined by adjointness on 470 residual modes even though the other 4,080 algebraic dual coordinates remain check-only. The resulting rank-940 cyclic replay closes M1B without promoting the finite verification core into a continuous BV model.",
-      "hard_boundary": "The classical source is frozen, but the nonlinear vertices have not yet been certified against both Lorentzian Green orientations. Therefore no full-complex Hadamard, renormalization, QME or residual quantum claim follows."
+      "new_positive_result": "The immutable Gate-A complex now has a post-freeze typed nonlinear causal envelope and a full-row BRST Hadamard pseudo-state pair with eleven passed obligations.",
+      "surprise": "The scalar Hodge zero mode is not an obstruction to Hadamard regularity: the scale-free stationary split +/- i(t-t')/2 supplies the commutator as a smooth finite-rank term. It is instead a clean witness that the selected pair is not positive.",
+      "hard_boundary": "Hadamard regularity, graded CCR and Ward identities do not imply positivity, renormalized products or the QME. The result is a free pseudo-state layer, not a complete quantum theory."
     },
     "classical_import_reconciliation": {
       "result_id": "CLASSICAL_IMPORT_GATE_V30_RECONCILIATION",
@@ -19066,30 +19073,30 @@
     "route_selection": [
       {
         "rank": 1,
-        "route": "STRICT_Q2_Q3_TYPED_GREEN_COMPATIBILITY",
-        "branch": "STRICT_PURE_WEYL_386",
-        "scientific_leverage": "VERY_HIGH",
-        "tractability": "MEDIUM",
-        "dependency_depth": "HIGH",
-        "recommendation": "On the immutable Gate-A snapshot, type both advanced and retarded Green actions and replay the q2/q3 homotopy, chain, cyclic and causal-support identities without importing Berger data."
-      },
-      {
-        "rank": 2,
-        "route": "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE",
-        "branch": "STRICT_PURE_WEYL_386",
-        "scientific_leverage": "VERY_HIGH",
-        "tractability": "MEDIUM",
-        "dependency_depth": "HIGH",
-        "recommendation": "After nonlinear identity, prove Noether closure of the general lambda-squared source."
-      },
-      {
-        "rank": 3,
-        "route": "STRICT_BRST_HADAMARD_TWO_POINT_OR_OBSTRUCTION",
+        "route": "STRICT_PHYSICAL_COHOMOLOGY_POSITIVITY_DECISION",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "LOW",
         "dependency_depth": "HIGH",
-        "recommendation": "After nonlinear Green compatibility, either construct a full-complex BRST-compatible Hadamard two-point function or isolate an incompatible subset of field-equation, wavefront, BRST, pairing and positivity conditions and prove a scoped obstruction."
+        "recommendation": "Determine whether any BRST Hadamard representative descends to a positive physical cohomology covariance, or prove a scoped positivity obstruction that keeps the Krein boundary explicit."
+      },
+      {
+        "rank": 2,
+        "route": "STRICT_LORENTZIAN_RENORMALIZED_TIME_ORDERED_PRODUCTS",
+        "branch": "STRICT_PURE_WEYL_386",
+        "scientific_leverage": "VERY_HIGH",
+        "tractability": "LOW",
+        "dependency_depth": "HIGH",
+        "recommendation": "Use the certified Hadamard pair to define the first local covariant Wick and time-ordered products on the same 386-row carrier, with wavefront and scaling-degree receipts."
+      },
+      {
+        "rank": 3,
+        "route": "STRICT_LOCAL_ANOMALY_CLASSIFICATION_AND_QME_RESTORATION",
+        "branch": "STRICT_PURE_WEYL_386",
+        "scientific_leverage": "VERY_HIGH",
+        "tractability": "LOW",
+        "dependency_depth": "HIGH",
+        "recommendation": "Reconcile the existing local anomaly classification with the Lorentzian product scheme, compute only the surviving coefficients, and restore or obstruct the local QME before residual transfer."
       },
       {
         "rank": 4,
@@ -19102,15 +19109,6 @@
       },
       {
         "rank": 5,
-        "route": "DIRECT_SPACETIME_Q26_HADAMARD",
-        "branch": "BERGER_POSITIVE_CLOCK_54",
-        "scientific_leverage": "VERY_HIGH",
-        "tractability": "LOW",
-        "dependency_depth": "MEDIUM",
-        "recommendation": "Keep the analytically mature Berger Hadamard route as a different-theory control, not as the strict pure-Weyl carrier map."
-      },
-      {
-        "rank": 6,
         "route": "STRICT_ANALYTIC_MOLLER_CONVERGENCE",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "MEDIUM",
@@ -19119,33 +19117,42 @@
         "recommendation": "Only after all-order source closure, derive seminorm majorants and a nonzero convergence domain."
       },
       {
-        "rank": 7,
+        "rank": 6,
         "route": "STRICT_MIXED_WEIGHTED_CAUSAL_DOMAIN",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "MEDIUM",
         "tractability": "MEDIUM",
         "dependency_depth": "MEDIUM",
         "recommendation": "Test weighted opposite-polarity domains against the scalar zero-mode witness; polarized recursion does not require this."
+      },
+      {
+        "rank": 7,
+        "route": "DIRECT_SPACETIME_Q26_HADAMARD",
+        "branch": "BERGER_POSITIVE_CLOCK_54",
+        "scientific_leverage": "VERY_HIGH",
+        "tractability": "LOW",
+        "dependency_depth": "MEDIUM",
+        "recommendation": "Keep the analytically mature Berger Hadamard route as a different-theory control, not as the strict pure-Weyl carrier map."
       }
     ],
     "research_queue": [
       {
         "priority": 1,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_Q2_Q3_TYPED_GREEN_COMPATIBILITY",
-        "why": "On the immutable Gate-A snapshot, type both advanced and retarded Green actions and replay the q2/q3 homotopy, chain, cyclic and causal-support identities without importing Berger data."
+        "object": "STRICT_PHYSICAL_COHOMOLOGY_POSITIVITY_DECISION",
+        "why": "Determine whether any BRST Hadamard representative descends to a positive physical cohomology covariance, or prove a scoped positivity obstruction that keeps the Krein boundary explicit."
       },
       {
         "priority": 2,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE",
-        "why": "After nonlinear identity, prove Noether closure of the general lambda-squared source."
+        "object": "STRICT_LORENTZIAN_RENORMALIZED_TIME_ORDERED_PRODUCTS",
+        "why": "Use the certified Hadamard pair to define the first local covariant Wick and time-ordered products on the same 386-row carrier, with wavefront and scaling-degree receipts."
       },
       {
         "priority": 3,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_BRST_HADAMARD_TWO_POINT_OR_OBSTRUCTION",
-        "why": "After nonlinear Green compatibility, either construct a full-complex BRST-compatible Hadamard two-point function or isolate an incompatible subset of field-equation, wavefront, BRST, pairing and positivity conditions and prove a scoped obstruction."
+        "object": "STRICT_LOCAL_ANOMALY_CLASSIFICATION_AND_QME_RESTORATION",
+        "why": "Reconcile the existing local anomaly classification with the Lorentzian product scheme, compute only the surviving coefficients, and restore or obstruct the local QME before residual transfer."
       },
       {
         "priority": 4,
@@ -19155,21 +19162,21 @@
       },
       {
         "priority": 5,
-        "branch": "BERGER_POSITIVE_CLOCK_54",
-        "object": "DIRECT_SPACETIME_Q26_HADAMARD",
-        "why": "Keep the analytically mature Berger Hadamard route as a different-theory control, not as the strict pure-Weyl carrier map."
-      },
-      {
-        "priority": 6,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_ANALYTIC_MOLLER_CONVERGENCE",
         "why": "Only after all-order source closure, derive seminorm majorants and a nonzero convergence domain."
       },
       {
-        "priority": 7,
+        "priority": 6,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_MIXED_WEIGHTED_CAUSAL_DOMAIN",
         "why": "Test weighted opposite-polarity domains against the scalar zero-mode witness; polarized recursion does not require this."
+      },
+      {
+        "priority": 7,
+        "branch": "BERGER_POSITIVE_CLOCK_54",
+        "object": "DIRECT_SPACETIME_Q26_HADAMARD",
+        "why": "Keep the analytically mature Berger Hadamard route as a different-theory control, not as the strict pure-Weyl carrier map."
       }
     ],
     "provenance": {
@@ -20049,6 +20056,24 @@
           "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V30_RECONCILIATION",
           "sha256": "95cfe49e134064f8e8d25cb2ad1a01bc84ff0bf921676486316e8ec72a390263",
           "role": "independently verified classical Gate-A decision"
+        },
+        {
+          "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V48.json",
+          "result_or_artifact_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V48",
+          "sha256": "89a5c2b1026ed1e019c7cbe69152ef363b0aa3b6b68c30d88c93e6a5a72bd4d0",
+          "role": "immutable Atlas V48 predecessor"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1.json",
+          "result_or_artifact_id": "STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1",
+          "sha256": "2f3dd4b5ca58c53a1676b1a46ff31991d281359d0988fce4acfd53147c863445",
+          "role": "typed q2/q3 nonlinear Green compatibility and second-source closure"
+        },
+        {
+          "path": "quantum-weyl/lorentzian/certificates/STRICT_386_BRST_HADAMARD_TWO_POINT_V1.json",
+          "result_or_artifact_id": "STRICT_386_BRST_HADAMARD_TWO_POINT_V1",
+          "sha256": "bc7dc68e81c2dfae48e8760e012c1e4f57375763a9f399d227086c7f34f92004",
+          "role": "full-row BRST Hadamard two-point pair with pseudo-state boundary"
         }
       ]
     },
@@ -20250,7 +20275,7 @@
       "strict_386_full_arity_three_identity_replayed": true,
       "strict_386_full_q3_cyclicity_replayed_mod_d": true,
       "strict_386_full_D_q3_derivation_replayed": true,
-      "strict_386_q2_q3_green_compatibility_certified": false,
+      "strict_386_q2_q3_green_compatibility_certified": true,
       "v33_preserved": true,
       "strict_residual_primal_dual_modes_serialized": true,
       "strict_so42_structure_constants_serialized": true,
@@ -20334,7 +20359,12 @@
       "strict_M1B_primal_composite_contraction_complete": true,
       "strict_M1B_action_dual_lift_complete": true,
       "strict_M1B_typed_cyclic_replay_complete": true,
-      "v47_preserved": true
+      "v47_preserved": true,
+      "v48_preserved": true,
+      "strict_386_lambda2_general_source_cocycle_closed": true,
+      "strict_386_full_bv_hadamard_two_point_constructed": true,
+      "strict_386_full_bv_brst_ward_certified": true,
+      "strict_386_physical_cohomology_positivity_certified": false
     },
     "does_not_establish": [
       "a no-go theorem for every nonstationary Krein Hadamard representative",
@@ -20348,26 +20378,28 @@
       "that the formal 8,980-coordinate comparison source is the authoritative classical BV source",
       "an effective numerical Green solver or serialized distribution-kernel bytes",
       "a constructive, choice-free, or weakest-base proof of the imported analytic Green theorem",
-      "q2/q3 compatibility with both typed advanced and retarded Lorentzian Green homotopies",
-      "general lambda-squared source-cocycle closure or an analytic Moller inverse",
       "a nonlinear D-Cartan homotopy or a proper-gauge/charge decision for the cylinder generator",
-      "a full-complex BRST-compatible Hadamard two-point function or a no-go theorem for one",
-      "renormalized Lorentzian products, QME restoration, residual quantum transfer or a Lorentzian quantum theory"
+      "renormalized Lorentzian products, QME restoration, residual quantum transfer or a Lorentzian quantum theory",
+      "arbitrary mixed-orientation nonlinear Green trees or convergence of an infinite Moller series",
+      "a positive full-complex Hadamard state or positive covariance on physical cohomology",
+      "renormalized Lorentzian Wick or time-ordered products and a causal perturbative AQFT construction",
+      "Lorentzian QME restoration, residual quantum transfer, particles, scattering or unitarity",
+      "a complete interacting Lorentzian quantum theory"
     ],
     "independent_checker": {
-      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v48.py",
+      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v49.py",
       "checks": [
-        "V47 predecessor and 77-cell preservation",
-        "independent Gate V30 receiver replay",
-        "M1B action-dual and thirteen cyclic identities",
-        "M1C snapshot identity and census",
-        "retirement of three classical-freeze routes",
-        "nonlinear Green and Hadamard firewalls",
+        "V48 predecessor and 77-cell preservation",
+        "independent nonlinear Green and Hadamard receiver replays",
+        "S3/S4/S5/free-layer stage promotion",
+        "eleven Hadamard obligations and retained zero mode",
+        "positivity/products/QME/full-theory firewalls",
+        "post-Hadamard route retirement and ranking",
         "canonical atlas digest"
       ],
-      "expected_digest": "97affed2f2acbafa570fa33348cbfe327e613f65e549d60436b855d9b28ff418"
+      "expected_digest": "787715356781d5bff177bd9dc746a62080f5f967d9d7a67f0b7018d870848724"
     },
-    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v48.md",
+    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v49.md",
     "strict_gate_a_progress": {
       "status": "STABILIZED_Q2_CANDIDATE_CERTIFIED_AUTHORITATIVE_IDENTITY_REQUIRED",
       "evidence": [
@@ -22008,6 +22040,46 @@
       "gate_checks_replayed": 10,
       "supplemental_checks_replayed": 3,
       "M1C_complete": true
+    },
+    "strict_m2_q2_q3_typed_green_compatibility": {
+      "result_id": "STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1",
+      "content_sha256": "8ab0867e05c24ea28bdfca269d92ff21490b72974b03399fe276fbcbda2d28a2",
+      "snapshot_id": "STRICT_PURE_WEYL_BV_SNAPSHOT_07dc7271b95b263a",
+      "snapshot_sha256": "07dc7271b95b263a079446479596a87bd849c2520c1b8ba275afc6eca8e21a5a",
+      "carrier_rows": 386,
+      "orientations_checked": 2,
+      "nonlinear_arities": [
+        2,
+        3
+      ],
+      "exact_or_structural_defects": 0,
+      "all_finite_same_orientation_q2_q3_trees": true,
+      "general_second_source_cocycle_closed": true,
+      "arbitrary_mixed_orientation_trees": false,
+      "infinite_tree_series_convergence": false
+    },
+    "strict_386_brst_hadamard_two_point": {
+      "result_id": "STRICT_386_BRST_HADAMARD_TWO_POINT_V1",
+      "content_sha256": "a787ffed47fb4758ab7a5936c7e9f793349b73bef882d65e55b64b514a7063a1",
+      "hadamard_snapshot_sha256": "5fea44144688a1ea13e82cb1d730731fd4ba396e35cb2ae2e9d1ec653a60af22",
+      "classical_snapshot_id": "STRICT_PURE_WEYL_BV_SNAPSHOT_07dc7271b95b263a",
+      "classical_snapshot_sha256": "07dc7271b95b263a079446479596a87bd849c2520c1b8ba275afc6eca8e21a5a",
+      "carrier_rows": 386,
+      "parent_rank_profile": [
+        15,
+        60,
+        60,
+        15
+      ],
+      "proof_obligations": 11,
+      "proof_defects": 0,
+      "zero_mode_retained": true,
+      "BRST_Ward_exact": true,
+      "graded_CCR_exact": true,
+      "Hadamard_wavefront_exact": true,
+      "object_type": "BRST_HADAMARD_PSEUDO_STATE_TWO_POINT_PAIR",
+      "positive_state_constructed": false,
+      "physical_cohomology_positivity": false
     }
   },
   "completion_common_endpoint_sdr_binding": {
@@ -231217,8 +231289,8 @@
     "ground_state_dynamics_interface_report": "sources/foundations/reports/krein-fock-ground-state-dynamics-interface.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md",
-    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V48.json",
-    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v48.md",
+    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V49.json",
+    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v49.md",
     "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V30_RECONCILIATION.json",
     "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V30.md",
     "completion_m1b_primal": "sources/quantum-weyl/classical_import/certificates/STRICT_M1B_PRIMAL_COMPOSITE_CONTRACTION_V1.json",
@@ -231332,7 +231404,11 @@
     "completion_shifted_mass_q3": "sources/quantum-weyl/classical_import/certificates/STRICT_386_SHIFTED_MASS_BV_Q3_LIFT_V1.json",
     "completion_shifted_mass_q3_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_SHIFTED_MASS_BV_Q3_LIFT_V1.md",
     "completion_source_q3": "sources/quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.json",
-    "completion_source_q3_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.md"
+    "completion_source_q3_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.md",
+    "completion_nonlinear_green": "sources/quantum-weyl/classical_import/certificates/STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1.json",
+    "completion_nonlinear_green_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1.md",
+    "completion_hadamard": "sources/quantum-weyl/lorentzian/certificates/STRICT_386_BRST_HADAMARD_TWO_POINT_V1.json",
+    "completion_hadamard_report": "sources/quantum-weyl/lorentzian/REPORT_STRICT_386_BRST_HADAMARD_TWO_POINT_V1.md"
   },
-  "canonical_digest": "28a50f89bc7cdeaadad165aee83015d3e6d7ebd7ad593ba8a713296da3c2ed78"
+  "canonical_digest": "0cdc2be777962634ed320344fa8d4a468169d64ecb1e8f8ef9e5abbc81da6c5e"
 }

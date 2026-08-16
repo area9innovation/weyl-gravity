@@ -1,0 +1,70 @@
+{
+  "receipt_id": "STRICT_386_BRST_HADAMARD_TWO_POINT_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_BRST_HADAMARD_TWO_POINT_V1",
+  "created": "2026-08-16",
+  "repository_base_commit": "278f63816b6e71192a7a03ac4e028ab912f4eafe",
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "A graded BRST-Hadamard two-point pair on the complete strict 386-row off-shell BV carrier, transported from the parent Hodge-wave spectral splitting with the scalar zero mode retained.",
+  "claim_boundary": {
+    "established": "Eleven left/right bisolution, graded-CCR, microlocal Hadamard, BRST-Ward, graded-reality, stationarity, zero-mode-policy and complete-row-coverage obligations pass with zero defects. The result kind is a BRST_HADAMARD_PSEUDO_STATE_TWO_POINT_PAIR.",
+    "open": "The selected pair is indefinite and is not a positive state. Positivity on physical cohomology, renormalized Lorentzian time-ordered products, causal pAQFT, Lorentzian QME restoration and residual quantum transfer are not established."
+  },
+  "tiers": [
+    {
+      "tier": 0,
+      "status": "PASS",
+      "commands": [
+        "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3.12 -m py_compile <scoped M2, Hadamard, Atlas, site and paper Python paths>",
+        "jq empty <scoped certificate, schema, Atlas, site and paper JSON paths>",
+        "git diff --check"
+      ],
+      "elapsed_seconds": 0.4,
+      "result": "Changed Python and structured-data files parse, and the worktree whitespace audit passes."
+    },
+    {
+      "tier": 1,
+      "status": "PASS",
+      "commands": [
+        "python3 quantum-weyl/lorentzian/build_strict_386_brst_hadamard_two_point.py --check",
+        "python3 quantum-weyl/lorentzian/check_strict_386_brst_hadamard_two_point.py",
+        "python3 quantum-weyl/lorentzian/verify_strict_386_brst_hadamard_two_point.py",
+        "python3 -m unittest quantum-weyl/lorentzian/tests/test_strict_386_brst_hadamard_two_point.py -v"
+      ],
+      "elapsed_seconds": 17.01,
+      "result": "Producer determinism, independent modal and graph-transfer replay, Draft 2020-12 schema/provenance checks and ten adversarial mutation tests pass."
+    },
+    {
+      "tier": 2,
+      "status": "PASS",
+      "commands": [
+        "python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v49.py --check",
+        "python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v49.py",
+        "python3 -m unittest foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v49.py -v",
+        "python3 foundations/build_matrix_site_v2.py --check",
+        "python3 foundations/check_matrix_site_v2.py",
+        "python3 foundations/verify_matrix_site_v2.py",
+        "paper appendix/claim-map deterministic generators and independent verifier",
+        "pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (two passes)"
+      ],
+      "elapsed_seconds": 10.09,
+      "result": "The V49 Atlas, six mutation tests, static explorer, paper claim map and 78-page compiled paper pass their affected-chain audits."
+    },
+    {
+      "tier": 3,
+      "status": "FAIL",
+      "commands": [
+        "python3 -m unittest discover -v"
+      ],
+      "elapsed_seconds": 913.36,
+      "result": "The repository-wide rail ran 4,688 tests with 33 failures and 9 skips. The failures are outside the changed certificate chain: one covariant-completion live-evidence drift and 32 reverse_physics producer/verifier or chain-import drift failures associated with pre-existing workspace evidence. No Tier-3 pass or repository freeze is claimed. The scoped Hadamard receiver and every affected direct consumer pass independently."
+    }
+  ],
+  "content_hashes": {
+    "quantum-weyl/lorentzian/certificates/STRICT_386_BRST_HADAMARD_TWO_POINT_V1.json": "bc7dc68e81c2dfae48e8760e012c1e4f57375763a9f399d227086c7f34f92004",
+    "quantum-weyl/lorentzian/REPORT_STRICT_386_BRST_HADAMARD_TWO_POINT_V1.md": "3d541a7ddbacfb8d3947fb3b24f8f248eb030dd1d20614718741fa71993cf962",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V49.json": "5dd450b6186f41508407829f7f00983c604b809e0b51f5af161883fa1e5519ce",
+    "paper/21-reverse-foundations-of-physics.pdf": "83743461915c93a5a79f3dff5c3ce24b40b4c51a6a026c1a51f204d42e92212c"
+  }
+}

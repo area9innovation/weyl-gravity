@@ -1,0 +1,69 @@
+{
+  "receipt_id": "STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1_TIER_RECEIPT",
+  "result_id": "STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1",
+  "created": "2026-08-16",
+  "repository_base_commit": "278f63816b6e71192a7a03ac4e028ab912f4eafe",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Post-freeze compatibility of the authoritative strict 386-row q2/q3 Taylor data with both typed Lorentzian Green homotopies, including the finite polarized nonlinear-tree envelope and the general second nonlinear source cocycle.",
+  "claim_boundary": {
+    "established": "Both causal orientations satisfy the q2 and q3 response identities, cyclic chain and support rules with zero defects. Every finite same-orientation q2/q3 tree is defined on the declared support-indexed domains, and the general second nonlinear source cocycle closes.",
+    "open": "Arbitrary mixed-orientation trees, convergence of the infinite series, an all-order or nonperturbative Moller map, a positive state, renormalized products, QME restoration and residual transfer are not established."
+  },
+  "tiers": [
+    {
+      "tier": 0,
+      "status": "PASS",
+      "commands": [
+        "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3.12 -m py_compile <scoped M2, Hadamard, Atlas, site and paper Python paths>",
+        "jq empty <scoped certificate, schema, Atlas, site and paper JSON paths>",
+        "git diff --check"
+      ],
+      "elapsed_seconds": 0.4,
+      "result": "Changed Python and structured-data files parse, and the worktree whitespace audit passes."
+    },
+    {
+      "tier": 1,
+      "status": "PASS",
+      "commands": [
+        "python3 quantum-weyl/classical_import/build_strict_m2_q2_q3_typed_green_compatibility.py --check",
+        "python3 quantum-weyl/classical_import/check_strict_m2_q2_q3_typed_green_compatibility.py",
+        "python3 quantum-weyl/classical_import/verify_strict_m2_q2_q3_typed_green_compatibility.py",
+        "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_m2_q2_q3_typed_green_compatibility.py -v"
+      ],
+      "elapsed_seconds": 15.16,
+      "result": "Producer determinism, the independent exact receiver, Draft 2020-12 schema/provenance checks and nine adversarial mutation tests pass."
+    },
+    {
+      "tier": 2,
+      "status": "PASS",
+      "commands": [
+        "python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v49.py --check",
+        "python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v49.py",
+        "python3 -m unittest foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v49.py -v",
+        "python3 foundations/build_matrix_site_v2.py --check",
+        "python3 foundations/check_matrix_site_v2.py",
+        "python3 foundations/verify_matrix_site_v2.py",
+        "paper appendix/claim-map deterministic generators and independent verifier"
+      ],
+      "elapsed_seconds": 8.45,
+      "result": "The V49 Atlas, six mutation tests, static explorer and paper claim map pass their affected-chain audits."
+    },
+    {
+      "tier": 3,
+      "status": "FAIL",
+      "commands": [
+        "python3 -m unittest discover -v"
+      ],
+      "elapsed_seconds": 913.36,
+      "result": "The repository-wide rail ran 4,688 tests with 33 failures and 9 skips. The failures are outside the changed certificate chain: one covariant-completion live-evidence drift and 32 reverse_physics producer/verifier or chain-import drift failures associated with pre-existing workspace evidence. No Tier-3 pass or repository freeze is claimed. The scoped M2 receiver and every affected direct consumer pass independently."
+    }
+  ],
+  "content_hashes": {
+    "quantum-weyl/classical_import/certificates/STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1.json": "2f3dd4b5ca58c53a1676b1a46ff31991d281359d0988fce4acfd53147c863445",
+    "quantum-weyl/classical_import/REPORT_STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1.md": "9a2aaceb5e46975377559a2595ddd823f50d9eb0f3796166f58f639eede35fec",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V49.json": "5dd450b6186f41508407829f7f00983c604b809e0b51f5af161883fa1e5519ce"
+  }
+}

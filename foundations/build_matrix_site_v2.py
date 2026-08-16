@@ -64,8 +64,8 @@ BT_EUCLIDEAN_IMPORT = FOUNDATIONS / "results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_I
 AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json"
 FULL_SURFACE_AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json"
 LADDER = FOUNDATIONS / "results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
-COMPLETION_ATLAS = FOUNDATIONS / "results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V48.json"
-COMPLETION_REPORT = FOUNDATIONS / "reports/lorentzian-weyl-bv-completion-atlas-v48.md"
+COMPLETION_ATLAS = FOUNDATIONS / "results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V49.json"
+COMPLETION_REPORT = FOUNDATIONS / "reports/lorentzian-weyl-bv-completion-atlas-v49.md"
 COMPLETION_GATE = ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V30_RECONCILIATION.json"
 COMPLETION_GATE_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_GATE_V30.md"
 COMPLETION_M1B_PRIMAL = ROOT / "quantum-weyl/classical_import/certificates/STRICT_M1B_PRIMAL_COMPOSITE_CONTRACTION_V1.json"
@@ -180,9 +180,13 @@ COMPLETION_SHIFTED_MASS_Q3 = ROOT / "quantum-weyl/classical_import/certificates/
 COMPLETION_SHIFTED_MASS_Q3_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_386_SHIFTED_MASS_BV_Q3_LIFT_V1.md"
 COMPLETION_SOURCE_Q3 = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.json"
 COMPLETION_SOURCE_Q3_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.md"
+COMPLETION_NONLINEAR_GREEN = ROOT / "quantum-weyl/classical_import/certificates/STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1.json"
+COMPLETION_NONLINEAR_GREEN_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1.md"
+COMPLETION_HADAMARD = ROOT / "quantum-weyl/lorentzian/certificates/STRICT_386_BRST_HADAMARD_TWO_POINT_V1.json"
+COMPLETION_HADAMARD_REPORT = ROOT / "quantum-weyl/lorentzian/REPORT_STRICT_386_BRST_HADAMARD_TWO_POINT_V1.md"
 LEDGERS = v1.LEDGERS
-CREATED = "2026-08-15"
-BASE_COMMIT = "229fd0f2147e8ed611c5147328459f7678b1f605"
+CREATED = "2026-08-16"
+BASE_COMMIT = "278f63816b6e71192a7a03ac4e028ab912f4eafe"
 
 PLAIN_AXIS_GUIDE = {
     "FOUNDATION": {
@@ -538,6 +542,10 @@ def build_dataset() -> dict[str, Any]:
             "completion_shifted_mass_q3_report": site_link(rel(COMPLETION_SHIFTED_MASS_Q3_REPORT)),
             "completion_source_q3": site_link(rel(COMPLETION_SOURCE_Q3)),
             "completion_source_q3_report": site_link(rel(COMPLETION_SOURCE_Q3_REPORT)),
+            "completion_nonlinear_green": site_link(rel(COMPLETION_NONLINEAR_GREEN)),
+            "completion_nonlinear_green_report": site_link(rel(COMPLETION_NONLINEAR_GREEN_REPORT)),
+            "completion_hadamard": site_link(rel(COMPLETION_HADAMARD)),
+            "completion_hadamard_report": site_link(rel(COMPLETION_HADAMARD_REPORT)),
         },
     }
     dataset["canonical_digest"] = canonical_digest(dataset)
@@ -587,7 +595,7 @@ eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
-Atlas V48 preserves the field-equation type result.  The degree-one-to-zero
+Atlas V49 preserves the field-equation type result.  The degree-one-to-zero
 Green component is an exact right inverse on Noether-compatible sources and a
 left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
 the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
@@ -715,9 +723,13 @@ coordinates replay thirteen typed contraction and cyclic identities with zero
 defects against the rank-940 residual action pairing.  M1C pins sixteen
 artifacts in one immutable six-object snapshot, binds all twenty exports and all
 seven top-level hashes, and replays ten Gate-A plus three supplemental audits.
-Gate V30 therefore verifies Gate A.  This is a classical import decision only:
-q2/q3 compatibility with both Lorentzian Green orientations and the
-BRST-compatible Hadamard two-point function remain open.
+Gate V30 therefore verifies Gate A.  The post-freeze nonlinear receiver now
+certifies q2/q3 compatibility with both Lorentzian Green orientations, every
+finite same-orientation q2/q3 tree, and general second-source cocycle closure.
+The next receiver constructs a full 386-row BRST Hadamard two-point pair with
+exact graded CCR, both Ward identities, the vector-valued Hadamard wavefront
+relation, stationarity, and a retained smooth scalar zero mode.  It is an
+indefinite pseudo-state pair, not a positive Hadamard state.
 The complete Berger q3 remains a different-theory Weyl-plus-clock result on a fixed
 54-row carrier; no certified same-theory cyclic map authorizes its direct import.
 
@@ -735,8 +747,9 @@ overclaim guards. The full q1 is now a content-addressed unary snapshot:
 18 operator tables, 127 jet tables and 2,193 rational coefficients on all
 386 rows, with exact nilpotency and zero suspended-cyclicity defects. Local
 The unary SDR, canonical shear and represented Green actions are serialized.
-What remains open at the nonlinear frontier is q2/q3 Green compatibility,
-the BRST-compatible Hadamard two-point function, renormalization and QME.
+What remains open after the classical-to-Hadamard bridge is physical-cohomology
+positivity, arbitrary mixed-sign or infinite nonlinear Green recursion,
+renormalized Lorentzian products and QME restoration.
 
 The new reconstruction import supplies the first explicit weak-arithmetic
 finite-approximant theorem for a declared bounded wave observable. Its rational
@@ -1039,6 +1052,8 @@ def generated() -> dict[Path, bytes]:
         COMPLETION_M1B_DUAL_REPORT,
         COMPLETION_M1B_CYCLIC_REPORT,
         COMPLETION_M1C_SNAPSHOT_REPORT,
+        COMPLETION_NONLINEAR_GREEN_REPORT,
+        COMPLETION_HADAMARD_REPORT,
         COMPLETION_M1A_LOCAL_REPORT,
         COMPLETION_M1A_REPRESENTED_REPORT,
         COMPLETION_M1A_LEDGER_REPORT,
@@ -1079,7 +1094,7 @@ def generated() -> dict[Path, bytes]:
         COMPLETION_SOURCE_Q3_REPORT,
     ]
     bundled_sources = sorted(set([CUBE, *PREVIOUS_CUBES, FULL_SURFACE_AUDIT, CORNER_BORN_INTERFACE, GROUND_STATE_DYNAMICS_INTERFACE, BT_EUCLIDEAN_IMPORT, GR_CASSINI_RESULT, GR_CASSINI_SCHEMA, MANNHEIM_NGC3198_RESULT, MANNHEIM_NGC3198_SCHEMA, MANNHEIM_NGC3198_PARAMETERS, MANNHEIM_NGC3198_SPARC, MANNHEIM_NGC3198_CPP, NGC3198_COMMON_FIT_RESULT, NGC3198_COMMON_FIT_SCHEMA, NGC3198_COMMON_FIT_PROTOCOL, NGC3198_COMMON_FIT_CPP, AUDIT, LADDER, COMPLETION_ATLAS, COMPLETION_REPORT, COMPLETION_GATE, COMPLETION_GATE_REPORT, COMPLETION_M1A_LOCAL, COMPLETION_M1A_LOCAL_REPORT, COMPLETION_M1_PREFLIGHT, COMPLETION_M1_PREFLIGHT_REPORT, COMPLETION_ENDPOINT_SDR_BINDING, COMPLETION_ENDPOINT_SDR_BINDING_REPORT, COMPLETION_LOCAL_CYCLIC_PAIRING, COMPLETION_LOCAL_CYCLIC_PAIRING_REPORT, COMPLETION_RESIDUAL_ZERO_MODES, COMPLETION_RESIDUAL_ZERO_MODES_REPORT, COMPLETION_CENTERED_COHOMOLOGY, COMPLETION_CENTERED_COHOMOLOGY_REPORT, COMPLETION_RESIDUAL_SDR_TYPE_AUDIT, COMPLETION_RESIDUAL_SDR_TYPE_AUDIT_REPORT, COMPLETION_SDR, COMPLETION_SDR_REPORT, COMPLETION_CYCLIC, COMPLETION_CYCLIC_REPORT, COMPLETION_TRANSPORT, COMPLETION_TRANSPORT_REPORT, COMPLETION_ENDPOINT, COMPLETION_ENDPOINT_REPORT, COMPLETION_SUSPENSION, COMPLETION_SUSPENSION_REPORT, COMPLETION_COMPONENT_PAIRING, COMPLETION_COMPONENT_PAIRING_REPORT, COMPLETION_OPERATOR_PORTABILITY, COMPLETION_OPERATOR_PORTABILITY_REPORT, COMPLETION_Q1_SIGN_GATE, COMPLETION_Q1_SIGN_GATE_REPORT, COMPLETION_Q1_SIGN_REPAIR, COMPLETION_Q1_SIGN_REPAIR_REPORT, COMPLETION_FULL_Q1, COMPLETION_FULL_Q1_REPORT, COMPLETION_LOCAL_SDR, COMPLETION_LOCAL_SDR_REPORT, COMPLETION_CANONICAL_SHEAR, COMPLETION_CANONICAL_SHEAR_REPORT, COMPLETION_GREEN_ACTION_NAME, COMPLETION_GREEN_ACTION_NAME_REPORT, COMPLETION_UNARY_CAUSAL_SNAPSHOT, COMPLETION_UNARY_CAUSAL_SNAPSHOT_REPORT, COMPLETION_FULL_D, COMPLETION_FULL_D_REPORT, COMPLETION_Q2_PREFLIGHT, COMPLETION_Q2_PREFLIGHT_REPORT, COMPLETION_Q2_GREEN, COMPLETION_Q2_GREEN_REPORT, COMPLETION_RECURSIVE_TREES, COMPLETION_RECURSIVE_TREES_REPORT, COMPLETION_FORMAL_COEFFICIENTS, COMPLETION_FORMAL_COEFFICIENTS_REPORT, COMPLETION_FIELD_EQUATION_QUOTIENT_INVERSE, COMPLETION_FIELD_EQUATION_QUOTIENT_INVERSE_REPORT, COMPLETION_QUADRATIC_OBSTRUCTION, COMPLETION_QUADRATIC_OBSTRUCTION_REPORT, COMPLETION_Q3_WITNESS, COMPLETION_Q3_WITNESS_REPORT, COMPLETION_MINIMAL_Q3, COMPLETION_MINIMAL_Q3_REPORT, COMPLETION_ARITY3, COMPLETION_ARITY3_REPORT, COMPLETION_Q3_CYCLICITY, COMPLETION_Q3_CYCLICITY_REPORT, COMPLETION_CUBIC_INVENTORY, COMPLETION_CUBIC_INVENTORY_REPORT, COMPLETION_HH_HV_LIFT, COMPLETION_HH_HV_LIFT_REPORT, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
-    bundled_sources = sorted(set([*bundled_sources, COMPLETION_M1B_PRIMAL, COMPLETION_M1B_PRIMAL_REPORT, COMPLETION_M1B_DUAL, COMPLETION_M1B_DUAL_REPORT, COMPLETION_M1B_CYCLIC, COMPLETION_M1B_CYCLIC_REPORT, COMPLETION_M1C_SNAPSHOT, COMPLETION_M1C_SNAPSHOT_REPORT, COMPLETION_M1A_REPRESENTED, COMPLETION_M1A_REPRESENTED_REPORT, COMPLETION_M1A_LEDGER, COMPLETION_M1A_LEDGER_REPORT, COMPLETION_DIFF_AUXILIARY, COMPLETION_DIFF_AUXILIARY_REPORT, COMPLETION_GHOST_MANIFEST, COMPLETION_GHOST_MANIFEST_REPORT, COMPLETION_CLASSICAL_QUARTIC, COMPLETION_CLASSICAL_QUARTIC_REPORT, COMPLETION_SHIFTED_MASS_Q3, COMPLETION_SHIFTED_MASS_Q3_REPORT, COMPLETION_SOURCE_Q3, COMPLETION_SOURCE_Q3_REPORT, *completion_evidence_paths]))
+    bundled_sources = sorted(set([*bundled_sources, COMPLETION_M1B_PRIMAL, COMPLETION_M1B_PRIMAL_REPORT, COMPLETION_M1B_DUAL, COMPLETION_M1B_DUAL_REPORT, COMPLETION_M1B_CYCLIC, COMPLETION_M1B_CYCLIC_REPORT, COMPLETION_M1C_SNAPSHOT, COMPLETION_M1C_SNAPSHOT_REPORT, COMPLETION_M1A_REPRESENTED, COMPLETION_M1A_REPRESENTED_REPORT, COMPLETION_M1A_LEDGER, COMPLETION_M1A_LEDGER_REPORT, COMPLETION_DIFF_AUXILIARY, COMPLETION_DIFF_AUXILIARY_REPORT, COMPLETION_GHOST_MANIFEST, COMPLETION_GHOST_MANIFEST_REPORT, COMPLETION_CLASSICAL_QUARTIC, COMPLETION_CLASSICAL_QUARTIC_REPORT, COMPLETION_SHIFTED_MASS_Q3, COMPLETION_SHIFTED_MASS_Q3_REPORT, COMPLETION_SOURCE_Q3, COMPLETION_SOURCE_Q3_REPORT, COMPLETION_NONLINEAR_GREEN, COMPLETION_NONLINEAR_GREEN_REPORT, COMPLETION_HADAMARD, COMPLETION_HADAMARD_REPORT, *completion_evidence_paths]))
     bundled_sources = sorted(set([
         *bundled_sources,
         COMPLETION_RESIDUAL_COMPARISON,
@@ -1188,7 +1203,6 @@ def generated() -> dict[Path, bytes]:
     result["does_not_establish"].extend([
         "H3 or H5 cohomology from the adjacent centered C3 and C5 carrier bases",
         "that the formal 8,980-coordinate cotangent completion is the unchanged authoritative classical BV source",
-        "q2/q3 compatibility with an advanced or retarded Green homotopy",
     ])
     result["does_not_establish"].extend([
         "that the exact stabilized-q3 candidate is the authoritative nonminimal pure-Weyl BV interaction",
@@ -1255,6 +1269,16 @@ def generated() -> dict[Path, bytes]:
     result["claim_flags"]["strict_full_carrier_q2_exposed"] = True
     result["claim_flags"]["strict_386_full_source_q2_pullback_replayed"] = True
     result["claim_flags"]["strict_386_full_source_q3_pullback_replayed"] = True
+    result["features"].append("post-freeze strict q2/q3 compatibility with both typed Lorentzian Green orientations, all finite same-orientation trees, and general second-source cocycle closure")
+    result["features"].append("full 386-row BRST Hadamard pseudo-state pair with exact graded CCR, both Ward identities, retained scalar zero mode, stationarity, and vector-valued microlocal spectrum condition")
+    result["claim_flags"]["strict_authoritative_q2_green_compatibility_exposed"] = True
+    result["claim_flags"]["strict_recursive_nonlinear_green_trees_exposed"] = True
+    result["claim_flags"]["strict_386_full_brst_hadamard_two_point_exposed"] = True
+    result["claim_flags"]["strict_386_full_brst_ward_exposed"] = True
+    result["claim_flags"]["strict_386_positive_hadamard_state_exposed"] = False
+    result["claim_flags"]["strict_386_physical_cohomology_positivity_exposed"] = False
+    result["does_not_establish"].append("a positive full-complex Hadamard state or positive physical-cohomology covariance")
+    result["does_not_establish"].append("renormalized Lorentzian products, QME restoration, residual transfer or a complete interacting Lorentzian quantum theory")
     outputs[RESULT] = (json.dumps(result, indent=2) + "\n").encode()
     outputs[REPORT] = render_report(result).encode()
     outputs[VIABILITY_RESULT] = viability_json

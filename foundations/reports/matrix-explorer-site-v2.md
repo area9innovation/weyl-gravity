@@ -39,7 +39,7 @@ eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
-Atlas V48 preserves the field-equation type result.  The degree-one-to-zero
+Atlas V49 preserves the field-equation type result.  The degree-one-to-zero
 Green component is an exact right inverse on Noether-compatible sources and a
 left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
 the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
@@ -167,9 +167,13 @@ coordinates replay thirteen typed contraction and cyclic identities with zero
 defects against the rank-940 residual action pairing.  M1C pins sixteen
 artifacts in one immutable six-object snapshot, binds all twenty exports and all
 seven top-level hashes, and replays ten Gate-A plus three supplemental audits.
-Gate V30 therefore verifies Gate A.  This is a classical import decision only:
-q2/q3 compatibility with both Lorentzian Green orientations and the
-BRST-compatible Hadamard two-point function remain open.
+Gate V30 therefore verifies Gate A.  The post-freeze nonlinear receiver now
+certifies q2/q3 compatibility with both Lorentzian Green orientations, every
+finite same-orientation q2/q3 tree, and general second-source cocycle closure.
+The next receiver constructs a full 386-row BRST Hadamard two-point pair with
+exact graded CCR, both Ward identities, the vector-valued Hadamard wavefront
+relation, stationarity, and a retained smooth scalar zero mode.  It is an
+indefinite pseudo-state pair, not a positive Hadamard state.
 The complete Berger q3 remains a different-theory Weyl-plus-clock result on a fixed
 54-row carrier; no certified same-theory cyclic map authorizes its direct import.
 
@@ -187,8 +191,9 @@ overclaim guards. The full q1 is now a content-addressed unary snapshot:
 18 operator tables, 127 jet tables and 2,193 rational coefficients on all
 386 rows, with exact nilpotency and zero suspended-cyclicity defects. Local
 The unary SDR, canonical shear and represented Green actions are serialized.
-What remains open at the nonlinear frontier is q2/q3 Green compatibility,
-the BRST-compatible Hadamard two-point function, renormalization and QME.
+What remains open after the classical-to-Hadamard bridge is physical-cohomology
+positivity, arbitrary mixed-sign or infinite nonlinear Green recursion,
+renormalized Lorentzian products and QME restoration.
 
 The new reconstruction import supplies the first explicit weak-arithmetic
 finite-approximant theorem for a declared bounded wave observable. Its rational
@@ -293,6 +298,7 @@ This site does not establish:
 - support-locality or all-energy smooth completion of the represented finite M3R harmonic comparison
 - H3 or H5 cohomology from the adjacent centered C3 and C5 carrier bases
 - that the formal 8,980-coordinate cotangent completion is the unchanged authoritative classical BV source
-- q2/q3 compatibility with an advanced or retarded Green homotopy
 - that the exact stabilized-q3 candidate is the authoritative nonminimal pure-Weyl BV interaction
 - general lambda-squared causal source closure from the candidate q3 stabilization
+- a positive full-complex Hadamard state or positive physical-cohomology covariance
+- renormalized Lorentzian products, QME restoration, residual transfer or a complete interacting Lorentzian quantum theory

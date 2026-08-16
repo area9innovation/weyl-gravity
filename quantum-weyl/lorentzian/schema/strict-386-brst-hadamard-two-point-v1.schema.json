@@ -1,0 +1,295 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-386-brst-hadamard-two-point-v1.schema.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "result_id",
+    "result_kind",
+    "result_state",
+    "lifecycle",
+    "dependency_tags",
+    "scope",
+    "provenance",
+    "modal_exact_checks",
+    "two_point_operator_names",
+    "parent_BRST_proof",
+    "graph_transfer_proof",
+    "proof_obligations",
+    "state_and_positivity_boundary",
+    "hadamard_snapshot",
+    "foundational_strength",
+    "independent_checker",
+    "human_report",
+    "next_gate",
+    "does_not_establish",
+    "claim_flags",
+    "content_sha256"
+  ],
+  "properties": {
+    "schema": {
+      "const": "strict-386-brst-hadamard-two-point-v1"
+    },
+    "result_id": {
+      "const": "STRICT_386_BRST_HADAMARD_TWO_POINT_V1"
+    },
+    "result_kind": {
+      "const": "FULL_COMPLEX_BRST_HADAMARD_TWO_POINT_DISTRIBUTION_WITH_PSEUDO_STATE_BOUNDARY"
+    },
+    "result_state": {
+      "const": "FULL_386_BRST_HADAMARD_TWO_POINT_CERTIFIED_POSITIVE_STATE_OPEN"
+    },
+    "lifecycle": {
+      "const": "LORENTZIAN_CERTIFIED"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ]
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "theory",
+        "background",
+        "carrier",
+        "classical_snapshot_id",
+        "classical_snapshot_sha256",
+        "excluded"
+      ],
+      "properties": {
+        "classical_snapshot_id": {
+          "pattern": "^STRICT_PURE_WEYL_BV_SNAPSHOT_[0-9a-f]{16}$"
+        },
+        "classical_snapshot_sha256": {
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "inputs",
+        "analytic_sources"
+      ],
+      "properties": {
+        "inputs": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6
+        },
+        "analytic_sources": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3
+        }
+      }
+    },
+    "modal_exact_checks": {
+      "type": "object",
+      "required": [
+        "positive_lambda",
+        "zero_lambda",
+        "all_modal_defects",
+        "sha256"
+      ],
+      "properties": {
+        "all_modal_defects": {
+          "const": 0
+        },
+        "positive_lambda": {
+          "type": "object",
+          "properties": {
+            "defects": {
+              "const": 0
+            }
+          }
+        },
+        "zero_lambda": {
+          "type": "object",
+          "properties": {
+            "defects": {
+              "const": 0
+            },
+            "arbitrary_scale_or_zero_mode_deletion": {
+              "const": false
+            }
+          }
+        }
+      }
+    },
+    "two_point_operator_names": {
+      "type": "object",
+      "required": [
+        "plus",
+        "minus",
+        "causal_difference",
+        "normalization",
+        "complex_conjugation",
+        "sha256"
+      ]
+    },
+    "parent_BRST_proof": {
+      "type": "object",
+      "required": [
+        "wave_bisolution",
+        "parent_definition",
+        "spectral_intertwining",
+        "parent_Ward_derivation",
+        "parent_CCR_derivation",
+        "graded_transpose",
+        "parent_hadamard",
+        "parent_rank_profile",
+        "defects",
+        "sha256"
+      ],
+      "properties": {
+        "defects": {
+          "const": 0
+        },
+        "parent_rank_profile": {
+          "const": [
+            15,
+            60,
+            60,
+            15
+          ]
+        }
+      }
+    },
+    "graph_transfer_proof": {
+      "type": "object",
+      "required": [
+        "tracefree",
+        "trace_Weyl",
+        "full_graph",
+        "chain_maps",
+        "cyclic_maps",
+        "Ward_transport",
+        "CCR_transport",
+        "wavefront_transport",
+        "full_row_domain",
+        "defects",
+        "sha256"
+      ],
+      "properties": {
+        "defects": {
+          "const": 0
+        }
+      }
+    },
+    "proof_obligations": {
+      "type": "object",
+      "required": [
+        "left_bisolution",
+        "right_bisolution",
+        "graded_CCR_antisymmetric_part",
+        "Hadamard_wavefront_set",
+        "BRST_compatibility_left",
+        "BRST_compatibility_right",
+        "graded_hermiticity_and_reality",
+        "D_stationarity",
+        "zero_mode_policy",
+        "positivity_or_Krein_policy",
+        "complete_386_row_coverage",
+        "sha256"
+      ]
+    },
+    "state_and_positivity_boundary": {
+      "type": "object",
+      "required": [
+        "Hadamard_two_point_function",
+        "BRST_Ward_identity",
+        "graded_CCR",
+        "positivity",
+        "object_type",
+        "reason",
+        "physical_cohomology_positivity",
+        "renormalized_products",
+        "QME",
+        "sha256"
+      ],
+      "properties": {
+        "Hadamard_two_point_function": {
+          "const": "CONSTRUCTED_ON_FULL_386_ROW_OFFSHELL_BV_COMPLEX"
+        },
+        "positivity": {
+          "const": "NOT_SATISFIED_OR_CLAIMED"
+        },
+        "object_type": {
+          "const": "BRST_HADAMARD_PSEUDO_STATE_TWO_POINT_PAIR"
+        }
+      }
+    },
+    "hadamard_snapshot": {
+      "type": "object",
+      "required": [
+        "kind",
+        "classical_snapshot_id",
+        "classical_snapshot_sha256",
+        "causal_envelope_sha256",
+        "pairing_sha256",
+        "graph_q1_sha256",
+        "suspension_sha256",
+        "plus_name_sha256",
+        "minus_name_sha256",
+        "modal_checks_sha256",
+        "parent_proof_sha256",
+        "transfer_proof_sha256",
+        "proof_checks_sha256",
+        "state_boundary_sha256",
+        "sha256"
+      ],
+      "properties": {
+        "kind": {
+          "const": "STRICT_386_FULL_COMPLEX_BRST_HADAMARD_TWO_POINT_SNAPSHOT"
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "CLASSICAL_IMPORT_GATE_PASSED",
+        "NONLINEAR_GREEN_COMPATIBILITY_CERTIFIED",
+        "STRICT_PARENT_HODGE_HADAMARD_TWO_POINT_PAIR_CONSTRUCTED",
+        "STRICT_386_FULL_COMPLEX_BRST_HADAMARD_TWO_POINT_FUNCTION_CONSTRUCTED",
+        "STRICT_386_HADAMARD_WAVEFRONT_CONDITION_CERTIFIED",
+        "STRICT_386_BRST_WARD_IDENTITIES_CERTIFIED",
+        "STRICT_386_GRADED_CCR_CERTIFIED",
+        "STRICT_386_ZERO_MODE_RETAINED_AND_SPLIT",
+        "STRICT_386_D_STATIONARY_TWO_POINT_PAIR",
+        "STRICT_386_POSITIVE_HADAMARD_STATE_CONSTRUCTED",
+        "STRICT_386_PHYSICAL_COHOMOLOGY_POSITIVITY_CERTIFIED",
+        "RENORMALIZED_LORENTZIAN_PRODUCTS_CONSTRUCTED",
+        "CAUSAL_PERTURBATIVE_AQFT_CONSTRUCTED",
+        "LORENTZIAN_QME_RESTORED",
+        "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED",
+        "LORENTZIAN_QUANTUM_THEORY"
+      ],
+      "properties": {
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": true},
+        "NONLINEAR_GREEN_COMPATIBILITY_CERTIFIED": {"const": true},
+        "STRICT_PARENT_HODGE_HADAMARD_TWO_POINT_PAIR_CONSTRUCTED": {"const": true},
+        "STRICT_386_FULL_COMPLEX_BRST_HADAMARD_TWO_POINT_FUNCTION_CONSTRUCTED": {"const": true},
+        "STRICT_386_HADAMARD_WAVEFRONT_CONDITION_CERTIFIED": {"const": true},
+        "STRICT_386_BRST_WARD_IDENTITIES_CERTIFIED": {"const": true},
+        "STRICT_386_GRADED_CCR_CERTIFIED": {"const": true},
+        "STRICT_386_ZERO_MODE_RETAINED_AND_SPLIT": {"const": true},
+        "STRICT_386_D_STATIONARY_TWO_POINT_PAIR": {"const": true},
+        "STRICT_386_POSITIVE_HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "STRICT_386_PHYSICAL_COHOMOLOGY_POSITIVITY_CERTIFIED": {"const": false},
+        "RENORMALIZED_LORENTZIAN_PRODUCTS_CONSTRUCTED": {"const": false},
+        "CAUSAL_PERTURBATIVE_AQFT_CONSTRUCTED": {"const": false},
+        "LORENTZIAN_QME_RESTORED": {"const": false},
+        "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": {"const": false},
+        "LORENTZIAN_QUANTUM_THEORY": {"const": false}
+      }
+    },
+    "content_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}
