@@ -18030,8 +18030,8 @@
     ]
   },
   "completion_atlas": {
-    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v36",
-    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V36",
+    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v37",
+    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V37",
     "result_kind": "BRANCH_BY_STAGE_COMPLETION_ATLAS",
     "lifecycle": "CLASSIFIED",
     "created": "2026-08-16",
@@ -18042,12 +18042,12 @@
       "REDUCED-MODE",
       "LORENTZIAN-CAUSAL"
     ],
-    "question": "After separating local endpoint contraction from global residual projection, what is the strongest viable route toward a Lorentzian Weyl BV completion?",
-    "answer": "Atlas V36 rejects the former single M3 route as ill-typed. The exact support-local 386-to-30 endpoint SDR is preserved and now needs common-hash binding, while the W+/W- harmonic comparison is a distinct REDUCED-MODE construction whose global projections must not be used as local Green-transfer maps. The strongest route is therefore to bind the existing graph endpoint SDR, close its full cyclic pairing, construct the typed endpoint-to-residual spectral comparison in parallel, and only then perform the all-object freeze. This removes a false shortcut without rejecting the surviving local causal architecture.",
+    "question": "After binding the local endpoint SDR to the common strict nonlinear carrier, what is the strongest surviving route toward Lorentzian Weyl BV completion?",
+    "answer": "Atlas V37 closes the low-depth M3L integration route. The exact 386-to-30 support-local endpoint SDR now shares a content-addressed manifest with q1, q2, q3, D, pairing, suspension and represented Green names. The strongest next route is to finish the full cyclic pairing on this common carrier, while the separately typed endpoint-to-residual spectral comparison is constructed as REDUCED-MODE data. Only after both can the common freeze be attempted. Gate A remains fail closed at one of seven hashes, so no Hadamard or QME stage is promoted.",
     "predecessor": {
-      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V35",
-      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V35.json",
-      "sha256": "ba062a1544bddc19979d2843c03dc35ed063c6e90a43761bf0827f0de5d3a2b2",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V36",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V36.json",
+      "sha256": "4901f12cf6c89565f684266c623c9ea612c5337786b5738536c10a36223faee1",
       "preserved": true
     },
     "status_vocabulary": [
@@ -18155,7 +18155,7 @@
           {
             "stage": "S0_CLASSICAL_AUTHORITY",
             "status": "FAIL_CLOSED",
-            "statement": "The q1/q2/q3/D/pairing, exact local graph endpoint SDR, residual zero modes and centered H4 payload all exist in scoped exact forms. The local endpoint SDR, finite W+/W- residual SDR and symmetry cotangent payload are now explicitly separated by type; common binding, a typed spectral comparison and full cyclic freeze remain open.",
+            "statement": "The q1/q2/q3/D/pairing and exact local graph endpoint SDR now share one scoped content-addressed 386-row manifest. Residual zero modes and centered H4 payload remain exact in their separate reduced-mode scopes; their typed spectral comparison, residual cyclicity and the common all-object freeze remain open.",
             "evidence": [
               "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
               "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
@@ -18189,9 +18189,11 @@
               "STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1",
               "CLASSICAL_IMPORT_GATE_V17_RECONCILIATION",
               "STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT_V1",
-              "CLASSICAL_IMPORT_GATE_V18_RECONCILIATION"
+              "CLASSICAL_IMPORT_GATE_V18_RECONCILIATION",
+              "STRICT_386_COMMON_ENDPOINT_SDR_BINDING_V1",
+              "CLASSICAL_IMPORT_GATE_V19_RECONCILIATION"
             ],
-            "boundary": "A global harmonic or zero-mode projector is not support-local. It cannot be substituted for the local endpoint SDR in Green-homotopy transfer, and no common hash, Hadamard state or QME is promoted."
+            "boundary": "M3L supplies only the support-local endpoint contraction. It does not make global harmonic projectors local, construct M3R, accept another Gate-A hash, or promote Hadamard/QME claims."
           },
           {
             "stage": "S1_OFF_SHELL_BV",
@@ -18910,20 +18912,20 @@
       }
     ],
     "frontier_summary": {
-      "highest_value_next_route": "STRICT_COMMON_ENDPOINT_SDR_BINDING",
-      "route_count": 10,
-      "completed_since_v35": [
-        "STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT",
-        "GATE_V18_M3_TYPED_REPAIR"
+      "highest_value_next_route": "STRICT_FULL_CYCLIC_PAIRING",
+      "route_count": 9,
+      "completed_since_v36": [
+        "STRICT_COMMON_ENDPOINT_SDR_BINDING",
+        "GATE_V19_M3L_INTEGRATION"
       ],
-      "new_positive_result": "The exact support-local graph endpoint SDR survives unchanged and is now cleanly separated from both finite W+/W- harmonic cohomology and conformal-Killing cotangent data.",
-      "new_no_go": "The specified global harmonic and zero-mode projectors expand support, so they cannot be promoted directly to support-local maps in the Green-homotopy transfer premise.",
-      "surprise": "The leading M3 task was partly a type error: the two occurrences of dimension thirty counted local field species and global symmetry-cotangent coefficients, not the same vector space.",
-      "hard_boundary": "M3L common binding, M3R typed spectral comparison, M4 pairing, M1 freeze, six hashes, nonlinear Green compatibility, Hadamard and QME remain open."
+      "new_positive_result": "The exact local graph endpoint SDR and the q1/q2/q3/D nonlinear layers now inhabit one scoped content-addressed 386-row manifest.",
+      "new_no_go": "None. The V36 prohibition on treating global harmonic projection as support-local remains in force.",
+      "surprise": "M3L required no new homotopy: the decisive work was proving that ten existing artifacts share seventeen canonical object hashes and fifteen exact compatibility links.",
+      "hard_boundary": "M4 pairing, M3R typed spectral comparison, M1 freeze, six hashes, nonlinear Green compatibility, Hadamard and QME remain open."
     },
     "classical_import_reconciliation": {
-      "result_id": "CLASSICAL_IMPORT_GATE_V18_RECONCILIATION",
-      "status": "M3_TYPE_REPAIRED_LOCAL_ENDPOINT_BINDING_AND_TYPED_RESIDUAL_COMPARISON_OPEN_GATE_FAIL_CLOSED",
+      "result_id": "CLASSICAL_IMPORT_GATE_V19_RECONCILIATION",
+      "status": "M3L_COMMON_ENDPOINT_SDR_BOUND_THREE_TYPED_PACKAGES_OPEN_GATE_FAIL_CLOSED",
       "exports_receiver_verified_scoped": 17,
       "exports_total": 20,
       "freeze_checks_receiver_verified_scoped": 9,
@@ -18932,7 +18934,6 @@
       "gate_a_status": "FAIL_CLOSED",
       "minimal_missing_bundle": [
         "M1_COMMON_STRICT_SNAPSHOT",
-        "M3L_COMMON_ENDPOINT_SDR_BINDING",
         "M3R_TYPED_RESIDUAL_COMPARISON",
         "M4_FULL_CYCLIC_PAIRING"
       ]
@@ -19040,22 +19041,13 @@
     ],
     "route_selection": [
       {
-        "route": "STRICT_COMMON_ENDPOINT_SDR_BINDING",
-        "branch": "STRICT_PURE_WEYL_386",
-        "scientific_leverage": "VERY_HIGH",
-        "tractability": "HIGH",
-        "dependency_depth": "LOW",
-        "recommendation": "Bind the already exact graph-coordinate i_end, p_end and H_alg, transported suspension and q1 bytes to the same strict manifest used by q2/q3/D; replay the contraction and intertwiners without rebuilding a different SDR.",
-        "rank": 1
-      },
-      {
-        "rank": 2,
+        "rank": 1,
         "route": "STRICT_FULL_CYCLIC_PAIRING",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "HIGH",
-        "recommendation": "On the common endpoint SDR carrier, replay the serialized 386-row pairing against q1/q2/q3 and every SDR cyclic side condition; do not couple it to global-mode projection until M3R is separately typed."
+        "recommendation": "Audit the already serialized 386-row graph pairing against q1/q2/q3 and every local endpoint-SDR cyclic side condition, then isolate the genuinely residual cyclicity obligations that depend on M3R."
       },
       {
         "route": "STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON",
@@ -19063,20 +19055,20 @@
         "scientific_leverage": "VERY_HIGH",
         "tractability": "LOW",
         "dependency_depth": "HIGH",
-        "recommendation": "Construct a typed harmonic restriction/comparison from endpoint sections to W+/W- residual coefficients, declare test/distribution domains and zero-mode policy, and label every support-expanding projection REDUCED-MODE rather than local.",
-        "rank": 3
+        "recommendation": "Construct a typed harmonic restriction/comparison from endpoint sections to W+/W- coefficients, with explicit test/distribution domains, zero-mode policy and REDUCED-MODE labels for every support-expanding map.",
+        "rank": 2
       },
       {
-        "rank": 4,
+        "rank": 3,
         "route": "STRICT_COMMON_FREEZE_SNAPSHOT_AND_FINAL_CYCLIC_CONTRACTION",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "MEDIUM",
-        "recommendation": "After M3L, M3R and M4, bind q1/q2/q3/D, endpoint SDR, residual comparison, zero modes, centered representatives and pairing to one manifest; accept hashes only after all identities replay in their declared categories."
+        "recommendation": "After M4 and M3R, bind the local and reduced-mode objects under one typed manifest and accept each top-level hash only after its category-correct identities replay."
       },
       {
-        "rank": 5,
+        "rank": 4,
         "route": "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
@@ -19085,7 +19077,7 @@
         "recommendation": "After nonlinear identity, prove Noether closure of the general lambda-squared source."
       },
       {
-        "rank": 6,
+        "rank": 5,
         "route": "STRICT_CANDIDATE_Q2_Q3_GREEN_LAMBDA2_RESPONSE",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
@@ -19094,7 +19086,7 @@
         "recommendation": "Compose accepted q2/q3 with both Green orientations and verify response identities."
       },
       {
-        "rank": 7,
+        "rank": 6,
         "route": "DIRECT_SPACETIME_Q26_HADAMARD",
         "branch": "BERGER_POSITIVE_CLOCK_54",
         "scientific_leverage": "VERY_HIGH",
@@ -19103,7 +19095,7 @@
         "recommendation": "Keep the analytically mature Berger Hadamard route as a different-theory control, not as the strict pure-Weyl carrier map."
       },
       {
-        "rank": 8,
+        "rank": 7,
         "route": "STRICT_D_CARTAN_AND_CHARGE_DECISION",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "HIGH",
@@ -19112,7 +19104,7 @@
         "recommendation": "Classify the nonlinear D-Cartan homotopy and proper-gauge/charge status on the strict carrier."
       },
       {
-        "rank": 9,
+        "rank": 8,
         "route": "STRICT_ANALYTIC_MOLLER_CONVERGENCE",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "MEDIUM",
@@ -19121,7 +19113,7 @@
         "recommendation": "Only after all-order source closure, derive seminorm majorants and a nonzero convergence domain."
       },
       {
-        "rank": 10,
+        "rank": 9,
         "route": "STRICT_MIXED_WEIGHTED_CAUSAL_DOMAIN",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "MEDIUM",
@@ -19134,59 +19126,53 @@
       {
         "priority": 1,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_COMMON_ENDPOINT_SDR_BINDING",
-        "why": "The exact support-local graph SDR already exists; the next task is a common-byte binding and replay, not a speculative reconstruction of a finite residual projector."
+        "object": "STRICT_FULL_CYCLIC_PAIRING",
+        "why": "Most graph pairing bytes and local cyclic identities already exist; the audit can separate an attainable local closure from residual cyclicity that genuinely waits for M3R."
       },
       {
         "priority": 2,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_FULL_CYCLIC_PAIRING",
-        "why": "The full 386-row pairing is already serialized and can be closed against the common endpoint SDR while the harder spectral comparison proceeds independently."
+        "object": "STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON",
+        "why": "The remaining M3 task is a typed analytic bridge, not another finite endpoint contraction."
       },
       {
         "priority": 3,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON",
-        "why": "Residual and centered data become relevant to the field theory only through a typed harmonic restriction that admits its nonlocality."
+        "object": "STRICT_COMMON_FREEZE_SNAPSHOT_AND_FINAL_CYCLIC_CONTRACTION",
+        "why": "The all-object freeze becomes meaningful only after M4 and M3R close in their distinct categories."
       },
       {
         "priority": 4,
-        "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_COMMON_FREEZE_SNAPSHOT_AND_FINAL_CYCLIC_CONTRACTION",
-        "why": "The freeze becomes honest only after local and reduced-mode maps are distinct, manifest-bound and independently replayed."
-      },
-      {
-        "priority": 5,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_LAMBDA2_GENERAL_SOURCE_COCYCLE_CLOSURE",
         "why": "After nonlinear identity, prove Noether closure of the general lambda-squared source."
       },
       {
-        "priority": 6,
+        "priority": 5,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_CANDIDATE_Q2_Q3_GREEN_LAMBDA2_RESPONSE",
         "why": "Compose accepted q2/q3 with both Green orientations and verify response identities."
       },
       {
-        "priority": 7,
+        "priority": 6,
         "branch": "BERGER_POSITIVE_CLOCK_54",
         "object": "DIRECT_SPACETIME_Q26_HADAMARD",
         "why": "Keep the analytically mature Berger Hadamard route as a different-theory control, not as the strict pure-Weyl carrier map."
       },
       {
-        "priority": 8,
+        "priority": 7,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_D_CARTAN_AND_CHARGE_DECISION",
         "why": "Classify the nonlinear D-Cartan homotopy and proper-gauge/charge status on the strict carrier."
       },
       {
-        "priority": 9,
+        "priority": 8,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_ANALYTIC_MOLLER_CONVERGENCE",
         "why": "Only after all-order source closure, derive seminorm majorants and a nonzero convergence domain."
       },
       {
-        "priority": 10,
+        "priority": 9,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_MIXED_WEIGHTED_CAUSAL_DOMAIN",
         "why": "Test weighted opposite-polarity domains against the scalar zero-mode witness; polarized recursion does not require this."
@@ -19835,6 +19821,24 @@
           "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V18_RECONCILIATION",
           "sha256": "2fd87beeb6e1098f3c8d6d5473f1a67a5362e66ea5cd82a1fc7ce866d6252642",
           "role": "Gate-A V18 typed M3 reconciliation"
+        },
+        {
+          "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V36.json",
+          "result_or_artifact_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V36",
+          "sha256": "4901f12cf6c89565f684266c623c9ea612c5337786b5738536c10a36223faee1",
+          "role": "immutable V36 predecessor"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMMON_ENDPOINT_SDR_BINDING_V1.json",
+          "result_or_artifact_id": "STRICT_386_COMMON_ENDPOINT_SDR_BINDING_V1",
+          "sha256": "f61855e6693120f8c93109fadd0415a8b3369c3ea55caaa7fe0035e913d89b73",
+          "role": "common local endpoint-SDR binding"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V19_RECONCILIATION.json",
+          "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V19_RECONCILIATION",
+          "sha256": "3e00c7f65061f311e5a97c14717ea081fe540a46225d75c42771468ce7c31a3f",
+          "role": "Gate-A V19 M3L reconciliation"
         }
       ]
     },
@@ -20057,8 +20061,12 @@
       "strict_dfinite_residual_projector_support_local": false,
       "strict_zero_mode_projector_support_local": false,
       "strict_M3_typed_split_required": true,
-      "strict_M3L_common_endpoint_sdr_bound": false,
-      "strict_M3R_typed_residual_comparison_constructed": false
+      "strict_M3L_common_endpoint_sdr_bound": true,
+      "strict_M3R_typed_residual_comparison_constructed": false,
+      "v36_preserved": true,
+      "strict_386_common_endpoint_sdr_manifest_bound": true,
+      "strict_386_common_endpoint_sdr_identities_replayed": true,
+      "strict_386_q1_d_q2_q3_same_local_carrier": true
     },
     "does_not_establish": [
       "a passed strict pure-Weyl classical import gate",
@@ -20176,19 +20184,20 @@
       "the assembled source q2/q3, accepted nonlinear hashes, or cyclic L-infinity equivalence"
     ],
     "independent_checker": {
-      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v36.py",
+      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v37.py",
       "checks": [
-        "V35 predecessor and 77-cell preservation",
-        "Gate V18 and type-audit pins",
-        "386/30 local, 4,490/470 harmonic and 30 symmetry-cotangent type census",
-        "M3L/M3R split and support-locality firewall",
-        "four-package Gate remainder",
-        "ten-route reranking",
-        "Gate-A/Green/Hadamard/QME firewalls"
+        "V36 predecessor and 77-cell preservation",
+        "Gate V19 and M3L content pins",
+        "386/30/356 manifest and zero-defect projection",
+        "M3L completion with M3R type firewall",
+        "three-package Gate remainder and one accepted hash",
+        "nine-route reranking",
+        "Gate-A/Green/Hadamard/QME firewalls",
+        "canonical atlas digest"
       ],
-      "expected_digest": "dc563abce58f01da6ca13fe78ea415e93b52f7db250135753ee62e463476eaf9"
+      "expected_digest": "931cb70758badec796404043e4c85e2f28967b6d3013682d09bdbb4786a65db9"
     },
-    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v36.md",
+    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v37.md",
     "strict_gate_a_progress": {
       "status": "STABILIZED_Q2_CANDIDATE_CERTIFIED_AUTHORITATIVE_IDENTITY_REQUIRED",
       "evidence": [
@@ -21485,26 +21494,6 @@
       "M6_payload_complete": true,
       "common_freeze_bound": false
     },
-    "strict_gate_v18_reconciliation": {
-      "result_id": "CLASSICAL_IMPORT_GATE_V18_RECONCILIATION",
-      "status": "M3_TYPE_REPAIRED_LOCAL_ENDPOINT_BINDING_AND_TYPED_RESIDUAL_COMPARISON_OPEN_GATE_FAIL_CLOSED",
-      "exports_total": 20,
-      "exports_receiver_verified_scoped": 17,
-      "freeze_checks_total": 10,
-      "freeze_checks_receiver_verified_scoped": 9,
-      "accepted_top_level_hashes": 1,
-      "remaining_top_level_hashes": 6,
-      "minimal_missing_bundle": [
-        "M1_COMMON_STRICT_SNAPSHOT",
-        "M3L_COMMON_ENDPOINT_SDR_BINDING",
-        "M3R_TYPED_RESIDUAL_COMPARISON",
-        "M4_FULL_CYCLIC_PAIRING"
-      ],
-      "M3_typed_split_required": true,
-      "M3L_common_endpoint_sdr_bound": false,
-      "M3R_typed_residual_comparison_constructed": false,
-      "gate_a_status": "FAIL_CLOSED"
-    },
     "strict_residual_sdr_type_audit": {
       "result_id": "STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT_V1",
       "type_census_sha256": "108626a3033cdd9b2e3885caa2399685eab725dd76f45a716f26b5e1ec4b1d8c",
@@ -21517,6 +21506,313 @@
       "graph_endpoint_is_symmetry_cotangent": false,
       "dfinite_projector_support_local": false,
       "M3_typed_split_required": true
+    },
+    "strict_gate_v19_reconciliation": {
+      "result_id": "CLASSICAL_IMPORT_GATE_V19_RECONCILIATION",
+      "status": "M3L_COMMON_ENDPOINT_SDR_BOUND_THREE_TYPED_PACKAGES_OPEN_GATE_FAIL_CLOSED",
+      "exports_total": 20,
+      "exports_receiver_verified_scoped": 17,
+      "freeze_checks_total": 10,
+      "freeze_checks_receiver_verified_scoped": 9,
+      "accepted_top_level_hashes": 1,
+      "remaining_top_level_hashes": 6,
+      "minimal_missing_bundle": [
+        "M1_COMMON_STRICT_SNAPSHOT",
+        "M3R_TYPED_RESIDUAL_COMPARISON",
+        "M4_FULL_CYCLIC_PAIRING"
+      ],
+      "M3L_common_endpoint_sdr_bound": true,
+      "M3R_typed_residual_comparison_constructed": false,
+      "gate_a_status": "FAIL_CLOSED"
+    },
+    "strict_common_endpoint_sdr_binding": {
+      "result_id": "STRICT_386_COMMON_ENDPOINT_SDR_BINDING_V1",
+      "manifest_id": "STRICT_386_LOCAL_ENDPOINT_NONLINEAR_COMMON_MANIFEST_V1",
+      "manifest_sha256": "c1796f6f498c79c58317269a30c430c3e5b80cca149e4050742fae70040f4f58",
+      "carrier_rows": 386,
+      "endpoint_rows": 30,
+      "contracted_rows": 356,
+      "artifact_pins": 10,
+      "canonical_object_hashes": 17,
+      "compatibility_links_checked": 15,
+      "projected_identity_defects": 0,
+      "support_local": true,
+      "residual_comparison_included": false
+    }
+  },
+  "completion_common_endpoint_sdr_binding": {
+    "$schema": "../schema/strict-386-common-endpoint-sdr-binding-v1.schema.json",
+    "schema": "strict-386-common-endpoint-sdr-binding-v1",
+    "schema_path": "quantum-weyl/classical_import/schema/strict-386-common-endpoint-sdr-binding-v1.schema.json",
+    "result_id": "STRICT_386_COMMON_ENDPOINT_SDR_BINDING_V1",
+    "result_kind": "CLASSICAL_IMPORT_COMMON_LOCAL_ENDPOINT_SDR_BINDING",
+    "result_state": "M3L_COMMON_ENDPOINT_SDR_BOUND_M3R_AND_GATE_A_OPEN",
+    "lifecycle": "CLASSIFIED",
+    "created": "2026-08-16",
+    "repository_base_commit": "669895e3a9f75681f36de94f73a9b3b6039af8d7",
+    "dependency_tags": [
+      "LOCAL-ALGEBRAIC",
+      "LORENTZIAN-CAUSAL"
+    ],
+    "question": "Do the exact graph endpoint SDR, q1, D, source q2/q3, transported suspension and represented Green names inhabit one content-addressed strict 386-row local carrier?",
+    "answer": "Yes, in the declared local endpoint scope. A receiver manifest pins the same 386-row basis, odd pairing, split q1, canonical shear, graph q1, H_alg_graph, i_end_graph, p_end_graph, complementary projectors, transported suspension, represented Green names, D action and exact compositional graph q2/q3 DAGs. Fifteen independent provenance and internal-hash comparisons agree, and every previously receiver-replayed endpoint contraction, q1/q2/q3, cyclicity and stationary-D defect is zero on those pinned artifacts. This closes M3L only. It does not identify the endpoint with W+/W- residual coefficients, construct M3R, close residual cyclicity, accept a new Gate-A top-level hash, or reach Hadamard/QME stages.",
+    "scope": {
+      "theory": "strict pure-Weyl classical BV complex",
+      "background": "unit conformal cylinder",
+      "carrier": "386 local graph component species",
+      "endpoint": "30 local field-component species",
+      "coordinate_presentation": "unshifted curvature graph with exact split-source q2/q3 transport DAGs",
+      "locality": "finite-order support-local SDR maps; represented Green names are separately analytic"
+    },
+    "common_manifest": {
+      "manifest_id": "STRICT_386_LOCAL_ENDPOINT_NONLINEAR_COMMON_MANIFEST_V1",
+      "coordinate_presentation": "UNSHIFTED_CURVATURE_GRAPH_WITH_EXACT_SPLIT_SOURCE_DAGS",
+      "carrier_rows": 386,
+      "endpoint_rows": 30,
+      "contracted_rows": 356,
+      "artifact_pins": [
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1.json",
+          "result_or_artifact_id": "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1",
+          "sha256": "b805bd81b35f13325d938e93be91495e1d46aa5900fd168e55bdcde1afbfa8e2",
+          "role": "exact graph q1, endpoint SDR and transported suspension bytes"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1.json",
+          "result_or_artifact_id": "STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1",
+          "sha256": "08e4c12adb9183429f018d60574fdf0c1e21db40b25de10648247fdfd17bf6ab",
+          "role": "receiver-accepted represented unary-causal snapshot"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_D_ACTION_V1.json",
+          "result_or_artifact_id": "STRICT_386_FULL_D_ACTION_V1",
+          "sha256": "c83c53250e3c8b8bc913f902a8cd4a4aff1a918c88b42167e9076e4aa96dc148",
+          "role": "exact local cylinder-flow action on the graph carrier"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1.json",
+          "result_or_artifact_id": "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1",
+          "sha256": "2a93236ba5ae929bde285339286fbc24ceb98415b6b1750b90b546f921f658ed",
+          "role": "accepted source q2 and exact graph transport DAG"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.json",
+          "result_or_artifact_id": "STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1",
+          "sha256": "d2fb66beec9f77bd24487f13406aa5a179f332d113b8b1ca7052547df7e3b696",
+          "role": "accepted source q3 and exact graph transport DAG"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+          "result_or_artifact_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+          "sha256": "3b9d8a2fc5a70d20770452eb0a2a4891f59314c21c83188bfb59de0941cac4b2",
+          "role": "fixed 386-row basis and odd pairing"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1.json",
+          "result_or_artifact_id": "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1",
+          "sha256": "9b0e9da9e8838a0ade6e1f1214e16457e9a94af981d9d020c137d105f9e9c21e",
+          "role": "fixed split-coordinate unary table"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1.json",
+          "result_or_artifact_id": "STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1",
+          "sha256": "5f9240a362ce8568f0ac502e25978a4675f9744cc750dee5b1378828033eb301",
+          "role": "fixed BV-canonical split-to-graph transport"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT_V1.json",
+          "result_or_artifact_id": "STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT_V1",
+          "sha256": "423f462839c3f0c12cbb65e507e3d1d43443c84f4ec3bb7da532d8338be698f5",
+          "role": "M3L/M3R type and locality decision"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V18_RECONCILIATION.json",
+          "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V18_RECONCILIATION",
+          "sha256": "2fd87beeb6e1098f3c8d6d5473f1a67a5362e66ea5cd82a1fc7ce866d6252642",
+          "role": "open M3L Gate-A predecessor"
+        }
+      ],
+      "object_hashes": {
+        "component_basis_sha256": "8e29f0f2419d1086969fd1962c62bd5c185bff3772ebd247591bdea5ac2828c4",
+        "odd_pairing_sha256": "912aecc758dfd5f0d9de815530a2fe1428442afe874343a08d90673e1f2f6381",
+        "split_q1_snapshot_sha256": "34d0a3198d73a99111a1b91d9b642f8d890c4c479de00d056fe592c820f2e39a",
+        "canonical_shear_snapshot_sha256": "2843eba9ce39e701f8b838437d58a53f3b71d6ffad9800311e137f971d9a1573",
+        "graph_q1_sha256": "5c23d4bc1228e9b065ec60f67f367785b9456c7a9401dedb85a44d3b6b32ff5f",
+        "H_alg_graph_sha256": "1e61cbb16d3a8ca314354d719830fd26ffa748879950459d70bdc119b4cfc2ec",
+        "i_end_graph_sha256": "fa2566e14e3f65a6a2a8e1e40304911723b3662d9f2c8278c6fe538e037c6a27",
+        "p_end_graph_sha256": "39e61764aa9c2548b9ef9a0658eb6031c2602a0d3a23a4edb6e42a5bf870e204",
+        "P_end_graph_sha256": "5805462bebbc04f1ed33e481995a7c157668ce9e569f195d116789bc498b94ae",
+        "P_alg_graph_sha256": "9b0f34f6cd32af4ee34ead79e5f6443305961abf8a4c5ed78985fe78432bef6a",
+        "R_graph_sha256": "14f88c3097dc764050f77446e462fb6c4b8b6ebb6ea11ef5f274a9691a63a1d6",
+        "represented_green_common_snapshot_sha256": "ffd018f8516d5a1547c235f17b37a03e1307990fb280b24efbfe37fc3ebd8344",
+        "D_action_sha256": "b20def4d59de1f1f618ad022b89673206b5741daad7dda406ec2fe03e6e4d8da",
+        "q2_source_snapshot_sha256": "0f1e23a5653db0666cbd02dea49f8961927d03ff4c72ed402fd24ba8f2ba4800",
+        "q2_graph_transport_sha256": "ef1b90766be72fe7aef8600a786312e4a02b69997125c878eb9ffe8289f1e706",
+        "q3_source_snapshot_sha256": "2c2032011400463419fb7427f38746e6fa14d0fe0cbfe754e9b0023de5387f8a",
+        "q3_graph_transport_sha256": "a1057f818fe27efbee6d562573c48758ddf95e95321351d71f85afe2730dbf91"
+      },
+      "sha256": "c1796f6f498c79c58317269a30c430c3e5b80cca149e4050742fae70040f4f58"
+    },
+    "compatibility_checks": {
+      "unary_pins_graph_certificate": true,
+      "D_pins_graph_certificate": true,
+      "q2_pins_graph_certificate": true,
+      "q2_and_q3_pin_same_split_q1": true,
+      "graph_and_q2_pin_same_split_q1": true,
+      "graph_q2_q3_pin_same_pairing": true,
+      "graph_q2_q3_pin_same_shear": true,
+      "q2_and_q3_pin_same_D": true,
+      "q3_pins_accepted_q2_certificate": true,
+      "q3_pins_accepted_q2_object": true,
+      "graph_and_D_basis_hash_agree": true,
+      "graph_and_D_pairing_hash_agree": true,
+      "graph_and_D_q1_hash_agree": true,
+      "q2_graph_DAG_exact": true,
+      "q3_graph_DAG_exact": true
+    },
+    "exact_replay": {
+      "compatibility_links_checked": 15,
+      "compatibility_defects": 0,
+      "qH_plus_Hq_defects": 0,
+      "p_i_identity_defects": 0,
+      "i_p_projector_defects": 0,
+      "normalized_side_condition_defects": 0,
+      "endpoint_SDR_cyclicity_defects": 0,
+      "transported_suspension_PBW_reduced_cyclicity_defects": 0,
+      "D_q1_commutator_defects": 0,
+      "graph_q1_q2_defects": 0,
+      "graph_q2_cyclicity_defects": 0,
+      "graph_D_q2_derivation_defects": 0,
+      "graph_arity_three_defects": 0,
+      "graph_q3_cyclicity_defects_mod_d": 0,
+      "graph_D_q3_derivation_defects": 0
+    },
+    "local_transfer_premise": {
+      "i_end_graph_support_local": true,
+      "p_end_graph_support_local": true,
+      "H_alg_graph_support_local": true,
+      "maximum_q1_differential_order": 4,
+      "SDR_maps_use_Green_operator": false,
+      "SDR_maps_add_choice_operation": false,
+      "represented_green_names_bound": true,
+      "endpoint_green_homotopy_identity_receiver_replayed": true,
+      "nonlinear_green_compatibility_certified": false
+    },
+    "foundational_strength": {
+      "manifest_and_component_replay": "finite exact rational and hash computation formalizable in PRA for fixed serialized artifacts",
+      "choice_dependency_added": "none",
+      "analytic_dependency": "the represented Green-action names retain their smooth support-indexed LF and spectral completeness assumptions",
+      "residual_dependency": "no harmonic or zero-mode projection enters M3L"
+    },
+    "gate_disposition": {
+      "M3L_COMMON_ENDPOINT_SDR_BINDING": "COMPLETE",
+      "M3R_TYPED_RESIDUAL_COMPARISON": "OPEN",
+      "M4_FULL_CYCLIC_PAIRING": "OPEN",
+      "M1_COMMON_STRICT_SNAPSHOT": "OPEN",
+      "top_level_gate_a_hashes_accepted_by_this_result": 0,
+      "classical_import_gate_a_status": "FAIL_CLOSED"
+    },
+    "provenance": {
+      "inputs": [
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1.json",
+          "result_or_artifact_id": "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1",
+          "sha256": "b805bd81b35f13325d938e93be91495e1d46aa5900fd168e55bdcde1afbfa8e2",
+          "role": "exact graph q1, endpoint SDR and transported suspension bytes"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1.json",
+          "result_or_artifact_id": "STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1",
+          "sha256": "08e4c12adb9183429f018d60574fdf0c1e21db40b25de10648247fdfd17bf6ab",
+          "role": "receiver-accepted represented unary-causal snapshot"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_D_ACTION_V1.json",
+          "result_or_artifact_id": "STRICT_386_FULL_D_ACTION_V1",
+          "sha256": "c83c53250e3c8b8bc913f902a8cd4a4aff1a918c88b42167e9076e4aa96dc148",
+          "role": "exact local cylinder-flow action on the graph carrier"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1.json",
+          "result_or_artifact_id": "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1",
+          "sha256": "2a93236ba5ae929bde285339286fbc24ceb98415b6b1750b90b546f921f658ed",
+          "role": "accepted source q2 and exact graph transport DAG"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.json",
+          "result_or_artifact_id": "STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1",
+          "sha256": "d2fb66beec9f77bd24487f13406aa5a179f332d113b8b1ca7052547df7e3b696",
+          "role": "accepted source q3 and exact graph transport DAG"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+          "result_or_artifact_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+          "sha256": "3b9d8a2fc5a70d20770452eb0a2a4891f59314c21c83188bfb59de0941cac4b2",
+          "role": "fixed 386-row basis and odd pairing"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1.json",
+          "result_or_artifact_id": "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1",
+          "sha256": "9b0e9da9e8838a0ade6e1f1214e16457e9a94af981d9d020c137d105f9e9c21e",
+          "role": "fixed split-coordinate unary table"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1.json",
+          "result_or_artifact_id": "STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1",
+          "sha256": "5f9240a362ce8568f0ac502e25978a4675f9744cc750dee5b1378828033eb301",
+          "role": "fixed BV-canonical split-to-graph transport"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT_V1.json",
+          "result_or_artifact_id": "STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT_V1",
+          "sha256": "423f462839c3f0c12cbb65e507e3d1d43443c84f4ec3bb7da532d8338be698f5",
+          "role": "M3L/M3R type and locality decision"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V18_RECONCILIATION.json",
+          "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V18_RECONCILIATION",
+          "sha256": "2fd87beeb6e1098f3c8d6d5473f1a67a5362e66ea5cd82a1fc7ce866d6252642",
+          "role": "open M3L Gate-A predecessor"
+        }
+      ]
+    },
+    "claim_flags": {
+      "STRICT_386_COMMON_ENDPOINT_SDR_MANIFEST_BOUND": true,
+      "STRICT_386_COMMON_ENDPOINT_SDR_IDENTITIES_REPLAYED": true,
+      "STRICT_386_Q1_D_Q2_Q3_SAME_LOCAL_CARRIER": true,
+      "STRICT_386_GRAPH_ENDPOINT_SDR_SUPPORT_LOCAL": true,
+      "M3L_COMMON_ENDPOINT_SDR_BOUND": true,
+      "M3R_TYPED_RESIDUAL_COMPARISON_CONSTRUCTED": false,
+      "FULL_RESIDUAL_CYCLIC_PAIRING_CERTIFIED": false,
+      "NEW_GATE_A_TOP_LEVEL_HASH_ACCEPTED": false,
+      "CLASSICAL_IMPORT_GATE_PASSED": false,
+      "LORENTZIAN_Q2_Q3_GREEN_COMPATIBILITY_CERTIFIED": false,
+      "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED": false,
+      "QME_RESTORED": false,
+      "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": false
+    },
+    "does_not_establish": [
+      "an identification of the local endpoint with the 470-coordinate W+/W- residual carrier or the 15+15 symmetry-cotangent carrier",
+      "a typed harmonic restriction or endpoint-to-residual spectral comparison",
+      "support-locality of any nonzero global harmonic or zero-mode projector",
+      "full residual cyclic pairing or cyclicity of M3R",
+      "flattened graph-coordinate q2 or q3 tensors beyond the exact compositional transport DAGs",
+      "nonlinear q2/q3 compatibility with the represented Green homotopies",
+      "a new accepted Gate-A top-level hash, a passed classical import gate, Hadamard state, renormalized products, QME restoration or residual transfer"
+    ],
+    "next_gate": "Construct M3R as a typed endpoint-to-W+/W- harmonic comparison with explicit test/distribution domains and zero-mode policy. In parallel separate the already serialized full graph pairing from the still-open residual-comparison cyclicity, then freeze only after those typed obligations close.",
+    "human_report": "quantum-weyl/classical_import/REPORT_STRICT_386_COMMON_ENDPOINT_SDR_BINDING_V1.md",
+    "independent_checker": {
+      "path": "quantum-weyl/classical_import/check_strict_386_common_endpoint_sdr_binding.py",
+      "checks": [
+        "all ten input content hashes and identities",
+        "shared graph, q1, pairing, shear, D and q2 provenance pins",
+        "basis/pairing/q1 internal hash agreement",
+        "all fifteen cross-certificate compatibility links",
+        "endpoint SDR and nonlinear exact defect projections",
+        "manifest digest and every Gate/Hadamard/QME firewall"
+      ],
+      "expected_digest": "98636929866066fc6029efd7fa76dea51a87f43c0ae951166886f3f535bc67fd"
     }
   },
   "completion_residual_zero_modes": {
@@ -201101,10 +201397,12 @@
     "ground_state_dynamics_interface_report": "sources/foundations/reports/krein-fock-ground-state-dynamics-interface.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md",
-    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V36.json",
-    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v36.md",
-    "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V18_RECONCILIATION.json",
-    "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V18.md",
+    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V37.json",
+    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v37.md",
+    "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V19_RECONCILIATION.json",
+    "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V19.md",
+    "completion_common_endpoint_sdr_binding": "sources/quantum-weyl/classical_import/certificates/STRICT_386_COMMON_ENDPOINT_SDR_BINDING_V1.json",
+    "completion_common_endpoint_sdr_binding_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_COMMON_ENDPOINT_SDR_BINDING_V1.md",
     "completion_residual_zero_modes": "sources/quantum-weyl/classical_import/certificates/STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1.json",
     "completion_residual_zero_modes_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1.md",
     "completion_centered_cohomology": "sources/quantum-weyl/classical_import/certificates/STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1.json",
@@ -201188,5 +201486,5 @@
     "completion_source_q3": "sources/quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.json",
     "completion_source_q3_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.md"
   },
-  "canonical_digest": "a64282a1573d8f4d164991d438b9cf6837b519398adba9cab945205376a58aaa"
+  "canonical_digest": "830fffc8a59fbb44adde5d0eccac286e9c8d24bb19130844acccf23452dab2be"
 }

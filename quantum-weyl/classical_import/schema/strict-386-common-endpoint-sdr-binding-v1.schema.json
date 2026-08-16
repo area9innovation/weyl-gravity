@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-386-common-endpoint-sdr-binding-v1.schema.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_kind",
+    "result_state",
+    "lifecycle",
+    "dependency_tags",
+    "scope",
+    "common_manifest",
+    "compatibility_checks",
+    "exact_replay",
+    "local_transfer_premise",
+    "foundational_strength",
+    "gate_disposition",
+    "provenance",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate",
+    "independent_checker"
+  ],
+  "properties": {
+    "schema": {"const": "strict-386-common-endpoint-sdr-binding-v1"},
+    "result_id": {"const": "STRICT_386_COMMON_ENDPOINT_SDR_BINDING_V1"},
+    "result_kind": {"const": "CLASSICAL_IMPORT_COMMON_LOCAL_ENDPOINT_SDR_BINDING"},
+    "result_state": {"const": "M3L_COMMON_ENDPOINT_SDR_BOUND_M3R_AND_GATE_A_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "common_manifest": {
+      "type": "object",
+      "required": ["manifest_id", "coordinate_presentation", "carrier_rows", "endpoint_rows", "contracted_rows", "artifact_pins", "object_hashes", "sha256"],
+      "properties": {
+        "manifest_id": {"const": "STRICT_386_LOCAL_ENDPOINT_NONLINEAR_COMMON_MANIFEST_V1"},
+        "coordinate_presentation": {"const": "UNSHIFTED_CURVATURE_GRAPH_WITH_EXACT_SPLIT_SOURCE_DAGS"},
+        "carrier_rows": {"const": 386},
+        "endpoint_rows": {"const": 30},
+        "contracted_rows": {"const": 356},
+        "artifact_pins": {
+          "type": "array",
+          "minItems": 10,
+          "maxItems": 10,
+          "items": {
+            "type": "object",
+            "required": ["path", "result_or_artifact_id", "sha256", "role"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "result_or_artifact_id": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+              "role": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "object_hashes": {
+          "type": "object",
+          "minProperties": 17,
+          "maxProperties": 17,
+          "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        },
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "compatibility_checks": {
+      "type": "object",
+      "minProperties": 15,
+      "maxProperties": 15,
+      "additionalProperties": {"const": true}
+    },
+    "exact_replay": {
+      "type": "object",
+      "required": ["compatibility_links_checked", "compatibility_defects", "qH_plus_Hq_defects", "p_i_identity_defects", "i_p_projector_defects", "normalized_side_condition_defects", "endpoint_SDR_cyclicity_defects", "transported_suspension_PBW_reduced_cyclicity_defects", "D_q1_commutator_defects", "graph_q1_q2_defects", "graph_q2_cyclicity_defects", "graph_D_q2_derivation_defects", "graph_arity_three_defects", "graph_q3_cyclicity_defects_mod_d", "graph_D_q3_derivation_defects"],
+      "properties": {
+        "compatibility_links_checked": {"const": 15}
+      },
+      "patternProperties": {
+        ".*_defects$": {"const": 0}
+      }
+    },
+    "gate_disposition": {
+      "type": "object",
+      "required": ["M3L_COMMON_ENDPOINT_SDR_BINDING", "M3R_TYPED_RESIDUAL_COMPARISON", "M4_FULL_CYCLIC_PAIRING", "M1_COMMON_STRICT_SNAPSHOT", "top_level_gate_a_hashes_accepted_by_this_result", "classical_import_gate_a_status"],
+      "properties": {
+        "M3L_COMMON_ENDPOINT_SDR_BINDING": {"const": "COMPLETE"},
+        "M3R_TYPED_RESIDUAL_COMPARISON": {"const": "OPEN"},
+        "M4_FULL_CYCLIC_PAIRING": {"const": "OPEN"},
+        "M1_COMMON_STRICT_SNAPSHOT": {"const": "OPEN"},
+        "top_level_gate_a_hashes_accepted_by_this_result": {"const": 0},
+        "classical_import_gate_a_status": {"const": "FAIL_CLOSED"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["STRICT_386_COMMON_ENDPOINT_SDR_MANIFEST_BOUND", "STRICT_386_COMMON_ENDPOINT_SDR_IDENTITIES_REPLAYED", "STRICT_386_Q1_D_Q2_Q3_SAME_LOCAL_CARRIER", "STRICT_386_GRAPH_ENDPOINT_SDR_SUPPORT_LOCAL", "M3L_COMMON_ENDPOINT_SDR_BOUND", "M3R_TYPED_RESIDUAL_COMPARISON_CONSTRUCTED", "FULL_RESIDUAL_CYCLIC_PAIRING_CERTIFIED", "NEW_GATE_A_TOP_LEVEL_HASH_ACCEPTED", "CLASSICAL_IMPORT_GATE_PASSED", "LORENTZIAN_Q2_Q3_GREEN_COMPATIBILITY_CERTIFIED", "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED", "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED"],
+      "properties": {
+        "STRICT_386_COMMON_ENDPOINT_SDR_MANIFEST_BOUND": {"const": true},
+        "STRICT_386_COMMON_ENDPOINT_SDR_IDENTITIES_REPLAYED": {"const": true},
+        "STRICT_386_Q1_D_Q2_Q3_SAME_LOCAL_CARRIER": {"const": true},
+        "STRICT_386_GRAPH_ENDPOINT_SDR_SUPPORT_LOCAL": {"const": true},
+        "M3L_COMMON_ENDPOINT_SDR_BOUND": {"const": true},
+        "M3R_TYPED_RESIDUAL_COMPARISON_CONSTRUCTED": {"const": false},
+        "FULL_RESIDUAL_CYCLIC_PAIRING_CERTIFIED": {"const": false},
+        "NEW_GATE_A_TOP_LEVEL_HASH_ACCEPTED": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "LORENTZIAN_Q2_Q3_GREEN_COMPATIBILITY_CERTIFIED": {"const": false},
+        "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": {"const": false}
+      }
+    },
+    "provenance": {"type": "object", "required": ["inputs"]},
+    "does_not_establish": {"type": "array", "minItems": 7},
+    "next_gate": {"type": "string", "minLength": 1},
+    "independent_checker": {
+      "type": "object",
+      "required": ["path", "checks", "expected_digest"],
+      "properties": {
+        "expected_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

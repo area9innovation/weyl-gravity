@@ -1,0 +1,106 @@
+{
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_M3L_COMMON_BINDING_V1_TIER_RECEIPT",
+  "result_ids": [
+    "STRICT_386_COMMON_ENDPOINT_SDR_BINDING_V1",
+    "CLASSICAL_IMPORT_GATE_V19_RECONCILIATION",
+    "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V37",
+    "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2"
+  ],
+  "created": "2026-08-16",
+  "repository_base_commit": "669895e3a9f75681f36de94f73a9b3b6039af8d7",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Bind the exact support-local 386-to-30 graph endpoint SDR to the already certified strict q1, q2, q3, D, pairing, suspension and represented Green-name objects; independently replay the projected identities; remove M3L from the fail-closed classical import ledger; and project the result through Gate V19, completion Atlas V37, the existing static explorer and Paper 21 without conflating the separately typed M3R spectral comparison or promoting a Lorentzian quantum lifecycle state.",
+  "artifact_sha256": {
+    "quantum-weyl/classical_import/certificates/STRICT_386_COMMON_ENDPOINT_SDR_BINDING_V1.json": "f61855e6693120f8c93109fadd0415a8b3369c3ea55caaa7fe0035e913d89b73",
+    "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V19_RECONCILIATION.json": "3e00c7f65061f311e5a97c14717ea081fe540a46225d75c42771468ce7c31a3f",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V37.json": "82c8cddf5e8d5df483c9375bf9ca6117a4a1aafc22c8378f9b8850a4b104afc7",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "28841ce5d37b07d75d0e51a119347b8bd8da0a1fd023ce6a6c38b76e781621ba",
+    "foundations/site/data.json": "3130361d84cacfc34c73897e590975e56c9ea102285f4300cfd73cd6c21e5c20",
+    "paper/21-reverse-foundations-of-physics-appendices.tex": "d59c67aa719aedd31f7d59b740909e85bf450436a20d5ea1635e1a0f2dc280d1",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "e85e96c42ac6e1d1caa666ae355b2393646b5eef3ab1191f5c5fd091068b5d96",
+    "paper/21-reverse-foundations-of-physics.pdf": "38be48f54d5660d4a59b14708fc8e999a2a61e56ed37c26d5a9a0eeafa751467"
+  },
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3.12 -m py_compile <explicit M3L, Gate V19, Atlas V37, site and Paper 21 Python paths>",
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 -m json.tool <explicit changed and generated JSON paths, including this receipt>",
+          "status": "PASS"
+        },
+        {
+          "command": "git diff --check -- <explicit scoped M3L, Gate V19, Atlas V37, site, Paper 21 and receipt paths>",
+          "status": "PASS"
+        },
+        {
+          "command": "pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (two passes from paper/)",
+          "elapsed_seconds": 3.1,
+          "status": "PASS",
+          "output": "73 pages, 759487 bytes; no fatal error or undefined reference. Existing dense generated tables retain non-fatal underfull-box notices."
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 15.02,
+      "commands": [
+        "python3.12 -m unittest -v quantum-weyl/classical_import/tests/test_strict_386_common_endpoint_sdr_binding.py quantum-weyl/classical_import/tests/test_classical_import_gate_v19_reconciliation.py foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v37.py foundations/tests/test_matrix_site.py",
+        "python3.12 <M3L, Gate V19, Atlas V37, site and Paper 21 producer currentness checks and independent checkers>"
+      ],
+      "checks": {
+        "unit_and_mutation_tests": "27/27 PASS",
+        "m3l_artifact_pins": 10,
+        "m3l_canonical_object_hashes": 17,
+        "m3l_cross_certificate_compatibility_checks": "15/15 PASS",
+        "graph_rows": 386,
+        "local_endpoint_species": 30,
+        "contracted_rows": 356,
+        "classical_exports_receiver_verified_scoped": "17/20",
+        "classical_freeze_checks_receiver_verified_scoped": "9/10",
+        "accepted_top_level_hashes": "1/7",
+        "completion_atlas_cells": 77,
+        "completion_atlas_routes": 9,
+        "site_foundational_cells": 576,
+        "site_migration_pending": 0,
+        "paper_pdf_pages": 73
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 8.3,
+      "command": "Replay the graph q1/SDR, unary-causal snapshot, full D, source q2, source q3 and residual-type independent checkers; then replay all M3L, Gate V19, Atlas V37, site and Paper 21 producer-currentness and independent-verifier rails.",
+      "criterion": "Every transitive source certificate consumed by the common endpoint manifest and every changed downstream representation replayed successfully. Category firewalls for support-local, REDUCED-MODE and Lorentzian-causal objects remained explicit."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze/tag, shared core algebra change, release preparation, QME lifecycle promotion or LORENTZIAN_CERTIFIED result occurred. Gate A remains FAIL_CLOSED, so a repository-wide Tier-3 run is not applicable."
+    }
+  },
+  "advisory_science_forge_shadow": {
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": 8.65,
+    "exit_status": 0,
+    "toolchain": "INFO: unpinned dirty development Forge build whose embedded revision differs from the current Forge stdlib checkout",
+    "bridge_audit": "FAIL_CLOSED: the external bp2transformer bridge verifier cannot import sympy in its selected environment",
+    "coverage_census": "DRIFT: 1903 certificates versus the 2026-07-19 baseline of 976",
+    "disposition": "The rail is advisory. Its findings are recorded without treating the failed external bridge audit or stale corpus baseline as evidence for this scoped result."
+  },
+  "scientific_result": {
+    "m3l": "COMPLETE_IN_LOCAL_ENDPOINT_SCOPE",
+    "m3r": "OPEN_REDUCED_MODE_COMPARISON",
+    "m4": "OPEN_FULL_CYCLIC_PAIRING",
+    "m1": "OPEN_COMMON_STRICT_SNAPSHOT",
+    "classical_import_gate_a": "FAIL_CLOSED",
+    "highest_value_next_route": "STRICT_FULL_CYCLIC_PAIRING"
+  },
+  "claim_boundary": "The exact local endpoint SDR, q1, q2, q3, D, pairing, suspension and represented Green names now share one scoped content-addressed carrier manifest, and all projected local identities replay. This does not identify the local endpoint complex with the W+/W- harmonic residual complex, construct the typed nonlocal M3R comparison, close full residual cyclicity, bind the final M1 snapshot, accept six missing Gate-A hashes, construct a full Lorentzian off-shell BV propagator or Hadamard state, define renormalized Lorentzian products, restore the QME, authorize residual quantum transfer, establish physical positivity, or certify a Lorentzian quantum theory."
+}
