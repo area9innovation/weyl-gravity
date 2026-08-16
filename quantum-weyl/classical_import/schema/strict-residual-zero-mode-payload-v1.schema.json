@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-residual-zero-mode-payload-v1.schema.json",
+  "title": "Strict pure-Weyl residual zero-mode payload v1",
+  "type": "object",
+  "required": [
+    "$schema", "schema", "schema_path", "result_id", "result_kind",
+    "result_state", "lifecycle", "created", "repository_base_commit",
+    "dependency_tags", "scope", "zero_mode_basis",
+    "so42_structure_constants", "residual_representation",
+    "residual_differential_q_res_0", "canonical_hashes",
+    "residual_snapshot", "exact_replay", "foundational_strength",
+    "gate_disposition", "claim_flags", "provenance", "does_not_establish",
+    "next_gate", "independent_checker", "human_report"
+  ],
+  "properties": {
+    "$schema": {"const": "../schema/strict-residual-zero-mode-payload-v1.schema.json"},
+    "schema": {"const": "strict-residual-zero-mode-payload-v1"},
+    "result_id": {"const": "STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1"},
+    "result_kind": {"const": "EXACT_RESIDUAL_CLASSICAL_PAYLOAD"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "scope": {
+      "type": "object",
+      "required": ["primal_dimension", "dual_dimension", "residual_cotangent_dimension", "coefficient_field"],
+      "properties": {
+        "primal_dimension": {"const": 15},
+        "dual_dimension": {"const": 15},
+        "residual_cotangent_dimension": {"const": 30},
+        "coefficient_field": {"const": "Q"}
+      }
+    },
+    "canonical_hashes": {
+      "type": "object",
+      "required": ["zero_mode_basis_sha256", "structure_constants_sha256", "representation_matrices_sha256", "q_res_0_sha256"],
+      "additionalProperties": {"$ref": "#/$defs/sha256"}
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "STRICT_PRIMAL_FIFTEEN_MODE_BASIS_SERIALIZED",
+        "STRICT_DUAL_FIFTEEN_MODE_BASIS_SERIALIZED",
+        "STRICT_SO42_STRUCTURE_CONSTANTS_SERIALIZED",
+        "STRICT_RESIDUAL_REPRESENTATION_MATRICES_SERIALIZED",
+        "STRICT_Q_RES_0_SERIALIZED",
+        "STRICT_RESIDUAL_ZERO_MODE_IDENTITIES_REPLAYED",
+        "M5_RESIDUAL_EXACT_PAYLOAD_COMPLETE", "COMMON_GATE_A_FREEZE_BOUND",
+        "CLASSICAL_IMPORT_GATE_PASSED", "HADAMARD_STATE_CONSTRUCTED",
+        "QME_RESTORED", "LORENTZIAN_QUANTUM_THEORY"
+      ],
+      "properties": {
+        "STRICT_PRIMAL_FIFTEEN_MODE_BASIS_SERIALIZED": {"const": true},
+        "STRICT_DUAL_FIFTEEN_MODE_BASIS_SERIALIZED": {"const": true},
+        "STRICT_SO42_STRUCTURE_CONSTANTS_SERIALIZED": {"const": true},
+        "STRICT_RESIDUAL_REPRESENTATION_MATRICES_SERIALIZED": {"const": true},
+        "STRICT_Q_RES_0_SERIALIZED": {"const": true},
+        "STRICT_RESIDUAL_ZERO_MODE_IDENTITIES_REPLAYED": {"const": true},
+        "M5_RESIDUAL_EXACT_PAYLOAD_COMPLETE": {"const": true},
+        "COMMON_GATE_A_FREEZE_BOUND": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "LORENTZIAN_QUANTUM_THEORY": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "provenance": {
+      "type": "object",
+      "required": ["inputs"],
+      "properties": {
+        "inputs": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/provenance"}}
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "provenance": {
+      "type": "object",
+      "required": ["path", "sha256", "role"],
+      "properties": {
+        "path": {"type": "string", "minLength": 3},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "role": {"type": "string", "minLength": 8}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

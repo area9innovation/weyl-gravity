@@ -39,7 +39,7 @@ eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
-Atlas V33 preserves the field-equation type result.  The degree-one-to-zero
+Atlas V34 preserves the field-equation type result.  The degree-one-to-zero
 Green component is an exact right inverse on Noether-compatible sources and a
 left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
 the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
@@ -97,9 +97,17 @@ stationary D/q2 defect counts are all zero.  The exact auxiliary quartic mass
 then supplies 321 independent monomials, 912 ordered fourth variations and
 5,952 paired q3 coefficients.  Together with minimal Bach q3 these exhaust the
 two source families; arity three, cyclicity modulo horizontal boundary and
-stationary D/q3 have zero split/graph defects.  Gate V15 retains the accepted
-q2 hash and closes M2, while remaining fail closed because six other hashes and
-the final common cyclic contraction remain open.
+stationary D/q3 have zero split/graph defects.  The exact residual export now
+serializes fifteen primal and fifteen normalized dual zero modes, all 120
+nonzero SO(4,2) structure coefficients, fifteen adjoint/coadjoint/cotangent
+representation matrices, and the zero 30-by-30 unary residual differential.
+Its independent receiver replays the basis, projectors, pairing, Jacobi,
+unimodularity, representation, coadjoint and nilpotency identities without a
+defect.  Gate V16 therefore closes the coefficient-level M5 package and retains
+the accepted q2 hash.  It remains fail closed because the new zero-mode hash is
+not yet bound to the common snapshot: six of seven top-level hashes, the common
+residual SDR, the full cyclic pairing, centered H3/H4/H5 representatives and the
+final common contraction remain open.
 The complete Berger q3 remains a different-theory Weyl-plus-clock result on a fixed
 54-row carrier; no certified same-theory cyclic map authorizes its direct import.
 
@@ -220,7 +228,9 @@ This site does not establish:
 - composition beyond the two certified scoped cross-cell interfaces
 - precision sampler equivalence, continuum reconstruction, or empirical support from the BT finite lattice
 - a complete observationally validated theory
-- the complete twenty-export, seven-hash classical Gate A from the linked source-q2/q3 snapshots
+- the complete twenty-export, seven-hash classical Gate A from the linked source-q2/q3 snapshots and the unbound residual zero-mode payload
+- a common-snapshot zero-mode hash from the portable residual coefficient package
+- centered H3/H4/H5 representative vectors, a common support-local residual SDR, or the final full cyclic contraction
 - q2/q3 compatibility with an advanced or retarded Green homotopy
 - that the exact stabilized-q3 candidate is the authoritative nonminimal pure-Weyl BV interaction
 - general lambda-squared causal source closure from the candidate q3 stabilization

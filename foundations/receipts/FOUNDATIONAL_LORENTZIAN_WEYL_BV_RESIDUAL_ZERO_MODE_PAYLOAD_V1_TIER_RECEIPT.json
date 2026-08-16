@@ -1,0 +1,161 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_RESIDUAL_ZERO_MODE_PAYLOAD_V1_TIER_RECEIPT",
+  "result_id": "STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1",
+  "created": "2026-08-16",
+  "source_base_commit": "389cccc029a73c4a5ae82851583b32b864054a75",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "scope": "Export and independently replay the exact strict residual zero-mode basis, normalized dual basis, SO(4,2) tensor, residual representation matrices and q_res^(0); reconcile Gate V16 without accepting an unbound hash; project the result into completion Atlas V34, the static explorer and Paper 21.",
+  "inputs": [
+    {
+      "path": "quantum-weyl/classical_import/certificates/STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1.json",
+      "sha256": "85a889aca3b2dcdcae06a0cbd99107401c2ec66461fbdf0f2c20bc26bda1b61f",
+      "role": "portable exact residual coefficient payload"
+    },
+    {
+      "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V16_RECONCILIATION.json",
+      "sha256": "f379f1e4d6703c59261b0988317824737d7ac1d1cc3b1eaf89a759ef23a535b8",
+      "role": "fail-closed receiver reconciliation"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V34.json",
+      "sha256": "1aae2e7cb2b7953e58c0fae9edf35f136cb72a9f19b733b10e06d7f3a56bb7cc",
+      "role": "foundational route projection"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "foundations/site/data.json",
+      "sha256": "30becb756ffdbd4d249f4530dd30591174dcae7c85b1a5ebb96f28414fcc9d9b"
+    },
+    {
+      "path": "foundations/site/manifest.json",
+      "sha256": "e2e320ed32b62f306b0d99de340fb0c6f427c1375d50fe031693564ab23b578c"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
+      "sha256": "7e09c5f60e9b3a5226f10edadd56dd13c5ec73971f4fee3d8b4b2aca1ac62d6f"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.tex",
+      "sha256": "a968907b613eacd2f944621ddcd790b9c6e78e96c9bf5222d44624b872cc1d67"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
+      "sha256": "aa781a7ed6dd750d255d65629d6ddfa36a48dc56a6ba59c5620fd061305506f9"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-claim-map.json",
+      "sha256": "61d3d13e8da3d86d31fa66b267275a40b5d747c278d16706997da24bed747375"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.pdf",
+      "sha256": "03074e539284d7cc2e45fee2fa534fdaf66988c360da641a950fefba0fb904d0"
+    }
+  ],
+  "exact_result": {
+    "primal_modes": 15,
+    "normalized_dual_modes": 15,
+    "residual_cotangent_dimension": 30,
+    "so42_nonzero_structure_coefficients": 120,
+    "representation_matrices": 15,
+    "q_res_0_nonzero_entries": 0,
+    "declared_identity_defects": 0,
+    "gate_v16_receiver_verified_exports": 15,
+    "gate_v16_total_exports": 20,
+    "gate_v16_receiver_verified_freeze_checks": 9,
+    "gate_v16_total_freeze_checks": 10,
+    "accepted_common_snapshot_hashes": 1,
+    "remaining_common_snapshot_packages": 4
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3.12 -m py_compile <seventeen scoped Python producers/checkers/verifiers/tests>",
+          "status": "PASS"
+        },
+        {
+          "command": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3.12 -m json.tool <five changed machine-readable certificates/results/receipt>",
+          "status": "PASS"
+        },
+        {
+          "command": "pdflatex -interaction=nonstopmode -halt-on-error paper/21-reverse-foundations-of-physics.tex",
+          "elapsed_seconds": 3.42,
+          "status": "PASS",
+          "output": "72 pages; no fatal error, undefined citation/reference, or overfull box on the final pass. Existing generated longtable underfull notices remain non-fatal."
+        },
+        {
+          "command": "git diff --check -- <scoped residual, Gate V16, Atlas V34, site, paper and receipt paths>",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3.12 residual builder --check; independent residual checker; six residual unit tests",
+          "elapsed_seconds": 52.66,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Gate V16 builder/checker/five tests; Atlas V34 builder/checker/schema verifier/four tests",
+          "elapsed_seconds": 13.50,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 static-site builder/checker/verifier/ten tests",
+          "elapsed_seconds": 8.33,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Paper 21 appendix check, claim-map check and independent claim-map verifier; pdflatex final pass and log audit",
+          "elapsed_seconds": 3.42,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The changed exact residual payload is consumed transitively by Gate V16, Atlas V34, the content-addressed static explorer, and Paper 21. Each producer/currentness check and each independent receiver/verifier in that affected chain passed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze/tag, QME lifecycle promotion, shared core algebra change, or release preparation occurred. Gate A remains FAIL_CLOSED and no LORENTZIAN_CERTIFIED claim is promoted."
+    }
+  },
+  "environment": {
+    "exact_python": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3.12",
+    "exact_python_sympy": "1.14",
+    "system_python_note": "/usr/bin/python3 is Python 3.14 without the repository's SymPy dependency; the exact rails were therefore run with the provisioned Python 3.12.13 environment."
+  },
+  "advisory": {
+    "kind": "ADVISORY_FINDING",
+    "certifying": false,
+    "command": "/home/alstrup/area9/tango/forge/tools/science-forge/paper_prose_advisory.sh paper/21-reverse-foundations-of-physics.tex",
+    "result": "Emphasis, em-dash, sentence-length, novelty and vocabulary rails are within advisory budgets. Parenthetical density and abstract length remain above the non-gating budgets; the abstract contains one numeric group."
+  },
+  "claim_flags": {
+    "residual_zero_mode_coefficients_portable": true,
+    "residual_zero_mode_identities_independently_replayed": true,
+    "m5_residual_exact_payload_complete": true,
+    "zero_mode_hash_bound_to_common_gate_snapshot": false,
+    "classical_import_gate_a_passed": false,
+    "full_complex_hadamard_state_constructed": false,
+    "qme_restored": false,
+    "residual_quantum_transfer_authorized": false
+  },
+  "does_not_establish": [
+    "a support-local residual SDR on the complete common field carrier",
+    "a full cyclic pairing and final contraction on common bytes",
+    "exact centered H3, H4 and H5 representative vectors",
+    "acceptance of the candidate zero-mode hash by Gate A",
+    "a complete Lorentzian off-shell BV propagator or BRST-compatible Hadamard state",
+    "renormalized Lorentzian products, QME restoration, or residual quantum transfer"
+  ]
+}

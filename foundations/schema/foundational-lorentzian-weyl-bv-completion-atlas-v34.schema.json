@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/foundational-lorentzian-weyl-bv-completion-atlas-v34.schema.json",
+  "type": "object",
+  "required": ["schema_version", "result_id", "lifecycle", "dependency_tags", "stages", "branches", "frontier_summary", "classical_import_reconciliation", "strict_gate_v16_reconciliation", "strict_source_q2_common_assembly", "strict_source_q3_common_assembly", "strict_residual_zero_mode_payload", "route_selection", "research_queue", "claim_flags", "provenance", "independent_checker"],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v34"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V34"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"contains": {"const": "LORENTZIAN-CAUSAL"}},
+    "stages": {"type": "array", "minItems": 11, "maxItems": 11},
+    "branches": {"type": "array", "minItems": 7, "maxItems": 7},
+    "route_selection": {"type": "array", "minItems": 10, "maxItems": 10},
+    "research_queue": {"type": "array", "minItems": 10, "maxItems": 10},
+    "strict_residual_zero_mode_payload": {
+      "type": "object",
+      "required": ["primal_modes", "dual_modes", "residual_cotangent_dimension", "structure_nonzero_entries", "representation_matrices", "identity_defects", "M5_payload_complete", "common_freeze_bound"],
+      "properties": {
+        "primal_modes": {"const": 15}, "dual_modes": {"const": 15},
+        "residual_cotangent_dimension": {"const": 30},
+        "structure_nonzero_entries": {"const": 120},
+        "representation_matrices": {"const": 15}, "identity_defects": {"const": 0},
+        "M5_payload_complete": {"const": true}, "common_freeze_bound": {"const": false}
+      }
+    },
+    "strict_gate_v16_reconciliation": {
+      "type": "object",
+      "required": ["gate_a_status", "accepted_top_level_hashes", "remaining_top_level_hashes", "minimal_missing_bundle", "M5_payload_complete", "zero_mode_hash_common_bound"],
+      "properties": {
+        "gate_a_status": {"const": "FAIL_CLOSED"},
+        "accepted_top_level_hashes": {"const": 1}, "remaining_top_level_hashes": {"const": 6},
+        "minimal_missing_bundle": {"type": "array", "minItems": 4, "maxItems": 4},
+        "M5_payload_complete": {"const": true}, "zero_mode_hash_common_bound": {"const": false}
+      }
+    },
+    "independent_checker": {"type": "object", "required": ["path", "checks", "expected_digest"]}
+  }
+}
