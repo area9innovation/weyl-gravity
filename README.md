@@ -234,6 +234,7 @@ default and reports drift rather than silently certifying the entire corpus.
 | --- | --- |
 | `paper/` | Manuscripts, supplements, public introductions, and PDFs |
 | `symbolic/`, `numeric/`, `lean/` | Exact algebra, validated/numerical checks, and Lean formalization |
+| `physlib-demo/` | Content-pinned Physlib bridge from a Forge certificate to a kernel-checked implication |
 | `black_hole_programme/` | Schwarzschild operators, endpoint analysis, QNMs, thermodynamics, and certificates |
 | `covariant_completion/`, `analytic_completion/` | Causal and functional-analytic completion work |
 | `d_quotient_classical/`, `d_quotient_programme/` | Compact reduction, clocks, charges, and cross-programme imports |
@@ -269,8 +270,12 @@ python3 symbolic/verify_gravity_paper6.py --quick
 # Advisory corpus audit; findings are not a pass
 bash ci/science-forge-shadow.sh
 
-# Lean formalization
+# Existing Pais--Uhlenbeck Lean formalization (Lean/Mathlib 4.32)
 ( cd lean && lake exe cache get && lake build )
+
+# Physlib bridge pilot (separate dependency graph, also Lean 4.32)
+( cd physlib-demo && lake update && lake exe cache get && lake build )
+python3 physlib-demo/check_bridge.py --run-lean
 ```
 
 The exhaustive suite is intentionally not a per-commit test. Changes to a

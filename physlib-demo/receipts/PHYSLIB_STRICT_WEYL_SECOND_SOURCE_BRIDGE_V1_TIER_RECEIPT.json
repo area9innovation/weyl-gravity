@@ -1,0 +1,72 @@
+{
+  "receipt_id": "PHYSLIB_STRICT_WEYL_SECOND_SOURCE_BRIDGE_V1_TIER_RECEIPT",
+  "result_id": "PHYSLIB_STRICT_WEYL_SECOND_SOURCE_BRIDGE_V1",
+  "recorded_at": "2026-08-16",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "environment": {
+    "lean": "4.32.0",
+    "lake": "5.0.0-src+8c9756b",
+    "physlib_commit": "ba2a946586c7de1ff394607afd1dd7fe8539a364",
+    "mathlib_commit": "81a5d257c8e410db227a6665ed08f64fea08e997"
+  },
+  "commands": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile physlib-demo/check_bridge.py physlib-demo/tests/test_bridge.py && jq empty physlib-demo/certificates/PHYSLIB_STRICT_WEYL_SECOND_SOURCE_BRIDGE_V1.json physlib-demo/lake-manifest.json lean/lake-manifest.json",
+      "elapsed_seconds": 0.01,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "cd lean && PATH=/home/alstrup/.elan/bin:$PATH lake build",
+      "elapsed_seconds": 161.23,
+      "status": "PASS",
+      "notes": "Existing Pais-Uhlenbeck library passed after the Lean/Mathlib 4.32 upgrade; two non-failing unused-tactic/simp-argument warnings remain."
+    },
+    {
+      "tier": 1,
+      "command": "cd physlib-demo && PATH=/home/alstrup/.elan/bin:$PATH lake build",
+      "elapsed_seconds": 3.39,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PATH=/home/alstrup/.elan/bin:$PATH python3 physlib-demo/check_bridge.py --run-lean",
+      "elapsed_seconds": 3.40,
+      "status": "PASS",
+      "notes": "Replayed both theorems and observed the declared axiom footprint."
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest discover -s physlib-demo/tests -v",
+      "elapsed_seconds": 0.07,
+      "status": "PASS",
+      "tests": 5
+    }
+  ],
+  "diagnostic_attempts": [
+    {
+      "command": "cd physlib-demo && PATH=/home/alstrup/.elan/bin:$PATH lake build",
+      "elapsed_seconds": 148.35,
+      "status": "INTERRUPTED_NOT_A_PASS",
+      "reason": "The initial broad Mathlib import caused an unnecessary all-module build; it was interrupted and replaced by scoped imports before the passing replay."
+    }
+  ],
+  "affected_chain": {
+    "status": "PASS_BY_CONTENT_ADDRESS_AND_SCOPED_REPLAY",
+    "source_certificate_sha256": "2f3dd4b5ca58c53a1676b1a46ff31991d281359d0988fce4acfd53147c863445",
+    "reason": "The authoritative Forge source certificate was unchanged; the checker verified its content hash. Reproduction of its producer would not be independent verification."
+  },
+  "higher_tiers": {
+    "tier_3": "NOT_RUN",
+    "criterion": "No freeze, lifecycle promotion, shared algebra change, release preparation, or request for the exhaustive repository suite."
+  },
+  "claim_flags": {
+    "SCOPED_TESTS_PASS": true,
+    "LEAN_4_32_UPGRADE_PASS": true,
+    "PHYSLIB_BRIDGE_PASS": true,
+    "FULL_REPOSITORY_SUITE_PASS": false
+  }
+}

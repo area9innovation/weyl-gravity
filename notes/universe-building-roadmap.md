@@ -37,6 +37,17 @@ restored Lorentzian QME, or residual quantum transfer.  The next broad goal is
 to decide physical-cohomology positivity and, independently, build the first
 renormalized time-ordered products before attempting local QME restoration.
 
+A first Lean/Physlib pilot now checks the final algebraic implication in the
+second-source certificate on Lean 4.32.  It proves that the declared reduction
+and arity-three identities imply `q1(S2)=0`; it imports, rather than
+reconstructs, the geometric and causal premises.  The machine-readable result
+`PHYSLIB_STRICT_WEYL_SECOND_SOURCE_BRIDGE_V1` therefore carries only the
+`LOCAL-ALGEBRAIC` tag.  This establishes the intended Forge-to-kernel
+interface, not a formalized Green, support, Hadamard, positivity, or quantum
+theorem.  The next formalization target should be one authoritative finite
+`q2/q3` identity with its exact carrier types, before any analytic layer is
+moved into Lean.
+
 ## Planning authority and document roles
 
 This file is the single authority for forward-looking programme sequencing.

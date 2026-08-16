@@ -1,0 +1,62 @@
+{
+  "result_id": "PHYSLIB_STRICT_WEYL_SECOND_SOURCE_BRIDGE_V1",
+  "schema_version": "1.0.0",
+  "result_kind": "LEAN_KERNEL_BRIDGE",
+  "generated_at": "2026-08-16",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "toolchain": {
+    "lean": "leanprover/lean4:v4.32.0",
+    "physlib_commit": "ba2a946586c7de1ff394607afd1dd7fe8539a364",
+    "mathlib_commit": "81a5d257c8e410db227a6665ed08f64fea08e997"
+  },
+  "formal_claims": [
+    {
+      "theorem": "WeylPhyslibBridge.StrictWeyl.rationalCoefficientCancellation",
+      "establishes": "The exact rational identity 1/2 + (1/6)(-3) = 0."
+    },
+    {
+      "theorem": "WeylPhyslibBridge.StrictWeyl.secondNonlinearSourceClosed",
+      "establishes": "For any rational module, the declared reduction identity and arity-three identity imply q1(S2)=0."
+    }
+  ],
+  "axiom_footprint": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "provenance": {
+    "lean_source": {
+      "path": "physlib-demo/WeylPhyslibBridge/StrictWeylSecondSource.lean",
+      "sha256": "bac74fb79c9ab02f143b72690a39b01f011289bf2c0ed24a6f095af3c11084b1"
+    },
+    "forge_source_certificate": {
+      "path": "quantum-weyl/classical_import/certificates/STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1.json",
+      "artifact_id": "STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1",
+      "sha256": "2f3dd4b5ca58c53a1676b1a46ff31991d281359d0988fce4acfd53147c863445"
+    }
+  },
+  "claim_flags": {
+    "LEAN_KERNEL_PROOF_COMPILES": true,
+    "RATIONAL_COEFFICIENT_CANCELLATION_FORMALIZED": true,
+    "SECOND_SOURCE_CLOSURE_IMPLICATION_FORMALIZED": true,
+    "SOURCE_Q2_Q3_IDENTITIES_FORMALIZED": false,
+    "GREEN_HOMOTOPY_FORMALIZED": false,
+    "CAUSAL_SUPPORT_FORMALIZED": false,
+    "HADAMARD_FORMALIZED": false,
+    "PHYSICAL_POSITIVITY_FORMALIZED": false,
+    "LORENTZIAN_QUANTUM_THEORY": false
+  },
+  "does_not_establish": [
+    "the source q2 and q3 identities",
+    "a Green homotopy or causal-support theorem",
+    "a Hadamard state",
+    "physical positivity or unitarity",
+    "a Lorentzian quantum-master-equation theorem"
+  ],
+  "independent_checker": {
+    "command": "python3 physlib-demo/check_bridge.py --run-lean",
+    "certificate_digest_sha256": "f6ab76c47c209466b77d285a0b4ff8325eab99fa0831774dd42852ec8880515d"
+  }
+}
