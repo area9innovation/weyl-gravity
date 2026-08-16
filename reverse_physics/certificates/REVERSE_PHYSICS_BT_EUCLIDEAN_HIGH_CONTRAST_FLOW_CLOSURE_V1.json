@@ -1,0 +1,1592 @@
+{
+  "actual_gibbs_corollary": {
+    "edge_count": "4*N",
+    "high_contrast_threshold": "3*q^2*N*(N-1)=192*N*(N-1)",
+    "imported_edge_moment": "E exp(2*|psi_y-psi_x|)<=16176/25 for every undirected nearest-neighbor edge",
+    "scope": "periodic four-dimensional L^4 BT lattice at lambda=2/5, L>=4, q=8, N=L^4",
+    "typical_sector": "outside this event W<192*N*(N-1), so the edge-ratio hierarchy spans only O(log N) multiplicative decades",
+    "union_markov_bound": "mu(W>=192*N*(N-1))<=337/[4800*N*(N-1)^2]",
+    "volume_order": "O(N^-3)=O(L^-12), hence the sequence of one-volume tail bounds is summable"
+  },
+  "answer": "No. For every connected q-regular N-vertex graph, orient each unequal edge from low to high field and let W be the largest edge ratio. The exact canonical current splits into W^2 times an acyclic positive flow plus an error whose divergence norm is at most 3*q^2*W*sqrt(N). Flow transport then proves that W>=3*q^2*N*(N-1) forces ||grad A||^2/||r||^2>=9*q^2, which is stronger than omega_G^2. On the actual lambda=2/5 four-torus Gibbs law, the probability of this sector is at most 337/[4800*N*(N-1)^2]. Thus a collapsing sequence must remain in the polynomial-contrast sector and exploit correlated moderate scales or the full Witten operator.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_HIGH_CONTRAST_FLOW_CLOSURE_V1",
+  "checks": {
+    "details": {
+      "actual_gibbs_tail_is_summable_in_volume": true,
+      "all_fixture_identities_and_bounds_pass": true,
+      "moderate_contrast_multiscale_sector_remains_open": true,
+      "no_witten_h_minus_one_or_reconstruction_promotion": true,
+      "spectral_comparison_uses_omega_at_most_2q": true,
+      "three_exact_finite_amplitude_fixtures": true,
+      "threshold_quotient_floor_is_9q2": true,
+      "torus_tail_constant_reduces_exactly": true,
+      "universal_threshold_is_3q2N_Nminus1": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 9,
+    "total": 9
+  },
+  "created": "2026-08-16",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "a lower bound for the complete finite-amplitude quotient in the polynomial-contrast sector",
+    "exclusion of O(log N) correlated edge-ratio bands",
+    "a Poincare inequality or full Witten one-form estimate",
+    "boundedness or divergence of the actual interacting H^-1 moment",
+    "tightness or a continuum Euclidean measure",
+    "a continuum Osterwalder-Schrader theorem",
+    "a Born rule or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_fixtures": [
+    {
+      "bounded_remainder": [
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 2,
+          "numerator": -3
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 2,
+          "numerator": -3
+        }
+      ],
+      "checks": {
+        "acyclic_transport_bound": true,
+        "current_divergence_is_gradient": true,
+        "divergence_error_bound": true,
+        "edge_error_bound": true,
+        "flow_mass_at_least_one": true,
+        "flow_mass_identity": true,
+        "gradient_conservation": true,
+        "gradient_decomposition": true,
+        "h_interval": true,
+        "maximum_edge_gives_unit_normalized_ratio": true,
+        "residual_decomposition": true
+      },
+      "degree": 2,
+      "edges": [
+        {
+          "current": {
+            "denominator": 4,
+            "numerator": 15
+          },
+          "equal_edge": false,
+          "error_current": {
+            "denominator": 4,
+            "numerator": -17
+          },
+          "head": 1,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 8
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "tail": 0
+        },
+        {
+          "current": {
+            "denominator": 4,
+            "numerator": 15
+          },
+          "equal_edge": false,
+          "error_current": {
+            "denominator": 4,
+            "numerator": -17
+          },
+          "head": 3,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 8
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "tail": 0
+        },
+        {
+          "current": {
+            "denominator": 2,
+            "numerator": 3
+          },
+          "equal_edge": false,
+          "error_current": {
+            "denominator": 2,
+            "numerator": -5
+          },
+          "head": 2,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "tail": 1
+        },
+        {
+          "current": {
+            "denominator": 2,
+            "numerator": 3
+          },
+          "equal_edge": false,
+          "error_current": {
+            "denominator": 2,
+            "numerator": -5
+          },
+          "head": 2,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "tail": 3
+        }
+      ],
+      "error_divergence": [
+        {
+          "denominator": 2,
+          "numerator": 17
+        },
+        {
+          "denominator": 4,
+          "numerator": -7
+        },
+        {
+          "denominator": 1,
+          "numerator": -5
+        },
+        {
+          "denominator": 4,
+          "numerator": -7
+        }
+      ],
+      "gradient": [
+        {
+          "denominator": 2,
+          "numerator": -15
+        },
+        {
+          "denominator": 4,
+          "numerator": 9
+        },
+        {
+          "denominator": 1,
+          "numerator": 3
+        },
+        {
+          "denominator": 4,
+          "numerator": 9
+        }
+      ],
+      "main_flow_divergence": [
+        {
+          "denominator": 1,
+          "numerator": -4
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ],
+      "maximum_edge_ratio": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "name": "C4_single_band",
+      "neighbors": [
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "normalized_outgoing_mass": [
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ],
+      "norms": {
+        "divergence_l1": {
+          "denominator": 1,
+          "numerator": 8
+        },
+        "divergence_l2_squared": {
+          "denominator": 1,
+          "numerator": 22
+        },
+        "error_divergence_norm_squared": {
+          "denominator": 8,
+          "numerator": 827
+        },
+        "flow_mass": {
+          "denominator": 1,
+          "numerator": 6
+        },
+        "gradient_norm_squared": {
+          "denominator": 8,
+          "numerator": 603
+        },
+        "residual_norm_squared": {
+          "denominator": 2,
+          "numerator": 11
+        }
+      },
+      "omega": [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 4
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        }
+      ],
+      "residual": [
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        }
+      ],
+      "vertex_count": 4
+    },
+    {
+      "bounded_remainder": [
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 2,
+          "numerator": -3
+        },
+        {
+          "denominator": 4,
+          "numerator": -5
+        },
+        {
+          "denominator": 2,
+          "numerator": -3
+        },
+        {
+          "denominator": 2,
+          "numerator": -3
+        }
+      ],
+      "checks": {
+        "acyclic_transport_bound": true,
+        "current_divergence_is_gradient": true,
+        "divergence_error_bound": true,
+        "edge_error_bound": true,
+        "flow_mass_at_least_one": true,
+        "flow_mass_identity": true,
+        "gradient_conservation": true,
+        "gradient_decomposition": true,
+        "h_interval": true,
+        "maximum_edge_gives_unit_normalized_ratio": true,
+        "residual_decomposition": true
+      },
+      "degree": 2,
+      "edges": [
+        {
+          "current": {
+            "denominator": 4,
+            "numerator": 11
+          },
+          "equal_edge": false,
+          "error_current": {
+            "denominator": 4,
+            "numerator": -21
+          },
+          "head": 1,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 8
+          },
+          "normalized_ratio": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "tail": 0
+        },
+        {
+          "current": {
+            "denominator": 4,
+            "numerator": 15
+          },
+          "equal_edge": false,
+          "error_current": {
+            "denominator": 4,
+            "numerator": -17
+          },
+          "head": 4,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 8
+          },
+          "normalized_ratio": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "tail": 0
+        },
+        {
+          "current": {
+            "denominator": 16,
+            "numerator": 165
+          },
+          "equal_edge": false,
+          "error_current": {
+            "denominator": 16,
+            "numerator": -91
+          },
+          "head": 2,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 16
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "tail": 1
+        },
+        {
+          "current": {
+            "denominator": 8,
+            "numerator": 13
+          },
+          "equal_edge": false,
+          "error_current": {
+            "denominator": 8,
+            "numerator": -19
+          },
+          "head": 2,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "normalized_ratio": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "tail": 3
+        },
+        {
+          "current": {
+            "denominator": 4,
+            "numerator": 3
+          },
+          "equal_edge": false,
+          "error_current": {
+            "denominator": 4,
+            "numerator": -13
+          },
+          "head": 3,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "normalized_ratio": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "tail": 4
+        }
+      ],
+      "error_divergence": [
+        {
+          "denominator": 2,
+          "numerator": 19
+        },
+        {
+          "denominator": 16,
+          "numerator": 7
+        },
+        {
+          "denominator": 16,
+          "numerator": -129
+        },
+        {
+          "denominator": 8,
+          "numerator": -7
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        }
+      ],
+      "gradient": [
+        {
+          "denominator": 2,
+          "numerator": -13
+        },
+        {
+          "denominator": 16,
+          "numerator": -121
+        },
+        {
+          "denominator": 16,
+          "numerator": 191
+        },
+        {
+          "denominator": 8,
+          "numerator": -7
+        },
+        {
+          "denominator": 1,
+          "numerator": 3
+        }
+      ],
+      "main_flow_divergence": [
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 2,
+          "numerator": -1
+        },
+        {
+          "denominator": 4,
+          "numerator": 5
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 4,
+          "numerator": 1
+        }
+      ],
+      "maximum_edge_ratio": {
+        "denominator": 1,
+        "numerator": 4
+      },
+      "name": "C5_two_band",
+      "neighbors": [
+        [
+          4,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "normalized_outgoing_mass": [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        }
+      ],
+      "norms": {
+        "divergence_l1": {
+          "denominator": 1,
+          "numerator": 3
+        },
+        "divergence_l2_squared": {
+          "denominator": 8,
+          "numerator": 23
+        },
+        "error_divergence_norm_squared": {
+          "denominator": 128,
+          "numerator": 20123
+        },
+        "flow_mass": {
+          "denominator": 2,
+          "numerator": 5
+        },
+        "gradient_norm_squared": {
+          "denominator": 128,
+          "numerator": 32219
+        },
+        "residual_norm_squared": {
+          "denominator": 16,
+          "numerator": 197
+        }
+      },
+      "omega": [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 8
+        },
+        {
+          "denominator": 1,
+          "numerator": 4
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        }
+      ],
+      "residual": [
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 2,
+          "numerator": 5
+        },
+        {
+          "denominator": 4,
+          "numerator": -5
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        }
+      ],
+      "vertex_count": 5
+    },
+    {
+      "bounded_remainder": [
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        }
+      ],
+      "checks": {
+        "acyclic_transport_bound": true,
+        "current_divergence_is_gradient": true,
+        "divergence_error_bound": true,
+        "edge_error_bound": true,
+        "flow_mass_at_least_one": true,
+        "flow_mass_identity": true,
+        "gradient_conservation": true,
+        "gradient_decomposition": true,
+        "h_interval": true,
+        "maximum_edge_gives_unit_normalized_ratio": true,
+        "residual_decomposition": true
+      },
+      "degree": 4,
+      "edges": [
+        {
+          "current": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "equal_edge": false,
+          "error_current": {
+            "denominator": 1,
+            "numerator": -4
+          },
+          "head": 1,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 8
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "tail": 0
+        },
+        {
+          "current": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "equal_edge": true,
+          "error_current": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "head": 2,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "tail": 0
+        },
+        {
+          "current": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "equal_edge": false,
+          "error_current": {
+            "denominator": 1,
+            "numerator": -4
+          },
+          "head": 3,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 8
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "tail": 0
+        },
+        {
+          "current": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "equal_edge": true,
+          "error_current": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "head": 6,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "tail": 0
+        },
+        {
+          "current": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "equal_edge": false,
+          "error_current": {
+            "denominator": 1,
+            "numerator": -4
+          },
+          "head": 1,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 8
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "tail": 2
+        },
+        {
+          "current": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "equal_edge": false,
+          "error_current": {
+            "denominator": 1,
+            "numerator": -3
+          },
+          "head": 4,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "tail": 1
+        },
+        {
+          "current": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "equal_edge": true,
+          "error_current": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "head": 7,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "tail": 1
+        },
+        {
+          "current": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "equal_edge": false,
+          "error_current": {
+            "denominator": 1,
+            "numerator": -4
+          },
+          "head": 5,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 8
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "tail": 2
+        },
+        {
+          "current": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "equal_edge": true,
+          "error_current": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "head": 8,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "tail": 2
+        },
+        {
+          "current": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "equal_edge": false,
+          "error_current": {
+            "denominator": 1,
+            "numerator": -3
+          },
+          "head": 4,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "tail": 3
+        },
+        {
+          "current": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "equal_edge": true,
+          "error_current": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "head": 5,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "tail": 3
+        },
+        {
+          "current": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "equal_edge": false,
+          "error_current": {
+            "denominator": 1,
+            "numerator": -4
+          },
+          "head": 3,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 8
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "tail": 6
+        },
+        {
+          "current": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "equal_edge": false,
+          "error_current": {
+            "denominator": 1,
+            "numerator": -3
+          },
+          "head": 4,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "tail": 5
+        },
+        {
+          "current": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "equal_edge": false,
+          "error_current": {
+            "denominator": 1,
+            "numerator": -3
+          },
+          "head": 4,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "tail": 7
+        },
+        {
+          "current": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "equal_edge": false,
+          "error_current": {
+            "denominator": 1,
+            "numerator": -4
+          },
+          "head": 5,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 8
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "tail": 8
+        },
+        {
+          "current": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "equal_edge": false,
+          "error_current": {
+            "denominator": 1,
+            "numerator": -4
+          },
+          "head": 7,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 8
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "tail": 6
+        },
+        {
+          "current": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "equal_edge": true,
+          "error_current": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "head": 8,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "tail": 6
+        },
+        {
+          "current": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "equal_edge": false,
+          "error_current": {
+            "denominator": 1,
+            "numerator": -4
+          },
+          "head": 7,
+          "main_current": {
+            "denominator": 1,
+            "numerator": 8
+          },
+          "normalized_ratio": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "tail": 8
+        }
+      ],
+      "error_divergence": [
+        {
+          "denominator": 1,
+          "numerator": 8
+        },
+        {
+          "denominator": 1,
+          "numerator": -5
+        },
+        {
+          "denominator": 1,
+          "numerator": 8
+        },
+        {
+          "denominator": 1,
+          "numerator": -5
+        },
+        {
+          "denominator": 1,
+          "numerator": -12
+        },
+        {
+          "denominator": 1,
+          "numerator": -5
+        },
+        {
+          "denominator": 1,
+          "numerator": 8
+        },
+        {
+          "denominator": 1,
+          "numerator": -5
+        },
+        {
+          "denominator": 1,
+          "numerator": 8
+        }
+      ],
+      "gradient": [
+        {
+          "denominator": 1,
+          "numerator": -8
+        },
+        {
+          "denominator": 1,
+          "numerator": 7
+        },
+        {
+          "denominator": 1,
+          "numerator": -8
+        },
+        {
+          "denominator": 1,
+          "numerator": 7
+        },
+        {
+          "denominator": 1,
+          "numerator": 4
+        },
+        {
+          "denominator": 1,
+          "numerator": 7
+        },
+        {
+          "denominator": 1,
+          "numerator": -8
+        },
+        {
+          "denominator": 1,
+          "numerator": 7
+        },
+        {
+          "denominator": 1,
+          "numerator": -8
+        }
+      ],
+      "main_flow_divergence": [
+        {
+          "denominator": 1,
+          "numerator": -4
+        },
+        {
+          "denominator": 1,
+          "numerator": 3
+        },
+        {
+          "denominator": 1,
+          "numerator": -4
+        },
+        {
+          "denominator": 1,
+          "numerator": 3
+        },
+        {
+          "denominator": 1,
+          "numerator": 4
+        },
+        {
+          "denominator": 1,
+          "numerator": 3
+        },
+        {
+          "denominator": 1,
+          "numerator": -4
+        },
+        {
+          "denominator": 1,
+          "numerator": 3
+        },
+        {
+          "denominator": 1,
+          "numerator": -4
+        }
+      ],
+      "maximum_edge_ratio": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "name": "T3x3_pyramid",
+      "neighbors": [
+        [
+          6,
+          3,
+          2,
+          1
+        ],
+        [
+          7,
+          4,
+          0,
+          2
+        ],
+        [
+          8,
+          5,
+          1,
+          0
+        ],
+        [
+          0,
+          6,
+          5,
+          4
+        ],
+        [
+          1,
+          7,
+          3,
+          5
+        ],
+        [
+          2,
+          8,
+          4,
+          3
+        ],
+        [
+          3,
+          0,
+          8,
+          7
+        ],
+        [
+          4,
+          1,
+          6,
+          8
+        ],
+        [
+          5,
+          2,
+          7,
+          6
+        ]
+      ],
+      "normalized_outgoing_mass": [
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        }
+      ],
+      "norms": {
+        "divergence_l1": {
+          "denominator": 1,
+          "numerator": 32
+        },
+        "divergence_l2_squared": {
+          "denominator": 1,
+          "numerator": 116
+        },
+        "error_divergence_norm_squared": {
+          "denominator": 1,
+          "numerator": 500
+        },
+        "flow_mass": {
+          "denominator": 1,
+          "numerator": 20
+        },
+        "gradient_norm_squared": {
+          "denominator": 1,
+          "numerator": 468
+        },
+        "residual_norm_squared": {
+          "denominator": 1,
+          "numerator": 20
+        }
+      },
+      "omega": [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 4
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ],
+      "residual": [
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        }
+      ],
+      "vertex_count": 9
+    }
+  ],
+  "finite_amplitude_theorem": {
+    "current_split": "J_e=r_tail*z_e-r_head/z_e=W^2*c_tail*alpha_e+epsilon_e on unequal edges; equal edges are assigned entirely to epsilon",
+    "error_bound": "|epsilon_e|<=3*q*W and ||div epsilon||_2<=3*q^2*W*sqrt(N)",
+    "flow": "f_e=c_tail*alpha_e is positive and acyclic, div f=d, and total edge-flow mass is F=sum c_x^2",
+    "gradient_floor": "||grad A||_2>=W^2/[(N-1)*sqrt(N)]",
+    "maximum_ratio": "W=max_{undirected edges {x,y}} max(Omega_y/Omega_x,Omega_x/Omega_y)>1",
+    "orientation": "orient every unequal edge from lower to higher Omega, write z_e=Omega_head/Omega_tail and alpha_e=z_e/W",
+    "quotient_floor": "||grad A||_2^2/||r||_2^2>=W^2/[q^2*N^2*(N-1)^2]>=9*q^2",
+    "residual_ceiling": "||r||_2<=q*W*sqrt(N)",
+    "residual_split": "c_x=sum_{outgoing e}alpha_e, h_x=r_x-W*c_x in [-q,0], so r=W*c+h and F=sum_x c_x^2>=1",
+    "scope": "every finite connected simple q-regular undirected graph with N>=2 and every nonconstant positive field Omega",
+    "spectral_consequence": "since omega_G<=2q, the high-contrast quotient is at least (9/4)*omega_G^2",
+    "threshold": "W>=3*q^2*N*(N-1)",
+    "transport": "every flow path is simple and has length at most N-1, hence ||d||_1>=2F/(N-1) and ||d||_2>=2F/[(N-1)*sqrt(N)]"
+  },
+  "lifecycle_state": "HIGH_CONTRAST_SECTOR_CLOSED_MODERATE_MULTISCALE_GATE_OPEN",
+  "next_gate": "On the high-probability sector W<192*N*(N-1), decompose the exact current into its O(log N) ratio bands and prove a block-transport/corrector estimate, or construct a polynomial-contrast growing-volume field or full-Witten low-Rayleigh sequence. Only an annealed transfer to the lowest-mode marginal and dyadic shells can decide the actual H^-1 moment.",
+  "provenance": {
+    "assumptions": [
+      "the deterministic graph is finite, connected, simple, regular, and undirected",
+      "the field is positive and nonconstant",
+      "the Gibbs probability corollary is only for the certified lambda=2/5 periodic four-torus law"
+    ],
+    "exact_arithmetic": "rational residuals, currents, normalized edge flows, divergences, norms, constants, and finite graph fixtures",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TROPICAL_FLOW_TRANSPORT_V1.json",
+        "sha256": "7cea7f63378172af0d83cbc689300e46c3c36f77503b31d50d8fd107db18b9a4"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ANNEALED_EDGE_ELLIPTICITY_V1.json",
+        "sha256": "7eb2d863fb90a4c941f44ab6987f4d550b2db13376abbebb3107243013aa22e3"
+      }
+    ],
+    "repository_base_commit": "f8709e9bee7e72b48a17b45f2b8666e97980029f"
+  },
+  "question": "Can a joint growing-volume BT gradient collapse be driven by a super-polynomial nearest-neighbor field ratio hidden beyond the tropical asymptotic regime?",
+  "report": "reverse_physics/reports/bt-euclidean-high-contrast-flow-closure.md",
+  "research_disposition": {
+    "actual_gibbs_high_contrast_tail": "VOLUME_UNIFORM_SUMMABLE_BOUND_PROVED",
+    "actual_interacting_h_minus_one": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "continuum_measure": "NOT_ESTABLISHED",
+    "finite_amplitude_all_field_scaled_PL": "OPEN",
+    "full_witten_coercivity": "OPEN",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "ordinary_OS_finite_volume": "OBSTRUCTED_BY_PREDECESSOR",
+    "polynomial_contrast_dense_multiscale_sector": "OPEN",
+    "single_scale_tropical_collapse": "RULED_OUT_BY_PREDECESSOR",
+    "super_polynomial_edge_contrast_gradient_collapse": "RULED_OUT"
+  },
+  "result_kind": "finite-amplitude acyclic-flow coercivity and actual-Gibbs high-contrast tail theorem",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-high-contrast-flow-closure-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-high-contrast-flow-closure-v1",
+  "tier_receipt": {
+    "memory_policy": "all Python commands run sequentially under a 500000 KiB virtual-memory ceiling",
+    "scoped_command_receipts": {
+      "independent_verifier": "PASS; 0.23 s; 32504 KiB peak RSS; 9/9 checks over 318 rational fields",
+      "planning_event": "PASS; sequence 88; append-only ACTIVE checkpoint; 9.7 s wall time",
+      "planning_import_initial_misapplied_cap": "FAIL; inherited Python ulimit prevented the Go runtime from reserving page-summary address space; not counted as a pass",
+      "planning_import_separated_cap": "PASS; 1707 nodes, 0 invalid items, 0 malformed events; 11.56 s; 208176 KiB peak RSS",
+      "producer_emit": "PASS; 0.05 s; 21028 KiB peak RSS; 9/9 exact checks",
+      "python_compilation": "PASS; 0.05 s; 16180 KiB peak RSS",
+      "science_forge_shadow": "ADVISORY exit 0; 6.11 s; 328620 KiB peak RSS; reported pre-existing unpinned Forge/stdlib drift, missing SymPy in the bp2 bridge audit, and corpus-baseline drift; not a scientific pass",
+      "ten_focused_and_mutation_tests": "PASS; 1.65 s; 32668 KiB peak RSS"
+    },
+    "tier_0": "Python compilation, strict JSON/schema parsing, deterministic certificate drift, scoped diff check, and exact staged-diff inspection required",
+    "tier_1": "exact finite-amplitude producer, nonimporting reconstruction verifier, complete small rational-field rail, and adversarial mutation tests required",
+    "tier_2": "the tropical-flow and annealed-edge-ellipticity predecessors are unchanged and checked by content hash",
+    "tier_3": "not triggered: the polynomial-contrast Witten/H^-1, continuum, reconstruction, freeze, and release lifecycle states remain open"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_high_contrast_flow_closure.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_high_contrast_flow_closure.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_high_contrast_flow_closure"
+  ],
+  "verifier": "reverse_physics/verify_bt_euclidean_high_contrast_flow_closure.py"
+}
