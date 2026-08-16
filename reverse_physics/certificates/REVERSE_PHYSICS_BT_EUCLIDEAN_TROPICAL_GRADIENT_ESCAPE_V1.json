@@ -1,0 +1,296 @@
+{
+  "answer": "No. On every nonconstant power ray Omega_x=t^(a_x), the largest oriented edge exponent jump D makes ||r||^2 of degree 2D and ||grad A||^2 of degree 4D, with an explicit strictly positive leading quotient coefficient. Hence ||grad A||^2/||r||^2 grows like C(a)t^(2D). Compactness of the edge ratios after division by their maximum extends this to every unbounded fixed-graph field sequence: the positive limiting maximum-ratio graph is acyclic and has a source with a nonzero negative-square gradient coefficient. Together with the certified unique vacuum and the free bilaplacian limit near it, this proves a positive graph-dependent Polyak-Lojasiewicz constant on every fixed connected graph. It does not prove that the constant divided by omega_G^2 is uniform as the graph grows.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_TROPICAL_GRADIENT_ESCAPE_V1",
+  "checks": {
+    "details": {
+      "every_profile_is_nonconstant": true,
+      "exact_parameter_two_gradient_conservation": true,
+      "fixed_graph_PL_consequence_is_positive_but_nonquantitative": true,
+      "gradient_degree_is_2D": true,
+      "leading_coefficient_floor_holds": true,
+      "leading_coefficient_is_positive": true,
+      "no_H_minus_one_or_reconstruction_promotion": true,
+      "residual_degree_is_D": true,
+      "source_coefficient_is_negative_square": true,
+      "source_has_no_max_incoming_edge": true,
+      "three_exact_graph_fixtures": true,
+      "volume_uniform_normalized_constant_remains_open": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 12,
+    "total": 12
+  },
+  "created": "2026-08-16",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "an L-uniform lower bound for c_L/omega_L^2",
+    "a Poincare or full Witten one-form estimate",
+    "boundedness or divergence of the actual interacting H^-1 moment",
+    "tightness or a continuum Euclidean measure",
+    "a Born rule or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_fixtures": [
+    {
+      "degree": 2,
+      "exponents": [
+        0,
+        -1,
+        -2,
+        -1
+      ],
+      "gradient_max_laurent_degree": 2,
+      "name": "C4_bowl",
+      "parameter_two_gradient_norm_squared": {
+        "denominator": 8,
+        "numerator": 603
+      },
+      "parameter_two_gradient_sum": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "parameter_two_residual_norm_squared": {
+        "denominator": 2,
+        "numerator": 11
+      },
+      "residual_max_laurent_degree": 1,
+      "tropical": {
+        "chosen_source_vertex": 2,
+        "gradient_leading_coefficients": [
+          2,
+          1,
+          -4,
+          1
+        ],
+        "leading_quotient_coefficient": {
+          "denominator": 3,
+          "numerator": 11
+        },
+        "max_edge_exponent_jump": 1,
+        "max_jump_outdegrees": [
+          0,
+          1,
+          2,
+          1
+        ],
+        "source_gradient_leading_coefficient": -4,
+        "source_has_no_max_jump_incoming_edge": true,
+        "universal_coefficient_floor": {
+          "denominator": 16,
+          "numerator": 1
+        }
+      },
+      "vertex_count": 4
+    },
+    {
+      "degree": 2,
+      "exponents": [
+        0,
+        -1,
+        -2,
+        -2,
+        -2,
+        -1
+      ],
+      "gradient_max_laurent_degree": 2,
+      "name": "C6_plateau",
+      "parameter_two_gradient_norm_squared": {
+        "denominator": 4,
+        "numerator": 113
+      },
+      "parameter_two_gradient_sum": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "parameter_two_residual_norm_squared": {
+        "denominator": 2,
+        "numerator": 7
+      },
+      "residual_max_laurent_degree": 1,
+      "tropical": {
+        "chosen_source_vertex": 2,
+        "gradient_leading_coefficients": [
+          2,
+          0,
+          -1,
+          0,
+          -1,
+          0
+        ],
+        "leading_quotient_coefficient": {
+          "denominator": 2,
+          "numerator": 3
+        },
+        "max_edge_exponent_jump": 1,
+        "max_jump_outdegrees": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "source_gradient_leading_coefficient": -1,
+        "source_has_no_max_jump_incoming_edge": true,
+        "universal_coefficient_floor": {
+          "denominator": 24,
+          "numerator": 1
+        }
+      },
+      "vertex_count": 6
+    },
+    {
+      "degree": 4,
+      "exponents": [
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "gradient_max_laurent_degree": 2,
+      "name": "T3x3_single_peak",
+      "parameter_two_gradient_norm_squared": {
+        "denominator": 1,
+        "numerator": 260
+      },
+      "parameter_two_gradient_sum": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "parameter_two_residual_norm_squared": {
+        "denominator": 1,
+        "numerator": 8
+      },
+      "residual_max_laurent_degree": 1,
+      "tropical": {
+        "chosen_source_vertex": 1,
+        "gradient_leading_coefficients": [
+          4,
+          -1,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          0,
+          0
+        ],
+        "leading_quotient_coefficient": {
+          "denominator": 1,
+          "numerator": 5
+        },
+        "max_edge_exponent_jump": 1,
+        "max_jump_outdegrees": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "source_gradient_leading_coefficient": -1,
+        "source_has_no_max_jump_incoming_edge": true,
+        "universal_coefficient_floor": {
+          "denominator": 144,
+          "numerator": 1
+        }
+      },
+      "vertex_count": 9
+    }
+  ],
+  "fixed_graph_PL_theorem": {
+    "boundary_escape": "If W=max_(x~y) exp(psi_y-psi_x), fixed-graph connectivity makes osc(psi)->infinity imply W->infinity. Along any subsequence, the normalized directed edge ratios exp(psi_y-psi_x)/W have a convergent further subsequence. Their positive support is acyclic; a source with positive outgoing mass gives a nonzero negative-square coefficient in grad A/W^2. Hence Q_G/W^2 has a strictly positive subsequential limit and Q_G->infinity.",
+    "compact_annulus": "the unique-critical-point theorem makes Q_G continuous and strictly positive away from the vacuum; it therefore has a positive minimum on every remaining compact annulus",
+    "not_uniform": "no lower bound for c_G/omega_G^2 independent of graph size is proved",
+    "quotient": "Q_G(psi)=||grad A(psi)||^2/||r(psi)||^2 for nonconstant psi in the mean-zero carrier",
+    "statement": "there exists c_G>0 such that ||grad A||^2>=c_G*||r||^2=2*c_G*A on the fixed mean-zero graph",
+    "status": "PROVED_NONCONSTRUCTIVELY_FOR_EACH_FIXED_GRAPH",
+    "vacuum_limit": "liminf_(psi->0)Q_G(psi)>=omega_G^2 by r=Delta psi+O(||psi||^2) and grad A=Delta^2 psi+O(||psi||^2)"
+  },
+  "lifecycle_state": "FIXED_GRAPH_PL_PROVED_VOLUME_UNIFORM_CONSTANT_OPEN",
+  "next_gate": "The obstruction, if it exists, must be a genuinely growing-volume multiscale sequence. Prove a graph-size-uniform lower bound for c_L/omega_L^2 together with a Witten/Lyapunov transfer, or construct a sequence L->infinity for which that normalized quotient or the full Witten Rayleigh quotient collapses with nonzero lowest-mode overlap.",
+  "provenance": {
+    "analytic_argument": "compactness of maximum-normalized directed edge ratios and acyclicity of their positive limiting support, the certified unique-vacuum theorem, the bilaplacian vacuum expansion, and compactness of fixed-graph mean-zero annuli",
+    "assumptions": [
+      "the graph is finite, connected, regular, and undirected",
+      "the action is A=(1/2)*sum_x[(Delta Omega)_x/Omega_x]^2",
+      "the fixed-graph theorem is not assigned a graph-size-uniform constant"
+    ],
+    "exact_arithmetic": "integer Laurent-polynomial residual and gradient algebra, exact rational evaluation at t=2, and integer maximal-jump graph coefficients",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_UNIQUE_CRITICAL_POINT_GRADIENT_GATE_V1.json",
+        "sha256": "606ef7f58477b9eab18b41a1e83eb11d6b298129a1f9da1e96099487d9209c56"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_BOUNDED_OSCILLATION_GRADIENT_COERCIVITY_V1.json",
+        "sha256": "af4b94d56181a3ae9e351c7a15dd5e0d1bf586cd86e56c2efc1ba13a7860740d"
+      }
+    ],
+    "repository_base_commit": "57f752f6377877019b8a9aaaf25c8ce6cb75976f"
+  },
+  "question": "Can the BT residual-gradient quotient collapse by escaping to infinite field amplitude on a fixed finite graph?",
+  "report": "reverse_physics/reports/bt-euclidean-tropical-gradient-escape.md",
+  "research_disposition": {
+    "PL_to_Witten_Lyapunov_bridge": "OPEN",
+    "actual_interacting_h_minus_one": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "continuum_measure": "NOT_ESTABLISHED",
+    "fixed_graph_large_amplitude_gradient_collapse": "RULED_OUT",
+    "fixed_graph_positive_PL_constant": "PROVED",
+    "full_Witten_coercivity": "OPEN",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "ordinary_OS_finite_volume": "OBSTRUCTED_BY_PREDECESSOR",
+    "uniform_L_scaled_PL_constant": "OPEN"
+  },
+  "result_kind": "universal power-ray asymptotics and fixed-graph Polyak-Lojasiewicz theorem for the BT residual-square action",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-tropical-gradient-escape-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-tropical-gradient-escape-v1",
+  "tier_receipt": {
+    "memory_policy": "all Python commands run sequentially under a 500000 KiB virtual-memory ceiling",
+    "scoped_command_receipts": {
+      "fourteen_focused_and_mutation_tests": "PASS; 0.17 s; 30616 KiB peak RSS",
+      "independent_verifier": "PASS; 0.10 s; 30216 KiB peak RSS; 621 complete exponent classes",
+      "planning_event": "PASS; sequence 86; 6.37 s; 188416 KiB peak RSS",
+      "planning_import": "PASS; 1705 nodes, 0 invalid items, 0 malformed events; 6.65 s; 208272 KiB peak RSS",
+      "producer_check": "PASS; 0.04 s; 20740 KiB peak RSS",
+      "science_forge_shadow": "ADVISORY exit 0; 3.17 s; 333392 KiB peak RSS; reported pre-existing unpinned Forge/stdlib drift, missing SymPy in the bp2 bridge audit, and corpus-baseline drift; not a scientific pass"
+    },
+    "tier_0": "Python compilation, strict JSON/schema parsing, deterministic certificate drift, scoped diff check, and exact staged-diff inspection required",
+    "tier_1": "exact Laurent producer, nonimporting combinatorial/direct-evaluation verifier, complete small exponent-class rail, and adversarial mutation tests required",
+    "tier_2": "the unique-critical-point and bounded-oscillation predecessors are unchanged and checked by content hash",
+    "tier_3": "not triggered: the graph-size-uniform PL/Witten/H^-1 and continuum lifecycle states remain open"
+  },
+  "universal_tropical_theorem": {
+    "coefficient_floor": "(sum d_x^2)/(sum c_x^2)>=1/(N*q^2)",
+    "consequence": "the residual-gradient quotient diverges on every nonconstant fixed power ray",
+    "exact_limit": "lim_(t->infinity)t^(-2D)*||grad A||^2/||r||^2=(sum_x d_x^2)/(sum_x c_x^2)>0",
+    "gradient_leading_data": "d_x=sum_(y~x,a_x-a_y=D)c_y-c_x^2; (grad A)_x=d_x*t^(2D)+o(t^(2D))",
+    "max_jump": "D=max_(oriented edges x->y)(a_y-a_x)>0",
+    "max_jump_graph": "orient exactly the D-edges from lower to higher exponent; it is acyclic",
+    "power_ray": "Omega_x(t)=t^(a_x), t tending to positive infinity",
+    "residual_leading_data": "c_x=#{y~x:a_y-a_x=D}; r_x=c_x*t^D+o(t^D)",
+    "scope": "every finite connected q-regular undirected graph and every nonconstant real exponent profile a",
+    "source_argument": "choose a minimum-exponent tail among D-edges; it has no incoming D-edge and d_x=-c_x^2!=0"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_tropical_gradient_escape.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_tropical_gradient_escape.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_tropical_gradient_escape"
+  ],
+  "verifier": "reverse_physics/verify_bt_euclidean_tropical_gradient_escape.py"
+}

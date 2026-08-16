@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-tropical-gradient-escape-v1.schema.json",
+  "title": "BT tropical gradient escape",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "created",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "universal_tropical_theorem",
+    "fixed_graph_PL_theorem",
+    "exact_fixtures",
+    "research_disposition",
+    "next_gate",
+    "does_not_establish",
+    "provenance",
+    "tier_receipt",
+    "checks",
+    "report",
+    "schema",
+    "verifier",
+    "verification_commands"
+  ],
+  "$defs": {
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    }
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_TROPICAL_GRADIENT_ESCAPE_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-tropical-gradient-escape-v1"},
+    "created": {"const": "2026-08-16"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "FIXED_GRAPH_PL_PROVED_VOLUME_UNIFORM_CONSTANT_OPEN"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "universal_tropical_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope",
+        "power_ray",
+        "max_jump",
+        "residual_leading_data",
+        "max_jump_graph",
+        "gradient_leading_data",
+        "source_argument",
+        "exact_limit",
+        "coefficient_floor",
+        "consequence"
+      ],
+      "properties": {
+        "scope": {"type": "string"},
+        "power_ray": {"type": "string"},
+        "max_jump": {"type": "string"},
+        "residual_leading_data": {"type": "string"},
+        "max_jump_graph": {"type": "string"},
+        "gradient_leading_data": {"type": "string"},
+        "source_argument": {"type": "string"},
+        "exact_limit": {"type": "string"},
+        "coefficient_floor": {"const": "(sum d_x^2)/(sum c_x^2)>=1/(N*q^2)"},
+        "consequence": {"const": "the residual-gradient quotient diverges on every nonconstant fixed power ray"}
+      }
+    },
+    "fixed_graph_PL_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "quotient",
+        "vacuum_limit",
+        "boundary_escape",
+        "compact_annulus",
+        "statement",
+        "status",
+        "not_uniform"
+      ],
+      "properties": {
+        "quotient": {"type": "string"},
+        "vacuum_limit": {"type": "string"},
+        "boundary_escape": {"type": "string"},
+        "compact_annulus": {"type": "string"},
+        "statement": {"type": "string"},
+        "status": {"const": "PROVED_NONCONSTRUCTIVELY_FOR_EACH_FIXED_GRAPH"},
+        "not_uniform": {"type": "string"}
+      }
+    },
+    "exact_fixtures": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "vertex_count",
+          "degree",
+          "exponents",
+          "tropical",
+          "residual_max_laurent_degree",
+          "gradient_max_laurent_degree",
+          "parameter_two_residual_norm_squared",
+          "parameter_two_gradient_norm_squared",
+          "parameter_two_gradient_sum"
+        ],
+        "properties": {
+          "name": {"enum": ["C4_bowl", "C6_plateau", "T3x3_single_peak"]},
+          "vertex_count": {"type": "integer", "minimum": 3},
+          "degree": {"type": "integer", "minimum": 2},
+          "exponents": {"type": "array", "minItems": 4, "items": {"type": "integer"}},
+          "tropical": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "max_edge_exponent_jump",
+              "max_jump_outdegrees",
+              "gradient_leading_coefficients",
+              "chosen_source_vertex",
+              "source_has_no_max_jump_incoming_edge",
+              "source_gradient_leading_coefficient",
+              "leading_quotient_coefficient",
+              "universal_coefficient_floor"
+            ],
+            "properties": {
+              "max_edge_exponent_jump": {"type": "integer", "minimum": 1},
+              "max_jump_outdegrees": {"type": "array", "items": {"type": "integer", "minimum": 0}},
+              "gradient_leading_coefficients": {"type": "array", "items": {"type": "integer"}},
+              "chosen_source_vertex": {"type": "integer", "minimum": 0},
+              "source_has_no_max_jump_incoming_edge": {"const": true},
+              "source_gradient_leading_coefficient": {"type": "integer", "maximum": -1},
+              "leading_quotient_coefficient": {"$ref": "#/$defs/fraction"},
+              "universal_coefficient_floor": {"$ref": "#/$defs/fraction"}
+            }
+          },
+          "residual_max_laurent_degree": {"type": "integer", "minimum": 1},
+          "gradient_max_laurent_degree": {"type": "integer", "minimum": 2},
+          "parameter_two_residual_norm_squared": {"$ref": "#/$defs/fraction"},
+          "parameter_two_gradient_norm_squared": {"$ref": "#/$defs/fraction"},
+          "parameter_two_gradient_sum": {"$ref": "#/$defs/fraction"}
+        }
+      }
+    },
+    "research_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixed_graph_large_amplitude_gradient_collapse",
+        "fixed_graph_positive_PL_constant",
+        "uniform_L_scaled_PL_constant",
+        "PL_to_Witten_Lyapunov_bridge",
+        "full_Witten_coercivity",
+        "actual_interacting_h_minus_one",
+        "continuum_measure",
+        "ordinary_OS_finite_volume",
+        "born_rule",
+        "krein_reconstruction",
+        "lorentzian_transfer"
+      ],
+      "properties": {
+        "fixed_graph_large_amplitude_gradient_collapse": {"const": "RULED_OUT"},
+        "fixed_graph_positive_PL_constant": {"const": "PROVED"},
+        "uniform_L_scaled_PL_constant": {"const": "OPEN"},
+        "PL_to_Witten_Lyapunov_bridge": {"const": "OPEN"},
+        "full_Witten_coercivity": {"const": "OPEN"},
+        "actual_interacting_h_minus_one": {"const": "OPEN"},
+        "continuum_measure": {"const": "NOT_ESTABLISHED"},
+        "ordinary_OS_finite_volume": {"const": "OBSTRUCTED_BY_PREDECESSOR"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "does_not_establish": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "exact_arithmetic", "analytic_argument", "assumptions"],
+      "properties": {
+        "repository_base_commit": {"const": "57f752f6377877019b8a9aaaf25c8ce6cb75976f"},
+        "inputs": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "exact_arithmetic": {"type": "string"},
+        "analytic_argument": {"type": "string"},
+        "assumptions": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+      }
+    },
+    "tier_receipt": {"type": "object"},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-tropical-gradient-escape.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-tropical-gradient-escape-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_tropical_gradient_escape.py"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+  }
+}
