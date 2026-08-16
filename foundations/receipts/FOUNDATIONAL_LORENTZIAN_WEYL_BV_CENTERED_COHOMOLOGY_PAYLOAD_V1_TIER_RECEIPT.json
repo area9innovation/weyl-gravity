@@ -1,0 +1,174 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_CENTERED_COHOMOLOGY_PAYLOAD_V1_TIER_RECEIPT",
+  "result_id": "STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1",
+  "created": "2026-08-16",
+  "source_base_commit": "0817dcbb57ee93b141649f79f4c12a95d11e8d46",
+  "shared_master_at_verification": "b349a24e91dcd60151fed7050ad63a45b902706d",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "scope": "Export and independently replay the exact strict centered C3/C4/C5 coefficient complex and normalized chiral H4 representatives; reconcile Gate V17 without accepting an unbound hash; project the result into completion Atlas V35, the static explorer and Paper 21.",
+  "inputs": [
+    {
+      "path": "quantum-weyl/classical_import/certificates/STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1.json",
+      "sha256": "21400beeac1def4ba3b9e43d5e8222e106192a1ccfb504e5b0455859ad7fd286",
+      "role": "portable exact centered cochain and representative payload"
+    },
+    {
+      "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V17_RECONCILIATION.json",
+      "sha256": "1ce44731dafd153145246c530762ad6569fefae8e726f6597e5e62a0c53efcb3",
+      "role": "fail-closed receiver reconciliation"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V35.json",
+      "sha256": "ba062a1544bddc19979d2843c03dc35ed063c6e90a43761bf0827f0de5d3a2b2",
+      "role": "foundational route projection"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "foundations/site/data.json",
+      "sha256": "7455863ebf794595e2888d4c1fb5fda5c3b48180f53b5eb458c479745337721c"
+    },
+    {
+      "path": "foundations/site/manifest.json",
+      "sha256": "81526d3c0289fba9f71b8853a0a0dd7027fc5a65da204301fb2aa1f13c90a1ad"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
+      "sha256": "88047c919fca3f4fd3db5957ec107458a41babe19f6fd8f3788de46fa90e3366"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.tex",
+      "sha256": "da077d7b7cec88c674698aee0b1cde1541d7adcbe2bb12c00a6b97953c10f57f"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
+      "sha256": "155a72460f651699a83abf612eb31a1e511ee86f9573df97f162ba735cbedec1"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-claim-map.json",
+      "sha256": "0dfff4b857b13c78d17f9c7cb1899b1894872e7b16b01687c31add28fd7594dd"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.pdf",
+      "sha256": "65b37fe20126c859636d5b30f4b9b31345f3088355ecb42aee10416eae464f9b"
+    }
+  ],
+  "exact_result": {
+    "cochain_dimensions_C3_C4_C5": [727, 3084, 8532],
+    "ordered_basis_elements": 12343,
+    "reconstructed_nonzero_differential_coefficients": 85091,
+    "nilpotency_defects": 0,
+    "modular_prime": 1009,
+    "ranks_d3_d4": [636, 2446],
+    "exact_cohomology_dimension_H4": 2,
+    "normalized_representatives": ["W_+^2 v_-", "W_-^2 v_-"],
+    "representative_coefficient_field": "Q(sqrt(10))",
+    "normalized_gram": [[1, 0], [0, 1]],
+    "parity_exchanges_representatives": true,
+    "gate_v17_receiver_verified_exports": 17,
+    "gate_v17_total_exports": 20,
+    "gate_v17_receiver_verified_freeze_checks": 9,
+    "gate_v17_total_freeze_checks": 10,
+    "accepted_common_snapshot_hashes": 1,
+    "remaining_common_snapshot_packages": 3
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3.12 -m py_compile <scoped centered, Gate V17, Atlas V35, site and Paper 21 Python files>",
+          "status": "PASS"
+        },
+        {
+          "command": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3.12 -m json.tool <scoped certificates, schemas, results, site data and receipt>",
+          "status": "PASS"
+        },
+        {
+          "command": "pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (three passes from paper/)",
+          "elapsed_seconds": 5.1,
+          "status": "PASS",
+          "output": "73 pages; no fatal error, undefined citation/reference, or overfull box on the final pass. Existing generated longtable underfull notices remain non-fatal."
+        },
+        {
+          "command": "git diff --check -- <scoped centered, Gate V17, Atlas V35, site, paper and receipt paths>",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3.12 centered builder --check; independent centered checker; six centered unit tests",
+          "elapsed_seconds": 58.43,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Gate V17 builder/checker/five tests",
+          "elapsed_seconds": 11.93,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Atlas V35 builder/checker/schema verifier/four tests",
+          "elapsed_seconds": 0.61,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 static-site builder/checker/verifier/ten tests",
+          "elapsed_seconds": 19.38,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Paper 21 appendix currentness, claim-map currentness and independent claim-map verifier",
+          "elapsed_seconds": 1.07,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The changed exact centered payload is consumed transitively by Gate V17, Atlas V35, the content-addressed static explorer, and Paper 21. Each producer/currentness check and each independent receiver/verifier in that affected chain passed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze/tag, QME lifecycle promotion, shared core algebra change, or release preparation occurred. Gate A remains FAIL_CLOSED and no LORENTZIAN_CERTIFIED claim is promoted."
+    }
+  },
+  "environment": {
+    "exact_python": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3.12",
+    "exact_python_sympy": "1.14",
+    "system_python_note": "/usr/bin/python3 is Python 3.14 without the repository's SymPy dependency; the exact rails were therefore run with the provisioned Python 3.12.13 environment."
+  },
+  "advisory": {
+    "kind": "ADVISORY_FINDING",
+    "certifying": false,
+    "command": "/home/alstrup/area9/tango/forge/tools/science-forge/paper_prose_advisory.sh paper/21-reverse-foundations-of-physics.tex",
+    "elapsed_seconds": 0.59,
+    "result": "Emphasis, em-dash, sentence-length, novelty and vocabulary rails are within advisory budgets. Parenthetical density and abstract length remain above the non-gating budgets; the abstract contains one numeric group."
+  },
+  "claim_flags": {
+    "centered_c3_c4_c5_bases_portable": true,
+    "centered_differential_independently_reconstructed": true,
+    "centered_h4_dimension_and_representatives_replayed": true,
+    "m6_centered_representative_payload_complete": true,
+    "representative_hash_bound_to_common_gate_snapshot": false,
+    "classical_import_gate_a_passed": false,
+    "full_complex_hadamard_state_constructed": false,
+    "qme_restored": false,
+    "residual_quantum_transfer_authorized": false
+  },
+  "does_not_establish": [
+    "H3 or H5 cohomology; C3 and C5 are serialized cochain carriers",
+    "a support-local residual SDR on the complete common field carrier",
+    "a full cyclic pairing and final contraction on common bytes",
+    "acceptance of the candidate representative hash by Gate A",
+    "a complete Lorentzian off-shell BV propagator or BRST-compatible Hadamard state",
+    "renormalized Lorentzian products, QME restoration, or residual quantum transfer",
+    "one-particle graviton states; the centered classes are deformation or vertex classes"
+  ]
+}

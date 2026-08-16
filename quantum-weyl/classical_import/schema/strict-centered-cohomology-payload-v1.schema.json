@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-centered-cohomology-payload-v1.schema.json",
+  "title": "Strict pure-Weyl centered cohomology payload v1",
+  "type": "object",
+  "required": [
+    "$schema", "schema", "schema_path", "result_id", "result_kind",
+    "result_state", "lifecycle", "created", "repository_base_commit",
+    "dependency_tags", "scope", "residual_structure_reference",
+    "ordered_centered_cochain_basis", "coefficient_modules",
+    "centered_differential_summary", "normalized_H4_representatives",
+    "canonical_hashes", "centered_snapshot", "exact_replay",
+    "foundational_strength", "gate_disposition", "claim_flags",
+    "provenance", "does_not_establish", "next_gate",
+    "independent_checker", "human_report"
+  ],
+  "properties": {
+    "$schema": {"const": "../schema/strict-centered-cohomology-payload-v1.schema.json"},
+    "schema": {"const": "strict-centered-cohomology-payload-v1"},
+    "result_id": {"const": "STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1"},
+    "result_kind": {"const": "EXACT_CENTERED_CLASSICAL_COHOMOLOGY_PAYLOAD"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "repository_base_commit": {"$ref": "#/$defs/commit"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "scope": {
+      "type": "object",
+      "required": ["coefficient_fields", "centered_cochain_dimensions_C3_C4_C5", "cohomology_dimension_H4"],
+      "properties": {
+        "coefficient_fields": {"const": ["Q", "Q(sqrt(10))"]},
+        "centered_cochain_dimensions_C3_C4_C5": {"const": [727, 3084, 8532]},
+        "cohomology_dimension_H4": {"const": 2}
+      }
+    },
+    "ordered_centered_cochain_basis": {
+      "type": "object",
+      "required": ["residual_generator_order", "residual_generator_compact_degrees", "residual_ghost_compact_degrees", "sector_order", "degrees", "sha256"],
+      "properties": {
+        "sector_order": {"const": ["vacuum", "one_particle", "two_particle_weight_four"]},
+        "degrees": {
+          "type": "object",
+          "required": ["3", "4", "5"],
+          "properties": {
+            "3": {"$ref": "#/$defs/basis3"},
+            "4": {"$ref": "#/$defs/basis4"},
+            "5": {"$ref": "#/$defs/basis5"}
+          },
+          "additionalProperties": false
+        },
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "centered_differential_summary": {
+      "type": "object",
+      "required": ["aggregate_nonzero_coefficients", "aggregate_ranks_d3_d4", "nilpotency_defects", "cohomology_dimension_H4", "sha256"],
+      "properties": {
+        "aggregate_nonzero_coefficients": {"const": 85091},
+        "aggregate_ranks_d3_d4": {"const": [636, 2446]},
+        "nilpotency_defects": {"const": 0},
+        "cohomology_dimension_H4": {"const": 2},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "normalized_H4_representatives": {
+      "type": "object",
+      "required": ["W_plus_squared_times_v_minus", "W_minus_squared_times_v_minus", "two_particle_pairing", "two_particle_parity", "normalized_gram", "parity_action_in_chiral_basis", "sha256"],
+      "properties": {
+        "normalized_gram": {"const": [[1, 0], [0, 1]]},
+        "parity_action_in_chiral_basis": {"const": [[0, 1], [1, 0]]},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "canonical_hashes": {
+      "type": "object",
+      "minProperties": 5,
+      "additionalProperties": {"$ref": "#/$defs/sha256"}
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "STRICT_CENTERED_C3_C4_C5_BASES_SERIALIZED",
+        "STRICT_CENTERED_DIFFERENTIAL_RECONSTRUCTED",
+        "STRICT_NORMALIZED_WEYL_SQUARE_REPRESENTATIVES_SERIALIZED",
+        "STRICT_CENTERED_H4_COHOMOLOGY_REPLAYED",
+        "M6_CENTERED_REPRESENTATIVES_COMPLETE", "COMMON_GATE_A_FREEZE_BOUND",
+        "CLASSICAL_IMPORT_GATE_PASSED", "HADAMARD_STATE_CONSTRUCTED",
+        "QME_RESTORED", "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED",
+        "LORENTZIAN_QUANTUM_THEORY"
+      ],
+      "properties": {
+        "STRICT_CENTERED_C3_C4_C5_BASES_SERIALIZED": {"const": true},
+        "STRICT_CENTERED_DIFFERENTIAL_RECONSTRUCTED": {"const": true},
+        "STRICT_NORMALIZED_WEYL_SQUARE_REPRESENTATIVES_SERIALIZED": {"const": true},
+        "STRICT_CENTERED_H4_COHOMOLOGY_REPLAYED": {"const": true},
+        "M6_CENTERED_REPRESENTATIVES_COMPLETE": {"const": true},
+        "COMMON_GATE_A_FREEZE_BOUND": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": {"const": false},
+        "LORENTZIAN_QUANTUM_THEORY": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "provenance": {
+      "type": "object",
+      "required": ["inputs"],
+      "properties": {
+        "inputs": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/provenance"}}
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "basis3": {"allOf": [{"$ref": "#/$defs/basis"}], "properties": {"ghost_number": {"const": 3}, "dimension": {"const": 727}}},
+    "basis4": {"allOf": [{"$ref": "#/$defs/basis"}], "properties": {"ghost_number": {"const": 4}, "dimension": {"const": 3084}}},
+    "basis5": {"allOf": [{"$ref": "#/$defs/basis"}], "properties": {"ghost_number": {"const": 5}, "dimension": {"const": 8532}}},
+    "basis": {
+      "type": "object",
+      "required": ["ghost_number", "total_compact_degree", "ordering", "entries", "dimension", "sha256"],
+      "properties": {
+        "total_compact_degree": {"const": 0},
+        "entries": {"type": "array"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["path", "sha256", "role"],
+      "properties": {
+        "path": {"type": "string", "minLength": 3},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "role": {"type": "string", "minLength": 8}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

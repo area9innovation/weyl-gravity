@@ -34,12 +34,12 @@ all-real BT/Krein path integral; controlled conditional bridges remain open.
 
 The **Weyl BV routes** view projects the current audited Lorentzian completion atlas as
 seven architectures across eleven ordered gates, for 77 separately typed cells.
-It exposes the finite residual-SDR repair, ten ranked next constructions and the
+It exposes the finite residual-SDR repair, nine ranked next constructions and the
 eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a theorem; in particular,
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
-Atlas V34 preserves the field-equation type result.  The degree-one-to-zero
+Atlas V35 preserves the field-equation type result.  The degree-one-to-zero
 Green component is an exact right inverse on Noether-compatible sources and a
 left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
 the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
@@ -103,11 +103,14 @@ nonzero SO(4,2) structure coefficients, fifteen adjoint/coadjoint/cotangent
 representation matrices, and the zero 30-by-30 unary residual differential.
 Its independent receiver replays the basis, projectors, pairing, Jacobi,
 unimodularity, representation, coadjoint and nilpotency identities without a
-defect.  Gate V16 therefore closes the coefficient-level M5 package and retains
-the accepted q2 hash.  It remains fail closed because the new zero-mode hash is
-not yet bound to the common snapshot: six of seven top-level hashes, the common
-residual SDR, the full cyclic pairing, centered H3/H4/H5 representatives and the
-final common contraction remain open.
+defect.  The centered successor exports ordered C3, C4 and C5 bases with
+dimensions 727, 3,084 and 8,532, reconstructs 85,091 rational differential
+coefficients, and proves ranks 636 and 2,446.  Its two sparse chiral H4 vectors
+have identity Gram and are exchanged by parity.  Gate V17 therefore closes the
+coefficient-level M5 and M6 packages and retains the accepted q2 hash.  It
+remains fail closed because neither new candidate hash is bound to the common
+snapshot: six of seven top-level hashes, the common support-local residual SDR,
+the full cyclic pairing and the final common contraction remain open.
 The complete Berger q3 remains a different-theory Weyl-plus-clock result on a fixed
 54-row carrier; no certified same-theory cyclic map authorizes its direct import.
 
@@ -228,9 +231,11 @@ This site does not establish:
 - composition beyond the two certified scoped cross-cell interfaces
 - precision sampler equivalence, continuum reconstruction, or empirical support from the BT finite lattice
 - a complete observationally validated theory
-- the complete twenty-export, seven-hash classical Gate A from the linked source-q2/q3 snapshots and the unbound residual zero-mode payload
+- the complete twenty-export, seven-hash classical Gate A from the linked source-q2/q3 snapshots and the unbound residual and centered payloads
 - a common-snapshot zero-mode hash from the portable residual coefficient package
-- centered H3/H4/H5 representative vectors, a common support-local residual SDR, or the final full cyclic contraction
+- a common-snapshot representative hash from the portable centered coefficient package
+- H3 or H5 cohomology from the adjacent centered C3 and C5 carrier bases
+- a common support-local residual SDR or the final full cyclic contraction
 - q2/q3 compatibility with an advanced or retarded Green homotopy
 - that the exact stabilized-q3 candidate is the authoritative nonminimal pure-Weyl BV interaction
 - general lambda-squared causal source closure from the candidate q3 stabilization
