@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-m1a-carrier-grading-convention-audit-v1.schema.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_kind",
+    "result_state",
+    "lifecycle",
+    "dependency_tags",
+    "counts",
+    "convention_collision_witness",
+    "namespace_contract",
+    "local_endpoint_typed_rows",
+    "carrier_audit",
+    "m1a_repair_plan",
+    "claim_flags",
+    "does_not_establish",
+    "independent_checker"
+  ],
+  "properties": {
+    "schema": {"const": "strict-m1a-carrier-grading-convention-audit-v1"},
+    "result_id": {"const": "STRICT_M1A_CARRIER_GRADING_CONVENTION_AUDIT_V1"},
+    "result_kind": {"const": "M1A_TYPED_CARRIER_SEMANTIC_NAMESPACE_AUDIT"},
+    "result_state": {"const": "CONVENTION_COLLISION_CERTIFIED_M1A_LEDGER_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "counts": {
+      "type": "object",
+      "required": [
+        "local_rows_total",
+        "local_endpoint_rows_fully_namespaced",
+        "local_rows_partially_namespaced",
+        "local_endpoint_nonzero_bv_ghost_rows",
+        "dfinite_full_coordinates",
+        "dfinite_minimal_coordinates_with_sign_bridge",
+        "dfinite_test_nonminimal_coordinates_without_local_source_dictionary",
+        "represented_residual_rows",
+        "formal_cotangent_rows",
+        "action_residual_rows",
+        "zero_mode_rows",
+        "centered_cochain_rows",
+        "dfinite_q_degree_defects",
+        "dfinite_minimal_sign_bridge_defects"
+      ],
+      "properties": {
+        "local_rows_total": {"const": 386},
+        "local_endpoint_rows_fully_namespaced": {"const": 30},
+        "local_rows_partially_namespaced": {"const": 356},
+        "local_endpoint_nonzero_bv_ghost_rows": {"const": 20},
+        "dfinite_full_coordinates": {"const": 4490},
+        "dfinite_minimal_coordinates_with_sign_bridge": {"const": 4080},
+        "dfinite_test_nonminimal_coordinates_without_local_source_dictionary": {"const": 410},
+        "represented_residual_rows": {"const": 470},
+        "formal_cotangent_rows": {"const": 8980},
+        "action_residual_rows": {"const": 940},
+        "zero_mode_rows": {"const": 30},
+        "centered_cochain_rows": {"const": 12343},
+        "dfinite_q_degree_defects": {"const": 0},
+        "dfinite_minimal_sign_bridge_defects": {"const": 0}
+      },
+      "additionalProperties": false
+    },
+    "convention_collision_witness": {
+      "type": "object",
+      "required": ["endpoint_rows_satisfy_chain_degree_equals_minus_bv_ghost_number", "dfinite_legacy_key", "dfinite_semantic_value", "compact_degree_collision"],
+      "properties": {
+        "endpoint_rows_satisfy_chain_degree_equals_minus_bv_ghost_number": {"const": true},
+        "dfinite_legacy_key": {"const": "ghost_number"},
+        "dfinite_semantic_value": {"const": "chain_degree"},
+        "compact_degree_collision": {
+          "type": "object",
+          "required": ["same_semantic_field"],
+          "properties": {"same_semantic_field": {"const": false}}
+        }
+      }
+    },
+    "namespace_contract": {
+      "type": "object",
+      "required": ["rule", "fields", "forbidden_aliases"],
+      "properties": {
+        "fields": {"type": "array", "minItems": 11, "maxItems": 11},
+        "forbidden_aliases": {"type": "array", "minItems": 5, "maxItems": 5}
+      }
+    },
+    "local_endpoint_typed_rows": {
+      "type": "array",
+      "minItems": 30,
+      "maxItems": 30,
+      "items": {
+        "type": "object",
+        "required": ["index", "row_id", "block", "role", "bv_ghost_number", "chain_degree", "antifield_number", "form_degree", "Grassmann_parity", "mass_dimension", "Weyl_weight", "intrinsic_jet_order_bound", "conformal_compact_weight", "ce_ghost_number", "authority"]
+      }
+    },
+    "carrier_audit": {"type": "array", "minItems": 7, "maxItems": 7},
+    "m1a_repair_plan": {"type": "array", "minItems": 4, "maxItems": 4},
+    "claim_flags": {
+      "type": "object",
+      "required": ["M1A_CONVENTION_COLLISION_AUDITED", "LOCAL_ENDPOINT_30_FULLY_NAMESPACED", "LOCAL_386_FULLY_TYPED", "M1A_FULL_TYPED_CARRIER_LEDGER_COMPLETE", "CLASSICAL_IMPORT_GATE_PASSED", "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED"],
+      "properties": {
+        "M1A_CONVENTION_COLLISION_AUDITED": {"const": true},
+        "LOCAL_ENDPOINT_30_FULLY_NAMESPACED": {"const": true},
+        "LOCAL_386_FULLY_TYPED": {"const": false},
+        "M1A_FULL_TYPED_CARRIER_LEDGER_COMPLETE": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "QME_RESTORED": {"const": false}
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 6},
+    "independent_checker": {
+      "type": "object",
+      "required": ["path", "method", "expected_digest"],
+      "properties": {"expected_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    }
+  }
+}

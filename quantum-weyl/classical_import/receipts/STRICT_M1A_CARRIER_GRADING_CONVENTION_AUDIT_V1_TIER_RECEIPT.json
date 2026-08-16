@@ -1,0 +1,91 @@
+{
+  "result_id": "STRICT_M1A_CARRIER_GRADING_CONVENTION_AUDIT_V1",
+  "receipt_id": "STRICT_M1A_CARRIER_GRADING_CONVENTION_AUDIT_V1_TIER_RECEIPT",
+  "generated_at": "2026-08-16",
+  "source_commit_before_change": "4ada117a5a856ed219bcc77330d57ffae04ce3e7",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Independently audit the grading semantics needed by M1A, crosswalk the thirty local endpoint rows to the authoritative action dictionary and atom manifest, scan the full finite-harmonic unary carrier, distinguish BV ghost number, chain degree, conformal compact weight and CE ghost number, and leave M1A and Gate A fail closed.",
+  "artifact_hashes": {
+    "quantum-weyl/classical_import/certificates/STRICT_M1A_CARRIER_GRADING_CONVENTION_AUDIT_V1.json": "1a581b7fcde955e2e975fae58700897c722d06c945ee4db740ae82c614b65b67"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3.12 -m py_compile <M1A audit producer, receiver and tests>",
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 -m json.tool <certificate, schema and receipt>",
+          "status": "PASS"
+        },
+        {
+          "command": "git diff --check on the scoped paths",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3.12 build_strict_m1a_carrier_grading_convention_audit.py --check",
+          "elapsed_seconds": 0.08,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 check_strict_m1a_carrier_grading_convention_audit.py",
+          "elapsed_seconds": 0.08,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 -m pytest -q tests/test_strict_m1a_carrier_grading_convention_audit.py",
+          "elapsed_seconds": 0.69,
+          "status": "PASS",
+          "output": "6 tests and 3 subtests passed"
+        },
+        {
+          "command": "Draft202012Validator(schema).validate(certificate)",
+          "elapsed_seconds": 0.08,
+          "status": "PASS"
+        }
+      ],
+      "elapsed_seconds": 0.93
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "This CLASSIFIED audit consumes content-addressed, unchanged classical and residual inputs but changes no mathematical operator, schema consumed by an existing certificate chain, Gate-A lifecycle state or accepted hash. Downstream Gate/atlas propagation is a separate affected-consumer tranche."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze/tag, shared core algebra change, theorem promotion, lifecycle promotion, release preparation or explicit full-suite request occurred. M1A and Gate A remain open."
+    }
+  },
+  "scientific_result": {
+    "local_rows_total": 386,
+    "local_endpoint_rows_fully_namespaced": 30,
+    "local_rows_partially_namespaced": 356,
+    "local_endpoint_nonzero_bv_ghost_rows": 20,
+    "dfinite_minimal_coordinates_with_sign_bridge": 4080,
+    "dfinite_test_nonminimal_coordinates_without_local_source_dictionary": 410,
+    "dfinite_q_degree_defects": 0,
+    "dfinite_minimal_sign_bridge_defects": 0,
+    "category_boundary": "The audit certifies a convention collision and an exact thirty-row endpoint crosswalk. It does not type the remaining 356 local rows, complete the represented crosswalk, or complete M1A."
+  },
+  "claim_flags": {
+    "m1a_convention_collision_audited": true,
+    "local_endpoint_30_fully_namespaced": true,
+    "local_386_fully_typed": false,
+    "m1a_full_typed_carrier_ledger_complete": false,
+    "classical_import_gate_a_passed": false,
+    "full_complex_hadamard_state_constructed": false,
+    "renormalized_lorentzian_products_constructed": false,
+    "qme_restored": false,
+    "residual_quantum_transfer_authorized": false
+  }
+}

@@ -1,0 +1,1023 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "strict-m1a-carrier-grading-convention-audit-v1",
+  "schema_path": "quantum-weyl/classical_import/schema/strict-m1a-carrier-grading-convention-audit-v1.schema.json",
+  "result_id": "STRICT_M1A_CARRIER_GRADING_CONVENTION_AUDIT_V1",
+  "result_kind": "M1A_TYPED_CARRIER_SEMANTIC_NAMESPACE_AUDIT",
+  "result_state": "CONVENTION_COLLISION_CERTIFIED_M1A_LEDGER_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-16",
+  "repository_base_commit": "4ada117a5a856ed219bcc77330d57ffae04ce3e7",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "Can M1A safely flatten the existing local, harmonic, cotangent, zero-mode and centered grading labels into one row dictionary?",
+  "answer": "No. Thirty local endpoint rows can already be typed exactly, and all 386 local rows have an authoritative chain degree. But the local action dictionary uses standard BV ghost number while the D-finite SDR's field named ghost_number is the q-chain degree and has the opposite sign on every nonzero minimal BV degree. The phrase compact degree also denotes two different objects: local chain degree and conformal D weight. A safe M1A ledger therefore needs tagged grading namespaces and explicit NOT_APPLICABLE values before the remaining 356 local rows and represented carriers can be serialized.",
+  "scope": {
+    "theory": "strict pure-Weyl classical BV import",
+    "background": "unit conformal cylinder",
+    "task": "M1A semantic namespace and source-authority audit",
+    "arithmetic": "exact integer gradings and content hashes"
+  },
+  "counts": {
+    "local_rows_total": 386,
+    "local_endpoint_rows_fully_namespaced": 30,
+    "local_rows_partially_namespaced": 356,
+    "local_endpoint_nonzero_bv_ghost_rows": 20,
+    "dfinite_full_coordinates": 4490,
+    "dfinite_minimal_coordinates_with_sign_bridge": 4080,
+    "dfinite_test_nonminimal_coordinates_without_local_source_dictionary": 410,
+    "represented_residual_rows": 470,
+    "formal_cotangent_rows": 8980,
+    "action_residual_rows": 940,
+    "zero_mode_rows": 30,
+    "centered_cochain_rows": 12343,
+    "dfinite_q_degree_defects": 0,
+    "dfinite_minimal_sign_bridge_defects": 0
+  },
+  "convention_collision_witness": {
+    "local_bv_examples": [
+      {
+        "row": "c_0",
+        "bv_ghost_number": 1,
+        "chain_degree": -1
+      },
+      {
+        "row": "h_star_00",
+        "bv_ghost_number": -1,
+        "chain_degree": 1
+      },
+      {
+        "row": "c_star_0",
+        "bv_ghost_number": -2,
+        "chain_degree": 2
+      }
+    ],
+    "endpoint_rows_satisfy_chain_degree_equals_minus_bv_ghost_number": true,
+    "dfinite_legacy_key": "ghost_number",
+    "dfinite_semantic_value": "chain_degree",
+    "dfinite_q_raises_legacy_value_by_one": true,
+    "dfinite_minimal_value_equals_minus_local_bv_ghost_number": true,
+    "compact_degree_collision": {
+      "local_meaning": "q-chain degree",
+      "zero_mode_and_centered_meaning": "conformal D eigenweight",
+      "same_semantic_field": false
+    }
+  },
+  "namespace_contract": {
+    "rule": "Every grading is a tagged semantic field. A grading that does not apply is serialized as NOT_APPLICABLE with a reason; it is never silently set to zero.",
+    "fields": [
+      {
+        "name": "bv_ghost_number",
+        "meaning": "standard local BV ghost number from the action-derived generator dictionary",
+        "applies_to": [
+          "LOCAL_COMPONENT_JET and rows explicitly crosswalked to it"
+        ]
+      },
+      {
+        "name": "chain_degree",
+        "meaning": "degree raised by the unary chain differential q1",
+        "applies_to": [
+          "local and finite harmonic chain carriers"
+        ]
+      },
+      {
+        "name": "antifield_number",
+        "meaning": "Koszul-Tate antifield filtration degree",
+        "applies_to": [
+          "local BV rows and explicitly crosswalked harmonic rows"
+        ]
+      },
+      {
+        "name": "form_degree",
+        "meaning": "spacetime differential-form degree of the local BV generator or density",
+        "applies_to": [
+          "local BV rows"
+        ]
+      },
+      {
+        "name": "Grassmann_parity",
+        "meaning": "Z2 parity of the local coordinate",
+        "applies_to": [
+          "graded local and transported rows"
+        ]
+      },
+      {
+        "name": "mass_dimension",
+        "meaning": "engineering dimension in the action convention",
+        "applies_to": [
+          "local action-derived rows"
+        ]
+      },
+      {
+        "name": "Weyl_weight",
+        "meaning": "coefficient in gamma X=Lie_xi X+w omega X",
+        "applies_to": [
+          "local conformal-covariant rows"
+        ]
+      },
+      {
+        "name": "conformal_compact_weight",
+        "meaning": "eigenweight of the compact conformal D grading",
+        "applies_to": [
+          "zero modes and residual CE cochains"
+        ]
+      },
+      {
+        "name": "ce_ghost_number",
+        "meaning": "exterior degree in the residual Chevalley-Eilenberg complex",
+        "applies_to": [
+          "residual CE cochains"
+        ]
+      },
+      {
+        "name": "intrinsic_jet_order_bound",
+        "meaning": "maximum derivative order represented by the coordinate itself",
+        "applies_to": [
+          "local jet rows"
+        ]
+      },
+      {
+        "name": "operator_order_bounds",
+        "meaning": "per-arrow differential-order metadata; never conflated with a row grading",
+        "applies_to": [
+          "serialized q1, inclusion, projection, homotopy and Green names"
+        ]
+      }
+    ],
+    "forbidden_aliases": [
+      "ghost_number=chain_degree",
+      "compact_degree=chain_degree",
+      "compact_degree=conformal_compact_weight",
+      "row_derivative_order=operator_order",
+      "not_applicable=0"
+    ]
+  },
+  "local_endpoint_typed_rows": [
+    {
+      "index": 0,
+      "row_id": "c_0",
+      "block": "ENDPOINT_G",
+      "role": "diffeomorphism_ghost",
+      "bv_ghost_number": 1,
+      "chain_degree": -1,
+      "antifield_number": 0,
+      "form_degree": 0,
+      "Grassmann_parity": 1,
+      "mass_dimension": -1,
+      "Weyl_weight": 0,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/xi",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/1",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/0"
+      }
+    },
+    {
+      "index": 1,
+      "row_id": "c_1",
+      "block": "ENDPOINT_G",
+      "role": "diffeomorphism_ghost",
+      "bv_ghost_number": 1,
+      "chain_degree": -1,
+      "antifield_number": 0,
+      "form_degree": 0,
+      "Grassmann_parity": 1,
+      "mass_dimension": -1,
+      "Weyl_weight": 0,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/xi",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/1",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/1"
+      }
+    },
+    {
+      "index": 2,
+      "row_id": "c_2",
+      "block": "ENDPOINT_G",
+      "role": "diffeomorphism_ghost",
+      "bv_ghost_number": 1,
+      "chain_degree": -1,
+      "antifield_number": 0,
+      "form_degree": 0,
+      "Grassmann_parity": 1,
+      "mass_dimension": -1,
+      "Weyl_weight": 0,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/xi",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/1",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/2"
+      }
+    },
+    {
+      "index": 3,
+      "row_id": "c_3",
+      "block": "ENDPOINT_G",
+      "role": "diffeomorphism_ghost",
+      "bv_ghost_number": 1,
+      "chain_degree": -1,
+      "antifield_number": 0,
+      "form_degree": 0,
+      "Grassmann_parity": 1,
+      "mass_dimension": -1,
+      "Weyl_weight": 0,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/xi",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/1",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/3"
+      }
+    },
+    {
+      "index": 4,
+      "row_id": "omega",
+      "block": "ENDPOINT_G",
+      "role": "weyl_ghost",
+      "bv_ghost_number": 1,
+      "chain_degree": -1,
+      "antifield_number": 0,
+      "form_degree": 0,
+      "Grassmann_parity": 1,
+      "mass_dimension": 0,
+      "Weyl_weight": 0,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/omega",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/2",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/4"
+      }
+    },
+    {
+      "index": 5,
+      "row_id": "h_00",
+      "block": "ENDPOINT_M",
+      "role": "metric",
+      "bv_ghost_number": 0,
+      "chain_degree": 0,
+      "antifield_number": 0,
+      "form_degree": 0,
+      "Grassmann_parity": 0,
+      "mass_dimension": 0,
+      "Weyl_weight": 2,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/g",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/0",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/5"
+      }
+    },
+    {
+      "index": 6,
+      "row_id": "h_01",
+      "block": "ENDPOINT_M",
+      "role": "metric",
+      "bv_ghost_number": 0,
+      "chain_degree": 0,
+      "antifield_number": 0,
+      "form_degree": 0,
+      "Grassmann_parity": 0,
+      "mass_dimension": 0,
+      "Weyl_weight": 2,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/g",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/0",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/6"
+      }
+    },
+    {
+      "index": 7,
+      "row_id": "h_02",
+      "block": "ENDPOINT_M",
+      "role": "metric",
+      "bv_ghost_number": 0,
+      "chain_degree": 0,
+      "antifield_number": 0,
+      "form_degree": 0,
+      "Grassmann_parity": 0,
+      "mass_dimension": 0,
+      "Weyl_weight": 2,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/g",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/0",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/7"
+      }
+    },
+    {
+      "index": 8,
+      "row_id": "h_03",
+      "block": "ENDPOINT_M",
+      "role": "metric",
+      "bv_ghost_number": 0,
+      "chain_degree": 0,
+      "antifield_number": 0,
+      "form_degree": 0,
+      "Grassmann_parity": 0,
+      "mass_dimension": 0,
+      "Weyl_weight": 2,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/g",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/0",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/8"
+      }
+    },
+    {
+      "index": 9,
+      "row_id": "h_11",
+      "block": "ENDPOINT_M",
+      "role": "metric",
+      "bv_ghost_number": 0,
+      "chain_degree": 0,
+      "antifield_number": 0,
+      "form_degree": 0,
+      "Grassmann_parity": 0,
+      "mass_dimension": 0,
+      "Weyl_weight": 2,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/g",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/0",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/9"
+      }
+    },
+    {
+      "index": 10,
+      "row_id": "h_12",
+      "block": "ENDPOINT_M",
+      "role": "metric",
+      "bv_ghost_number": 0,
+      "chain_degree": 0,
+      "antifield_number": 0,
+      "form_degree": 0,
+      "Grassmann_parity": 0,
+      "mass_dimension": 0,
+      "Weyl_weight": 2,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/g",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/0",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/10"
+      }
+    },
+    {
+      "index": 11,
+      "row_id": "h_13",
+      "block": "ENDPOINT_M",
+      "role": "metric",
+      "bv_ghost_number": 0,
+      "chain_degree": 0,
+      "antifield_number": 0,
+      "form_degree": 0,
+      "Grassmann_parity": 0,
+      "mass_dimension": 0,
+      "Weyl_weight": 2,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/g",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/0",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/11"
+      }
+    },
+    {
+      "index": 12,
+      "row_id": "h_22",
+      "block": "ENDPOINT_M",
+      "role": "metric",
+      "bv_ghost_number": 0,
+      "chain_degree": 0,
+      "antifield_number": 0,
+      "form_degree": 0,
+      "Grassmann_parity": 0,
+      "mass_dimension": 0,
+      "Weyl_weight": 2,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/g",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/0",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/12"
+      }
+    },
+    {
+      "index": 13,
+      "row_id": "h_23",
+      "block": "ENDPOINT_M",
+      "role": "metric",
+      "bv_ghost_number": 0,
+      "chain_degree": 0,
+      "antifield_number": 0,
+      "form_degree": 0,
+      "Grassmann_parity": 0,
+      "mass_dimension": 0,
+      "Weyl_weight": 2,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/g",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/0",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/13"
+      }
+    },
+    {
+      "index": 14,
+      "row_id": "h_33",
+      "block": "ENDPOINT_M",
+      "role": "metric",
+      "bv_ghost_number": 0,
+      "chain_degree": 0,
+      "antifield_number": 0,
+      "form_degree": 0,
+      "Grassmann_parity": 0,
+      "mass_dimension": 0,
+      "Weyl_weight": 2,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/g",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/0",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/14"
+      }
+    },
+    {
+      "index": 15,
+      "row_id": "h_star_00",
+      "block": "ENDPOINT_E",
+      "role": "metric_antifield",
+      "bv_ghost_number": -1,
+      "chain_degree": 1,
+      "antifield_number": 1,
+      "form_degree": 4,
+      "Grassmann_parity": 1,
+      "mass_dimension": 4,
+      "Weyl_weight": -2,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/g_star",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/3",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/15"
+      }
+    },
+    {
+      "index": 16,
+      "row_id": "h_star_01",
+      "block": "ENDPOINT_E",
+      "role": "metric_antifield",
+      "bv_ghost_number": -1,
+      "chain_degree": 1,
+      "antifield_number": 1,
+      "form_degree": 4,
+      "Grassmann_parity": 1,
+      "mass_dimension": 4,
+      "Weyl_weight": -2,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/g_star",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/3",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/16"
+      }
+    },
+    {
+      "index": 17,
+      "row_id": "h_star_02",
+      "block": "ENDPOINT_E",
+      "role": "metric_antifield",
+      "bv_ghost_number": -1,
+      "chain_degree": 1,
+      "antifield_number": 1,
+      "form_degree": 4,
+      "Grassmann_parity": 1,
+      "mass_dimension": 4,
+      "Weyl_weight": -2,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/g_star",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/3",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/17"
+      }
+    },
+    {
+      "index": 18,
+      "row_id": "h_star_03",
+      "block": "ENDPOINT_E",
+      "role": "metric_antifield",
+      "bv_ghost_number": -1,
+      "chain_degree": 1,
+      "antifield_number": 1,
+      "form_degree": 4,
+      "Grassmann_parity": 1,
+      "mass_dimension": 4,
+      "Weyl_weight": -2,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/g_star",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/3",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/18"
+      }
+    },
+    {
+      "index": 19,
+      "row_id": "h_star_11",
+      "block": "ENDPOINT_E",
+      "role": "metric_antifield",
+      "bv_ghost_number": -1,
+      "chain_degree": 1,
+      "antifield_number": 1,
+      "form_degree": 4,
+      "Grassmann_parity": 1,
+      "mass_dimension": 4,
+      "Weyl_weight": -2,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/g_star",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/3",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/19"
+      }
+    },
+    {
+      "index": 20,
+      "row_id": "h_star_12",
+      "block": "ENDPOINT_E",
+      "role": "metric_antifield",
+      "bv_ghost_number": -1,
+      "chain_degree": 1,
+      "antifield_number": 1,
+      "form_degree": 4,
+      "Grassmann_parity": 1,
+      "mass_dimension": 4,
+      "Weyl_weight": -2,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/g_star",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/3",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/20"
+      }
+    },
+    {
+      "index": 21,
+      "row_id": "h_star_13",
+      "block": "ENDPOINT_E",
+      "role": "metric_antifield",
+      "bv_ghost_number": -1,
+      "chain_degree": 1,
+      "antifield_number": 1,
+      "form_degree": 4,
+      "Grassmann_parity": 1,
+      "mass_dimension": 4,
+      "Weyl_weight": -2,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/g_star",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/3",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/21"
+      }
+    },
+    {
+      "index": 22,
+      "row_id": "h_star_22",
+      "block": "ENDPOINT_E",
+      "role": "metric_antifield",
+      "bv_ghost_number": -1,
+      "chain_degree": 1,
+      "antifield_number": 1,
+      "form_degree": 4,
+      "Grassmann_parity": 1,
+      "mass_dimension": 4,
+      "Weyl_weight": -2,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/g_star",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/3",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/22"
+      }
+    },
+    {
+      "index": 23,
+      "row_id": "h_star_23",
+      "block": "ENDPOINT_E",
+      "role": "metric_antifield",
+      "bv_ghost_number": -1,
+      "chain_degree": 1,
+      "antifield_number": 1,
+      "form_degree": 4,
+      "Grassmann_parity": 1,
+      "mass_dimension": 4,
+      "Weyl_weight": -2,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/g_star",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/3",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/23"
+      }
+    },
+    {
+      "index": 24,
+      "row_id": "h_star_33",
+      "block": "ENDPOINT_E",
+      "role": "metric_antifield",
+      "bv_ghost_number": -1,
+      "chain_degree": 1,
+      "antifield_number": 1,
+      "form_degree": 4,
+      "Grassmann_parity": 1,
+      "mass_dimension": 4,
+      "Weyl_weight": -2,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/g_star",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/3",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/24"
+      }
+    },
+    {
+      "index": 25,
+      "row_id": "c_star_0",
+      "block": "ENDPOINT_I",
+      "role": "diffeomorphism_ghost_antifield",
+      "bv_ghost_number": -2,
+      "chain_degree": 2,
+      "antifield_number": 2,
+      "form_degree": 4,
+      "Grassmann_parity": 0,
+      "mass_dimension": 5,
+      "Weyl_weight": 0,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/xi_star",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/4",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/25"
+      }
+    },
+    {
+      "index": 26,
+      "row_id": "c_star_1",
+      "block": "ENDPOINT_I",
+      "role": "diffeomorphism_ghost_antifield",
+      "bv_ghost_number": -2,
+      "chain_degree": 2,
+      "antifield_number": 2,
+      "form_degree": 4,
+      "Grassmann_parity": 0,
+      "mass_dimension": 5,
+      "Weyl_weight": 0,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/xi_star",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/4",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/26"
+      }
+    },
+    {
+      "index": 27,
+      "row_id": "c_star_2",
+      "block": "ENDPOINT_I",
+      "role": "diffeomorphism_ghost_antifield",
+      "bv_ghost_number": -2,
+      "chain_degree": 2,
+      "antifield_number": 2,
+      "form_degree": 4,
+      "Grassmann_parity": 0,
+      "mass_dimension": 5,
+      "Weyl_weight": 0,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/xi_star",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/4",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/27"
+      }
+    },
+    {
+      "index": 28,
+      "row_id": "c_star_3",
+      "block": "ENDPOINT_I",
+      "role": "diffeomorphism_ghost_antifield",
+      "bv_ghost_number": -2,
+      "chain_degree": 2,
+      "antifield_number": 2,
+      "form_degree": 4,
+      "Grassmann_parity": 0,
+      "mass_dimension": 5,
+      "Weyl_weight": 0,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/xi_star",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/4",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/28"
+      }
+    },
+    {
+      "index": 29,
+      "row_id": "omega_star",
+      "block": "ENDPOINT_I",
+      "role": "weyl_ghost_antifield",
+      "bv_ghost_number": -2,
+      "chain_degree": 2,
+      "antifield_number": 2,
+      "form_degree": 4,
+      "Grassmann_parity": 0,
+      "mass_dimension": 4,
+      "Weyl_weight": 0,
+      "intrinsic_jet_order_bound": 0,
+      "conformal_compact_weight": null,
+      "ce_ghost_number": null,
+      "authority": {
+        "generator": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json#/generators/omega_star",
+        "atom": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json#/atoms/5",
+        "chain_row": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json#/component_basis/rows/29"
+      }
+    }
+  ],
+  "local_chain_degree_counts": {
+    "-2": 14,
+    "-1": 63,
+    "0": 116,
+    "1": 116,
+    "2": 63,
+    "3": 14
+  },
+  "carrier_audit": [
+    {
+      "carrier": "LOCAL_GRAPH_BV_386",
+      "rows": 386,
+      "category": "LOCAL_COMPONENT_JET",
+      "fully_namespaced_rows": 30,
+      "partially_namespaced_rows": 356,
+      "available_now": [
+        "structural_role",
+        "chain_degree"
+      ],
+      "additional_endpoint_fields": [
+        "bv_ghost_number",
+        "antifield_number",
+        "form_degree",
+        "Grassmann_parity",
+        "mass_dimension",
+        "Weyl_weight",
+        "intrinsic_jet_order_bound"
+      ],
+      "missing_for_completion": "Declare action-derived auxiliary weights and the mapping-cone grading functor, including typed not-applicable values where no conformal or CE grading exists."
+    },
+    {
+      "carrier": "REPRESENTED_ENDPOINT_DFINITE_4080",
+      "rows": 4080,
+      "category": "REDUCED_MODE_GLOBAL_HARMONIC",
+      "fully_namespaced_rows": 0,
+      "partially_namespaced_rows": 4080,
+      "available_now": [
+        "energy",
+        "sector role",
+        "legacy q-chain degree",
+        "antifield_number"
+      ],
+      "missing_for_completion": "Replace the misleading legacy ghost_number key by chain_degree and bind every represented endpoint species to one local typed species."
+    },
+    {
+      "carrier": "DFINITE_COMPARISON_4490",
+      "rows": 4490,
+      "category": "REDUCED_MODE_GLOBAL_HARMONIC",
+      "fully_namespaced_rows": 0,
+      "partially_namespaced_rows": 4490,
+      "available_now": [
+        "energy",
+        "sector role",
+        "legacy q-chain degree",
+        "antifield_number"
+      ],
+      "missing_for_completion": "Separate the 4,080 represented endpoint coordinates from the 410-coordinate scalar test nonminimal doublet and give the latter an explicit source dictionary or exclude it from the authoritative source."
+    },
+    {
+      "carrier": "FORMAL_COTANGENT_COMPARISON_8980",
+      "rows": 8980,
+      "category": "FORMAL_SHIFTED_COTANGENT",
+      "fully_namespaced_rows": 0,
+      "partially_namespaced_rows": 8980,
+      "available_now": [
+        "primal/dual category",
+        "shifted dual degree rule"
+      ],
+      "missing_for_completion": "Retain as a formal comparison carrier; do not use it as the authoritative full local BV source."
+    },
+    {
+      "carrier": "ACTION_RESIDUAL_940",
+      "rows": 940,
+      "category": "REDUCED_MODE_CAUSAL_COHOMOLOGY",
+      "fully_namespaced_rows": 0,
+      "partially_namespaced_rows": 940,
+      "available_now": [
+        "represented primal/action-dual role",
+        "energy",
+        "chirality",
+        "E/A/L family",
+        "support class"
+      ],
+      "missing_for_completion": "Bind the 470 primal and 470 action-dual rows to namespaced chain/BV degrees without identifying the finite represented dual with the full continuous dual."
+    },
+    {
+      "carrier": "ZERO_MODE_15_PLUS_15",
+      "rows": 30,
+      "category": "RESIDUAL_ZERO_MODE",
+      "fully_namespaced_rows": 30,
+      "partially_namespaced_rows": 0,
+      "available_now": [
+        "generator/action-dual role",
+        "conformal compact weight"
+      ],
+      "missing_for_completion": "None for its declared zero-mode namespace; local BV and CE gradings must be explicit not-applicable values rather than zeros."
+    },
+    {
+      "carrier": "CENTERED_C3_C4_C5",
+      "rows": 12343,
+      "category": "RESIDUAL_COCHAIN",
+      "fully_namespaced_rows": 12343,
+      "partially_namespaced_rows": 0,
+      "available_now": [
+        "CE ghost number",
+        "total conformal compact weight",
+        "sector",
+        "basis monomial"
+      ],
+      "missing_for_completion": "None for its declared CE namespace; it is a cochain carrier and not a local field/antifield dictionary."
+    }
+  ],
+  "m1a_repair_plan": [
+    {
+      "order": 1,
+      "id": "M1A1_NAMESPACED_GRADING_SCHEMA",
+      "status": "READY",
+      "deliverable": "Adopt the tagged namespace contract with explicit NOT_APPLICABLE records and prohibit the five unsafe aliases."
+    },
+    {
+      "order": 2,
+      "id": "M1A2_LOCAL_356_SEMANTIC_EXTENSION",
+      "status": "OPEN",
+      "deliverable": "Derive auxiliary and mapping-cone weights, form roles and intrinsic jet bounds from the action and the mapping-cone functor, with an independent receiver."
+    },
+    {
+      "order": 3,
+      "id": "M1A3_REPRESENTED_CROSSWALK",
+      "status": "OPEN",
+      "deliverable": "Crosswalk the 4,080 represented endpoint rows, isolate the 410 test-nonminimal rows, and type the 470+470 action residual without promoting the formal 8,980 source."
+    },
+    {
+      "order": 4,
+      "id": "M1A4_LEDGER_FREEZE",
+      "status": "BLOCKED_BY_M1A2_M1A3",
+      "deliverable": "Serialize every row, hash the field dictionary and gradings, and rerun the M1A receiver."
+    }
+  ],
+  "foundational_strength": {
+    "logic": "primitive-recursive finite scans and exact integer equalities",
+    "choice_used": false,
+    "excluded_middle_used": "decidable finite equality only",
+    "analysis_used": false
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json",
+        "result_id": "CLASSICAL_MINIMAL_BV_FIELD_DICTIONARY_V2",
+        "sha256": "9a898f03fab150f38dfcd1a78bf6b9ae00b8b42f66613c453328d5fee23f781b",
+        "role": "authoritative local BV generator semantics"
+      },
+      {
+        "path": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json",
+        "result_id": "CLASSICAL_MINIMAL_BV_KT_ADAPTED_ATOM_BASIS_V2",
+        "sha256": "8bb38ab39dacb2dfea36e2d2fd4873df221a64057a9bc8d05174f6b9615db378",
+        "role": "authoritative intrinsic jet orders"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+        "result_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+        "sha256": "3b9d8a2fc5a70d20770452eb0a2a4891f59314c21c83188bfb59de0941cac4b2",
+        "role": "authoritative local 386-row ordering and chain degree"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json",
+        "result_id": "STRICT_DFINITE_RESIDUAL_SDR_V1",
+        "sha256": "1816a7fb98cb7a844cade72fa8d2ee8de3e858540d5c932d93a5f68b37235c08",
+        "role": "finite harmonic comparison carrier and legacy grading labels"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1.json",
+        "result_id": "STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1",
+        "sha256": "2716713554ccba14c4d3549b2493c5c7c4032e2491333d2a4edb15cad69cd812",
+        "role": "represented 470-mode residual basis"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_DFINITE_COTANGENT_DUAL_COMPARISON_V1.json",
+        "result_id": "STRICT_DFINITE_COTANGENT_DUAL_COMPARISON_V1",
+        "sha256": "0564f4d41fb8593a3320c70317b184b70d1f195957b2b97b40c80fb7ced81c7e",
+        "role": "formal 8,980-to-940 cotangent comparison"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_M3RC_ACTION_SUPPORT_DUAL_IDENTIFICATION_V1.json",
+        "result_id": "STRICT_M3RC_ACTION_SUPPORT_DUAL_IDENTIFICATION_V1",
+        "sha256": "849cf880d2bcece12bb7436cc79a7b5b985ac7e48ce09b998723a1692556da76",
+        "role": "represented action-support dual target"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1.json",
+        "result_id": "STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1",
+        "sha256": "85a889aca3b2dcdcae06a0cbd99107401c2ec66461fbdf0f2c20bc26bda1b61f",
+        "role": "conformal zero-mode compact weights"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1.json",
+        "result_id": "STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1",
+        "sha256": "21400beeac1def4ba3b9e43d5e8222e106192a1ccfb504e5b0455859ad7fd286",
+        "role": "centered CE cochain gradings"
+      }
+    ],
+    "producer": "quantum-weyl/classical_import/build_strict_m1a_carrier_grading_convention_audit.py"
+  },
+  "independent_checker": {
+    "path": "quantum-weyl/classical_import/check_strict_m1a_carrier_grading_convention_audit.py",
+    "method": "Reconstruct the endpoint source crosswalk, scan every D-finite q0 entry against sector degrees, and recompute carrier counts and collision witnesses without importing the producer.",
+    "expected_digest": "a9b129bf2534988825988d831a778d11217fc992de04ee33f78dc98a867abae7"
+  },
+  "claim_flags": {
+    "M1A_CONVENTION_COLLISION_AUDITED": true,
+    "LOCAL_ENDPOINT_30_FULLY_NAMESPACED": true,
+    "LOCAL_386_FULLY_TYPED": false,
+    "DFINITE_LEGACY_GHOST_NUMBER_IS_SAFE_TO_IMPORT_AS_BV_GHOST_NUMBER": false,
+    "CHAIN_DEGREE_AND_CONFORMAL_COMPACT_WEIGHT_IDENTICAL": false,
+    "M1A_FULL_TYPED_CARRIER_LEDGER_COMPLETE": false,
+    "M1B_REPRESENTED_COMPOSITE_CONTRACTION_COMPLETE": false,
+    "M1C_COMMON_MANIFEST_REPLAY_COMPLETE": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED": false,
+    "RENORMALIZED_LORENTZIAN_PRODUCTS_CONSTRUCTED": false,
+    "QME_RESTORED": false,
+    "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": false
+  },
+  "does_not_establish": [
+    "the completed M1A carrier ledger",
+    "an authoritative source dictionary for the 410-coordinate scalar test nonminimal sector",
+    "mass dimensions or Weyl weights for the 356 auxiliary and mapping-cone rows",
+    "the M1B represented composite contraction",
+    "the M1C immutable manifest or any replayed final Gate-A check",
+    "a full-complex Hadamard state, renormalized Lorentzian products, QME restoration or residual quantum transfer"
+  ],
+  "next_gate": "Adopt M1A1, then derive M1A2 from the action and mapping-cone functor and M1A3 from the represented endpoint/action-dual crosswalk; only their union may be frozen as M1A4.",
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_M1A_CARRIER_GRADING_CONVENTION_AUDIT_V1.md"
+}
