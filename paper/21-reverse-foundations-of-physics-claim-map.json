@@ -1015,6 +1015,17 @@
       "result_id": "CLASSICAL_IMPORT_GATE_V26_RECONCILIATION",
       "sha256": "f291dce70498ab8992d5c56a23f1838f86451e1bc88fac4757a3ce80adc84d64"
     },
+    "classical_import_gate_v27": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V27_RECONCILIATION.json",
+      "result_id": "CLASSICAL_IMPORT_GATE_V27_RECONCILIATION",
+      "sha256": "73e4366fd7a6becc27318e703068cc001aea94951325b41d00672e776943cf9e"
+    },
     "classical_import_gate_v5": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -1179,7 +1190,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "ab8561e5fe62d05268dd26b9d8c4f696b213180139f7a3e1ad4f56aa4895b503"
+      "sha256": "de903586dd1b2475e08de6713c74d4caf3f51326d903c043fbe93d3c0447d2bd"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -1686,6 +1697,18 @@
       "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V44",
       "sha256": "c9a7c671680db5b72a39e75a26726c41bf3b4a16a5db244b1ea63ba9032de280"
     },
+    "lorentzian_weyl_bv_completion_atlas_v45": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V45.json",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V45",
+      "sha256": "2d4708dedcf4e345917b0e72a075bceeeae1ea05112d9db5f11645cc698ef49c"
+    },
     "lorentzian_weyl_bv_completion_atlas_v5": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -2143,6 +2166,16 @@
       "result_id": "STRICT_M1_COMMON_SNAPSHOT_PREFLIGHT_V1",
       "sha256": "be9d505bd7494bb677da23d08088711a7583de0a57de5cb12d3b51d824b461fb"
     },
+    "strict_m1a_local_semantic_extension": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_M1A_LOCAL_SEMANTIC_EXTENSION_V1.json",
+      "result_id": "STRICT_M1A_LOCAL_SEMANTIC_EXTENSION_V1",
+      "sha256": "8745ced9035c5125638651549052be09283162ea2f6c235bcd58aebc367dab57"
+    },
     "strict_m3rc_action_support_dual_identification": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -2261,10 +2294,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "a867f95721e395ae135d7249d16ffc282f89faef5970dc4b7599fb63544bfed0"
+      "sha256": "cd4ea242c52ed0e2bd9a0ec2e483d3b5a4bf2743da9fc836da9ff2541fa44a10"
     }
   },
-  "canonical_digest": "1f83ac26b1f9fadecf071ffd3c931421b9393d277520a95c33dffc1800d53f31",
+  "canonical_digest": "2d3b6b20cecbadc7accc37dfa4b1751e9b6f0b9b91507d650396a8aa74ce2e95",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -2412,6 +2445,7 @@
     "classical_import_gate_v24_fail_closed": true,
     "classical_import_gate_v25_fail_closed": true,
     "classical_import_gate_v26_fail_closed": true,
+    "classical_import_gate_v27_fail_closed": true,
     "classical_import_gate_v8_fail_closed": true,
     "classical_import_gate_v9_fail_closed": true,
     "coded_h2_arbitrary_distribution_uniqueness_proved": false,
@@ -2584,10 +2618,14 @@
     "strict_full_residual_cyclic_pairing_certified": false,
     "strict_graph_endpoint_sdr_support_local": true,
     "strict_harmonic_analysis_support_local": false,
+    "strict_local_386_fully_typed": true,
     "strict_m1_common_strict_snapshot_complete": false,
     "strict_m1_is_clerical_hash_bundle": false,
     "strict_m1_preflight_complete": true,
     "strict_m1_typed_diagram_required": true,
+    "strict_m1a2_local_semantic_extension_complete": true,
+    "strict_m1a3_represented_crosswalk_complete": false,
+    "strict_m1a4_ledger_freeze_complete": false,
     "strict_m1a_full_typed_carrier_ledger_complete": false,
     "strict_m1b_represented_composite_contraction_complete": false,
     "strict_m1c_common_manifest_replay_complete": false,
@@ -3633,6 +3671,20 @@
       ],
       "statement": "The sole remaining M1 classical-import package is not a clerical hash bundle. An independent receiver inventories eight distinct carrier objects and seven typed cross-category edges. Fourteen of twenty required exports are object-ready; two require a full explicit 386-row field, ghost, antifield and grading ledger, while four require a serialized represented composite inclusion, projection, homotopy and action pairing from the authoritative local graph architecture to the rank-940 action residual. Four of seven hash objects are ready to bind, three remain blocked, and none of the ten final checks has run on common bytes. The formal 8,980-coordinate cotangent comparison source is not the authoritative full BV source. M1 therefore splits into ordered packages M1A typed ledger, M1B represented composite contraction and M1C immutable manifest/replay. Gate V26 remains fail closed at one accepted hash; Atlas V44 ranks M1A, M1B and M1C first. This CLASSIFIED result does not complete any M1 package, construct a full-complex Hadamard state, define renormalized Lorentzian products, restore the QME or authorize residual transfer.",
       "status": "M1_PREFLIGHT_COMPLETE_M1A_M1B_M1C_OPEN_GATE_A_FAIL_CLOSED"
+    },
+    {
+      "authorities": [
+        "strict_m1a_local_semantic_extension",
+        "classical_import_gate_v27",
+        "lorentzian_weyl_bv_completion_atlas_v45"
+      ],
+      "claim_id": "RF-75-STRICT-WEYL-M1A2-LOCAL-SEMANTIC-EXTENSION",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "M1A2 is complete on the authoritative local graph carrier. The prior endpoint dictionary supplies 30 rows; exact source reconstruction adds 36 shifted auxiliary rows and 320 fixed-background mapping-cone rows, so all 386 local rows now have explicit chain degree, BV ghost number, antifield filtration, form degree, parity, geometric role, tensor type, engineering dimension, and intrinsic jet status with zero unresolved local fields. Scalar nonlinear Weyl weight is not missing on the 320 cone rows but not applicable: in four dimensions the all-lowered Cotton slot V_abc=nabla^d W_adbc obeys delta_omega V_abc=omega^p W_apbc. An independent exact receiver checks 2,560 components with zero defects and 176 nonzero mixing cases, proving that Cotton is not a nonlinear Weyl eigenrow; an orthonormal-frame change cannot remove the triangular mixing. M1A remains open at M1A3, which must crosswalk 4,080 represented endpoint-harmonic coordinates, classify 410 separate scalar test-nonminimal coordinates, and type the 470 primal plus 470 action-dual residual rows. M1A4 must then freeze the combined ledger. Gate V27 remains fail closed at one of seven hashes, and Atlas V45 ranks M1A3, M1A4, M1B, and M1C first. This CLASSIFIED local result establishes no full-complex Hadamard state, renormalized Lorentzian products, QME restoration, or residual quantum transfer.",
+      "status": "M1A2_LOCAL_386_FULLY_TYPED_M1A3_M1A4_M1B_M1C_OPEN_GATE_A_FAIL_CLOSED"
     }
   ],
   "created": "2026-08-16",
@@ -3666,6 +3718,7 @@
     "the full continuous action/support dual or cyclic contraction of the all-energy smooth solution space from the finite represented M3RC-B and M4R results",
     "that the formal 8,980-coordinate shifted-cotangent comparison source is the authoritative full classical BV source",
     "the M1 common strict snapshot or a passed classical import Gate A",
+    "the represented M1A3 crosswalk or M1A4 immutable ledger freeze from the completed local M1A2 semantics",
     "a complete Lorentzian off-shell BV propagator",
     "q2/q3 compatibility with advanced or retarded Green homotopies from the local source assembly",
     "an obstruction to every further local metric-dependent canonical or L-infinity normalization from the 72-to-zero shifted-mass comparison",
@@ -3862,19 +3915,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "a2de9341ae2a1c40b5abe8b2a70e56225dcf2b50771ecb1dbbbe3c31f1e50889",
+      "assembly_source_canonical_digest": "fef881568b9e4d644e718d16a65915ddfa2ba124828132baa0d77203834d0eff",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "a867f95721e395ae135d7249d16ffc282f89faef5970dc4b7599fb63544bfed0",
+      "assembly_source_sha256": "cd4ea242c52ed0e2bd9a0ec2e483d3b5a4bf2743da9fc836da9ff2541fa44a10",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
-      "generator_sha256": "15f055fc4d6a61d9da6ba7d1dfdea830bfc82db7fb83b300d1315d820736e3ea",
+      "generator_sha256": "24f6adc765f16942099f628c27c348d46f326317572f8525a526fd16a6137cbc",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "9d67828104cbc56cc70ee3cb0b75379b4006fade146e6e1fa0797400cd031086",
-      "source_canonical_digest": "bd8fbba366226eb729865b01417b7e87649fea3d0901769c8d96a35a4a5a6644",
+      "sha256": "4c88667abbeb891c9c2de421f7c760065d2f7ab4de2ce385369e786b052b8704",
+      "source_canonical_digest": "29eb2f6bb5f6329bea02fc6d11600b5ef36f6064151d26bb5d2d424514d66040",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "56dfb96a1062d92d0491a7e9872fef880a45df86b6063494d9d0bc2003cba281"
+      "source_sha256": "91bf012f358ed50774562995f7b469d216e19e31fdf909ffe9607338494dedfa"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "7f911a9d99e7ccb72f2cd61904edc179d3aedf6ce6860dae9777c523d38c88ca"
+    "sha256": "0becc4128cc6bd2e975ed19f236f7ef442bb377ee295c1bbbd30815939030e10"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

@@ -208,6 +208,9 @@ def main() -> int:
     m1_preflight = json.loads((ROOT / data["authorities"]["strict_m1_common_snapshot_preflight"]["path"]).read_text())
     gate_v26 = json.loads((ROOT / data["authorities"]["classical_import_gate_v26"]["path"]).read_text())
     completion_atlas_v44 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v44"]["path"]).read_text())
+    m1a_local = json.loads((ROOT / data["authorities"]["strict_m1a_local_semantic_extension"]["path"]).read_text())
+    gate_v27 = json.loads((ROOT / data["authorities"]["classical_import_gate_v27"]["path"]).read_text())
+    completion_atlas_v45 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v45"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -540,6 +543,7 @@ def main() -> int:
         (72, "STRICT-WEYL-REPRESENTED-ACTION-SUPPORT-DUAL"),
         (73, "STRICT-WEYL-TYPED-RESIDUAL-CYCLIC-CONTRACTION"),
         (74, "STRICT-WEYL-M1-TYPED-DIAGRAM-PREFLIGHT"),
+        (75, "STRICT-WEYL-M1A2-LOCAL-SEMANTIC-EXTENSION"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -987,6 +991,11 @@ def main() -> int:
     require(m1_preflight["authoritative_source_decision"]["formal_8980_source_authoritative"] is False and m1_preflight["authoritative_source_decision"]["local_source"] == "LOCAL_GRAPH_BV_386", "M1 authoritative-source firewall drift")
     require(gate_v26["gate_disposition"]["gate_a_status"] == "FAIL_CLOSED" and gate_v26["gate_disposition"]["accepted_common_snapshot_hashes"] == 1 and gate_v26["claim_flags"]["M1_PREFLIGHT_COMPLETE"] is True and gate_v26["claim_flags"]["M1_COMMON_STRICT_SNAPSHOT_COMPLETE"] is False, "Gate V26 M1 preflight boundary drift")
     require([row["route"] for row in completion_atlas_v44["route_selection"][:3]] == ["STRICT_M1A_FULL_TYPED_CARRIER_LEDGER", "STRICT_M1B_REPRESENTED_COMPOSITE_CONTRACTION", "STRICT_M1C_COMMON_MANIFEST_REPLAY"] and completion_atlas_v44["claim_flags"]["strict_pure_weyl_classical_gate_passed"] is False, "completion atlas V44 M1 route/Gate boundary drift")
+    require(m1a_local["counts"] == {"extension_rows": 356, "auxiliary_rows_fully_namespaced": 36, "mapping_cone_rows_fully_namespaced": 320, "mapping_cone_rows_with_not_applicable_scalar_Weyl_weight": 320, "rows_with_unresolved_fields": 0, "local_386_rows_fully_namespaced_after_this_result": 386, "local_386_rows_remaining_partial": 0}, "M1A2 local coverage drift")
+    require(m1a_local["cotton_nonlinear_weyl_non_eigen_witness"]["infinitesimal_formula_in_dimension_four"] == "delta_omega V_abc=omega^p W_apbc" and m1a_local["cotton_nonlinear_weyl_non_eigen_witness"]["component_checks"] == 2560 and m1a_local["cotton_nonlinear_weyl_non_eigen_witness"]["defects"] == 0 and m1a_local["cotton_nonlinear_weyl_non_eigen_witness"]["nonzero_mixing_checks"] == 176, "M1A2 Cotton non-eigenrow witness drift")
+    require(m1a_local["claim_flags"]["LOCAL_386_FULLY_TYPED"] is True and m1a_local["claim_flags"]["M1A_FULL_TYPED_CARRIER_LEDGER_COMPLETE"] is False and m1a_local["claim_flags"]["CLASSICAL_IMPORT_GATE_PASSED"] is False, "M1A2 lifecycle firewall drift")
+    require(gate_v27["gate_disposition"]["gate_a_status"] == "FAIL_CLOSED" and gate_v27["gate_disposition"]["accepted_common_snapshot_hashes"] == 1 and gate_v27["claim_flags"]["M1A2_LOCAL_SEMANTIC_EXTENSION_COMPLETE"] is True and gate_v27["claim_flags"]["M1A3_REPRESENTED_CROSSWALK_COMPLETE"] is False and gate_v27["claim_flags"]["M1A4_LEDGER_FREEZE_COMPLETE"] is False, "Gate V27 M1A2/M1A3/M1A4 boundary drift")
+    require([row["route"] for row in completion_atlas_v45["route_selection"][:4]] == ["STRICT_M1A3_REPRESENTED_CROSSWALK", "STRICT_M1A4_LEDGER_FREEZE", "STRICT_M1B_REPRESENTED_COMPOSITE_CONTRACTION", "STRICT_M1C_COMMON_MANIFEST_REPLAY"] and completion_atlas_v45["claim_flags"]["strict_M1A2_local_semantic_extension_complete"] is True and completion_atlas_v45["claim_flags"]["strict_pure_weyl_classical_gate_passed"] is False, "completion atlas V45 M1A route/Gate boundary drift")
     require(flags["strict_386_field_equation_green_component_typed"] is True and flags["strict_386_field_equation_constrained_right_inverse_certified"] is True and flags["strict_386_field_equation_quotient_left_inverse_certified"] is True and flags["strict_386_ungauge_fixed_full_inverse_obstructed"] is True and flags["strict_386_q2_only_lambda2_source_obstructed"] is True and flags["strict_386_authoritative_q3_cancellation_target_exact"] is True and flags["strict_386_authoritative_q3_imported"] is True and flags["strict_386_full_weyl_lambda2_source_closure_certified"] is False and flags["strict_386_all_order_nonlinear_source_closure_certified"] is False, "typed inverse/nonlinear lifecycle firewall drift")
     require(flags["strict_pure_weyl_metric_q3_witness_derived"] is True and flags["strict_pure_weyl_q3_witness_cancellation_certified"] is True and flags["strict_386_lambda2_witness_full_source_closed"] is True and flags["strict_386_Berger_q3_direct_import_compatible"] is False and flags["strict_386_arbitrary_input_q3_certified"] is True and flags["strict_386_full_bv_arity_three_identity_certified"] is True, "paper authoritative cubic completion flags drift")
     require(flags["strict_authoritative_minimal_q3_imported"] is True and flags["strict_minimal_full_bv_arity_three_identity_certified"] is True and flags["strict_minimal_q3_cyclicity_certified"] is True and flags["strict_386_q3_stabilized"] is False, "paper minimal-q3/386 firewall drift")
@@ -1009,11 +1018,12 @@ def main() -> int:
     require(flags["strict_older_even_cross_energy_form_is_bv_antibracket"] is False and flags["strict_940_shifted_cotangent_preflight_full_rank"] is True and flags["strict_m3rc_dual_comparison_maps_constructed"] is True, "paper M3RC comparison-map flags drift")
     require(flags["classical_import_gate_v23_fail_closed"] is True and flags["strict_original_dfinite_h1_zero"] is True and flags["strict_unchanged_4490_source_retracts_to_940_residual"] is False, "paper Gate V23/same-source obstruction flags drift")
     require(flags["strict_m3rc_a_formal_cotangent_dual_comparison_complete"] is True and flags["strict_formal_8980_to_940_cotangent_sdr_exact"] is True and flags["strict_formal_cotangent_pairing_nondegenerate"] is True, "paper M3RC-A formal cotangent flags missing")
-    require(flags["classical_import_gate_v24_fail_closed"] is True and flags["classical_import_gate_v25_fail_closed"] is True and flags["classical_import_gate_v26_fail_closed"] is True, "paper Gate V24/V25/V26 fail-closed flags missing")
+    require(flags["classical_import_gate_v24_fail_closed"] is True and flags["classical_import_gate_v25_fail_closed"] is True and flags["classical_import_gate_v26_fail_closed"] is True and flags["classical_import_gate_v27_fail_closed"] is True, "paper Gate V24/V25/V26/V27 fail-closed flags missing")
     require(flags["strict_m3rc_b_action_support_identification_complete"] is True and flags["strict_m3rc_b_represented_action_support_dual_identification_complete"] is True and flags["strict_all_470_formal_duals_have_compact_source_representatives"] is True and flags["strict_action_pairing_equals_canonical_940_cotangent_pairing"] is True, "paper M3RC-B represented action/support flags missing")
     require(flags["strict_formal_dual_identified_with_action_support_dual"] is False and flags["strict_all_energy_or_smooth_completion_certified"] is False and flags["strict_formal_8980_source_is_authoritative_original_bv_complex"] is False, "paper M3RC-B full-dual/source firewall drift")
     require(flags["strict_m4r_represented_q_res_cyclic"] is True and flags["strict_m4r_represented_projection_equals_inclusion_sharp"] is True and flags["strict_m4r_represented_homotopy_skew_adjoint"] is True and flags["strict_m4r_represented_normalized_cyclic_contraction_complete"] is True and flags["strict_m1_common_strict_snapshot_complete"] is False, "paper M4R/M1 flags drift")
     require(flags["strict_m1_preflight_complete"] is True and flags["strict_m1_typed_diagram_required"] is True and flags["strict_m1_is_clerical_hash_bundle"] is False and flags["strict_m1a_full_typed_carrier_ledger_complete"] is False and flags["strict_m1b_represented_composite_contraction_complete"] is False and flags["strict_m1c_common_manifest_replay_complete"] is False, "paper M1 preflight/package flags drift")
+    require(flags["strict_m1a2_local_semantic_extension_complete"] is True and flags["strict_local_386_fully_typed"] is True and flags["strict_m1a3_represented_crosswalk_complete"] is False and flags["strict_m1a4_ledger_freeze_complete"] is False, "paper M1A2/M1A3/M1A4 flags drift")
     require(flags["strict_386_authoritative_full_q3_imported"] is True and flags["strict_386_full_arity_three_identity_replayed"] is True and flags["strict_386_full_q3_cyclicity_replayed_mod_d"] is True and flags["strict_386_full_d_q3_derivation_replayed"] is True and flags["strict_386_q2_q3_green_compatibility_certified"] is False, "paper authoritative q3/local-to-causal firewall drift")
     require(flags["static_atlas_appendix_generated"] is True, "static atlas appendix flag is not certified")
     require(flags["complete_evidence_register_generated"] is True, "complete evidence register flag is not certified")
@@ -1533,6 +1543,10 @@ def main() -> int:
         r"homotopy is skew-adjoint",
         r"CLASSICAL_IMPORT_GATE_V25_RECONCILIATION",
         r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V43",
+        r"STRICT_M1A_LOCAL_SEMANTIC_EXTENSION_V1",
+        r"2,560 components with zero defects",
+        r"CLASSICAL_IMPORT_GATE_V27_RECONCILIATION",
+        r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V45",
         r"ten source artifacts and seventeen canonical object hashes",
         r"All fifteen cross-certificate",
         r"4,490 harmonic coefficients",

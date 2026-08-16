@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-classical-import-gate-v27-reconciliation-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "m1a_local_semantic_resolution", "gate_disposition", "claim_flags", "independent_checker"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-classical-import-gate-v27-reconciliation-v1"},
+    "result_id": {"const": "CLASSICAL_IMPORT_GATE_V27_RECONCILIATION"},
+    "result_state": {"const": "M1A_LOCAL_386_TYPED_REPRESENTED_CROSSWALK_OPEN_GATE_FAIL_CLOSED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "m1a_local_semantic_resolution": {
+      "type": "object",
+      "required": ["extension_rows", "auxiliary_rows_fully_namespaced", "mapping_cone_rows_fully_namespaced", "local_386_rows_fully_namespaced", "unresolved_fields", "cotton_weyl_component_checks", "cotton_weyl_defects", "M1A_complete"],
+      "properties": {
+        "extension_rows": {"const": 356}, "auxiliary_rows_fully_namespaced": {"const": 36},
+        "mapping_cone_rows_fully_namespaced": {"const": 320}, "local_386_rows_fully_namespaced": {"const": 386},
+        "unresolved_fields": {"const": 0}, "cotton_weyl_component_checks": {"const": 2560},
+        "cotton_weyl_defects": {"const": 0}, "M1A_complete": {"const": false}
+      }
+    },
+    "gate_disposition": {"type": "object", "properties": {"gate_a_status": {"const": "FAIL_CLOSED"}, "accepted_common_snapshot_hashes": {"const": 1}}},
+    "claim_flags": {
+      "type": "object",
+      "properties": {
+        "M1A2_LOCAL_SEMANTIC_EXTENSION_COMPLETE": {"const": true},
+        "LOCAL_386_FULLY_TYPED": {"const": true},
+        "M1A3_REPRESENTED_CROSSWALK_COMPLETE": {"const": false},
+        "M1A_FULL_TYPED_CARRIER_LEDGER_COMPLETE": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "QME_RESTORED": {"const": false}
+      }
+    },
+    "independent_checker": {"type": "object", "required": ["path", "checks", "expected_digest"], "properties": {"expected_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+  }
+}

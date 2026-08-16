@@ -1,0 +1,130 @@
+{
+  "result_id": "STRICT_M1A_LOCAL_SEMANTIC_EXTENSION_V1",
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_M1A_LOCAL_SEMANTIC_EXTENSION_V1_TIER_RECEIPT",
+  "generated_at": "2026-08-16",
+  "source_commit_before_change": "f8709e9bee7e72b48a17b45f2b8666e97980029f",
+  "integration_head_before_commit": "b4af4470d2c3cd6539f25036e589aa0e79183769",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Complete local M1A2 on the authoritative 386-row strict pure-Weyl graph carrier; derive the 36 shifted-auxiliary and 320 fixed-background mapping-cone semantics; certify that scalar nonlinear Weyl weight is not applicable to the Cotton resolution rows; reconcile Gate A through V27; advance the completion atlas through V45; and propagate the fail-closed result through the existing static explorer and Paper 21.",
+  "artifact_hashes": {
+    "quantum-weyl/classical_import/certificates/STRICT_M1A_LOCAL_SEMANTIC_EXTENSION_V1.json": "8745ced9035c5125638651549052be09283162ea2f6c235bcd58aebc367dab57",
+    "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V27_RECONCILIATION.json": "73e4366fd7a6becc27318e703068cc001aea94951325b41d00672e776943cf9e",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V45.json": "2d4708dedcf4e345917b0e72a075bceeeae1ea05112d9db5f11645cc698ef49c",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "de903586dd1b2475e08de6713c74d4caf3f51326d903c043fbe93d3c0447d2bd",
+    "foundations/site/data.json": "91bf012f358ed50774562995f7b469d216e19e31fdf909ffe9607338494dedfa",
+    "paper/21-reverse-foundations-of-physics.tex": "0becc4128cc6bd2e975ed19f236f7ef442bb377ee295c1bbbd30815939030e10",
+    "paper/21-reverse-foundations-of-physics-appendices.tex": "4c88667abbeb891c9c2de421f7c760065d2f7ab4de2ce385369e786b052b8704",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "6fc6d406e21fa7fda473f38c07df15afece4a711f92fb5fe23633a27aee4274a",
+    "paper/21-reverse-foundations-of-physics.pdf": "7a6e7859ef149cddeaf73d3eadef4147515d8ba3602f9616e23496c0553cabf1"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3.12 -m py_compile <scoped M1A2, Gate V27, Atlas V45, static-site and Paper 21 Python files>",
+          "status": "PASS"
+        },
+        {
+          "command": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3.12 -m json.tool <scoped certificates, schemas, results, site data, claim map and receipt>",
+          "status": "PASS"
+        },
+        {
+          "command": "/home/alstrup/.deno/bin/deno check foundations/matrix_site_v2_assets/app-v2.js foundations/site/migration-review.js",
+          "status": "PASS"
+        },
+        {
+          "command": "Draft202012Validator.check_schema plus instance validation for the M1A2, Gate V27 and Atlas V45 schemas",
+          "status": "PASS"
+        },
+        {
+          "command": "pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (three passes from paper/), followed by fatal/undefined-reference/rerun scan",
+          "elapsed_seconds": 2.67,
+          "status": "PASS",
+          "output": "76 pages"
+        },
+        {
+          "command": "git diff --check on explicit scoped paths",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3.12 M1A2 builder --check; independent checker; seven mutation/generation unit tests",
+          "elapsed_seconds": 11.79,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Gate V27 builder --check; independent checker; five mutation/generation unit tests",
+          "elapsed_seconds": 0.22,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Atlas V45 builder --check; independent checker; five unit tests with thirteen promotion/mutation subtests",
+          "elapsed_seconds": 27.42,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 static-site builder --check; independent checker; verifier; ten unit tests",
+          "elapsed_seconds": 16.93,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Paper 21 appendix --check; claim-map --check; independent claim-map verifier",
+          "elapsed_seconds": 0.72,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The local row semantics change the mathematical classification and route order of the final classical-import frontier. The transitive chain through Gate V27, Atlas V45, the content-addressed static explorer, viability and assembly projections, generated appendices, claim map, manuscript pins and rendered PDF was rebuilt and independently checked. The concurrent reverse_physics polynomial-contrast work is unrelated and was excluded."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze/tag, shared core algebra change, lifecycle promotion, release preparation or explicit full-suite request occurred. Gate A remains FAIL_CLOSED; M1A3, M1A4, M1B and M1C remain open; no LORENTZIAN_CERTIFIED claim is promoted."
+    }
+  },
+  "scientific_result": {
+    "endpoint_rows_previously_namespaced": 30,
+    "shifted_auxiliary_rows_namespaced": 36,
+    "mapping_cone_rows_namespaced": 320,
+    "local_rows_fully_namespaced": 386,
+    "local_rows_unresolved": 0,
+    "cotton_transformation_formula": "delta_omega V_abc=omega^p W_apbc",
+    "cotton_component_checks": 2560,
+    "cotton_component_defects": 0,
+    "cotton_nonzero_mixing_checks": 176,
+    "scalar_nonlinear_weyl_weight_on_fixed_background_cone": "NOT_APPLICABLE",
+    "next_ordered_work_packages": [
+      "STRICT_M1A3_REPRESENTED_CROSSWALK",
+      "STRICT_M1A4_LEDGER_FREEZE",
+      "STRICT_M1B_REPRESENTED_COMPOSITE_CONTRACTION",
+      "STRICT_M1C_COMMON_MANIFEST_REPLAY"
+    ],
+    "category_boundary": "M1A2 closes only the local 386-row semantics. It does not crosswalk the 4,080 represented endpoint-harmonic coordinates, classify the separate 410 scalar test-nonminimal coordinates, type the 470+470 action-residual carrier, freeze the common ledger, construct the represented composite, or pass Gate A."
+  },
+  "claim_flags": {
+    "m1a2_local_semantic_extension_complete": true,
+    "local_386_fully_typed": true,
+    "m1a3_represented_crosswalk_complete": false,
+    "m1a4_ledger_freeze_complete": false,
+    "m1a_full_typed_carrier_ledger_complete": false,
+    "m1b_represented_composite_contraction_complete": false,
+    "m1c_common_manifest_replay_complete": false,
+    "formal_8980_source_is_authoritative_original_bv_complex": false,
+    "m1_common_strict_snapshot_complete": false,
+    "classical_import_gate_a_passed": false,
+    "full_complex_hadamard_state_constructed": false,
+    "renormalized_lorentzian_products_constructed": false,
+    "qme_restored": false,
+    "residual_quantum_transfer_authorized": false
+  }
+}

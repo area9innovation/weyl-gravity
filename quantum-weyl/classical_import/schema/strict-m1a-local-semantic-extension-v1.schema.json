@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-m1a-local-semantic-extension-v1.schema.json",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "result_kind", "result_state", "lifecycle",
+    "dependency_tags", "counts", "auxiliary_dimension_derivation",
+    "mapping_cone_dimension_functor", "cotton_nonlinear_weyl_non_eigen_witness",
+    "scalar_weyl_weight_applicability",
+    "local_extension_rows", "claim_flags", "does_not_establish",
+    "independent_checker"
+  ],
+  "properties": {
+    "schema": {"const": "strict-m1a-local-semantic-extension-v1"},
+    "result_id": {"const": "STRICT_M1A_LOCAL_SEMANTIC_EXTENSION_V1"},
+    "result_kind": {"const": "M1A2_LOCAL_AUXILIARY_AND_MAPPING_CONE_SEMANTIC_EXTENSION"},
+    "result_state": {"const": "ALL_356_NAMESPACED_FIXED_BACKGROUND_CONE_SCALAR_WEYL_WEIGHT_NOT_APPLICABLE"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "counts": {
+      "const": {
+        "extension_rows": 356,
+        "auxiliary_rows_fully_namespaced": 36,
+        "mapping_cone_rows_fully_namespaced": 320,
+        "mapping_cone_rows_with_not_applicable_scalar_Weyl_weight": 320,
+        "rows_with_unresolved_fields": 0,
+        "local_386_rows_fully_namespaced_after_this_result": 386,
+        "local_386_rows_remaining_partial": 0
+      }
+    },
+    "auxiliary_dimension_derivation": {"type": "array", "minItems": 4, "maxItems": 4},
+    "mapping_cone_dimension_functor": {
+      "type": "object",
+      "required": ["U", "Eq", "Id", "cotangent_rule", "X_and_Y_copies_share_engineering_dimension"]
+    },
+    "cotton_nonlinear_weyl_non_eigen_witness": {
+      "type": "object",
+      "required": ["infinitesimal_formula_in_dimension_four", "component_checks", "defects", "nonzero_mixing_checks", "conclusion"],
+      "properties": {"component_checks": {"const": 2560}, "defects": {"const": 0}}
+    },
+    "scalar_weyl_weight_applicability": {
+      "type": "object",
+      "required": ["affected_rows", "classification", "not_unknown", "reason", "future_nonlinear_upgrade_test"],
+      "properties": {"affected_rows": {"const": 320}, "classification": {"const": "NOT_APPLICABLE"}, "not_unknown": {"const": true}}
+    },
+    "local_extension_rows": {
+      "type": "array",
+      "minItems": 356,
+      "maxItems": 356,
+      "items": {
+        "type": "object",
+        "required": [
+          "index", "row_id", "block", "role", "tensor_type",
+          "bv_ghost_number", "chain_degree", "antifield_number", "form_degree",
+          "Grassmann_parity", "mass_dimension", "Weyl_weight",
+          "conformal_compact_weight", "ce_ghost_number",
+          "intrinsic_jet_order_bound", "semantic_state", "authority"
+        ]
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "M1A2_AUXILIARY_36_FULLY_NAMESPACED",
+        "M1A2_MAPPING_CONE_320_FULLY_NAMESPACED",
+        "M1A2_SCALAR_WEYL_WEIGHT_APPLICABILITY_CLASSIFIED",
+        "LOCAL_386_FULLY_TYPED", "M1A_FULL_TYPED_CARRIER_LEDGER_COMPLETE",
+        "CLASSICAL_IMPORT_GATE_PASSED", "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED",
+        "QME_RESTORED"
+      ],
+      "properties": {
+        "M1A2_AUXILIARY_36_FULLY_NAMESPACED": {"const": true},
+        "M1A2_MAPPING_CONE_320_FULLY_NAMESPACED": {"const": true},
+        "M1A2_SCALAR_WEYL_WEIGHT_APPLICABILITY_CLASSIFIED": {"const": true},
+        "LOCAL_386_FULLY_TYPED": {"const": true},
+        "M1A_FULL_TYPED_CARRIER_LEDGER_COMPLETE": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "QME_RESTORED": {"const": false}
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 5},
+    "independent_checker": {
+      "type": "object",
+      "required": ["path", "method", "expected_digest"],
+      "properties": {"expected_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    }
+  }
+}

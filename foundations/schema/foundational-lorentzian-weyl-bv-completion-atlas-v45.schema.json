@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9innovation.github.io/weyl-gravity/foundational-lorentzian-weyl-bv-completion-atlas-v45.schema.json",
+  "title": "Foundational Lorentzian Weyl BV completion atlas v45",
+  "type": "object",
+  "required": [
+    "schema_version", "result_id", "result_kind", "lifecycle", "created",
+    "dependency_tags", "question", "answer", "predecessor", "stages", "branches",
+    "frontier_summary", "classical_import_reconciliation", "strict_gate_v27_reconciliation",
+    "strict_m1a_local_semantic_extension", "route_selection", "research_queue",
+    "claim_flags", "does_not_establish", "provenance", "independent_checker", "human_report"
+  ],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v45"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V45"},
+    "result_kind": {"type": "string"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"const": "2026-08-16"},
+    "dependency_tags": {"contains": {"const": "LORENTZIAN-CAUSAL"}},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "predecessor": {
+      "type": "object",
+      "required": ["result_id", "path", "sha256", "preserved"],
+      "properties": {
+        "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V44"},
+        "path": {"const": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V44.json"},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "preserved": {"const": true}
+      }
+    },
+    "stages": {"type": "array", "minItems": 11, "maxItems": 11},
+    "branches": {"type": "array", "minItems": 7, "maxItems": 7},
+    "frontier_summary": {
+      "type": "object",
+      "required": ["highest_value_next_route", "route_count", "completed_since_v44", "new_positive_result", "surprise", "hard_boundary"],
+      "properties": {
+        "highest_value_next_route": {"const": "STRICT_M1A3_REPRESENTED_CROSSWALK"},
+        "route_count": {"const": 10},
+        "completed_since_v44": {"const": ["STRICT_M1A2_LOCAL_SEMANTIC_EXTENSION", "GATE_V27_LOCAL_SEMANTIC_RECONCILIATION"]}
+      }
+    },
+    "classical_import_reconciliation": {
+      "type": "object",
+      "required": ["result_id", "accepted_top_level_hashes", "gate_a_status", "minimal_missing_bundle"],
+      "properties": {
+        "result_id": {"const": "CLASSICAL_IMPORT_GATE_V27_RECONCILIATION"},
+        "accepted_top_level_hashes": {"const": 1},
+        "gate_a_status": {"const": "FAIL_CLOSED"},
+        "minimal_missing_bundle": {"const": ["M1_COMMON_STRICT_SNAPSHOT"]}
+      }
+    },
+    "strict_gate_v27_reconciliation": {
+      "type": "object",
+      "required": ["result_id", "accepted_top_level_hashes", "remaining_top_level_hashes", "local_386_rows_fully_namespaced", "M1A2_local_semantic_extension_complete", "M1A3_represented_crosswalk_complete", "M1A4_ledger_freeze_complete", "M1A_full_typed_carrier_ledger_complete", "gate_a_status"],
+      "properties": {
+        "result_id": {"const": "CLASSICAL_IMPORT_GATE_V27_RECONCILIATION"},
+        "accepted_top_level_hashes": {"const": 1},
+        "remaining_top_level_hashes": {"const": 6},
+        "local_386_rows_fully_namespaced": {"const": 386},
+        "M1A2_local_semantic_extension_complete": {"const": true},
+        "M1A3_represented_crosswalk_complete": {"const": false},
+        "M1A4_ledger_freeze_complete": {"const": false},
+        "M1A_full_typed_carrier_ledger_complete": {"const": false},
+        "gate_a_status": {"const": "FAIL_CLOSED"}
+      }
+    },
+    "strict_m1a_local_semantic_extension": {
+      "type": "object",
+      "required": ["result_id", "extension_rows", "auxiliary_rows_fully_namespaced", "mapping_cone_rows_fully_namespaced", "local_386_rows_fully_namespaced", "unresolved_local_rows", "scalar_nonlinear_weyl_weight", "cotton_component_checks", "cotton_component_defects", "M1A2_complete", "M1A_complete"],
+      "properties": {
+        "result_id": {"const": "STRICT_M1A_LOCAL_SEMANTIC_EXTENSION_V1"},
+        "extension_rows": {"const": 356},
+        "auxiliary_rows_fully_namespaced": {"const": 36},
+        "mapping_cone_rows_fully_namespaced": {"const": 320},
+        "local_386_rows_fully_namespaced": {"const": 386},
+        "unresolved_local_rows": {"const": 0},
+        "scalar_nonlinear_weyl_weight": {"const": "NOT_APPLICABLE"},
+        "cotton_component_checks": {"const": 2560},
+        "cotton_component_defects": {"const": 0},
+        "M1A2_complete": {"const": true},
+        "M1A_complete": {"const": false}
+      }
+    },
+    "route_selection": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "prefixItems": [
+        {"type": "object", "required": ["route", "rank"], "properties": {"route": {"const": "STRICT_M1A3_REPRESENTED_CROSSWALK"}, "rank": {"const": 1}}},
+        {"type": "object", "required": ["route", "rank"], "properties": {"route": {"const": "STRICT_M1A4_LEDGER_FREEZE"}, "rank": {"const": 2}}},
+        {"type": "object", "required": ["route", "rank"], "properties": {"route": {"const": "STRICT_M1B_REPRESENTED_COMPOSITE_CONTRACTION"}, "rank": {"const": 3}}},
+        {"type": "object", "required": ["route", "rank"], "properties": {"route": {"const": "STRICT_M1C_COMMON_MANIFEST_REPLAY"}, "rank": {"const": 4}}}
+      ]
+    },
+    "research_queue": {"type": "array", "minItems": 10, "maxItems": 10},
+    "claim_flags": {
+      "type": "object",
+      "required": ["strict_M1A2_local_semantic_extension_complete", "strict_local_386_fully_typed", "strict_M1A3_represented_crosswalk_complete", "strict_M1A4_ledger_freeze_complete", "strict_M1A_full_typed_carrier_ledger_complete", "strict_M1B_represented_composite_contraction_complete", "strict_M1C_common_manifest_replay_complete", "strict_M1_common_strict_snapshot_complete", "strict_pure_weyl_classical_gate_passed", "strict_386_full_bv_hadamard_state_constructed", "strict_pure_weyl_qme_restored", "lorentzian_full_theory_certified"],
+      "properties": {
+        "strict_M1A2_local_semantic_extension_complete": {"const": true},
+        "strict_local_386_fully_typed": {"const": true},
+        "strict_M1A3_represented_crosswalk_complete": {"const": false},
+        "strict_M1A4_ledger_freeze_complete": {"const": false},
+        "strict_M1A_full_typed_carrier_ledger_complete": {"const": false},
+        "strict_M1B_represented_composite_contraction_complete": {"const": false},
+        "strict_M1C_common_manifest_replay_complete": {"const": false},
+        "strict_M1_common_strict_snapshot_complete": {"const": false},
+        "strict_pure_weyl_classical_gate_passed": {"const": false},
+        "strict_386_full_bv_hadamard_state_constructed": {"const": false},
+        "strict_pure_weyl_qme_restored": {"const": false},
+        "lorentzian_full_theory_certified": {"const": false}
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "provenance": {"type": "object", "required": ["inputs"]},
+    "independent_checker": {
+      "type": "object",
+      "required": ["path", "checks", "expected_digest"],
+      "properties": {
+        "path": {"const": "foundations/check_lorentzian_weyl_bv_completion_atlas_v45.py"},
+        "checks": {"type": "array", "minItems": 8},
+        "expected_digest": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "human_report": {"const": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v45.md"}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

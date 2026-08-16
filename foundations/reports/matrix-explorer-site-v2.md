@@ -34,12 +34,12 @@ all-real BT/Krein path integral; controlled conditional bridges remain open.
 
 The **Weyl BV routes** view projects the current audited Lorentzian completion atlas as
 seven architectures across eleven ordered gates, for 77 separately typed cells.
-It exposes the finite residual-SDR repair, nine ranked next constructions and the
+It exposes the finite residual-SDR repair, ten ranked next constructions and the
 eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a theorem; in particular,
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
-Atlas V44 preserves the field-equation type result.  The degree-one-to-zero
+Atlas V45 preserves the field-equation type result.  The degree-one-to-zero
 Green component is an exact right inverse on Noether-compatible sources and a
 left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
 the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
@@ -141,13 +141,18 @@ and 940, and every declared SDR and cyclicity defect is zero.  Gate V24 then
 closes M3RC-B on represented energies two through six: the causal cutoff
 inverse gives all 470 formal duals compact-source representatives, and the
 action-derived Cauchy/Green form agrees with the canonical rank-940 cotangent
-pairing.  Gate V26 preserves M4R on that represented carrier and classifies
+pairing.  Gate V27 preserves M4R on that represented carrier and advances
 M1.  Its independent
 sparse receiver reconstructs all five cotangent blocks and finds zero defects
 in q-res cyclicity, projection-adjointness, homotopy skewness, inclusion
 isometry, contraction and normalized side conditions.  M1 is now the sole
-minimal missing package, split into M1A typed-ledger, M1B composite-contraction,
-and M1C final-replay constructions.  No new top-level hash is accepted because the formal
+minimal missing package. Local M1A2 is now complete: all 386 local rows are
+fully namespaced, including an exact 2,560-component proof that scalar nonlinear
+Weyl weight is not applicable to the fixed-background Cotton resolution rows.
+M1A3 must crosswalk 4,080 represented endpoint coordinates, distinguish the
+separate 410 test-nonminimal coordinates, and type the 470+470 action-residual
+carrier; M1A4 must freeze that ledger. M1B composite contraction and M1C final
+replay remain downstream. No new top-level hash is accepted because the formal
 8,980-coordinate comparison source is not declared to be the authoritative
 full BV source.
 The complete Berger q3 remains a different-theory Weyl-plus-clock result on a fixed
@@ -276,6 +281,7 @@ This site does not establish:
 - a common-snapshot representative hash from the portable centered coefficient package
 - H3 or H5 cohomology from the adjacent centered C3 and C5 carrier bases
 - the final all-object M1 freeze or a promotion of the formal 8,980-coordinate comparison source to the authoritative full BV source
+- the represented M1A3 crosswalk or M1A4 freeze from complete local 386-row semantics
 - that the formal 8,980-coordinate cotangent completion is the unchanged authoritative classical BV source
 - q2/q3 compatibility with an advanced or retarded Green homotopy
 - that the exact stabilized-q3 candidate is the authoritative nonminimal pure-Weyl BV interaction
