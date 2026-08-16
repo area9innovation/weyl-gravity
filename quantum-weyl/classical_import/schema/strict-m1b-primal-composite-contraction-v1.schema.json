@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-m1b-primal-composite-contraction-v1.schema.json",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "result_id", "result_kind", "result_state",
+    "lifecycle", "dependency_tags", "scope", "typed_operator_dag",
+    "local_graph_factor", "represented_contraction",
+    "residual_coordinate_actions", "composition_obligations",
+    "formal_composition_replay", "foundational_strength", "provenance",
+    "independent_checker", "human_report", "does_not_establish",
+    "claim_flags", "content_sha256"
+  ],
+  "properties": {
+    "schema": {"const": "strict-m1b-primal-composite-contraction-v1"},
+    "result_id": {"const": "STRICT_M1B_PRIMAL_COMPOSITE_CONTRACTION_V1"},
+    "result_kind": {"const": "TYPED_PRIMAL_COMPOSITE_CONTRACTION"},
+    "result_state": {"const": "M1B_PRIMAL_COMPOSITE_COMPLETE_ACTION_DUAL_AND_CYCLIC_REPLAY_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "typed_operator_dag": {
+      "type": "object",
+      "required": ["nodes", "arrows", "formula", "sha256"],
+      "properties": {
+        "nodes": {"type": "array", "minItems": 5, "maxItems": 5},
+        "arrows": {"type": "array", "minItems": 6, "maxItems": 6},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "represented_contraction": {
+      "type": "object",
+      "required": ["blocks", "aggregate", "exact_replay", "sha256"],
+      "properties": {
+        "blocks": {"type": "array", "minItems": 5, "maxItems": 5},
+        "aggregate": {
+          "type": "object",
+          "required": ["represented_rows", "residual_rows", "q0_nonzero_entries", "iota_nonzero_entries", "pi_nonzero_entries", "homotopy_nonzero_entries", "q0_cross_partition_defects"],
+          "properties": {
+            "represented_rows": {"const": 4080},
+            "residual_rows": {"const": 470},
+            "q0_nonzero_entries": {"const": 1805},
+            "iota_nonzero_entries": {"const": 470},
+            "pi_nonzero_entries": {"const": 470},
+            "homotopy_nonzero_entries": {"const": 1805},
+            "q0_cross_partition_defects": {"const": 0}
+          }
+        },
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "residual_coordinate_actions": {"type": "array", "minItems": 470, "maxItems": 470},
+    "composition_obligations": {"type": "object", "required": ["local_factor", "represented_factor", "domain_gluing"]},
+    "formal_composition_replay": {
+      "type": "object",
+      "minProperties": 9,
+      "maxProperties": 9,
+      "additionalProperties": {"const": 0}
+    },
+    "foundational_strength": {
+      "type": "object",
+      "required": ["finite_exact_kernel", "operator_composition", "choice_principle_used", "weakest_complete_foundational_base"],
+      "properties": {"choice_principle_used": {"const": false}}
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["inputs"],
+      "properties": {"inputs": {"type": "array", "minItems": 5, "maxItems": 5}}
+    },
+    "does_not_establish": {"type": "array", "minItems": 6},
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "M1B_PRIMAL_COMPOSITE_CONTRACTION_COMPLETE",
+        "REPRESENTED_4080_TO_470_NORMALIZED_CONTRACTION_COMPLETE",
+        "TYPED_386_THROUGH_30_TO_470_OPERATOR_DAG_COMPLETE",
+        "GRAPH_TO_ENDPOINT_FACTOR_SUPPORT_LOCAL",
+        "HARMONIC_RESTRICTION_SUPPORT_LOCAL",
+        "RAW_386_BY_470_COMPONENT_MATRIX_CONSTRUCTED",
+        "M1B_ACTION_DUAL_LIFT_COMPLETE", "M1B_TYPED_CYCLIC_REPLAY_COMPLETE",
+        "M1B_REPRESENTED_COMPOSITE_CONTRACTION_COMPLETE",
+        "M1C_COMMON_MANIFEST_REPLAY_COMPLETE", "CLASSICAL_IMPORT_GATE_PASSED",
+        "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED",
+        "RENORMALIZED_LORENTZIAN_PRODUCTS_CONSTRUCTED", "QME_RESTORED",
+        "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED"
+      ],
+      "properties": {
+        "M1B_PRIMAL_COMPOSITE_CONTRACTION_COMPLETE": {"const": true},
+        "REPRESENTED_4080_TO_470_NORMALIZED_CONTRACTION_COMPLETE": {"const": true},
+        "TYPED_386_THROUGH_30_TO_470_OPERATOR_DAG_COMPLETE": {"const": true},
+        "GRAPH_TO_ENDPOINT_FACTOR_SUPPORT_LOCAL": {"const": true},
+        "HARMONIC_RESTRICTION_SUPPORT_LOCAL": {"const": false},
+        "RAW_386_BY_470_COMPONENT_MATRIX_CONSTRUCTED": {"const": false},
+        "M1B_ACTION_DUAL_LIFT_COMPLETE": {"const": false},
+        "M1B_TYPED_CYCLIC_REPLAY_COMPLETE": {"const": false},
+        "M1B_REPRESENTED_COMPOSITE_CONTRACTION_COMPLETE": {"const": false},
+        "M1C_COMMON_MANIFEST_REPLAY_COMPLETE": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "RENORMALIZED_LORENTZIAN_PRODUCTS_CONSTRUCTED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": {"const": false}
+      }
+    },
+    "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

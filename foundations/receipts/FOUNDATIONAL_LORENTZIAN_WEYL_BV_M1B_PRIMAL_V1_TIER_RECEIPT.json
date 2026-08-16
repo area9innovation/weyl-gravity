@@ -1,0 +1,138 @@
+{
+  "result_id": "STRICT_M1B_PRIMAL_COMPOSITE_CONTRACTION_V1",
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_M1B_PRIMAL_V1_TIER_RECEIPT",
+  "generated_at": "2026-08-16",
+  "source_commit_before_change": "0a17388b4837808fc3f0f2504114ac011e38a17f",
+  "integration_head_before_commit": "0a17388b4837808fc3f0f2504114ac011e38a17f",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Complete only the primal part of strict pure-Weyl M1B on the declared D-finite energies two through six: restrict the 4,490-coordinate comparison source to its 4,080 represented endpoint subcomplex, construct and independently verify the exact normalized contraction to 470 primal residual modes, compose it with the authoritative local graph-to-endpoint contraction as a typed operator diagram, reconcile Gate A through V29, advance the completion atlas through V47, and propagate the fail-closed result through the existing static explorer and Paper 21.",
+  "artifact_hashes": {
+    "quantum-weyl/classical_import/certificates/STRICT_M1B_PRIMAL_COMPOSITE_CONTRACTION_V1.json": "f95655fc847d6d5ada7dfb6bef6571003792a0d7264c2a8e8bd2a65df9a197c5",
+    "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V29_RECONCILIATION.json": "7c46fea05dad0d62c9c7d49b8bc095bf4dd44edf9901a07da1390e9ec8b61423",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V47.json": "996c351c4ce71f161b04e45d7889d780dd1c4985881aec4e44c00abe4ca40ca6",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "389ddb1b325b3d3659c834585325ac4c838c9c859d6f7e5c175318416ee47d5d",
+    "foundations/site/data.json": "717a1f316b99575f07e1573b80afd18c40dd95552b2a59dfdfe338a5519fe41c",
+    "paper/21-reverse-foundations-of-physics.tex": "9e761867eb40c558b202d3fd4e7e80f0e9f6410c7164b84fd6867445261e4ed2",
+    "paper/21-reverse-foundations-of-physics-appendices.tex": "feced8e5b168f564491820635d664d5ecf7ff0569ba98b3968335b18e2aa990f",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "0e769b4c8f7cff90cf53fc0791766a8e11bdfc1210b08b00ddd8474f43196a6e",
+    "paper/21-reverse-foundations-of-physics.pdf": "c2617eaa1d02a252826ac2d9d897d5d198450b4b86dd6700cbe31b474b79db9f"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3.12 -m py_compile <scoped M1B primal, Gate V29, Atlas V47, static-site and Paper 21 Python files>",
+          "elapsed_seconds": 0.13,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 -m json.tool <14 scoped certificates, schemas, results, site data and claim-map artifacts>",
+          "status": "PASS"
+        },
+        {
+          "command": "Draft202012Validator.check_schema plus instance validation in the M1B primal, Gate V29 and Atlas V47 builders/checkers",
+          "status": "PASS"
+        },
+        {
+          "command": "pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (three passes from paper/), followed by undefined-reference and overfull-box scan",
+          "elapsed_seconds": 2.48,
+          "status": "PASS",
+          "output": "77 pages; no undefined references or overfull boxes"
+        },
+        {
+          "command": "git diff --check on the scoped worktree",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3.12 M1B primal builder --check; independent checker; ten unit tests and seven mutation subtests",
+          "elapsed_seconds": 4.02,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Gate V29 builder --check; independent checker; seven unit tests and three mutation subtests",
+          "elapsed_seconds": 0.45,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Atlas V47 builder --check; independent checker; five unit tests and twelve subtests",
+          "elapsed_seconds": 2.83,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 static-site builder --check; independent checker; verifier; ten unit tests",
+          "elapsed_seconds": 12.36,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Paper 21 appendix --check; claim-map --check; independent claim-map verifier",
+          "elapsed_seconds": 1.37,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The new primal composite changes the M1B package boundary and the final classical-import route order. The transitive chain through Gate V29, Atlas V47, the content-addressed static explorer, viability and assembly projections, generated appendices, claim map, manuscript pins and rendered PDF was rebuilt and independently checked. The unrelated reverse_physics polynomial-contrast work was excluded."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No final classical or quantum freeze/tag, shared core algebra change, lifecycle promotion, release preparation or explicit full-suite request occurred. Only the M1B primal subpackage is complete: the action-dual lift, cyclic replay, M1C, Gate A and every LORENTZIAN_CERTIFIED quantum claim remain open."
+    }
+  },
+  "advisory_rails": {
+    "science_forge_shadow": {
+      "command": "ci/science-forge-shadow.sh",
+      "elapsed_seconds": 3.24,
+      "script_exit_status": "ADVISORY_PASS",
+      "audit_status": "FAIL_CLOSED",
+      "findings": [
+        "The configured bridge audit resolved into the bp2transformer tree and failed because sympy was unavailable there; it did not audit the scoped M1B artifacts.",
+        "The Forge binary reports an unpinned dirty development build whose compiled revision differs from the current stdlib checkout.",
+        "The advisory corpus census reports 1,951 certificates versus the 2026-07-19 baseline of 976."
+      ]
+    }
+  },
+  "scientific_result": {
+    "declared_energies": [2, 3, 4, 5, 6],
+    "comparison_source_rows": 4490,
+    "represented_endpoint_rows": 4080,
+    "excluded_test_rows": 410,
+    "excluded_test_doublets": 205,
+    "primal_residual_rows": 470,
+    "q0_nonzero_entries": 1805,
+    "homotopy_nonzero_entries": 1805,
+    "inclusion_nonzero_entries": 470,
+    "projection_nonzero_entries": 470,
+    "normalized_contraction_identity_defects": 0,
+    "formal_composition_defects": 0,
+    "next_ordered_work_packages": [
+      "STRICT_M1B_ACTION_DUAL_LIFT",
+      "STRICT_M1B_TYPED_CYCLIC_REPLAY",
+      "STRICT_M1C_COMMON_MANIFEST_REPLAY"
+    ],
+    "category_boundary": "The result is a typed composition of a support-local 386-to-30 graph-bundle contraction and a global finite-harmonic 4,080-to-470 represented contraction. It is not a raw 386 by 470 component matrix and does not extend to arbitrary smooth sections or all energies."
+  },
+  "claim_flags": {
+    "m1a_full_typed_carrier_ledger_complete": true,
+    "m1b_primal_composite_contraction_complete": true,
+    "m1b_action_dual_lift_complete": false,
+    "m1b_typed_cyclic_replay_complete": false,
+    "m1b_represented_composite_contraction_complete": false,
+    "m1c_common_manifest_replay_complete": false,
+    "classical_import_gate_a_passed": false,
+    "full_complex_hadamard_state_constructed": false,
+    "renormalized_lorentzian_products_constructed": false,
+    "qme_restored": false,
+    "residual_quantum_transfer_authorized": false
+  }
+}

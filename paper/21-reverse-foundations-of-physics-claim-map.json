@@ -1037,6 +1037,17 @@
       "result_id": "CLASSICAL_IMPORT_GATE_V28_RECONCILIATION",
       "sha256": "679ebb14ad5b53a53e569012aa7b079896ee8db5db724020890b8072666f71a7"
     },
+    "classical_import_gate_v29": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V29_RECONCILIATION.json",
+      "result_id": "CLASSICAL_IMPORT_GATE_V29_RECONCILIATION",
+      "sha256": "7c46fea05dad0d62c9c7d49b8bc095bf4dd44edf9901a07da1390e9ec8b61423"
+    },
     "classical_import_gate_v5": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -1201,7 +1212,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "e5b5e6828f4a8c3afb143e47107da7667787acc21158b18cb4aeddf3406388ba"
+      "sha256": "389ddb1b325b3d3659c834585325ac4c838c9c859d6f7e5c175318416ee47d5d"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -1732,6 +1743,18 @@
       "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V46",
       "sha256": "fc72ae4be5a03158dd84382b3b6c6aa17f9cd61f1aba352e6bd9afe957c0f9d0"
     },
+    "lorentzian_weyl_bv_completion_atlas_v47": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V47.json",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V47",
+      "sha256": "996c351c4ce71f161b04e45d7889d780dd1c4985881aec4e44c00abe4ca40ca6"
+    },
     "lorentzian_weyl_bv_completion_atlas_v5": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -2221,6 +2244,16 @@
       "result_id": "STRICT_M1A_REPRESENTED_CARRIER_CROSSWALK_V1",
       "sha256": "c715c138a94af0681ad6674e49bc2b8c82ee2924d30f5e0a9b04b65c1163dc2f"
     },
+    "strict_m1b_primal_composite_contraction": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_M1B_PRIMAL_COMPOSITE_CONTRACTION_V1.json",
+      "result_id": "STRICT_M1B_PRIMAL_COMPOSITE_CONTRACTION_V1",
+      "sha256": "f95655fc847d6d5ada7dfb6bef6571003792a0d7264c2a8e8bd2a65df9a197c5"
+    },
     "strict_m3rc_action_support_dual_identification": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -2339,10 +2372,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "3e47695ccfcdbd2bc006541ba8fdeed1f7aa5d46b94684afc0b734c8ddd4d9e5"
+      "sha256": "bd7d68e5fd10a99310d305d3b97f6d81f13742f4a46ca83ea82acf50dc8cd7ee"
     }
   },
-  "canonical_digest": "ec7a827599e0abd8158d2059f5f7703e150d583b83f87704c47e5cdad6fe1abd",
+  "canonical_digest": "2a9d4cc2766c3970dd61655baab40b5dd1c7ba6b70a394ac1b6c10b25fd13920",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -2492,6 +2525,7 @@
     "classical_import_gate_v26_fail_closed": true,
     "classical_import_gate_v27_fail_closed": true,
     "classical_import_gate_v28_fail_closed": true,
+    "classical_import_gate_v29_fail_closed": true,
     "classical_import_gate_v8_fail_closed": true,
     "classical_import_gate_v9_fail_closed": true,
     "coded_h2_arbitrary_distribution_uniqueness_proved": false,
@@ -2673,7 +2707,10 @@
     "strict_m1a3_represented_crosswalk_complete": true,
     "strict_m1a4_ledger_freeze_complete": true,
     "strict_m1a_full_typed_carrier_ledger_complete": true,
+    "strict_m1b_action_dual_lift_complete": false,
+    "strict_m1b_primal_composite_contraction_complete": true,
     "strict_m1b_represented_composite_contraction_complete": false,
+    "strict_m1b_typed_cyclic_replay_complete": false,
     "strict_m1c_common_manifest_replay_complete": false,
     "strict_m3_typed_split_required": true,
     "strict_m3l_common_endpoint_sdr_bound": true,
@@ -3747,6 +3784,21 @@
       ],
       "statement": "M1A is complete as an immutable typed diagram, not as one vector space. M1A3 crosswalks all 4,080 represented endpoint coordinates through eight finite harmonic sectors to six local endpoint species and types 470 primal plus 470 action-dual residual rows, with zero q0 partition, chain-degree, residual-crosswalk, or compact-support typing defects. The separate 410 comparison rows are exactly 205 antighost/multiplier test doublets; because no authoritative local source dictionary exists for them, they are explicitly excluded rather than assigned invented semantics. M1A4 content-addresses 17,779 authoritative rows across six distinct objects: 386 local rows, 4,080 represented endpoint rows, 470 primal residual rows, 470 action-dual rows, 30 zero modes, and 12,343 centered cochains. Every authoritative row has a materialization rule, the untyped count and category-identification defect count are zero, and the typed diagram hash is 6fc2f2c0ab0ace839cc96f1cc3ca5a86635f93d8f2e284d69b136d9d3af8c3d8. The formal 8,980-row shifted cotangent remains a non-authoritative comparison fixture. Gate V28 records M1A complete but remains fail closed at one of seven accepted hashes. M1B must construct the primal composite, action-dual lift and typed cyclic replay; M1C must bind and replay the common manifest. No full-complex Hadamard state, renormalized Lorentzian products, QME restoration or residual quantum transfer is established.",
       "status": "M1A_TYPED_DIAGRAM_COMPLETE_M1B_M1C_OPEN_GATE_A_FAIL_CLOSED"
+    },
+    {
+      "authorities": [
+        "strict_m1b_primal_composite_contraction",
+        "classical_import_gate_v29",
+        "lorentzian_weyl_bv_completion_atlas_v47"
+      ],
+      "claim_id": "RF-77-STRICT-WEYL-M1B-PRIMAL-COMPOSITE-CONTRACTION",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "The primal part of M1B is complete on the declared D-finite energies two through six. After deleting exactly 410 comparison-only test coordinates, an exact sparse receiver constructs a normalized contraction from 4,080 represented endpoint coordinates to 470 primal residual modes. The differential and homotopy each have 1,805 nonzero entries, inclusion and projection each have 470, and all eight contraction identities and all formal composition rewrites have zero defects. The certificate is a typed operator diagram: its graph-to-endpoint factor is support-local, whereas its finite harmonic restriction is global. It is neither a raw 386 by 470 component matrix nor an arbitrary-smooth-domain theorem. Gate V29 remains fail closed at one accepted common hash because the action-derived dual lift, rank-940 cyclic replay, and M1C remain open; Atlas V47 ranks those successors first. No full-complex Hadamard state, renormalized Lorentzian products, QME restoration, or residual quantum transfer is established.",
+      "status": "M1B_PRIMAL_COMPOSITE_COMPLETE_ACTION_DUAL_CYCLIC_M1C_AND_GATE_A_OPEN"
     }
   ],
   "created": "2026-08-16",
@@ -3976,19 +4028,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "f068eefd9ddd3bc2495250d8c300f494e3abf91622f6e97149deda566f8c13b8",
+      "assembly_source_canonical_digest": "0ef3b2d27745dd481b6092f121c708061e3225f515bdbe515d4c286b532b7ccf",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "3e47695ccfcdbd2bc006541ba8fdeed1f7aa5d46b94684afc0b734c8ddd4d9e5",
+      "assembly_source_sha256": "bd7d68e5fd10a99310d305d3b97f6d81f13742f4a46ca83ea82acf50dc8cd7ee",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
-      "generator_sha256": "cb0cf6809f4e97368b195e880af4da5123ce19f07d926919e484e4f0e4eb8659",
+      "generator_sha256": "42179d89aae53f53923994923005689141852c94a5d04a92fda829c8733e1c65",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "9c441733256b09fdc749d22b0b1c4f50602bf3c745f7c09ae2f6cd50dffcfd88",
-      "source_canonical_digest": "e52e34ce18da9ed21c2adbb86c91d20ccb4e183e3420f4a53fc98ea9036501bd",
+      "sha256": "feced8e5b168f564491820635d664d5ecf7ff0569ba98b3968335b18e2aa990f",
+      "source_canonical_digest": "5fe7faa8ba4cf9bd60e56b2f261d62a28e6d089c9c1aa542970aed2f3cf916a9",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "00fafefa8a41ae0a8f9c6ba37b144d8efcbe089f9818ac589f3c79ce0a2e3614"
+      "source_sha256": "717a1f316b99575f07e1573b80afd18c40dd95552b2a59dfdfe338a5519fe41c"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "dcc375753f8ae6299ae518220c033a0e701c2aef88e3e1bd6ae46cad5e2d1ea4"
+    "sha256": "9e761867eb40c558b202d3fd4e7e80f0e9f6410c7164b84fd6867445261e4ed2"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",
