@@ -13,10 +13,35 @@
   const RESIDUAL_ZERO_MODES = DATA.completion_residual_zero_modes;
   const CENTERED_COHOMOLOGY = DATA.completion_centered_cohomology;
   const RESIDUAL_SDR_TYPE_AUDIT = DATA.completion_residual_sdr_type_audit;
+  const PROOF_BRIDGES = DATA.proof_bridges || [];
 
   const cells = new Map(DATA.cells.map(cell => [`${cell.foundation}|${cell.carrier}|${cell.obligation}`, cell]));
   const esc = value => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
   const words = value => String(value ?? "").toLowerCase().replaceAll("_", " ").replace(/\b\w/g, char => char.toUpperCase());
+
+  function axiomFootprint(value) {
+    if (Array.isArray(value)) return `<code>${value.map(esc).join(" · ")}</code>`;
+    return Object.entries(value || {}).map(([scope, axioms]) => `<div><b>${esc(words(scope))}</b><code>${axioms.map(esc).join(" · ")}</code></div>`).join("");
+  }
+
+  function proofPassportCard(passport, compact = false) {
+    const claims = passport.formal_claims.map(item => `<li><code>${esc(item.theorem.split(".").at(-1))}</code> — ${esc(item.establishes)}</li>`).join("");
+    const imported = passport.imported_premises.map(item => `<li>${esc(item)}</li>`).join("");
+    const boundaries = passport.does_not_establish.map(item => `<li>${esc(item)}</li>`).join("");
+    return `<article class="proof-passport ${compact ? "compact" : ""}">
+      <div class="proof-passport-head"><div><p class="eyebrow">Formal assurance · no evidence-grade change</p><h3>${esc(passport.title)}</h3></div><span class="kernel-badge">Lean kernel checked</span></div>
+      <p>${esc(passport.summary)}</p>
+      <div class="proof-passport-status"><span><b>Scope</b>${esc(words(passport.formalization_scope))}</span><span><b>Portability</b>${esc(words(passport.foundational_portability))}</span><span><b>Source result</b><code>${esc(passport.source_result_id)}</code></span></div>
+      ${compact ? "" : `<details><summary>What Lean proves</summary><ul>${claims}</ul></details><details><summary>Premises still imported</summary><ul>${imported}</ul></details><details><summary>Axiom footprint</summary><div class="axiom-footprint">${axiomFootprint(passport.axiom_footprint)}</div><p class="muted">This reports the present proof implementation; it is not a minimal reverse-mathematics classification.</p></details><details><summary>Claim boundary</summary><ul>${boundaries}</ul></details>`}
+      <p class="proof-links"><a href="${esc(passport.links.certificate)}">Proof certificate</a> · <a href="${esc(passport.links.lean_source)}">Lean source</a> · <a href="${esc(passport.links.report)}">Report</a> · <a href="${esc(passport.links.checker)}">Replay checker</a> · <a href="${esc(passport.links.receipt)}">Test receipt</a></p>
+    </article>`;
+  }
+
+  function renderProofPassports() {
+    const root = document.getElementById("proofPassportExplorer");
+    if (!root) return;
+    root.innerHTML = `<section class="proof-passport-section"><div class="section-head compact-head"><div><p class="eyebrow">A second assurance axis</p><h2>Formal proof passports</h2></div><p>These records say which implications Lean checks. They do not recolor matrix cells, strengthen physical evidence, or show that an axiom footprint is minimal.</p></div><div class="proof-passport-grid">${PROOF_BRIDGES.map(item => proofPassportCard(item)).join("")}</div></section>`;
+  }
 
   function renderCompletionAtlas() {
     const root = document.getElementById("completionExplorer");
@@ -86,6 +111,7 @@
     const gateProgress = gateV30.result_id ? `<article class="completion-intro gate-progress"><div><p class="eyebrow">Classical import freeze verified</p><h3>One immutable strict pure-Weyl BV snapshot now passes Gate A</h3><p>The receiver verifies ${esc(gateV30.exports_receiver_verified)} of ${esc(gateV30.exports_total)} exports, ${esc(gateV30.freeze_checks_receiver_verified)} of ${esc(gateV30.freeze_checks_total)} required checks, and all ${esc(gateV30.accepted_top_level_hashes)} top-level hashes on the same pinned bytes.</p><p><a href="${esc(DATA.source_links.completion_gate_report)}">Read Gate V30 reconciliation</a> · <a href="${esc(DATA.source_links.completion_m1c_snapshot)}">Inspect the immutable snapshot</a></p></div><aside><b>The post-freeze bridge is now closed</b><p>The exact same snapshot now supports typed nonlinear Green compatibility and a full-complex BRST Hadamard pseudo-state pair. Positivity, renormalized products and the QME remain separate open gates.</p></aside></article>` : "";
     const nonlinearGreenProgress = nonlinearGreen.result_id ? `<article class="completion-intro gate-progress"><div><p class="eyebrow">Nonlinear causal gate closed</p><h3>q2 and q3 compose with both Lorentzian Green orientations</h3><p>The receiver checks arities ${esc(nonlinearGreen.nonlinear_arities.join(" and "))} on all ${esc(nonlinearGreen.carrier_rows)} rows, with ${esc(nonlinearGreen.exact_or_structural_defects)} exact or structural defects. Every finite same-orientation q2/q3 tree is typed, and the general second nonlinear source is a cocycle.</p><p><a href="${esc(DATA.source_links.completion_nonlinear_green_report)}">Read the nonlinear Green report</a> · <a href="${esc(DATA.source_links.completion_nonlinear_green)}">Inspect the certificate</a></p></div><aside><b>Still not an all-order Møller theorem</b><p>Arbitrary mixed orientations and convergence of an infinite tree series remain open.</p></aside></article>` : "";
     const hadamardProgress = hadamard.result_id ? `<article class="completion-intro gate-progress"><div><p class="eyebrow">Classical-to-Hadamard bridge closed</p><h3>A BRST Hadamard two-point pair covers all ${esc(hadamard.carrier_rows)} rows</h3><p>All ${esc(hadamard.proof_obligations)} bisolution, graded-CCR, wavefront, Ward, reality, stationarity, zero-mode, policy and coverage obligations pass with ${esc(hadamard.proof_defects)} defects. The scalar zero mode is retained as a smooth finite-rank term.</p><p><a href="${esc(DATA.source_links.completion_hadamard_report)}">Read the Hadamard report</a> · <a href="${esc(DATA.source_links.completion_hadamard)}">Inspect the content-addressed pair</a></p></div><aside><b>Pseudo-state, not positive state</b><p>The selected pair is indefinite. Positivity on physical cohomology is the new ranked frontier; products and QME restoration remain downstream.</p></aside></article>` : "";
+    const proofBridgeProgress = PROOF_BRIDGES.length ? `<section class="completion-proof-rail"><div class="section-head compact-head"><div><p class="eyebrow">Independent formal-assurance rail</p><h2>What Lean checks—and what it imports</h2></div><p>Kernel checking is shown separately from scientific certification. Neither passport changes a completion gate or matrix grade.</p></div><div class="proof-passport-grid">${PROOF_BRIDGES.map(item => proofPassportCard(item, true)).join("")}</div></section>` : "";
     const m1PreflightProgress = m1Preflight.result_id ? `<article class="completion-intro gate-progress"><div><p class="eyebrow">Preflight separated the carriers</p><h3>M1 is mathematical construction, not a hash sweep</h3><p>The preflight found <b>${esc(m1Preflight.carrier_count)}</b> carrier categories joined by <b>${esc(m1Preflight.typed_edge_count)}</b> typed edges. That separation led to the completed M1A typed diagram; it remains the reason M1B is composed as typed arrows rather than an invented rectangular matrix.</p><p><a href="${esc(DATA.source_links.completion_m1_preflight_report)}">Read the M1 preflight</a> · <a href="${esc(DATA.source_links.completion_m1_preflight)}">Inspect the carrier and blocker ledger</a></p></div><aside><b>Build order completed</b><p>The action-dual and cyclic M1B layers now close on the typed carrier, and M1C binds the final manifest. The preflight remains useful because it explains why those maps cannot be collapsed into one untyped matrix.</p></aside></article>` : "";
     const m1aLocalProgress = m1aLocal.result_id ? `<article class="completion-intro gate-progress"><div><p class="eyebrow">Local semantic frontier closed</p><h3>All ${esc(m1aLocal.local_386_rows_fully_namespaced)} local rows are now explicitly typed</h3><p>The completed ledger adds ${esc(m1aLocal.auxiliary_rows_fully_namespaced)} shifted auxiliary and ${esc(m1aLocal.mapping_cone_rows_fully_namespaced)} mapping-cone rows to the 30 endpoint rows. The exact 2,560-component check has ${esc(m1aLocal.cotton_component_defects)} defects.</p><p><a href="${esc(DATA.source_links.completion_m1a_local_report)}">Read the local semantic report</a> · <a href="${esc(DATA.source_links.completion_m1a_local)}">Inspect all row semantics</a></p></div><aside><b>Why one field says “not applicable”</b><p>The Cotton slot transforms triangularly, mixing with the Weyl tensor through the gradient of the scale parameter. It is therefore not a nonlinear Weyl eigenrow. A scalar weight would be false data, not a stronger classification.</p></aside></article>` : "";
     const m1aRepresentedProgress = m1aRepresented.result_id ? `<article class="completion-intro gate-progress"><div><p class="eyebrow">Represented crosswalk closed</p><h3>${Number(m1aRepresented.represented_endpoint_rows).toLocaleString()} endpoint rows and ${Number(m1aRepresented.action_residual_primal_rows + m1aRepresented.action_residual_dual_rows).toLocaleString()} residual rows are typed</h3><p>Eight finite harmonic sectors crosswalk exactly to six local endpoint species. All partition, chain-degree, residual-crosswalk, and support-typing defect counts are zero.</p><p><a href="${esc(DATA.source_links.completion_m1a_represented_report)}">Read the M1A3 report</a> · <a href="${esc(DATA.source_links.completion_m1a_represented)}">Inspect the row-level crosswalk</a></p></div><aside><b>The extra 410 rows are explained</b><p>They are exactly ${esc(m1aRepresented.excluded_test_doublets)} test antighost/multiplier doublets used by the finite comparison. They are excluded from the authoritative source instead of receiving invented local-field meanings.</p></aside></article>` : "";
@@ -137,6 +163,7 @@
       <article class="completion-intro"><div><p class="eyebrow">Long-running programme objective</p><h3>Complete one causal route—or certify the first impossible gate</h3><p>${esc(ATLAS.answer)}</p></div><aside><b>Current front</b><p>The classical-to-Hadamard bridge is closed on the immutable Gate-A snapshot. The next decisive question is whether a BRST Hadamard representative is positive on physical cohomology; Lorentzian products and QME restoration follow as separate gates.</p><a href="${esc(DATA.source_links.completion_atlas_report)}">Read the audited V49 report</a></aside></article>
       ${gateProgress}
       ${nonlinearGreenProgress}
+      ${proofBridgeProgress}
       ${hadamardProgress}
       ${m1bPrimalProgress}
       ${m1bDualProgress}
@@ -236,6 +263,7 @@
     removeLegacyPendingStatus();
     enhanceInspector();
     renderCompletionAtlas();
+    renderProofPassports();
     if (document.querySelector('[data-view="completion"]')?.classList.contains("active")) document.querySelector(".controls").hidden = true;
   }
 

@@ -1,0 +1,110 @@
+{
+  "result_id": "PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1",
+  "schema_version": "1.0.0",
+  "result_kind": "LEAN_KERNEL_FINITE_CERTIFICATE_REPLAY",
+  "generated_at": "2026-08-16",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "formalization_scope": "FINITE_SERIALIZED_RECEIVER",
+  "kernel_status": "COMPILES",
+  "foundational_portability": "PROOF_METHOD_NOT_MINIMIZED",
+  "toolchain": {
+    "lean": "leanprover/lean4:v4.32.0",
+    "physlib_commit": "ba2a946586c7de1ff394607afd1dd7fe8539a364",
+    "mathlib_commit": "81a5d257c8e410db227a6665ed08f64fea08e997"
+  },
+  "formal_claims": [
+    {
+      "theorem": "WeylPhyslibBridge.MinimalArityThree.channelCountCertified",
+      "establishes": "The imported finite inventory contains exactly 72 channels."
+    },
+    {
+      "theorem": "WeylPhyslibBridge.MinimalArityThree.composablePathCountCertified",
+      "establishes": "The 72 channels contain exactly 212 composable paths."
+    },
+    {
+      "theorem": "WeylPhyslibBridge.MinimalArityThree.q1q3PathCountCertified",
+      "establishes": "Exactly two paths have kind q1-q3."
+    },
+    {
+      "theorem": "WeylPhyslibBridge.MinimalArityThree.q2q2PathCountCertified",
+      "establishes": "Exactly 204 paths have kind q2-q2."
+    },
+    {
+      "theorem": "WeylPhyslibBridge.MinimalArityThree.q3q1PathCountCertified",
+      "establishes": "Exactly six paths have kind q3-q1."
+    },
+    {
+      "theorem": "WeylPhyslibBridge.MinimalArityThree.exactReceiverDefectsZero",
+      "establishes": "Every exact rational defect serialized by the 72-channel receiver is zero."
+    },
+    {
+      "theorem": "WeylPhyslibBridge.MinimalArityThree.allThreeMutationsDetected",
+      "establishes": "Each of the three serialized sign-mutation witnesses contains a nonzero exact rational defect."
+    }
+  ],
+  "axiom_footprints": {
+    "census_and_zero_defects": [
+      "propext",
+      "Quot.sound"
+    ],
+    "rational_mutation_witnesses": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "imported_premises": [
+    "the q1, q2 and q3 natural differential-operator semantics",
+    "the identification of those operators as Taylor coefficients of one BV vector field",
+    "the arbitrary-input differentiated-nilpotency argument",
+    "the exact receiver's evaluation of the differential operators before serialization"
+  ],
+  "provenance": {
+    "lean_source": {
+      "path": "physlib-demo/WeylPhyslibBridge/MinimalArityThree.lean",
+      "sha256": "a048f3cb6ced3c6b480266c6231cc5379ec2dfe6aa3e8560ecb7e1d3e25a1197"
+    },
+    "generator": {
+      "path": "physlib-demo/generate_minimal_arity_three.py",
+      "sha256": "5f64f5276518b2f27dca0eb2028ef2e2be650dca9a571a391de0d9a6dd85bddb"
+    },
+    "forge_source_certificate": {
+      "path": "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1.json",
+      "artifact_id": "STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1",
+      "sha256": "ec51e447914516164b0caa51cbecbf12f1a4b2c8b7ecfbd1303f56d17cc095b5"
+    }
+  },
+  "claim_flags": {
+    "LEAN_KERNEL_PROOF_COMPILES": true,
+    "CHANNEL_INVENTORY_FORMALIZED": true,
+    "ALL_72_CHANNELS_REPLAYED": true,
+    "ALL_212_PATHS_REPLAYED": true,
+    "PATH_KIND_PARTITION_FORMALIZED": true,
+    "EXACT_RECEIVER_ZERO_DEFECTS_FORMALIZED": true,
+    "THREE_MUTATION_WITNESSES_FORMALIZED": true,
+    "NATURAL_OPERATOR_EVALUATOR_FORMALIZED": false,
+    "ARBITRARY_INPUT_NATURAL_IDENTITY_FORMALIZED": false,
+    "CAUSAL_SUPPORT_FORMALIZED": false,
+    "LORENTZIAN_QUANTUM_THEORY": false
+  },
+  "does_not_establish": [
+    "a Lean definition or evaluation of the q1, q2 or q3 natural differential operators",
+    "the arbitrary-input arity-three identity from differentiated BV nilpotency",
+    "quartic q3 cyclicity or a 386-row stabilization",
+    "Green compatibility, causal support, Hadamard properties or positivity",
+    "that the reported axiom footprint is minimal"
+  ],
+  "web_passport": {
+    "title": "Minimal BV arity-three finite replay",
+    "summary": "Lean checks all 72 serialized channels, all 212 typed paths, every zero receiver defect, and three nonzero sign-mutation witnesses.",
+    "evidence_effect": "NONE",
+    "target_view": "completion",
+    "source_result_id": "STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1"
+  },
+  "independent_checker": {
+    "command": "python3 physlib-demo/check_bridge.py --run-lean",
+    "certificate_digest_sha256": "f4629bd189f3bbeebb20a8d6bd1408d1cd82bc8dbf03de57b6c8440f23184767"
+  }
+}

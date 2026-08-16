@@ -12,6 +12,24 @@
 .completion-intro h3 { margin: .15rem 0 .65rem; font-size: clamp(1.35rem, 2.2vw, 2rem); }
 .completion-intro aside { padding: 1rem; border-radius: .75rem; background: #edf3ef; }
 .completion-intro aside p { margin: .45rem 0 .8rem; }
+.proof-passport-section,
+.completion-proof-rail { margin: 1.25rem 0 1.75rem; padding: 1rem; border: 1px solid #c8d7d0; border-radius: .9rem; background: linear-gradient(135deg, #f5f8f6, #eef4f1); }
+.proof-passport-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 25rem), 1fr)); gap: .9rem; }
+.proof-passport { padding: 1rem; border: 1px solid #cbd7d1; border-left: .35rem solid #3b7561; border-radius: .75rem; background: #fff; }
+.proof-passport-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+.proof-passport h3 { margin: .15rem 0 .5rem; }
+.kernel-badge { flex: 0 0 auto; padding: .32rem .5rem; border-radius: 999px; background: #d9efe3; color: #145d43; font-size: .7rem; font-weight: 850; text-transform: uppercase; letter-spacing: .03em; }
+.proof-passport-status { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: .5rem; margin: .8rem 0; }
+.proof-passport-status span { padding: .55rem; border-radius: .45rem; background: #f1f4f2; font-size: .8rem; overflow-wrap: anywhere; }
+.proof-passport-status b { display: block; margin-bottom: .2rem; color: #496158; font-size: .68rem; text-transform: uppercase; }
+.proof-passport details { margin-top: .55rem; padding-top: .45rem; border-top: 1px solid #dfe7e3; }
+.proof-passport summary { cursor: pointer; font-weight: 750; }
+.proof-passport li { margin: .35rem 0; }
+.proof-links { margin-bottom: 0; }
+.axiom-footprint div { margin: .45rem 0; }
+.axiom-footprint b { display: block; font-size: .78rem; }
+.axiom-footprint code { display: block; margin-top: .2rem; overflow-wrap: anywhere; }
+.proof-passport.compact .proof-passport-status { grid-template-columns: 1fr; }
 .completion-layout { display: grid; grid-template-columns: minmax(0, 1fr) 19rem; gap: 1.2rem; align-items: start; }
 .completion-table-wrap { overflow-x: auto; padding-bottom: .5rem; }
 .completion-table { width: 100%; min-width: 82rem; border-collapse: separate; border-spacing: .28rem; table-layout: fixed; }
@@ -64,4 +82,6 @@
 @media (max-width: 900px) {
   .completion-intro, .completion-layout { grid-template-columns: 1fr; }
   .completion-legend { position: static; }
+  .proof-passport-head { display: block; }
+  .kernel-badge { display: inline-block; margin-bottom: .5rem; }
 }

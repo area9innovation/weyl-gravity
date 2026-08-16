@@ -16,6 +16,7 @@ SPEC.loader.exec_module(CHECKER)
 class PhyslibBridgeCertificateTests(unittest.TestCase):
     def setUp(self) -> None:
         self.result = json.loads(CHECKER.CERTIFICATE.read_text())
+        self.arity = json.loads(CHECKER.ARITY_CERTIFICATE.read_text())
 
     def test_certificate_passes(self) -> None:
         errors, _ = CHECKER.check(self.result)
@@ -44,6 +45,22 @@ class PhyslibBridgeCertificateTests(unittest.TestCase):
         mutated["toolchain"]["physlib_commit"] = "0" * 40
         errors, _ = CHECKER.check(mutated)
         self.assertIn("Physlib manifest pin", errors)
+
+    def test_arity_certificate_passes(self) -> None:
+        errors, _ = CHECKER.check_arity_three(self.arity)
+        self.assertEqual(errors, [])
+
+    def test_arity_natural_operator_overpromotion_is_rejected(self) -> None:
+        mutated = copy.deepcopy(self.arity)
+        mutated["claim_flags"]["NATURAL_OPERATOR_EVALUATOR_FORMALIZED"] = True
+        errors, _ = CHECKER.check_arity_three(mutated)
+        self.assertIn("arity claim flags", errors)
+
+    def test_arity_source_hash_mutation_is_rejected(self) -> None:
+        mutated = copy.deepcopy(self.arity)
+        mutated["provenance"]["forge_source_certificate"]["sha256"] = "0" * 64
+        errors, _ = CHECKER.check_arity_three(mutated)
+        self.assertIn("arity forge_source_certificate hash", errors)
 
 
 if __name__ == "__main__":

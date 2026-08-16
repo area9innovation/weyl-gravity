@@ -195,6 +195,14 @@ What remains open after the classical-to-Hadamard bridge is physical-cohomology
 positivity, arbitrary mixed-sign or infinite nonlinear Green recursion,
 renormalized Lorentzian products and QME restoration.
 
+The explorer also exposes two Lean/Physlib proof passports as a separate
+formal-assurance rail. One kernel-checks the final second-source implication;
+the other checks all 72 finite arity-three channels, all 212 serialized paths,
+the zero-defect census and three mutation witnesses. The passports identify
+their imported premises and current axiom footprints. They do this without
+changing evidence grades or completion gates, and they do not formalize the
+natural differential-operator evaluator or establish a minimal axiom base.
+
 The new reconstruction import supplies the first explicit weak-arithmetic
 finite-approximant theorem for a declared bounded wave observable. Its rational
 dyadic interpolants converge uniformly on every rational bounded time interval
@@ -302,3 +310,5 @@ This site does not establish:
 - general lambda-squared causal source closure from the candidate q3 stabilization
 - a positive full-complex Hadamard state or positive physical-cohomology covariance
 - renormalized Lorentzian products, QME restoration, residual transfer or a complete interacting Lorentzian quantum theory
+- that a Lean proof passport strengthens a matrix evidence grade or supplies a missing physical premise
+- that the displayed Lean axiom footprints are reverse-mathematically minimal

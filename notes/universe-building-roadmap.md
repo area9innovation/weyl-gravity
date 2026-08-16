@@ -37,16 +37,19 @@ restored Lorentzian QME, or residual quantum transfer.  The next broad goal is
 to decide physical-cohomology positivity and, independently, build the first
 renormalized time-ordered products before attempting local QME restoration.
 
-A first Lean/Physlib pilot now checks the final algebraic implication in the
-second-source certificate on Lean 4.32.  It proves that the declared reduction
-and arity-three identities imply `q1(S2)=0`; it imports, rather than
-reconstructs, the geometric and causal premises.  The machine-readable result
-`PHYSLIB_STRICT_WEYL_SECOND_SOURCE_BRIDGE_V1` therefore carries only the
-`LOCAL-ALGEBRAIC` tag.  This establishes the intended Forge-to-kernel
-interface, not a formalized Green, support, Hadamard, positivity, or quantum
-theorem.  The next formalization target should be one authoritative finite
-`q2/q3` identity with its exact carrier types, before any analytic layer is
-moved into Lean.
+Two Lean/Physlib pilots now exercise the Forge-to-kernel interface on Lean
+4.32. The first proves that the declared reduction and arity-three identities
+imply `q1(S2)=0`. The second imports the complete finite receiver for the
+minimal arity-three certificate and kernel-checks all 72 channels, all 212
+paths, every serialized zero defect, and three nonzero mutation witnesses.
+Both results carry only `LOCAL-ALGEBRAIC`: the second is a complete replay of
+the finite serialization, not a Lean construction of the natural `q1/q2/q3`
+operators or an arbitrary-input theorem. The Atlas exposes both proof
+passports on a separate assurance axis and explicitly gives them no evidence-
+grade effect. The next formalization target is the smallest semantic step that
+removes one imported premise—a natural-operator evaluator or a generic graded
+arity-three identity. Stop if the work merely serializes more rows without
+closing that interface, and do not move an analytic layer into Lean first.
 
 ## Planning authority and document roles
 

@@ -65,6 +65,8 @@ COMPLETION_GATE_V30 = ROOT / "quantum-weyl/classical_import/certificates/CLASSIC
 COMPLETION_M1B_DUAL = ROOT / "quantum-weyl/classical_import/certificates/STRICT_M1B_ACTION_DUAL_LIFT_V1.json"
 COMPLETION_M1B_CYCLIC = ROOT / "quantum-weyl/classical_import/certificates/STRICT_M1B_TYPED_CYCLIC_COMPOSITE_V1.json"
 COMPLETION_M1C_SNAPSHOT = ROOT / "quantum-weyl/classical_import/certificates/STRICT_M1C_COMMON_SNAPSHOT_V1.json"
+PHYSLIB_SECOND_SOURCE_BRIDGE = ROOT / "physlib-demo/certificates/PHYSLIB_STRICT_WEYL_SECOND_SOURCE_BRIDGE_V1.json"
+PHYSLIB_ARITY_THREE_BRIDGE = ROOT / "physlib-demo/certificates/PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1.json"
 STATUSES = {"LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "REVIEWED_GAP", "NOT_MAPPED"}
 MIGRATIONS = {"EXACT_PARENT_TRANSFER", "CAPABILITY_QUALIFIED", "REVIEWED_OVERLAY", "REVIEWED_NO_TRANSFER", "REVIEWED_CHILD_GAP", "DIRECT_COORDINATE_REVIEW", "NOT_REVIEWED"}
 
@@ -78,7 +80,7 @@ def sha(path: Path) -> str:
 
 
 def digest(data: dict[str, Any]) -> str:
-    projection = {key: data[key] for key in ("axes", "cells", "evidence", "ladder", "graph", "completion_atlas", "completion_common_endpoint_sdr_binding", "completion_endpoint_to_residual_comparison", "completion_residual_cyclic_carrier_obstruction", "completion_dfinite_cotangent_dual_comparison", "completion_m3rc_action_support_dual_identification", "completion_typed_residual_cyclicity", "completion_local_cyclic_pairing", "completion_residual_zero_modes", "completion_centered_cohomology", "completion_residual_sdr_type_audit", "cross_cell_interfaces", "carrier_interfaces", "numerical_reproducibility_records")}
+    projection = {key: data[key] for key in ("axes", "cells", "evidence", "ladder", "graph", "completion_atlas", "completion_common_endpoint_sdr_binding", "completion_endpoint_to_residual_comparison", "completion_residual_cyclic_carrier_obstruction", "completion_dfinite_cotangent_dual_comparison", "completion_m3rc_action_support_dual_identification", "completion_typed_residual_cyclicity", "completion_local_cyclic_pairing", "completion_residual_zero_modes", "completion_centered_cohomology", "completion_residual_sdr_type_audit", "proof_bridges", "cross_cell_interfaces", "carrier_interfaces", "numerical_reproducibility_records")}
     return hashlib.sha256(json.dumps(projection, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()).hexdigest()
 
 
@@ -87,6 +89,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     cube, ladder, completion_source, endpoint_sdr_binding_source, residual_comparison_source, residual_cyclic_obstruction_source, dfinite_cotangent_dual_source, m3rc_action_support_source, typed_residual_cyclicity_source, local_cyclic_pairing_source, residual_zero_mode_source, centered_cohomology_source, residual_sdr_type_audit_source, result, manifest, viability, assemblies = load(CUBE), load(LADDER), load(COMPLETION_ATLAS), load(COMPLETION_ENDPOINT_SDR_BINDING), load(COMPLETION_RESIDUAL_COMPARISON), load(COMPLETION_RESIDUAL_CYCLIC_OBSTRUCTION), load(COMPLETION_DFINITE_COTANGENT_DUAL), load(COMPLETION_M3RC_ACTION_SUPPORT_DUAL), load(COMPLETION_TYPED_RESIDUAL_CYCLICITY), load(COMPLETION_LOCAL_CYCLIC_PAIRING), load(COMPLETION_RESIDUAL_ZERO_MODES), load(COMPLETION_CENTERED_COHOMOLOGY), load(COMPLETION_RESIDUAL_SDR_TYPE_AUDIT), load(RESULT), load(MANIFEST), load(VIABILITY), load(ASSEMBLIES)
     green_source, unary_causal_source = load(COMPLETION_GREEN_ACTION_NAME), load(COMPLETION_UNARY_CAUSAL_SNAPSHOT)
     full_d_source, q2_preflight_source, q2_green_source, recursive_tree_source, formal_source, typed_inverse_source, quadratic_source, q3_witness_source, gate_v8_source, gate_v9_source, gate_v10_source, cubic_inventory_source, hh_hv_lift_source, gate_v11_source, diff_auxiliary_source, gate_v12_source, ghost_manifest_source, gate_v13_source, shifted_mass_source, diff_v2_source, source_q2_source, classical_quartic_source, shifted_mass_q3_source, source_q3_source, gate_v27_source, m1a_local_source, gate_v28_source, m1a_represented_source, m1a_ledger_source, gate_v29_source, m1b_primal_source, gate_v30_source, m1b_dual_source, m1b_cyclic_source, m1c_source = load(COMPLETION_FULL_D), load(COMPLETION_Q2_PREFLIGHT), load(COMPLETION_Q2_GREEN), load(COMPLETION_RECURSIVE_TREES), load(COMPLETION_FORMAL_COEFFICIENTS), load(COMPLETION_FIELD_EQUATION_QUOTIENT_INVERSE), load(COMPLETION_QUADRATIC_OBSTRUCTION), load(COMPLETION_Q3_WITNESS), load(COMPLETION_GATE_V8), load(COMPLETION_GATE_V9), load(COMPLETION_GATE_V10), load(COMPLETION_CUBIC_INVENTORY), load(COMPLETION_HH_HV_LIFT), load(COMPLETION_GATE_V11), load(COMPLETION_DIFF_AUXILIARY), load(COMPLETION_GATE_V12), load(COMPLETION_GHOST_MANIFEST), load(COMPLETION_GATE_V13), load(COMPLETION_SHIFTED_MASS_Q2), load(COMPLETION_DIFF_AUXILIARY_V2), load(COMPLETION_SOURCE_Q2), load(COMPLETION_CLASSICAL_QUARTIC), load(COMPLETION_SHIFTED_MASS_Q3), load(COMPLETION_SOURCE_Q3), load(COMPLETION_GATE_V27), load(COMPLETION_M1A_LOCAL), load(COMPLETION_GATE_V28), load(COMPLETION_M1A_REPRESENTED), load(COMPLETION_M1A_LEDGER), load(COMPLETION_GATE_V29), load(COMPLETION_M1B_PRIMAL), load(COMPLETION_GATE_V30), load(COMPLETION_M1B_DUAL), load(COMPLETION_M1B_CYCLIC), load(COMPLETION_M1C_SNAPSHOT)
+    proof_sources = {item["result_id"]: item for item in (load(PHYSLIB_SECOND_SOURCE_BRIDGE), load(PHYSLIB_ARITY_THREE_BRIDGE))}
     errors: list[str] = []
     axes = {x.get("id"): x for x in data.get("axes", [])}
     keys = {axis_id: [x.get("id") for x in axes.get(axis_id, {}).get("keys", [])] for axis_id in ("FOUNDATION", "CARRIER", "REFINED_OBLIGATION")}
@@ -897,7 +900,30 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("strict M1 preflight projection")
     if [item.get("route") for item in completion.get("route_selection", [])[:3]] != ["STRICT_PHYSICAL_COHOMOLOGY_POSITIVITY_DECISION", "STRICT_LORENTZIAN_RENORMALIZED_TIME_ORDERED_PRODUCTS", "STRICT_LOCAL_ANOMALY_CLASSIFICATION_AND_QME_RESTORATION"]:
         errors.append("strict V49 route frontier")
+    proof_bridges = data.get("proof_bridges", [])
+    if len(proof_bridges) != 2 or {item.get("bridge_result_id") for item in proof_bridges} != set(proof_sources):
+        errors.append("proof-passport closure")
+    else:
+        for passport in proof_bridges:
+            source = proof_sources[passport["bridge_result_id"]]
+            web = source["web_passport"]
+            if (
+                passport.get("source_result_id") != web.get("source_result_id")
+                or passport.get("formalization_scope") != source.get("formalization_scope")
+                or passport.get("kernel_status") != "COMPILES"
+                or passport.get("foundational_portability") != "PROOF_METHOD_NOT_MINIMIZED"
+                or passport.get("evidence_effect") != "NONE"
+                or passport.get("dependency_tags") != ["LOCAL-ALGEBRAIC"]
+                or not passport.get("formal_claims")
+                or not passport.get("imported_premises")
+                or not passport.get("does_not_establish")
+            ):
+                errors.append("proof-passport boundary " + passport["bridge_result_id"])
+    if any(item.get("evidence_effect") != "NONE" for item in proof_bridges):
+        errors.append("proof passport changed evidence state")
     result_flags = result.get("claim_flags", {})
+    if result_flags.get("proof_passports_exposed") is not True or result_flags.get("proof_passports_change_evidence_grades") is not False or result_flags.get("minimal_arity_three_finite_replay_exposed") is not True or result_flags.get("minimal_arity_three_natural_operator_proof_formalized") is not False:
+        errors.append("site proof-passport exposure flags")
     if result_flags.get("strict_residual_zero_mode_payload_exposed") is not True or result_flags.get("strict_residual_zero_mode_common_freeze_exposed") is not True:
         errors.append("site residual zero-mode exposure flags")
     if result_flags.get("strict_centered_cohomology_payload_exposed") is not True or result_flags.get("strict_centered_representative_common_freeze_exposed") is not True:

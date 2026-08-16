@@ -1,14 +1,22 @@
 # Physlib bridge demo
 
-This isolated Lake package demonstrates how a Forge certificate can become a
-kernel-checked Lean theorem without conflating the two assurance layers.
+This isolated Lake package contains two demonstrations of how Forge
+certificates can become kernel-checked Lean theorems without conflating the
+two assurance layers.
 
-The source certificate is
-`STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1`.  Lean proves only its final
+The conclusion-only bridge starts from
+`STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1`. Lean proves its final
 universal algebraic implication: the receiver's reduction of the second
 source together with the diagonal arity-three identity forces exact closure
-because `1/2 - 3/6 = 0`.  The Forge certificate continues to own the geometry,
-typed Green homotopies, causal support and finite-tree theorem.
+because `1/2 - 3/6 = 0`.
+
+The finite-receiver bridge starts from
+`STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1`. A deterministic generator imports
+all 72 serialized channels, all 212 composable paths, their exact rational
+defects, and three sign-mutation witnesses. Lean checks the inventory and the
+finite zero/nonzero claims. Forge continues to own the natural differential
+operators, their evaluation, the arbitrary-input identity, geometry, Green
+homotopies, and causal support.
 
 ## Installation
 
@@ -40,8 +48,10 @@ silently change its dependency graph.
 
 ```bash
 cd physlib-demo
+python3 generate_minimal_arity_three.py --check
 lake build
 lake env lean WeylPhyslibBridge/StrictWeylSecondSource.lean
+lake env lean WeylPhyslibBridge/MinimalArityThree.lean
 python3 check_bridge.py --run-lean
 ```
 
@@ -52,9 +62,15 @@ as provenance.
 
 ## Boundary
 
-The demo does not formalize the full BV complex, the `q₂/q₃` identities, the
-Green homotopies, support-indexed function spaces, Hadamard wavefront sets, or
-physical positivity.  It establishes a small but real two-rail result:
+The demo does not formalize the full BV complex, natural `q₁/q₂/q₃`
+operator evaluation, the arbitrary-input arity-three theorem, Green
+homotopies, support-indexed function spaces, Hadamard wavefront sets, or
+physical positivity. It establishes a small but real two-rail result:
 
 - Forge verifies the scientific premises and their scope;
-- Lean's kernel verifies the final implication from those premises.
+- Lean's kernel verifies either a final implication or a complete finite
+  serialization from those premises.
+
+The generated proof passports shown by the Reverse Physics Atlas report this
+scope, the imported premises, and the current axiom footprint. They are an
+assurance axis; they do not change evidence grades or completion gates.

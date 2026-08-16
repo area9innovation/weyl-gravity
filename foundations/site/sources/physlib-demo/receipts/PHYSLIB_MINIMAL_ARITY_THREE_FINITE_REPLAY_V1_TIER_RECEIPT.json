@@ -1,0 +1,96 @@
+{
+  "receipt_id": "PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1_TIER_RECEIPT",
+  "result_id": "PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1",
+  "recorded_at": "2026-08-16",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "environment": {
+    "lean": "4.32.0",
+    "lake": "5.0.0-src+8c9756b",
+    "physlib_commit": "ba2a946586c7de1ff394607afd1dd7fe8539a364",
+    "mathlib_commit": "81a5d257c8e410db227a6665ed08f64fea08e997"
+  },
+  "commands": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile physlib-demo/generate_minimal_arity_three.py physlib-demo/check_bridge.py physlib-demo/tests/test_bridge.py foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py foundations/verify_matrix_site_v2.py foundations/tests/test_matrix_site.py",
+      "elapsed_seconds": 0.07,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 physlib-demo/generate_minimal_arity_three.py --check",
+      "elapsed_seconds": 0.05,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "cd physlib-demo && PATH=/home/alstrup/.elan/bin:$PATH lake build",
+      "elapsed_seconds": 4.12,
+      "status": "PASS",
+      "notes": "Lean replayed both bridge modules; the finite module reported the declared census, zero-defect and mutation-witness axiom footprints."
+    },
+    {
+      "tier": 1,
+      "command": "PATH=/home/alstrup/.elan/bin:$PATH python3 physlib-demo/check_bridge.py --run-lean",
+      "elapsed_seconds": 6.52,
+      "status": "PASS",
+      "notes": "Both content-addressed bridge certificates and both Lean modules replayed successfully."
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest discover -s physlib-demo/tests -v",
+      "elapsed_seconds": 0.08,
+      "status": "PASS",
+      "tests": 8
+    },
+    {
+      "tier": 2,
+      "command": "python3 foundations/build_matrix_site_v2.py --check && python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py",
+      "elapsed_seconds": 6.96,
+      "status": "PASS",
+      "notes": "The deterministic site, independent data audit, schema, manifest, claim flags and human-report boundaries passed."
+    },
+    {
+      "tier": 2,
+      "command": "python3 -m unittest foundations.tests.test_matrix_site -v",
+      "elapsed_seconds": 16.33,
+      "status": "PASS",
+      "tests": 11
+    }
+  ],
+  "diagnostic_attempts": [
+    {
+      "command": "cd physlib-demo && PATH=/home/alstrup/.elan/bin:$PATH lake build",
+      "status": "FAILED_NOT_A_PASS",
+      "reason": "An initial decide proof did not discharge nonzero rational mutation witnesses and exposed sorryAx; the proof was replaced by exact norm_num witnesses."
+    },
+    {
+      "command": "cd physlib-demo && PATH=/home/alstrup/.elan/bin:$PATH lake build",
+      "status": "FAILED_NOT_A_PASS",
+      "reason": "A diagnostic NativeDecide import did not exist in the pinned Mathlib package; it was removed before the passing build."
+    },
+    {
+      "command": "python3 foundations/verify_matrix_site_v2.py",
+      "status": "FAILED_NOT_A_PASS",
+      "reason": "The first site report did not narrate the proof-passport evidence boundary; a generated explanatory paragraph and fail-closed report tokens were added before the passing verification."
+    }
+  ],
+  "affected_chain": {
+    "status": "PASS_BY_CONTENT_ADDRESS_AND_SCOPED_REPLAY",
+    "source_certificate_sha256": "ec51e447914516164b0caa51cbecbf12f1a4b2c8b7ecfbd1303f56d17cc095b5",
+    "reason": "The authoritative Forge source certificate is content-addressed; its producer is not rerun as an independent verification rail."
+  },
+  "higher_tiers": {
+    "tier_3": "NOT_RUN",
+    "criterion": "No freeze, lifecycle promotion, shared core algebra change, release preparation, or request for the exhaustive repository suite."
+  },
+  "claim_flags": {
+    "SCOPED_TESTS_PASS": true,
+    "LEAN_FINITE_REPLAY_PASS": true,
+    "SITE_PROOF_PASSPORT_PASS": true,
+    "NATURAL_OPERATOR_EVALUATOR_FORMALIZED": false,
+    "FULL_REPOSITORY_SUITE_PASS": false
+  }
+}

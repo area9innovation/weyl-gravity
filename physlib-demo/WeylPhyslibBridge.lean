@@ -1,1 +1,2 @@
+import WeylPhyslibBridge.MinimalArityThree
 import WeylPhyslibBridge.StrictWeylSecondSource

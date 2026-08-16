@@ -184,6 +184,15 @@ COMPLETION_NONLINEAR_GREEN = ROOT / "quantum-weyl/classical_import/certificates/
 COMPLETION_NONLINEAR_GREEN_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1.md"
 COMPLETION_HADAMARD = ROOT / "quantum-weyl/lorentzian/certificates/STRICT_386_BRST_HADAMARD_TWO_POINT_V1.json"
 COMPLETION_HADAMARD_REPORT = ROOT / "quantum-weyl/lorentzian/REPORT_STRICT_386_BRST_HADAMARD_TWO_POINT_V1.md"
+PHYSLIB_SECOND_SOURCE_BRIDGE = ROOT / "physlib-demo/certificates/PHYSLIB_STRICT_WEYL_SECOND_SOURCE_BRIDGE_V1.json"
+PHYSLIB_ARITY_THREE_BRIDGE = ROOT / "physlib-demo/certificates/PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1.json"
+PHYSLIB_BRIDGE_REPORT = ROOT / "physlib-demo/REPORT.md"
+PHYSLIB_SECOND_SOURCE_LEAN = ROOT / "physlib-demo/WeylPhyslibBridge/StrictWeylSecondSource.lean"
+PHYSLIB_ARITY_THREE_LEAN = ROOT / "physlib-demo/WeylPhyslibBridge/MinimalArityThree.lean"
+PHYSLIB_ARITY_THREE_GENERATOR = ROOT / "physlib-demo/generate_minimal_arity_three.py"
+PHYSLIB_BRIDGE_CHECKER = ROOT / "physlib-demo/check_bridge.py"
+PHYSLIB_SECOND_SOURCE_RECEIPT = ROOT / "physlib-demo/receipts/PHYSLIB_STRICT_WEYL_SECOND_SOURCE_BRIDGE_V1_TIER_RECEIPT.json"
+PHYSLIB_ARITY_THREE_RECEIPT = ROOT / "physlib-demo/receipts/PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1_TIER_RECEIPT.json"
 LEDGERS = v1.LEDGERS
 CREATED = "2026-08-16"
 BASE_COMMIT = "278f63816b6e71192a7a03ac4e028ab912f4eafe"
@@ -313,7 +322,7 @@ def cell_mark(cell: dict[str, Any], evidence: dict[str, dict[str, Any]]) -> str:
 def canonical_digest(dataset: dict[str, Any]) -> str:
     projection = {
         key: dataset[key]
-        for key in ("axes", "cells", "evidence", "ladder", "graph", "completion_atlas", "completion_common_endpoint_sdr_binding", "completion_endpoint_to_residual_comparison", "completion_residual_cyclic_carrier_obstruction", "completion_dfinite_cotangent_dual_comparison", "completion_m3rc_action_support_dual_identification", "completion_typed_residual_cyclicity", "completion_local_cyclic_pairing", "completion_residual_zero_modes", "completion_centered_cohomology", "completion_residual_sdr_type_audit", "cross_cell_interfaces", "carrier_interfaces", "numerical_reproducibility_records")
+        for key in ("axes", "cells", "evidence", "ladder", "graph", "completion_atlas", "completion_common_endpoint_sdr_binding", "completion_endpoint_to_residual_comparison", "completion_residual_cyclic_carrier_obstruction", "completion_dfinite_cotangent_dual_comparison", "completion_m3rc_action_support_dual_identification", "completion_typed_residual_cyclicity", "completion_local_cyclic_pairing", "completion_residual_zero_modes", "completion_centered_cohomology", "completion_residual_sdr_type_audit", "proof_bridges", "cross_cell_interfaces", "carrier_interfaces", "numerical_reproducibility_records")
     }
     return v1.sha_bytes(json.dumps(projection, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode())
 
@@ -331,6 +340,42 @@ def build_dataset() -> dict[str, Any]:
     completion_residual_zero_modes = v1.load(COMPLETION_RESIDUAL_ZERO_MODES)
     completion_centered_cohomology = v1.load(COMPLETION_CENTERED_COHOMOLOGY)
     completion_residual_sdr_type_audit = v1.load(COMPLETION_RESIDUAL_SDR_TYPE_AUDIT)
+    proof_bridge_sources = [v1.load(PHYSLIB_SECOND_SOURCE_BRIDGE), v1.load(PHYSLIB_ARITY_THREE_BRIDGE)]
+    proof_bridges = []
+    lean_sources = {
+        "PHYSLIB_STRICT_WEYL_SECOND_SOURCE_BRIDGE_V1": PHYSLIB_SECOND_SOURCE_LEAN,
+        "PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1": PHYSLIB_ARITY_THREE_LEAN,
+    }
+    receipts = {
+        "PHYSLIB_STRICT_WEYL_SECOND_SOURCE_BRIDGE_V1": PHYSLIB_SECOND_SOURCE_RECEIPT,
+        "PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1": PHYSLIB_ARITY_THREE_RECEIPT,
+    }
+    for bridge in proof_bridge_sources:
+        passport = bridge["web_passport"]
+        lean_source = lean_sources[bridge["result_id"]]
+        proof_bridges.append({
+            "bridge_result_id": bridge["result_id"],
+            "source_result_id": passport["source_result_id"],
+            "title": passport["title"],
+            "summary": passport["summary"],
+            "formalization_scope": bridge["formalization_scope"],
+            "kernel_status": bridge["kernel_status"],
+            "foundational_portability": bridge["foundational_portability"],
+            "dependency_tags": bridge["dependency_tags"],
+            "axiom_footprint": bridge.get("axiom_footprint", bridge.get("axiom_footprints")),
+            "formal_claims": bridge["formal_claims"],
+            "imported_premises": bridge["imported_premises"],
+            "does_not_establish": bridge["does_not_establish"],
+            "evidence_effect": passport["evidence_effect"],
+            "target_view": passport["target_view"],
+            "links": {
+                "certificate": site_link(rel(PHYSLIB_SECOND_SOURCE_BRIDGE if bridge["result_id"] == "PHYSLIB_STRICT_WEYL_SECOND_SOURCE_BRIDGE_V1" else PHYSLIB_ARITY_THREE_BRIDGE)),
+                "lean_source": site_link(rel(lean_source)),
+                "report": site_link(rel(PHYSLIB_BRIDGE_REPORT)),
+                "checker": site_link(rel(PHYSLIB_BRIDGE_CHECKER)),
+                "receipt": site_link(rel(receipts[bridge["result_id"]])),
+            },
+        })
     interface_results = [v1.load(CORNER_BORN_INTERFACE), v1.load(GROUND_STATE_DYNAMICS_INTERFACE)]
     if cube.get("certified_interfaces") != [item.get("interface") for item in interface_results]:
         raise ValueError("cube/interface projection mismatch")
@@ -390,6 +435,7 @@ def build_dataset() -> dict[str, Any]:
         "completion_residual_zero_modes": completion_residual_zero_modes,
         "completion_centered_cohomology": completion_centered_cohomology,
         "completion_residual_sdr_type_audit": completion_residual_sdr_type_audit,
+        "proof_bridges": proof_bridges,
         "cross_cell_interfaces": cube["certified_interfaces"],
         "carrier_interfaces": cube["certified_carrier_interfaces"],
         "numerical_reproducibility_records": bt_import["numerical_reproducibility_records"],
@@ -546,6 +592,9 @@ def build_dataset() -> dict[str, Any]:
             "completion_nonlinear_green_report": site_link(rel(COMPLETION_NONLINEAR_GREEN_REPORT)),
             "completion_hadamard": site_link(rel(COMPLETION_HADAMARD)),
             "completion_hadamard_report": site_link(rel(COMPLETION_HADAMARD_REPORT)),
+            "physlib_second_source_bridge": site_link(rel(PHYSLIB_SECOND_SOURCE_BRIDGE)),
+            "physlib_arity_three_bridge": site_link(rel(PHYSLIB_ARITY_THREE_BRIDGE)),
+            "physlib_bridge_report": site_link(rel(PHYSLIB_BRIDGE_REPORT)),
         },
     }
     dataset["canonical_digest"] = canonical_digest(dataset)
@@ -750,6 +799,14 @@ The unary SDR, canonical shear and represented Green actions are serialized.
 What remains open after the classical-to-Hadamard bridge is physical-cohomology
 positivity, arbitrary mixed-sign or infinite nonlinear Green recursion,
 renormalized Lorentzian products and QME restoration.
+
+The explorer also exposes two Lean/Physlib proof passports as a separate
+formal-assurance rail. One kernel-checks the final second-source implication;
+the other checks all 72 finite arity-three channels, all 212 serialized paths,
+the zero-defect census and three mutation witnesses. The passports identify
+their imported premises and current axiom footprints. They do this without
+changing evidence grades or completion gates, and they do not formalize the
+natural differential-operator evaluator or establish a minimal axiom base.
 
 The new reconstruction import supplies the first explicit weak-arithmetic
 finite-approximant theorem for a declared bounded wave observable. Its rational
@@ -1054,6 +1111,7 @@ def generated() -> dict[Path, bytes]:
         COMPLETION_M1C_SNAPSHOT_REPORT,
         COMPLETION_NONLINEAR_GREEN_REPORT,
         COMPLETION_HADAMARD_REPORT,
+        PHYSLIB_BRIDGE_REPORT,
         COMPLETION_M1A_LOCAL_REPORT,
         COMPLETION_M1A_REPRESENTED_REPORT,
         COMPLETION_M1A_LEDGER_REPORT,
@@ -1107,6 +1165,14 @@ def generated() -> dict[Path, bytes]:
         COMPLETION_M3RC_ACTION_SUPPORT_DUAL_REPORT,
         COMPLETION_TYPED_RESIDUAL_CYCLICITY,
         COMPLETION_TYPED_RESIDUAL_CYCLICITY_REPORT,
+        PHYSLIB_SECOND_SOURCE_BRIDGE,
+        PHYSLIB_ARITY_THREE_BRIDGE,
+        PHYSLIB_SECOND_SOURCE_LEAN,
+        PHYSLIB_ARITY_THREE_LEAN,
+        PHYSLIB_ARITY_THREE_GENERATOR,
+        PHYSLIB_BRIDGE_CHECKER,
+        PHYSLIB_SECOND_SOURCE_RECEIPT,
+        PHYSLIB_ARITY_THREE_RECEIPT,
     ]))
     for source in bundled_sources:
         outputs[SITE / "sources" / source.relative_to(ROOT)] = source.read_bytes()
@@ -1279,6 +1345,13 @@ def generated() -> dict[Path, bytes]:
     result["claim_flags"]["strict_386_physical_cohomology_positivity_exposed"] = False
     result["does_not_establish"].append("a positive full-complex Hadamard state or positive physical-cohomology covariance")
     result["does_not_establish"].append("renormalized Lorentzian products, QME restoration, residual transfer or a complete interacting Lorentzian quantum theory")
+    result["features"].append("two generated Lean/Physlib proof passports that expose formalized scope, imported premises, axiom footprints and replay links without changing evidence grades")
+    result["claim_flags"]["proof_passports_exposed"] = True
+    result["claim_flags"]["proof_passports_change_evidence_grades"] = False
+    result["claim_flags"]["minimal_arity_three_finite_replay_exposed"] = True
+    result["claim_flags"]["minimal_arity_three_natural_operator_proof_formalized"] = False
+    result["does_not_establish"].append("that a Lean proof passport strengthens a matrix evidence grade or supplies a missing physical premise")
+    result["does_not_establish"].append("that the displayed Lean axiom footprints are reverse-mathematically minimal")
     outputs[RESULT] = (json.dumps(result, indent=2) + "\n").encode()
     outputs[REPORT] = render_report(result).encode()
     outputs[VIABILITY_RESULT] = viability_json

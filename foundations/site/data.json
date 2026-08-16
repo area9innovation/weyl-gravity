@@ -231122,6 +231122,131 @@
     },
     "human_report": "quantum-weyl/classical_import/REPORT_STRICT_RESIDUAL_SDR_TYPE_AND_LOCALITY_AUDIT_V1.md"
   },
+  "proof_bridges": [
+    {
+      "bridge_result_id": "PHYSLIB_STRICT_WEYL_SECOND_SOURCE_BRIDGE_V1",
+      "source_result_id": "STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1",
+      "title": "Second nonlinear source implication",
+      "summary": "Lean proves the final rational-module implication from the declared receiver reduction and arity-three identity; the geometric and causal premises remain imported.",
+      "formalization_scope": "CONCLUSION_ONLY",
+      "kernel_status": "COMPILES",
+      "foundational_portability": "PROOF_METHOD_NOT_MINIMIZED",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "axiom_footprint": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "formal_claims": [
+        {
+          "theorem": "WeylPhyslibBridge.StrictWeyl.rationalCoefficientCancellation",
+          "establishes": "The exact rational identity 1/2 + (1/6)(-3) = 0."
+        },
+        {
+          "theorem": "WeylPhyslibBridge.StrictWeyl.secondNonlinearSourceClosed",
+          "establishes": "For any rational module, the declared reduction identity and arity-three identity imply q1(S2)=0."
+        }
+      ],
+      "imported_premises": [
+        "the receiver reduction of q1(S2) to the Jacobiator and q1(q3)",
+        "the diagonal arity-three q1(q3) identity",
+        "the Green and causal-support construction supplying those identities"
+      ],
+      "does_not_establish": [
+        "the source q2 and q3 identities",
+        "a Green homotopy or causal-support theorem",
+        "a Hadamard state",
+        "physical positivity or unitarity",
+        "a Lorentzian quantum-master-equation theorem"
+      ],
+      "evidence_effect": "NONE",
+      "target_view": "completion",
+      "links": {
+        "certificate": "sources/physlib-demo/certificates/PHYSLIB_STRICT_WEYL_SECOND_SOURCE_BRIDGE_V1.json",
+        "lean_source": "sources/physlib-demo/WeylPhyslibBridge/StrictWeylSecondSource.lean",
+        "report": "sources/physlib-demo/REPORT.md",
+        "checker": "sources/physlib-demo/check_bridge.py",
+        "receipt": "sources/physlib-demo/receipts/PHYSLIB_STRICT_WEYL_SECOND_SOURCE_BRIDGE_V1_TIER_RECEIPT.json"
+      }
+    },
+    {
+      "bridge_result_id": "PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1",
+      "source_result_id": "STRICT_MINIMAL_BV_ARITY_THREE_IDENTITY_V1",
+      "title": "Minimal BV arity-three finite replay",
+      "summary": "Lean checks all 72 serialized channels, all 212 typed paths, every zero receiver defect, and three nonzero sign-mutation witnesses.",
+      "formalization_scope": "FINITE_SERIALIZED_RECEIVER",
+      "kernel_status": "COMPILES",
+      "foundational_portability": "PROOF_METHOD_NOT_MINIMIZED",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "axiom_footprint": {
+        "census_and_zero_defects": [
+          "propext",
+          "Quot.sound"
+        ],
+        "rational_mutation_witnesses": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "formal_claims": [
+        {
+          "theorem": "WeylPhyslibBridge.MinimalArityThree.channelCountCertified",
+          "establishes": "The imported finite inventory contains exactly 72 channels."
+        },
+        {
+          "theorem": "WeylPhyslibBridge.MinimalArityThree.composablePathCountCertified",
+          "establishes": "The 72 channels contain exactly 212 composable paths."
+        },
+        {
+          "theorem": "WeylPhyslibBridge.MinimalArityThree.q1q3PathCountCertified",
+          "establishes": "Exactly two paths have kind q1-q3."
+        },
+        {
+          "theorem": "WeylPhyslibBridge.MinimalArityThree.q2q2PathCountCertified",
+          "establishes": "Exactly 204 paths have kind q2-q2."
+        },
+        {
+          "theorem": "WeylPhyslibBridge.MinimalArityThree.q3q1PathCountCertified",
+          "establishes": "Exactly six paths have kind q3-q1."
+        },
+        {
+          "theorem": "WeylPhyslibBridge.MinimalArityThree.exactReceiverDefectsZero",
+          "establishes": "Every exact rational defect serialized by the 72-channel receiver is zero."
+        },
+        {
+          "theorem": "WeylPhyslibBridge.MinimalArityThree.allThreeMutationsDetected",
+          "establishes": "Each of the three serialized sign-mutation witnesses contains a nonzero exact rational defect."
+        }
+      ],
+      "imported_premises": [
+        "the q1, q2 and q3 natural differential-operator semantics",
+        "the identification of those operators as Taylor coefficients of one BV vector field",
+        "the arbitrary-input differentiated-nilpotency argument",
+        "the exact receiver's evaluation of the differential operators before serialization"
+      ],
+      "does_not_establish": [
+        "a Lean definition or evaluation of the q1, q2 or q3 natural differential operators",
+        "the arbitrary-input arity-three identity from differentiated BV nilpotency",
+        "quartic q3 cyclicity or a 386-row stabilization",
+        "Green compatibility, causal support, Hadamard properties or positivity",
+        "that the reported axiom footprint is minimal"
+      ],
+      "evidence_effect": "NONE",
+      "target_view": "completion",
+      "links": {
+        "certificate": "sources/physlib-demo/certificates/PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1.json",
+        "lean_source": "sources/physlib-demo/WeylPhyslibBridge/MinimalArityThree.lean",
+        "report": "sources/physlib-demo/REPORT.md",
+        "checker": "sources/physlib-demo/check_bridge.py",
+        "receipt": "sources/physlib-demo/receipts/PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1_TIER_RECEIPT.json"
+      }
+    }
+  ],
   "cross_cell_interfaces": [
     {
       "id": "STATE_TO_PROBABILITY",
@@ -231408,7 +231533,10 @@
     "completion_nonlinear_green": "sources/quantum-weyl/classical_import/certificates/STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1.json",
     "completion_nonlinear_green_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1.md",
     "completion_hadamard": "sources/quantum-weyl/lorentzian/certificates/STRICT_386_BRST_HADAMARD_TWO_POINT_V1.json",
-    "completion_hadamard_report": "sources/quantum-weyl/lorentzian/REPORT_STRICT_386_BRST_HADAMARD_TWO_POINT_V1.md"
+    "completion_hadamard_report": "sources/quantum-weyl/lorentzian/REPORT_STRICT_386_BRST_HADAMARD_TWO_POINT_V1.md",
+    "physlib_second_source_bridge": "sources/physlib-demo/certificates/PHYSLIB_STRICT_WEYL_SECOND_SOURCE_BRIDGE_V1.json",
+    "physlib_arity_three_bridge": "sources/physlib-demo/certificates/PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1.json",
+    "physlib_bridge_report": "sources/physlib-demo/REPORT.md"
   },
-  "canonical_digest": "0cdc2be777962634ed320344fa8d4a468169d64ecb1e8f8ef9e5abbc81da6c5e"
+  "canonical_digest": "08f1dcb716d43586ce7ab14baf18ce2773e018048682f3e78e8f2a13d6734cde"
 }

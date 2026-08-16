@@ -65,6 +65,12 @@ class MatrixSiteTests(unittest.TestCase):
         report = REPORT.read_text().replace("it is not a result", "it is a result")
         self.assertTrue(verify(report=report)[0])
 
+    def test_proof_passport_cannot_change_evidence_grade(self):
+        data = build_dataset()
+        data["proof_bridges"][0]["evidence_effect"] = "PROMOTE"
+        errors, _ = check(data)
+        self.assertTrue(any("proof passport" in error for error in errors))
+
     def test_static_shell_exposes_migration_review(self):
         html = (ROOT / "foundations/site/index.html").read_text()
         base_app = (ROOT / "foundations/site/app.js").read_text()
@@ -79,6 +85,11 @@ class MatrixSiteTests(unittest.TestCase):
         self.assertIn('data-view="completion"', html)
         self.assertIn('id="completionView"', html)
         self.assertIn('id="completionExplorer"', html)
+        self.assertIn('id="proofPassportExplorer"', html)
+        self.assertIn("Formal proof passports", app)
+        self.assertIn("no evidence-grade change", app)
+        self.assertIn("What Lean proves", app)
+        self.assertIn("Premises still imported", app)
         self.assertIn("Represented Green action certified", app)
         self.assertIn("Scoped common snapshot accepted", app)
         self.assertIn("Full cylinder flow certified", app)
@@ -92,9 +103,30 @@ class MatrixSiteTests(unittest.TestCase):
         self.assertIn("The first BV promotion gap is at λ²", app)
         self.assertIn("Field-equation type gate corrected and closed", app)
         self.assertIn("The stronger inverse is impossible", app)
-        self.assertIn("Read the audited V48 report", app)
+        self.assertIn("Read the audited V49 report", app)
         self.assertIn("Minimal cubic L∞ package completed", app)
         site_data = json.loads((ROOT / "foundations/site/data.json").read_text())
+        passports = site_data["proof_bridges"]
+        self.assertEqual(len(passports), 2)
+        self.assertEqual(
+            {item["bridge_result_id"] for item in passports},
+            {
+                "PHYSLIB_STRICT_WEYL_SECOND_SOURCE_BRIDGE_V1",
+                "PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1",
+            },
+        )
+        self.assertEqual({item["evidence_effect"] for item in passports}, {"NONE"})
+        self.assertEqual(
+            {item["formalization_scope"] for item in passports},
+            {"CONCLUSION_ONLY", "FINITE_SERIALIZED_RECEIVER"},
+        )
+        for path in (
+            "foundations/site/sources/physlib-demo/certificates/PHYSLIB_STRICT_WEYL_SECOND_SOURCE_BRIDGE_V1.json",
+            "foundations/site/sources/physlib-demo/certificates/PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1.json",
+            "foundations/site/sources/physlib-demo/WeylPhyslibBridge/StrictWeylSecondSource.lean",
+            "foundations/site/sources/physlib-demo/WeylPhyslibBridge/MinimalArityThree.lean",
+        ):
+            self.assertTrue((ROOT / path).is_file(), path)
         self.assertEqual(site_data["completion_atlas"]["strict_minimal_q3_completion"]["arity_three_channels"], 72)
         self.assertIn("The quadratic-only λ² source is not closed", app)
         self.assertIn("The target has now been met at minimal scope", app)
@@ -162,7 +194,7 @@ class MatrixSiteTests(unittest.TestCase):
         self.assertEqual(site_data["completion_atlas"]["strict_m1b_primal_composite_contraction"]["represented_identity_defects"], 0)
         self.assertTrue(site_data["completion_atlas"]["strict_m1b_typed_cyclic_composite"]["M1B_complete"])
         self.assertTrue(site_data["completion_atlas"]["strict_m1c_common_snapshot"]["M1C_complete"])
-        self.assertEqual(site_data["completion_atlas"]["route_selection"][0]["route"], "STRICT_Q2_Q3_TYPED_GREEN_COMPATIBILITY")
+        self.assertEqual(site_data["completion_atlas"]["route_selection"][0]["route"], "STRICT_PHYSICAL_COHOMOLOGY_POSITIVITY_DECISION")
         self.assertEqual(len(site_data["completion_atlas"]["route_selection"]), 7)
         self.assertEqual(site_data["completion_endpoint_to_residual_comparison"]["comparison"]["target"]["dimension"], 470)
         self.assertTrue(site_data["completion_endpoint_to_residual_comparison"]["claim_flags"]["M3R_TYPED_RESIDUAL_COMPARISON_CONSTRUCTED"])
