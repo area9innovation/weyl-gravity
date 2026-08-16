@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/foundational-lorentzian-weyl-bv-completion-atlas-v40.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "result_id",
+    "lifecycle",
+    "dependency_tags",
+    "stages",
+    "branches",
+    "frontier_summary",
+    "classical_import_reconciliation",
+    "strict_gate_v22_reconciliation",
+    "strict_endpoint_to_residual_spectral_comparison",
+    "strict_residual_cyclic_carrier_obstruction",
+    "strict_local_cyclic_pairing_closure",
+    "strict_common_endpoint_sdr_binding",
+    "strict_residual_sdr_type_audit",
+    "strict_source_q2_common_assembly",
+    "strict_source_q3_common_assembly",
+    "strict_residual_zero_mode_payload",
+    "strict_centered_cohomology_payload",
+    "route_selection",
+    "research_queue",
+    "claim_flags",
+    "provenance",
+    "independent_checker"
+  ],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v40"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V40"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"contains": {"const": "LORENTZIAN-CAUSAL"}},
+    "stages": {"type": "array", "minItems": 11, "maxItems": 11},
+    "branches": {"type": "array", "minItems": 7, "maxItems": 7},
+    "route_selection": {"type": "array", "minItems": 9, "maxItems": 9},
+    "research_queue": {"type": "array", "minItems": 9, "maxItems": 9},
+    "strict_gate_v22_reconciliation": {
+      "type": "object",
+      "required": ["gate_a_status", "accepted_top_level_hashes", "remaining_top_level_hashes", "minimal_missing_bundle", "current_470_induced_odd_pairing_rank_zero", "finite_940_cotangent_preflight_constructed", "M3RC_dual_comparison_maps_constructed", "M4R_typed_residual_cyclicity_complete"],
+      "properties": {
+        "gate_a_status": {"const": "FAIL_CLOSED"},
+        "accepted_top_level_hashes": {"const": 1},
+        "remaining_top_level_hashes": {"const": 6},
+        "minimal_missing_bundle": {"const": ["M3RC_CYCLIC_RESIDUAL_CARRIER_COMPLETION", "M4R_TYPED_RESIDUAL_CYCLICITY", "M1_COMMON_STRICT_SNAPSHOT"]},
+        "current_470_induced_odd_pairing_rank_zero": {"const": true},
+        "finite_940_cotangent_preflight_constructed": {"const": true},
+        "M3RC_dual_comparison_maps_constructed": {"const": false},
+        "M4R_typed_residual_cyclicity_complete": {"const": false}
+      }
+    },
+    "strict_residual_cyclic_carrier_obstruction": {
+      "type": "object",
+      "required": ["result_id", "current_carrier_coordinates", "current_carrier_degree_counts", "authoritative_pairing_degree", "current_induced_pairing_rank", "current_induced_pairing_nullity", "nondegeneracy_rank_defect", "older_even_form_is_BV_antibracket", "cotangent_preflight_coordinates", "cotangent_preflight_pairing_rank", "cotangent_action_pairing_identified", "M3RC_status", "M4R_status"],
+      "properties": {
+        "result_id": {"const": "STRICT_RESIDUAL_CYCLIC_CARRIER_OBSTRUCTION_V1"},
+        "current_carrier_coordinates": {"const": 470},
+        "current_carrier_degree_counts": {"const": {"0": 470}},
+        "authoritative_pairing_degree": {"const": -1},
+        "current_induced_pairing_rank": {"const": 0},
+        "current_induced_pairing_nullity": {"const": 470},
+        "nondegeneracy_rank_defect": {"const": 470},
+        "older_even_form_is_BV_antibracket": {"const": false},
+        "cotangent_preflight_coordinates": {"const": 940},
+        "cotangent_preflight_pairing_rank": {"const": 940},
+        "cotangent_action_pairing_identified": {"const": false},
+        "M3RC_status": {"const": "OPEN"},
+        "M4R_status": {"const": "BLOCKED_BY_M3RC"}
+      }
+    },
+    "frontier_summary": {
+      "type": "object",
+      "required": ["highest_value_next_route", "route_count", "completed_since_v39", "new_positive_result", "new_no_go", "surprise", "hard_boundary"],
+      "properties": {
+        "highest_value_next_route": {"const": "STRICT_M3RC_DUAL_RESIDUAL_COMPARISON"},
+        "route_count": {"const": 9}
+      }
+    },
+    "independent_checker": {"type": "object", "required": ["path", "checks", "expected_digest"]}
+  }
+}

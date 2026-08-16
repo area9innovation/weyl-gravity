@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-residual-cyclic-carrier-obstruction-v1.schema.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_kind",
+    "result_state",
+    "lifecycle",
+    "dependency_tags",
+    "scope",
+    "obstruction_replay",
+    "older_even_form_control",
+    "cotangent_preflight",
+    "repair_ledger",
+    "foundational_strength",
+    "gate_disposition",
+    "provenance",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate",
+    "independent_checker"
+  ],
+  "properties": {
+    "schema": {"const": "strict-residual-cyclic-carrier-obstruction-v1"},
+    "result_id": {"const": "STRICT_RESIDUAL_CYCLIC_CARRIER_OBSTRUCTION_V1"},
+    "result_kind": {"const": "CLASSICAL_IMPORT_RESIDUAL_CYCLIC_CARRIER_OBSTRUCTION_AND_COTANGENT_PREFLIGHT"},
+    "result_state": {"const": "CURRENT_470_MODE_M4R_OBSTRUCTED_MINIMAL_940_COTANGENT_PREFLIGHT_CONSTRUCTED_DUAL_COMPARISON_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "obstruction_replay": {
+      "type": "object",
+      "required": [
+        "m3r_residual_coordinates",
+        "m3r_inclusion_nonzero_entries",
+        "m3r_inclusion_coordinate_defects",
+        "m3r_inclusion_degree_counts",
+        "m3r_inclusion_sector_counts",
+        "m3r_inclusion_coefficient_counts",
+        "authoritative_local_pairing_degree",
+        "endpoint_metric_component_rows",
+        "endpoint_metric_metric_pairing_nonzeros",
+        "pulled_back_odd_pairing_nonzeros",
+        "pulled_back_odd_pairing_rank",
+        "pulled_back_odd_pairing_nullity",
+        "required_nondegenerate_rank",
+        "nondegeneracy_rank_defect",
+        "q_res_cyclicity_defects",
+        "reason_q_res_check_is_not_sufficient"
+      ],
+      "properties": {
+        "m3r_residual_coordinates": {"const": 470},
+        "m3r_inclusion_nonzero_entries": {"const": 470},
+        "m3r_inclusion_coordinate_defects": {"const": 0},
+        "m3r_inclusion_degree_counts": {"const": {"0": 470}},
+        "m3r_inclusion_sector_counts": {"const": {"metric_tf": 470}},
+        "m3r_inclusion_coefficient_counts": {"const": {"1": 470}},
+        "authoritative_local_pairing_degree": {"const": -1},
+        "endpoint_metric_component_rows": {"const": 10},
+        "endpoint_metric_metric_pairing_nonzeros": {"const": 0},
+        "pulled_back_odd_pairing_nonzeros": {"const": 0},
+        "pulled_back_odd_pairing_rank": {"const": 0},
+        "pulled_back_odd_pairing_nullity": {"const": 470},
+        "required_nondegenerate_rank": {"const": 470},
+        "nondegeneracy_rank_defect": {"const": 470},
+        "q_res_cyclicity_defects": {"const": 0}
+      }
+    },
+    "older_even_form_control": {
+      "type": "object",
+      "required": ["artifact", "category", "normalization", "energies", "dimension", "symmetric_even_physical_form", "field_theoretic_BV_antibracket_identified", "all_M3R_energies_covered", "disposition"],
+      "properties": {
+        "energies": {"const": [2, 3, 4, 5]},
+        "dimension": {"const": 268},
+        "symmetric_even_physical_form": {"const": true},
+        "field_theoretic_BV_antibracket_identified": {"const": false},
+        "all_M3R_energies_covered": {"const": false},
+        "disposition": {"const": "VALID_EVEN_REPRESENTATION_THEORETIC_CONTROL_NOT_M4R_EVIDENCE"}
+      }
+    },
+    "cotangent_preflight": {
+      "type": "object",
+      "required": [
+        "status",
+        "object",
+        "primal_dimension",
+        "adjoined_dual_dimension",
+        "total_dimension",
+        "degree_counts",
+        "differential",
+        "pairing_degree",
+        "pairing_convention",
+        "nonzero_ordered_pairing_entries",
+        "constructive_exact_rank",
+        "odd_skew_defects",
+        "pairing_degree_defects",
+        "q_res_cyclicity_defects",
+        "pair_dictionary_sha256",
+        "pair_dictionary",
+        "minimality_scope",
+        "absolute_minimal_cyclic_completion",
+        "action_or_endpoint_pairing_transport"
+      ],
+      "properties": {
+        "status": {"const": "FINITE_ALGEBRAIC_CARRIER_AND_PAIRING_CONSTRUCTED_COMPARISON_MAPS_OPEN"},
+        "primal_dimension": {"const": 470},
+        "adjoined_dual_dimension": {"const": 470},
+        "total_dimension": {"const": 940},
+        "degree_counts": {"const": {"0": 470, "1": 470}},
+        "pairing_degree": {"const": -1},
+        "nonzero_ordered_pairing_entries": {"const": 940},
+        "constructive_exact_rank": {"const": 940},
+        "odd_skew_defects": {"const": 0},
+        "pairing_degree_defects": {"const": 0},
+        "q_res_cyclicity_defects": {"const": 0},
+        "pair_dictionary_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "pair_dictionary": {
+          "type": "array",
+          "minItems": 470,
+          "maxItems": 470,
+          "items": {
+            "type": "object",
+            "required": ["pair_index", "energy", "chirality", "family", "primal_index", "primal_degree", "primal_label", "dual_index", "dual_degree", "dual_label", "forward_coefficient", "reverse_coefficient"]
+          }
+        },
+        "absolute_minimal_cyclic_completion": {"const": "NOT_PROVED"},
+        "action_or_endpoint_pairing_transport": {"const": "NOT_CONSTRUCTED"}
+      }
+    },
+    "repair_ledger": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "prefixItems": [
+        {"type": "object", "properties": {"id": {"const": "M3RC_CYCLIC_RESIDUAL_CARRIER_COMPLETION"}, "status": {"const": "OPEN"}}},
+        {"type": "object", "properties": {"id": {"const": "M4R_TYPED_RESIDUAL_CYCLICITY"}, "status": {"const": "BLOCKED_BY_M3RC"}}},
+        {"type": "object", "properties": {"id": {"const": "M1_COMMON_STRICT_SNAPSHOT"}, "status": {"const": "BLOCKED_BY_M3RC_AND_M4R"}}}
+      ]
+    },
+    "gate_disposition": {
+      "type": "object",
+      "required": ["M3R_PRIMAL_COMPARISON", "M3RC_CYCLIC_RESIDUAL_CARRIER_COMPLETION", "M4R_TYPED_RESIDUAL_CYCLICITY", "M1_COMMON_STRICT_SNAPSHOT", "classical_import_gate_a_status"],
+      "properties": {
+        "M3RC_CYCLIC_RESIDUAL_CARRIER_COMPLETION": {"const": "OPEN_AFTER_EXACT_RANK_ZERO_OBSTRUCTION"},
+        "M4R_TYPED_RESIDUAL_CYCLICITY": {"const": "BLOCKED_BY_M3RC"},
+        "classical_import_gate_a_status": {"const": "FAIL_CLOSED"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["inputs"],
+      "properties": {"inputs": {"type": "array", "minItems": 6, "maxItems": 6}}
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "CURRENT_470_MODE_INDUCED_ODD_PAIRING_NONDEGENERATE",
+        "CURRENT_470_MODE_INDUCED_ODD_PAIRING_RANK_ZERO",
+        "OLDER_EVEN_COHOMOLOGY_FORM_IS_BV_ANTIBRACKET",
+        "FINITE_940_SHIFTED_COTANGENT_CARRIER_CONSTRUCTED",
+        "FINITE_940_CANONICAL_ODD_PAIRING_NONDEGENERATE",
+        "FINITE_940_PAIRING_IDENTIFIED_WITH_ACTION_BV_PAIRING",
+        "M3RC_DUAL_COMPARISON_MAPS_CONSTRUCTED",
+        "M4R_TYPED_RESIDUAL_CYCLICITY_COMPLETE",
+        "CLASSICAL_IMPORT_GATE_PASSED",
+        "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED",
+        "QME_RESTORED",
+        "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED"
+      ],
+      "properties": {
+        "CURRENT_470_MODE_INDUCED_ODD_PAIRING_NONDEGENERATE": {"const": false},
+        "CURRENT_470_MODE_INDUCED_ODD_PAIRING_RANK_ZERO": {"const": true},
+        "OLDER_EVEN_COHOMOLOGY_FORM_IS_BV_ANTIBRACKET": {"const": false},
+        "FINITE_940_SHIFTED_COTANGENT_CARRIER_CONSTRUCTED": {"const": true},
+        "FINITE_940_CANONICAL_ODD_PAIRING_NONDEGENERATE": {"const": true},
+        "FINITE_940_PAIRING_IDENTIFIED_WITH_ACTION_BV_PAIRING": {"const": false},
+        "M3RC_DUAL_COMPARISON_MAPS_CONSTRUCTED": {"const": false},
+        "M4R_TYPED_RESIDUAL_CYCLICITY_COMPLETE": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": {"const": false}
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 7},
+    "next_gate": {"type": "string", "minLength": 1},
+    "independent_checker": {
+      "type": "object",
+      "required": ["path", "checks", "expected_digest"],
+      "properties": {"expected_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    }
+  }
+}

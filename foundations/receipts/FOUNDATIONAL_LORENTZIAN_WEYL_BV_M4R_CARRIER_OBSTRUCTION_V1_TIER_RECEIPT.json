@@ -1,0 +1,117 @@
+{
+  "result_id": "STRICT_RESIDUAL_CYCLIC_CARRIER_OBSTRUCTION_V1",
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_M4R_CARRIER_OBSTRUCTION_V1_TIER_RECEIPT",
+  "generated_at": "2026-08-16",
+  "source_commit_before_change": "6395898920233872342d9f24757d5c7406f5db05",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Test the literal induced odd BV pairing on the fixed 470-mode M3R carrier; classify the exact rank-zero obstruction; separate the older even cohomology form from the BV antibracket; construct and independently verify the finite 940-coordinate shifted-cotangent preflight; insert M3RC before M4R and M1 in Gate V22 and Atlas V40; propagate the fail-closed result through the static explorer and Paper 21 without promoting a Lorentzian quantum lifecycle state.",
+  "artifact_hashes": {
+    "quantum-weyl/classical_import/certificates/STRICT_RESIDUAL_CYCLIC_CARRIER_OBSTRUCTION_V1.json": "ee15ebff18e6c17ebaf8a26f83ed67fefc31dd520661ddf7aee457297ef74555",
+    "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V22_RECONCILIATION.json": "8603cda324d3ad0e7d95f535cec06e76ff63880f41c5dea3eda7942ec57c0c26",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V40.json": "fc9194a78e41389c05649c2de636b6f4e3106877308fd0c144c5e5983999dde9",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "958e6b2b37d895966bb0eaca0a645eb0a25ad21ddc86dc36c47ddcc2246df50b",
+    "foundations/site/data.json": "0aeeeef106d0fb38cb1e9804ed20a088b4044c071af496d50bfbd99587b59f2e",
+    "paper/21-reverse-foundations-of-physics-appendices.tex": "1db8561f143bca303147e5d570e666bd4ae1f93f0958c28b35e784c911e44a2d",
+    "paper/21-reverse-foundations-of-physics.pdf": "0447f05c9136375c7fb7596960433e02d229edbf8f10ef312e944d352fe95f78",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "dcd6ce6279a8a6768cb08d5efb3323cc5526afd07c683cf4960723acbc6fc902"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3.12 -m py_compile <scoped obstruction, Gate V22, Atlas V40, static-site and Paper 21 Python files>",
+          "elapsed_seconds": 0.12,
+          "status": "PASS"
+        },
+        {
+          "command": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3.12 -m json.tool <scoped certificates, schemas, results, site data, claim map and receipt>",
+          "status": "PASS"
+        },
+        {
+          "command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory paper paper/21-reverse-foundations-of-physics.tex",
+          "elapsed_seconds": 1.39,
+          "status": "PASS",
+          "output": "75 pages; no undefined citation/reference or overfull box. Existing non-fatal underfull boxes remain."
+        },
+        {
+          "command": "git diff --check -- foundations quantum-weyl/classical_import paper",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3.12 obstruction builder --check; independent checker; seven unit tests",
+          "elapsed_seconds": 0.53,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Gate V22 builder --check; independent checker; six unit tests",
+          "elapsed_seconds": 0.40,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Atlas V40 builder --check; independent checker; five unit tests",
+          "elapsed_seconds": 0.29,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 static-site builder --check; independent checker; verifier; ten unit tests",
+          "elapsed_seconds": 26.07,
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Paper 21 appendix --check; claim-map --check; independent claim-map verifier",
+          "elapsed_seconds": 1.11,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The obstruction result changes the residual-cyclicity prerequisite and is consumed transitively by Gate V22, Atlas V40, the content-addressed static explorer, the generated appendices, the paper claim map and the rendered PDF. Every producer currentness check and independent receiver/checker in that affected chain passed. The M3R comparison, local pairing and older cross-energy form are unchanged and pinned by content hash in the new certificate."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze/tag, QME lifecycle promotion, shared core algebra change, or release preparation occurred. Gate A remains FAIL_CLOSED; M3RC, M4R and M1 remain open; no LORENTZIAN_CERTIFIED claim is promoted."
+    }
+  },
+  "scientific_result": {
+    "current_primal_residual_coordinates": 470,
+    "current_induced_odd_pairing_nonzeros": 0,
+    "current_induced_odd_pairing_rank": 0,
+    "current_induced_odd_pairing_nullity": 470,
+    "current_induced_odd_pairing_rank_defect": 470,
+    "older_even_form_coordinates": 268,
+    "older_even_form_is_field_theoretic_bv_antibracket": false,
+    "shifted_cotangent_primal_coordinates": 470,
+    "shifted_cotangent_dual_coordinates": 470,
+    "shifted_cotangent_total_coordinates": 940,
+    "shifted_cotangent_pairing_rank": 940,
+    "route_order": [
+      "STRICT_M3RC_DUAL_RESIDUAL_COMPARISON",
+      "STRICT_TYPED_RESIDUAL_CYCLICITY",
+      "STRICT_COMMON_FREEZE_SNAPSHOT_AND_FINAL_CYCLIC_CONTRACTION"
+    ],
+    "category_boundary": "The exact obstruction rejects direct cyclic transfer to the one-sided degree-zero 470-mode carrier. The 940-coordinate object is a finite algebraic cotangent preflight, not an action-derived residual BV complex and not a no-go theorem for dual-complete residual complexes."
+  },
+  "claim_flags": {
+    "current_470_mode_induced_odd_pairing_rank_zero": true,
+    "current_470_mode_induced_odd_pairing_nondegenerate": false,
+    "older_even_form_promoted_to_bv_antibracket": false,
+    "finite_940_shifted_cotangent_pairing_nondegenerate": true,
+    "m3rc_dual_endpoint_comparison_constructed": false,
+    "m4r_typed_residual_cyclicity_constructed": false,
+    "classical_import_gate_a_passed": false,
+    "full_complex_hadamard_state_constructed": false,
+    "qme_restored": false,
+    "residual_quantum_transfer_authorized": false
+  }
+}

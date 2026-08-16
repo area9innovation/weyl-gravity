@@ -34,12 +34,12 @@ all-real BT/Krein path integral; controlled conditional bridges remain open.
 
 The **Weyl BV routes** view projects the current audited Lorentzian completion atlas as
 seven architectures across eleven ordered gates, for 77 separately typed cells.
-It exposes the finite residual-SDR repair, eight ranked next constructions and the
+It exposes the finite residual-SDR repair, nine ranked next constructions and the
 eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a theorem; in particular,
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
-Atlas V39 preserves the field-equation type result.  The degree-one-to-zero
+Atlas V40 preserves the field-equation type result.  The degree-one-to-zero
 Green component is an exact right inverse on Noether-compatible sources and a
 left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
 the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
@@ -129,8 +129,15 @@ Gate V21 now closes M3R on the represented D-finite domain: all 470
 positive-energy residual coordinates have explicit E/A/L magnetic labels,
 normalized synthesis names, an exact bijective crosswalk, and zero retraction
 or q0-chain defects.  The harmonic restriction is global and is not promoted
-to a support-local or all-energy map.  No new top-level hash is accepted; M1
-and M4R remain open.
+to a support-local or all-energy map.  Gate V22 then tests the missing cyclic
+step rather than assuming it.  All 470 synthesis columns land in degree-zero
+metric slots, while the degree-minus-one BV form has no metric--metric block.
+Its literal pullback therefore has rank zero and nullity 470.  The older
+cross-energy form is symmetric and even, not the field-theoretic BV
+antibracket.  A 940-coordinate shifted-cotangent preflight has an exact
+rank-940 odd pairing, but its dual endpoint maps and action-pairing
+identification remain open.  No new top-level hash is accepted; M3RC, M4R,
+and M1 remain in that dependency order.
 The complete Berger q3 remains a different-theory Weyl-plus-clock result on a fixed
 54-row carrier; no certified same-theory cyclic map authorizes its direct import.
 
@@ -256,7 +263,7 @@ This site does not establish:
 - a common-snapshot zero-mode hash from the portable residual coefficient package
 - a common-snapshot representative hash from the portable centered coefficient package
 - H3 or H5 cohomology from the adjacent centered C3 and C5 carrier bases
-- the induced residual pairing/cyclicity M4R or the final all-object freeze M1
+- M3RC dual comparison maps, the induced residual pairing/cyclicity M4R, or the final all-object freeze M1
 - q2/q3 compatibility with an advanced or retarded Green homotopy
 - that the exact stabilized-q3 candidate is the authoritative nonminimal pure-Weyl BV interaction
 - general lambda-squared causal source closure from the candidate q3 stabilization

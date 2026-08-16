@@ -5475,6 +5475,6 @@ window.THEORY_VIABILITY_DATA = {
     "that Pareto-frontier profiles are physically preferred or more likely true",
     "a complete observationally validated theory under any regime or carrier portfolio"
   ],
-  "source_atlas_digest": "2a7b176015d98fe38e1cf635b22c1cce58bc8a0b453779ee6f2a2b2d2e158032",
-  "canonical_digest": "4c3156d05d5121c4c2ff56c76661d4f92b8d900147480e827b645de8bc697908"
+  "source_atlas_digest": "5eecc265c0a6894d881789e3deffc40b08d2a7d50c4bd26e66844306713c8571",
+  "canonical_digest": "b031a6ea7b320efd0134aa607adaa6fd945f2168d960c27c20e8f7860a1c4cf1"
 };
