@@ -1,0 +1,284 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9innovation.github.io/weyl-gravity/strict-dfinite-cotangent-dual-comparison-v1.schema.json",
+  "title": "Strict D-finite cotangent-dual comparison v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema",
+    "schema_path",
+    "result_id",
+    "result_kind",
+    "result_state",
+    "lifecycle",
+    "created",
+    "repository_base_commit",
+    "dependency_tags",
+    "question",
+    "answer",
+    "scope",
+    "original_source_cohomology",
+    "same_source_impossibility",
+    "formal_cotangent_completion",
+    "action_support_identification",
+    "m3rc_split",
+    "foundational_strength",
+    "provenance",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate",
+    "human_report",
+    "independent_checker"
+  ],
+  "properties": {
+    "$schema": {"const": "../schema/strict-dfinite-cotangent-dual-comparison-v1.schema.json"},
+    "schema": {"const": "strict-dfinite-cotangent-dual-comparison-v1"},
+    "schema_path": {"const": "quantum-weyl/classical_import/schema/strict-dfinite-cotangent-dual-comparison-v1.schema.json"},
+    "result_id": {"const": "STRICT_DFINITE_COTANGENT_DUAL_COMPARISON_V1"},
+    "result_kind": {"const": "FORMAL_COTANGENT_DUAL_SDR_COMPARISON_AND_SAME_SOURCE_OBSTRUCTION"},
+    "result_state": {"type": "string", "minLength": 1},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"const": "2026-08-16"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background", "energies", "arithmetic", "duality"],
+      "properties": {
+        "theory": {"type": "string"},
+        "background": {"type": "string"},
+        "energies": {"const": [2, 3, 4, 5, 6]},
+        "arithmetic": {"type": "string"},
+        "duality": {"type": "string"}
+      }
+    },
+    "original_source_cohomology": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blocks", "global_dimensions_by_degree"],
+      "properties": {
+        "blocks": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {"$ref": "#/$defs/cohomologyBlock"}
+        },
+        "global_dimensions_by_degree": {
+          "const": {"-1": 0, "0": 470, "1": 0, "2": 0}
+        }
+      }
+    },
+    "same_source_impossibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "original_source_full_dimension",
+        "original_source_total_cohomology_dimension",
+        "original_source_degree_zero_cohomology_dimension",
+        "original_source_degree_one_cohomology_dimension",
+        "desired_cotangent_residual_dimension",
+        "desired_degree_one_dual_dimension",
+        "cohomology_dimension_mismatch",
+        "same_source_deformation_retract_to_940_possible",
+        "reason"
+      ],
+      "properties": {
+        "original_source_full_dimension": {"const": 4490},
+        "original_source_total_cohomology_dimension": {"const": 470},
+        "original_source_degree_zero_cohomology_dimension": {"const": 470},
+        "original_source_degree_one_cohomology_dimension": {"const": 0},
+        "desired_cotangent_residual_dimension": {"const": 940},
+        "desired_degree_one_dual_dimension": {"const": 470},
+        "cohomology_dimension_mismatch": {"const": 470},
+        "same_source_deformation_retract_to_940_possible": {"const": false},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "formal_cotangent_completion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source", "target", "full_dimension", "residual_dimension",
+        "primal_residual_dimension", "dual_residual_dimension", "differential",
+        "inclusion", "projection", "homotopy", "full_pairing", "residual_pairing",
+        "full_pairing_rank", "residual_pairing_rank", "global_dual_map_hash",
+        "block_comparisons", "all_declared_identity_defects"
+      ],
+      "properties": {
+        "source": {"type": "string"},
+        "target": {"type": "string"},
+        "full_dimension": {"const": 8980},
+        "residual_dimension": {"const": 940},
+        "primal_residual_dimension": {"const": 470},
+        "dual_residual_dimension": {"const": 470},
+        "differential": {"type": "string"},
+        "inclusion": {"type": "string"},
+        "projection": {"type": "string"},
+        "homotopy": {"type": "string"},
+        "full_pairing": {"type": "string"},
+        "residual_pairing": {"type": "string"},
+        "full_pairing_rank": {"const": 8980},
+        "residual_pairing_rank": {"const": 940},
+        "global_dual_map_hash": {"$ref": "#/$defs/hash"},
+        "block_comparisons": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {"$ref": "#/$defs/dualBlock"}
+        },
+        "all_declared_identity_defects": {"const": 0}
+      }
+    },
+    "action_support_identification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "formal_dual_used", "action_dual_needed", "missing_comparison", "same_endpoint_carrier_identification", "formal_cotangent_completion_is_authoritative_original_bv_complex"],
+      "properties": {
+        "status": {"const": "OPEN"},
+        "formal_dual_used": {"type": "string"},
+        "action_dual_needed": {"type": "string"},
+        "missing_comparison": {"type": "string"},
+        "same_endpoint_carrier_identification": {"const": false},
+        "formal_cotangent_completion_is_authoritative_original_bv_complex": {"const": false}
+      }
+    },
+    "m3rc_split": {
+      "const": {
+        "M3RC_A_FORMAL_COTANGENT_DUAL_COMPARISON": "COMPLETE",
+        "M3RC_B_ACTION_SUPPORT_DUAL_IDENTIFICATION": "OPEN",
+        "M4R_TYPED_RESIDUAL_CYCLICITY": "BLOCKED_BY_M3RC_B",
+        "M1_COMMON_STRICT_SNAPSHOT": "OPEN_AFTER_M4R"
+      }
+    },
+    "foundational_strength": {"type": "object", "minProperties": 5},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inputs"],
+      "properties": {
+        "inputs": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {"$ref": "#/$defs/input"}
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": {"type": "boolean"},
+      "required": [
+        "ORIGINAL_DFINITE_H1_ZERO",
+        "UNCHANGED_4490_SOURCE_CAN_RETRACT_TO_940_RESIDUAL",
+        "FORMAL_8980_COTANGENT_SOURCE_CONSTRUCTED",
+        "FORMAL_940_COTANGENT_RESIDUAL_COMPARISON_CONSTRUCTED",
+        "FORMAL_COTANGENT_PAIRING_NONDEGENERATE",
+        "FORMAL_COTANGENT_SDR_CYCLIC",
+        "FORMAL_DUAL_IDENTIFIED_WITH_ACTION_SUPPORT_DUAL",
+        "M3RC_ACTION_SUPPORT_IDENTIFICATION_COMPLETE",
+        "M4R_TYPED_RESIDUAL_CYCLICITY_COMPLETE",
+        "CLASSICAL_IMPORT_GATE_PASSED",
+        "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED",
+        "QME_RESTORED",
+        "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED"
+      ]
+    },
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_DFINITE_COTANGENT_DUAL_COMPARISON_V1.md"},
+    "independent_checker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "checks", "expected_digest"],
+      "properties": {
+        "path": {"const": "quantum-weyl/classical_import/check_strict_dfinite_cotangent_dual_comparison.py"},
+        "checks": {"type": "array", "minItems": 8, "items": {"type": "string"}},
+        "expected_digest": {"$ref": "#/$defs/hash"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_or_artifact_id", "sha256", "role"],
+      "properties": {
+        "path": {"type": "string"},
+        "result_or_artifact_id": {"type": "string"},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "role": {"type": "string"}
+      }
+    },
+    "cohomologyBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["energy", "chain_dimensions_by_degree", "differential_ranks_by_source_degree", "cohomology_dimensions_by_degree", "degree_defects", "partial_identity_defects", "declared_residual_dimension", "degree_one_residual_dimension", "sector_degree_dictionary"],
+      "properties": {
+        "energy": {"type": "integer", "minimum": 2, "maximum": 6},
+        "chain_dimensions_by_degree": {"type": "object"},
+        "differential_ranks_by_source_degree": {"type": "object"},
+        "cohomology_dimensions_by_degree": {
+          "type": "object",
+          "required": ["-1", "0", "1", "2"],
+          "properties": {"-1": {"const": 0}, "0": {"type": "integer", "minimum": 1}, "1": {"const": 0}, "2": {"const": 0}}
+        },
+        "degree_defects": {"const": 0},
+        "partial_identity_defects": {"const": 0},
+        "declared_residual_dimension": {"type": "integer", "minimum": 1},
+        "degree_one_residual_dimension": {"const": 0},
+        "sector_degree_dictionary": {"type": "object"}
+      }
+    },
+    "mapSpec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "rows", "columns", "entry_count", "construction_rule", "entries_sha256"],
+      "properties": {
+        "name": {"type": "string"},
+        "rows": {"type": "integer", "minimum": 1},
+        "columns": {"type": "integer", "minimum": 1},
+        "entry_count": {"type": "integer", "minimum": 0},
+        "construction_rule": {"type": "string"},
+        "entries_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "dualBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["energy", "primal_full_dimension", "dual_full_dimension", "cotangent_full_dimension", "primal_residual_dimension", "dual_residual_dimension", "cotangent_residual_dimension", "dual_degree_rule", "dual_full_degree_counts", "dual_maps", "exact_identity_replay"],
+      "properties": {
+        "energy": {"type": "integer", "minimum": 2, "maximum": 6},
+        "primal_full_dimension": {"type": "integer", "minimum": 1},
+        "dual_full_dimension": {"type": "integer", "minimum": 1},
+        "cotangent_full_dimension": {"type": "integer", "minimum": 2},
+        "primal_residual_dimension": {"type": "integer", "minimum": 1},
+        "dual_residual_dimension": {"type": "integer", "minimum": 1},
+        "cotangent_residual_dimension": {"type": "integer", "minimum": 2},
+        "dual_degree_rule": {"type": "string"},
+        "dual_full_degree_counts": {"type": "object"},
+        "dual_maps": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["q_dual", "iota_dual", "pi_dual", "s_dual", "q_res_dual"],
+          "properties": {
+            "q_dual": {"$ref": "#/$defs/mapSpec"},
+            "iota_dual": {"$ref": "#/$defs/mapSpec"},
+            "pi_dual": {"$ref": "#/$defs/mapSpec"},
+            "s_dual": {"$ref": "#/$defs/mapSpec"},
+            "q_res_dual": {"$ref": "#/$defs/mapSpec"}
+          }
+        },
+        "exact_identity_replay": {
+          "type": "object",
+          "minProperties": 11,
+          "additionalProperties": {"const": 0}
+        }
+      }
+    }
+  }
+}

@@ -18030,8 +18030,8 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "completion_atlas": {
-    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v40",
-    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V40",
+    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v41",
+    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V41",
     "result_kind": "BRANCH_BY_STAGE_COMPLETION_ATLAS",
     "lifecycle": "CLASSIFIED",
     "created": "2026-08-16",
@@ -18042,12 +18042,12 @@ window.MATRIX_EXPLORER_DATA = {
       "REDUCED-MODE",
       "LORENTZIAN-CAUSAL"
     ],
-    "question": "After testing M4R on the fixed 470-mode target, what carrier repair is required and which route now has highest leverage?",
-    "answer": "Atlas V40 records an exact rank-zero obstruction to direct M4R. The current M3R target is a one-sided degree-zero physical carrier, so the degree-minus-one local BV pairing vanishes on its image. The older symmetric cross-energy form is an even representation-theoretic form and is not a BV antibracket. A canonical 940-coordinate shifted-cotangent preflight has exact full rank, but its dual endpoint comparison maps and action-pairing identification are open. The highest-value route is therefore M3RC dual residual completion, followed by M4R and then M1. Gate A remains fail closed at one of seven hashes.",
+    "question": "What remains after exact formal cotangent completion of the residual comparison?",
+    "answer": "Atlas V41 closes M3RC-A: the unchanged 4,490-coordinate D-finite source has H0=470 and H1=0 and therefore cannot retract onto a 940-coordinate cotangent residual carrier, while its declared 8,980-coordinate shifted cotangent completion retracts exactly onto that carrier with full-rank canonical odd pairings and zero declared SDR defects. This is a formal finite algebraic comparison, not an action-derived support dual. The highest-value route is now M3RC-B: select paired support/topology classes and prove that harmonic integration identifies the action BV pairing and adjoint maps with the formal cotangent construction. M4R and M1 follow; Gate A remains fail closed at one of seven hashes.",
     "predecessor": {
-      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V39",
-      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V39.json",
-      "sha256": "d3c5b1e239aefef6329707341c1fb6fa6d22321dbbc097b975092d62d8c11fb6",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V40",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V40.json",
+      "sha256": "fc9194a78e41389c05649c2de636b6f4e3106877308fd0c144c5e5983999dde9",
       "preserved": true
     },
     "status_vocabulary": [
@@ -18155,7 +18155,7 @@ window.MATRIX_EXPLORER_DATA = {
           {
             "stage": "S0_CLASSICAL_AUTHORITY",
             "status": "FAIL_CLOSED",
-            "statement": "M3L, M4L and the represented finite M3R primal comparison are complete. Direct cyclic pullback to the 470 degree-zero modes has exact rank zero. A 940-coordinate cotangent preflight exists, but M3RC dual comparison maps, M4R and M1 remain.",
+            "statement": "M3L, M4L, M3R and the formal algebraic M3RC-A cotangent comparison are complete. The unchanged source has no degree-one cohomology, so M3RC-B must identify an enlarged action/support dual before M4R and M1.",
             "evidence": [
               "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
               "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
@@ -18197,9 +18197,11 @@ window.MATRIX_EXPLORER_DATA = {
               "STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1",
               "CLASSICAL_IMPORT_GATE_V21_RECONCILIATION",
               "STRICT_RESIDUAL_CYCLIC_CARRIER_OBSTRUCTION_V1",
-              "CLASSICAL_IMPORT_GATE_V22_RECONCILIATION"
+              "CLASSICAL_IMPORT_GATE_V22_RECONCILIATION",
+              "STRICT_DFINITE_COTANGENT_DUAL_COMPARISON_V1",
+              "CLASSICAL_IMPORT_GATE_V23_RECONCILIATION"
             ],
-            "boundary": "The rank-zero result rejects only direct M4R on the one-sided 470-mode carrier. It neither obstructs a dual-complete carrier nor identifies the 940-coordinate preflight with the action BV pairing."
+            "boundary": "The 8,980-to-940 formal cotangent SDR is exact finite algebra. It is not the unchanged classical source and does not identify the continuous action-derived BV dual, support classes or harmonic integration pairing."
           },
           {
             "stage": "S1_OFF_SHELL_BV",
@@ -18918,21 +18920,20 @@ window.MATRIX_EXPLORER_DATA = {
       }
     ],
     "frontier_summary": {
-      "highest_value_next_route": "STRICT_M3RC_DUAL_RESIDUAL_COMPARISON",
+      "highest_value_next_route": "STRICT_M3RC_ACTION_SUPPORT_DUAL_IDENTIFICATION",
       "route_count": 9,
-      "completed_since_v39": [
-        "M4R_DIRECT_470_CARRIER_OBSTRUCTION",
-        "FINITE_940_COTANGENT_PREFLIGHT",
-        "GATE_V22_DEPENDENCY_REPAIR"
+      "completed_since_v40": [
+        "M3RC_A_FORMAL_COTANGENT_DUAL_COMPARISON",
+        "GATE_V23_M3RC_SPLIT"
       ],
-      "new_positive_result": "The finite 940-coordinate shifted-cotangent preflight has a canonical exact rank-940 degree-minus-one odd pairing with no choice or completion assumption.",
-      "new_no_go": "The literal odd BV pairing pulled back to the current 470 degree-zero M3R coordinates is the zero form, with rank defect 470; direct M4R on that carrier is impossible.",
-      "surprise": "The pre-existing symmetric cross-energy form is valid but categorically different: it is an even physical cohomology form and explicitly not a field-theoretic BV antibracket.",
-      "hard_boundary": "Dual residual comparison maps and action-pairing identification (M3RC), M4R, M1, six hashes, nonlinear Green compatibility, Hadamard and QME remain open."
+      "new_positive_result": "The declared 8,980-coordinate shifted cotangent complex retracts exactly onto the 940-coordinate residual cotangent carrier; full and residual canonical odd pairings have ranks 8,980 and 940 and every declared SDR/cyclicity defect is zero.",
+      "new_no_go": "The unchanged 4,490-coordinate D-finite source has H0 dimension 470 and H1 dimension zero, so no deformation retract from that same source to a 940-coordinate residual cotangent carrier can exist.",
+      "surprise": "The missing dual maps are not algebraically mysterious: they are exact transposes of the primal SDR. The real missing theorem is categorical and analytic—what support dual the action selects and whether harmonic integration realizes those transposes.",
+      "hard_boundary": "M3RC-B action/support identification, M4R, M1, six hashes, nonlinear Green compatibility, full-carrier Hadamard/Ward data, renormalized products and Lorentzian QME remain open."
     },
     "classical_import_reconciliation": {
-      "result_id": "CLASSICAL_IMPORT_GATE_V22_RECONCILIATION",
-      "status": "M3R_PRIMAL_COMPLETE_CURRENT_470_M4R_RANK_ZERO_M3RC_M4R_M1_OPEN_GATE_FAIL_CLOSED",
+      "result_id": "CLASSICAL_IMPORT_GATE_V23_RECONCILIATION",
+      "status": "M3RC_FORMAL_DUAL_COMPLETE_ACTION_SUPPORT_IDENTIFICATION_M4R_M1_OPEN_GATE_FAIL_CLOSED",
       "exports_receiver_verified_scoped": 17,
       "exports_total": 20,
       "freeze_checks_receiver_verified_scoped": 9,
@@ -18940,7 +18941,7 @@ window.MATRIX_EXPLORER_DATA = {
       "accepted_top_level_hashes": 1,
       "gate_a_status": "FAIL_CLOSED",
       "minimal_missing_bundle": [
-        "M3RC_CYCLIC_RESIDUAL_CARRIER_COMPLETION",
+        "M3RC_B_ACTION_SUPPORT_DUAL_IDENTIFICATION",
         "M4R_TYPED_RESIDUAL_CYCLICITY",
         "M1_COMMON_STRICT_SNAPSHOT"
       ]
@@ -19049,12 +19050,12 @@ window.MATRIX_EXPLORER_DATA = {
     "route_selection": [
       {
         "rank": 1,
-        "route": "STRICT_M3RC_DUAL_RESIDUAL_COMPARISON",
+        "route": "STRICT_M3RC_ACTION_SUPPORT_DUAL_IDENTIFICATION",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
-        "tractability": "MEDIUM",
+        "tractability": "MEDIUM_LOW",
         "dependency_depth": "MEDIUM",
-        "recommendation": "Construct degree-one dual residual representatives and exact dual inclusion/projection on the same energy-2-through-6 endpoint domain; identify their pulled pairing with the canonical 940-coordinate cotangent form without confusing the older even cohomology form with the BV antibracket."
+        "recommendation": "Declare paired compact/test and distributional/solution support classes, construct the harmonic integration map to the algebraic cotangent dual, and prove that the action-derived BV density and adjoint comparison maps agree with the exact M3RC-A formulas."
       },
       {
         "rank": 2,
@@ -19063,7 +19064,7 @@ window.MATRIX_EXPLORER_DATA = {
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "MEDIUM",
-        "recommendation": "Only after M3RC, replay nondegeneracy, q_res cyclicity, p=iota-sharp, homotopy skew-adjointness and residual-transfer cyclic side conditions on the dual-complete carrier."
+        "recommendation": "After M3RC-B, replay nondegeneracy, q_res cyclicity, p=iota-sharp, homotopy skew-adjointness and residual-transfer cyclic side conditions on the action-identified cotangent carrier."
       },
       {
         "rank": 3,
@@ -19072,7 +19073,7 @@ window.MATRIX_EXPLORER_DATA = {
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "MEDIUM",
-        "recommendation": "After M3RC and M4R, bind every local, primal-residual and dual-residual map under one typed M1 manifest; accept hashes only after category-correct receiver replay."
+        "recommendation": "After M3RC-B and M4R, bind the local, primal-residual, dual-residual and action-pairing maps under one typed M1 manifest; accept hashes only after category-correct receiver replay."
       },
       {
         "rank": 4,
@@ -19133,20 +19134,20 @@ window.MATRIX_EXPLORER_DATA = {
       {
         "priority": 1,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_M3RC_DUAL_RESIDUAL_COMPARISON",
-        "why": "The exact rank-zero pullback proves that M4R is ill-typed on the current one-sided carrier; M3RC is the first missing mathematical object."
+        "object": "STRICT_M3RC_ACTION_SUPPORT_DUAL_IDENTIFICATION",
+        "why": "M3RC-A proves the algebraic formulas; M3RC-B is now the sole missing comparison that decides whether they represent the action-derived BV dual."
       },
       {
         "priority": 2,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_TYPED_RESIDUAL_CYCLICITY",
-        "why": "The canonical 940-row pairing makes the target formula explicit, but cyclic transfer is meaningful only after its dual comparison maps are source-identified."
+        "why": "Residual cyclicity is meaningful only after the formal cotangent dual is identified with declared support/topology classes and the action pairing."
       },
       {
         "priority": 3,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_COMMON_FREEZE_SNAPSHOT_AND_FINAL_CYCLIC_CONTRACTION",
-        "why": "M1 becomes meaningful only after both residual halves and the M4R identities exist on common bytes."
+        "why": "M1 becomes meaningful only after the action-identified dual and M4R identities exist on common bytes."
       },
       {
         "priority": 4,
@@ -19900,6 +19901,24 @@ window.MATRIX_EXPLORER_DATA = {
           "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V22_RECONCILIATION",
           "sha256": "8603cda324d3ad0e7d95f535cec06e76ff63880f41c5dea3eda7942ec57c0c26",
           "role": "Gate-A V22 M3RC dependency repair"
+        },
+        {
+          "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V40.json",
+          "result_or_artifact_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V40",
+          "sha256": "fc9194a78e41389c05649c2de636b6f4e3106877308fd0c144c5e5983999dde9",
+          "role": "immutable V40 predecessor"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_DFINITE_COTANGENT_DUAL_COMPARISON_V1.json",
+          "result_or_artifact_id": "STRICT_DFINITE_COTANGENT_DUAL_COMPARISON_V1",
+          "sha256": "0564f4d41fb8593a3320c70317b184b70d1f195957b2b97b40c80fb7ced81c7e",
+          "role": "receiver-verified formal cotangent-dual comparison"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V23_RECONCILIATION.json",
+          "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V23_RECONCILIATION",
+          "sha256": "8b06a9d757f1e351b9b654a23b5b8163599d55f39dc1aad5c32d9bd3ff378030",
+          "role": "Gate-A V23 M3RC-A/M3RC-B reconciliation"
         }
       ]
     },
@@ -20146,7 +20165,15 @@ window.MATRIX_EXPLORER_DATA = {
       "strict_finite_940_cotangent_carrier_constructed": true,
       "strict_finite_940_canonical_odd_pairing_nondegenerate": true,
       "strict_finite_940_pairing_action_identified": false,
-      "strict_M3RC_dual_comparison_maps_constructed": false
+      "strict_M3RC_dual_comparison_maps_constructed": false,
+      "v40_preserved": true,
+      "strict_original_dfinite_H1_zero": true,
+      "strict_unchanged_4490_source_retracts_to_940_residual": false,
+      "strict_M3RC_A_formal_cotangent_dual_comparison_complete": true,
+      "strict_formal_8980_to_940_cotangent_SDR_exact": true,
+      "strict_formal_cotangent_pairing_nondegenerate": true,
+      "strict_M3RC_B_action_support_dual_identification_complete": false,
+      "strict_formal_dual_identified_with_action_support_dual": false
     },
     "does_not_establish": [
       "a passed strict pure-Weyl classical import gate",
@@ -20261,23 +20288,26 @@ window.MATRIX_EXPLORER_DATA = {
       "the complete source q2/q3 pullback, accepted nonlinear hashes, or cyclic L-infinity equivalence",
       "causal lambda-squared closure, a Hadamard state, renormalized Lorentzian products, QME restoration, or residual transfer",
       "an exhaustive nonlinear Weyl/conformal-boost ghost-antifield manifest or proof that the seven known families exhaust the source theory",
-      "the assembled source q2/q3, accepted nonlinear hashes, or cyclic L-infinity equivalence"
+      "the assembled source q2/q3, accepted nonlinear hashes, or cyclic L-infinity equivalence",
+      "that the formal 8,980-coordinate shifted cotangent complex is the unchanged authoritative classical BV source",
+      "a selected continuous action/support dual or harmonic integration identification",
+      "M3RC-B, M4R, M1, a passed Gate A, Hadamard data, renormalized products, QME restoration or residual transfer"
     ],
     "independent_checker": {
-      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v40.py",
+      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v41.py",
       "checks": [
-        "V39 predecessor and 77-cell preservation",
-        "Gate V22 and residual-obstruction content pins",
-        "rank-zero 470-mode pullback and rank-940 cotangent preflight projection",
-        "even physical form versus odd BV antibracket category firewall",
-        "M3RC inserted before M4R and M1 in the nine-route queue",
+        "V40 predecessor and 77-cell preservation",
+        "Gate V23 and formal cotangent-dual receiver replay",
+        "same-source H1-zero obstruction and exact 8980-to-940 SDR projection",
+        "formal algebraic dual versus action/support dual firewall",
+        "M3RC-B before M4R and M1 in the nine-route queue",
         "one accepted hash and three-package dependency remainder",
         "Gate-A/Green/Hadamard/QME firewalls",
         "canonical atlas digest"
       ],
-      "expected_digest": "c2e2b2f54fe696615dc2be63371efd6b6c7723294e0652a0ea1164c48f2cb69c"
+      "expected_digest": "7a3033e5c725d2bb94df8ade5e610fca3966d04f2f6dda714c231203a062c5ee"
     },
-    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v40.md",
+    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v41.md",
     "strict_gate_a_progress": {
       "status": "STABILIZED_Q2_CANDIDATE_CERTIFIED_AUTHORITATIVE_IDENTITY_REQUIRED",
       "evidence": [
@@ -21608,9 +21638,9 @@ window.MATRIX_EXPLORER_DATA = {
       "exact_pairing_rank": 386,
       "local_cyclicity_defects": 0,
       "M4L_status": "COMPLETE",
-      "M4R_status": "BLOCKED_BY_M3RC_RANK_ZERO",
+      "M4R_status": "BLOCKED_BY_M3RC_B_ACTION_SUPPORT_IDENTIFICATION",
       "residual_rows_in_local_carrier": 0,
-      "M3RC_status": "OPEN"
+      "M3RC_status": "SPLIT_M3RC_A_COMPLETE_M3RC_B_OPEN"
     },
     "strict_endpoint_to_residual_spectral_comparison": {
       "result_id": "STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1",
@@ -21638,29 +21668,6 @@ window.MATRIX_EXPLORER_DATA = {
       "smooth_completion_certified": false,
       "M3R_status": "COMPLETE_IN_REPRESENTED_DFINITE_ENERGIES_2_THROUGH_6"
     },
-    "strict_gate_v22_reconciliation": {
-      "result_id": "CLASSICAL_IMPORT_GATE_V22_RECONCILIATION",
-      "status": "M3R_PRIMAL_COMPLETE_CURRENT_470_M4R_RANK_ZERO_M3RC_M4R_M1_OPEN_GATE_FAIL_CLOSED",
-      "exports_total": 20,
-      "exports_receiver_verified_scoped": 17,
-      "legacy_accepted_scoped": 3,
-      "freeze_checks_total": 10,
-      "freeze_checks_receiver_verified_scoped": 9,
-      "freeze_checks_blocked": 1,
-      "accepted_top_level_hashes": 1,
-      "remaining_top_level_hashes": 6,
-      "minimal_missing_bundle": [
-        "M3RC_CYCLIC_RESIDUAL_CARRIER_COMPLETION",
-        "M4R_TYPED_RESIDUAL_CYCLICITY",
-        "M1_COMMON_STRICT_SNAPSHOT"
-      ],
-      "M3R_primal_comparison_constructed": true,
-      "current_470_induced_odd_pairing_rank_zero": true,
-      "finite_940_cotangent_preflight_constructed": true,
-      "M3RC_dual_comparison_maps_constructed": false,
-      "M4R_typed_residual_cyclicity_complete": false,
-      "gate_a_status": "FAIL_CLOSED"
-    },
     "strict_residual_cyclic_carrier_obstruction": {
       "result_id": "STRICT_RESIDUAL_CYCLIC_CARRIER_OBSTRUCTION_V1",
       "current_carrier_coordinates": 470,
@@ -21675,8 +21682,44 @@ window.MATRIX_EXPLORER_DATA = {
       "cotangent_preflight_coordinates": 940,
       "cotangent_preflight_pairing_rank": 940,
       "cotangent_action_pairing_identified": false,
-      "M3RC_status": "OPEN",
-      "M4R_status": "BLOCKED_BY_M3RC"
+      "M3RC_status": "SPLIT_M3RC_A_COMPLETE_M3RC_B_OPEN",
+      "M4R_status": "BLOCKED_BY_M3RC_B"
+    },
+    "strict_gate_v23_reconciliation": {
+      "result_id": "CLASSICAL_IMPORT_GATE_V23_RECONCILIATION",
+      "status": "M3RC_FORMAL_DUAL_COMPLETE_ACTION_SUPPORT_IDENTIFICATION_M4R_M1_OPEN_GATE_FAIL_CLOSED",
+      "exports_total": 20,
+      "exports_receiver_verified_scoped": 17,
+      "legacy_accepted_scoped": 3,
+      "freeze_checks_total": 10,
+      "freeze_checks_receiver_verified_scoped": 9,
+      "freeze_checks_blocked": 1,
+      "accepted_top_level_hashes": 1,
+      "remaining_top_level_hashes": 6,
+      "minimal_missing_bundle": [
+        "M3RC_B_ACTION_SUPPORT_DUAL_IDENTIFICATION",
+        "M4R_TYPED_RESIDUAL_CYCLICITY",
+        "M1_COMMON_STRICT_SNAPSHOT"
+      ],
+      "M3RC_A_formal_cotangent_dual_comparison_complete": true,
+      "M3RC_B_action_support_dual_identification_complete": false,
+      "M4R_typed_residual_cyclicity_complete": false,
+      "gate_a_status": "FAIL_CLOSED"
+    },
+    "strict_dfinite_cotangent_dual_comparison": {
+      "result_id": "STRICT_DFINITE_COTANGENT_DUAL_COMPARISON_V1",
+      "original_source_full_dimension": 4490,
+      "original_source_H0_dimension": 470,
+      "original_source_H1_dimension": 0,
+      "same_source_retract_to_940_possible": false,
+      "formal_cotangent_source_dimension": 8980,
+      "formal_cotangent_residual_dimension": 940,
+      "formal_full_pairing_rank": 8980,
+      "formal_residual_pairing_rank": 940,
+      "formal_identity_defects": 0,
+      "M3RC_A_status": "COMPLETE",
+      "M3RC_B_status": "OPEN",
+      "action_support_dual_identified": false
     }
   },
   "completion_common_endpoint_sdr_binding": {
@@ -38532,6 +38575,705 @@ window.MATRIX_EXPLORER_DATA = {
         "M3RC, M4R, Gate A, Hadamard and QME firewalls"
       ],
       "expected_digest": "231807ddbb5f0af8c72abbd7667612724586d267bfa773f814a19744b4ea1aea"
+    }
+  },
+  "completion_dfinite_cotangent_dual_comparison": {
+    "$schema": "../schema/strict-dfinite-cotangent-dual-comparison-v1.schema.json",
+    "schema": "strict-dfinite-cotangent-dual-comparison-v1",
+    "schema_path": "quantum-weyl/classical_import/schema/strict-dfinite-cotangent-dual-comparison-v1.schema.json",
+    "result_id": "STRICT_DFINITE_COTANGENT_DUAL_COMPARISON_V1",
+    "result_kind": "FORMAL_COTANGENT_DUAL_SDR_COMPARISON_AND_SAME_SOURCE_OBSTRUCTION",
+    "result_state": "FORMAL_8980_TO_940_COTANGENT_SDR_EXACT_ORIGINAL_4490_SOURCE_CANNOT_RETRACT_TO_940_ACTION_SUPPORT_IDENTIFICATION_OPEN",
+    "lifecycle": "CLASSIFIED",
+    "created": "2026-08-16",
+    "repository_base_commit": "4f054fc718f818b6603964fbe016429671f73443",
+    "dependency_tags": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE"
+    ],
+    "question": "Can the 470 missing degree-one residual partners be constructed by exact duality, and can they be comparison maps on the unchanged D-finite endpoint source?",
+    "answer": "The exact algebraic dual comparison is constructive, but it cannot live on the unchanged source. The original five-block D-finite complex has H^0 dimension 470 and H^1 dimension zero, so no deformation retract from that 4,490-coordinate source can have a 940-coordinate residual target. Passing instead to its explicit 8,980-coordinate shifted cotangent completion gives dual differential -q0^T, inclusion pi_cl^T, projection iota_cl^T and homotopy -s_cl^T. Together with the primal maps these retract exactly onto the 940-coordinate cotangent residual carrier and preserve the canonical odd evaluation pairing. What remains open is the scientific identification of this formal algebraic dual with a support-sensitive action-derived BV dual carrier. Thus the formal half of M3RC is complete, but M3RC action/support identification and M4R remain fail closed.",
+    "scope": {
+      "theory": "strict pure-Weyl free classical BV represented comparison",
+      "background": "unit Lorentzian conformal cylinder",
+      "energies": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "arithmetic": "finite exact integer sparse transposition and partial-identity cohomology census",
+      "duality": "finite algebraic shifted cotangent dual only"
+    },
+    "original_source_cohomology": {
+      "blocks": [
+        {
+          "energy": 2,
+          "chain_dimensions_by_degree": {
+            "-1": 100,
+            "0": 110,
+            "1": 10,
+            "2": 10
+          },
+          "differential_ranks_by_source_degree": {
+            "-1": 100,
+            "0": 0,
+            "1": 10
+          },
+          "cohomology_dimensions_by_degree": {
+            "-1": 0,
+            "0": 10,
+            "1": 0,
+            "2": 0
+          },
+          "degree_defects": 0,
+          "partial_identity_defects": 0,
+          "declared_residual_dimension": 10,
+          "degree_one_residual_dimension": 0,
+          "sector_degree_dictionary": {
+            "diff_ghost": -1,
+            "weyl_ghost": -1,
+            "metric_trace": 0,
+            "metric_tf": 0,
+            "metric_antifield": 1,
+            "diff_ghost_antifield": 2,
+            "trace_antifield": 1,
+            "weyl_ghost_antifield": 2,
+            "antighost": -1,
+            "multiplier": 0
+          }
+        },
+        {
+          "energy": 3,
+          "chain_dimensions_by_degree": {
+            "-1": 180,
+            "0": 220,
+            "1": 20,
+            "2": 20
+          },
+          "differential_ranks_by_source_degree": {
+            "-1": 180,
+            "0": 0,
+            "1": 20
+          },
+          "cohomology_dimensions_by_degree": {
+            "-1": 0,
+            "0": 40,
+            "1": 0,
+            "2": 0
+          },
+          "degree_defects": 0,
+          "partial_identity_defects": 0,
+          "declared_residual_dimension": 40,
+          "degree_one_residual_dimension": 0,
+          "sector_degree_dictionary": {
+            "diff_ghost": -1,
+            "weyl_ghost": -1,
+            "metric_trace": 0,
+            "metric_tf": 0,
+            "metric_antifield": 1,
+            "diff_ghost_antifield": 2,
+            "trace_antifield": 1,
+            "weyl_ghost_antifield": 2,
+            "antighost": -1,
+            "multiplier": 0
+          }
+        },
+        {
+          "energy": 4,
+          "chain_dimensions_by_degree": {
+            "-1": 294,
+            "0": 385,
+            "1": 44,
+            "2": 35
+          },
+          "differential_ranks_by_source_degree": {
+            "-1": 294,
+            "0": 9,
+            "1": 35
+          },
+          "cohomology_dimensions_by_degree": {
+            "-1": 0,
+            "0": 82,
+            "1": 0,
+            "2": 0
+          },
+          "degree_defects": 0,
+          "partial_identity_defects": 0,
+          "declared_residual_dimension": 82,
+          "degree_one_residual_dimension": 0,
+          "sector_degree_dictionary": {
+            "diff_ghost": -1,
+            "weyl_ghost": -1,
+            "metric_trace": 0,
+            "metric_tf": 0,
+            "metric_antifield": 1,
+            "diff_ghost_antifield": 2,
+            "trace_antifield": 1,
+            "weyl_ghost_antifield": 2,
+            "antighost": -1,
+            "multiplier": 0
+          }
+        },
+        {
+          "energy": 5,
+          "chain_dimensions_by_degree": {
+            "-1": 448,
+            "0": 616,
+            "1": 92,
+            "2": 60
+          },
+          "differential_ranks_by_source_degree": {
+            "-1": 448,
+            "0": 32,
+            "1": 60
+          },
+          "cohomology_dimensions_by_degree": {
+            "-1": 0,
+            "0": 136,
+            "1": 0,
+            "2": 0
+          },
+          "degree_defects": 0,
+          "partial_identity_defects": 0,
+          "declared_residual_dimension": 136,
+          "degree_one_residual_dimension": 0,
+          "sector_degree_dictionary": {
+            "diff_ghost": -1,
+            "weyl_ghost": -1,
+            "metric_trace": 0,
+            "metric_tf": 0,
+            "metric_antifield": 1,
+            "diff_ghost_antifield": 2,
+            "trace_antifield": 1,
+            "weyl_ghost_antifield": 2,
+            "antighost": -1,
+            "multiplier": 0
+          }
+        },
+        {
+          "energy": 6,
+          "chain_dimensions_by_degree": {
+            "-1": 648,
+            "0": 924,
+            "1": 174,
+            "2": 100
+          },
+          "differential_ranks_by_source_degree": {
+            "-1": 648,
+            "0": 74,
+            "1": 100
+          },
+          "cohomology_dimensions_by_degree": {
+            "-1": 0,
+            "0": 202,
+            "1": 0,
+            "2": 0
+          },
+          "degree_defects": 0,
+          "partial_identity_defects": 0,
+          "declared_residual_dimension": 202,
+          "degree_one_residual_dimension": 0,
+          "sector_degree_dictionary": {
+            "diff_ghost": -1,
+            "weyl_ghost": -1,
+            "metric_trace": 0,
+            "metric_tf": 0,
+            "metric_antifield": 1,
+            "diff_ghost_antifield": 2,
+            "trace_antifield": 1,
+            "weyl_ghost_antifield": 2,
+            "antighost": -1,
+            "multiplier": 0
+          }
+        }
+      ],
+      "global_dimensions_by_degree": {
+        "-1": 0,
+        "0": 470,
+        "1": 0,
+        "2": 0
+      }
+    },
+    "same_source_impossibility": {
+      "original_source_full_dimension": 4490,
+      "original_source_total_cohomology_dimension": 470,
+      "original_source_degree_zero_cohomology_dimension": 470,
+      "original_source_degree_one_cohomology_dimension": 0,
+      "desired_cotangent_residual_dimension": 940,
+      "desired_degree_one_dual_dimension": 470,
+      "cohomology_dimension_mismatch": 470,
+      "same_source_deformation_retract_to_940_possible": false,
+      "reason": "A deformation retract is a quasi-isomorphism and cannot change total cohomology dimension from 470 to 940 or degree-one cohomology from zero to 470."
+    },
+    "formal_cotangent_completion": {
+      "source": "T_star[-1](C_D-finite)=C_D-finite direct_sum C_D-finite^vee[1]",
+      "target": "T_star[-1](H_res)=H_res direct_sum H_res^vee[1]",
+      "full_dimension": 8980,
+      "residual_dimension": 940,
+      "primal_residual_dimension": 470,
+      "dual_residual_dimension": 470,
+      "differential": "Q_cotangent=diag(q0,-q0^T)",
+      "inclusion": "iota_cotangent=diag(iota_cl,pi_cl^T)",
+      "projection": "pi_cotangent=diag(pi_cl,iota_cl^T)",
+      "homotopy": "s_cotangent=diag(s_cl,-s_cl^T)",
+      "full_pairing": "Omega_C((x,alpha),(y,beta))=beta(x)-alpha(y)",
+      "residual_pairing": "Omega_H((u,a),(v,b))=b(u)-a(v)",
+      "full_pairing_rank": 8980,
+      "residual_pairing_rank": 940,
+      "global_dual_map_hash": "ae4c7893da21168b9fafc8dbf21480777e32f6fa64f0a2070f4aa48735b1b48a",
+      "block_comparisons": [
+        {
+          "energy": 2,
+          "primal_full_dimension": 230,
+          "dual_full_dimension": 230,
+          "cotangent_full_dimension": 460,
+          "primal_residual_dimension": 10,
+          "dual_residual_dimension": 10,
+          "cotangent_residual_dimension": 20,
+          "dual_degree_rule": "degree(dual[1](x))=1-degree(x)",
+          "dual_full_degree_counts": {
+            "-1": 10,
+            "0": 10,
+            "1": 110,
+            "2": 100
+          },
+          "dual_maps": {
+            "q_dual": {
+              "name": "q_dual=-q0^T",
+              "rows": 230,
+              "columns": 230,
+              "entry_count": 110,
+              "construction_rule": "negative transpose of q0",
+              "entries_sha256": "55726267b0e04df6f263aaffcbcfc480be4b5a105fe7ea336f20094aa3eb5609"
+            },
+            "iota_dual": {
+              "name": "iota_dual=pi_cl^T",
+              "rows": 230,
+              "columns": 10,
+              "entry_count": 10,
+              "construction_rule": "transpose of pi_cl",
+              "entries_sha256": "fe350c71eac53680151c0ffe30948d03823fe4d7bae93a3f018af43a67a6b915"
+            },
+            "pi_dual": {
+              "name": "pi_dual=iota_cl^T",
+              "rows": 10,
+              "columns": 230,
+              "entry_count": 10,
+              "construction_rule": "transpose of iota_cl",
+              "entries_sha256": "d45292fca870ecbaa193be5cad76521d81f4ea2a00fdbb7c8421d3fba78297d7"
+            },
+            "s_dual": {
+              "name": "s_dual=-s_cl^T",
+              "rows": 230,
+              "columns": 230,
+              "entry_count": 110,
+              "construction_rule": "negative transpose of s_cl",
+              "entries_sha256": "a7f8375362b3e83a7b20fc11fc708d1d612913e46aaa4b400c5d9d886aab621e"
+            },
+            "q_res_dual": {
+              "name": "q_res_dual=0",
+              "rows": 10,
+              "columns": 10,
+              "entry_count": 0,
+              "construction_rule": "negative transpose of q_res_0",
+              "entries_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+            }
+          },
+          "exact_identity_replay": {
+            "q_dual_squared_defects": 0,
+            "pi_dual_iota_dual_defects": 0,
+            "cotangent_contraction_defects": 0,
+            "dual_synthesis_chain_defects": 0,
+            "dual_analysis_chain_defects": 0,
+            "s_dual_squared_defects": 0,
+            "s_dual_iota_dual_defects": 0,
+            "pi_dual_s_dual_defects": 0,
+            "canonical_pairing_q_cyclicity_defects": 0,
+            "canonical_pairing_homotopy_skew_defects": 0,
+            "canonical_pairing_degree_defects": 0,
+            "cotangent_inclusion_isometry_defects": 0
+          }
+        },
+        {
+          "energy": 3,
+          "primal_full_dimension": 440,
+          "dual_full_dimension": 440,
+          "cotangent_full_dimension": 880,
+          "primal_residual_dimension": 40,
+          "dual_residual_dimension": 40,
+          "cotangent_residual_dimension": 80,
+          "dual_degree_rule": "degree(dual[1](x))=1-degree(x)",
+          "dual_full_degree_counts": {
+            "-1": 20,
+            "0": 20,
+            "1": 220,
+            "2": 180
+          },
+          "dual_maps": {
+            "q_dual": {
+              "name": "q_dual=-q0^T",
+              "rows": 440,
+              "columns": 440,
+              "entry_count": 200,
+              "construction_rule": "negative transpose of q0",
+              "entries_sha256": "8fd34d3d405f726e84c03eafd7852284123c85c799911e99bd0f38bc56bb6c85"
+            },
+            "iota_dual": {
+              "name": "iota_dual=pi_cl^T",
+              "rows": 440,
+              "columns": 40,
+              "entry_count": 40,
+              "construction_rule": "transpose of pi_cl",
+              "entries_sha256": "ad9983912d3fb38f206da85891015b9ed3dcf5340f64245d225620b3d6820089"
+            },
+            "pi_dual": {
+              "name": "pi_dual=iota_cl^T",
+              "rows": 40,
+              "columns": 440,
+              "entry_count": 40,
+              "construction_rule": "transpose of iota_cl",
+              "entries_sha256": "e4f0d26419cad6379424e4c97d08001751ad2f6973e3fb1718f00f1554141d94"
+            },
+            "s_dual": {
+              "name": "s_dual=-s_cl^T",
+              "rows": 440,
+              "columns": 440,
+              "entry_count": 200,
+              "construction_rule": "negative transpose of s_cl",
+              "entries_sha256": "14736835d29e451d76c1eec4e10981238bba446c8baf5f777c68d3f5107516fb"
+            },
+            "q_res_dual": {
+              "name": "q_res_dual=0",
+              "rows": 40,
+              "columns": 40,
+              "entry_count": 0,
+              "construction_rule": "negative transpose of q_res_0",
+              "entries_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+            }
+          },
+          "exact_identity_replay": {
+            "q_dual_squared_defects": 0,
+            "pi_dual_iota_dual_defects": 0,
+            "cotangent_contraction_defects": 0,
+            "dual_synthesis_chain_defects": 0,
+            "dual_analysis_chain_defects": 0,
+            "s_dual_squared_defects": 0,
+            "s_dual_iota_dual_defects": 0,
+            "pi_dual_s_dual_defects": 0,
+            "canonical_pairing_q_cyclicity_defects": 0,
+            "canonical_pairing_homotopy_skew_defects": 0,
+            "canonical_pairing_degree_defects": 0,
+            "cotangent_inclusion_isometry_defects": 0
+          }
+        },
+        {
+          "energy": 4,
+          "primal_full_dimension": 758,
+          "dual_full_dimension": 758,
+          "cotangent_full_dimension": 1516,
+          "primal_residual_dimension": 82,
+          "dual_residual_dimension": 82,
+          "cotangent_residual_dimension": 164,
+          "dual_degree_rule": "degree(dual[1](x))=1-degree(x)",
+          "dual_full_degree_counts": {
+            "-1": 35,
+            "0": 44,
+            "1": 385,
+            "2": 294
+          },
+          "dual_maps": {
+            "q_dual": {
+              "name": "q_dual=-q0^T",
+              "rows": 758,
+              "columns": 758,
+              "entry_count": 338,
+              "construction_rule": "negative transpose of q0",
+              "entries_sha256": "5516ff7544eeda2e5b2f58fe88c910f7a1f65e149d75730e40441d6711e81208"
+            },
+            "iota_dual": {
+              "name": "iota_dual=pi_cl^T",
+              "rows": 758,
+              "columns": 82,
+              "entry_count": 82,
+              "construction_rule": "transpose of pi_cl",
+              "entries_sha256": "40134443679f998b00495a08f06fcf4cb0c7ff9653d7c2a427d5c6585e673cf9"
+            },
+            "pi_dual": {
+              "name": "pi_dual=iota_cl^T",
+              "rows": 82,
+              "columns": 758,
+              "entry_count": 82,
+              "construction_rule": "transpose of iota_cl",
+              "entries_sha256": "1ffb1ae25bfbd2be816086cd9ed8128891e14610148651e06b54caa713c7b049"
+            },
+            "s_dual": {
+              "name": "s_dual=-s_cl^T",
+              "rows": 758,
+              "columns": 758,
+              "entry_count": 338,
+              "construction_rule": "negative transpose of s_cl",
+              "entries_sha256": "cc0e064a017aeae2e8afd389335ca8f84506ac168619150d42d77622c4ddc625"
+            },
+            "q_res_dual": {
+              "name": "q_res_dual=0",
+              "rows": 82,
+              "columns": 82,
+              "entry_count": 0,
+              "construction_rule": "negative transpose of q_res_0",
+              "entries_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+            }
+          },
+          "exact_identity_replay": {
+            "q_dual_squared_defects": 0,
+            "pi_dual_iota_dual_defects": 0,
+            "cotangent_contraction_defects": 0,
+            "dual_synthesis_chain_defects": 0,
+            "dual_analysis_chain_defects": 0,
+            "s_dual_squared_defects": 0,
+            "s_dual_iota_dual_defects": 0,
+            "pi_dual_s_dual_defects": 0,
+            "canonical_pairing_q_cyclicity_defects": 0,
+            "canonical_pairing_homotopy_skew_defects": 0,
+            "canonical_pairing_degree_defects": 0,
+            "cotangent_inclusion_isometry_defects": 0
+          }
+        },
+        {
+          "energy": 5,
+          "primal_full_dimension": 1216,
+          "dual_full_dimension": 1216,
+          "cotangent_full_dimension": 2432,
+          "primal_residual_dimension": 136,
+          "dual_residual_dimension": 136,
+          "cotangent_residual_dimension": 272,
+          "dual_degree_rule": "degree(dual[1](x))=1-degree(x)",
+          "dual_full_degree_counts": {
+            "-1": 60,
+            "0": 92,
+            "1": 616,
+            "2": 448
+          },
+          "dual_maps": {
+            "q_dual": {
+              "name": "q_dual=-q0^T",
+              "rows": 1216,
+              "columns": 1216,
+              "entry_count": 540,
+              "construction_rule": "negative transpose of q0",
+              "entries_sha256": "7445ece98b545bde96d1e950be1fc002f7740141dfa4ea02fd6920e1d95da504"
+            },
+            "iota_dual": {
+              "name": "iota_dual=pi_cl^T",
+              "rows": 1216,
+              "columns": 136,
+              "entry_count": 136,
+              "construction_rule": "transpose of pi_cl",
+              "entries_sha256": "055e17f0df47ca9035454ef30e21b332afd784d9579da1e5933ff883a1ed3257"
+            },
+            "pi_dual": {
+              "name": "pi_dual=iota_cl^T",
+              "rows": 136,
+              "columns": 1216,
+              "entry_count": 136,
+              "construction_rule": "transpose of iota_cl",
+              "entries_sha256": "3e0ce288b77b42873cfdd7caa2ab5e8b5b3f9d172317447491edff363f9f1f6e"
+            },
+            "s_dual": {
+              "name": "s_dual=-s_cl^T",
+              "rows": 1216,
+              "columns": 1216,
+              "entry_count": 540,
+              "construction_rule": "negative transpose of s_cl",
+              "entries_sha256": "3f0abd5ad3431f3ca4d9757c18db897d55ab9a509a41b6b316d296855257bdfa"
+            },
+            "q_res_dual": {
+              "name": "q_res_dual=0",
+              "rows": 136,
+              "columns": 136,
+              "entry_count": 0,
+              "construction_rule": "negative transpose of q_res_0",
+              "entries_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+            }
+          },
+          "exact_identity_replay": {
+            "q_dual_squared_defects": 0,
+            "pi_dual_iota_dual_defects": 0,
+            "cotangent_contraction_defects": 0,
+            "dual_synthesis_chain_defects": 0,
+            "dual_analysis_chain_defects": 0,
+            "s_dual_squared_defects": 0,
+            "s_dual_iota_dual_defects": 0,
+            "pi_dual_s_dual_defects": 0,
+            "canonical_pairing_q_cyclicity_defects": 0,
+            "canonical_pairing_homotopy_skew_defects": 0,
+            "canonical_pairing_degree_defects": 0,
+            "cotangent_inclusion_isometry_defects": 0
+          }
+        },
+        {
+          "energy": 6,
+          "primal_full_dimension": 1846,
+          "dual_full_dimension": 1846,
+          "cotangent_full_dimension": 3692,
+          "primal_residual_dimension": 202,
+          "dual_residual_dimension": 202,
+          "cotangent_residual_dimension": 404,
+          "dual_degree_rule": "degree(dual[1](x))=1-degree(x)",
+          "dual_full_degree_counts": {
+            "-1": 100,
+            "0": 174,
+            "1": 924,
+            "2": 648
+          },
+          "dual_maps": {
+            "q_dual": {
+              "name": "q_dual=-q0^T",
+              "rows": 1846,
+              "columns": 1846,
+              "entry_count": 822,
+              "construction_rule": "negative transpose of q0",
+              "entries_sha256": "67559d0752b56a50cde924667c88c8f85a3b90f25ca14c866be25ac2c625776d"
+            },
+            "iota_dual": {
+              "name": "iota_dual=pi_cl^T",
+              "rows": 1846,
+              "columns": 202,
+              "entry_count": 202,
+              "construction_rule": "transpose of pi_cl",
+              "entries_sha256": "350e3f5df2eed0e91cebfbfb720653682538bd7e1f9fc8148fcbc328db97b6a3"
+            },
+            "pi_dual": {
+              "name": "pi_dual=iota_cl^T",
+              "rows": 202,
+              "columns": 1846,
+              "entry_count": 202,
+              "construction_rule": "transpose of iota_cl",
+              "entries_sha256": "62ccbb4680b541954df0c2f6eb69b15747dc9cfdba4ad43f62b0b5573536c03c"
+            },
+            "s_dual": {
+              "name": "s_dual=-s_cl^T",
+              "rows": 1846,
+              "columns": 1846,
+              "entry_count": 822,
+              "construction_rule": "negative transpose of s_cl",
+              "entries_sha256": "1a4457785705ff17f11eaf64a0d516b128222009cd1d47d7a0f1e6c1340d9f43"
+            },
+            "q_res_dual": {
+              "name": "q_res_dual=0",
+              "rows": 202,
+              "columns": 202,
+              "entry_count": 0,
+              "construction_rule": "negative transpose of q_res_0",
+              "entries_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+            }
+          },
+          "exact_identity_replay": {
+            "q_dual_squared_defects": 0,
+            "pi_dual_iota_dual_defects": 0,
+            "cotangent_contraction_defects": 0,
+            "dual_synthesis_chain_defects": 0,
+            "dual_analysis_chain_defects": 0,
+            "s_dual_squared_defects": 0,
+            "s_dual_iota_dual_defects": 0,
+            "pi_dual_s_dual_defects": 0,
+            "canonical_pairing_q_cyclicity_defects": 0,
+            "canonical_pairing_homotopy_skew_defects": 0,
+            "canonical_pairing_degree_defects": 0,
+            "cotangent_inclusion_isometry_defects": 0
+          }
+        }
+      ],
+      "all_declared_identity_defects": 0
+    },
+    "action_support_identification": {
+      "status": "OPEN",
+      "formal_dual_used": "finite algebraic dual of the represented coefficient complex",
+      "action_dual_needed": "a declared compact-source, spacelike-compact, distributional or other topological dual carrier on which the local BV density integrates nondegenerately",
+      "missing_comparison": "identify the formal evaluation pairing and transposed maps with the action-derived local BV pairing under explicit harmonic integration and support conventions",
+      "same_endpoint_carrier_identification": false,
+      "formal_cotangent_completion_is_authoritative_original_bv_complex": false
+    },
+    "m3rc_split": {
+      "M3RC_A_FORMAL_COTANGENT_DUAL_COMPARISON": "COMPLETE",
+      "M3RC_B_ACTION_SUPPORT_DUAL_IDENTIFICATION": "OPEN",
+      "M4R_TYPED_RESIDUAL_CYCLICITY": "BLOCKED_BY_M3RC_B",
+      "M1_COMMON_STRICT_SNAPSHOT": "OPEN_AFTER_M4R"
+    },
+    "foundational_strength": {
+      "fixed_finite_construction": "primitive-recursive exact sparse transposition and enumeration",
+      "choice_principle_used": false,
+      "Hilbert_or_Krein_completion_used": false,
+      "new_assumption_added_by_formal_completion": "finite algebraic cotangent doubling of the represented source",
+      "infinite_extension_boundary": "The continuous dual of an all-energy LF/Frechet/Sobolev carrier depends on topology and support; algebraic, Hilbert, Krein and distributional duals are inequivalent."
+    },
+    "provenance": {
+      "inputs": [
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json",
+          "result_or_artifact_id": "STRICT_DFINITE_RESIDUAL_SDR_V1",
+          "sha256": "1816a7fb98cb7a844cade72fa8d2ee8de3e858540d5c932d93a5f68b37235c08",
+          "role": "exact primal D-finite SDR whose transpose defines the dual maps"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1.json",
+          "result_or_artifact_id": "STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1",
+          "sha256": "2716713554ccba14c4d3549b2493c5c7c4032e2491333d2a4edb15cad69cd812",
+          "role": "fixed 470-coordinate represented residual ordering"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_RESIDUAL_CYCLIC_CARRIER_OBSTRUCTION_V1.json",
+          "result_or_artifact_id": "STRICT_RESIDUAL_CYCLIC_CARRIER_OBSTRUCTION_V1",
+          "sha256": "ee15ebff18e6c17ebaf8a26f83ed67fefc31dd520661ddf7aee457297ef74555",
+          "role": "rank-zero one-sided result and 940-coordinate target dictionary"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+          "result_or_artifact_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+          "sha256": "3b9d8a2fc5a70d20770452eb0a2a4891f59314c21c83188bfb59de0941cac4b2",
+          "role": "degree-minus-one action-derived local pairing convention"
+        }
+      ]
+    },
+    "claim_flags": {
+      "ORIGINAL_DFINITE_H1_ZERO": true,
+      "UNCHANGED_4490_SOURCE_CAN_RETRACT_TO_940_RESIDUAL": false,
+      "FORMAL_8980_COTANGENT_SOURCE_CONSTRUCTED": true,
+      "FORMAL_940_COTANGENT_RESIDUAL_COMPARISON_CONSTRUCTED": true,
+      "FORMAL_COTANGENT_PAIRING_NONDEGENERATE": true,
+      "FORMAL_COTANGENT_SDR_CYCLIC": true,
+      "FORMAL_DUAL_IDENTIFIED_WITH_ACTION_SUPPORT_DUAL": false,
+      "M3RC_ACTION_SUPPORT_IDENTIFICATION_COMPLETE": false,
+      "M4R_TYPED_RESIDUAL_CYCLICITY_COMPLETE": false,
+      "CLASSICAL_IMPORT_GATE_PASSED": false,
+      "FULL_COMPLEX_HADAMARD_STATE_CONSTRUCTED": false,
+      "QME_RESTORED": false,
+      "RESIDUAL_QUANTUM_TRANSFER_AUTHORIZED": false
+    },
+    "does_not_establish": [
+      "that the formal 8,980-coordinate cotangent completion is the original authoritative D-finite BV complex",
+      "a support or topology class whose continuous dual is the formal algebraic dual",
+      "identification of the formal evaluation pairing with the integrated action-derived BV pairing",
+      "a same-source 4,490-to-940 deformation retract; the exact cohomology census rules this out",
+      "M3RC-B, M4R, M1, Gate A, a Lorentzian off-shell propagator, a Hadamard state, renormalized products, QME restoration or residual quantum transfer"
+    ],
+    "next_gate": "Choose and certify the paired support/topology classes for the endpoint solution and source complexes, construct the harmonic integration map to the finite algebraic dual, and prove that the action-derived BV pairing and adjoint SDR maps agree with the formal cotangent comparison. Only then replay M4R.",
+    "human_report": "quantum-weyl/classical_import/REPORT_STRICT_DFINITE_COTANGENT_DUAL_COMPARISON_V1.md",
+    "independent_checker": {
+      "path": "quantum-weyl/classical_import/check_strict_dfinite_cotangent_dual_comparison.py",
+      "checks": [
+        "all four input identities and content hashes",
+        "degreewise cohomology of every original D-finite block",
+        "H1=0 and the 470-dimensional same-source quasi-isomorphism obstruction",
+        "negative-transpose dual differential and homotopy hashes",
+        "transpose inclusion and projection hashes",
+        "all eight dual SDR identities",
+        "canonical full and residual pairing ranks, q-cyclicity, homotopy skewness and inclusion isometry",
+        "action/support, Gate-A, Hadamard and QME firewalls",
+        "canonical result digest"
+      ],
+      "expected_digest": "d1cf6cfd5baebfe9ff7a8e1b98fd254ee11ecfa706eba2fcbb97c26959cadb27"
     }
   },
   "completion_local_cyclic_pairing": {
@@ -218388,16 +219130,18 @@ window.MATRIX_EXPLORER_DATA = {
     "ground_state_dynamics_interface_report": "sources/foundations/reports/krein-fock-ground-state-dynamics-interface.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md",
-    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V40.json",
-    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v40.md",
-    "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V22_RECONCILIATION.json",
-    "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V22.md",
+    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V41.json",
+    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v41.md",
+    "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V23_RECONCILIATION.json",
+    "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V23.md",
     "completion_common_endpoint_sdr_binding": "sources/quantum-weyl/classical_import/certificates/STRICT_386_COMMON_ENDPOINT_SDR_BINDING_V1.json",
     "completion_common_endpoint_sdr_binding_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_COMMON_ENDPOINT_SDR_BINDING_V1.md",
     "completion_endpoint_to_residual_comparison": "sources/quantum-weyl/classical_import/certificates/STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1.json",
     "completion_endpoint_to_residual_comparison_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1.md",
     "completion_residual_cyclic_carrier_obstruction": "sources/quantum-weyl/classical_import/certificates/STRICT_RESIDUAL_CYCLIC_CARRIER_OBSTRUCTION_V1.json",
     "completion_residual_cyclic_carrier_obstruction_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_RESIDUAL_CYCLIC_CARRIER_OBSTRUCTION_V1.md",
+    "completion_dfinite_cotangent_dual_comparison": "sources/quantum-weyl/classical_import/certificates/STRICT_DFINITE_COTANGENT_DUAL_COMPARISON_V1.json",
+    "completion_dfinite_cotangent_dual_comparison_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_DFINITE_COTANGENT_DUAL_COMPARISON_V1.md",
     "completion_local_cyclic_pairing": "sources/quantum-weyl/classical_import/certificates/STRICT_386_LOCAL_CYCLIC_PAIRING_CLOSURE_V1.json",
     "completion_local_cyclic_pairing_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_LOCAL_CYCLIC_PAIRING_CLOSURE_V1.md",
     "completion_residual_zero_modes": "sources/quantum-weyl/classical_import/certificates/STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1.json",
@@ -218483,5 +219227,5 @@ window.MATRIX_EXPLORER_DATA = {
     "completion_source_q3": "sources/quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.json",
     "completion_source_q3_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_SOURCE_Q3_COMMON_ASSEMBLY_V1.md"
   },
-  "canonical_digest": "5eecc265c0a6894d881789e3deffc40b08d2a7d50c4bd26e66844306713c8571"
+  "canonical_digest": "be93324decd9cbcfa640c19ac6c2882c9aa51ff55213e878305bd54c46f6fc5a"
 };

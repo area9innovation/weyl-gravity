@@ -1,0 +1,112 @@
+{
+  "result_id": "STRICT_DFINITE_COTANGENT_DUAL_COMPARISON_V1",
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_M3RC_FORMAL_COTANGENT_DUAL_V1_TIER_RECEIPT",
+  "generated_at": "2026-08-16",
+  "source_commit_before_change": "4f054fc718f818b6603964fbe016429671f73443",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Resolve M3RC-A by testing whether the unchanged 4490-coordinate D-finite source can retract to a 940-coordinate dual-complete residual carrier, constructing the formal shifted cotangent completion when it cannot, replaying its SDR identities and canonical odd pairing exactly, and propagating the resulting M3RC-A/M3RC-B boundary through Gate V23, Atlas V41, the static explorer and Paper 21.",
+  "artifact_hashes": {
+    "quantum-weyl/classical_import/certificates/STRICT_DFINITE_COTANGENT_DUAL_COMPARISON_V1.json": "0564f4d41fb8593a3320c70317b184b70d1f195957b2b97b40c80fb7ced81c7e",
+    "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V23_RECONCILIATION.json": "8b06a9d757f1e351b9b654a23b5b8163599d55f39dc1aad5c32d9bd3ff378030",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V41.json": "b278777443ac15089120d63a1ded1d88b937cc3849deb2b5f9fb96cbc184bd46",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "b908daa4b0f66e3a0c795ff4bc24065c9ade70539a0c39614927bb85ddabf1bf",
+    "foundations/site/data.json": "00d7d58ff0875d6158159581845510b586e74bb18e5fc43befabdce257996c0e",
+    "paper/21-reverse-foundations-of-physics-appendices.tex": "8bc6661adffc8ddd4815661f654aa2ca9316dc479c1578546e0939abf7c565c2",
+    "paper/21-reverse-foundations-of-physics.pdf": "73b2903ee3b11686a671a17d54b0d595caa9db034e96c6e2d072ba8fe69faaab",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "08892f86b0b456936739a48e4e2bbfd1f690e474ad8a1e22dee1001cb5032a49"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3.12 -m py_compile <scoped M3RC-A, Gate V23, Atlas V41, static-site and Paper 21 Python files>",
+          "status": "PASS"
+        },
+        {
+          "command": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3.12 -m json.tool <scoped certificates, schemas, results, site data, claim map and receipt>",
+          "status": "PASS"
+        },
+        {
+          "command": "pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (three passes from paper/)",
+          "elapsed_seconds": 5.9,
+          "status": "PASS",
+          "output": "75 pages"
+        },
+        {
+          "command": "git diff --check",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3.12 M3RC-A builder --check; independent checker; seven unit tests",
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Gate V23 builder --check; independent checker; six unit tests",
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Atlas V41 builder --check; independent checker; five unit tests",
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 static-site builder --check; independent checker; verifier; ten unit tests",
+          "status": "PASS"
+        },
+        {
+          "command": "python3.12 Paper 21 appendix --check; claim-map --check; independent claim-map verifier",
+          "status": "PASS"
+        }
+      ],
+      "elapsed_seconds": 22.83
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The new exact comparison changes the first residual-cyclicity prerequisite and is consumed transitively by Gate V23, Atlas V41, the content-addressed static explorer, the generated appendices, the claim map and the rendered paper. Every producer currentness check and independent receiver/checker in that affected chain passed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze/tag, QME lifecycle promotion, shared core algebra change, release preparation or explicit full-suite request occurred. Gate A remains FAIL_CLOSED; M3RC-B, M4R and M1 remain open; no LORENTZIAN_CERTIFIED claim is promoted."
+    }
+  },
+  "scientific_result": {
+    "unchanged_source_dimension": 4490,
+    "unchanged_source_h0_dimension": 470,
+    "unchanged_source_h1_dimension": 0,
+    "same_source_retract_to_940_possible": false,
+    "formal_cotangent_full_dimension": 8980,
+    "formal_cotangent_residual_dimension": 940,
+    "formal_full_pairing_rank": 8980,
+    "formal_residual_pairing_rank": 940,
+    "declared_identity_defects": 0,
+    "route_order": [
+      "STRICT_M3RC_ACTION_SUPPORT_DUAL_IDENTIFICATION",
+      "STRICT_TYPED_RESIDUAL_CYCLICITY",
+      "STRICT_COMMON_FREEZE_SNAPSHOT_AND_FINAL_CYCLIC_CONTRACTION"
+    ],
+    "category_boundary": "M3RC-A establishes exact finite algebraic cotangent duality. It does not identify the formal algebraic dual with the continuous/action dual selected by the Weyl kinetic pairing and Lorentzian support topology; that is M3RC-B."
+  },
+  "claim_flags": {
+    "same_source_4490_to_940_retract_exists": false,
+    "formal_8980_to_940_cotangent_sdr_exact": true,
+    "formal_full_pairing_nondegenerate": true,
+    "formal_residual_pairing_nondegenerate": true,
+    "m3rc_a_formal_cotangent_comparison_complete": true,
+    "m3rc_b_action_support_identification_complete": false,
+    "formal_dual_identified_with_action_support_dual": false,
+    "m4r_typed_residual_cyclicity_constructed": false,
+    "classical_import_gate_a_passed": false,
+    "full_complex_hadamard_state_constructed": false,
+    "qme_restored": false,
+    "residual_quantum_transfer_authorized": false
+  }
+}

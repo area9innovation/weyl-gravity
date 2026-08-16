@@ -64,10 +64,12 @@ BT_EUCLIDEAN_IMPORT = FOUNDATIONS / "results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_I
 AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json"
 FULL_SURFACE_AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json"
 LADDER = FOUNDATIONS / "results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
-COMPLETION_ATLAS = FOUNDATIONS / "results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V40.json"
-COMPLETION_REPORT = FOUNDATIONS / "reports/lorentzian-weyl-bv-completion-atlas-v40.md"
-COMPLETION_GATE = ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V22_RECONCILIATION.json"
-COMPLETION_GATE_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_GATE_V22.md"
+COMPLETION_ATLAS = FOUNDATIONS / "results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V41.json"
+COMPLETION_REPORT = FOUNDATIONS / "reports/lorentzian-weyl-bv-completion-atlas-v41.md"
+COMPLETION_GATE = ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V23_RECONCILIATION.json"
+COMPLETION_GATE_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_GATE_V23.md"
+COMPLETION_DFINITE_COTANGENT_DUAL = ROOT / "quantum-weyl/classical_import/certificates/STRICT_DFINITE_COTANGENT_DUAL_COMPARISON_V1.json"
+COMPLETION_DFINITE_COTANGENT_DUAL_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_DFINITE_COTANGENT_DUAL_COMPARISON_V1.md"
 COMPLETION_RESIDUAL_COMPARISON = ROOT / "quantum-weyl/classical_import/certificates/STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1.json"
 COMPLETION_RESIDUAL_COMPARISON_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_ENDPOINT_TO_RESIDUAL_SPECTRAL_COMPARISON_V1.md"
 COMPLETION_RESIDUAL_CYCLIC_OBSTRUCTION = ROOT / "quantum-weyl/classical_import/certificates/STRICT_RESIDUAL_CYCLIC_CARRIER_OBSTRUCTION_V1.json"
@@ -287,7 +289,7 @@ def cell_mark(cell: dict[str, Any], evidence: dict[str, dict[str, Any]]) -> str:
 def canonical_digest(dataset: dict[str, Any]) -> str:
     projection = {
         key: dataset[key]
-        for key in ("axes", "cells", "evidence", "ladder", "graph", "completion_atlas", "completion_common_endpoint_sdr_binding", "completion_endpoint_to_residual_comparison", "completion_residual_cyclic_carrier_obstruction", "completion_local_cyclic_pairing", "completion_residual_zero_modes", "completion_centered_cohomology", "completion_residual_sdr_type_audit", "cross_cell_interfaces", "carrier_interfaces", "numerical_reproducibility_records")
+        for key in ("axes", "cells", "evidence", "ladder", "graph", "completion_atlas", "completion_common_endpoint_sdr_binding", "completion_endpoint_to_residual_comparison", "completion_residual_cyclic_carrier_obstruction", "completion_dfinite_cotangent_dual_comparison", "completion_local_cyclic_pairing", "completion_residual_zero_modes", "completion_centered_cohomology", "completion_residual_sdr_type_audit", "cross_cell_interfaces", "carrier_interfaces", "numerical_reproducibility_records")
     }
     return v1.sha_bytes(json.dumps(projection, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode())
 
@@ -298,6 +300,7 @@ def build_dataset() -> dict[str, Any]:
     completion_common_endpoint_sdr_binding = v1.load(COMPLETION_ENDPOINT_SDR_BINDING)
     completion_endpoint_to_residual_comparison = v1.load(COMPLETION_RESIDUAL_COMPARISON)
     completion_residual_cyclic_carrier_obstruction = v1.load(COMPLETION_RESIDUAL_CYCLIC_OBSTRUCTION)
+    completion_dfinite_cotangent_dual_comparison = v1.load(COMPLETION_DFINITE_COTANGENT_DUAL)
     completion_local_cyclic_pairing = v1.load(COMPLETION_LOCAL_CYCLIC_PAIRING)
     completion_residual_zero_modes = v1.load(COMPLETION_RESIDUAL_ZERO_MODES)
     completion_centered_cohomology = v1.load(COMPLETION_CENTERED_COHOMOLOGY)
@@ -354,6 +357,7 @@ def build_dataset() -> dict[str, Any]:
         "completion_common_endpoint_sdr_binding": completion_common_endpoint_sdr_binding,
         "completion_endpoint_to_residual_comparison": completion_endpoint_to_residual_comparison,
         "completion_residual_cyclic_carrier_obstruction": completion_residual_cyclic_carrier_obstruction,
+        "completion_dfinite_cotangent_dual_comparison": completion_dfinite_cotangent_dual_comparison,
         "completion_local_cyclic_pairing": completion_local_cyclic_pairing,
         "completion_residual_zero_modes": completion_residual_zero_modes,
         "completion_centered_cohomology": completion_centered_cohomology,
@@ -404,6 +408,8 @@ def build_dataset() -> dict[str, Any]:
             "completion_endpoint_to_residual_comparison_report": site_link(rel(COMPLETION_RESIDUAL_COMPARISON_REPORT)),
             "completion_residual_cyclic_carrier_obstruction": site_link(rel(COMPLETION_RESIDUAL_CYCLIC_OBSTRUCTION)),
             "completion_residual_cyclic_carrier_obstruction_report": site_link(rel(COMPLETION_RESIDUAL_CYCLIC_OBSTRUCTION_REPORT)),
+            "completion_dfinite_cotangent_dual_comparison": site_link(rel(COMPLETION_DFINITE_COTANGENT_DUAL)),
+            "completion_dfinite_cotangent_dual_comparison_report": site_link(rel(COMPLETION_DFINITE_COTANGENT_DUAL_REPORT)),
             "completion_local_cyclic_pairing": site_link(rel(COMPLETION_LOCAL_CYCLIC_PAIRING)),
             "completion_local_cyclic_pairing_report": site_link(rel(COMPLETION_LOCAL_CYCLIC_PAIRING_REPORT)),
             "completion_residual_zero_modes": site_link(rel(COMPLETION_RESIDUAL_ZERO_MODES)),
@@ -537,7 +543,7 @@ eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
-Atlas V40 preserves the field-equation type result.  The degree-one-to-zero
+Atlas V41 preserves the field-equation type result.  The degree-one-to-zero
 Green component is an exact right inverse on Noether-compatible sources and a
 left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
 the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
@@ -627,14 +633,18 @@ Gate V21 now closes M3R on the represented D-finite domain: all 470
 positive-energy residual coordinates have explicit E/A/L magnetic labels,
 normalized synthesis names, an exact bijective crosswalk, and zero retraction
 or q0-chain defects.  The harmonic restriction is global and is not promoted
-to a support-local or all-energy map.  Gate V22 then tests the missing cyclic
-step rather than assuming it.  All 470 synthesis columns land in degree-zero
-metric slots, while the degree-minus-one BV form has no metric--metric block.
-Its literal pullback therefore has rank zero and nullity 470.  The older
-cross-energy form is symmetric and even, not the field-theoretic BV
-antibracket.  A 940-coordinate shifted-cotangent preflight has an exact
-rank-940 odd pairing, but its dual endpoint maps and action-pairing
-identification remain open.  No new top-level hash is accepted; M3RC, M4R,
+to a support-local or all-energy map.  Gate V22 tests the missing cyclic step
+rather than assuming it: all 470 synthesis columns land in degree-zero metric
+slots, so the degree-minus-one BV form pulls back with rank zero and nullity
+470.  Gate V23 now separates the repair into two claims.  M3RC-A is complete:
+the unchanged 4,490-coordinate D-finite source has H0=470 and H1=0 and cannot
+retract to a 940-coordinate cotangent residual carrier, while its declared
+8,980-coordinate shifted cotangent completion retracts exactly onto those 940
+coordinates.  The full and residual canonical odd pairings have ranks 8,980
+and 940, and every declared SDR and cyclicity defect is zero.  M3RC-B remains
+open because no selected support/topology dual or harmonic integration theorem
+identifies the formal evaluation pairing and transposed maps with the
+action-derived BV density.  No new top-level hash is accepted; M3RC-B, M4R,
 and M1 remain in that dependency order.
 The complete Berger q3 remains a different-theory Weyl-plus-clock result on a fixed
 54-row carrier; no certified same-theory cyclic map authorizes its direct import.
@@ -990,7 +1000,15 @@ def generated() -> dict[Path, bytes]:
     ]
     bundled_sources = sorted(set([CUBE, *PREVIOUS_CUBES, FULL_SURFACE_AUDIT, CORNER_BORN_INTERFACE, GROUND_STATE_DYNAMICS_INTERFACE, BT_EUCLIDEAN_IMPORT, GR_CASSINI_RESULT, GR_CASSINI_SCHEMA, MANNHEIM_NGC3198_RESULT, MANNHEIM_NGC3198_SCHEMA, MANNHEIM_NGC3198_PARAMETERS, MANNHEIM_NGC3198_SPARC, MANNHEIM_NGC3198_CPP, NGC3198_COMMON_FIT_RESULT, NGC3198_COMMON_FIT_SCHEMA, NGC3198_COMMON_FIT_PROTOCOL, NGC3198_COMMON_FIT_CPP, AUDIT, LADDER, COMPLETION_ATLAS, COMPLETION_REPORT, COMPLETION_GATE, COMPLETION_GATE_REPORT, COMPLETION_ENDPOINT_SDR_BINDING, COMPLETION_ENDPOINT_SDR_BINDING_REPORT, COMPLETION_LOCAL_CYCLIC_PAIRING, COMPLETION_LOCAL_CYCLIC_PAIRING_REPORT, COMPLETION_RESIDUAL_ZERO_MODES, COMPLETION_RESIDUAL_ZERO_MODES_REPORT, COMPLETION_CENTERED_COHOMOLOGY, COMPLETION_CENTERED_COHOMOLOGY_REPORT, COMPLETION_RESIDUAL_SDR_TYPE_AUDIT, COMPLETION_RESIDUAL_SDR_TYPE_AUDIT_REPORT, COMPLETION_SDR, COMPLETION_SDR_REPORT, COMPLETION_CYCLIC, COMPLETION_CYCLIC_REPORT, COMPLETION_TRANSPORT, COMPLETION_TRANSPORT_REPORT, COMPLETION_ENDPOINT, COMPLETION_ENDPOINT_REPORT, COMPLETION_SUSPENSION, COMPLETION_SUSPENSION_REPORT, COMPLETION_COMPONENT_PAIRING, COMPLETION_COMPONENT_PAIRING_REPORT, COMPLETION_OPERATOR_PORTABILITY, COMPLETION_OPERATOR_PORTABILITY_REPORT, COMPLETION_Q1_SIGN_GATE, COMPLETION_Q1_SIGN_GATE_REPORT, COMPLETION_Q1_SIGN_REPAIR, COMPLETION_Q1_SIGN_REPAIR_REPORT, COMPLETION_FULL_Q1, COMPLETION_FULL_Q1_REPORT, COMPLETION_LOCAL_SDR, COMPLETION_LOCAL_SDR_REPORT, COMPLETION_CANONICAL_SHEAR, COMPLETION_CANONICAL_SHEAR_REPORT, COMPLETION_GREEN_ACTION_NAME, COMPLETION_GREEN_ACTION_NAME_REPORT, COMPLETION_UNARY_CAUSAL_SNAPSHOT, COMPLETION_UNARY_CAUSAL_SNAPSHOT_REPORT, COMPLETION_FULL_D, COMPLETION_FULL_D_REPORT, COMPLETION_Q2_PREFLIGHT, COMPLETION_Q2_PREFLIGHT_REPORT, COMPLETION_Q2_GREEN, COMPLETION_Q2_GREEN_REPORT, COMPLETION_RECURSIVE_TREES, COMPLETION_RECURSIVE_TREES_REPORT, COMPLETION_FORMAL_COEFFICIENTS, COMPLETION_FORMAL_COEFFICIENTS_REPORT, COMPLETION_FIELD_EQUATION_QUOTIENT_INVERSE, COMPLETION_FIELD_EQUATION_QUOTIENT_INVERSE_REPORT, COMPLETION_QUADRATIC_OBSTRUCTION, COMPLETION_QUADRATIC_OBSTRUCTION_REPORT, COMPLETION_Q3_WITNESS, COMPLETION_Q3_WITNESS_REPORT, COMPLETION_MINIMAL_Q3, COMPLETION_MINIMAL_Q3_REPORT, COMPLETION_ARITY3, COMPLETION_ARITY3_REPORT, COMPLETION_Q3_CYCLICITY, COMPLETION_Q3_CYCLICITY_REPORT, COMPLETION_CUBIC_INVENTORY, COMPLETION_CUBIC_INVENTORY_REPORT, COMPLETION_HH_HV_LIFT, COMPLETION_HH_HV_LIFT_REPORT, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
     bundled_sources = sorted(set([*bundled_sources, COMPLETION_DIFF_AUXILIARY, COMPLETION_DIFF_AUXILIARY_REPORT, COMPLETION_GHOST_MANIFEST, COMPLETION_GHOST_MANIFEST_REPORT, COMPLETION_CLASSICAL_QUARTIC, COMPLETION_CLASSICAL_QUARTIC_REPORT, COMPLETION_SHIFTED_MASS_Q3, COMPLETION_SHIFTED_MASS_Q3_REPORT, COMPLETION_SOURCE_Q3, COMPLETION_SOURCE_Q3_REPORT, *completion_evidence_paths]))
-    bundled_sources = sorted(set([*bundled_sources, COMPLETION_RESIDUAL_COMPARISON, COMPLETION_RESIDUAL_COMPARISON_REPORT, COMPLETION_RESIDUAL_CYCLIC_OBSTRUCTION, COMPLETION_RESIDUAL_CYCLIC_OBSTRUCTION_REPORT]))
+    bundled_sources = sorted(set([
+        *bundled_sources,
+        COMPLETION_RESIDUAL_COMPARISON,
+        COMPLETION_RESIDUAL_COMPARISON_REPORT,
+        COMPLETION_RESIDUAL_CYCLIC_OBSTRUCTION,
+        COMPLETION_RESIDUAL_CYCLIC_OBSTRUCTION_REPORT,
+        COMPLETION_DFINITE_COTANGENT_DUAL,
+        COMPLETION_DFINITE_COTANGENT_DUAL_REPORT,
+    ]))
     for source in bundled_sources:
         outputs[SITE / "sources" / source.relative_to(ROOT)] = source.read_bytes()
     input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", FOUNDATIONS / "theory_assembly.py", FOUNDATIONS / "build_gr_cassini_assembly.py", FOUNDATIONS / "check_gr_cassini_assembly.py", FOUNDATIONS / "verify_gr_cassini_assembly.py", FOUNDATIONS / "build_mannheim_ngc3198_assembly.py", FOUNDATIONS / "check_mannheim_ngc3198_assembly.py", FOUNDATIONS / "verify_mannheim_ngc3198_assembly.py", FOUNDATIONS / "build_ngc3198_common_fit_comparison.py", FOUNDATIONS / "check_ngc3198_common_fit_comparison.py", FOUNDATIONS / "verify_ngc3198_common_fit_comparison.py", FOUNDATIONS / "standard-gr-observational-control-v1.json", FOUNDATIONS / "schema/standard-gr-observational-control-v1.schema.json", *bundled_sources, ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js", V2_ASSETS / "styles-v2.css"]))
@@ -1022,7 +1040,7 @@ def generated() -> dict[Path, bytes]:
         "human_report": "foundations/reports/matrix-explorer-site-v2.md",
     }
     result["features"] = [item for item in result["features"] if not item.startswith("Gate V11 reconciliation")]
-    result["features"].append("Gate V22 residual cyclic-carrier repair with one accepted common hash and M3RC/M4R/M1 remaining")
+    result["features"].append("Gate V23 formal/action dual split with one accepted common hash and M3RC-B/M4R/M1 remaining")
     result["features"].append("M3L content-addressed 386-to-30 local endpoint contraction across 10 artifacts, 17 canonical object hashes, 15 compatibility links, and zero projected defects")
     result["features"].append("M4L complete rank-386 local odd pairing with 410 ordered entries and zero q1/SDR/D/q2/q3 cyclicity defects")
     result["features"].append("M3R represented finite endpoint-to-residual comparison with 470 E/A/L magnetic names, exact crosswalk and zero retraction or q0-chain defects")
@@ -1051,13 +1069,19 @@ def generated() -> dict[Path, bytes]:
     result["claim_flags"]["strict_M4R_residual_cyclicity_exposed"] = False
     result["claim_flags"]["strict_current_470_induced_odd_pairing_rank_zero_exposed"] = True
     result["claim_flags"]["strict_finite_940_cotangent_preflight_exposed"] = True
+    result["claim_flags"]["strict_original_dfinite_H1_zero_exposed"] = True
+    result["claim_flags"]["strict_M3RC_A_formal_cotangent_dual_comparison_exposed"] = True
+    result["claim_flags"]["strict_formal_8980_to_940_cotangent_SDR_exposed"] = True
+    result["claim_flags"]["strict_M3RC_B_action_support_identification_exposed"] = False
     result["claim_flags"]["strict_M3RC_dual_comparison_maps_exposed"] = False
+    result["features"].append("exact M3RC-A formal 8980-to-940 cotangent SDR with same-source H1-zero obstruction and fail-closed M3RC-B action/support frontier")
     result["does_not_establish"].extend([
         "the complete twenty-export, seven-hash classical Gate A from the linked source-q2/q3 snapshots and the unbound residual and centered payloads",
         "a common-snapshot zero-mode hash from the portable residual coefficient package",
         "a common-snapshot representative hash from the portable centered coefficient package",
         "H3 or H5 cohomology from the adjacent centered C3 and C5 carrier bases",
-        "M3RC dual comparison maps, the induced residual pairing/cyclicity M4R, or the final all-object freeze M1",
+        "M3RC-B action/support identification, the induced residual pairing/cyclicity M4R, or the final all-object freeze M1",
+        "that the formal 8,980-coordinate cotangent completion is the unchanged authoritative classical BV source",
         "q2/q3 compatibility with an advanced or retarded Green homotopy",
     ])
     result["does_not_establish"].extend([
