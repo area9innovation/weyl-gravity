@@ -1,0 +1,257 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-tropical-flow-transport-v1.schema.json",
+  "title": "BT Euclidean tropical flow transport certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "answer",
+    "certificate",
+    "checks",
+    "created",
+    "dependency_tags",
+    "does_not_establish",
+    "exact_fixtures",
+    "four_torus_corollary",
+    "lifecycle_state",
+    "next_gate",
+    "provenance",
+    "question",
+    "report",
+    "research_disposition",
+    "result_kind",
+    "schema",
+    "schema_version",
+    "theorem",
+    "tier_receipt",
+    "verification_commands",
+    "verifier"
+  ],
+  "properties": {
+    "answer": {"type": "string", "minLength": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_TROPICAL_FLOW_TRANSPORT_V1"},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["details", "failures", "ok", "passed", "total"],
+      "properties": {
+        "details": {
+          "type": "object",
+          "additionalProperties": {"type": "boolean"},
+          "minProperties": 6
+        },
+        "failures": {"type": "array", "items": {"type": "string"}},
+        "ok": {"type": "boolean"},
+        "passed": {"type": "integer", "minimum": 0},
+        "total": {"type": "integer", "minimum": 1}
+      }
+    },
+    "created": {"type": "string", "format": "date"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"},
+        {"const": "REDUCED-MODE"}
+      ],
+      "items": false,
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 7,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "exact_fixtures": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"$ref": "#/$defs/fixture"}
+    },
+    "four_torus_corollary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "coefficient_floor",
+        "diameter",
+        "interpretation",
+        "normalized_leading_floor",
+        "spectral_scale"
+      ],
+      "properties": {
+        "coefficient_floor": {"type": "string"},
+        "diameter": {"type": "string"},
+        "interpretation": {"type": "string"},
+        "normalized_leading_floor": {"type": "string"},
+        "spectral_scale": {"type": "string"}
+      }
+    },
+    "lifecycle_state": {"const": "SINGLE_SCALE_TROPICAL_COEFFICIENT_SHARPENED_MULTISCALE_UNIFORM_GATE_OPEN"},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["assumptions", "exact_arithmetic", "inputs", "repository_base_commit"],
+      "properties": {
+        "assumptions": {
+          "type": "array",
+          "minItems": 3,
+          "items": {"type": "string"}
+        },
+        "exact_arithmetic": {"type": "string"},
+        "inputs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+      }
+    },
+    "question": {"type": "string", "minLength": 1},
+    "report": {"type": "string", "minLength": 1},
+    "research_disposition": {
+      "type": "object",
+      "additionalProperties": {"type": "string"},
+      "minProperties": 10
+    },
+    "result_kind": {"type": "string", "minLength": 1},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-tropical-flow-transport-v1.schema.json"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-tropical-flow-transport-v1"},
+    "theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "asymptotic",
+        "coefficient_bound",
+        "flow",
+        "integrality",
+        "max_jump_graph",
+        "path_length",
+        "scope",
+        "transport"
+      ],
+      "properties": {
+        "asymptotic": {"type": "string"},
+        "coefficient_bound": {"type": "string"},
+        "flow": {"type": "string"},
+        "integrality": {"type": "string"},
+        "max_jump_graph": {"type": "string"},
+        "path_length": {"type": "string"},
+        "scope": {"type": "string"},
+        "transport": {"type": "string"}
+      }
+    },
+    "tier_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["memory_policy", "scoped_command_receipts", "tier_0", "tier_1", "tier_2", "tier_3"],
+      "properties": {
+        "memory_policy": {"type": "string"},
+        "scoped_command_receipts": {"type": "object", "additionalProperties": {"type": "string"}},
+        "tier_0": {"type": "string"},
+        "tier_1": {"type": "string"},
+        "tier_2": {"type": "string"},
+        "tier_3": {"type": "string"}
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"type": "string"}
+    },
+    "verifier": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "integerArray": {
+      "type": "array",
+      "items": {"type": "integer"}
+    },
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["denominator", "numerator"],
+      "properties": {
+        "denominator": {"type": "integer", "minimum": 1},
+        "numerator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "path": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["length", "mass", "vertices"],
+      "properties": {
+        "length": {"type": "integer", "minimum": 1},
+        "mass": {"type": "integer", "minimum": 1},
+        "vertices": {"$ref": "#/$defs/integerArray"}
+      }
+    },
+    "fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "checks",
+        "degree",
+        "diameter",
+        "divergence_l1",
+        "divergence_l2_squared",
+        "exponents",
+        "flow_divergence",
+        "flow_mass",
+        "leading_quotient_coefficient",
+        "longest_path",
+        "max_edge_exponent_jump",
+        "max_jump_edges",
+        "max_jump_outdegrees",
+        "name",
+        "path_decomposition",
+        "path_edge_mass",
+        "shape",
+        "transport_lower_bound",
+        "transported_mass",
+        "vertex_count"
+      ],
+      "properties": {
+        "checks": {"type": "object", "additionalProperties": {"type": "boolean"}, "minProperties": 6},
+        "degree": {"type": "integer", "minimum": 2},
+        "diameter": {"type": "integer", "minimum": 1},
+        "divergence_l1": {"type": "integer", "minimum": 1},
+        "divergence_l2_squared": {"type": "integer", "minimum": 1},
+        "exponents": {"$ref": "#/$defs/integerArray"},
+        "flow_divergence": {"$ref": "#/$defs/integerArray"},
+        "flow_mass": {"type": "integer", "minimum": 1},
+        "leading_quotient_coefficient": {"$ref": "#/$defs/rational"},
+        "longest_path": {"type": "integer", "minimum": 1},
+        "max_edge_exponent_jump": {"type": "integer", "minimum": 1},
+        "max_jump_edges": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [{"type": "integer"}, {"type": "integer"}],
+            "items": false,
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "max_jump_outdegrees": {"$ref": "#/$defs/integerArray"},
+        "name": {"type": "string"},
+        "path_decomposition": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/path"}},
+        "path_edge_mass": {"type": "integer", "minimum": 1},
+        "shape": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 3}},
+        "transport_lower_bound": {"$ref": "#/$defs/rational"},
+        "transported_mass": {"type": "integer", "minimum": 1},
+        "vertex_count": {"type": "integer", "minimum": 3}
+      }
+    }
+  }
+}
