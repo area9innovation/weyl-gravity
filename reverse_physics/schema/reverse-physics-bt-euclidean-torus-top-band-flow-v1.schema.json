@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-torus-top-band-flow-v1.schema.json",
+  "title": "BT Euclidean torus top-band flow certificate",
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "object": {"type": "object", "minProperties": 1},
+    "fraction": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "refined_error_theorem", "top_band_theorem", "four_torus_dichotomy",
+    "exact_fixture", "research_disposition", "does_not_establish",
+    "provenance", "verification_commands", "tier_receipt", "checks",
+    "report", "schema", "verifier"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_TOP_BAND_FLOW_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-torus-top-band-flow-v1"},
+    "created": {"const": "2026-08-17"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "UNCONDITIONAL_SUPER_L_11_OVER_3_CONTRAST_CLOSED_MODERATE_MULTIBAND_GATE_OPEN"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "refined_error_theorem": {"$ref": "#/$defs/object"},
+    "top_band_theorem": {
+      "type": "object",
+      "required": ["band", "unit_mass", "path_length", "divergence_floor", "hypothesis", "gradient_floor", "quotient_floor"],
+      "properties": {
+        "band": {"const": "H={e:alpha_e>=1/2}"},
+        "unit_mass": {"$ref": "#/$defs/text"},
+        "path_length": {"$ref": "#/$defs/text"},
+        "divergence_floor": {"const": "||div(f)||_2>=1/(D*sqrt(N))"},
+        "hypothesis": {"const": "W^2>=256*q^3*D^2*N*F"},
+        "gradient_floor": {"const": "||g||_2>=W^2/(2*D*sqrt(N))"},
+        "quotient_floor": {"const": "Q>=W^2/(4*q^2*D^2*N^2)>=64*q*F/N>=64*q/N"}
+      },
+      "additionalProperties": false
+    },
+    "four_torus_dichotomy": {
+      "type": "object",
+      "required": ["split", "common_contrast_hypothesis", "torus_sufficient_condition", "normalized_conclusion", "counterfamily_necessity"],
+      "properties": {
+        "split": {"$ref": "#/$defs/text"},
+        "common_contrast_hypothesis": {"const": "W>=24*q^2*D*N^(2/3)"},
+        "torus_sufficient_condition": {"const": "W>=3072*L^(11/3)"},
+        "normalized_conclusion": {"const": "Q/omega_L^2>=32/pi^4"},
+        "counterfamily_necessity": {"$ref": "#/$defs/text"}
+      },
+      "additionalProperties": false
+    },
+    "exact_fixture": {
+      "type": "object",
+      "required": [
+        "graph", "vertices", "degree", "diameter", "height",
+        "maximum_edge_ratio", "density_mass_F", "top_half_band_flow_mass",
+        "main_divergence_norm_squared", "error_edge_norm_squared",
+        "error_edge_norm_ceiling", "error_divergence_norm_squared",
+        "error_divergence_norm_ceiling", "top_condition_left_W_squared",
+        "top_condition_right", "residual_norm_squared",
+        "gradient_norm_squared", "gradient_floor_squared", "quotient",
+        "quotient_floor", "checks"
+      ],
+      "properties": {
+        "graph": {"const": "T_4^4 single spike"},
+        "vertices": {"const": 256},
+        "degree": {"const": 8},
+        "diameter": {"const": 8},
+        "height": {"const": 1000000},
+        "maximum_edge_ratio": {"$ref": "#/$defs/fraction"},
+        "density_mass_F": {"$ref": "#/$defs/fraction"},
+        "top_half_band_flow_mass": {"$ref": "#/$defs/fraction"},
+        "main_divergence_norm_squared": {"$ref": "#/$defs/fraction"},
+        "error_edge_norm_squared": {"$ref": "#/$defs/fraction"},
+        "error_edge_norm_ceiling": {"$ref": "#/$defs/fraction"},
+        "error_divergence_norm_squared": {"$ref": "#/$defs/fraction"},
+        "error_divergence_norm_ceiling": {"$ref": "#/$defs/fraction"},
+        "top_condition_left_W_squared": {"$ref": "#/$defs/fraction"},
+        "top_condition_right": {"$ref": "#/$defs/fraction"},
+        "residual_norm_squared": {"$ref": "#/$defs/fraction"},
+        "gradient_norm_squared": {"$ref": "#/$defs/fraction"},
+        "gradient_floor_squared": {"$ref": "#/$defs/fraction"},
+        "quotient": {"$ref": "#/$defs/fraction"},
+        "quotient_floor": {"$ref": "#/$defs/fraction"},
+        "checks": {"type": "object", "minProperties": 8, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "research_disposition": {
+      "type": "object",
+      "required": ["super_L_11_over_3_edge_contrast_collapse", "sparse_top_band_error_control", "moderate_sparse_multiband_sector", "all_field_torus_scaled_PL", "witten_poincare_transfer", "interacting_h_minus_one", "lorentzian_transfer"],
+      "properties": {
+        "super_L_11_over_3_edge_contrast_collapse": {"const": "RULED_OUT"},
+        "sparse_top_band_error_control": {"const": "PROVED"},
+        "moderate_sparse_multiband_sector": {"const": "OPEN"},
+        "all_field_torus_scaled_PL": {"const": "OPEN"},
+        "witten_poincare_transfer": {"const": "OPEN"},
+        "interacting_h_minus_one": {"const": "OPEN"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "does_not_establish": {"type": "array", "minItems": 7, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {"$ref": "#/$defs/object"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "tier_receipt": {"$ref": "#/$defs/object"},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 10},
+        "total": {"const": 10},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-torus-top-band-flow.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-torus-top-band-flow-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_torus_top_band_flow.py"}
+  },
+  "additionalProperties": false
+}

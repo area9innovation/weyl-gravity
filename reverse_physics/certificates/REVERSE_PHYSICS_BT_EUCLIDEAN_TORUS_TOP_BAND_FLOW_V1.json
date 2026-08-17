@@ -1,0 +1,179 @@
+{
+  "answer": "No above an explicit second threshold. The complete-current error has an L2 bound controlled by W*sqrt(F), not W*sqrt(N). The single edge attaining W carries at least unit leading flow in the alpha>=1/2 top band, whose paths contain at most 2D top edges. If W^2>=256*q^3*D^2*N*F, then Q>=W^2/(4*q^2*D^2*N^2)>=64*q*F/N>=64*q/N. Combining this sparse-F theorem with the density-sensitive predecessor at the split F=N^(1/3) proves that every T_L^4 field with W>=3072*L^(11/3) has Q/omega_L^2>=32/pi^4. A collapsing family must therefore have W<3072*L^(11/3). The remaining moderate sparse multiband sector is open.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_TOP_BAND_FLOW_V1",
+  "checks": {
+    "details": {
+      "all_field_scaled_PL_remains_open": true,
+      "cutoff_constant_is_3072": true,
+      "dense_sparse_dichotomy_closes_L_11_over_3_sector": true,
+      "fixture_checks_pass": true,
+      "no_witten_or_lorentzian_promotion": true,
+      "refined_edge_error_bound_proved": true,
+      "sparse_F_free_scale_bound_proved": true,
+      "top_band_divergence_floor_proved": true,
+      "top_band_path_length_at_most_two_diameters": true,
+      "top_half_band_contains_unit_flow": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 10,
+    "total": 10
+  },
+  "created": "2026-08-17",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "a lower bound for all edge contrasts on T_L^4",
+    "exclusion of polynomial contrast W=O(L^(11/3))",
+    "a nonseparable collapsing family",
+    "a Witten or Poincare theorem",
+    "boundedness or divergence of the interacting H^-1 moment",
+    "a continuum measure, Born rule, or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_fixture": {
+    "checks": {
+      "complete_gradient_reconstructed": true,
+      "divergence_error_obeys_refined_bound": true,
+      "edge_error_obeys_refined_bound": true,
+      "gradient_clears_floor": true,
+      "main_divergence_has_top_path_floor": true,
+      "quotient_clears_floor": true,
+      "top_condition_holds": true,
+      "top_half_band_has_unit_mass": true
+    },
+    "degree": 8,
+    "density_mass_F": {
+      "denominator": 1,
+      "numerator": 8
+    },
+    "diameter": 8,
+    "error_divergence_norm_ceiling": {
+      "denominator": 1,
+      "numerator": 57344000012582912
+    },
+    "error_divergence_norm_squared": {
+      "denominator": 1953125000000000000000,
+      "numerator": 906248250000484373750010749982000009
+    },
+    "error_edge_norm_ceiling": {
+      "denominator": 1,
+      "numerator": 3584000000786432
+    },
+    "error_edge_norm_squared": {
+      "denominator": 1953125000000000000000,
+      "numerator": 124999781249859375250000999998000001
+    },
+    "gradient_floor_squared": {
+      "denominator": 1,
+      "numerator": 15258789062500000000
+    },
+    "gradient_norm_squared": {
+      "denominator": 1953125000000000000000,
+      "numerator": 140624937500687500499998234373750010749982000009
+    },
+    "graph": "T_4^4 single spike",
+    "height": 1000000,
+    "main_divergence_norm_squared": {
+      "denominator": 1,
+      "numerator": 72
+    },
+    "maximum_edge_ratio": {
+      "denominator": 1,
+      "numerator": 1000000
+    },
+    "quotient": {
+      "denominator": 1736111111125000000000,
+      "numerator": 15625024305664930805555750000000001
+    },
+    "quotient_floor": {
+      "denominator": 262144,
+      "numerator": 244140625
+    },
+    "residual_norm_squared": {
+      "denominator": 15625000000,
+      "numerator": 124999750001124998000001
+    },
+    "top_condition_left_W_squared": {
+      "denominator": 1,
+      "numerator": 1000000000000
+    },
+    "top_condition_right": {
+      "denominator": 1,
+      "numerator": 17179869184
+    },
+    "top_half_band_flow_mass": {
+      "denominator": 1,
+      "numerator": 8
+    },
+    "vertices": 256
+  },
+  "four_torus_dichotomy": {
+    "common_contrast_hypothesis": "W>=24*q^2*D*N^(2/3)",
+    "counterfamily_necessity": "Q/omega_L^2->0 implies eventually W<3072*L^(11/3)",
+    "normalized_conclusion": "Q/omega_L^2>=32/pi^4",
+    "split": "F>=N^(1/3) uses the density-sensitive predecessor; F<N^(1/3) uses the top-band theorem",
+    "torus_sufficient_condition": "W>=3072*L^(11/3)"
+  },
+  "lifecycle_state": "UNCONDITIONAL_SUPER_L_11_OVER_3_CONTRAST_CLOSED_MODERATE_MULTIBAND_GATE_OPEN",
+  "provenance": {
+    "exact_arithmetic": "Fraction reconstruction of the complete T_4^4 spike residual, gradient, leading flow, edge error, divergence error, norms, and theorem floors",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_SPARSE_MAXIMA_FLOW_V1.json",
+        "sha256": "f2c430486568594c6c08f1959a9132cd2c8c86879019989122da89eaf0be5e40"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_HIGH_CONTRAST_FLOW_CLOSURE_V1.json",
+        "sha256": "822216dfdc5aad17f0be7d2fa453dade539b5d0e469ab1ae81d4e2fa0a39323c"
+      }
+    ],
+    "repository_base_commit": "080de60e9dd36cf7bf29c54807abff34e762cb0e"
+  },
+  "question": "Can the sparse near-maximal band left by the density-sensitive theorem support a BT quotient collapse at very large polynomial edge contrast?",
+  "refined_error_theorem": {
+    "divergence_error_square": "||div(epsilon)||_2^2<=14*q^3*W^2*F+12*q^4*N",
+    "edge_error_square": "sum_e epsilon_e^2<=7*q^2*W^2*F+6*q^3*N",
+    "norm_form": "||div(epsilon)||_2<=4*q^(3/2)*W*sqrt(F)+4*q^2*sqrt(N)",
+    "scope": "the complete current, including reverse-current and equal-field edges"
+  },
+  "report": "reverse_physics/reports/bt-euclidean-torus-top-band-flow.md",
+  "research_disposition": {
+    "all_field_torus_scaled_PL": "OPEN",
+    "interacting_h_minus_one": "OPEN",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "moderate_sparse_multiband_sector": "OPEN",
+    "sparse_top_band_error_control": "PROVED",
+    "super_L_11_over_3_edge_contrast_collapse": "RULED_OUT",
+    "witten_poincare_transfer": "OPEN"
+  },
+  "result_kind": "exact top-band current theorem and unconditional torus high-contrast cutoff",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-torus-top-band-flow-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-torus-top-band-flow-v1",
+  "tier_receipt": {
+    "paper_integration": "PASS: claim-map verifier 1.05 s at 148360 KiB maximum RSS; two-pass PDF build 2.49 s at 53844 KiB maximum RSS",
+    "planning_event": "PASS: append-only event sequence 93, id da1d71826151d8fa",
+    "science_forge_shadow": "ADVISORY EXIT 0 IN 8.05 S AT 336480 KiB, NOT A SCIENTIFIC PASS: bridge audit fail-closed on source-current Forge E9415 drift; coverage census reports 1972 certificates versus baseline 976",
+    "tier_0": "Python compilation, strict JSON/schema parsing, deterministic drift, scoped diff check, exact staged-diff inspection, planning import, paper claim-map verification, and two-pass PDF build required; planning import passed with 1712 nodes, 0 invalid items, and 0 malformed events in 1.77 s at 16900 KiB maximum RSS",
+    "tier_1": "PASS: producer 10/10 in 0.05 s at 20788 KiB; independent verifier 10/10 in 0.12 s at 30044 KiB; focused and mutation tests 11/11 in 0.27 s at 30968 KiB; unchanged sparse-maxima predecessor verifier 12/12 in 0.13 s at 30504 KiB",
+    "tier_2": "the sparse-maxima and high-contrast predecessors are unchanged and checked by content hash",
+    "tier_3": "not triggered: the all-field, Witten, H^-1, continuum, freeze, and release gates remain open"
+  },
+  "top_band_theorem": {
+    "band": "H={e:alpha_e>=1/2}",
+    "divergence_floor": "||div(f)||_2>=1/(D*sqrt(N))",
+    "gradient_floor": "||g||_2>=W^2/(2*D*sqrt(N))",
+    "hypothesis": "W^2>=256*q^3*D^2*N*F",
+    "path_length": "every directed path has at most 2D top-band edges when W>=4",
+    "quotient_floor": "Q>=W^2/(4*q^2*D^2*N^2)>=64*q*F/N>=64*q/N",
+    "unit_mass": "sum_(e in H) f_e>=1 because an edge has alpha_e=1 and its tail has c_x>=1"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_torus_top_band_flow.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_torus_top_band_flow.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_torus_top_band_flow"
+  ],
+  "verifier": "reverse_physics/verify_bt_euclidean_torus_top_band_flow.py"
+}

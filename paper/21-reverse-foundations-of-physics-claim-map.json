@@ -287,6 +287,11 @@
     "bt_tensor_phase_gradient_identity": "g(x)=sum_a h_(x_a)+sum_(a!=b) delta_(x_a)*rho_(x_b)",
     "bt_tensor_phase_normalized_lower": "Q_k/omega_L^2>=m^10/(16*40^k*pi^4)",
     "bt_tensor_phase_quotient_lower": "Q_k>=1/(256*40^k*m^6) for 2<=k<=4 and m>=4",
+    "bt_top_band_all_field_status": "OPEN",
+    "bt_top_band_cutoff": "W>=3072*L^(11/3)",
+    "bt_top_band_error_square": "sum_e epsilon_e^2<=7*q^2*W^2*F+6*q^3*N",
+    "bt_top_band_hypothesis": "W^2>=256*q^3*D^2*N*F",
+    "bt_top_band_normalized_floor": "Q/omega_L^2>=32/pi^4",
     "bt_torus_phase_pullback_all_field_status": "OPEN",
     "bt_torus_phase_pullback_cycle_lower": "Q_C>=1/(144m^6) for m>=4",
     "bt_torus_phase_pullback_identity": "Q_T=k^2*Q_C",
@@ -869,6 +874,16 @@
       "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_SPARSE_MAXIMA_FLOW_V1.json",
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_SPARSE_MAXIMA_FLOW_V1",
       "sha256": "f2c430486568594c6c08f1959a9132cd2c8c86879019989122da89eaf0be5e40"
+    },
+    "bt_torus_top_band_flow": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "UNCONDITIONAL_SUPER_L_11_OVER_3_CONTRAST_CLOSED_MODERATE_MULTIBAND_GATE_OPEN",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_TOP_BAND_FLOW_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_TOP_BAND_FLOW_V1",
+      "sha256": "7d3ee031eb2d11c3259d9fbdcbc2dfd514b594fdef04866d035957fa830aa75b"
     },
     "bt_tuned_remainder_compensation": {
       "dependency_tags": [
@@ -2557,7 +2572,7 @@
       "sha256": "c394928bb8ead70ba9eeb76ee16298c3fffec5712d8c9290f773712960d333fb"
     }
   },
-  "canonical_digest": "3dd5ec440df8c4e8f7dcbf639fde3c9f372aa31f44cb50658d826689dbbc17a4",
+  "canonical_digest": "0f5f61fae84cad59e09106b315e8b455326dcbb27b9b4c3cf77843677efe7189",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -2683,12 +2698,16 @@
     "bt_tensor_phase_counterfamily_ruled_out": true,
     "bt_tensor_phase_hierarchy_obstruction_certified": true,
     "bt_torus_all_field_scaled_pl_decided": false,
+    "bt_torus_moderate_sparse_multiband_gate_open": true,
     "bt_torus_phase_pullback_obstruction_certified": true,
     "bt_torus_single_phase_counterfamily_ruled_out": true,
     "bt_torus_sparse_maxima_all_field_scaled_pl_decided": false,
     "bt_torus_sparse_maxima_flow_certified": true,
     "bt_torus_sparse_maxima_necessity_proved": true,
     "bt_torus_sparse_multiband_gate_open": true,
+    "bt_torus_super_L_11_over_3_contrast_ruled_out": true,
+    "bt_torus_top_band_all_field_scaled_pl_decided": false,
+    "bt_torus_top_band_flow_certified": true,
     "bt_translation_invariant_current_susceptibility_established": false,
     "bt_translation_invariant_flux_corrector_established": false,
     "bt_tree_log_convexity_extra_tilt_confinement_obstructed": true,
@@ -4123,6 +4142,18 @@
       ],
       "statement": "On the isotropic four-torus, orient increasing field edges, normalize their ratios by the maximum W, put c_x=sum_(x->y) alpha_e and F=sum_x c_x^2. If W*F>=24*q^2*diam(T_L^4)*L^4, exact finite-amplitude flow decomposition and torus path geometry give ||grad A||^2/||r||^2>=9q^2. Hence every candidate below this floor obeys W*F<3072*L^5, and its relative top-band edge count satisfies E_theta/(4L^4)<768*L/(theta^2*W). Thus W/L->infinity forces every fixed near-maximal band to have vanishing density. Sparse multiband hierarchies and the all-field torus bound remain open.",
       "status": "EXACT_DENSITY_SENSITIVE_TORUS_FLOW_BOUND_WITH_SPARSE_MULTIBAND_GATE_OPEN"
+    },
+    {
+      "authorities": [
+        "bt_torus_top_band_flow"
+      ],
+      "claim_id": "RF-87-BT-TORUS-TOP-BAND-FLOW",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "statement": "The complete-current error in the torus maximum-ratio decomposition obeys sum_e epsilon_e^2<=7*q^2*W^2*F+6*q^3*N and ||div epsilon||^2<=14*q^3*W^2*F+12*q^4*N. The edge attaining W carries at least unit leading flow through alpha>=1/2, so if W^2>=256*q^3*D^2*N*F then Q>=64*q*F/N. Combining this sparse-F theorem with the density-sensitive predecessor at F=N^(1/3) proves that W>=3072*L^(11/3) implies Q/omega_L^2>=32/pi^4 on T_L^4. Thus every collapsing candidate eventually has W<3072*L^(11/3); the moderate sparse multiband and all-field gates remain open.",
+      "status": "EXACT_UNCONDITIONAL_SUPER_L_11_OVER_3_CONTRAST_OBSTRUCTION_WITH_MODERATE_MULTIBAND_GATE_OPEN"
     }
   ],
   "created": "2026-08-17",
@@ -4362,7 +4393,7 @@
       "source_sha256": "813d29b98f493c3a1d944eb302c7c842cb3773622a5d4dee702c586b5a598087"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "6173fa4910ddfbe43c6a6bca753f31c6152fa8064283f003e628f320b256c5f4"
+    "sha256": "13d4f5453c9eb5bcc66bf2efe890e2fdce5513b69eaf0b942439830a1c5de72a"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

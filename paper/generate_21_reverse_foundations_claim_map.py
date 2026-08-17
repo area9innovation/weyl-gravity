@@ -73,6 +73,7 @@ AUTHORITY_PATHS = {
     "bt_torus_phase_pullback_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_PHASE_PULLBACK_OBSTRUCTION_V1.json",
     "bt_tensor_phase_hierarchy_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TENSOR_PHASE_HIERARCHY_OBSTRUCTION_V1.json",
     "bt_torus_sparse_maxima_flow": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_SPARSE_MAXIMA_FLOW_V1.json",
+    "bt_torus_top_band_flow": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_TOP_BAND_FLOW_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -308,6 +309,7 @@ def build() -> dict:
     bt_torus_phase_pullback = loaded["bt_torus_phase_pullback_obstruction"]
     bt_tensor_phase = loaded["bt_tensor_phase_hierarchy_obstruction"]
     bt_sparse_maxima = loaded["bt_torus_sparse_maxima_flow"]
+    bt_top_band = loaded["bt_torus_top_band_flow"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -457,6 +459,11 @@ def build() -> dict:
             "bt_sparse_maxima_torus_condition": bt_sparse_maxima["four_torus_corollary"]["sufficient_condition"],
             "bt_sparse_maxima_density_bound": bt_sparse_maxima["four_torus_corollary"]["bad_family_density"],
             "bt_sparse_maxima_all_field_status": bt_sparse_maxima["research_disposition"]["all_field_torus_scaled_PL"],
+            "bt_top_band_error_square": bt_top_band["refined_error_theorem"]["edge_error_square"],
+            "bt_top_band_hypothesis": bt_top_band["top_band_theorem"]["hypothesis"],
+            "bt_top_band_cutoff": bt_top_band["four_torus_dichotomy"]["torus_sufficient_condition"],
+            "bt_top_band_normalized_floor": bt_top_band["four_torus_dichotomy"]["normalized_conclusion"],
+            "bt_top_band_all_field_status": bt_top_band["research_disposition"]["all_field_torus_scaled_PL"],
             "coded_wave_observable_cutoff": coded_wave_observable["cutoff_theorem"]["cutoff"],
             "coded_wave_observable_full_state_reconstruction": coded_wave_observable["claim_flags"]["full_state_reconstruction_proved"],
             "coded_local_weak_wave_basis_tests": coded_local_weak_wave["localized_test_class"]["basis_size"],
@@ -1297,6 +1304,13 @@ def build() -> dict:
                 "authorities": ["bt_torus_sparse_maxima_flow"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
+            {
+                "claim_id": "RF-87-BT-TORUS-TOP-BAND-FLOW",
+                "statement": "The complete-current error in the torus maximum-ratio decomposition obeys sum_e epsilon_e^2<=7*q^2*W^2*F+6*q^3*N and ||div epsilon||^2<=14*q^3*W^2*F+12*q^4*N. The edge attaining W carries at least unit leading flow through alpha>=1/2, so if W^2>=256*q^3*D^2*N*F then Q>=64*q*F/N. Combining this sparse-F theorem with the density-sensitive predecessor at F=N^(1/3) proves that W>=3072*L^(11/3) implies Q/omega_L^2>=32/pi^4 on T_L^4. Thus every collapsing candidate eventually has W<3072*L^(11/3); the moderate sparse multiband and all-field gates remain open.",
+                "status": "EXACT_UNCONDITIONAL_SUPER_L_11_OVER_3_CONTRAST_OBSTRUCTION_WITH_MODERATE_MULTIBAND_GATE_OPEN",
+                "authorities": ["bt_torus_top_band_flow"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -1572,6 +1586,10 @@ def build() -> dict:
             "bt_torus_sparse_maxima_necessity_proved": True,
             "bt_torus_sparse_multiband_gate_open": True,
             "bt_torus_sparse_maxima_all_field_scaled_pl_decided": False,
+            "bt_torus_top_band_flow_certified": True,
+            "bt_torus_super_L_11_over_3_contrast_ruled_out": True,
+            "bt_torus_moderate_sparse_multiband_gate_open": True,
+            "bt_torus_top_band_all_field_scaled_pl_decided": False,
             "bt_euclidean_finite_capabilities_imported": True,
             "bt_euclidean_coarse_reproduction_separated": True,
             "bt_free_os_obstruction_certified": True,
