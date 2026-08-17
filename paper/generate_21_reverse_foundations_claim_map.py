@@ -82,6 +82,7 @@ AUTHORITY_PATHS = {
     "bt_torus_reciprocal_virial_localization": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_RECIPROCAL_VIRIAL_LOCALIZATION_V1.json",
     "bt_torus_curvature_cut_concentration": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_CURVATURE_CUT_CONCENTRATION_V1.json",
     "bt_torus_small_action_gradient_floor": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_SMALL_ACTION_GRADIENT_FLOOR_V1.json",
+    "bt_torus_green_tail_counterfamily": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_GREEN_TAIL_COUNTERFAMILY_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -326,6 +327,7 @@ def build() -> dict:
     bt_reciprocal_virial = loaded["bt_torus_reciprocal_virial_localization"]
     bt_curvature_cut = loaded["bt_torus_curvature_cut_concentration"]
     bt_small_action = loaded["bt_torus_small_action_gradient_floor"]
+    bt_green_tail = loaded["bt_torus_green_tail_counterfamily"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -1409,6 +1411,13 @@ def build() -> dict:
                 "authorities": ["bt_torus_small_action_gradient_floor"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
+            {
+                "claim_id": "RF-96-BT-TORUS-GREEN-TAIL-COUNTERFAMILY",
+                "statement": "The all-field deterministic BT torus scaled PL inequality is false. On L_n=n^24, a critical-bubble source is compensated by its exact mean, inverted with the mean-zero periodic graph Green operator, lifted by epsilon_n=n^-26, and multiplied by a bounded four-way sine coupling. The resulting positive nonseparable fields have residual norm bounded above and below, field contrast O(L_n^(5/12)), and Q_n/omega_Ln^2=O(n^-2)->0. The construction realizes the positive-action residual-escape, flat-curvature, and height-cut-cancellation necessities from RF-93--RF-95. It does not decide the full Witten quotient, Gibbs typicality, the interacting H^-1 moment, continuum reconstruction, Born/Krein interpretation, or any Lorentzian claim.",
+                "status": "NONSEPARABLE_POLYNOMIAL_CONTRAST_FREE_SCALE_COLLAPSE_CONSTRUCTED",
+                "authorities": ["bt_torus_green_tail_counterfamily"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -1720,6 +1729,11 @@ def build() -> dict:
             "bt_torus_vanishing_action_collapse_ruled_out": True,
             "bt_torus_action_quantization_for_collapse_certified": True,
             "bt_torus_small_action_all_field_scaled_pl_decided": False,
+            "bt_torus_green_tail_counterfamily_certified": True,
+            "bt_torus_all_field_scaled_pl_refuted": True,
+            "bt_torus_nonseparable_polynomial_contrast_family_constructed": True,
+            "bt_torus_complete_residual_gradient_free_scale_collapse_proved": True,
+            "bt_torus_green_tail_witten_transfer_decided": False,
             "bt_euclidean_finite_capabilities_imported": True,
             "bt_euclidean_coarse_reproduction_separated": True,
             "bt_free_os_obstruction_certified": True,

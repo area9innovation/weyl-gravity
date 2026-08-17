@@ -920,6 +920,16 @@
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_GLOBAL_VIRIAL_COMPATIBILITY_V1",
       "sha256": "a6fd5252aee40559043db93af4baa3f6eb6e2826b215f5ec11e2606f1c24efac"
     },
+    "bt_torus_green_tail_counterfamily": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "NONSEPARABLE_POLYNOMIAL_CONTRAST_FREE_SCALE_COLLAPSE_CONSTRUCTED",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_GREEN_TAIL_COUNTERFAMILY_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_GREEN_TAIL_COUNTERFAMILY_V1",
+      "sha256": "508a7a8607a3c04e6538fb3c28d135603afca8250d982941a74bdef107423d83"
+    },
     "bt_torus_phase_pullback_obstruction": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -2678,7 +2688,7 @@
       "sha256": "c394928bb8ead70ba9eeb76ee16298c3fffec5712d8c9290f773712960d333fb"
     }
   },
-  "canonical_digest": "79b26a61c862176d631c89360c70507045ca7e8f7705509160f3b749d2ea78c8",
+  "canonical_digest": "ae505c5b7028c1f24eaa8faf619f0c78fa43c58873f9b00c8c500905009990f4",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -2805,6 +2815,8 @@
     "bt_tensor_phase_hierarchy_obstruction_certified": true,
     "bt_torus_action_quantization_for_collapse_certified": true,
     "bt_torus_all_field_scaled_pl_decided": false,
+    "bt_torus_all_field_scaled_pl_refuted": true,
+    "bt_torus_complete_residual_gradient_free_scale_collapse_proved": true,
     "bt_torus_curvature_cut_all_field_scaled_pl_decided": false,
     "bt_torus_curvature_flatness_for_collapse_certified": true,
     "bt_torus_dyadic_stopping_all_field_scaled_pl_decided": false,
@@ -2818,9 +2830,12 @@
     "bt_torus_fixed_height_residual_fraction_ruled_out_for_positive_action_collapse": true,
     "bt_torus_global_virial_all_field_scaled_pl_decided": false,
     "bt_torus_global_virial_compatibility_certified": true,
+    "bt_torus_green_tail_counterfamily_certified": true,
+    "bt_torus_green_tail_witten_transfer_decided": false,
     "bt_torus_height_cut_current_cancellation_for_collapse_certified": true,
     "bt_torus_macroscopic_low_set_curvature_vanishes_for_collapse": true,
     "bt_torus_moderate_sparse_multiband_gate_open": true,
+    "bt_torus_nonseparable_polynomial_contrast_family_constructed": true,
     "bt_torus_phase_pullback_obstruction_certified": true,
     "bt_torus_quadratic_virial_all_field_scaled_pl_decided": false,
     "bt_torus_quadratic_virial_density_gate_certified": true,
@@ -4388,6 +4403,18 @@
       ],
       "statement": "There is a dimension-only rho_*>0 such that every nonconstant positive field on T_L^4 with residual norm R<=rho_* obeys ||grad A||_2^2/R^2>=omega_L^2/16. The proof combines a volume-uniform critical discrete Sobolev estimate, exact exponential remainder bounds, and the additive contraction u->u+s, which selects the small logarithmic-Laplacian branch without assuming it. Hence Q_L/omega_L^2->0 implies liminf A_L>=rho_*^2/2: the vanishing-action branch is ruled out. Combined with RF-94, any remaining counterfamily has positive action, residual escape to diverging heights, flat unweighted curvature, and cancellation across every fixed height cut. The positive-action branch and all-field inequality remain open.",
       "status": "UNIFORM_SMALL_ACTION_FREE_SCALE_FLOOR_CERTIFIED_POSITIVE_ACTION_CONCENTRATION_GATE_OPEN"
+    },
+    {
+      "authorities": [
+        "bt_torus_green_tail_counterfamily"
+      ],
+      "claim_id": "RF-96-BT-TORUS-GREEN-TAIL-COUNTERFAMILY",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "statement": "The all-field deterministic BT torus scaled PL inequality is false. On L_n=n^24, a critical-bubble source is compensated by its exact mean, inverted with the mean-zero periodic graph Green operator, lifted by epsilon_n=n^-26, and multiplied by a bounded four-way sine coupling. The resulting positive nonseparable fields have residual norm bounded above and below, field contrast O(L_n^(5/12)), and Q_n/omega_Ln^2=O(n^-2)->0. The construction realizes the positive-action residual-escape, flat-curvature, and height-cut-cancellation necessities from RF-93--RF-95. It does not decide the full Witten quotient, Gibbs typicality, the interacting H^-1 moment, continuum reconstruction, Born/Krein interpretation, or any Lorentzian claim.",
+      "status": "NONSEPARABLE_POLYNOMIAL_CONTRAST_FREE_SCALE_COLLAPSE_CONSTRUCTED"
     }
   ],
   "created": "2026-08-17",
@@ -4627,7 +4654,7 @@
       "source_sha256": "813d29b98f493c3a1d944eb302c7c842cb3773622a5d4dee702c586b5a598087"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "051d6e1207c1f1a254e59d40073d222f72e27a9e395b5a55c63bbb7569fc320e"
+    "sha256": "9aa4b248fa5315559decda0c6494c265fdd6aedad6bff1a76e500b2c148bd0d2"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

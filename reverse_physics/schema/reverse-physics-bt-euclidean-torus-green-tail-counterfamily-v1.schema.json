@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-torus-green-tail-counterfamily-v1.schema.json",
+  "title": "BT torus Green-tail counterfamily certificate",
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "object": {"type": "object", "minProperties": 1}
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer", "family",
+    "discrete_green_annular_lemma", "perturbation_theorem", "power_balance",
+    "action_and_contrast", "exact_fixture", "research_disposition",
+    "does_not_establish", "provenance", "verification_commands",
+    "tier_receipt", "checks", "report", "schema", "verifier"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_GREEN_TAIL_COUNTERFAMILY_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-torus-green-tail-counterfamily-v1"},
+    "created": {"const": "2026-08-17"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "NONSEPARABLE_POLYNOMIAL_CONTRAST_FREE_SCALE_COLLAPSE_CONSTRUCTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "family": {"$ref": "#/$defs/object"},
+    "discrete_green_annular_lemma": {"$ref": "#/$defs/object"},
+    "perturbation_theorem": {"$ref": "#/$defs/object"},
+    "power_balance": {
+      "type": "object",
+      "required": ["scale_exponents_in_n", "free_gap", "base_terms_after_free_normalization", "four_way_perturbation", "normalized_upper_bound", "limit"],
+      "properties": {
+        "scale_exponents_in_n": {
+          "type": "object",
+          "required": ["side", "bubble_scale", "tail_scale", "positive_lift", "four_way_amplitude"],
+          "properties": {
+            "side": {"type": "integer"},
+            "bubble_scale": {"type": "integer"},
+            "tail_scale": {"type": "integer"},
+            "positive_lift": {"type": "integer"},
+            "four_way_amplitude": {"type": "integer"}
+          },
+          "additionalProperties": false
+        },
+        "free_gap": {"const": "omega_L=4*sin(pi/L)^2 and omega_L^2>=256/L^4 for L>=4"},
+        "base_terms_after_free_normalization": {"$ref": "#/$defs/object"},
+        "four_way_perturbation": {"const": "delta_n^2=n^-2"},
+        "normalized_upper_bound": {"const": "Q_n/omega_Ln^2<=C*(n^-32+n^-8+n^-12+n^-20+n^-2)=O(n^-2)"},
+        "limit": {"const": "lim_(n->infinity) Q_n/omega_Ln^2=0"}
+      },
+      "additionalProperties": false
+    },
+    "action_and_contrast": {"$ref": "#/$defs/object"},
+    "exact_fixture": {"$ref": "#/$defs/object"},
+    "research_disposition": {
+      "type": "object",
+      "required": ["all_field_torus_scaled_PL", "nonseparable_polynomial_contrast_counterfamily", "complete_residual_gradient_free_scale_collapse", "witten_poincare_transfer", "interacting_h_minus_one", "continuum_measure", "lorentzian_transfer"],
+      "properties": {
+        "all_field_torus_scaled_PL": {"const": "REFUTED"},
+        "nonseparable_polynomial_contrast_counterfamily": {"const": "CONSTRUCTED"},
+        "complete_residual_gradient_free_scale_collapse": {"const": "PROVED"},
+        "witten_poincare_transfer": {"const": "OPEN"},
+        "interacting_h_minus_one": {"const": "OPEN"},
+        "continuum_measure": {"const": "OPEN"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "does_not_establish": {"type": "array", "minItems": 10, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {"$ref": "#/$defs/object"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "tier_receipt": {"$ref": "#/$defs/object"},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 9},
+        "total": {"const": 9},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 9, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-torus-green-tail-counterfamily.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-torus-green-tail-counterfamily-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_torus_green_tail_counterfamily.py"}
+  },
+  "additionalProperties": false
+}

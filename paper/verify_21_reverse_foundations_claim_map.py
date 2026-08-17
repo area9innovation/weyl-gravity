@@ -100,6 +100,7 @@ def main() -> int:
     bt_reciprocal_virial = json.loads((ROOT / data["authorities"]["bt_torus_reciprocal_virial_localization"]["path"]).read_text())
     bt_curvature_cut = json.loads((ROOT / data["authorities"]["bt_torus_curvature_cut_concentration"]["path"]).read_text())
     bt_small_action = json.loads((ROOT / data["authorities"]["bt_torus_small_action_gradient_floor"]["path"]).read_text())
+    bt_green_tail = json.loads((ROOT / data["authorities"]["bt_torus_green_tail_counterfamily"]["path"]).read_text())
     coded_wave_observable = json.loads((ROOT / data["authorities"]["coded_wave_observable_reconstruction"]["path"]).read_text())
     coded_local_weak_wave = json.loads((ROOT / data["authorities"]["coded_local_weak_wave_test_class"]["path"]).read_text())
     coded_h2_test = json.loads((ROOT / data["authorities"]["coded_weak_wave_h2_test_completion"]["path"]).read_text())
@@ -593,6 +594,7 @@ def main() -> int:
         (93, "BT-TORUS-RECIPROCAL-VIRIAL-LOCALIZATION"),
         (94, "BT-TORUS-CURVATURE-CUT-CONCENTRATION"),
         (95, "BT-TORUS-SMALL-ACTION-GRADIENT-FLOOR"),
+        (96, "BT-TORUS-GREEN-TAIL-COUNTERFAMILY"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -1167,6 +1169,16 @@ def main() -> int:
     require(flags["bt_torus_small_action_all_field_scaled_pl_decided"] is False, "BT small-action theorem promoted to an all-field decision")
     require(bt_small_action["research_disposition"]["all_field_torus_scaled_PL"] == "OPEN", "BT small-action authority promoted to all-field")
     require(bt_small_action["research_disposition"]["lorentzian_transfer"] == "NOT_ESTABLISHED", "BT small-action authority promoted to Lorentzian")
+    require(flags["bt_torus_green_tail_counterfamily_certified"] is True, "BT Green-tail counterfamily was not certified")
+    require(flags["bt_torus_all_field_scaled_pl_refuted"] is True, "BT all-field scaled PL refutation was not recorded")
+    require(bt_green_tail["power_balance"]["limit"] == "lim_(n->infinity) Q_n/omega_Ln^2=0", "BT Green-tail collapse limit drift")
+    require(flags["bt_torus_nonseparable_polynomial_contrast_family_constructed"] is True, "BT nonseparable polynomial-contrast family was omitted")
+    require(bt_green_tail["action_and_contrast"]["field_contrast"] == "max(u_n)/min(u_n)<=C*R_n^2/lambda_n^2=C*n^10=C*L_n^(5/12)", "BT Green-tail contrast exponent drift")
+    require(flags["bt_torus_complete_residual_gradient_free_scale_collapse_proved"] is True, "BT complete residual-gradient collapse was not recorded")
+    require(bt_green_tail["research_disposition"]["complete_residual_gradient_free_scale_collapse"] == "PROVED", "BT Green-tail authority does not prove complete-gradient collapse")
+    require(flags["bt_torus_green_tail_witten_transfer_decided"] is False, "BT deterministic counterfamily promoted through the Witten gate")
+    require(bt_green_tail["research_disposition"]["witten_poincare_transfer"] == "OPEN", "BT Green-tail Witten boundary silently closed")
+    require(bt_green_tail["research_disposition"]["lorentzian_transfer"] == "NOT_ESTABLISHED", "BT Green-tail authority promoted to Lorentzian")
     require(flags["bt_euclidean_finite_capabilities_imported"] is True, "BT finite import flag is not certified")
     require(flags["bt_euclidean_coarse_reproduction_separated"] is True, "BT numerical separation flag is not certified")
     require(flags["bt_free_os_obstruction_certified"] is True, "BT OS obstruction flag is not certified")

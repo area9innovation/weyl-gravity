@@ -2645,6 +2645,77 @@ torus inequality.  The constant \(S_4\), and hence the threshold, is universal
 but not numerically optimized; no Witten/Poincare, continuum, Born/Krein or
 Lorentzian claim follows.
 
+The positive-action branch is realized by a compensated Green tail.  On the
+integer subsequence
+
+\[
+ L_n=n^{24},\qquad \lambda_n=n^{16},\qquad R_n=n^{21},\qquad
+ \epsilon_n={\lambda_n\over R_n^2}=n^{-26},
+\]
+
+put
+
+\[
+ f_n(x)={8\lambda_n^3\over
+  (\lambda_n^2+d_{L_n}(x,0)^2)^3}
+\]
+
+and let \(v_n\) be the unique mean-zero solution of
+\(-\Delta v_n=f_n-\bar f_n\).  The positive base field is
+\(u_n^0=v_n-\min v_n+\epsilon_n\).  The exact mean subtraction is
+load-bearing: it spreads the compensating source through the periodic Green
+tail instead of creating the order-one cutoff shell that obstructed the
+earlier bubble families.
+
+Discrete Green-kernel and dyadic annular estimates give
+
+\[
+ 0<c\leq\left\|{\Delta u_n^0\over u_n^0}\right\|_2^2\leq C
+\]
+
+and
+
+\[
+ \lVert g(u_n^0)\rVert_2^2\leq C\left(
+ \lambda_n^{-8}+{\lambda_n^4\over R_n^8}
+ +{R_n^4\over L_n^8}
+ +{\lambda_n^4\over R_n^4L_n^4}\right).
+\]
+
+To make nonseparability explicit, define
+
+\[
+ p_n(x)=\prod_{a=1}^4\sin{2\pi x_a\over L_n},\qquad
+ u_n=u_n^0(1+n^{-1}p_n).
+\]
+
+The factor is positive.  Its tensor mode has nonzero pairing with
+\(\log u_n\) and is orthogonal to every sum of one-coordinate functions, so
+the field is not a product ansatz.  Finite-difference expansion gives
+
+\[
+ \lVert r(u_n)-r(u_n^0)\rVert_2=O(n^{-1}),\qquad
+ \lVert g(u_n)-g(u_n^0)\rVert_2=O(n^{-1}L_n^{-2}).
+\]
+
+Since \(\omega_L^2\geq256/L^4\), substitution of the four integer scales
+yields
+
+\[
+ \boxed{{Q_n\over\omega_{L_n}^2}
+ \leq C(n^{-32}+n^{-8}+n^{-12}+n^{-20}+n^{-2})
+ \longrightarrow0.}
+\]
+
+The action remains bounded above and below, while
+\(\max u_n/\min u_n=O(L_n^{5/12})\).  Thus the all-field deterministic
+torus inequality is false: a nonseparable polynomial-contrast family
+satisfies every concentration necessity above and collapses at the free
+scale.  This does not transfer through the Witten form or establish Gibbs
+typicality, an interacting \(H^{-1}\) failure, continuum reconstruction,
+Born/Krein interpretation, or any Lorentzian claim.  Those are now the
+relevant gates.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The
@@ -4064,7 +4135,12 @@ axioms and carrier-matching theorem; no Euclidean result here supplies a
 Krein/Lorentzian observable map.  Global bilaplacian strong convexity cannot
 supply the estimate: an exact fixed-volume family makes its comparison ratio
 tend to zero.  A direct or annealed covariance estimate is therefore the next
-analytic gate.  The direct pointwise Schwinger--Dyson sign route is now also
+analytic gate.  The Green-tail family above now also refutes an all-field
+residual-gradient floor at the free scale while keeping positive action and
+polynomial contrast.  It does not refute a Witten/Poincare estimate under the
+Gibbs weight, so the remaining problem is an annealed or normalized-marginal
+theorem rather than another all-field PL search.  The direct pointwise
+Schwinger--Dyson sign route is now also
 obstructed, although the exact residual-sum identity supplies uniform quartic
 action confinement of each lowest normalized Fourier mode.  The remaining
 gate is specifically annealed or normalized-marginal control.  A sharper
