@@ -90,6 +90,7 @@ def main() -> int:
     bt_polynomial_contrast = json.loads((ROOT / data["authorities"]["bt_polynomial_contrast_hierarchy_obstruction"]["path"]).read_text())
     bt_torus_phase_pullback = json.loads((ROOT / data["authorities"]["bt_torus_phase_pullback_obstruction"]["path"]).read_text())
     bt_tensor_phase = json.loads((ROOT / data["authorities"]["bt_tensor_phase_hierarchy_obstruction"]["path"]).read_text())
+    bt_sparse_maxima = json.loads((ROOT / data["authorities"]["bt_torus_sparse_maxima_flow"]["path"]).read_text())
     coded_wave_observable = json.loads((ROOT / data["authorities"]["coded_wave_observable_reconstruction"]["path"]).read_text())
     coded_local_weak_wave = json.loads((ROOT / data["authorities"]["coded_local_weak_wave_test_class"]["path"]).read_text())
     coded_h2_test = json.loads((ROOT / data["authorities"]["coded_weak_wave_h2_test_completion"]["path"]).read_text())
@@ -573,6 +574,7 @@ def main() -> int:
         (83, "BT-POLYNOMIAL-CONTRAST-HIERARCHY-OBSTRUCTION"),
         (84, "BT-TORUS-PHASE-PULLBACK-OBSTRUCTION"),
         (85, "BT-TENSOR-PHASE-HIERARCHY-OBSTRUCTION"),
+        (86, "BT-TORUS-SPARSE-MAXIMA-FLOW"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -1098,6 +1100,10 @@ def main() -> int:
     require(flags["bt_tensor_phase_hierarchy_obstruction_certified"] is True, "BT tensor-phase hierarchy flag is not certified")
     require(flags["bt_tensor_phase_counterfamily_ruled_out"] is True, "BT independent tensor-phase counterfamily is not ruled out")
     require(flags["bt_tensor_phase_all_field_scaled_pl_decided"] is False, "BT tensor-phase result promoted to an all-field torus decision")
+    require(flags["bt_torus_sparse_maxima_flow_certified"] is True, "BT torus sparse-maxima flow flag is not certified")
+    require(flags["bt_torus_sparse_maxima_necessity_proved"] is True, "BT torus sparse-maxima necessity flag is not proved")
+    require(flags["bt_torus_sparse_multiband_gate_open"] is True, "BT torus sparse multiband gate was silently closed")
+    require(flags["bt_torus_sparse_maxima_all_field_scaled_pl_decided"] is False, "BT sparse-maxima result promoted to an all-field torus decision")
     require(flags["bt_euclidean_finite_capabilities_imported"] is True, "BT finite import flag is not certified")
     require(flags["bt_euclidean_coarse_reproduction_separated"] is True, "BT numerical separation flag is not certified")
     require(flags["bt_free_os_obstruction_certified"] is True, "BT OS obstruction flag is not certified")
@@ -1385,6 +1391,13 @@ def main() -> int:
     require(atlas["bt_tensor_phase_all_field_status"] == bt_tensor_phase["research_disposition"]["all_field_torus_scaled_PL"] == "OPEN", "BT tensor-phase all-field boundary drift")
     require(bt_tensor_phase["checks"]["ok"] is True and all(all(item["checks"].values()) for item in bt_tensor_phase["exact_fixtures"]), "BT tensor-phase exact checks are not closed")
     require(bt_tensor_phase["research_disposition"]["nonseparable_transverse_corrector"] == "OPEN" and bt_tensor_phase["research_disposition"]["lorentzian_transfer"] == "NOT_ESTABLISHED", "BT tensor-phase nonseparable/Lorentzian boundary drift")
+    require(atlas["bt_sparse_maxima_hypothesis"] == bt_sparse_maxima["theorem"]["hypothesis"] == "W*F>=24*q^2*D*N", "BT sparse-maxima hypothesis drift")
+    require(atlas["bt_sparse_maxima_quotient_floor"] == bt_sparse_maxima["theorem"]["quotient_floor"] == "||g||_2^2/||r||_2^2>=49*W^2*F^2/(1600*q^2*D^2*N^2)>=9*q^2", "BT sparse-maxima quotient floor drift")
+    require(atlas["bt_sparse_maxima_torus_condition"] == bt_sparse_maxima["four_torus_corollary"]["sufficient_condition"] == "W*F>=3072*L^5", "BT sparse-maxima torus condition drift")
+    require(atlas["bt_sparse_maxima_density_bound"] == bt_sparse_maxima["four_torus_corollary"]["bad_family_density"] == "E_theta/(4*L^4)<768*L/(theta^2*W)", "BT sparse-maxima density bound drift")
+    require(atlas["bt_sparse_maxima_all_field_status"] == bt_sparse_maxima["research_disposition"]["all_field_torus_scaled_PL"] == "OPEN", "BT sparse-maxima all-field boundary drift")
+    require(bt_sparse_maxima["checks"]["ok"] is True and all(all(item["checks"].values()) for item in bt_sparse_maxima["exact_fixtures"]), "BT sparse-maxima exact checks are not closed")
+    require(bt_sparse_maxima["research_disposition"]["dense_multiband_polynomial_contrast_sector"] == "OPEN" and bt_sparse_maxima["research_disposition"]["lorentzian_transfer"] == "NOT_ESTABLISHED", "BT sparse-maxima multiband/Lorentzian boundary drift")
     require(abs(atlas["mannheim_ngc3198_sparc_rms_km_s"] - 4.5382719695501885) < 1e-12, "Mannheim SPARC RMS drift")
     require(abs(atlas["mannheim_ngc3198_sparc_reduced_chi2"] - 5.592211904260559) < 1e-12, "Mannheim SPARC chi-squared drift")
     standard = next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")

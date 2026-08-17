@@ -72,6 +72,7 @@ AUTHORITY_PATHS = {
     "bt_polynomial_contrast_hierarchy_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_POLYNOMIAL_CONTRAST_HIERARCHY_OBSTRUCTION_V1.json",
     "bt_torus_phase_pullback_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_PHASE_PULLBACK_OBSTRUCTION_V1.json",
     "bt_tensor_phase_hierarchy_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TENSOR_PHASE_HIERARCHY_OBSTRUCTION_V1.json",
+    "bt_torus_sparse_maxima_flow": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_SPARSE_MAXIMA_FLOW_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -306,6 +307,7 @@ def build() -> dict:
     bt_polynomial_contrast = loaded["bt_polynomial_contrast_hierarchy_obstruction"]
     bt_torus_phase_pullback = loaded["bt_torus_phase_pullback_obstruction"]
     bt_tensor_phase = loaded["bt_tensor_phase_hierarchy_obstruction"]
+    bt_sparse_maxima = loaded["bt_torus_sparse_maxima_flow"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -450,6 +452,11 @@ def build() -> dict:
             "bt_tensor_phase_quotient_lower": bt_tensor_phase["same_sign_bulk_theorem"]["quotient"],
             "bt_tensor_phase_normalized_lower": bt_tensor_phase["four_torus_corollary"]["normalized_bound"],
             "bt_tensor_phase_all_field_status": bt_tensor_phase["research_disposition"]["all_field_torus_scaled_PL"],
+            "bt_sparse_maxima_hypothesis": bt_sparse_maxima["theorem"]["hypothesis"],
+            "bt_sparse_maxima_quotient_floor": bt_sparse_maxima["theorem"]["quotient_floor"],
+            "bt_sparse_maxima_torus_condition": bt_sparse_maxima["four_torus_corollary"]["sufficient_condition"],
+            "bt_sparse_maxima_density_bound": bt_sparse_maxima["four_torus_corollary"]["bad_family_density"],
+            "bt_sparse_maxima_all_field_status": bt_sparse_maxima["research_disposition"]["all_field_torus_scaled_PL"],
             "coded_wave_observable_cutoff": coded_wave_observable["cutoff_theorem"]["cutoff"],
             "coded_wave_observable_full_state_reconstruction": coded_wave_observable["claim_flags"]["full_state_reconstruction_proved"],
             "coded_local_weak_wave_basis_tests": coded_local_weak_wave["localized_test_class"]["basis_size"],
@@ -1283,6 +1290,13 @@ def build() -> dict:
                 "authorities": ["bt_tensor_phase_hierarchy_obstruction"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"],
             },
+            {
+                "claim_id": "RF-86-BT-TORUS-SPARSE-MAXIMA-FLOW",
+                "statement": "On the isotropic four-torus, orient increasing field edges, normalize their ratios by the maximum W, put c_x=sum_(x->y) alpha_e and F=sum_x c_x^2. If W*F>=24*q^2*diam(T_L^4)*L^4, exact finite-amplitude flow decomposition and torus path geometry give ||grad A||^2/||r||^2>=9q^2. Hence every candidate below this floor obeys W*F<3072*L^5, and its relative top-band edge count satisfies E_theta/(4L^4)<768*L/(theta^2*W). Thus W/L->infinity forces every fixed near-maximal band to have vanishing density. Sparse multiband hierarchies and the all-field torus bound remain open.",
+                "status": "EXACT_DENSITY_SENSITIVE_TORUS_FLOW_BOUND_WITH_SPARSE_MULTIBAND_GATE_OPEN",
+                "authorities": ["bt_torus_sparse_maxima_flow"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -1554,6 +1568,10 @@ def build() -> dict:
             "bt_tensor_phase_hierarchy_obstruction_certified": True,
             "bt_tensor_phase_counterfamily_ruled_out": True,
             "bt_tensor_phase_all_field_scaled_pl_decided": False,
+            "bt_torus_sparse_maxima_flow_certified": True,
+            "bt_torus_sparse_maxima_necessity_proved": True,
+            "bt_torus_sparse_multiband_gate_open": True,
+            "bt_torus_sparse_maxima_all_field_scaled_pl_decided": False,
             "bt_euclidean_finite_capabilities_imported": True,
             "bt_euclidean_coarse_reproduction_separated": True,
             "bt_free_os_obstruction_certified": True,

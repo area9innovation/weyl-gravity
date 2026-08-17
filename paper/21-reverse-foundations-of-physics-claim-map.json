@@ -267,6 +267,11 @@
     "bt_score_log_residue_status": "PROVED",
     "bt_separable_conditional_variance_status": "PROVED",
     "bt_separable_lowest_mode_curvature_status": "PROVED",
+    "bt_sparse_maxima_all_field_status": "OPEN",
+    "bt_sparse_maxima_density_bound": "E_theta/(4*L^4)<768*L/(theta^2*W)",
+    "bt_sparse_maxima_hypothesis": "W*F>=24*q^2*D*N",
+    "bt_sparse_maxima_quotient_floor": "||g||_2^2/||r||_2^2>=49*W^2*F^2/(1600*q^2*D^2*N^2)>=9*q^2",
+    "bt_sparse_maxima_torus_condition": "W*F>=3072*L^5",
     "bt_specific_zero_fiber_ward_status": "OPEN",
     "bt_subunit_positive_virial_status": "OBSTRUCTED",
     "bt_tensor_phase_active_counts": [
@@ -854,6 +859,16 @@
       "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_PHASE_PULLBACK_OBSTRUCTION_V1.json",
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_PHASE_PULLBACK_OBSTRUCTION_V1",
       "sha256": "ba7b4b510a4e9fd19004b8ec759cef8ee450df548b41b96c9dbc868102a39ac4"
+    },
+    "bt_torus_sparse_maxima_flow": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "DENSITY_SENSITIVE_HIGH_CONTRAST_CLOSED_MULTIBAND_GATE_OPEN",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_SPARSE_MAXIMA_FLOW_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_SPARSE_MAXIMA_FLOW_V1",
+      "sha256": "f2c430486568594c6c08f1959a9132cd2c8c86879019989122da89eaf0be5e40"
     },
     "bt_tuned_remainder_compensation": {
       "dependency_tags": [
@@ -2542,7 +2557,7 @@
       "sha256": "c394928bb8ead70ba9eeb76ee16298c3fffec5712d8c9290f773712960d333fb"
     }
   },
-  "canonical_digest": "60a36ca9c7e2d896bab11d228c37ed10ffbf4fbe880c05a92917350eefe3b987",
+  "canonical_digest": "3dd5ec440df8c4e8f7dcbf639fde3c9f372aa31f44cb50658d826689dbbc17a4",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -2670,6 +2685,10 @@
     "bt_torus_all_field_scaled_pl_decided": false,
     "bt_torus_phase_pullback_obstruction_certified": true,
     "bt_torus_single_phase_counterfamily_ruled_out": true,
+    "bt_torus_sparse_maxima_all_field_scaled_pl_decided": false,
+    "bt_torus_sparse_maxima_flow_certified": true,
+    "bt_torus_sparse_maxima_necessity_proved": true,
+    "bt_torus_sparse_multiband_gate_open": true,
     "bt_translation_invariant_current_susceptibility_established": false,
     "bt_translation_invariant_flux_corrector_established": false,
     "bt_tree_log_convexity_extra_tilt_confinement_obstructed": true,
@@ -4092,6 +4111,18 @@
       ],
       "statement": "For every k=2,3,4, the multiplicative tensor field Omega(x)=product_a u(x_a) made from the polynomial-contrast cycle hierarchy has exact residual r=sum_a rho_a and complete gradient g=sum_a h_a+sum_(a!=b) delta_a rho_b. On a macroscopic ramp block rho is positive while delta and h are negative, so every cross term reinforces and Q_k>=1/(256*40^k*m^6). On L=4m^4+2 this gives Q_k/omega_L^2>=m^10/(16*40^k*pi^4), which diverges. This rules out independent tensor phases only; genuinely coupled nonseparable correctors, the all-field torus bound, Witten coercivity, the interacting H^-1 moment, reconstruction, Born/Krein interpretation and Lorentzian claims remain open.",
       "status": "EXACT_INDEPENDENT_TENSOR_PHASE_FREE_SCALE_OBSTRUCTION_WITH_NONSEPARABLE_GATE_OPEN"
+    },
+    {
+      "authorities": [
+        "bt_torus_sparse_maxima_flow"
+      ],
+      "claim_id": "RF-86-BT-TORUS-SPARSE-MAXIMA-FLOW",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "statement": "On the isotropic four-torus, orient increasing field edges, normalize their ratios by the maximum W, put c_x=sum_(x->y) alpha_e and F=sum_x c_x^2. If W*F>=24*q^2*diam(T_L^4)*L^4, exact finite-amplitude flow decomposition and torus path geometry give ||grad A||^2/||r||^2>=9q^2. Hence every candidate below this floor obeys W*F<3072*L^5, and its relative top-band edge count satisfies E_theta/(4L^4)<768*L/(theta^2*W). Thus W/L->infinity forces every fixed near-maximal band to have vanishing density. Sparse multiband hierarchies and the all-field torus bound remain open.",
+      "status": "EXACT_DENSITY_SENSITIVE_TORUS_FLOW_BOUND_WITH_SPARSE_MULTIBAND_GATE_OPEN"
     }
   ],
   "created": "2026-08-17",
@@ -4331,7 +4362,7 @@
       "source_sha256": "813d29b98f493c3a1d944eb302c7c842cb3773622a5d4dee702c586b5a598087"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "729a59b5dddaaa4dd9bcd79ffff84eab3236569f99879d7199228edfd56132cc"
+    "sha256": "6173fa4910ddfbe43c6a6bca753f31c6152fa8064283f003e628f320b256c5f4"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-951fabdfad0112a6",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-951fabdfad0112a6.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "codex", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": null, "seq": 92, "predecessor": "sf:program/event/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-c8f6fd0b18ec564f", "payload": {"target": "sf:program/work/reverse-physics-bateman-euclidean-continuum-reconstruction", "to_state": "ACTIVE", "note": "Torus sparse-maxima flow theorem: orient increasing edges, normalize by W, and set F=sum_x(sum_out alpha_e)^2. If W*F>=24*q^2*diam(T_L^4)*L^4, exact complete-current decomposition plus torus path geometry gives ||grad A||^2/||r||^2>=9q^2. Hence every candidate below this floor has W*F<3072*L^5 and E_theta/(4L^4)<768*L/(theta^2*W); when W/L tends to infinity every fixed relative top band is sparse. This narrows the counterfamily to a sparse multiband hierarchy but leaves the all-field torus bound, an actual collapsing family, Witten/H^-1, continuum, Born/Krein, and Lorentzian gates open."}, "native": {"authored_by": "sfc work-event", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/reverse-physics-bateman-euclidean-continuum-reconstruction"}]
+}

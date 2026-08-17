@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-torus-sparse-maxima-flow-v1.schema.json",
+  "title": "BT Euclidean torus sparse-maxima flow certificate",
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "fraction": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "object": {"type": "object", "minProperties": 1},
+    "fixture": {
+      "type": "object",
+      "required": [
+        "kind", "side", "vertices", "degree", "diameter", "height",
+        "maximum_edge_ratio", "oriented_edge_count", "equal_edge_count",
+        "near_maximal_half_edge_count", "outgoing_square_mass_F",
+        "band_threshold_tau", "low_flow_mass", "high_flow_mass",
+        "condition_left_WF", "condition_right_24q2DN",
+        "residual_norm_squared", "gradient_norm_squared", "quotient",
+        "theorem_quotient_floor", "checks"
+      ],
+      "properties": {
+        "kind": {"enum": ["single_spike", "checkerboard"]},
+        "side": {"const": 4},
+        "vertices": {"const": 256},
+        "degree": {"const": 8},
+        "diameter": {"const": 8},
+        "height": {"type": "integer", "minimum": 2},
+        "maximum_edge_ratio": {"$ref": "#/$defs/fraction"},
+        "oriented_edge_count": {"type": "integer", "minimum": 1},
+        "equal_edge_count": {"type": "integer", "minimum": 0},
+        "near_maximal_half_edge_count": {"type": "integer", "minimum": 1},
+        "outgoing_square_mass_F": {"$ref": "#/$defs/fraction"},
+        "band_threshold_tau": {"$ref": "#/$defs/fraction"},
+        "low_flow_mass": {"$ref": "#/$defs/fraction"},
+        "high_flow_mass": {"$ref": "#/$defs/fraction"},
+        "condition_left_WF": {"$ref": "#/$defs/fraction"},
+        "condition_right_24q2DN": {"$ref": "#/$defs/fraction"},
+        "residual_norm_squared": {"$ref": "#/$defs/fraction"},
+        "gradient_norm_squared": {"$ref": "#/$defs/fraction"},
+        "quotient": {"$ref": "#/$defs/fraction"},
+        "theorem_quotient_floor": {"$ref": "#/$defs/fraction"},
+        "checks": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {"const": true}
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer", "definitions",
+    "finite_amplitude_decomposition", "torus_band_transport", "theorem",
+    "four_torus_corollary", "exact_fixtures", "research_disposition",
+    "does_not_establish", "provenance", "verification_commands",
+    "tier_receipt", "checks", "report", "schema", "verifier"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_SPARSE_MAXIMA_FLOW_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-torus-sparse-maxima-flow-v1"},
+    "created": {"const": "2026-08-17"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "DENSITY_SENSITIVE_HIGH_CONTRAST_CLOSED_MULTIBAND_GATE_OPEN"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "definitions": {"$ref": "#/$defs/object"},
+    "finite_amplitude_decomposition": {"$ref": "#/$defs/object"},
+    "torus_band_transport": {"$ref": "#/$defs/object"},
+    "theorem": {
+      "type": "object",
+      "required": ["hypothesis", "gradient_floor", "residual_ceiling", "quotient_floor", "free_scale"],
+      "properties": {
+        "hypothesis": {"const": "W*F>=24*q^2*D*N"},
+        "gradient_floor": {"const": "||g||_2>=7*W^2*F/(40*D*sqrt(N))"},
+        "residual_ceiling": {"const": "||r||_2<=q*W*sqrt(N)"},
+        "quotient_floor": {"const": "||g||_2^2/||r||_2^2>=49*W^2*F^2/(1600*q^2*D^2*N^2)>=9*q^2"},
+        "free_scale": {"$ref": "#/$defs/text"}
+      },
+      "additionalProperties": false
+    },
+    "four_torus_corollary": {"$ref": "#/$defs/object"},
+    "exact_fixtures": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"$ref": "#/$defs/fixture"}
+    },
+    "research_disposition": {
+      "type": "object",
+      "required": [
+        "macroscopic_near_maximal_high_contrast_flow", "sparse_maxima_necessity",
+        "bounded_oscillation_sector", "dense_multiband_polynomial_contrast_sector",
+        "all_field_torus_scaled_PL", "witten_poincare_transfer",
+        "interacting_h_minus_one", "lorentzian_transfer"
+      ],
+      "properties": {
+        "macroscopic_near_maximal_high_contrast_flow": {"const": "RULED_OUT_ABOVE_EXPLICIT_WF_THRESHOLD"},
+        "sparse_maxima_necessity": {"const": "PROVED"},
+        "bounded_oscillation_sector": {"const": "RULED_OUT_BY_HASHED_PREDECESSOR_CHAIN"},
+        "dense_multiband_polynomial_contrast_sector": {"const": "OPEN"},
+        "all_field_torus_scaled_PL": {"const": "OPEN"},
+        "witten_poincare_transfer": {"const": "OPEN"},
+        "interacting_h_minus_one": {"const": "OPEN"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "does_not_establish": {"type": "array", "minItems": 7, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {"$ref": "#/$defs/object"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "tier_receipt": {"$ref": "#/$defs/object"},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 11},
+        "total": {"const": 11},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 11, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-torus-sparse-maxima-flow.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-torus-sparse-maxima-flow-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_torus_sparse_maxima_flow.py"}
+  },
+  "additionalProperties": false
+}
