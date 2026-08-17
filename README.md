@@ -136,7 +136,7 @@ with the [physicist executive summary](paper/98-physicist-executive-summary.md).
 - **General introduction (Paper 99):** [How to Build a Universe: Physics,
   Mathematics, Logic—and Research in the Age of
   AI](paper/99-how-to-build-a-universe.md)
-- **Programme introduction (Paper 00):** [Ghosts, Geometry, and
+- **Programme guide (Paper 00):** [Ghosts, Geometry, and
   Reality](paper/00-ghosts-geometry-reality.pdf)
 - **Physicist introduction (Paper 98):** [Reverse Physics and Pure-Weyl
   Gravity: Executive Summary for
@@ -168,7 +168,7 @@ sources.
 
 | Paper | Subject |
 | --- | --- |
-| [00](paper/00-ghosts-geometry-reality.pdf) | Conceptual introduction to the four ghost questions, model universes, reverse foundations, claim types, and empirical gates |
+| [00](paper/00-ghosts-geometry-reality.pdf) | Thematic guide to Papers 01–22, public syntheses, computational supplements, bridge notes, reading routes, and claim boundaries |
 | [01](paper/01-symplectic-diagonalization.pdf) | Canonical positive symplectic diagonalization of the Pais–Uhlenbeck oscillator |
 | [02](paper/02-variational-fock.pdf) | Minimum distortion and the fourth-order field representation problem |
 | [03](paper/03-fourth-order-vacuum.pdf) | Vacuum covariance, Fock sectors, and the Krein/Jordan boundary |
@@ -187,6 +187,10 @@ sources.
 | [16](paper/16-lorentzian-endpoint-nonselection-pure-weyl.pdf) | Lorentzian endpoint conditions and non-selection of the Einstein subsector |
 | [17](paper/17-pure-weyl-schwarzschild-extension-structure.pdf) | Non-split Regge–Wheeler self-extension and defective Schwarzschild resonance |
 | [18](paper/18-static-bach-flat-black-hole-thermodynamics.pdf) | Residual-basic charges and simultaneous horizon first laws on the Mannheim–Kazanas family |
+| [19](paper/19-what-conformal-gravity-must-assume.pdf) | Assumptions behind Mannheim rotation curves and a bounded NGC 3198 comparison |
+| [20](paper/20-is-the-gauge-algebra-an-assumption.pdf) | Direct finite-order test of Bach Noether identities and gauge-algebra completeness |
+| [21](paper/21-reverse-foundations-of-physics.pdf) | Reverse foundations: separating logic, existence theory, mathematical carriers, physical postulates, and empirical obligations |
+| [22](paper/22-bateman-turok-euclidean-torus-collapse.pdf) | A compensated Green-tail counterfamily for one Bateman–Turok Euclidean torus route |
 
 Computational supplements accompany Papers 07–09, 12, and 16. The `paper/90`,
 `91`, and `92` documents are technical bridge notes rather than numbered
@@ -207,7 +211,8 @@ These labels are not interchangeable. In particular, this repository does
 not currently contain:
 
 - a complete Lorentzian off-shell BV propagator;
-- a BRST-compatible Hadamard state for the full metric BV complex;
+- a positive BRST-compatible Hadamard state for the full metric BV complex
+  (the certified 386-row object is an indefinite pseudo-state pair);
 - renormalized Lorentzian time-ordered products;
 - a causal perturbative AQFT construction;
 - a Lorentzian quantum-master-equation theorem;

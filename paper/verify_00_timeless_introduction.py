@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Independent audit of Paper 00's hashes, authorities, and claim boundaries."""
+"""Independent audit of Paper 00's guide coverage, authorities, and boundaries."""
 
 from __future__ import annotations
 
@@ -25,11 +25,11 @@ def require(condition: bool, message: str) -> None:
 def main() -> None:
     receipt = json.loads(RECEIPT.read_text())
     require(
-        receipt["schema_version"] == "paper-00-timeless-introduction-receipt-v1",
+        receipt["schema_version"] == "paper-00-programme-guide-receipt-v2",
         "unexpected receipt schema",
     )
     require(
-        receipt["result_id"] == "PAPER_00_TIMELESS_GHOSTS_REVERSE_FOUNDATIONS_SYNTHESIS_V1",
+        receipt["result_id"] == "PAPER_00_THEMATIC_PROGRAMME_GUIDE_V2",
         "unexpected result id",
     )
     require(receipt["lifecycle"] == "VERIFIED_NAVIGATION_ARTIFACT", "unexpected lifecycle")
@@ -118,7 +118,13 @@ def main() -> None:
 
     source_path = ROOT / "paper/00-ghosts-geometry-reality.tex"
     source = source_path.read_text()
-    links = [target for target in re.findall(r"\\href\{([^}]+)\}", source) if "://" not in target]
+    direct = [
+        target
+        for target in re.findall(r"\\href\{([^}]+)\}", source)
+        if "://" not in target and target != "#1"
+    ]
+    paper_links = re.findall(r"\\paperlink\{([^}]+)\}", source)
+    links = sorted(set(direct + paper_links))
     require(links == receipt["local_links"], "local-link ledger drifted")
     require(all((source_path.parent / target).resolve().exists() for target in links), "a local link is missing")
     cited = set()
@@ -131,25 +137,40 @@ def main() -> None:
     require(
         receipt["editorial_checks"]
         == {
+            "archive_documents_covered": 1,
             "atlas_coordinates": 576,
-            "bibliography_keys_resolved": 16,
-            "changelog_fragments_rejected": 10,
-            "local_links_resolved": 6,
+            "bibliography_keys_resolved": 0,
+            "bridge_notes_covered": 3,
+            "changelog_fragments_rejected": 14,
+            "computational_supplements_covered": 4,
+            "headline_papers_covered": 22,
+            "local_links_resolved": 33,
             "programme_prototypes": 9,
-            "required_synthesis_fragments": 8,
+            "public_entrances_covered": 2,
+            "required_guide_fragments": 7,
             "theory_passports": 8,
         },
         "editorial-check ledger drifted",
     )
     require(all(value is False for value in receipt["claim_flags"].values()), "a promotion flag is true")
     required_sections = [
-        "\\section{An equation is not yet a theory}",
-        "\\section{The ghost question is four questions}",
-        "\\section{Pure Weyl gravity across the obligation ladder}",
-        "\\section{Reverse foundations: changing the mathematical world}",
-        "\\section{What the examples establish}",
+        "\\section{Choose an entrance}",
+        "\\section{How claims move through the series}",
+        "\\section{Thread I: completion and interaction---Papers 01--06}",
+        "\\section{Thread II: causal and compact pure-Weyl theory---Papers 07--13}",
+        "\\section{Thread III: black holes and the four-level classification---Papers 14--18}",
+        "\\section{Thread IV: assumptions and reverse foundations---Papers 19--22}",
+        "\\section{Reading routes by research question}",
+        "\\section{How to inspect a claim}",
     ]
-    require(all(section in source for section in required_sections), "a synthesis section is missing")
+    require(all(section in source for section in required_sections), "a guide section is missing")
+    basenames = {Path(link).name for link in links}
+    for paper_number in range(1, 23):
+        prefix = f"{paper_number:02d}-"
+        require(any(name.startswith(prefix) for name in basenames), f"Paper {paper_number:02d} is not linked")
+    for paper_number in (90, 91, 92, 98, 99):
+        prefix = f"{paper_number:02d}-"
+        require(any(name.startswith(prefix) for name in basenames), f"Paper {paper_number:02d} is not linked")
     forbidden = [
         "\\section{Paper map}",
         "\\section{What remains open}",
@@ -157,7 +178,7 @@ def main() -> None:
         "Public pre-release, July 2026",
     ]
     require(all(fragment not in source for fragment in forbidden), "changelog structure survived")
-    print("Paper 00 independent timeless-introduction audit: PASS")
+    print("Paper 00 independent programme-guide audit: PASS")
 
 
 if __name__ == "__main__":

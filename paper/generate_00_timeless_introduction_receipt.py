@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the content-addressed receipt for the timeless Paper 00 synthesis."""
+"""Generate the content-addressed receipt for the Paper 00 programme guide."""
 
 from __future__ import annotations
 
@@ -126,7 +126,13 @@ def validate_authorities(payloads: dict[str, dict]) -> None:
 
 
 def local_links_and_citations(source: str) -> tuple[list[str], list[str]]:
-    links = [target for target in re.findall(r"\\href\{([^}]+)\}", source) if "://" not in target]
+    direct = [
+        target
+        for target in re.findall(r"\\href\{([^}]+)\}", source)
+        if "://" not in target and target != "#1"
+    ]
+    paper_links = re.findall(r"\\paperlink\{([^}]+)\}", source)
+    links = sorted(set(direct + paper_links))
     missing = [target for target in links if not (ROOT / "paper" / target).resolve().exists()]
     require(not missing, f"missing local links: {missing}")
     cited = set()
@@ -144,14 +150,13 @@ def build() -> dict:
     validate_authorities(payloads)
 
     required = [
-        "An equation is not yet a theory",
-        "The ghost question is four questions",
-        "full 386-row off-shell carrier admits a BRST--Hadamard two-point pseudo-state pair",
-        "Mannheim has the smallest unweighted residual",
-        "This refutes one deterministic all-field scaled-PL architecture",
-        "The Cartesian product contains \\(6\\times6\\times16=576\\) coordinates",
-        "A sign is not a state.",
-        "These routes are thematic references, not a sequence of release notes.",
+        "This document is a guide, not another synthesis.",
+        "Thread I: completion and interaction---Papers 01--06",
+        "Thread II: causal and compact pure-Weyl theory---Papers 07--13",
+        "Thread III: black holes and the four-level classification---Papers 14--18",
+        "Thread IV: assumptions and reverse foundations---Papers 19--22",
+        "Reading routes by research question",
+        "Paper 00 tells the reader where to go next and where each route must stop.",
     ]
     forbidden = [
         "Public pre-release, July 2026",
@@ -164,17 +169,25 @@ def build() -> dict:
         "The most important next steps are now narrower",
         "eighteen-paper programme",
         "Papers~16 and~17 contain the current black-hole",
+        "\\section{An equation is not yet a theory}",
+        "\\section{Pure Weyl gravity across the obligation ladder}",
+        "\\section{Black holes: boundary selection and defective response}",
+        "\\section{Two tests beyond black-hole perturbation theory}",
     ]
     for fragment in required:
-        require(fragment in normalized, f"required synthesis fragment missing: {fragment}")
+        require(fragment in normalized, f"required guide fragment missing: {fragment}")
     for fragment in forbidden:
         require(fragment not in source, f"changelog fragment survived: {fragment}")
 
     links, citations = local_links_and_citations(source)
+    basenames = {Path(link).name for link in links}
+    for paper_number in range(1, 23):
+        prefix = f"{paper_number:02d}-"
+        require(any(name.startswith(prefix) for name in basenames), f"Paper {paper_number:02d} is not linked")
     return {
-        "schema_version": "paper-00-timeless-introduction-receipt-v1",
-        "result_id": "PAPER_00_TIMELESS_GHOSTS_REVERSE_FOUNDATIONS_SYNTHESIS_V1",
-        "result_kind": "CONTENT_ADDRESSED_PUBLIC_SYNTHESIS_AND_CLAIM_BOUNDARY_RECEIPT",
+        "schema_version": "paper-00-programme-guide-receipt-v2",
+        "result_id": "PAPER_00_THEMATIC_PROGRAMME_GUIDE_V2",
+        "result_kind": "CONTENT_ADDRESSED_PROGRAMME_NAVIGATION_AND_CLAIM_BOUNDARY_RECEIPT",
         "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
         "created": "2026-08-17",
         "dependency_tags": [
@@ -188,10 +201,15 @@ def build() -> dict:
         "local_links": links,
         "bibliography_keys": citations,
         "editorial_checks": {
-            "required_synthesis_fragments": len(required),
+            "required_guide_fragments": len(required),
             "changelog_fragments_rejected": len(forbidden),
             "local_links_resolved": len(links),
             "bibliography_keys_resolved": len(citations),
+            "headline_papers_covered": 22,
+            "public_entrances_covered": 2,
+            "computational_supplements_covered": 4,
+            "archive_documents_covered": 1,
+            "bridge_notes_covered": 3,
             "atlas_coordinates": 576,
             "theory_passports": 8,
             "programme_prototypes": 9,
@@ -230,7 +248,7 @@ def main() -> None:
     rendered = json.dumps(build(), indent=2, sort_keys=True) + "\n"
     if args.check:
         require(OUTPUT.exists() and OUTPUT.read_text() == rendered, "Paper 00 receipt is stale")
-        print("Paper 00 timeless-introduction receipt: PASS")
+        print("Paper 00 programme-guide receipt: PASS")
     else:
         OUTPUT.write_text(rendered)
         print(f"wrote {OUTPUT.relative_to(ROOT)}")

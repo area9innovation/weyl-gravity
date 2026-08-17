@@ -1,7 +1,7 @@
 {
   "artifacts": {
-    "paper/00-ghosts-geometry-reality.pdf": "898513ed420b37d542c419499f65b313f1906ae8d454d9d09d41fb8ee55c34ba",
-    "paper/00-ghosts-geometry-reality.tex": "2b4ca29af8822569318acd66aef6102e7ee8535e877e34b006de6cb6d4056751"
+    "paper/00-ghosts-geometry-reality.pdf": "639866dbb934e045ab82a1a842e76487b0eda867c7883fd21bf5ea7bc83581f7",
+    "paper/00-ghosts-geometry-reality.tex": "88cf6380ad50de77f0bfd8e8258330bab0e2a330c3056e2b3ebf65fea97a0707"
   },
   "authorities": {
     "bt_green_tail": {
@@ -244,24 +244,7 @@
       "sha256": "2f3dd4b5ca58c53a1676b1a46ff31991d281359d0988fce4acfd53147c863445"
     }
   },
-  "bibliography_keys": [
-    "BM2008PRD",
-    "BM2008PRL",
-    "BVBFV",
-    "BatemanTurok2026",
-    "CarcassiAidala2022",
-    "Leaver",
-    "LogGravity",
-    "LuPope",
-    "MK1989",
-    "Maldacena",
-    "MannheimOBrien2012",
-    "Ostrogradsky",
-    "PU1950",
-    "ReggeWheeler",
-    "Stelle",
-    "Woodard"
-  ],
+  "bibliography_keys": [],
   "claim_flags": {
     "COMPLETE_THEORY_SELECTED": false,
     "GLOBAL_BLACK_HOLE_WAVEFORM_ESTABLISHED": false,
@@ -289,26 +272,58 @@
     "peer review or independent reproduction of the whole programme"
   ],
   "editorial_checks": {
+    "archive_documents_covered": 1,
     "atlas_coordinates": 576,
-    "bibliography_keys_resolved": 16,
-    "changelog_fragments_rejected": 10,
-    "local_links_resolved": 6,
+    "bibliography_keys_resolved": 0,
+    "bridge_notes_covered": 3,
+    "changelog_fragments_rejected": 14,
+    "computational_supplements_covered": 4,
+    "headline_papers_covered": 22,
+    "local_links_resolved": 33,
     "programme_prototypes": 9,
-    "required_synthesis_fragments": 8,
+    "public_entrances_covered": 2,
+    "required_guide_fragments": 7,
     "theory_passports": 8
   },
   "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
   "local_links": [
     "../foundations/site/index.html",
+    "01-symplectic-diagonalization.pdf",
+    "02-variational-fock.pdf",
+    "03-fourth-order-vacuum.pdf",
+    "04-fourth-order-gravity.pdf",
+    "05-interaction-obstructions.pdf",
+    "06-einstein-weyl-interaction-obstructions.pdf",
+    "07-08-conformal-residual-cohomology-archive.pdf",
+    "07-08-conformal-residual-cohomology-computational-supplement.pdf",
+    "07-conformal-residual-cohomology-krein.pdf",
+    "08-conformal-covariant-causal-transport.pdf",
+    "09-relational-clocks-berger-d-cartan-computational-supplement.pdf",
+    "09-relational-clocks-berger-d-cartan.pdf",
+    "10-compact-einstein-maxwell-weyl-phase-space.pdf",
+    "11-gravity-light-cyclic-causal-ell3.pdf",
+    "12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf",
+    "12-pure-weyl-one-loop-bv-anomaly.pdf",
+    "13-compact-weyl-maxwell-second-order-tangent-cone.pdf",
+    "14-pure-weyl-black-hole-radiation.pdf",
     "15-four-level-ghost-classification-phase1-synthesis.pdf",
+    "16-endpoint-nonselection-computational-supplement.pdf",
+    "16-lorentzian-endpoint-nonselection-pure-weyl.pdf",
+    "17-pure-weyl-schwarzschild-extension-structure.pdf",
+    "18-static-bach-flat-black-hole-thermodynamics.pdf",
     "19-what-conformal-gravity-must-assume.pdf",
     "20-is-the-gauge-algebra-an-assumption.pdf",
     "21-reverse-foundations-of-physics.pdf",
-    "22-bateman-turok-euclidean-torus-collapse.pdf"
+    "22-bateman-turok-euclidean-torus-collapse.pdf",
+    "90-cyclic-green-transfer-bridge.pdf",
+    "91-charge-fibre-taub-bridge.pdf",
+    "92-extra-axial-lee-wald-bridge.pdf",
+    "98-physicist-executive-summary.pdf",
+    "99-how-to-build-a-universe.pdf"
   ],
-  "result_id": "PAPER_00_TIMELESS_GHOSTS_REVERSE_FOUNDATIONS_SYNTHESIS_V1",
-  "result_kind": "CONTENT_ADDRESSED_PUBLIC_SYNTHESIS_AND_CLAIM_BOUNDARY_RECEIPT",
-  "schema_version": "paper-00-timeless-introduction-receipt-v1",
+  "result_id": "PAPER_00_THEMATIC_PROGRAMME_GUIDE_V2",
+  "result_kind": "CONTENT_ADDRESSED_PROGRAMME_NAVIGATION_AND_CLAIM_BOUNDARY_RECEIPT",
+  "schema_version": "paper-00-programme-guide-receipt-v2",
   "verification_commands": [
     "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 00-ghosts-geometry-reality.tex && pdflatex -interaction=nonstopmode -halt-on-error 00-ghosts-geometry-reality.tex",
     "python3 paper/generate_00_timeless_introduction_receipt.py --check",
