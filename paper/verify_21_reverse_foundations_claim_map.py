@@ -94,6 +94,7 @@ def main() -> int:
     bt_top_band = json.loads((ROOT / data["authorities"]["bt_torus_top_band_flow"]["path"]).read_text())
     bt_dyadic_stopping = json.loads((ROOT / data["authorities"]["bt_torus_dyadic_stopping_flow"]["path"]).read_text())
     bt_extensive_action = json.loads((ROOT / data["authorities"]["bt_torus_extensive_action_gradient_floor"]["path"]).read_text())
+    bt_sharp_virial = json.loads((ROOT / data["authorities"]["bt_torus_sharp_virial_density_gate"]["path"]).read_text())
     coded_wave_observable = json.loads((ROOT / data["authorities"]["coded_wave_observable_reconstruction"]["path"]).read_text())
     coded_local_weak_wave = json.loads((ROOT / data["authorities"]["coded_local_weak_wave_test_class"]["path"]).read_text())
     coded_h2_test = json.loads((ROOT / data["authorities"]["coded_weak_wave_h2_test_completion"]["path"]).read_text())
@@ -581,6 +582,7 @@ def main() -> int:
         (87, "BT-TORUS-TOP-BAND-FLOW"),
         (88, "BT-TORUS-DYADIC-STOPPING-FLOW"),
         (89, "BT-TORUS-EXTENSIVE-ACTION-GRADIENT-FLOOR"),
+        (90, "BT-TORUS-SHARP-VIRIAL-DENSITY-GATE"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -1122,6 +1124,10 @@ def main() -> int:
     require(flags["bt_torus_extensive_action_branch_ruled_out"] is True, "BT extensive-action branch is not ruled out")
     require(flags["bt_torus_sub_16_L_squared_low_action_gate_open"] is True, "BT low-action sub-16L^2 gate was silently closed")
     require(flags["bt_torus_extensive_action_all_field_scaled_pl_decided"] is False, "BT extensive-action result promoted to an all-field torus decision")
+    require(flags["bt_torus_sharp_virial_density_gate_certified"] is True, "BT sharp-virial density-gate flag is not certified")
+    require(flags["bt_torus_fixed_action_density_above_32_ruled_out"] is True, "BT fixed action density above 32 was not ruled out")
+    require(flags["bt_torus_sub_32_action_density_gate_open"] is True, "BT sub-32 action-density gate was silently closed")
+    require(flags["bt_torus_sharp_virial_all_field_scaled_pl_decided"] is False, "BT sharp-virial result promoted to an all-field torus decision")
     require(flags["bt_euclidean_finite_capabilities_imported"] is True, "BT finite import flag is not certified")
     require(flags["bt_euclidean_coarse_reproduction_separated"] is True, "BT numerical separation flag is not certified")
     require(flags["bt_free_os_obstruction_certified"] is True, "BT OS obstruction flag is not certified")
@@ -1437,6 +1443,12 @@ def main() -> int:
     require(atlas["bt_extensive_action_all_field_status"] == bt_extensive_action["research_disposition"]["all_field_torus_scaled_PL"] == "OPEN", "BT extensive-action all-field boundary drift")
     require(bt_extensive_action["checks"]["ok"] is True and all(bt_extensive_action["exact_constant_audit"]["checks"].values()), "BT extensive-action exact checks are not closed")
     require(bt_extensive_action["research_disposition"]["low_action_sub_16_L_squared_sector"] == "OPEN" and bt_extensive_action["research_disposition"]["lorentzian_transfer"] == "NOT_ESTABLISHED", "BT extensive-action low-action/Lorentzian boundary drift")
+    require(atlas["bt_sharp_virial_fixed_margin_theorem"] == bt_sharp_virial["four_torus_theorem"]["fixed_margin_theorem"] == "for every 0<epsilon<=32, A>=(32+epsilon)*L^4 implies Q/omega_L^2>=epsilon^2/(8192*pi^4)", "BT sharp-virial fixed-margin theorem drift")
+    require(atlas["bt_sharp_virial_collapsing_action_necessity"] == bt_sharp_virial["four_torus_theorem"]["collapsing_action_necessity"] == "Q/omega_L^2->0 implies limsup A/L^4<=32", "BT sharp-virial collapsing action necessity drift")
+    require(atlas["bt_sharp_virial_collapsing_contrast_necessity"] == bt_sharp_virial["four_torus_theorem"]["collapsing_contrast_necessity"] == "Q/omega_L^2->0 implies limsup W/L^2<=8", "BT sharp-virial collapsing contrast necessity drift")
+    require(atlas["bt_sharp_virial_all_field_status"] == bt_sharp_virial["research_disposition"]["all_field_torus_scaled_PL"] == "OPEN", "BT sharp-virial all-field boundary drift")
+    require(bt_sharp_virial["checks"]["ok"] is True and all(bt_sharp_virial["exact_constant_audit"]["checks"].values()), "BT sharp-virial exact checks are not closed")
+    require(bt_sharp_virial["research_disposition"]["action_density_at_most_32_sector"] == "OPEN" and bt_sharp_virial["research_disposition"]["lorentzian_transfer"] == "NOT_ESTABLISHED", "BT sharp-virial low-action/Lorentzian boundary drift")
     require(abs(atlas["mannheim_ngc3198_sparc_rms_km_s"] - 4.5382719695501885) < 1e-12, "Mannheim SPARC RMS drift")
     require(abs(atlas["mannheim_ngc3198_sparc_reduced_chi2"] - 5.592211904260559) < 1e-12, "Mannheim SPARC chi-squared drift")
     standard = next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")

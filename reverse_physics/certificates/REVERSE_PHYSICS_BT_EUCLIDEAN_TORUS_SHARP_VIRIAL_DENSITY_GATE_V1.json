@@ -1,0 +1,184 @@
+{
+  "answer": "No. Exact optimization of the negative-residual vertex replaces the prior 488/5 virial defect by 64: <psi,g>>=2A-64N. For every 0<epsilon<=32, A>=(32+epsilon)L^4 implies Q/omega_L^2>=epsilon^2/(8192*pi^4). Hence every collapsing sequence has limsup A/L^4<=32 and limsup W/L^2<=8. The action-density-at-most-32 nonseparable sector remains open.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_SHARP_VIRIAL_DENSITY_GATE_V1",
+  "checks": {
+    "details": {
+      "all_field_scaled_PL_remains_open": true,
+      "collapsing_action_density_limsup_proved": true,
+      "collapsing_contrast_coefficient_limsup_proved": true,
+      "constant_audit_closes": true,
+      "epsilon_uniform_torus_floor_proved": true,
+      "fixture_checks_close": true,
+      "intermediate_density_floor_proved": true,
+      "large_density_predecessor_joined": true,
+      "no_witten_or_lorentzian_promotion": true,
+      "sharp_vertex_virial_defect_proved": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 10,
+    "total": 10
+  },
+  "created": "2026-08-17",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "a lower bound for all fields with A<=32*L^4",
+    "the all-field torus scaled Polyak-Lojasiewicz inequality",
+    "absence or existence of a nonseparable low-action collapsing family",
+    "a Witten or Poincare theorem",
+    "boundedness or divergence of the interacting H^-1 moment",
+    "a continuum measure or continuum identification",
+    "a Born rule or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_constant_audit": {
+    "asymptotic_contrast_coefficient": 8,
+    "checks": {
+      "critical_density_is_half_degree_square": true,
+      "degree_square_is_64": true,
+      "density_floor_denominator": true,
+      "epsilon_ceiling_matches_middle_floor": true,
+      "exp_lower_partial_sum_cubed_above_13": true,
+      "exp_upper_geometric_bound_below_3": true,
+      "low_density_contrast_at_L4": true,
+      "mean_zero_log_norm_coefficient": true,
+      "middle_branch_normalized_floor": true,
+      "middle_branch_raw_floor": true,
+      "predecessor_floor_beats_middle_floor": true,
+      "spectral_denominator": true,
+      "sqrt_128_below_12": true
+    },
+    "critical_action_density": {
+      "denominator": 1,
+      "numerator": 32
+    },
+    "degree": 8,
+    "intermediate_action_density_ceiling": {
+      "denominator": 1,
+      "numerator": 64
+    },
+    "normalized_density_floor_denominator": 8192,
+    "raw_density_floor_denominator": 512,
+    "sharp_vertex_defect": {
+      "denominator": 1,
+      "numerator": 64
+    }
+  },
+  "exact_fixture": {
+    "action": {
+      "denominator": 25,
+      "numerator": 267264
+    },
+    "action_density": {
+      "denominator": 25,
+      "numerator": 1044
+    },
+    "checks": {
+      "density_branch_floor_holds": true,
+      "density_is_strictly_between_32_and_64": true,
+      "gradient_has_zero_sum": true,
+      "maximum_edge_ratio_is_five_halves": true,
+      "residual_is_nonzero": true
+    },
+    "degree": 8,
+    "density_branch_floor": {
+      "denominator": 5120000,
+      "numerator": 3721
+    },
+    "gradient_norm_squared": {
+      "denominator": 625,
+      "numerator": 10433396736
+    },
+    "gradient_sum": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "graph": "T_4^4 parity checkerboard",
+    "height_ratio": {
+      "denominator": 2,
+      "numerator": 5
+    },
+    "quotient": {
+      "denominator": 725,
+      "numerator": 566048
+    },
+    "residual_norm_squared": {
+      "denominator": 25,
+      "numerator": 534528
+    },
+    "side": 4,
+    "vertices": 256
+  },
+  "four_torus_theorem": {
+    "collapsing_action_necessity": "Q/omega_L^2->0 implies limsup A/L^4<=32",
+    "collapsing_contrast_necessity": "Q/omega_L^2->0 implies limsup W/L^2<=8",
+    "fixed_margin_theorem": "for every 0<epsilon<=32, A>=(32+epsilon)*L^4 implies Q/omega_L^2>=epsilon^2/(8192*pi^4)",
+    "intermediate_density_branch": "32<x<64 implies N*Q>=(x-32)^2/512",
+    "intermediate_normalized_branch": "32<x<64 implies Q/omega_L^2>=(x-32)^2/(8192*pi^4)",
+    "middle_branch": "64<=x<488/5 implies N*Q>=2 and Q/omega_L^2>=1/(8*pi^4)",
+    "predecessor_branch": "x>=488/5 implies Q/omega_L^2>=61/(320*pi^4)>1/(8*pi^4)",
+    "scope": "T_L^4 with L>=4, N=L^4, x=A/N and omega_L=4*sin(pi/L)^2"
+  },
+  "lifecycle_state": "ACTION_DENSITY_ABOVE_32_FREE_SCALE_CLOSED_SUB_32_NONSEPARABLE_GATE_OPEN",
+  "provenance": {
+    "analytic_inputs": [
+      "superadditivity gives sum_i w_i log(w_i)<=s log(s)",
+      "the one-variable convexity audit of H(s) on 1<s<8",
+      "e^3>13, 2*log(L)<=L for L>=4, and sin(x)<=x"
+    ],
+    "exact_arithmetic": "Fraction audit of 64, 32, 512, 8192, the joined middle/predecessor floors, and a complete rational T_4^4 checkerboard",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_AFFINE_VIRIAL_ACTION_DENSITY_V1.json",
+        "sha256": "5ca8a2a7bc0d48300b0af031990e3c9c177fdec0d35f763666d2e397b495e1e0"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_EXTENSIVE_ACTION_GRADIENT_FLOOR_V1.json",
+        "sha256": "e570ccae41d81c583f47a3a6aefafb38f2f2aea7fabc2d95524652f575a8fa4e"
+      }
+    ],
+    "repository_base_commit": "0f1f469f612fb311d8f349246387af88974a90a1"
+  },
+  "question": "Can a BT torus quotient collapse while its residual action density stays a fixed amount above 32?",
+  "report": "reverse_physics/reports/bt-euclidean-torus-sharp-virial-density-gate.md",
+  "research_disposition": {
+    "action_density_at_most_32_sector": "OPEN",
+    "all_field_torus_scaled_PL": "OPEN",
+    "asymptotic_edge_contrast_coefficient_above_8": "RULED_OUT_FOR_A_COLLAPSING_SEQUENCE",
+    "fixed_action_density_above_32_collapse": "RULED_OUT",
+    "interacting_h_minus_one": "OPEN",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "nonseparable_counterfamily": "NOT_CONSTRUCTED",
+    "witten_poincare_transfer": "OPEN"
+  },
+  "result_kind": "exact sharp virial defect and asymptotic low-action torus reduction",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-torus-sharp-virial-density-gate-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-torus-sharp-virial-density-gate-v1",
+  "sharp_vertex_theorem": {
+    "calculus_certificate": "H'(s)=log(s)-8/s and H''(s)=1/s+8/s^2>0; any interior minimum solves s*log(s)=8, lies in (4,8), and has H=24-s-64/s>=4",
+    "definitions": "s_x=sum_(y~x) exp(psi_y-psi_x), r_x=s_x-8, t_x=sum_(y~x) exp(psi_y-psi_x)*(psi_y-psi_x)",
+    "negative_residual_bound": "r_x<0 implies r_x*t_x>=r_x^2-64",
+    "positive_residual_bound": "r_x>=0 implies r_x*t_x>=r_x^2",
+    "scalar_reduction": "for 1<s<8 it is enough that H(s)=16-s-(8-s)*log(s)>=0",
+    "scope": "every positive field on a finite 8-regular graph",
+    "sharp_virial_bound": "<psi,g>=sum_x r_x*t_x>=2*A-64*N"
+  },
+  "tier_receipt": {
+    "paper_integration": "PASS: Paper 21 RF-90 claim-map verification completed in 0.59 s at 149224 KiB maximum RSS and the 82-page PDF built twice in 1.77 s at 54148 KiB maximum RSS",
+    "planning_event": "PASS: append-only ACTIVE event sequence 96, id af82e5376a3dcb75",
+    "science_forge_shadow": "not rerun: no Science Forge substrate input changes; the latest advisory attempt had no final disposition and is not counted as a pass",
+    "tier_0": "PASS: changed Python compiled; strict JSON/schema parsing, deterministic certificate drift, scoped diff check, exact staged-diff inspection, planning import, claim-map verification, and two-pass PDF build were run; planning imported 1715 nodes with 0 invalid items and 0 malformed events in 1.23 s at 17228 KiB maximum RSS",
+    "tier_1": "PASS: producer 10/10 in 0.05 s at 20416 KiB; nonimporting verifier 11/11 in 0.11 s at 30088 KiB; focused and mutation tests 11/11 in 0.20 s at 30964 KiB; unchanged affine-virial and extensive-action predecessor verifiers passed 10/10 and 12/12 in 0.10 s and 0.11 s",
+    "tier_2": "the affine-virial and extensive-action inputs are unchanged and pinned by content hash",
+    "tier_3": "not triggered: the all-field, Witten, H^-1, continuum, freeze, release, and shared-core gates remain open"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_torus_sharp_virial_density_gate.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_torus_sharp_virial_density_gate.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_torus_sharp_virial_density_gate"
+  ],
+  "verifier": "reverse_physics/verify_bt_euclidean_torus_sharp_virial_density_gate.py"
+}

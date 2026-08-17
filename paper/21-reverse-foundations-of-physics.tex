@@ -2326,6 +2326,60 @@ contrast.  This is a necessary-condition theorem, not the all-field result:
 the low-action sub-\(16L^2\) sector, Witten/Poincare transfer, interacting
 \(H^{-1}\), continuum, Born/Krein and Lorentzian gates remain open.
 
+The volume defect in that affine estimate can itself be optimized.
+Certificate
+
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_SHARP_VIRIAL_DENSITY_GATE_V1}
+
+uses the exact vertex variables \(s_x=\sum_{y\sim x}e^{\psi_y-\psi_x}\)
+and \(t_x=\sum_{y\sim x}e^{\psi_y-\psi_x}(\psi_y-\psi_x)\).  Positive
+residuals obey \(r_xt_x\geq r_x^2\), while direct one-variable convexity
+gives
+
+\[
+                         r_xt_x\geq r_x^2-64
+                         \qquad(r_x<0).
+\]
+
+The load-bearing scalar inequality is
+\(16-s-(8-s)\log s\geq0\) for \(1<s<8\).  Its unique possible interior
+minimum satisfies \(s\log s=8\), lies in \((4,8)\), and has value at least
+four.  Consequently
+
+\[
+                         \langle\psi,g\rangle\geq2A-64N.
+\]
+
+Writing \(x=A/L^4\), the range argument in the interval \(32<x<64\)
+now gives
+
+\[
+ L^4Q\geq{(x-32)^2\over512},\qquad
+ {Q\over\omega_L^2}\geq{(x-32)^2\over8192\pi^4}.
+\]
+
+After joining the already-certified branches above \(x=64\), for every
+\(0<\epsilon\leq32\),
+
+\[
+ A\geq(32+\epsilon)L^4
+ \quad\Longrightarrow\quad
+ {Q\over\omega_L^2}\geq{\epsilon^2\over8192\pi^4}.
+\]
+
+Thus an actually collapsing sequence must satisfy
+
+\[
+ \limsup {A\over L^4}\leq32,
+ \qquad
+ \limsup {W\over L^2}\leq8.
+\]
+
+This sharpens the remaining deterministic search but does not complete it:
+the action-density-at-most-\(32\) nonseparable sector, the all-field torus
+bound, Witten/Poincare transfer, interacting \(H^{-1}\), continuum,
+Born/Krein and Lorentzian gates remain open.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The

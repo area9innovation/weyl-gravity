@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-torus-sharp-virial-density-gate-v1.schema.json",
+  "title": "BT Euclidean torus sharp-virial action-density gate certificate",
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "object": {"type": "object", "minProperties": 1},
+    "fraction": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "sharp_vertex_theorem", "four_torus_theorem", "exact_constant_audit",
+    "exact_fixture", "research_disposition", "does_not_establish",
+    "provenance", "verification_commands", "tier_receipt", "checks",
+    "report", "schema", "verifier"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_SHARP_VIRIAL_DENSITY_GATE_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-torus-sharp-virial-density-gate-v1"},
+    "created": {"const": "2026-08-17"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "ACTION_DENSITY_ABOVE_32_FREE_SCALE_CLOSED_SUB_32_NONSEPARABLE_GATE_OPEN"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "sharp_vertex_theorem": {
+      "type": "object",
+      "required": ["scope", "definitions", "positive_residual_bound", "negative_residual_bound", "sharp_virial_bound", "scalar_reduction", "calculus_certificate"],
+      "properties": {
+        "scope": {"const": "every positive field on a finite 8-regular graph"},
+        "definitions": {"$ref": "#/$defs/text"},
+        "positive_residual_bound": {"const": "r_x>=0 implies r_x*t_x>=r_x^2"},
+        "negative_residual_bound": {"const": "r_x<0 implies r_x*t_x>=r_x^2-64"},
+        "sharp_virial_bound": {"const": "<psi,g>=sum_x r_x*t_x>=2*A-64*N"},
+        "scalar_reduction": {"const": "for 1<s<8 it is enough that H(s)=16-s-(8-s)*log(s)>=0"},
+        "calculus_certificate": {"$ref": "#/$defs/text"}
+      },
+      "additionalProperties": false
+    },
+    "four_torus_theorem": {
+      "type": "object",
+      "required": ["scope", "intermediate_density_branch", "intermediate_normalized_branch", "fixed_margin_theorem", "middle_branch", "predecessor_branch", "collapsing_action_necessity", "collapsing_contrast_necessity"],
+      "properties": {
+        "scope": {"const": "T_L^4 with L>=4, N=L^4, x=A/N and omega_L=4*sin(pi/L)^2"},
+        "intermediate_density_branch": {"const": "32<x<64 implies N*Q>=(x-32)^2/512"},
+        "intermediate_normalized_branch": {"const": "32<x<64 implies Q/omega_L^2>=(x-32)^2/(8192*pi^4)"},
+        "fixed_margin_theorem": {"const": "for every 0<epsilon<=32, A>=(32+epsilon)*L^4 implies Q/omega_L^2>=epsilon^2/(8192*pi^4)"},
+        "middle_branch": {"const": "64<=x<488/5 implies N*Q>=2 and Q/omega_L^2>=1/(8*pi^4)"},
+        "predecessor_branch": {"const": "x>=488/5 implies Q/omega_L^2>=61/(320*pi^4)>1/(8*pi^4)"},
+        "collapsing_action_necessity": {"const": "Q/omega_L^2->0 implies limsup A/L^4<=32"},
+        "collapsing_contrast_necessity": {"const": "Q/omega_L^2->0 implies limsup W/L^2<=8"}
+      },
+      "additionalProperties": false
+    },
+    "exact_constant_audit": {
+      "type": "object",
+      "required": ["degree", "sharp_vertex_defect", "critical_action_density", "intermediate_action_density_ceiling", "raw_density_floor_denominator", "normalized_density_floor_denominator", "asymptotic_contrast_coefficient", "checks"],
+      "properties": {
+        "degree": {"const": 8},
+        "sharp_vertex_defect": {"const": {"numerator": 64, "denominator": 1}},
+        "critical_action_density": {"const": {"numerator": 32, "denominator": 1}},
+        "intermediate_action_density_ceiling": {"const": {"numerator": 64, "denominator": 1}},
+        "raw_density_floor_denominator": {"const": 512},
+        "normalized_density_floor_denominator": {"const": 8192},
+        "asymptotic_contrast_coefficient": {"const": 8},
+        "checks": {"type": "object", "minProperties": 11, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "exact_fixture": {"$ref": "#/$defs/object"},
+    "research_disposition": {
+      "type": "object",
+      "required": ["fixed_action_density_above_32_collapse", "asymptotic_edge_contrast_coefficient_above_8", "action_density_at_most_32_sector", "all_field_torus_scaled_PL", "nonseparable_counterfamily", "witten_poincare_transfer", "interacting_h_minus_one", "lorentzian_transfer"],
+      "properties": {
+        "fixed_action_density_above_32_collapse": {"const": "RULED_OUT"},
+        "asymptotic_edge_contrast_coefficient_above_8": {"const": "RULED_OUT_FOR_A_COLLAPSING_SEQUENCE"},
+        "action_density_at_most_32_sector": {"const": "OPEN"},
+        "all_field_torus_scaled_PL": {"const": "OPEN"},
+        "nonseparable_counterfamily": {"const": "NOT_CONSTRUCTED"},
+        "witten_poincare_transfer": {"const": "OPEN"},
+        "interacting_h_minus_one": {"const": "OPEN"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "does_not_establish": {"type": "array", "minItems": 8, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {"$ref": "#/$defs/object"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "tier_receipt": {"$ref": "#/$defs/object"},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 10},
+        "total": {"const": 10},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-torus-sharp-virial-density-gate.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-torus-sharp-virial-density-gate-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_torus_sharp_virial_density_gate.py"}
+  },
+  "additionalProperties": false
+}

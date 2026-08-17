@@ -76,6 +76,7 @@ AUTHORITY_PATHS = {
     "bt_torus_top_band_flow": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_TOP_BAND_FLOW_V1.json",
     "bt_torus_dyadic_stopping_flow": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_DYADIC_STOPPING_FLOW_V1.json",
     "bt_torus_extensive_action_gradient_floor": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_EXTENSIVE_ACTION_GRADIENT_FLOOR_V1.json",
+    "bt_torus_sharp_virial_density_gate": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_SHARP_VIRIAL_DENSITY_GATE_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -314,6 +315,7 @@ def build() -> dict:
     bt_top_band = loaded["bt_torus_top_band_flow"]
     bt_dyadic_stopping = loaded["bt_torus_dyadic_stopping_flow"]
     bt_extensive_action = loaded["bt_torus_extensive_action_gradient_floor"]
+    bt_sharp_virial = loaded["bt_torus_sharp_virial_density_gate"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -478,6 +480,10 @@ def build() -> dict:
             "bt_extensive_action_counterfamily_action": bt_extensive_action["four_torus_corollary"]["counterfamily_action_necessity"],
             "bt_extensive_action_counterfamily_contrast": bt_extensive_action["four_torus_corollary"]["counterfamily_contrast_necessity"],
             "bt_extensive_action_all_field_status": bt_extensive_action["research_disposition"]["all_field_torus_scaled_PL"],
+            "bt_sharp_virial_fixed_margin_theorem": bt_sharp_virial["four_torus_theorem"]["fixed_margin_theorem"],
+            "bt_sharp_virial_collapsing_action_necessity": bt_sharp_virial["four_torus_theorem"]["collapsing_action_necessity"],
+            "bt_sharp_virial_collapsing_contrast_necessity": bt_sharp_virial["four_torus_theorem"]["collapsing_contrast_necessity"],
+            "bt_sharp_virial_all_field_status": bt_sharp_virial["research_disposition"]["all_field_torus_scaled_PL"],
             "coded_wave_observable_cutoff": coded_wave_observable["cutoff_theorem"]["cutoff"],
             "coded_wave_observable_full_state_reconstruction": coded_wave_observable["claim_flags"]["full_state_reconstruction_proved"],
             "coded_local_weak_wave_basis_tests": coded_local_weak_wave["localized_test_class"]["basis_size"],
@@ -1339,6 +1345,13 @@ def build() -> dict:
                 "authorities": ["bt_torus_extensive_action_gradient_floor"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
+            {
+                "claim_id": "RF-90-BT-TORUS-SHARP-VIRIAL-DENSITY-GATE",
+                "statement": "Exact optimization of the negative-residual vertex sharpens the radial virial inequality to <psi,g>>=2A-64N on every 8-regular graph. On T_L^4, if x=A/L^4 lies between 32 and 64 then L^4*Q>=(x-32)^2/512. Joining this with the already-certified larger-action branches proves that, for every 0<epsilon<=32, A>=(32+epsilon)L^4 implies Q/omega_L^2>=epsilon^2/(8192*pi^4). Hence every collapsing sequence has limsup A/L^4<=32 and limsup W/L^2<=8. The action-density-at-most-32 nonseparable sector, all-field torus theorem, Witten/Poincare transfer, interacting H^-1, continuum, Born/Krein and Lorentzian gates remain open.",
+                "status": "ACTION_DENSITY_ABOVE_32_FREE_SCALE_CLOSED_SUB_32_NONSEPARABLE_GATE_OPEN",
+                "authorities": ["bt_torus_sharp_virial_density_gate"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -1626,6 +1639,10 @@ def build() -> dict:
             "bt_torus_extensive_action_branch_ruled_out": True,
             "bt_torus_sub_16_L_squared_low_action_gate_open": True,
             "bt_torus_extensive_action_all_field_scaled_pl_decided": False,
+            "bt_torus_sharp_virial_density_gate_certified": True,
+            "bt_torus_fixed_action_density_above_32_ruled_out": True,
+            "bt_torus_sub_32_action_density_gate_open": True,
+            "bt_torus_sharp_virial_all_field_scaled_pl_decided": False,
             "bt_euclidean_finite_capabilities_imported": True,
             "bt_euclidean_coarse_reproduction_separated": True,
             "bt_free_os_obstruction_certified": True,
