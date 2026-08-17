@@ -562,7 +562,7 @@
     "universal_compensator_no_go": false
   },
   "compiled_pdf": "paper/12-pure-weyl-one-loop-bv-anomaly.pdf",
-  "compiled_pdf_sha256": "ab6ddb91627c6fc6403a79c8aa1b41f4ed6d6284bb74931884525bd693ff5cff",
+  "compiled_pdf_sha256": "4509d8e839bbece04b0587df66c90f8cd7f60d1bccf5eacc89116336829a6fa6",
   "conditional_all_loop_evidence": {
     "claim_boundary": "This LOCAL-ALGEBRAIC theorem proves an order-by-order formal local QME restoration induction for the changed tau-adic compensator theory, conditional on the explicitly declared quantum action principle and regular formal coupling chart. The complete H14 module is zero and the stable H04 module contains C(g_hat)^2, E4(g_hat), R(g_hat)^2 and the parity-odd Pontryagin direction, with total derivatives, canonical transformations and coupling redefinitions separated. It does not construct the required regulator, prove convergence, exclude global anomalies, repair strict pure-Weyl gravity, or establish Lorentzian products, a QME, residual transfer, states, positivity, particles, scattering or unitarity.",
     "dependency_tags": [
@@ -704,6 +704,18 @@
       "result_id": "WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT",
       "sha256": "b265dc9d86938ed7bee0f57a1394e26e762e99841a89b1310b950542e0c2e2b1"
     },
+    "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V30_RECONCILIATION.json": {
+      "result_id": "CLASSICAL_IMPORT_GATE_V30_RECONCILIATION",
+      "sha256": "95cfe49e134064f8e8d25cb2ad1a01bc84ff0bf921676486316e8ec72a390263"
+    },
+    "quantum-weyl/classical_import/certificates/STRICT_M1C_COMMON_SNAPSHOT_V1.json": {
+      "result_id": "STRICT_M1C_COMMON_SNAPSHOT_V1",
+      "sha256": "7d2838b32f543c5ed6a1d39d44811a4982563cacba831b24e2253b4554ac68a6"
+    },
+    "quantum-weyl/classical_import/certificates/STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1.json": {
+      "result_id": "STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1",
+      "sha256": "2f3dd4b5ca58c53a1676b1a46ff31991d281359d0988fce4acfd53147c863445"
+    },
     "quantum-weyl/local_bv/certificates/AFN0_DIFF_MIXED_MINIMAL_BV_H14.json": {
       "result_id": "AFN0_DIFF_MIXED_MINIMAL_BV_H14",
       "sha256": "f2624bad4840e33682b1dc3971c09e466f530c90e4404edd19c65613187dc81b"
@@ -723,6 +735,10 @@
     "quantum-weyl/local_bv/certificates/MINIMAL_BV_KOSZUL_TATE_COLLAPSE.json": {
       "result_id": "MINIMAL_BV_KOSZUL_TATE_COLLAPSE",
       "sha256": "f2b04706724d79b50ddcbe0895476b4a688b40253715538bbdb8d09ea2c6a461"
+    },
+    "quantum-weyl/lorentzian/certificates/STRICT_386_BRST_HADAMARD_TWO_POINT_V1.json": {
+      "result_id": "STRICT_386_BRST_HADAMARD_TWO_POINT_V1",
+      "sha256": "bc7dc68e81c2dfae48e8760e012c1e4f57375763a9f399d227086c7f34f92004"
     },
     "quantum-weyl/relative/certificates/RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1.json": {
       "result_id": "RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1",
@@ -972,7 +988,7 @@
   "latest_coefficient_update": "The longitudinal D_W towers are one Schur kernel. Its exact non-Einstein S2(k1)xS2(k2) spectrum and degeneracies are supplied, with six matched vector-zero/Schur-pole modes contributing 3^-6. On S2(1)xS2(2), the regular-complement det3 is rigorously enclosed with common prefix 0.3263039; weighted R(K), finite-part R(K2), arbitrary-background finite Schur rows and remaining BV rows stay open.",
   "lifecycle_state": "WRITING_STARTED",
   "manuscript": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-  "manuscript_sha256": "326c1e5ef84cafa38341d4aff400fe13166cfe497090983d5374dbf0c9763ea3",
+  "manuscript_sha256": "c7df6e4cf64885d2428ed38a0199e8474624d7953199d51c7f5b54bde387a385",
   "minimal_compensator_family_status": {
     "candidate_C_selected": false,
     "certificate_sha256": "41ce6db6ab8fc58f4cc1ecedb205f732fd3dcee645f9408506d3535545f7026a",
@@ -1590,12 +1606,102 @@
     ],
     "status": "ANALYTICALLY_CONTINUE_PRODUCT_WEIGHTED_R_K_AND_FINITE_PART_R_K2_THEN_ADD_REMAINING_BV_SECTORS"
   },
+  "post_freeze_successor_frontier": {
+    "authorities": {
+      "authoritative_classical_snapshot": {
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE",
+          "LORENTZIAN-CAUSAL"
+        ],
+        "does_not_establish": [
+          "that the finite harmonic or algebraic-dual verification cores are the authoritative local source",
+          "an arbitrary-smooth, all-energy, distributional, Hilbert, Krein, Sobolev, LF, or Frechet completion",
+          "q2/q3 compatibility with advanced and retarded Green homotopies",
+          "a complete Lorentzian off-shell BV propagator",
+          "a BRST-compatible Hadamard two-point function or renormalized Lorentzian products",
+          "QME restoration, residual quantum transfer, physical positivity, or a Lorentzian quantum theory"
+        ],
+        "path": "quantum-weyl/classical_import/certificates/STRICT_M1C_COMMON_SNAPSHOT_V1.json",
+        "result_id": "STRICT_M1C_COMMON_SNAPSHOT_V1",
+        "result_state": "M1C_COMPLETE_GATE_A_READY_FOR_INDEPENDENT_DECISION",
+        "sha256": "7d2838b32f543c5ed6a1d39d44811a4982563cacba831b24e2253b4554ac68a6"
+      },
+      "brst_hadamard_pseudo_state_pair": {
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "LORENTZIAN-CAUSAL"
+        ],
+        "does_not_establish": [
+          "a positive quasifree Hadamard state or positive physical graviton Hilbert space",
+          "that the scale-free stationary pseudo-state is the unique zero-mode policy",
+          "distribution-kernel coordinate bytes or an effective projector algorithm",
+          "a Feynman propagator, renormalized Lorentzian time-ordered product or causal perturbative AQFT construction",
+          "QME restoration, anomaly cancellation, residual quantum transfer, particles, scattering or unitarity",
+          "a complete interacting Lorentzian quantum theory"
+        ],
+        "path": "quantum-weyl/lorentzian/certificates/STRICT_386_BRST_HADAMARD_TWO_POINT_V1.json",
+        "result_id": "STRICT_386_BRST_HADAMARD_TWO_POINT_V1",
+        "result_state": "FULL_386_BRST_HADAMARD_TWO_POINT_CERTIFIED_POSITIVE_STATE_OPEN",
+        "sha256": "bc7dc68e81c2dfae48e8760e012c1e4f57375763a9f399d227086c7f34f92004"
+      },
+      "classical_import_gate_A": {
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE",
+          "LORENTZIAN-CAUSAL"
+        ],
+        "does_not_establish": [
+          "a new scientific identity from the standalone-history migration repair",
+          "that Berger q2 or D belongs to strict pure-Weyl gravity",
+          "that an auxiliary deformation retract is the residual SDR",
+          "that a causal Green homotopy is s_cl",
+          "support-locality of the D-finite W+/W- harmonic projector",
+          "an all-energy or arbitrary-smooth completion of the represented harmonic comparison",
+          "that the formal 8,980-coordinate cotangent comparison source is the authoritative classical BV source",
+          "a one-particle interpretation for W_+^2 or W_-^2",
+          "q2/q3 compatibility with the typed advanced and retarded Green homotopies",
+          "a complete Lorentzian off-shell BV propagator or BRST-compatible Hadamard two-point function",
+          "renormalized Lorentzian products, QME restoration, residual transfer, physical positivity, or a Lorentzian quantum theory"
+        ],
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V30_RECONCILIATION.json",
+        "result_id": "CLASSICAL_IMPORT_GATE_V30_RECONCILIATION",
+        "result_state": "CLASSICAL_IMPORT_GATE_A_VERIFIED_ON_IMMUTABLE_STRICT_PURE_WEYL_SNAPSHOT",
+        "sha256": "95cfe49e134064f8e8d25cb2ad1a01bc84ff0bf921676486316e8ec72a390263"
+      },
+      "typed_q2_q3_green_compatibility": {
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "LORENTZIAN-CAUSAL"
+        ],
+        "does_not_establish": [
+          "a mutation of or additional object inside the immutable Gate-A snapshot",
+          "arbitrary mixed advanced/retarded response trees on the current support classes",
+          "convergence, summability or a nonperturbative realization of the infinite response-tree series",
+          "absence of q4 or higher Taylor operations or all-order nonlinear source closure",
+          "serialized distribution-kernel coordinates or an effective numerical Green solver",
+          "a complete Lorentzian off-shell BV propagator",
+          "a BRST-compatible Hadamard two-point function, positive state or particle interpretation",
+          "renormalized Lorentzian products, QME restoration, residual quantum transfer or a Lorentzian quantum theory"
+        ],
+        "path": "quantum-weyl/classical_import/certificates/STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1.json",
+        "result_id": "STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1",
+        "result_state": "NONLINEAR_GREEN_COMPATIBILITY_AND_SECOND_SOURCE_COCYCLE_CERTIFIED_HADAMARD_OPEN",
+        "sha256": "2f3dd4b5ca58c53a1676b1a46ff31991d281359d0988fce4acfd53147c863445"
+      }
+    },
+    "local_anomaly_coefficients_changed": false,
+    "lorentzian_QME_established": false,
+    "positive_hadamard_state_established": false,
+    "residual_quantum_transfer_established": false,
+    "role": "PROVENANCE_AND_BOUNDARY_UPDATE_NO_COEFFICIENT_CHANGE"
+  },
   "publication_artifacts": {
     "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "f589a862ca60974d22eef483d4741734db8b7b895b7ab90c5193fc47af14520b",
     "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "5cedb35a2bff658e784f29c985eed489dea39c8abccbd00e5a0dbe67bc7f4228",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-paper-coverage-report.json": "75ef2b271717af99acc13a076d73136d1499110a6df0d83c0c5392ff6f8a7f28",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-paper-coverage-report.json": "56715946f000a60ce8f97d49de272db38ffc2a22e8fa7180be84d016dcdf4274",
     "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "aaae402f8dbf845def05c7dae642f2792a629b0342e4d8a03b7898e272ab7e66",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-science-forge-paper-coverage.json": "cadae4f1ad7fa9f477d8f9632ddcd1806c21538756cb3d82326b4051c843a8ed",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-science-forge-paper-coverage.json": "5521c062125d2422e1098d4845d613e6aea66105f4898e60e04f522ce0399768",
     "paper/generate_12_quantum_anomaly_tables.py": "53fa1f003c9cedd320d7e2d8c8e8b589fcd5fc200c7c0362955107b68e62e4db",
     "paper/generated/12-quantum-anomaly-certificate-tables.tex": "b7556226f31a06e73e9410c3e382c5eca6b77be3bce6004324ee1c0171b8e8c0",
     "paper/verify_12_quantum_anomaly_tables.py": "30370f348cc90cf9d8063cb9c47bb7a7576a4951869ba3e9bf63039be75ad258"

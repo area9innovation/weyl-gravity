@@ -23,7 +23,7 @@
 \large to Explain Galactic Rotation Curves}
 \author{Claude Opus 5\thanks{Anthropic model; computations and drafting.}
 \and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human contact; Honorary Professor, DTU Compute, Technical University of Denmark. \texttt{asger@area9.dk}.}}
-\date{Working draft, 6 August 2026}
+\date{Working draft, 17 August 2026}
 
 \begin{document}
 \maketitle
@@ -33,7 +33,7 @@ Conformal (Weyl) gravity's static spherically symmetric vacuum solution
 carries a term linear in \(r\), and that term is the basis of a long-standing
 proposal to fit galactic rotation curves without dark matter.  We ask a
 reverse-physics question about it, in the sense of Carcassi and
-Aidala~\cite{CarcassiAidala2022,AoP}: not whether the fits succeed, but
+Aidala~\cite{CarcassiAidala2022,AoP}: primarily not whether the fits succeed, but
 \emph{what must be assumed for them to mean anything}.
 
 \textbf{None of the physics below is new, and we name the owner of each piece
@@ -77,8 +77,10 @@ boundary datum plus a sourced piece, which is the parametrisation the
 rotation-curve fits already use~\cite{MannheimOBrien2012}.  That sits awkwardly
 with our own Tully--Fisher conditional, which says a mass-proportional piece
 moves the slope, whereas those fits retain both terms and report success over
-a large sample.  We record it as an unresolved tension between a premise we
-adopt and a fit we do not evaluate.  The underlying dispute is live and more
+a large sample.  A later bounded comparison on NGC~3198 does not resolve that
+population-level dispute: Mannheim has the smaller unweighted residual, while
+GR plus an NFW halo has the smaller uncertainty-weighted score and is the only
+one of the three declared models to pass the random-error gate.  The underlying dispute is live and more
 than a decade old~\cite{Horne2016,HobsonLasenby2021,Mannheim2022,%
 HobsonLasenby2022}, and its crux is not algebraic: both sides agree on the
 transformation law and disagree over whether the mass-generating scalar is
@@ -91,7 +93,9 @@ It cannot settle this one, and we do not pretend otherwise.
 Conformal gravity has been proposed as an explanation of galactic rotation
 curves without dark matter, on the strength of a term linear in \(r\) in its
 static spherically symmetric vacuum solution.  The literature on whether the
-fits succeed is substantial and we add nothing to it.
+fits succeed is substantial.  Our later bounded check compares three assembled
+curves on one galaxy under one common protocol; it is not a new population
+study.
 
 We ask instead the \emph{reverse-physics} question---in the sense of Carcassi
 and Aidala~\cite{CarcassiAidala2022,AoP}, whose programme transplants reverse
@@ -218,8 +222,9 @@ it rather than merely accommodating it.
 
 This does not resolve the tension recorded above.  The published fits carry a
 factor \(1+N^{*}/D\) with \(D=\gamma_{0}/\gamma^{*}\)~\cite{OBrien2018},
-which bounds the effect of the sourced piece but is a statement about fits we
-do not evaluate.  The tension stands.
+which bounds the effect of the sourced piece.  The one-galaxy protocol below
+tests the assembled curve but not the population-level claim.  The tension
+stands.
 
 Readers comparing numerical factors should note that the same formula gives
 \(a_{0}=2c^{2}\gamma_{0}\) at the low-mass end and \(4c^{2}\gamma_{0}\)
@@ -228,6 +233,37 @@ where \(N^{*}\sim D\), since \(1+N^{*}/D\in[1,2]\).  With the fitted
 \(5.5\times10^{-9}\) to \(1.1\times10^{-8}\,\mathrm{cm\,s^{-2}}\), which
 is why both factors appear in the literature.  Neither is an error.
 \end{remark}
+
+\subsection*{A bounded common-protocol check on NGC~3198}
+
+The repository now evaluates three assembled curves against the same 39
+NGC~3198 points and quoted random errors.  The calculation is deliberately
+narrow: it compares Newtonian baryons, GR plus an NFW halo, and the Mannheim
+curve under one frozen protocol.  It is not a reanalysis of the full SPARC
+sample or of the original Mannheim data products.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}Yrrrrc@{}}
+\toprule
+Model & Parameters & RMS [km/s] & \(\chi^2_\nu\) & AICc & Gate \\
+\midrule
+Newtonian baryons & 1 & 23.896 & 128.722 & 4893.56 & fail \\
+GR + NFW halo & 3 & 5.148 & 0.965 & 41.44 & pass \\
+Mannheim conformal gravity & 1 & 4.694 & 3.202 & 123.78 & fail \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The ordering depends on the question asked.  Mannheim has the smallest
+\emph{unweighted} RMS residual; NFW has the best uncertainty-weighted
+\(\chi^2\) and AICc, and alone passes the declared
+\(\chi^2_\nu\leq2\) gate.  This is evidence about one bounded assembly, not a
+complete-theory verdict.  It omits distance, inclination, beam-smearing,
+stellar-population and gas-profile systematics; it does not identify the
+analytic baryonic geometry with the original numerical mass components, test
+a cosmological concentration--mass prior, or support population-level model
+selection.  The machine-readable authority is
+\path{foundations/results/FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1.json}.
 
 Read in the reverse-physics direction: the observed Tully--Fisher relation,
 combined with the forced metric, requires \(\gamma\) to be a universal
@@ -650,9 +686,10 @@ rotation-curve fits already use, with a universal global term and a local term
 proportional to the source~\cite{MannheimOBrien2012}.  And it sits awkwardly
 with our own Theorem~\ref{thm:tf}, which says a mass-proportional piece moves
 the Tully--Fisher slope, whereas those fits retain both terms and report
-success over a large sample.  We record that as an unresolved tension between
-a premise we adopt and a fit we do not evaluate.  It is the sharpest thing we
-can say, and it is weaker than a verdict.
+success over a large sample.  Our bounded NGC~3198 comparison adds one
+controlled data point: it favors Mannheim by unweighted RMS but GR+NFW by
+uncertainty-weighted fit and AICc.  That mixed ordering neither reconciles the
+Tully--Fisher conditional nor decides the published population-level dispute.
 
 \begin{remark}[A sign worth stating]
 \label{rem:sign}

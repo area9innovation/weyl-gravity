@@ -11,7 +11,7 @@
 Residual cohomology and causal transport in free pure-Weyl gravity}
 \author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
 \and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human contact; Honorary Professor, DTU Compute, Technical University of Denmark. \texttt{asger@area9.dk}.}}
-\date{Draft for external review, July 2026}
+\date{Draft for external review, August 2026}
 
 \begin{document}
 \maketitle
@@ -192,6 +192,42 @@ invariant two-wave-factor family; it is not used as evidence against the
 direct tractor causal homotopy.
 
 \input{generated/endpoint_factorization_nullstellensatz.tex}
+
+\section{Post-freeze import provenance}
+
+The quantum programme consumes the certified classical theorem through a
+content-addressed import chain.  This chain is a provenance and compatibility
+result; it neither recomputes Paper~A's cohomology nor changes its theorem.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.34\textwidth}
+                  >{\raggedright\arraybackslash}p{0.58\textwidth}}
+\toprule
+Authority & Role and boundary \\
+\midrule
+\endhead
+\path{quantum-weyl/classical_import/certificates/STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1.json}
+& Hash-pinned centered representatives and normalized pairing data for
+\([W_+^2]\) and \([W_-^2]\).  They are deformation/vertex classes, not
+one-particle states. \\
+\path{quantum-weyl/classical_import/certificates/STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1.json}
+& Typed residual zero-mode payload and comparison data; no arbitrary-smooth
+or all-energy completion follows. \\
+\path{quantum-weyl/classical_import/certificates/STRICT_M1C_COMMON_SNAPSHOT_V1.json}
+& Immutable authoritative classical BV snapshot used by the quantum brief;
+finite verification cores are checks, not replacement sources. \\
+\path{quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V30_RECONCILIATION.json}
+& Independent Gate-A decision over nilpotency, contraction, chain maps,
+cyclicity, residual cohomology and pairing.  It does not certify nonlinear
+Green compatibility, a positive Hadamard state, QME restoration or quantum
+residual transfer. \\
+\bottomrule
+\end{longtable}
+
+The dependency tags on this import chain separate
+\texttt{LOCAL-ALGEBRAIC}, \texttt{REDUCED-MODE} and
+\texttt{LORENTZIAN-CAUSAL} content.  Passing the import gate authorizes use of
+the frozen classical data; it does not allow a reduced-mode computation to
+stand in for a Lorentzian causal theorem.
 
 \section{Repository computational material}
 

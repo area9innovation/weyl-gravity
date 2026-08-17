@@ -1,0 +1,320 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,tabularx}
+\usepackage{microtype,xurl}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,
+            citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\T}{\mathbb T}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\cert}[1]{\nolinkurl{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{A Compensated Green-Tail Counterfamily\\
+\large for the Bateman--Turok Euclidean Torus}
+\author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
+\and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human contact; Honorary Professor, DTU Compute, Technical University of Denmark. \texttt{asger@area9.dk}.}}
+\date{Working draft, 17 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The positive Euclidean lattice proposed by Bateman and Turok invites a
+deterministic route to reconstruction: prove that the complete action
+gradient cannot become softer than the free bilaplacian scale.  We formulate
+that route as a scaled Polyak--\L ojasiewicz inequality on the isotropic
+four-torus and disprove it.  An explicit positive, nonseparable,
+polynomial-contrast family has action bounded above and away from zero while
+its normalized gradient quotient satisfies
+\(Q_n/\omega_{L_n}^{2}=O(n^{-2})\to0\).  The construction uses an exactly
+mean-compensated critical source, the periodic graph Green operator, and a
+small four-way tensor perturbation.  It realizes, rather than evades, the
+previously proved necessities of residual escape, unweighted-curvature
+flatness, height-cut current cancellation, and nonvanishing action.  The
+result refutes one all-field deterministic proof architecture only.  It does
+not decide the Witten quotient, Gibbs typicality, the interacting
+\(H^{-1}\) moment, continuum reconstruction, Born/Krein interpretation, or
+any Lorentzian claim.
+\end{abstract}
+
+\section{Question and exact boundary}
+
+Bateman and Turok propose to control a higher-derivative Euclidean theory by
+a positive lattice weight and a hidden ghost-parity structure
+\cite{BatemanTurok2026}.  Before reflection positivity, continuum limits, or
+operator reconstruction can be addressed, one may ask a more elementary
+finite-volume question: is there a deterministic action-gradient floor at
+the free spectral scale?
+
+Let \(\T_L^4=(\mathbb Z/L\mathbb Z)^4\), with nearest-neighbor graph
+Laplacian \(\Delta\), and let \(u:\T_L^4\to(0,\infty)\).  Define
+\[
+ r_x=\frac{\Delta u_x}{u_x},\qquad
+ A(u)=\frac12\sum_x r_x^2,
+ \qquad g=\nabla_{\log u}A,
+ \qquad Q(u)=\frac{\norm{g}_2^2}{\norm{r}_2^2}.
+\]
+The free gap is
+\[
+ \omega_L=4\sin^2\!\left(\frac{\pi}{L}\right).
+\]
+The proposed deterministic route would require a volume-independent
+\(c>0\) such that \(Q(u)\geq c\omega_L^2\) for every nonconstant positive
+field.  Our result is the negation of precisely this statement.
+
+\begin{theorem}[Compensated Green-tail counterfamily]
+\label{thm:main}
+There are explicit integers \(L_n\to\infty\) and positive nonseparable
+fields \(u_n\) on \(\T_{L_n}^4\) for which constants \(0<c<C<\infty\),
+independent of \(n\), satisfy
+\[
+ c\leq\norm{r(u_n)}_2^2\leq C,
+ \qquad \frac{\max u_n}{\min u_n}=O(L_n^{5/12}),
+ \qquad \frac{Q(u_n)}{\omega_{L_n}^2}=O(n^{-2})\longrightarrow0.
+\]
+Consequently no positive volume-independent constant gives the all-field
+scaled inequality above.
+\end{theorem}
+
+The dependency tags of Theorem~\ref{thm:main} are exactly
+\texttt{LOCAL-ALGEBRAIC} and \texttt{EUCLIDEAN-SPECTRAL}.  It is neither a
+\texttt{REDUCED-MODE} nor a \texttt{LORENTZIAN-CAUSAL} theorem.
+
+\section{The weighted-current identity}
+
+The useful variable is not \(r\) by itself but
+\[
+ h_x=\frac{r_x}{u_x^2},\qquad c_{xy}=u_xu_y.
+\]
+Direct differentiation, retaining both orientations of every edge, gives
+the exact identity
+\begin{equation}
+ g_x=\sum_{y\sim x}c_{xy}(h_y-h_x)=:(L_ch)_x.
+ \label{eq:weighted-current}
+\end{equation}
+Thus the nonlinear action gradient is a weighted graph Laplacian applied to
+an unweighted curvature.  This identity explains both the concentration
+theorems and the counterfamily: \(r=u^2h\) can retain finite energy at large
+field height while \(h\) becomes flat and the weighted currents cancel.
+
+For the height set \(S_K=\{x:u_x>K\}\), internal currents cancel and
+\[
+ \Gamma_K:=\sum_{x\in S_K}g_x
+\]
+is exactly the net current across its boundary.  Pairing with the centered
+cut indicator and using \(\omega_L\geq16/L^2\) gives
+\begin{equation}
+ \frac{Q}{\omega_L^2}\geq
+ \frac{\Gamma_K^2}{4\pi^4\norm{r}_2^2}.
+ \label{eq:cut}
+\end{equation}
+The counterfamily must therefore cancel every fixed-height net current; it
+cannot be a single uncancelled spike.
+
+\section{The construction}
+
+Take the integer scales
+\[
+ L_n=n^{24},\qquad \lambda_n=n^{16},\qquad R_n=n^{21},
+ \qquad \epsilon_n=\frac{\lambda_n}{R_n^2}=n^{-26}.
+\]
+Let \(d_L(x,0)\) denote periodic graph distance and set
+\begin{equation}
+ f_n(x)=\frac{8\lambda_n^3}
+   {(\lambda_n^2+d_{L_n}(x,0)^2)^3}.
+ \label{eq:source}
+\end{equation}
+There is a unique mean-zero solution
+\begin{equation}
+ -\Delta v_n=f_n-\overline f_n.
+ \label{eq:green}
+\end{equation}
+Define
+\[
+ u_n^0=v_n-\min v_n+\epsilon_n.
+\]
+The subtraction of \(\overline f_n\) is load-bearing.  It distributes the
+compensating negative source through the periodic Green tail; a local cutoff
+would create an order-one shell and restore a large gradient.
+
+To exclude any hidden product ansatz, put
+\[
+ p_n(x)=\prod_{a=1}^4\sin\!\left(\frac{2\pi x_a}{L_n}\right),
+ \qquad u_n=u_n^0(1+n^{-1}p_n).
+\]
+The factor is positive.  Its four-way Fourier coefficient has nonzero pairing
+with \(\log u_n\) and is orthogonal to every sum of one-coordinate functions;
+hence \(u_n\) is genuinely nonseparable.
+
+\section{Estimates}
+
+The proof uses exact finite-difference inequalities and four uniform analytic
+estimates.  The detailed rational witnesses and the independent finite
+fixture are stored in the certificate named in
+\S\ref{sec:reproduction}.
+
+\begin{lemma}[Action does not vanish]
+There are dimension-only \(c,C>0\) such that
+\[
+ c\leq\left\|\frac{\Delta u_n^0}{u_n^0}\right\|_2^2\leq C.
+\]
+\end{lemma}
+
+The inner annuli of the critical source supply the lower bound.  Periodic
+Green estimates, split dyadically at \(\lambda_n\) and \(R_n\), control the
+tail and give the upper bound.  The lift \(\epsilon_n\) prevents a zero of
+the denominator without erasing the inner contribution.
+
+\begin{lemma}[Gradient estimate]
+The base field satisfies
+\[
+ \norm{g(u_n^0)}_2^2\leq C\left(
+ \lambda_n^{-8}+\frac{\lambda_n^4}{R_n^8}
+ +\frac{R_n^4}{L_n^8}
+ +\frac{\lambda_n^4}{R_n^4L_n^4}\right).
+\]
+\end{lemma}
+
+The four terms respectively record the smoothed core, finite-radius tail,
+periodic compensation, and core--tail interaction.  They are kept separate
+in the certificate so that no asymptotic cancellation is assumed.
+
+\begin{lemma}[Stable nonseparable perturbation]
+\[
+ \norm{r(u_n)-r(u_n^0)}_2=O(n^{-1}),\qquad
+ \norm{g(u_n)-g(u_n^0)}_2=O(n^{-1}L_n^{-2}).
+\]
+\end{lemma}
+
+Since \(\omega_L^2\geq256/L^4\), substitution of the four scales yields
+\[
+ \frac{Q(u_n)}{\omega_{L_n}^2}
+ \leq C(n^{-32}+n^{-8}+n^{-12}+n^{-20}+n^{-2}).
+\]
+This proves Theorem~\ref{thm:main}.  Notice that the slowest term is the
+deliberate nonseparability perturbation; the radial Green-tail base collapses
+faster.
+
+\section{How the proof search narrowed the geometry}
+
+The final construction was not guessed in isolation.  A sequence of exact
+results removed simple architectures and derived necessary properties of
+any counterfamily.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}p{0.18\textwidth}YY@{}}
+\toprule
+Stage & What was established & What remained \\
+\midrule
+RF--83--85 & Cycle hierarchies collapse only relative to a diameter method;
+one-phase torus pullbacks and independent tensor phases move away from the
+free scale. & A genuinely coupled four-dimensional corrector. \\
+RF--86--92 & Sparse-flow, top-band, dyadic and virial bounds progressively
+exclude super-polynomial contrast and action density above \(272/29\). & A
+bounded-action, polynomial-contrast sequence. \\
+RF--93--94 & Collapse at positive action forces residual energy above every
+fixed height, flat \(h=r/u^2\), and cancellation across every height cut. &
+Compatibility of all three conditions. \\
+RF--95 & A uniform small-action floor excludes \(A\to0\). & The
+positive-action concentration branch. \\
+RF--96 & The compensated Green tail realizes that branch and refutes the
+all-field floor. & Probabilistic, interacting, continuum and reconstruction
+questions. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+This history matters logically.  RF--93--95 are not failed attempts at the
+final theorem: they are necessary-condition theorems that the counterfamily
+must and does satisfy.  Conversely, RF--96 does not invalidate the earlier
+large-action or large-contrast lower bounds; it lives in their surviving
+region.
+
+\section{What the counterfamily changes}
+
+The theorem removes a tempting shortcut.  Uniform deterministic coercivity
+of the complete finite-volume score cannot by itself carry the free
+bilaplacian gap through all positive field configurations.  Any successful
+reconstruction argument must use information absent from that statement.
+Three possibilities remain conceptually distinct:
+
+\begin{enumerate}
+\item a probabilistic theorem showing that Green-tail neighborhoods have
+negligible Gibbs weight;
+\item an interacting \(H^{-1}\) or Witten-form estimate whose negative or
+nonlocal terms see more than \(\norm{\nabla A}^2/\norm{r}^2\);
+\item a reconstruction mechanism that needs only typical or observable
+sectors rather than an all-field deterministic floor.
+\end{enumerate}
+
+The first route requires an entropy-versus-action comparison for a positive
+radius tube around the family, not just the weight of one configuration.  The
+second requires the actual interacting operator, not an analogy with the
+free gap.  The third must still establish reflection positivity or its stated
+replacement, a probability rule, and a controlled continuum limit.
+
+\section{Claim boundary}
+
+The theorem does \emph{not} establish any of the following:
+\begin{itemize}
+\item failure of the full Bateman--Turok proposal or of its Witten quotient;
+\item non-negligible Gibbs probability of the counterfamily;
+\item failure of an interacting \(H^{-1}\) moment or spectral gap;
+\item a continuum counterexample or obstruction to Osterwalder--Schrader
+reconstruction;
+\item a Born rule, Krein probability interpretation, positive physical state,
+particle space, scattering or unitarity;
+\item any claim about Lorentzian propagation, BV Green operators, Hadamard
+states, renormalized products or a Lorentzian QME.
+\end{itemize}
+
+These exclusions are not cautionary prose appended after the fact.  They are
+machine-readable negative claim flags in the certificate and claim map.
+
+\section{Certification and reproduction}
+\label{sec:reproduction}
+
+The authoritative result is
+\begin{center}
+\path{reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_GREEN_TAIL_COUNTERFAMILY_V1.json}.
+\end{center}
+It records the scale ledger, exact inequalities, dependency tags, controls,
+input hashes, assumptions and exclusions.  Its verifier is independent of
+the exploratory floating-point scout.  An exact rational \(4^4\)-torus
+fixture reduces the source-centered geometry to 15 symmetry orbits while
+retaining all 256 vertices; it checks the Green solve, positivity, residual,
+weighted-current identity, nonseparability witness and exponent ledger.
+
+The affected deterministic test chain is run by
+\begin{verbatim}
+python3 -m unittest discover -s reverse_physics/tests \
+  -p 'test_bt_euclidean_torus_*.py'
+python3 paper/generate_22_bateman_turok_torus_claim_map.py --check
+python3 paper/verify_22_bateman_turok_torus_claim_map.py
+\end{verbatim}
+The paper claim map hash-pins RF--83 through RF--96.  Re-running a producer is
+reproduction; the independent verifier is the separate audit rail.
+
+\begin{thebibliography}{9}
+
+\bibitem{BatemanTurok2026}
+S.~Bateman and N.~Turok,
+``Escape from Ostrogradsky via hidden ghost parity,'' 2026.
+\url{https://arxiv.org/abs/2607.00096}.
+
+\bibitem{ReverseFoundations2026}
+OpenAI Codex and A.~A.~Palm,
+``Reverse foundations of physics: separating physical postulates,
+mathematical carriers, and logical strength,'' Paper~21 of this programme,
+2026; \path{paper/21-reverse-foundations-of-physics.pdf}.
+
+\end{thebibliography}
+\end{document}

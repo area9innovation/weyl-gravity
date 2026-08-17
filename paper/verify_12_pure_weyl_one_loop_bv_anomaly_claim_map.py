@@ -16,7 +16,7 @@ COVERAGE = (
     / "paper/12-pure-weyl-one-loop-bv-anomaly-science-forge-paper-coverage.json"
 )
 EXPECTED_MANUSCRIPT_SHA256 = (
-    "326c1e5ef84cafa38341d4aff400fe13166cfe497090983d5374dbf0c9763ea3"
+    "c7df6e4cf64885d2428ed38a0199e8474624d7953199d51c7f5b54bde387a385"
 )
 ALL_LOOP_INPUT_SHA256 = (
     "3649925e44d99bea0020f3d1c20a16c54a44f6c9714a3c273c20a6e6d8f84dbc"
@@ -301,10 +301,27 @@ def main() -> None:
         "neither a determinant nor an action-specific QAP freeze is activated",
         "separated real scale plus compact internal $U(1)$ representation is the next preflight only",
         "COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1",
+        "Authoritative classical import and the later Lorentzian frontier",
+        "indefinite pseudo-state pair",
     ]
     for fragment in required_manuscript_fragments:
         assert fragment in normalized_manuscript, fragment
     assert "Hadamard" not in abstract
+    successor = payload["post_freeze_successor_frontier"]
+    assert successor["role"] == "PROVENANCE_AND_BOUNDARY_UPDATE_NO_COEFFICIENT_CHANGE"
+    assert len(successor["authorities"]) == 4
+    for row in successor["authorities"].values():
+        authority = ROOT / row["path"]
+        imported = json.loads(authority.read_text())
+        assert _sha256(authority) == row["sha256"]
+        assert imported["result_id"] == row["result_id"]
+        assert imported["result_state"] == row["result_state"]
+        assert imported["dependency_tags"] == row["dependency_tags"]
+        assert imported["does_not_establish"] == row["does_not_establish"]
+    assert successor["local_anomaly_coefficients_changed"] is False
+    assert successor["positive_hadamard_state_established"] is False
+    assert successor["lorentzian_QME_established"] is False
+    assert successor["residual_quantum_transfer_established"] is False
     compiled_pdf = ROOT / payload["compiled_pdf"]
     assert compiled_pdf.is_file()
     assert _sha256(compiled_pdf) == payload["compiled_pdf_sha256"]
@@ -1244,7 +1261,7 @@ def main() -> None:
     assert claims["physical_Hessian_triangle_integrated_channel_count"] == 11
     assert claims["physical_Hessian_triangle_corner_count"] == 33
     assert claims["physical_Hessian_triangle_structured_basis_coordinate_count"] == 77
-    assert len(payload["inputs"]) == 87
+    assert len(payload["inputs"]) == 91
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative

@@ -29,7 +29,7 @@ COVERAGE_REPORT = (
 )
 OUTPUT = ROOT / "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json"
 EXPECTED_MANUSCRIPT_SHA256 = (
-    "326c1e5ef84cafa38341d4aff400fe13166cfe497090983d5374dbf0c9763ea3"
+    "c7df6e4cf64885d2428ed38a0199e8474624d7953199d51c7f5b54bde387a385"
 )
 ALL_LOOP_INPUT_COMMIT = "7fabe987861f1e4facfc2282e7023274df2ddc72"
 ALL_LOOP_INPUT_SHA256 = (
@@ -145,6 +145,10 @@ INPUTS = {
     "product_S2_S2_ghost_Schur_det3_enclosure": ROOT / "quantum-weyl/spectral/euclidean/certificates/PRODUCT_S2_S2_GHOST_SCHUR_DET3_ENCLOSURE.json",
     "generic_ghost_Schur_weight_raised_zeta_factorization": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHT_RAISED_ZETA_FACTORIZATION.json",
     "BoxR_scheme_conversion": ROOT / "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
+    "authoritative_classical_snapshot": ROOT / "quantum-weyl/classical_import/certificates/STRICT_M1C_COMMON_SNAPSHOT_V1.json",
+    "classical_import_gate_A": ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V30_RECONCILIATION.json",
+    "typed_q2_q3_green_compatibility": ROOT / "quantum-weyl/classical_import/certificates/STRICT_M2_Q2_Q3_TYPED_GREEN_COMPATIBILITY_V1.json",
+    "brst_hadamard_pseudo_state_pair": ROOT / "quantum-weyl/lorentzian/certificates/STRICT_386_BRST_HADAMARD_TWO_POINT_V1.json",
 }
 
 
@@ -319,6 +323,27 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     product_s2_s2_ghost_schur_det3 = values["product_S2_S2_ghost_Schur_det3_enclosure"]
     generic_ghost_schur_weight_raised = values["generic_ghost_Schur_weight_raised_zeta_factorization"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
+    classical_snapshot = values["authoritative_classical_snapshot"]
+    gate_a = values["classical_import_gate_A"]
+    q2_q3_green = values["typed_q2_q3_green_compatibility"]
+    hadamard_pair = values["brst_hadamard_pseudo_state_pair"]
+    if (
+        classical_snapshot["result_state"]
+        != "M1C_COMPLETE_GATE_A_READY_FOR_INDEPENDENT_DECISION"
+        or gate_a["result_state"]
+        != "CLASSICAL_IMPORT_GATE_A_VERIFIED_ON_IMMUTABLE_STRICT_PURE_WEYL_SNAPSHOT"
+        or q2_q3_green["result_state"]
+        != "NONLINEAR_GREEN_COMPATIBILITY_AND_SECOND_SOURCE_COCYCLE_CERTIFIED_HADAMARD_OPEN"
+        or hadamard_pair["result_state"]
+        != "FULL_386_BRST_HADAMARD_TWO_POINT_CERTIFIED_POSITIVE_STATE_OPEN"
+        or q2_q3_green["dependency_tags"]
+        != ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]
+        or hadamard_pair["dependency_tags"]
+        != ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]
+        or "a positive quasifree Hadamard state or positive physical graviton Hilbert space"
+        not in hadamard_pair["does_not_establish"]
+    ):
+        raise ValueError("Paper 12 post-freeze successor boundary drifted")
     if (
         _sha256(MANUSCRIPT) != EXPECTED_MANUSCRIPT_SHA256
         or _sha256(INPUTS["tau_adic_all_loop_local_QME_stability"])
@@ -1496,6 +1521,29 @@ def build() -> dict[str, Any]:
             "tau_adic_compensator_extended_formal_all_loop": all_loop["lifecycle"][
                 "tau_adic_all_loop_formal_local"
             ],
+        },
+        "post_freeze_successor_frontier": {
+            "role": "PROVENANCE_AND_BOUNDARY_UPDATE_NO_COEFFICIENT_CHANGE",
+            "authorities": {
+                name: {
+                    "path": _relative(INPUTS[name]),
+                    "sha256": _sha256(INPUTS[name]),
+                    "result_id": values[name]["result_id"],
+                    "result_state": values[name]["result_state"],
+                    "dependency_tags": values[name]["dependency_tags"],
+                    "does_not_establish": values[name]["does_not_establish"],
+                }
+                for name in (
+                    "authoritative_classical_snapshot",
+                    "classical_import_gate_A",
+                    "typed_q2_q3_green_compatibility",
+                    "brst_hadamard_pseudo_state_pair",
+                )
+            },
+            "local_anomaly_coefficients_changed": False,
+            "positive_hadamard_state_established": False,
+            "lorentzian_QME_established": False,
+            "residual_quantum_transfer_established": False,
         },
         "conditional_all_loop_evidence": {
             "result_id": all_loop["result_id"],

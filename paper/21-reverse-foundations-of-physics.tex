@@ -29,7 +29,7 @@
 \large Separating Physical Postulates, Mathematical Carriers, and Logical Strength}
 \author{OpenAI Codex\thanks{Literature synthesis, formal organization, and drafting.}
 \and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human contact; Honorary Professor, DTU Compute, Technical University of Denmark. \texttt{asger@area9.dk}.}}
-\date{Working draft, 16 August 2026}
+\date{Working draft, 17 August 2026}
 
 \begin{document}
 \maketitle
@@ -257,7 +257,8 @@ Physical structure can nevertheless reduce mathematical commitments in a
 more direct way.  If the physics supplies a canonical grading and explicit
 mode labels, a proof need not choose a basis.  If it supplies a preferred
 state or boundary condition, a selection problem may disappear.  The correct
-relation in such cases is often \rtype{AVOIDED_BY_REFORMULATION}, not
+relation in such cases is often
+\texttt{AVOIDED\_BY\_}\allowbreak\texttt{REFORMULATION}, not
 ``physics proves Choice'' or ``physics disproves Choice.''
 
 \section{The research atlas}
@@ -2053,6 +2054,45 @@ control every large-corrector environment.  The next gate is a
 corrector-to-block extraction and compatibility theorem, followed by the
 Gibbs corrector structure factor.
 
+The most recent deterministic torus branch is developed separately in
+Paper~22.  Its proof search has four stages.  First, cycle hierarchies,
+single-phase pullbacks and independent tensor phases are excluded as
+free-scale counterfamilies (RF--83--85).  Second, sparse-flow and virial
+estimates force any collapsing sequence into bounded action density and
+polynomial contrast (RF--86--92).  Third, reciprocal, cut-current and
+small-action estimates show that such a sequence must retain positive action
+while moving residual energy above every fixed field height, flattening
+\(h=r/u^2\), and cancelling every fixed-height net current (RF--93--95).
+Finally, RF--96 constructs exactly that geometry with a compensated periodic
+Green tail and a small four-way sine coupling:
+\[
+ L_n=n^{24},\quad \lambda_n=n^{16},\quad R_n=n^{21},\quad
+ \epsilon_n=n^{-26},
+\]
+\[
+ f_n(x)={8\lambda_n^3\over(\lambda_n^2+d_{L_n}(x,0)^2)^3},
+ \qquad -\Delta v_n=f_n-\overline f_n,
+\]
+\[
+ u_n=(v_n-\min v_n+\epsilon_n)
+ \left(1+n^{-1}\prod_{a=1}^4\sin{2\pi x_a\over L_n}\right).
+\]
+The fields are positive and nonseparable, their action remains bounded above
+and away from zero, their contrast is \(O(L_n^{5/12})\), and
+\[
+ {Q_n\over\omega_{L_n}^2}=O(n^{-2})\longrightarrow0.
+\]
+Thus the deterministic all-field BT torus scaled PL inequality is false.  The
+negative result is scoped: it does not decide the Witten quotient, Gibbs
+typicality, the actual interacting \(H^{-1}\) moment, continuum or
+Osterwalder--Schrader reconstruction, Born/Krein interpretation, or anything
+Lorentzian.  Paper~22 supplies the theorem, proof ledger and exact
+RF--83--96 authority map; the present paper retains those claims only as the
+programme-level synthesis.
+
+% The former line-by-line RF--83--96 narrative is retained below as a source
+% audit trail but omitted from the compiled synthesis in favor of Paper 22.
+\iffalse
 A later transport route first closes the opposite, enormous-contrast regime:
 the finite-amplitude high-contrast certificate proves that sufficiently large
 edge ratio forces a strong residual-gradient quotient.  The remaining
@@ -2715,6 +2755,7 @@ scale.  This does not transfer through the Witten form or establish Gibbs
 typicality, an interacting \(H^{-1}\) failure, continuum reconstruction,
 Born/Krein interpretation, or any Lorentzian claim.  Those are now the
 relevant gates.
+\fi
 
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
