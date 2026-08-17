@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-torus-curvature-cut-concentration-v1.schema.json",
+  "title": "BT torus curvature/cut concentration certificate",
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "object": {"type": "object", "minProperties": 1}
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer", "definitions",
+    "spectral_flatness_theorem", "height_cut_theorem",
+    "combined_concentration_theorem", "exact_fixture",
+    "research_disposition", "does_not_establish", "provenance",
+    "verification_commands", "tier_receipt", "checks", "report", "schema",
+    "verifier"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_CURVATURE_CUT_CONCENTRATION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-torus-curvature-cut-concentration-v1"},
+    "created": {"const": "2026-08-17"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "CURVATURE_FLATNESS_AND_HEIGHT_CUT_CANCELLATION_CERTIFIED_ALL_FIELD_GATE_OPEN"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "definitions": {"$ref": "#/$defs/object"},
+    "spectral_flatness_theorem": {
+      "type": "object",
+      "required": ["scope", "energy", "poincare_chain", "flatness_bound", "normalized_flatness"],
+      "properties": {
+        "scope": {"const": "every nonconstant positive field on T_L^4 with L>=4"},
+        "energy": {"const": "E=sum_edges c_xy*(h_x-h_y)^2=-<h,g>=-<h-h_bar,g>"},
+        "poincare_chain": {"const": "omega_L*||h-h_bar||_2^2<=sum_edges(h_x-h_y)^2<=E<=||h-h_bar||_2*||g||_2"},
+        "flatness_bound": {"const": "||h-h_bar||_2<=||g||_2/omega_L"},
+        "normalized_flatness": {"const": "||h-h_bar||_2/R<=sqrt(Q/omega_L^2)"}
+      },
+      "additionalProperties": false
+    },
+    "height_cut_theorem": {
+      "type": "object",
+      "required": ["threshold", "boundary_formula", "exact_indicator_floor", "normalized_floor", "collapsing_necessity"],
+      "properties": {
+        "threshold": {"const": "K>=1, S_K={x:u_x>K}, s_K=|S_K|, and Gamma_K=sum_(x in S_K)g_x"},
+        "boundary_formula": {"const": "Gamma_K=sum_(x outside S_K,y inside S_K,x~y)[r_x*u_y/u_x-r_y*u_x/u_y]"},
+        "exact_indicator_floor": {"const": "Q>=N*Gamma_K^2/[s_K*(N-s_K)*R^2] for 0<s_K<N"},
+        "normalized_floor": {"const": "Q/omega_L^2>=Gamma_K^2/(4*pi^4*R^2)"},
+        "collapsing_necessity": {"const": "Q/omega_L^2->0 implies Gamma_K/R->0 for every chosen nontrivial height threshold K"}
+      },
+      "additionalProperties": false
+    },
+    "combined_concentration_theorem": {"$ref": "#/$defs/object"},
+    "exact_fixture": {"$ref": "#/$defs/object"},
+    "research_disposition": {
+      "type": "object",
+      "required": ["positive_action_fixed_height_residual_retention", "nonflat_unweighted_curvature", "noncancelling_height_cut_current", "remaining_counterfamily_shape", "all_field_torus_scaled_PL", "nonseparable_counterfamily", "witten_poincare_transfer", "interacting_h_minus_one", "lorentzian_transfer"],
+      "properties": {
+        "positive_action_fixed_height_residual_retention": {"const": "RULED_OUT_FOR_COLLAPSE"},
+        "nonflat_unweighted_curvature": {"const": "RULED_OUT_FOR_COLLAPSE"},
+        "noncancelling_height_cut_current": {"const": "RULED_OUT_FOR_COLLAPSE"},
+        "remaining_counterfamily_shape": {"const": "HIGH_FIELD_WEIGHT_AMPLIFICATION_WITH_FLAT_UNWEIGHTED_CURVATURE_AND_ALL_HEIGHT_CUT_CURRENT_CANCELLATION"},
+        "all_field_torus_scaled_PL": {"const": "OPEN"},
+        "nonseparable_counterfamily": {"const": "NOT_CONSTRUCTED"},
+        "witten_poincare_transfer": {"const": "OPEN"},
+        "interacting_h_minus_one": {"const": "OPEN"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "does_not_establish": {"type": "array", "minItems": 10, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {"$ref": "#/$defs/object"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "tier_receipt": {"$ref": "#/$defs/object"},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 9},
+        "total": {"const": 9},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 9, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-torus-curvature-cut-concentration.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-torus-curvature-cut-concentration-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_torus_curvature_cut_concentration.py"}
+  },
+  "additionalProperties": false
+}

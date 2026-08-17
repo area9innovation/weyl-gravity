@@ -80,6 +80,7 @@ AUTHORITY_PATHS = {
     "bt_torus_global_virial_compatibility": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_GLOBAL_VIRIAL_COMPATIBILITY_V1.json",
     "bt_torus_quadratic_virial_density_gate": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_QUADRATIC_VIRIAL_DENSITY_GATE_V1.json",
     "bt_torus_reciprocal_virial_localization": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_RECIPROCAL_VIRIAL_LOCALIZATION_V1.json",
+    "bt_torus_curvature_cut_concentration": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_CURVATURE_CUT_CONCENTRATION_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -322,6 +323,7 @@ def build() -> dict:
     bt_global_virial = loaded["bt_torus_global_virial_compatibility"]
     bt_quadratic_virial = loaded["bt_torus_quadratic_virial_density_gate"]
     bt_reciprocal_virial = loaded["bt_torus_reciprocal_virial_localization"]
+    bt_curvature_cut = loaded["bt_torus_curvature_cut_concentration"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -1391,6 +1393,13 @@ def build() -> dict:
                 "authorities": ["bt_torus_reciprocal_virial_localization"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
+            {
+                "claim_id": "RF-94-BT-TORUS-CURVATURE-CUT-CONCENTRATION",
+                "statement": "Normalize min(u)=1 and put h=r/u^2. The complete BT gradient is exactly the weighted Laplacian g=L_c h with conductances c_xy=u_x u_y>=1. The torus spectral gap gives ||h-h_bar||/R<=sqrt(Q/omega_L^2). For every nontrivial height cut S_K={u>K}, its canonical-current flux Gamma_K=sum_(S_K)g obeys Q/omega_L^2>=Gamma_K^2/(4pi^4 R^2). Combined with reciprocal localization, positive-action collapse therefore requires simultaneously residual escape above every fixed K, flat unweighted curvature, and cancellation across every fixed height cut. If the low set stays macroscopic, even ||h||/R tends to zero and the residual can survive only through u^2 amplification. This is a concentration alternative, not the all-field lower bound or a counterfamily construction.",
+                "status": "CURVATURE_FLATNESS_AND_HEIGHT_CUT_CANCELLATION_CERTIFIED_ALL_FIELD_GATE_OPEN",
+                "authorities": ["bt_torus_curvature_cut_concentration"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -1693,6 +1702,11 @@ def build() -> dict:
             "bt_torus_reciprocal_virial_localization_certified": True,
             "bt_torus_fixed_height_residual_fraction_ruled_out_for_positive_action_collapse": True,
             "bt_torus_reciprocal_virial_all_field_scaled_pl_decided": False,
+            "bt_torus_curvature_flatness_for_collapse_certified": True,
+            "bt_torus_height_cut_current_cancellation_for_collapse_certified": True,
+            "bt_torus_macroscopic_low_set_curvature_vanishes_for_collapse": True,
+            "bt_torus_three_condition_concentration_alternative_certified": True,
+            "bt_torus_curvature_cut_all_field_scaled_pl_decided": False,
             "bt_euclidean_finite_capabilities_imported": True,
             "bt_euclidean_coarse_reproduction_separated": True,
             "bt_free_os_obstruction_certified": True,

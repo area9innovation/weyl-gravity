@@ -98,6 +98,7 @@ def main() -> int:
     bt_global_virial = json.loads((ROOT / data["authorities"]["bt_torus_global_virial_compatibility"]["path"]).read_text())
     bt_quadratic_virial = json.loads((ROOT / data["authorities"]["bt_torus_quadratic_virial_density_gate"]["path"]).read_text())
     bt_reciprocal_virial = json.loads((ROOT / data["authorities"]["bt_torus_reciprocal_virial_localization"]["path"]).read_text())
+    bt_curvature_cut = json.loads((ROOT / data["authorities"]["bt_torus_curvature_cut_concentration"]["path"]).read_text())
     coded_wave_observable = json.loads((ROOT / data["authorities"]["coded_wave_observable_reconstruction"]["path"]).read_text())
     coded_local_weak_wave = json.loads((ROOT / data["authorities"]["coded_local_weak_wave_test_class"]["path"]).read_text())
     coded_h2_test = json.loads((ROOT / data["authorities"]["coded_weak_wave_h2_test_completion"]["path"]).read_text())
@@ -589,6 +590,7 @@ def main() -> int:
         (91, "BT-TORUS-GLOBAL-VIRIAL-COMPATIBILITY"),
         (92, "BT-TORUS-QUADRATIC-VIRIAL-DENSITY-GATE"),
         (93, "BT-TORUS-RECIPROCAL-VIRIAL-LOCALIZATION"),
+        (94, "BT-TORUS-CURVATURE-CUT-CONCENTRATION"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -1145,6 +1147,15 @@ def main() -> int:
     require(flags["bt_torus_reciprocal_virial_localization_certified"] is True, "BT reciprocal-virial localization flag is not certified")
     require(flags["bt_torus_fixed_height_residual_fraction_ruled_out_for_positive_action_collapse"] is True, "BT reciprocal-virial fixed-height localization was not recorded")
     require(flags["bt_torus_reciprocal_virial_all_field_scaled_pl_decided"] is False, "BT reciprocal-virial result promoted to an all-field torus decision")
+    require(flags["bt_torus_curvature_flatness_for_collapse_certified"] is True, "BT curvature-flatness necessity was not recorded")
+    require(bt_curvature_cut["spectral_flatness_theorem"]["normalized_flatness"] == "||h-h_bar||_2/R<=sqrt(Q/omega_L^2)", "BT curvature-flatness formula drift")
+    require(flags["bt_torus_height_cut_current_cancellation_for_collapse_certified"] is True, "BT height-cut current cancellation was not recorded")
+    require(bt_curvature_cut["height_cut_theorem"]["normalized_floor"] == "Q/omega_L^2>=Gamma_K^2/(4*pi^4*R^2)", "BT height-cut floor drift")
+    require(flags["bt_torus_macroscopic_low_set_curvature_vanishes_for_collapse"] is True, "BT macroscopic-low-set curvature consequence was not recorded")
+    require(flags["bt_torus_three_condition_concentration_alternative_certified"] is True, "BT three-condition concentration alternative was omitted")
+    require(bt_curvature_cut["research_disposition"]["remaining_counterfamily_shape"] == "HIGH_FIELD_WEIGHT_AMPLIFICATION_WITH_FLAT_UNWEIGHTED_CURVATURE_AND_ALL_HEIGHT_CUT_CURRENT_CANCELLATION", "BT remaining counterfamily shape drift")
+    require(flags["bt_torus_curvature_cut_all_field_scaled_pl_decided"] is False, "BT curvature/cut result promoted to an all-field torus decision")
+    require(bt_curvature_cut["research_disposition"]["all_field_torus_scaled_PL"] == "OPEN", "BT all-field torus gate silently closed")
     require(flags["bt_euclidean_finite_capabilities_imported"] is True, "BT finite import flag is not certified")
     require(flags["bt_euclidean_coarse_reproduction_separated"] is True, "BT numerical separation flag is not certified")
     require(flags["bt_free_os_obstruction_certified"] is True, "BT OS obstruction flag is not certified")

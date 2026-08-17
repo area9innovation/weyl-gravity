@@ -2536,6 +2536,62 @@ floating-point minimum is evidence for the claim.  Witten/Poincare,
 interacting-\(H^{-1}\), continuum, Born/Krein and Lorentzian promotions remain
 open.
 
+The next certificate,
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_CURVATURE_CUT_CONCENTRATION_V1},
+turns that qualitative escape geometry into a three-condition concentration
+alternative.  Normalize \(\min_xu_x=1\), and define the unweighted residual
+curvature and edge conductance by
+
+\[
+ h_x={r_x\over u_x^2},\qquad c_{xy}=u_xu_y\geq1.
+\]
+
+The complete gradient is exactly the weighted graph Laplacian
+
+\[
+ g_x=\sum_{y\sim x}c_{xy}(h_y-h_x).
+\]
+
+Its weighted edge energy satisfies
+
+\[
+ \sum_{\{x,y\}}c_{xy}(h_x-h_y)^2
+ =-\langle h-\bar h,g\rangle.
+\]
+
+The ordinary torus spectral gap therefore gives the all-field estimate
+
+\[
+ {\lVert h-\bar h\rVert_2\over R}
+ \leq\sqrt{{Q\over\omega_L^2}}.
+\]
+
+For a height cut \(S_K=\{x:u_x>K\}\), let
+\(\Gamma_K=\sum_{x\in S_K}g_x\).  Internal edge currents cancel, so
+\(\Gamma_K\) is exactly the canonical current across the boundary of the
+superlevel set.  Pairing \(g\) with the centered cut indicator yields
+
+\[
+ {Q\over\omega_L^2}
+ \geq{\Gamma_K^2\over4\pi^4R^2}.
+\]
+
+Consequently, a positive-action collapsing sequence must satisfy three
+conditions simultaneously for every fixed \(K\): its residual fraction below
+height \(K\) tends to zero, its unweighted curvature becomes flat relative to
+\(R\), and its net canonical current across the height cut cancels relative to
+\(R\).  If the low set remains a macroscopic fraction of the torus, even
+\(\lVert h\rVert_2/R\to0\), so any residual survives only through the
+amplification \(r=u^2h\).
+
+This does not close the all-field inequality: large opposing boundary currents
+may cancel, and the weights \(u^2\) may diverge.  It does make the remaining
+fork concrete.  One must either prove that high-field residual escape,
+unweighted-curvature flatness and all-height cut-current cancellation are
+incompatible at positive action, or construct a nonseparable family satisfying
+all three.  Witten/Poincare, interacting-\(H^{-1}\), continuum, Born/Krein and
+Lorentzian promotions remain open.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The

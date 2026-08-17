@@ -880,6 +880,16 @@
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_TENSOR_PHASE_HIERARCHY_OBSTRUCTION_V1",
       "sha256": "c7b52f728373d66262855d63d4d0fb8b1b2028493ef4bf51a48616ca691c121e"
     },
+    "bt_torus_curvature_cut_concentration": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "CURVATURE_FLATNESS_AND_HEIGHT_CUT_CANCELLATION_CERTIFIED_ALL_FIELD_GATE_OPEN",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_CURVATURE_CUT_CONCENTRATION_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_CURVATURE_CUT_CONCENTRATION_V1",
+      "sha256": "6a003cd7eb61a631ebc90f4215f8f76e9b4ef42d4efb04ec3cbb31c6f26ba10e"
+    },
     "bt_torus_dyadic_stopping_flow": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -2658,7 +2668,7 @@
       "sha256": "c394928bb8ead70ba9eeb76ee16298c3fffec5712d8c9290f773712960d333fb"
     }
   },
-  "canonical_digest": "b25bbd51e07793967c987a594f46351677fd32f44eebabfbad286443391d1945",
+  "canonical_digest": "aa0aeefe23d22d02b5f0d04591ffc3c56670c7454a816bb1c92030d768820aea",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -2784,6 +2794,8 @@
     "bt_tensor_phase_counterfamily_ruled_out": true,
     "bt_tensor_phase_hierarchy_obstruction_certified": true,
     "bt_torus_all_field_scaled_pl_decided": false,
+    "bt_torus_curvature_cut_all_field_scaled_pl_decided": false,
+    "bt_torus_curvature_flatness_for_collapse_certified": true,
     "bt_torus_dyadic_stopping_all_field_scaled_pl_decided": false,
     "bt_torus_dyadic_stopping_flow_certified": true,
     "bt_torus_extensive_action_all_field_scaled_pl_decided": false,
@@ -2795,6 +2807,8 @@
     "bt_torus_fixed_height_residual_fraction_ruled_out_for_positive_action_collapse": true,
     "bt_torus_global_virial_all_field_scaled_pl_decided": false,
     "bt_torus_global_virial_compatibility_certified": true,
+    "bt_torus_height_cut_current_cancellation_for_collapse_certified": true,
+    "bt_torus_macroscopic_low_set_curvature_vanishes_for_collapse": true,
     "bt_torus_moderate_sparse_multiband_gate_open": true,
     "bt_torus_phase_pullback_obstruction_certified": true,
     "bt_torus_quadratic_virial_all_field_scaled_pl_decided": false,
@@ -2815,6 +2829,7 @@
     "bt_torus_sub_L_10_over_3_moderate_gate_open": true,
     "bt_torus_super_L_10_over_3_contrast_for_L_ge_4096_ruled_out": true,
     "bt_torus_super_L_11_over_3_contrast_ruled_out": true,
+    "bt_torus_three_condition_concentration_alternative_certified": true,
     "bt_torus_top_band_all_field_scaled_pl_decided": false,
     "bt_torus_top_band_flow_certified": true,
     "bt_translation_invariant_current_susceptibility_established": false,
@@ -4335,6 +4350,18 @@
       ],
       "statement": "For every nonconstant positive field, the inverse-field deformation v=1/u obeys Jv=-r/u exactly. After normalizing min(u)=1, Cauchy--Schwarz and Popoviciu give Q>=4B^2/(N R^2), B=sum r^2/u. On T_L^4 this becomes Q/omega_L^2>=eta^2 A/(2pi^4), eta=B/R^2. If F_K is the fraction of residual energy on u<=K, then Q/omega_L^2>=A F_K^2/(2pi^4 K^2). Hence a collapsing sequence with action bounded away from zero moves every fixed-height residual fraction to diverging field superlevels. This localizes the remaining counterfamily geometry but does not prove the all-field bound or construct the counterfamily.",
       "status": "RECIPROCAL_RESIDUAL_LOCALIZATION_CERTIFIED_ALL_FIELD_GATE_OPEN"
+    },
+    {
+      "authorities": [
+        "bt_torus_curvature_cut_concentration"
+      ],
+      "claim_id": "RF-94-BT-TORUS-CURVATURE-CUT-CONCENTRATION",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "statement": "Normalize min(u)=1 and put h=r/u^2. The complete BT gradient is exactly the weighted Laplacian g=L_c h with conductances c_xy=u_x u_y>=1. The torus spectral gap gives ||h-h_bar||/R<=sqrt(Q/omega_L^2). For every nontrivial height cut S_K={u>K}, its canonical-current flux Gamma_K=sum_(S_K)g obeys Q/omega_L^2>=Gamma_K^2/(4pi^4 R^2). Combined with reciprocal localization, positive-action collapse therefore requires simultaneously residual escape above every fixed K, flat unweighted curvature, and cancellation across every fixed height cut. If the low set stays macroscopic, even ||h||/R tends to zero and the residual can survive only through u^2 amplification. This is a concentration alternative, not the all-field lower bound or a counterfamily construction.",
+      "status": "CURVATURE_FLATNESS_AND_HEIGHT_CUT_CANCELLATION_CERTIFIED_ALL_FIELD_GATE_OPEN"
     }
   ],
   "created": "2026-08-17",
@@ -4574,7 +4601,7 @@
       "source_sha256": "813d29b98f493c3a1d944eb302c7c842cb3773622a5d4dee702c586b5a598087"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "02db54ba9cf9c2dd6a99175368c8244166de881083e1d1498759c5664a4523f3"
+    "sha256": "5d1ebb7e6315cd3bc8db9cac797b5fb868c546a61e2aefe4f12c764c24be1087"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",
