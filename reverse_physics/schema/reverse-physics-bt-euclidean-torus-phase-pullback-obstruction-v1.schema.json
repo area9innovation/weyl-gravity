@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-torus-phase-pullback-obstruction-v1.schema.json",
+  "title": "BT Euclidean torus phase-pullback obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "answer",
+    "certificate",
+    "checks",
+    "created",
+    "dependency_tags",
+    "does_not_establish",
+    "exact_direct_torus_fixture",
+    "exact_hierarchy_fixtures",
+    "four_torus_corollary",
+    "hierarchy_lower_bound",
+    "lifecycle_state",
+    "missing_object_ledger",
+    "next_gate",
+    "phase_pullback_theorem",
+    "provenance",
+    "question",
+    "report",
+    "research_disposition",
+    "result_kind",
+    "schema",
+    "schema_version",
+    "tier_receipt",
+    "verification_commands",
+    "verifier"
+  ],
+  "properties": {
+    "answer": {"$ref": "#/$defs/text"},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_PHASE_PULLBACK_OBSTRUCTION_V1"},
+    "checks": {"$ref": "#/$defs/checkSummary"},
+    "created": {"type": "string", "format": "date"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"},
+        {"const": "REDUCED-MODE"}
+      ],
+      "items": false,
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "does_not_establish": {"$ref": "#/$defs/textArray"},
+    "exact_direct_torus_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cycle_field", "cycle_gradient_norm_squared", "cycle_length", "cycle_quotient", "cycle_residual_norm_squared", "torus_rows"],
+      "properties": {
+        "cycle_field": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/rational"}},
+        "cycle_gradient_norm_squared": {"$ref": "#/$defs/rational"},
+        "cycle_length": {"const": 4},
+        "cycle_quotient": {"$ref": "#/$defs/rational"},
+        "cycle_residual_norm_squared": {"$ref": "#/$defs/rational"},
+        "torus_rows": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["active_coordinates", "quotient_over_cycle", "torus_gradient_norm_squared", "torus_quotient", "torus_residual_norm_squared"],
+            "properties": {
+              "active_coordinates": {"type": "integer", "minimum": 1, "maximum": 4},
+              "quotient_over_cycle": {"$ref": "#/$defs/rational"},
+              "torus_gradient_norm_squared": {"$ref": "#/$defs/rational"},
+              "torus_quotient": {"$ref": "#/$defs/rational"},
+              "torus_residual_norm_squared": {"$ref": "#/$defs/rational"}
+            }
+          }
+        }
+      }
+    },
+    "exact_hierarchy_fixtures": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["checks", "cycle_quotient", "cycle_quotient_scaled_by_m6", "gradient_norm_squared", "length", "maximum_edge_ratio", "member", "opposite_current", "peak_current", "ramp_length", "residual_norm_squared", "two_active_coordinate_torus_quotient"],
+        "properties": {
+          "checks": {"type": "object", "additionalProperties": {"type": "boolean"}, "minProperties": 6},
+          "cycle_quotient": {"$ref": "#/$defs/rational"},
+          "cycle_quotient_scaled_by_m6": {"$ref": "#/$defs/rational"},
+          "gradient_norm_squared": {"$ref": "#/$defs/rational"},
+          "length": {"type": "integer", "minimum": 1},
+          "maximum_edge_ratio": {"$ref": "#/$defs/rational"},
+          "member": {"type": "integer", "minimum": 2},
+          "opposite_current": {"$ref": "#/$defs/rational"},
+          "peak_current": {"$ref": "#/$defs/rational"},
+          "ramp_length": {"type": "integer", "minimum": 1},
+          "residual_norm_squared": {"$ref": "#/$defs/rational"},
+          "two_active_coordinate_torus_quotient": {"$ref": "#/$defs/rational"}
+        }
+      }
+    },
+    "four_torus_corollary": {"$ref": "#/$defs/stringMap"},
+    "hierarchy_lower_bound": {"$ref": "#/$defs/stringMap"},
+    "lifecycle_state": {"const": "CYCLE_PHASE_PULLBACK_ROUTE_RULED_OUT_GENUINE_TORUS_CORRECTOR_GATE_OPEN"},
+    "missing_object_ledger": {"$ref": "#/$defs/textArray"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "phase_pullback_theorem": {"$ref": "#/$defs/stringMap"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["assumptions", "exact_arithmetic", "inputs", "repository_base_commit"],
+      "properties": {
+        "assumptions": {"$ref": "#/$defs/textArray"},
+        "exact_arithmetic": {"$ref": "#/$defs/text"},
+        "inputs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"const": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_POLYNOMIAL_CONTRAST_HIERARCHY_OBSTRUCTION_V1.json"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+      }
+    },
+    "question": {"$ref": "#/$defs/text"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-torus-phase-pullback-obstruction.md"},
+    "research_disposition": {"$ref": "#/$defs/stringMap"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-torus-phase-pullback-obstruction-v1.schema.json"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-torus-phase-pullback-obstruction-v1"},
+    "tier_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["memory_policy", "scoped_command_receipts", "tier_0", "tier_1", "tier_2", "tier_3"],
+      "properties": {
+        "memory_policy": {"$ref": "#/$defs/text"},
+        "scoped_command_receipts": {"type": "object", "additionalProperties": {"type": "string"}},
+        "tier_0": {"$ref": "#/$defs/text"},
+        "tier_1": {"$ref": "#/$defs/text"},
+        "tier_2": {"$ref": "#/$defs/text"},
+        "tier_3": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_torus_phase_pullback_obstruction.py"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "textArray": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "stringMap": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["denominator", "numerator"],
+      "properties": {
+        "denominator": {"type": "integer", "minimum": 1},
+        "numerator": {"type": "integer"}
+      }
+    },
+    "checkSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["details", "failures", "ok", "passed", "total"],
+      "properties": {
+        "details": {"type": "object", "minProperties": 10, "additionalProperties": {"type": "boolean"}},
+        "failures": {"type": "array", "items": {"type": "string"}},
+        "ok": {"const": true},
+        "passed": {"const": 10},
+        "total": {"const": 10}
+      }
+    }
+  }
+}

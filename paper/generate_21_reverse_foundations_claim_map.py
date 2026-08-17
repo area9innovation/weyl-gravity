@@ -70,6 +70,7 @@ AUTHORITY_PATHS = {
     "bt_corrector_slab_fiber_stability": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CORRECTOR_SLAB_FIBER_STABILITY_V1.json",
     "bt_corrector_slab_cylinder_suppression": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CORRECTOR_SLAB_CYLINDER_SUPPRESSION_V1.json",
     "bt_polynomial_contrast_hierarchy_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_POLYNOMIAL_CONTRAST_HIERARCHY_OBSTRUCTION_V1.json",
+    "bt_torus_phase_pullback_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_PHASE_PULLBACK_OBSTRUCTION_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -302,6 +303,7 @@ def build() -> dict:
     bt_corrector_slab_fiber = loaded["bt_corrector_slab_fiber_stability"]
     bt_corrector_slab_cylinder = loaded["bt_corrector_slab_cylinder_suppression"]
     bt_polynomial_contrast = loaded["bt_polynomial_contrast_hierarchy_obstruction"]
+    bt_torus_phase_pullback = loaded["bt_torus_phase_pullback_obstruction"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -436,6 +438,10 @@ def build() -> dict:
             "bt_polynomial_contrast_main_bound": bt_polynomial_contrast["main_flow_theorem"]["coefficient_upper_bound"],
             "bt_polynomial_contrast_full_bound": bt_polynomial_contrast["full_gradient_theorem"]["quotient_upper_bound"],
             "bt_polynomial_contrast_four_torus_status": bt_polynomial_contrast["research_disposition"]["isotropic_four_torus_scaled_PL"],
+            "bt_torus_phase_pullback_identity": bt_torus_phase_pullback["phase_pullback_theorem"]["quotient_identity"],
+            "bt_torus_phase_pullback_cycle_lower": bt_torus_phase_pullback["hierarchy_lower_bound"]["cycle_lower"],
+            "bt_torus_phase_pullback_normalized_lower": bt_torus_phase_pullback["four_torus_corollary"]["normalized_bound"],
+            "bt_torus_phase_pullback_all_field_status": bt_torus_phase_pullback["research_disposition"]["all_field_torus_scaled_PL"],
             "coded_wave_observable_cutoff": coded_wave_observable["cutoff_theorem"]["cutoff"],
             "coded_wave_observable_full_state_reconstruction": coded_wave_observable["claim_flags"]["full_state_reconstruction_proved"],
             "coded_local_weak_wave_basis_tests": coded_local_weak_wave["localized_test_class"]["basis_size"],
@@ -1255,6 +1261,13 @@ def build() -> dict:
                 "authorities": ["bt_polynomial_contrast_hierarchy_obstruction"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"],
             },
+            {
+                "claim_id": "RF-84-BT-TORUS-PHASE-PULLBACK-OBSTRUCTION",
+                "statement": "For every positive cycle field and every phase chi_k=x_1+...+x_k on the isotropic four-torus, the complete BT residual and action gradient pull back pointwise with factors k and k^2, so the torus quotient is exactly k^2 times the cycle quotient. For the polynomial-contrast hierarchy on L=4m^4+2, a new current-variation lower bound gives Q_C>=1/(144m^6) for m>=4, complementing the predecessor upper bound and proving Q_C=Theta(m^-6). Hence every axial, diagonal or helical single-phase lift obeys Q_T/omega_L^2>=k^2m^10/(9pi^4) and moves away from free-scale collapse. This rules out one-phase wrapping only; genuinely transverse multiphase correctors, an all-field torus bound, Witten coercivity, the interacting H^-1 moment, reconstruction, Born/Krein interpretation and Lorentzian claims remain open.",
+                "status": "CYCLE_PHASE_PULLBACK_ROUTE_RULED_OUT_GENUINE_TORUS_CORRECTOR_GATE_OPEN",
+                "authorities": ["bt_torus_phase_pullback_obstruction"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -1520,6 +1533,9 @@ def build() -> dict:
             "theory_passport_complete_theory_selected": False,
             "bt_polynomial_contrast_hierarchy_obstruction_certified": True,
             "bt_polynomial_contrast_four_torus_decided": False,
+            "bt_torus_phase_pullback_obstruction_certified": True,
+            "bt_torus_single_phase_counterfamily_ruled_out": True,
+            "bt_torus_all_field_scaled_pl_decided": False,
             "bt_euclidean_finite_capabilities_imported": True,
             "bt_euclidean_coarse_reproduction_separated": True,
             "bt_free_os_obstruction_certified": True,

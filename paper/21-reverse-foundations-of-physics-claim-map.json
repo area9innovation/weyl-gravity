@@ -269,6 +269,10 @@
     "bt_separable_lowest_mode_curvature_status": "PROVED",
     "bt_specific_zero_fiber_ward_status": "OPEN",
     "bt_subunit_positive_virial_status": "OBSTRUCTED",
+    "bt_torus_phase_pullback_all_field_status": "OPEN",
+    "bt_torus_phase_pullback_cycle_lower": "Q_C>=1/(144m^6) for m>=4",
+    "bt_torus_phase_pullback_identity": "Q_T=k^2*Q_C",
+    "bt_torus_phase_pullback_normalized_lower": "Q_T/omega_L^2>=k^2*m^10/(9*pi^4) for m>=4",
     "bt_tuned_exact_score_status": "OPEN",
     "bt_tuned_remainder_compensation_status": "LEADING_POWER_COMPENSATION_FORCED",
     "bt_tuned_remainder_gap": {
@@ -815,6 +819,17 @@
       "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_SEPARABLE_LOWEST_MODE_CURVATURE_V1.json",
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_SEPARABLE_LOWEST_MODE_CURVATURE_V1",
       "sha256": "113eb734688dd2163304398043a9ab680cd0fa4ccb5f08b059e808dce9fdf8a7"
+    },
+    "bt_torus_phase_pullback_obstruction": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE"
+      ],
+      "lifecycle": "CYCLE_PHASE_PULLBACK_ROUTE_RULED_OUT_GENUINE_TORUS_CORRECTOR_GATE_OPEN",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_PHASE_PULLBACK_OBSTRUCTION_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_PHASE_PULLBACK_OBSTRUCTION_V1",
+      "sha256": "ba7b4b510a4e9fd19004b8ec759cef8ee450df548b41b96c9dbc868102a39ac4"
     },
     "bt_tuned_remainder_compensation": {
       "dependency_tags": [
@@ -2503,7 +2518,7 @@
       "sha256": "c394928bb8ead70ba9eeb76ee16298c3fffec5712d8c9290f773712960d333fb"
     }
   },
-  "canonical_digest": "3966747fef1c3c0593a72c56e30c61827d1286225e86b7abe1857a62c634ec9b",
+  "canonical_digest": "951a813aa169efecc9bd500368d025ac8d413a2abc9c4a4b0b391fc36da12bf3",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -2625,6 +2640,9 @@
     "bt_specific_zero_fiber_ward_identity_established": false,
     "bt_standard_boundary_curvature_spectral_gap_route_obstructed": true,
     "bt_subunit_positive_homogeneous_virial_established": false,
+    "bt_torus_all_field_scaled_pl_decided": false,
+    "bt_torus_phase_pullback_obstruction_certified": true,
+    "bt_torus_single_phase_counterfamily_ruled_out": true,
     "bt_translation_invariant_current_susceptibility_established": false,
     "bt_translation_invariant_flux_corrector_established": false,
     "bt_tree_log_convexity_extra_tilt_confinement_obstructed": true,
@@ -4021,6 +4039,19 @@
       ],
       "statement": "For every integer m at least two, an exact positive field on the cycle with 4m^4+2 vertices has maximum edge ratio m and positive-main-flow divergence coefficient at most 160/m^6. For m at least eight its complete BT residual-gradient quotient is at most 1960/m^6. Multiplication by the cycle diameter still tends to zero, obstructing a graph-generic diameter-scale band-transport extension. This is a reduced-mode method obstruction on cycles: it neither compares the quotient with the cycle free bilaplacian scale nor supplies an isotropic four-torus counterexample, Witten or interacting H^-1 result, continuum reconstruction, Born/Krein interpretation, or Lorentzian claim.",
       "status": "GENERIC_DIAMETER_SCALE_BAND_TRANSPORT_OBSTRUCTED_TORUS_WITTEN_AND_RECONSTRUCTION_OPEN"
+    },
+    {
+      "authorities": [
+        "bt_torus_phase_pullback_obstruction"
+      ],
+      "claim_id": "RF-84-BT-TORUS-PHASE-PULLBACK-OBSTRUCTION",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE"
+      ],
+      "statement": "For every positive cycle field and every phase chi_k=x_1+...+x_k on the isotropic four-torus, the complete BT residual and action gradient pull back pointwise with factors k and k^2, so the torus quotient is exactly k^2 times the cycle quotient. For the polynomial-contrast hierarchy on L=4m^4+2, a new current-variation lower bound gives Q_C>=1/(144m^6) for m>=4, complementing the predecessor upper bound and proving Q_C=Theta(m^-6). Hence every axial, diagonal or helical single-phase lift obeys Q_T/omega_L^2>=k^2m^10/(9pi^4) and moves away from free-scale collapse. This rules out one-phase wrapping only; genuinely transverse multiphase correctors, an all-field torus bound, Witten coercivity, the interacting H^-1 moment, reconstruction, Born/Krein interpretation and Lorentzian claims remain open.",
+      "status": "CYCLE_PHASE_PULLBACK_ROUTE_RULED_OUT_GENUINE_TORUS_CORRECTOR_GATE_OPEN"
     }
   ],
   "created": "2026-08-17",
@@ -4260,7 +4291,7 @@
       "source_sha256": "813d29b98f493c3a1d944eb302c7c842cb3773622a5d4dee702c586b5a598087"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "dcdf05a895bd8a46bd4f4406829e7447e9e0c6b18663c500820bec6f9e1afe83"
+    "sha256": "d2e93c474b62ae893955dbfb2193fcd685c7c892d84f8e4257147773135976f7"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

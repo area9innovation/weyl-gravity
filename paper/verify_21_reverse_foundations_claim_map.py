@@ -88,6 +88,7 @@ def main() -> int:
     ngc3198_common_fit = json.loads((ROOT / data["authorities"]["ngc3198_common_fit_comparison"]["path"]).read_text())
     theory_passports = json.loads((ROOT / data["authorities"]["theory_passport_atlas"]["path"]).read_text())
     bt_polynomial_contrast = json.loads((ROOT / data["authorities"]["bt_polynomial_contrast_hierarchy_obstruction"]["path"]).read_text())
+    bt_torus_phase_pullback = json.loads((ROOT / data["authorities"]["bt_torus_phase_pullback_obstruction"]["path"]).read_text())
     coded_wave_observable = json.loads((ROOT / data["authorities"]["coded_wave_observable_reconstruction"]["path"]).read_text())
     coded_local_weak_wave = json.loads((ROOT / data["authorities"]["coded_local_weak_wave_test_class"]["path"]).read_text())
     coded_h2_test = json.loads((ROOT / data["authorities"]["coded_weak_wave_h2_test_completion"]["path"]).read_text())
@@ -569,6 +570,7 @@ def main() -> int:
         (81, "STRICT-WEYL-FULL-BRST-HADAMARD-PSEUDO-STATE-PAIR"),
         (82, "END-TO-END-THEORY-PASSPORT-ATLAS"),
         (83, "BT-POLYNOMIAL-CONTRAST-HIERARCHY-OBSTRUCTION"),
+        (84, "BT-TORUS-PHASE-PULLBACK-OBSTRUCTION"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -1088,6 +1090,9 @@ def main() -> int:
     require(flags["theory_passport_complete_theory_selected"] is False, "theory-passport atlas promoted a complete theory")
     require(flags["bt_polynomial_contrast_hierarchy_obstruction_certified"] is True, "BT polynomial-contrast hierarchy flag is not certified")
     require(flags["bt_polynomial_contrast_four_torus_decided"] is False, "BT cycle obstruction promoted to a four-torus decision")
+    require(flags["bt_torus_phase_pullback_obstruction_certified"] is True, "BT torus phase-pullback flag is not certified")
+    require(flags["bt_torus_single_phase_counterfamily_ruled_out"] is True, "BT single-phase counterfamily is not ruled out")
+    require(flags["bt_torus_all_field_scaled_pl_decided"] is False, "BT phase-pullback result promoted to an all-field torus decision")
     require(flags["bt_euclidean_finite_capabilities_imported"] is True, "BT finite import flag is not certified")
     require(flags["bt_euclidean_coarse_reproduction_separated"] is True, "BT numerical separation flag is not certified")
     require(flags["bt_free_os_obstruction_certified"] is True, "BT OS obstruction flag is not certified")
@@ -1361,6 +1366,12 @@ def main() -> int:
     require(atlas["bt_polynomial_contrast_four_torus_status"] == bt_polynomial_contrast["research_disposition"]["isotropic_four_torus_scaled_PL"] == "OPEN", "BT polynomial-contrast four-torus boundary drift")
     require(bt_polynomial_contrast["checks"]["ok"] is True and all(all(item["checks"].values()) for item in bt_polynomial_contrast["exact_fixtures"]), "BT polynomial-contrast exact checks are not closed")
     require(bt_polynomial_contrast["research_disposition"]["actual_interacting_h_minus_one"] == "OPEN" and bt_polynomial_contrast["research_disposition"]["lorentzian_transfer"] == "NOT_ESTABLISHED", "BT polynomial-contrast H^-1/Lorentzian boundary drift")
+    require(atlas["bt_torus_phase_pullback_identity"] == bt_torus_phase_pullback["phase_pullback_theorem"]["quotient_identity"] == "Q_T=k^2*Q_C", "BT torus phase-pullback quotient identity drift")
+    require(atlas["bt_torus_phase_pullback_cycle_lower"] == bt_torus_phase_pullback["hierarchy_lower_bound"]["cycle_lower"] == "Q_C>=1/(144m^6) for m>=4", "BT torus phase-pullback cycle lower bound drift")
+    require(atlas["bt_torus_phase_pullback_normalized_lower"] == bt_torus_phase_pullback["four_torus_corollary"]["normalized_bound"] == "Q_T/omega_L^2>=k^2*m^10/(9*pi^4) for m>=4", "BT torus phase-pullback normalized lower bound drift")
+    require(atlas["bt_torus_phase_pullback_all_field_status"] == bt_torus_phase_pullback["research_disposition"]["all_field_torus_scaled_PL"] == "OPEN", "BT torus phase-pullback all-field boundary drift")
+    require(bt_torus_phase_pullback["checks"]["ok"] is True and all(all(item["checks"].values()) for item in bt_torus_phase_pullback["exact_hierarchy_fixtures"]), "BT torus phase-pullback exact checks are not closed")
+    require(bt_torus_phase_pullback["research_disposition"]["full_witten_coercivity"] == "OPEN" and bt_torus_phase_pullback["research_disposition"]["lorentzian_transfer"] == "NOT_ESTABLISHED", "BT torus phase-pullback Witten/Lorentzian boundary drift")
     require(abs(atlas["mannheim_ngc3198_sparc_rms_km_s"] - 4.5382719695501885) < 1e-12, "Mannheim SPARC RMS drift")
     require(abs(atlas["mannheim_ngc3198_sparc_reduced_chi2"] - 5.592211904260559) < 1e-12, "Mannheim SPARC chi-squared drift")
     standard = next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")
