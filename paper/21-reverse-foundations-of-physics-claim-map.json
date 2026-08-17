@@ -84,6 +84,11 @@
     "bt_cubic_nonperturbative_score_status": "OPEN",
     "bt_cubic_soft_leg_status": "PROVED",
     "bt_direct_action_fiber_bound_status": "OPEN",
+    "bt_dyadic_stopping_all_field_status": "OPEN",
+    "bt_dyadic_stopping_cutoff": "W>=512*L^(10/3)",
+    "bt_dyadic_stopping_divergence_floor": "||div(f)||_2>=F/(D*log_2(W)*sqrt(N))",
+    "bt_dyadic_stopping_minimum_side": 4096,
+    "bt_dyadic_stopping_normalized_floor": "Q/omega_L^2>=32/pi^4",
     "bt_eom_to_zero_fiber_transfer_status": "OBSTRUCTED_AS_A_LOGICAL_INFERENCE",
     "bt_euclidean_carrier_relation": "INCOMPATIBLE",
     "bt_euclidean_direct_capabilities": 5,
@@ -853,6 +858,16 @@
       "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TENSOR_PHASE_HIERARCHY_OBSTRUCTION_V1.json",
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_TENSOR_PHASE_HIERARCHY_OBSTRUCTION_V1",
       "sha256": "c7b52f728373d66262855d63d4d0fb8b1b2028493ef4bf51a48616ca691c121e"
+    },
+    "bt_torus_dyadic_stopping_flow": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "UNCONDITIONAL_SUPER_L_10_OVER_3_CONTRAST_CLOSED_FOR_L_GE_4096_MODERATE_GATE_OPEN",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_DYADIC_STOPPING_FLOW_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_DYADIC_STOPPING_FLOW_V1",
+      "sha256": "a2eb34512af234bb38dc5753ef492011f438159568dfcb85ea0921da2a9e9c7e"
     },
     "bt_torus_phase_pullback_obstruction": {
       "dependency_tags": [
@@ -2572,7 +2587,7 @@
       "sha256": "c394928bb8ead70ba9eeb76ee16298c3fffec5712d8c9290f773712960d333fb"
     }
   },
-  "canonical_digest": "0f5f61fae84cad59e09106b315e8b455326dcbb27b9b4c3cf77843677efe7189",
+  "canonical_digest": "407be0738a460b95baf3f18a8f9c9b8823a399d4d10452aef8144f42acfa130f",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -2698,6 +2713,8 @@
     "bt_tensor_phase_counterfamily_ruled_out": true,
     "bt_tensor_phase_hierarchy_obstruction_certified": true,
     "bt_torus_all_field_scaled_pl_decided": false,
+    "bt_torus_dyadic_stopping_all_field_scaled_pl_decided": false,
+    "bt_torus_dyadic_stopping_flow_certified": true,
     "bt_torus_moderate_sparse_multiband_gate_open": true,
     "bt_torus_phase_pullback_obstruction_certified": true,
     "bt_torus_single_phase_counterfamily_ruled_out": true,
@@ -2705,6 +2722,8 @@
     "bt_torus_sparse_maxima_flow_certified": true,
     "bt_torus_sparse_maxima_necessity_proved": true,
     "bt_torus_sparse_multiband_gate_open": true,
+    "bt_torus_sub_L_10_over_3_moderate_gate_open": true,
+    "bt_torus_super_L_10_over_3_contrast_for_L_ge_4096_ruled_out": true,
     "bt_torus_super_L_11_over_3_contrast_ruled_out": true,
     "bt_torus_top_band_all_field_scaled_pl_decided": false,
     "bt_torus_top_band_flow_certified": true,
@@ -4154,6 +4173,18 @@
       ],
       "statement": "The complete-current error in the torus maximum-ratio decomposition obeys sum_e epsilon_e^2<=7*q^2*W^2*F+6*q^3*N and ||div epsilon||^2<=14*q^3*W^2*F+12*q^4*N. The edge attaining W carries at least unit leading flow through alpha>=1/2, so if W^2>=256*q^3*D^2*N*F then Q>=64*q*F/N. Combining this sparse-F theorem with the density-sensitive predecessor at F=N^(1/3) proves that W>=3072*L^(11/3) implies Q/omega_L^2>=32/pi^4 on T_L^4. Thus every collapsing candidate eventually has W<3072*L^(11/3); the moderate sparse multiband and all-field gates remain open.",
       "status": "EXACT_UNCONDITIONAL_SUPER_L_11_OVER_3_CONTRAST_OBSTRUCTION_WITH_MODERATE_MULTIBAND_GATE_OPEN"
+    },
+    {
+      "authorities": [
+        "bt_torus_dyadic_stopping_flow"
+      ],
+      "claim_id": "RF-88-BT-TORUS-DYADIC-STOPPING-FLOW",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "statement": "The leading acyclic BT flow has total mass F. If F>2*q^2*N/W, more than half of that mass crosses edges with ratio at least two, while any source-to-sink path contains at most D*log_2(W) such edges. Hence ||div(f)||_2>=F/[D*log_2(W)*sqrt(N)]. After the certified complete-current error is restored, sqrt(W)>=16*sqrt(q)*D*log_2(W) gives Q>=q^2/[D^2*log_2(W)^2]. The complementary sparse branch is controlled by the top-band theorem. Consequently, on T_L^4 for L>=4096, W>=512*L^(10/3) implies Q/omega_L^2>=32/pi^4. Every collapsing candidate eventually has W<512*L^(10/3); the all-field moderate-contrast, Witten, interacting H^-1, continuum, Born/Krein and Lorentzian gates remain open.",
+      "status": "EXACT_UNCONDITIONAL_SUPER_L_10_OVER_3_CONTRAST_OBSTRUCTION_FOR_L_GE_4096_WITH_MODERATE_GATE_OPEN"
     }
   ],
   "created": "2026-08-17",
@@ -4393,7 +4424,7 @@
       "source_sha256": "813d29b98f493c3a1d944eb302c7c842cb3773622a5d4dee702c586b5a598087"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "13d4f5453c9eb5bcc66bf2efe890e2fdce5513b69eaf0b942439830a1c5de72a"
+    "sha256": "c3340e0b4b52080347e97999fb00d6eea21be3bc6bfdae91d9c8782129ee5cc5"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

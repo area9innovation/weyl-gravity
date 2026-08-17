@@ -2242,6 +2242,47 @@ an unrestricted high-contrast field.  This still leaves the all-field,
 Witten, interacting \(H^{-1}\), continuum, Born/Krein, and Lorentzian gates
 open.
 
+The multiband region itself admits a stopping-time estimate.  Certificate
+
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_DYADIC_STOPPING_FLOW_V1}
+
+uses the exact identity \(\sum_e f_e=F\).  Edges with ratio below two carry
+at most \(q^2N/W\) flow mass.  If the complementary factor-two band carries
+more than half the mass, acyclic path decomposition and the endpoint-ratio
+bound show that a path can cross at most \(D\log_2W\) such edges.  Therefore
+
+\[
+ F>{2q^2N\over W}
+ \quad\Longrightarrow\quad
+ \|\operatorname{div}f\|_2
+ \geq{F\over D\log_2W\sqrt N}.
+\]
+
+The certified complete-current error can be absorbed when
+\(\sqrt W\geq16\sqrt q\,D\log_2W\), giving
+
+\[
+                         Q\geq{q^2\over D^2\log_2(W)^2}.
+\]
+
+The complementary low-mass branch is covered by the top-band theorem.
+Combining both branches with the preceding larger-contrast cutoff yields,
+for \(L\geq4096\),
+
+\[
+ \boxed{
+ W\geq512L^{10/3}
+ \quad\Longrightarrow\quad
+ {Q\over\omega_L^2}\geq{32\over\pi^4}.}
+\]
+
+This lowers the asymptotic unresolved contrast exponent from \(11/3\) to
+\(10/3\).  It does not prove the all-field inequality: a collapsing sequence
+must now remain below \(512L^{10/3}\), where an iterated signed band estimate
+or a genuinely nonseparable counterfamily is still required.  No Witten,
+interacting \(H^{-1}\), continuum, Born/Krein, or Lorentzian conclusion is
+promoted.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The

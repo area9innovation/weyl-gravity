@@ -74,6 +74,7 @@ AUTHORITY_PATHS = {
     "bt_tensor_phase_hierarchy_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TENSOR_PHASE_HIERARCHY_OBSTRUCTION_V1.json",
     "bt_torus_sparse_maxima_flow": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_SPARSE_MAXIMA_FLOW_V1.json",
     "bt_torus_top_band_flow": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_TOP_BAND_FLOW_V1.json",
+    "bt_torus_dyadic_stopping_flow": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_DYADIC_STOPPING_FLOW_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -310,6 +311,7 @@ def build() -> dict:
     bt_tensor_phase = loaded["bt_tensor_phase_hierarchy_obstruction"]
     bt_sparse_maxima = loaded["bt_torus_sparse_maxima_flow"]
     bt_top_band = loaded["bt_torus_top_band_flow"]
+    bt_dyadic_stopping = loaded["bt_torus_dyadic_stopping_flow"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -464,6 +466,11 @@ def build() -> dict:
             "bt_top_band_cutoff": bt_top_band["four_torus_dichotomy"]["torus_sufficient_condition"],
             "bt_top_band_normalized_floor": bt_top_band["four_torus_dichotomy"]["normalized_conclusion"],
             "bt_top_band_all_field_status": bt_top_band["research_disposition"]["all_field_torus_scaled_PL"],
+            "bt_dyadic_stopping_divergence_floor": bt_dyadic_stopping["dyadic_stopping_theorem"]["divergence_floor"],
+            "bt_dyadic_stopping_cutoff": bt_dyadic_stopping["four_torus_corollary"]["contrast_hypothesis"],
+            "bt_dyadic_stopping_minimum_side": bt_dyadic_stopping["exact_constant_audit"]["minimum_side"],
+            "bt_dyadic_stopping_normalized_floor": bt_dyadic_stopping["four_torus_corollary"]["normalized_conclusion"],
+            "bt_dyadic_stopping_all_field_status": bt_dyadic_stopping["research_disposition"]["all_field_torus_scaled_PL"],
             "coded_wave_observable_cutoff": coded_wave_observable["cutoff_theorem"]["cutoff"],
             "coded_wave_observable_full_state_reconstruction": coded_wave_observable["claim_flags"]["full_state_reconstruction_proved"],
             "coded_local_weak_wave_basis_tests": coded_local_weak_wave["localized_test_class"]["basis_size"],
@@ -1311,6 +1318,13 @@ def build() -> dict:
                 "authorities": ["bt_torus_top_band_flow"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
+            {
+                "claim_id": "RF-88-BT-TORUS-DYADIC-STOPPING-FLOW",
+                "statement": "The leading acyclic BT flow has total mass F. If F>2*q^2*N/W, more than half of that mass crosses edges with ratio at least two, while any source-to-sink path contains at most D*log_2(W) such edges. Hence ||div(f)||_2>=F/[D*log_2(W)*sqrt(N)]. After the certified complete-current error is restored, sqrt(W)>=16*sqrt(q)*D*log_2(W) gives Q>=q^2/[D^2*log_2(W)^2]. The complementary sparse branch is controlled by the top-band theorem. Consequently, on T_L^4 for L>=4096, W>=512*L^(10/3) implies Q/omega_L^2>=32/pi^4. Every collapsing candidate eventually has W<512*L^(10/3); the all-field moderate-contrast, Witten, interacting H^-1, continuum, Born/Krein and Lorentzian gates remain open.",
+                "status": "EXACT_UNCONDITIONAL_SUPER_L_10_OVER_3_CONTRAST_OBSTRUCTION_FOR_L_GE_4096_WITH_MODERATE_GATE_OPEN",
+                "authorities": ["bt_torus_dyadic_stopping_flow"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -1590,6 +1604,10 @@ def build() -> dict:
             "bt_torus_super_L_11_over_3_contrast_ruled_out": True,
             "bt_torus_moderate_sparse_multiband_gate_open": True,
             "bt_torus_top_band_all_field_scaled_pl_decided": False,
+            "bt_torus_dyadic_stopping_flow_certified": True,
+            "bt_torus_super_L_10_over_3_contrast_for_L_ge_4096_ruled_out": True,
+            "bt_torus_sub_L_10_over_3_moderate_gate_open": True,
+            "bt_torus_dyadic_stopping_all_field_scaled_pl_decided": False,
             "bt_euclidean_finite_capabilities_imported": True,
             "bt_euclidean_coarse_reproduction_separated": True,
             "bt_free_os_obstruction_certified": True,

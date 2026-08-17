@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-torus-dyadic-stopping-flow-v1.schema.json",
+  "title": "BT Euclidean torus dyadic stopping-flow certificate",
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "object": {"type": "object", "minProperties": 1}
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "dyadic_stopping_theorem", "sparse_dense_dichotomy",
+    "four_torus_corollary", "monotonicity_lemmas", "exact_constant_audit",
+    "research_disposition", "does_not_establish", "provenance",
+    "verification_commands", "tier_receipt", "checks", "report", "schema",
+    "verifier"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_DYADIC_STOPPING_FLOW_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-torus-dyadic-stopping-flow-v1"},
+    "created": {"const": "2026-08-17"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "UNCONDITIONAL_SUPER_L_10_OVER_3_CONTRAST_CLOSED_FOR_L_GE_4096_MODERATE_GATE_OPEN"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "dyadic_stopping_theorem": {
+      "type": "object",
+      "required": ["total_flow_mass", "low_band", "low_band_mass_ceiling", "dense_hypothesis", "high_band_mass_floor", "path_edge_count", "divergence_floor", "error_absorption_hypothesis", "complete_gradient_floor", "dense_quotient_floor"],
+      "properties": {
+        "total_flow_mass": {"const": "sum_e f_e=F"},
+        "low_band": {"const": "B_<2={e:z_e<2}"},
+        "low_band_mass_ceiling": {"const": "sum_(e in B_<2) f_e<=q^2*N/W"},
+        "dense_hypothesis": {"const": "F>2*q^2*N/W"},
+        "high_band_mass_floor": {"const": "sum_(e:z_e>=2) f_e>F/2"},
+        "path_edge_count": {"const": "each source-to-sink path contains at most D*log_2(W) edges with z_e>=2"},
+        "divergence_floor": {"const": "||div(f)||_2>=F/(D*log_2(W)*sqrt(N))"},
+        "error_absorption_hypothesis": {"const": "sqrt(W)>=16*sqrt(q)*D*log_2(W)"},
+        "complete_gradient_floor": {"const": "||g||_2>=W^2*F/(2*D*log_2(W)*sqrt(N))"},
+        "dense_quotient_floor": {"const": "Q>=q^2/(D^2*log_2(W)^2)"}
+      },
+      "additionalProperties": false
+    },
+    "sparse_dense_dichotomy": {"$ref": "#/$defs/object"},
+    "four_torus_corollary": {
+      "type": "object",
+      "required": ["scope", "contrast_hypothesis", "predecessor_large_contrast_branch", "new_live_interval", "dense_interval_log_bound", "normalized_conclusion", "counterfamily_necessity"],
+      "properties": {
+        "scope": {"const": "T_L^4 with L>=4096"},
+        "contrast_hypothesis": {"const": "W>=512*L^(10/3)"},
+        "predecessor_large_contrast_branch": {"const": "W>=3072*L^(11/3)"},
+        "new_live_interval": {"const": "512*L^(10/3)<=W<3072*L^(11/3)"},
+        "dense_interval_log_bound": {"const": "log_2(W)<(14/3)*log_2(L)<5*log_2(L)<=5*L/64<L/8"},
+        "normalized_conclusion": {"const": "Q/omega_L^2>=32/pi^4"},
+        "counterfamily_necessity": {"$ref": "#/$defs/text"}
+      },
+      "additionalProperties": false
+    },
+    "monotonicity_lemmas": {"$ref": "#/$defs/object"},
+    "exact_constant_audit": {
+      "type": "object",
+      "required": ["q", "cutoff_coefficient", "minimum_side", "minimum_side_log2", "sparse_available_coefficient", "sparse_required_coefficient", "stopping_condition_left_at_L0", "stopping_condition_log2_W0_at_L0", "stopping_condition_right_at_L0", "checks"],
+      "properties": {
+        "q": {"const": 8},
+        "cutoff_coefficient": {"const": 512},
+        "minimum_side": {"const": 4096},
+        "minimum_side_log2": {"const": 12},
+        "sparse_available_coefficient": {"const": 134217728},
+        "sparse_required_coefficient": {"const": 67108864},
+        "stopping_condition_left_at_L0": {"const": 65536},
+        "stopping_condition_log2_W0_at_L0": {"const": 49},
+        "stopping_condition_right_at_L0": {"const": 38416},
+        "checks": {"type": "object", "minProperties": 8, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "research_disposition": {
+      "type": "object",
+      "required": ["super_L_10_over_3_edge_contrast_collapse_for_L_ge_4096", "dyadic_moderate_band_transport", "sub_L_10_over_3_moderate_contrast_sector", "all_field_torus_scaled_PL", "witten_poincare_transfer", "interacting_h_minus_one", "lorentzian_transfer"],
+      "properties": {
+        "super_L_10_over_3_edge_contrast_collapse_for_L_ge_4096": {"const": "RULED_OUT"},
+        "dyadic_moderate_band_transport": {"const": "PROVED"},
+        "sub_L_10_over_3_moderate_contrast_sector": {"const": "OPEN"},
+        "all_field_torus_scaled_PL": {"const": "OPEN"},
+        "witten_poincare_transfer": {"const": "OPEN"},
+        "interacting_h_minus_one": {"const": "OPEN"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "does_not_establish": {"type": "array", "minItems": 8, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {"$ref": "#/$defs/object"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "tier_receipt": {"$ref": "#/$defs/object"},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 10},
+        "total": {"const": 10},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-torus-dyadic-stopping-flow.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-torus-dyadic-stopping-flow-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_torus_dyadic_stopping_flow.py"}
+  },
+  "additionalProperties": false
+}

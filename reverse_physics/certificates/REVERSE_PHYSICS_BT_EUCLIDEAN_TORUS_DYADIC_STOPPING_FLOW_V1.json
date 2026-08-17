@@ -1,0 +1,133 @@
+{
+  "answer": "Not above a smaller asymptotic contrast scale. The leading acyclic flow has total mass F. If F>2*q^2*N/W, more than F/2 crosses edges with ratio at least two. A source-to-sink path contains at most D*log_2(W) such edges, forcing ||div(f)||_2>=F/[D*log_2(W)*sqrt(N)]. The complete-current error is absorbed when sqrt(W)>=16*sqrt(q)*D*log_2(W), giving Q>=q^2/[D^2*log_2(W)^2] in this dense dyadic branch. The complementary branch F<=2*q^2*N/W is controlled by the predecessor top-band theorem when W^3>=512*q^5*D^2*N^2. Combining both branches with the old cutoff proves that, for L>=4096, W>=512*L^(10/3) implies Q/omega_L^2>=32/pi^4. A collapsing family must therefore eventually have W<512*L^(10/3). The all-field moderate-contrast sector remains open.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_DYADIC_STOPPING_FLOW_V1",
+  "checks": {
+    "details": {
+      "acyclic_path_decomposition_used": true,
+      "all_field_scaled_PL_remains_open": true,
+      "complete_current_error_absorbed": true,
+      "constant_audit_closes": true,
+      "dense_divergence_floor_proved": true,
+      "dyadic_low_band_count_proved": true,
+      "dyadic_path_length_proved": true,
+      "no_witten_or_lorentzian_promotion": true,
+      "sparse_dense_dichotomy_proved": true,
+      "torus_L_10_over_3_corollary_proved": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 10,
+    "total": 10
+  },
+  "created": "2026-08-17",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "a lower bound for every positive field on T_L^4",
+    "exclusion of polynomial contrast W=O(L^(10/3))",
+    "the L^(10/3) cutoff for L<4096",
+    "a nonseparable collapsing family",
+    "a Witten or Poincare theorem",
+    "boundedness or divergence of the interacting H^-1 moment",
+    "a continuum measure, Born rule, or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "dyadic_stopping_theorem": {
+    "complete_gradient_floor": "||g||_2>=W^2*F/(2*D*log_2(W)*sqrt(N))",
+    "dense_hypothesis": "F>2*q^2*N/W",
+    "dense_quotient_floor": "Q>=q^2/(D^2*log_2(W)^2)",
+    "divergence_floor": "||div(f)||_2>=F/(D*log_2(W)*sqrt(N))",
+    "error_absorption_hypothesis": "sqrt(W)>=16*sqrt(q)*D*log_2(W)",
+    "high_band_mass_floor": "sum_(e:z_e>=2) f_e>F/2",
+    "low_band": "B_<2={e:z_e<2}",
+    "low_band_mass_ceiling": "sum_(e in B_<2) f_e<=q^2*N/W",
+    "path_edge_count": "each source-to-sink path contains at most D*log_2(W) edges with z_e>=2",
+    "total_flow_mass": "sum_e f_e=F"
+  },
+  "exact_constant_audit": {
+    "checks": {
+      "dense_log_fraction_below_one_eighth": true,
+      "dense_normalized_floor_constant": true,
+      "minimum_side_is_power_of_two": true,
+      "old_cutoff_coefficient_below_minimum_side": true,
+      "sparse_coefficient_clears": true,
+      "sparse_normalized_floor_constant": true,
+      "stopping_condition_holds_at_minimum_side": true,
+      "stopping_log_is_exact": true
+    },
+    "cutoff_coefficient": 512,
+    "minimum_side": 4096,
+    "minimum_side_log2": 12,
+    "q": 8,
+    "sparse_available_coefficient": 134217728,
+    "sparse_required_coefficient": 67108864,
+    "stopping_condition_left_at_L0": 65536,
+    "stopping_condition_log2_W0_at_L0": 49,
+    "stopping_condition_right_at_L0": 38416
+  },
+  "four_torus_corollary": {
+    "contrast_hypothesis": "W>=512*L^(10/3)",
+    "counterfamily_necessity": "Q/omega_L^2->0 implies eventually W<512*L^(10/3)",
+    "dense_interval_log_bound": "log_2(W)<(14/3)*log_2(L)<5*log_2(L)<=5*L/64<L/8",
+    "new_live_interval": "512*L^(10/3)<=W<3072*L^(11/3)",
+    "normalized_conclusion": "Q/omega_L^2>=32/pi^4",
+    "predecessor_large_contrast_branch": "W>=3072*L^(11/3)",
+    "scope": "T_L^4 with L>=4096"
+  },
+  "lifecycle_state": "UNCONDITIONAL_SUPER_L_10_OVER_3_CONTRAST_CLOSED_FOR_L_GE_4096_MODERATE_GATE_OPEN",
+  "monotonicity_lemmas": {
+    "log_growth": "log_2(L)<=L/64 for L>=4096",
+    "stopping_ratio": "sqrt(W)/log_2(W) is increasing for W>e^2",
+    "torus_base_check": "L^(4/3)>=16*(9+(10/3)*log_2(L))^2 at L=4096",
+    "torus_extension": "the left/right ratio in the base check is increasing for L>=4096"
+  },
+  "provenance": {
+    "exact_arithmetic": "integer audit of the sparse coefficient, L=4096 stopping inequality, logarithmic interval bound, and normalized torus floors",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_TOP_BAND_FLOW_V1.json",
+        "sha256": "7d3ee031eb2d11c3259d9fbdcbc2dfd514b594fdef04866d035957fa830aa75b"
+      }
+    ],
+    "repository_base_commit": "1931a152ed8eeb5e69b2daf6e368f6b15f394b04"
+  },
+  "question": "Can flow spread across many moderate ratio bands evade both the density-sensitive and single-top-band BT estimates on the isotropic four-torus?",
+  "report": "reverse_physics/reports/bt-euclidean-torus-dyadic-stopping-flow.md",
+  "research_disposition": {
+    "all_field_torus_scaled_PL": "OPEN",
+    "dyadic_moderate_band_transport": "PROVED",
+    "interacting_h_minus_one": "OPEN",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "sub_L_10_over_3_moderate_contrast_sector": "OPEN",
+    "super_L_10_over_3_edge_contrast_collapse_for_L_ge_4096": "RULED_OUT",
+    "witten_poincare_transfer": "OPEN"
+  },
+  "result_kind": "exact dyadic stopping-flow theorem and asymptotic four-torus contrast cutoff",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-torus-dyadic-stopping-flow-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-torus-dyadic-stopping-flow-v1",
+  "sparse_dense_dichotomy": {
+    "dense_branch": "F>2*q^2*N/W",
+    "dense_conclusion": "Q>=q^2/(D^2*log_2(W)^2)",
+    "dense_sufficient_condition": "sqrt(W)>=16*sqrt(q)*D*log_2(W)",
+    "sparse_branch": "F<=2*q^2*N/W",
+    "sparse_conclusion": "Q>=64*q/N",
+    "sparse_sufficient_condition": "W^3>=512*q^5*D^2*N^2"
+  },
+  "tier_receipt": {
+    "paper_integration": "PASS: claim-map verifier 0.58 s at 148272 KiB maximum RSS; two-pass PDF build 1.74 s at 54172 KiB maximum RSS; prose advisory remained non-certifying and reported manuscript-wide parenthetical and abstract-word findings",
+    "planning_event": "PASS: append-only event sequence 94, id c5abc8168b333351",
+    "science_forge_shadow": "ADVISORY EXIT 0 IN 6.72 S AT 341500 KiB, NOT A SCIENTIFIC PASS: bridge audit fail-closed on source-current Forge E9415 drift; coverage census reports 1973 certificates versus baseline 976",
+    "tier_0": "PASS: Python compilation, strict JSON/schema parsing, deterministic drift, scoped diff check, exact staged-diff inspection, planning import, claim-map verification, and two-pass PDF build; planning import passed with 1713 nodes, 0 invalid items, and 0 malformed events in 1.22 s at 16896 KiB maximum RSS",
+    "tier_1": "PASS: producer 10/10 in 0.03 s at 20032 KiB; independent verifier 12/12 in 0.09 s at 29780 KiB; focused and mutation tests 11/11 in 0.10 s at 30704 KiB; unchanged top-band predecessor verifier 10/10 in 0.11 s at 30084 KiB",
+    "tier_2": "the top-band predecessor is unchanged and checked by content hash",
+    "tier_3": "not triggered: the all-field, Witten, H^-1, continuum, freeze, and release gates remain open"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_torus_dyadic_stopping_flow.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_torus_dyadic_stopping_flow.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_torus_dyadic_stopping_flow"
+  ],
+  "verifier": "reverse_physics/verify_bt_euclidean_torus_dyadic_stopping_flow.py"
+}
