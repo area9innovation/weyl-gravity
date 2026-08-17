@@ -94,6 +94,11 @@
     "bt_euclidean_direct_capabilities": 5,
     "bt_euclidean_numerical_status": "COARSE_REPRODUCTION_ONLY",
     "bt_euclidean_reconstruction_status": "PRIORITY_GAP",
+    "bt_extensive_action_all_field_status": "OPEN",
+    "bt_extensive_action_counterfamily_action": "Q/omega_L^2<61/(320*pi^4) implies A<(488/5)*L^4",
+    "bt_extensive_action_counterfamily_contrast": "Q/omega_L^2<61/(320*pi^4) implies W<16*L^2",
+    "bt_extensive_action_normalized_floor": "Q/omega_L^2>=61/(320*pi^4)",
+    "bt_extensive_action_threshold": "A>=(488/5)*L^4",
     "bt_fixed_spacing_large_volume_score_status": "OPEN",
     "bt_free_h_minus_one_bound": {
       "denominator": 32,
@@ -868,6 +873,16 @@
       "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_DYADIC_STOPPING_FLOW_V1.json",
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_DYADIC_STOPPING_FLOW_V1",
       "sha256": "a2eb34512af234bb38dc5753ef492011f438159568dfcb85ea0921da2a9e9c7e"
+    },
+    "bt_torus_extensive_action_gradient_floor": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "EXTENSIVE_ACTION_BRANCH_FREE_SCALE_CLOSED_LOW_ACTION_L2_CONTRAST_GATE_OPEN",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_EXTENSIVE_ACTION_GRADIENT_FLOOR_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_EXTENSIVE_ACTION_GRADIENT_FLOOR_V1",
+      "sha256": "e570ccae41d81c583f47a3a6aefafb38f2f2aea7fabc2d95524652f575a8fa4e"
     },
     "bt_torus_phase_pullback_obstruction": {
       "dependency_tags": [
@@ -2587,7 +2602,7 @@
       "sha256": "c394928bb8ead70ba9eeb76ee16298c3fffec5712d8c9290f773712960d333fb"
     }
   },
-  "canonical_digest": "407be0738a460b95baf3f18a8f9c9b8823a399d4d10452aef8144f42acfa130f",
+  "canonical_digest": "b7f691bcf314a9d45fef0d6beb68e5bf64cad1df23a120bd290521166a9a9e5d",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -2715,6 +2730,9 @@
     "bt_torus_all_field_scaled_pl_decided": false,
     "bt_torus_dyadic_stopping_all_field_scaled_pl_decided": false,
     "bt_torus_dyadic_stopping_flow_certified": true,
+    "bt_torus_extensive_action_all_field_scaled_pl_decided": false,
+    "bt_torus_extensive_action_branch_ruled_out": true,
+    "bt_torus_extensive_action_gradient_floor_certified": true,
     "bt_torus_moderate_sparse_multiband_gate_open": true,
     "bt_torus_phase_pullback_obstruction_certified": true,
     "bt_torus_single_phase_counterfamily_ruled_out": true,
@@ -2722,6 +2740,7 @@
     "bt_torus_sparse_maxima_flow_certified": true,
     "bt_torus_sparse_maxima_necessity_proved": true,
     "bt_torus_sparse_multiband_gate_open": true,
+    "bt_torus_sub_16_L_squared_low_action_gate_open": true,
     "bt_torus_sub_L_10_over_3_moderate_gate_open": true,
     "bt_torus_super_L_10_over_3_contrast_for_L_ge_4096_ruled_out": true,
     "bt_torus_super_L_11_over_3_contrast_ruled_out": true,
@@ -4185,6 +4204,18 @@
       ],
       "statement": "The leading acyclic BT flow has total mass F. If F>2*q^2*N/W, more than half of that mass crosses edges with ratio at least two, while any source-to-sink path contains at most D*log_2(W) such edges. Hence ||div(f)||_2>=F/[D*log_2(W)*sqrt(N)]. After the certified complete-current error is restored, sqrt(W)>=16*sqrt(q)*D*log_2(W) gives Q>=q^2/[D^2*log_2(W)^2]. The complementary sparse branch is controlled by the top-band theorem. Consequently, on T_L^4 for L>=4096, W>=512*L^(10/3) implies Q/omega_L^2>=32/pi^4. Every collapsing candidate eventually has W<512*L^(10/3); the all-field moderate-contrast, Witten, interacting H^-1, continuum, Born/Krein and Lorentzian gates remain open.",
       "status": "EXACT_UNCONDITIONAL_SUPER_L_10_OVER_3_CONTRAST_OBSTRUCTION_FOR_L_GE_4096_WITH_MODERATE_GATE_OPEN"
+    },
+    {
+      "authorities": [
+        "bt_torus_extensive_action_gradient_floor"
+      ],
+      "claim_id": "RF-89-BT-TORUS-EXTENSIVE-ACTION-GRADIENT-FLOOR",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "statement": "The affine virial inequality and the exact edge-ratio/range bounds close the entire extensive-action branch on T_L^4: for L>=4, A>=(488/5)L^4 implies Q/omega_L^2>=61/(320*pi^4). Therefore every field below that normalized floor obeys both A<(488/5)L^4 and W<16L^2. This improves the live contrast exponent from 10/3 to 2 and forces bounded action density without using convexity, Hessian positivity or a current-sign assumption. The low-action sub-16L^2 sector, the all-field torus theorem, Witten/Poincare transfer, interacting H^-1, continuum, Born/Krein and Lorentzian gates remain open.",
+      "status": "EXTENSIVE_ACTION_BRANCH_FREE_SCALE_CLOSED_LOW_ACTION_L2_CONTRAST_GATE_OPEN"
     }
   ],
   "created": "2026-08-17",
@@ -4424,7 +4455,7 @@
       "source_sha256": "813d29b98f493c3a1d944eb302c7c842cb3773622a5d4dee702c586b5a598087"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "c3340e0b4b52080347e97999fb00d6eea21be3bc6bfdae91d9c8782129ee5cc5"
+    "sha256": "92621e4add235461b7ac494be444c509b4461fd971fe55dd0708888c8fcc8e4f"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

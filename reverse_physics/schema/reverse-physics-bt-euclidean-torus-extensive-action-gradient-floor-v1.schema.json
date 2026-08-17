@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-torus-extensive-action-gradient-floor-v1.schema.json",
+  "title": "BT Euclidean torus extensive-action gradient-floor certificate",
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "object": {"type": "object", "minProperties": 1},
+    "fraction": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "graph_theorem", "four_torus_corollary", "exact_constant_audit",
+    "exact_fixture", "research_disposition", "does_not_establish",
+    "provenance", "verification_commands", "tier_receipt", "checks",
+    "report", "schema", "verifier"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_EXTENSIVE_ACTION_GRADIENT_FLOOR_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-torus-extensive-action-gradient-floor-v1"},
+    "created": {"const": "2026-08-17"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "EXTENSIVE_ACTION_BRANCH_FREE_SCALE_CLOSED_LOW_ACTION_L2_CONTRAST_GATE_OPEN"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "graph_theorem": {
+      "type": "object",
+      "required": ["scope", "affine_virial_input", "large_action_hypothesis", "radial_pairing_floor", "edge_ratio_bound", "log_field_range_bound", "gradient_floor", "quotient_floor", "monotonicity"],
+      "properties": {
+        "scope": {"const": "every finite connected 8-regular graph with mean-zero log field psi"},
+        "affine_virial_input": {"const": "<psi,g>>=2*A-C*N with C=488/5 for q=8"},
+        "large_action_hypothesis": {"const": "A>=C*N"},
+        "radial_pairing_floor": {"const": "<psi,g>>=A"},
+        "edge_ratio_bound": {"const": "W<=q+sqrt(2*A)"},
+        "log_field_range_bound": {"const": "||psi||_2<=D*sqrt(N)*log(q+sqrt(2*A))"},
+        "gradient_floor": {"const": "||g||_2>=A/[D*sqrt(N)*log(q+sqrt(2*A))]"},
+        "quotient_floor": {"const": "Q>=A/[2*N*D^2*log(q+sqrt(2*A))^2]"},
+        "monotonicity": {"$ref": "#/$defs/text"}
+      },
+      "additionalProperties": false
+    },
+    "four_torus_corollary": {
+      "type": "object",
+      "required": ["scope", "vertices", "degree", "diameter", "spectral_scale", "extensive_action_hypothesis", "quotient_floor", "normalized_floor", "counterfamily_action_necessity", "counterfamily_contrast_necessity"],
+      "properties": {
+        "scope": {"const": "T_L^4 with L>=4"},
+        "vertices": {"const": "N=L^4"},
+        "degree": {"const": 8},
+        "diameter": {"const": "D=4*floor(L/2)<=2*L"},
+        "spectral_scale": {"const": "omega_L=4*sin(pi/L)^2<=4*pi^2/L^2"},
+        "extensive_action_hypothesis": {"const": "A>=(488/5)*L^4"},
+        "quotient_floor": {"const": "Q>=(61/20)*L^(-4)"},
+        "normalized_floor": {"const": "Q/omega_L^2>=61/(320*pi^4)"},
+        "counterfamily_action_necessity": {"$ref": "#/$defs/text"},
+        "counterfamily_contrast_necessity": {"const": "Q/omega_L^2<61/(320*pi^4) implies W<16*L^2"}
+      },
+      "additionalProperties": false
+    },
+    "exact_constant_audit": {
+      "type": "object",
+      "required": ["virial_constant", "twice_virial_constant", "sqrt_ceiling", "torus_degree", "minimum_side", "diameter_ceiling", "logarithm_ceiling", "pre_spectral_floor_coefficient", "normalized_floor_coefficient", "checks"],
+      "properties": {
+        "virial_constant": {"$ref": "#/$defs/fraction"},
+        "twice_virial_constant": {"$ref": "#/$defs/fraction"},
+        "sqrt_ceiling": {"const": 14},
+        "torus_degree": {"const": 8},
+        "minimum_side": {"const": 4},
+        "diameter_ceiling": {"const": "D<=2*L"},
+        "logarithm_ceiling": {"const": "log(8+sqrt(2*C)*L^2)<2*L"},
+        "pre_spectral_floor_coefficient": {"const": {"numerator": 61, "denominator": 20}},
+        "normalized_floor_coefficient": {"const": {"numerator": 61, "denominator": 320}},
+        "checks": {"type": "object", "minProperties": 9, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "exact_fixture": {"$ref": "#/$defs/object"},
+    "research_disposition": {
+      "type": "object",
+      "required": ["extensive_or_superextensive_action_collapse", "super_16_L_squared_edge_contrast_collapse", "low_action_sub_16_L_squared_sector", "all_field_torus_scaled_PL", "witten_poincare_transfer", "interacting_h_minus_one", "lorentzian_transfer"],
+      "properties": {
+        "extensive_or_superextensive_action_collapse": {"const": "RULED_OUT"},
+        "super_16_L_squared_edge_contrast_collapse": {"const": "RULED_OUT_BELOW_THE_CERTIFIED_FLOOR"},
+        "low_action_sub_16_L_squared_sector": {"const": "OPEN"},
+        "all_field_torus_scaled_PL": {"const": "OPEN"},
+        "witten_poincare_transfer": {"const": "OPEN"},
+        "interacting_h_minus_one": {"const": "OPEN"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "does_not_establish": {"type": "array", "minItems": 8, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {"$ref": "#/$defs/object"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "tier_receipt": {"$ref": "#/$defs/object"},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 10},
+        "total": {"const": 10},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-torus-extensive-action-gradient-floor.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-torus-extensive-action-gradient-floor-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_torus_extensive_action_gradient_floor.py"}
+  },
+  "additionalProperties": false
+}

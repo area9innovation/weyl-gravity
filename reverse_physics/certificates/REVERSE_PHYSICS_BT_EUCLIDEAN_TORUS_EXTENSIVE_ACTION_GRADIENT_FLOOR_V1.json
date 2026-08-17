@@ -1,0 +1,182 @@
+{
+  "answer": "No. The affine virial inequality, the mean-zero log-field range bound, and the exact edge-ratio bound imply that every T_L^4 field with A>=(488/5)L^4 obeys Q/omega_L^2>=61/(320*pi^4). Therefore every sequence below that floor has A<(488/5)L^4 and W<16L^2. This improves the live contrast window from W=O(L^(10/3)) to W=O(L^2), but does not decide the remaining low-action sector.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_EXTENSIVE_ACTION_GRADIENT_FLOOR_V1",
+  "checks": {
+    "details": {
+      "affine_virial_imported": true,
+      "all_field_scaled_PL_remains_open": true,
+      "constant_audit_closes": true,
+      "edge_ratio_from_residual_proved": true,
+      "fixture_checks_close": true,
+      "four_torus_free_scale_floor_proved": true,
+      "large_action_monotonicity_proved": true,
+      "low_action_L_squared_contrast_necessity_proved": true,
+      "mean_zero_range_bound_proved": true,
+      "no_witten_or_lorentzian_promotion": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 10,
+    "total": 10
+  },
+  "created": "2026-08-17",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "a lower bound for fields with A<(488/5)*L^4 and W<16*L^2",
+    "the all-field torus scaled Polyak-Lojasiewicz inequality",
+    "absence of a nonseparable low-action collapsing family",
+    "a Witten or Poincare theorem",
+    "boundedness or divergence of the interacting H^-1 moment",
+    "a continuum measure or continuum identification",
+    "a Born rule or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_constant_audit": {
+    "checks": {
+      "diameter_ceiling_coefficient": true,
+      "logarithm_ceiling_uses_L_at_least_four": true,
+      "low_action_edge_ratio_coefficient": true,
+      "normalized_denominator_coefficient": true,
+      "normalized_fraction_reduced": true,
+      "quotient_denominator_coefficient": true,
+      "spectral_square_coefficient": true,
+      "torus_degree_is_eight": true,
+      "twice_virial_constant_below_14_squared": true
+    },
+    "diameter_ceiling": "D<=2*L",
+    "logarithm_ceiling": "log(8+sqrt(2*C)*L^2)<2*L",
+    "minimum_side": 4,
+    "normalized_floor_coefficient": {
+      "denominator": 320,
+      "numerator": 61
+    },
+    "pre_spectral_floor_coefficient": {
+      "denominator": 20,
+      "numerator": 61
+    },
+    "sqrt_ceiling": 14,
+    "torus_degree": 8,
+    "twice_virial_constant": {
+      "denominator": 5,
+      "numerator": 976
+    },
+    "virial_constant": {
+      "denominator": 5,
+      "numerator": 488
+    }
+  },
+  "exact_fixture": {
+    "action": {
+      "denominator": 31250,
+      "numerator": 124751123001
+    },
+    "checks": {
+      "action_is_extensive": true,
+      "edge_ratio_bound_holds": true,
+      "gradient_has_zero_sum": true,
+      "quotient_is_positive": true,
+      "residual_is_nonzero": true
+    },
+    "degree": 8,
+    "extensive_action_threshold": {
+      "denominator": 5,
+      "numerator": 124928
+    },
+    "gradient_norm_squared": {
+      "denominator": 1953125000,
+      "numerator": 140563187998233135732009
+    },
+    "gradient_sum": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "graph": "T_4^4 single spike",
+    "maximum_edge_ratio": 1000,
+    "quotient": {
+      "denominator": 1736125000,
+      "numerator": 15649415180750001
+    },
+    "residual_norm_squared": {
+      "denominator": 15625,
+      "numerator": 124751123001
+    },
+    "side": 4,
+    "spike_height": 1000,
+    "vertices": 256
+  },
+  "four_torus_corollary": {
+    "counterfamily_action_necessity": "Q/omega_L^2<61/(320*pi^4) implies A<(488/5)*L^4",
+    "counterfamily_contrast_necessity": "Q/omega_L^2<61/(320*pi^4) implies W<16*L^2",
+    "degree": 8,
+    "diameter": "D=4*floor(L/2)<=2*L",
+    "extensive_action_hypothesis": "A>=(488/5)*L^4",
+    "normalized_floor": "Q/omega_L^2>=61/(320*pi^4)",
+    "quotient_floor": "Q>=(61/20)*L^(-4)",
+    "scope": "T_L^4 with L>=4",
+    "spectral_scale": "omega_L=4*sin(pi/L)^2<=4*pi^2/L^2",
+    "vertices": "N=L^4"
+  },
+  "graph_theorem": {
+    "affine_virial_input": "<psi,g>>=2*A-C*N with C=488/5 for q=8",
+    "edge_ratio_bound": "W<=q+sqrt(2*A)",
+    "gradient_floor": "||g||_2>=A/[D*sqrt(N)*log(q+sqrt(2*A))]",
+    "large_action_hypothesis": "A>=C*N",
+    "log_field_range_bound": "||psi||_2<=D*sqrt(N)*log(q+sqrt(2*A))",
+    "monotonicity": "A/log(q+sqrt(2*A))^2 is increasing for A>0 when q>=1",
+    "quotient_floor": "Q>=A/[2*N*D^2*log(q+sqrt(2*A))^2]",
+    "radial_pairing_floor": "<psi,g>>=A",
+    "scope": "every finite connected 8-regular graph with mean-zero log field psi"
+  },
+  "lifecycle_state": "EXTENSIVE_ACTION_BRANCH_FREE_SCALE_CLOSED_LOW_ACTION_L2_CONTRAST_GATE_OPEN",
+  "provenance": {
+    "analytic_inputs": [
+      "e^4>16 from e>2, hence log(16)<4",
+      "2*log(L)<=L for L>=4 by the base value and derivative comparison",
+      "sin(x)<=x for x>=0"
+    ],
+    "exact_arithmetic": "Fraction audit of C=488/5, its square-root ceiling, the 32 and 512 denominator factors, the reduced 61/320 normalized coefficient, and a complete rational T_4^4 spike",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_AFFINE_VIRIAL_ACTION_DENSITY_V1.json",
+        "sha256": "5ca8a2a7bc0d48300b0af031990e3c9c177fdec0d35f763666d2e397b495e1e0"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_DYADIC_STOPPING_FLOW_V1.json",
+        "sha256": "a2eb34512af234bb38dc5753ef492011f438159568dfcb85ea0921da2a9e9c7e"
+      }
+    ],
+    "repository_base_commit": "073224675bb1afad692251fd282b4eb714334e5c"
+  },
+  "question": "Can the remaining BT torus quotient collapse by carrying extensive or superextensive residual action while keeping its largest edge ratio below the preceding stopping-flow threshold?",
+  "report": "reverse_physics/reports/bt-euclidean-torus-extensive-action-gradient-floor.md",
+  "research_disposition": {
+    "all_field_torus_scaled_PL": "OPEN",
+    "extensive_or_superextensive_action_collapse": "RULED_OUT",
+    "interacting_h_minus_one": "OPEN",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "low_action_sub_16_L_squared_sector": "OPEN",
+    "super_16_L_squared_edge_contrast_collapse": "RULED_OUT_BELOW_THE_CERTIFIED_FLOOR",
+    "witten_poincare_transfer": "OPEN"
+  },
+  "result_kind": "exact extensive-action gradient floor and low-action torus contrast reduction",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-torus-extensive-action-gradient-floor-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-torus-extensive-action-gradient-floor-v1",
+  "tier_receipt": {
+    "paper_integration": "PASS: Paper 21 RF-89 claim-map verification completed in 0.59 s at 148780 KiB maximum RSS and the PDF built twice in 1.77 s at 54264 KiB; the prose advisory remained non-certifying and reported manuscript-wide parenthetical and abstract-length findings",
+    "planning_event": "PASS: append-only ACTIVE event sequence 95, id cb549856a2943012",
+    "science_forge_shadow": "ADVISORY ONLY, NOT A SCIENTIFIC PASS: the shadow rail was interrupted after 172.70 s without a final disposition after its cbp indexing subprocesses aborted under the memory ceiling",
+    "tier_0": "PASS: changed Python compiled; strict JSON/schema parsing, deterministic certificate drift, scoped diff check, exact staged-diff inspection, planning import, claim-map verification, and two-pass PDF build were run; planning imported 1714 nodes with 0 invalid items and 0 malformed events in 1.23 s at 16964 KiB maximum RSS",
+    "tier_1": "PASS: producer 10/10 in 0.05 s at 20564 KiB; nonimporting verifier 12/12 in 0.11 s at 29796 KiB; focused and mutation tests 12/12 in 0.19 s at 30512 KiB; unchanged affine-virial and dyadic-stopping predecessor verifiers passed 10/10 and 12/12 in 0.10 s each",
+    "tier_2": "the affine-virial and dyadic-stopping inputs are unchanged and checked by content hash; no shared operator, schema consumer, or generated certificate chain changed",
+    "tier_3": "not triggered: the all-field, Witten, H^-1, continuum, freeze, release, and shared-core gates remain open"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_torus_extensive_action_gradient_floor.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_torus_extensive_action_gradient_floor.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_torus_extensive_action_gradient_floor"
+  ],
+  "verifier": "reverse_physics/verify_bt_euclidean_torus_extensive_action_gradient_floor.py"
+}

@@ -75,6 +75,7 @@ AUTHORITY_PATHS = {
     "bt_torus_sparse_maxima_flow": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_SPARSE_MAXIMA_FLOW_V1.json",
     "bt_torus_top_band_flow": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_TOP_BAND_FLOW_V1.json",
     "bt_torus_dyadic_stopping_flow": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_DYADIC_STOPPING_FLOW_V1.json",
+    "bt_torus_extensive_action_gradient_floor": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_EXTENSIVE_ACTION_GRADIENT_FLOOR_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -312,6 +313,7 @@ def build() -> dict:
     bt_sparse_maxima = loaded["bt_torus_sparse_maxima_flow"]
     bt_top_band = loaded["bt_torus_top_band_flow"]
     bt_dyadic_stopping = loaded["bt_torus_dyadic_stopping_flow"]
+    bt_extensive_action = loaded["bt_torus_extensive_action_gradient_floor"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -471,6 +473,11 @@ def build() -> dict:
             "bt_dyadic_stopping_minimum_side": bt_dyadic_stopping["exact_constant_audit"]["minimum_side"],
             "bt_dyadic_stopping_normalized_floor": bt_dyadic_stopping["four_torus_corollary"]["normalized_conclusion"],
             "bt_dyadic_stopping_all_field_status": bt_dyadic_stopping["research_disposition"]["all_field_torus_scaled_PL"],
+            "bt_extensive_action_threshold": bt_extensive_action["four_torus_corollary"]["extensive_action_hypothesis"],
+            "bt_extensive_action_normalized_floor": bt_extensive_action["four_torus_corollary"]["normalized_floor"],
+            "bt_extensive_action_counterfamily_action": bt_extensive_action["four_torus_corollary"]["counterfamily_action_necessity"],
+            "bt_extensive_action_counterfamily_contrast": bt_extensive_action["four_torus_corollary"]["counterfamily_contrast_necessity"],
+            "bt_extensive_action_all_field_status": bt_extensive_action["research_disposition"]["all_field_torus_scaled_PL"],
             "coded_wave_observable_cutoff": coded_wave_observable["cutoff_theorem"]["cutoff"],
             "coded_wave_observable_full_state_reconstruction": coded_wave_observable["claim_flags"]["full_state_reconstruction_proved"],
             "coded_local_weak_wave_basis_tests": coded_local_weak_wave["localized_test_class"]["basis_size"],
@@ -1325,6 +1332,13 @@ def build() -> dict:
                 "authorities": ["bt_torus_dyadic_stopping_flow"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
+            {
+                "claim_id": "RF-89-BT-TORUS-EXTENSIVE-ACTION-GRADIENT-FLOOR",
+                "statement": "The affine virial inequality and the exact edge-ratio/range bounds close the entire extensive-action branch on T_L^4: for L>=4, A>=(488/5)L^4 implies Q/omega_L^2>=61/(320*pi^4). Therefore every field below that normalized floor obeys both A<(488/5)L^4 and W<16L^2. This improves the live contrast exponent from 10/3 to 2 and forces bounded action density without using convexity, Hessian positivity or a current-sign assumption. The low-action sub-16L^2 sector, the all-field torus theorem, Witten/Poincare transfer, interacting H^-1, continuum, Born/Krein and Lorentzian gates remain open.",
+                "status": "EXTENSIVE_ACTION_BRANCH_FREE_SCALE_CLOSED_LOW_ACTION_L2_CONTRAST_GATE_OPEN",
+                "authorities": ["bt_torus_extensive_action_gradient_floor"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -1608,6 +1622,10 @@ def build() -> dict:
             "bt_torus_super_L_10_over_3_contrast_for_L_ge_4096_ruled_out": True,
             "bt_torus_sub_L_10_over_3_moderate_gate_open": True,
             "bt_torus_dyadic_stopping_all_field_scaled_pl_decided": False,
+            "bt_torus_extensive_action_gradient_floor_certified": True,
+            "bt_torus_extensive_action_branch_ruled_out": True,
+            "bt_torus_sub_16_L_squared_low_action_gate_open": True,
+            "bt_torus_extensive_action_all_field_scaled_pl_decided": False,
             "bt_euclidean_finite_capabilities_imported": True,
             "bt_euclidean_coarse_reproduction_separated": True,
             "bt_free_os_obstruction_certified": True,
