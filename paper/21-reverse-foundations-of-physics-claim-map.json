@@ -961,6 +961,16 @@
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_SHARP_VIRIAL_DENSITY_GATE_V1",
       "sha256": "9d6c4a25ad7b0a4bfe74226af0ce750ded47369e21be982cd7c5f20264406538"
     },
+    "bt_torus_small_action_gradient_floor": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "UNIFORM_SMALL_ACTION_FREE_SCALE_FLOOR_CERTIFIED_POSITIVE_ACTION_CONCENTRATION_GATE_OPEN",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_SMALL_ACTION_GRADIENT_FLOOR_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_SMALL_ACTION_GRADIENT_FLOOR_V1",
+      "sha256": "da498d8e5864bae3975e1e1a9045c8f0c0c475e9a7d25d2abcf691bfdfbdf126"
+    },
     "bt_torus_sparse_maxima_flow": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -2668,7 +2678,7 @@
       "sha256": "c394928bb8ead70ba9eeb76ee16298c3fffec5712d8c9290f773712960d333fb"
     }
   },
-  "canonical_digest": "aa0aeefe23d22d02b5f0d04591ffc3c56670c7454a816bb1c92030d768820aea",
+  "canonical_digest": "79b26a61c862176d631c89360c70507045ca7e8f7705509160f3b749d2ea78c8",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -2793,6 +2803,7 @@
     "bt_tensor_phase_all_field_scaled_pl_decided": false,
     "bt_tensor_phase_counterfamily_ruled_out": true,
     "bt_tensor_phase_hierarchy_obstruction_certified": true,
+    "bt_torus_action_quantization_for_collapse_certified": true,
     "bt_torus_all_field_scaled_pl_decided": false,
     "bt_torus_curvature_cut_all_field_scaled_pl_decided": false,
     "bt_torus_curvature_flatness_for_collapse_certified": true,
@@ -2818,6 +2829,8 @@
     "bt_torus_sharp_virial_all_field_scaled_pl_decided": false,
     "bt_torus_sharp_virial_density_gate_certified": true,
     "bt_torus_single_phase_counterfamily_ruled_out": true,
+    "bt_torus_small_action_all_field_scaled_pl_decided": false,
+    "bt_torus_small_action_gradient_floor_certified": true,
     "bt_torus_sparse_maxima_all_field_scaled_pl_decided": false,
     "bt_torus_sparse_maxima_flow_certified": true,
     "bt_torus_sparse_maxima_necessity_proved": true,
@@ -2832,6 +2845,7 @@
     "bt_torus_three_condition_concentration_alternative_certified": true,
     "bt_torus_top_band_all_field_scaled_pl_decided": false,
     "bt_torus_top_band_flow_certified": true,
+    "bt_torus_vanishing_action_collapse_ruled_out": true,
     "bt_translation_invariant_current_susceptibility_established": false,
     "bt_translation_invariant_flux_corrector_established": false,
     "bt_tree_log_convexity_extra_tilt_confinement_obstructed": true,
@@ -4362,6 +4376,18 @@
       ],
       "statement": "Normalize min(u)=1 and put h=r/u^2. The complete BT gradient is exactly the weighted Laplacian g=L_c h with conductances c_xy=u_x u_y>=1. The torus spectral gap gives ||h-h_bar||/R<=sqrt(Q/omega_L^2). For every nontrivial height cut S_K={u>K}, its canonical-current flux Gamma_K=sum_(S_K)g obeys Q/omega_L^2>=Gamma_K^2/(4pi^4 R^2). Combined with reciprocal localization, positive-action collapse therefore requires simultaneously residual escape above every fixed K, flat unweighted curvature, and cancellation across every fixed height cut. If the low set stays macroscopic, even ||h||/R tends to zero and the residual can survive only through u^2 amplification. This is a concentration alternative, not the all-field lower bound or a counterfamily construction.",
       "status": "CURVATURE_FLATNESS_AND_HEIGHT_CUT_CANCELLATION_CERTIFIED_ALL_FIELD_GATE_OPEN"
+    },
+    {
+      "authorities": [
+        "bt_torus_small_action_gradient_floor"
+      ],
+      "claim_id": "RF-95-BT-TORUS-SMALL-ACTION-GRADIENT-FLOOR",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "statement": "There is a dimension-only rho_*>0 such that every nonconstant positive field on T_L^4 with residual norm R<=rho_* obeys ||grad A||_2^2/R^2>=omega_L^2/16. The proof combines a volume-uniform critical discrete Sobolev estimate, exact exponential remainder bounds, and the additive contraction u->u+s, which selects the small logarithmic-Laplacian branch without assuming it. Hence Q_L/omega_L^2->0 implies liminf A_L>=rho_*^2/2: the vanishing-action branch is ruled out. Combined with RF-94, any remaining counterfamily has positive action, residual escape to diverging heights, flat unweighted curvature, and cancellation across every fixed height cut. The positive-action branch and all-field inequality remain open.",
+      "status": "UNIFORM_SMALL_ACTION_FREE_SCALE_FLOOR_CERTIFIED_POSITIVE_ACTION_CONCENTRATION_GATE_OPEN"
     }
   ],
   "created": "2026-08-17",
@@ -4601,7 +4627,7 @@
       "source_sha256": "813d29b98f493c3a1d944eb302c7c842cb3773622a5d4dee702c586b5a598087"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "5d1ebb7e6315cd3bc8db9cac797b5fb868c546a61e2aefe4f12c764c24be1087"
+    "sha256": "051d6e1207c1f1a254e59d40073d222f72e27a9e395b5a55c63bbb7569fc320e"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

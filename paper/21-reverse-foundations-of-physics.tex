@@ -2592,6 +2592,59 @@ incompatible at positive action, or construct a nonseparable family satisfying
 all three.  Witten/Poincare, interacting-\(H^{-1}\), continuum, Born/Krein and
 Lorentzian promotions remain open.
 
+The zero-action corner can now be removed from that fork.  Write
+\(p=\Delta\psi\), \(P=\lVert p\rVert_2\), and \(R=\lVert r\rVert_2\).  The
+volume-uniform critical discrete Sobolev inequality on \(T_L^4\) gives a
+dimension-only constant \(S_4\) such that
+
+\[
+ \left(\sum_{\text{directed }x\sim y}
+ |\psi_y-\psi_x|^4\right)^{1/2}
+ \leq S_4\lVert\Delta\psi\rVert_2^2.
+\]
+
+When \(R\leq1\), the residual formula bounds every edge ratio and its inverse
+by \(9\).  The exponential remainders in both \(r-p\) and
+\(J_\psi\psi-r\) are therefore bounded by \(C_4P^2\), where
+\(C_4=(9/2)\sqrt8S_4\).  The resulting quadratic estimate has two formal
+branches.  The exact additive deformation \(u^{(s)}=u+s\) selects the small
+one: its residual is
+
+\[
+ r_x^{(s)}={\Delta u_x\over u_x+s},
+\]
+
+so its norm never increases, while
+\(\lVert\Delta\log(u+s)\rVert_2\to0\).  Continuity excludes a crossing to the
+large branch.  With
+\(\rho_*=\min\{1,(8C_4)^{-1}\}\), this proves \(P\leq2R\) whenever
+\(R\leq\rho_*\).
+
+For the complete logarithmic action gradient,
+
+\[
+ \langle g,\psi\rangle
+ =R^2+\langle r,J_\psi\psi-r\rangle\geq {R^2\over2}.
+\]
+
+After centering \(\psi\), the torus gap gives
+\(\lVert\psi\rVert_2\leq2R/\omega_L\), hence
+
+\[
+ \boxed{{\lVert g\rVert_2^2\over R^2\omega_L^2}\geq {1\over16}}
+ \qquad (R\leq\rho_*).
+\]
+
+Thus a collapsing sequence has
+\(\liminf R_L\geq\rho_*\) and
+\(\liminf A_L\geq\rho_*^2/2\).  In ordinary terms, a counterexample cannot
+become arbitrarily weak: it must retain definite action while meeting all
+three high-field concentration conditions above.  This closes the
+vanishing-action branch, not the positive-action branch or the all-field
+torus inequality.  The constant \(S_4\), and hence the threshold, is universal
+but not numerically optimized; no Witten/Poincare, continuum, Born/Krein or
+Lorentzian claim follows.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The

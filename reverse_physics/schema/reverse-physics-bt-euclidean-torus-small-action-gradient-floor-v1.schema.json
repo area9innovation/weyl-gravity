@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-torus-small-action-gradient-floor-v1.schema.json",
+  "title": "BT torus small-action gradient-floor certificate",
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "object": {"type": "object", "minProperties": 1}
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer", "definitions",
+    "critical_sobolev_lemma", "nonlinear_remainder_lemma",
+    "additive_branch_theorem", "small_action_theorem",
+    "combined_concentration_alternative", "exact_fixture",
+    "research_disposition", "does_not_establish", "provenance",
+    "verification_commands", "tier_receipt", "checks", "report", "schema",
+    "verifier"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_SMALL_ACTION_GRADIENT_FLOOR_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-torus-small-action-gradient-floor-v1"},
+    "created": {"const": "2026-08-17"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "UNIFORM_SMALL_ACTION_FREE_SCALE_FLOOR_CERTIFIED_POSITIVE_ACTION_CONCENTRATION_GATE_OPEN"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "definitions": {"$ref": "#/$defs/object"},
+    "critical_sobolev_lemma": {"$ref": "#/$defs/object"},
+    "nonlinear_remainder_lemma": {"$ref": "#/$defs/object"},
+    "additive_branch_theorem": {"$ref": "#/$defs/object"},
+    "small_action_theorem": {
+      "type": "object",
+      "required": ["scope", "pairing_identity", "pairing_floor", "spectral_step", "gradient_floor", "quotient_floor", "action_threshold"],
+      "properties": {
+        "scope": {"const": "every nonconstant positive field on every T_L^4 with L>=4 and ||r||_2<=rho_*"},
+        "pairing_identity": {"const": "<g,psi>=<r,J_psi*psi>=R^2+<r,d>"},
+        "pairing_floor": {"const": "<g,psi>>=R^2/2 because ||d||_2<=4*C_4*R^2 and R<=1/(8*C_4)"},
+        "spectral_step": {"const": "after centering psi, ||psi||_2<=||Delta psi||_2/omega_L<=2R/omega_L"},
+        "gradient_floor": {"const": "||g||_2>=omega_L*R/4"},
+        "quotient_floor": {"const": "Q=||g||_2^2/R^2>=omega_L^2/16"},
+        "action_threshold": {"const": "A<=A_*:=rho_*^2/2 implies Q/omega_L^2>=1/16"}
+      },
+      "additionalProperties": false
+    },
+    "combined_concentration_alternative": {"$ref": "#/$defs/object"},
+    "exact_fixture": {"$ref": "#/$defs/object"},
+    "research_disposition": {
+      "type": "object",
+      "required": ["vanishing_action_collapsing_sequence", "uniform_small_action_scaled_PL", "positive_action_three_condition_branch", "all_field_torus_scaled_PL", "nonseparable_counterfamily", "witten_poincare_transfer", "interacting_h_minus_one", "lorentzian_transfer"],
+      "properties": {
+        "vanishing_action_collapsing_sequence": {"const": "RULED_OUT"},
+        "uniform_small_action_scaled_PL": {"const": "PROVED_WITH_CONSTANT_ONE_SIXTEENTH"},
+        "positive_action_three_condition_branch": {"const": "OPEN"},
+        "all_field_torus_scaled_PL": {"const": "OPEN"},
+        "nonseparable_counterfamily": {"const": "NOT_CONSTRUCTED"},
+        "witten_poincare_transfer": {"const": "OPEN"},
+        "interacting_h_minus_one": {"const": "OPEN"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "does_not_establish": {"type": "array", "minItems": 10, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {"$ref": "#/$defs/object"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "tier_receipt": {"$ref": "#/$defs/object"},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 10},
+        "total": {"const": 10},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-torus-small-action-gradient-floor.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-torus-small-action-gradient-floor-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_torus_small_action_gradient_floor.py"}
+  },
+  "additionalProperties": false
+}

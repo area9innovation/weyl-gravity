@@ -99,6 +99,7 @@ def main() -> int:
     bt_quadratic_virial = json.loads((ROOT / data["authorities"]["bt_torus_quadratic_virial_density_gate"]["path"]).read_text())
     bt_reciprocal_virial = json.loads((ROOT / data["authorities"]["bt_torus_reciprocal_virial_localization"]["path"]).read_text())
     bt_curvature_cut = json.loads((ROOT / data["authorities"]["bt_torus_curvature_cut_concentration"]["path"]).read_text())
+    bt_small_action = json.loads((ROOT / data["authorities"]["bt_torus_small_action_gradient_floor"]["path"]).read_text())
     coded_wave_observable = json.loads((ROOT / data["authorities"]["coded_wave_observable_reconstruction"]["path"]).read_text())
     coded_local_weak_wave = json.loads((ROOT / data["authorities"]["coded_local_weak_wave_test_class"]["path"]).read_text())
     coded_h2_test = json.loads((ROOT / data["authorities"]["coded_weak_wave_h2_test_completion"]["path"]).read_text())
@@ -591,6 +592,7 @@ def main() -> int:
         (92, "BT-TORUS-QUADRATIC-VIRIAL-DENSITY-GATE"),
         (93, "BT-TORUS-RECIPROCAL-VIRIAL-LOCALIZATION"),
         (94, "BT-TORUS-CURVATURE-CUT-CONCENTRATION"),
+        (95, "BT-TORUS-SMALL-ACTION-GRADIENT-FLOOR"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -1156,6 +1158,15 @@ def main() -> int:
     require(bt_curvature_cut["research_disposition"]["remaining_counterfamily_shape"] == "HIGH_FIELD_WEIGHT_AMPLIFICATION_WITH_FLAT_UNWEIGHTED_CURVATURE_AND_ALL_HEIGHT_CUT_CURRENT_CANCELLATION", "BT remaining counterfamily shape drift")
     require(flags["bt_torus_curvature_cut_all_field_scaled_pl_decided"] is False, "BT curvature/cut result promoted to an all-field torus decision")
     require(bt_curvature_cut["research_disposition"]["all_field_torus_scaled_PL"] == "OPEN", "BT all-field torus gate silently closed")
+    require(flags["bt_torus_small_action_gradient_floor_certified"] is True, "BT small-action gradient floor was not certified")
+    require(bt_small_action["small_action_theorem"]["quotient_floor"] == "Q=||g||_2^2/R^2>=omega_L^2/16", "BT small-action quotient floor drift")
+    require(flags["bt_torus_vanishing_action_collapse_ruled_out"] is True, "BT vanishing-action collapse was not ruled out")
+    require(flags["bt_torus_action_quantization_for_collapse_certified"] is True, "BT collapse action quantization was not recorded")
+    require(bt_small_action["combined_concentration_alternative"]["collapse_action_quantization"] == "Q_L/omega_L^2->0 implies liminf ||r_L||_2>=rho_* and liminf A_L>=A_*=rho_*^2/2", "BT collapse action-quantization formula drift")
+    require(bt_small_action["research_disposition"]["positive_action_three_condition_branch"] == "OPEN", "BT positive-action concentration gate silently closed")
+    require(flags["bt_torus_small_action_all_field_scaled_pl_decided"] is False, "BT small-action theorem promoted to an all-field decision")
+    require(bt_small_action["research_disposition"]["all_field_torus_scaled_PL"] == "OPEN", "BT small-action authority promoted to all-field")
+    require(bt_small_action["research_disposition"]["lorentzian_transfer"] == "NOT_ESTABLISHED", "BT small-action authority promoted to Lorentzian")
     require(flags["bt_euclidean_finite_capabilities_imported"] is True, "BT finite import flag is not certified")
     require(flags["bt_euclidean_coarse_reproduction_separated"] is True, "BT numerical separation flag is not certified")
     require(flags["bt_free_os_obstruction_certified"] is True, "BT OS obstruction flag is not certified")

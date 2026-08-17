@@ -81,6 +81,7 @@ AUTHORITY_PATHS = {
     "bt_torus_quadratic_virial_density_gate": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_QUADRATIC_VIRIAL_DENSITY_GATE_V1.json",
     "bt_torus_reciprocal_virial_localization": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_RECIPROCAL_VIRIAL_LOCALIZATION_V1.json",
     "bt_torus_curvature_cut_concentration": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_CURVATURE_CUT_CONCENTRATION_V1.json",
+    "bt_torus_small_action_gradient_floor": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_SMALL_ACTION_GRADIENT_FLOOR_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -324,6 +325,7 @@ def build() -> dict:
     bt_quadratic_virial = loaded["bt_torus_quadratic_virial_density_gate"]
     bt_reciprocal_virial = loaded["bt_torus_reciprocal_virial_localization"]
     bt_curvature_cut = loaded["bt_torus_curvature_cut_concentration"]
+    bt_small_action = loaded["bt_torus_small_action_gradient_floor"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -1400,6 +1402,13 @@ def build() -> dict:
                 "authorities": ["bt_torus_curvature_cut_concentration"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
+            {
+                "claim_id": "RF-95-BT-TORUS-SMALL-ACTION-GRADIENT-FLOOR",
+                "statement": "There is a dimension-only rho_*>0 such that every nonconstant positive field on T_L^4 with residual norm R<=rho_* obeys ||grad A||_2^2/R^2>=omega_L^2/16. The proof combines a volume-uniform critical discrete Sobolev estimate, exact exponential remainder bounds, and the additive contraction u->u+s, which selects the small logarithmic-Laplacian branch without assuming it. Hence Q_L/omega_L^2->0 implies liminf A_L>=rho_*^2/2: the vanishing-action branch is ruled out. Combined with RF-94, any remaining counterfamily has positive action, residual escape to diverging heights, flat unweighted curvature, and cancellation across every fixed height cut. The positive-action branch and all-field inequality remain open.",
+                "status": "UNIFORM_SMALL_ACTION_FREE_SCALE_FLOOR_CERTIFIED_POSITIVE_ACTION_CONCENTRATION_GATE_OPEN",
+                "authorities": ["bt_torus_small_action_gradient_floor"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -1707,6 +1716,10 @@ def build() -> dict:
             "bt_torus_macroscopic_low_set_curvature_vanishes_for_collapse": True,
             "bt_torus_three_condition_concentration_alternative_certified": True,
             "bt_torus_curvature_cut_all_field_scaled_pl_decided": False,
+            "bt_torus_small_action_gradient_floor_certified": True,
+            "bt_torus_vanishing_action_collapse_ruled_out": True,
+            "bt_torus_action_quantization_for_collapse_certified": True,
+            "bt_torus_small_action_all_field_scaled_pl_decided": False,
             "bt_euclidean_finite_capabilities_imported": True,
             "bt_euclidean_coarse_reproduction_separated": True,
             "bt_free_os_obstruction_certified": True,
