@@ -138,8 +138,8 @@ false.**
 
 This does not refute the full proposal. The dangerous fields might be
 overwhelmingly improbable, the true interacting operator might control them,
-or reconstruction might need a different argument. Those are now sharper
-questions because the easy route has been removed.
+or reconstruction might need a different argument. Removing the easy route
+turns those possibilities into sharper mathematical questions.
 
 ### Pure-Weyl gravity
 
@@ -160,10 +160,10 @@ pole. That is a sharp mathematical signature, not yet an observable waveform.
 
 The quantum story is equally layered. The strict theory has a nonzero local
 one-loop anomaly in the setting tested. A compensating field repairs that
-local identity, but changes the theory. More recently, the complete gauge
-complex acquired a BRST-compatible Hadamard two-point **pseudo-state**. It has
-the right causal singularity and gauge identities, but it is indefinite. It
-is not a positive physical state, particle theory, or unitarity result.
+local identity, but changes the theory. At the causal level, the complete
+gauge complex admits a BRST-compatible Hadamard two-point **pseudo-state**. It
+has the right causal singularity and gauge identities, but it is indefinite.
+It is not a positive physical state, particle theory, or unitarity result.
 
 ### Constructive, finite, and weak-foundation routes
 
@@ -190,11 +190,11 @@ also follows eight **theory journeys** through six plain questions:
 5. What numerical prediction is produced?
 6. Does it meet a declared empirical benchmark?
 
-Four journeys currently reach bounded data. GR at Cassini and GR+NFW at NGC
-3198 pass their declared gates. Newtonian baryons alone and Mannheim’s curve
-fail the declared NGC 3198 random-error gate. Four other journeys—Bateman–Turok,
-a free Krein mode, a constructive coded wave, and the pure-Weyl causal quantum
-route—have not reached an empirical test.
+Four journeys reach bounded data. GR at Cassini and GR+NFW at NGC 3198 pass
+their declared gates. Newtonian baryons alone and Mannheim’s curve fail the
+declared NGC 3198 random-error gate. Four other journeys—Bateman–Turok, a free
+Krein mode, a constructive coded wave, and the pure-Weyl causal quantum
+route—do not reach an empirical test.
 
 “Not reached” is not “refuted.” A later mathematical result also does not
 repair an earlier missing state, observable, or prediction bridge.
@@ -257,25 +257,32 @@ view that matches your question:
 
 The technical synthesis is [Paper 21](21-reverse-foundations-of-physics.pdf).
 The physicist-level overview is [Paper 98](98-physicist-executive-summary.md).
-The latest focused theorem is the [Bateman–Turok torus paper](22-bateman-turok-euclidean-torus-collapse.pdf).
+The [Bateman–Turok torus paper](22-bateman-turok-euclidean-torus-collapse.pdf)
+gives a focused example of the method applied to a proposed universal bound.
 
-## Public scorecard
+## What the examples establish
 
-**We have:** exact finite and symbolic constructions; controlled causal gauge
-systems; classical survival and obstruction theorems; a strict local anomaly;
-a full-complex Hadamard pseudo-state pair; a sharp black-hole double-pole case;
-an interactive assumptions matrix; theory passports; bounded empirical
-controls; and multiple independent verification surfaces.
+Taken together, the examples establish that several distinctions carry real
+mathematical content. A classical mode can survive reduction without becoming
+a positive quantum particle. A causal two-point object can satisfy gauge and
+Hadamard conditions without defining a positive state. A finite or
+constructive proof can avoid an existence principle without supplying a
+continuum limit. A curve can minimize one residual while failing an
+uncertainty-weighted gate. A universal stability shortcut can fail without the
+larger research programme being refuted.
 
-**We partly have:** selected probability rules, reduced positive structures,
-nonlinear continuation, changed-theory anomaly repair, mode-reduced causal
-response, proof-assistant replays, and programme assemblies whose interfaces
-are not all closed.
+The examples also show why assembling a theory is harder than collecting good
+components. Selected positive structures, nonlinear continuations,
+changed-theory anomaly repairs, mode-reduced causal responses, and
+proof-assistant replays each solve a particular job. Unless their domains,
+carriers, and physical interpretations agree, they do not compose into one
+universe.
 
-**We do not have:** a new complete theory of nature, a positive full-BV quantum
-state, Lorentzian interacting quantum gravity, a population-level galactic
-verdict, a continuum Bateman–Turok reconstruction, a complete black-hole
-waveform, or peer review of the programme as a whole.
+Nothing in the argument supplies a complete theory of nature, a positive
+full-BV quantum state, Lorentzian interacting quantum gravity, a
+population-level galactic verdict, a continuum Bateman–Turok reconstruction,
+or a complete black-hole waveform. Each is a distinct obligation that cannot
+be inferred from the results presented here.
 
 ## Bottom line
 

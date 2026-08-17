@@ -2,9 +2,7 @@
 
 *Executive summary for physicists*
 
-**Public pre-release — 17 August 2026**
-
-*By GPT-5.6.sol and Asger Alstrup Palm*
+*By GPT-5.6.sol and Asger Alstrup Palm — 17 August 2026*
 
 > **Research context.** Asger Alstrup Palm, a computer scientist and Honorary
 > Professor at DTU Compute, orchestrates the programme and is the accountable
@@ -13,118 +11,120 @@
 > from its arguments, claim boundaries, and reproducible evidence—not accepted
 > or rejected because of its unusual authorship.
 
-## Ninety-second summary
+## Abstract
 
-This repository now contains two connected research programmes.
-
-The first asks whether pure Weyl gravity, and related fourth-order theories,
-can survive a sequence of classical, nonlinear, causal, quantum, and empirical
-tests. It has produced exact constructions and scoped obstructions, but no
-positive complete quantum theory, scattering theory, or phenomenologically
-validated replacement for general relativity.
-
-The second asks a more general question: what part of a physical theory comes
-from physical postulates, what part comes from the chosen mathematical
-carrier, and what part comes from logic, infinity, or existence principles?
-Its central judgement is
+This paper develops a common framework for two questions. The first is whether
+pure Weyl gravity and related fourth-order theories survive classical,
+nonlinear, causal, quantum, and empirical tests. The second is which parts of
+those tests depend on physical postulates, which depend on the mathematical
+carrier, and which depend on logic, infinity, or existence principles. The
+framework treats a physical conclusion as a typed judgement
 
 $$
 L+S+M+\operatorname{Enc}(P)\ \vdash\ O,
 $$
 
 where logic $L$, set or existence theory $S$, mathematical carrier $M$, and
-encoded physical postulates $P$ are kept separate from the obligation $O$
-being proved. The resulting **reverse-physics atlas** has six foundational
-regimes, six carrier families, and sixteen physical obligations: 576
-navigational coordinates. These are not 576 theories, and cell coverage does
-not imply that the ingredients compose.
+encoded physical postulates $P$ are kept separate from the obligation $O$.
+This decomposition prevents a finite calculation, Euclidean measure,
+indefinite completion, cohomology class, or fitted curve from acquiring a
+stronger physical interpretation merely by notation.
 
-Several recent results sharpen the combined picture:
+Five case studies make the method concrete:
 
-- the authoritative classical pure-Weyl BV snapshot has passed its independent
-  Gate-A import decision;
-- typed nonlinear $q_2/q_3$ Green compatibility and a full 386-row
-  BRST–Hadamard two-point **pseudo-state pair** are certified;
-- the pseudo-state is indefinite, not a positive quasifree state or physical
-  graviton Hilbert space;
+- fourth-order completion, compact causal reduction, and a defective
+  Schwarzschild response distinguish local modes from globally admissible
+  classical directions;
+- an independently imported pure-Weyl BV complex supports typed nonlinear
+  Green compatibility and a full 386-row BRST–Hadamard two-point
+  **pseudo-state pair**, while positivity and a physical graviton Hilbert space
+  remain separate obligations;
 - a bounded NGC 3198 comparison gives Mannheim conformal gravity the smaller
   unweighted residual, but GR plus an NFW halo the better weighted fit and the
   only passing random-error gate among the three galactic models tested;
 - an explicit Bateman–Turok Euclidean torus family refutes a tempting
   deterministic all-field stability bound at the free spectral scale;
-- eight end-to-end theory passports and nine programme prototypes now expose
-  where mathematical pieces exist but the joins to predictions or data remain
-  open.
+- eight end-to-end theory passports and nine programme prototypes expose where
+  mathematical pieces exist but the joins to predictions or data are absent.
 
-The headline is therefore not that one unconventional theory has won. It is
-that assumptions, carriers, proofs, interfaces, and empirical tests can be
-made separately reviewable.
+These results neither select an unconventional theory nor reduce the subject
+to a generic ghost objection. They support a more modest thesis: assumptions,
+carriers, proofs, interfaces, and empirical tests can be separated into
+reviewable obligations, and doing so exposes both genuine theorems and missing
+bridges.
 
-## What is established—and what is not
+## The obligation ladder
 
-### Established in declared settings
+The basic unit of analysis is not a theory name but an obligation. A proposed
+theory must specify what counts as a state, how states evolve, which quantities
+are observable, how gauge redundancy is removed, what probability means, how
+local constructions become global or continuum objects, and how a numerical
+prediction meets data. Evidence at one rung does not automatically climb to
+the next.
 
-- Positive, Krein, vacuum, and Jordan completions of selected fourth-order
-  systems, together with exact interaction obstructions.
-- Residual cohomology and causal BV–BFV transport for free pure-Weyl gravity on
-  the conformal cylinder in a selected closed-universe polarization.
-- Additional compact axial and polar classical directions with nonzero
-  action-derived pairings; their signs do not follow the shortcut “Einstein
-  positive, additional negative.”
-- A nonzero strict local Euclidean one-loop BV anomaly. A formal shifting
-  compensator restores the tested local Euclidean QME at one loop, but changes
-  the theory and counterterm space.
-- Axial Schwarzschild endpoint non-selection, a non-split repeated
-  Regge–Wheeler extension, one validated defective $\ell=2$ QNM, and a nonzero
-  second-order pole of the compactly cut-off radial Green operator.
-- An immutable classical import snapshot and independent Gate-A verification
-  of its declared nilpotency, contraction, chain-map, cyclicity, residual
-  cohomology, and pairing obligations.
-- Full-complex BRST–Hadamard two-point pseudo-state data on the 386-row
-  off-shell carrier, including the declared bisolution, graded CCR, wavefront,
-  Ward, reality, and stationarity conditions.
-- Exact finite, constructive, weak-foundation, and Krein examples that show
-  how particular basis-selection or completion assumptions can be avoided in
-  stated scopes.
-- Scoped empirical controls: standard GR passes the declared Cassini gate;
-  GR+NFW passes the bounded NGC 3198 random-error gate.
+### Algebraic and classical obligations
 
-### Partial, changed-theory, or interface-local
+At the algebraic end, selected fourth-order systems admit positive, Krein,
+vacuum, and Jordan completions, while explicit interactions obstruct some
+analytic positive continuations. In pure-Weyl gravity, the conformal-cylinder
+BV–BFV construction supplies residual cohomology and causal transport in a
+declared polarization. Compact axial and polar sectors also contain additional
+nonradical directions whose action-derived pairing does not obey the shortcut
+“Einstein positive, additional negative.”
 
-- Positive metrics and probability rules on selected finite or reduced
-  blocks.
-- Relational clocks and detector preparations on compact laboratories.
-- Finite-harmonic nonlinear continuation and several exact obstruction
-  branches, without a complete bounded nonlinear cone.
-- A compensator restoration in an enlarged theory, not strict pure Weyl.
-- A Hadamard pseudo-state pair without positivity on physical cohomology.
-- A mode-reduced retarded-to-resonance bridge without a complete global
-  metric/Bondi waveform theorem.
-- Matrix cells and programme prototypes whose selected ingredients have not
-  been joined by typed composition theorems.
-- Two Lean/Physlib proof passports: useful independent formal replay surfaces,
-  but not stronger physics claims or upgraded matrix grades.
+The quantum programme imports this classical complex through a content-addressed
+Gate-A snapshot. Nilpotency, contraction, chain-map, cyclicity, residual
+cohomology, and pairing checks certify the import in its stated scope. They do
+not turn the centered residual classes $[W_+^2]$ and $[W_-^2]$ into
+one-particle gravitons; those classes remain deformations or interaction
+vertices.
 
-### Open
+### Nonlinear and quantum obligations
 
-- A positive full-BV physical state, physical Hilbert space, scattering, and
-  unitarity.
-- Renormalized Lorentzian time-ordered products, causal pAQFT, and a Lorentzian
-  quantum master equation.
-- Quantum residual transfer and a particle interpretation of residual
-  cohomology. The centered classes $[W_+^2]$ and $[W_-^2]$ are certified
-  deformation/vertex classes, not one-particle gravitons.
-- A complete Lorentzian off-shell BV propagator represented by effective
-  distribution kernels.
-- Population-level, held-out, systematics-aware comparison of the galactic
-  models.
-- The Bateman–Turok Witten quotient, Gibbs typicality, interacting $H^{-1}$
-  moment, continuum measure, and Osterwalder–Schrader reconstruction.
-- Full Schwarzschild contour deformation, real-source excitation, bounded
-  metric/Bondi reconstruction, and polar or all-multipole analogues.
-- A weakest-foundation theorem for a full physical theory.
+Finite-harmonic nonlinear continuation and several obstruction branches are
+known without a complete bounded nonlinear cone. At one loop, strict pure Weyl
+has a nonzero local Euclidean BV anomaly. A formal shifting compensator repairs
+the tested identity only after enlarging the field content and counterterm
+space; it is therefore a result about a changed theory.
 
-## Claim architecture
+On the Lorentzian side, typed $q_2/q_3$ Green compatibility leads to a
+full-complex BRST–Hadamard two-point pair on the 386-row off-shell carrier. It
+is a pseudo-state: the construction supplies the declared bisolution, graded
+CCR, wavefront, Ward, reality, and stationarity conditions without supplying
+positivity on physical cohomology. Consequently it does not establish a
+physical Hilbert space, renormalized time-ordered products, causal pAQFT, a
+Lorentzian QME, scattering, or unitarity.
+
+### Propagation and empirical obligations
+
+The axial Schwarzschild analysis proves endpoint non-selection, a non-split
+repeated Regge–Wheeler extension, a defective $\ell=2$ quasinormal mode, and a
+nonzero second-order pole of a compactly cut-off radial Green operator. The
+pole has a retarded mode-reduced parent, but a mode-reduced meromorphic bridge
+is not a complete global metric or Bondi waveform.
+
+Empirical gates are likewise scoped. Standard GR passes the declared Cassini
+test, and GR+NFW passes the bounded NGC 3198 random-error gate. On that same
+galaxy protocol, Mannheim conformal gravity has the smaller unweighted
+residual but fails the uncertainty-weighted gate. None of these statements is
+a population-level comparison with astrophysical systematics.
+
+### Foundation and composition obligations
+
+The reverse-physics atlas crosses six foundational regimes, six carrier
+families, and sixteen physical obligations, giving 576 navigational
+coordinates. Exact finite, constructive, weak-foundation, Hilbert, Krein,
+algebraic, smooth, and internal constructions can therefore be compared
+without being identified. A populated cell records scoped evidence; it is not
+a complete theory.
+
+The nine programme prototypes are coverage envelopes, not rankings. The eight
+theory passports ask whether foundations, state space, dynamics, observables,
+predictions, and empirical tests are joined for one route. Two Lean/Physlib
+proof passports independently replay finite identities, but neither formal
+proof supplies a missing physical premise or promotes an atlas grade.
+
+## A type system for scientific claims
 
 Every quantum result carries one or more dependency tags:
 
@@ -153,7 +153,7 @@ The programme deliberately permits later stages to remain visible when an
 earlier interface is open. That is diagnostic information, not permission to
 compose around the missing step.
 
-## Five scientific strands
+## Five case studies
 
 ### 1. Fourth-order completion and the ghost test
 
@@ -170,14 +170,12 @@ Phase-1 conclusion is a classification: additional classical directions
 survive some reductions, while global balance, resonance, stability, and
 quantum tests obstruct others. No tested branch passes every level.
 
-The sharpest black-hole case remains valuable but is no longer the programme’s
-sole front door. In axial Schwarzschild $\ell=2$, ordinary future-horizon and
-one-sided radiation conditions do not select the Einstein subsector. A
-repeated spin-two Regge–Wheeler pair forms a non-split self-extension. At one
-validated damped frequency it has a length-two root chain and a rank-one
-second-order cut-off Green pole. The local contour contains a
-$t e^{i\omega_n t}$ term, but no complete causal detector waveform has been
-proved.
+In axial Schwarzschild $\ell=2$, ordinary future-horizon and one-sided
+radiation conditions do not select the Einstein subsector. A repeated spin-two
+Regge–Wheeler pair forms a non-split self-extension. At one validated damped
+frequency it has a length-two root chain and a rank-one second-order cut-off
+Green pole. The local contour contains a $t e^{i\omega_n t}$ term, but no
+complete causal detector waveform has been proved.
 
 ### 2. Classical authority, quantum anomaly, and Hadamard data
 
@@ -186,12 +184,12 @@ programme. Gate A imports a content-addressed snapshot rather than rebuilding
 a competing complex in the quantum tree. The snapshot passes the declared
 algebraic, homological, cyclic, residual, and pairing checks.
 
-Post-freeze work establishes typed $q_2/q_3$ compatibility with advanced and
-retarded Green homotopies and then constructs a BRST–Hadamard two-point pair on
-the full 386-row carrier. The word **pseudo-state** is load-bearing. The pair
-is indefinite and does not establish positivity on physical cohomology, a
-unique zero-mode policy, a Feynman propagator, renormalized products, causal
-pAQFT, QME restoration, particle space, scattering, or unitarity.
+On the imported complex, typed $q_2/q_3$ compatibility with advanced and
+retarded Green homotopies supports a BRST–Hadamard two-point pair on the full
+386-row carrier. The word **pseudo-state** is load-bearing. The pair is
+indefinite and does not establish positivity on physical cohomology, a unique
+zero-mode policy, a Feynman propagator, renormalized products, causal pAQFT,
+QME restoration, particle space, scattering, or unitarity.
 
 This Lorentzian frontier is logically separate from Paper 12’s local anomaly
 classification. Strict pure Weyl is locally QME-obstructed at one loop in the
@@ -290,41 +288,42 @@ Re-running a producer is reproduction, not independent verification. Exact
 and numerical evidence remain different types. A timeout or skip is never a
 pass.
 
-## Paper map
+## Supporting arguments
 
-- **Papers 01–06:** fourth-order completion, field representations, and
-  interaction obstructions.
-- **Papers 07–08:** pure-Weyl residual cohomology and covariant causal
-  transport.
-- **Papers 09–13:** clocks, compact phase spaces, gravity–light transfer,
-  anomaly, and nonlinear tangent cones.
-- **Papers 14–18:** black-hole architecture, Phase-1 synthesis, endpoint
-  non-selection, defective resonance, and static thermodynamics.
-- **[Paper 19](19-what-conformal-gravity-must-assume.pdf):** assumptions behind
-  the Mannheim rotation-curve explanation and the bounded NGC 3198 check.
-- **[Paper 20](20-is-the-gauge-algebra-an-assumption.pdf):** whether gauge
+The completion and interaction analysis is developed in Papers 01–06; the
+residual and causal pure-Weyl construction in Papers 07–08; the compact
+laboratory, anomaly, and nonlinear analyses in Papers 09–13; and the
+black-hole architecture in Papers 14–18. Four papers isolate the cross-cutting
+arguments used here:
+
+- [Paper 19](19-what-conformal-gravity-must-assume.pdf) separates the radial
+  Mannheim solution from its matter, frame, boundary, and empirical premises.
+- [Paper 20](20-is-the-gauge-algebra-an-assumption.pdf) asks whether a gauge
   algebra is input, derived structure, or representation-dependent.
-- **[Paper 21](21-reverse-foundations-of-physics.pdf):** the reverse-foundations
-  programme, literature synthesis, atlas, and evidence appendices.
-- **[Paper 22](22-bateman-turok-euclidean-torus-collapse.pdf):** the
-  compensated Green-tail counterfamily and deterministic BT torus no-go.
+- [Paper 21](21-reverse-foundations-of-physics.pdf) develops the
+  reverse-foundations framework, literature synthesis, atlas, and evidence
+  appendices.
+- [Paper 22](22-bateman-turok-euclidean-torus-collapse.pdf) proves the
+  compensated Green-tail counterfamily for the deterministic BT torus bound.
 
-## Highest-leverage next questions
+## Consequences for theory construction
 
-1. Is the certified BRST–Hadamard pseudo-state positive on the declared
-   physical cohomology, or can positivity be exactly obstructed?
-2. Can Lorentzian renormalized products and a QME be constructed without
-   crossing the dependency boundaries?
-3. Is the BT Green-tail family probabilistically negligible, or does it
-   obstruct the actual interacting $H^{-1}$ or Witten estimate?
-4. Which assembly interfaces can be certified so that coverage becomes an
-   end-to-end prediction rather than a portfolio?
-5. Do the NGC 3198 model orderings persist under systematics, other galaxies,
-   held-out tests, and physically constrained priors?
-6. Can the black-hole double pole be promoted to a complete causal waveform
-   with a real source and detector observable?
-7. Which mathematical assumptions are genuinely necessary, rather than merely
-   inherited from a convenient representation?
+The examples expose three recurring forks. First, an indefinite causal
+two-point object must either become positive after physical reduction or yield
+an exact positivity obstruction; neither outcome follows from Hadamard form
+alone. Second, a portfolio of individually supported ingredients must acquire
+typed interface theorems before it becomes an end-to-end theory. Third, a
+bounded empirical success or failure must survive systematics, held-out cases,
+and physically constrained priors before it bears on a research programme as
+a whole.
+
+The same logic applies to foundation changes. Avoiding Choice in one finite or
+constructive representation establishes a local economy of assumptions, not a
+weakest-foundation theorem for physics. Conversely, discovering that a proof
+uses Hilbert completion, a smooth continuum, or classical existence does not
+show that nature requires it. The scientific question is whether the relevant
+obligation can be reconstructed on another carrier while preserving its
+operational meaning.
 
 ## Bottom line
 

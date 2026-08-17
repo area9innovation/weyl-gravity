@@ -121,6 +121,8 @@ def build() -> dict:
         "Paper 22 answers **no**",
         "Eight theory passports",
         "two Lean/Physlib proof passports",
+        "The basic unit of analysis is not a theory name but an obligation.",
+        "The examples expose three recurring forks.",
     ]
     required99 = [
         "A theory is a stack, not an equation",
@@ -128,6 +130,7 @@ def build() -> dict:
         "one plausible universal stability shortcut is false",
         "It is not a positive physical state",
         "Some finite identities are exposed as Lean 4.32/Physlib proof passports.",
+        "Each is a distinct obligation that cannot be inferred from the results presented here.",
     ]
     for fragment in required98:
         if fragment not in normalized98:
@@ -139,6 +142,15 @@ def build() -> dict:
         "does not currently contain:\n\n- a BRST-compatible Hadamard state",
         "**Public pre-release — 27 July 2026**",
         "# Are Weyl Gravity’s Ghosts Real?",
+        "**Public pre-release",
+        "Several recent results",
+        "## What is established—and what is not",
+        "## Paper map",
+        "## Highest-leverage next questions",
+        "Post-freeze work",
+        "More recently",
+        "The latest focused theorem",
+        "## Public scorecard",
     ]
     for phrase in forbidden:
         if phrase in paper98 or phrase in paper99:
@@ -149,8 +161,8 @@ def build() -> dict:
         ARTIFACTS[2]: local_links(ARTIFACTS[2]),
     }
     return {
-        "schema_version": "public-front-door-editorial-receipt-v2",
-        "result_id": "PUBLIC_FRONT_DOOR_98_99_REFRESH_V2",
+        "schema_version": "public-front-door-editorial-receipt-v3",
+        "result_id": "PUBLIC_FRONT_DOOR_98_99_TIMELESS_SYNTHESIS_V3",
         "result_kind": "CONTENT_ADDRESSED_PUBLIC_NAVIGATION_AND_CLAIM_BOUNDARY_RECEIPT",
         "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
         "created": "2026-08-17",
@@ -166,7 +178,7 @@ def build() -> dict:
         "public_summary_checks": {
             "paper98_required_fragments": len(required98),
             "paper99_required_fragments": len(required99),
-            "stale_phrases_rejected": len(forbidden),
+            "changelog_phrases_rejected": len(forbidden),
             "theory_passports": 8,
             "programme_prototypes": 9,
             "atlas_coordinates": 576,

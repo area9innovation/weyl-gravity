@@ -25,10 +25,10 @@ def require(condition: bool, message: str) -> None:
 def main() -> None:
     receipt = json.loads(RECEIPT.read_text())
     require(
-        receipt["schema_version"] == "public-front-door-editorial-receipt-v2",
+        receipt["schema_version"] == "public-front-door-editorial-receipt-v3",
         "unexpected receipt schema",
     )
-    require(receipt["result_id"] == "PUBLIC_FRONT_DOOR_98_99_REFRESH_V2", "unexpected result id")
+    require(receipt["result_id"] == "PUBLIC_FRONT_DOOR_98_99_TIMELESS_SYNTHESIS_V3", "unexpected result id")
     require(receipt["lifecycle"] == "VERIFIED_NAVIGATION_ARTIFACT", "unexpected lifecycle")
     require(
         receipt["dependency_tags"]
@@ -125,11 +125,11 @@ def main() -> None:
         checks
         == {
             "atlas_coordinates": 576,
-            "paper98_required_fragments": 6,
-            "paper99_required_fragments": 5,
+            "changelog_phrases_rejected": 12,
+            "paper98_required_fragments": 8,
+            "paper99_required_fragments": 6,
             "physlib_passports": 2,
             "programme_prototypes": 9,
-            "stale_phrases_rejected": 3,
             "theory_passports": 8,
         },
         "public-summary ledger drifted",
@@ -142,9 +142,22 @@ def main() -> None:
     normalized99 = " ".join(paper99.split())
     require("The word **pseudo-state** is load-bearing." in normalized98, "Paper 98 pseudo-state boundary missing")
     require("coverage envelopes, not rankings" in normalized98, "Paper 98 coverage boundary missing")
+    require("## The obligation ladder" in paper98, "Paper 98 obligation argument missing")
+    require("## Consequences for theory construction" in paper98, "Paper 98 synthesis missing")
     require("A theory is a stack, not an equation" in normalized99, "Paper 99 stack explanation missing")
     require("“Not reached” is not “refuted.”" in normalized99, "Paper 99 status explanation missing")
     require("not a truth machine" in normalized99, "Paper 99 AI boundary missing")
+    require("## What the examples establish" in paper99, "Paper 99 synthesis missing")
+    forbidden_headings = [
+        "## What is established—and what is not",
+        "## Paper map",
+        "## Highest-leverage next questions",
+        "## Public scorecard",
+    ]
+    require(
+        all(heading not in paper98 and heading not in paper99 for heading in forbidden_headings),
+        "changelog-style heading survived",
+    )
     print("Papers 98–99 independent public-front-door audit: PASS")
 
 
