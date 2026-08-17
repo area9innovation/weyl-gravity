@@ -89,6 +89,7 @@ def main() -> int:
     theory_passports = json.loads((ROOT / data["authorities"]["theory_passport_atlas"]["path"]).read_text())
     bt_polynomial_contrast = json.loads((ROOT / data["authorities"]["bt_polynomial_contrast_hierarchy_obstruction"]["path"]).read_text())
     bt_torus_phase_pullback = json.loads((ROOT / data["authorities"]["bt_torus_phase_pullback_obstruction"]["path"]).read_text())
+    bt_tensor_phase = json.loads((ROOT / data["authorities"]["bt_tensor_phase_hierarchy_obstruction"]["path"]).read_text())
     coded_wave_observable = json.loads((ROOT / data["authorities"]["coded_wave_observable_reconstruction"]["path"]).read_text())
     coded_local_weak_wave = json.loads((ROOT / data["authorities"]["coded_local_weak_wave_test_class"]["path"]).read_text())
     coded_h2_test = json.loads((ROOT / data["authorities"]["coded_weak_wave_h2_test_completion"]["path"]).read_text())
@@ -571,6 +572,7 @@ def main() -> int:
         (82, "END-TO-END-THEORY-PASSPORT-ATLAS"),
         (83, "BT-POLYNOMIAL-CONTRAST-HIERARCHY-OBSTRUCTION"),
         (84, "BT-TORUS-PHASE-PULLBACK-OBSTRUCTION"),
+        (85, "BT-TENSOR-PHASE-HIERARCHY-OBSTRUCTION"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -1093,6 +1095,9 @@ def main() -> int:
     require(flags["bt_torus_phase_pullback_obstruction_certified"] is True, "BT torus phase-pullback flag is not certified")
     require(flags["bt_torus_single_phase_counterfamily_ruled_out"] is True, "BT single-phase counterfamily is not ruled out")
     require(flags["bt_torus_all_field_scaled_pl_decided"] is False, "BT phase-pullback result promoted to an all-field torus decision")
+    require(flags["bt_tensor_phase_hierarchy_obstruction_certified"] is True, "BT tensor-phase hierarchy flag is not certified")
+    require(flags["bt_tensor_phase_counterfamily_ruled_out"] is True, "BT independent tensor-phase counterfamily is not ruled out")
+    require(flags["bt_tensor_phase_all_field_scaled_pl_decided"] is False, "BT tensor-phase result promoted to an all-field torus decision")
     require(flags["bt_euclidean_finite_capabilities_imported"] is True, "BT finite import flag is not certified")
     require(flags["bt_euclidean_coarse_reproduction_separated"] is True, "BT numerical separation flag is not certified")
     require(flags["bt_free_os_obstruction_certified"] is True, "BT OS obstruction flag is not certified")
@@ -1372,6 +1377,14 @@ def main() -> int:
     require(atlas["bt_torus_phase_pullback_all_field_status"] == bt_torus_phase_pullback["research_disposition"]["all_field_torus_scaled_PL"] == "OPEN", "BT torus phase-pullback all-field boundary drift")
     require(bt_torus_phase_pullback["checks"]["ok"] is True and all(all(item["checks"].values()) for item in bt_torus_phase_pullback["exact_hierarchy_fixtures"]), "BT torus phase-pullback exact checks are not closed")
     require(bt_torus_phase_pullback["research_disposition"]["full_witten_coercivity"] == "OPEN" and bt_torus_phase_pullback["research_disposition"]["lorentzian_transfer"] == "NOT_ESTABLISHED", "BT torus phase-pullback Witten/Lorentzian boundary drift")
+    require(atlas["bt_tensor_phase_fixture_members"] == [4, 5], "BT tensor-phase fixture members drift")
+    require(atlas["bt_tensor_phase_active_counts"] == [2, 3, 4], "BT tensor-phase active-count drift")
+    require(atlas["bt_tensor_phase_gradient_identity"] == bt_tensor_phase["tensor_identity"]["torus_gradient"] == "g(x)=sum_a h_(x_a)+sum_(a!=b) delta_(x_a)*rho_(x_b)", "BT tensor-phase gradient identity drift")
+    require(atlas["bt_tensor_phase_quotient_lower"] == bt_tensor_phase["same_sign_bulk_theorem"]["quotient"] == "Q_k>=1/(256*40^k*m^6) for 2<=k<=4 and m>=4", "BT tensor-phase quotient lower bound drift")
+    require(atlas["bt_tensor_phase_normalized_lower"] == bt_tensor_phase["four_torus_corollary"]["normalized_bound"] == "Q_k/omega_L^2>=m^10/(16*40^k*pi^4)", "BT tensor-phase normalized lower bound drift")
+    require(atlas["bt_tensor_phase_all_field_status"] == bt_tensor_phase["research_disposition"]["all_field_torus_scaled_PL"] == "OPEN", "BT tensor-phase all-field boundary drift")
+    require(bt_tensor_phase["checks"]["ok"] is True and all(all(item["checks"].values()) for item in bt_tensor_phase["exact_fixtures"]), "BT tensor-phase exact checks are not closed")
+    require(bt_tensor_phase["research_disposition"]["nonseparable_transverse_corrector"] == "OPEN" and bt_tensor_phase["research_disposition"]["lorentzian_transfer"] == "NOT_ESTABLISHED", "BT tensor-phase nonseparable/Lorentzian boundary drift")
     require(abs(atlas["mannheim_ngc3198_sparc_rms_km_s"] - 4.5382719695501885) < 1e-12, "Mannheim SPARC RMS drift")
     require(abs(atlas["mannheim_ngc3198_sparc_reduced_chi2"] - 5.592211904260559) < 1e-12, "Mannheim SPARC chi-squared drift")
     standard = next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")

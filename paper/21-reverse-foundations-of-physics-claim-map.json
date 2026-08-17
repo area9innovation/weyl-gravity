@@ -269,6 +269,19 @@
     "bt_separable_lowest_mode_curvature_status": "PROVED",
     "bt_specific_zero_fiber_ward_status": "OPEN",
     "bt_subunit_positive_virial_status": "OBSTRUCTED",
+    "bt_tensor_phase_active_counts": [
+      2,
+      3,
+      4
+    ],
+    "bt_tensor_phase_all_field_status": "OPEN",
+    "bt_tensor_phase_fixture_members": [
+      4,
+      5
+    ],
+    "bt_tensor_phase_gradient_identity": "g(x)=sum_a h_(x_a)+sum_(a!=b) delta_(x_a)*rho_(x_b)",
+    "bt_tensor_phase_normalized_lower": "Q_k/omega_L^2>=m^10/(16*40^k*pi^4)",
+    "bt_tensor_phase_quotient_lower": "Q_k>=1/(256*40^k*m^6) for 2<=k<=4 and m>=4",
     "bt_torus_phase_pullback_all_field_status": "OPEN",
     "bt_torus_phase_pullback_cycle_lower": "Q_C>=1/(144m^6) for m>=4",
     "bt_torus_phase_pullback_identity": "Q_T=k^2*Q_C",
@@ -819,6 +832,17 @@
       "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_SEPARABLE_LOWEST_MODE_CURVATURE_V1.json",
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_SEPARABLE_LOWEST_MODE_CURVATURE_V1",
       "sha256": "113eb734688dd2163304398043a9ab680cd0fa4ccb5f08b059e808dce9fdf8a7"
+    },
+    "bt_tensor_phase_hierarchy_obstruction": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE"
+      ],
+      "lifecycle": "INDEPENDENT_TENSOR_PHASE_ROUTE_RULED_OUT_NONSEPARABLE_CORRECTOR_GATE_OPEN",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TENSOR_PHASE_HIERARCHY_OBSTRUCTION_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_TENSOR_PHASE_HIERARCHY_OBSTRUCTION_V1",
+      "sha256": "c7b52f728373d66262855d63d4d0fb8b1b2028493ef4bf51a48616ca691c121e"
     },
     "bt_torus_phase_pullback_obstruction": {
       "dependency_tags": [
@@ -2518,7 +2542,7 @@
       "sha256": "c394928bb8ead70ba9eeb76ee16298c3fffec5712d8c9290f773712960d333fb"
     }
   },
-  "canonical_digest": "951a813aa169efecc9bd500368d025ac8d413a2abc9c4a4b0b391fc36da12bf3",
+  "canonical_digest": "60a36ca9c7e2d896bab11d228c37ed10ffbf4fbe880c05a92917350eefe3b987",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -2640,6 +2664,9 @@
     "bt_specific_zero_fiber_ward_identity_established": false,
     "bt_standard_boundary_curvature_spectral_gap_route_obstructed": true,
     "bt_subunit_positive_homogeneous_virial_established": false,
+    "bt_tensor_phase_all_field_scaled_pl_decided": false,
+    "bt_tensor_phase_counterfamily_ruled_out": true,
+    "bt_tensor_phase_hierarchy_obstruction_certified": true,
     "bt_torus_all_field_scaled_pl_decided": false,
     "bt_torus_phase_pullback_obstruction_certified": true,
     "bt_torus_single_phase_counterfamily_ruled_out": true,
@@ -4052,6 +4079,19 @@
       ],
       "statement": "For every positive cycle field and every phase chi_k=x_1+...+x_k on the isotropic four-torus, the complete BT residual and action gradient pull back pointwise with factors k and k^2, so the torus quotient is exactly k^2 times the cycle quotient. For the polynomial-contrast hierarchy on L=4m^4+2, a new current-variation lower bound gives Q_C>=1/(144m^6) for m>=4, complementing the predecessor upper bound and proving Q_C=Theta(m^-6). Hence every axial, diagonal or helical single-phase lift obeys Q_T/omega_L^2>=k^2m^10/(9pi^4) and moves away from free-scale collapse. This rules out one-phase wrapping only; genuinely transverse multiphase correctors, an all-field torus bound, Witten coercivity, the interacting H^-1 moment, reconstruction, Born/Krein interpretation and Lorentzian claims remain open.",
       "status": "CYCLE_PHASE_PULLBACK_ROUTE_RULED_OUT_GENUINE_TORUS_CORRECTOR_GATE_OPEN"
+    },
+    {
+      "authorities": [
+        "bt_tensor_phase_hierarchy_obstruction"
+      ],
+      "claim_id": "RF-85-BT-TENSOR-PHASE-HIERARCHY-OBSTRUCTION",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE"
+      ],
+      "statement": "For every k=2,3,4, the multiplicative tensor field Omega(x)=product_a u(x_a) made from the polynomial-contrast cycle hierarchy has exact residual r=sum_a rho_a and complete gradient g=sum_a h_a+sum_(a!=b) delta_a rho_b. On a macroscopic ramp block rho is positive while delta and h are negative, so every cross term reinforces and Q_k>=1/(256*40^k*m^6). On L=4m^4+2 this gives Q_k/omega_L^2>=m^10/(16*40^k*pi^4), which diverges. This rules out independent tensor phases only; genuinely coupled nonseparable correctors, the all-field torus bound, Witten coercivity, the interacting H^-1 moment, reconstruction, Born/Krein interpretation and Lorentzian claims remain open.",
+      "status": "EXACT_INDEPENDENT_TENSOR_PHASE_FREE_SCALE_OBSTRUCTION_WITH_NONSEPARABLE_GATE_OPEN"
     }
   ],
   "created": "2026-08-17",
@@ -4291,7 +4331,7 @@
       "source_sha256": "813d29b98f493c3a1d944eb302c7c842cb3773622a5d4dee702c586b5a598087"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "d2e93c474b62ae893955dbfb2193fcd685c7c892d84f8e4257147773135976f7"
+    "sha256": "729a59b5dddaaa4dd9bcd79ffff84eab3236569f99879d7199228edfd56132cc"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-tensor-phase-hierarchy-obstruction-v1.schema.json",
+  "title": "BT Euclidean tensor-phase hierarchy obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "answer",
+    "certificate",
+    "checks",
+    "created",
+    "dependency_tags",
+    "does_not_establish",
+    "exact_fixtures",
+    "four_torus_corollary",
+    "lifecycle_state",
+    "missing_object_ledger",
+    "next_gate",
+    "provenance",
+    "question",
+    "report",
+    "research_disposition",
+    "result_kind",
+    "same_sign_bulk_theorem",
+    "schema",
+    "schema_version",
+    "tensor_identity",
+    "tier_receipt",
+    "verification_commands",
+    "verifier"
+  ],
+  "properties": {
+    "answer": {"$ref": "#/$defs/text"},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_TENSOR_PHASE_HIERARCHY_OBSTRUCTION_V1"},
+    "checks": {"$ref": "#/$defs/checkSummary"},
+    "created": {"type": "string", "format": "date"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"},
+        {"const": "REDUCED-MODE"}
+      ],
+      "items": false,
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "does_not_establish": {"$ref": "#/$defs/textArray"},
+    "exact_fixtures": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "bulk_count",
+          "bulk_start",
+          "bulk_stop",
+          "checks",
+          "length",
+          "local_gradient_floor",
+          "maximum_bulk_delta",
+          "maximum_bulk_gradient",
+          "maximum_edge_ratio",
+          "member",
+          "minimum_bulk_rho",
+          "ramp_length",
+          "tensor_rows"
+        ],
+        "properties": {
+          "bulk_count": {"type": "integer", "minimum": 1},
+          "bulk_start": {"type": "integer", "minimum": 0},
+          "bulk_stop": {"type": "integer", "minimum": 0},
+          "checks": {"type": "object", "minProperties": 8, "additionalProperties": {"type": "boolean"}},
+          "length": {"type": "integer", "minimum": 1},
+          "local_gradient_floor": {"$ref": "#/$defs/rational"},
+          "maximum_bulk_delta": {"$ref": "#/$defs/rational"},
+          "maximum_bulk_gradient": {"$ref": "#/$defs/rational"},
+          "maximum_edge_ratio": {"$ref": "#/$defs/rational"},
+          "member": {"type": "integer", "minimum": 4},
+          "minimum_bulk_rho": {"$ref": "#/$defs/rational"},
+          "ramp_length": {"type": "integer", "minimum": 1},
+          "tensor_rows": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["active_phases", "analytic_lower_bound", "gradient_norm_squared", "lower_bound_verified", "quotient", "quotient_scaled_by_m6", "residual_norm_squared"],
+              "properties": {
+                "active_phases": {"type": "integer", "minimum": 2, "maximum": 4},
+                "analytic_lower_bound": {"$ref": "#/$defs/rational"},
+                "gradient_norm_squared": {"$ref": "#/$defs/rational"},
+                "lower_bound_verified": {"const": true},
+                "quotient": {"$ref": "#/$defs/rational"},
+                "quotient_scaled_by_m6": {"$ref": "#/$defs/rational"},
+                "residual_norm_squared": {"$ref": "#/$defs/rational"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "four_torus_corollary": {"$ref": "#/$defs/stringMap"},
+    "lifecycle_state": {"const": "INDEPENDENT_TENSOR_PHASE_ROUTE_RULED_OUT_NONSEPARABLE_CORRECTOR_GATE_OPEN"},
+    "missing_object_ledger": {"$ref": "#/$defs/textArray"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["assumptions", "exact_arithmetic", "inputs", "repository_base_commit"],
+      "properties": {
+        "assumptions": {"$ref": "#/$defs/textArray"},
+        "exact_arithmetic": {"$ref": "#/$defs/text"},
+        "inputs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"const": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_PHASE_PULLBACK_OBSTRUCTION_V1.json"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+      }
+    },
+    "question": {"$ref": "#/$defs/text"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-tensor-phase-hierarchy-obstruction.md"},
+    "research_disposition": {"$ref": "#/$defs/stringMap"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "same_sign_bulk_theorem": {"$ref": "#/$defs/stringMap"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-tensor-phase-hierarchy-obstruction-v1.schema.json"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-tensor-phase-hierarchy-obstruction-v1"},
+    "tensor_identity": {"$ref": "#/$defs/stringMap"},
+    "tier_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["memory_policy", "scoped_command_receipts", "tier_0", "tier_1", "tier_2", "tier_3"],
+      "properties": {
+        "memory_policy": {"$ref": "#/$defs/text"},
+        "scoped_command_receipts": {"type": "object", "minProperties": 7, "additionalProperties": {"type": "string"}},
+        "tier_0": {"$ref": "#/$defs/text"},
+        "tier_1": {"$ref": "#/$defs/text"},
+        "tier_2": {"$ref": "#/$defs/text"},
+        "tier_3": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_tensor_phase_hierarchy_obstruction.py"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "textArray": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "stringMap": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["denominator", "numerator"],
+      "properties": {
+        "denominator": {"type": "integer", "minimum": 1},
+        "numerator": {"type": "integer"}
+      }
+    },
+    "checkSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["details", "failures", "ok", "passed", "total"],
+      "properties": {
+        "details": {"type": "object", "minProperties": 10, "additionalProperties": {"type": "boolean"}},
+        "failures": {"type": "array", "items": {"type": "string"}},
+        "ok": {"const": true},
+        "passed": {"const": 10},
+        "total": {"const": 10}
+      }
+    }
+  }
+}

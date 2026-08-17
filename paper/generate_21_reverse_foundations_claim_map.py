@@ -71,6 +71,7 @@ AUTHORITY_PATHS = {
     "bt_corrector_slab_cylinder_suppression": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CORRECTOR_SLAB_CYLINDER_SUPPRESSION_V1.json",
     "bt_polynomial_contrast_hierarchy_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_POLYNOMIAL_CONTRAST_HIERARCHY_OBSTRUCTION_V1.json",
     "bt_torus_phase_pullback_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_PHASE_PULLBACK_OBSTRUCTION_V1.json",
+    "bt_tensor_phase_hierarchy_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TENSOR_PHASE_HIERARCHY_OBSTRUCTION_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -304,6 +305,7 @@ def build() -> dict:
     bt_corrector_slab_cylinder = loaded["bt_corrector_slab_cylinder_suppression"]
     bt_polynomial_contrast = loaded["bt_polynomial_contrast_hierarchy_obstruction"]
     bt_torus_phase_pullback = loaded["bt_torus_phase_pullback_obstruction"]
+    bt_tensor_phase = loaded["bt_tensor_phase_hierarchy_obstruction"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -442,6 +444,12 @@ def build() -> dict:
             "bt_torus_phase_pullback_cycle_lower": bt_torus_phase_pullback["hierarchy_lower_bound"]["cycle_lower"],
             "bt_torus_phase_pullback_normalized_lower": bt_torus_phase_pullback["four_torus_corollary"]["normalized_bound"],
             "bt_torus_phase_pullback_all_field_status": bt_torus_phase_pullback["research_disposition"]["all_field_torus_scaled_PL"],
+            "bt_tensor_phase_fixture_members": [item["member"] for item in bt_tensor_phase["exact_fixtures"]],
+            "bt_tensor_phase_active_counts": [item["active_phases"] for item in bt_tensor_phase["exact_fixtures"][0]["tensor_rows"]],
+            "bt_tensor_phase_gradient_identity": bt_tensor_phase["tensor_identity"]["torus_gradient"],
+            "bt_tensor_phase_quotient_lower": bt_tensor_phase["same_sign_bulk_theorem"]["quotient"],
+            "bt_tensor_phase_normalized_lower": bt_tensor_phase["four_torus_corollary"]["normalized_bound"],
+            "bt_tensor_phase_all_field_status": bt_tensor_phase["research_disposition"]["all_field_torus_scaled_PL"],
             "coded_wave_observable_cutoff": coded_wave_observable["cutoff_theorem"]["cutoff"],
             "coded_wave_observable_full_state_reconstruction": coded_wave_observable["claim_flags"]["full_state_reconstruction_proved"],
             "coded_local_weak_wave_basis_tests": coded_local_weak_wave["localized_test_class"]["basis_size"],
@@ -1268,6 +1276,13 @@ def build() -> dict:
                 "authorities": ["bt_torus_phase_pullback_obstruction"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"],
             },
+            {
+                "claim_id": "RF-85-BT-TENSOR-PHASE-HIERARCHY-OBSTRUCTION",
+                "statement": "For every k=2,3,4, the multiplicative tensor field Omega(x)=product_a u(x_a) made from the polynomial-contrast cycle hierarchy has exact residual r=sum_a rho_a and complete gradient g=sum_a h_a+sum_(a!=b) delta_a rho_b. On a macroscopic ramp block rho is positive while delta and h are negative, so every cross term reinforces and Q_k>=1/(256*40^k*m^6). On L=4m^4+2 this gives Q_k/omega_L^2>=m^10/(16*40^k*pi^4), which diverges. This rules out independent tensor phases only; genuinely coupled nonseparable correctors, the all-field torus bound, Witten coercivity, the interacting H^-1 moment, reconstruction, Born/Krein interpretation and Lorentzian claims remain open.",
+                "status": "EXACT_INDEPENDENT_TENSOR_PHASE_FREE_SCALE_OBSTRUCTION_WITH_NONSEPARABLE_GATE_OPEN",
+                "authorities": ["bt_tensor_phase_hierarchy_obstruction"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -1536,6 +1551,9 @@ def build() -> dict:
             "bt_torus_phase_pullback_obstruction_certified": True,
             "bt_torus_single_phase_counterfamily_ruled_out": True,
             "bt_torus_all_field_scaled_pl_decided": False,
+            "bt_tensor_phase_hierarchy_obstruction_certified": True,
+            "bt_tensor_phase_counterfamily_ruled_out": True,
+            "bt_tensor_phase_all_field_scaled_pl_decided": False,
             "bt_euclidean_finite_capabilities_imported": True,
             "bt_euclidean_coarse_reproduction_separated": True,
             "bt_free_os_obstruction_certified": True,
