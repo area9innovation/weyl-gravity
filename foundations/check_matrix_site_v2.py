@@ -15,6 +15,7 @@ MANIFEST = SITE / "manifest.json"
 RESULT = ROOT / "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json"
 VIABILITY = ROOT / "foundations/site/viability.json"
 ASSEMBLIES = ROOT / "foundations/site/assemblies.json"
+THEORY_PASSPORTS = ROOT / "foundations/results/FOUNDATIONAL_END_TO_END_THEORY_PASSPORT_ATLAS_V1.json"
 CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V15.json"
 LADDER = ROOT / "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
 COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V49.json"
@@ -80,13 +81,13 @@ def sha(path: Path) -> str:
 
 
 def digest(data: dict[str, Any]) -> str:
-    projection = {key: data[key] for key in ("axes", "cells", "evidence", "ladder", "graph", "completion_atlas", "completion_common_endpoint_sdr_binding", "completion_endpoint_to_residual_comparison", "completion_residual_cyclic_carrier_obstruction", "completion_dfinite_cotangent_dual_comparison", "completion_m3rc_action_support_dual_identification", "completion_typed_residual_cyclicity", "completion_local_cyclic_pairing", "completion_residual_zero_modes", "completion_centered_cohomology", "completion_residual_sdr_type_audit", "proof_bridges", "cross_cell_interfaces", "carrier_interfaces", "numerical_reproducibility_records")}
+    projection = {key: data[key] for key in ("axes", "cells", "evidence", "ladder", "graph", "theory_passports", "completion_atlas", "completion_common_endpoint_sdr_binding", "completion_endpoint_to_residual_comparison", "completion_residual_cyclic_carrier_obstruction", "completion_dfinite_cotangent_dual_comparison", "completion_m3rc_action_support_dual_identification", "completion_typed_residual_cyclicity", "completion_local_cyclic_pairing", "completion_residual_zero_modes", "completion_centered_cohomology", "completion_residual_sdr_type_audit", "proof_bridges", "cross_cell_interfaces", "carrier_interfaces", "numerical_reproducibility_records")}
     return hashlib.sha256(json.dumps(projection, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()).hexdigest()
 
 
 def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]]:
     data = load(DATA) if data is None else data
-    cube, ladder, completion_source, endpoint_sdr_binding_source, residual_comparison_source, residual_cyclic_obstruction_source, dfinite_cotangent_dual_source, m3rc_action_support_source, typed_residual_cyclicity_source, local_cyclic_pairing_source, residual_zero_mode_source, centered_cohomology_source, residual_sdr_type_audit_source, result, manifest, viability, assemblies = load(CUBE), load(LADDER), load(COMPLETION_ATLAS), load(COMPLETION_ENDPOINT_SDR_BINDING), load(COMPLETION_RESIDUAL_COMPARISON), load(COMPLETION_RESIDUAL_CYCLIC_OBSTRUCTION), load(COMPLETION_DFINITE_COTANGENT_DUAL), load(COMPLETION_M3RC_ACTION_SUPPORT_DUAL), load(COMPLETION_TYPED_RESIDUAL_CYCLICITY), load(COMPLETION_LOCAL_CYCLIC_PAIRING), load(COMPLETION_RESIDUAL_ZERO_MODES), load(COMPLETION_CENTERED_COHOMOLOGY), load(COMPLETION_RESIDUAL_SDR_TYPE_AUDIT), load(RESULT), load(MANIFEST), load(VIABILITY), load(ASSEMBLIES)
+    cube, ladder, completion_source, endpoint_sdr_binding_source, residual_comparison_source, residual_cyclic_obstruction_source, dfinite_cotangent_dual_source, m3rc_action_support_source, typed_residual_cyclicity_source, local_cyclic_pairing_source, residual_zero_mode_source, centered_cohomology_source, residual_sdr_type_audit_source, result, manifest, viability, assemblies, theory_passports = load(CUBE), load(LADDER), load(COMPLETION_ATLAS), load(COMPLETION_ENDPOINT_SDR_BINDING), load(COMPLETION_RESIDUAL_COMPARISON), load(COMPLETION_RESIDUAL_CYCLIC_OBSTRUCTION), load(COMPLETION_DFINITE_COTANGENT_DUAL), load(COMPLETION_M3RC_ACTION_SUPPORT_DUAL), load(COMPLETION_TYPED_RESIDUAL_CYCLICITY), load(COMPLETION_LOCAL_CYCLIC_PAIRING), load(COMPLETION_RESIDUAL_ZERO_MODES), load(COMPLETION_CENTERED_COHOMOLOGY), load(COMPLETION_RESIDUAL_SDR_TYPE_AUDIT), load(RESULT), load(MANIFEST), load(VIABILITY), load(ASSEMBLIES), load(THEORY_PASSPORTS)
     green_source, unary_causal_source = load(COMPLETION_GREEN_ACTION_NAME), load(COMPLETION_UNARY_CAUSAL_SNAPSHOT)
     full_d_source, q2_preflight_source, q2_green_source, recursive_tree_source, formal_source, typed_inverse_source, quadratic_source, q3_witness_source, gate_v8_source, gate_v9_source, gate_v10_source, cubic_inventory_source, hh_hv_lift_source, gate_v11_source, diff_auxiliary_source, gate_v12_source, ghost_manifest_source, gate_v13_source, shifted_mass_source, diff_v2_source, source_q2_source, classical_quartic_source, shifted_mass_q3_source, source_q3_source, gate_v27_source, m1a_local_source, gate_v28_source, m1a_represented_source, m1a_ledger_source, gate_v29_source, m1b_primal_source, gate_v30_source, m1b_dual_source, m1b_cyclic_source, m1c_source = load(COMPLETION_FULL_D), load(COMPLETION_Q2_PREFLIGHT), load(COMPLETION_Q2_GREEN), load(COMPLETION_RECURSIVE_TREES), load(COMPLETION_FORMAL_COEFFICIENTS), load(COMPLETION_FIELD_EQUATION_QUOTIENT_INVERSE), load(COMPLETION_QUADRATIC_OBSTRUCTION), load(COMPLETION_Q3_WITNESS), load(COMPLETION_GATE_V8), load(COMPLETION_GATE_V9), load(COMPLETION_GATE_V10), load(COMPLETION_CUBIC_INVENTORY), load(COMPLETION_HH_HV_LIFT), load(COMPLETION_GATE_V11), load(COMPLETION_DIFF_AUXILIARY), load(COMPLETION_GATE_V12), load(COMPLETION_GHOST_MANIFEST), load(COMPLETION_GATE_V13), load(COMPLETION_SHIFTED_MASS_Q2), load(COMPLETION_DIFF_AUXILIARY_V2), load(COMPLETION_SOURCE_Q2), load(COMPLETION_CLASSICAL_QUARTIC), load(COMPLETION_SHIFTED_MASS_Q3), load(COMPLETION_SOURCE_Q3), load(COMPLETION_GATE_V27), load(COMPLETION_M1A_LOCAL), load(COMPLETION_GATE_V28), load(COMPLETION_M1A_REPRESENTED), load(COMPLETION_M1A_LEDGER), load(COMPLETION_GATE_V29), load(COMPLETION_M1B_PRIMAL), load(COMPLETION_GATE_V30), load(COMPLETION_M1B_DUAL), load(COMPLETION_M1B_CYCLIC), load(COMPLETION_M1C_SNAPSHOT)
     proof_sources = {item["result_id"]: item for item in (load(PHYSLIB_SECOND_SOURCE_BRIDGE), load(PHYSLIB_ARITY_THREE_BRIDGE))}
@@ -205,6 +206,23 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     completion = data.get("completion_atlas", {})
     if completion != completion_source:
         errors.append("Lorentzian completion atlas projection")
+    passport_projection = data.get("theory_passports", {})
+    if passport_projection != theory_passports:
+        errors.append("theory-passport atlas projection")
+    passport_summary = passport_projection.get("atlas_summary", {})
+    if passport_projection.get("result_id") != "FOUNDATIONAL_END_TO_END_THEORY_PASSPORT_ATLAS_V1" or passport_summary != {
+        "passport_count": 8,
+        "benchmark_groups": ["CASSINI_SOLAR_SYSTEM", "NGC3198_COMMON_PROTOCOL", "NO_EMPIRICAL_BENCHMARK"],
+        "empirical_dispositions": ["FAILED_DECLARED_GATE", "NOT_TESTED", "SUPPORTED_IN_DECLARED_SCOPE"],
+        "reaches_empirical_benchmark": 4,
+        "passes_declared_empirical_gate": 2,
+        "fails_declared_empirical_gate": 2,
+        "not_yet_empirically_tested": 4,
+        "complete_theories": 0,
+    }:
+        errors.append("theory-passport summary boundary")
+    if len(passport_projection.get("passports", [])) != 8 or any(len(item.get("stages", [])) != 6 or len(item.get("joins", [])) != 5 or item.get("journey_summary", {}).get("complete_theory") is not False for item in passport_projection.get("passports", [])):
+        errors.append("theory-passport journey closure")
     residual_zero_modes = data.get("completion_residual_zero_modes", {})
     if residual_zero_modes != residual_zero_mode_source:
         errors.append("residual zero-mode payload projection")
@@ -928,6 +946,8 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     result_flags = result.get("claim_flags", {})
     if result_flags.get("proof_passports_exposed") is not True or result_flags.get("proof_passports_change_evidence_grades") is not False or result_flags.get("minimal_arity_three_finite_replay_exposed") is not True or result_flags.get("minimal_arity_three_finite_graded_evaluator_exposed") is not True or result_flags.get("minimal_arity_three_natural_operator_proof_formalized") is not False:
         errors.append("site proof-passport exposure flags")
+    if result_flags.get("end_to_end_theory_passports_exposed") is not True or result_flags.get("theory_passports_select_complete_theory") is not False or result_flags.get("theory_passports_promote_matrix_grades") is not False:
+        errors.append("site theory-passport exposure flags")
     if result_flags.get("strict_residual_zero_mode_payload_exposed") is not True or result_flags.get("strict_residual_zero_mode_common_freeze_exposed") is not True:
         errors.append("site residual zero-mode exposure flags")
     if result_flags.get("strict_centered_cohomology_payload_exposed") is not True or result_flags.get("strict_centered_representative_common_freeze_exposed") is not True:
@@ -1043,7 +1063,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     app = (SITE / "app.js").read_text() + (SITE / "migration-review.js").read_text() + (SITE / "assemblies.js").read_text()
     if "https://" in html or "http://" in html or '<script src="data.js"></script>' not in html or '<script src="viability.js"></script>' not in html or '<script src="assemblies.js"></script>' not in html or '<script src="migration-review.js"></script>' not in html:
         errors.append("offline/no-remote-code shell")
-    for token in ("matrixGroups", "viabilityView", "Theory profiles", "Coverage readiness map", "Coverage envelope, not a composed theory", "No complete observationally validated theory is certified", "paretoProfiles", "assembliesView", "Bounded model tests", "Research programmes", "Interfaces & calibration", "assemblyPanel", "Bounded assembly complete", "Field equations to Cassini", "Weyl action to NGC 3198", "random-error gate failed", "No parameter is refitted", "SPARC", "Meet the research programmes", "Bateman–Turok", "Mannheim conformal gravity", "Pure-Weyl BV–BFV", "Central question", "Important boundary", "Applicability mask", "Seven independent maturity rails", "Eight independent maturity rails", "Numerical reproduction is not empirical validation", "Euclidean/Krein carrier boundary", "External positive control", "Typed interface ledger", "Empirical benchmark ledger", "NOT_ASSESSED", "guideView", "dimensionGuide", "Every result answers three different questions", "Rules", "Container", "Job", "Why “general relativity works” is too compressed", "The question changes even when the equation does not", "Small glossary", "Axiom of Choice", "For reviewers: how the evidence letters and migration audit work", "Regime × carrier × obligation", "Reviewed gap versus priority gap", "graphView", "GRAPH_PATHWAYS", "Relation ledger", "graph-edge-hit", "No direct certificate yet", "ladderView", "evidenceView", "compareDialog", "exportJson", "exportCsv", "downloadBrief", "column-label", "Migration review", "migration_evidence", "175-coordinate surface audit", "data-dual", "directKinds", "role-badge", "Local + literature result", "Directness unreviewed", "data-marklen", "supportingKinds", "legend-note"):
+    for token in ("matrixGroups", "viabilityView", "Theory profiles", "Coverage readiness map", "Coverage envelope, not a composed theory", "No complete observationally validated theory is certified", "paretoProfiles", "assembliesView", "Bounded model tests", "Research programmes", "Interfaces & calibration", "assemblyPanel", "Bounded assembly complete", "Field equations to Cassini", "Weyl action to NGC 3198", "random-error gate failed", "No parameter is refitted", "SPARC", "Meet the research programmes", "Bateman–Turok", "Mannheim conformal gravity", "Pure-Weyl BV–BFV", "Central question", "Important boundary", "Applicability mask", "Seven independent maturity rails", "Eight independent maturity rails", "Numerical reproduction is not empirical validation", "Euclidean/Krein carrier boundary", "External positive control", "Typed interface ledger", "Empirical benchmark ledger", "NOT_ASSESSED", "passportsView", "Theory journeys", "theoryPassportExplorer", "A theory must cross six bridges before it can confront nature", "scoped passes", "scoped failures", "Highest-value next step", "first blocker or failure", "guideView", "dimensionGuide", "Every result answers three different questions", "Rules", "Container", "Job", "Why “general relativity works” is too compressed", "The question changes even when the equation does not", "Small glossary", "Axiom of Choice", "For reviewers: how the evidence letters and migration audit work", "Regime × carrier × obligation", "Reviewed gap versus priority gap", "graphView", "GRAPH_PATHWAYS", "Relation ledger", "graph-edge-hit", "No direct certificate yet", "ladderView", "evidenceView", "compareDialog", "exportJson", "exportCsv", "downloadBrief", "column-label", "Migration review", "migration_evidence", "175-coordinate surface audit", "data-dual", "directKinds", "role-badge", "Local + literature result", "Directness unreviewed", "data-marklen", "supportingKinds", "legend-note"):
         if token not in html + app:
             errors.append("interface token " + token)
     if "No stronger interpretation is licensed" in app:
@@ -1099,6 +1119,8 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         "completion_cells": sum(len(item.get("stages", [])) for item in completion.get("branches", [])),
         "completion_routes": len(completion.get("route_selection", [])),
         "completion_decisions": len(completion.get("berger_h26_c26_decision_chain", [])),
+        "theory_passports": len(passport_projection.get("passports", [])),
+        "theory_passport_stages": sum(len(item.get("stages", [])) for item in passport_projection.get("passports", [])),
         "theory_profiles": len(viability.get("profiles", [])),
         "carrier_envelopes": len(viability.get("carrier_envelopes", [])),
         "pareto_profiles": sum(item.get("pareto_default") is True for item in viability.get("profiles", [])),

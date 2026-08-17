@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "assertion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "pointer", "expected"],
+      "properties": {
+        "source": {"enum": ["GR_CASSINI", "NGC3198_COMMON", "MANNHEIM_NGC3198", "BT_EUCLIDEAN", "KREIN_FREE", "CODED_WAVE", "PURE_WEYL"]},
+        "pointer": {"type": "string", "pattern": "^/"},
+        "expected": {}
+      }
+    },
+    "stage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "status", "summary", "boundary", "source_assertions"],
+      "properties": {
+        "id": {"enum": ["FOUNDATIONAL_ASSUMPTIONS", "STATE_SPACE", "DYNAMICS", "OBSERVABLE", "PREDICTION", "EMPIRICAL_BENCHMARK"]},
+        "status": {"enum": ["ESTABLISHED_EXACT", "ESTABLISHED_SCOPED", "ESTABLISHED_NUMERIC", "EMPIRICAL_PASS", "EMPIRICAL_FAIL", "PARTIAL", "OPEN", "NOT_REACHED"]},
+        "summary": {"type": "string", "minLength": 1},
+        "boundary": {"type": "string", "minLength": 1},
+        "source_assertions": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/assertion"}}
+      }
+    },
+    "join": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from", "to", "status", "explanation"],
+      "properties": {
+        "from": {"type": "string"},
+        "to": {"type": "string"},
+        "status": {"enum": ["CLOSED", "CLOSED_WITH_NEGATIVE_OUTCOME", "OPEN", "NOT_REACHED"]},
+        "explanation": {"type": "string", "minLength": 1}
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit",
+    "dependency_tags", "title", "plain_language_purpose", "comparison_rule", "stage_vocabulary",
+    "status_vocabulary", "sources", "passports", "atlas_summary", "claim_flags", "does_not_establish",
+    "independent_checker", "human_report", "canonical_digest"
+  ],
+  "properties": {
+    "schema_version": {"const": "foundational-end-to-end-theory-passport-atlas-v1"},
+    "result_id": {"const": "FOUNDATIONAL_END_TO_END_THEORY_PASSPORT_ATLAS_V1"},
+    "result_kind": {"const": "EVIDENCE_PINNED_CROSS_ASSEMBLY_END_TO_END_COMPARISON"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "title": {"type": "string", "minLength": 1},
+    "plain_language_purpose": {"type": "string", "minLength": 1},
+    "comparison_rule": {"type": "string", "minLength": 1},
+    "stage_vocabulary": {
+      "type": "array", "minItems": 6, "maxItems": 6,
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["id", "label", "question"],
+        "properties": {"id": {"type": "string"}, "label": {"type": "string", "minLength": 1}, "question": {"type": "string", "minLength": 1}}
+      }
+    },
+    "status_vocabulary": {
+      "type": "array", "minItems": 8, "maxItems": 8,
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["id", "plain_meaning", "counts_as_ready"],
+        "properties": {"id": {"type": "string"}, "plain_meaning": {"type": "string", "minLength": 1}, "counts_as_ready": {"type": "boolean"}}
+      }
+    },
+    "sources": {
+      "type": "object", "minProperties": 7, "maxProperties": 7,
+      "additionalProperties": {
+        "type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256", "human_report"],
+        "properties": {
+          "path": {"type": "string", "minLength": 1}, "result_id": {"type": "string", "minLength": 1},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "human_report": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "passports": {
+      "type": "array", "minItems": 8, "maxItems": 8,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "label", "family", "scope", "benchmark_group", "dependency_tags", "stages", "joins", "journey_summary", "highest_value_next_step"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[A-Z0-9_]+$"}, "label": {"type": "string", "minLength": 1},
+          "family": {"type": "string", "minLength": 1}, "scope": {"type": "string", "minLength": 1},
+          "benchmark_group": {"enum": ["CASSINI_SOLAR_SYSTEM", "NGC3198_COMMON_PROTOCOL", "NO_EMPIRICAL_BENCHMARK"]},
+          "dependency_tags": {"type": "array", "minItems": 1, "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}},
+          "stages": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/stage"}},
+          "joins": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/join"}},
+          "journey_summary": {
+            "type": "object", "additionalProperties": false,
+            "required": ["contiguous_ready_through", "first_blocker_or_failure", "furthest_stage_with_evidence", "ready_stage_count", "assessed_stage_count", "reaches_empirical_benchmark", "empirical_disposition", "complete_theory"],
+            "properties": {
+              "contiguous_ready_through": {"type": ["string", "null"]}, "first_blocker_or_failure": {"type": ["string", "null"]},
+              "furthest_stage_with_evidence": {"type": ["string", "null"]}, "ready_stage_count": {"type": "integer", "minimum": 0, "maximum": 6},
+              "assessed_stage_count": {"type": "integer", "minimum": 0, "maximum": 6}, "reaches_empirical_benchmark": {"type": "boolean"},
+              "empirical_disposition": {"enum": ["SUPPORTED_IN_DECLARED_SCOPE", "FAILED_DECLARED_GATE", "NOT_TESTED"]}, "complete_theory": {"const": false}
+            }
+          },
+          "highest_value_next_step": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "atlas_summary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["passport_count", "benchmark_groups", "empirical_dispositions", "reaches_empirical_benchmark", "passes_declared_empirical_gate", "fails_declared_empirical_gate", "not_yet_empirically_tested", "complete_theories"],
+      "properties": {
+        "passport_count": {"const": 8}, "benchmark_groups": {"type": "array", "minItems": 3, "maxItems": 3},
+        "empirical_dispositions": {"type": "array", "minItems": 3, "maxItems": 3}, "reaches_empirical_benchmark": {"const": 4},
+        "passes_declared_empirical_gate": {"const": 2}, "fails_declared_empirical_gate": {"const": 2},
+        "not_yet_empirically_tested": {"const": 4}, "complete_theories": {"const": 0}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fixed_six_stage_crosswalk_complete", "all_stage_promotions_source_asserted", "common_ngc3198_protocol_exposed", "scoped_empirical_pass_and_failure_distinguished", "stage_local_evidence_distinguished_from_end_to_end_composition", "complete_theory_selected", "matrix_cell_grades_promoted", "new_empirical_analysis_performed"],
+      "properties": {
+        "fixed_six_stage_crosswalk_complete": {"const": true}, "all_stage_promotions_source_asserted": {"const": true},
+        "common_ngc3198_protocol_exposed": {"const": true}, "scoped_empirical_pass_and_failure_distinguished": {"const": true},
+        "stage_local_evidence_distinguished_from_end_to_end_composition": {"const": true}, "complete_theory_selected": {"const": false},
+        "matrix_cell_grades_promoted": {"const": false}, "new_empirical_analysis_performed": {"const": false}
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 7, "items": {"type": "string", "minLength": 1}},
+    "independent_checker": {
+      "type": "object", "additionalProperties": false, "required": ["path", "method"],
+      "properties": {"path": {"const": "foundations/check_theory_passport_atlas.py"}, "method": {"type": "string", "minLength": 1}}
+    },
+    "human_report": {"const": "foundations/reports/end-to-end-theory-passport-atlas-v1.md"},
+    "canonical_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

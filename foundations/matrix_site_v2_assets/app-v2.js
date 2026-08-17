@@ -14,6 +14,7 @@
   const CENTERED_COHOMOLOGY = DATA.completion_centered_cohomology;
   const RESIDUAL_SDR_TYPE_AUDIT = DATA.completion_residual_sdr_type_audit;
   const PROOF_BRIDGES = DATA.proof_bridges || [];
+  const PASSPORT_ATLAS = DATA.theory_passports;
 
   const cells = new Map(DATA.cells.map(cell => [`${cell.foundation}|${cell.carrier}|${cell.obligation}`, cell]));
   const esc = value => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
@@ -42,6 +43,55 @@
     const root = document.getElementById("proofPassportExplorer");
     if (!root) return;
     root.innerHTML = `<section class="proof-passport-section"><div class="section-head compact-head"><div><p class="eyebrow">A second assurance axis</p><h2>Formal proof passports</h2></div><p>These records say which implications Lean checks. They do not recolor matrix cells, strengthen physical evidence, or show that an axiom footprint is minimal.</p></div><div class="proof-passport-grid">${PROOF_BRIDGES.map(item => proofPassportCard(item)).join("")}</div></section>`;
+  }
+
+  function renderTheoryPassports() {
+    const root = document.getElementById("theoryPassportExplorer");
+    if (!root || !PASSPORT_ATLAS) return;
+    const params = new URLSearchParams(location.hash.slice(1));
+    const requested = params.get("passport");
+    const selected = PASSPORT_ATLAS.passports.find(item => item.id === requested) || PASSPORT_ATLAS.passports[0];
+    const stageVocabulary = new Map(PASSPORT_ATLAS.stage_vocabulary.map(item => [item.id, item]));
+    const statusVocabulary = new Map(PASSPORT_ATLAS.status_vocabulary.map(item => [item.id, item]));
+    const summary = PASSPORT_ATLAS.atlas_summary;
+    const matrixHead = PASSPORT_ATLAS.stage_vocabulary.map((item, index) => `<th title="${esc(item.question)}"><span>${index + 1}</span><b>${esc(item.label)}</b></th>`).join("");
+    const matrixRows = PASSPORT_ATLAS.passports.map(item => `<tr class="${item.id === selected.id ? "selected" : ""}"><th><button data-theory-passport="${esc(item.id)}"><b>${esc(item.label)}</b><small>${esc(item.family)}</small></button></th>${item.stages.map(stage => `<td><button data-theory-passport="${esc(item.id)}" class="passport-dot passport-${esc(stage.status.toLowerCase())}" title="${esc(statusVocabulary.get(stage.status)?.plain_meaning)}"><span>${esc(stage.status.replaceAll("ESTABLISHED_", "").replaceAll("EMPIRICAL_", ""))}</span></button></td>`).join("")}</tr>`).join("");
+    const legend = PASSPORT_ATLAS.status_vocabulary.map(item => `<li><i class="passport-swatch passport-${esc(item.id.toLowerCase())}"></i><span><b>${esc(words(item.id))}</b><small>${esc(item.plain_meaning)}</small></span></li>`).join("");
+    const stages = selected.stages.map((stage, index) => {
+      const vocabulary = stageVocabulary.get(stage.id);
+      const evidence = stage.source_assertions.map(claim => {
+        const source = PASSPORT_ATLAS.sources[claim.source];
+        return `<li><a href="sources/${esc(source.path)}"><code>${esc(claim.source)}</code></a><span>${esc(claim.pointer)}</span></li>`;
+      }).join("");
+      const join = index < selected.joins.length ? selected.joins[index] : null;
+      return `<li class="passport-stage-card passport-${esc(stage.status.toLowerCase())}">
+        <div class="passport-stage-number">${index + 1}</div><div><p class="eyebrow">${esc(vocabulary.label)} · ${esc(words(stage.status))}</p><h3>${esc(stage.summary)}</h3><p class="passport-stage-question">${esc(vocabulary.question)}</p><p class="passport-boundary"><b>Boundary:</b> ${esc(stage.boundary)}</p><details><summary>Evidence anchors (${stage.source_assertions.length})</summary><ul class="passport-evidence">${evidence}</ul></details></div>
+        ${join ? `<aside class="passport-join join-${esc(join.status.toLowerCase())}"><b>${esc(words(join.status))}</b><span>${esc(join.explanation)}</span></aside>` : ""}
+      </li>`;
+    }).join("");
+    const dispositionClass = selected.journey_summary.empirical_disposition === "SUPPORTED_IN_DECLARED_SCOPE" ? "pass" : selected.journey_summary.empirical_disposition === "FAILED_DECLARED_GATE" ? "fail" : "open";
+    const sourceReports = [...new Set(selected.stages.flatMap(stage => stage.source_assertions.map(claim => claim.source)))].map(sourceId => {
+      const source = PASSPORT_ATLAS.sources[sourceId];
+      const report = source.human_report ? ` · <a href="sources/${esc(source.human_report)}">report</a>` : "";
+      return `<li><code>${esc(source.result_id)}</code> — <a href="sources/${esc(source.path)}">result</a>${report}</li>`;
+    }).join("");
+    root.innerHTML = `<section class="passport-intro"><div><p class="eyebrow">The idea without the jargon</p><h3>A theory must cross six bridges before it can confront nature</h3><p>${esc(PASSPORT_ATLAS.plain_language_purpose)}</p><p>The boxes report evidence, not popularity or truth. A result can exist at a later stage while an earlier bridge remains open; the passport keeps both facts visible.</p></div><div class="passport-counts"><span><b>${summary.passport_count}</b> journeys</span><span><b>${summary.reaches_empirical_benchmark}</b> reach data</span><span class="count-pass"><b>${summary.passes_declared_empirical_gate}</b> scoped passes</span><span class="count-fail"><b>${summary.fails_declared_empirical_gate}</b> scoped failures</span></div></section>
+      <div class="passport-overview"><div class="passport-table-wrap"><table class="passport-table"><thead><tr><th>Theory journey</th>${matrixHead}</tr></thead><tbody>${matrixRows}</tbody></table></div><aside class="passport-legend"><h3>What the colors mean</h3><ul>${legend}</ul></aside></div>
+      <article class="passport-detail"><header><div><p class="eyebrow">${esc(selected.family)} · ${esc(words(selected.benchmark_group))}</p><h2>${esc(selected.label)}</h2><p>${esc(selected.scope)}</p></div><span class="passport-disposition disposition-${dispositionClass}">${esc(words(selected.journey_summary.empirical_disposition))}</span></header>
+        <div class="passport-progress"><span><b>${selected.journey_summary.ready_stage_count}/6</b> stages ready</span><span><b>${esc(words(selected.journey_summary.contiguous_ready_through || "none"))}</b> continuous chain reaches</span><span><b>${esc(words(selected.journey_summary.first_blocker_or_failure || "none"))}</b> first blocker or failure</span></div>
+        <ol class="passport-track">${stages}</ol>
+        <section class="passport-next"><p class="eyebrow">Highest-value next step</p><h3>${esc(selected.highest_value_next_step)}</h3></section>
+        <details class="passport-sources"><summary>Sources and audit trail</summary><ul>${sourceReports}</ul><p><a href="${esc(DATA.source_links.theory_passports_report)}">Read the full passport report</a> · <a href="${esc(DATA.source_links.theory_passports)}">Download the machine-readable atlas</a></p></details>
+      </article>
+      <article class="viability-warning boundary"><b>Fail-closed reading.</b> ${esc(PASSPORT_ATLAS.comparison_rule)} ${esc(PASSPORT_ATLAS.does_not_establish[2])}.</article>`;
+    root.querySelectorAll("[data-theory-passport]").forEach(button => button.addEventListener("click", () => {
+      const next = new URLSearchParams(location.hash.slice(1));
+      next.set("view", "passports");
+      next.set("passport", button.dataset.theoryPassport);
+      history.replaceState(null, "", `${location.pathname}${location.search}#${next}`);
+      renderTheoryPassports();
+      document.querySelector(".passport-detail")?.scrollIntoView({behavior: "smooth", block: "start"});
+    }));
   }
 
   function renderCompletionAtlas() {
@@ -265,7 +315,8 @@
     enhanceInspector();
     renderCompletionAtlas();
     renderProofPassports();
-    if (document.querySelector('[data-view="completion"]')?.classList.contains("active")) document.querySelector(".controls").hidden = true;
+    renderTheoryPassports();
+    if (document.querySelector('[data-view="completion"]')?.classList.contains("active") || document.querySelector('[data-view="passports"]')?.classList.contains("active")) document.querySelector(".controls").hidden = true;
   }
 
   function enhanceInspector() {
@@ -292,6 +343,9 @@
   enhanceInterface();
   if (new URLSearchParams(location.hash.slice(1)).get("view") === "completion") {
     document.querySelector('[data-view="completion"]')?.click();
+  }
+  if (new URLSearchParams(location.hash.slice(1)).get("view") === "passports") {
+    document.querySelector('[data-view="passports"]')?.click();
   }
   for (const event of ["click", "input", "change"]) {
     document.addEventListener(event, () => window.setTimeout(enhanceInterface, 0));

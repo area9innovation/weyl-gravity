@@ -18029,6 +18029,1337 @@ window.MATRIX_EXPLORER_DATA = {
       }
     ]
   },
+  "theory_passports": {
+    "schema_version": "foundational-end-to-end-theory-passport-atlas-v1",
+    "result_id": "FOUNDATIONAL_END_TO_END_THEORY_PASSPORT_ATLAS_V1",
+    "result_kind": "EVIDENCE_PINNED_CROSS_ASSEMBLY_END_TO_END_COMPARISON",
+    "lifecycle": "CLASSIFIED",
+    "created": "2026-08-17",
+    "repository_base_commit": "e070091ae701d959d4c8c5f1a76574d4fb13875f",
+    "dependency_tags": [
+      "LOCAL-ALGEBRAIC",
+      "EUCLIDEAN-SPECTRAL",
+      "REDUCED-MODE",
+      "LORENTZIAN-CAUSAL"
+    ],
+    "title": "Theory passports: from assumptions to observations",
+    "plain_language_purpose": "Show how far each proposed physical framework travels along the same six-step route, where it first stops, and whether it has actually met data.",
+    "comparison_rule": "Stages compare functions in a research journey, not claims of equal mathematical structure. Only evidence pinned to the named source and boundary may close a stage.",
+    "stage_vocabulary": [
+      {
+        "id": "FOUNDATIONAL_ASSUMPTIONS",
+        "label": "Foundational assumptions",
+        "question": "What mathematical and physical rules are being accepted at the start?"
+      },
+      {
+        "id": "STATE_SPACE",
+        "label": "State space",
+        "question": "What objects count as possible physical configurations or states?"
+      },
+      {
+        "id": "DYNAMICS",
+        "label": "Dynamics",
+        "question": "What law says how those objects evolve, respond, or are weighted?"
+      },
+      {
+        "id": "OBSERVABLE",
+        "label": "Observable",
+        "question": "What quantity is connected to an operation or measurement?"
+      },
+      {
+        "id": "PREDICTION",
+        "label": "Prediction",
+        "question": "What definite number or curve does the model produce?"
+      },
+      {
+        "id": "EMPIRICAL_BENCHMARK",
+        "label": "Empirical benchmark",
+        "question": "What happens when that prediction meets a declared dataset or experimental estimate?"
+      }
+    ],
+    "status_vocabulary": [
+      {
+        "id": "ESTABLISHED_EXACT",
+        "plain_meaning": "An exact or formally checked result closes this stage in the stated scope.",
+        "counts_as_ready": true
+      },
+      {
+        "id": "ESTABLISHED_SCOPED",
+        "plain_meaning": "A declared or literature-backed ingredient closes this stage only inside an explicit model boundary.",
+        "counts_as_ready": true
+      },
+      {
+        "id": "ESTABLISHED_NUMERIC",
+        "plain_meaning": "A reproducible numerical calculation closes this stage under its stated protocol.",
+        "counts_as_ready": true
+      },
+      {
+        "id": "EMPIRICAL_PASS",
+        "plain_meaning": "The prediction reaches data and passes the declared comparison gate; this is not validation of the complete theory.",
+        "counts_as_ready": true
+      },
+      {
+        "id": "EMPIRICAL_FAIL",
+        "plain_meaning": "The prediction reaches data but fails the declared comparison gate; this is a scoped negative result, not a universal refutation.",
+        "counts_as_ready": false
+      },
+      {
+        "id": "PARTIAL",
+        "plain_meaning": "Useful stage-local evidence exists, but a required piece or bridge is still missing.",
+        "counts_as_ready": false
+      },
+      {
+        "id": "OPEN",
+        "plain_meaning": "The stage is required for this journey and has not been established.",
+        "counts_as_ready": false
+      },
+      {
+        "id": "NOT_REACHED",
+        "plain_meaning": "The journey cannot yet make this claim because an earlier required stage is open.",
+        "counts_as_ready": false
+      }
+    ],
+    "sources": {
+      "GR_CASSINI": {
+        "path": "foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json",
+        "result_id": "FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1",
+        "sha256": "f87aa0453de1af594175d1c23c39b48d644064a8582a56785bd9ea4ce279a902",
+        "human_report": "foundations/reports/gr-cassini-model-assembly-v1.md"
+      },
+      "NGC3198_COMMON": {
+        "path": "foundations/results/FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1.json",
+        "result_id": "FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1",
+        "sha256": "e9c9ecd8e6778a98cf15754970ac2e8fa6c117edca630f3a89b30aea1a03eaeb",
+        "human_report": "foundations/reports/ngc3198-common-fit-comparison-v1.md"
+      },
+      "MANNHEIM_NGC3198": {
+        "path": "foundations/results/FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1.json",
+        "result_id": "FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1",
+        "sha256": "d4e7b8774f6593136b512453108a2d39396cd91969fdfc73681ee14d936e0154",
+        "human_report": "foundations/reports/mannheim-ngc3198-model-assembly-v1.md"
+      },
+      "BT_EUCLIDEAN": {
+        "path": "foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json",
+        "result_id": "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1",
+        "sha256": "f8791f9209682cd01b29a5868ea8f353b958f9fb8ce24d77d9b8af6bc92b7f94",
+        "human_report": "foundations/reports/bt-euclidean-lattice-foundational-import.md"
+      },
+      "KREIN_FREE": {
+        "path": "foundations/results/FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1.json",
+        "result_id": "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1",
+        "sha256": "36444854eaed27ebd0a82cb7b26f2c3ad1c1e211f08fc0326882fd325676af06",
+        "human_report": "foundations/reports/krein-fock-ground-state-dynamics-interface.md"
+      },
+      "CODED_WAVE": {
+        "path": "foundations/results/FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1.json",
+        "result_id": "FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1",
+        "sha256": "cf90e90abb824e19a2a0e7caf2d32c4772f408a70107e4c9ea6013edc0e8e215",
+        "human_report": "foundations/reports/coded-wave-observable-reconstruction-v1.md"
+      },
+      "PURE_WEYL": {
+        "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V49.json",
+        "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V49",
+        "sha256": "5dd450b6186f41508407829f7f00983c604b809e0b51f5af161883fa1e5519ce",
+        "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v49.md"
+      }
+    },
+    "passports": [
+      {
+        "id": "STANDARD_GR_CASSINI",
+        "label": "Standard GR — Cassini",
+        "family": "Mainstream general relativity",
+        "scope": "Static, spherical, asymptotically flat solar exterior and the published Cassini gamma estimate.",
+        "benchmark_group": "CASSINI_SOLAR_SYSTEM",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "LORENTZIAN-CAUSAL"
+        ],
+        "stages": [
+          {
+            "id": "FOUNDATIONAL_ASSUMPTIONS",
+            "status": "ESTABLISHED_SCOPED",
+            "summary": "Four-dimensional Lorentzian metric gravity with the vacuum Einstein equation outside the Sun.",
+            "boundary": "This does not cover the solar interior, cosmology, or quantum gravity.",
+            "source_assertions": [
+              {
+                "source": "GR_CASSINI",
+                "pointer": "/model_identity/id",
+                "expected": "STANDARD_GR_VACUUM_SOLAR_EXTERIOR"
+              }
+            ]
+          },
+          {
+            "id": "STATE_SPACE",
+            "status": "ESTABLISHED_SCOPED",
+            "summary": "Static spherical exterior metrics with asymptotic-flatness and Newtonian normalization.",
+            "boundary": "This is a deliberately restricted classical sector, not the full solution space of GR.",
+            "source_assertions": [
+              {
+                "source": "GR_CASSINI",
+                "pointer": "/model_identity/sector",
+                "expected": "Static, spherically symmetric, asymptotically flat vacuum exterior of the Sun"
+              }
+            ]
+          },
+          {
+            "id": "DYNAMICS",
+            "status": "ESTABLISHED_EXACT",
+            "summary": "The reduced Einstein equations integrate exactly to the Schwarzschild exterior.",
+            "boundary": "Exact only inside the declared ansatz and boundary normalization.",
+            "source_assertions": [
+              {
+                "source": "GR_CASSINI",
+                "pointer": "/claim_flags/vacuum_field_equation_to_solution_derived",
+                "expected": true
+              }
+            ]
+          },
+          {
+            "id": "OBSERVABLE",
+            "status": "ESTABLISHED_EXACT",
+            "summary": "Null propagation identifies the Cassini-sensitive delay coefficient as 1+gamma.",
+            "boundary": "The operational map imports the experiment's fitted-parameter interpretation.",
+            "source_assertions": [
+              {
+                "source": "GR_CASSINI",
+                "pointer": "/claim_flags/null_delay_gamma_plus_one_coefficient_derived",
+                "expected": true
+              },
+              {
+                "source": "GR_CASSINI",
+                "pointer": "/claim_flags/cassini_observable_map_registered",
+                "expected": true
+              }
+            ]
+          },
+          {
+            "id": "PREDICTION",
+            "status": "ESTABLISHED_EXACT",
+            "summary": "The model predicts gamma=1, hence gamma-1=0.",
+            "boundary": "This is one weak-field prediction, not a test of every GR sector.",
+            "source_assertions": [
+              {
+                "source": "GR_CASSINI",
+                "pointer": "/claim_flags/ppn_gamma_equals_one_derived_exactly",
+                "expected": true
+              }
+            ]
+          },
+          {
+            "id": "EMPIRICAL_BENCHMARK",
+            "status": "EMPIRICAL_PASS",
+            "summary": "The prediction lies inside the publisher's displayed Cassini uncertainty band.",
+            "boundary": "The raw spacecraft data and likelihood were not reanalysed.",
+            "source_assertions": [
+              {
+                "source": "GR_CASSINI",
+                "pointer": "/claim_flags/prediction_inside_reported_band",
+                "expected": true
+              },
+              {
+                "source": "GR_CASSINI",
+                "pointer": "/claim_flags/cassini_likelihood_reproduced",
+                "expected": false
+              }
+            ]
+          }
+        ],
+        "joins": [
+          {
+            "from": "FOUNDATIONAL_ASSUMPTIONS",
+            "to": "STATE_SPACE",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          },
+          {
+            "from": "STATE_SPACE",
+            "to": "DYNAMICS",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          },
+          {
+            "from": "DYNAMICS",
+            "to": "OBSERVABLE",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          },
+          {
+            "from": "OBSERVABLE",
+            "to": "PREDICTION",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          },
+          {
+            "from": "PREDICTION",
+            "to": "EMPIRICAL_BENCHMARK",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          }
+        ],
+        "journey_summary": {
+          "contiguous_ready_through": "EMPIRICAL_BENCHMARK",
+          "first_blocker_or_failure": null,
+          "furthest_stage_with_evidence": "EMPIRICAL_BENCHMARK",
+          "ready_stage_count": 6,
+          "assessed_stage_count": 6,
+          "reaches_empirical_benchmark": true,
+          "empirical_disposition": "SUPPORTED_IN_DECLARED_SCOPE",
+          "complete_theory": false
+        },
+        "highest_value_next_step": "Add an independently reproduced second solar-system benchmark and a systematics-aware comparison."
+      },
+      {
+        "id": "NEWTONIAN_BARYONS_NGC3198",
+        "label": "Newtonian baryons — NGC 3198",
+        "family": "Classical baryons-only control",
+        "scope": "One fitted stellar scale, fixed gas, and a common analytic thin-disk geometry compared with 39 SPARC velocities.",
+        "benchmark_group": "NGC3198_COMMON_PROTOCOL",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC"
+        ],
+        "stages": [
+          {
+            "id": "FOUNDATIONAL_ASSUMPTIONS",
+            "status": "ESTABLISHED_SCOPED",
+            "summary": "Classical Newtonian gravity for the declared stellar and gas disk model.",
+            "boundary": "The common analytic disk is a comparison control, not the full SPARC mass model.",
+            "source_assertions": [
+              {
+                "source": "NGC3198_COMMON",
+                "pointer": "/models/0/model_id",
+                "expected": "NEWTONIAN_BARYONS_ONLY"
+              }
+            ]
+          },
+          {
+            "id": "STATE_SPACE",
+            "status": "ESTABLISHED_SCOPED",
+            "summary": "Circular tracers respond to a thin exponential stellar disk plus a fixed gas disk.",
+            "boundary": "Distance, inclination and baryonic systematics are not marginalized.",
+            "source_assertions": [
+              {
+                "source": "NGC3198_COMMON",
+                "pointer": "/claim_flags/common_baryonic_geometry_used",
+                "expected": true
+              }
+            ]
+          },
+          {
+            "id": "DYNAMICS",
+            "status": "ESTABLISHED_SCOPED",
+            "summary": "The circular-speed law contains only the Newtonian stellar and gas contributions.",
+            "boundary": "One stellar mass scale is fitted to this same galaxy.",
+            "source_assertions": [
+              {
+                "source": "NGC3198_COMMON",
+                "pointer": "/models/0/parameter_count",
+                "expected": 1
+              }
+            ]
+          },
+          {
+            "id": "OBSERVABLE",
+            "status": "ESTABLISHED_SCOPED",
+            "summary": "The observable is the rotation speed at the common set of 39 galactic radii.",
+            "boundary": "Only tabulated random velocity errors enter the objective.",
+            "source_assertions": [
+              {
+                "source": "NGC3198_COMMON",
+                "pointer": "/models/0/metrics/point_count",
+                "expected": 39
+              }
+            ]
+          },
+          {
+            "id": "PREDICTION",
+            "status": "ESTABLISHED_NUMERIC",
+            "summary": "A deterministic fit produces a complete 39-point baryons-only rotation curve.",
+            "boundary": "This is an in-sample fit, not a held-out prediction.",
+            "source_assertions": [
+              {
+                "source": "NGC3198_COMMON",
+                "pointer": "/models/0/parameter_boundary_hit",
+                "expected": false
+              }
+            ]
+          },
+          {
+            "id": "EMPIRICAL_BENCHMARK",
+            "status": "EMPIRICAL_FAIL",
+            "summary": "The reduced chi-squared is about 128.72 and fails the declared <=2 random-error gate.",
+            "boundary": "This rejects this bounded baryons-only control, not Newtonian gravity in every setting.",
+            "source_assertions": [
+              {
+                "source": "NGC3198_COMMON",
+                "pointer": "/models/0/random_error_gate/passed",
+                "expected": false
+              }
+            ]
+          }
+        ],
+        "joins": [
+          {
+            "from": "FOUNDATIONAL_ASSUMPTIONS",
+            "to": "STATE_SPACE",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          },
+          {
+            "from": "STATE_SPACE",
+            "to": "DYNAMICS",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          },
+          {
+            "from": "DYNAMICS",
+            "to": "OBSERVABLE",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          },
+          {
+            "from": "OBSERVABLE",
+            "to": "PREDICTION",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          },
+          {
+            "from": "PREDICTION",
+            "to": "EMPIRICAL_BENCHMARK",
+            "status": "CLOSED_WITH_NEGATIVE_OUTCOME",
+            "explanation": "The prediction reaches the benchmark, where the declared comparison gate fails."
+          }
+        ],
+        "journey_summary": {
+          "contiguous_ready_through": "PREDICTION",
+          "first_blocker_or_failure": "EMPIRICAL_BENCHMARK",
+          "furthest_stage_with_evidence": "EMPIRICAL_BENCHMARK",
+          "ready_stage_count": 5,
+          "assessed_stage_count": 6,
+          "reaches_empirical_benchmark": true,
+          "empirical_disposition": "FAILED_DECLARED_GATE",
+          "complete_theory": false
+        },
+        "highest_value_next_step": "Use the failure as a calibrated baseline when testing added halo or modified-gravity structure."
+      },
+      {
+        "id": "GR_NFW_NGC3198",
+        "label": "GR + NFW halo — NGC 3198",
+        "family": "Mainstream dark-halo phenomenology",
+        "scope": "Newtonian weak-field baryons plus an NFW halo, with three fitted parameters under the common 39-point protocol.",
+        "benchmark_group": "NGC3198_COMMON_PROTOCOL",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC"
+        ],
+        "stages": [
+          {
+            "id": "FOUNDATIONAL_ASSUMPTIONS",
+            "status": "ESTABLISHED_SCOPED",
+            "summary": "Weak-field general relativity represented by Newtonian baryons plus an NFW dark-matter halo.",
+            "boundary": "No cosmological halo prior or posterior is included.",
+            "source_assertions": [
+              {
+                "source": "NGC3198_COMMON",
+                "pointer": "/models/1/model_id",
+                "expected": "GR_NFW_DARK_HALO"
+              }
+            ]
+          },
+          {
+            "id": "STATE_SPACE",
+            "status": "ESTABLISHED_SCOPED",
+            "summary": "The model combines the common stellar/gas disks with a spherical NFW halo.",
+            "boundary": "The halo is a phenomenological fitted component for one galaxy.",
+            "source_assertions": [
+              {
+                "source": "NGC3198_COMMON",
+                "pointer": "/claim_flags/common_baryonic_geometry_used",
+                "expected": true
+              }
+            ]
+          },
+          {
+            "id": "DYNAMICS",
+            "status": "ESTABLISHED_SCOPED",
+            "summary": "Circular speed is the baryonic contribution plus the NFW circular-speed formula.",
+            "boundary": "The fit has q_star, V200 and concentration as free parameters.",
+            "source_assertions": [
+              {
+                "source": "NGC3198_COMMON",
+                "pointer": "/models/1/parameter_count",
+                "expected": 3
+              }
+            ]
+          },
+          {
+            "id": "OBSERVABLE",
+            "status": "ESTABLISHED_SCOPED",
+            "summary": "The observable is the rotation speed at the same 39 radii used for both competing curves.",
+            "boundary": "The comparison uses random errors only.",
+            "source_assertions": [
+              {
+                "source": "NGC3198_COMMON",
+                "pointer": "/models/1/metrics/point_count",
+                "expected": 39
+              }
+            ]
+          },
+          {
+            "id": "PREDICTION",
+            "status": "ESTABLISHED_NUMERIC",
+            "summary": "Independent optimizers agree on a fitted 39-point NFW rotation curve.",
+            "boundary": "The curve is fitted in-sample and has two more parameters than the one-parameter alternatives.",
+            "source_assertions": [
+              {
+                "source": "NGC3198_COMMON",
+                "pointer": "/claim_flags/independent_optimizer_agreement_required",
+                "expected": true
+              },
+              {
+                "source": "NGC3198_COMMON",
+                "pointer": "/models/1/parameter_boundary_hit",
+                "expected": false
+              }
+            ]
+          },
+          {
+            "id": "EMPIRICAL_BENCHMARK",
+            "status": "EMPIRICAL_PASS",
+            "summary": "Reduced chi-squared about 0.965 passes the declared <=2 gate and has the lowest AICc here.",
+            "boundary": "One galaxy without systematic-error marginalization does not select a complete theory.",
+            "source_assertions": [
+              {
+                "source": "NGC3198_COMMON",
+                "pointer": "/models/1/random_error_gate/passed",
+                "expected": true
+              },
+              {
+                "source": "NGC3198_COMMON",
+                "pointer": "/ranking_by_AICc/0",
+                "expected": "GR_NFW_DARK_HALO"
+              },
+              {
+                "source": "NGC3198_COMMON",
+                "pointer": "/claim_flags/complete_theory_selected",
+                "expected": false
+              }
+            ]
+          }
+        ],
+        "joins": [
+          {
+            "from": "FOUNDATIONAL_ASSUMPTIONS",
+            "to": "STATE_SPACE",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          },
+          {
+            "from": "STATE_SPACE",
+            "to": "DYNAMICS",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          },
+          {
+            "from": "DYNAMICS",
+            "to": "OBSERVABLE",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          },
+          {
+            "from": "OBSERVABLE",
+            "to": "PREDICTION",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          },
+          {
+            "from": "PREDICTION",
+            "to": "EMPIRICAL_BENCHMARK",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          }
+        ],
+        "journey_summary": {
+          "contiguous_ready_through": "EMPIRICAL_BENCHMARK",
+          "first_blocker_or_failure": null,
+          "furthest_stage_with_evidence": "EMPIRICAL_BENCHMARK",
+          "ready_stage_count": 6,
+          "assessed_stage_count": 6,
+          "reaches_empirical_benchmark": true,
+          "empirical_disposition": "SUPPORTED_IN_DECLARED_SCOPE",
+          "complete_theory": false
+        },
+        "highest_value_next_step": "Repeat the common protocol across a preregistered galaxy sample with nuisance parameters and held-out tests."
+      },
+      {
+        "id": "MANNHEIM_NGC3198",
+        "label": "Mannheim conformal gravity — NGC 3198",
+        "family": "Mannheim–Kazanas programme",
+        "scope": "The pure-metric conformal-gravity rotation law, common analytic disk geometry, and the same 39 SPARC velocities.",
+        "benchmark_group": "NGC3198_COMMON_PROTOCOL",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC"
+        ],
+        "stages": [
+          {
+            "id": "FOUNDATIONAL_ASSUMPTIONS",
+            "status": "ESTABLISHED_SCOPED",
+            "summary": "Four-dimensional pure-metric conformal gravity in the Mannheim–Kazanas phenomenological branch.",
+            "boundary": "The matter-sector interpretation is an explicit unresolved assumption.",
+            "source_assertions": [
+              {
+                "source": "MANNHEIM_NGC3198",
+                "pointer": "/model_identity/id",
+                "expected": "MANNHEIM_OBRIEN_NGC3198_THIN_DISK"
+              },
+              {
+                "source": "MANNHEIM_NGC3198",
+                "pointer": "/claim_flags/matter_coupling_dispute_resolved",
+                "expected": false
+              }
+            ]
+          },
+          {
+            "id": "STATE_SPACE",
+            "status": "ESTABLISHED_SCOPED",
+            "summary": "Static weak-field metrics and thin stellar/gas disks describe massive circular tracers.",
+            "boundary": "This assumes the displayed metric governs massive tracers; no galactic interior matter solution is supplied.",
+            "source_assertions": [
+              {
+                "source": "MANNHEIM_NGC3198",
+                "pointer": "/model_identity/benchmark",
+                "expected": "GALACTIC_DYNAMICS"
+              }
+            ]
+          },
+          {
+            "id": "DYNAMICS",
+            "status": "ESTABLISHED_SCOPED",
+            "summary": "Certified exterior and orbit-law predecessors feed the published thin-disk and universal-term formula.",
+            "boundary": "The disk integration is literature-transcribed and does not resolve the matter coupling.",
+            "source_assertions": [
+              {
+                "source": "MANNHEIM_NGC3198",
+                "pointer": "/claim_flags/exact_local_predecessors_imported_by_hash",
+                "expected": true
+              }
+            ]
+          },
+          {
+            "id": "OBSERVABLE",
+            "status": "ESTABLISHED_SCOPED",
+            "summary": "The operational quantity is the circular rotation speed across NGC 3198.",
+            "boundary": "The later SPARC data are not identical to the original fitting dataset.",
+            "source_assertions": [
+              {
+                "source": "NGC3198_COMMON",
+                "pointer": "/models/2/metrics/point_count",
+                "expected": 39
+              }
+            ]
+          },
+          {
+            "id": "PREDICTION",
+            "status": "ESTABLISHED_NUMERIC",
+            "summary": "A one-parameter common-protocol fit produces the complete Mannheim curve.",
+            "boundary": "This differs from reproducing the original Mannheim likelihood.",
+            "source_assertions": [
+              {
+                "source": "NGC3198_COMMON",
+                "pointer": "/models/2/model_id",
+                "expected": "MANNHEIM_CONFORMAL_GRAVITY"
+              },
+              {
+                "source": "NGC3198_COMMON",
+                "pointer": "/models/2/parameter_count",
+                "expected": 1
+              }
+            ]
+          },
+          {
+            "id": "EMPIRICAL_BENCHMARK",
+            "status": "EMPIRICAL_FAIL",
+            "summary": "Reduced chi-squared about 3.20 fails the declared <=2 random-error gate despite a low unweighted RMS.",
+            "boundary": "This is a bounded one-galaxy result, not a universal refutation of conformal gravity.",
+            "source_assertions": [
+              {
+                "source": "NGC3198_COMMON",
+                "pointer": "/models/2/random_error_gate/passed",
+                "expected": false
+              },
+              {
+                "source": "MANNHEIM_NGC3198",
+                "pointer": "/claim_flags/empirical_support_established",
+                "expected": false
+              }
+            ]
+          }
+        ],
+        "joins": [
+          {
+            "from": "FOUNDATIONAL_ASSUMPTIONS",
+            "to": "STATE_SPACE",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          },
+          {
+            "from": "STATE_SPACE",
+            "to": "DYNAMICS",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          },
+          {
+            "from": "DYNAMICS",
+            "to": "OBSERVABLE",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          },
+          {
+            "from": "OBSERVABLE",
+            "to": "PREDICTION",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          },
+          {
+            "from": "PREDICTION",
+            "to": "EMPIRICAL_BENCHMARK",
+            "status": "CLOSED_WITH_NEGATIVE_OUTCOME",
+            "explanation": "The prediction reaches the benchmark, where the declared comparison gate fails."
+          }
+        ],
+        "journey_summary": {
+          "contiguous_ready_through": "PREDICTION",
+          "first_blocker_or_failure": "EMPIRICAL_BENCHMARK",
+          "furthest_stage_with_evidence": "EMPIRICAL_BENCHMARK",
+          "ready_stage_count": 5,
+          "assessed_stage_count": 6,
+          "reaches_empirical_benchmark": true,
+          "empirical_disposition": "FAILED_DECLARED_GATE",
+          "complete_theory": false
+        },
+        "highest_value_next_step": "Resolve or parameterize the massive-matter coupling, then test a preregistered multi-galaxy sample with systematics."
+      },
+      {
+        "id": "BATEMAN_TUROK_EUCLIDEAN",
+        "label": "Bateman–Turok — finite Euclidean lattice",
+        "family": "Bateman–Turok programme",
+        "scope": "The positive finite-volume Euclidean lattice slice, not the proposed full Lorentzian Krein theory.",
+        "benchmark_group": "NO_EMPIRICAL_BENCHMARK",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "EUCLIDEAN-SPECTRAL"
+        ],
+        "stages": [
+          {
+            "id": "FOUNDATIONAL_ASSUMPTIONS",
+            "status": "ESTABLISHED_SCOPED",
+            "summary": "A finite periodic graph, ordinary real integration, and a positive Euclidean weight.",
+            "boundary": "Finite graph does not mean a finite field-value space.",
+            "source_assertions": [
+              {
+                "source": "BT_EUCLIDEAN",
+                "pointer": "/source_classification/foundation",
+                "expected": "FINITE_DISCRETE"
+              }
+            ]
+          },
+          {
+            "id": "STATE_SPACE",
+            "status": "ESTABLISHED_EXACT",
+            "summary": "Mean-zero real lattice fields with positive Omega have a finite partition function and normalized Gibbs state.",
+            "boundary": "This is a Euclidean statistical state, not a Lorentzian physical state.",
+            "source_assertions": [
+              {
+                "source": "BT_EUCLIDEAN",
+                "pointer": "/claim_flags/finite_partition_function_supports_normalized_gibbs_state",
+                "expected": true
+              }
+            ]
+          },
+          {
+            "id": "DYNAMICS",
+            "status": "PARTIAL",
+            "summary": "A nonlinear Euclidean action and Gibbs weighting are explicit, but no Lorentzian time evolution or continuation is established.",
+            "boundary": "Euclidean weighting cannot silently stand in for causal dynamics.",
+            "source_assertions": [
+              {
+                "source": "BT_EUCLIDEAN",
+                "pointer": "/claim_flags/lorentzian_transfer_established",
+                "expected": false
+              }
+            ]
+          },
+          {
+            "id": "OBSERVABLE",
+            "status": "PARTIAL",
+            "summary": "Finite-volume lattice observables can be sampled under the positive Gibbs measure.",
+            "boundary": "No Born rule, scattering observable, or laboratory event rate is connected.",
+            "source_assertions": [
+              {
+                "source": "BT_EUCLIDEAN",
+                "pointer": "/claim_flags/five_finite_euclidean_capabilities_imported",
+                "expected": true
+              }
+            ]
+          },
+          {
+            "id": "PREDICTION",
+            "status": "PARTIAL",
+            "summary": "Two samplers coarsely reproduce declared L=4 and L=6 finite-volume quantities.",
+            "boundary": "No controlled continuum or regulator-independent prediction follows.",
+            "source_assertions": [
+              {
+                "source": "BT_EUCLIDEAN",
+                "pointer": "/claim_flags/independent_sampler_coarse_reproduction_recorded",
+                "expected": true
+              },
+              {
+                "source": "BT_EUCLIDEAN",
+                "pointer": "/claim_flags/continuum_reconstruction_established",
+                "expected": false
+              }
+            ]
+          },
+          {
+            "id": "EMPIRICAL_BENCHMARK",
+            "status": "OPEN",
+            "summary": "No empirical benchmark has been connected to this Euclidean construction.",
+            "boundary": "Numerical reproducibility of the regulator is not empirical validation.",
+            "source_assertions": [
+              {
+                "source": "BT_EUCLIDEAN",
+                "pointer": "/claim_flags/empirical_agreement_assessed",
+                "expected": false
+              }
+            ]
+          }
+        ],
+        "joins": [
+          {
+            "from": "FOUNDATIONAL_ASSUMPTIONS",
+            "to": "STATE_SPACE",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          },
+          {
+            "from": "STATE_SPACE",
+            "to": "DYNAMICS",
+            "status": "OPEN",
+            "explanation": "At least one adjacent stage is partial or open, so composition is not certified."
+          },
+          {
+            "from": "DYNAMICS",
+            "to": "OBSERVABLE",
+            "status": "OPEN",
+            "explanation": "At least one adjacent stage is partial or open, so composition is not certified."
+          },
+          {
+            "from": "OBSERVABLE",
+            "to": "PREDICTION",
+            "status": "OPEN",
+            "explanation": "At least one adjacent stage is partial or open, so composition is not certified."
+          },
+          {
+            "from": "PREDICTION",
+            "to": "EMPIRICAL_BENCHMARK",
+            "status": "OPEN",
+            "explanation": "At least one adjacent stage is partial or open, so composition is not certified."
+          }
+        ],
+        "journey_summary": {
+          "contiguous_ready_through": "STATE_SPACE",
+          "first_blocker_or_failure": "DYNAMICS",
+          "furthest_stage_with_evidence": "PREDICTION",
+          "ready_stage_count": 2,
+          "assessed_stage_count": 5,
+          "reaches_empirical_benchmark": false,
+          "empirical_disposition": "NOT_TESTED",
+          "complete_theory": false
+        },
+        "highest_value_next_step": "Construct a controlled continuum and Euclidean-to-Lorentzian bridge before defining a physical observable."
+      },
+      {
+        "id": "KREIN_FREE_MODE",
+        "label": "Krein free-mode ground state",
+        "family": "Indefinite-metric / Krein programme",
+        "scope": "The explicit free reduced-mode bosonic Krein–Fock carrier and its ground-state dynamics.",
+        "benchmark_group": "NO_EMPIRICAL_BENCHMARK",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "stages": [
+          {
+            "id": "FOUNDATIONAL_ASSUMPTIONS",
+            "status": "ESTABLISHED_SCOPED",
+            "summary": "Ordinary local algebra on a reduced Krein–Fock carrier with an explicit companion positive form.",
+            "boundary": "This is a reduced free system, not a full field theory.",
+            "source_assertions": [
+              {
+                "source": "KREIN_FREE",
+                "pointer": "/interface/carrier_transition",
+                "expected": "IDENTICAL_FREE_KREIN_FOCK_CARRIER"
+              }
+            ]
+          },
+          {
+            "id": "STATE_SPACE",
+            "status": "ESTABLISHED_EXACT",
+            "summary": "The energy selects a unique normalized vector ground state and unique normal zero-energy density state.",
+            "boundary": "Selection is conditional on the free ground-state criterion.",
+            "source_assertions": [
+              {
+                "source": "KREIN_FREE",
+                "pointer": "/claim_flags/free_ground_state_selected",
+                "expected": true
+              },
+              {
+                "source": "KREIN_FREE",
+                "pointer": "/claim_flags/unique_normal_zero_energy_density_state_proved",
+                "expected": true
+              }
+            ]
+          },
+          {
+            "id": "DYNAMICS",
+            "status": "ESTABLISHED_EXACT",
+            "summary": "The same total-energy operator generates a dynamics that fixes the vacuum.",
+            "boundary": "Stationarity alone would not make the state unique.",
+            "source_assertions": [
+              {
+                "source": "KREIN_FREE",
+                "pointer": "/claim_flags/vacuum_dynamics_invariance_proved",
+                "expected": true
+              },
+              {
+                "source": "KREIN_FREE",
+                "pointer": "/claim_flags/stationarity_alone_implies_uniqueness",
+                "expected": false
+              }
+            ]
+          },
+          {
+            "id": "OBSERVABLE",
+            "status": "OPEN",
+            "summary": "No generalized Born rule or operational field observable is joined to this state and dynamics.",
+            "boundary": "A valid free state is not yet a measurement theory.",
+            "source_assertions": [
+              {
+                "source": "KREIN_FREE",
+                "pointer": "/claim_flags/brst_compatible_state_constructed",
+                "expected": false
+              }
+            ]
+          },
+          {
+            "id": "PREDICTION",
+            "status": "NOT_REACHED",
+            "summary": "No experimental number or curve follows without an observable and probability rule.",
+            "boundary": "Reduced-mode energy identities are not phenomenological predictions.",
+            "source_assertions": [
+              {
+                "source": "KREIN_FREE",
+                "pointer": "/claim_flags/interacting_ground_state_selected",
+                "expected": false
+              }
+            ]
+          },
+          {
+            "id": "EMPIRICAL_BENCHMARK",
+            "status": "NOT_REACHED",
+            "summary": "No dataset is in scope for the certified free-mode interface.",
+            "boundary": "No empirical agreement is implied.",
+            "source_assertions": [
+              {
+                "source": "KREIN_FREE",
+                "pointer": "/claim_flags/lorentzian_claim",
+                "expected": false
+              }
+            ]
+          }
+        ],
+        "joins": [
+          {
+            "from": "FOUNDATIONAL_ASSUMPTIONS",
+            "to": "STATE_SPACE",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          },
+          {
+            "from": "STATE_SPACE",
+            "to": "DYNAMICS",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          },
+          {
+            "from": "DYNAMICS",
+            "to": "OBSERVABLE",
+            "status": "OPEN",
+            "explanation": "At least one adjacent stage is partial or open, so composition is not certified."
+          },
+          {
+            "from": "OBSERVABLE",
+            "to": "PREDICTION",
+            "status": "NOT_REACHED",
+            "explanation": "An earlier missing bridge prevents this join from carrying a claim."
+          },
+          {
+            "from": "PREDICTION",
+            "to": "EMPIRICAL_BENCHMARK",
+            "status": "NOT_REACHED",
+            "explanation": "An earlier missing bridge prevents this join from carrying a claim."
+          }
+        ],
+        "journey_summary": {
+          "contiguous_ready_through": "DYNAMICS",
+          "first_blocker_or_failure": "OBSERVABLE",
+          "furthest_stage_with_evidence": "DYNAMICS",
+          "ready_stage_count": 3,
+          "assessed_stage_count": 3,
+          "reaches_empirical_benchmark": false,
+          "empirical_disposition": "NOT_TESTED",
+          "complete_theory": false
+        },
+        "highest_value_next_step": "Define a physical observable and probability rule on the same carrier, then compute a bounded prediction."
+      },
+      {
+        "id": "CONSTRUCTIVE_CODED_WAVE",
+        "label": "Constructive coded wave observable",
+        "family": "Reverse mathematics / computable physics",
+        "scope": "Rationally coded one-dimensional chiral-wave data and one bounded smeared observable over a weak base theory.",
+        "benchmark_group": "NO_EMPIRICAL_BENCHMARK",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "stages": [
+          {
+            "id": "FOUNDATIONAL_ASSUMPTIONS",
+            "status": "ESTABLISHED_EXACT",
+            "summary": "Finite rational codes use primitive-recursive arithmetic; RCA_0 supplies coded completion and uniform limits.",
+            "boundary": "RCA_0 is proved sufficient, not necessary or weakest.",
+            "source_assertions": [
+              {
+                "source": "CODED_WAVE",
+                "pointer": "/claim_flags/rca0_upper_bound_proved",
+                "expected": true
+              },
+              {
+                "source": "CODED_WAVE",
+                "pointer": "/claim_flags/weakest_base_proved",
+                "expected": false
+              }
+            ]
+          },
+          {
+            "id": "STATE_SPACE",
+            "status": "ESTABLISHED_SCOPED",
+            "summary": "Mean-zero rational step-pair initial data represent two chiral wave components.",
+            "boundary": "The full wave state is not reconstructed from the one observable.",
+            "source_assertions": [
+              {
+                "source": "CODED_WAVE",
+                "pointer": "/claim_flags/declared_rational_initial_data",
+                "expected": true
+              }
+            ]
+          },
+          {
+            "id": "DYNAMICS",
+            "status": "ESTABLISHED_EXACT",
+            "summary": "Explicit translations evolve the two chiral components, with a uniform bounded-time reconstruction theorem.",
+            "boundary": "This does not establish curved-spacetime or variable-coefficient dynamics.",
+            "source_assertions": [
+              {
+                "source": "CODED_WAVE",
+                "pointer": "/claim_flags/uniform_bounded_time_convergence_proved",
+                "expected": true
+              }
+            ]
+          },
+          {
+            "id": "OBSERVABLE",
+            "status": "ESTABLISHED_EXACT",
+            "summary": "A declared polygonal detector produces a bounded smeared amplitude with explicit rational approximants.",
+            "boundary": "It is one detector profile, not a point field or probability rule.",
+            "source_assertions": [
+              {
+                "source": "CODED_WAVE",
+                "pointer": "/claim_flags/declared_bounded_linear_observable",
+                "expected": true
+              },
+              {
+                "source": "CODED_WAVE",
+                "pointer": "/claim_flags/explicit_cutoff_function_proved",
+                "expected": true
+              }
+            ]
+          },
+          {
+            "id": "PREDICTION",
+            "status": "OPEN",
+            "summary": "The observable has no empirical calibration, source model, or measured target.",
+            "boundary": "Computing an amplitude is not yet predicting an experiment.",
+            "source_assertions": [
+              {
+                "source": "CODED_WAVE",
+                "pointer": "/claim_flags/empirical_calibration_proved",
+                "expected": false
+              }
+            ]
+          },
+          {
+            "id": "EMPIRICAL_BENCHMARK",
+            "status": "NOT_REACHED",
+            "summary": "No empirical dataset can be compared until the detector profile and initial data are operationally calibrated.",
+            "boundary": "No observational support is claimed.",
+            "source_assertions": [
+              {
+                "source": "CODED_WAVE",
+                "pointer": "/claim_flags/new_lorentzian_claim",
+                "expected": false
+              }
+            ]
+          }
+        ],
+        "joins": [
+          {
+            "from": "FOUNDATIONAL_ASSUMPTIONS",
+            "to": "STATE_SPACE",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          },
+          {
+            "from": "STATE_SPACE",
+            "to": "DYNAMICS",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          },
+          {
+            "from": "DYNAMICS",
+            "to": "OBSERVABLE",
+            "status": "CLOSED",
+            "explanation": "Both adjacent stages are established in the declared passport scope."
+          },
+          {
+            "from": "OBSERVABLE",
+            "to": "PREDICTION",
+            "status": "OPEN",
+            "explanation": "At least one adjacent stage is partial or open, so composition is not certified."
+          },
+          {
+            "from": "PREDICTION",
+            "to": "EMPIRICAL_BENCHMARK",
+            "status": "NOT_REACHED",
+            "explanation": "An earlier missing bridge prevents this join from carrying a claim."
+          }
+        ],
+        "journey_summary": {
+          "contiguous_ready_through": "OBSERVABLE",
+          "first_blocker_or_failure": "PREDICTION",
+          "furthest_stage_with_evidence": "OBSERVABLE",
+          "ready_stage_count": 4,
+          "assessed_stage_count": 4,
+          "reaches_empirical_benchmark": false,
+          "empirical_disposition": "NOT_TESTED",
+          "complete_theory": false
+        },
+        "highest_value_next_step": "Calibrate a coded source and detector against one bounded wave experiment without strengthening the logical base silently."
+      },
+      {
+        "id": "PURE_WEYL_BV_CAUSAL",
+        "label": "Pure Weyl BV — causal quantum route",
+        "family": "Repository pure-Weyl BV–BFV programme",
+        "scope": "The immutable 386-row classical BV carrier through nonlinear causal compatibility and a BRST Hadamard pseudo-state.",
+        "benchmark_group": "NO_EMPIRICAL_BENCHMARK",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "EUCLIDEAN-SPECTRAL",
+          "REDUCED-MODE",
+          "LORENTZIAN-CAUSAL"
+        ],
+        "stages": [
+          {
+            "id": "FOUNDATIONAL_ASSUMPTIONS",
+            "status": "ESTABLISHED_EXACT",
+            "summary": "The content-pinned classical pure-Weyl BV snapshot passes its import gate.",
+            "boundary": "The classical complex is authoritative; this does not certify the quantum theory.",
+            "source_assertions": [
+              {
+                "source": "PURE_WEYL",
+                "pointer": "/claim_flags/strict_pure_weyl_classical_gate_passed",
+                "expected": true
+              }
+            ]
+          },
+          {
+            "id": "STATE_SPACE",
+            "status": "PARTIAL",
+            "summary": "A full-row BRST Hadamard pseudo-state exists, but positivity on physical cohomology is not certified.",
+            "boundary": "Hadamard regularity and Ward identities do not turn an indefinite covariance into a physical state.",
+            "source_assertions": [
+              {
+                "source": "PURE_WEYL",
+                "pointer": "/claim_flags/strict_386_full_bv_hadamard_two_point_constructed",
+                "expected": true
+              },
+              {
+                "source": "PURE_WEYL",
+                "pointer": "/claim_flags/strict_386_physical_cohomology_positivity_certified",
+                "expected": false
+              }
+            ]
+          },
+          {
+            "id": "DYNAMICS",
+            "status": "ESTABLISHED_EXACT",
+            "summary": "The same carrier has typed q2/q3 nonlinear compatibility with retarded and advanced Green homotopies.",
+            "boundary": "This is a causal perturbative envelope, not an all-order convergent interacting theory.",
+            "source_assertions": [
+              {
+                "source": "PURE_WEYL",
+                "pointer": "/claim_flags/strict_386_q2_q3_green_compatibility_certified",
+                "expected": true
+              },
+              {
+                "source": "PURE_WEYL",
+                "pointer": "/claim_flags/strict_386_lambda2_general_source_cocycle_closed",
+                "expected": true
+              }
+            ]
+          },
+          {
+            "id": "OBSERVABLE",
+            "status": "OPEN",
+            "summary": "No positive physical-state quotient has yet been joined to an operational observable.",
+            "boundary": "The residual Weyl-square classes are deformation classes, not one-particle graviton states.",
+            "source_assertions": [
+              {
+                "source": "PURE_WEYL",
+                "pointer": "/claim_flags/strict_386_physical_cohomology_positivity_certified",
+                "expected": false
+              }
+            ]
+          },
+          {
+            "id": "PREDICTION",
+            "status": "NOT_REACHED",
+            "summary": "Renormalized Lorentzian products and a restored QME are still absent, so no quantum prediction is promoted.",
+            "boundary": "Reduced-mode or Euclidean calculations cannot fill this Lorentzian gap.",
+            "source_assertions": [
+              {
+                "source": "PURE_WEYL",
+                "pointer": "/claim_flags/renormalized_lorentzian_products_constructed",
+                "expected": false
+              },
+              {
+                "source": "PURE_WEYL",
+                "pointer": "/claim_flags/strict_pure_weyl_qme_restored",
+                "expected": false
+              }
+            ]
+          },
+          {
+            "id": "EMPIRICAL_BENCHMARK",
+            "status": "NOT_REACHED",
+            "summary": "No observational benchmark is connected to the certified quantum route.",
+            "boundary": "Classical phenomenology from another assembly cannot be transferred without a typed interface.",
+            "source_assertions": [
+              {
+                "source": "PURE_WEYL",
+                "pointer": "/claim_flags/lorentzian_full_theory_certified",
+                "expected": false
+              }
+            ]
+          }
+        ],
+        "joins": [
+          {
+            "from": "FOUNDATIONAL_ASSUMPTIONS",
+            "to": "STATE_SPACE",
+            "status": "OPEN",
+            "explanation": "At least one adjacent stage is partial or open, so composition is not certified."
+          },
+          {
+            "from": "STATE_SPACE",
+            "to": "DYNAMICS",
+            "status": "OPEN",
+            "explanation": "At least one adjacent stage is partial or open, so composition is not certified."
+          },
+          {
+            "from": "DYNAMICS",
+            "to": "OBSERVABLE",
+            "status": "OPEN",
+            "explanation": "At least one adjacent stage is partial or open, so composition is not certified."
+          },
+          {
+            "from": "OBSERVABLE",
+            "to": "PREDICTION",
+            "status": "NOT_REACHED",
+            "explanation": "An earlier missing bridge prevents this join from carrying a claim."
+          },
+          {
+            "from": "PREDICTION",
+            "to": "EMPIRICAL_BENCHMARK",
+            "status": "NOT_REACHED",
+            "explanation": "An earlier missing bridge prevents this join from carrying a claim."
+          }
+        ],
+        "journey_summary": {
+          "contiguous_ready_through": "FOUNDATIONAL_ASSUMPTIONS",
+          "first_blocker_or_failure": "STATE_SPACE",
+          "furthest_stage_with_evidence": "DYNAMICS",
+          "ready_stage_count": 2,
+          "assessed_stage_count": 3,
+          "reaches_empirical_benchmark": false,
+          "empirical_disposition": "NOT_TESTED",
+          "complete_theory": false
+        },
+        "highest_value_next_step": "Decide physical-cohomology positivity on the same 386-row Hadamard carrier; then construct Lorentzian products and restore or obstruct the QME."
+      }
+    ],
+    "atlas_summary": {
+      "passport_count": 8,
+      "benchmark_groups": [
+        "CASSINI_SOLAR_SYSTEM",
+        "NGC3198_COMMON_PROTOCOL",
+        "NO_EMPIRICAL_BENCHMARK"
+      ],
+      "empirical_dispositions": [
+        "FAILED_DECLARED_GATE",
+        "NOT_TESTED",
+        "SUPPORTED_IN_DECLARED_SCOPE"
+      ],
+      "reaches_empirical_benchmark": 4,
+      "passes_declared_empirical_gate": 2,
+      "fails_declared_empirical_gate": 2,
+      "not_yet_empirically_tested": 4,
+      "complete_theories": 0
+    },
+    "claim_flags": {
+      "fixed_six_stage_crosswalk_complete": true,
+      "all_stage_promotions_source_asserted": true,
+      "common_ngc3198_protocol_exposed": true,
+      "scoped_empirical_pass_and_failure_distinguished": true,
+      "stage_local_evidence_distinguished_from_end_to_end_composition": true,
+      "complete_theory_selected": false,
+      "matrix_cell_grades_promoted": false,
+      "new_empirical_analysis_performed": false
+    },
+    "does_not_establish": [
+      "that the six stage functions have identical mathematical meaning in classical, quantum, Euclidean, constructive, and indefinite-metric theories",
+      "that a stage-local theorem composes with later evidence unless the passport join is closed",
+      "that passing one bounded empirical gate validates a complete theory",
+      "that failing one bounded empirical gate universally refutes a research programme",
+      "population-level or held-out observational performance for any galactic model",
+      "a new Lorentzian, quantum, continuum, positivity, or QME result",
+      "any promotion of a completion-matrix cell"
+    ],
+    "independent_checker": {
+      "path": "foundations/check_theory_passport_atlas.py",
+      "method": "Independently validates the fixed passport/stage contract, source pins and assertions, summaries, joins, and fail-closed boundary flags without importing the producer."
+    },
+    "human_report": "foundations/reports/end-to-end-theory-passport-atlas-v1.md",
+    "canonical_digest": "da1a7f502185ed4fdd45e246d0ae4dafe08e5fe28262120ff9fc7d6148ac2d9d"
+  },
   "completion_atlas": {
     "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v49",
     "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V49",
@@ -231431,6 +232762,8 @@ window.MATRIX_EXPLORER_DATA = {
     "full_surface_audit": "sources/foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "migration_audit": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json",
     "ladder": "sources/foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json",
+    "theory_passports": "sources/foundations/results/FOUNDATIONAL_END_TO_END_THEORY_PASSPORT_ATLAS_V1.json",
+    "theory_passports_report": "sources/foundations/reports/end-to-end-theory-passport-atlas-v1.md",
     "cube_report": "sources/foundations/reports/refined-intersection-cube-v14.md",
     "bt_euclidean_import": "sources/foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json",
     "bt_euclidean_import_report": "sources/foundations/reports/bt-euclidean-lattice-foundational-import.md",
@@ -231569,5 +232902,5 @@ window.MATRIX_EXPLORER_DATA = {
     "physlib_arity_three_bridge": "sources/physlib-demo/certificates/PHYSLIB_MINIMAL_ARITY_THREE_FINITE_REPLAY_V1.json",
     "physlib_bridge_report": "sources/physlib-demo/REPORT.md"
   },
-  "canonical_digest": "43d2b9ee8e05de803f63f27df4130c591ae698f4482c97336703c010beb67c7a"
+  "canonical_digest": "13a2918081ba6486c3cce14b2bcb01f8dde28ac56056e6031f559681211e3332"
 };

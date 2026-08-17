@@ -54,6 +54,37 @@ path end to end or the generic arbitrary-input differentiated-nilpotency
 identity. Stop if the work merely serializes more rows, and do not move an
 analytic layer into Lean first.
 
+## Cross-framework theory passports (2026-08-17)
+
+The reverse-foundations branch now has its first common end-to-end comparison
+contract. `FOUNDATIONAL_END_TO_END_THEORY_PASSPORT_ATLAS_V1` traces eight
+bounded assemblies through six fixed functions: assumptions, state space,
+dynamics, observable, prediction, and empirical benchmark. All 48 stages are
+anchored by 64 checked JSON-pointer assertions into seven content-pinned source
+results. The independent rail recomputes source hashes, assertions, stage
+order, joins, first blockers, empirical dispositions, and the complete-theory
+firewall without importing the producer.
+
+Four passports reach data. GR/Cassini and GR+NFW/NGC 3198 pass their declared
+bounded gates; Newtonian baryons and Mannheim conformal gravity reach the same
+NGC 3198 protocol and fail its random-error gate. The Bateman--Turok Euclidean
+lattice, free Krein mode, constructive coded wave, and strict pure-Weyl BV
+causal route are `NOT_TESTED`, not empirical failures. Their first blockers are
+respectively Lorentzian/continuum reconstruction, an operational observable and
+probability rule, source/detector calibration, and physical-cohomology
+positivity. Later stage-local results remain visible when an earlier join is
+open, so the pure-Weyl causal result is not erased or misrepresented as a
+composed physical state.
+
+The next broad passport goal is robustness rather than adding more decorative
+rows. Extend one common empirical protocol beyond a single galaxy with declared
+systematics and held-out tests; in parallel, close one pre-empirical bridge for
+an alternative programme on the same carrier. The leading candidates are the
+Bateman--Turok Euclidean-to-Lorentzian reconstruction gate, the Krein
+state/dynamics-to-observable gate, and pure-Weyl physical positivity. A new
+passport should be admitted only when it adds a content-pinned stage or a truly
+common benchmark, not merely a programme label.
+
 ## Planning authority and document roles
 
 This file is the single authority for forward-looking programme sequencing.

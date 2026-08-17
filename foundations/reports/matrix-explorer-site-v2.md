@@ -195,6 +195,13 @@ What remains open after the classical-to-Hadamard bridge is physical-cohomology
 positivity, arbitrary mixed-sign or infinite nonlinear Green recursion,
 renormalized Lorentzian products and QME restoration.
 
+The new **Theory journeys** view is an eight-passport cross-framework map from
+assumptions through state space, dynamics, observable, prediction and empirical
+benchmark. Four chains reach data: two scoped passes and two scoped failures.
+The other four expose their first missing bridge as not yet tested rather than
+as empirical failures. Every one of the 48 stages is tied to source assertions;
+the view selects no complete theory and promotes no matrix evidence grade.
+
 The explorer also exposes two Lean/Physlib proof passports as a separate
 formal-assurance rail. One kernel-checks the final second-source implication;
 the other now derives all 212 finite arity-three paths and their suspended
@@ -314,3 +321,4 @@ This site does not establish:
 - renormalized Lorentzian products, QME restoration, residual transfer or a complete interacting Lorentzian quantum theory
 - that a Lean proof passport strengthens a matrix evidence grade or supplies a missing physical premise
 - that the displayed Lean axiom footprints are reverse-mathematically minimal
+- that a theory passport selects a complete theory or promotes a completion-matrix evidence grade

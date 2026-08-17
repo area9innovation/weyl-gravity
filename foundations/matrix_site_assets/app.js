@@ -224,6 +224,10 @@
       params.set("assembly", state.assembly);
       if (state.assemblyPanel !== "models") params.set("panel", state.assemblyPanel);
     }
+    if (state.view === "passports") {
+      const requestedPassport = new URLSearchParams(location.hash.slice(1)).get("passport");
+      if (DATA.theory_passports?.passports?.some(item => item.id === requestedPassport)) params.set("passport", requestedPassport);
+    }
     const mapping = {f: "FOUNDATION", c: "CARRIER", o: "REFINED_OBLIGATION", s: "STATUS"};
     for (const [param, axisId] of Object.entries(mapping)) {
       const allowed = axisId === "STATUS" ? Object.keys(STATUS) : axis[axisId].keys.map(x => x.id);

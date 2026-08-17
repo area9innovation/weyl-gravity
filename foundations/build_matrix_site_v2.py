@@ -42,6 +42,12 @@ NGC3198_COMMON_FIT_REPORT = FOUNDATIONS / "reports/ngc3198-common-fit-comparison
 NGC3198_COMMON_FIT_SCHEMA = FOUNDATIONS / "schema/foundational-ngc3198-common-fit-comparison-v1.schema.json"
 NGC3198_COMMON_FIT_PROTOCOL = FOUNDATIONS / "data/ngc3198-common-fit-protocol-v1.json"
 NGC3198_COMMON_FIT_CPP = FOUNDATIONS / "ngc3198_common_fit_checker.cpp"
+THEORY_PASSPORT_RESULT = FOUNDATIONS / "results/FOUNDATIONAL_END_TO_END_THEORY_PASSPORT_ATLAS_V1.json"
+THEORY_PASSPORT_REPORT = FOUNDATIONS / "reports/end-to-end-theory-passport-atlas-v1.md"
+THEORY_PASSPORT_SCHEMA = FOUNDATIONS / "schema/foundational-end-to-end-theory-passport-atlas-v1.schema.json"
+THEORY_PASSPORT_BUILDER = FOUNDATIONS / "build_theory_passport_atlas.py"
+THEORY_PASSPORT_CHECKER = FOUNDATIONS / "check_theory_passport_atlas.py"
+THEORY_PASSPORT_VERIFIER = FOUNDATIONS / "verify_theory_passport_atlas.py"
 CUBE = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V15.json"
 PREVIOUS_CUBES = [
     FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json",
@@ -325,13 +331,14 @@ def cell_mark(cell: dict[str, Any], evidence: dict[str, dict[str, Any]]) -> str:
 def canonical_digest(dataset: dict[str, Any]) -> str:
     projection = {
         key: dataset[key]
-        for key in ("axes", "cells", "evidence", "ladder", "graph", "completion_atlas", "completion_common_endpoint_sdr_binding", "completion_endpoint_to_residual_comparison", "completion_residual_cyclic_carrier_obstruction", "completion_dfinite_cotangent_dual_comparison", "completion_m3rc_action_support_dual_identification", "completion_typed_residual_cyclicity", "completion_local_cyclic_pairing", "completion_residual_zero_modes", "completion_centered_cohomology", "completion_residual_sdr_type_audit", "proof_bridges", "cross_cell_interfaces", "carrier_interfaces", "numerical_reproducibility_records")
+        for key in ("axes", "cells", "evidence", "ladder", "graph", "theory_passports", "completion_atlas", "completion_common_endpoint_sdr_binding", "completion_endpoint_to_residual_comparison", "completion_residual_cyclic_carrier_obstruction", "completion_dfinite_cotangent_dual_comparison", "completion_m3rc_action_support_dual_identification", "completion_typed_residual_cyclicity", "completion_local_cyclic_pairing", "completion_residual_zero_modes", "completion_centered_cohomology", "completion_residual_sdr_type_audit", "proof_bridges", "cross_cell_interfaces", "carrier_interfaces", "numerical_reproducibility_records")
     }
     return v1.sha_bytes(json.dumps(projection, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode())
 
 
 def build_dataset() -> dict[str, Any]:
     cube, audit, ladder, bt_import = v1.load(CUBE), v1.load(AUDIT), v1.load(LADDER), v1.load(BT_EUCLIDEAN_IMPORT)
+    theory_passports = v1.load(THEORY_PASSPORT_RESULT)
     completion_atlas = v1.load(COMPLETION_ATLAS)
     completion_common_endpoint_sdr_binding = v1.load(COMPLETION_ENDPOINT_SDR_BINDING)
     completion_endpoint_to_residual_comparison = v1.load(COMPLETION_RESIDUAL_COMPARISON)
@@ -428,6 +435,7 @@ def build_dataset() -> dict[str, Any]:
         "evidence": evidence,
         "ladder": ladder["ladder"],
         "graph": ladder["typed_relation_graph"],
+        "theory_passports": theory_passports,
         "completion_atlas": completion_atlas,
         "completion_common_endpoint_sdr_binding": completion_common_endpoint_sdr_binding,
         "completion_endpoint_to_residual_comparison": completion_endpoint_to_residual_comparison,
@@ -462,6 +470,8 @@ def build_dataset() -> dict[str, Any]:
             "full_surface_audit": site_link(rel(FULL_SURFACE_AUDIT)),
             "migration_audit": site_link(rel(AUDIT)),
             "ladder": site_link(rel(LADDER)),
+            "theory_passports": site_link(rel(THEORY_PASSPORT_RESULT)),
+            "theory_passports_report": site_link(rel(THEORY_PASSPORT_REPORT)),
             "cube_report": site_link("foundations/reports/refined-intersection-cube-v14.md"),
             "bt_euclidean_import": site_link(rel(BT_EUCLIDEAN_IMPORT)),
             "bt_euclidean_import_report": site_link("foundations/reports/bt-euclidean-lattice-foundational-import.md"),
@@ -804,6 +814,13 @@ What remains open after the classical-to-Hadamard bridge is physical-cohomology
 positivity, arbitrary mixed-sign or infinite nonlinear Green recursion,
 renormalized Lorentzian products and QME restoration.
 
+The new **Theory journeys** view is an eight-passport cross-framework map from
+assumptions through state space, dynamics, observable, prediction and empirical
+benchmark. Four chains reach data: two scoped passes and two scoped failures.
+The other four expose their first missing bridge as not yet tested rather than
+as empirical failures. Every one of the 48 stages is tied to source assertions;
+the view selects no complete theory and promotes no matrix evidence grade.
+
 The explorer also exposes two Lean/Physlib proof passports as a separate
 formal-assurance rail. One kernel-checks the final second-source implication;
 the other now derives all 212 finite arity-three paths and their suspended
@@ -1058,17 +1075,17 @@ def generated() -> dict[Path, bytes]:
     assembly_json = (json.dumps(assemblies, indent=2, ensure_ascii=False) + "\n").encode()
     app = (ASSETS / "app.js").read_text().replace(
         '["matrix", "viability", "assemblies", "guide", "graph", "ladder", "evidence"]',
-        '["matrix", "viability", "assemblies", "guide", "graph", "ladder", "completion", "evidence"]',
+        '["matrix", "viability", "assemblies", "passports", "guide", "graph", "ladder", "completion", "evidence"]',
     ).replace(
         '["viability", "assemblies", "guide", "graph", "ladder"].includes(view)',
-        '["viability", "assemblies", "guide", "graph", "ladder", "completion"].includes(view)',
+        '["viability", "assemblies", "passports", "guide", "graph", "ladder", "completion"].includes(view)',
     ).encode()
     index = (ASSETS / "index.html").read_text().replace(
         '    <button class="tab" data-view="evidence">Evidence</button>',
-        '    <button class="tab" data-view="completion">Weyl BV routes</button>\n    <button class="tab" data-view="evidence">Evidence</button>',
+        '    <button class="tab" data-view="passports">Theory journeys</button>\n    <button class="tab" data-view="completion">Weyl BV routes</button>\n    <button class="tab" data-view="evidence">Evidence</button>',
     ).replace(
         '    <section id="evidenceView" class="view">',
-        '    <section id="completionView" class="view">\n      <div class="section-head"><div><p class="eyebrow">From survey to causal construction</p><h2>Lorentzian Weyl BV completion routes</h2></div><p>Seven architectures cross eleven gates. A colored cell reports a scoped evidence state—not a probability that the theory is true.</p></div>\n      <div id="completionExplorer"></div>\n    </section>\n\n    <section id="evidenceView" class="view">',
+        '    <section id="passportsView" class="view">\n      <div class="section-head"><div><p class="eyebrow">From ideas to measurements</p><h2>Theory journeys</h2></div><p>Eight evidence-pinned passports ask the same six plain questions of competing approaches. They show the first missing bridge and distinguish passing data, failing data, and not yet reaching data.</p></div>\n      <div id="theoryPassportExplorer"></div>\n    </section>\n\n    <section id="completionView" class="view">\n      <div class="section-head"><div><p class="eyebrow">From survey to causal construction</p><h2>Lorentzian Weyl BV completion routes</h2></div><p>Seven architectures cross eleven gates. A colored cell reports a scoped evidence state—not a probability that the theory is true.</p></div>\n      <div id="completionExplorer"></div>\n    </section>\n\n    <section id="evidenceView" class="view">',
     ).replace(
         '<script src="data.js"></script>',
         '<script src="data.js"></script>\n  <script src="viability.js"></script>\n  <script src="assemblies.js"></script>',
@@ -1110,6 +1127,7 @@ def generated() -> dict[Path, bytes]:
         GR_CASSINI_REPORT,
         MANNHEIM_NGC3198_REPORT,
         NGC3198_COMMON_FIT_REPORT,
+        THEORY_PASSPORT_REPORT,
         COMPLETION_REPORT,
         COMPLETION_GATE_REPORT,
         COMPLETION_M1B_DUAL_REPORT,
@@ -1161,6 +1179,12 @@ def generated() -> dict[Path, bytes]:
     bundled_sources = sorted(set([*bundled_sources, COMPLETION_M1B_PRIMAL, COMPLETION_M1B_PRIMAL_REPORT, COMPLETION_M1B_DUAL, COMPLETION_M1B_DUAL_REPORT, COMPLETION_M1B_CYCLIC, COMPLETION_M1B_CYCLIC_REPORT, COMPLETION_M1C_SNAPSHOT, COMPLETION_M1C_SNAPSHOT_REPORT, COMPLETION_M1A_REPRESENTED, COMPLETION_M1A_REPRESENTED_REPORT, COMPLETION_M1A_LEDGER, COMPLETION_M1A_LEDGER_REPORT, COMPLETION_DIFF_AUXILIARY, COMPLETION_DIFF_AUXILIARY_REPORT, COMPLETION_GHOST_MANIFEST, COMPLETION_GHOST_MANIFEST_REPORT, COMPLETION_CLASSICAL_QUARTIC, COMPLETION_CLASSICAL_QUARTIC_REPORT, COMPLETION_SHIFTED_MASS_Q3, COMPLETION_SHIFTED_MASS_Q3_REPORT, COMPLETION_SOURCE_Q3, COMPLETION_SOURCE_Q3_REPORT, COMPLETION_NONLINEAR_GREEN, COMPLETION_NONLINEAR_GREEN_REPORT, COMPLETION_HADAMARD, COMPLETION_HADAMARD_REPORT, *completion_evidence_paths]))
     bundled_sources = sorted(set([
         *bundled_sources,
+        THEORY_PASSPORT_RESULT,
+        THEORY_PASSPORT_REPORT,
+        THEORY_PASSPORT_SCHEMA,
+        THEORY_PASSPORT_BUILDER,
+        THEORY_PASSPORT_CHECKER,
+        THEORY_PASSPORT_VERIFIER,
         COMPLETION_RESIDUAL_COMPARISON,
         COMPLETION_RESIDUAL_COMPARISON_REPORT,
         COMPLETION_RESIDUAL_CYCLIC_OBSTRUCTION,
@@ -1362,6 +1386,13 @@ def generated() -> dict[Path, bytes]:
     result["claim_flags"]["minimal_arity_three_natural_operator_proof_formalized"] = False
     result["does_not_establish"].append("that a Lean proof passport strengthens a matrix evidence grade or supplies a missing physical premise")
     result["does_not_establish"].append("that the displayed Lean axiom footprints are reverse-mathematically minimal")
+    result["features"].append("interactive eight-passport theory-journey comparison across assumptions, state space, dynamics, observables, predictions, and empirical benchmarks")
+    result["features"].append("four composed empirical journeys split into two scoped passes and two scoped failures, with four foundational journeys exposing their first missing bridge")
+    result["claim_flags"]["end_to_end_theory_passports_exposed"] = True
+    result["claim_flags"]["theory_passports_select_complete_theory"] = False
+    result["claim_flags"]["theory_passports_promote_matrix_grades"] = False
+    result["provenance"]["theory_passport_digest"] = v1.load(THEORY_PASSPORT_RESULT)["canonical_digest"]
+    result["does_not_establish"].append("that a theory passport selects a complete theory or promotes a completion-matrix evidence grade")
     outputs[RESULT] = (json.dumps(result, indent=2) + "\n").encode()
     outputs[REPORT] = render_report(result).encode()
     outputs[VIABILITY_RESULT] = viability_json

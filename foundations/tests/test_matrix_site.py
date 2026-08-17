@@ -223,7 +223,7 @@ class MatrixSiteTests(unittest.TestCase):
         self.assertIn("Regime × carrier × obligation", base_app)
         self.assertIn("Every result answers three different questions", base_app)
         self.assertIn("Why “general relativity works” is too compressed", base_app)
-        self.assertIn('["viability", "assemblies", "guide", "graph", "ladder", "completion"]', base_app)
+        self.assertIn('["viability", "assemblies", "passports", "guide", "graph", "ladder", "completion"]', base_app)
         self.assertIn("The question changes even when the equation does not", base_app)
         self.assertIn("Small glossary", base_app)
         self.assertIn("For reviewers: how the evidence letters and migration audit work", base_app)

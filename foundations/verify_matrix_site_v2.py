@@ -53,6 +53,8 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         "completion_cells": 77,
         "completion_routes": 7,
         "completion_decisions": 11,
+        "theory_passports": 8,
+        "theory_passport_stages": 48,
         "theory_profiles": 36,
         "carrier_envelopes": 6,
         "pareto_profiles": 4,
@@ -91,6 +93,8 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
     for key in ("proof_passports_exposed", "minimal_arity_three_finite_replay_exposed", "minimal_arity_three_finite_graded_evaluator_exposed"):
         if flags.get(key) is not True:
             errors.append("positive flag " + key)
+    if flags.get("end_to_end_theory_passports_exposed") is not True:
+        errors.append("positive flag end_to_end_theory_passports_exposed")
     for key in (
         "strict_authoritative_q2_green_compatibility_exposed",
         "strict_recursive_nonlinear_green_trees_exposed",
@@ -117,6 +121,9 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
     for key in ("proof_passports_change_evidence_grades", "minimal_arity_three_natural_operator_proof_formalized"):
         if flags.get(key) is not False:
             errors.append("boundary flag " + key)
+    for key in ("theory_passports_select_complete_theory", "theory_passports_promote_matrix_grades"):
+        if flags.get(key) is not False:
+            errors.append("boundary flag " + key)
     checks.append("fail-closed claim flags")
     for token in ("576", "169 `REVIEWED_GAP`", "0\n`NOT_MAPPED`", "not a result", "selected priority", "literature-absence claim", "all 401 prior", "51 emitted blanks", "124", "without transferring evidence", "exactly twenty additional empty cells", "seventeen", "three pieces-only", "classification before QME restoration", "none of those toy-model statements is a Weyl-BV promotion", "two certified", "CONDITIONAL_BRIDGE", "unique normal", "coarse numerical reproduction", "not empirical validation", "conditional bridges remain open", "N(k)=k+ell(K)+1", "not the full field", "rank-10", "coefficient by coefficient", "not a theorem for\nevery smooth test function", "named H2 completion", "nonmetrizable LF test topology", "representation-to-causality", "retarded and\nadvanced Green maps", "scalar benchmark", "Atlas V47", "arbitrary-input", "386-row", "nine ranked", "eleven-step", "72", "1,392", "3,907", "22", "16", "pairing slices", "212", "S4", "-75760/9", "not an authoritative", "Omega(f_hat,q2(v,v))=-1", "first nonlinear", "full source\npullback", "primary-source", "actual source q2", "accepted common q2 snapshot", "336 exact q1/q2 defects", "Gate V29", "M1B primal", "4,080", "support-expanding", "M1A2", "M1A3", "M1A4", "M1B", "M1C", "17,779", "205 test", "2,560-component", "M3L", "M3R", "M3RC-A", "M3RC-B", "M4L", "M4R", "rank zero", "940-coordinate", "8,980-coordinate", "H1=0", "support-local", "fifteen primal", "120", "ordered C3, C4 and C5", "85,091", "auxiliary quartic mass", "5,952 paired q3 coefficients", "separate coverage and migration", "Earlier cubes remain unchanged", "does not establish"):
         token = {"Atlas V47": "Atlas V49", "nine ranked": "seven ranked", "Gate V29": "Gate V30"}.get(token, token)
@@ -125,6 +132,9 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
     for token in ("Lean/Physlib proof passports", "changing evidence grades"):
         if token not in text:
             errors.append("report proof-passport token " + token)
+    for token in ("eight-passport", "assumptions", "state space", "empirical", "scoped passes", "scoped failures", "first missing bridge"):
+        if token not in text.lower():
+            errors.append("report theory-passport token " + token)
     checks.append("human-readable migration and deployment report")
     return errors, checks
 

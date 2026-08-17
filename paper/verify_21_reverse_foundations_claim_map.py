@@ -86,6 +86,7 @@ def main() -> int:
     gr_cassini = json.loads((ROOT / data["authorities"]["gr_cassini_assembly"]["path"]).read_text())
     mannheim_ngc3198 = json.loads((ROOT / data["authorities"]["mannheim_ngc3198_assembly"]["path"]).read_text())
     ngc3198_common_fit = json.loads((ROOT / data["authorities"]["ngc3198_common_fit_comparison"]["path"]).read_text())
+    theory_passports = json.loads((ROOT / data["authorities"]["theory_passport_atlas"]["path"]).read_text())
     coded_wave_observable = json.loads((ROOT / data["authorities"]["coded_wave_observable_reconstruction"]["path"]).read_text())
     coded_local_weak_wave = json.loads((ROOT / data["authorities"]["coded_local_weak_wave_test_class"]["path"]).read_text())
     coded_h2_test = json.loads((ROOT / data["authorities"]["coded_weak_wave_h2_test_completion"]["path"]).read_text())
@@ -565,6 +566,7 @@ def main() -> int:
         (79, "STRICT-WEYL-IMMUTABLE-M1C-SNAPSHOT-AND-GATE-A"),
         (80, "STRICT-WEYL-POST-FREEZE-NONLINEAR-GREEN-COMPATIBILITY"),
         (81, "STRICT-WEYL-FULL-BRST-HADAMARD-PSEUDO-STATE-PAIR"),
+        (82, "END-TO-END-THEORY-PASSPORT-ATLAS"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -1080,6 +1082,8 @@ def main() -> int:
     require(flags["bounded_empirical_comparison_registered"] is True, "bounded empirical comparison flag is not certified")
     require(flags["mannheim_ngc3198_mixed_assembly_registered"] is True, "Mannheim mixed assembly flag is not certified")
     require(flags["ngc3198_common_fit_comparison_registered"] is True, "NGC 3198 common-fit flag is not certified")
+    require(flags["end_to_end_theory_passport_atlas_registered"] is True, "end-to-end theory-passport atlas flag is not certified")
+    require(flags["theory_passport_complete_theory_selected"] is False, "theory-passport atlas promoted a complete theory")
     require(flags["bt_euclidean_finite_capabilities_imported"] is True, "BT finite import flag is not certified")
     require(flags["bt_euclidean_coarse_reproduction_separated"] is True, "BT numerical separation flag is not certified")
     require(flags["bt_free_os_obstruction_certified"] is True, "BT OS obstruction flag is not certified")
@@ -1335,6 +1339,17 @@ def main() -> int:
     require(atlas["ngc3198_common_fit_ranking_AICc"] == ngc3198_common_fit["ranking_by_AICc"], "common-fit AICc ranking drift")
     require(atlas["ngc3198_common_fit_random_error_passes"] == ["GR_NFW_DARK_HALO"], "common-fit gate disposition drift")
     require(atlas["ngc3198_common_fit_complete_theory_selected"] is False, "common-fit promoted to complete theory")
+    passport_summary = theory_passports["atlas_summary"]
+    require(atlas["theory_passport_count"] == len(theory_passports["passports"]) == passport_summary["passport_count"] == 8, "theory-passport count drift")
+    require(atlas["theory_passport_stage_count"] == sum(len(item["stages"]) for item in theory_passports["passports"]) == 48, "theory-passport stage count drift")
+    require(atlas["theory_passport_source_assertions"] == sum(len(stage["source_assertions"]) for item in theory_passports["passports"] for stage in item["stages"]) == 64, "theory-passport source-assertion count drift")
+    require(atlas["theory_passport_empirical_reach"] == passport_summary["reaches_empirical_benchmark"] == 4, "theory-passport empirical-reach count drift")
+    require(atlas["theory_passport_empirical_passes"] == passport_summary["passes_declared_empirical_gate"] == 2, "theory-passport empirical-pass count drift")
+    require(atlas["theory_passport_empirical_failures"] == passport_summary["fails_declared_empirical_gate"] == 2, "theory-passport empirical-failure count drift")
+    require(atlas["theory_passport_not_tested"] == passport_summary["not_yet_empirically_tested"] == 4, "theory-passport not-tested count drift")
+    require(atlas["theory_passport_complete_theories"] == passport_summary["complete_theories"] == 0, "theory-passport complete-theory count drift")
+    require(theory_passports["claim_flags"]["complete_theory_selected"] is False, "theory-passport result promoted a complete theory")
+    require(theory_passports["claim_flags"]["matrix_cell_grades_promoted"] is False, "theory-passport result promoted matrix grades")
     require(abs(atlas["mannheim_ngc3198_sparc_rms_km_s"] - 4.5382719695501885) < 1e-12, "Mannheim SPARC RMS drift")
     require(abs(atlas["mannheim_ngc3198_sparc_reduced_chi2"] - 5.592211904260559) < 1e-12, "Mannheim SPARC chi-squared drift")
     standard = next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")
@@ -1363,6 +1378,12 @@ def main() -> int:
     require("No parameter is refitted" in appendix, "Mannheim no-refit boundary missing")
     require(r"reduced $\chi^2$" in appendix, "Mannheim failed random-error metric missing")
     require("Common-protocol NGC 3198 control" in appendix, "common-fit appendix section missing")
+    require(r"\label{app:theory-passports}" in appendix, "theory-passport appendix section missing")
+    require(r"\label{tab:theory-passport-overview}" in appendix, "theory-passport overview table missing")
+    require("whose 48 stages carry 64 JSON-pointer assertions" in appendix, "theory-passport evidence count boundary missing")
+    require("No row is a complete theory" in appendix, "theory-passport complete-theory boundary missing")
+    for passport in theory_passports["passports"]:
+        require(tex(passport["label"]) in appendix, f"theory passport missing from appendix: {passport['id']}")
     require("GR plus NFW dark halo" in appendix, "common-fit NFW row missing")
     require("AICc penalizes the two extra NFW parameters" in appendix, "common-fit penalty boundary missing")
     for stage in mannheim_ngc3198["stages"]:
@@ -1659,6 +1680,9 @@ def main() -> int:
         r"Exact finite causality is not continuum causality",
         r"none of the case studies constructs a complete Lorentzian off-shell",
         r"bounded prediction assembly",
+        r"theory passports",
+        r"FOUNDATIONAL_END_TO_END_THEORY_PASSPORT_ATLAS_V1",
+        r"physical-cohomology positivity",
         r"reverse-foundations-of-physics-appendices.tex",
         r"D\geq2A-\frac{488}{5}N",
         r"\mathbb E\sqrt{1+\frac AN}\leq\frac{\sqrt{1247}}5",

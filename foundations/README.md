@@ -454,6 +454,30 @@ python3 foundations/verify_ngc3198_common_fit_comparison.py
 python3 -m unittest foundations.tests.test_ngc3198_common_fit_comparison
 ```
 
+The [end-to-end theory-passport atlas](reports/end-to-end-theory-passport-atlas-v1.md)
+places eight approaches on one six-stage journey: foundational assumptions,
+state space, dynamics, observable, prediction, and empirical benchmark. It is
+an evidence-pinned crosswalk rather than a new calculation. Its 48 stages carry
+64 JSON-pointer assertions into seven existing results, so source drift fails
+generation until the interpretation is reviewed. Four passports reach data:
+GR/Cassini and GR+NFW/NGC 3198 pass their declared bounded gates, while the
+baryons-only and Mannheim NGC 3198 curves fail. Bateman--Turok Euclidean,
+free-mode Krein, constructive coded wave, and the pure-Weyl BV causal route are
+reported as not yet empirically tested, with their first missing bridge and
+later stage-local evidence both visible. No passport selects a complete theory
+or promotes a matrix cell:
+
+```bash
+python3 foundations/build_theory_passport_atlas.py --write
+python3 foundations/check_theory_passport_atlas.py
+python3 foundations/verify_theory_passport_atlas.py
+python3 -m unittest foundations.tests.test_theory_passport_atlas
+```
+
+The website exposes this artifact as the separate **Theory journeys** tab.
+Selecting a row opens its six stages, typed joins, evidence pointers, claim
+boundaries, and highest-value next experiment or theorem.
+
 A separately labelled external standard-GR positive control supplies four
 primary-source comparison records across three benchmark families; it
 calibrates the display and is neither a cube-selected assembly nor evidence

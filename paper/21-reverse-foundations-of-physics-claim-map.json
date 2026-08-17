@@ -355,6 +355,14 @@
     "support_indexed_name_equivalence": true,
     "support_indexed_stages": 6,
     "synthetic_complements": 0,
+    "theory_passport_complete_theories": 0,
+    "theory_passport_count": 8,
+    "theory_passport_empirical_failures": 2,
+    "theory_passport_empirical_passes": 2,
+    "theory_passport_empirical_reach": 4,
+    "theory_passport_not_tested": 4,
+    "theory_passport_source_assertions": 64,
+    "theory_passport_stage_count": 48,
     "total_not_mapped_in_explorer": 0
   },
   "authorities": {
@@ -1223,7 +1231,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "988d1c64b92cbcf4e23537e5fd12827fc07a73070675fed7a8a6e9255787788a"
+      "sha256": "4475d89cc791e7f0a16cceb09e511f3ebee9ae3b22aad88d22652cc0309b9a16"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -2460,10 +2468,22 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "13239b43dbb3a5d2ff7c11c8a2249eb7294c10522010671cd2af91348baf3940"
+      "sha256": "7a081144698f0e870ae1bf4d3d3bd04fd2eeb4b07e17a2c1966b20d231c93d21"
+    },
+    "theory_passport_atlas": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "foundations/results/FOUNDATIONAL_END_TO_END_THEORY_PASSPORT_ATLAS_V1.json",
+      "result_id": "FOUNDATIONAL_END_TO_END_THEORY_PASSPORT_ATLAS_V1",
+      "sha256": "c394928bb8ead70ba9eeb76ee16298c3fffec5712d8c9290f773712960d333fb"
     }
   },
-  "canonical_digest": "318e5d1e17dc63ce9be35a31fa47085862314b86d9d0e4ce582808af73987c54",
+  "canonical_digest": "a6d0ece4bdd35c976b2152576801ca5a18287ddcfc59073776321bab6fc8aca6",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -2628,6 +2648,7 @@
     "coded_wave_observable_reconstruction_certified": true,
     "complete_evidence_register_generated": true,
     "complete_literature_register_generated": true,
+    "end_to_end_theory_passport_atlas_registered": true,
     "evidence_usage_crosswalk_generated": true,
     "fixed_support_smooth_to_h2_translator_certified": true,
     "fixed_support_translator_uses_choice": false,
@@ -2846,6 +2867,7 @@
     "strict_zero_mode_projector_support_local": false,
     "support_indexed_full_lf_topology_reconstructed": false,
     "support_indexed_name_equivalence_certified": true,
+    "theory_passport_complete_theory_selected": false,
     "typed_relations_supplied": true,
     "weakest_foundation_proved": false,
     "weyl_bv_classical_import_gate_passed": false,
@@ -3950,9 +3972,23 @@
       ],
       "statement": "A graded BRST-Hadamard two-point pair is constructed on the complete 386-row off-shell BV carrier. Whole Hodge eigenspace projectors split the parent cylinder wave kernel; the scalar zero mode is retained by the smooth scale-free stationary pair plus or minus i(t-t')/2. Exact modal replay and cyclic BGG, trace/Weyl-shear and graph-retract transport establish both bisolution equations, the graded CCR, the Hadamard wavefront relation, Ward identities in both arguments, graded reality, stationarity and complete row coverage. Eleven obligations pass with zero defects. The object is an indefinite pseudo-state pair, not a positive Hadamard state; positivity on physical cohomology, renormalized Lorentzian products, QME restoration and residual quantum transfer remain open.",
       "status": "FULL_386_BRST_HADAMARD_PSEUDO_STATE_PAIR_CERTIFIED_POSITIVITY_AND_INTERACTIONS_OPEN"
+    },
+    {
+      "authorities": [
+        "theory_passport_atlas"
+      ],
+      "claim_id": "RF-82-END-TO-END-THEORY-PASSPORT-ATLAS",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "Eight evidence-pinned theory passports compare the same six functional stages: foundational assumptions, state space, dynamics, observable, prediction and empirical benchmark. Four chains reach data: GR/Cassini and GR+NFW/NGC 3198 pass their declared bounded gates, while Newtonian baryons and Mannheim/NGC 3198 fail the declared common random-error gate. Bateman--Turok Euclidean, free-mode Krein, constructive coded wave and pure-Weyl BV causal remain not tested, each with a first blocker. The 48 stages carry 64 source assertions. Later stage-local evidence remains visible after an earlier blocker. No passport selects a complete theory, promotes a matrix grade, performs new empirical analysis, converts a bounded pass into global validation or converts a bounded failure into universal refutation.",
+      "status": "EIGHT_SOURCE_ASSERTED_PASSPORTS_FOUR_EMPIRICAL_CHAINS_ZERO_COMPLETE_THEORIES"
     }
   ],
-  "created": "2026-08-16",
+  "created": "2026-08-17",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "EUCLIDEAN-SPECTRAL",
@@ -4177,19 +4213,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "e257e047befcf2b7e6fe1125c8cf6b5a58767c04b2cd6710d07063b4ff63ee55",
+      "assembly_source_canonical_digest": "400866fe8fcc819e0f9a36f6121f3319e32df443fe8fab025f0365260834e357",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "13239b43dbb3a5d2ff7c11c8a2249eb7294c10522010671cd2af91348baf3940",
+      "assembly_source_sha256": "7a081144698f0e870ae1bf4d3d3bd04fd2eeb4b07e17a2c1966b20d231c93d21",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
-      "generator_sha256": "50d9d80a38af27984c57fa4d93090e70d89dad758a7ddaef6e1ff75b377f094a",
+      "generator_sha256": "1f00bf2488ef9d42073107b0e1fdd6a361ee0c344af18b43fbc269dbfbf4f7f1",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "566887e345afd7b751c3893b5aa784c79b822b90a9a02453bc19be996bb5029c",
-      "source_canonical_digest": "0cdc2be777962634ed320344fa8d4a468169d64ecb1e8f8ef9e5abbc81da6c5e",
+      "sha256": "efc30401eb47f49e1b7fc0dd24010a5725e7009c448a163be513a1e41d68d3e6",
+      "source_canonical_digest": "13a2918081ba6486c3cce14b2bcb01f8dde28ac56056e6031f559681211e3332",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "46d01672f46bfab9e3a2ad8a25df1804cdbde2352ad6dcc48c8e2841b886e3e8"
+      "source_sha256": "813d29b98f493c3a1d944eb302c7c842cb3773622a5d4dee702c586b5a598087"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "fc9996d4ae7fd04d86027fd4939ab2477a515cfe0a1f38a5a93a698c6e3be591"
+    "sha256": "a790cf65bffb403b53be237f29bcb52e801d6ceb906b716e9fdf35a52d3d7a74"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

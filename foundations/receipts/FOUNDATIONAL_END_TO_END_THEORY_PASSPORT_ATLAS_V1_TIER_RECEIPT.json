@@ -1,0 +1,180 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_END_TO_END_THEORY_PASSPORT_ATLAS_V1_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_END_TO_END_THEORY_PASSPORT_ATLAS_V1",
+  "created": "2026-08-17",
+  "source_base_commit": "e070091ae701d959d4c8c5f1a76574d4fb13875f",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Constructed eight evidence-pinned theory passports over one fixed six-stage route from foundational assumptions through state space, dynamics, observable and prediction to an empirical benchmark. Four routes reach bounded data comparisons; four expose their first missing bridge. Stage-local evidence remains visible after an upstream blocker, while joins and claim flags prevent isolated results from being promoted to a complete theory.",
+  "authoritative_artifact": {
+    "path": "foundations/results/FOUNDATIONAL_END_TO_END_THEORY_PASSPORT_ATLAS_V1.json",
+    "sha256": "c394928bb8ead70ba9eeb76ee16298c3fffec5712d8c9290f773712960d333fb",
+    "canonical_digest": "da1a7f502185ed4fdd45e246d0ae4dafe08e5fe28262120ff9fc7d6148ac2d9d",
+    "role": "machine-readable cross-framework journey comparison"
+  },
+  "artifacts": [
+    {
+      "path": "foundations/build_theory_passport_atlas.py",
+      "sha256": "d58ba135fa11516dd445f1142d7acc8b5c0fcf4d447882e92bf1d70f550726a4",
+      "role": "deterministic source-pinned passport producer"
+    },
+    {
+      "path": "foundations/check_theory_passport_atlas.py",
+      "sha256": "c7af8c364cd37b340721bd6fec365890e65341d27573c07e7f4dde39b4db5d45",
+      "role": "independent source, assertion, join, summary and boundary checker"
+    },
+    {
+      "path": "foundations/verify_theory_passport_atlas.py",
+      "sha256": "73a531f56abd0f3c26737addb2af2d92bd84ecb3086148eaea17e07b5064acf1",
+      "role": "schema, determinism and independent-check orchestration"
+    },
+    {
+      "path": "foundations/schema/foundational-end-to-end-theory-passport-atlas-v1.schema.json",
+      "sha256": "978a06e1b3eb894ff586ab162e004969a2e4fdf6c1e6d8547b50b6bb762cfb92",
+      "role": "Draft 2020-12 result contract"
+    },
+    {
+      "path": "foundations/reports/end-to-end-theory-passport-atlas-v1.md",
+      "sha256": "76387281f23564106eed72832fcaced4feddd3e3a214119040dd485f09c71a6f",
+      "role": "human-readable passport table, blockers and source trail"
+    },
+    {
+      "path": "foundations/site/manifest.json",
+      "sha256": "5a5febe4a8469fa60bb88d184d223c050b6b4c584e5286cb46a19e72f434b996",
+      "role": "content-addressed static-site manifest with the Theory journeys view"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
+      "sha256": "4475d89cc791e7f0a16cceb09e511f3ebee9ae3b22aad88d22652cc0309b9a16",
+      "role": "site result exposing the passport atlas without changing evidence grades"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
+      "sha256": "efc30401eb47f49e1b7fc0dd24010a5725e7009c448a163be513a1e41d68d3e6",
+      "role": "generated static eight-passport appendix"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-claim-map.json",
+      "sha256": "fe15dd34f22016b4b0c2db18457c2a7fd0ea2cdd7534b60ef4841c7e55d053ba",
+      "canonical_digest": "a6d0ece4bdd35c976b2152576801ca5a18287ddcfc59073776321bab6fc8aca6",
+      "role": "paper authority and RF-82 passport claim registration"
+    },
+    {
+      "path": "paper/verify_21_reverse_foundations_claim_map.py",
+      "sha256": "e62ee15ad55e2896e0ff8caa2423b92a114dff8663980cb2d91f9f0c07d52cc5",
+      "role": "independent paper, appendix, passport-count and boundary verifier"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.pdf",
+      "sha256": "b2be05332f906da952d26e62a2c1bc661631c2d3c898ded232df45c788d25407",
+      "role": "compiled 79-page working paper"
+    }
+  ],
+  "assessment_snapshot": {
+    "passports": 8,
+    "stages_per_passport": 6,
+    "stages": 48,
+    "typed_joins": 40,
+    "source_assertions": 64,
+    "source_artifacts": 7,
+    "empirical_routes": 4,
+    "scoped_empirical_passes": 2,
+    "scoped_empirical_failures": 2,
+    "not_yet_tested": 4,
+    "complete_theories": 0
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -W error::SyntaxWarning -m py_compile foundations/build_theory_passport_atlas.py foundations/check_theory_passport_atlas.py foundations/verify_theory_passport_atlas.py foundations/tests/test_theory_passport_atlas.py foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py foundations/verify_matrix_site_v2.py paper/generate_21_reverse_foundations_appendices.py paper/generate_21_reverse_foundations_claim_map.py paper/verify_21_reverse_foundations_claim_map.py",
+          "status": "PASS"
+        },
+        {
+          "command": "python3 -m json.tool foundations/schema/foundational-end-to-end-theory-passport-atlas-v1.schema.json && python3 -m json.tool foundations/results/FOUNDATIONAL_END_TO_END_THEORY_PASSPORT_ATLAS_V1.json",
+          "status": "PASS"
+        },
+        {
+          "command": "deno check foundations/matrix_site_assets/app.js foundations/matrix_site_v2_assets/app-v2.js foundations/site/app.js foundations/site/migration-review.js",
+          "status": "PASS"
+        },
+        {
+          "command": "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex",
+          "elapsed_seconds": 2.3,
+          "status": "PASS",
+          "output": "79 pages; final pass contains no undefined reference or citation warnings."
+        },
+        {
+          "command": "google-chrome --headless --disable-gpu --no-sandbox --window-size=1600,5000 --virtual-time-budget=2500 --screenshot=/tmp/theory-passports-pure.png http://127.0.0.1:8765/index.html#view=passports&passport=PURE_WEYL_BV_CAUSAL",
+          "status": "PASS",
+          "output": "Theory journeys overview and Pure-Weyl detail rendered and visually inspected; no browser JavaScript errors."
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 foundations/check_theory_passport_atlas.py && python3 foundations/verify_theory_passport_atlas.py && python3 -m unittest foundations.tests.test_theory_passport_atlas",
+          "elapsed_seconds": 0.4,
+          "status": "PASS",
+          "output": "Eight passports, 48 stages, 40 joins and 64 source assertions independently verified; 7 regression and mutation tests passed."
+        },
+        {
+          "command": "python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py && python3 foundations/verify_theory_viability.py && python3 foundations/verify_theory_assembly.py",
+          "status": "PASS",
+          "output": "Static site, 576-cell matrix, viability assessment and assembly atlas verified."
+        },
+        {
+          "command": "python3 -m unittest foundations.tests.test_matrix_site foundations.tests.test_theory_viability foundations.tests.test_theory_assembly",
+          "elapsed_seconds": 18.882,
+          "status": "PASS",
+          "output": "23 tests passed."
+        },
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_appendices.py --check && python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+          "status": "PASS",
+          "output": "Generated appendix and claim map current; authority hashes, passport counts and RF-82 boundaries independently verified."
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The new result schema and generated atlas affect the website and paper certificate chain. The atlas producer/checker, site producer/checker, viability and assembly direct consumers, appendix generator, paper authority map and compiled PDF were rebuilt and checked. All seven scientific source artifacts were unchanged and accepted only by their recorded content hashes; their expensive producer chains were therefore not rerun."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze/tag, theorem or lifecycle promotion, shared core-algebra change, release, or explicit full-suite request is involved."
+    }
+  },
+  "claim_flags": {
+    "fixed_six_stage_crosswalk_complete": true,
+    "all_stage_promotions_source_asserted": true,
+    "interactive_theory_journeys_view_generated": true,
+    "paper_appendix_and_claim_map_current": true,
+    "bounded_empirical_pass_and_failure_distinguished": true,
+    "complete_theory_selected": false,
+    "matrix_cell_grades_promoted": false,
+    "new_empirical_analysis_performed": false,
+    "new_lorentzian_claim": false,
+    "quantum_lifecycle_promoted": false
+  },
+  "does_not_establish": [
+    "that stage functions have identical mathematical realizations across competing frameworks",
+    "that a stage-local result composes through an open join",
+    "that a bounded empirical pass validates a complete theory",
+    "that a bounded empirical failure universally refutes a programme",
+    "population-level or held-out galactic performance",
+    "a new Lorentzian, quantum, continuum, positivity or QME result",
+    "a promotion of any completion-matrix evidence grade"
+  ],
+  "preexisting_unrelated_work_preserved": [
+    "reverse_physics/bt_euclidean_polynomial_contrast_hierarchy_obstruction.py"
+  ]
+}

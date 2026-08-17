@@ -75,6 +75,7 @@ AUTHORITY_PATHS = {
     "gr_cassini_assembly": "foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json",
     "mannheim_ngc3198_assembly": "foundations/results/FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1.json",
     "ngc3198_common_fit_comparison": "foundations/results/FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1.json",
+    "theory_passport_atlas": "foundations/results/FOUNDATIONAL_END_TO_END_THEORY_PASSPORT_ATLAS_V1.json",
     "explicit_krein": "foundations/results/FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1.json",
     "krein_state_selection": "foundations/results/FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1.json",
     "separable_cstar_state_chain": "foundations/results/FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1.json",
@@ -303,6 +304,7 @@ def build() -> dict:
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
     ngc3198_common_fit = loaded["ngc3198_common_fit_comparison"]
+    theory_passports = loaded["theory_passport_atlas"]
     coded_wave_observable = loaded["coded_wave_observable_reconstruction"]
     coded_local_weak_wave = loaded["coded_local_weak_wave_test_class"]
     coded_h2_test = loaded["coded_weak_wave_h2_test_completion"]
@@ -322,7 +324,7 @@ def build() -> dict:
         "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
         "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",
         "lifecycle": "WORKING_DRAFT",
-        "created": "2026-08-16",
+        "created": "2026-08-17",
         "dependency_tags": [
             "LOCAL-ALGEBRAIC",
             "EUCLIDEAN-SPECTRAL",
@@ -419,6 +421,14 @@ def build() -> dict:
             "ngc3198_common_fit_ranking_AICc": ngc3198_common_fit["ranking_by_AICc"],
             "ngc3198_common_fit_random_error_passes": [item["model_id"] for item in ngc3198_common_fit["models"] if item["random_error_gate"]["passed"]],
             "ngc3198_common_fit_complete_theory_selected": ngc3198_common_fit["claim_flags"]["complete_theory_selected"],
+            "theory_passport_count": theory_passports["atlas_summary"]["passport_count"],
+            "theory_passport_stage_count": sum(len(item["stages"]) for item in theory_passports["passports"]),
+            "theory_passport_source_assertions": sum(len(stage["source_assertions"]) for item in theory_passports["passports"] for stage in item["stages"]),
+            "theory_passport_empirical_reach": theory_passports["atlas_summary"]["reaches_empirical_benchmark"],
+            "theory_passport_empirical_passes": theory_passports["atlas_summary"]["passes_declared_empirical_gate"],
+            "theory_passport_empirical_failures": theory_passports["atlas_summary"]["fails_declared_empirical_gate"],
+            "theory_passport_not_tested": theory_passports["atlas_summary"]["not_yet_empirically_tested"],
+            "theory_passport_complete_theories": theory_passports["atlas_summary"]["complete_theories"],
             "coded_wave_observable_cutoff": coded_wave_observable["cutoff_theorem"]["cutoff"],
             "coded_wave_observable_full_state_reconstruction": coded_wave_observable["claim_flags"]["full_state_reconstruction_proved"],
             "coded_local_weak_wave_basis_tests": coded_local_weak_wave["localized_test_class"]["basis_size"],
@@ -1224,6 +1234,13 @@ def build() -> dict:
                 "authorities": ["strict_386_brst_hadamard_two_point", "lorentzian_weyl_bv_completion_atlas_v49"],
                 "dependency_tags": ["LORENTZIAN-CAUSAL"],
             },
+            {
+                "claim_id": "RF-82-END-TO-END-THEORY-PASSPORT-ATLAS",
+                "statement": "Eight evidence-pinned theory passports compare the same six functional stages: foundational assumptions, state space, dynamics, observable, prediction and empirical benchmark. Four chains reach data: GR/Cassini and GR+NFW/NGC 3198 pass their declared bounded gates, while Newtonian baryons and Mannheim/NGC 3198 fail the declared common random-error gate. Bateman--Turok Euclidean, free-mode Krein, constructive coded wave and pure-Weyl BV causal remain not tested, each with a first blocker. The 48 stages carry 64 source assertions. Later stage-local evidence remains visible after an earlier blocker. No passport selects a complete theory, promotes a matrix grade, performs new empirical analysis, converts a bounded pass into global validation or converts a bounded failure into universal refutation.",
+                "status": "EIGHT_SOURCE_ASSERTED_PASSPORTS_FOUR_EMPIRICAL_CHAINS_ZERO_COMPLETE_THEORIES",
+                "authorities": ["theory_passport_atlas"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -1485,6 +1502,8 @@ def build() -> dict:
             "bounded_empirical_comparison_registered": True,
             "mannheim_ngc3198_mixed_assembly_registered": True,
             "ngc3198_common_fit_comparison_registered": True,
+            "end_to_end_theory_passport_atlas_registered": True,
+            "theory_passport_complete_theory_selected": False,
             "bt_euclidean_finite_capabilities_imported": True,
             "bt_euclidean_coarse_reproduction_separated": True,
             "bt_free_os_obstruction_certified": True,

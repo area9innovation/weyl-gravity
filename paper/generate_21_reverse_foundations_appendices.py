@@ -139,6 +139,7 @@ def coverage_counts(cells: list[dict], field: str, value: str) -> collections.Co
 
 def build(data: dict, assemblies: dict) -> str:
     axes = {axis["id"]: axis for axis in data["axes"]}
+    passports = data["theory_passports"]
     completion = data["completion_atlas"]
     endpoint_sdr_binding = data["completion_common_endpoint_sdr_binding"]
     residual_comparison = data["completion_endpoint_to_residual_comparison"]
@@ -197,7 +198,7 @@ def build(data: dict, assemblies: dict) -> str:
         r"\section{Static companion to the evidence atlas}",
         r"\label{app:atlas-companion}",
         "",
-        "The interactive atlas exposes seven views of the same normalized evidence and derived assessments: matrix, dimensions guide, theory profiles, assemblies, typed implications, strength ladder, and evidence catalogue.  This appendix preserves their key research content in a citable static form.  It is a snapshot, not a replacement for cell inspection, filtering, neighboring-cell comparison, or the complete downloadable dataset.",
+        "The interactive atlas exposes eight views of the same normalized evidence and derived assessments: matrix, dimensions guide, theory profiles, assemblies, theory journeys, typed implications, strength ladder, and evidence catalogue.  This appendix preserves their key research content in a citable static form.  It is a snapshot, not a replacement for cell inspection, filtering, neighboring-cell comparison, or the complete downloadable dataset.",
         "",
         r"\begin{center}",
         r"\small",
@@ -209,6 +210,7 @@ def build(data: dict, assemblies: dict) -> str:
         r"Dimensions guide & All 28 axis options with their non-specialist descriptions. \\",
         r"Theory profiles & Coverage-envelope and Pareto navigation; these are not composed theories. \\",
         r"Assemblies & Nine cube-selected prototypes, two model-scoped chains with independent maturity rails, typed joins, and an external standard-GR calibration control. \\",
+        r"Theory journeys & Eight evidence-pinned passports across assumptions, state space, dynamics, observable, prediction, and empirical benchmark, with the first blocker or failure kept explicit. \\",
         r"Implications & The complete typed relation ledger: ten directed edges with their exact assertion and evidence. \\",
         r"Strength ladder & All six cylinder-wave gates, including what each adds, establishes, and leaves open. \\",
         rf"Evidence & The complete literature register, local-certificate register, and usage crosswalk for all {len(evidence)} records. \\",
@@ -555,6 +557,49 @@ def build(data: dict, assemblies: dict) -> str:
             r"\bottomrule",
             r"\end{longtable}",
             r"\endgroup",
+            "",
+            r"\subsection{Theory passports: where each journey stops}",
+            r"\label{app:theory-passports}",
+            "A passport asks the same six functional questions of each framework: which assumptions enter, which states or configurations are admitted, which dynamics acts, which operational observable is defined, which definite prediction follows, and whether that prediction has met a declared empirical benchmark.  These functions need not have identical mathematical realizations across classical, quantum, Euclidean, constructive, and indefinite-metric theories.",
+            "",
+            "A later stage-local result remains visible even when an earlier bridge is open.  For example, the pure-Weyl route has exact nonlinear causal dynamics on its certified carrier, while the earlier physical-state step remains partial because positivity on physical BRST cohomology is not certified.  The continuous chain therefore stops at state space without erasing the later local result.",
+            "",
+            r"\begin{table}[htbp]",
+            r"\centering",
+            r"\scriptsize",
+            r"\setlength{\tabcolsep}{3pt}",
+            r"\begin{tabularx}{\textwidth}{@{}Yrrrrrrp{0.19\textwidth}@{}}",
+            r"\toprule",
+            r"Passport & A & S & D & O & P & E & First blocker or failure \\",
+            r"\midrule",
+        ]
+    )
+    passport_short = {
+        "ESTABLISHED_EXACT": "exact",
+        "ESTABLISHED_SCOPED": "scoped",
+        "ESTABLISHED_NUMERIC": "numeric",
+        "EMPIRICAL_PASS": "pass",
+        "EMPIRICAL_FAIL": "fail",
+        "PARTIAL": "partial",
+        "OPEN": "open",
+        "NOT_REACHED": "---",
+    }
+    passport_stage_labels = {item["id"]: item["label"] for item in passports["stage_vocabulary"]}
+    for item in passports["passports"]:
+        cells = " & ".join(tex(passport_short[stage["status"]]) for stage in item["stages"])
+        first = item["journey_summary"]["first_blocker_or_failure"]
+        lines.append(f"{tex(item['label'])} & {cells} & {tex(passport_stage_labels.get(first, 'none'))}" + r" \\")
+    lines.extend(
+        [
+            r"\bottomrule",
+            r"\end{tabularx}",
+            r"\caption{Eight evidence-pinned theory passports.  A, S, D, O, P and E denote assumptions, state space, dynamics, observable, prediction and empirical benchmark.  ``Pass'' and ``fail'' are scoped to the declared gate; a dash means that an upstream bridge prevents the later claim.}",
+            r"\label{tab:theory-passport-overview}",
+            r"\end{table}",
+            "",
+            "Four passports reach an empirical comparison.  Standard GR at Cassini and GR plus an NFW halo in the bounded NGC 3198 protocol pass their declared gates.  Newtonian baryons alone and the Mannheim conformal-gravity curve fail the declared NGC 3198 random-error gate.  The Bateman--Turok Euclidean lattice, free Krein mode, constructive coded wave, and pure-Weyl BV causal route are classified as not yet tested rather than empirically failed.",
+            "",
+            "No row is a complete theory.  Passing one bounded gate is not global validation; failing one bounded gate is not a universal refutation.  The machine-readable source is " + cert("FOUNDATIONAL_END_TO_END_THEORY_PASSPORT_ATLAS_V1") + ", whose 48 stages carry 64 JSON-pointer assertions into seven content-pinned source results.",
             "",
             r"\subsection{Model-scoped assembly, prototype envelopes, and empirical calibration}",
             r"\label{app:assembly-calibration}",
