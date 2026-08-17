@@ -69,6 +69,7 @@ AUTHORITY_PATHS = {
     "bt_flux_corrector_pointwise_energy_no_go": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FLUX_CORRECTOR_POINTWISE_ENERGY_NO_GO_V1.json",
     "bt_corrector_slab_fiber_stability": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CORRECTOR_SLAB_FIBER_STABILITY_V1.json",
     "bt_corrector_slab_cylinder_suppression": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CORRECTOR_SLAB_CYLINDER_SUPPRESSION_V1.json",
+    "bt_polynomial_contrast_hierarchy_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_POLYNOMIAL_CONTRAST_HIERARCHY_OBSTRUCTION_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -300,6 +301,7 @@ def build() -> dict:
     bt_corrector_energy_no_go = loaded["bt_flux_corrector_pointwise_energy_no_go"]
     bt_corrector_slab_fiber = loaded["bt_corrector_slab_fiber_stability"]
     bt_corrector_slab_cylinder = loaded["bt_corrector_slab_cylinder_suppression"]
+    bt_polynomial_contrast = loaded["bt_polynomial_contrast_hierarchy_obstruction"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -429,6 +431,11 @@ def build() -> dict:
             "theory_passport_empirical_failures": theory_passports["atlas_summary"]["fails_declared_empirical_gate"],
             "theory_passport_not_tested": theory_passports["atlas_summary"]["not_yet_empirically_tested"],
             "theory_passport_complete_theories": theory_passports["atlas_summary"]["complete_theories"],
+            "bt_polynomial_contrast_fixture_members": [item["member"] for item in bt_polynomial_contrast["exact_fixtures"]],
+            "bt_polynomial_contrast_cycle_volume_formula": bt_polynomial_contrast["hierarchy"]["graph"],
+            "bt_polynomial_contrast_main_bound": bt_polynomial_contrast["main_flow_theorem"]["coefficient_upper_bound"],
+            "bt_polynomial_contrast_full_bound": bt_polynomial_contrast["full_gradient_theorem"]["quotient_upper_bound"],
+            "bt_polynomial_contrast_four_torus_status": bt_polynomial_contrast["research_disposition"]["isotropic_four_torus_scaled_PL"],
             "coded_wave_observable_cutoff": coded_wave_observable["cutoff_theorem"]["cutoff"],
             "coded_wave_observable_full_state_reconstruction": coded_wave_observable["claim_flags"]["full_state_reconstruction_proved"],
             "coded_local_weak_wave_basis_tests": coded_local_weak_wave["localized_test_class"]["basis_size"],
@@ -1241,6 +1248,13 @@ def build() -> dict:
                 "authorities": ["theory_passport_atlas"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
             },
+            {
+                "claim_id": "RF-83-BT-POLYNOMIAL-CONTRAST-HIERARCHY-OBSTRUCTION",
+                "statement": "For every integer m at least two, an exact positive field on the cycle with 4m^4+2 vertices has maximum edge ratio m and positive-main-flow divergence coefficient at most 160/m^6. For m at least eight its complete BT residual-gradient quotient is at most 1960/m^6. Multiplication by the cycle diameter still tends to zero, obstructing a graph-generic diameter-scale band-transport extension. This is a reduced-mode method obstruction on cycles: it neither compares the quotient with the cycle free bilaplacian scale nor supplies an isotropic four-torus counterexample, Witten or interacting H^-1 result, continuum reconstruction, Born/Krein interpretation, or Lorentzian claim.",
+                "status": "GENERIC_DIAMETER_SCALE_BAND_TRANSPORT_OBSTRUCTED_TORUS_WITTEN_AND_RECONSTRUCTION_OPEN",
+                "authorities": ["bt_polynomial_contrast_hierarchy_obstruction"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -1504,6 +1518,8 @@ def build() -> dict:
             "ngc3198_common_fit_comparison_registered": True,
             "end_to_end_theory_passport_atlas_registered": True,
             "theory_passport_complete_theory_selected": False,
+            "bt_polynomial_contrast_hierarchy_obstruction_certified": True,
+            "bt_polynomial_contrast_four_torus_decided": False,
             "bt_euclidean_finite_capabilities_imported": True,
             "bt_euclidean_coarse_reproduction_separated": True,
             "bt_free_os_obstruction_certified": True,

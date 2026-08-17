@@ -1,0 +1,226 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-polynomial-contrast-hierarchy-obstruction-v1.schema.json",
+  "title": "BT Euclidean polynomial-contrast hierarchy obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "answer",
+    "certificate",
+    "checks",
+    "created",
+    "dependency_tags",
+    "does_not_establish",
+    "exact_fixtures",
+    "full_gradient_theorem",
+    "hierarchy",
+    "lifecycle_state",
+    "main_flow_theorem",
+    "next_gate",
+    "provenance",
+    "question",
+    "report",
+    "research_disposition",
+    "result_kind",
+    "schema",
+    "schema_version",
+    "tier_receipt",
+    "verification_commands",
+    "verifier"
+  ],
+  "properties": {
+    "answer": {"type": "string", "minLength": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_POLYNOMIAL_CONTRAST_HIERARCHY_OBSTRUCTION_V1"},
+    "checks": {"$ref": "#/$defs/checkSummary"},
+    "created": {"type": "string", "format": "date"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"},
+        {"const": "REDUCED-MODE"}
+      ],
+      "items": false,
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 8,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "exact_fixtures": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"$ref": "#/$defs/fixture"}
+    },
+    "full_gradient_theorem": {"$ref": "#/$defs/stringMap"},
+    "hierarchy": {"$ref": "#/$defs/stringMap"},
+    "lifecycle_state": {"const": "GENERIC_BAND_DIAMETER_TRANSPORT_OBSTRUCTED_FOUR_TORUS_COMPATIBILITY_GATE_OPEN"},
+    "main_flow_theorem": {"$ref": "#/$defs/stringMap"},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["assumptions", "exact_arithmetic", "inputs", "repository_base_commit"],
+      "properties": {
+        "assumptions": {
+          "type": "array",
+          "minItems": 3,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "exact_arithmetic": {"type": "string", "minLength": 1},
+        "inputs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"const": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_HIGH_CONTRAST_FLOW_CLOSURE_V1.json"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+      }
+    },
+    "question": {"type": "string", "minLength": 1},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-polynomial-contrast-hierarchy-obstruction.md"},
+    "research_disposition": {
+      "type": "object",
+      "additionalProperties": {"type": "string", "minLength": 1},
+      "minProperties": 12
+    },
+    "result_kind": {"type": "string", "minLength": 1},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-polynomial-contrast-hierarchy-obstruction-v1.schema.json"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-polynomial-contrast-hierarchy-obstruction-v1"},
+    "tier_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["memory_policy", "scoped_command_receipts", "tier_0", "tier_1", "tier_2", "tier_3"],
+      "properties": {
+        "memory_policy": {"type": "string", "minLength": 1},
+        "scoped_command_receipts": {
+          "type": "object",
+          "additionalProperties": {"type": "string"}
+        },
+        "tier_0": {"type": "string", "minLength": 1},
+        "tier_1": {"type": "string", "minLength": 1},
+        "tier_2": {"type": "string", "minLength": 1},
+        "tier_3": {"type": "string", "minLength": 1}
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_polynomial_contrast_hierarchy_obstruction.py"}
+  },
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["denominator", "numerator"],
+      "properties": {
+        "denominator": {"type": "integer", "minimum": 1},
+        "numerator": {"type": "integer"}
+      }
+    },
+    "stringMap": {
+      "type": "object",
+      "additionalProperties": {"type": "string", "minLength": 1},
+      "minProperties": 5
+    },
+    "checkSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["details", "failures", "ok", "passed", "total"],
+      "properties": {
+        "details": {
+          "type": "object",
+          "additionalProperties": {"type": "boolean"},
+          "minProperties": 10,
+          "maxProperties": 10
+        },
+        "failures": {"type": "array", "items": {"type": "string"}},
+        "ok": {"type": "boolean"},
+        "passed": {"type": "integer", "minimum": 0},
+        "total": {"const": 10}
+      }
+    },
+    "fixtureChecks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cycle_ratio_is_polynomial",
+        "full_quotient_bound",
+        "gradient_conservation",
+        "main_flow_bound",
+        "nonconstant_positive_field",
+        "pointwise_gradient_bound",
+        "side_peak_is_m",
+        "side_starts_and_ends_at_unit_ratio",
+        "two_sides_close_the_positive_cycle"
+      ],
+      "properties": {
+        "cycle_ratio_is_polynomial": {"type": "boolean"},
+        "full_quotient_bound": {"type": "boolean"},
+        "gradient_conservation": {"type": "boolean"},
+        "main_flow_bound": {"type": "boolean"},
+        "nonconstant_positive_field": {"type": "boolean"},
+        "pointwise_gradient_bound": {"type": "boolean"},
+        "side_peak_is_m": {"type": "boolean"},
+        "side_starts_and_ends_at_unit_ratio": {"type": "boolean"},
+        "two_sides_close_the_positive_cycle": {"type": "boolean"}
+      }
+    },
+    "fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "active_edge_count_per_side",
+        "checks",
+        "cycle_diameter",
+        "cycle_volume",
+        "full_gradient_quotient",
+        "full_quotient_scaled_by_m6",
+        "gradient_norm_squared",
+        "main_divergence_norm_squared",
+        "main_flow_mass",
+        "main_transport_coefficient",
+        "main_transport_scaled_by_m6",
+        "maximum_absolute_gradient",
+        "maximum_edge_ratio",
+        "member",
+        "ramp_length",
+        "ratio_slope",
+        "residual_norm_squared"
+      ],
+      "properties": {
+        "active_edge_count_per_side": {"type": "integer", "minimum": 1},
+        "checks": {"$ref": "#/$defs/fixtureChecks"},
+        "cycle_diameter": {"type": "integer", "minimum": 1},
+        "cycle_volume": {"type": "integer", "minimum": 3},
+        "full_gradient_quotient": {"$ref": "#/$defs/rational"},
+        "full_quotient_scaled_by_m6": {"$ref": "#/$defs/rational"},
+        "gradient_norm_squared": {"$ref": "#/$defs/rational"},
+        "main_divergence_norm_squared": {"$ref": "#/$defs/rational"},
+        "main_flow_mass": {"$ref": "#/$defs/rational"},
+        "main_transport_coefficient": {"$ref": "#/$defs/rational"},
+        "main_transport_scaled_by_m6": {"$ref": "#/$defs/rational"},
+        "maximum_absolute_gradient": {"$ref": "#/$defs/rational"},
+        "maximum_edge_ratio": {"$ref": "#/$defs/rational"},
+        "member": {"type": "integer", "minimum": 2},
+        "ramp_length": {"type": "integer", "minimum": 16},
+        "ratio_slope": {"$ref": "#/$defs/rational"},
+        "residual_norm_squared": {"$ref": "#/$defs/rational"}
+      }
+    }
+  }
+}

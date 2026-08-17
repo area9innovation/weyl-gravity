@@ -87,6 +87,7 @@ def main() -> int:
     mannheim_ngc3198 = json.loads((ROOT / data["authorities"]["mannheim_ngc3198_assembly"]["path"]).read_text())
     ngc3198_common_fit = json.loads((ROOT / data["authorities"]["ngc3198_common_fit_comparison"]["path"]).read_text())
     theory_passports = json.loads((ROOT / data["authorities"]["theory_passport_atlas"]["path"]).read_text())
+    bt_polynomial_contrast = json.loads((ROOT / data["authorities"]["bt_polynomial_contrast_hierarchy_obstruction"]["path"]).read_text())
     coded_wave_observable = json.loads((ROOT / data["authorities"]["coded_wave_observable_reconstruction"]["path"]).read_text())
     coded_local_weak_wave = json.loads((ROOT / data["authorities"]["coded_local_weak_wave_test_class"]["path"]).read_text())
     coded_h2_test = json.loads((ROOT / data["authorities"]["coded_weak_wave_h2_test_completion"]["path"]).read_text())
@@ -567,6 +568,7 @@ def main() -> int:
         (80, "STRICT-WEYL-POST-FREEZE-NONLINEAR-GREEN-COMPATIBILITY"),
         (81, "STRICT-WEYL-FULL-BRST-HADAMARD-PSEUDO-STATE-PAIR"),
         (82, "END-TO-END-THEORY-PASSPORT-ATLAS"),
+        (83, "BT-POLYNOMIAL-CONTRAST-HIERARCHY-OBSTRUCTION"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -1084,6 +1086,8 @@ def main() -> int:
     require(flags["ngc3198_common_fit_comparison_registered"] is True, "NGC 3198 common-fit flag is not certified")
     require(flags["end_to_end_theory_passport_atlas_registered"] is True, "end-to-end theory-passport atlas flag is not certified")
     require(flags["theory_passport_complete_theory_selected"] is False, "theory-passport atlas promoted a complete theory")
+    require(flags["bt_polynomial_contrast_hierarchy_obstruction_certified"] is True, "BT polynomial-contrast hierarchy flag is not certified")
+    require(flags["bt_polynomial_contrast_four_torus_decided"] is False, "BT cycle obstruction promoted to a four-torus decision")
     require(flags["bt_euclidean_finite_capabilities_imported"] is True, "BT finite import flag is not certified")
     require(flags["bt_euclidean_coarse_reproduction_separated"] is True, "BT numerical separation flag is not certified")
     require(flags["bt_free_os_obstruction_certified"] is True, "BT OS obstruction flag is not certified")
@@ -1350,6 +1354,13 @@ def main() -> int:
     require(atlas["theory_passport_complete_theories"] == passport_summary["complete_theories"] == 0, "theory-passport complete-theory count drift")
     require(theory_passports["claim_flags"]["complete_theory_selected"] is False, "theory-passport result promoted a complete theory")
     require(theory_passports["claim_flags"]["matrix_cell_grades_promoted"] is False, "theory-passport result promoted matrix grades")
+    require(atlas["bt_polynomial_contrast_fixture_members"] == [2, 3, 4], "BT polynomial-contrast fixture members drift")
+    require(atlas["bt_polynomial_contrast_cycle_volume_formula"] == bt_polynomial_contrast["hierarchy"]["graph"] == "cycle C_(4*m^4+2), viewed as two equal paths from one minimum plateau to one maximum plateau", "BT polynomial-contrast cycle formula drift")
+    require(atlas["bt_polynomial_contrast_main_bound"] == bt_polynomial_contrast["main_flow_theorem"]["coefficient_upper_bound"] == "D_m/K_m<=160/m^6", "BT polynomial-contrast main-flow bound drift")
+    require(atlas["bt_polynomial_contrast_full_bound"] == bt_polynomial_contrast["full_gradient_theorem"]["quotient_upper_bound"] == "for m>=8, ||g||_2^2/||r||_2^2<=1960/m^6", "BT polynomial-contrast full-gradient bound drift")
+    require(atlas["bt_polynomial_contrast_four_torus_status"] == bt_polynomial_contrast["research_disposition"]["isotropic_four_torus_scaled_PL"] == "OPEN", "BT polynomial-contrast four-torus boundary drift")
+    require(bt_polynomial_contrast["checks"]["ok"] is True and all(all(item["checks"].values()) for item in bt_polynomial_contrast["exact_fixtures"]), "BT polynomial-contrast exact checks are not closed")
+    require(bt_polynomial_contrast["research_disposition"]["actual_interacting_h_minus_one"] == "OPEN" and bt_polynomial_contrast["research_disposition"]["lorentzian_transfer"] == "NOT_ESTABLISHED", "BT polynomial-contrast H^-1/Lorentzian boundary drift")
     require(abs(atlas["mannheim_ngc3198_sparc_rms_km_s"] - 4.5382719695501885) < 1e-12, "Mannheim SPARC RMS drift")
     require(abs(atlas["mannheim_ngc3198_sparc_reduced_chi2"] - 5.592211904260559) < 1e-12, "Mannheim SPARC chi-squared drift")
     standard = next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")
@@ -1683,6 +1694,10 @@ def main() -> int:
         r"theory passports",
         r"FOUNDATIONAL_END_TO_END_THEORY_PASSPORT_ATLAS_V1",
         r"physical-cohomology positivity",
+        r"REVERSE_PHYSICS_BT_EUCLIDEAN_POLYNOMIAL_CONTRAST_HIERARCHY_OBSTRUCTION_V1",
+        r"{D_m\over K_m}\leq {160\over m^6}",
+        r"{\|g_m\|_2^2\over\|R_m\|_2^2}\leq {1960\over m^6}",
+        r"not a counterexample on isotropic four-tori",
         r"reverse-foundations-of-physics-appendices.tex",
         r"D\geq2A-\frac{488}{5}N",
         r"\mathbb E\sqrt{1+\frac AN}\leq\frac{\sqrt{1247}}5",

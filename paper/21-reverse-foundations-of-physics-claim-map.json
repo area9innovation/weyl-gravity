@@ -205,6 +205,15 @@
     "bt_pointwise_half_action_curvature_route_status": "OBSTRUCTED_AS_FORMULATED",
     "bt_pointwise_nonnegative_virial_status": "OBSTRUCTED",
     "bt_pointwise_virial_constant_two_status": "POINTWISE_VIRIAL_CONSTANT_TWO_OBSTRUCTED",
+    "bt_polynomial_contrast_cycle_volume_formula": "cycle C_(4*m^4+2), viewed as two equal paths from one minimum plateau to one maximum plateau",
+    "bt_polynomial_contrast_fixture_members": [
+      2,
+      3,
+      4
+    ],
+    "bt_polynomial_contrast_four_torus_status": "OPEN",
+    "bt_polynomial_contrast_full_bound": "for m>=8, ||g||_2^2/||r||_2^2<=1960/m^6",
+    "bt_polynomial_contrast_main_bound": "D_m/K_m<=160/m^6",
     "bt_q_zero_uniform_lower_bound_status": "OBSTRUCTED",
     "bt_quartic_kernel_status": "PROVED",
     "bt_quartic_power_cancellation_status": "OPEN",
@@ -705,6 +714,17 @@
       "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ORTHOGONAL_HESSIAN_BLOCK_OBSTRUCTION_V1.json",
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_ORTHOGONAL_HESSIAN_BLOCK_OBSTRUCTION_V1",
       "sha256": "f984df873bb6f41476b15acb7bc01e9737fa1438782ddd970d1d62033e5a430e"
+    },
+    "bt_polynomial_contrast_hierarchy_obstruction": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE"
+      ],
+      "lifecycle": "GENERIC_BAND_DIAMETER_TRANSPORT_OBSTRUCTED_FOUR_TORUS_COMPATIBILITY_GATE_OPEN",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_POLYNOMIAL_CONTRAST_HIERARCHY_OBSTRUCTION_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_POLYNOMIAL_CONTRAST_HIERARCHY_OBSTRUCTION_V1",
+      "sha256": "fc57587918eceb9f2791ab36e14e79ac9030b790071a9451548bd7f81b89587a"
     },
     "bt_quartic_score_power_obstruction": {
       "dependency_tags": [
@@ -2483,7 +2503,7 @@
       "sha256": "c394928bb8ead70ba9eeb76ee16298c3fffec5712d8c9290f773712960d333fb"
     }
   },
-  "canonical_digest": "a6d0ece4bdd35c976b2152576801ca5a18287ddcfc59073776321bab6fc8aca6",
+  "canonical_digest": "3966747fef1c3c0593a72c56e30c61827d1286225e86b7abe1857a62c634ec9b",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -2586,6 +2606,8 @@
     "bt_ordinary_eom_score_identity_established": true,
     "bt_pointwise_half_action_curvature_route_obstructed": true,
     "bt_pointwise_nonnegative_radial_virial_obstructed": true,
+    "bt_polynomial_contrast_four_torus_decided": false,
+    "bt_polynomial_contrast_hierarchy_obstruction_certified": true,
     "bt_quadratic_bubble_score_soft_factor_established": true,
     "bt_quartic_power_cancellation_established": false,
     "bt_quartic_score_kernel_established": true,
@@ -3986,6 +4008,19 @@
       ],
       "statement": "Eight evidence-pinned theory passports compare the same six functional stages: foundational assumptions, state space, dynamics, observable, prediction and empirical benchmark. Four chains reach data: GR/Cassini and GR+NFW/NGC 3198 pass their declared bounded gates, while Newtonian baryons and Mannheim/NGC 3198 fail the declared common random-error gate. Bateman--Turok Euclidean, free-mode Krein, constructive coded wave and pure-Weyl BV causal remain not tested, each with a first blocker. The 48 stages carry 64 source assertions. Later stage-local evidence remains visible after an earlier blocker. No passport selects a complete theory, promotes a matrix grade, performs new empirical analysis, converts a bounded pass into global validation or converts a bounded failure into universal refutation.",
       "status": "EIGHT_SOURCE_ASSERTED_PASSPORTS_FOUR_EMPIRICAL_CHAINS_ZERO_COMPLETE_THEORIES"
+    },
+    {
+      "authorities": [
+        "bt_polynomial_contrast_hierarchy_obstruction"
+      ],
+      "claim_id": "RF-83-BT-POLYNOMIAL-CONTRAST-HIERARCHY-OBSTRUCTION",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE"
+      ],
+      "statement": "For every integer m at least two, an exact positive field on the cycle with 4m^4+2 vertices has maximum edge ratio m and positive-main-flow divergence coefficient at most 160/m^6. For m at least eight its complete BT residual-gradient quotient is at most 1960/m^6. Multiplication by the cycle diameter still tends to zero, obstructing a graph-generic diameter-scale band-transport extension. This is a reduced-mode method obstruction on cycles: it neither compares the quotient with the cycle free bilaplacian scale nor supplies an isotropic four-torus counterexample, Witten or interacting H^-1 result, continuum reconstruction, Born/Krein interpretation, or Lorentzian claim.",
+      "status": "GENERIC_DIAMETER_SCALE_BAND_TRANSPORT_OBSTRUCTED_TORUS_WITTEN_AND_RECONSTRUCTION_OPEN"
     }
   ],
   "created": "2026-08-17",
@@ -4225,7 +4260,7 @@
       "source_sha256": "813d29b98f493c3a1d944eb302c7c842cb3773622a5d4dee702c586b5a598087"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "a790cf65bffb403b53be237f29bcb52e801d6ceb906b716e9fdf35a52d3d7a74"
+    "sha256": "dcdf05a895bd8a46bd4f4406829e7447e9e0c6b18663c500820bec6f9e1afe83"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",
