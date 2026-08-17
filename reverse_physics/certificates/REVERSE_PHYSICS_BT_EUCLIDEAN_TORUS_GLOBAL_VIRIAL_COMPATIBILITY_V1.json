@@ -1,0 +1,197 @@
+{
+  "answer": "Yes. A piecewise scalar majorant with slope -21/4, combined with sum_x(s_x-8)=sum_edges(z+z^-1-2)>=0, proves <psi,g>>=2A-22N. For every 0<epsilon<=32, A>=(11+epsilon)L^4 implies Q/omega_L^2>=epsilon^2/(8192*pi^4). Hence every collapsing sequence has limsup A/L^4<=11 and limsup W^2/L^4<=22. The sub-11 nonseparable sector remains open.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_GLOBAL_VIRIAL_COMPATIBILITY_V1",
+  "checks": {
+    "details": {
+      "all_field_scaled_PL_remains_open": true,
+      "collapsing_action_density_limsup_11_proved": true,
+      "collapsing_contrast_square_limsup_22_proved": true,
+      "constant_audit_closes": true,
+      "fixed_margin_torus_floor_proved": true,
+      "fixture_checks_close": true,
+      "global_reciprocal_edge_compatibility_proved": true,
+      "global_virial_defect_22_proved": true,
+      "no_witten_or_lorentzian_promotion": true,
+      "piecewise_scalar_majorant_proved": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 10,
+    "total": 10
+  },
+  "created": "2026-08-17",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "a lower bound for all fields with A<=11*L^4",
+    "the all-field torus scaled Polyak-Lojasiewicz inequality",
+    "absence or existence of a nonseparable low-action collapsing family",
+    "a Witten or Poincare theorem",
+    "boundedness or divergence of the interacting H^-1 moment",
+    "a continuum measure or continuum identification",
+    "a Born rule or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_constant_audit": {
+    "affine_majorant_slope": {
+      "denominator": 4,
+      "numerator": 21
+    },
+    "asymptotic_contrast_square_coefficient": 22,
+    "checks": {
+      "critical_density_is_11": true,
+      "density_floor_denominator": true,
+      "exp_16_over_9_taylor_exceeds_9_over_2": true,
+      "high_log_rational_derivative_nonnegative": true,
+      "high_polynomial_critical_floor_positive": true,
+      "high_polynomial_derivative_positive_at_83_over_100": true,
+      "high_polynomial_large_y_discriminant_negative": true,
+      "large_branch_dominates_epsilon_32": true,
+      "line_intercept_at_zero_is_64": true,
+      "low_branch_endpoint_comparison": true,
+      "normalized_floor_denominator": true,
+      "range_norm_coefficient": true,
+      "sqrt_128_below_12": true
+    },
+    "critical_action_density": {
+      "denominator": 1,
+      "numerator": 11
+    },
+    "global_virial_defect": {
+      "denominator": 1,
+      "numerator": 22
+    },
+    "high_polynomial_critical_floor": {
+      "denominator": 800,
+      "numerator": 71
+    },
+    "high_polynomial_derivative_at_83_over_100": {
+      "denominator": 625,
+      "numerator": 343
+    },
+    "low_branch_taylor_partial_sum": {
+      "denominator": 2187,
+      "numerator": 11579
+    },
+    "normalized_density_floor_denominator": 8192
+  },
+  "exact_fixture": {
+    "action": {
+      "denominator": 25,
+      "numerator": 267264
+    },
+    "action_density": {
+      "denominator": 25,
+      "numerator": 1044
+    },
+    "checks": {
+      "density_branch_floor_holds": true,
+      "density_is_between_11_and_64": true,
+      "edge_reciprocal_excess_is_nonnegative": true,
+      "global_edge_compatibility_identity": true,
+      "gradient_has_zero_sum": true
+    },
+    "density_branch_floor": {
+      "denominator": 81920000,
+      "numerator": 591361
+    },
+    "edge_reciprocal_excess": {
+      "denominator": 5,
+      "numerator": 4608
+    },
+    "gradient_norm_squared": {
+      "denominator": 625,
+      "numerator": 10433396736
+    },
+    "graph": "T_4^4 parity checkerboard",
+    "height_ratio": {
+      "denominator": 2,
+      "numerator": 5
+    },
+    "quotient": {
+      "denominator": 725,
+      "numerator": 566048
+    },
+    "residual_norm_squared": {
+      "denominator": 25,
+      "numerator": 534528
+    },
+    "residual_sum": {
+      "denominator": 5,
+      "numerator": 4608
+    },
+    "side": 4,
+    "vertices": 256
+  },
+  "four_torus_theorem": {
+    "bounded_density_branch": "11<x<64 implies N*Q>=(x-11)^2/512",
+    "bounded_density_normalized_branch": "11<x<64 implies Q/omega_L^2>=(x-11)^2/(8192*pi^4)",
+    "collapsing_action_necessity": "Q/omega_L^2->0 implies limsup A/L^4<=11",
+    "collapsing_contrast_necessity": "Q/omega_L^2->0 implies limsup W^2/L^4<=22",
+    "fixed_margin_theorem": "for every 0<epsilon<=32, A>=(11+epsilon)*L^4 implies Q/omega_L^2>=epsilon^2/(8192*pi^4)",
+    "large_density_join": "x>=64 implies Q/omega_L^2>=1/(8*pi^4)",
+    "scope": "T_L^4 with L>=4, N=L^4, x=A/N and omega_L=4*sin(pi/L)^2"
+  },
+  "global_graph_theorem": {
+    "compatibility_identity": "sum_x(s_x-8)=sum_edges(z_e+z_e^(-1)-2)>=0",
+    "global_virial_bound": "<psi,g>>=2*A-22*N",
+    "scope": "every positive field on every finite 8-regular undirected graph",
+    "virial_identity": "<psi,g>=sum_x r_x*t_x"
+  },
+  "lifecycle_state": "ACTION_DENSITY_ABOVE_11_FREE_SCALE_CLOSED_SUB_11_NONSEPARABLE_GATE_OPEN",
+  "provenance": {
+    "analytic_inputs": [
+      "Jensen and superadditivity bounds for sum_i w_i log(w_i) at fixed s",
+      "log(1+y)>=2y/(2+y), proved by a derivative y^2/[(1+y)(2+y)^2]",
+      "e^(16/9)>9/2 from a rational Taylor partial sum, e<3, 2log L<=L, and sin x<=x"
+    ],
+    "exact_arithmetic": "Fraction audit of slope 21/4, defect 22, density 11, the low-branch Taylor localization, the high-branch cubic critical point, the 512/8192 torus constants, and a complete rational T_4^4 checkerboard",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_SHARP_VIRIAL_DENSITY_GATE_V1.json",
+        "sha256": "9d6c4a25ad7b0a4bfe74226af0ce750ded47369e21be982cd7c5f20264406538"
+      }
+    ],
+    "repository_base_commit": "88dc6d68eded9cd8c81842290e3b7547fd7d7468"
+  },
+  "question": "Does reciprocal-edge compatibility improve the sharp isolated-vertex virial defect and further confine a collapsing BT torus family?",
+  "report": "reverse_physics/reports/bt-euclidean-torus-global-virial-compatibility.md",
+  "research_disposition": {
+    "action_density_at_most_11_sector": "OPEN",
+    "all_field_torus_scaled_PL": "OPEN",
+    "asymptotic_edge_contrast_square_above_22": "RULED_OUT_FOR_A_COLLAPSING_SEQUENCE",
+    "fixed_action_density_above_11_collapse": "RULED_OUT",
+    "interacting_h_minus_one": "OPEN",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "nonseparable_counterfamily": "NOT_CONSTRUCTED",
+    "witten_poincare_transfer": "OPEN"
+  },
+  "result_kind": "exact global reciprocal-edge virial compatibility and low-action torus reduction",
+  "scalar_majorant": {
+    "affine_majorant": "Phi(s)+(21/4)*(s-8)<=22 for every s>0",
+    "definitions": "s=sum_i w_i, r=s-8, and Phi(s) is an upper bound for r^2-r*t after optimizing t at fixed s",
+    "negative_branch": "0<s<8: Phi(s)=(8-s)^2+(8-s)*s*log(s)",
+    "negative_branch_proof": "the remainder is s*[(8-s)log(s)+s-43/4]; its unique possible maximum solves s*log(s)=8, lies in (9/2,8), and is below 337/18-75/4<0",
+    "positive_branch": "s>=8: Phi(s)=(s-8)^2-(s-8)*s*log(s/8)",
+    "positive_branch_proof": "with y=s/8-1 and log(1+y)>=2y/(2+y), the remainder reduces to p(y)=64y^3-42y^2-62y+44>=0; its sole positive critical minimum on [0,1] lies below 83/100 and is positive, while y>=1 follows from a quadratic with discriminant -7"
+  },
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-torus-global-virial-compatibility-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-torus-global-virial-compatibility-v1",
+  "tier_receipt": {
+    "paper_integration": "PASS: Paper 21 RF-91 claim-map verification completed in 0.60 s at 149096 KiB maximum RSS and the 83-page PDF built twice in 1.82 s at 53992 KiB maximum RSS",
+    "planning_event": "PASS: append-only ACTIVE event sequence 97, id 910ac622c3231cca",
+    "science_forge_shadow": "not rerun: no Science Forge substrate input changes; the latest advisory attempt had no final disposition and is not counted as a pass",
+    "tier_0": "PASS: changed Python compiled; strict JSON/schema parsing, deterministic certificate drift, scoped diff check, exact staged-diff inspection, planning import, claim-map verification, and two-pass PDF build were run; planning imported 1716 nodes with 0 invalid items and 0 malformed events in 1.24 s at 16856 KiB maximum RSS",
+    "tier_1": "PASS: producer 10/10 in 0.05 s at 20752 KiB; nonimporting verifier 12/12 in 0.11 s at 30328 KiB; focused and mutation tests 12/12 in 0.25 s at 30896 KiB; unchanged sharp-virial predecessor verifier passed 11/11 in 0.11 s",
+    "tier_2": "the sharp-virial predecessor is unchanged and pinned by content hash",
+    "tier_3": "not triggered: the all-field, Witten, H^-1, continuum, freeze, release, and shared-core gates remain open"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_torus_global_virial_compatibility.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_torus_global_virial_compatibility.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_torus_global_virial_compatibility"
+  ],
+  "verifier": "reverse_physics/verify_bt_euclidean_torus_global_virial_compatibility.py"
+}

@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-torus-global-virial-compatibility-v1.schema.json",
+  "title": "BT Euclidean torus global virial-compatibility certificate",
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "object": {"type": "object", "minProperties": 1}
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "scalar_majorant", "global_graph_theorem", "four_torus_theorem",
+    "exact_constant_audit", "exact_fixture", "research_disposition",
+    "does_not_establish", "provenance", "verification_commands",
+    "tier_receipt", "checks", "report", "schema", "verifier"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_GLOBAL_VIRIAL_COMPATIBILITY_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-torus-global-virial-compatibility-v1"},
+    "created": {"const": "2026-08-17"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "ACTION_DENSITY_ABOVE_11_FREE_SCALE_CLOSED_SUB_11_NONSEPARABLE_GATE_OPEN"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "scalar_majorant": {
+      "type": "object",
+      "required": ["definitions", "negative_branch", "positive_branch", "affine_majorant", "negative_branch_proof", "positive_branch_proof"],
+      "properties": {
+        "definitions": {"$ref": "#/$defs/text"},
+        "negative_branch": {"const": "0<s<8: Phi(s)=(8-s)^2+(8-s)*s*log(s)"},
+        "positive_branch": {"const": "s>=8: Phi(s)=(s-8)^2-(s-8)*s*log(s/8)"},
+        "affine_majorant": {"const": "Phi(s)+(21/4)*(s-8)<=22 for every s>0"},
+        "negative_branch_proof": {"$ref": "#/$defs/text"},
+        "positive_branch_proof": {"$ref": "#/$defs/text"}
+      },
+      "additionalProperties": false
+    },
+    "global_graph_theorem": {
+      "type": "object",
+      "required": ["scope", "compatibility_identity", "virial_identity", "global_virial_bound"],
+      "properties": {
+        "scope": {"const": "every positive field on every finite 8-regular undirected graph"},
+        "compatibility_identity": {"const": "sum_x(s_x-8)=sum_edges(z_e+z_e^(-1)-2)>=0"},
+        "virial_identity": {"const": "<psi,g>=sum_x r_x*t_x"},
+        "global_virial_bound": {"const": "<psi,g>>=2*A-22*N"}
+      },
+      "additionalProperties": false
+    },
+    "four_torus_theorem": {
+      "type": "object",
+      "required": ["scope", "bounded_density_branch", "bounded_density_normalized_branch", "fixed_margin_theorem", "large_density_join", "collapsing_action_necessity", "collapsing_contrast_necessity"],
+      "properties": {
+        "scope": {"const": "T_L^4 with L>=4, N=L^4, x=A/N and omega_L=4*sin(pi/L)^2"},
+        "bounded_density_branch": {"const": "11<x<64 implies N*Q>=(x-11)^2/512"},
+        "bounded_density_normalized_branch": {"const": "11<x<64 implies Q/omega_L^2>=(x-11)^2/(8192*pi^4)"},
+        "fixed_margin_theorem": {"const": "for every 0<epsilon<=32, A>=(11+epsilon)*L^4 implies Q/omega_L^2>=epsilon^2/(8192*pi^4)"},
+        "large_density_join": {"const": "x>=64 implies Q/omega_L^2>=1/(8*pi^4)"},
+        "collapsing_action_necessity": {"const": "Q/omega_L^2->0 implies limsup A/L^4<=11"},
+        "collapsing_contrast_necessity": {"const": "Q/omega_L^2->0 implies limsup W^2/L^4<=22"}
+      },
+      "additionalProperties": false
+    },
+    "exact_constant_audit": {"$ref": "#/$defs/object"},
+    "exact_fixture": {"$ref": "#/$defs/object"},
+    "research_disposition": {
+      "type": "object",
+      "required": ["fixed_action_density_above_11_collapse", "asymptotic_edge_contrast_square_above_22", "action_density_at_most_11_sector", "all_field_torus_scaled_PL", "nonseparable_counterfamily", "witten_poincare_transfer", "interacting_h_minus_one", "lorentzian_transfer"],
+      "properties": {
+        "fixed_action_density_above_11_collapse": {"const": "RULED_OUT"},
+        "asymptotic_edge_contrast_square_above_22": {"const": "RULED_OUT_FOR_A_COLLAPSING_SEQUENCE"},
+        "action_density_at_most_11_sector": {"const": "OPEN"},
+        "all_field_torus_scaled_PL": {"const": "OPEN"},
+        "nonseparable_counterfamily": {"const": "NOT_CONSTRUCTED"},
+        "witten_poincare_transfer": {"const": "OPEN"},
+        "interacting_h_minus_one": {"const": "OPEN"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "does_not_establish": {"type": "array", "minItems": 8, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {"$ref": "#/$defs/object"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "tier_receipt": {"$ref": "#/$defs/object"},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 10},
+        "total": {"const": 10},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-torus-global-virial-compatibility.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-torus-global-virial-compatibility-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_torus_global_virial_compatibility.py"}
+  },
+  "additionalProperties": false
+}

@@ -2380,6 +2380,64 @@ the action-density-at-most-\(32\) nonseparable sector, the all-field torus
 bound, Witten/Poincare transfer, interacting \(H^{-1}\), continuum,
 Born/Krein and Lorentzian gates remain open.
 
+Reciprocal edges improve this estimate again.  Certificate
+
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_GLOBAL_VIRIAL_COMPATIBILITY_V1}
+
+optimizes the defect \(r_x^2-r_xt_x\) at fixed
+\(s_x=\sum_{y\sim x}e^{\psi_y-\psi_x}\).  Its exact piecewise envelope
+\(\Phi\) obeys
+
+\[
+                         \Phi(s)+{21\over4}(s-8)\leq22
+                         \qquad(s>0).
+\]
+
+The negative-\(r\) branch is a one-variable concavity calculation.  On the
+positive branch, \(\log(1+y)\geq2y/(2+y)\) reduces the claim to positivity
+of
+
+\[
+                         64y^3-42y^2-62y+44.
+\]
+
+Its sole positive critical minimum below one is enclosed exactly using
+\(y<83/100\); above one a quadratic lower bound has discriminant \(-7\).
+The graph then supplies the load-bearing compatibility identity
+
+\[
+ \sum_x(s_x-8)
+ =\sum_{\{x,y\}}\left(
+ {\Omega_y\over\Omega_x}+{\Omega_x\over\Omega_y}-2\right)\geq0.
+\]
+
+Summing the affine envelope proves
+
+\[
+                         \langle\psi,g\rangle\geq2A-22N.
+\]
+
+Therefore, for every \(0<\epsilon\leq32\),
+
+\[
+ A\geq(11+\epsilon)L^4
+ \quad\Longrightarrow\quad
+ {Q\over\omega_L^2}\geq{\epsilon^2\over8192\pi^4}.
+\]
+
+An actually collapsing sequence is now confined by
+
+\[
+ \limsup {A\over L^4}\leq11,
+ \qquad
+ \limsup {W^2\over L^4}\leq22.
+\]
+
+This uses the global reciprocal-edge constraint absent from the preceding
+vertexwise estimate.  It still leaves the sub-\(11\) nonseparable sector,
+the all-field torus theorem, Witten/Poincare transfer, interacting
+\(H^{-1}\), continuum, Born/Krein and Lorentzian gates open.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The
