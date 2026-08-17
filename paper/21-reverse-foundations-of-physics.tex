@@ -2486,6 +2486,56 @@ optimum.  The action-density-at-most-\(272/29\) nonseparable sector and the
 all-field torus theorem remain open, as do every Witten/Poincare,
 interacting-\(H^{-1}\), continuum, Born/Krein and Lorentzian promotion.
 
+The certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_RECIPROCAL_VIRIAL_LOCALIZATION_V1}
+uses an inverse-field deformation rather than a stronger scalar majorant.
+Put \(u=e^\psi\), let \(J\) denote the derivative
+of the residual map, and set \(v=1/u\).  Directly at every vertex,
+
+\[
+ (Jv)_x=-{r_x\over u_x}.
+\]
+
+Therefore, if \(B=\sum_xr_x^2/u_x\), scale invariance and
+Cauchy--Schwarz give
+
+\[
+ Q\geq {B^2\over R^2\lVert v-\bar v\rVert_2^2},
+ \qquad R^2=\sum_xr_x^2.
+\]
+
+Normalize the irrelevant common scale by \(\min_xu_x=1\).  Popoviciu's
+variance inequality then gives
+
+\[
+ Q\geq{4B^2\over NR^2}={8\eta^2A\over N},
+ \qquad \eta={B\over R^2}.
+\]
+
+On \(T_L^4\), this becomes
+
+\[
+ {Q\over\omega_L^2}\geq{\eta^2A\over2\pi^4}.
+\]
+
+More geometrically, let \(F_K\) be the fraction of residual energy on
+vertices with \(u_x\leq K\).  Since \(\eta\geq F_K/K\),
+
+\[
+ {Q\over\omega_L^2}\geq {A F_K^2\over2\pi^4K^2}.
+\]
+
+Thus a collapsing sequence whose action stays bounded away from zero cannot
+retain any fixed-height fraction of its residual energy: for every fixed
+\(K\), \(F_K\to0\).  This is a certified superlevel-localization theorem,
+not the all-field inequality.  It leaves two live branches: total action
+tending to zero, or residual energy escaping through field heights diverging
+relative to the global minimum.  Numerical continuation of symmetric
+four-dimensional profiles was used only to discover this deformation; no
+floating-point minimum is evidence for the claim.  Witten/Poincare,
+interacting-\(H^{-1}\), continuum, Born/Krein and Lorentzian promotions remain
+open.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The

@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-torus-reciprocal-virial-localization-v1.schema.json",
+  "title": "BT Euclidean torus reciprocal-virial localization certificate",
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "object": {"type": "object", "minProperties": 1}
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "exact_graph_theorem", "four_torus_theorem", "exact_fixture",
+    "numerical_scout_disposition", "research_disposition",
+    "does_not_establish", "provenance", "verification_commands",
+    "tier_receipt", "checks", "report", "schema", "verifier"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_RECIPROCAL_VIRIAL_LOCALIZATION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-torus-reciprocal-virial-localization-v1"},
+    "created": {"const": "2026-08-17"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "RECIPROCAL_RESIDUAL_LOCALIZATION_CERTIFIED_ALL_FIELD_GATE_OPEN"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "exact_graph_theorem": {
+      "type": "object",
+      "required": ["scope", "definitions", "inverse_direction_identity", "pairing_identity", "exact_quotient_floor", "normalization", "popoviciu_floor"],
+      "properties": {
+        "scope": {"const": "every nonconstant positive field u on every finite connected regular undirected graph"},
+        "definitions": {"$ref": "#/$defs/text"},
+        "inverse_direction_identity": {"const": "(Jv)_x=-r_x/u_x"},
+        "pairing_identity": {"const": "<g,v-v_bar>=<g,v>=<r,Jv>=-B"},
+        "exact_quotient_floor": {"const": "Q=||g||_2^2/R^2>=B^2/(R^2*||v-v_bar||_2^2)"},
+        "normalization": {"const": "rescale u so min_x u_x=1; then 0<v_x<=1"},
+        "popoviciu_floor": {"const": "||v-v_bar||_2^2<=N/4 and therefore Q>=4*B^2/(N*R^2)=8*eta^2*A/N"}
+      },
+      "additionalProperties": false
+    },
+    "four_torus_theorem": {
+      "type": "object",
+      "required": ["scope", "free_scale_comparison", "normalized_floor", "threshold_definition", "threshold_floor", "collapsing_necessity", "fixed_threshold_corollary", "extensive_action_corollary"],
+      "properties": {
+        "scope": {"const": "T_L^4 with L>=4, N=L^4 and omega_L=4*sin(pi/L)^2"},
+        "free_scale_comparison": {"const": "omega_L^2<=16*pi^4/N"},
+        "normalized_floor": {"const": "Q/omega_L^2>=eta^2*A/(2*pi^4)"},
+        "threshold_definition": {"const": "for K>=1, F_K=(sum_(u_x<=K) r_x^2)/R^2"},
+        "threshold_floor": {"const": "Q/omega_L^2>=A*F_K^2/(2*pi^4*K^2)"},
+        "collapsing_necessity": {"const": "Q/omega_L^2->0 implies sqrt(A)*F_K/K->0 for every chosen threshold K>=1"},
+        "fixed_threshold_corollary": {"const": "if liminf A>0 and K is fixed, collapse implies F_K->0"},
+        "extensive_action_corollary": {"const": "if A>=a*L^4 with fixed a>0 and K is fixed, collapse implies F_K=o(L^-2)"}
+      },
+      "additionalProperties": false
+    },
+    "exact_fixture": {"$ref": "#/$defs/object"},
+    "numerical_scout_disposition": {"$ref": "#/$defs/object"},
+    "research_disposition": {
+      "type": "object",
+      "required": ["fixed_height_residual_fraction_in_positive_action_collapsing_sequence", "remaining_counterfamily_shape", "action_density_at_most_272_over_29_sector", "all_field_torus_scaled_PL", "nonseparable_counterfamily", "witten_poincare_transfer", "interacting_h_minus_one", "lorentzian_transfer"],
+      "properties": {
+        "fixed_height_residual_fraction_in_positive_action_collapsing_sequence": {"const": "RULED_OUT"},
+        "remaining_counterfamily_shape": {"const": "RESIDUAL_ENERGY_MUST_ESCAPE_TO_DIVERGING_FIELD_SUPERLEVELS_OR_TOTAL_ACTION_MUST_VANISH"},
+        "action_density_at_most_272_over_29_sector": {"const": "OPEN"},
+        "all_field_torus_scaled_PL": {"const": "OPEN"},
+        "nonseparable_counterfamily": {"const": "NOT_CONSTRUCTED"},
+        "witten_poincare_transfer": {"const": "OPEN"},
+        "interacting_h_minus_one": {"const": "OPEN"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "does_not_establish": {"type": "array", "minItems": 10, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {"$ref": "#/$defs/object"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "tier_receipt": {"$ref": "#/$defs/object"},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 9},
+        "total": {"const": 9},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 9, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-torus-reciprocal-virial-localization.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-torus-reciprocal-virial-localization-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_torus_reciprocal_virial_localization.py"}
+  },
+  "additionalProperties": false
+}

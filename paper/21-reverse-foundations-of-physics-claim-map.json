@@ -237,6 +237,10 @@
     "bt_quartic_power_cancellation_status": "OPEN",
     "bt_quartic_soft_degree": "LINEAR_NONZERO",
     "bt_radial_convexity_status": "OBSTRUCTED",
+    "bt_reciprocal_virial_all_field_status": "OPEN",
+    "bt_reciprocal_virial_fixed_threshold_corollary": "if liminf A>0 and K is fixed, collapse implies F_K->0",
+    "bt_reciprocal_virial_normalized_floor": "Q/omega_L^2>=eta^2*A/(2*pi^4)",
+    "bt_reciprocal_virial_threshold_floor": "Q/omega_L^2>=A*F_K^2/(2*pi^4*K^2)",
     "bt_residual_boundary_coordinate_status": "PROVED",
     "bt_residual_cycle_jacobian": {
       "denominator": 2,
@@ -926,6 +930,16 @@
       "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_QUADRATIC_VIRIAL_DENSITY_GATE_V1.json",
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_QUADRATIC_VIRIAL_DENSITY_GATE_V1",
       "sha256": "ab73fa170f3c6e9ead83feed4c95b1f35a94f4ed06fb916944e35f0681276ba5"
+    },
+    "bt_torus_reciprocal_virial_localization": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "RECIPROCAL_RESIDUAL_LOCALIZATION_CERTIFIED_ALL_FIELD_GATE_OPEN",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_RECIPROCAL_VIRIAL_LOCALIZATION_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_RECIPROCAL_VIRIAL_LOCALIZATION_V1",
+      "sha256": "1033aba118eb0f18a7d3723b5e672773a759a6b26208937086b8dfc6dd3f579d"
     },
     "bt_torus_sharp_virial_density_gate": {
       "dependency_tags": [
@@ -2644,7 +2658,7 @@
       "sha256": "c394928bb8ead70ba9eeb76ee16298c3fffec5712d8c9290f773712960d333fb"
     }
   },
-  "canonical_digest": "80ea31a991189a456670f0764beacf667775f9252d2b72f9e91346e07849a9ac",
+  "canonical_digest": "b25bbd51e07793967c987a594f46351677fd32f44eebabfbad286443391d1945",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -2778,12 +2792,15 @@
     "bt_torus_fixed_action_density_above_11_ruled_out": true,
     "bt_torus_fixed_action_density_above_272_over_29_ruled_out": true,
     "bt_torus_fixed_action_density_above_32_ruled_out": true,
+    "bt_torus_fixed_height_residual_fraction_ruled_out_for_positive_action_collapse": true,
     "bt_torus_global_virial_all_field_scaled_pl_decided": false,
     "bt_torus_global_virial_compatibility_certified": true,
     "bt_torus_moderate_sparse_multiband_gate_open": true,
     "bt_torus_phase_pullback_obstruction_certified": true,
     "bt_torus_quadratic_virial_all_field_scaled_pl_decided": false,
     "bt_torus_quadratic_virial_density_gate_certified": true,
+    "bt_torus_reciprocal_virial_all_field_scaled_pl_decided": false,
+    "bt_torus_reciprocal_virial_localization_certified": true,
     "bt_torus_sharp_virial_all_field_scaled_pl_decided": false,
     "bt_torus_sharp_virial_density_gate_certified": true,
     "bt_torus_single_phase_counterfamily_ruled_out": true,
@@ -4306,6 +4323,18 @@
       ],
       "statement": "The exact quadratic scalar majorant Phi(s)+(41/8)(s-8)-(3/32)(s-8)^2<=17 combines with reciprocal-edge compatibility to prove <psi,g>>=(29/16)A-17N. On T_L^4, for every 0<epsilon<=32, A>=(272/29+epsilon)L^4 implies Q/omega_L^2>=841epsilon^2/(8388608pi^4). Hence every collapsing sequence has limsup A/L^4<=272/29 and limsup W^2/L^4<=544/29. The action-density-at-most-272/29 nonseparable sector, optimality, all-field torus theorem, Witten/Poincare transfer, interacting H^-1, continuum, Born/Krein and Lorentzian gates remain open.",
       "status": "ACTION_DENSITY_ABOVE_272_OVER_29_FREE_SCALE_CLOSED_LOWER_NONSEPARABLE_GATE_OPEN"
+    },
+    {
+      "authorities": [
+        "bt_torus_reciprocal_virial_localization"
+      ],
+      "claim_id": "RF-93-BT-TORUS-RECIPROCAL-VIRIAL-LOCALIZATION",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "statement": "For every nonconstant positive field, the inverse-field deformation v=1/u obeys Jv=-r/u exactly. After normalizing min(u)=1, Cauchy--Schwarz and Popoviciu give Q>=4B^2/(N R^2), B=sum r^2/u. On T_L^4 this becomes Q/omega_L^2>=eta^2 A/(2pi^4), eta=B/R^2. If F_K is the fraction of residual energy on u<=K, then Q/omega_L^2>=A F_K^2/(2pi^4 K^2). Hence a collapsing sequence with action bounded away from zero moves every fixed-height residual fraction to diverging field superlevels. This localizes the remaining counterfamily geometry but does not prove the all-field bound or construct the counterfamily.",
+      "status": "RECIPROCAL_RESIDUAL_LOCALIZATION_CERTIFIED_ALL_FIELD_GATE_OPEN"
     }
   ],
   "created": "2026-08-17",
@@ -4545,7 +4574,7 @@
       "source_sha256": "813d29b98f493c3a1d944eb302c7c842cb3773622a5d4dee702c586b5a598087"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "ff67fc15ac296721bb8e02254ff3b5547a6c5140ee7565f940d61bace10b3822"
+    "sha256": "02db54ba9cf9c2dd6a99175368c8244166de881083e1d1498759c5664a4523f3"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",
