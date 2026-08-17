@@ -9,7 +9,7 @@
 \hypersetup{
   pdftitle={Ghosts, Geometry, and Reality in Fourth-Order Gravity},
   pdfauthor={GPT-5.6.sol; Claude Fable 5; Asger Alstrup Palm},
-  pdfsubject={Public introduction to the Weyl-gravity research programme}
+  pdfsubject={A guided introduction to physical claims, mathematical carriers, and evidence in fourth-order gravity}
 }
 
 \newcommand{\R}{\mathbb R}
@@ -20,77 +20,102 @@
   \end{center}}
 
 \title{Ghosts, Geometry, and Reality in Fourth-Order Gravity\\[4pt]
-\large A guided introduction to an AI-orchestrated research programme}
+\large A guided introduction to physical claims, mathematical carriers,
+and evidence}
 \author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
 \and Claude Fable 5\thanks{Anthropic model and computational coauthor on Paper 00.}
 \and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human
 contact; Honorary Professor, DTU Compute, Technical University of Denmark.
 \texttt{asger@area9.dk}.}}
-\date{Public pre-release, July 2026}
+\date{17 August 2026}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
 Fourth-order gravity contains more local solutions than general relativity.
-Some enter familiar decompositions with an indefinite sign and are called
-ghosts.  A sign is a serious warning, but it does not by itself identify a
-physical particle.  Gauge reduction, global constraints, nonlinear
-continuation, boundary conditions, and quantum consistency are separate
-tests.  This introduction explains an eighteen-paper programme that keeps
-those tests distinct.
+Some appear with an indefinite sign in familiar decompositions and are called
+ghosts.  The sign is a serious warning, but it does not identify by itself a
+physical particle.  Local solution space, gauge-reduced classical phase
+space, nonlinear continuation, and positive quantum state space are different
+objects.
 
-The programme has not established that pure Weyl gravity is a viable theory
-of nature.  It has established several narrower results.  Positive and Krein
-completions of elementary fourth-order systems can be classified exactly,
-but their interaction continuations can fail.  On compact gravitational
-laboratories, additional fourth-order directions can survive gauge reduction
-and have nonzero action-derived pairings, while nonlinear balance and
-resonance remove other directions.  Strict pure Weyl gravity has a nonzero
-local Euclidean one-loop BV anomaly in the declared fixed-field-content
-complex; a compensator can make the tested cocycle exact only by changing the
-theory.
+This paper develops a way to keep those objects apart.  A physical conclusion
+is treated as a judgement depending on physical postulates, a mathematical
+carrier, logical and existence assumptions, and explicit bridges to
+observation.  Pais--Uhlenbeck systems, compact pure-Weyl laboratories,
+Schwarzschild perturbations, Mannheim rotation curves, and the
+Bateman--Turok Euclidean lattice serve as controlled examples.  Each answers
+a different question; none is silently promoted into a complete theory.
 
-The newest results concern Schwarzschild black holes.  Standard Lorentzian
-radiation conditions---future-horizon regularity and one-sided incoming or
-outgoing traces---do not select the Einstein subsector of the complete axial
-\(\ell=2\) pure-Weyl system.  The repeated spin-two Regge--Wheeler block is a
-non-split self-extension.  At one validated damped Schwarzschild frequency it
-has a length-two root chain: the geometric root is Einstein, whereas the
-generalized root has nonzero traceless-Ricci carrier.  The compactly cut-off
-radial Green operator has a nonzero rank-one second-order pole.  The same
-pole occurs in a fixed-domain global complex-scaled radial Fredholm
-realization.  This complex-scaled transfer is now identified as the unique
-meromorphic continuation of a genuinely retarded, mode-reduced
-compact-source/compact-observation response.  The isolated local resonance
-contour contains the corresponding \(t e^{i\omega_n t}\) Einstein profile.
-This is not yet a global inverse-Laplace or late-time ringdown theorem.
+The examples yield exact survival results and exact obstructions.  Additional
+classical pure-Weyl directions can survive gauge reduction.  A repeated
+Schwarzschild spin-two block can form a non-split extension with a defective
+resonance.  Strict pure Weyl has a nonzero local Euclidean one-loop BV anomaly
+in the declared complex.  A full-complex BRST--Hadamard two-point pseudo-state
+can satisfy causal and gauge conditions while remaining indefinite.  A
+bounded galaxy comparison can favor different models under different scores,
+and an explicit positive Euclidean family can refute a proposed universal
+stability shortcut.
 
-The repository is also a methodological experiment.  A computer scientist
-without professional physics training orchestrates AI systems that propose,
-derive, challenge, verify, and document the research.  The experiment can
-succeed only if experts can audit the assumptions, reproduce the evidence,
-and correct or reject the claims.
+The conclusion is methodological rather than triumphalist: the word
+``ghost'' should be replaced by a ladder of falsifiable obligations, and each
+obligation should state which physics, mathematics, logic, and evidence make
+it true.
 \end{abstract}
 
-\section*{Authorship, accountability, and status}
+\section*{Authorship and how to read this paper}
 
-This is an open-repository preprint, not a peer-reviewed publication.
-GPT-5.6.sol is the principal programme author.  Claude Fable~5 contributed to
-this introductory paper.  Asger Alstrup Palm selected and coordinated the
-programme, made the public-release decisions, and is the accountable human
-contact.  His DTU affiliation identifies his academic role and does not imply
-institutional endorsement.
+Asger Alstrup Palm, a computer scientist and Honorary Professor at DTU
+Compute, orchestrates the programme and is the accountable human contact.
+AI systems perform substantial derivation, programming, literature work,
+adversarial review, and drafting.  Claude Fable~5 contributed to this
+introductory paper.  Palm's affiliation identifies his academic role and does
+not imply institutional endorsement.
 
-AI authorship is part of the experiment, not a substitute for evidence.
-Every strong claim is intended to be tied to a mathematical statement,
-declared assumptions, source code, a machine-readable certificate, and a
-verifier that can reject damaged inputs.  The public repository is
-\href{https://github.com/area9innovation/weyl-gravity}
-{area9innovation/weyl-gravity}.  No repository-wide licence or archival DOI
-is claimed in this pre-release.
+AI authorship is neither evidence for nor evidence against a scientific
+claim.  The relevant questions are whether the assumptions are declared,
+whether the derivation is valid, whether the computation can reject damaged
+inputs, and whether another researcher can locate the exact boundary of the
+claim.  Sources, certificates, verifiers, and papers are available in the
+\href{https://github.com/area9innovation/weyl-gravity}{public repository}.
 
 \tableofcontents
+
+\section{An equation is not yet a theory}
+
+An elegant field equation does not say by itself what exists, what can be
+prepared, what evolves causally, or what an observer will count.  A usable
+theory requires at least five layers:
+\begin{enumerate}
+\item \textbf{Physical postulates:} symmetry, locality, causality,
+conservation, and composition rules.
+\item \textbf{A mathematical carrier:} finite algebra, Hilbert or Krein
+space, operator algebra, smooth fields, distributions, or an internal
+geometric setting.
+\item \textbf{Logic and existence assumptions:} classical or constructive
+logic, forms of infinity, completeness, compactness, and choice.
+\item \textbf{Operational bridges:} states, observables, probability,
+preparation, clocks, detectors, and reconstruction.
+\item \textbf{Empirical contact:} a numerical prediction with declared inputs,
+uncertainties, and a falsifiable comparison protocol.
+\end{enumerate}
+
+The programme writes this dependence schematically as
+\[
+ L+S+M+\operatorname{Enc}(P)\ \vdash\ O,
+\]
+where \(L\) is the logic, \(S\) the set or existence theory, \(M\) the
+mathematical carrier, \(P\) the physical postulates, and \(O\) the obligation
+being proved.  The notation is not a claim that physics reduces to formal
+logic.  It is a bookkeeping rule: if the carrier or existence principles
+change, the conclusion must be re-established rather than inherited by
+analogy.
+
+\keybox{\textbf{Central rule.}
+A finite identity is not a continuum limit.  A Euclidean measure is not a
+Lorentzian causal state.  A cohomology class is not a particle.  A fitted
+curve is not a complete physical explanation.}
 
 \section{The ghost question is four questions}
 
@@ -99,205 +124,191 @@ A nondegenerate fourth-order oscillator has an equation of the form
  \left(\frac{d^2}{dt^2}+\omega_1^2\right)
  \left(\frac{d^2}{dt^2}+\omega_2^2\right)z=0.
 \]
-It contains two second-order oscillators.  In the standard Ostrogradsky
-description, one normally appears with the opposite Hamiltonian sign
-\cite{Ostrogradsky,Woodard,PU1950}.  Bender and Mannheim showed that the
+It contains two second-order oscillatory branches.  In the standard
+Ostrogradsky description, one normally appears with the opposite Hamiltonian
+sign~\cite{Ostrogradsky,Woodard,PU1950}.  Bender and Mannheim showed that the
 unequal-frequency Pais--Uhlenbeck model also admits a non-Hermitian
-PT-symmetric description with a positive metric \cite{BM2008PRL,BM2008PRD}.
-At equal frequency, however, the two branches coalesce into a Jordan system.
+PT-symmetric description with a positive metric~\cite{BM2008PRL,BM2008PRD}.
+At equal frequency the branches coalesce into a Jordan system.
 
-These observations motivate the programme, but they do not settle gravity.
-The word ``ghost'' is often used for four different objects:
+None of these facts settles gravity.  In a gauge field theory the word
+``ghost'' is commonly asked to carry four distinct meanings:
 \begin{enumerate}
 \item a local solution of a differential equation;
-\item a classical direction remaining after gauge, constraints, charges,
-      boundaries, and the symplectic radical are removed;
-\item a direction that can be continued consistently through nonlinear
-      interactions;
+\item a classical direction surviving gauge symmetry, constraints, charges,
+boundaries, and the symplectic radical;
+\item a direction admitting consistent nonlinear continuation;
 \item a state or particle in a positive quantum theory.
 \end{enumerate}
-A calculation at one level is not automatically evidence at the next.
-In particular, a propagator residue is not yet a gauge-reduced state, and a
-classical flux sign is not yet a quantum probability.
 
-\keybox{\textbf{Programme rule.}
-Every result must name its theory, background, boundary conditions, phase
-space, and claim level.  Results from different laboratories are compared
-only through an explicit map.}
+The implications between these levels are neither automatic nor symmetric.
+A negative propagator residue warns of a problem but is not yet a
+gauge-reduced state.  A nonzero classical symplectic pairing proves that a
+direction is not radical, but does not provide a Born rule.  A positive metric
+for one free block does not guarantee an interaction-compatible metric.  A
+well-behaved causal two-point distribution need not be positive on physical
+cohomology.
 
 \section{Why use several model universes?}
 
-No single background makes every part of the problem tractable.  The
-programme therefore uses several declared laboratories.
+No single background makes every obligation tractable.  The programme uses
+declared laboratories, each chosen to expose a particular interface.
 
 \begin{center}
-\begin{tabular}{p{0.30\linewidth}p{0.60\linewidth}}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.30\linewidth}
+                >{\raggedright\arraybackslash}p{0.60\linewidth}}
 \toprule
-Laboratory & Principal question\\
+Laboratory & Question isolated\\
 \midrule
 Pais--Uhlenbeck oscillator and scalar field
-& Positive metrics, Krein real forms, vacuum representations, Jordan limits,
-  and interaction obstructions.\\
-Conformal cylinder \(\R\times S^3\)
-& Complete free BV--BFV gauge complex, causal transport, and selected
-  residual cohomology.\\
-Berger and compact product backgrounds
-& Relational clocks, Einstein/additional wave comparison, action-derived
-  pairings, nonlinear balance, and resonance.\\
+& Positive and Krein completions, vacuum representations, Jordan limits,
+and interaction obstructions.\\
+Conformal cylinder and compact product backgrounds
+& Full free gauge complexes, residual cohomology, causal transport,
+action-derived pairings, and nonlinear balance.\\
 Schwarzschild exterior and static spherical metrics
-& Horizon conditions, radiative traces, quasinormal resonances, Green poles,
-  and static thermodynamic normalization.\\
-Euclidean backgrounds and reduced mode spaces
-& Local anomaly classes, determinant data, and candidate two-point
-  functions.\\
+& Horizon and radiation conditions, extension structure, resonances,
+Green poles, reconstruction, and static charge normalization.\\
+Mannheim--Kazanas geometry and NGC~3198
+& The separation between a fourth-order radial solution, matter and frame
+assumptions, fitted parameters, and an empirical score.\\
+Bateman--Turok periodic Euclidean lattice
+& Whether a proposed all-field stability estimate survives an explicit
+positive, nonseparable counterfamily.\\
+Finite, constructive, Hilbert, Krein, algebraic, and internal settings
+& Which physical obligations survive a change of mathematical foundation or
+carrier.\\
 \bottomrule
 \end{tabular}
 \end{center}
 
-The laboratories are not asserted to be one physical universe.  They isolate
-different promotion gates.  A compact positive block does not establish an
-asymptotically flat particle, and a black-hole endpoint theorem does not
-establish a cosmology.
+The laboratories are not asserted to be one universe.  They are controlled
+experiments on the reasoning.  A compact positive block does not establish an
+asymptotically flat particle; a Euclidean lattice does not establish
+Lorentzian reconstruction; and a black-hole endpoint theorem does not
+establish cosmology.
 
-\section{What the first six papers establish}
+\section{From oscillator signs to interacting fields}
 
-Papers~01--03 reconstruct the elementary fourth-order completion problem.
-They classify the canonical positive symplectic diagonalization of the
-unequal-frequency Pais--Uhlenbeck system, identify a minimum-distortion
-metric, and distinguish metric geometry from vacuum and Fock-sector
-geometry.  Their common lesson is that ``the metric'' is not one universal
-object: a finite oscillator similarity transform, a field representation,
-and a vacuum covariance have different continuity and ultraviolet
-requirements.
+The elementary fourth-order models distinguish several structures often
+compressed into ``the metric'': a finite-dimensional similarity transform, a
+Krein real form, a vacuum covariance, a field representation, a Fock sector,
+and the equal-frequency Jordan limit.  These structures obey different
+continuity and ultraviolet requirements.
 
-Paper~04 carries that distinction into linearized Einstein--Weyl gravity.
-Gauge reduction removes redundant variables, but it does not turn a
-fourth-order gravitational system into five independent copies of a scalar
-oscillator.  Lorentz covariance, helicity, constraints, and the conformal
-critical limit constrain which real forms are admissible.
+Linearized Einstein--Weyl gravity adds Lorentz covariance, helicity, gauge
+constraints, and a conformal critical limit.  Gauge reduction removes
+redundant variables but does not turn the gravitational problem into
+independent copies of a scalar oscillator.  The real form must be compatible
+with the tensorial and gauge structure.
 
-Papers~05--06 ask whether a free positive completion survives interaction.
-Their scoped answer is negative for the canonical analytic continuation
-tested there.  Resonant branch conversion obstructs the required metric
-deformation in the scalar field and in an open Einstein--Weyl gravitational
-channel.  This does not exclude every indefinite, nonlocal, singular, or
-nonperturbative prescription.  It shows that solving the free theory is not
-the same as solving its interaction problem.
+Interaction is a separate gate.  In the scalar and gravitational channels
+tested, resonant branch conversion obstructs the canonical analytic
+continuation of the free positive metric.  The conclusion is scoped: it does
+not exclude every indefinite, nonlocal, singular, or nonperturbative
+prescription.  It proves that a free completion cannot be advertised as an
+interacting solution without another theorem.
 
-\section{Causal reduction and compact classical tests}
+This distinction is especially important in higher-derivative gravity.
+Stelle's renormalizability result~\cite{Stelle} concerns ultraviolet power
+counting and counterterms; it does not by itself settle the physical state
+space.  Conversely, a difficulty with one state-space completion does not
+erase the classical field equations or their gauge cohomology.
+
+\section{Pure Weyl gravity across the obligation ladder}
 
 \subsection{Residual cohomology is not a graviton count}
 
-Papers~07--08 analyze free pure Weyl gravity on the conformal cylinder.  One
-paper computes a selected residual complex after treating all fifteen
-residual conformal generators as constraints in a declared zero-charge
-sector.  The first surviving classes are
+On the conformal cylinder, a declared zero-charge reduction treats all
+fifteen residual conformal generators as constraints.  The first surviving
+centered classes are
 \[
  H^4_{\rm res}
  =\operatorname{span}\{[W_+^2],[W_-^2]\},
  \qquad G_{\rm res}=I_2.
 \]
-They are centered deformation or vertex classes, not one-particle
-gravitons.  The companion causal paper constructs the covariant free
-BV--BFV transport that connects compact and global support conditions and
-transports the relevant pairings.  Neither paper constructs a positive
-interacting graviton Hilbert space.
+They are deformation or vertex classes, not one-particle gravitons.  A
+companion causal BV--BFV construction transports the relevant free pairings
+between support conditions~\cite{BVBFV}.  Neither statement supplies a
+positive interacting particle space.
 
-\subsection{Additional classical directions can be real}
+Compact axial and polar laboratories show that some additional fourth-order
+directions survive gauge reduction and have nonzero action-derived Lee--Wald
+pairings.  Their sign pattern is not the shortcut ``Einstein positive,
+additional negative.''  Other directions fail global charge balance,
+secular-growth, resonance, or Hamiltonian health tests.  The scientifically
+stable object is therefore a classification of promotion and obstruction,
+not a universal rescue or universal no-go theorem.
 
-Papers~09--13 move to clock and compact Einstein--Maxwell/Weyl--Maxwell
-laboratories.  They show why local solution counting is insufficient in
-both directions:
-\begin{itemize}
-\item some additional axial and polar fourth-order directions survive local
-gauge reduction and have nonzero Lee--Wald pairings;
-\item the sign pattern is not simply ``Einstein positive, additional
-negative'';
-\item at second order, formal finite-harmonic continuation is controlled by
-five global stabilizer-charge conditions;
-\item bounded continuation has further secular-growth and resonance
-conditions;
-\item a causal changed gravity--clock parent can still fail the physical
-health test through a Hamiltonian--Hopf quartet.
-\end{itemize}
+\subsection{The classical complex is an input to quantization}
 
-The resulting Phase-1 verdict, synthesized in Paper~15, is a classification.
-It neither rescues pure Weyl gravity nor proves a universal no-go theorem.
-The programme found real additional classical directions and real
-obstructions, but no tested candidate reached a positive full-BV quantum
-state, scattering theory, or unitarity theorem.
+The classical BV--BFV complex is imported into the quantum programme through
+an immutable, content-addressed snapshot.  Independent checks cover the
+declared nilpotency, contraction, chain-map, cyclicity, residual-cohomology,
+and pairing obligations.  This gate matters because rebuilding an unofficial
+classical complex inside the quantum calculation could make a later quantum
+identity true of the wrong theory.
 
-\section{The Schwarzschild result}
+Typed \(q_2/q_3\) compatibility with advanced and retarded Green homotopies
+then connects the nonlinear brackets to the causal classical data.  The
+construction does not supply arbitrary all-order response trees, convergence,
+or an effective global Green solver.
 
-\subsection{Radiation conditions do not select the Einstein sector}
+\subsection{Anomaly and pseudo-state are different quantum questions}
 
-Maldacena-type boundary selection can isolate an Einstein sector of
-conformal gravity in Euclidean anti-de Sitter or late-time de Sitter settings
-\cite{Maldacena}.  Paper~16 asks a different question: do the standard
-Lorentzian black-hole conditions---future-horizon regularity together with
-incoming, outgoing, or no-incoming traces---force the additional
+In the declared local Euclidean quotient, strict fixed-field-content pure
+Weyl gravity has a nonzero one-loop BV anomaly.  A formal shifting compensator
+makes the tested cocycle exact only after enlarging the field and counterterm
+space.  That is a restoration in a changed theory, not proof that strict pure
+Weyl is anomaly-free.
+
+On the Lorentzian side, the full 386-row off-shell carrier admits a
+BRST--Hadamard two-point pseudo-state pair satisfying the declared bisolution,
+graded commutator, wavefront, Ward, reality, and stationarity conditions.  The
+word \emph{pseudo-state} is essential.  The pair is indefinite and does not
+establish positivity on physical cohomology, a positive graviton Hilbert
+space, a Feynman propagator, renormalized time-ordered products, a Lorentzian
+quantum master equation, scattering, or unitarity.
+
+The anomaly and pseudo-state results do not repair one another.  They answer
+different obligations on different dependency rails.
+
+\section{Black holes: boundary selection and defective response}
+
+Maldacena-type conditions can isolate an Einstein sector of conformal gravity
+in Euclidean anti-de Sitter or late-time de Sitter settings~\cite{Maldacena}.
+The Lorentzian Schwarzschild question is different: do future-horizon
+regularity and ordinary one-sided radiative traces force the additional
 pure-Weyl curvature carrier to vanish?
 
-For the complete axial \(\ell=2\) Schwarzschild system, the answer is no.
-The radial differential module has a filtration with successive factors
+For the complete axial
+\(\ell=2\) Schwarzschild system, the answer is no.  Its radial differential
+module has successive factors
 \[
  M_{\rm RW}^{(2)},\qquad M_{\rm RW}^{(2)},\qquad M_{\rm RW}^{(1)}.
 \]
-The two spin-two factors are a non-split self-extension, not a direct sum.
-The complete incoming trace space has an action-derived nondegenerate form of
-signature \((1,2)\).  Exact scalar Wronskian arguments show that every
-incoming direction is populated by a future-horizon-regular exterior
-solution for every real \(\omega>0\).  Outgoing population is certified on a
-band and holds away from isolated reflection zeros.  The same filtration
-excludes exponentially growing separated axial modes.
+The repeated spin-two factors form a non-split self-extension rather than a
+direct sum.  Exact Wronskian arguments populate every incoming direction by a
+future-horizon-regular exterior solution for real positive frequency.  The
+same filtration excludes exponentially growing separated axial modes.
 
-These statements coexist without contradiction.  Separated-mode stability
-means that the tested system has no exponentially growing separated
-frequency.  It does not make the inherited flux positive and does not bound
-the full time-domain resolvent.
+This coexistence is instructive.  Separated-mode stability says that one
+particular instability is absent.  It does not make the inherited flux
+positive and does not bound the full time-domain resolvent.
 
-\subsection{A defective quasinormal resonance}
-
-At one validated simple Schwarzschild spin-two quasinormal frequency, the
-extension selector is nonzero and the spin-one factor is a local unit.  The
-complete connection then has Smith valuations
+At one validated simple Regge--Wheeler quasinormal frequency~\cite{ReggeWheeler,Leaver},
+the complete connection has Smith valuations
 \[
  (0,0,2).
 \]
-Its algebraic multiplicity is two, its geometric multiplicity is one, and it
-has a length-two root chain.  The geometric root lies in the Einstein
+The algebraic multiplicity is two, the geometric multiplicity is one, and the
+root chain has length two.  The geometric root lies in the Einstein
 submodule; the generalized root has nonzero gauge-invariant traceless-Ricci
-carrier.
+carrier.  This is related to the logarithmic-partner structure of critical
+gravity~\cite{LuPope,LogGravity}, although the asymptotically flat endpoint
+tangent is polynomial rather than an independent literal \(\log r\) mode.
 
-Paper~17 identifies the underlying projective class:
-\[
- [\mathcal I_{\rm Bach}]
- =\frac{i\omega}{2}\left[1-\frac2r\right].
-\]
-Writing \(m=\mu^2\) for the signed squared-mass parameter, the complete
-coupled massive axial system has tensor projective class
-\[
- [\mathcal I_{\rm phys}]=\frac13\left[1-\frac2r\right],
- \qquad
- [\mathcal I_{\rm Bach}]
- =\frac{3i\omega}{2}[\mathcal I_{\rm phys}].
-\]
-Thus the identification is an exact first-jet statement for the complete
-coupled equations, not merely for a scalar graded quotient.  Matrix
-Frobenius and sectorial Volterra constructions identify the complete
-endpoint-normalized Jost planes and give
-\[
- \omega_n'(0)=\frac{2i}{3\omega_n}\kappa_n\ne0
-\]
-for the signed squared-mass parameter.  This crosswalk gives the
-generalized root the same critical-confluence
-interpretation as the logarithmic partners of critical
-gravity \cite{LuPope,LogGravity}, but the asymptotically flat endpoint tangent
-is polynomial rather than a literal independent radial \(\log r\) mode.
-
-The finite-radius radial Green problem, its compactly cut-off exterior
-realization, and a fixed-domain global complex-scaled radial Fredholm
-pencil all have the same nonzero rank-one second-order pole:
+The compactly cut-off exterior radial Green operator has
 \[
  R(\omega)
  =\frac{R_{-2}}{(\omega-\omega_n)^2}
@@ -305,181 +316,231 @@ pencil all have the same nonzero rank-one second-order pole:
   +R_{\rm hol}(\omega),
  \qquad R_{-2}\ne0.
 \]
-Exact axial reconstruction shows that the Einstein range of \(R_{-2}\) has
-nonzero Bondi shear.  A complexified conserved, traceless, radially compact
-odd source can have nonzero adjoint overlap.  On an isolated local resonance
-contour, the contribution therefore contains
-\[
- e^{i\omega_n t}\bigl(V_1+i t\,V_0\bigr),
-\]
-where \(V_0\) is the ordinary Einstein QNM and \(V_1\) is the generalized,
-non-Einstein partner.
+The same pole appears in a fixed-domain two-ended complex-scaled Fredholm
+realization and is the meromorphic continuation of a retarded, mode-reduced,
+compact-source/compact-observation transfer.  An isolated local contour
+therefore contains \(e^{i\omega_n t}(V_1+i tV_0)\).
 
-\keybox{\textbf{Exact boundary of the ringdown claim.}
-The local cut-off radial Green pole and the isolated-contour
-\(t e^{i\omega_n t}\) term are established.  The compactly cut-off transfer
-is also the meromorphic continuation of a mode-reduced retarded parent
-response.  A full metric/BV retarded propagator, inverse-Laplace contour
-deformation, complete late-time QNM expansion, and real astrophysical source
-calculation are not.}
+\keybox{\textbf{Boundary of the resonance claim.}
+The non-split extension, double radial Green pole, and retarded mode-reduced
+parent are established in their declared settings.  A full metric/BV
+retarded propagator, global inverse-Laplace deformation, complete late-time
+expansion, and real astrophysical detector waveform are not.}
 
-\subsection{Static black holes are a separate problem}
+Static Bach-flat black holes answer another question.  Residual-basic
+normalization yields a consistent Hamiltonian, Wald entropy, and signed
+temperature on the certified static family, but this is not a radiative or
+physical-process thermodynamics theorem.
 
-Paper~18 separates the static spherical Bach-flat classification and horizon
-normalization problem from the perturbation theorem.  Within the declared
-Laurent class it proves the corrected Einstein sheet and shows that the bare
-chart-normalized Iyer--Wald charge is nonintegrable.  Requiring the
-field-dependent generator to descend to the residual quotient forces
-\(\chi=u f(J)\partial_t\).  The resulting exact Hamiltonian, Wald entropy,
-and signed temperature satisfy one first law simultaneously at every simple
-horizon.  The theorem is static and linear-spherical at charge level; it is
-not a physical-process or radiative thermodynamics theorem.
+\section{Two tests beyond black-hole perturbation theory}
 
-\section{The quantum fork}
+\subsection{Mannheim gravity: solution, interpretation, and fit}
 
-Paper~12 computes a nonzero local Euclidean one-loop Weyl-anomaly class for
-strict fixed-field-content pure Weyl gravity in its declared BV complex.
-A formal compensator makes the tested cocycle exact, but enlarges the field
-content and counterterm space.  It is therefore a result about a changed
-theory, not proof that strict pure Weyl gravity is anomaly-free.
+The Mannheim--Kazanas geometry contains a linear radial potential because the
+static fourth-order vacuum equation admits it~\cite{MK1989,MannheimOBrien2012}.
+That mathematical fact does not determine how the term is sourced or how
+massive matter moves.  A physical explanation must also specify the matter
+sector, scale breaking, conformal frame, source moments, and global boundary
+data.
 
-A separate reduced free-wave construction admits Hadamard two-point
-distributions with one positive and two negative Krein signs.  This is a
-well-defined reduced carrier, not a positive full-BV state.  The repository
-does not contain a complete Lorentzian off-shell BV propagator,
-BRST-compatible full-metric Hadamard state, renormalized time-ordered
-products, Lorentzian quantum master equation, physical particle space, or
-unitarity theorem.
-
-\section{What has been learned}
-
-Five conclusions survive the changes of model and method:
-\begin{enumerate}
-\item \textbf{Pole signs are warnings, not complete physical verdicts.}
-The final object must be named: local solution, reduced classical direction,
-nonlinear tangent, or quantum state.
-\item \textbf{A direct-sum factorization can hide an extension.}
-In Schwarzschild pure Weyl gravity the repeated spin-two factor is
-non-split, and the extension becomes spectrally visible at a defective QNM.
-\item \textbf{Radiation conditions select propagation direction, not
-extension layer.}
-Standard Lorentzian endpoint conditions do not impose the additional
-traceless-Ricci condition defining the Einstein subsector.
-\item \textbf{Stability, sign, and observability are different tests.}
-The axial system can lack exponentially growing separated modes while
-retaining an indefinite populated flux space and a double-pole response.
-\item \textbf{Changing the theory must be stated.}
-Compensators, altered boundary conditions, and different positive metrics
-can be useful, but they are not silent proofs about strict pure Weyl gravity.
-\end{enumerate}
-
-\section{The AI-orchestrated research experiment}
-
-Asger Alstrup Palm is a computer scientist, not a professional physicist.
-He uses AI systems as a research team: to propose questions, derive
-identities, implement symbolic and interval computations, search the
-literature, conduct adversarial reviews, and draft papers.  Palm chooses the
-programme and decides what is released.
-
-This arrangement creates obvious risks.  AI systems can produce plausible
-but false derivations, reinforce one another's mistakes, invent references,
-or conceal uncertainty behind polished prose.  The repository therefore
-treats the workflow itself as an experiment.  Its governing rules are:
-\begin{itemize}
-\item fail closed when data, assumptions, or verification are missing;
-\item preserve failed and superseded results in append-only records;
-\item distinguish reproduction from independent verification;
-\item distinguish exact algebra from validated or exploratory numerics;
-\item state what a calculation does not establish;
-\item invite expert criticism at the level of equations and certificates.
-\end{itemize}
-
-The repository cannot validate itself by declaring the experiment a success.
-Scientific success requires outside experts to reproduce, criticize,
-correct, cite, or use the work.  A decisive reproducible refutation would
-also count as useful progress.
-
-\section{Paper map}
-
+The distinction becomes visible in a bounded 39-point NGC~3198 protocol:
 \begin{center}
-\small
-\begin{tabular}{clp{0.62\linewidth}}
+\begin{tabular}{lrrc}
 \toprule
-Paper & Layer & Main subject\\
+Model & RMS (km/s) & Reduced \(\chi^2\) & Random-error gate\\
 \midrule
-01--03 & Free systems & Positive metrics, minimum distortion, vacuum
-representations, and the Krein/Jordan boundary.\\
-04--06 & Gravity and interaction & Gauge reduction, Einstein--Weyl
-completions, and interaction obstructions.\\
-07--08 & Causal residual theory & Pure-Weyl residual cohomology and covariant
-BV--BFV transport on the conformal cylinder.\\
-09--13 & Compact laboratories & Clocks, Einstein/additional waves,
-gravity--light transfer, anomaly, and nonlinear tangent cones.\\
-14 & Black-hole programme & Initial pure-Weyl black-hole radiation
-architecture; superseded claims are corrected by later papers.\\
-15 & Synthesis & Four-level Phase-1 classification and nonpromotions.\\
-16 & Endpoint theorem & Standard Lorentzian endpoint conditions do not
-select the Einstein subsector.\\
-17 & Resonance theorem & Non-split axial \(\ell=2\) self-extension,
-defective QNM, and global complex-scaled radial Green double pole.\\
-18 & Static charges & Residual-basic normalization and simultaneous signed
-first laws at every simple horizon of the certified static family.\\
+Newtonian baryons & 23.896 & 128.722 & fail\\
+GR plus NFW halo & 5.148 & 0.965 & pass\\
+Mannheim conformal gravity & 4.694 & 3.202 & fail\\
 \bottomrule
 \end{tabular}
 \end{center}
 
-\section{What remains open}
+Mannheim has the smallest unweighted residual, whereas GR+NFW has the better
+uncertainty-weighted score.  This is not a contradiction: the two scores ask
+different questions.  Nor is it a population-level verdict.  Distance,
+inclination, beam smearing, stellar populations, gas profiles, and other
+systematics lie outside the frozen protocol.
 
-The most important next steps are now narrower than the original ghost
-question:
+\subsection{Bateman--Turok: a universal shortcut meets a counterfamily}
+
+Bateman and Turok propose a positive Euclidean lattice and a hidden ghost
+parity as a route around the usual higher-derivative instability
+story~\cite{BatemanTurok2026}.  One tempting deterministic strategy is to
+bound the complete action gradient below at the free bilaplacian scale for
+every positive field.
+
+An explicit periodic-torus family disproves that universal bound.  On
+\(L_n=n^{24}\), an exactly mean-compensated critical source is inverted by the
+periodic graph Green operator, lifted above its minimum, and coupled weakly in
+four directions.  The fields remain positive, nonseparable, and of
+polynomial contrast.  Their action stays bounded above and away from zero,
+while
+\[
+ \frac{Q_n}{\omega_{L_n}^2}=O(n^{-2})\longrightarrow0.
+\]
+
+This refutes one deterministic all-field scaled-PL architecture, not the full
+Bateman--Turok programme.  Gibbs typicality, the interacting Witten quotient,
+the \(H^{-1}\) moment, the continuum measure, reflection positivity, and
+Lorentzian reconstruction remain logically separate tests.
+
+\section{Reverse foundations: changing the mathematical world}
+
+The previous examples change physical models while mostly retaining familiar
+mathematics.  Reverse foundations asks the complementary question: what
+happens when the physical obligation is held fixed but the mathematical or
+logical background changes?  This extends the idea of reverse physics---work
+backward from what a law must accomplish to the assumptions that make it
+possible~\cite{CarcassiAidala2022}.
+
+The interactive atlas crosses three axes:
+\begin{itemize}
+\item six foundational regimes, including classical, weakened-choice,
+constructive, internal/topos, and finite settings;
+\item six carrier families, including finite algebra, Hilbert space, Krein
+space, operator algebra, smooth/distributional fields, and localic geometry;
+\item sixteen physical obligations, from state existence and dynamics through
+causality, gauge reduction, interaction, renormalization, reconstruction, and
+empirical adequacy.
+\end{itemize}
+
+The Cartesian product contains \(6\times6\times16=576\) coordinates.  They
+are not 576 candidate universes.  They are 576 scoped questions.  A populated
+cell records evidence about one obligation in one setting; it does not show
+that neighboring cells compose.
+
+Theory assemblies group evidence by research tradition, while theory
+passports follow a single route through foundations, state space, dynamics,
+observable, prediction, and empirical benchmark.  This exposes an important
+difference between \emph{coverage} and \emph{completion}.  A mature tradition
+may possess tools for every job without those tools belonging to one model.
+An unconventional programme may solve a difficult late-stage identity while
+lacking an earlier state or observable bridge.
+
+Finite and constructive examples can avoid particular basis-selection or
+completion assumptions.  Lean/Physlib proof passports can replay finite
+identities with explicit types and signs.  Such results show that an
+assumption is avoidable in that representation.  They do not prove that the
+universe is finite, that all physics is constructive, or that formal proof
+supplies a missing physical premise.
+
+\section{Evidence is part of the theory interface}
+
+To prevent scope changes from becoming invisible, quantum results carry one
+or more exact dependency tags:
+\begin{center}
+\texttt{LOCAL-ALGEBRAIC}\quad
+\texttt{EUCLIDEAN-SPECTRAL}\quad
+\texttt{REDUCED-MODE}\quad
+\texttt{LORENTZIAN-CAUSAL}.
+\end{center}
+A result does not move between these rails without an explicit bridge.
+Likewise, anomaly classification, coefficient computation, QME restoration,
+residual transfer, and Lorentzian certification are distinct lifecycle
+states.
+
+The preferred audit chain is
+\[
+ \text{claim}
+ \longrightarrow \text{producer}
+ \longrightarrow \text{certificate}
+ \longrightarrow \text{independent verifier}
+ \longrightarrow \text{adversarial test}
+ \longrightarrow \text{paper}.
+\]
+Re-running the producer is reproduction, not independent verification.  Exact
+algebra and numerical validation remain different evidence types.  A timeout,
+missing input, or skipped exhaustive calculation is not a pass.
+
+This architecture is especially important for AI-orchestrated research.  AI
+systems can derive equations, write software, search literature, and produce
+fluent exposition.  They can also share hidden assumptions, invent
+references, and produce mutually reinforcing errors.  The answer is not to
+treat AI as an oracle, but to make every substantial claim easier to attack.
+A reproducible refutation is scientifically useful because it removes an
+invalid route and sharpens the surviving alternatives.
+
+\section{What the examples establish}
+
+Six conclusions cut across the different laboratories:
 \begin{enumerate}
-\item extend the mode-reduced causal bridge to bounded full metric and Bondi
-reconstruction, and justify the retarded inverse-Laplace contour deformation;
-\item compute real source excitation and asymptotic detector coefficients;
-\item finish the polar and broader multipole black-hole analyses;
-\item determine whether any changed classical theory has an open,
-physically healthy parameter region rather than an isolated causal fixture;
-\item construct, or rule out under explicit hypotheses, a positive
-BRST-compatible Lorentzian quantum state and interacting observable algebra;
-\item subject the central certificates and papers to independent expert
-review and archival reproduction.
+\item \textbf{A sign is not a state.}  Pole residues, classical fluxes,
+Krein signatures, and quantum probabilities are different objects.
+\item \textbf{Reduction can preserve or remove extra directions.}  Gauge,
+charges, boundaries, and the symplectic radical must be tested explicitly.
+\item \textbf{Interactions are promotion gates.}  A free positive completion
+can fail when branches mix, while a formal nonlinear solution can fail global
+balance or boundedness.
+\item \textbf{Causality and positivity are independent obligations.}  A
+BRST--Hadamard pseudo-state can have the required singularity and gauge
+identities without defining a positive physical state.
+\item \textbf{A counterexample should be scoped as carefully as a theorem.}
+The BT family refutes one all-field bound; the NGC~3198 gate tests one frozen
+data protocol; neither decides an entire research tradition.
+\item \textbf{Changing mathematics changes proof obligations.}  Replacing a
+Hilbert carrier, weakening Choice, or restricting to a finite model can remove
+an assumption, but operational meaning must be rebuilt rather than presumed.
 \end{enumerate}
+
+These conclusions explain why collecting individually attractive ingredients
+is not enough.  A physical theory requires typed interfaces between its
+foundations, states, dynamics, observables, predictions, and empirical tests.
+The interfaces are often where the decisive theorem or obstruction lives.
+
+\section{Routes into the technical evidence}
+
+The \href{../foundations/site/index.html}{Reverse Physics Atlas} provides the
+interactive matrix, dimension guide, programme assemblies, theory journeys,
+Weyl BV routes, literature records, certificates, and formal-proof passports.
+The companion papers can be entered thematically:
+\begin{itemize}
+\item \href{15-four-level-ghost-classification-phase1-synthesis.pdf}{the
+four-level ghost classification} develops the separation between local,
+classical, nonlinear, and quantum claims;
+\item \href{19-what-conformal-gravity-must-assume.pdf}{the Mannheim analysis}
+separates the radial solution from matter, frame, boundary, and empirical
+premises;
+\item \href{20-is-the-gauge-algebra-an-assumption.pdf}{the gauge-algebra
+analysis} asks whether algebraic structure is input, derived, or
+representation-dependent;
+\item \href{21-reverse-foundations-of-physics.pdf}{the reverse-foundations
+synthesis} develops the atlas and literature framework;
+\item \href{22-bateman-turok-euclidean-torus-collapse.pdf}{the
+Bateman--Turok analysis} proves the compensated Green-tail counterfamily.
+\end{itemize}
+
+These routes are thematic references, not a sequence of release notes.  Each
+technical claim should be evaluated through its own assumptions, certificate,
+verifier, and stated non-claims.
 
 \section{Conclusion}
 
-The programme's present conclusion is deliberately modest.  Pure Weyl
-gravity has additional classical structures that cannot all be dismissed as
-gauge, duplicated factors, or bad horizon behavior.  It also has serious
-classical, nonlinear, boundary, and quantum obstructions.  The most developed
-black-hole result is structurally sharp: the axial Schwarzschild system
-contains a non-split Regge--Wheeler self-extension, and one ordinary
-Schwarzschild QNM becomes a defective pure-Weyl resonance with a nonzero
-double radial Green pole on both compactly localized exterior channels and
-a global complex-scaled Fredholm domain.  That pole is the meromorphic
-continuation of an actual retarded mode-reduced transfer operator.
+Fourth-order gravity cannot be assessed by counting poles or attaching the
+word ``ghost'' to every additional solution.  The physically relevant
+question is which object survives each promotion gate: local equation,
+classical reduction, nonlinear continuation, causal construction, positive
+quantum state, operational prediction, and empirical test.
 
-That is scientifically interesting without being a theory of observed
-gravity.  The remaining tasks---global causal contour control, real
-excitation, complete asymptotics, full gauge reduction, and quantum
-positivity---are
-exactly the tasks that determine whether the structure is physical.
+The examples do not establish pure Weyl gravity, Mannheim conformal gravity,
+or Bateman--Turok physics as a successful description of nature.  Nor do they
+support a single generic dismissal.  They establish a mixed landscape of
+survival theorems, obstructions, counterexamples, and unproved interfaces.
 
-\keybox{\textbf{Current verdict.}
-The ghost problem has not been solved.  It has been decomposed into
-falsifiable tests, several of which now have exact answers.  No tested theory
-in the programme has yet passed all four levels.}
+\keybox{\textbf{Durable conclusion.}
+Physical postulates, mathematical carriers, logical strength, causal and
+quantum claim types, interface proofs, and empirical gates must be separated.
+Only explicit bridges may join them.}
 
-\paragraph{Repository and verification.}
-Sources, committed PDFs, computational supplements, certificates, and
-verifiers are available at
-\href{https://github.com/area9innovation/weyl-gravity}
-{github.com/area9innovation/weyl-gravity}.  The most stable Phase-1 account
-is Paper~15; Papers~16 and~17 contain the current black-hole endpoint and
-resonance results.  Historical records are retained even when later work
-narrows or supersedes their interpretations.
+That principle turns a vague dispute about ghosts into a collection of
+answerable questions.  It also gives researchers a practical standard for
+reviewing theories built with unfamiliar mathematics or substantial AI
+assistance: inspect the obligation, inspect its dependencies, and inspect the
+bridge to the next claim.
 
 \begin{thebibliography}{99}
 \raggedright
+\small
 
 \bibitem{Ostrogradsky}
 M.~Ostrogradsky,
@@ -511,20 +572,22 @@ C.~M.~Bender and P.~D.~Mannheim,
 counterpart},
 Phys.\ Rev.\ D \textbf{78} (2008), 025022; arXiv:0804.4190.
 
+\bibitem{Stelle}
+K.~S.~Stelle,
+\emph{Renormalization of higher-derivative quantum gravity},
+Phys.\ Rev.\ D \textbf{16} (1977), 953--969,
+\href{https://doi.org/10.1103/physrevd.16.953}{doi:10.1103/physrevd.16.953}.
+
+\bibitem{BVBFV}
+A.~S.~Cattaneo, P.~Mnev and N.~Reshetikhin,
+\emph{Classical BV theories on manifolds with boundary},
+Commun.\ Math.\ Phys.\ \textbf{332} (2014), 535--603;
+arXiv:1201.0290.
+
 \bibitem{Maldacena}
 J.~Maldacena,
 \emph{Einstein gravity from conformal gravity},
 arXiv:1105.5632.
-
-\bibitem{LuPope}
-H.~L\"u and C.~N.~Pope,
-\emph{Critical gravity in four dimensions},
-Phys.\ Rev.\ Lett.\ \textbf{106} (2011), 181302; arXiv:1101.1971.
-
-\bibitem{LogGravity}
-E.~A.~Bergshoeff, O.~Hohm, J.~Rosseel and P.~K.~Townsend,
-\emph{Modes of log gravity},
-Phys.\ Rev.\ D \textbf{83} (2011), 104038; arXiv:1102.4091.
 
 \bibitem{ReggeWheeler}
 T.~Regge and J.~A.~Wheeler,
@@ -539,17 +602,35 @@ holes},
 Proc.\ R.\ Soc.\ Lond.\ A \textbf{402} (1985), 285--298,
 \href{https://doi.org/10.1098/rspa.1985.0119}{doi:10.1098/rspa.1985.0119}.
 
-\bibitem{Stelle}
-K.~S.~Stelle,
-\emph{Renormalization of higher-derivative quantum gravity},
-Phys.\ Rev.\ D \textbf{16} (1977), 953--969,
-\href{https://doi.org/10.1103/physrevd.16.953}{doi:10.1103/physrevd.16.953}.
+\bibitem{LuPope}
+H.~L\"u and C.~N.~Pope,
+\emph{Critical gravity in four dimensions},
+Phys.\ Rev.\ Lett.\ \textbf{106} (2011), 181302; arXiv:1101.1971.
 
-\bibitem{BVBFV}
-A.~S.~Cattaneo, P.~Mnev and N.~Reshetikhin,
-\emph{Classical BV theories on manifolds with boundary},
-Commun.\ Math.\ Phys.\ \textbf{332} (2014), 535--603;
-arXiv:1201.0290.
+\bibitem{LogGravity}
+E.~A.~Bergshoeff, O.~Hohm, J.~Rosseel and P.~K.~Townsend,
+\emph{Modes of log gravity},
+Phys.\ Rev.\ D \textbf{83} (2011), 104038; arXiv:1102.4091.
+
+\bibitem{MK1989}
+P.~D.~Mannheim and D.~Kazanas,
+\emph{Exact vacuum solution to conformal Weyl gravity and galactic rotation
+curves}, Astrophys.\ J.\ \textbf{342} (1989), 635.
+
+\bibitem{MannheimOBrien2012}
+P.~D.~Mannheim and J.~G.~O'Brien,
+\emph{Galactic rotation curves in conformal gravity},
+J.\ Phys.\ Conf.\ Ser.\ \textbf{437} (2013), 012002; arXiv:1211.0188.
+
+\bibitem{CarcassiAidala2022}
+G.~Carcassi and C.~A.~Aidala,
+\emph{Reverse Physics: From Laws to Physical Assumptions},
+Found.\ Phys.\ \textbf{52} (2022), 40; arXiv:2111.09107.
+
+\bibitem{BatemanTurok2026}
+S.~Bateman and N.~Turok,
+\emph{Escape from Ostrogradsky via hidden ghost parity}, 2026;
+\href{https://arxiv.org/abs/2607.00096}{arXiv:2607.00096}.
 
 \end{thebibliography}
 

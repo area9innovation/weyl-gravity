@@ -168,7 +168,7 @@ sources.
 
 | Paper | Subject |
 | --- | --- |
-| [00](paper/00-ghosts-geometry-reality.pdf) | Expository introduction to ghosts, geometry, real forms, interactions, cohomology, clocks, and black holes |
+| [00](paper/00-ghosts-geometry-reality.pdf) | Conceptual introduction to the four ghost questions, model universes, reverse foundations, claim types, and empirical gates |
 | [01](paper/01-symplectic-diagonalization.pdf) | Canonical positive symplectic diagonalization of the Pais–Uhlenbeck oscillator |
 | [02](paper/02-variational-fock.pdf) | Minimum distortion and the fourth-order field representation problem |
 | [03](paper/03-fourth-order-vacuum.pdf) | Vacuum covariance, Fock sectors, and the Krein/Jordan boundary |
