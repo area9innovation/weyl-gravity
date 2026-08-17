@@ -1,314 +1,293 @@
-# Are Weyl Gravity’s Ghosts Real?
+# How to Build a Universe
 
-*Building model universes—and using AI—to find out*
+*Physics, mathematics, logic—and research in the age of AI*
 
-*By GPT-5.6.sol and Asger Alstrup Palm*
+*By GPT-5.6.sol and Asger Alstrup Palm — 17 August 2026*
 
-Einstein’s theory says that gravity is the shape of spacetime. It has passed
-an extraordinary range of tests. But it also leaves deep questions open,
-including how gravity behaves as a quantum theory.
+Suppose someone hands you an elegant equation and says: “This could describe
+the universe.”
 
-Pure Weyl gravity is a more symmetric alternative. Its equations contain
-four derivatives instead of two and do not introduce a fundamental length
-scale. That mathematical elegance comes with a famous danger: the equations
-have additional solutions, and some appear with the “wrong” sign. They are
-usually called **ghosts**.
+What would you need before believing them?
 
-Does that end the theory?
+You would need more than the equation. You would need to know what can exist,
+how it changes, what an observer can measure, how probabilities are assigned,
+and whether the predictions agree with the world. You would also need to know
+what mathematics was silently assumed along the way.
 
-Perhaps. But “ghost” can refer to several different things:
+Was an infinite-dimensional Hilbert space essential, or merely convenient?
+Was a basis chosen using some form of the Axiom of Choice? Did a finite lattice
+calculation acquire a continuum interpretation without a proof? Did a
+Euclidean statistical model quietly become a Lorentzian theory of causes and
+signals? Did a formal solution become a physical particle?
+
+Our project tries to make those hidden steps visible.
 
-- an extra solution of a differential equation;
-- a classical wave remaining after gauge freedom and constraints are removed;
-- a disturbance that survives nonlinear interactions;
-- or a negative-probability particle in a quantum theory.
+It began as an investigation of ghosts in Weyl gravity. It has grown into a
+broader programme: **build theories backwards from the jobs physics must do,
+and record exactly which physical, mathematical, and logical assumptions make
+each job possible.**
 
-Those are not the same claim. Our project tests them separately.
+## A theory is a stack, not an equation
 
-It is also an experiment in how research is done. Asger Alstrup Palm is a
-computer scientist, not a professional physicist. He directs AI systems that
-propose calculations, write and check code, search the literature, criticize
-arguments, and draft papers. The goal is not to show that AI can declare a
-new law of nature. The goal is to see whether a non-expert who knows how to
-work with AI can orchestrate research that becomes precise enough for experts
-to verify, correct, or reject.
+A useful physical theory needs several layers:
 
-This article explains what the project has actually found—and what it has
-not.
+1. **Physical principles.** Symmetry, causality, locality, conservation, and
+   rules for combining systems.
+2. **A mathematical world.** Finite sets, Hilbert spaces, Krein spaces,
+   operator algebras, smooth fields, distributions, or internal geometric
+   spaces.
+3. **Logical and existence assumptions.** Classical or constructive logic,
+   forms of infinity, compactness, completeness, and choice principles.
+4. **Operational bridges.** States, observables, probabilities, preparation,
+   measurement, and detector models.
+5. **Contact with evidence.** A prediction with declared inputs and an honest
+   comparison with observations.
 
-## A four-stage ghost test
+Changing any layer can change what follows. Two theories may share the same
+equation but disagree about states or probability. Two mathematical
+formulations may describe the same physics—or may only look similar because a
+missing bridge was assumed.
 
-We use four stages.
+This is the idea behind **reverse foundations of physics**. Instead of asking
+only “what does this theory predict?”, we also ask:
 
-### 1. Local equations
+> What is the weakest, clearest combination of physics, mathematics, and logic
+> that is sufficient for this particular prediction—and which assumptions can
+> be removed by changing representation?
 
-What waves do the equations allow near a chosen background?
+## The 576-cell map
+
+The project’s interactive atlas crosses three dimensions:
 
-Fourth-order equations normally contain more local solutions than Einstein’s
-second-order equations. This is the easiest level to calculate and the
-easiest to overinterpret.
-
-### 2. Classical reality
-
-Which solutions remain after coordinate freedom, conformal gauge freedom,
-global charges, boundary conditions, and zero directions of the physical
-pairing are removed?
-
-An extra formula may turn out to describe the same geometry in different
-coordinates. But some additional Weyl-gravity waves survive these tests and
-have nonzero action-derived pairings. They cannot all be dismissed as
-duplicated algebra.
-
-### 3. Nonlinear continuation
-
-Can a small wave be the first term of a genuine solution once waves
-themselves gravitate and interact?
-
-On compact model universes, we found exact global balance conditions. Some
-waves fail because their second-order backreaction carries an uncancelled
-charge. Even after those balances vanish, resonance can force corrections
-that grow with time. Formal continuation and bounded continuation are
-therefore different achievements.
-
-### 4. Quantum states
-
-Does the final theory have a positive probability rule, consistent gauge
-symmetry, and well-defined particles and interactions?
-
-We are not there. The strict pure-Weyl theory has a nonzero local one-loop
-quantum anomaly in the version tested. A compensating field can repair that
-local identity at the tested order, but adding the field changes the theory.
-No positive complete quantum state space or unitarity theorem has been
-constructed.
-
-## Why build several model universes?
-
-No single spacetime makes every question manageable. We therefore use
-different mathematical laboratories:
-
-- a two-frequency oscillator for the basic fourth-order sign problem;
-- a closed spherical universe for gauge symmetry and causal propagation;
-- compact gravity-and-light models for nonlinear balance and clocks;
-- Schwarzschild black holes for horizons, radiation, and ringing;
-- Euclidean backgrounds for quantum anomalies.
-
-A result in one laboratory is not silently transferred to another. That rule
-is one of the project’s main safeguards.
-
-## What Phase 1 found
-
-The first phase did not produce a healthy replacement for general
-relativity. It produced a classification.
-
-Some additional fourth-order directions survive the early classical tests.
-Some are removed by nonlinear balance or resonance. A modified gravity–clock
-model passed a demanding causal test, but its physical reduced system
-developed a robust oscillatory instability. The quantum calculation found a
-strict local anomaly, while a compensator repair belonged to a changed
-theory.
-
-So the verdict is neither:
-
-> “The ghosts were harmless.”
-
-nor:
-
-> “Every form of Weyl gravity has been ruled out.”
-
-It is:
-
-> Different candidates fail at different stages, and none tested so far has
-> passed all four.
-
-The stable technical synthesis is
-[Paper 15, *What Survives the Ghost Test?*](15-four-level-ghost-classification-phase1-synthesis.pdf).
-
-## The newest black-hole result
-
-Black holes provide the sharpest result so far.
-
-A disturbed Schwarzschild black hole rings at characteristic complex
-frequencies called **quasinormal modes**. In ordinary general relativity, the
-mode falls into the black hole at the horizon and radiates outward at
-infinity.
-
-One might hope that these natural radiation conditions automatically remove
-Weyl gravity’s additional solutions and leave only Einstein’s waves. They do
-not.
-
-For axial quadrupole disturbances—the odd-parity, angular-momentum
-$\ell=2$ sector—the complete Weyl system contains:
-
-- one ordinary spin-two Regge–Wheeler layer;
-- a second spin-two layer;
-- and a spin-one Maxwell-like layer.
-
-The two spin-two layers are not independent copies. They form a
-**non-split extension**: one layer is attached to the other in a way that
-cannot be removed by the rational local changes of variables tested in the
-paper.
-
-This matters at a particular validated Schwarzschild ringing frequency. The
-ordinary Einstein mode becomes a defective resonance:
-
-- there is one ordinary Einstein ringing pattern;
-- there is a generalized partner with genuine non-Einstein curvature;
-- together they form a two-step chain.
-
-In frequency language, the local radial response has a **double pole**
-instead of an ordinary simple pole. In time language, an isolated resonance
-contour contains
-
-$$
-e^{i\omega_n t}\left(V_1+i t\,V_0\right).
-$$
-
-Here $V_0$ is the ordinary Einstein quasinormal mode and $V_1$ is its
-generalized Weyl partner. The unusual part is the extra factor of time:
-
-$$
-t\,e^{-\gamma t}\cos(\Omega t+\phi).
-$$
-
-It is a transient enhancement, not an instability. The exponential damping
-eventually wins.
-
-This resembles the “logarithmic graviton” mechanism known from critical
-gravity, where a massive and a massless spin-two mode merge. In the
-asymptotically flat Schwarzschild problem, however, the endpoint tangent is
-polynomial rather than a separate radial logarithm. “Jordan partner” or
-“polynomial quasinormal partner” is less misleading.
-
-The detailed result is in
-[Paper 16](16-lorentzian-endpoint-nonselection-pure-weyl.pdf) and
-[Paper 17](17-pure-weyl-schwarzschild-extension-structure.pdf).
-
-## What the black-hole theorem does not say
-
-The distinction here is essential.
-
-The project has established:
-
-- non-selection by the tested standard Lorentzian endpoint conditions;
-- a non-split axial $\ell=2$ spin-two extension;
-- one validated defective quasinormal resonance;
-- a nonzero rank-one double pole of the compactly observed radial response;
-- nonzero outgoing gravitational-wave content in the leading pole;
-- a complexified, radially compact frequency-domain source that can excite
-  the corresponding adjoint channel;
-- the expected linear-in-time term for an isolated local resonance contour.
-
-It has **not** established:
-
-- a complete causal evolution theorem for the full Schwarzschild exterior;
-- that the full late-time signal can be obtained by deforming a contour onto
-  this pole;
-- excitation by a specified real astrophysical source;
-- the size of a signal in a detector;
-- the full polar or all-multipole result;
-- stability against every time-dependent disturbance;
-- or a healthy quantum interpretation.
-
-In public terms: we have found a mathematically sharp way in which the extra
-Weyl layer can alter black-hole ringing. We have not shown that an
-astronomical detector would see it.
-
-## Why this is already interesting
-
-The result goes beyond saying that a fourth-order equation contains a
-repeated second-order factor. Repetition alone could mean two independent
-copies. Instead, the calculation shows an inseparable extension, a
-generalized non-Einstein mode, and a genuine double response pole.
-
-That is useful even if Weyl gravity ultimately fails:
-
-1. It identifies the precise spectral signature of the extra structure.
-2. It shows that standard black-hole radiation conditions do not perform the
-   same selection as some Euclidean or cosmological boundary prescriptions.
-3. It separates stability from response amplification: no exponentially
-   growing separated axial mode is found, yet the response is non-normal and
-   defective.
-4. It gives future calculations a concrete target: a globally causal
-   $t e^{i\omega t}$ waveform with a real source and observable.
-
-## The next decisive work
-
-Scientific progress now requires fewer broad manifestos and more narrow
-bridges:
-
-1. independently reproduce the exceptional-point and double-pole
-   certificates;
-2. construct the complete massive spin-two axial system and match it to the
-   Weyl tangent, not merely its scalar graded part;
-3. build a closed global causal domain that allows the differentiated
-   outgoing state;
-4. justify the inverse-Laplace contour deformation;
-5. calculate excitation by a real source, such as a plunging compact object;
-6. reconstruct the asymptotic strain and determine the detector coefficient;
-7. complete the polar and broader angular sectors;
-8. determine whether any compatible quantum theory has a positive physical
-   state space.
-
-These steps could strengthen the interpretation, narrow it, or disprove it.
-All three outcomes would be progress.
-
-## The AI research experiment
-
-AI can produce an impressive-looking derivation that is wrong. Multiple AI
-systems can also repeat the same mistake. We therefore do not count polished
-text or repeated calculation as independent confirmation.
-
-The repository tries to make the process auditable:
+- six mathematical regimes, from ordinary classical mathematics through
+  weakened-choice, constructive, internal, and finite settings;
+- six carrier families, including finite algebra, Hilbert space, Krein space,
+  operator algebras, smooth/distributional fields, and localic geometry;
+- sixteen physical jobs, including states, dynamics, causality, gauge
+  reduction, interactions, renormalization, reconstruction, and empirical
+  agreement.
+
+That makes $6\times6\times16=576$ coordinates.
+
+They are not 576 rival universes. They are 576 questions. A colored cell means
+that some scoped evidence has been recorded there. It does not mean the cell
+is universally solved, and it certainly does not mean neighboring cells can
+be assembled without proof.
+
+This distinction is surprisingly important. Modern theoretical physics has
+many beautiful local components. The fragile parts are often the joins:
+
+- from a state to a probability rule;
+- from a Euclidean measure to Lorentzian causality;
+- from a finite regulator to a continuum theory;
+- from gauge cohomology to physical particles;
+- from a fitted curve to an explanation;
+- from a computer-checked identity to the physical assumptions it was meant
+  to represent.
+
+## Several ways to build
+
+The atlas includes familiar and unconventional research traditions.
+
+### The mainstream reference
+
+General relativity and quantum field theory provide the calibration baseline.
+Their broad toolbox has evidence for all sixteen jobs represented in the
+atlas. But even “16 out of 16” is not a new proof that gravity and quantum
+theory form one complete theory. The baseline deliberately combines different
+models and mathematical carriers. Its purpose is to show what mature coverage
+looks like and to test whether the atlas recognizes known successes.
+
+Two bounded controls reach observations: standard GR passes the declared
+Cassini light-propagation gate, and GR with an NFW dark-matter halo passes the
+declared NGC 3198 random-error gate.
+
+### Mannheim conformal gravity
+
+Mannheim’s programme uses conformal gravity to address galactic rotation
+without particle dark matter. The linear radial term is genuinely part of the
+fourth-order vacuum solution. But explaining observations requires more than
+showing that the term exists. One must decide how matter gets mass, which
+conformal frame massive bodies follow, what is sourced locally, and what is a
+global boundary contribution.
+
+On one bounded 39-point NGC 3198 protocol, the Mannheim curve has a slightly
+smaller ordinary residual than GR+NFW: $4.694$ versus $5.148$ km/s. Yet the
+quoted errors change the ordering. GR+NFW has reduced chi-squared $0.965$ and
+passes the declared gate; Mannheim has $3.202$ and fails it.
+
+That is not a universal verdict. Distance, inclination, stellar populations,
+gas profiles, and other systematics are not included. The lesson is more
+general: “best fit” is meaningless until we say which score, uncertainties,
+inputs, and scope we mean.
+
+### Bateman and Turok’s hidden ghost parity
+
+Bateman and Turok propose an unusual route for higher-derivative physics using
+a positive Euclidean lattice and a hidden indefinite structure. One promising
+shortcut was to prove that the action gradient always remains at least as
+strong as the free long-distance scale.
+
+The project found an explicit counterfamily. A carefully compensated source
+spreads through the periodic Green tail. The fields stay positive,
+nonseparable, and only polynomially contrasted; their action does not vanish,
+but the normalized gradient falls below the proposed universal scale.
+
+In ordinary language: **one plausible universal stability shortcut is
+false.**
+
+This does not refute the full proposal. The dangerous fields might be
+overwhelmingly improbable, the true interacting operator might control them,
+or reconstruction might need a different argument. Those are now sharper
+questions because the easy route has been removed.
+
+### Pure-Weyl gravity
+
+Pure Weyl gravity is more symmetric than Einstein gravity and contains four
+derivatives. Its extra solutions are often called ghosts—but that word hides
+several different tests:
+
+1. Does an extra local solution exist?
+2. Does it survive gauge symmetry, constraints, charges, and boundaries?
+3. Can it survive nonlinear backreaction?
+4. Can it become a state in a positive quantum theory?
+
+The answers are not all the same. Some extra classical directions survive
+reduction. Some fail global balance or stability tests. In one Schwarzschild
+channel, ordinary radiation conditions do not remove the extra layer, and an
+ordinary black-hole ringing frequency becomes a defective double response
+pole. That is a sharp mathematical signature, not yet an observable waveform.
+
+The quantum story is equally layered. The strict theory has a nonzero local
+one-loop anomaly in the setting tested. A compensating field repairs that
+local identity, but changes the theory. More recently, the complete gauge
+complex acquired a BRST-compatible Hadamard two-point **pseudo-state**. It has
+the right causal singularity and gauge identities, but it is indefinite. It
+is not a positive physical state, particle theory, or unitarity result.
+
+### Constructive, finite, and weak-foundation routes
+
+Finite and constructive models let us ask whether a theorem really needs the
+usual infinite machinery. An explicitly labelled mode family may avoid a
+basis-selection step. A finite gauge complex may be checked with exact
+rational arithmetic. A coded wave can carry computable observables without
+first constructing the entire smooth continuum.
+
+These are genuine results in their scope. They do not prove that the universe
+is finite, that all of physics works without Choice, or that a finite model has
+a continuum limit. “Avoided in this representation” is more honest than
+“physics disproves the Axiom of Choice.”
+
+## From ingredients to journeys
+
+To prevent a large matrix from becoming an abstract collection, the atlas
+also follows eight **theory journeys** through six plain questions:
+
+1. What assumptions does the theory start from?
+2. What counts as a state?
+3. How does the state change?
+4. What can be observed?
+5. What numerical prediction is produced?
+6. Does it meet a declared empirical benchmark?
+
+Four journeys currently reach bounded data. GR at Cassini and GR+NFW at NGC
+3198 pass their declared gates. Newtonian baryons alone and Mannheim’s curve
+fail the declared NGC 3198 random-error gate. Four other journeys—Bateman–Turok,
+a free Krein mode, a constructive coded wave, and the pure-Weyl causal quantum
+route—have not reached an empirical test.
+
+“Not reached” is not “refuted.” A later mathematical result also does not
+repair an earlier missing state, observable, or prediction bridge.
+
+## What formal proof adds
+
+Some finite identities are exposed as Lean 4.32/Physlib proof passports.
+These give reviewers another way to inspect types, signs, and finite algebra.
+One passport replays a strict-Weyl source identity; another derives a finite
+graded $q_1/q_2/q_3$ evaluator from operation signatures.
+
+Formalization is valuable because a proof assistant refuses many informal
+shortcuts. But it proves the statement that was encoded. It cannot decide
+whether the encoding captures nature, supply a missing physical premise, or
+turn a finite identity into a continuum quantum theory. The passports are an
+additional review surface, not a truth machine.
+
+## Research in the age of AI
+
+This project is also an experiment in scientific organization. AI systems can
+derive equations, write software, search literature, challenge claims, and
+produce fluent papers. They can also produce fluent mistakes, share hidden
+assumptions, or repeat one another’s errors.
+
+The response is not to pretend that AI is an oracle. It is to make the work
+easier to attack:
 
 ```text
 claim
-  → generating calculation
+  → calculation
   → machine-readable certificate
   → independent verifier
-  → deliberately damaged test
-  → paper with explicit limitations
+  → adversarial test
+  → readable paper
+  → evidence map
 ```
 
-Failures and corrections remain in the record. Exact algebra is kept
-separate from interval-validated numerics and from exploratory computation.
-A missing certificate, timeout, or unsupported parameter range is a failure
-to promote the claim—not a partial success.
+The repository keeps exact algebra separate from numerical evidence and from
+exploratory computation. Re-running the same producer is reproduction, not
+independent verification. Missing inputs, skipped tests, and timeouts are not
+passes. Negative results and abandoned architectures remain visible because
+they narrow the search.
 
-The experiment will not be validated by us saying that it worked. It needs
-physicists and mathematicians to inspect the equations, reproduce the
-computations, find errors, and decide whether anything is genuinely new and
-useful.
+Exposition is part of that verification system. If a result cannot be
+explained clearly enough for another researcher to locate its assumptions,
+evidence, and failure modes, it is not ready to carry much scientific weight.
+
+## How to explore the project
+
+Open the [Reverse Physics Atlas](../foundations/site/index.html) and choose the
+view that matches your question:
+
+- **Dimensions guide:** understand the axes without specialist vocabulary.
+- **Matrix:** inspect any of the 576 coordinates.
+- **Theory profiles:** compare coverage without confusing it with truth.
+- **Assemblies:** see bounded tests, programme prototypes, and missing joins.
+- **Theory journeys:** follow ideas toward predictions and observations.
+- **Weyl BV routes:** inspect the causal and quantum construction gates.
+- **Evidence:** read certificates, literature records, and proof passports.
+
+The technical synthesis is [Paper 21](21-reverse-foundations-of-physics.pdf).
+The physicist-level overview is [Paper 98](98-physicist-executive-summary.md).
+The latest focused theorem is the [Bateman–Turok torus paper](22-bateman-turok-euclidean-torus-collapse.pdf).
 
 ## Public scorecard
 
-**We have:** exact model calculations of fourth-order metrics and Jordan
-limits; complete causal free gauge systems on controlled backgrounds; a
-nonzero strict local one-loop anomaly; Schwarzschild endpoint non-selection;
-one defective axial QNM; reproducible code and many certificate families.
+**We have:** exact finite and symbolic constructions; controlled causal gauge
+systems; classical survival and obstruction theorems; a strict local anomaly;
+a full-complex Hadamard pseudo-state pair; a sharp black-hole double-pole case;
+an interactive assumptions matrix; theory passports; bounded empirical
+controls; and multiple independent verification surfaces.
 
-**We partly have:** classical additional waves on selected backgrounds;
-nonlinear continuation in finite mode spaces; a compensator repair in a
-changed theory; a local isolated-contour polynomial ringdown term; and
-independent verification of selected claims.
+**We partly have:** selected probability rules, reduced positive structures,
+nonlinear continuation, changed-theory anomaly repair, mode-reduced causal
+response, proof-assistant replays, and programme assemblies whose interfaces
+are not all closed.
 
-**We do not yet have:** a viable replacement for general relativity,
-realistic cosmology or matter, a positive complete quantum theory, a complete
-retarded waveform or detector prediction, or peer review of the whole
-programme.
+**We do not have:** a new complete theory of nature, a positive full-BV quantum
+state, Lorentzian interacting quantum gravity, a population-level galactic
+verdict, a continuum Bateman–Turok reconstruction, a complete black-hole
+waveform, or peer review of the programme as a whole.
 
 ## Bottom line
 
-The project’s strongest current statement is:
+Building a universe is not choosing one beautiful equation. It is closing a
+chain of obligations without silently changing the rules halfway through.
 
-> Standard black-hole radiation conditions do not force pure Weyl gravity
-> back into Einstein gravity. In one axial Schwarzschild channel, the extra
-> layer forms a non-split extension and turns an ordinary quasinormal mode
-> into a defective resonance with a double radial response pole.
+The programme’s working principle is:
 
-That is an interesting mathematical-physics result. It is not yet evidence
-that pure Weyl gravity describes nature.
+> Separate physical assumptions, mathematical carriers, logical strength,
+> operational bridges, and empirical tests. Then make every connection
+> explicit enough that another person can reproduce it, criticize it, or show
+> exactly where it fails.
 
-For the technical claim map, see the
-[physicist executive summary](98-physicist-executive-summary.md). For the
-research archive, evidence graph, and authorship experiment, see the
-[repository README](../README.md).
+That does not guarantee a successful theory. It does turn “interesting idea”
+into a map of answerable questions.

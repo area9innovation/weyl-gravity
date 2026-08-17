@@ -133,13 +133,14 @@ with the [physicist executive summary](paper/98-physicist-executive-summary.md).
 
 ## Start here
 
-- **General introduction (Paper 99):** [Are Weyl Gravity's Ghosts Real?
-  Building Model Universes to Find
-  Out](paper/99-how-to-build-a-universe.md)
+- **General introduction (Paper 99):** [How to Build a Universe: Physics,
+  Mathematics, Logic—and Research in the Age of
+  AI](paper/99-how-to-build-a-universe.md)
 - **Programme introduction (Paper 00):** [Ghosts, Geometry, and
   Reality](paper/00-ghosts-geometry-reality.pdf)
-- **Physicist introduction (Paper 98):** [Pure-Weyl gravity programme:
-  executive summary for physicists](paper/98-physicist-executive-summary.md)
+- **Physicist introduction (Paper 98):** [Reverse Physics and Pure-Weyl
+  Gravity: Executive Summary for
+  Physicists](paper/98-physicist-executive-summary.md)
 - **External reviewers:** [Review Paper 17 and its evidence
   chain](REVIEWING.md)
 - **Stable Phase-1 synthesis:** [What Survives the Ghost
