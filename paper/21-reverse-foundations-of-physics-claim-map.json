@@ -229,6 +229,10 @@
     "bt_polynomial_contrast_full_bound": "for m>=8, ||g||_2^2/||r||_2^2<=1960/m^6",
     "bt_polynomial_contrast_main_bound": "D_m/K_m<=160/m^6",
     "bt_q_zero_uniform_lower_bound_status": "OBSTRUCTED",
+    "bt_quadratic_virial_all_field_status": "OPEN",
+    "bt_quadratic_virial_collapsing_action_necessity": "Q/omega_L^2->0 implies limsup A/L^4<=272/29",
+    "bt_quadratic_virial_collapsing_contrast_necessity": "Q/omega_L^2->0 implies limsup W^2/L^4<=544/29",
+    "bt_quadratic_virial_fixed_margin_theorem": "for every 0<epsilon<=32, A>=(272/29+epsilon)*L^4 implies Q/omega_L^2>=841*epsilon^2/(8388608*pi^4)",
     "bt_quartic_kernel_status": "PROVED",
     "bt_quartic_power_cancellation_status": "OPEN",
     "bt_quartic_soft_degree": "LINEAR_NONZERO",
@@ -912,6 +916,16 @@
       "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_PHASE_PULLBACK_OBSTRUCTION_V1.json",
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_PHASE_PULLBACK_OBSTRUCTION_V1",
       "sha256": "ba7b4b510a4e9fd19004b8ec759cef8ee450df548b41b96c9dbc868102a39ac4"
+    },
+    "bt_torus_quadratic_virial_density_gate": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "ACTION_DENSITY_ABOVE_272_OVER_29_FREE_SCALE_CLOSED_LOWER_NONSEPARABLE_GATE_OPEN",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_QUADRATIC_VIRIAL_DENSITY_GATE_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_TORUS_QUADRATIC_VIRIAL_DENSITY_GATE_V1",
+      "sha256": "ab73fa170f3c6e9ead83feed4c95b1f35a94f4ed06fb916944e35f0681276ba5"
     },
     "bt_torus_sharp_virial_density_gate": {
       "dependency_tags": [
@@ -2630,7 +2644,7 @@
       "sha256": "c394928bb8ead70ba9eeb76ee16298c3fffec5712d8c9290f773712960d333fb"
     }
   },
-  "canonical_digest": "0d33e5a1a1ec43a28f5eb6981b8bfb6b090d48e7d04ba0c1913f8c0fc8814047",
+  "canonical_digest": "80ea31a991189a456670f0764beacf667775f9252d2b72f9e91346e07849a9ac",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -2762,11 +2776,14 @@
     "bt_torus_extensive_action_branch_ruled_out": true,
     "bt_torus_extensive_action_gradient_floor_certified": true,
     "bt_torus_fixed_action_density_above_11_ruled_out": true,
+    "bt_torus_fixed_action_density_above_272_over_29_ruled_out": true,
     "bt_torus_fixed_action_density_above_32_ruled_out": true,
     "bt_torus_global_virial_all_field_scaled_pl_decided": false,
     "bt_torus_global_virial_compatibility_certified": true,
     "bt_torus_moderate_sparse_multiband_gate_open": true,
     "bt_torus_phase_pullback_obstruction_certified": true,
+    "bt_torus_quadratic_virial_all_field_scaled_pl_decided": false,
+    "bt_torus_quadratic_virial_density_gate_certified": true,
     "bt_torus_sharp_virial_all_field_scaled_pl_decided": false,
     "bt_torus_sharp_virial_density_gate_certified": true,
     "bt_torus_single_phase_counterfamily_ruled_out": true,
@@ -2776,6 +2793,7 @@
     "bt_torus_sparse_multiband_gate_open": true,
     "bt_torus_sub_11_action_density_gate_open": true,
     "bt_torus_sub_16_L_squared_low_action_gate_open": true,
+    "bt_torus_sub_272_over_29_action_density_gate_open": true,
     "bt_torus_sub_32_action_density_gate_open": true,
     "bt_torus_sub_L_10_over_3_moderate_gate_open": true,
     "bt_torus_super_L_10_over_3_contrast_for_L_ge_4096_ruled_out": true,
@@ -4276,6 +4294,18 @@
       ],
       "statement": "The exact affine scalar majorant Phi(s)+(21/4)(s-8)<=22 combines with the reciprocal-edge identity sum_x(s_x-8)=sum_edges(z+z^-1-2)>=0 to sharpen the global radial pairing to <psi,g>>=2A-22N. On T_L^4, for every 0<epsilon<=32, A>=(11+epsilon)L^4 implies Q/omega_L^2>=epsilon^2/(8192*pi^4). Hence every collapsing sequence has limsup A/L^4<=11 and limsup W^2/L^4<=22. The sub-11 nonseparable sector, all-field torus theorem, Witten/Poincare transfer, interacting H^-1, continuum, Born/Krein and Lorentzian gates remain open.",
       "status": "ACTION_DENSITY_ABOVE_11_FREE_SCALE_CLOSED_SUB_11_NONSEPARABLE_GATE_OPEN"
+    },
+    {
+      "authorities": [
+        "bt_torus_quadratic_virial_density_gate"
+      ],
+      "claim_id": "RF-92-BT-TORUS-QUADRATIC-VIRIAL-DENSITY-GATE",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "statement": "The exact quadratic scalar majorant Phi(s)+(41/8)(s-8)-(3/32)(s-8)^2<=17 combines with reciprocal-edge compatibility to prove <psi,g>>=(29/16)A-17N. On T_L^4, for every 0<epsilon<=32, A>=(272/29+epsilon)L^4 implies Q/omega_L^2>=841epsilon^2/(8388608pi^4). Hence every collapsing sequence has limsup A/L^4<=272/29 and limsup W^2/L^4<=544/29. The action-density-at-most-272/29 nonseparable sector, optimality, all-field torus theorem, Witten/Poincare transfer, interacting H^-1, continuum, Born/Krein and Lorentzian gates remain open.",
+      "status": "ACTION_DENSITY_ABOVE_272_OVER_29_FREE_SCALE_CLOSED_LOWER_NONSEPARABLE_GATE_OPEN"
     }
   ],
   "created": "2026-08-17",
@@ -4515,7 +4545,7 @@
       "source_sha256": "813d29b98f493c3a1d944eb302c7c842cb3773622a5d4dee702c586b5a598087"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "91f901a3063279fc2bab447b9d81b1b1a5b4c69f0c5b91deb0be586f19173922"
+    "sha256": "ff67fc15ac296721bb8e02254ff3b5547a6c5140ee7565f940d61bace10b3822"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",
