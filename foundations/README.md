@@ -285,6 +285,20 @@ python3 foundations/build_cylinder_wave_strength_ladder_v2.py --check
 python3 foundations/verify_cylinder_wave_strength_ladder_v2.py
 ```
 
+The [wave-data modulus reversal](reports/coded-wave-modulus-reversal-v1.md)
+now supplies a human proof that reconstructing the same fixed tent observable
+from arbitrary unit-ball Cauchy energy sequences **without a supplied rate**
+is equivalent to `ACA_0` over `RCA_0`. With the rate supplied, `RCA_0` still
+suffices. The lower bound uses one fixed spatial profile and time-zero
+evaluation. Its independent exact audit checks the reduction witnesses, not
+the infinite logical proof; no atlas, paper, or quantum lifecycle is promoted.
+
+```bash
+python3 foundations/build_coded_wave_modulus_reversal.py --check
+python3 foundations/verify_coded_wave_modulus_reversal.py
+python3 -m unittest foundations.tests.test_coded_wave_modulus_reversal
+```
+
 The follow-on
 [`coded observable reconstruction`](reports/coded-wave-observable-reconstruction-v1.md)
 names a rational periodic detector and constructs finite rational dyadic-time

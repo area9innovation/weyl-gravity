@@ -1,0 +1,1389 @@
+{
+  "schema_version": "foundational-coded-wave-modulus-reversal-v1",
+  "result_id": "FOUNDATIONAL_CODED_WAVE_MODULUS_REVERSAL_V1",
+  "result_kind": "REPRESENTATION_SPECIFIC_REVERSE_MATHEMATICS",
+  "evidence_status": "HUMAN_PROOF_WITH_EXACT_REDUCTION_AUDIT",
+  "created": "2026-09-07",
+  "repository_base_commit": "548f99056ef0ef55a9edabae0252381a8c5ffa9b",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "theorem": {
+    "base": "RCA_0",
+    "rate_free_principle": "WR",
+    "equivalent_system": "ACA_0",
+    "supplied_modulus_principle": "WR_mu",
+    "supplied_modulus_base": "RCA_0",
+    "scope": "Unit-ball Cauchy sequences of mean-zero rational chiral step pairs, with the fixed periodic tent detector.",
+    "quantifiers": "For every coded input satisfying the ordinary Cauchy promise, there exists a fast uniform polygonal output name.",
+    "input_rate_supplied": false,
+    "input_limit_state_supplied": false,
+    "output_input_convergence_rate_required": false,
+    "higher_type_choice_functional_asserted": false,
+    "necessity_uses": "One fixed spatial profile and evaluation at time zero."
+  },
+  "detector": {
+    "id": "PERIODIC_TENT_SMEARED_CHIRAL_AMPLITUDE",
+    "test_breaks": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "test_values": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "test_l2_squared": [
+      1,
+      3
+    ],
+    "formula": "O_h(t;p)=integral_0^1 h(x)[T_t a(x)+T_-t b(x)] dx"
+  },
+  "profile": {
+    "breaks": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "values": [
+      [
+        -1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        -1,
+        1
+      ]
+    ],
+    "mean": [
+      0,
+      1
+    ],
+    "l2_squared": [
+      1,
+      1
+    ],
+    "gain_at_zero": [
+      1,
+      4
+    ],
+    "metric_scaling_squared": [
+      1,
+      1
+    ],
+    "response_pieces": [
+      {
+        "interval": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        "coefficients": [
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            -4,
+            1
+          ]
+        ]
+      },
+      {
+        "interval": [
+          [
+            1,
+            4
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "coefficients": [
+          [
+            3,
+            4
+          ],
+          [
+            -4,
+            1
+          ],
+          [
+            4,
+            1
+          ]
+        ]
+      },
+      {
+        "interval": [
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "coefficients": [
+          [
+            -15,
+            4
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            -4,
+            1
+          ]
+        ]
+      }
+    ]
+  },
+  "upper_bound": {
+    "observable_distance_squared_constant": [
+      2,
+      3
+    ],
+    "unit_ball_time_lipschitz_bound": [
+      4,
+      1
+    ],
+    "modulus_index_shift": 3,
+    "dyadic_mesh_index_shift": 5,
+    "pair_error_coefficient": [
+      3,
+      8
+    ],
+    "output_convergence_modulus_shift": 5
+  },
+  "encoding": {
+    "radix": 4,
+    "weight_exponent_shift": 1,
+    "duplicates_counted_once": true,
+    "total_weight": [
+      1,
+      3
+    ],
+    "tail_after_e_over_weight_e": [
+      1,
+      3
+    ],
+    "output_evaluation_scale": [
+      4,
+      1
+    ],
+    "output_evaluation_index_shift": 2,
+    "absence_comparison": "r_k + 2^(-k) - q_s < w_e",
+    "absence_requires_not_seen": true
+  },
+  "infinite_proof_obligations": [
+    {
+      "id": "MODULUS_SELECTION",
+      "base": "ACA_0",
+      "status": "HUMAN_PROOF",
+      "report_section": "Upper bound and the supplied-rate construction"
+    },
+    {
+      "id": "RATE_SUPPLIED_AVOIDANCE",
+      "base": "RCA_0",
+      "status": "HUMAN_PROOF",
+      "report_section": "Upper bound and the supplied-rate construction"
+    },
+    {
+      "id": "ORDINARY_CAUCHY_WITHOUT_MODULUS",
+      "base": "RCA_0",
+      "status": "HUMAN_PROOF",
+      "report_section": "Why the Cauchy promise is available in RCA_0"
+    },
+    {
+      "id": "SIGMA1_COMPLEMENT_AND_DELTA1_RANGE",
+      "base": "RCA_0 + WR",
+      "status": "HUMAN_PROOF",
+      "report_section": "The output decides the range"
+    }
+  ],
+  "fixtures": [
+    {
+      "prefix": [
+        4,
+        1,
+        4,
+        7,
+        0
+      ],
+      "tail_start": 8,
+      "limit": [
+        15409,
+        49152
+      ],
+      "stages": [
+        {
+          "stage": 0,
+          "seen": [],
+          "amplitude": [
+            0,
+            1
+          ],
+          "observation_at_zero": [
+            0,
+            1
+          ],
+          "energy_squared": [
+            0,
+            1
+          ]
+        },
+        {
+          "stage": 1,
+          "seen": [
+            4
+          ],
+          "amplitude": [
+            1,
+            1024
+          ],
+          "observation_at_zero": [
+            1,
+            4096
+          ],
+          "energy_squared": [
+            1,
+            1048576
+          ]
+        },
+        {
+          "stage": 2,
+          "seen": [
+            1,
+            4
+          ],
+          "amplitude": [
+            65,
+            1024
+          ],
+          "observation_at_zero": [
+            65,
+            4096
+          ],
+          "energy_squared": [
+            4225,
+            1048576
+          ]
+        },
+        {
+          "stage": 3,
+          "seen": [
+            1,
+            4
+          ],
+          "amplitude": [
+            65,
+            1024
+          ],
+          "observation_at_zero": [
+            65,
+            4096
+          ],
+          "energy_squared": [
+            4225,
+            1048576
+          ]
+        },
+        {
+          "stage": 4,
+          "seen": [
+            1,
+            4,
+            7
+          ],
+          "amplitude": [
+            4161,
+            65536
+          ],
+          "observation_at_zero": [
+            4161,
+            262144
+          ],
+          "energy_squared": [
+            17313921,
+            4294967296
+          ]
+        },
+        {
+          "stage": 5,
+          "seen": [
+            0,
+            1,
+            4,
+            7
+          ],
+          "amplitude": [
+            20545,
+            65536
+          ],
+          "observation_at_zero": [
+            20545,
+            262144
+          ],
+          "energy_squared": [
+            422097025,
+            4294967296
+          ]
+        },
+        {
+          "stage": 6,
+          "seen": [
+            0,
+            1,
+            4,
+            7,
+            8
+          ],
+          "amplitude": [
+            82181,
+            262144
+          ],
+          "observation_at_zero": [
+            82181,
+            1048576
+          ],
+          "energy_squared": [
+            6753716761,
+            68719476736
+          ]
+        },
+        {
+          "stage": 7,
+          "seen": [
+            0,
+            1,
+            4,
+            7,
+            8,
+            9
+          ],
+          "amplitude": [
+            328725,
+            1048576
+          ],
+          "observation_at_zero": [
+            328725,
+            4194304
+          ],
+          "energy_squared": [
+            108060125625,
+            1099511627776
+          ]
+        },
+        {
+          "stage": 8,
+          "seen": [
+            0,
+            1,
+            4,
+            7,
+            8,
+            9,
+            10
+          ],
+          "amplitude": [
+            1314901,
+            4194304
+          ],
+          "observation_at_zero": [
+            1314901,
+            16777216
+          ],
+          "energy_squared": [
+            1728964639801,
+            17592186044416
+          ]
+        }
+      ],
+      "range_witnesses": [
+        {
+          "value": 0,
+          "in_range": true,
+          "absence_witness": null
+        },
+        {
+          "value": 1,
+          "in_range": true,
+          "absence_witness": null
+        },
+        {
+          "value": 2,
+          "in_range": false,
+          "absence_witness": {
+            "stage": 5,
+            "precision": 10,
+            "limit_approximant": [
+              321,
+              1024
+            ],
+            "upper_remainder": [
+              63,
+              65536
+            ]
+          }
+        },
+        {
+          "value": 3,
+          "in_range": false,
+          "absence_witness": {
+            "stage": 5,
+            "precision": 12,
+            "limit_approximant": [
+              321,
+              1024
+            ],
+            "upper_remainder": [
+              15,
+              65536
+            ]
+          }
+        },
+        {
+          "value": 4,
+          "in_range": true,
+          "absence_witness": null
+        },
+        {
+          "value": 5,
+          "in_range": false,
+          "absence_witness": {
+            "stage": 5,
+            "precision": 16,
+            "limit_approximant": [
+              20545,
+              65536
+            ],
+            "upper_remainder": [
+              1,
+              65536
+            ]
+          }
+        },
+        {
+          "value": 6,
+          "in_range": false,
+          "absence_witness": {
+            "stage": 5,
+            "precision": 18,
+            "limit_approximant": [
+              82181,
+              262144
+            ],
+            "upper_remainder": [
+              1,
+              131072
+            ]
+          }
+        },
+        {
+          "value": 7,
+          "in_range": true,
+          "absence_witness": null
+        },
+        {
+          "value": 8,
+          "in_range": true,
+          "absence_witness": null
+        },
+        {
+          "value": 9,
+          "in_range": true,
+          "absence_witness": null
+        }
+      ]
+    },
+    {
+      "prefix": [
+        7,
+        8,
+        9,
+        10,
+        0,
+        2
+      ],
+      "tail_start": 11,
+      "limit": [
+        13057,
+        49152
+      ],
+      "stages": [
+        {
+          "stage": 0,
+          "seen": [],
+          "amplitude": [
+            0,
+            1
+          ],
+          "observation_at_zero": [
+            0,
+            1
+          ],
+          "energy_squared": [
+            0,
+            1
+          ]
+        },
+        {
+          "stage": 1,
+          "seen": [
+            7
+          ],
+          "amplitude": [
+            1,
+            65536
+          ],
+          "observation_at_zero": [
+            1,
+            262144
+          ],
+          "energy_squared": [
+            1,
+            4294967296
+          ]
+        },
+        {
+          "stage": 2,
+          "seen": [
+            7,
+            8
+          ],
+          "amplitude": [
+            5,
+            262144
+          ],
+          "observation_at_zero": [
+            5,
+            1048576
+          ],
+          "energy_squared": [
+            25,
+            68719476736
+          ]
+        },
+        {
+          "stage": 3,
+          "seen": [
+            7,
+            8,
+            9
+          ],
+          "amplitude": [
+            21,
+            1048576
+          ],
+          "observation_at_zero": [
+            21,
+            4194304
+          ],
+          "energy_squared": [
+            441,
+            1099511627776
+          ]
+        },
+        {
+          "stage": 4,
+          "seen": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "amplitude": [
+            85,
+            4194304
+          ],
+          "observation_at_zero": [
+            85,
+            16777216
+          ],
+          "energy_squared": [
+            7225,
+            17592186044416
+          ]
+        },
+        {
+          "stage": 5,
+          "seen": [
+            0,
+            7,
+            8,
+            9,
+            10
+          ],
+          "amplitude": [
+            1048661,
+            4194304
+          ],
+          "observation_at_zero": [
+            1048661,
+            16777216
+          ],
+          "energy_squared": [
+            1099689892921,
+            17592186044416
+          ]
+        },
+        {
+          "stage": 6,
+          "seen": [
+            0,
+            2,
+            7,
+            8,
+            9,
+            10
+          ],
+          "amplitude": [
+            1114197,
+            4194304
+          ],
+          "observation_at_zero": [
+            1114197,
+            16777216
+          ],
+          "energy_squared": [
+            1241434954809,
+            17592186044416
+          ]
+        },
+        {
+          "stage": 7,
+          "seen": [
+            0,
+            2,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "amplitude": [
+            4456789,
+            16777216
+          ],
+          "observation_at_zero": [
+            4456789,
+            67108864
+          ],
+          "energy_squared": [
+            19862968190521,
+            281474976710656
+          ]
+        },
+        {
+          "stage": 8,
+          "seen": [
+            0,
+            2,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "amplitude": [
+            17827157,
+            67108864
+          ],
+          "observation_at_zero": [
+            17827157,
+            268435456
+          ],
+          "energy_squared": [
+            317807526702649,
+            4503599627370496
+          ]
+        },
+        {
+          "stage": 9,
+          "seen": [
+            0,
+            2,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "amplitude": [
+            71308629,
+            268435456
+          ],
+          "observation_at_zero": [
+            71308629,
+            1073741824
+          ],
+          "energy_squared": [
+            5084920569859641,
+            72057594037927936
+          ]
+        }
+      ],
+      "range_witnesses": [
+        {
+          "value": 0,
+          "in_range": true,
+          "absence_witness": null
+        },
+        {
+          "value": 1,
+          "in_range": false,
+          "absence_witness": {
+            "stage": 6,
+            "precision": 8,
+            "limit_approximant": [
+              17,
+              64
+            ],
+            "upper_remainder": [
+              16299,
+              4194304
+            ]
+          }
+        },
+        {
+          "value": 2,
+          "in_range": true,
+          "absence_witness": null
+        },
+        {
+          "value": 3,
+          "in_range": false,
+          "absence_witness": {
+            "stage": 6,
+            "precision": 12,
+            "limit_approximant": [
+              17,
+              64
+            ],
+            "upper_remainder": [
+              939,
+              4194304
+            ]
+          }
+        },
+        {
+          "value": 4,
+          "in_range": false,
+          "absence_witness": {
+            "stage": 6,
+            "precision": 14,
+            "limit_approximant": [
+              17,
+              64
+            ],
+            "upper_remainder": [
+              171,
+              4194304
+            ]
+          }
+        },
+        {
+          "value": 5,
+          "in_range": false,
+          "absence_witness": {
+            "stage": 6,
+            "precision": 16,
+            "limit_approximant": [
+              17409,
+              65536
+            ],
+            "upper_remainder": [
+              43,
+              4194304
+            ]
+          }
+        },
+        {
+          "value": 6,
+          "in_range": false,
+          "absence_witness": {
+            "stage": 6,
+            "precision": 18,
+            "limit_approximant": [
+              69637,
+              262144
+            ],
+            "upper_remainder": [
+              11,
+              4194304
+            ]
+          }
+        },
+        {
+          "value": 7,
+          "in_range": true,
+          "absence_witness": null
+        },
+        {
+          "value": 8,
+          "in_range": true,
+          "absence_witness": null
+        },
+        {
+          "value": 9,
+          "in_range": true,
+          "absence_witness": null
+        },
+        {
+          "value": 10,
+          "in_range": true,
+          "absence_witness": null
+        },
+        {
+          "value": 11,
+          "in_range": true,
+          "absence_witness": null
+        },
+        {
+          "value": 12,
+          "in_range": true,
+          "absence_witness": null
+        }
+      ]
+    },
+    {
+      "prefix": [
+        0,
+        0,
+        0
+      ],
+      "tail_start": 1,
+      "limit": [
+        1,
+        3
+      ],
+      "stages": [
+        {
+          "stage": 0,
+          "seen": [],
+          "amplitude": [
+            0,
+            1
+          ],
+          "observation_at_zero": [
+            0,
+            1
+          ],
+          "energy_squared": [
+            0,
+            1
+          ]
+        },
+        {
+          "stage": 1,
+          "seen": [
+            0
+          ],
+          "amplitude": [
+            1,
+            4
+          ],
+          "observation_at_zero": [
+            1,
+            16
+          ],
+          "energy_squared": [
+            1,
+            16
+          ]
+        },
+        {
+          "stage": 2,
+          "seen": [
+            0
+          ],
+          "amplitude": [
+            1,
+            4
+          ],
+          "observation_at_zero": [
+            1,
+            16
+          ],
+          "energy_squared": [
+            1,
+            16
+          ]
+        },
+        {
+          "stage": 3,
+          "seen": [
+            0
+          ],
+          "amplitude": [
+            1,
+            4
+          ],
+          "observation_at_zero": [
+            1,
+            16
+          ],
+          "energy_squared": [
+            1,
+            16
+          ]
+        },
+        {
+          "stage": 4,
+          "seen": [
+            0,
+            1
+          ],
+          "amplitude": [
+            5,
+            16
+          ],
+          "observation_at_zero": [
+            5,
+            64
+          ],
+          "energy_squared": [
+            25,
+            256
+          ]
+        },
+        {
+          "stage": 5,
+          "seen": [
+            0,
+            1,
+            2
+          ],
+          "amplitude": [
+            21,
+            64
+          ],
+          "observation_at_zero": [
+            21,
+            256
+          ],
+          "energy_squared": [
+            441,
+            4096
+          ]
+        },
+        {
+          "stage": 6,
+          "seen": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "amplitude": [
+            85,
+            256
+          ],
+          "observation_at_zero": [
+            85,
+            1024
+          ],
+          "energy_squared": [
+            7225,
+            65536
+          ]
+        }
+      ],
+      "range_witnesses": [
+        {
+          "value": 0,
+          "in_range": true,
+          "absence_witness": null
+        },
+        {
+          "value": 1,
+          "in_range": true,
+          "absence_witness": null
+        },
+        {
+          "value": 2,
+          "in_range": true,
+          "absence_witness": null
+        }
+      ]
+    },
+    {
+      "prefix": [
+        3,
+        1,
+        3,
+        1
+      ],
+      "tail_start": 4,
+      "limit": [
+        13,
+        192
+      ],
+      "stages": [
+        {
+          "stage": 0,
+          "seen": [],
+          "amplitude": [
+            0,
+            1
+          ],
+          "observation_at_zero": [
+            0,
+            1
+          ],
+          "energy_squared": [
+            0,
+            1
+          ]
+        },
+        {
+          "stage": 1,
+          "seen": [
+            3
+          ],
+          "amplitude": [
+            1,
+            256
+          ],
+          "observation_at_zero": [
+            1,
+            1024
+          ],
+          "energy_squared": [
+            1,
+            65536
+          ]
+        },
+        {
+          "stage": 2,
+          "seen": [
+            1,
+            3
+          ],
+          "amplitude": [
+            17,
+            256
+          ],
+          "observation_at_zero": [
+            17,
+            1024
+          ],
+          "energy_squared": [
+            289,
+            65536
+          ]
+        },
+        {
+          "stage": 3,
+          "seen": [
+            1,
+            3
+          ],
+          "amplitude": [
+            17,
+            256
+          ],
+          "observation_at_zero": [
+            17,
+            1024
+          ],
+          "energy_squared": [
+            289,
+            65536
+          ]
+        },
+        {
+          "stage": 4,
+          "seen": [
+            1,
+            3
+          ],
+          "amplitude": [
+            17,
+            256
+          ],
+          "observation_at_zero": [
+            17,
+            1024
+          ],
+          "energy_squared": [
+            289,
+            65536
+          ]
+        },
+        {
+          "stage": 5,
+          "seen": [
+            1,
+            3,
+            4
+          ],
+          "amplitude": [
+            69,
+            1024
+          ],
+          "observation_at_zero": [
+            69,
+            4096
+          ],
+          "energy_squared": [
+            4761,
+            1048576
+          ]
+        },
+        {
+          "stage": 6,
+          "seen": [
+            1,
+            3,
+            4,
+            5
+          ],
+          "amplitude": [
+            277,
+            4096
+          ],
+          "observation_at_zero": [
+            277,
+            16384
+          ],
+          "energy_squared": [
+            76729,
+            16777216
+          ]
+        },
+        {
+          "stage": 7,
+          "seen": [
+            1,
+            3,
+            4,
+            5,
+            6
+          ],
+          "amplitude": [
+            1109,
+            16384
+          ],
+          "observation_at_zero": [
+            1109,
+            65536
+          ],
+          "energy_squared": [
+            1229881,
+            268435456
+          ]
+        }
+      ],
+      "range_witnesses": [
+        {
+          "value": 0,
+          "in_range": false,
+          "absence_witness": {
+            "stage": 4,
+            "precision": 6,
+            "limit_approximant": [
+              1,
+              16
+            ],
+            "upper_remainder": [
+              3,
+              256
+            ]
+          }
+        },
+        {
+          "value": 1,
+          "in_range": true,
+          "absence_witness": null
+        },
+        {
+          "value": 2,
+          "in_range": false,
+          "absence_witness": {
+            "stage": 4,
+            "precision": 10,
+            "limit_approximant": [
+              69,
+              1024
+            ],
+            "upper_remainder": [
+              1,
+              512
+            ]
+          }
+        },
+        {
+          "value": 3,
+          "in_range": true,
+          "absence_witness": null
+        },
+        {
+          "value": 4,
+          "in_range": true,
+          "absence_witness": null
+        },
+        {
+          "value": 5,
+          "in_range": true,
+          "absence_witness": null
+        }
+      ]
+    }
+  ],
+  "blind_control": {
+    "breaks": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "values": [
+      [
+        1,
+        1
+      ],
+      [
+        -1,
+        1
+      ]
+    ],
+    "gain_at_zero": [
+      0,
+      1
+    ],
+    "scope": "Time-zero evaluation only; not all-time blindness."
+  },
+  "provenance": [
+    {
+      "path": "foundations/results/FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1.json",
+      "sha256": "cf90e90abb824e19a2a0e7caf2d32c4772f408a70107e4c9ea6013edc0e8e215",
+      "role": "existing_observable_certificate",
+      "source_commit": "548f99056ef0ef55a9edabae0252381a8c5ffa9b"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1.json",
+      "sha256": "4138c860c53fe85ba4fa1f2ece93cc5b6c0fce9468c7e5dfa69e314663b56ac7",
+      "role": "existing_energy_representation",
+      "source_commit": "548f99056ef0ef55a9edabae0252381a8c5ffa9b"
+    },
+    {
+      "path": "foundations/reports/coded-wave-modulus-reversal-v1.md",
+      "sha256": "ed9ac312af4e166c51a0dfa3a8c0107fbbb1a5c01563c460ce87b958cc65c5a0",
+      "role": "human_proof",
+      "source_commit": null
+    },
+    {
+      "path": "foundations/build_coded_wave_modulus_reversal.py",
+      "sha256": "781758d53b1f9931cdbe30b35f3b2f72f1e2ac9493a3e8ab08a00bff56bf4ae1",
+      "role": "producer",
+      "source_commit": null
+    },
+    {
+      "path": "foundations/verify_coded_wave_modulus_reversal.py",
+      "sha256": "529745518ac6f6bc794f07ab3245112025f474ed204d9defa8fd559b94eff374",
+      "role": "independent_finite_audit",
+      "source_commit": null
+    },
+    {
+      "path": "foundations/schema/foundational-coded-wave-modulus-reversal-v1.schema.json",
+      "sha256": "8dfdd664af5ab0b4e245d07df99743b5432a7a18abd977781508f146db6c5017",
+      "role": "schema",
+      "source_commit": null
+    },
+    {
+      "path": "foundations/tests/test_coded_wave_modulus_reversal.py",
+      "sha256": "aa9ca8f077ed4a646deff757387dc26eab2c822e647a350a3cf3f26b4fdc1c51",
+      "role": "mutation_tests",
+      "source_commit": null
+    }
+  ],
+  "literature": {
+    "citation": "Stephen G. Simpson, Subsystems of Second Order Arithmetic, second edition (2009), Chapter I, Theorem I.9.1 and the Section III.1 summary on printed page 47.",
+    "url": "https://sgslogic.net/t20/sosoa/chapter1.pdf",
+    "accessed": "2026-09-07",
+    "retrieved_sha256": "c3ec4d883a2346deb3780f14791df237f90b78ca3610596fb21ac622d4ca23ce",
+    "local_replay_status": "NOT_VENDORED_NOT_REPLAYED_BY_VERIFIER",
+    "role": "Standard scalar comprehension reversal and range-existence characterization; no novelty claim for that argument."
+  },
+  "claim_flags": {
+    "human_equivalence_proof_supplied": true,
+    "exact_reduction_witnesses_supplied": true,
+    "infinite_proof_kernel_checked": false,
+    "unrestricted_wave_foundations_classified": false,
+    "physical_preparation_or_probability_proved": false,
+    "causal_support_proved": false,
+    "new_lorentzian_claim": false,
+    "atlas_or_passport_promoted": false,
+    "paper_theorem_promoted": false,
+    "quantum_lifecycle_promoted": false
+  },
+  "missing_objects": [
+    "Proof-assistant formalization of the quantified RCA_0 argument.",
+    "Independent review of the infinite proof, beyond the exact reduction audit."
+  ],
+  "human_report": "foundations/reports/coded-wave-modulus-reversal-v1.md",
+  "content_sha256": "c19fa5ec90233afc2f61473336029398e9354a4f8eef78ce201712f32cd8b202"
+}

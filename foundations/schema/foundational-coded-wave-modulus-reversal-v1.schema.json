@@ -1,0 +1,966 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "result_id",
+    "result_kind",
+    "evidence_status",
+    "created",
+    "repository_base_commit",
+    "dependency_tags",
+    "theorem",
+    "detector",
+    "profile",
+    "upper_bound",
+    "encoding",
+    "infinite_proof_obligations",
+    "fixtures",
+    "blind_control",
+    "provenance",
+    "literature",
+    "claim_flags",
+    "missing_objects",
+    "human_report",
+    "content_sha256"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "foundational-coded-wave-modulus-reversal-v1"
+    },
+    "result_id": {
+      "const": "FOUNDATIONAL_CODED_WAVE_MODULUS_REVERSAL_V1"
+    },
+    "result_kind": {
+      "const": "REPRESENTATION_SPECIFIC_REVERSE_MATHEMATICS"
+    },
+    "evidence_status": {
+      "const": "HUMAN_PROOF_WITH_EXACT_REDUCTION_AUDIT"
+    },
+    "created": {
+      "const": "2026-09-07"
+    },
+    "repository_base_commit": {
+      "const": "548f99056ef0ef55a9edabae0252381a8c5ffa9b"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ]
+    },
+    "theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "base",
+        "rate_free_principle",
+        "equivalent_system",
+        "supplied_modulus_principle",
+        "supplied_modulus_base",
+        "scope",
+        "quantifiers",
+        "input_rate_supplied",
+        "input_limit_state_supplied",
+        "output_input_convergence_rate_required",
+        "higher_type_choice_functional_asserted",
+        "necessity_uses"
+      ],
+      "properties": {
+        "base": {
+          "const": "RCA_0"
+        },
+        "rate_free_principle": {
+          "const": "WR"
+        },
+        "equivalent_system": {
+          "const": "ACA_0"
+        },
+        "supplied_modulus_principle": {
+          "const": "WR_mu"
+        },
+        "supplied_modulus_base": {
+          "const": "RCA_0"
+        },
+        "scope": {
+          "const": "Unit-ball Cauchy sequences of mean-zero rational chiral step pairs, with the fixed periodic tent detector."
+        },
+        "quantifiers": {
+          "const": "For every coded input satisfying the ordinary Cauchy promise, there exists a fast uniform polygonal output name."
+        },
+        "input_rate_supplied": {
+          "const": false
+        },
+        "input_limit_state_supplied": {
+          "const": false
+        },
+        "output_input_convergence_rate_required": {
+          "const": false
+        },
+        "higher_type_choice_functional_asserted": {
+          "const": false
+        },
+        "necessity_uses": {
+          "const": "One fixed spatial profile and evaluation at time zero."
+        }
+      }
+    },
+    "detector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "test_breaks",
+        "test_values",
+        "test_l2_squared",
+        "formula"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "test_breaks": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer",
+                "minimum": 1
+              }
+            ],
+            "items": false,
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "test_values": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer",
+                "minimum": 1
+              }
+            ],
+            "items": false,
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "test_l2_squared": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer",
+              "minimum": 1
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "formula": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "breaks",
+        "values",
+        "mean",
+        "l2_squared",
+        "gain_at_zero",
+        "metric_scaling_squared",
+        "response_pieces"
+      ],
+      "properties": {
+        "breaks": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer",
+                "minimum": 1
+              }
+            ],
+            "items": false,
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer",
+                "minimum": 1
+              }
+            ],
+            "items": false,
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "mean": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer",
+              "minimum": 1
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "l2_squared": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer",
+              "minimum": 1
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "gain_at_zero": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer",
+              "minimum": 1
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "metric_scaling_squared": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer",
+              "minimum": 1
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "response_pieces": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "interval",
+              "coefficients"
+            ],
+            "properties": {
+              "interval": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "prefixItems": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  ],
+                  "items": false,
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "coefficients": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "prefixItems": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  ],
+                  "items": false,
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "minItems": 3,
+                "maxItems": 3
+              }
+            }
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      }
+    },
+    "upper_bound": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "observable_distance_squared_constant",
+        "unit_ball_time_lipschitz_bound",
+        "modulus_index_shift",
+        "dyadic_mesh_index_shift",
+        "pair_error_coefficient",
+        "output_convergence_modulus_shift"
+      ],
+      "properties": {
+        "observable_distance_squared_constant": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer",
+              "minimum": 1
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "unit_ball_time_lipschitz_bound": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer",
+              "minimum": 1
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "modulus_index_shift": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 12
+        },
+        "dyadic_mesh_index_shift": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 12
+        },
+        "pair_error_coefficient": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer",
+              "minimum": 1
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "output_convergence_modulus_shift": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 12
+        }
+      }
+    },
+    "encoding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "radix",
+        "weight_exponent_shift",
+        "duplicates_counted_once",
+        "total_weight",
+        "tail_after_e_over_weight_e",
+        "output_evaluation_scale",
+        "output_evaluation_index_shift",
+        "absence_comparison",
+        "absence_requires_not_seen"
+      ],
+      "properties": {
+        "radix": {
+          "type": "integer",
+          "minimum": 2,
+          "maximum": 16
+        },
+        "weight_exponent_shift": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 12
+        },
+        "duplicates_counted_once": {
+          "const": true
+        },
+        "total_weight": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer",
+              "minimum": 1
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "tail_after_e_over_weight_e": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer",
+              "minimum": 1
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "output_evaluation_scale": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer",
+              "minimum": 1
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "output_evaluation_index_shift": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 12
+        },
+        "absence_comparison": {
+          "const": "r_k + 2^(-k) - q_s < w_e"
+        },
+        "absence_requires_not_seen": {
+          "const": true
+        }
+      }
+    },
+    "infinite_proof_obligations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "base",
+          "status",
+          "report_section"
+        ],
+        "properties": {
+          "id": {
+            "enum": [
+              "MODULUS_SELECTION",
+              "RATE_SUPPLIED_AVOIDANCE",
+              "ORDINARY_CAUCHY_WITHOUT_MODULUS",
+              "SIGMA1_COMPLEMENT_AND_DELTA1_RANGE"
+            ]
+          },
+          "base": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "const": "HUMAN_PROOF"
+          },
+          "report_section": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "fixtures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "prefix",
+          "tail_start",
+          "limit",
+          "stages",
+          "range_witnesses"
+        ],
+        "properties": {
+          "prefix": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 64
+            },
+            "minItems": 1,
+            "maxItems": 16
+          },
+          "tail_start": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 65
+          },
+          "limit": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer",
+                "minimum": 1
+              }
+            ],
+            "items": false,
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "stages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "stage",
+                "seen",
+                "amplitude",
+                "observation_at_zero",
+                "energy_squared"
+              ],
+              "properties": {
+                "stage": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 256
+                },
+                "seen": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 128
+                  },
+                  "minItems": 0,
+                  "maxItems": 32
+                },
+                "amplitude": {
+                  "type": "array",
+                  "prefixItems": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  ],
+                  "items": false,
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "observation_at_zero": {
+                  "type": "array",
+                  "prefixItems": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  ],
+                  "items": false,
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "energy_squared": {
+                  "type": "array",
+                  "prefixItems": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  ],
+                  "items": false,
+                  "minItems": 2,
+                  "maxItems": 2
+                }
+              }
+            },
+            "minItems": 1,
+            "maxItems": 32
+          },
+          "range_witnesses": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "value",
+                "in_range",
+                "absence_witness"
+              ],
+              "properties": {
+                "value": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 128
+                },
+                "in_range": {
+                  "type": "boolean"
+                },
+                "absence_witness": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "stage",
+                        "precision",
+                        "limit_approximant",
+                        "upper_remainder"
+                      ],
+                      "properties": {
+                        "stage": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 256
+                        },
+                        "precision": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 256
+                        },
+                        "limit_approximant": {
+                          "type": "array",
+                          "prefixItems": [
+                            {
+                              "type": "integer"
+                            },
+                            {
+                              "type": "integer",
+                              "minimum": 1
+                            }
+                          ],
+                          "items": false,
+                          "minItems": 2,
+                          "maxItems": 2
+                        },
+                        "upper_remainder": {
+                          "type": "array",
+                          "prefixItems": [
+                            {
+                              "type": "integer"
+                            },
+                            {
+                              "type": "integer",
+                              "minimum": 1
+                            }
+                          ],
+                          "items": false,
+                          "minItems": 2,
+                          "maxItems": 2
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "minItems": 1,
+            "maxItems": 128
+          }
+        }
+      },
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "blind_control": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "breaks",
+        "values",
+        "gain_at_zero",
+        "scope"
+      ],
+      "properties": {
+        "breaks": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer",
+                "minimum": 1
+              }
+            ],
+            "items": false,
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer",
+                "minimum": 1
+              }
+            ],
+            "items": false,
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "gain_at_zero": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer",
+              "minimum": 1
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "scope": {
+          "const": "Time-zero evaluation only; not all-time blindness."
+        }
+      }
+    },
+    "provenance": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256",
+          "role",
+          "source_commit"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_commit": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "string",
+                "pattern": "^[0-9a-f]{40}$"
+              }
+            ]
+          }
+        }
+      },
+      "minItems": 7,
+      "maxItems": 7
+    },
+    "literature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "citation",
+        "url",
+        "accessed",
+        "retrieved_sha256",
+        "local_replay_status",
+        "role"
+      ],
+      "properties": {
+        "citation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "const": "https://sgslogic.net/t20/sosoa/chapter1.pdf"
+        },
+        "accessed": {
+          "const": "2026-09-07"
+        },
+        "retrieved_sha256": {
+          "const": "c3ec4d883a2346deb3780f14791df237f90b78ca3610596fb21ac622d4ca23ce"
+        },
+        "local_replay_status": {
+          "const": "NOT_VENDORED_NOT_REPLAYED_BY_VERIFIER"
+        },
+        "role": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "human_equivalence_proof_supplied",
+        "exact_reduction_witnesses_supplied",
+        "infinite_proof_kernel_checked",
+        "unrestricted_wave_foundations_classified",
+        "physical_preparation_or_probability_proved",
+        "causal_support_proved",
+        "new_lorentzian_claim",
+        "atlas_or_passport_promoted",
+        "paper_theorem_promoted",
+        "quantum_lifecycle_promoted"
+      ],
+      "properties": {
+        "human_equivalence_proof_supplied": {
+          "const": true
+        },
+        "exact_reduction_witnesses_supplied": {
+          "const": true
+        },
+        "infinite_proof_kernel_checked": {
+          "const": false
+        },
+        "unrestricted_wave_foundations_classified": {
+          "const": false
+        },
+        "physical_preparation_or_probability_proved": {
+          "const": false
+        },
+        "causal_support_proved": {
+          "const": false
+        },
+        "new_lorentzian_claim": {
+          "const": false
+        },
+        "atlas_or_passport_promoted": {
+          "const": false
+        },
+        "paper_theorem_promoted": {
+          "const": false
+        },
+        "quantum_lifecycle_promoted": {
+          "const": false
+        }
+      }
+    },
+    "missing_objects": {
+      "const": [
+        "Proof-assistant formalization of the quantified RCA_0 argument.",
+        "Independent review of the infinite proof, beyond the exact reduction audit."
+      ]
+    },
+    "human_report": {
+      "const": "foundations/reports/coded-wave-modulus-reversal-v1.md"
+    },
+    "content_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

@@ -54,6 +54,24 @@ path end to end or the generic arbitrary-input differentiated-nilpotency
 identity. Stop if the work merely serializes more rows, and do not move an
 analytic layer into Lean first.
 
+## Wave-data modulus reversal: human proof and exact audit (2026-09-07)
+
+`FOUNDATIONAL_CODED_WAVE_MODULUS_REVERSAL_V1` supplies both directions of a
+representation-specific equivalence: over `RCA_0`, reconstruction of the fixed
+tent observable from unit-ball rational wave data satisfying the ordinary
+Cauchy promise, without a supplied modulus, is equivalent to `ACA_0`. Keeping
+the modulus in the input restores the `RCA_0` construction. One fixed spatial
+profile and time-zero detector value already carry the lower bound.
+
+The [proof and audit report](../foundations/reports/coded-wave-modulus-reversal-v1.md)
+separates the human infinite proof from independently checked rational
+reduction witnesses. Its tags are `LOCAL-ALGEBRAIC`, `REDUCED-MODE`; it promotes
+no atlas cell, passport, paper theorem, or quantum lifecycle. The next gate is
+independent review or formalization of the quantified `RCA_0` proof, especially
+the Cauchy-chain induction and complementary Sigma-0-1 range predicates.
+More finite fixture rows cannot close that gate. This is a cost of the input
+representation, not a necessity theorem for physical wave propagation.
+
 ## Cross-framework theory passports (2026-08-17)
 
 The reverse-foundations branch now has its first common end-to-end comparison

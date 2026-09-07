@@ -1,0 +1,220 @@
+{
+  "schema_version": "coded-wave-modulus-reversal-validation-v1",
+  "date": "2026-09-07",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "repository_base_commit": "548f99056ef0ef55a9edabae0252381a8c5ffa9b",
+  "assignment": "Direct user instruction: do next step 1, determine the logical cost of removing a supplied wave-data convergence modulus.",
+  "preexisting_worktree": "Science Forge HEAD-to-worktree scan: clean; HEAD matched origin/master after fetch.",
+  "commands": [
+    {
+      "tier": 0,
+      "argv": [
+        "python3",
+        "-m",
+        "py_compile",
+        "foundations/build_coded_wave_modulus_reversal.py",
+        "foundations/verify_coded_wave_modulus_reversal.py",
+        "foundations/tests/test_coded_wave_modulus_reversal.py"
+      ],
+      "command": "python3 -m py_compile foundations/build_coded_wave_modulus_reversal.py foundations/verify_coded_wave_modulus_reversal.py foundations/tests/test_coded_wave_modulus_reversal.py",
+      "elapsed_seconds": 0.075446,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "tier": 0,
+      "argv": [
+        "python3",
+        "-c",
+        "import json; from pathlib import Path; from jsonschema import Draft202012Validator; paths=[Path('foundations/schema/foundational-coded-wave-modulus-reversal-v1.schema.json'),Path('foundations/results/FOUNDATIONAL_CODED_WAVE_MODULUS_REVERSAL_V1.json')]; values=[json.loads(p.read_text()) for p in paths]; Draft202012Validator.check_schema(values[0]); print('JSON and schema parse: PASS')"
+      ],
+      "command": "python3 -c 'import json; from pathlib import Path; from jsonschema import Draft202012Validator; paths=[Path('\"'\"'foundations/schema/foundational-coded-wave-modulus-reversal-v1.schema.json'\"'\"'),Path('\"'\"'foundations/results/FOUNDATIONAL_CODED_WAVE_MODULUS_REVERSAL_V1.json'\"'\"')]; values=[json.loads(p.read_text()) for p in paths]; Draft202012Validator.check_schema(values[0]); print('\"'\"'JSON and schema parse: PASS'\"'\"')'",
+      "elapsed_seconds": 0.14852,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "JSON and schema parse: PASS\n",
+      "stderr": ""
+    },
+    {
+      "tier": 0,
+      "argv": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "foundations/README.md",
+        "notes/universe-building-roadmap.md",
+        "foundations/build_coded_wave_modulus_reversal.py",
+        "foundations/verify_coded_wave_modulus_reversal.py",
+        "foundations/tests/test_coded_wave_modulus_reversal.py",
+        "foundations/schema/foundational-coded-wave-modulus-reversal-v1.schema.json",
+        "foundations/results/FOUNDATIONAL_CODED_WAVE_MODULUS_REVERSAL_V1.json",
+        "foundations/reports/coded-wave-modulus-reversal-v1.md"
+      ],
+      "command": "git diff --check -- foundations/README.md notes/universe-building-roadmap.md foundations/build_coded_wave_modulus_reversal.py foundations/verify_coded_wave_modulus_reversal.py foundations/tests/test_coded_wave_modulus_reversal.py foundations/schema/foundational-coded-wave-modulus-reversal-v1.schema.json foundations/results/FOUNDATIONAL_CODED_WAVE_MODULUS_REVERSAL_V1.json foundations/reports/coded-wave-modulus-reversal-v1.md",
+      "elapsed_seconds": 0.012728,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "tier": 1,
+      "argv": [
+        "python3",
+        "foundations/build_coded_wave_modulus_reversal.py",
+        "--check"
+      ],
+      "command": "python3 foundations/build_coded_wave_modulus_reversal.py --check",
+      "elapsed_seconds": 0.063779,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Coded-wave modulus reversal deterministic receipt: PASS\n",
+      "stderr": ""
+    },
+    {
+      "tier": 1,
+      "argv": [
+        "python3",
+        "foundations/verify_coded_wave_modulus_reversal.py"
+      ],
+      "command": "python3 foundations/verify_coded_wave_modulus_reversal.py",
+      "elapsed_seconds": 0.132817,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "FOUNDATIONAL_CODED_WAVE_MODULUS_REVERSAL_V1: PASS\n  Independent rational response, encoding, error-budget, mutation-input and provenance audit.\n  Infinite proof: HUMAN_PROOF, not kernel checked; no atlas/paper/quantum promotion.\n",
+      "stderr": ""
+    },
+    {
+      "tier": 1,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "foundations.tests.test_coded_wave_modulus_reversal"
+      ],
+      "command": "python3 -m unittest foundations.tests.test_coded_wave_modulus_reversal",
+      "elapsed_seconds": 0.321107,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "......................\n----------------------------------------------------------------------\nRan 22 tests in 0.170s\n\nOK\n"
+    },
+    {
+      "tier": 2,
+      "argv": [
+        "python3",
+        "foundations/verify_coded_polygonal_wave_rca0.py"
+      ],
+      "command": "python3 foundations/verify_coded_polygonal_wave_rca0.py",
+      "elapsed_seconds": 0.187873,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1: PASS\n  - schema\n  - independent exact rail\n  - deterministic artifacts\n  - checker isolation\n  - content pin\n  - claim boundaries\n",
+      "stderr": ""
+    },
+    {
+      "tier": 2,
+      "argv": [
+        "python3",
+        "foundations/verify_coded_wave_observable_reconstruction.py"
+      ],
+      "command": "python3 foundations/verify_coded_wave_observable_reconstruction.py",
+      "elapsed_seconds": 3.005742,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1: PASS\n  - Draft 2020-12 schema\n  - independent exact checker\n  - deterministic artifacts\n  - checker isolation\n  - positive theorem flags\n  - fail-closed boundaries\n",
+      "stderr": ""
+    }
+  ],
+  "source_commit_hash_checks": [
+    {
+      "command": "git show 548f99056ef0ef55a9edabae0252381a8c5ffa9b:foundations/results/FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1.json",
+      "elapsed_seconds": 0.003019,
+      "status": "PASS",
+      "sha256": "cf90e90abb824e19a2a0e7caf2d32c4772f408a70107e4c9ea6013edc0e8e215"
+    },
+    {
+      "command": "git show 548f99056ef0ef55a9edabae0252381a8c5ffa9b:foundations/results/FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1.json",
+      "elapsed_seconds": 0.003177,
+      "status": "PASS",
+      "sha256": "4138c860c53fe85ba4fa1f2ece93cc5b6c0fce9468c7e5dfa69e314663b56ac7"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "foundations/README.md",
+      "sha256": "ad357207e33789ef924c4fc6e4887ddfd9ddae2f74105f5de888d5378c3a5fde"
+    },
+    {
+      "path": "notes/universe-building-roadmap.md",
+      "sha256": "df6ae907647c064164f20e0193b4650b9b2338658e4311583b4cf9bdfad36673"
+    },
+    {
+      "path": "foundations/build_coded_wave_modulus_reversal.py",
+      "sha256": "781758d53b1f9931cdbe30b35f3b2f72f1e2ac9493a3e8ab08a00bff56bf4ae1"
+    },
+    {
+      "path": "foundations/verify_coded_wave_modulus_reversal.py",
+      "sha256": "529745518ac6f6bc794f07ab3245112025f474ed204d9defa8fd559b94eff374"
+    },
+    {
+      "path": "foundations/tests/test_coded_wave_modulus_reversal.py",
+      "sha256": "aa9ca8f077ed4a646deff757387dc26eab2c822e647a350a3cf3f26b4fdc1c51"
+    },
+    {
+      "path": "foundations/schema/foundational-coded-wave-modulus-reversal-v1.schema.json",
+      "sha256": "8dfdd664af5ab0b4e245d07df99743b5432a7a18abd977781508f146db6c5017"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_CODED_WAVE_MODULUS_REVERSAL_V1.json",
+      "sha256": "4cdf301c4eaa7cf03f51ae74695ab66feb33b0d41de5ba5129d2d8f619edcd16"
+    },
+    {
+      "path": "foundations/reports/coded-wave-modulus-reversal-v1.md",
+      "sha256": "ed9ac312af4e166c51a0dfa3a8c0107fbbb1a5c01563c460ce87b958cc65c5a0"
+    }
+  ],
+  "claim_boundary": {
+    "infinite_proof_status": "HUMAN_PROOF_NOT_KERNEL_CHECKED",
+    "independent_rail_scope": "Exact rational reduction identities, finite witness coverage, source/proof hashes, schema and fail-closed claim flags.",
+    "paper_theorem_promoted": false,
+    "atlas_or_passport_promoted": false,
+    "quantum_lifecycle_promoted": false
+  },
+  "missing_objects": [
+    "Proof-assistant formalization of the quantified RCA_0 argument.",
+    "Independent review of the infinite proof, beyond the exact reduction audit."
+  ],
+  "higher_tiers": {
+    "affected_chain": "The new consumer and both direct imported wave certificates were verified. Imported source-commit contents were independently hashed. No downstream certified consumer is changed.",
+    "broader_tier2": "NOT_RUN: no shared operator, existing schema, classical mathematical input, or downstream certified claim changed.",
+    "full_repository_tier3": "NOT_RUN: no freeze/tag, paper-theorem or lifecycle promotion, shared-core change, release, or explicit full-suite request. This package records a human proof and finite audit without promoting existing scientific gates."
+  },
+  "commit_method": "Explicit-path manual staging/commit for a new-file package, per the documented new-file transaction fallback in planning/SCIENCE-FORGE-ADOPTION.md.",
+  "final_staged_diff_audit": {
+    "status": "PASS",
+    "elapsed_seconds": 0.136257,
+    "whitespace_command": "git diff --cached --check -- foundations/README.md notes/universe-building-roadmap.md foundations/build_coded_wave_modulus_reversal.py foundations/verify_coded_wave_modulus_reversal.py foundations/tests/test_coded_wave_modulus_reversal.py foundations/schema/foundational-coded-wave-modulus-reversal-v1.schema.json foundations/results/FOUNDATIONAL_CODED_WAVE_MODULUS_REVERSAL_V1.json foundations/reports/coded-wave-modulus-reversal-v1.md",
+    "exact_diff_command": "git diff --no-ext-diff --cached --binary -- foundations/README.md notes/universe-building-roadmap.md foundations/build_coded_wave_modulus_reversal.py foundations/verify_coded_wave_modulus_reversal.py foundations/tests/test_coded_wave_modulus_reversal.py foundations/schema/foundational-coded-wave-modulus-reversal-v1.schema.json foundations/results/FOUNDATIONAL_CODED_WAVE_MODULUS_REVERSAL_V1.json foundations/reports/coded-wave-modulus-reversal-v1.md",
+    "exact_diff_sha256": "77c2777d0574e46d3a50890f4f584950ccfd800cbfb28ae26d12ab1ea5449b6b",
+    "scope": [
+      "foundations/README.md",
+      "notes/universe-building-roadmap.md",
+      "foundations/build_coded_wave_modulus_reversal.py",
+      "foundations/verify_coded_wave_modulus_reversal.py",
+      "foundations/tests/test_coded_wave_modulus_reversal.py",
+      "foundations/schema/foundational-coded-wave-modulus-reversal-v1.schema.json",
+      "foundations/results/FOUNDATIONAL_CODED_WAVE_MODULUS_REVERSAL_V1.json",
+      "foundations/reports/coded-wave-modulus-reversal-v1.md"
+    ],
+    "staged_bytes_match_tested_artifact_hashes": true,
+    "review": "Inspected the exact staged Python, proof, and navigation diffs; parsed and validated the staged schema/result, inspected theorem parameters, response coefficients, fixture inventories, claim flags, and all provenance hashes.",
+    "receipt_excluded_from_self_hash": true
+  }
+}
