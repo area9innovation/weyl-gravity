@@ -1,0 +1,588 @@
+{
+  "schema_version": 1,
+  "kind": "editorial-automatic-terminology-validation",
+  "dependency_tags": [],
+  "scientific_claims_promoted": false,
+  "source_commit": "1c2e461023937e9c2ad0f5aaa389eadcad7bc143",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "foundations/import_editorial_vocabulary.py",
+        "--check"
+      ],
+      "elapsed_seconds": 0.12,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "bash",
+        "foundations/setup_editorial_nlp.sh",
+        "/tmp/editorial-nlp-cpu"
+      ],
+      "elapsed_seconds": 2.199,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "py_compile",
+        "foundations/extract_editorial_terms.py",
+        "foundations/import_editorial_vocabulary.py",
+        "foundations/term_review.py",
+        "foundations/build_matrix_site_v2.py",
+        "foundations/reading_site.py",
+        "foundations/ladder_terms.py",
+        "foundations/verify_reading_site.py",
+        "foundations/tests/test_editorial_extraction.py",
+        "foundations/tests/browser_term_review.py"
+      ],
+      "elapsed_seconds": 0.082,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/home/asger/.local/share/mise/installs/node/24.20.0/bin/node",
+        "--check",
+        "foundations/matrix_site_v2_assets/term-review.js"
+      ],
+      "elapsed_seconds": 0.048,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "bash",
+        "-n",
+        "foundations/setup_editorial_nlp.sh"
+      ],
+      "elapsed_seconds": 0.004,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/build_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 6.344,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/build_term_inventory.py"
+      ],
+      "elapsed_seconds": 4.725,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONPATH=/tmp/tt-browser-deps",
+        "python3",
+        "foundations/tests/browser_term_review.py"
+      ],
+      "elapsed_seconds": 1.782,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "foundations.tests.test_editorial_extraction",
+        "foundations.tests.test_ladder_terms",
+        "foundations.tests.test_term_inventory",
+        "foundations.tests.test_reading_site",
+        "foundations.tests.test_matrix_site"
+      ],
+      "elapsed_seconds": 46.761,
+      "status": "FAIL",
+      "exit_code": 1,
+      "resolution": "Superseded by final passing run after freezing the punctuation/stopword correction and rebuilding artifacts."
+    },
+    {
+      "command": [
+        "/tmp/editorial-nlp-cpu/bin/python",
+        "foundations/extract_editorial_terms.py",
+        "--reproduce"
+      ],
+      "elapsed_seconds": 76.866,
+      "status": "FAIL",
+      "exit_code": 1,
+      "resolution": "Superseded by final passing run after freezing the punctuation/stopword correction and rebuilding artifacts."
+    },
+    {
+      "command": [
+        "/tmp/editorial-nlp-cpu/bin/python",
+        "-c",
+        "import importlib.util; from keyphrase_vectorizers import KeyphraseCountVectorizer; import spacy; assert importlib.util.find_spec(\"torch\") is None; assert spacy.load(\"en_core_web_sm\"); print(\"PASS: CPU grammar environment loads without torch\")"
+      ],
+      "elapsed_seconds": 2.077,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/home/asger/.local/share/mise/installs/node/24.20.0/bin/node",
+        "--check",
+        "foundations/matrix_site_v2_assets/reading.js"
+      ],
+      "elapsed_seconds": 0.03,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/tmp/editorial-nlp-cpu/bin/python",
+        "foundations/extract_editorial_terms.py"
+      ],
+      "elapsed_seconds": 77.421,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/build_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 6.205,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONPATH=/tmp/tt-browser-deps",
+        "python3",
+        "foundations/tests/browser_term_review.py"
+      ],
+      "elapsed_seconds": 2.863,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONPATH=/tmp/tt-browser-deps",
+        "python3",
+        "foundations/tests/browser_ladder_terms.py"
+      ],
+      "elapsed_seconds": 6.065,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/verify_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 9.952,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/verify_reading_site.py"
+      ],
+      "elapsed_seconds": 0.19,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONPATH=/tmp/tt-browser-deps",
+        "python3",
+        "foundations/tests/browser_site_shell.py"
+      ],
+      "elapsed_seconds": 5.09,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/build_term_inventory.py",
+        "--check"
+      ],
+      "elapsed_seconds": 4.89,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-c",
+        "from pathlib import Path; from urllib.request import urlopen; p=Path(\"foundations/site/term-review.html\"); assert urlopen(\"http://127.0.0.1:8765/term-review.html\").read()==p.read_bytes(); print(\"PASS: exposed server serves current review page\")"
+      ],
+      "elapsed_seconds": 0.086,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "py_compile",
+        "foundations/extract_editorial_terms.py",
+        "foundations/import_editorial_vocabulary.py",
+        "foundations/term_review.py",
+        "foundations/build_matrix_site_v2.py",
+        "foundations/reading_site.py",
+        "foundations/ladder_terms.py",
+        "foundations/verify_reading_site.py",
+        "foundations/tests/test_editorial_extraction.py",
+        "foundations/tests/browser_term_review.py"
+      ],
+      "elapsed_seconds": 0.106,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "foundations/build_matrix_site_v2.py",
+        "foundations/editorial/README.md",
+        "foundations/ladder_terms.py",
+        "foundations/matrix_site_v2_assets/reading.js",
+        "foundations/reading_site.py",
+        "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
+        "foundations/site/atlas.html",
+        "foundations/site/dictionary.html",
+        "foundations/site/manifest.json",
+        "foundations/site/reading.js",
+        "foundations/verify_reading_site.py"
+      ],
+      "elapsed_seconds": 0.018,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "foundations.tests.test_editorial_extraction",
+        "foundations.tests.test_ladder_terms",
+        "foundations.tests.test_term_inventory",
+        "foundations.tests.test_reading_site",
+        "foundations.tests.test_matrix_site"
+      ],
+      "elapsed_seconds": 53.997,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/tmp/editorial-nlp-cpu/bin/python",
+        "foundations/extract_editorial_terms.py",
+        "--reproduce"
+      ],
+      "elapsed_seconds": 79.856,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "py_compile",
+        "foundations/extract_editorial_terms.py",
+        "foundations/tests/test_editorial_extraction.py"
+      ],
+      "elapsed_seconds": 0.051,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/tmp/editorial-nlp-cpu/bin/python",
+        "foundations/extract_editorial_terms.py"
+      ],
+      "elapsed_seconds": 76.951,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/build_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 5.832,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "foundations.tests.test_editorial_extraction"
+      ],
+      "elapsed_seconds": 11.279,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/verify_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 8.35,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONPATH=/tmp/tt-browser-deps",
+        "python3",
+        "foundations/tests/browser_term_review.py"
+      ],
+      "elapsed_seconds": 2.566,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/verify_reading_site.py"
+      ],
+      "elapsed_seconds": 0.088,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-c",
+        "import gzip,json,subprocess; from pathlib import Path; p=\"foundations/results/TERM_EXTRACTION_V1.json.gz\"; old=json.loads(gzip.decompress(subprocess.check_output([\"git\",\"show\",\":\"+p]))); new=json.loads(gzip.decompress(Path(p).read_bytes())); assert old[\"units\"]==new[\"units\"] and old[\"candidates\"]==new[\"candidates\"]; print(\"PASS: corpus membership guard leaves extracted content unchanged\")"
+      ],
+      "elapsed_seconds": 3.56,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/tmp/editorial-nlp-cpu/bin/python",
+        "foundations/extract_editorial_terms.py",
+        "--reproduce"
+      ],
+      "elapsed_seconds": 77.994,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "elapsed_seconds": 0.035,
+      "status": "PASS",
+      "exit_code": 0
+    }
+  ],
+  "counts": {
+    "units": 7699,
+    "candidates": 131584,
+    "coverage": {
+      "UNEXPLAINED_CANDIDATE": 131424,
+      "DICTIONARY_MATCH_REVIEW_SENSE": 18,
+      "VOCABULARY_MATCH_NO_EXPLANATION": 142
+    },
+    "kinds": {
+      "term-candidate": 129291,
+      "explanation-unit": 2293
+    }
+  },
+  "scope_counts": {
+    "ladder": 328,
+    "matrix": 2972,
+    "atlas": 4128,
+    "reading": 2215,
+    "dictionary": 1561,
+    "papers": 126684
+  },
+  "inputs_sha256": {
+    "@generated:matrix-data": "813d29b98f493c3a1d944eb302c7c842cb3773622a5d4dee702c586b5a598087",
+    "foundations/editorial/reading-content.json": "53828828ddbb523d474e0a9d953a04c7d9557b38f22f71ca00124825cb091652",
+    "foundations/editorial/dictionary.json": "822b21afc4980f43c79be7045ebdbb27d9e85655ade9d568ad1999827737f02b",
+    "paper/00-ghosts-geometry-reality.tex": "88cf6380ad50de77f0bfd8e8258330bab0e2a330c3056e2b3ebf65fea97a0707",
+    "paper/01-symplectic-diagonalization.tex": "dd9a6fe7dac4296004f59ac28e21086c5ace02cc144a96f985edc88ff4a5477b",
+    "paper/02-variational-fock.tex": "7ee8311dd0db9e32f4afcdd2b885b160a09f3b2e1a5ce725fd066f00f02372fb",
+    "paper/03-fourth-order-vacuum.tex": "276d590dd9eb80908c624a691fcea595cd2d97a6891b9196843edec9b7b25923",
+    "paper/04-fourth-order-gravity.tex": "dfc8775914b2dc2c39c5d9579c9f04b2b9a28c7f9d6a5f9ded0503d1d980fa05",
+    "paper/05-interaction-obstructions.tex": "ba20f12e1a3e6206b213980c3065229f3d2886e4cfd179939da02d5d22b6d9a2",
+    "paper/06-einstein-weyl-interaction-obstructions.tex": "6061520e9eb2c46f0bef0fb9884c5251eb446df74854d0fedebfa09101f4df0c",
+    "paper/07-08-conformal-residual-cohomology-archive.tex": "5b1a52050c9ebe9e21520646db162b1d4f0437f61713f863ec10dec87fde3927",
+    "paper/07-08-conformal-residual-cohomology-computational-supplement.tex": "ef22bbf3c5923c03d10ca306a593375d83a82495e9443fe182be82cdb6e8e669",
+    "paper/07-conformal-residual-cohomology-krein.tex": "a5084ad5ee4d00969533e8eefd828e7e26c4778fee4b2c536d862c2c5ae48329",
+    "paper/08-conformal-covariant-causal-transport.tex": "810dfd3d63224f55e7ff597dc39318a3b5be284c341f1abc60ec70a825f3fbaf",
+    "paper/09-relational-clocks-berger-d-cartan-computational-supplement.tex": "f6cf43f8e4907762b04c23770d77a0d14832e1afd728e76dcd45253863b74ce1",
+    "paper/09-relational-clocks-berger-d-cartan.tex": "d16618dd103109c80f19d61c30e5f572b5282271fe8705c06703e3dee5e17c81",
+    "paper/10-compact-einstein-maxwell-weyl-phase-space.tex": "f9a8f9d07bdfaec7382e76ecb19eac4b784c03dc110da98f04073495b441d35e",
+    "paper/11-gravity-light-cyclic-causal-ell3.tex": "993b3afce8d63b34cd3ab19fdb89a163d46de9792d9e50f8542619689f5967a3",
+    "paper/11-gravity-light-ell3-witness-inclusion-columns.tex": "31c0aca8e69ff9180517298e2ce6890bd20d9ac9746d0d14662e4136fa681ffe",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "5cedb35a2bff658e784f29c985eed489dea39c8abccbd00e5a0dbe67bc7f4228",
+    "paper/12-pure-weyl-one-loop-bv-anomaly.tex": "c7df6e4cf64885d2428ed38a0199e8474624d7953199d51c7f5b54bde387a385",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex": "53e0bc1cd89e2ad426b7a2461cfc0d82e5f902695ba581ba3cd2a7d99984fe10",
+    "paper/14-pure-weyl-black-hole-radiation.tex": "f3e3d7a0a04c0751dd57db90fa4117fb64f313de56257c1b7440669a3b44b74c",
+    "paper/15-four-level-ghost-classification-phase1-synthesis.tex": "b9d88051b214622d6cd8b934b0c29495c4ba0d71d57b1db8af6183629f8da4e4",
+    "paper/16-endpoint-nonselection-computational-supplement.tex": "fc1f7175943a7482c88448bf6d7835ebb91243095861c1d6e175993e82150d8d",
+    "paper/16-lorentzian-endpoint-nonselection-pure-weyl.tex": "340f32d43698f9d2467d038eb09dbcbd6f3a328b004e0ff74d07928738c753a5",
+    "paper/17-pure-weyl-schwarzschild-extension-structure.tex": "cff76a9cf8fcc455b33c4b383e9049cd5e3615dbc0731e9a9063ea7525563d66",
+    "paper/18-static-bach-flat-black-hole-thermodynamics.tex": "9f8ee2e2d25bef1731b1d33656a07f8218c7b0be2b94ff9701b572fe6f94fd10",
+    "paper/19-what-conformal-gravity-must-assume.tex": "de9fcf26d373c1118728340d27994c20c8fbe87a196b36e6cd0548623e4d263c",
+    "paper/20-is-the-gauge-algebra-an-assumption.tex": "182760728e468044428d17c8b3b924b292a219959f5c747e9f6bd28dbb8ce6ef",
+    "paper/21-reverse-foundations-of-physics-appendices.tex": "efc30401eb47f49e1b7fc0dd24010a5725e7009c448a163be513a1e41d68d3e6",
+    "paper/21-reverse-foundations-of-physics.tex": "86e81f95a16b124253d5953c42711582f2d5a3edbbd9ecb3f3918d4966b71228",
+    "paper/22-bateman-turok-euclidean-torus-collapse.tex": "694b26f142a753def327015efe2aef7c8801d93536db650283faeee925266ce0",
+    "paper/theorem_statements.tex": "dbb3d38c13fae40c94463378f331ca219900a6c8faf77cecb6704e0016be966d",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "aaae402f8dbf845def05c7dae642f2792a629b0342e4d8a03b7898e272ab7e66",
+    "paper/90-cyclic-green-transfer-bridge.md": "8dbba39100e7a1c3a7068ba4d677373a44bd00a45f4dd24270fc896375f1264c",
+    "paper/91-charge-fibre-taub-bridge.md": "07639d8ade4580a93fad264e7c602fb00428d8e890836f283b3458e10bdd1e02",
+    "paper/92-extra-axial-lee-wald-bridge.md": "eea60908cb7e413e1bb6965b63bf355cfd5098d1ff939eaa5efd673ba1f2f96a",
+    "paper/98-physicist-executive-summary.md": "2e460f5135f4f79edce6af2da8ace805e65ce013734992fef57d38823b5772b5",
+    "paper/99-how-to-build-a-universe.md": "5828cd053ee65670f3297ebd6541c6fac049b0a0140f07be4d34fa35a6c747b1",
+    "paper/video-background-guide.md": "6a77e8e73b897dc83c628feb516fe3bcd02863487d6d713b37fa43a3c2d71dcb",
+    "foundations/editorial/vocabularies/physh-2.8.0-terms.json": "8b45034abd43949e62118d6121185a24ee056621348c5a1ab6d874f018b9040e",
+    "foundations/extract_editorial_terms.py": "c411e58dbdcd6f8d2c3537a7bcbb41267183994ab00bc56c7866ef125cd8661c",
+    "foundations/build_term_inventory.py": "2c6fd43aa271ecbb66b16c4e44a88201e9ed8645bda89b500464987d35e2cf4b",
+    "foundations/ladder_terms.py": "5f3d16440ae2e2b577cdf1fed982ef2f9d096f0035a5cef6835670084ac3f1cd",
+    "foundations/editorial-nlp-requirements.txt": "975c499119ff3912c08daf58e204654f1f3797ffc54d08b9623f59ee8eb3bea1",
+    "foundations/setup_editorial_nlp.sh": "8327e713e701c42cda77104c6adeea09fea2317c65dd89a035aaf37fff6f7411",
+    "foundations/import_editorial_vocabulary.py": "92ec1b034f773017654991854db721538ba5c4e51bedf05fd707e28a6d54dc12",
+    "foundations/editorial/vocabularies/physh-2.8.0.json.gz": "4030abdc5ab09afbe67e4f3f8b3aa840f570e5c3a2bbe7e7af9bd0c6692171bf",
+    "foundations/editorial/vocabularies/PHYSH-LICENSE.md": "015e5415032b965420f043e85a919865b305ace21a18a2b0fdf8c00653f8573b"
+  },
+  "artifacts_sha256": {
+    "foundations/build_matrix_site_v2.py": "251d25c197876952ec5cd3ad61479e35775c0e85f1d0373b1c031e6f5c0c840a",
+    "foundations/editorial/README.md": "1c3c543bd7f824b3c39abfc299380f66075f04ba313fd3d5102f63efd8e8e8c7",
+    "foundations/ladder_terms.py": "5f3d16440ae2e2b577cdf1fed982ef2f9d096f0035a5cef6835670084ac3f1cd",
+    "foundations/matrix_site_v2_assets/reading.js": "3e12db9fa0dd8ed42f4a976a39ce464827cec1a1158bd6c9376df9b982b36e8b",
+    "foundations/reading_site.py": "bc275d757f7b2cbcae83e9042e61ac243498d9a51467572e25b2f827ab4bb9dd",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "bad38dfcb616aa10ceccb43bc843324cecbeab213b9551f0ccc90c159d16ee1d",
+    "foundations/site/atlas.html": "f220c86dfe0b915a970e5ea8e8024e79e003e68f10c272858162cf5641f87602",
+    "foundations/site/dictionary.html": "0ed6e94aec31ff1dc1655d2885caa2f03189bbda6ba4b00dbfd9e29911094a88",
+    "foundations/site/manifest.json": "4719426d94d9f24f95a0c8146ed531e16bcf5a070df4b45a16c1fb0fc782d332",
+    "foundations/site/reading.js": "3e12db9fa0dd8ed42f4a976a39ce464827cec1a1158bd6c9376df9b982b36e8b",
+    "foundations/verify_reading_site.py": "34340054ff26a10a547bc61ca7e35a4b0ec72fb112807f14a748bb4adb9cd844",
+    "foundations/editorial-nlp-requirements.txt": "975c499119ff3912c08daf58e204654f1f3797ffc54d08b9623f59ee8eb3bea1",
+    "foundations/editorial/vocabularies/PHYSH-LICENSE.md": "015e5415032b965420f043e85a919865b305ace21a18a2b0fdf8c00653f8573b",
+    "foundations/editorial/vocabularies/physh-2.8.0-terms.json": "8b45034abd43949e62118d6121185a24ee056621348c5a1ab6d874f018b9040e",
+    "foundations/editorial/vocabularies/physh-2.8.0.json.gz": "4030abdc5ab09afbe67e4f3f8b3aa840f570e5c3a2bbe7e7af9bd0c6692171bf",
+    "foundations/extract_editorial_terms.py": "c411e58dbdcd6f8d2c3537a7bcbb41267183994ab00bc56c7866ef125cd8661c",
+    "foundations/import_editorial_vocabulary.py": "92ec1b034f773017654991854db721538ba5c4e51bedf05fd707e28a6d54dc12",
+    "foundations/matrix_site_v2_assets/term-review.css": "854c80e1793375213165ab89de790a5bbf920a0a6a34753e005bb02edbf900dc",
+    "foundations/matrix_site_v2_assets/term-review.js": "b5102bc4f4a9fd018f679ba3eb9d1e81aa6f41fb00c2f5b92f432cda1df5f2de",
+    "foundations/reports/automatic-terminology-review-v1.md": "cb8912631f52f67ec39a0653231621ffbd4ba93c5eb9227704edcf1b1cdf25f5",
+    "foundations/results/TERM_EXTRACTION_V1.json.gz": "51eac79b24c1608ba4d96df56162ed780f7cc8431d1c89116b5424d2f8e66130",
+    "foundations/setup_editorial_nlp.sh": "8327e713e701c42cda77104c6adeea09fea2317c65dd89a035aaf37fff6f7411",
+    "foundations/site/term-candidates-atlas.json.gz": "d6a66db09a10b0f26d330ccc079d2979a0ef0776a20537515eb8c55a621d5b04",
+    "foundations/site/term-candidates-dictionary.json.gz": "b74a8016d0c1d71fbc409aa58a644c2a2627016d8e70154a349fb3aa5fe46679",
+    "foundations/site/term-candidates-ladder.json.gz": "018ebdd6e60f6710bf171ceb2ce7625c134cf86264f31885eddff34fa00071d7",
+    "foundations/site/term-candidates-matrix.json.gz": "469812b5d763863c46a32745a2493f87bbca8de8fab365164cd285e2e4aaf65f",
+    "foundations/site/term-candidates-papers.json.gz": "22284e0c7b46151fcbd747f102aecffe4e3c6d359085426ca37b39280c6a777b",
+    "foundations/site/term-candidates-reading.json.gz": "b94ea8faf7391fce31263d512b04e778dc2ce3431e1e795565fb40b8acfde7d7",
+    "foundations/site/term-extraction-summary.json": "94f756487d02fe78065edfa0d905f3c4681a2e5cda82428138c888423371610a",
+    "foundations/site/term-review.css": "854c80e1793375213165ab89de790a5bbf920a0a6a34753e005bb02edbf900dc",
+    "foundations/site/term-review.html": "aab994800262ffc61e05b44dbeb2d7871fb9443c1407556c8c01edc94a061eda",
+    "foundations/site/term-review.js": "b5102bc4f4a9fd018f679ba3eb9d1e81aa6f41fb00c2f5b92f432cda1df5f2de",
+    "foundations/term_review.py": "58b35289c77e82c9a26ccd0211a246cb4a7f85cbff8e618bf695bbab524f9370",
+    "foundations/tests/browser_term_review.py": "a89b2f050b4c56cb32fef4e07f4ce8964818df4878ef6db950b2c69208ec8ab9",
+    "foundations/tests/fixtures/ladder-explanation-coverage.json": "99c281fe1f5838da349f0d6c189108b7f83cceecbfd3db5e4dc3552f5a378d5f",
+    "foundations/tests/test_editorial_extraction.py": "1ed26660135cccf5e7515d14f41f29a7ca2ccb77a93b901c15174a984913f05a"
+  },
+  "engine": {
+    "packages": {
+      "spacy": "3.8.11",
+      "keyphrase-vectorizers": "0.0.13",
+      "en-core-web-sm": "3.8.0",
+      "numpy": "2.5.3",
+      "scikit-learn": "1.9.0",
+      "scipy": "1.18.1",
+      "nltk": "3.10.3",
+      "psutil": "7.2.2",
+      "thinc": "8.3.11",
+      "blis": "1.3.3"
+    },
+    "model_files_sha256": {
+      "__init__.py": "c8eb57079c03fc4157c227f641781fbcb3e9d11439abe1bf0b72e4c0fa78a38d",
+      "en_core_web_sm-3.8.0/LICENSE": "3933c176979b68bc6d0bcc902c7d6c130f1d127f476f17ba5cdba8d99cfd0012",
+      "en_core_web_sm-3.8.0/LICENSES_SOURCES": "20d9dfacd215112251f15341edd1a47b1f98bf393a212f10f194ffdc7ee98a90",
+      "en_core_web_sm-3.8.0/README.md": "91b0ed1742ea0803034b4d769c4536e88d9d4da7808d833f2a804b6c54aae220",
+      "en_core_web_sm-3.8.0/accuracy.json": "e7572d7f2f3c18e9921471f9d0b3424f8cf7f1a909ae484fa10b780a13f4c676",
+      "en_core_web_sm-3.8.0/attribute_ruler/patterns": "f8b97f7ebef9b8536bba5f0fc1e73af6183563e96e2325bcbb021b8c6dbc6683",
+      "en_core_web_sm-3.8.0/config.cfg": "65c545ca2da5bd4b87b22d4917318605360b37dee6ed6b18516a036f87319f79",
+      "en_core_web_sm-3.8.0/lemmatizer/lookups/lookups.bin": "eb64f40c0f8396d1762730c0ddf4dad2a52d138f5a389f71a1a1d088173b7737",
+      "en_core_web_sm-3.8.0/meta.json": "7456349002fa8cf31111051bd37fdbea67a1b7f7a0a60ce235466f98a6758125",
+      "en_core_web_sm-3.8.0/ner/cfg": "a7172edadafba9f472e9ac0f2660eec04b6405e471be9e20267b79c67288d22d",
+      "en_core_web_sm-3.8.0/ner/model": "cd93e9ca9126c69f1d10a1039ef67c3d9ec1223b44d079856705970f0f19ff4e",
+      "en_core_web_sm-3.8.0/ner/moves": "d82b13473ebd33e0396004dd22f00c71fe3c1251742bf1f7c4554f23fd3b0af4",
+      "en_core_web_sm-3.8.0/parser/cfg": "e2a240ef01f95e58f5dd4c9d6e90d61f597b8d998966570d3009dd81e8879780",
+      "en_core_web_sm-3.8.0/parser/model": "e0098910535a863d430082ece57455d5fa071cd4ca3a0054e80582076c752b1e",
+      "en_core_web_sm-3.8.0/parser/moves": "ec41318c32eb7f9e4d8f050b2e8466ee67954d2d3455c1aec73abf46c82dd67f",
+      "en_core_web_sm-3.8.0/senter/cfg": "2a4db4a729b6469da1f87d71cc7cd3ed2a73360cc85326821e850836c4671103",
+      "en_core_web_sm-3.8.0/senter/model": "b69e7174a0b6307739adec3c8053ac45fdbad7171c4d3d8bfcd9713ecbc01f8c",
+      "en_core_web_sm-3.8.0/tagger/cfg": "d484c3d9391f37bf9c727aa2eb4c477a24cb103020f95e52dc37842818b50118",
+      "en_core_web_sm-3.8.0/tagger/model": "1ec3d93f38cebe172f2b5c89d84be72856ce42c8f1a64f1699f1d98a771f36b7",
+      "en_core_web_sm-3.8.0/tok2vec/cfg": "f8a5a26e3056eb6fb06deeb3dbccfd88ae74900200c98c70b5966bbb7ec9d4de",
+      "en_core_web_sm-3.8.0/tok2vec/model": "e84fc06eb319c94d28e460fc334e292120b01f18baa5dc8b50c977459820a090",
+      "en_core_web_sm-3.8.0/tokenizer": "b014e8bba4958b120af2d0c1c63eabb7c00379f2bacaf10df7c5325efd2ea467",
+      "en_core_web_sm-3.8.0/vocab/key2row": "76be8b528d0075f7aae98d6fa57a6d3c83ae480a8469e668d7b0af968995ac71",
+      "en_core_web_sm-3.8.0/vocab/lookups.bin": "fce9c883c56165f29573cc938c2a1c9d417ac61bd8f56b671dd5f7996de70682",
+      "en_core_web_sm-3.8.0/vocab/strings.json": "b1966d1f07a05b68576df07f43f40203b4e11124ad82cc839e8312ad8d7fdae7",
+      "en_core_web_sm-3.8.0/vocab/vectors": "14772b683e726436d5948ad3fff2b43d036ef2ebbe3458aafed6004e05a40706",
+      "en_core_web_sm-3.8.0/vocab/vectors.cfg": "ff4359091952c8cd16f1f0482f5770fb82d1707368d5cca3c46aa501f552e3c5",
+      "meta.json": "7456349002fa8cf31111051bd37fdbea67a1b7f7a0a60ce235466f98a6758125"
+    },
+    "keyphrase_feature_count": 48199,
+    "pipeline": "spaCy tagging/parser + KeyphraseVectorizers + nested phrases + acronym/compound rules + PhraseMatcher"
+  },
+  "assumptions": [
+    "Python 3.12 CPU grammar setup with pinned model; model data downloaded during setup",
+    "Native browser DecompressionStream for interactive compressed queues",
+    "Paper normalization and selected prose-field policy are not a complete rendered-site language model"
+  ],
+  "unresolved": [
+    "All candidate senses and proposed definitions require contextual review",
+    "Paper nested-phrase output is noisy; no global recall or precision claim",
+    "Persistent review decisions and automatic definition drafting are not implemented"
+  ],
+  "fail_closed_flags": {
+    "stale_extraction_rejected": true,
+    "automatic_dictionary_publication": false,
+    "automatic_scientific_claim_promotion": false
+  },
+  "tiers": {
+    "0": "PASS: source parsing, structured artifacts, scoped/staged diff checks and input hashes",
+    "1": "PASS: scoped unit suites, new-paper regression and independent browser checks",
+    "2": "PASS: affected matrix and reading site verification chain",
+    "3": "NOT RUN: no mathematical input, shared algebra, theorem promotion or release changed"
+  },
+  "independent_rails": [
+    "Source spans and dictionary/PhySH aliases checked against supplied texts/vocabulary",
+    "Coverage fixture excluded from extraction inputs",
+    "Browser interaction, highlights, download, large shard and failure handling"
+  ],
+  "reproduction_is_not_independent_verification": true,
+  "visual_review": [
+    "/tmp/term-review-desktop.png",
+    "/tmp/term-review-mobile.png"
+  ]
+}

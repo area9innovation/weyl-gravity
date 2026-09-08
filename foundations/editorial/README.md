@@ -206,3 +206,65 @@ selected stage is focused on navigation and reload. Add reviewed vocabulary
 to the registry, then rebuild the site and inventory. The browser check
 compares every recorded source string with the rendered ladder so missing
 rendered-field coverage is exposed separately from extraction reproduction.
+
+## Automatic terminology discovery and review
+
+Start at `term-review.html` (linked from the dictionary and ladder index).
+The queue covers the 576 matrix cells, ladder, other selected atlas prose,
+reading accounts, dictionary explanations and source papers. Search and filter
+by source, explanation status or candidate type. Select candidates and download
+a JSON drafting brief with source contexts and requirements for all four
+perspectives. Selections last only for the current page session; each selection
+retains occurrences from the source scope where it was made.
+
+`extract_editorial_terms.py` combines spaCy English tagging and noun chunks,
+KeyphraseVectorizers grammar candidates, nested phrases, abbreviations,
+hyphenated compounds, known dictionary aliases and APS PhySH labels. Complete
+short text units are retained as explanation tasks, so a claim such as “exact
+wave-equation residual zero” is not lost when a parser splits its terminology.
+Single content words are deliberately retained too: this favors discovery
+coverage at the cost of noise. Frequency is not a difficulty score. The existing
+curated alphabetical ladder registry remains the reader-facing index; the
+automatic review queue supplies candidates for improving it and the dictionary.
+
+No generated candidate is approved or published as a definition. Even an exact
+dictionary match requires checking the sense in its passage. An external
+vocabulary match supplies an identifier and aliases, not audience explanations.
+PhySH covers physics topics; it is not a complete reverse-mathematics lexicon.
+There is no global recall guarantee. The user's initial ladder block is an
+independent coverage fixture, never an extraction input.
+
+Rebuild with Python 3.12 and a separate CPU grammar environment:
+
+```sh
+bash foundations/setup_editorial_nlp.sh /tmp/editorial-nlp-cpu
+python3 foundations/import_editorial_vocabulary.py --check
+/tmp/editorial-nlp-cpu/bin/python foundations/extract_editorial_terms.py
+python3 foundations/build_matrix_site_v2.py
+python3 foundations/build_term_inventory.py
+python3 -m unittest foundations.tests.test_editorial_extraction
+python3 foundations/verify_reading_site.py
+PYTHONPATH=/tmp/tt-browser-deps python3 foundations/tests/browser_term_review.py
+```
+
+The setup intentionally omits the vectorizer's unused transformer extras;
+this pipeline uses neither embeddings nor GPU packages. `--reproduce` reruns
+NLP and byte-compares the result. Routine site builds require no NLP installation:
+they validate the cached extraction's input hashes and fail closed if stale.
+The expensive production/reproduction rail is separate from fast cached span,
+source freshness and example coverage checks. KPV grammar fits use bounded
+batches without frequency pruning to avoid its flattened-document regex limit.
+
+`results/TERM_EXTRACTION_V1.json.gz` records exact source occurrences, discovery
+methods, unreviewed status, per-perspective availability, source/model hashes
+and package versions. Website JSON is compressed and split by source scope so opening the
+ladder does not download the paper corpus. Browsing uses the browser’s native
+`DecompressionStream`; compressed downloads remain available without JavaScript. Offsets count Unicode code points;
+paper text is normalized and carries its original block starting line. The
+virtual matrix input is hashed from the actual matrix producer, avoiding a
+stale-site circular dependency.
+
+The PhySH 2.8.0 JSON-LD snapshot and CC0 license are stored in `vocabularies/`;
+`import_editorial_vocabulary.py` verifies its pinned hash and reproduces the
+English label/alias file. Source: <https://physh.org/releases>. NLP tools:
+<https://spacy.io/> and <https://github.com/TimSchopf/KeyphraseVectorizers>.

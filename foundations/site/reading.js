@@ -36,7 +36,7 @@
     }
     document.querySelectorAll('a[href]').forEach(link => {
       const url = new URL(link.getAttribute('href'), location.href);
-      if (url.origin === location.origin && /\/(index|wave|questions|papers|dictionary|atlas|cutoff-positivity)\.html$/.test(url.pathname)) {
+      if (url.origin === location.origin && /\/(index|wave|questions|papers|dictionary|term-review|atlas|cutoff-positivity)\.html$/.test(url.pathname)) {
         url.searchParams.set('audience', value);
         link.setAttribute('href', url.pathname.split('/').pop() + url.search + url.hash);
       }

@@ -62,7 +62,7 @@ def verify():
         assert p.perspectives==list(d['audiences']),'checkbox coverage/order'
         for a in d['audiences']:
             assert [s['id'] for s in t['versions'][a]]==t['section_ids']
-    for name in ['index.html','wave.html','questions.html','papers.html','atlas.html','cutoff-positivity.html','dictionary.html']:
+    for name in ['index.html','wave.html','questions.html','papers.html','atlas.html','cutoff-positivity.html','dictionary.html','term-review.html']:
         page_text=(SITE/name).read_text()
         assert page_text.count('aria-label="Main navigation"')==1
         assert 'id="perspective-menu"' in page_text and 'href="site-shell.css"' in page_text

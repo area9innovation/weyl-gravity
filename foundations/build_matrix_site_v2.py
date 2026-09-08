@@ -16,7 +16,7 @@ if str(_ROOT) not in sys.path:
 from foundations import build_matrix_site as v1
 from foundations.theory_assembly import build_assembly_assessment
 from foundations.theory_viability import build_assessment
-from foundations import reading_site, ladder_terms
+from foundations import reading_site, ladder_terms, term_review
 
 ROOT = v1.ROOT
 FOUNDATIONS = v1.FOUNDATIONS
@@ -1136,6 +1136,7 @@ def generated() -> dict[Path, bytes]:
         SITE / "assemblies.js": b"window.THEORY_ASSEMBLY_DATA = " + assembly_json.rstrip() + b";\n",
     }
     outputs.update({SITE / name: content for name, content in reading_site.generated().items()})
+    outputs.update({SITE / name: content for name, content in term_review.generated(data_json).items()})
     for path, content in list(outputs.items()):
         if path.suffix == '.html' and b'src="dictionary.js"' not in content:
             outputs[path]=content.replace(b'</head>', b'<link rel="stylesheet" href="site-shell.css"><script src="reading.js" defer></script><link rel="stylesheet" href="dictionary.css"><script src="dictionary.js" defer></script></head>')
@@ -1255,7 +1256,7 @@ def generated() -> dict[Path, bytes]:
     ]))
     for source in bundled_sources:
         outputs[SITE / "sources" / source.relative_to(ROOT)] = source.read_bytes()
-    input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", FOUNDATIONS / "theory_assembly.py", FOUNDATIONS / "build_gr_cassini_assembly.py", FOUNDATIONS / "check_gr_cassini_assembly.py", FOUNDATIONS / "verify_gr_cassini_assembly.py", FOUNDATIONS / "build_mannheim_ngc3198_assembly.py", FOUNDATIONS / "check_mannheim_ngc3198_assembly.py", FOUNDATIONS / "verify_mannheim_ngc3198_assembly.py", FOUNDATIONS / "build_ngc3198_common_fit_comparison.py", FOUNDATIONS / "check_ngc3198_common_fit_comparison.py", FOUNDATIONS / "verify_ngc3198_common_fit_comparison.py", FOUNDATIONS / "standard-gr-observational-control-v1.json", FOUNDATIONS / "schema/standard-gr-observational-control-v1.schema.json", *bundled_sources, *reading_site.inputs(), Path(ladder_terms.__file__), ladder_terms.REGISTRY, V2_ASSETS / "cutoff-positivity.html", ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js", V2_ASSETS / "styles-v2.css"]))
+    input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", FOUNDATIONS / "theory_assembly.py", FOUNDATIONS / "build_gr_cassini_assembly.py", FOUNDATIONS / "check_gr_cassini_assembly.py", FOUNDATIONS / "verify_gr_cassini_assembly.py", FOUNDATIONS / "build_mannheim_ngc3198_assembly.py", FOUNDATIONS / "check_mannheim_ngc3198_assembly.py", FOUNDATIONS / "verify_mannheim_ngc3198_assembly.py", FOUNDATIONS / "build_ngc3198_common_fit_comparison.py", FOUNDATIONS / "check_ngc3198_common_fit_comparison.py", FOUNDATIONS / "verify_ngc3198_common_fit_comparison.py", FOUNDATIONS / "standard-gr-observational-control-v1.json", FOUNDATIONS / "schema/standard-gr-observational-control-v1.schema.json", *bundled_sources, *reading_site.inputs(), *term_review.inputs(), Path(ladder_terms.__file__), ladder_terms.REGISTRY, V2_ASSETS / "cutoff-positivity.html", ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js", V2_ASSETS / "styles-v2.css"]))
     manifest = {
         "schema_version": "foundational-matrix-explorer-manifest-v2",
         "created": CREATED,
