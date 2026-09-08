@@ -15,11 +15,21 @@ try:
     browser=p.chromium.launch(executable_path='/usr/bin/google-chrome',headless=True,args=['--no-sandbox'])
     page=browser.new_page(viewport={'width':1440,'height':1000});errors=[]
     page.on('pageerror',lambda e:errors.append(str(e)))
+    page.goto(base+'dictionary.html?audience=mathematics')
+    page.wait_for_selector('.term-candidate')
+    assert page.locator('#term-scope').input_value()=='all'
+    assert not page.locator('#download-brief').is_visible()
+    assert page.locator('.term-definition-status').first.is_visible()
+    assert page.locator('.term-candidate .term-label').evaluate_all("nodes=>nodes.every(n=>/^\\p{L}/u.test(n.textContent))")
+    assert page.evaluate("(() => {const terms=[...document.querySelectorAll('.term-candidate .term-label')].map(n=>n.textContent);const c=new Intl.Collator('en',{sensitivity:'base',numeric:true,ignorePunctuation:true});return terms.every((t,i)=>!i||c.compare(terms[i-1],t)<=0);})()")
     page.goto(base+'term-review.html?audience=mathematics&scope=ladder')
+    page.wait_for_url('**/dictionary.html?audience=mathematics&scope=ladder#terminology-index')
     page.wait_for_selector('.term-candidate')
     page.locator('#term-search').fill('causal support')
     card=page.locator('.term-candidate').filter(has=page.get_by_text('causal support',exact=True)).first
-    card.locator('summary').click();card.locator('input').check()
+    card.locator('summary').click()
+    assert not card.locator('input').is_visible()
+    page.locator('#editing-tools').check();card.locator('input').check()
     assert card.locator('mark').first.inner_text().casefold()=='causal support'
     with page.expect_download() as pending:page.locator('#download-brief').click()
     brief=json.loads(Path(pending.value.path()).read_text())
@@ -45,5 +55,5 @@ try:
     page.wait_for_function("document.querySelector('#review-status').textContent.includes('Could not load')")
     assert not errors,errors
     browser.close()
- print('PASS: term contexts, four-perspective brief, dictionary navigation, scope loading, mobile bounds and fetch failure')
+ print('PASS: global alphabetical dictionary, hidden editing tools, legacy redirect, term contexts, four-perspective brief, dictionary navigation, scope loading, mobile bounds and fetch failure')
 finally:server.shutdown();server.server_close()

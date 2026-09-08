@@ -1136,7 +1136,7 @@ def generated() -> dict[Path, bytes]:
         SITE / "assemblies.js": b"window.THEORY_ASSEMBLY_DATA = " + assembly_json.rstrip() + b";\n",
     }
     outputs.update({SITE / name: content for name, content in reading_site.generated().items()})
-    outputs.update({SITE / name: content for name, content in term_review.generated(data_json).items()})
+    outputs.update({SITE / name: content for name, content in term_review.generated(data_json, outputs[SITE / 'dictionary.html']).items()})
     for path, content in list(outputs.items()):
         if path.suffix == '.html' and b'src="dictionary.js"' not in content:
             outputs[path]=content.replace(b'</head>', b'<link rel="stylesheet" href="site-shell.css"><script src="reading.js" defer></script><link rel="stylesheet" href="dictionary.css"><script src="dictionary.js" defer></script></head>')

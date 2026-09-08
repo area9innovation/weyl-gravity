@@ -209,7 +209,9 @@ rendered-field coverage is exposed separately from extraction reproduction.
 
 ## Automatic terminology discovery and review
 
-Start at `term-review.html` (linked from the dictionary and ladder index).
+Start at `dictionary.html` through the global Dictionary navigation; the
+ladder links to the same index with a source filter. Enable Show editing tools
+for drafting controls. Old `term-review.html` links redirect here.
 The queue covers the 576 matrix cells, ladder, other selected atlas prose,
 reading accounts, dictionary explanations and source papers. Search and filter
 by source, explanation status or candidate type. Select candidates and download
@@ -268,3 +270,23 @@ The PhySH 2.8.0 JSON-LD snapshot and CC0 license are stored in `vocabularies/`;
 `import_editorial_vocabulary.py` verifies its pinned hash and reproduces the
 English label/alias file. Source: <https://physh.org/releases>. NLP tools:
 <https://spacy.io/> and <https://github.com/TimSchopf/KeyphraseVectorizers>.
+
+## One global terminology destination
+
+`dictionary.html` is now the reader-facing index for the entire project. The
+existing global Dictionary navigation opens it. Explained terms have quick
+alphabetical links and retain their four-perspective entries and anchors;
+the integrated searchable word list defaults to the whole corpus, in
+alphabetical order. Source filters narrow this same index to the ladder,
+matrix, atlas, reading accounts, dictionary explanations or papers. Unknown
+phrases say Definition pending; a lexical match links to a related entry
+without claiming the senses agree.
+
+Symbolic/parser fragments are hidden from the reader list unless they match
+an existing dictionary entry; editing tools expose the unfiltered candidates.
+Draft selection, extraction methods and short-claim tasks are optional editing
+tools on this page, hidden by default. `term-review.html` redirects here and
+preserves audience and source filters; it no longer hosts a competing interface.
+The ladder links directly to the same dictionary with its source filter set.
+The global corpus shard is larger than a page-specific shard; full definitions
+and their links remain available without JavaScript while the index loads.

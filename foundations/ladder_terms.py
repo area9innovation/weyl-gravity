@@ -47,4 +47,4 @@ def render(data):
         if term['dictionary_id']:text+=f'<a href="dictionary.html#{e(term["dictionary_id"])}">Related definition</a>'
         else:text+='<span class="muted">Definition pending</span>'
         text+='</li>'
-    return text+'</ul><p><a href="term-review.html?scope=ladder">Review automatically extracted phrases and explanation gaps →</a></p><p><a href="ladder-terms.json">Index and exact source locations</a></p></details>'
+    return text+'</ul><p><a href="dictionary.html?scope=ladder#terminology-index">Find these terms in the site-wide dictionary →</a></p><p><a href="ladder-terms.json">Index and exact source locations</a></p></details>'

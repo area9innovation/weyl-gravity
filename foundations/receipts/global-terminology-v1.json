@@ -1,0 +1,338 @@
+{
+  "schema_version": 1,
+  "kind": "global-terminology-interface-validation",
+  "dependency_tags": [],
+  "scientific_claims_promoted": false,
+  "source_commit": "daf10609feaaf9b5d2fea843126a9f1d273953a7",
+  "checks": [
+    {
+      "command": [
+        "/tmp/editorial-nlp-cpu/bin/python",
+        "foundations/extract_editorial_terms.py"
+      ],
+      "elapsed_seconds": 76.12,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "py_compile",
+        "foundations/term_review.py",
+        "foundations/reading_site.py",
+        "foundations/ladder_terms.py",
+        "foundations/build_matrix_site_v2.py",
+        "foundations/tests/browser_term_review.py"
+      ],
+      "elapsed_seconds": 0.095,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/home/asger/.local/share/mise/installs/node/24.20.0/bin/node",
+        "--check",
+        "foundations/matrix_site_v2_assets/term-review.js"
+      ],
+      "elapsed_seconds": 0.055,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/build_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 8.765,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "foundations.tests.test_editorial_extraction",
+        "foundations.tests.test_ladder_terms"
+      ],
+      "elapsed_seconds": 11.889,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/build_term_inventory.py"
+      ],
+      "elapsed_seconds": 4.713,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONPATH=/tmp/tt-browser-deps",
+        "python3",
+        "foundations/tests/browser_term_review.py"
+      ],
+      "elapsed_seconds": 3.947,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/verify_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 11.612,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/verify_reading_site.py"
+      ],
+      "elapsed_seconds": 0.105,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONPATH=/tmp/tt-browser-deps",
+        "python3",
+        "foundations/tests/browser_dictionary.py"
+      ],
+      "elapsed_seconds": 8.816,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-c",
+        "import gzip,json,subprocess; from pathlib import Path; p=\"foundations/results/TERM_EXTRACTION_V1.json.gz\"; old=json.loads(gzip.decompress(subprocess.check_output([\"git\",\"show\",\"HEAD:\"+p]))); new=json.loads(gzip.decompress(Path(p).read_bytes())); assert old[\"units\"]==new[\"units\"] and old[\"candidates\"]==new[\"candidates\"]; full=json.loads(gzip.decompress(Path(\"foundations/site/term-candidates-all.json.gz\").read_bytes())); assert full[\"candidates\"]==new[\"candidates\"]; assert list(full[\"units\"].values())==new[\"units\"]; print(\"PASS: extraction content unchanged; global index includes every candidate and source unit\")"
+      ],
+      "elapsed_seconds": 5.105,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/home/asger/.local/share/mise/installs/node/24.20.0/bin/node",
+        "--check",
+        "foundations/matrix_site_v2_assets/term-review.js"
+      ],
+      "elapsed_seconds": 0.055,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/build_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 8.784,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/build_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 8.799,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONPATH=/tmp/tt-browser-deps",
+        "python3",
+        "foundations/tests/browser_term_review.py"
+      ],
+      "elapsed_seconds": 3.796,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/verify_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 11.705,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/home/asger/.local/share/mise/installs/node/24.20.0/bin/node",
+        "--check",
+        "foundations/matrix_site_v2_assets/term-review.js"
+      ],
+      "elapsed_seconds": 0.057,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "py_compile",
+        "foundations/term_review.py",
+        "foundations/reading_site.py",
+        "foundations/ladder_terms.py",
+        "foundations/build_matrix_site_v2.py",
+        "foundations/tests/browser_term_review.py"
+      ],
+      "elapsed_seconds": 0.085,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/build_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 8.83,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONPATH=/tmp/tt-browser-deps",
+        "python3",
+        "foundations/tests/browser_term_review.py"
+      ],
+      "elapsed_seconds": 3.982,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/verify_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 11.71,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "elapsed_seconds": 0.052,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/home/asger/.local/share/mise/installs/node/24.20.0/bin/node",
+        "--check",
+        "foundations/matrix_site_v2_assets/term-review.js"
+      ],
+      "elapsed_seconds": 0.055,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/build_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 8.819,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONPATH=/tmp/tt-browser-deps",
+        "python3",
+        "foundations/tests/browser_term_review.py"
+      ],
+      "elapsed_seconds": 3.976,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/verify_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 11.527,
+      "status": "PASS",
+      "exit_code": 0
+    }
+  ],
+  "integration_attempts": [
+    {
+      "command": [
+        "python3",
+        "/tmp/editorial-nlp-cpu/bin/python",
+        "foundations/extract_editorial_terms.py"
+      ],
+      "elapsed_seconds": 0.824,
+      "status": "FAIL",
+      "resolution": "Incorrect interpreter invocation; corrected command passed."
+    }
+  ],
+  "artifacts_sha256": {
+    "foundations/build_matrix_site_v2.py": "479b3636b24d68a2a329cf312858ac4a7636246bdd4b0f485fdd39c0fc8724c7",
+    "foundations/editorial/README.md": "686f3621d6175f7b8c02adfc99691cda74c8a87425700438966aebb7d40ee8cc",
+    "foundations/ladder_terms.py": "70fbcfddf7361ffe6cbbed81f9af1922e62285c9b2c833c379c3d58bccfefc42",
+    "foundations/matrix_site_v2_assets/term-review.css": "2a7c398512f748ee1090215e8b0516268bc3ec3a00ee77cbb9c0c2e4e6349fe0",
+    "foundations/matrix_site_v2_assets/term-review.js": "5485ccfa1c29da78bd1d9060f4850831bdf301dd1531df79e5964364da86c13f",
+    "foundations/reading_site.py": "274fe1ad70ce84063871238160bf1173d89f1fa7359a490ea954a2302fe8b978",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "9c88535902fe0ab7899b5e860b672567e29d2ff023f26fb1accbb4172e712192",
+    "foundations/results/TERM_EXTRACTION_V1.json.gz": "6b5da21b8f314e714df693056a0421051b6fa909d122a27c5c87ce2e864634b1",
+    "foundations/site/atlas.html": "53cec0565fb4591331c3a9835b318582a6160f50d679153f2c8e0af3685304d2",
+    "foundations/site/dictionary.html": "2d63f62728ad26d52712ab10bdc23baa78e58de1f1686c5a8e7df273ceb18b01",
+    "foundations/site/manifest.json": "fb3c48ff1049f5bc561fbfc2b135c793ead1f2a2cf62f8197a029d6e90a0e225",
+    "foundations/site/term-candidates-atlas.json.gz": "8fe033a6ade10577ac02d10801e067caaf45db3448f727a6db1d4316e2b4475c",
+    "foundations/site/term-candidates-dictionary.json.gz": "3337d6526a9f0c16cf3779fbc006db72f96e6edb4999cc9e3def4550458c4fce",
+    "foundations/site/term-candidates-ladder.json.gz": "f1894ec3b917bcee31648580b1b2633c4ecd295b508d8f9bdbcc993cf635bb02",
+    "foundations/site/term-candidates-matrix.json.gz": "d9bdd11d6503bb9ca406fd59af66a956321d8ae66ff93b3e157d68857e9f3925",
+    "foundations/site/term-candidates-papers.json.gz": "2a1c780b8942f5e23e411393f1b4b4917a2ebf515982ba709bf80d54238028d6",
+    "foundations/site/term-candidates-reading.json.gz": "3f6afbfe3fcf0768d5967f83429d3bb096efa2f77cf540dca4a6f824137cb63c",
+    "foundations/site/term-extraction-summary.json": "eafd1cef2618630cc47576659c76aa44028c9eb735e2709b592368c8f57bfe54",
+    "foundations/site/term-review.css": "2a7c398512f748ee1090215e8b0516268bc3ec3a00ee77cbb9c0c2e4e6349fe0",
+    "foundations/site/term-review.html": "202ba169e473edf641621ec37e380686640b85ca9321e31385b4883ca8af7ce5",
+    "foundations/site/term-review.js": "5485ccfa1c29da78bd1d9060f4850831bdf301dd1531df79e5964364da86c13f",
+    "foundations/term_review.py": "636e68215fd9171dfa9d8b70be4ce3f66d4e31f95eba9a98d23eed8bb685a1d6",
+    "foundations/tests/browser_term_review.py": "5d9272225dbf419e647cc4c3f29e0a0da568fba7d777f21cdc4af8618c161ab9",
+    "foundations/reports/global-terminology-v1.md": "b647b5529ea3b83db332581dccefa6d8a6da4ccef2ff7a1c9f45b14b847b55dd",
+    "foundations/site/term-candidates-all.json.gz": "d62ba1c3defc8c9b1df84d03b2596a052bbf70ac47c00bb76a5f4c8472b4add1"
+  },
+  "assumptions": [
+    "Existing four-perspective dictionary entries retain their source/meaning review boundary",
+    "Global automatic candidate inventory is broader than approved dictionary vocabulary",
+    "Browser DecompressionStream required for the interactive compressed index"
+  ],
+  "unresolved": [
+    "Missing definitions remain pending",
+    "Lexical filtering does not establish semantic correctness",
+    "Whole-project download is larger than individual source downloads"
+  ],
+  "claim_flags": {
+    "candidate_terms_approved": false,
+    "new_definitions_published": false,
+    "scientific_lifecycle_promoted": false
+  },
+  "tiers": {
+    "0": "PASS: source parsing, JSON/gzip parsing, exact scoped diff and hashes",
+    "1": "PASS: extraction/ladder tests and dictionary/index browser regression",
+    "2": "PASS: affected matrix/reading website verification chain",
+    "3": "NOT RUN: no mathematical input, theorem, shared algebra or lifecycle changed"
+  },
+  "visual_review": [
+    "/tmp/term-review-desktop.png",
+    "/tmp/term-review-mobile.png"
+  ]
+}

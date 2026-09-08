@@ -12,3 +12,10 @@
 .term-candidate blockquote { margin:10px 0; padding:10px 16px; border-left:3px solid #9db3a4; background:#f0f4ed; }
 .term-candidate mark { background:#ffe6a8; color:inherit; }
 @media(max-width:600px) { .review-filters { grid-template-columns:1fr; } }
+
+.term-review .editorial-only { display:none; }
+.term-review[data-editing] .editorial-only { display:block; }
+.term-review[data-editing] .review-actions.editorial-only { display:flex; }
+#terminology-index { scroll-margin-top:2rem; }
+
+.term-candidate summary .term-definition-status { display:inline-block; margin-left:12px; font-size:12px; font-weight:400; }

@@ -131,9 +131,9 @@ def generated():
     outputs['dictionary.json']=DICTIONARY.read_bytes()
     ordered=sorted(dictionary['terms'],key=lambda t:t['label'].casefold())
     word_list=sorted([(label,t['id']) for t in ordered for label in [t['label'],*t.get('index_labels',[])]],key=lambda pair:pair[0].casefold())
-    body='<header class="reading-hero"><p class="eyebrow">Concepts and connections</p><h1>Dictionary</h1><p class="deck">Choose your reading perspectives, then browse the alphabetical word list. Each entry explains the idea, its use in this project and its limits.</p></header>'
-    body+='<nav class="dictionary-index" aria-label="Alphabetical word list"><h2>Alphabetical word list</h2><ul>'+''.join(f'<li><a href="#{e(id)}">{e(label)}</a></li>' for label,id in word_list)+'</ul></nav>'
-    body+='<p class="review-note"><a href="term-review.html">Review terms that need explanations →</a></p>'
+    body='<header class="reading-hero"><p class="eyebrow">Concepts and connections</p><h1>Terminology &amp; dictionary</h1><p class="deck">A shared index for the whole project. Find a term, see where it is used, and read its explanation at your chosen perspective.</p></header>'
+    body+='<nav class="dictionary-index" aria-label="Alphabetical word list"><h2>Explained terms (A–Z)</h2><ul>'+''.join(f'<li><a href="#{e(id)}">{e(label)}</a></li>' for label,id in word_list)+'</ul></nav>'
+    body+='<!-- GLOBAL_TERMINOLOGY_INDEX -->'
     labels={t['id']:t['label'] for t in ordered}
     for term in ordered:
         body+=f'<section class="reading-section dictionary-entry" id="{e(term["id"])}"><header class="dictionary-entry-heading"><h2>{e(term["label"])}</h2><p>{e(term["scope"])}</p>'+ (f'<p class="abbreviation-expansion"><strong>Stands for:</strong> {e(term["expansion"])}</p>' if term.get('expansion') else '')+'</header>'
