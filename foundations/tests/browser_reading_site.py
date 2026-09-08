@@ -17,11 +17,12 @@ try:
     context=browser.new_context(viewport={'width':1440,'height':1000})
     page=context.new_page();errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
     page.goto(base+'index.html')
-    assert page.locator('h1').inner_text()=='What does it take to turn an equation into a prediction?'
+    assert page.locator('h1').inner_text()=='How to build a universe'
     assert page.locator('input[name=audience]:checked').evaluate_all('(nodes)=>nodes.map(n=>n.value)')==['general']
     assert page.locator('#matrixView').count()==0
     page.screenshot(path='/tmp/reading-introduction-desktop.png',full_page=True)
     page.goto(base+'wave.html?audience=mathematics#inputs')
+    page.locator('#perspective-menu > summary').click()
     shared=page.locator('.shared-status').inner_text()
     for audience in ['general','physics','mathematics','specialist']:
         page.locator('input[name=audience][value='+audience+']').check()
@@ -42,6 +43,7 @@ try:
     assert page.locator('#inputs [data-edition=mathematics] .edition-label').inner_text()=='Mathematics'
     assert page.locator('#inputs [data-edition=general] .edition-background').inner_text()=='No specialist background assumed.'
     assert page.locator('.shared-status').inner_text()==shared
+    page.locator('#perspective-menu > summary').click()
     page.locator('#show-all-perspectives').click()
     assert page.locator('#inputs [data-edition]:visible').count()==4
     assert page.url.endswith('#inputs')
@@ -51,6 +53,7 @@ try:
     assert page.locator('input[name=audience]:checked').count()==4
     page.reload();assert page.locator('input[name=audience]:checked').count()==4
     page.goto(base+'wave.html?audience=general')
+    page.locator('#perspective-menu > summary').click()
     only=page.locator('input[name=audience][value=general]')
     only.focus();page.keyboard.press('Space')
     assert only.is_checked()
@@ -76,6 +79,7 @@ try:
     nojs.close()
     blocked=browser.new_context();blocked.add_init_script("Object.defineProperty(window, 'localStorage', {get(){throw new Error('blocked storage')}})")
     bp=blocked.new_page();bp.goto(base+'wave.html?audience=physics');assert bp.locator('input[name=audience][value=physics]').is_checked()
+    bp.locator('#perspective-menu > summary').click()
     bp.locator('input[name=audience][value=mathematics]').check();assert bp.locator('#inputs [data-edition]:visible').count()==2
     blocked.close();assert not errors,errors
     browser.close()

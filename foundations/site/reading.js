@@ -25,6 +25,8 @@
     document.body.dataset.comparing = String(values.length > 1);
     document.querySelectorAll('[data-edition]').forEach(node => { node.hidden = !values.includes(node.dataset.edition); });
     choices.forEach(choice => { choice.checked = values.includes(choice.value); });
+    const current = document.getElementById('perspective-current');
+    if (current) current.textContent = values.map(key => labels[key]).join(' + ');
     const status = document.getElementById('audience-description');
     if (status) status.textContent = (values.length > 1 ? 'Comparing ' : 'Showing ') + values.map(key => labels[key]).join(' · ') + '.';
     try { localStorage.setItem('reading-audience', value); } catch (_) { /* URL still carries choice. */ }
@@ -49,6 +51,9 @@
     apply(values, true);
     if (section) window.scrollBy(0, section.getBoundingClientRect().top - offset);
   }
+  const menu=document.getElementById('perspective-menu');
+  document.addEventListener('click',event=>{if(menu && !menu.contains(event.target)) menu.open=false;});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape' && menu?.open){menu.open=false;menu.querySelector('summary').focus();}});
   apply(selected, false);
   choices.forEach(choice => choice.addEventListener('change', () => {
     const values = choices.filter(input => input.checked).map(input => input.value);

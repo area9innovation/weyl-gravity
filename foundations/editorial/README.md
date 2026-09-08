@@ -143,3 +143,43 @@ python3 foundations/build_term_inventory.py --check
 python3 -m unittest foundations.tests.test_term_inventory foundations.tests.test_reading_site
 PYTHONPATH=/tmp/tt-browser-deps python3 foundations/tests/browser_dictionary.py
 ```
+
+## Shared layout and the living introduction
+
+The current technology remains Python-generated static HTML, plain CSS and
+small JavaScript modules. This fits a source-pinned publication with a rich
+client-side atlas. A framework migration would not itself fix inconsistent
+content or page components. Reconsider a backend if editorial accounts,
+concurrent browser editing or permissions become requirements; reconsider a
+larger client framework if shared application state becomes substantially
+more complex than the current menus and atlas.
+
+`reading_site.site_header()` is the single source for main navigation and the
+perspective menu on all seven main routes. `site-shell.css` scopes the shared
+header and menu styles, including legacy atlas/case pages. `reading.js` owns
+selection, persistence, link propagation and menu dismissal. Native details,
+summary and checkboxes provide the keyboard interaction; this is a form
+popover, not an ARIA application menu. Shared pages explicitly say that only
+their term definitions change; the atlas is not presented as four rewritten
+research editions. Specialized atlas controls keep their own layout.
+
+The introduction is the living adaptation of Papers 99 and 98, with eight
+aligned sections: programme, assumptions, map, examples, results, limits,
+evidence and exploration. Each section has the same identity across all four
+perspectives. `section_sources` records the source-paper or correction links
+reviewed for each part. The title and visible source links make the papers'
+role explicit; current export corrections override their dated affirmative
+full-transfer language. The papers themselves remain unchanged.
+
+Dictionary abbreviation entries declare `abbreviation` and `expansion`.
+The expansion must occur in the general definition; the build rejects its
+absence. The full entry also displays “Stands for”. Explain new abbreviations
+at first use in general prose—do not assume an acronym is helpful simply
+because it has a dictionary entry.
+
+`linked_text()` adds static crosslinks to unambiguous dictionary terms inside
+other entries. It escapes authored text, excludes self-links, links each target
+once per paragraph, and respects `auto_annotate: false`. Existing related-term
+links handle deliberate connections, including ambiguous terms. Links work
+without JavaScript and preserve selected perspectives when JavaScript is
+available. Crosslinking is not a substitute for a self-contained explanation.

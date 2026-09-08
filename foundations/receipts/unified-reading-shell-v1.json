@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "kind": "editorial-interface-validation",
+  "dependency_tags": [],
+  "scientific_claims_promoted": false,
+  "checks": [
+    {
+      "command": "python3 -m py_compile foundations/reading_site.py foundations/build_matrix_site_v2.py foundations/verify_reading_site.py foundations/tests/test_reading_site.py foundations/tests/browser_reading_site.py foundations/tests/browser_site_shell.py",
+      "elapsed_seconds": 0.101,
+      "status": "PASS"
+    },
+    {
+      "command": "/home/asger/.local/share/mise/installs/node/24.20.0/bin/node --check foundations/matrix_site_v2_assets/reading.js",
+      "elapsed_seconds": 0.055,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 foundations/build_term_inventory.py --check",
+      "elapsed_seconds": 4.838,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest foundations.tests.test_term_inventory foundations.tests.test_reading_site foundations.tests.test_matrix_site",
+      "elapsed_seconds": 19.327,
+      "status": "PASS"
+    },
+    {
+      "command": "PYTHONPATH=/tmp/tt-browser-deps python3 foundations/tests/browser_site_shell.py",
+      "elapsed_seconds": 4.578,
+      "status": "PASS"
+    },
+    {
+      "command": "PYTHONPATH=/tmp/tt-browser-deps python3 foundations/tests/browser_dictionary.py",
+      "elapsed_seconds": 4.781,
+      "status": "PASS"
+    },
+    {
+      "command": "PYTHONPATH=/tmp/tt-browser-deps python3 foundations/tests/browser_reading_site.py",
+      "elapsed_seconds": 5.86,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 foundations/verify_matrix_site_v2.py",
+      "elapsed_seconds": 3.781,
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "elapsed_seconds": 0.041,
+      "status": "PASS"
+    }
+  ],
+  "hashes": {
+    "foundations/editorial/dictionary.json": "822b21afc4980f43c79be7045ebdbb27d9e85655ade9d568ad1999827737f02b",
+    "foundations/editorial/reading-content.json": "53828828ddbb523d474e0a9d953a04c7d9557b38f22f71ca00124825cb091652",
+    "foundations/reading_site.py": "39294adaf54ee3443009f2f78898c359a391a8dd21499408a6fe128004b7fbd0",
+    "foundations/matrix_site_v2_assets/site-shell.css": "e1079713df6e68ed2205d72db8ced3fcaeb4a4c2eab6f8c719dc40dfb879c4af",
+    "foundations/matrix_site_v2_assets/reading.js": "618eb05fb21486abd2ad60bf28aec217e09c44ffb5b136f794e9bd7a9c2271c8",
+    "foundations/site/index.html": "f7e7edeb0c5130b34a5e7f026c68f486ecafe073518d3964a9c950ba73548bb6",
+    "foundations/site/dictionary.html": "be5b5736d1c93ef8abcfa249643c5f627d5c8a8ca8bc3cbb69a97a6caa0c1a71",
+    "foundations/site/manifest.json": "2dc1c0a284bdbf97c32c43536ca4ce743d942cccc2e0060e109ba572ae3de9e5",
+    "foundations/results/TERM_INVENTORY_V1.json": "264a779301ba01193679d1a473c06f361673de4a2905638acb52bd07f6e2df87"
+  },
+  "assumptions": [
+    "Playwright is installed externally under /tmp/tt-browser-deps",
+    "Introduction adapts pinned Papers 99 and 98 with current export corrections",
+    "Shared status records remain authoritative across perspectives"
+  ],
+  "unresolved": [
+    "No independent expert semantic review",
+    "Atlas content retains its specialist edition",
+    "Abbreviation expansion applies to declared dictionary entries, not every pending inventory term"
+  ],
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "No scientific input, core algebra, theorem or lifecycle change"
+  }
+}

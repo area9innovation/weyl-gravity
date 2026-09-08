@@ -1115,10 +1115,10 @@ def generated() -> dict[Path, bytes]:
     ).encode()
     index = index.replace(b'<a href="manifest.json">Build manifest</a>',
         b'<a href="cutoff-positivity.html">Finite positivity case study</a>\n    <a href="manifest.json">Build manifest</a>')
-    index = index.replace(b'<body>', b'<body><nav class="reader-links" aria-label="Main navigation"><a href="index.html">Introduction</a><a href="questions.html">Questions</a><a href="atlas.html#view=passports">Theory journeys</a><a href="atlas.html" aria-current="page">Research atlas</a><a href="papers.html">Papers</a><span>Specialist reference views</span></nav>')
+    index = index.replace(b'<body>', ('<body>'+reading_site.site_header('atlas')).encode())
     index = index.replace(b'<main>', b'<main><aside class="export-audit"><strong>Full export currently rejected:</strong> these research views retain historical records. The current trace/ghost candidate is only a partial repair. <a href="index.html#limits">Read the current account</a> or <a href="cutoff-positivity.html">the scoped positivity case</a>.</aside>')
     outputs: dict[Path, bytes] = {
-        SITE / "cutoff-positivity.html": (V2_ASSETS / "cutoff-positivity.html").read_bytes(),
+        SITE / "cutoff-positivity.html": (V2_ASSETS / "cutoff-positivity.html").read_text().replace('<body>', '<body>'+reading_site.site_header('questions')).encode(),
         SITE / "atlas.html": index,
         SITE / "styles.css": (ASSETS / "styles.css").read_bytes() + b"\n" + (V2_ASSETS / "styles-v2.css").read_bytes(),
         SITE / "app.js": app,
@@ -1133,7 +1133,7 @@ def generated() -> dict[Path, bytes]:
     outputs.update({SITE / name: content for name, content in reading_site.generated().items()})
     for path, content in list(outputs.items()):
         if path.suffix == '.html' and b'src="dictionary.js"' not in content:
-            outputs[path]=content.replace(b'</head>', b'<link rel="stylesheet" href="dictionary.css"><script src="dictionary.js" defer></script></head>')
+            outputs[path]=content.replace(b'</head>', b'<link rel="stylesheet" href="site-shell.css"><script src="reading.js" defer></script><link rel="stylesheet" href="dictionary.css"><script src="dictionary.js" defer></script></head>')
     local_evidence_paths = [ROOT / item["result_path"] for item in dataset["evidence"].values() if item["kind"] == "LOCAL_RESULT"]
     local_report_paths = [ROOT / item["report_path"] for item in dataset["evidence"].values() if item["kind"] == "LOCAL_RESULT" and item.get("report_path")]
     completion_evidence_paths = [ROOT / item["path"] for item in dataset["completion_atlas"]["provenance"]["inputs"]]

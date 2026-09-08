@@ -36,6 +36,7 @@ def verify():
     terms=sorted(dictionary['terms'],key=lambda t:t['label'].casefold())
     assert [i for i in dp.ids if i in {t['id'] for t in terms}]==[t['id'] for t in terms]
     for term in terms:
+        if term.get('abbreviation'):assert term['expansion'] in term['definitions']['general']
         assert set(term['explanations'])==set(d['audiences'])
         for source in term['sources']:
             content=(ROOT/source['path']).read_bytes()
@@ -62,6 +63,9 @@ def verify():
         for a in d['audiences']:
             assert [s['id'] for s in t['versions'][a]]==t['section_ids']
     for name in ['index.html','wave.html','questions.html','papers.html','atlas.html','cutoff-positivity.html','dictionary.html']:
+        page_text=(SITE/name).read_text()
+        assert page_text.count('aria-label="Main navigation"')==1
+        assert 'id="perspective-menu"' in page_text and 'href="site-shell.css"' in page_text
         for href in Page((SITE/name).read_text()).links:
             url=urlsplit(href)
             if url.scheme or url.netloc:continue

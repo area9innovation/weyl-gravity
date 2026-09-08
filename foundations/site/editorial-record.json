@@ -96,8 +96,8 @@
   },
   "topics": {
     "introduction": {
-      "title": "What does it take to turn an equation into a prediction?",
-      "deck": "A guide to the questions, results and limits of reverse physics.",
+      "title": "How to build a universe",
+      "deck": "What must connect an equation to a prediction we can trust? A guide to the physics, mathematics, evidence and open questions of this programme.",
       "claim_ids": [
         "wave",
         "gravity",
@@ -106,145 +106,327 @@
       "section_ids": [
         "question",
         "inputs",
+        "map",
+        "examples",
         "result",
-        "limits"
+        "limits",
+        "evidence",
+        "explore"
       ],
       "versions": {
         "general": [
           {
             "id": "question",
-            "heading": "What would make an equation a theory?",
+            "heading": "An equation is a beginning",
             "paragraphs": [
-              "An equation can describe how something changes without telling us everything we need to know. What can we prepare? What can we measure? Does the prediction agree with an experiment? Those questions need answers before an attractive equation becomes a useful physical theory.",
-              "This project asks which assumptions make each answer possible. It began with Weyl gravity, a proposed description of gravity, and grew into an investigation of the mathematics that connects equations to predictions."
+              "Suppose someone hands you an elegant equation and says it could describe the universe. Before believing them, you would want to know what it describes, how things change, what can be measured, and whether the predictions agree with observations. An equation alone cannot answer all of those questions.",
+              "This programme began with an unusual theory of gravity called Weyl gravity. It grew into a broader investigation: start with the jobs a physical theory must do, then identify which physical ideas and mathematical assumptions make each job possible. We call this reverse foundations of physics. The aim is a clearer route from an interesting idea to a testable claim."
             ]
           },
           {
             "id": "inputs",
-            "heading": "What is being worked out?",
+            "heading": "The assumptions beneath the answer",
             "paragraphs": [
-              "There are two connected questions. Which physical requirements distinguish possible theories of gravity? And which mathematical assumptions are needed to turn a description into a prediction?",
-              "For example, suppose a computer produces increasingly detailed pictures of a wave. Knowing that these pictures eventually agree is different from knowing how detailed a picture must be to meet a chosen accuracy. The latter gives a usable error guarantee."
+              "A theory begins with physical ideas: how systems affect one another, which changes leave the laws unchanged, and what can count as a measurement. It also chooses a mathematical setting. A finite table of numbers and a space containing every possible wave are different settings, even if one approximates the other.",
+              "A further layer concerns what mathematics allows us to assume exists. For instance, better and better finite approximations need a justified connection to a limiting object. Finally, the model needs rules for predictions and probabilities, and a fair comparison with data. Changing any of these layers can change the conclusion."
+            ]
+          },
+          {
+            "id": "map",
+            "heading": "What the 576 cells mean",
+            "paragraphs": [
+              "The atlas crosses six ways of organizing mathematical assumptions, six kinds of mathematical setting, and sixteen jobs a theory may need to perform. Six times six times sixteen gives 576 cells. These are 576 questions, not 576 proposed universes.",
+              "A cell might ask whether states can be defined in a particular setting, or whether a limiting prediction can be reconstructed under particular assumptions. Its color reports the kind of evidence recorded there. Even several successful cells do not make a complete theory: the pieces must fit together, and the atlas records missing connections as well as results."
+            ]
+          },
+          {
+            "id": "examples",
+            "heading": "Why the distinctions matter",
+            "paragraphs": [
+              "The gravity studies ask several different questions about extra solutions: do they exist mathematically, survive the rules that remove redundant descriptions, remain possible when interactions are included, and support sensible probabilities? The word ghost is often used around these questions, but one answer cannot settle all of them.",
+              "Other examples test different connections. Mannheim’s proposal uses conformal gravity to explain how galaxies rotate; comparing its predictions with data requires stating how measurement errors are weighted. A curve can do better by one score and worse by another. A stability shortcut for Bateman and Turok’s proposal for higher-derivative physics can fail without disproving their entire theory. Each case needs a precise question and a conclusion with explicit limits."
             ]
           },
           {
             "id": "result",
-            "heading": "What have we learned?",
+            "heading": "A simple example of an important difference",
             "paragraphs": [
-              "In a particular wave model, an explicit error guarantee lets us construct a detector prediction using relatively modest mathematical assumptions. Removing that guarantee changes the mathematical existence problem, even though the wave and detector have not changed.",
-              "A separate model shows why checking positivity at every finite cutoff need not produce one acceptable state for the full continuum. Positivity here means that the mathematical rule for probabilities cannot assign negative values to the relevant tests. Both examples have precise restrictions; neither establishes a complete theory of gravity."
+              "Imagine receiving increasingly detailed descriptions of a wave. One supplier gives an error schedule telling you when an approximation is accurate enough. Another only promises that the descriptions eventually agree. Those are different amounts of information, even though the wave and the detector are the same.",
+              "The project proves a precise mathematical difference between these two reconstruction tasks. A second example shows why making each finite model pass a probability test can still leave the complete model unresolved or unacceptable under the stated conditions. These are useful bounded lessons about information and limits, not a finished theory of nature."
             ]
           },
           {
             "id": "limits",
-            "heading": "How should you judge this work?",
+            "heading": "What we have not built",
             "paragraphs": [
-              "Look for the question, the assumptions, the actual conclusion and the evidence supporting it. AI systems have contributed substantially to the calculations, code and writing, with Asger Alstrup Palm as the accountable human contact. That makes independent checking and clear explanations especially important.",
-              "The current full gravity export fails a consistency check. A partial repair exists, but it has not passed all the required tests. The wave result can be read independently of that unfinished construction."
+              "The programme has not produced a complete theory of the universe. A mathematical construction must still connect to meaningful states, predictions, and observations. Failing a proposed route may teach us something important without proving that every route must fail.",
+              "There is also a concrete correction to the older introductions: the current full exported gravity construction fails a basic internal consistency check. A partial repair removes the exposed errors, but the complete repaired construction has not been verified. This website therefore does not repeat the older affirmative claim that the full propagation and two-point construction has been established."
+            ]
+          },
+          {
+            "id": "evidence",
+            "heading": "How to judge AI-assisted research",
+            "paragraphs": [
+              "Artificial intelligence (AI) systems help this programme derive equations, write software, challenge arguments and draft explanations. They can also produce convincing mistakes. Clear writing matters because a reader must be able to see what was assumed, what was checked and where the argument could fail.",
+              "The evidence trail therefore links a claim to its calculation and checks. Repeating the same calculation is useful, but it is not the same as checking it independently. A computer proof establishes the statement it was given; it cannot decide whether that statement models nature. Asger Alstrup Palm is the accountable human contact. The work remains open to criticism on its evidence."
+            ]
+          },
+          {
+            "id": "explore",
+            "heading": "Choose a question, then follow the evidence",
+            "paragraphs": [
+              "Begin with Questions for a worked example. Use the Dictionary whenever a word blocks understanding; it explains the same idea for different backgrounds, with examples and links between concepts. The reading menu lets you change perspective or compare accounts without changing the topic.",
+              "Theory journeys follow a proposal toward a prediction and a test. The Research atlas lets you inspect the 576 questions and their evidence. Papers provide the detailed, dated arguments. You do not need to read the entire matrix first: choose a question, understand what would count as an answer, then inspect the supporting steps."
             ]
           }
         ],
         "physics": [
           {
             "id": "question",
-            "heading": "From a field equation to a physical prediction",
+            "heading": "From equations to physical obligations",
             "paragraphs": [
-              "The programme separates equations of motion from state selection, gauge reduction, probability, causal response and comparison with data. Pure-Weyl gravity supplies a demanding case study: a local or mode-level construction does not by itself establish a viable interacting quantum theory.",
-              "The additional question is mathematical: which assumptions about the state space and the representation of its elements are actually used to construct an observable?"
+              "The programme combines two questions: whether pure Weyl gravity and related fourth-order models survive their classical, quantum and empirical tests, and which assumptions each test actually uses. The unit of progress is an obligation—such as state existence, causal propagation or a calibrated prediction—rather than a theory name.",
+              "The two introductory papers motivate the same decomposition. Physical postulates, mathematical realizations and logical existence principles are distinct inputs. A result about one realization must not acquire a stronger interpretation merely because the notation resembles that of another. This introduction presents that programme, with later corrections incorporated below."
             ]
           },
           {
             "id": "inputs",
-            "heading": "The role of reverse mathematics",
+            "heading": "Keep five inputs visible",
             "paragraphs": [
-              "Reverse mathematics asks which axioms are sufficient for a theorem and, where possible, which are necessary. Here the input contract matters: a convergent sequence of wave data supplied with an error schedule is a different mathematical input from a sequence merely promised to converge.",
-              "This distinction concerns what the model supplies to the prediction procedure. It is not evidence that a laboratory instrument must implement a particular formal system."
+              "Separate physical postulates, the carrier used to realize them, logic and existence assumptions, operational identifications, and empirical protocols. Locality or conformal symmetry is a physical premise; a Hilbert completion or an operator domain is mathematical structure; a detector functional and a noise model add different operational information.",
+              "The distinction matters at familiar transitions: from finite truncations to continuum fields, from Euclidean constructions to Lorentzian propagation, and from an indefinite gauge description to physical probabilities. Each transition needs a theorem or an explicitly stated premise. A successful calculation on one side does not supply that bridge by itself."
+            ]
+          },
+          {
+            "id": "map",
+            "heading": "Coverage and composition are different",
+            "paragraphs": [
+              "The six foundational regimes, six carrier families and sixteen obligations form a common coordinate system. A finite algebraic construction, a Hilbert-space argument and a local field-theoretic construction can contribute evidence to different cells without being identified.",
+              "Theory profiles show coverage, whereas theory journeys follow assumptions, states, evolution, observables, predictions and empirical tests along one route. A profile may collect strong results from incompatible realizations. The journey asks whether the necessary interfaces have actually been supplied for the same model."
+            ]
+          },
+          {
+            "id": "examples",
+            "heading": "The papers organize several kinds of test",
+            "paragraphs": [
+              "The fourth-order and pure-Weyl studies distinguish local modes, reduction by gauge symmetry and constraints, nonlinear continuation, and quantum interpretation. An additional classical direction is not automatically a negative-probability particle; a positive free block does not automatically extend to an interacting theory.",
+              "The empirical studies distinguish unweighted residuals from uncertainty-weighted gates in a bounded galaxy protocol. The Bateman–Turok example targets a proposed universal Euclidean stability estimate rather than the whole reconstruction programme. Each is a case study in specifying which implication succeeds or fails, with the detailed assumptions retained in its paper and evidence record."
             ]
           },
           {
             "id": "result",
-            "heading": "Two results worth separating",
+            "heading": "Locate the extra requirement",
             "paragraphs": [
-              "For a fixed scalar wave and smeared detector on the circle, supplying convergence rates permits reconstruction over a weak arithmetic base. The rate-free reconstruction principle has the strength of arithmetic comprehension in the specified coding. The lower bound is already carried by a limiting amplitude at time zero; it is not generated by propagation.",
-              "In a separate reduced tensor model, finite spatial cutoffs admit positive covariance repairs that cannot approach a smooth full repair under the stated commutator and short-distance requirements. This does not settle positivity of the full metric theory."
+              "The wave benchmark fixes chiral data and one smeared detector. Supplying a Cauchy rate permits the declared reconstruction in the weak base; removing it yields a stronger existence statement. The lower bound already occurs at a fixed time and profile, so the additional logical cost is amplitude completion rather than propagation.",
+              "The reduced tensor-mode example distinguishes a positive correction at each finite cutoff from one smooth correction compatible with all modes and the stated commutator. Its boundary is reduced-model positivity. Neither calculation supplies the full gravity state construction or decides a research programme’s empirical viability."
             ]
           },
           {
             "id": "limits",
-            "heading": "The current physical boundary",
+            "heading": "Current gravity acceptance boundary",
             "paragraphs": [
-              "The serialized full-complex differential fails direct nilpotency checks. A trace/ghost candidate repairs the two exposed blocks and satisfies the checked contraction identities, but full nilpotency, chain maps and cyclicity remain unverified.",
-              "Consequently the published export cannot currently justify the full Green/Hadamard transfer. No physical Hilbert space, scattering theory or unitarity result follows from the present repair."
+              "The serialized full complex fails its differential consistency prerequisite. The trace/ghost candidate repairs two exposed blocks and selected contraction identities, but full nilpotency, compatible maps and pairing for the repaired object remain unverified. Older claims of an accepted full BRST–Hadamard transfer must be read with this correction.",
+              "This failure does not erase every classical or reduced-mode calculation. It blocks conclusions that depend on this full export. A physical positive state, full Lorentzian renormalization and an interacting quantum theory still need their own constructions; neither formal causal structure nor a local quantum calculation can substitute for them."
+            ]
+          },
+          {
+            "id": "evidence",
+            "heading": "Separate kinds of evidence",
+            "paragraphs": [
+              "An exact algebraic identity, a numerical benchmark, a written infinite-dimensional proof and a proof-assistant derivation answer different questions. An independent checker is useful only if it does not silently inherit the producer’s decisive assumption. A skip or timeout contributes no passing evidence.",
+              "The unusual AI-assisted authorship increases the importance of explicit sources and reproducible arguments. The website is a current explanatory account, while papers preserve dated arguments. Neither fluent prose nor a machine-readable certificate supplies missing physical premises or substitutes for independent scientific review."
+            ]
+          },
+          {
+            "id": "explore",
+            "heading": "Use the route that matches the question",
+            "paragraphs": [
+              "Questions gives the wave and finite-positivity examples; Theory journeys follows assumptions through states, dynamics, observables and empirical gates. The atlas is the specialist evidence interface for comparing carriers and tracing missing joins.",
+              "Read the physicist introduction as a dated source for this common introduction, then consult the appropriate specialist paper and current correction. The mathematics perspective explains logical and representation issues without assuming training in reverse mathematics. Comparing perspectives should reveal the same scope, not a different scientific claim."
             ]
           }
         ],
         "mathematics": [
           {
             "id": "question",
-            "heading": "Which assumptions does a prediction use?",
+            "heading": "What structures make a prediction possible?",
             "paragraphs": [
-              "A physical theorem combines assumptions about a model, a class of mathematical objects, and a system in which existence is asserted. The programme separates these choices before asking what is sufficient for a specified conclusion.",
-              "For the mathematical reader, the central example is a represented wave observable: rational approximations describe inputs and outputs, and their convergence information is part of the definition of the problem."
+              "A physical model is more than a differential equation. It needs a space of admissible data, evolution, quantities extracted from solutions, and a bridge to observations. Existence, uniqueness, continuity and probability can depend on different structures and hypotheses.",
+              "The project studies that dependency explicitly. Reverse foundations of physics is broader than reverse mathematics: it compares physical premises and mathematical representations as well as logical strength. Its origin in pure Weyl gravity provides concrete problems; the general question is which assumptions suffice for each specified task and which can be proved necessary."
             ]
           },
           {
             "id": "inputs",
-            "heading": "Existence with and without a rate",
+            "heading": "The ambient object is part of the theorem",
             "paragraphs": [
-              "A Cauchy condition says that for each tolerance there is an index beyond which all approximants agree within that tolerance. A supplied modulus gives a function selecting suitable indices. In weak foundations, extracting such information is an additional mathematical task.",
-              "Reverse mathematics studies equivalences over a specified base theory. RCA₀ is the weak base used here for coded constructions; ACA₀ additionally allows sets defined by arithmetic predicates. These are systems of axioms, not accuracy levels."
+              "A carrier includes the relevant topology, pairing and operator domains, not merely an underlying set or vector space. A change of topology can change which operations are continuous; a change of pairing can change positivity. A representation of input data can include or omit a convergence rate.",
+              "Logical assumptions form another layer. A proof may assert that an infinite set or limit exists without supplying an effective construction. Reverse mathematics studies the strength of such assertions over a fixed base. The wider programme also asks whether another carrier preserves the intended observable while avoiding a particular assumption."
+            ]
+          },
+          {
+            "id": "map",
+            "heading": "A coordinate system for scoped questions",
+            "paragraphs": [
+              "Each cell combines a foundational regime, a carrier family and a physical obligation. The geometry of this table is organizational: neighboring coordinates need not be connected by an implication. A populated cell does not quantify over every object in its family.",
+              "The atlas therefore keeps evidence records and interface claims separate. Compare hypotheses and constructions before composing results. A theorem about a finite exact complex can be useful without constituting a theorem about its completion; an existence proof on one carrier need not transport to another."
+            ]
+          },
+          {
+            "id": "examples",
+            "heading": "Different mathematical failures have different force",
+            "paragraphs": [
+              "A local solution may fail a global compatibility condition. A nontrivial cohomology class may have no demonstrated positive state interpretation. A family of finite constructions may lack a uniform estimate needed to pass to a limit. These are different obstructions and should have different conclusions.",
+              "The introductory papers illustrate this with fourth-order gravity, a Euclidean stability counterfamily, and bounded empirical comparisons. The counterexample to a sufficient estimate does not negate every possible construction; a comparison of fitted residuals does not identify a model without its statistical and physical assumptions."
             ]
           },
           {
             "id": "result",
-            "heading": "What the example establishes",
+            "heading": "Representation changes the statement",
             "paragraphs": [
-              "For the stated circle-wave representation, a supplied Cauchy modulus suffices for observable reconstruction in RCA₀. The rate-free principle WR is equivalent over RCA₀ to ACA₀. The lower bound uses one fixed profile and one fixed detector at time zero.",
-              "This specializes a standard scalar-completeness reversal. Its value here is to expose exactly where a physical-looking reconstruction problem inherits its logical strength. The infinite argument is a human proof with independently checked finite reductions, not a proof-assistant formalization."
+              "Over RCA₀, the supplied-rate reconstruction WRμ is provable, whereas the rate-free assertion WR is equivalent to ACA₀. RCA means Recursive Comprehension Axiom; ACA means Arithmetical Comprehension Axiom. They name mathematical axiom systems used to calibrate the two assertions, not levels of physical accuracy.",
+              "The distinction is in the input representation and the requested fast name for the observable. The scalar completeness reversal is standard; the project realizes it within the fixed wave-detector construction. The cutoff example separately illustrates the logical difference between a correction for each finite stage and one correction with the required uniform regularity."
             ]
           },
           {
             "id": "limits",
-            "heading": "What remains separate",
+            "heading": "A failed prerequisite blocks its dependants",
             "paragraphs": [
-              "The representation is essential. Changing what constitutes an input can change the logical classification without changing the displayed wave equation. This example proves no representation-independent axiom requirement for physics.",
-              "The larger gravity programme involves differential complexes and their contractions. The current exported differential has a nonzero square; partial contraction identities alone do not repair that failure. These algebraic issues are separate from the wave reconstruction theorem."
+              "A complex must satisfy Q²=0 before its claimed cohomology and transfer can be used in the advertised way. The current serialized export has nonzero terms where that identity requires zero. A candidate fixes the diagnosed blocks, but those repairs do not constitute a proof of all identities for the whole object.",
+              "The right conclusion is scoped: dependent full-transfer claims remain unestablished by this export. One should not infer that every related classical complex or every reduced calculation is invalid. The website separates the current status from the historical publications and keeps the remaining hypotheses visible."
+            ]
+          },
+          {
+            "id": "evidence",
+            "heading": "Check the theorem and its encoding",
+            "paragraphs": [
+              "For a formal or computational check, identify the exact object, arithmetic and assumptions that entered the encoding. Finite exact arithmetic can verify a matrix identity without proving an infinite convergence theorem. Replaying a generator demonstrates reproduction; a distinct derivation tests a different failure mode.",
+              "The wave reversal illustrates the distinction: its infinite argument is written mathematics supported by independent finite checks, not a completed proof-assistant formalization. Audience editions are also editorial work. Sharing a status record prevents one kind of inconsistency but cannot mechanically prove that every explanation preserves meaning."
+            ]
+          },
+          {
+            "id": "explore",
+            "heading": "Move between explanation and formal statement",
+            "paragraphs": [
+              "Use the mathematics perspective to identify objects and hypotheses, the physics perspective to understand what the observable is intended to represent, and the specialist perspective to find the exact contribution and boundary. The dictionary crosslinks concepts rather than requiring a fixed reading order.",
+              "For a theorem, follow its statement to the evidence record and source argument. For a proposed composition, inspect the interface as well as the two endpoints. The atlas organizes where to look; it is not itself a proof of every implication suggested by the layout."
             ]
           }
         ],
         "specialist": [
           {
             "id": "question",
-            "heading": "Scope and contribution",
+            "heading": "An obligation-based research programme",
             "paragraphs": [
-              "The programme audits implications from physical assumptions and represented mathematical carriers to explicit obligations. Its reverse-mathematical component should be distinguished from characterization of a gravitational action by physical postulates.",
-              "The introductory entry points are a represented wave reconstruction comparison and a conditional reduced-tensor positivity separation. Neither is offered as a new general completeness theorem or a newly discovered ghost mechanism."
+              "The synthesis organizes claims as L + S + M + Enc(P) ⊢ O: logic, existence principles, carrier and encoded physical premises support a specified obligation. This is an audit framework, not a single formal metatheorem or a claim that every atlas record has been mechanically formalized.",
+              "Pure-Weyl and fourth-order case studies motivate the distinction between algebraic consistency, admissible classical directions, nonlinear continuation, causal construction, quantum positivity and empirical comparison. The living introduction follows Papers 99 and 98 while replacing their superseded full-transfer assertions with the current export boundary."
             ]
           },
           {
             "id": "inputs",
-            "heading": "Represented reconstruction",
+            "heading": "Type the interfaces, not only the endpoints",
             "paragraphs": [
-              "For the fixed rate-free principle WR on bounded Cauchy sequences of rational mean-zero chiral step pairs, RCA₀ proves WR ↔ ACA₀. With a supplied modulus, RCA₀ proves the corresponding reconstruction principle. A fixed profile and evaluation of a fixed tent detector at time zero already realize the reversal.",
-              "The contribution is the explicit observable-level reduction and input-contract comparison. Prerequisites for the detailed account are second-order arithmetic and represented analysis. Finite rational checks support the reduction; the infinite equivalence is not machine-formalized."
+              "Record which structures a comparison preserves: differential, pairing, causal support, observable identification, positivity, normalization or empirical meaning. A chain map is not automatically a cyclic identification; a causal distribution is not automatically a state; local anomaly cancellation is not a Lorentzian construction.",
+              "Dependency tags and lifecycle states prevent these substitutions. LOCAL-ALGEBRAIC, EUCLIDEAN-SPECTRAL, REDUCED-MODE and LORENTZIAN-CAUSAL describe different dependencies. Classification, coefficient calculation, restoration of a local identity and transfer to a residual complex are separate obligations. None alone establishes a complete physical model."
+            ]
+          },
+          {
+            "id": "map",
+            "heading": "Read the atlas as a typed evidence index",
+            "paragraphs": [
+              "The 576-coordinate surface indexes scoped local and literature evidence. Coverage envelopes may select different realizations for different obligations; they are not consistent-model existence proofs, viability probabilities or rankings by foundational strength.",
+              "Use passports and interface ledgers to inspect the first missing join. Historical grades remain visible for audit, including records whose advertised full export later failed. The current correction on the atlas takes precedence over interpreting those records as accepted end-to-end constructions."
+            ]
+          },
+          {
+            "id": "examples",
+            "heading": "Read each case at its actual target",
+            "paragraphs": [
+              "The case portfolio separates fourth-order completion and interaction tests, compact and Schwarzschild admissibility, local quantum classification, Euclidean stability estimates, and bounded model-to-data protocols. These targets have different result kinds and cannot be collapsed into one ghost verdict.",
+              "In particular, the older introductions’ affirmative full-complex BRST–Hadamard language is superseded by the current export audit. The examples remain useful as an obligation map, but an archived claim is not a current acceptance certificate. Follow the source-specific evidence before using any case as an input to another construction."
             ]
           },
           {
             "id": "result",
-            "heading": "Reduced positivity",
+            "heading": "Two bounded results, distinct dependencies",
             "paragraphs": [
-              "For the specified standard-real reduced TT carrier, finite spatial cutoffs admit symmetric smooth covariance repairs preserving the commutator. The established lower bound on the smooth-repair seminorm prevents a uniform smooth full repair. The statement does not assume stationary or mode-diagonal corrections.",
-              "Transfer to the full metric complex is unavailable: the all-energy action-normalized tensor commutator has not been identified on an accepted full export."
+              "For rational mean-zero chiral step-pair inputs with an ordinary-Cauchy promise, the specified fast polygonal output principle WR is equivalent to ACA₀ over RCA₀. With a supplied tail modulus, WRμ is provable in the base. This is second-order pointwise existence, supported by an infinite written argument and exact finite reduction checks, not a uniform higher-type operator theorem.",
+              "The reduced TT cutoff obstruction concerns smooth corrections preserving the specified commutator and short-distance condition. Finite positivity can be repaired cutoff by cutoff while the required smooth control diverges. The result remains conditional and reduced-mode; full off-shell transfer and full physical positivity are separate gates."
             ]
           },
           {
             "id": "limits",
-            "heading": "Current obstruction and reading order",
+            "heading": "Do not compose past the failed export gate",
             "paragraphs": [
-              "The published graph differential has exact first-order square defects. A 12-coefficient trace/ghost candidate removes the two exposed blocks; corrected inclusion and projection satisfy pi=1, QH+HQ=1−ip, Hi=0 and pH=0. Full nilpotency, both chain-map identities and cyclicity remain open.",
-              "Read the wave question for its precise input/output distinction. Use the research atlas for historical artifacts and dependency structure, with the current correction taking precedence over earlier transfer claims."
+              "The current audit exposes 28 metric and 16 trace terms in Q². The 12-coefficient trace/ghost candidate cancels those blocks and passes selected contraction identities; it does not certify the complete repaired differential, chain maps, cyclicity or full causal transfer.",
+              "No accepted full off-shell Lorentzian propagator, full BRST-compatible Hadamard state, renormalized Lorentzian time-ordered products, causal perturbative quantum field theory or Lorentzian quantum-master-equation theorem follows here. Residual deformation classes are not one-particle graviton states. Preserve these boundaries when reading older introductory assertions."
+            ]
+          },
+          {
+            "id": "evidence",
+            "heading": "Audit receipts without overreading them",
+            "paragraphs": [
+              "Inspect source commits and hashes, exact-versus-numerical types, verifier independence, mutation tests and declared non-claims. The claim graph should expose failed prerequisites rather than allowing a later-stage label to conceal them. Lifecycle transitions require evidence, not editorial repetition.",
+              "AI contributes derivation, implementation and exposition, with an accountable human contact. Neither AI authorship nor a proof-assistant brand settles validity. Review the encoded statement and its connection to the target model; the four website editions are not four independent confirmations."
+            ]
+          },
+          {
+            "id": "explore",
+            "heading": "A review path through the site",
+            "paragraphs": [
+              "Use the introduction to locate the programme, Questions for bounded worked statements, and the atlas for evidence roles, passports and interfaces. Read current status before relying on archived papers. The specialist edition leads with targets and acceptance boundaries; other editions should communicate the same programme without hiding those boundaries.",
+              "A useful review identifies a specific unsupported implication, mismatched type, missing premise or incorrect calculation. The framework is intended to make such objections actionable, not to turn a broad coverage map into a claim of completion."
             ]
           }
+        ]
+      },
+      "section_labels": [
+        "The programme",
+        "The assumptions",
+        "The map",
+        "The examples",
+        "What we learn",
+        "What remains open",
+        "How to judge it",
+        "Where to go next"
+      ],
+      "section_sources": {
+        "question": [
+          "intro99",
+          "intro98"
+        ],
+        "inputs": [
+          "intro99",
+          "intro98"
+        ],
+        "map": [
+          "intro99",
+          "intro98"
+        ],
+        "examples": [
+          "intro99",
+          "intro98"
+        ],
+        "result": [
+          "wave",
+          "cutoff",
+          "intro99",
+          "intro98"
+        ],
+        "limits": [
+          "audit",
+          "repair",
+          "repair_report",
+          "intro99",
+          "intro98"
+        ],
+        "evidence": [
+          "intro99",
+          "intro98",
+          "wave"
+        ],
+        "explore": [
+          "intro99",
+          "intro98"
         ]
       }
     },

@@ -2,6 +2,7 @@
 import hashlib
 import html
 import json
+import re
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -18,6 +19,7 @@ def load():
     for term in dictionary['terms']:
         if term['id'] in ids: raise ValueError('duplicate dictionary ID')
         ids.add(term['id'])
+        if term.get('abbreviation') and (not term.get('expansion') or term['expansion'] not in term['definitions']['general']): raise ValueError('expand abbreviation in general definition')
         if not term['scope'].strip(): raise ValueError('missing dictionary scope')
         if set(term['explanations']) != set(data['audiences']): raise ValueError('missing expanded perspective')
         for blocks in term['explanations'].values():
@@ -37,6 +39,9 @@ def load():
         if set(topic['versions'])!=set(data['audiences']):raise ValueError('missing audience edition')
         for sections in topic['versions'].values():
             if [s['id'] for s in sections]!=topic['section_ids']:raise ValueError('section identity drift')
+        if len(topic.get('section_labels',topic['section_ids']))!=len(topic['section_ids']): raise ValueError('section label mismatch')
+        for refs in topic.get('section_sources',{}).values():
+            if any(ref not in data['sources'] for ref in refs): raise ValueError('unknown introduction source')
         for c in topic['claim_ids']:
             if c not in data['claims']:raise ValueError('missing scientific record')
     return data
@@ -45,25 +50,44 @@ def load():
 def e(text): return html.escape(text,quote=True)
 
 
-def shell(title,body,active='introduction',audience=False):
+def site_header(active='introduction', editions=False):
     nav=[('introduction','index.html','Introduction'),('questions','questions.html','Questions'),('journeys','atlas.html#view=passports','Theory journeys'),('atlas','atlas.html','Research atlas'),('papers','papers.html','Papers'),('dictionary','dictionary.html','Dictionary')]
     links=''.join(f'<a href="{url}"'+(' aria-current="page"' if key==active else '')+f'>{label}</a>' for key,url,label in nav)
-    selector=''
-    if audience:
-        perspectives=[('general','General','No specialist background'),('physics','Physics','University physics'),('mathematics','Mathematics','University mathematics'),('specialist','Specialist','Topic-specific research knowledge')]
-        selector='<fieldset class="reading-controls"><legend>Reading perspectives</legend><p class="perspective-help">Choose one or more to read and compare. Physics and Mathematics assume different backgrounds, not a higher or lower level.</p><div class="perspective-options">'+''.join(f'<label class="perspective-option" data-perspective="{key}"><input type="checkbox" name="audience" value="{key}"'+(' checked' if key=='general' else '')+f'><span><strong>{label}</strong><small>{background}</small></span></label>' for key,label,background in perspectives)+'</div><div class="perspective-actions"><button type="button" id="show-all-perspectives">Compare all four</button><span id="audience-description" role="status" aria-live="polite">Showing General.</span></div></fieldset>'
+    perspectives=[('general','General','No specialist background'),('physics','Physics','University physics'),('mathematics','Mathematics','University mathematics'),('specialist','Specialist','Topic-specific research knowledge')]
+    choices=''.join(f'<label class="perspective-option" data-perspective="{key}"><input type="checkbox" name="audience" value="{key}"'+(' checked' if key=='general' else '')+f'><span><strong>{label}</strong><small>{background}</small></span></label>' for key,label,background in perspectives)
+    context='Changes the account and term explanations on this page.' if editions else 'Changes term explanations and your reading preference. This page has one shared account; atlas research views remain specialist.'
+    menu='<details class="perspective-menu" id="perspective-menu"><summary>Reading perspectives <span id="perspective-current">General</span></summary><div class="perspective-panel"><fieldset class="reading-controls"><legend>Reading perspectives</legend><p class="perspective-help">Choose one or more to read and compare. Physics and Mathematics assume different backgrounds, not a higher or lower level.</p><div class="perspective-options">'+choices+'</div><div class="perspective-actions"><button type="button" id="show-all-perspectives">Compare all four</button><span id="audience-description" role="status" aria-live="polite">Showing General.</span></div><p class="perspective-context">'+context+'</p><noscript>JavaScript is needed to change perspective. The general account remains readable.</noscript></fieldset></div></details>'
+    return f'<header class="site-header"><a class="brand" href="index.html">Reverse Physics<span>Questions before conclusions</span></a><nav aria-label="Main navigation">{links}</nav>{menu}</header>'
+
+
+def shell(title,body,active='introduction',audience=False):
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(title)} — Reverse Physics</title><meta name="description" content="Read the questions and evidence of reverse physics from a general, physics, mathematics or specialist perspective.">
-<link rel="stylesheet" href="reading.css"><script src="reading.js" defer></script><link rel="stylesheet" href="dictionary.css"><script src="dictionary.js" defer></script></head>
-<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Reverse Physics<span>Questions before conclusions</span></a><nav aria-label="Main navigation">{links}</nav></header>
-{selector}<main id="main">{body}</main><footer>Living accounts, dated papers, explicit limits. <a href="papers.html">About the publications</a> · <a href="editorial-record.json">Scientific and editorial record</a> · <a href="manifest.json">Build provenance</a></footer></body></html>'''
+<link rel="stylesheet" href="reading.css"><link rel="stylesheet" href="site-shell.css"><script src="reading.js" defer></script><link rel="stylesheet" href="dictionary.css"><script src="dictionary.js" defer></script></head>
+<body><a class="skip" href="#main">Skip to content</a>{site_header(active,audience)}<main id="main">{body}</main><footer>Living accounts, dated papers, explicit limits. <a href="papers.html">About the publications</a> · <a href="editorial-record.json">Scientific and editorial record</a> · <a href="manifest.json">Build provenance</a></footer></body></html>'''
+
+
+def linked_text(text, terms, current):
+    """Link unambiguous dictionary vocabulary in authored prose, excluding self."""
+    aliases={a.casefold():t['id'] for t in terms if t['id']!=current and t.get('auto_annotate',True) for a in t['aliases']}
+    if not aliases:return e(text)
+    pattern=re.compile(r'(?<!\w)('+ '|'.join(re.escape(a) for a in sorted(aliases,key=len,reverse=True))+r')(?!\w)',re.I)
+    parts=[];start=0;seen=set()
+    for match in pattern.finditer(text):
+        id=aliases[match.group().casefold()]
+        parts.append(e(text[start:match.start()]))
+        parts.append(e(match.group()) if id in seen else f'<a class="dictionary-crosslink" href="dictionary.html#{e(id)}">{e(match.group())}</a>')
+        seen.add(id);start=match.end()
+    return ''.join(parts)+e(text[start:])
 
 
 def topic_page(data,key):
     topic=data['topics'][key]
     body=f'<header class="reading-hero"><p class="eyebrow">'+('The project' if key=='introduction' else 'Approximations and prediction')+f'</p><h1>{e(topic["title"])}</h1><p class="deck">{e(topic["deck"])}</p></header>'
-    body+='<nav class="section-nav" aria-label="On this page">'+''.join(f'<a href="#{sid}">{label}</a>' for sid,label in zip(topic['section_ids'],['The question','The assumptions','The result','The limits']))+'</nav>'
+    if key=='introduction':
+        body+='<p class="intro-provenance">The living introduction, adapted from <a href="papers/99-how-to-build-a-universe.pdf">How to Build a Universe</a> and the <a href="papers/98-physicist-executive-summary.pdf">physicist introduction</a>. The same programme and section outline at four perspectives, updated against the current evidence.</p>'
+    body+='<nav class="section-nav" aria-label="On this page">'+''.join(f'<a href="#{sid}">{label}</a>' for sid,label in zip(topic['section_ids'],topic.get('section_labels',['The question','The assumptions','The result','The limits'])))+'</nav>'
     for sid in topic['section_ids']:
         body+=f'<section id="{sid}" class="reading-section">'
         for audience,sections in topic['versions'].items():
@@ -102,20 +126,20 @@ def generated():
         'reading.css':(ASSETS/'reading.css').read_bytes(),'reading.js':(ASSETS/'reading.js').read_bytes(),
         'editorial-record.json':(json.dumps({k:v for k,v in data.items() if k!='concepts'},indent=2,ensure_ascii=False)+'\n').encode()}
     dictionary=json.loads(DICTIONARY.read_text())
-    for name in ['dictionary.js','dictionary.css']:
+    for name in ['dictionary.js','dictionary.css','site-shell.css']:
         outputs[name]=(ASSETS/name).read_bytes()
     outputs['dictionary.json']=DICTIONARY.read_bytes()
     ordered=sorted(dictionary['terms'],key=lambda t:t['label'].casefold())
     word_list=sorted([(label,t['id']) for t in ordered for label in [t['label'],*t.get('index_labels',[])]],key=lambda pair:pair[0].casefold())
-    body='<h1>Dictionary</h1><p>Choose your reading perspectives, then browse the alphabetical word list. Each entry explains the idea, its use in this project and its limits. These are reviewed editorial explanations, not new scientific certificates.</p>'
+    body='<header class="reading-hero"><p class="eyebrow">Concepts and connections</p><h1>Dictionary</h1><p class="deck">Choose your reading perspectives, then browse the alphabetical word list. Each entry explains the idea, its use in this project and its limits.</p></header>'
     body+='<nav class="dictionary-index" aria-label="Alphabetical word list"><h2>Alphabetical word list</h2><ul>'+''.join(f'<li><a href="#{e(id)}">{e(label)}</a></li>' for label,id in word_list)+'</ul></nav>'
     labels={t['id']:t['label'] for t in ordered}
     for term in ordered:
-        body+=f'<section class="reading-section dictionary-entry" id="{e(term["id"])}"><header class="dictionary-entry-heading"><h2>{e(term["label"])}</h2><p>{e(term["scope"])}</p></header>'
+        body+=f'<section class="reading-section dictionary-entry" id="{e(term["id"])}"><header class="dictionary-entry-heading"><h2>{e(term["label"])}</h2><p>{e(term["scope"])}</p>'+ (f'<p class="abbreviation-expansion"><strong>Stands for:</strong> {e(term["expansion"])}</p>' if term.get('expansion') else '')+'</header>'
         for audience,definition in term['definitions'].items():
-            body+=f'<div data-edition="{audience}"'+(' hidden' if audience!='general' else '')+f'><span class="edition-label">{e(data["audiences"][audience]["label"])}</span><p class="definition-summary">{e(definition)}</p>'
+            body+=f'<div data-edition="{audience}"'+(' hidden' if audience!='general' else '')+f'><span class="edition-label">{e(data["audiences"][audience]["label"])}</span><p class="definition-summary">{linked_text(definition,ordered,term['id'])}</p>'
             for block in term['explanations'][audience]:
-                body+=f'<h3>{e(block["heading"])}</h3><p>{e(block["text"])}</p>'
+                body+=f'<h3>{e(block["heading"])}</h3><p>{linked_text(block["text"],ordered,term['id'])}</p>'
             body+='</div>'
         body+='<footer class="dictionary-entry-sources"><p>Related: '+ ' · '.join(f'<a href="#{e(id)}">{e(labels[id])}</a>' for id in term['related'])+'</p><details><summary>Sources and editorial scope</summary><p>AI editorial review against these sources; no independent expert approval. Historical source claims remain subject to the current project status.</p><ul>'
         for source in term['sources']:
@@ -145,4 +169,4 @@ def generated():
 
 def inputs():
     data=load()
-    return [Path(__file__).resolve(),CONTENT,DICTIONARY,*[ROOT/s['path'] for t in json.loads(DICTIONARY.read_text())['terms'] for s in t['sources']],ASSETS/'dictionary.js',ASSETS/'dictionary.css',ASSETS/'reading.css',ASSETS/'reading.js',*[ROOT/r['path'] for r in data['sources'].values()],*[ROOT/'paper'/p for p in PAPERS]]
+    return [Path(__file__).resolve(),CONTENT,DICTIONARY,*[ROOT/s['path'] for t in json.loads(DICTIONARY.read_text())['terms'] for s in t['sources']],ASSETS/'dictionary.js',ASSETS/'dictionary.css',ASSETS/'site-shell.css',ASSETS/'reading.css',ASSETS/'reading.js',*[ROOT/r['path'] for r in data['sources'].values()],*[ROOT/'paper'/p for p in PAPERS]]
