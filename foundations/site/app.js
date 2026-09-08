@@ -216,7 +216,7 @@
 
   function updateHash() {
     const params = new URLSearchParams();
-    if (state.view !== "matrix") params.set("view", state.view);
+    if (state.view !== "matrix") params.set("view", state.view); const termStage = new URLSearchParams(location.hash.slice(1)).get("termStage"); if (state.view === "ladder" && DATA.ladder.some(step => step.level === termStage)) params.set("termStage", termStage);
     if (state.q) params.set("q", state.q);
     if (state.seededOnly) params.set("seeded", "1");
     if (state.cell) params.set("cell", state.cell);
@@ -488,7 +488,7 @@
     document.getElementById("ladder").innerHTML = DATA.ladder.map(step => {
       const established = step.establishes || step.establishes_if_formalized || [];
       const open = step.open || step.does_not_establish || (step.boundary ? [step.boundary] : []);
-      return `<article class="ladder-step" style="--status:${colors[step.status] || STATUS.NOT_MAPPED.color}"><div><p class="ladder-level">${esc(step.level)}</p><span class="quality">${esc(step.status)}</span></div><div><h3>${esc(step.object)}</h3><p><b>Base:</b> ${esc(step.sufficient_base || step.candidate_upper_bound || "Not classified")}</p><div class="ladder-columns"><div><h4>Adds</h4><ul>${list(step.adds).map(x => `<li>${esc(x)}</li>`).join("")}</ul></div><div><h4>Establishes</h4><ul>${list(established).map(x => `<li>${esc(x)}</li>`).join("") || "<li>Conditional target only</li>"}</ul></div><div><h4>Still open / excluded</h4><ul>${list(open).map(x => `<li>${esc(x)}</li>`).join("")}</ul></div></div>${step.separation ? `<p class="boundary">${esc(step.separation)}</p>` : ""}</div></article>`;
+      return `<article id="ladder-${esc(step.level)}" tabindex="-1" class="ladder-step" style="--status:${colors[step.status] || STATUS.NOT_MAPPED.color}"><div><p class="ladder-level">${esc(step.level)}</p><span class="quality">${esc(step.status)}</span></div><div><h3>${esc(step.object)}</h3><p><b>Base:</b> ${esc(step.sufficient_base || step.candidate_upper_bound || "Not classified")}</p><div class="ladder-columns"><div><h4>Adds</h4><ul>${list(step.adds).map(x => `<li>${esc(x)}</li>`).join("")}</ul></div><div><h4>Establishes</h4><ul>${list(established).map(x => `<li>${esc(x)}</li>`).join("") || "<li>Conditional target only</li>"}</ul></div><div><h4>Still open / excluded</h4><ul>${list(open).map(x => `<li>${esc(x)}</li>`).join("")}</ul></div></div>${step.separation ? `<p class="boundary">${esc(step.separation)}</p>` : ""}</div></article>`;
     }).join("");
   }
 

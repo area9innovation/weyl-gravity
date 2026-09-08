@@ -54,6 +54,15 @@
   const menu=document.getElementById('perspective-menu');
   document.addEventListener('click',event=>{if(menu && !menu.contains(event.target)) menu.open=false;});
   document.addEventListener('keydown',event=>{if(event.key==='Escape' && menu?.open){menu.open=false;menu.querySelector('summary').focus();}});
+  function jumpToLadderStage() {
+    const stage=new URLSearchParams(location.hash.slice(1)).get('termStage');
+    const target=stage && document.getElementById('ladder-'+stage);
+    if (target && document.getElementById('ladderView')?.classList.contains('active')) {
+      target.focus({preventScroll:true}); target.scrollIntoView({block:'start'});
+    }
+  }
+  window.addEventListener('hashchange',jumpToLadderStage);
+  requestAnimationFrame(jumpToLadderStage);
   apply(selected, false);
   choices.forEach(choice => choice.addEventListener('change', () => {
     const values = choices.filter(input => input.checked).map(input => input.value);

@@ -167,3 +167,11 @@
   .passport-progress { grid-template-columns: 1fr; }
 }
 .reader-links{display:flex;flex-wrap:wrap;gap:1.2rem;padding:1.2rem 4%;background:#faf9f3;border-bottom:1px solid #b9c9c0}.reader-links a{color:#075e4c}.reader-links span{color:#465e54;margin-left:auto}.export-audit{padding:1rem 1.3rem;background:#fff0cf;color:#493800;border:1px solid #c9ad66;border-radius:8px;margin-bottom:1rem}.export-audit a{color:#064f42}
+
+.ladder-terminology { margin:1rem 0 2rem; padding:1rem 1.2rem; background:#f3f6ef; border:1px solid #bbc9bd; border-radius:8px; }
+.ladder-terminology summary { cursor:pointer; font-weight:700; }
+.ladder-terminology ul { columns:2; padding-left:1.3rem; }
+.ladder-terminology li { break-inside:avoid; margin:0 0 .7rem; }
+.ladder-step:focus { outline:2px solid #17633e; outline-offset:4px; }
+.ladder-step { scroll-margin-top:1rem; }
+@media(max-width:750px) { .ladder-terminology ul { columns:1; } }

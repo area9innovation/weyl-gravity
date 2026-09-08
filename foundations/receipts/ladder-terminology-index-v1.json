@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "kind": "editorial-terminology-index-validation",
+  "dependency_tags": [],
+  "scientific_claims_promoted": false,
+  "checks": [
+    {
+      "command": "python3 -m py_compile foundations/ladder_terms.py foundations/build_term_inventory.py foundations/build_matrix_site_v2.py foundations/tests/test_ladder_terms.py foundations/tests/browser_ladder_terms.py",
+      "elapsed_seconds": 0.088,
+      "status": "PASS"
+    },
+    {
+      "command": "/home/asger/.local/share/mise/installs/node/24.20.0/bin/node --check foundations/site/app.js",
+      "elapsed_seconds": 0.062,
+      "status": "PASS"
+    },
+    {
+      "command": "/home/asger/.local/share/mise/installs/node/24.20.0/bin/node --check foundations/matrix_site_v2_assets/reading.js",
+      "elapsed_seconds": 0.04,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 foundations/build_term_inventory.py --check",
+      "elapsed_seconds": 4.651,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest foundations.tests.test_ladder_terms foundations.tests.test_term_inventory foundations.tests.test_reading_site foundations.tests.test_matrix_site",
+      "elapsed_seconds": 19.459,
+      "status": "PASS"
+    },
+    {
+      "command": "PYTHONPATH=/tmp/tt-browser-deps python3 foundations/tests/browser_ladder_terms.py",
+      "elapsed_seconds": 5.811,
+      "status": "PASS"
+    },
+    {
+      "command": "PYTHONPATH=/tmp/tt-browser-deps python3 foundations/tests/browser_reading_site.py",
+      "elapsed_seconds": 6.125,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 foundations/verify_matrix_site_v2.py",
+      "elapsed_seconds": 3.46,
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "elapsed_seconds": 0.047,
+      "status": "PASS"
+    }
+  ],
+  "hashes": {
+    "foundations/editorial/ladder-terms.json": "6f00dd45217d8c8a144536eb63cf34af373576665d21d7282d86c04169b010ea",
+    "foundations/ladder_terms.py": "556249a51c718993ff27a91901d24be9f8700efacc32b4098071a5ae85fed655",
+    "foundations/build_term_inventory.py": "2c6fd43aa271ecbb66b16c4e44a88201e9ed8645bda89b500464987d35e2cf4b",
+    "foundations/site/ladder-terms.json": "f7ab51ccb15480de1c704a591cd5f259afb8c5f7beafab14e2be9abe2681408c",
+    "foundations/site/atlas.html": "3d2752bab4c65e6268b0ab8f974d183d671febbb282207a057bf34f0f9d8fba7",
+    "foundations/site/manifest.json": "86acc04d7617febd99e6cf542d3df277fbffe0d88153dd1a30dac3d911e99d0d",
+    "foundations/results/TERM_INVENTORY_V1.json": "f09f656c717ac715f010dc07509d894025934f89fea616abe591da6a63e8e32b"
+  },
+  "assumptions": [
+    "Rendered ladder is the indexing target; historical scientific grades are not revalidated",
+    "Explicit vocabulary registry is curated, not automatically complete"
+  ],
+  "unresolved": [
+    "51 indexed items still need dedicated four-perspective definitions",
+    "Five existing dictionary links are related explanations, not full phrase coverage"
+  ],
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "No mathematical input, core algebra, theorem or lifecycle changes"
+  }
+}

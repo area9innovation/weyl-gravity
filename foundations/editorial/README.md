@@ -183,3 +183,26 @@ once per paragraph, and respects `auto_annotate: false`. Existing related-term
 links handle deliberate connections, including ambiguous terms. Links work
 without JavaScript and preserve selected perspectives when JavaScript is
 available. Crosslinking is not a substitute for a self-contained explanation.
+
+## Strength-ladder index
+
+The ladder has a dedicated alphabetical “Terms on this page” index.
+`ladder-terms.json` is its curated vocabulary registry; `ladder_terms.py`
+indexes the actual displayed fields, including stage identifiers, conditional
+results, open/excluded statements and separation notes. `site/ladder-terms.json`
+retains exact strings and character offsets for every match. The broad corpus
+inventory embeds this focused index and now also reads the formerly omitted
+conditional/open/separation fields.
+
+The initial index has 52 concepts and four status labels. Five links point to
+related dictionary entries; other entries explicitly say Definition pending.
+A related entry is not a claim that the entire phrase is explained. No new
+four-perspective definitions are invented by indexing. Stages and historical
+scientific grades remain unchanged. Visible underscore-separated stage names
+are indexed as displayed labels, unlike hidden machine identifiers.
+
+Stage links preserve `view=ladder`, `termStage` and the audience query; the
+selected stage is focused on navigation and reload. Add reviewed vocabulary
+to the registry, then rebuild the site and inventory. The browser check
+compares every recorded source string with the rendered ladder so missing
+rendered-field coverage is exposed separately from extraction reproduction.

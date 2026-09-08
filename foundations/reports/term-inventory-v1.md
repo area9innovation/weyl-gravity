@@ -63,7 +63,7 @@ Counts are lexical reach, not understanding scores. Repeated cell templates infl
 | symplectic | 0 | 18 | 18 | 102 | pending |
 | nilpotency | 0 | 17 | 18 | 45 | pending |
 | homotopy | 0 | 16 | 18 | 154 | pending |
-| distribution | 1 | 12 | 18 | 69 | pending |
+| distribution | 1 | 12 | 18 | 71 | pending |
 | detector | 3 | 11 | 17 | 201 | pending |
 | convergence rate | 2 | 9 | 15 | 48 | modulus |
 | BFV | 1 | 13 | 14 | 83 | pending |
@@ -81,6 +81,69 @@ Counts are lexical reach, not understanding scores. Repeated cell templates infl
 | weak König | 0 | 1 | 3 | 9 | pending |
 | test function | 0 | 2 | 2 | 2 | pending |
 | uniform convergence | 0 | 0 | 0 | 0 | pending |
+
+## Strength-ladder terminology
+
+The page-specific index covers displayed stage names, headings, bases, additions, established statements, exclusions and separation notes. It currently lists 56 concepts/status labels; 5 link to related dictionary entries. The remainder are definition work, not implicitly explained vocabulary.
+
+| Term | Stages | Dictionary coverage |
+|---|---|---|
+| Advanced solution map | L5 | pending |
+| Cauchy completion | L2 | pending |
+| Cauchy existence and uniqueness | L2, L5 | pending |
+| Cauchy name | L1 | pending |
+| Causal support | L0, L2 | pending |
+| Chiral modes and pairs | L0, L2 | pending |
+| Choice principle | L5 | pending |
+| Coded energy carrier | L2 | carrier |
+| Coefficient-to-distribution comparison | L3 | pending |
+| Coefficient-weak solution | L3 | pending |
+| Completion | L0, L2 | pending |
+| Conditional import | L5 | pending |
+| Constructive method | L1 | pending |
+| Continuity | L4 | pending |
+| Convergence modulus | L1, L2 | modulus |
+| Decidable rational equality | L0 | pending |
+| Diagonal construction | L2 | pending |
+| Distribution | L3, L4, L5 | pending |
+| Distributional duality | L5 | pending |
+| Energy estimate | L5 | pending |
+| Energy state | L1, L2, L3 | state |
+| Exact arithmetic | L0, L2 | pending |
+| Fast-Cauchy name | L2 | pending |
+| Finite propagation | L5 | pending |
+| Finite-support pairing | L3 | pending |
+| Formalization target | L3 | pending |
+| Fourier representation | L3, L4 | pending |
+| Galerkin nesting | L0 | pending |
+| Green operator | L5 | pending |
+| Hilbert coefficient sequence | L4 | pending |
+| Induction | L1 | pending |
+| Laurent algebra | L0, L4 | pending |
+| Localized test class | L3 | pending |
+| Mean-zero data | L2 | pending |
+| Open stage | L4 | pending |
+| Polygonal data | L2 | pending |
+| PRA (Primitive Recursive Arithmetic) | L0 | pending |
+| Primitive recursion | L1, L2 | pending |
+| RCA₀ (Recursive Comprehension Axiom) | L2 | rca |
+| Representation | L2 | pending |
+| Representation invariance | L2 | pending |
+| Retarded solution map | L5 | pending |
+| Reversal and necessity | L2 | reverse-mathematics |
+| Slab globalization | L5 | pending |
+| Smooth test function | L4 | pending |
+| Spacetime | L3, L4 | pending |
+| Spatial localization | L0 | pending |
+| Stage marked certified | L0, L1, L2 | pending |
+| Support propagation | L5 | pending |
+| Telescoping bound | L1 | pending |
+| Test-function space | L4 | pending |
+| Test-function topology | L4 | pending |
+| Translation group | L2 | pending |
+| Uniform modulus extractor | L1 | pending |
+| Weak equation | L2, L3 | pending |
+| Weakest base | L3, L5 | pending |
 
 ## Editorial sequence
 

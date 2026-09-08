@@ -16,7 +16,7 @@ if str(_ROOT) not in sys.path:
 from foundations import build_matrix_site as v1
 from foundations.theory_assembly import build_assembly_assessment
 from foundations.theory_viability import build_assessment
-from foundations import reading_site
+from foundations import reading_site, ladder_terms
 
 ROOT = v1.ROOT
 FOUNDATIONS = v1.FOUNDATIONS
@@ -1113,6 +1113,10 @@ def generated() -> dict[Path, bytes]:
         '<script src="app.js"></script>',
         '<script src="app.js"></script>\n  <script src="migration-review.js"></script>',
     ).encode()
+    app=app.replace(b'if (state.view !== "matrix") params.set("view", state.view);', b'if (state.view !== "matrix") params.set("view", state.view); const termStage = new URLSearchParams(location.hash.slice(1)).get("termStage"); if (state.view === "ladder" && DATA.ladder.some(step => step.level === termStage)) params.set("termStage", termStage);')
+    term_index=ladder_terms.inventory(dataset['ladder'])
+    app=app.replace(b'<article class="ladder-step"', b'<article id="ladder-${esc(step.level)}" tabindex="-1" class="ladder-step"')
+    index=index.replace(b'<div id="ladder">', ladder_terms.render(term_index).encode()+b'<div id="ladder">')
     index = index.replace(b'<a href="manifest.json">Build manifest</a>',
         b'<a href="cutoff-positivity.html">Finite positivity case study</a>\n    <a href="manifest.json">Build manifest</a>')
     index = index.replace(b'<body>', ('<body>'+reading_site.site_header('atlas')).encode())
@@ -1124,6 +1128,7 @@ def generated() -> dict[Path, bytes]:
         SITE / "app.js": app,
         SITE / "migration-review.js": (V2_ASSETS / "app-v2.js").read_bytes(),
         SITE / "data.json": data_json,
+        SITE / "ladder-terms.json": (json.dumps(term_index,indent=2,ensure_ascii=False)+"\n").encode(),
         SITE / "data.js": b"window.MATRIX_EXPLORER_DATA = " + data_json.rstrip() + b";\n",
         SITE / "viability.json": viability_json,
         SITE / "viability.js": b"window.THEORY_VIABILITY_DATA = " + viability_json.rstrip() + b";\n",
@@ -1250,7 +1255,7 @@ def generated() -> dict[Path, bytes]:
     ]))
     for source in bundled_sources:
         outputs[SITE / "sources" / source.relative_to(ROOT)] = source.read_bytes()
-    input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", FOUNDATIONS / "theory_assembly.py", FOUNDATIONS / "build_gr_cassini_assembly.py", FOUNDATIONS / "check_gr_cassini_assembly.py", FOUNDATIONS / "verify_gr_cassini_assembly.py", FOUNDATIONS / "build_mannheim_ngc3198_assembly.py", FOUNDATIONS / "check_mannheim_ngc3198_assembly.py", FOUNDATIONS / "verify_mannheim_ngc3198_assembly.py", FOUNDATIONS / "build_ngc3198_common_fit_comparison.py", FOUNDATIONS / "check_ngc3198_common_fit_comparison.py", FOUNDATIONS / "verify_ngc3198_common_fit_comparison.py", FOUNDATIONS / "standard-gr-observational-control-v1.json", FOUNDATIONS / "schema/standard-gr-observational-control-v1.schema.json", *bundled_sources, *reading_site.inputs(), V2_ASSETS / "cutoff-positivity.html", ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js", V2_ASSETS / "styles-v2.css"]))
+    input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", FOUNDATIONS / "theory_assembly.py", FOUNDATIONS / "build_gr_cassini_assembly.py", FOUNDATIONS / "check_gr_cassini_assembly.py", FOUNDATIONS / "verify_gr_cassini_assembly.py", FOUNDATIONS / "build_mannheim_ngc3198_assembly.py", FOUNDATIONS / "check_mannheim_ngc3198_assembly.py", FOUNDATIONS / "verify_mannheim_ngc3198_assembly.py", FOUNDATIONS / "build_ngc3198_common_fit_comparison.py", FOUNDATIONS / "check_ngc3198_common_fit_comparison.py", FOUNDATIONS / "verify_ngc3198_common_fit_comparison.py", FOUNDATIONS / "standard-gr-observational-control-v1.json", FOUNDATIONS / "schema/standard-gr-observational-control-v1.schema.json", *bundled_sources, *reading_site.inputs(), Path(ladder_terms.__file__), ladder_terms.REGISTRY, V2_ASSETS / "cutoff-positivity.html", ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js", V2_ASSETS / "styles-v2.css"]))
     manifest = {
         "schema_version": "foundational-matrix-explorer-manifest-v2",
         "created": CREATED,
