@@ -24,7 +24,11 @@ They are not a single ability ranking. Mathematics does not assume field
 theory or reverse mathematics; Physics does not assume mathematical logic.
 Specialist sections explicitly identify the prerequisites of the result.
 Audience selection changes the argument and emphasis, not its scientific
-strength. It preserves the topic, section anchor and common status record.
+strength. Checkboxes select one or more editions for review. Each section
+shows the selected accounts together, in two columns on wide screens and a
+single stack on mobile. Labels, accent colors and explicit background notes
+identify each perspective; color is never the only indication. The selection
+preserves the topic, section anchor and common status record.
 
 The site contains fixed, reviewed editions. There is no runtime AI rewriting.
 The initial editorial review was performed by the AI assistant against pinned
@@ -59,9 +63,11 @@ PYTHONPATH=/tmp/tt-browser-deps python3 foundations/tests/browser_reading_site.p
 ```
 
 `reading_site.py` renders static HTML with the general edition visible without
-JavaScript. `reading.js` switches the already-rendered editions. An explicit
-`?audience=mathematics` link takes precedence over stored preference. A section
-anchor such as `#inputs` survives switching. Local storage is optional.
+JavaScript. `reading.js` shows the selected, already-rendered editions. An
+explicit `?audience=general,mathematics` link takes precedence over stored
+preference; older single-perspective links still work. At least one edition
+stays selected, and “Compare all four” is a shortcut. A section anchor such as
+`#inputs` survives switching. Local storage is optional.
 
 The old `index.html#view=...`, cell and filter links redirect to `atlas.html`
 with their query and hash preserved. Research data, matrix grades and

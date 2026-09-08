@@ -13,12 +13,15 @@ CONTENT=ROOT/'foundations/editorial/reading-content.json'
 
 class Page(HTMLParser):
     def __init__(self,text):
-        super().__init__();self.links=[];self.ids=[];self.editions=[];self.claims=[];self.feed(text)
+        super().__init__();self.links=[];self.ids=[];self.editions=[];self.claims=[];self.perspectives=[];self.feed(text)
     def handle_starttag(self,tag,attrs):
         a=dict(attrs)
         if 'id' in a:self.ids.append(a['id'])
         if 'data-edition' in a:self.editions.append(a['data-edition'])
         if 'data-claim' in a:self.claims.append(a['data-claim'])
+        if tag=='input' and a.get('name')=='audience':
+            assert a.get('type')=='checkbox','perspective must support multiple selections'
+            self.perspectives.append(a['value'])
         if tag=='a' and 'href' in a:self.links.append(a['href'])
 
 
@@ -39,6 +42,7 @@ def verify():
         assert all(s in p.ids for s in t['section_ids'])
         assert p.claims==t['claim_ids'],'separate or missing status record'
         assert set(p.editions)==set(d['audiences'])
+        assert p.perspectives==list(d['audiences']),'checkbox coverage/order'
         for a in d['audiences']:
             assert [s['id'] for s in t['versions'][a]]==t['section_ids']
     for name in ['index.html','wave.html','questions.html','papers.html','atlas.html','cutoff-positivity.html']:

@@ -1,0 +1,145 @@
+{
+  "schema_version": "reading-perspective-comparison-validation-v1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "result_kind": "EDITORIAL_NAVIGATION_CHANGE",
+  "base_commit": "8b91a7b8d7711bee2d7ec577f240e1fec09974d3",
+  "assignment": "User requested checkboxes and visual perspective/background indications for reviewing levels of explanation.",
+  "coordination": "Opening Science Forge status clean and fetch current. Direct user-authorized website change; no scientific operators or resident lifecycle changed.",
+  "commands": [
+    {
+      "tier": "Tier 0",
+      "command": "python3 -m py_compile foundations/reading_site.py foundations/tests/browser_reading_site.py foundations/verify_reading_site.py foundations/build_matrix_site_v2.py",
+      "elapsed_seconds": 0.078463,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "tier": "Tier 0",
+      "command": "/home/asger/.local/share/mise/installs/node/24.20.0/bin/node --check foundations/matrix_site_v2_assets/reading.js",
+      "elapsed_seconds": 0.059662,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "tier": "Tier 1",
+      "command": "python3 -m unittest foundations.tests.test_reading_site",
+      "elapsed_seconds": 0.122167,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "PASS: audience coverage, shared section/status identity, input hashes, local links and correction boundaries; semantic prose review remains editorial\n",
+      "stderr": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.014s\n\nOK\n"
+    },
+    {
+      "tier": "Tier 1",
+      "command": "PYTHONPATH=/tmp/tt-browser-deps python3 foundations/tests/browser_reading_site.py",
+      "elapsed_seconds": 4.617168,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "PASS: default introduction, checkbox comparisons, labeled backgrounds, keyboard control, nonempty selection, section preservation, shared status, persistence, history, mobile layout, legacy atlas links, no-JS reading and blocked-storage fallback\n",
+      "stderr": ""
+    },
+    {
+      "tier": "Tier 2",
+      "command": "python3 foundations/verify_matrix_site_v2.py",
+      "elapsed_seconds": 3.516458,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2: PASS\n  - Draft 2020-12 result schema\n  - independent full-surface, migration, and evidence audit\n  - deterministic static build\n  - content-addressed manifest\n  - fail-closed claim flags\n  - human-readable migration and deployment report\n",
+      "stderr": ""
+    },
+    {
+      "tier": "Tier 0",
+      "command": "git diff --check -- foundations/reading_site.py foundations/matrix_site_v2_assets/reading.css foundations/matrix_site_v2_assets/reading.js foundations/tests/browser_reading_site.py foundations/verify_reading_site.py foundations/editorial/README.md foundations/build_matrix_site_v2.py foundations/reports/reading-perspective-comparison-v1.md foundations/reports/matrix-explorer-site-v2.md foundations/site/index.html foundations/site/wave.html foundations/site/reading.css foundations/site/reading.js foundations/site/manifest.json foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
+      "elapsed_seconds": 0.020557,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "tier": "Serving check",
+      "command": "urllib.request GET http://127.0.0.1:8765/{index.html,reading.js,reading.css}; compare bytes with generated files",
+      "elapsed_seconds": 0.075525,
+      "status": "PASS"
+    }
+  ],
+  "visual_review": "Desktop four-perspective comparison and mobile General+Mathematics screenshots inspected. Explicit labels and backgrounds supplement accent colors.",
+  "higher_tiers": {
+    "tier_2": "Affected site verifier and deterministic generated output checks passed.",
+    "tier_3": "NOT_RUN: no core algebra change, freeze, release or scientific promotion."
+  },
+  "claims": {
+    "multi_perspective_review_available": true,
+    "scientific_content_changed": false,
+    "new_scientific_claim": false
+  },
+  "serving": "Existing wt-exposed server serves the rebuilt files; local HTTP bytes verified. External route retains Web Agent authentication.",
+  "artifacts": [
+    {
+      "path": "foundations/reading_site.py",
+      "sha256": "dde09a224d2a926e10b2b75e8b305be2e02fafe574b052ac8ad691ef1b909172"
+    },
+    {
+      "path": "foundations/matrix_site_v2_assets/reading.css",
+      "sha256": "93072a8224ae5f5bec56a48e7fb4560c052ccf5607a1e8c587a148a6194248b0"
+    },
+    {
+      "path": "foundations/matrix_site_v2_assets/reading.js",
+      "sha256": "00f9d996d658e43365709643fa8e4bb1eadeb89959c30b42fef50e2f8446f4b7"
+    },
+    {
+      "path": "foundations/tests/browser_reading_site.py",
+      "sha256": "159319e9eef41e9477bbe173b5643314ea0512277a8e03e7e06d6e945e2a4b75"
+    },
+    {
+      "path": "foundations/verify_reading_site.py",
+      "sha256": "09c232b516f12e274293fd6b5f406471cc42a4ab9395658d8bfbec4703ad02e8"
+    },
+    {
+      "path": "foundations/editorial/README.md",
+      "sha256": "5f2269c2643695ed2e9bd27c805227d87ad9c84baa84e0f85729951cff502c9e"
+    },
+    {
+      "path": "foundations/build_matrix_site_v2.py",
+      "sha256": "500fe453d74c7abacf08b4b1a33555c7134d2a3e34bc35ff1e2f014291fe6a4d"
+    },
+    {
+      "path": "foundations/reports/reading-perspective-comparison-v1.md",
+      "sha256": "e6576245e7979e5352f93dd828388c54c0b4d27f8ce0bda1ad1bcf0256e1a03a"
+    },
+    {
+      "path": "foundations/reports/matrix-explorer-site-v2.md",
+      "sha256": "8da0957868df54f140730eb46a9a8866e79bac9ec9c832bcf1052d0dac7c543b"
+    },
+    {
+      "path": "foundations/site/index.html",
+      "sha256": "7d66d14d06b3b3529ae3b3d889e192cb9a6dbaa7edd9a044402eda07ecff9176"
+    },
+    {
+      "path": "foundations/site/wave.html",
+      "sha256": "6288de0d6166bb19e2bba61719d8fd11cb0aea31927c33dea3f1e7e7e15ab7fc"
+    },
+    {
+      "path": "foundations/site/reading.css",
+      "sha256": "93072a8224ae5f5bec56a48e7fb4560c052ccf5607a1e8c587a148a6194248b0"
+    },
+    {
+      "path": "foundations/site/reading.js",
+      "sha256": "00f9d996d658e43365709643fa8e4bb1eadeb89959c30b42fef50e2f8446f4b7"
+    },
+    {
+      "path": "foundations/site/manifest.json",
+      "sha256": "dd5342698a33ac1bd7098408c142caaa6b0da4fb16da955affb0f7239b80de39"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
+      "sha256": "d6f0120c51c4c9c48be6fbd086dc068df596f41e8e24179c564df16b2bd7f126"
+    }
+  ]
+}

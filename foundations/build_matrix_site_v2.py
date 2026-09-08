@@ -631,7 +631,9 @@ def render_report(result: dict[str, Any]) -> str:
 The primary entry point is now the unified introduction, with General,
 Physics, Mathematics and Specialist editions. The wave question uses the same
 audience and section system. Source-pinned scientific records supply shared
-status; changed sources require editorial review before rebuilding. Papers 98
+status. Perspective checkboxes allow comparison within each section, with
+labels, color accents and explicit background notes. Changed sources require
+editorial review before rebuilding. Papers 98
 and 99 remain dated publications with a visible correction notice. The matrix
 has moved to `atlas.html`; historical `index.html` atlas hashes redirect there.
 

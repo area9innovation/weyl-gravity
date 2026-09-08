@@ -32,7 +32,8 @@ def shell(title,body,active='introduction',audience=False):
     links=''.join(f'<a href="{url}"'+(' aria-current="page"' if key==active else '')+f'>{label}</a>' for key,url,label in nav)
     selector=''
     if audience:
-        selector='<div class="reading-controls"><label for="audience">Reading perspective</label><select id="audience" name="audience">'+''.join(f'<option value="{key}">{label}</option>' for key,label in [('general','General'),('physics','Physics'),('mathematics','Mathematics'),('specialist','Specialist')])+'</select><span id="audience-description">No specialist background assumed.</span></div>'
+        perspectives=[('general','General','No specialist background'),('physics','Physics','University physics'),('mathematics','Mathematics','University mathematics'),('specialist','Specialist','Topic-specific research knowledge')]
+        selector='<fieldset class="reading-controls"><legend>Reading perspectives</legend><p class="perspective-help">Choose one or more to read and compare. Physics and Mathematics assume different backgrounds, not a higher or lower level.</p><div class="perspective-options">'+''.join(f'<label class="perspective-option" data-perspective="{key}"><input type="checkbox" name="audience" value="{key}"'+(' checked' if key=='general' else '')+f'><span><strong>{label}</strong><small>{background}</small></span></label>' for key,label,background in perspectives)+'</div><div class="perspective-actions"><button type="button" id="show-all-perspectives">Compare all four</button><span id="audience-description" role="status" aria-live="polite">Showing General.</span></div></fieldset>'
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(title)} — Reverse Physics</title><meta name="description" content="Read the questions and evidence of reverse physics from a general, physics, mathematics or specialist perspective.">
@@ -49,7 +50,8 @@ def topic_page(data,key):
         body+=f'<section id="{sid}" class="reading-section">'
         for audience,sections in topic['versions'].items():
             section=next(s for s in sections if s['id']==sid)
-            body+=f'<div data-edition="{audience}"'+(' hidden' if audience!='general' else '')+f'><h2>{e(section["heading"])}</h2>'+''.join(f'<p>{e(p)}</p>' for p in section['paragraphs'])+'</div>'
+            brief=data['audiences'][audience]
+            body+=f'<div data-edition="{audience}"'+(' hidden' if audience!='general' else '')+f'><div class="edition-header"><span class="edition-label">{e(brief["label"])}</span><span class="edition-background">{e(brief["background"])}</span></div><h2>{e(section["heading"])}</h2>'+''.join(f'<p>{e(p)}</p>' for p in section['paragraphs'])+'</div>'
         body+='</section>'
     body+='<aside class="shared-status" aria-label="Current scientific status"><p class="eyebrow">Shared across all perspectives</p><h2>What is established?</h2>'
     for cid in topic['claim_ids']:
@@ -65,7 +67,7 @@ def topic_page(data,key):
     for concept in data['concepts'].values():
         body+=f'<details><summary>{e(concept["label"])}</summary>'
         for audience in data['audiences']:
-            body+=f'<p data-edition="{audience}"'+(' hidden' if audience!='general' else '')+f'>{e(concept[audience])}</p>'
+            body+=f'<p data-edition="{audience}"'+(' hidden' if audience!='general' else '')+f'><span class="edition-label">{e(data["audiences"][audience]["label"])}</span> {e(concept[audience])}</p>'
         body+='</details>'
     body+='</section>'
     if key=='introduction':
