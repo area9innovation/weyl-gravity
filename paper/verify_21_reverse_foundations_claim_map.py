@@ -603,6 +603,11 @@ def main() -> int:
     require(tt["gauge_factorization"]["advertised_pghost_identity_defects"] == 28, "TT projection audit missing")
     tt_claim = next(c for c in data["claims"] if c["claim_id"] == "RF-97-TT-CUTOFF-POSITIVITY-SEPARATION")
     require(tt_claim["status"] == "CONDITIONAL_ANALYTIC_CASE_STUDY_FULL_COMMUTATOR_OPEN", "TT evidence boundary")
+    audit = json.loads((ROOT / data["authorities"]["tt_projection_consistency"]["path"]).read_text())
+    require(audit["claims"]["serialized_graph_differential_nilpotent"] is False, "serialized differential audit missing")
+    require(audit["claims"]["full_consistent_repair_established"] is False, "partial repair promoted")
+    require(audit["candidate_checks"]["identity_equation_square_defects"] == 16, "trace obstruction missing")
+    require(data["claim_flags"]["current_serialized_graph_transfer_accepted"] is False, "failed transfer promoted")
 
     flags = data["claim_flags"]
     require(flags["strict_pure_weyl_local_q1_q2_certified"] is True, "strict pure-Weyl q1/q2 flag missing")

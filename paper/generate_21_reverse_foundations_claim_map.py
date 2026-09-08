@@ -238,6 +238,7 @@ AUTHORITY_PATHS = {
     "lorentzian_weyl_bv_completion_atlas_v49": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V49.json",
     "tt_cutoff_obstruction": "foundations/results/TT_HADAMARD_CUTOFF_OBSTRUCTION_V1.json",
     "tt_observable_extension": "foundations/results/TT_OBSERVABLE_EXTENSION_V1.json",
+    "tt_projection_consistency": "foundations/results/TT_PROJECTION_CONSISTENCY_AUDIT_V1.json",
     "finite_graph_causality": "foundations/results/FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1.json",
     "finite_bv": "foundations/results/FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1.json",
 }
@@ -2047,11 +2048,12 @@ def build() -> dict:
             )
             claim["status"] = "EXACT_FINITE_OS_AND_METHOD_OBSTRUCTIONS_WITH_TUNED_LEADING_POWER_COMPENSATION_REQUIRED_INTERACTING_H_MINUS_ONE_OPEN"
             break
+    payload["claim_flags"]["current_serialized_graph_transfer_accepted"] = False
     payload["claims"].append({
         "claim_id": "RF-97-TT-CUTOFF-POSITIVITY-SEPARATION",
-        "statement": "Conditional reduced TT model: every finite cutoff admits positive covariance, but no smooth repair makes the complete standard-reality Hadamard covariance positive. The explicit gauge-invariant source lift does not yet identify the full commutator; the advertised projection chain has 28 first-order defects.",
+        "statement": "Conditional reduced TT model: every finite cutoff admits positive covariance, but no smooth repair makes the complete standard-reality Hadamard covariance positive. The full commutator remains open: the exported differential has nonzero square blocks; a candidate attachment repairs 28 metric defects but leaves 16 trace defects. The current full transfer fails its complex prerequisite.",
         "status": "CONDITIONAL_ANALYTIC_CASE_STUDY_FULL_COMMUTATOR_OPEN",
-        "authorities": ["tt_cutoff_obstruction", "tt_observable_extension"],
+        "authorities": ["tt_cutoff_obstruction", "tt_observable_extension", "tt_projection_consistency"],
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
     })
     payload["canonical_digest"] = canonical_digest(payload)

@@ -12,6 +12,13 @@ lift. It also exposes 28 first-order defects in the advertised projection
 chain identity; the full tensor-commutator comparison remains open. Paper 21
 and the website present this as a conditional case study.
 
+The [projection consistency follow-up](reports/tt-projection-consistency-audit-v1.md)
+now traces those defects to nonzero blocks of the exported differential squared.
+A candidate attachment repairs the original 28 terms but leaves a separate
+16-term trace obstruction. The current full export therefore fails the
+prerequisite for the Green/Hadamard transfer; the reduced result remains scoped
+as above. Repairing the full differential must precede the commutator comparison.
+
 This directory couples the repository's reverse-physics programme to reverse
 mathematics and foundational analysis.  Its question is not merely which
 physical assumptions select a law, but which combinations of
