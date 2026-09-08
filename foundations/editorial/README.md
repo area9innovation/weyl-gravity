@@ -319,3 +319,21 @@ or scientific claims are changed by filtering. Independent checks:
 ```sh
 python3 -m unittest foundations.tests.test_term_source_filter foundations.tests.test_editorial_extraction
 ```
+
+## Proposed core dictionary
+
+The [150-concept proposal](../reports/core-terminology-proposal-v1.md) is the
+next editorial selection exercise, not an automatic publication list. It proposes
+67 introduction essentials (including seven existing entries), 76 atlas bridges
+and seven specialist topics. The editable selection is
+`core-terminology-proposal.json`; each row has a reason, priority and source-search
+phrases. Those phrases locate evidence and must not become annotation aliases
+without separate semantic review.
+
+Generate its source inventory with
+`python3 foundations/build_core_terminology_proposal.py`; reproduce with `--check`
+and independently check structure and source spans with
+`python3 foundations/verify_core_terminology_proposal.py`. Approve, consolidate,
+defer or remove proposed concepts before writing their four perspectives. The
+public dictionary and existing extraction publication policy are unchanged by
+this proposal.

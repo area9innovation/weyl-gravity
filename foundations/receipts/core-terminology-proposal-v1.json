@@ -1,0 +1,136 @@
+{
+  "kind": "core-terminology-editorial-proposal",
+  "source_commit": "09703e382e1d0adc3bb2d01f0c9d0c18b1318116",
+  "dependency_tags": [],
+  "status": "PROPOSED_FOR_HUMAN_REVIEW",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "foundations/verify_core_terminology_proposal.py"
+      ],
+      "elapsed_seconds": 1.082,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/build_core_terminology_proposal.py",
+        "--check"
+      ],
+      "elapsed_seconds": 7.562,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/build_core_terminology_proposal.py"
+      ],
+      "elapsed_seconds": 7.465,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "py_compile",
+        "foundations/build_core_terminology_proposal.py",
+        "foundations/verify_core_terminology_proposal.py"
+      ],
+      "elapsed_seconds": 0.057,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "foundations/editorial/README.md",
+        "foundations/editorial/core-terminology-proposal.json",
+        "foundations/build_core_terminology_proposal.py",
+        "foundations/verify_core_terminology_proposal.py",
+        "foundations/reports/core-terminology-proposal-v1.md",
+        "foundations/results/CORE_TERMINOLOGY_PROPOSAL_V1.json"
+      ],
+      "elapsed_seconds": 0.01,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/verify_core_terminology_proposal.py"
+      ],
+      "elapsed_seconds": 1.11,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/build_core_terminology_proposal.py",
+        "--check"
+      ],
+      "elapsed_seconds": 7.549,
+      "status": "PASS",
+      "exit_code": 0
+    }
+  ],
+  "counts": {
+    "total": 150,
+    "category": {
+      "Mathematics": 50,
+      "Physics": 55,
+      "Project": 45
+    },
+    "batch": {
+      "1": 67,
+      "2": 76,
+      "3": 7
+    },
+    "existing_dictionary_entries": 7,
+    "without_mentions": 0
+  },
+  "assumptions": [
+    "Search phrases locate mentions; they are not approved aliases or semantic equivalences.",
+    "Compound titles can contain contrasting subtopics that must be distinguished within the explanation.",
+    "Current dictionary entries still require contextual review; an existing ID does not certify every proposed sense.",
+    "This is a proposed editorial ceiling of 150 concepts, not 150 entries to publish immediately.",
+    "Dependency-tag and project-case entries should crosslink foundational explanations rather than repeat them."
+  ],
+  "unresolved_fields": [
+    "Human selection and consolidation",
+    "Four-perspective explanations for proposed entries",
+    "Semantic review of source senses and annotation aliases"
+  ],
+  "claim_flags": {
+    "scientific_claims_promoted": false,
+    "public_dictionary_changed": false,
+    "semantic_accuracy_certified": false
+  },
+  "tiers": {
+    "0": "PASS: Python compilation, JSON parsing, scoped diff and input hashes",
+    "1": "PASS: independent proposal verifier and deterministic reproduction",
+    "2": "NOT_RUN: standalone editorial proposal; no existing website or scientific certificate inputs changed",
+    "3": "NOT_RUN: no theorem promotion, core algebra change, freeze or release"
+  },
+  "sha256": {
+    "foundations/editorial/README.md": "0e1f78ec8dac4b872ec14f26e1561ffb26e5bd0531551048f3c549f5a7fe1547",
+    "foundations/editorial/core-terminology-proposal.json": "6d9572bb1374780a7c120d94c8006b8d298ddf2fc6ed021042b164f46e974ea6",
+    "foundations/build_core_terminology_proposal.py": "53aa759991628ec615b8c7a7a6c4e3f996e6d90449ccae475b7aa0f886bec3e3",
+    "foundations/verify_core_terminology_proposal.py": "660e5fb5d26a915fd7655b7307466aa06516645f2350235dd62f519c87e022ab",
+    "foundations/reports/core-terminology-proposal-v1.md": "7a7d51586142e8a2cc231622edafb8fbbe3806c4e70c0a2e64aeca0e490e6b7b",
+    "foundations/results/CORE_TERMINOLOGY_PROPOSAL_V1.json": "25616759014a1dbcb014929197a18673656936a130825436fe4048b40a97d233"
+  },
+  "imported_input_sha256": {
+    "foundations/editorial/core-terminology-proposal.json": "6d9572bb1374780a7c120d94c8006b8d298ddf2fc6ed021042b164f46e974ea6",
+    "foundations/results/TERM_EXTRACTION_V1.json.gz": "2de67df61346377ac1aa9021a5e7560e4435a2e95fbcf8bd0e7774769e878b10",
+    "foundations/editorial/reading-content.json": "53828828ddbb523d474e0a9d953a04c7d9557b38f22f71ca00124825cb091652",
+    "foundations/editorial/dictionary.json": "822b21afc4980f43c79be7045ebdbb27d9e85655ade9d568ad1999827737f02b"
+  }
+}
