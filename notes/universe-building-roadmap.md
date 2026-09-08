@@ -54,6 +54,28 @@ path end to end or the generic arbitrary-input differentiated-nilpotency
 identity. Stop if the work merely serializes more rows, and do not move an
 analytic layer into Lean first.
 
+## Finite-source detector recovery: feasibility decision (2026-09-08)
+
+`FOUNDATIONAL_WAVE_DETECTOR_RECOVERY_BENCHMARK_V1` computes sharp detector
+intervals from finite source-cell averages and a unit energy bound in the
+right-moving scalar circle model. A fixed tent detector is averaged over
+exposure `1/8`. Exact nonzero readings and zero readings with a deterministic
+aggregate noise bound have matching endpoint sources. At the three tested
+delays, 16 cells meet tolerance `1/16` with noise bound `1/16`; eight cannot.
+
+The [proof and feasibility report](../foundations/reports/wave-detector-recovery-benchmark-v1.md)
+identifies the argument as a standard optimal-recovery specialization.
+Its exact polynomial and endpoint audits carry `LOCAL-ALGEBRAIC` and
+`REDUCED-MODE` only. The finite observations constrain the actual source,
+so this is a different input contract from the rate-free Cauchy problem.
+No atlas, paper, or quantum lifecycle is promoted.
+
+Stop expanding the elementary example as a novelty claim. A successor needs
+an explicitly chosen physical constraint, observation geometry, or dynamics
+for which existing optimal-recovery results do not already provide the
+desired conclusion. This benchmark is a control for that comparison; merely
+adding grids or detector delays is not a new scientific gate.
+
 ## Wave-data modulus reversal: human proof and exact audit (2026-09-07)
 
 `FOUNDATIONAL_CODED_WAVE_MODULUS_REVERSAL_V1` supplies both directions of a

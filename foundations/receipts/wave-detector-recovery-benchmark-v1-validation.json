@@ -1,0 +1,215 @@
+{
+  "schema_version": "wave-detector-recovery-validation-v1",
+  "date": "2026-09-08",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "base_commit": "94d12eb369c8c2549bf0407a2d2f4feb6d2a49e3",
+  "assignment": "User authorized the finite-source detector recovery feasibility study.",
+  "preexisting_worktree": "Science Forge clean; origin/master matched HEAD after fetch.",
+  "commands": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile foundations/build_wave_detector_recovery.py foundations/verify_wave_detector_recovery.py foundations/tests/test_wave_detector_recovery.py",
+      "argv": [
+        "python3",
+        "-m",
+        "py_compile",
+        "foundations/build_wave_detector_recovery.py",
+        "foundations/verify_wave_detector_recovery.py",
+        "foundations/tests/test_wave_detector_recovery.py"
+      ],
+      "elapsed_seconds": 0.103595,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "tier": 0,
+      "command": "python3 -m json.tool foundations/results/FOUNDATIONAL_WAVE_DETECTOR_RECOVERY_BENCHMARK_V1.json /dev/null",
+      "argv": [
+        "python3",
+        "-m",
+        "json.tool",
+        "foundations/results/FOUNDATIONAL_WAVE_DETECTOR_RECOVERY_BENCHMARK_V1.json",
+        "/dev/null"
+      ],
+      "elapsed_seconds": 0.078627,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "tier": 0,
+      "command": "git diff --check -- foundations/README.md notes/universe-building-roadmap.md foundations/build_wave_detector_recovery.py foundations/verify_wave_detector_recovery.py foundations/tests/test_wave_detector_recovery.py foundations/reports/wave-detector-recovery-benchmark-v1.md foundations/results/FOUNDATIONAL_WAVE_DETECTOR_RECOVERY_BENCHMARK_V1.json",
+      "argv": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "foundations/README.md",
+        "notes/universe-building-roadmap.md",
+        "foundations/build_wave_detector_recovery.py",
+        "foundations/verify_wave_detector_recovery.py",
+        "foundations/tests/test_wave_detector_recovery.py",
+        "foundations/reports/wave-detector-recovery-benchmark-v1.md",
+        "foundations/results/FOUNDATIONAL_WAVE_DETECTOR_RECOVERY_BENCHMARK_V1.json"
+      ],
+      "elapsed_seconds": 0.028657,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "tier": 1,
+      "command": "python3 foundations/build_wave_detector_recovery.py --check",
+      "argv": [
+        "python3",
+        "foundations/build_wave_detector_recovery.py",
+        "--check"
+      ],
+      "elapsed_seconds": 0.115079,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Wave detector recovery deterministic artifact: PASS\n",
+      "stderr": ""
+    },
+    {
+      "tier": 1,
+      "command": "python3 foundations/verify_wave_detector_recovery.py",
+      "argv": [
+        "python3",
+        "foundations/verify_wave_detector_recovery.py"
+      ],
+      "elapsed_seconds": 0.086934,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "FOUNDATIONAL_WAVE_DETECTOR_RECOVERY_BENCHMARK_V1: PASS\n",
+      "stderr": ""
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest foundations.tests.test_wave_detector_recovery",
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "foundations.tests.test_wave_detector_recovery"
+      ],
+      "elapsed_seconds": 0.300841,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "....................\n----------------------------------------------------------------------\nRan 20 tests in 0.229s\n\nOK\n"
+    },
+    {
+      "tier": 2,
+      "command": "python3 foundations/verify_coded_wave_observable_reconstruction.py",
+      "argv": [
+        "python3",
+        "foundations/verify_coded_wave_observable_reconstruction.py"
+      ],
+      "elapsed_seconds": 2.935406,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1: PASS\n  - Draft 2020-12 schema\n  - independent exact checker\n  - deterministic artifacts\n  - checker isolation\n  - positive theorem flags\n  - fail-closed boundaries\n",
+      "stderr": ""
+    },
+    {
+      "tier": 2,
+      "command": "python3 foundations/verify_coded_wave_modulus_reversal.py",
+      "argv": [
+        "python3",
+        "foundations/verify_coded_wave_modulus_reversal.py"
+      ],
+      "elapsed_seconds": 0.125119,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "FOUNDATIONAL_CODED_WAVE_MODULUS_REVERSAL_V1: PASS\n  Independent rational response, encoding, error-budget, mutation-input and provenance audit.\n  Infinite proof: HUMAN_PROOF, not kernel checked; no atlas/paper/quantum promotion.\n",
+      "stderr": ""
+    }
+  ],
+  "import_source_commit_audit": {
+    "command": "git show 94d12eb369c8c2549bf0407a2d2f4feb6d2a49e3:foundations/results/FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1.json",
+    "status": "PASS",
+    "elapsed_seconds": 0.002966,
+    "sha256": "cf90e90abb824e19a2a0e7caf2d32c4772f408a70107e4c9ea6013edc0e8e215"
+  },
+  "artifacts": [
+    {
+      "path": "foundations/README.md",
+      "sha256": "bc5d3965936304ee32c025c731860e557cafc5bd9102223d0f14a91e8482e1a3"
+    },
+    {
+      "path": "notes/universe-building-roadmap.md",
+      "sha256": "91848cc020eefcb8e4827f3b82c449ef03aa32039b2e7985f3ff330968db67f9"
+    },
+    {
+      "path": "foundations/build_wave_detector_recovery.py",
+      "sha256": "a07eb721cd318442d1ec054ae74c4966c8adabbb7e5c942cdc7241cebd7279f9"
+    },
+    {
+      "path": "foundations/verify_wave_detector_recovery.py",
+      "sha256": "586ab1dff9691d46b1cd09010d1ccefa28dfbc9fe77c1686a2217c5e1795228e"
+    },
+    {
+      "path": "foundations/tests/test_wave_detector_recovery.py",
+      "sha256": "7d230d04b05bae2246de6ce85a8ff7a6ed2912818c85ca4922b3c2a463f7e6d8"
+    },
+    {
+      "path": "foundations/reports/wave-detector-recovery-benchmark-v1.md",
+      "sha256": "c49aa579e9283c560b9fe53385724238562736c85d1b5c260cefa50db6b21e91"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_WAVE_DETECTOR_RECOVERY_BENCHMARK_V1.json",
+      "sha256": "ed1c4f1cd7c54b76000ab367987346db019ae5e01545dc44ca16d72ce701234b"
+    }
+  ],
+  "boundaries": {
+    "sharp_intervals_for_declared_cases": true,
+    "matching_sources_supplied": true,
+    "new_general_recovery_theorem": false,
+    "new_reverse_mathematics_equivalence": false,
+    "arbitrary_nonzero_noisy_data_solved": false,
+    "laboratory_calibration_established": false,
+    "infinite_proof_kernel_checked": false,
+    "atlas_or_paper_promoted": false,
+    "new_lorentzian_claim": false,
+    "quantum_lifecycle_promoted": false
+  },
+  "missing_objects": [
+    "Physical calibration of source observations and detector.",
+    "A nonstandard physical constraint or dynamics producing a new recovery result.",
+    "Independent formal verification of the human infinite-dimensional proof."
+  ],
+  "novelty_disposition": "STANDARD_OPTIMAL_RECOVERY_SPECIALIZATION_RETAIN_AS_BENCHMARK",
+  "higher_tiers": {
+    "affected_chain": "Direct imported observable certificate and the contrasting rate-free certificate pass. No existing certified consumer or shared mathematical input changed.",
+    "broader_tier2": "NOT_RUN: changes are an isolated benchmark plus documentation; no shared operator or existing schema changed.",
+    "full_tier3": "NOT_RUN: no freeze, paper-theorem or lifecycle promotion, shared-core change, release or explicit full-suite request. The human optimality proof is retained as a benchmark without promoting existing gates."
+  },
+  "commit_method": "Explicit-path manual new-file fallback documented in planning/SCIENCE-FORGE-ADOPTION.md.",
+  "staged_diff_audit": {
+    "status": "PASS",
+    "elapsed_seconds": 0.17018,
+    "check_command": "git diff --cached --check -- foundations/README.md notes/universe-building-roadmap.md foundations/build_wave_detector_recovery.py foundations/verify_wave_detector_recovery.py foundations/tests/test_wave_detector_recovery.py foundations/reports/wave-detector-recovery-benchmark-v1.md foundations/results/FOUNDATIONAL_WAVE_DETECTOR_RECOVERY_BENCHMARK_V1.json",
+    "diff_command": "git diff --cached --binary -- foundations/README.md notes/universe-building-roadmap.md foundations/build_wave_detector_recovery.py foundations/verify_wave_detector_recovery.py foundations/tests/test_wave_detector_recovery.py foundations/reports/wave-detector-recovery-benchmark-v1.md foundations/results/FOUNDATIONAL_WAVE_DETECTOR_RECOVERY_BENCHMARK_V1.json",
+    "diff_sha256": "14a7e6fed1cdcd91f37fdbec3f56c2f549a0f7773048e546a69ae946bc9ee5bb",
+    "exact_staged_paths": [
+      "foundations/README.md",
+      "notes/universe-building-roadmap.md",
+      "foundations/build_wave_detector_recovery.py",
+      "foundations/verify_wave_detector_recovery.py",
+      "foundations/tests/test_wave_detector_recovery.py",
+      "foundations/reports/wave-detector-recovery-benchmark-v1.md",
+      "foundations/results/FOUNDATIONAL_WAVE_DETECTOR_RECOVERY_BENCHMARK_V1.json"
+    ],
+    "tested_hashes_match_staged_bytes": true,
+    "review": "Inspected the staged producer, independent verifier, mutation tests, full proof/report, README and roadmap changes. Parsed staged certificate and inspected all case norms, accuracy decisions, input contracts, boundaries and provenance.",
+    "self_hash_boundary": "Validation receipt is excluded from its own staged-diff digest and reviewed separately."
+  }
+}

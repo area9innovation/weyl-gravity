@@ -299,6 +299,19 @@ python3 foundations/verify_coded_wave_modulus_reversal.py
 python3 -m unittest foundations.tests.test_coded_wave_modulus_reversal
 ```
 
+The [finite-source detector recovery benchmark](reports/wave-detector-recovery-benchmark-v1.md)
+instead supplies actual cell-average observations and an energy bound. It
+computes sharp prediction intervals for a spatially smeared, time-averaged
+wave detector, including a bounded-noise zero-reading case, and gives pairs
+of compatible sources attaining their endpoints. The mechanism is standard
+optimal recovery: retain this as a benchmark, not a new general theorem.
+
+```bash
+python3 foundations/build_wave_detector_recovery.py --check
+python3 foundations/verify_wave_detector_recovery.py
+python3 -m unittest foundations.tests.test_wave_detector_recovery
+```
+
 The follow-on
 [`coded observable reconstruction`](reports/coded-wave-observable-reconstruction-v1.md)
 names a rational periodic detector and constructs finite rational dyadic-time

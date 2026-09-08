@@ -1,0 +1,4092 @@
+{
+  "schema_version": "wave-detector-recovery-benchmark-v1",
+  "result_id": "FOUNDATIONAL_WAVE_DETECTOR_RECOVERY_BENCHMARK_V1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "evidence_status": "EXACT_BENCHMARK_WITH_HUMAN_OPTIMALITY_PROOF",
+  "created": "2026-09-08",
+  "source_commit": "94d12eb369c8c2549bf0407a2d2f4feb6d2a49e3",
+  "contract": {
+    "state": "Real mean-zero L2 right-moving chiral source a on the unit circle; b=0.",
+    "energy_bound_squared": [
+      1,
+      1
+    ],
+    "spatial_detector": "Imported periodic tent h; not a point detector.",
+    "output": "J(a) = exposure^(-1) integral_delay^(delay+exposure) integral_0^1 h(x) a(x-t) dx dt.",
+    "exact_input": "Exact means on equal cells, interpreted as observations of the actual source.",
+    "noisy_input": "Observed cell means all zero; (1/N) sum_j true_mean_j^2 <= eta^2.",
+    "noise_type": "Deterministic aggregate L2 bound; no stochastic or per-cell-independent noise claim.",
+    "endpoint_domain": "Algebraically named piecewise quadratic L2 sources; not restricted to rational step data."
+  },
+  "cases": [
+    {
+      "cells": 2,
+      "delay": [
+        0,
+        1
+      ],
+      "exposure": [
+        1,
+        8
+      ],
+      "kernel": [
+        {
+          "interval": [
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              -3,
+              8
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              3,
+              8
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "coefficients": [
+            [
+              -21,
+              8
+            ],
+            [
+              14,
+              1
+            ],
+            [
+              -16,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              1,
+              2
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              11,
+              8
+            ],
+            [
+              -2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              7,
+              8
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "coefficients": [
+            [
+              109,
+              8
+            ],
+            [
+              -30,
+              1
+            ],
+            [
+              16,
+              1
+            ]
+          ]
+        }
+      ],
+      "kernel_cell_means": [
+        [
+          5,
+          48
+        ],
+        [
+          -5,
+          48
+        ]
+      ],
+      "kernel_norm_squared": [
+        151,
+        1920
+      ],
+      "projection_norm_squared": [
+        25,
+        2304
+      ],
+      "residual_norm_squared": [
+        781,
+        11520
+      ],
+      "exact_nonzero_data": {
+        "cell_means": [
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        "source_energy_squared": [
+          1,
+          4
+        ],
+        "prediction_center": [
+          5,
+          96
+        ],
+        "radius_squared": [
+          781,
+          15360
+        ],
+        "extremizer_residual_coefficient_squared": [
+          8640,
+          781
+        ]
+      },
+      "zero_reading_noisy_data": [
+        {
+          "eta": [
+            0,
+            1
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            0,
+            1
+          ],
+          "extremizer_residual_coefficient_squared": [
+            11520,
+            781
+          ],
+          "radius_sqrt_terms": [
+            [
+              0,
+              1
+            ],
+            [
+              781,
+              11520
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            16
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            9,
+            25
+          ],
+          "extremizer_residual_coefficient_squared": [
+            11475,
+            781
+          ],
+          "radius_sqrt_terms": [
+            [
+              25,
+              589824
+            ],
+            [
+              13277,
+              196608
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            4
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            144,
+            25
+          ],
+          "extremizer_residual_coefficient_squared": [
+            10800,
+            781
+          ],
+          "radius_sqrt_terms": [
+            [
+              25,
+              36864
+            ],
+            [
+              781,
+              12288
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            1
+          ],
+          "branch": "INACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            1920,
+            151
+          ],
+          "extremizer_residual_coefficient_squared": [
+            1920,
+            151
+          ],
+          "radius_sqrt_terms": [
+            [
+              3125,
+              2087424
+            ],
+            [
+              609961,
+              10437120
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "cells": 2,
+      "delay": [
+        1,
+        8
+      ],
+      "exposure": [
+        1,
+        8
+      ],
+      "kernel": [
+        {
+          "interval": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "coefficients": [
+            [
+              -1,
+              8
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              -9,
+              8
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              -16,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              3,
+              8
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "coefficients": [
+            [
+              9,
+              8
+            ],
+            [
+              -2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              3,
+              4
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              81,
+              8
+            ],
+            [
+              -26,
+              1
+            ],
+            [
+              16,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              7,
+              8
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "coefficients": [
+            [
+              -17,
+              8
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ],
+      "kernel_cell_means": [
+        [
+          11,
+          48
+        ],
+        [
+          -11,
+          48
+        ]
+      ],
+      "kernel_norm_squared": [
+        151,
+        1920
+      ],
+      "projection_norm_squared": [
+        121,
+        2304
+      ],
+      "residual_norm_squared": [
+        301,
+        11520
+      ],
+      "exact_nonzero_data": {
+        "cell_means": [
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        "source_energy_squared": [
+          1,
+          4
+        ],
+        "prediction_center": [
+          11,
+          96
+        ],
+        "radius_squared": [
+          301,
+          15360
+        ],
+        "extremizer_residual_coefficient_squared": [
+          8640,
+          301
+        ]
+      },
+      "zero_reading_noisy_data": [
+        {
+          "eta": [
+            0,
+            1
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            0,
+            1
+          ],
+          "extremizer_residual_coefficient_squared": [
+            11520,
+            301
+          ],
+          "radius_sqrt_terms": [
+            [
+              0,
+              1
+            ],
+            [
+              301,
+              11520
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            16
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            9,
+            121
+          ],
+          "extremizer_residual_coefficient_squared": [
+            11475,
+            301
+          ],
+          "radius_sqrt_terms": [
+            [
+              121,
+              589824
+            ],
+            [
+              5117,
+              196608
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            4
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            144,
+            121
+          ],
+          "extremizer_residual_coefficient_squared": [
+            10800,
+            301
+          ],
+          "radius_sqrt_terms": [
+            [
+              121,
+              36864
+            ],
+            [
+              301,
+              12288
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            1
+          ],
+          "branch": "INACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            1920,
+            151
+          ],
+          "extremizer_residual_coefficient_squared": [
+            1920,
+            151
+          ],
+          "radius_sqrt_terms": [
+            [
+              73205,
+              2087424
+            ],
+            [
+              90601,
+              10437120
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "cells": 2,
+      "delay": [
+        1,
+        4
+      ],
+      "exposure": [
+        1,
+        8
+      ],
+      "kernel": [
+        {
+          "interval": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              1,
+              8
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              1,
+              8
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "coefficients": [
+            [
+              -1,
+              8
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              -16,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              1,
+              4
+            ],
+            [
+              5,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              7,
+              8
+            ],
+            [
+              -2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              5,
+              8
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "coefficients": [
+            [
+              57,
+              8
+            ],
+            [
+              -22,
+              1
+            ],
+            [
+              16,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              3,
+              4
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "coefficients": [
+            [
+              -15,
+              8
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ],
+      "kernel_cell_means": [
+        [
+          11,
+          48
+        ],
+        [
+          -11,
+          48
+        ]
+      ],
+      "kernel_norm_squared": [
+        151,
+        1920
+      ],
+      "projection_norm_squared": [
+        121,
+        2304
+      ],
+      "residual_norm_squared": [
+        301,
+        11520
+      ],
+      "exact_nonzero_data": {
+        "cell_means": [
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        "source_energy_squared": [
+          1,
+          4
+        ],
+        "prediction_center": [
+          11,
+          96
+        ],
+        "radius_squared": [
+          301,
+          15360
+        ],
+        "extremizer_residual_coefficient_squared": [
+          8640,
+          301
+        ]
+      },
+      "zero_reading_noisy_data": [
+        {
+          "eta": [
+            0,
+            1
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            0,
+            1
+          ],
+          "extremizer_residual_coefficient_squared": [
+            11520,
+            301
+          ],
+          "radius_sqrt_terms": [
+            [
+              0,
+              1
+            ],
+            [
+              301,
+              11520
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            16
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            9,
+            121
+          ],
+          "extremizer_residual_coefficient_squared": [
+            11475,
+            301
+          ],
+          "radius_sqrt_terms": [
+            [
+              121,
+              589824
+            ],
+            [
+              5117,
+              196608
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            4
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            144,
+            121
+          ],
+          "extremizer_residual_coefficient_squared": [
+            10800,
+            301
+          ],
+          "radius_sqrt_terms": [
+            [
+              121,
+              36864
+            ],
+            [
+              301,
+              12288
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            1
+          ],
+          "branch": "INACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            1920,
+            151
+          ],
+          "extremizer_residual_coefficient_squared": [
+            1920,
+            151
+          ],
+          "radius_sqrt_terms": [
+            [
+              73205,
+              2087424
+            ],
+            [
+              90601,
+              10437120
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "cells": 4,
+      "delay": [
+        0,
+        1
+      ],
+      "exposure": [
+        1,
+        8
+      ],
+      "kernel": [
+        {
+          "interval": [
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              -3,
+              8
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              3,
+              8
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "coefficients": [
+            [
+              -21,
+              8
+            ],
+            [
+              14,
+              1
+            ],
+            [
+              -16,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              1,
+              2
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              11,
+              8
+            ],
+            [
+              -2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              7,
+              8
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "coefficients": [
+            [
+              109,
+              8
+            ],
+            [
+              -30,
+              1
+            ],
+            [
+              16,
+              1
+            ]
+          ]
+        }
+      ],
+      "kernel_cell_means": [
+        [
+          -1,
+          8
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          -1,
+          3
+        ]
+      ],
+      "kernel_norm_squared": [
+        151,
+        1920
+      ],
+      "projection_norm_squared": [
+        73,
+        1152
+      ],
+      "residual_norm_squared": [
+        11,
+        720
+      ],
+      "exact_nonzero_data": {
+        "cell_means": [
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        "source_energy_squared": [
+          1,
+          4
+        ],
+        "prediction_center": [
+          0,
+          1
+        ],
+        "radius_squared": [
+          11,
+          960
+        ],
+        "extremizer_residual_coefficient_squared": [
+          540,
+          11
+        ]
+      },
+      "zero_reading_noisy_data": [
+        {
+          "eta": [
+            0,
+            1
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            0,
+            1
+          ],
+          "extremizer_residual_coefficient_squared": [
+            720,
+            11
+          ],
+          "radius_sqrt_terms": [
+            [
+              0,
+              1
+            ],
+            [
+              11,
+              720
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            16
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            9,
+            146
+          ],
+          "extremizer_residual_coefficient_squared": [
+            11475,
+            176
+          ],
+          "radius_sqrt_terms": [
+            [
+              73,
+              294912
+            ],
+            [
+              187,
+              12288
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            4
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            72,
+            73
+          ],
+          "extremizer_residual_coefficient_squared": [
+            675,
+            11
+          ],
+          "radius_sqrt_terms": [
+            [
+              73,
+              18432
+            ],
+            [
+              11,
+              768
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            1
+          ],
+          "branch": "INACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            1920,
+            151
+          ],
+          "extremizer_residual_coefficient_squared": [
+            1920,
+            151
+          ],
+          "radius_sqrt_terms": [
+            [
+              26645,
+              521856
+            ],
+            [
+              121,
+              40770
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "cells": 4,
+      "delay": [
+        1,
+        8
+      ],
+      "exposure": [
+        1,
+        8
+      ],
+      "kernel": [
+        {
+          "interval": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "coefficients": [
+            [
+              -1,
+              8
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              -9,
+              8
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              -16,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              3,
+              8
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "coefficients": [
+            [
+              9,
+              8
+            ],
+            [
+              -2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              3,
+              4
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              81,
+              8
+            ],
+            [
+              -26,
+              1
+            ],
+            [
+              16,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              7,
+              8
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "coefficients": [
+            [
+              -17,
+              8
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ],
+      "kernel_cell_means": [
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          -1,
+          8
+        ],
+        [
+          -1,
+          3
+        ]
+      ],
+      "kernel_norm_squared": [
+        151,
+        1920
+      ],
+      "projection_norm_squared": [
+        73,
+        1152
+      ],
+      "residual_norm_squared": [
+        11,
+        720
+      ],
+      "exact_nonzero_data": {
+        "cell_means": [
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        "source_energy_squared": [
+          1,
+          4
+        ],
+        "prediction_center": [
+          0,
+          1
+        ],
+        "radius_squared": [
+          11,
+          960
+        ],
+        "extremizer_residual_coefficient_squared": [
+          540,
+          11
+        ]
+      },
+      "zero_reading_noisy_data": [
+        {
+          "eta": [
+            0,
+            1
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            0,
+            1
+          ],
+          "extremizer_residual_coefficient_squared": [
+            720,
+            11
+          ],
+          "radius_sqrt_terms": [
+            [
+              0,
+              1
+            ],
+            [
+              11,
+              720
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            16
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            9,
+            146
+          ],
+          "extremizer_residual_coefficient_squared": [
+            11475,
+            176
+          ],
+          "radius_sqrt_terms": [
+            [
+              73,
+              294912
+            ],
+            [
+              187,
+              12288
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            4
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            72,
+            73
+          ],
+          "extremizer_residual_coefficient_squared": [
+            675,
+            11
+          ],
+          "radius_sqrt_terms": [
+            [
+              73,
+              18432
+            ],
+            [
+              11,
+              768
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            1
+          ],
+          "branch": "INACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            1920,
+            151
+          ],
+          "extremizer_residual_coefficient_squared": [
+            1920,
+            151
+          ],
+          "radius_sqrt_terms": [
+            [
+              26645,
+              521856
+            ],
+            [
+              121,
+              40770
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "cells": 4,
+      "delay": [
+        1,
+        4
+      ],
+      "exposure": [
+        1,
+        8
+      ],
+      "kernel": [
+        {
+          "interval": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              1,
+              8
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              1,
+              8
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "coefficients": [
+            [
+              -1,
+              8
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              -16,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              1,
+              4
+            ],
+            [
+              5,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              7,
+              8
+            ],
+            [
+              -2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              5,
+              8
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "coefficients": [
+            [
+              57,
+              8
+            ],
+            [
+              -22,
+              1
+            ],
+            [
+              16,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              3,
+              4
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "coefficients": [
+            [
+              -15,
+              8
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ],
+      "kernel_cell_means": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          -1,
+          3
+        ],
+        [
+          -1,
+          8
+        ]
+      ],
+      "kernel_norm_squared": [
+        151,
+        1920
+      ],
+      "projection_norm_squared": [
+        73,
+        1152
+      ],
+      "residual_norm_squared": [
+        11,
+        720
+      ],
+      "exact_nonzero_data": {
+        "cell_means": [
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        "source_energy_squared": [
+          1,
+          4
+        ],
+        "prediction_center": [
+          0,
+          1
+        ],
+        "radius_squared": [
+          11,
+          960
+        ],
+        "extremizer_residual_coefficient_squared": [
+          540,
+          11
+        ]
+      },
+      "zero_reading_noisy_data": [
+        {
+          "eta": [
+            0,
+            1
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            0,
+            1
+          ],
+          "extremizer_residual_coefficient_squared": [
+            720,
+            11
+          ],
+          "radius_sqrt_terms": [
+            [
+              0,
+              1
+            ],
+            [
+              11,
+              720
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            16
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            9,
+            146
+          ],
+          "extremizer_residual_coefficient_squared": [
+            11475,
+            176
+          ],
+          "radius_sqrt_terms": [
+            [
+              73,
+              294912
+            ],
+            [
+              187,
+              12288
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            4
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            72,
+            73
+          ],
+          "extremizer_residual_coefficient_squared": [
+            675,
+            11
+          ],
+          "radius_sqrt_terms": [
+            [
+              73,
+              18432
+            ],
+            [
+              11,
+              768
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            1
+          ],
+          "branch": "INACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            1920,
+            151
+          ],
+          "extremizer_residual_coefficient_squared": [
+            1920,
+            151
+          ],
+          "radius_sqrt_terms": [
+            [
+              26645,
+              521856
+            ],
+            [
+              121,
+              40770
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "cells": 8,
+      "delay": [
+        0,
+        1
+      ],
+      "exposure": [
+        1,
+        8
+      ],
+      "kernel": [
+        {
+          "interval": [
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              -3,
+              8
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              3,
+              8
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "coefficients": [
+            [
+              -21,
+              8
+            ],
+            [
+              14,
+              1
+            ],
+            [
+              -16,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              1,
+              2
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              11,
+              8
+            ],
+            [
+              -2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              7,
+              8
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "coefficients": [
+            [
+              109,
+              8
+            ],
+            [
+              -30,
+              1
+            ],
+            [
+              16,
+              1
+            ]
+          ]
+        }
+      ],
+      "kernel_cell_means": [
+        [
+          -1,
+          4
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          4
+        ],
+        [
+          -5,
+          12
+        ]
+      ],
+      "kernel_norm_squared": [
+        151,
+        1920
+      ],
+      "projection_norm_squared": [
+        43,
+        576
+      ],
+      "residual_norm_squared": [
+        23,
+        5760
+      ],
+      "exact_nonzero_data": {
+        "cell_means": [
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        "source_energy_squared": [
+          1,
+          4
+        ],
+        "prediction_center": [
+          0,
+          1
+        ],
+        "radius_squared": [
+          23,
+          7680
+        ],
+        "extremizer_residual_coefficient_squared": [
+          4320,
+          23
+        ]
+      },
+      "zero_reading_noisy_data": [
+        {
+          "eta": [
+            0,
+            1
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            0,
+            1
+          ],
+          "extremizer_residual_coefficient_squared": [
+            5760,
+            23
+          ],
+          "radius_sqrt_terms": [
+            [
+              0,
+              1
+            ],
+            [
+              23,
+              5760
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            16
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            9,
+            172
+          ],
+          "extremizer_residual_coefficient_squared": [
+            11475,
+            46
+          ],
+          "radius_sqrt_terms": [
+            [
+              43,
+              147456
+            ],
+            [
+              391,
+              98304
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            4
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            36,
+            43
+          ],
+          "extremizer_residual_coefficient_squared": [
+            5400,
+            23
+          ],
+          "radius_sqrt_terms": [
+            [
+              43,
+              9216
+            ],
+            [
+              23,
+              6144
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            1
+          ],
+          "branch": "INACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            1920,
+            151
+          ],
+          "extremizer_residual_coefficient_squared": [
+            1920,
+            151
+          ],
+          "radius_sqrt_terms": [
+            [
+              9245,
+              130464
+            ],
+            [
+              529,
+              2609280
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "cells": 8,
+      "delay": [
+        1,
+        8
+      ],
+      "exposure": [
+        1,
+        8
+      ],
+      "kernel": [
+        {
+          "interval": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "coefficients": [
+            [
+              -1,
+              8
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              -9,
+              8
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              -16,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              3,
+              8
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "coefficients": [
+            [
+              9,
+              8
+            ],
+            [
+              -2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              3,
+              4
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              81,
+              8
+            ],
+            [
+              -26,
+              1
+            ],
+            [
+              16,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              7,
+              8
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "coefficients": [
+            [
+              -17,
+              8
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ],
+      "kernel_cell_means": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          4
+        ],
+        [
+          -5,
+          12
+        ],
+        [
+          -1,
+          4
+        ]
+      ],
+      "kernel_norm_squared": [
+        151,
+        1920
+      ],
+      "projection_norm_squared": [
+        43,
+        576
+      ],
+      "residual_norm_squared": [
+        23,
+        5760
+      ],
+      "exact_nonzero_data": {
+        "cell_means": [
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        "source_energy_squared": [
+          1,
+          4
+        ],
+        "prediction_center": [
+          0,
+          1
+        ],
+        "radius_squared": [
+          23,
+          7680
+        ],
+        "extremizer_residual_coefficient_squared": [
+          4320,
+          23
+        ]
+      },
+      "zero_reading_noisy_data": [
+        {
+          "eta": [
+            0,
+            1
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            0,
+            1
+          ],
+          "extremizer_residual_coefficient_squared": [
+            5760,
+            23
+          ],
+          "radius_sqrt_terms": [
+            [
+              0,
+              1
+            ],
+            [
+              23,
+              5760
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            16
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            9,
+            172
+          ],
+          "extremizer_residual_coefficient_squared": [
+            11475,
+            46
+          ],
+          "radius_sqrt_terms": [
+            [
+              43,
+              147456
+            ],
+            [
+              391,
+              98304
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            4
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            36,
+            43
+          ],
+          "extremizer_residual_coefficient_squared": [
+            5400,
+            23
+          ],
+          "radius_sqrt_terms": [
+            [
+              43,
+              9216
+            ],
+            [
+              23,
+              6144
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            1
+          ],
+          "branch": "INACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            1920,
+            151
+          ],
+          "extremizer_residual_coefficient_squared": [
+            1920,
+            151
+          ],
+          "radius_sqrt_terms": [
+            [
+              9245,
+              130464
+            ],
+            [
+              529,
+              2609280
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "cells": 8,
+      "delay": [
+        1,
+        4
+      ],
+      "exposure": [
+        1,
+        8
+      ],
+      "kernel": [
+        {
+          "interval": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              1,
+              8
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              1,
+              8
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "coefficients": [
+            [
+              -1,
+              8
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              -16,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              1,
+              4
+            ],
+            [
+              5,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              7,
+              8
+            ],
+            [
+              -2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              5,
+              8
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "coefficients": [
+            [
+              57,
+              8
+            ],
+            [
+              -22,
+              1
+            ],
+            [
+              16,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              3,
+              4
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "coefficients": [
+            [
+              -15,
+              8
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ],
+      "kernel_cell_means": [
+        [
+          1,
+          4
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          4
+        ],
+        [
+          -5,
+          12
+        ],
+        [
+          -1,
+          4
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "kernel_norm_squared": [
+        151,
+        1920
+      ],
+      "projection_norm_squared": [
+        43,
+        576
+      ],
+      "residual_norm_squared": [
+        23,
+        5760
+      ],
+      "exact_nonzero_data": {
+        "cell_means": [
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        "source_energy_squared": [
+          1,
+          4
+        ],
+        "prediction_center": [
+          0,
+          1
+        ],
+        "radius_squared": [
+          23,
+          7680
+        ],
+        "extremizer_residual_coefficient_squared": [
+          4320,
+          23
+        ]
+      },
+      "zero_reading_noisy_data": [
+        {
+          "eta": [
+            0,
+            1
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            0,
+            1
+          ],
+          "extremizer_residual_coefficient_squared": [
+            5760,
+            23
+          ],
+          "radius_sqrt_terms": [
+            [
+              0,
+              1
+            ],
+            [
+              23,
+              5760
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            16
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            9,
+            172
+          ],
+          "extremizer_residual_coefficient_squared": [
+            11475,
+            46
+          ],
+          "radius_sqrt_terms": [
+            [
+              43,
+              147456
+            ],
+            [
+              391,
+              98304
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            4
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            36,
+            43
+          ],
+          "extremizer_residual_coefficient_squared": [
+            5400,
+            23
+          ],
+          "radius_sqrt_terms": [
+            [
+              43,
+              9216
+            ],
+            [
+              23,
+              6144
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            1
+          ],
+          "branch": "INACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            1920,
+            151
+          ],
+          "extremizer_residual_coefficient_squared": [
+            1920,
+            151
+          ],
+          "radius_sqrt_terms": [
+            [
+              9245,
+              130464
+            ],
+            [
+              529,
+              2609280
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "cells": 16,
+      "delay": [
+        0,
+        1
+      ],
+      "exposure": [
+        1,
+        8
+      ],
+      "kernel": [
+        {
+          "interval": [
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              -3,
+              8
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              3,
+              8
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "coefficients": [
+            [
+              -21,
+              8
+            ],
+            [
+              14,
+              1
+            ],
+            [
+              -16,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              1,
+              2
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              11,
+              8
+            ],
+            [
+              -2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              7,
+              8
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "coefficients": [
+            [
+              109,
+              8
+            ],
+            [
+              -30,
+              1
+            ],
+            [
+              16,
+              1
+            ]
+          ]
+        }
+      ],
+      "kernel_cell_means": [
+        [
+          -5,
+          16
+        ],
+        [
+          -3,
+          16
+        ],
+        [
+          -1,
+          16
+        ],
+        [
+          1,
+          16
+        ],
+        [
+          3,
+          16
+        ],
+        [
+          5,
+          16
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          5,
+          16
+        ],
+        [
+          3,
+          16
+        ],
+        [
+          1,
+          16
+        ],
+        [
+          -1,
+          16
+        ],
+        [
+          -3,
+          16
+        ],
+        [
+          -5,
+          16
+        ],
+        [
+          -5,
+          12
+        ],
+        [
+          -5,
+          12
+        ]
+      ],
+      "kernel_norm_squared": [
+        151,
+        1920
+      ],
+      "projection_norm_squared": [
+        715,
+        9216
+      ],
+      "residual_norm_squared": [
+        49,
+        46080
+      ],
+      "exact_nonzero_data": {
+        "cell_means": [
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        "source_energy_squared": [
+          1,
+          4
+        ],
+        "prediction_center": [
+          0,
+          1
+        ],
+        "radius_squared": [
+          49,
+          61440
+        ],
+        "extremizer_residual_coefficient_squared": [
+          34560,
+          49
+        ]
+      },
+      "zero_reading_noisy_data": [
+        {
+          "eta": [
+            0,
+            1
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": true,
+          "extremizer_projection_coefficient_squared": [
+            0,
+            1
+          ],
+          "extremizer_residual_coefficient_squared": [
+            46080,
+            49
+          ],
+          "radius_sqrt_terms": [
+            [
+              0,
+              1
+            ],
+            [
+              49,
+              46080
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            16
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": true,
+          "extremizer_projection_coefficient_squared": [
+            36,
+            715
+          ],
+          "extremizer_residual_coefficient_squared": [
+            45900,
+            49
+          ],
+          "radius_sqrt_terms": [
+            [
+              715,
+              2359296
+            ],
+            [
+              833,
+              786432
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            4
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            576,
+            715
+          ],
+          "extremizer_residual_coefficient_squared": [
+            43200,
+            49
+          ],
+          "radius_sqrt_terms": [
+            [
+              715,
+              147456
+            ],
+            [
+              49,
+              49152
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            1
+          ],
+          "branch": "INACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            1920,
+            151
+          ],
+          "extremizer_residual_coefficient_squared": [
+            1920,
+            151
+          ],
+          "radius_sqrt_terms": [
+            [
+              2556125,
+              33398784
+            ],
+            [
+              2401,
+              166993920
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "cells": 16,
+      "delay": [
+        1,
+        8
+      ],
+      "exposure": [
+        1,
+        8
+      ],
+      "kernel": [
+        {
+          "interval": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "coefficients": [
+            [
+              -1,
+              8
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              -9,
+              8
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              -16,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              3,
+              8
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "coefficients": [
+            [
+              9,
+              8
+            ],
+            [
+              -2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              3,
+              4
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              81,
+              8
+            ],
+            [
+              -26,
+              1
+            ],
+            [
+              16,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              7,
+              8
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "coefficients": [
+            [
+              -17,
+              8
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ],
+      "kernel_cell_means": [
+        [
+          -1,
+          16
+        ],
+        [
+          1,
+          16
+        ],
+        [
+          3,
+          16
+        ],
+        [
+          5,
+          16
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          5,
+          16
+        ],
+        [
+          3,
+          16
+        ],
+        [
+          1,
+          16
+        ],
+        [
+          -1,
+          16
+        ],
+        [
+          -3,
+          16
+        ],
+        [
+          -5,
+          16
+        ],
+        [
+          -5,
+          12
+        ],
+        [
+          -5,
+          12
+        ],
+        [
+          -5,
+          16
+        ],
+        [
+          -3,
+          16
+        ]
+      ],
+      "kernel_norm_squared": [
+        151,
+        1920
+      ],
+      "projection_norm_squared": [
+        715,
+        9216
+      ],
+      "residual_norm_squared": [
+        49,
+        46080
+      ],
+      "exact_nonzero_data": {
+        "cell_means": [
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        "source_energy_squared": [
+          1,
+          4
+        ],
+        "prediction_center": [
+          0,
+          1
+        ],
+        "radius_squared": [
+          49,
+          61440
+        ],
+        "extremizer_residual_coefficient_squared": [
+          34560,
+          49
+        ]
+      },
+      "zero_reading_noisy_data": [
+        {
+          "eta": [
+            0,
+            1
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": true,
+          "extremizer_projection_coefficient_squared": [
+            0,
+            1
+          ],
+          "extremizer_residual_coefficient_squared": [
+            46080,
+            49
+          ],
+          "radius_sqrt_terms": [
+            [
+              0,
+              1
+            ],
+            [
+              49,
+              46080
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            16
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": true,
+          "extremizer_projection_coefficient_squared": [
+            36,
+            715
+          ],
+          "extremizer_residual_coefficient_squared": [
+            45900,
+            49
+          ],
+          "radius_sqrt_terms": [
+            [
+              715,
+              2359296
+            ],
+            [
+              833,
+              786432
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            4
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            576,
+            715
+          ],
+          "extremizer_residual_coefficient_squared": [
+            43200,
+            49
+          ],
+          "radius_sqrt_terms": [
+            [
+              715,
+              147456
+            ],
+            [
+              49,
+              49152
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            1
+          ],
+          "branch": "INACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            1920,
+            151
+          ],
+          "extremizer_residual_coefficient_squared": [
+            1920,
+            151
+          ],
+          "radius_sqrt_terms": [
+            [
+              2556125,
+              33398784
+            ],
+            [
+              2401,
+              166993920
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "cells": 16,
+      "delay": [
+        1,
+        4
+      ],
+      "exposure": [
+        1,
+        8
+      ],
+      "kernel": [
+        {
+          "interval": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              1,
+              8
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              1,
+              8
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "coefficients": [
+            [
+              -1,
+              8
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              -16,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              1,
+              4
+            ],
+            [
+              5,
+              8
+            ]
+          ],
+          "coefficients": [
+            [
+              7,
+              8
+            ],
+            [
+              -2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              5,
+              8
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "coefficients": [
+            [
+              57,
+              8
+            ],
+            [
+              -22,
+              1
+            ],
+            [
+              16,
+              1
+            ]
+          ]
+        },
+        {
+          "interval": [
+            [
+              3,
+              4
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "coefficients": [
+            [
+              -15,
+              8
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ],
+      "kernel_cell_means": [
+        [
+          3,
+          16
+        ],
+        [
+          5,
+          16
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          5,
+          16
+        ],
+        [
+          3,
+          16
+        ],
+        [
+          1,
+          16
+        ],
+        [
+          -1,
+          16
+        ],
+        [
+          -3,
+          16
+        ],
+        [
+          -5,
+          16
+        ],
+        [
+          -5,
+          12
+        ],
+        [
+          -5,
+          12
+        ],
+        [
+          -5,
+          16
+        ],
+        [
+          -3,
+          16
+        ],
+        [
+          -1,
+          16
+        ],
+        [
+          1,
+          16
+        ]
+      ],
+      "kernel_norm_squared": [
+        151,
+        1920
+      ],
+      "projection_norm_squared": [
+        715,
+        9216
+      ],
+      "residual_norm_squared": [
+        49,
+        46080
+      ],
+      "exact_nonzero_data": {
+        "cell_means": [
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        "source_energy_squared": [
+          1,
+          4
+        ],
+        "prediction_center": [
+          0,
+          1
+        ],
+        "radius_squared": [
+          49,
+          61440
+        ],
+        "extremizer_residual_coefficient_squared": [
+          34560,
+          49
+        ]
+      },
+      "zero_reading_noisy_data": [
+        {
+          "eta": [
+            0,
+            1
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": true,
+          "extremizer_projection_coefficient_squared": [
+            0,
+            1
+          ],
+          "extremizer_residual_coefficient_squared": [
+            46080,
+            49
+          ],
+          "radius_sqrt_terms": [
+            [
+              0,
+              1
+            ],
+            [
+              49,
+              46080
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            16
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": true,
+          "extremizer_projection_coefficient_squared": [
+            36,
+            715
+          ],
+          "extremizer_residual_coefficient_squared": [
+            45900,
+            49
+          ],
+          "radius_sqrt_terms": [
+            [
+              715,
+              2359296
+            ],
+            [
+              833,
+              786432
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            4
+          ],
+          "branch": "ACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            576,
+            715
+          ],
+          "extremizer_residual_coefficient_squared": [
+            43200,
+            49
+          ],
+          "radius_sqrt_terms": [
+            [
+              715,
+              147456
+            ],
+            [
+              49,
+              49152
+            ]
+          ]
+        },
+        {
+          "eta": [
+            1,
+            1
+          ],
+          "branch": "INACTIVE_NOISE_CONSTRAINT",
+          "tolerance_one_sixteenth_achievable": false,
+          "extremizer_projection_coefficient_squared": [
+            1920,
+            151
+          ],
+          "extremizer_residual_coefficient_squared": [
+            1920,
+            151
+          ],
+          "radius_sqrt_terms": [
+            [
+              2556125,
+              33398784
+            ],
+            [
+              2401,
+              166993920
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "novelty_disposition": "STANDARD_OPTIMAL_RECOVERY_SPECIALIZATION_RETAIN_AS_BENCHMARK",
+  "claim_flags": {
+    "sharp_intervals_for_declared_cases": true,
+    "matching_sources_supplied": true,
+    "new_general_recovery_theorem": false,
+    "new_reverse_mathematics_equivalence": false,
+    "arbitrary_nonzero_noisy_data_solved": false,
+    "laboratory_calibration_established": false,
+    "infinite_proof_kernel_checked": false,
+    "atlas_or_paper_promoted": false,
+    "new_lorentzian_claim": false,
+    "quantum_lifecycle_promoted": false
+  },
+  "missing_objects": [
+    "Physical calibration of source observations and detector.",
+    "A nonstandard physical constraint or dynamics producing a new recovery result.",
+    "Independent formal verification of the human infinite-dimensional proof."
+  ],
+  "literature": {
+    "url": "https://arxiv.org/abs/2111.02601",
+    "citation": "Simon Foucart and Chunyang Liao, Optimal Recovery from Inaccurate Data in Hilbert Spaces: Regularize, but what of the Parameter? (2021).",
+    "scope": "Existing optimal-recovery framework; the benchmark uses elementary Hilbert projection and Cauchy-Schwarz.",
+    "retrieved_pdf_sha256": "c4d8cdf9b2da8eb31ea3e957ded8a070d1c8a24ffd84b3dfb6fe6f031e99c775",
+    "pdf_local_replay": false
+  },
+  "provenance": [
+    {
+      "path": "foundations/results/FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1.json",
+      "sha256": "cf90e90abb824e19a2a0e7caf2d32c4772f408a70107e4c9ea6013edc0e8e215",
+      "source_commit": "94d12eb369c8c2549bf0407a2d2f4feb6d2a49e3"
+    },
+    {
+      "path": "foundations/reports/wave-detector-recovery-benchmark-v1.md",
+      "sha256": "c49aa579e9283c560b9fe53385724238562736c85d1b5c260cefa50db6b21e91",
+      "source_commit": null
+    },
+    {
+      "path": "foundations/build_wave_detector_recovery.py",
+      "sha256": "a07eb721cd318442d1ec054ae74c4966c8adabbb7e5c942cdc7241cebd7279f9",
+      "source_commit": null
+    },
+    {
+      "path": "foundations/verify_wave_detector_recovery.py",
+      "sha256": "586ab1dff9691d46b1cd09010d1ccefa28dfbc9fe77c1686a2217c5e1795228e",
+      "source_commit": null
+    },
+    {
+      "path": "foundations/tests/test_wave_detector_recovery.py",
+      "sha256": "7d230d04b05bae2246de6ce85a8ff7a6ed2912818c85ca4922b3c2a463f7e6d8",
+      "source_commit": null
+    }
+  ],
+  "human_report": "foundations/reports/wave-detector-recovery-benchmark-v1.md",
+  "content_sha256": "eb3a13f86858d21e16e1be0082f6d75aa4a0f5ff86270654ae2661124f5444c7"
+}
