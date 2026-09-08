@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "kind": "editorial-interface-validation",
+  "dependency_tags": [],
+  "scientific_claims_promoted": false,
+  "checks": [
+    {
+      "command": "python3 -m py_compile foundations/reading_site.py foundations/build_matrix_site_v2.py foundations/verify_reading_site.py foundations/tests/browser_dictionary.py",
+      "elapsed_seconds": 0.108,
+      "status": "PASS"
+    },
+    {
+      "command": "/home/asger/.local/share/mise/installs/node/24.20.0/bin/node --check foundations/matrix_site_v2_assets/dictionary.js",
+      "elapsed_seconds": 0.052,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest foundations.tests.test_reading_site foundations.tests.test_matrix_site",
+      "elapsed_seconds": 18.47,
+      "status": "PASS"
+    },
+    {
+      "command": "PYTHONPATH=/tmp/tt-browser-deps python3 foundations/tests/browser_dictionary.py",
+      "elapsed_seconds": 2.525,
+      "status": "PASS"
+    },
+    {
+      "command": "PYTHONPATH=/tmp/tt-browser-deps python3 foundations/tests/browser_reading_site.py",
+      "elapsed_seconds": 5.136,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 foundations/verify_matrix_site_v2.py",
+      "elapsed_seconds": 3.553,
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "elapsed_seconds": 0.538,
+      "status": "PASS"
+    }
+  ],
+  "hashes": {
+    "foundations/editorial/dictionary.json": "1e71fd9ae463fc37d18fb475643f21f0a8623431da58e95a57f4d507c4149853",
+    "foundations/editorial/reading-content.json": "44981830fbaf15e69db04ce7a961e5331f0ef0f5977cbf115b3958a6f5ec6d9b",
+    "foundations/matrix_site_v2_assets/dictionary.js": "6b1b3cd57a0b8bf4ed4c7a69ac4439fc1c1a7861fa097b01e1403a3217a92f4b",
+    "foundations/matrix_site_v2_assets/dictionary.css": "03c422a201596f1e617efbc1563f88ebda364c6e7cabea125fe572f0191e76e4",
+    "foundations/site/dictionary.html": "64aabcbe4a67f1f68f57906cf559290c87f80a559328900a3e6d6d3eb3fd1ee4",
+    "foundations/site/manifest.json": "f431786daab95210360d13140dd214a70f6f13b5bd9b424957e37b214a919d05"
+  },
+  "assumptions": [
+    "Browser dependencies provided externally in /tmp/tt-browser-deps",
+    "Definitions migrated from source-pinned existing account; scope notes are mandatory"
+  ],
+  "unresolved": [
+    "Only three initial entries; corpus-wide terminology inventory pending",
+    "No independent expert semantic review"
+  ],
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "No scientific input, core algebra, theorem or lifecycle change"
+  }
+}

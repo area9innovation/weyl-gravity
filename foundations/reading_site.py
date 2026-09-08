@@ -6,12 +6,21 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 CONTENT=ROOT/'foundations/editorial/reading-content.json'
+DICTIONARY=ROOT/'foundations/editorial/dictionary.json'
 ASSETS=ROOT/'foundations/matrix_site_v2_assets'
 PAPERS=['99-how-to-build-a-universe.pdf','98-physicist-executive-summary.pdf','00-ghosts-geometry-reality.pdf','21-reverse-foundations-of-physics.pdf']
 
 
 def load():
     data=json.loads(CONTENT.read_text())
+    dictionary=json.loads(DICTIONARY.read_text())
+    seen=set()
+    for term in dictionary['terms']:
+        if set(term['definitions']) != set(data['audiences']): raise ValueError('missing dictionary perspective')
+        for alias in term['aliases']:
+            if not alias.strip() or alias.casefold() in seen: raise ValueError('ambiguous dictionary alias')
+            seen.add(alias.casefold())
+    data['concepts']={t['id']:dict(label=t['label'], **t['definitions']) for t in dictionary['terms']}
     for record in data['sources'].values():
         if hashlib.sha256((ROOT/record['path']).read_bytes()).hexdigest()!=record['sha256']:
             raise ValueError('Editorial review required after source change: '+record['path'])
@@ -28,7 +37,7 @@ def e(text): return html.escape(text,quote=True)
 
 
 def shell(title,body,active='introduction',audience=False):
-    nav=[('introduction','index.html','Introduction'),('questions','questions.html','Questions'),('journeys','atlas.html#view=passports','Theory journeys'),('atlas','atlas.html','Research atlas'),('papers','papers.html','Papers')]
+    nav=[('introduction','index.html','Introduction'),('questions','questions.html','Questions'),('journeys','atlas.html#view=passports','Theory journeys'),('atlas','atlas.html','Research atlas'),('papers','papers.html','Papers'),('dictionary','dictionary.html','Dictionary')]
     links=''.join(f'<a href="{url}"'+(' aria-current="page"' if key==active else '')+f'>{label}</a>' for key,url,label in nav)
     selector=''
     if audience:
@@ -37,7 +46,7 @@ def shell(title,body,active='introduction',audience=False):
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(title)} — Reverse Physics</title><meta name="description" content="Read the questions and evidence of reverse physics from a general, physics, mathematics or specialist perspective.">
-<link rel="stylesheet" href="reading.css"><script src="reading.js" defer></script></head>
+<link rel="stylesheet" href="reading.css"><script src="reading.js" defer></script><link rel="stylesheet" href="dictionary.css"><script src="dictionary.js" defer></script></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Reverse Physics<span>Questions before conclusions</span></a><nav aria-label="Main navigation">{links}</nav></header>
 {selector}<main id="main">{body}</main><footer>Living accounts, dated papers, explicit limits. <a href="papers.html">About the publications</a> · <a href="editorial-record.json">Scientific and editorial record</a> · <a href="manifest.json">Build provenance</a></footer></body></html>'''
 
@@ -82,7 +91,18 @@ def generated():
     data=load()
     outputs={'index.html':topic_page(data,'introduction').encode(),'wave.html':topic_page(data,'wave').encode(),
         'reading.css':(ASSETS/'reading.css').read_bytes(),'reading.js':(ASSETS/'reading.js').read_bytes(),
-        'editorial-record.json':(json.dumps(data,indent=2,ensure_ascii=False)+'\n').encode()}
+        'editorial-record.json':(json.dumps({k:v for k,v in data.items() if k!='concepts'},indent=2,ensure_ascii=False)+'\n').encode()}
+    dictionary=json.loads(DICTIONARY.read_text())
+    for name in ['dictionary.js','dictionary.css']:
+        outputs[name]=(ASSETS/name).read_bytes()
+    outputs['dictionary.json']=DICTIONARY.read_bytes()
+    body='<h1>Dictionary</h1><p>Compare explanations for different backgrounds. Scope notes identify context-specific uses. Underlined terms elsewhere open these same definitions by hover, keyboard focus or tap.</p>'
+    for term in dictionary['terms']:
+        body+=f'<section class="reading-section" id="{e(term["id"])}"><h2>{e(term["label"])}</h2><p>{e(term["scope"])}</p>'
+        for audience,definition in term['definitions'].items():
+            body+=f'<div data-edition="{audience}"'+(' hidden' if audience!='general' else '')+f'><span class="edition-label">{e(data["audiences"][audience]["label"])}</span><p>{e(definition)}</p></div>'
+        body+='</section>'
+    outputs['dictionary.html']=shell('Dictionary',body,'dictionary',True).encode()
     questions='''<header class="reading-hero"><p class="eyebrow">Explore a question</p><h1>Where do the assumptions enter?</h1><p class="deck">Begin with one problem. Follow its explanation to the precise result and its evidence.</p></header>
 <div class="question-grid"><a class="question-card" href="wave.html"><span class="eyebrow">Physics and reverse mathematics</span><h2>When does an approximation justify a prediction?</h2><p>The same wave and detector, with and without a supplied error schedule.</p><span>General · Physics · Mathematics · Specialist →</span></a>
 <a class="question-card" href="cutoff-positivity.html"><span class="eyebrow">Finite models and the continuum</span><h2>Can every finite test pass while the full model fails?</h2><p>A conditional reduced-model positivity result and its limits.</p><span>Existing interactive account · audience migration pending →</span></a></div>'''
@@ -103,4 +123,4 @@ def generated():
 
 def inputs():
     data=load()
-    return [Path(__file__).resolve(),CONTENT,ASSETS/'reading.css',ASSETS/'reading.js',*[ROOT/r['path'] for r in data['sources'].values()],*[ROOT/'paper'/p for p in PAPERS]]
+    return [Path(__file__).resolve(),CONTENT,DICTIONARY,ASSETS/'dictionary.js',ASSETS/'dictionary.css',ASSETS/'reading.css',ASSETS/'reading.js',*[ROOT/r['path'] for r in data['sources'].values()],*[ROOT/'paper'/p for p in PAPERS]]

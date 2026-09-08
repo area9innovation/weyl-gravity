@@ -1,0 +1,11 @@
+.dictionary-term { font:inherit; color:inherit; background:none; border:0; border-bottom:1px dotted currentColor; padding:0; border-radius:0; cursor:help; }
+.dictionary-term:focus-visible { outline:2px solid #236fa0; outline-offset:3px; }
+.dictionary-popup { position:fixed; z-index:10000; box-sizing:border-box; width:420px; max-width:calc(100vw - 16px); max-height:calc(100vh - 16px); overflow:auto; padding:18px; border:1px solid #8a999f; border-radius:10px; background:#fffefa; color:#202e36; box-shadow:0 6px 28px #0003; font:16px/1.5 system-ui,sans-serif; }
+.dictionary-popup[hidden] { display:none; }
+.dictionary-popup p { margin:10px 0; }
+.dictionary-popup a { color:#19577a; }
+.dictionary-popup button { margin-left:12px; }
+.dictionary-popup [data-perspective] { border-left:3px solid #33775b; padding-left:10px; }
+.dictionary-popup [data-perspective=physics] { border-color:#2878a6; }
+.dictionary-popup [data-perspective=mathematics] { border-color:#80549e; }
+.dictionary-popup [data-perspective=specialist] { border-color:#aa7624; }

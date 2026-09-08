@@ -28,6 +28,9 @@ class Page(HTMLParser):
 def verify():
     d=json.loads(CONTENT.read_text())
     assert json.loads((SITE/'editorial-record.json').read_text())==d,'editorial record drift'
+    dictionary=json.loads((ROOT/'foundations/editorial/dictionary.json').read_text())
+    assert json.loads((SITE/'dictionary.json').read_text())==dictionary
+    assert all(set(t['definitions'])==set(d['audiences']) for t in dictionary['terms'])
     assert set(d['audiences'])=={'general','physics','mathematics','specialist'}
     for r in d['sources'].values():
         assert hashlib.sha256((ROOT/r['path']).read_bytes()).hexdigest()==r['sha256'],'source review stale'
@@ -45,7 +48,7 @@ def verify():
         assert p.perspectives==list(d['audiences']),'checkbox coverage/order'
         for a in d['audiences']:
             assert [s['id'] for s in t['versions'][a]]==t['section_ids']
-    for name in ['index.html','wave.html','questions.html','papers.html','atlas.html','cutoff-positivity.html']:
+    for name in ['index.html','wave.html','questions.html','papers.html','atlas.html','cutoff-positivity.html','dictionary.html']:
         for href in Page((SITE/name).read_text()).links:
             url=urlsplit(href)
             if url.scheme or url.netloc:continue

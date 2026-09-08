@@ -1131,6 +1131,9 @@ def generated() -> dict[Path, bytes]:
         SITE / "assemblies.js": b"window.THEORY_ASSEMBLY_DATA = " + assembly_json.rstrip() + b";\n",
     }
     outputs.update({SITE / name: content for name, content in reading_site.generated().items()})
+    for path, content in list(outputs.items()):
+        if path.suffix == '.html' and b'src="dictionary.js"' not in content:
+            outputs[path]=content.replace(b'</head>', b'<link rel="stylesheet" href="dictionary.css"><script src="dictionary.js" defer></script></head>')
     local_evidence_paths = [ROOT / item["result_path"] for item in dataset["evidence"].values() if item["kind"] == "LOCAL_RESULT"]
     local_report_paths = [ROOT / item["report_path"] for item in dataset["evidence"].values() if item["kind"] == "LOCAL_RESULT" and item.get("report_path")]
     completion_evidence_paths = [ROOT / item["path"] for item in dataset["completion_atlas"]["provenance"]["inputs"]]

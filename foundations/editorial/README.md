@@ -17,7 +17,7 @@ specialist reference, not an automatically simplified audience edition.
 - claims: one current status, statement, boundary and evidence list per result;
 - audiences: assumed knowledge and editorial purpose;
 - topics: a common title and stable section IDs with four different accounts;
-- concepts: optional definitions appropriate to the selected background.
+- dictionary.json: shared definitions appropriate to each background.
 
 The four perspectives are General, Physics, Mathematics and Specialist.
 They are not a single ability ranking. Mathematics does not assume field
@@ -74,3 +74,37 @@ with their query and hash preserved. Research data, matrix grades and
 historical certificates are unchanged. The local PDFs are downloadable;
 affirmative full-transfer statements in earlier introductions carry a visible
 correction on the Papers page. No hosted deployment is implied by building.
+
+## Shared dictionary
+
+`dictionary.json` owns the term definitions, including those shown in the
+existing topic glossaries. Each stable term ID has explicit matching aliases,
+a scope note, and four definitions. Begin with the three existing entries;
+coverage is deliberately incomplete. The combined RCA₀/ACA₀ entry explains
+both systems and does not equate them. Definitions of observable and modulus
+are explicitly scoped to the wave example.
+
+The generated Dictionary page supports comparison and works without JavaScript
+in the general perspective. Inline dotted underlines open by hover, focus or
+tap; Escape dismisses the popup. A passage's own perspective takes precedence
+over global selection. Shared content uses the selected perspectives. Popups
+link to the complete four-perspective entry. Missing dictionary requests leave
+ordinary text readable.
+
+Annotation uses explicit aliases, longest match first, with Unicode word
+boundaries. It covers new atlas DOM content without altering stored cell data.
+Links, controls, code, formulas, navigation, existing glossary and dictionary
+entries are excluded. Use `data-no-dictionary` on ambiguous prose. Do not add
+short overloaded aliases (such as P or state) without a contextual matching
+policy. A scope note is displayed in every popup: a project-specific use is
+not a universal definition. No runtime AI generates definitions.
+
+For expansion, inventory recurring terms across cells and papers, consolidate
+synonyms, split context-dependent meanings, then review all four definitions
+against an identified source. Add provenance and contextual rules before
+extending to ambiguous vocabulary. Existing source pins cover the initial
+entries through `reading-content.json`; the dictionary itself is hashed in
+the site manifest. Structural validation cannot certify semantic accuracy.
+
+Additional browser check:
+`PYTHONPATH=/tmp/tt-browser-deps python3 foundations/tests/browser_dictionary.py`.
