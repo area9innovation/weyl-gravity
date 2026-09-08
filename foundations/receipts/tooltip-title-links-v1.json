@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "kind": "tooltip-title-links",
+  "source_commit": "48fa607a7bad4b7a396bc4b42a0d8ad5d845bccc",
+  "dependency_tags": [],
+  "scientific_claims_promoted": false,
+  "checks": [
+    {
+      "command": [
+        "/home/asger/.local/share/mise/installs/node/24.20.0/bin/node",
+        "--check",
+        "foundations/matrix_site_v2_assets/dictionary.js"
+      ],
+      "elapsed_seconds": 0.035,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "foundations"
+      ],
+      "elapsed_seconds": 0.719,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONPATH=/tmp/tt-browser-deps",
+        "python3",
+        "foundations/tests/browser_term_review.py"
+      ],
+      "elapsed_seconds": 3.829,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONPATH=/tmp/tt-browser-deps",
+        "python3",
+        "foundations/tests/browser_dictionary.py"
+      ],
+      "elapsed_seconds": 4.832,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/verify_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 11.709,
+      "status": "PASS",
+      "exit_code": 0
+    }
+  ],
+  "source_sha256": {
+    "foundations/matrix_site_v2_assets/dictionary.js": "903fcb43f312c358f410df2cbb7fd957c3180d1ccdc2ade6da4a6aae150c6115",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "6da73db5d7d38f95c7e29d3095d9d880ed1ff80fb56e3cd53d0e123a6ee38438",
+    "foundations/site/dictionary.js": "903fcb43f312c358f410df2cbb7fd957c3180d1ccdc2ade6da4a6aae150c6115",
+    "foundations/site/manifest.json": "bb864ef1e6db37f9053695f4b38c397e78cad4342406188b3c824c233837b740",
+    "foundations/tests/browser_dictionary.py": "a60b4b5c1e57204cf50d5a94c2512c1bbfcb70ff9d59c741c6f446b115d65196",
+    "foundations/tests/browser_term_review.py": "ce32e6d544d23271bb90df5df0cdac01a963554c213557d5d98d2e1909f86c28",
+    "foundations/reports/tooltip-title-links-v1.md": "43c07d29d262b4cb0753adbf349a8efa75abf01cc5fdabcd864d80564669516c"
+  },
+  "assumptions": [
+    "Existing dictionary text and perspective selection semantics remain unchanged."
+  ],
+  "unresolved": [],
+  "tiers": {
+    "0": "PASS: JavaScript syntax and scoped whitespace",
+    "1": "PASS: two browser suites",
+    "2": "PASS: deterministic site verifier",
+    "3": "NOT_RUN: no mathematical inputs, shared algebra, lifecycle promotion or release changed"
+  }
+}

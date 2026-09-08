@@ -20,10 +20,18 @@ try:
     term.wait_for(); term.focus()
     popup=page.locator('#dictionary-popup')
     assert popup.is_visible() and 'Mathematics:' in popup.inner_text()
+    title=popup.locator('strong > a').first
+    assert 'audience=mathematics' in title.get_attribute('href')
+    destination=title.get_attribute('href')
+    title.click()
+    page.wait_for_url('**/'+destination)
+    assert page.locator('.dictionary-entry').count()==1
+    assert page.locator('input[name=audience]:checked').count()==1
+    page.go_back();term.wait_for();term.focus()
     page.keyboard.press('Escape');assert not popup.is_visible()
     term.hover();assert popup.is_visible()
     popup.hover();page.wait_for_timeout(450);assert popup.is_visible()
-    popup.get_by_role('link').click()
+    popup.get_by_role('link',name='Compare all four definitions').click()
     assert page.locator('input[name=audience]:checked').count()==4
     assert page.locator('.dictionary-entry .dictionary-term').count()==0
     page.goto(base+'dictionary.html?audience=general,physics,mathematics,specialist#aca')

@@ -23,13 +23,16 @@
   function show(button, term) {
     clearTimeout(timer); active?.setAttribute('aria-expanded','false'); active = button;
     button.setAttribute('aria-expanded','true'); popup.replaceChildren();
-    const heading = document.createElement('strong'); heading.textContent = term.label; popup.append(heading);
+    const heading = document.createElement('strong');
+    const titleLink = document.createElement('a'); titleLink.textContent = term.label;
+    titleLink.addEventListener('click',hide); heading.append(titleLink); popup.append(heading);
     const scope = document.createElement('p'); scope.textContent = term.scope; popup.append(scope);
     let raw = new URLSearchParams(location.search).get('audience');
     try { raw ??= localStorage.getItem('reading-audience'); } catch (_) {}
     const edition = button.closest('[data-edition]')?.dataset.edition;
     let selected = edition ? [edition] : (raw || 'general').split(',').filter(x=>labels[x]);
     if (!selected.length) selected = ['general'];
+    titleLink.href = 'term-'+term.id+'.html?audience='+selected.join(',');
     for (const key of selected) {
       const p = document.createElement('p'); p.dataset.perspective = key;
       const label = document.createElement('strong'); label.textContent = labels[key]+': ';

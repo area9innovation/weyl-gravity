@@ -28,7 +28,7 @@ try:
     page.keyboard.press('Escape');assert not popup.is_visible()
     term.click();assert popup.is_visible() and '#' not in page.url
     with page.expect_navigation(wait_until='load'):
-        popup.get_by_role('link').click()
+        popup.get_by_role('link',name='Compare all four definitions').click()
     assert page.locator('.dictionary-entry:visible').count()==1
     assert '/term-aca.html?' in page.url
     assert page.locator('#dictionary-word-list').count()==0
