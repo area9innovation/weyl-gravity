@@ -77,34 +77,69 @@ correction on the Papers page. No hosted deployment is implied by building.
 
 ## Shared dictionary
 
-`dictionary.json` owns the term definitions, including those shown in the
-existing topic glossaries. Each stable term ID has explicit matching aliases,
-a scope note, and four definitions. Begin with the three existing entries;
-coverage is deliberately incomplete. The combined RCA₀/ACA₀ entry explains
-both systems and does not equate them. Definitions of observable and modulus
-are explicitly scoped to the wave example.
+`dictionary.json` (schema version 2) owns both short definitions and expanded
+explanations. The seven current entries include separate RCA₀ and ACA₀ entries;
+`#rca` remains a valid link. Entries are sorted alphabetically, with a word list
+that also exposes useful alternative names such as Modulus. General remains
+readable without JavaScript.
 
-The generated Dictionary page supports comparison and works without JavaScript
-in the general perspective. Inline dotted underlines open by hover, focus or
-tap; Escape dismisses the popup. A passage's own perspective takes precedence
-over global selection. Shared content uses the selected perspectives. Popups
-link to the complete four-perspective entry. Missing dictionary requests leave
-ordinary text readable.
+Each stable ID has explicit aliases, scope, four short definitions, four sets
+of explanatory blocks, related terms, and content-hashed source records.
+External reference links supplement the pinned project sources. The builder
+fails on stale source hashes, missing perspectives, duplicate IDs or aliases,
+and unknown related terms. Topic glossaries use the same short definitions
+and link to the fuller account. Popups offer expandable detail for each active
+perspective; the dictionary page displays that detail directly.
 
-Annotation uses explicit aliases, longest match first, with Unicode word
-boundaries. It covers new atlas DOM content without altering stored cell data.
-Links, controls, code, formulas, navigation, existing glossary and dictionary
-entries are excluded. Use `data-no-dictionary` on ambiguous prose. Do not add
-short overloaded aliases (such as P or state) without a contextual matching
-policy. A scope note is displayed in every popup: a project-specific use is
-not a universal definition. No runtime AI generates definitions.
+Write for the reader's next question:
 
-For expansion, inventory recurring terms across cells and papers, consolidate
-synonyms, split context-dependent meanings, then review all four definitions
-against an identified source. Add provenance and contextual rules before
-extending to ambiguous vocabulary. Existing source pins cover the initial
-entries through `reading-content.json`; the dictionary itself is hashed in
-the site manifest. Structural validation cannot certify semantic accuracy.
+- General: explain the idea without relying on the term being defined; use a
+  concrete example and say why the distinction matters.
+- Physics: connect to modeling, measurement or approximation, while explaining
+  unfamiliar logic and representation assumptions.
+- Mathematics: give the defining structure and conditions; explain unfamiliar
+  physical interpretation and the coding used by the result.
+- Specialist: state the exact role, hypotheses, contribution and claim boundary.
+  More detail need not mean more elementary background.
 
-Additional browser check:
-`PYTHONPATH=/tmp/tt-browser-deps python3 foundations/tests/browser_dictionary.py`.
+Every entry should explain its use and a likely misunderstanding, not merely
+replace one unfamiliar phrase with another. Sources and an AI editorial review
+statement remain visible. These are not independently approved definitions or
+new scientific certificates. Structural checks cannot certify semantic accuracy.
+
+Annotation matches explicit aliases, longest first, with Unicode boundaries,
+and processes dynamically rendered atlas prose. Links, controls, code, formulas,
+navigation, glossary blocks and dictionary entries are excluded. Use
+`data-no-dictionary` for a passage or `auto_annotate: false` for an entire entry.
+State is currently dictionary-only because its meanings need contextual
+selection. No runtime AI generates text. Missing dictionary requests preserve
+ordinary reading. Hover, focus and tap open definitions; Escape dismisses them.
+
+## Repeatable terminology inventory
+
+`python3 foundations/build_term_inventory.py` writes
+`results/TERM_INVENTORY_V1.json` and `reports/term-inventory-v1.md`.
+Use `--check` to detect drift. Rebuild the site first if matrix data changed.
+The inventory reads all 576 cell prose records, six atlas prose collections,
+38 current paper/source documents and the reading account. It excludes duplicate
+same-stem Markdown when TeX exists, PDFs, site copies and machine identifiers.
+The exact corpus is content-hashed; its size may change on future runs.
+
+The inventory contains 75 manually selected alias families plus 200 automatically
+extracted word/phrase candidates. It records cell and paper reach, raw frequency,
+distinct whole-document text counts, source locations and sample contexts.
+Repeated templates still affect rankings; frequency is not reader difficulty.
+TeX normalization is heuristic. Inventory hits do not validate historical claims.
+
+Use the proposed prerequisite → bridge → specialist sequence in the report to
+plan future definitions. Resolve overloaded senses before enabling annotation.
+The automatic discovery list is an editorial queue, never an automatic publish
+list. A dictionary match does not mean all uses of that term are explained.
+
+Checks:
+
+```
+python3 foundations/build_term_inventory.py --check
+python3 -m unittest foundations.tests.test_term_inventory foundations.tests.test_reading_site
+PYTHONPATH=/tmp/tt-browser-deps python3 foundations/tests/browser_dictionary.py
+```

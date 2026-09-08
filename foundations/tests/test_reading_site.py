@@ -18,5 +18,17 @@ class ReadingTests(unittest.TestCase):
                 p=Path(tmp)/'content.json';p.write_text(json.dumps(v))
                 with self.subTest(kind=kind),patch.object(reading_site,'CONTENT',p),self.assertRaises(ValueError):reading_site.load()
 
+    def test_dictionary_review_gates(self):
+        d=json.loads(reading_site.DICTIONARY.read_text())
+        for kind in ['source','perspective','duplicate','related']:
+            v=copy.deepcopy(d)
+            if kind=='source':v['terms'][0]['sources'][0]['sha256']='0'*64
+            if kind=='perspective':del v['terms'][0]['explanations']['physics']
+            if kind=='duplicate':v['terms'].append(copy.deepcopy(v['terms'][0]))
+            if kind=='related':v['terms'][0]['related']=['missing']
+            with tempfile.TemporaryDirectory() as tmp:
+                p=Path(tmp)/'dictionary.json';p.write_text(json.dumps(v))
+                with self.subTest(kind=kind),patch.object(reading_site,'DICTIONARY',p),self.assertRaises(ValueError):reading_site.load()
+
 
 if __name__=='__main__':unittest.main()

@@ -9,3 +9,15 @@
 .dictionary-popup [data-perspective=physics] { border-color:#2878a6; }
 .dictionary-popup [data-perspective=mathematics] { border-color:#80549e; }
 .dictionary-popup [data-perspective=specialist] { border-color:#aa7624; }
+
+.dictionary-index { padding:20px; background:#f2f4f0; border:1px solid #cbd5cd; border-radius:10px; margin:24px 0; }
+.dictionary-index ul { columns:2; padding-left:22px; }
+.dictionary-index li { margin:10px 0; break-inside:avoid; }
+.dictionary-entry-heading, .dictionary-entry-sources { grid-column:1 / -1; }
+.dictionary-entry-sources { margin:0; padding:12px 0; border:0; }
+.dictionary-entry h3 { font-size:1rem; margin-bottom:6px; }
+.dictionary-entry .definition-summary { font-weight:550; }
+.dictionary-popup details { margin:10px 0 18px; }
+.dictionary-popup details[open] summary { margin-bottom:12px; }
+.dictionary-popup summary { cursor:pointer; text-decoration:underline; }
+@media(max-width:600px) { .dictionary-index ul { columns:1; } }

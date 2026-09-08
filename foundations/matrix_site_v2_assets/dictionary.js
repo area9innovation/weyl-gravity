@@ -8,7 +8,7 @@
     dictionary = await response.json();
   } catch (_) { return; } // Reading remains available if definitions cannot load.
   const labels = {general:'General', physics:'Physics', mathematics:'Mathematics', specialist:'Specialist'};
-  const aliases = dictionary.terms.flatMap(term => term.aliases.map(alias => ({alias, term})))
+  const aliases = dictionary.terms.filter(term => term.auto_annotate !== false).flatMap(term => term.aliases.map(alias => ({alias, term})))
     .sort((a,b) => b.alias.length-a.alias.length);
   const escape = value => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const pattern = new RegExp('(?<![\\p{L}\\p{N}_])(' + aliases.map(x=>escape(x.alias)).join('|') + ')(?![\\p{L}\\p{N}_])', 'giu');
@@ -33,6 +33,13 @@
       const p = document.createElement('p'); p.dataset.perspective = key;
       const label = document.createElement('strong'); label.textContent = labels[key]+': ';
       p.append(label,document.createTextNode(term.definitions[key])); popup.append(p);
+      const details=document.createElement('details');
+      const summary=document.createElement('summary'); summary.textContent='More for '+labels[key]; details.append(summary);
+      for (const block of term.explanations[key]) {
+        const heading=document.createElement('strong'); heading.textContent=block.heading;
+        const text=document.createElement('p'); text.textContent=block.text; details.append(heading,text);
+      }
+      details.addEventListener('toggle',position); popup.append(details);
     }
     const link = document.createElement('a'); link.href = 'dictionary.html?audience=general,physics,mathematics,specialist#'+term.id;
     link.textContent = 'Compare all four definitions'; popup.append(link);
@@ -44,6 +51,8 @@
   function position() {
     if (!active || popup.hidden) return;
     const rect = active.getBoundingClientRect();
+    const available = Math.max(innerHeight - rect.bottom - 14, rect.top - 14);
+    popup.style.maxHeight = Math.max(120, Math.min(innerHeight - 16, available))+'px';
     popup.style.left = Math.max(8,Math.min(rect.left,innerWidth-popup.offsetWidth-8))+'px';
     const below = rect.bottom + 6;
     const top = below + popup.offsetHeight <= innerHeight - 8 ? below : rect.top - popup.offsetHeight - 6;

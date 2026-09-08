@@ -26,6 +26,15 @@ try:
     popup.get_by_role('link').click()
     assert page.locator('input[name=audience]:checked').count()==4
     assert page.locator('.dictionary-term').count()==0
+    words=page.locator('.dictionary-index li a').all_text_contents()
+    assert words==sorted(words,key=str.casefold)
+    page.get_by_role('link',name='ACA₀',exact=True).first.click()
+    assert page.url.endswith('#aca')
+    assert page.locator('#aca [data-edition=general] h3').count()==3
+    assert page.locator('#rca [data-edition=physics] h3').count()==3
+    page.get_by_role('link',name='Modulus',exact=True).click()
+    assert page.url.endswith('#modulus')
+    page.screenshot(path='/tmp/dictionary-expanded-desktop.png',full_page=True)
     page.goto(base+'atlas.html?audience=general,physics')
     page.wait_for_function("document.querySelector('#dictionary-popup') !== null")
     page.evaluate("""() => {
@@ -37,10 +46,17 @@ try:
     assert probe.locator('code .dictionary-term,a .dictionary-term').count()==0
     probe.locator('.dictionary-term').first.click()
     assert 'General:' in popup.inner_text() and 'Physics:' in popup.inner_text()
+    popup.get_by_text('More for General',exact=True).click()
+    assert 'What a rulebook does' in popup.inner_text()
+    popup.get_by_text('More for General',exact=True).click()
     page.set_viewport_size({'width':390,'height':844})
     probe.locator('.dictionary-term').first.click()
     box=popup.bounding_box();assert box['x']>=0 and box['x']+box['width']<=390
     page.screenshot(path='/tmp/dictionary-mobile.png')
+    page.goto(base+'dictionary.html?audience=general,mathematics')
+    assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+    assert page.locator('#observable [data-edition]:visible').count()==2
+    page.screenshot(path='/tmp/dictionary-expanded-mobile.png')
     assert not errors,errors
     browser.close()
  print('PASS: perspective definitions, comparison, hover/focus/tap, Escape, dynamic atlas annotation, word boundaries, excluded elements and mobile bounds')

@@ -14,12 +14,21 @@ PAPERS=['99-how-to-build-a-universe.pdf','98-physicist-executive-summary.pdf','0
 def load():
     data=json.loads(CONTENT.read_text())
     dictionary=json.loads(DICTIONARY.read_text())
-    seen=set()
+    seen=set(); ids=set()
     for term in dictionary['terms']:
+        if term['id'] in ids: raise ValueError('duplicate dictionary ID')
+        ids.add(term['id'])
+        if not term['scope'].strip(): raise ValueError('missing dictionary scope')
+        if set(term['explanations']) != set(data['audiences']): raise ValueError('missing expanded perspective')
+        for blocks in term['explanations'].values():
+            if not blocks or any(not b['heading'].strip() or not b['text'].strip() for b in blocks): raise ValueError('empty expanded explanation')
+        for source in term['sources']:
+            if hashlib.sha256((ROOT/source['path']).read_bytes()).hexdigest()!=source['sha256']: raise ValueError('dictionary source review required: '+source['path'])
         if set(term['definitions']) != set(data['audiences']): raise ValueError('missing dictionary perspective')
         for alias in term['aliases']:
             if not alias.strip() or alias.casefold() in seen: raise ValueError('ambiguous dictionary alias')
             seen.add(alias.casefold())
+    if any(r not in ids for t in dictionary['terms'] for r in t['related']): raise ValueError('unknown related dictionary term')
     data['concepts']={t['id']:dict(label=t['label'], **t['definitions']) for t in dictionary['terms']}
     for record in data['sources'].values():
         if hashlib.sha256((ROOT/record['path']).read_bytes()).hexdigest()!=record['sha256']:
@@ -73,11 +82,11 @@ def topic_page(data,key):
             body+=f'<li><a href="sources/{e(path)}">{e(Path(path).name)}</a></li>'
         body+='</ul></details></article>'
     body+='</aside><section class="concepts"><h2>Terms used in this account</h2>'
-    for concept in data['concepts'].values():
+    for cid,concept in data['concepts'].items():
         body+=f'<details><summary>{e(concept["label"])}</summary>'
         for audience in data['audiences']:
             body+=f'<p data-edition="{audience}"'+(' hidden' if audience!='general' else '')+f'><span class="edition-label">{e(data["audiences"][audience]["label"])}</span> {e(concept[audience])}</p>'
-        body+='</details>'
+        body+=f'<p><a href="dictionary.html#{e(cid)}">Full explanation and examples →</a></p></details>'
     body+='</section>'
     if key=='introduction':
         body+='<a class="next-reading" href="wave.html">Explore the wave example <span>When does an approximation justify a prediction? →</span></a>'
@@ -96,12 +105,25 @@ def generated():
     for name in ['dictionary.js','dictionary.css']:
         outputs[name]=(ASSETS/name).read_bytes()
     outputs['dictionary.json']=DICTIONARY.read_bytes()
-    body='<h1>Dictionary</h1><p>Compare explanations for different backgrounds. Scope notes identify context-specific uses. Underlined terms elsewhere open these same definitions by hover, keyboard focus or tap.</p>'
-    for term in dictionary['terms']:
-        body+=f'<section class="reading-section" id="{e(term["id"])}"><h2>{e(term["label"])}</h2><p>{e(term["scope"])}</p>'
+    ordered=sorted(dictionary['terms'],key=lambda t:t['label'].casefold())
+    word_list=sorted([(label,t['id']) for t in ordered for label in [t['label'],*t.get('index_labels',[])]],key=lambda pair:pair[0].casefold())
+    body='<h1>Dictionary</h1><p>Choose your reading perspectives, then browse the alphabetical word list. Each entry explains the idea, its use in this project and its limits. These are reviewed editorial explanations, not new scientific certificates.</p>'
+    body+='<nav class="dictionary-index" aria-label="Alphabetical word list"><h2>Alphabetical word list</h2><ul>'+''.join(f'<li><a href="#{e(id)}">{e(label)}</a></li>' for label,id in word_list)+'</ul></nav>'
+    labels={t['id']:t['label'] for t in ordered}
+    for term in ordered:
+        body+=f'<section class="reading-section dictionary-entry" id="{e(term["id"])}"><header class="dictionary-entry-heading"><h2>{e(term["label"])}</h2><p>{e(term["scope"])}</p></header>'
         for audience,definition in term['definitions'].items():
-            body+=f'<div data-edition="{audience}"'+(' hidden' if audience!='general' else '')+f'><span class="edition-label">{e(data["audiences"][audience]["label"])}</span><p>{e(definition)}</p></div>'
-        body+='</section>'
+            body+=f'<div data-edition="{audience}"'+(' hidden' if audience!='general' else '')+f'><span class="edition-label">{e(data["audiences"][audience]["label"])}</span><p class="definition-summary">{e(definition)}</p>'
+            for block in term['explanations'][audience]:
+                body+=f'<h3>{e(block["heading"])}</h3><p>{e(block["text"])}</p>'
+            body+='</div>'
+        body+='<footer class="dictionary-entry-sources"><p>Related: '+ ' · '.join(f'<a href="#{e(id)}">{e(labels[id])}</a>' for id in term['related'])+'</p><details><summary>Sources and editorial scope</summary><p>AI editorial review against these sources; no independent expert approval. Historical source claims remain subject to the current project status.</p><ul>'
+        for source in term['sources']:
+            body+=f'<li><a href="sources/{e(source["path"])}">{e(Path(source["path"]).name)}</a></li>'
+            outputs['sources/'+source['path']]=(ROOT/source['path']).read_bytes()
+        for ref in term.get('references',[]):
+            body+=f'<li><a href="{e(ref["url"])}">{e(ref["title"])}</a></li>'
+        body+='</ul></details><a href="#main">Back to word list</a></footer></section>'
     outputs['dictionary.html']=shell('Dictionary',body,'dictionary',True).encode()
     questions='''<header class="reading-hero"><p class="eyebrow">Explore a question</p><h1>Where do the assumptions enter?</h1><p class="deck">Begin with one problem. Follow its explanation to the precise result and its evidence.</p></header>
 <div class="question-grid"><a class="question-card" href="wave.html"><span class="eyebrow">Physics and reverse mathematics</span><h2>When does an approximation justify a prediction?</h2><p>The same wave and detector, with and without a supplied error schedule.</p><span>General · Physics · Mathematics · Specialist →</span></a>
@@ -123,4 +145,4 @@ def generated():
 
 def inputs():
     data=load()
-    return [Path(__file__).resolve(),CONTENT,DICTIONARY,ASSETS/'dictionary.js',ASSETS/'dictionary.css',ASSETS/'reading.css',ASSETS/'reading.js',*[ROOT/r['path'] for r in data['sources'].values()],*[ROOT/'paper'/p for p in PAPERS]]
+    return [Path(__file__).resolve(),CONTENT,DICTIONARY,*[ROOT/s['path'] for t in json.loads(DICTIONARY.read_text())['terms'] for s in t['sources']],ASSETS/'dictionary.js',ASSETS/'dictionary.css',ASSETS/'reading.css',ASSETS/'reading.js',*[ROOT/r['path'] for r in data['sources'].values()],*[ROOT/'paper'/p for p in PAPERS]]

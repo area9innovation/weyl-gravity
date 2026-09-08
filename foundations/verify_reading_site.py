@@ -31,6 +31,19 @@ def verify():
     dictionary=json.loads((ROOT/'foundations/editorial/dictionary.json').read_text())
     assert json.loads((SITE/'dictionary.json').read_text())==dictionary
     assert all(set(t['definitions'])==set(d['audiences']) for t in dictionary['terms'])
+    dp=Page((SITE/'dictionary.html').read_text())
+    assert len(dp.ids)==len(set(dp.ids)), 'dictionary duplicate anchors'
+    terms=sorted(dictionary['terms'],key=lambda t:t['label'].casefold())
+    assert [i for i in dp.ids if i in {t['id'] for t in terms}]==[t['id'] for t in terms]
+    for term in terms:
+        assert set(term['explanations'])==set(d['audiences'])
+        for source in term['sources']:
+            content=(ROOT/source['path']).read_bytes()
+            assert hashlib.sha256(content).hexdigest()==source['sha256']
+            assert (SITE/'sources'/source['path']).read_bytes()==content
+        for perspective,blocks in term['explanations'].items():
+            assert blocks and all(block['text'] for block in blocks)
+    assert 'Alphabetical word list' in (SITE/'dictionary.html').read_text()
     assert set(d['audiences'])=={'general','physics','mathematics','specialist'}
     for r in d['sources'].values():
         assert hashlib.sha256((ROOT/r['path']).read_bytes()).hexdigest()==r['sha256'],'source review stale'
