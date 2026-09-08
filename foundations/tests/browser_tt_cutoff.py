@@ -19,13 +19,13 @@ with sync_playwright() as p:
   cost=Fraction((k-1)**3,8*k)
   assert page.locator('#cost').inner_text()==str(cost.numerator)+'/'+str(cost.denominator)
  for href in page.locator('a').evaluate_all('(links)=>links.map(a=>a.getAttribute("href"))'):
-  assert (root/href).exists(),href
+  assert (root/href.split('#')[0]).exists(),href
  page.screenshot(path='/tmp/tt-cutoff-desktop.png',full_page=True)
  page.set_viewport_size({'width':390,'height':844})
  assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth')
  page.screenshot(path='/tmp/tt-cutoff-mobile.png',full_page=True)
- page.goto((root/'index.html').as_uri())
- assert page.locator('.hero-note').filter(has_text='Full export currently rejected:').count()==1
+ page.goto((root/'atlas.html').as_uri())
+ assert page.locator('.export-audit').filter(has_text='Full export currently rejected:').count()==1
  assert not errors,errors
  browser.close()
 result={'command':'PYTHONPATH=/tmp/tt-browser-deps python3 foundations/tests/browser_tt_cutoff.py', 'elapsed_seconds':round(time.monotonic()-start,6),'status':'PASS','checks':['Chromium page load without JS errors','slider K=4,8,128 exact expectations and rational lower bound','all case-study links exist','390px mobile viewport has no horizontal overflow','current rejection and partial repair displayed on case study and index']}

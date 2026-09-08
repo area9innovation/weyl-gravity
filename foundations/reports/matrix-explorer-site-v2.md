@@ -8,6 +8,13 @@
 
 ## Outcome
 
+The primary entry point is now the unified introduction, with General,
+Physics, Mathematics and Specialist editions. The wave question uses the same
+audience and section system. Source-pinned scientific records supply shared
+status; changed sources require editorial review before rebuilding. Papers 98
+and 99 remain dated publications with a visible correction notice. The matrix
+has moved to `atlas.html`; historical `index.html` atlas hashes redirect there.
+
 The new `cutoff-positivity.html` case study presents the conditional TT
 finite/continuum separation. Its source extension reconciles the reduced
 reference import and supplies a gauge-invariant compact-source lift, but finds
@@ -18,7 +25,7 @@ is still required. The index exposes the current rejection and partial repair.
 The full tensor-commutator comparison remains open; no existing atlas cell or
 quantum lifecycle is promoted by this page.
 
-`foundations/site/index.html` presents all **576** Cartesian coordinates.
+`foundations/site/atlas.html` presents all **576** Cartesian coordinates.
 All **576** are now emitted by cube v15 and have separate coverage and migration
 review fields: **576 reviewed**, **0 pending**.
 The surface has **169 `REVIEWED_GAP`** cells and **0

@@ -1059,7 +1059,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         if not path.is_file() or sha(path) != source.get("sha256"):
             errors.append("manifest input " + str(source.get("path")))
 
-    html = (SITE / "index.html").read_text()
+    html = (SITE / "atlas.html").read_text()
     app = (SITE / "app.js").read_text() + (SITE / "migration-review.js").read_text() + (SITE / "assemblies.js").read_text()
     if "https://" in html or "http://" in html or '<script src="data.js"></script>' not in html or '<script src="viability.js"></script>' not in html or '<script src="assemblies.js"></script>' not in html or '<script src="migration-review.js"></script>' not in html:
         errors.append("offline/no-remote-code shell")

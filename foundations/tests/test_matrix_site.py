@@ -72,7 +72,7 @@ class MatrixSiteTests(unittest.TestCase):
         self.assertTrue(any("proof passport" in error for error in errors))
 
     def test_static_shell_exposes_migration_review(self):
-        html = (ROOT / "foundations/site/index.html").read_text()
+        html = (ROOT / "foundations/site/atlas.html").read_text()
         base_app = (ROOT / "foundations/site/app.js").read_text()
         assembly_data = (ROOT / "foundations/site/assemblies.js").read_text()
         app = (ROOT / "foundations/site/migration-review.js").read_text()

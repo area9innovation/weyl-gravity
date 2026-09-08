@@ -128,11 +128,20 @@ validated numerical results, but not a completed physical theory.
 | Phase-1 synthesis | The completed first phase is a classification with constructive results and obstructions—not a rescue of Weyl gravity and not a universal no-go theorem. | [Paper 15](paper/15-four-level-ghost-classification-phase1-synthesis.pdf) |
 | Reverse physics | Which minimal assumptions the Weyl action is *equivalent* to, rather than implied by. Every assumption now carries an independence witness; the derived derivative order is shown to require three of them; the geometry column is discharged or cited with stated boundaries; and Lovelock's \(D=4\) conclusion is computed in the same carrier, so the Einstein/Weyl comparison rests on two computed uniqueness theorems. This is assumption-necessity work about the theory's logical structure, not a new physical claim about the world. | [reverse_physics/](reverse_physics/README.md) |
 
-For the most detailed live claims table, assumptions, and non-claims, start
-with the [physicist executive summary](paper/98-physicist-executive-summary.md).
+For the current introductory account and its claim boundaries, start with the
+[web introduction](foundations/site/index.html). The physicist executive
+summary below remains a dated publication; consult the current correction
+notice alongside its earlier full-transfer claims.
 
 ## Start here
 
+- **Current web introduction:** [Reverse Physics](foundations/site/index.html),
+  with General, Physics, Mathematics and Specialist reading perspectives.
+  The [wave question](foundations/site/wave.html) uses the same structure;
+  the [research atlas](foundations/site/atlas.html) retains the technical views.
+- **Dated publications:** the introductions below are archived accounts.
+  Consult the [publication page and current corrections](foundations/site/papers.html)
+  when reading earlier full-transfer claims.
 - **General introduction (Paper 99):** [How to Build a Universe: Physics,
   Mathematics, Logic—and Research in the Age of
   AI](paper/99-how-to-build-a-universe.md)

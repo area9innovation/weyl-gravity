@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive reverse-physics atlas connecting mathematical assumptions, physical theories, observables, and evidence">
+  <title>Reverse Physics Atlas — Mathematics, Theories, and Evidence</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body><nav class="reader-links" aria-label="Main navigation"><a href="index.html">Introduction</a><a href="questions.html">Questions</a><a href="atlas.html#view=passports">Theory journeys</a><a href="atlas.html" aria-current="page">Research atlas</a><a href="papers.html">Papers</a><span>Specialist reference views</span></nav>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Mathematical assumptions → physical theories → evidence</p>
+      <h1>Reverse Physics <span>Atlas</span></h1>
+      <p class="lede">Trace how mathematical regimes and state-space carriers constrain dynamics, observables, and empirical tests—and see exactly where the evidence stops.</p>
+    </div>
+    <div class="hero-note"><strong>Read colors as evidence states.</strong><br>They are not truth values, importance scores, or literature-completeness claims.</div>
+  </header>
+
+  <nav class="tabs" aria-label="Explorer views">
+    <button class="tab active" data-view="matrix">Matrix</button>
+    <button class="tab" data-view="viability">Theory profiles</button>
+    <button class="tab" data-view="assemblies">Assemblies</button>
+    <button class="tab" data-view="guide">Dimensions guide</button>
+    <button class="tab" data-view="graph">Implications</button>
+    <button class="tab" data-view="ladder">Strength ladder</button>
+    <button class="tab" data-view="passports">Theory journeys</button>
+    <button class="tab" data-view="completion">Weyl BV routes</button>
+    <button class="tab" data-view="evidence">Evidence</button>
+    <a href="cutoff-positivity.html">Finite positivity case study</a>
+    <a href="manifest.json">Build manifest</a>
+  </nav>
+
+  <main><aside class="export-audit"><strong>Full export currently rejected:</strong> these research views retain historical records. The current trace/ghost candidate is only a partial repair. <a href="index.html#limits">Read the current account</a> or <a href="cutoff-positivity.html">the scoped positivity case</a>.</aside>
+    <section class="stats" id="stats" aria-label="Coverage counts"></section>
+
+    <section class="controls" aria-label="Matrix filters">
+      <label class="search"><span>Search claims, boundaries, evidence, authors</span><input id="search" type="search" placeholder="e.g. causal, Krein, Choice, QME"></label>
+      <div class="filter-row" id="filters"></div>
+      <div class="action-row">
+        <label class="check" title="Show only Pieces only and Priority gap cells: open questions with recorded ingredients or a concrete next investigation."><input id="seededOnly" type="checkbox"> Open cells with a starting point</label>
+        <button id="clearFilters">Clear filters</button>
+        <button id="copyLink">Copy permalink</button>
+        <button id="exportJson">Export filtered JSON</button>
+        <button id="exportCsv">Export filtered CSV</button>
+      </div>
+      <p id="filterSummary" class="muted" aria-live="polite"></p>
+    </section>
+
+    <section id="matrixView" class="view active">
+      <div class="section-head"><div><p class="eyebrow">Sixteen coordinated slices</p><h2>Entire 6 × 6 × 16 surface</h2></div><p>Rows are mathematical regimes. Columns are carriers. Choose any cell for its exact claim boundary and evidence trail.</p></div>
+      <div id="matrixGroups"></div>
+    </section>
+
+    <section id="viabilityView" class="view">
+      <div class="section-head"><div><p class="eyebrow">Coverage is not empirical validity</p><h2>Theory profiles and carrier portfolios</h2></div><p>Compare obligation coverage without collapsing composition and observational agreement into a misleading winner score.</p></div>
+      <div id="viabilityExplorer"></div>
+    </section>
+
+    <section id="assembliesView" class="view">
+      <div class="section-head"><div><p class="eyebrow">Coverage must compose</p><h2>Prediction assemblies and theory prototypes</h2></div><p>Compare bounded single-model chains—including a completed scoped result and a mixed failed-gate result—with coverage-maximizing prototypes. Exact derivations, operational bridges, and empirical comparisons remain separately typed.</p></div>
+      <div id="assemblyExplorer"></div>
+    </section>
+
+    <section id="guideView" class="view">
+      <div class="section-head"><div><p class="eyebrow">Start here</p><h2>What the three dimensions mean</h2></div><p>Every cell combines one mathematical regime, one carrier, and one physical obligation. The guide explains all 28 choices without assuming specialist vocabulary.</p></div>
+      <div id="dimensionGuide"></div>
+    </section>
+
+    <section id="graphView" class="view">
+      <div class="section-head"><div><p class="eyebrow">Typed, directional claims</p><h2>Physics → mathematics implications</h2></div><p>Three pathways separate the main construction, a failed finite-spectral route, and a literature contrast. Every arrow states exactly what is established or still missing.</p></div>
+      <div id="graphLegend" class="legend"></div>
+      <p class="graph-instructions"><b>How to use this map:</b> follow arrowheads from source to target. Solid, dashed, and dotted routes have different meanings. Hover or focus an arrow—or its ledger row—to isolate both endpoints. Select a box for its complete incident relations.</p>
+      <div class="graph-wrap"><svg id="graph" role="img" aria-label="Typed physics to mathematics implication graph"></svg></div>
+      <div id="edgeTable"></div>
+    </section>
+
+    <section id="ladderView" class="view">
+      <div class="section-head"><div><p class="eyebrow">Do not skip the gates</p><h2>Cylinder-wave strength ladder</h2></div><p>Each step adds mathematical data. Certified finite algebra does not silently become a distributional or causal theorem.</p></div>
+      <div id="ladder"></div>
+    </section>
+
+    <section id="passportsView" class="view">
+      <div class="section-head"><div><p class="eyebrow">From ideas to measurements</p><h2>Theory journeys</h2></div><p>Eight evidence-pinned passports ask the same six plain questions of competing approaches. They show the first missing bridge and distinguish passing data, failing data, and not yet reaching data.</p></div>
+      <div id="theoryPassportExplorer"></div>
+    </section>
+
+    <section id="completionView" class="view">
+      <div class="section-head"><div><p class="eyebrow">From survey to causal construction</p><h2>Lorentzian Weyl BV completion routes</h2></div><p>Seven architectures cross eleven gates. A colored cell reports a scoped evidence state—not a probability that the theory is true.</p></div>
+      <div id="completionExplorer"></div>
+    </section>
+
+    <section id="evidenceView" class="view">
+      <div class="section-head"><div><p class="eyebrow">Resolved provenance</p><h2>Evidence catalogue</h2></div><p>Local certificates and literature records are separate evidence types; metadata-only sources remain visibly marked.</p></div>
+      <div id="proofPassportExplorer"></div>
+      <div id="evidenceGrid" class="evidence-grid"></div>
+    </section>
+  </main>
+
+  <aside id="inspector" class="inspector" aria-hidden="true" aria-labelledby="inspectorTitle">
+    <button id="closeInspector" class="close" aria-label="Close cell inspector">×</button>
+    <div id="inspectorBody"></div>
+  </aside>
+  <div id="shade" class="shade" hidden></div>
+
+  <dialog id="compareDialog"><button id="closeCompare" class="close" aria-label="Close comparison">×</button><div id="compareBody"></div></dialog>
+  <div id="compareTray" class="compare-tray" hidden><span id="compareSummary"></span><button id="openCompare">Compare</button><button id="clearCompare">Clear</button></div>
+
+  <footer><p>Generated from content-pinned repository artifacts. <a href="data.json">Download the complete normalized dataset</a>.</p><p id="digest"></p></footer>
+  <script src="data.js"></script>
+  <script src="viability.js"></script>
+  <script src="assemblies.js"></script>
+  <script src="app.js"></script>
+  <script src="migration-review.js"></script>
+</body>
+</html>

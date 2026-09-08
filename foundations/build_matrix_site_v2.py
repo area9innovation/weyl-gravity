@@ -16,6 +16,7 @@ if str(_ROOT) not in sys.path:
 from foundations import build_matrix_site as v1
 from foundations.theory_assembly import build_assembly_assessment
 from foundations.theory_viability import build_assessment
+from foundations import reading_site
 
 ROOT = v1.ROOT
 FOUNDATIONS = v1.FOUNDATIONS
@@ -627,6 +628,13 @@ def render_report(result: dict[str, Any]) -> str:
 
 ## Outcome
 
+The primary entry point is now the unified introduction, with General,
+Physics, Mathematics and Specialist editions. The wave question uses the same
+audience and section system. Source-pinned scientific records supply shared
+status; changed sources require editorial review before rebuilding. Papers 98
+and 99 remain dated publications with a visible correction notice. The matrix
+has moved to `atlas.html`; historical `index.html` atlas hashes redirect there.
+
 The new `cutoff-positivity.html` case study presents the conditional TT
 finite/continuum separation. Its source extension reconciles the reduced
 reference import and supplies a gauge-invariant compact-source lift, but finds
@@ -637,7 +645,7 @@ is still required. The index exposes the current rejection and partial repair.
 The full tensor-commutator comparison remains open; no existing atlas cell or
 quantum lifecycle is promoted by this page.
 
-`foundations/site/index.html` presents all **576** Cartesian coordinates.
+`foundations/site/atlas.html` presents all **576** Cartesian coordinates.
 All **576** are now emitted by cube v15 and have separate coverage and migration
 review fields: **{counts['migration_reviewed']} reviewed**, **{counts['migration_pending']} pending**.
 The surface has **{counts['reviewed_gap']} `REVIEWED_GAP`** cells and **{counts['not_mapped']}
@@ -1105,10 +1113,11 @@ def generated() -> dict[Path, bytes]:
     ).encode()
     index = index.replace(b'<a href="manifest.json">Build manifest</a>',
         b'<a href="cutoff-positivity.html">Finite positivity case study</a>\n    <a href="manifest.json">Build manifest</a>')
-    index = index.replace(b'<main>', b'<main><aside class="hero-note"><strong>Full export currently rejected:</strong> the direct consistency check fails. A trace/ghost candidate repairs the two exposed error blocks; full verification and the tensor-commutator comparison remain open. <a href="cutoff-positivity.html">Read the audit and partial repair</a>.</aside>')
+    index = index.replace(b'<body>', b'<body><nav class="reader-links" aria-label="Main navigation"><a href="index.html">Introduction</a><a href="questions.html">Questions</a><a href="atlas.html#view=passports">Theory journeys</a><a href="atlas.html" aria-current="page">Research atlas</a><a href="papers.html">Papers</a><span>Specialist reference views</span></nav>')
+    index = index.replace(b'<main>', b'<main><aside class="export-audit"><strong>Full export currently rejected:</strong> these research views retain historical records. The current trace/ghost candidate is only a partial repair. <a href="index.html#limits">Read the current account</a> or <a href="cutoff-positivity.html">the scoped positivity case</a>.</aside>')
     outputs: dict[Path, bytes] = {
         SITE / "cutoff-positivity.html": (V2_ASSETS / "cutoff-positivity.html").read_bytes(),
-        SITE / "index.html": index,
+        SITE / "atlas.html": index,
         SITE / "styles.css": (ASSETS / "styles.css").read_bytes() + b"\n" + (V2_ASSETS / "styles-v2.css").read_bytes(),
         SITE / "app.js": app,
         SITE / "migration-review.js": (V2_ASSETS / "app-v2.js").read_bytes(),
@@ -1119,6 +1128,7 @@ def generated() -> dict[Path, bytes]:
         SITE / "assemblies.json": assembly_json,
         SITE / "assemblies.js": b"window.THEORY_ASSEMBLY_DATA = " + assembly_json.rstrip() + b";\n",
     }
+    outputs.update({SITE / name: content for name, content in reading_site.generated().items()})
     local_evidence_paths = [ROOT / item["result_path"] for item in dataset["evidence"].values() if item["kind"] == "LOCAL_RESULT"]
     local_report_paths = [ROOT / item["report_path"] for item in dataset["evidence"].values() if item["kind"] == "LOCAL_RESULT" and item.get("report_path")]
     completion_evidence_paths = [ROOT / item["path"] for item in dataset["completion_atlas"]["provenance"]["inputs"]]
@@ -1235,7 +1245,7 @@ def generated() -> dict[Path, bytes]:
     ]))
     for source in bundled_sources:
         outputs[SITE / "sources" / source.relative_to(ROOT)] = source.read_bytes()
-    input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", FOUNDATIONS / "theory_assembly.py", FOUNDATIONS / "build_gr_cassini_assembly.py", FOUNDATIONS / "check_gr_cassini_assembly.py", FOUNDATIONS / "verify_gr_cassini_assembly.py", FOUNDATIONS / "build_mannheim_ngc3198_assembly.py", FOUNDATIONS / "check_mannheim_ngc3198_assembly.py", FOUNDATIONS / "verify_mannheim_ngc3198_assembly.py", FOUNDATIONS / "build_ngc3198_common_fit_comparison.py", FOUNDATIONS / "check_ngc3198_common_fit_comparison.py", FOUNDATIONS / "verify_ngc3198_common_fit_comparison.py", FOUNDATIONS / "standard-gr-observational-control-v1.json", FOUNDATIONS / "schema/standard-gr-observational-control-v1.schema.json", *bundled_sources, V2_ASSETS / "cutoff-positivity.html", ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js", V2_ASSETS / "styles-v2.css"]))
+    input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", FOUNDATIONS / "theory_assembly.py", FOUNDATIONS / "build_gr_cassini_assembly.py", FOUNDATIONS / "check_gr_cassini_assembly.py", FOUNDATIONS / "verify_gr_cassini_assembly.py", FOUNDATIONS / "build_mannheim_ngc3198_assembly.py", FOUNDATIONS / "check_mannheim_ngc3198_assembly.py", FOUNDATIONS / "verify_mannheim_ngc3198_assembly.py", FOUNDATIONS / "build_ngc3198_common_fit_comparison.py", FOUNDATIONS / "check_ngc3198_common_fit_comparison.py", FOUNDATIONS / "verify_ngc3198_common_fit_comparison.py", FOUNDATIONS / "standard-gr-observational-control-v1.json", FOUNDATIONS / "schema/standard-gr-observational-control-v1.schema.json", *bundled_sources, *reading_site.inputs(), V2_ASSETS / "cutoff-positivity.html", ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js", V2_ASSETS / "styles-v2.css"]))
     manifest = {
         "schema_version": "foundational-matrix-explorer-manifest-v2",
         "created": CREATED,
@@ -1421,6 +1431,7 @@ def generated() -> dict[Path, bytes]:
     result["does_not_establish"].append("that a theory passport selects a complete theory or promotes a completion-matrix evidence grade")
     result["features"].append("conditional TT finite-cutoff positivity case study, current full-export rejection, and scoped trace/ghost repair of two square blocks with full verification open")
     result["claim_flags"]["current_serialized_graph_transfer_accepted"] = False
+    result["features"].append("unified question-led introduction and wave topic with four audience editions, shared scientific status, historical paper corrections and preserved atlas permalinks")
     outputs[RESULT] = (json.dumps(result, indent=2) + "\n").encode()
     outputs[REPORT] = render_report(result).encode()
     outputs[VIABILITY_RESULT] = viability_json
