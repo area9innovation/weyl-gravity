@@ -274,8 +274,8 @@ English label/alias file. Source: <https://physh.org/releases>. NLP tools:
 ## One global terminology destination
 
 `dictionary.html` is now the reader-facing index for the entire project. The
-existing global Dictionary navigation opens it. Explained terms have quick
-alphabetical links and retain their four-perspective entries and anchors;
+existing global Dictionary navigation opens it. Explained terms retain their
+four-perspective entries and anchors;
 the integrated searchable word list defaults to the whole corpus, in
 alphabetical order. Source filters narrow this same index to the ladder,
 matrix, atlas, reading accounts, dictionary explanations or papers. Unknown
@@ -289,4 +289,4 @@ tools on this page, hidden by default. `term-review.html` redirects here and
 preserves audience and source filters; it no longer hosts a competing interface.
 The ladder links directly to the same dictionary with its source filter set.
 The global corpus shard is larger than a page-specific shard; full definitions
-and their links remain available without JavaScript while the index loads.
+remain available without JavaScript while the index loads.

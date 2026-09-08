@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "kind": "editorial-layout-cleanup",
+  "dependency_tags": [],
+  "scientific_claims_promoted": false,
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "py_compile",
+        "foundations/reading_site.py",
+        "foundations/term_review.py"
+      ],
+      "elapsed_seconds": 0.084,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/build_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 8.88,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/verify_reading_site.py"
+      ],
+      "elapsed_seconds": 0.11,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/verify_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 11.69,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONPATH=/tmp/tt-browser-deps",
+        "python3",
+        "foundations/tests/browser_dictionary.py"
+      ],
+      "elapsed_seconds": 6.411,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "foundations/editorial/README.md",
+        "foundations/reading_site.py",
+        "foundations/term_review.py",
+        "foundations/tests/browser_dictionary.py",
+        "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
+        "foundations/site/dictionary.html",
+        "foundations/site/manifest.json",
+        "foundations/reports/global-terminology-v1.md"
+      ],
+      "elapsed_seconds": 0.013,
+      "status": "PASS"
+    }
+  ],
+  "artifacts_sha256": {
+    "foundations/editorial/README.md": "ec7c32e2ef091e022b0f6a78771152e5e9017d7784e8c15dbdf47262f0585279",
+    "foundations/reading_site.py": "d12c6efa4793a222ddd9b7b265c904e43ef779057ce1a426c1a0a3034d22b83c",
+    "foundations/term_review.py": "7c1a5765e29c946ef8a361d13c053a4f55119f34c6a2d7af34d538865bfec9be",
+    "foundations/tests/browser_dictionary.py": "7860d27365460a4a643a656c0b65ecc6eccf5ee486e4c76fdf2ce7557926d880",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "e6c987d4380948dc739b8e45d4162e4ccb327037799ff91fabc94e7e9b8101bb",
+    "foundations/site/dictionary.html": "97e08987c3652c60dad97d1d9e4ab6c11c55987358d23f906e889af2d52f449e",
+    "foundations/site/manifest.json": "54c5c548ed11d5e24885511b67b2d92a6b59864fee1a0d9a194d07978d781555",
+    "foundations/reports/global-terminology-v1.md": "53953cdce5030c19a7d264597d6871007303ecb9f371dca4306654eb6a9aaaca"
+  },
+  "assumptions": [
+    "Existing definitions and candidate index are unchanged"
+  ],
+  "unresolved": [],
+  "tiers": {
+    "0": "PASS: parsing, scoped diff and generated artifact hashes",
+    "1": "PASS: existing dictionary browser check",
+    "2": "PASS: reading and matrix site verifiers",
+    "3": "NOT RUN: no mathematical inputs or scientific claims changed"
+  }
+}

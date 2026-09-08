@@ -130,9 +130,7 @@ def generated():
         outputs[name]=(ASSETS/name).read_bytes()
     outputs['dictionary.json']=DICTIONARY.read_bytes()
     ordered=sorted(dictionary['terms'],key=lambda t:t['label'].casefold())
-    word_list=sorted([(label,t['id']) for t in ordered for label in [t['label'],*t.get('index_labels',[])]],key=lambda pair:pair[0].casefold())
     body='<header class="reading-hero"><p class="eyebrow">Concepts and connections</p><h1>Terminology &amp; dictionary</h1><p class="deck">A shared index for the whole project. Find a term, see where it is used, and read its explanation at your chosen perspective.</p></header>'
-    body+='<nav class="dictionary-index" aria-label="Alphabetical word list"><h2>Explained terms (A–Z)</h2><ul>'+''.join(f'<li><a href="#{e(id)}">{e(label)}</a></li>' for label,id in word_list)+'</ul></nav>'
     body+='<!-- GLOBAL_TERMINOLOGY_INDEX -->'
     labels={t['id']:t['label'] for t in ordered}
     for term in ordered:

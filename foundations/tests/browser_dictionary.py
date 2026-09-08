@@ -26,13 +26,11 @@ try:
     popup.get_by_role('link').click()
     assert page.locator('input[name=audience]:checked').count()==4
     assert page.locator('.dictionary-term').count()==0
-    words=page.locator('.dictionary-index li a').all_text_contents()
-    assert words==sorted(words,key=str.casefold)
-    page.get_by_role('link',name='ACA₀',exact=True).first.click()
+    page.goto(page.url.split('#')[0]+'#aca')
     assert page.url.endswith('#aca')
     assert page.locator('#aca [data-edition=general] h3').count()==3
     assert page.locator('#rca [data-edition=physics] h3').count()==3
-    page.get_by_role('link',name='Modulus',exact=True).click()
+    page.goto(page.url.split('#')[0]+'#modulus')
     assert page.url.endswith('#modulus')
     page.screenshot(path='/tmp/dictionary-expanded-desktop.png',full_page=True)
     page.goto(base+'atlas.html?audience=general,physics')

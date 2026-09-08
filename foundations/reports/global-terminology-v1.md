@@ -26,3 +26,11 @@ existing dictionary navigation, and mobile layout. The site verification chain
 checks generated artifacts and provenance. Commands, timings and artifact hashes
 are in `../receipts/global-terminology-v1.json`. Tier 3 is not required: no
 mathematical input, theorem or lifecycle changed.
+
+## Follow-up: remove the redundant explained-term list
+
+Removed the introductory “Explained terms (A–Z)” block and its unused list
+construction. The searchable global index and full four-perspective entries
+remain. No-JavaScript wording now points to the full entries below. Existing
+browser checks use direct entry anchors instead of the removed navigation.
+Validation and hashes: `../receipts/remove-explained-term-list-v1.json`.
