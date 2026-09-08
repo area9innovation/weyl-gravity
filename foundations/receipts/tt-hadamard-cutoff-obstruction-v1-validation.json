@@ -1,0 +1,124 @@
+{
+  "schema_version": "tt-hadamard-cutoff-obstruction-validation-v1",
+  "date": "2026-09-08",
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "base_commit": "08bf00a7c15e9593ad64f4a91dd7a03623ae222f",
+  "assignment": "User authorized one further attempt at interesting research; foundations study of finite versus continuum positivity.",
+  "coordination": "Direct user-assigned foundations work, outside the six resident stream lifecycles; explicit-path commit on shared master. No core quantum/classical files or lifecycle events changed.",
+  "preexisting_worktree": "Science Forge clean, shared index current; origin/master fetched and matched HEAD.",
+  "commands": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile foundations/build_tt_hadamard_cutoff_obstruction.py foundations/verify_tt_hadamard_cutoff_obstruction.py foundations/tests/test_tt_hadamard_cutoff_obstruction.py",
+      "elapsed_seconds": 0.082372,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "tier": 0,
+      "command": "python3 -m json.tool foundations/results/TT_HADAMARD_CUTOFF_OBSTRUCTION_V1.json /dev/null",
+      "elapsed_seconds": 0.056624,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "tier": 0,
+      "command": "git diff --check -- foundations/README.md foundations/build_tt_hadamard_cutoff_obstruction.py foundations/verify_tt_hadamard_cutoff_obstruction.py foundations/tests/test_tt_hadamard_cutoff_obstruction.py foundations/reports/tt-hadamard-cutoff-obstruction-v1.md foundations/results/TT_HADAMARD_CUTOFF_OBSTRUCTION_V1.json",
+      "elapsed_seconds": 0.010748,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=/tmp/tt-hadamard-check-deps python3 foundations/build_tt_hadamard_cutoff_obstruction.py --check",
+      "elapsed_seconds": 0.443327,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "TT cutoff obstruction reproduction: PASS\n",
+      "stderr": ""
+    },
+    {
+      "tier": 1,
+      "command": "python3 foundations/verify_tt_hadamard_cutoff_obstruction.py",
+      "elapsed_seconds": 0.053363,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "TT cutoff algebra/audit: PASS; reference import: FAIL_DEPENDENCY_DRIFT; human analysis not machine verified\n",
+      "stderr": ""
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest -v foundations.tests.test_tt_hadamard_cutoff_obstruction",
+      "elapsed_seconds": 0.117055,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "test_independent_replay (foundations.tests.test_tt_hadamard_cutoff_obstruction.CutoffObstructionTests.test_independent_replay) ... ok\ntest_mutations_are_rejected (foundations.tests.test_tt_hadamard_cutoff_obstruction.CutoffObstructionTests.test_mutations_are_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.009s\n\nOK\n"
+    },
+    {
+      "tier": 2,
+      "command": "PYTHONPATH=/tmp/tt-hadamard-check-deps python3 quantum-weyl/lorentzian/verify_vacuum_cylinder_reduced_bridge4_hadamard.py",
+      "elapsed_seconds": 0.372549,
+      "exit_code": 1,
+      "status": "FAIL",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/asger/weyl-gravity/quantum-weyl/lorentzian/verify_vacuum_cylinder_reduced_bridge4_hadamard.py\", line 101, in <module>\n    main()\n  File \"/home/asger/weyl-gravity/quantum-weyl/lorentzian/verify_vacuum_cylinder_reduced_bridge4_hadamard.py\", line 95, in main\n    value = verify()\n            ^^^^^^^^\n  File \"/home/asger/weyl-gravity/quantum-weyl/lorentzian/verify_vacuum_cylinder_reduced_bridge4_hadamard.py\", line 32, in verify\n    raise ValueError(f\"Bridge-4 dependency drifted: {path}\")\nValueError: Bridge-4 dependency drifted: /home/asger/weyl-gravity/covariant_completion/certificates/curved_direct_causal_pairing_transport.json\n"
+    },
+    {
+      "tier": 0,
+      "command": "git diff --cached --check",
+      "elapsed_seconds": 0.008316,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "overall_disposition": "SCOPED_ALGEBRA_AND_DRIFT_AUDIT_PASS; EXISTING_REDUCED_REFERENCE_IMPORT_FAIL; CURRENT_PHYSICAL_ACTIVATION_WITHHELD",
+  "earlier_failures": [
+    {
+      "command": "python3 foundations/build_tt_hadamard_cutoff_obstruction.py",
+      "status": "FAIL",
+      "elapsed_seconds": 0.127396396,
+      "reason": "SymPy absent in default Python; elapsed includes subsequent missing-output checker invocation."
+    },
+    {
+      "command": "python3 -m venv /tmp/tt-hadamard-check-venv",
+      "status": "FAIL",
+      "elapsed_seconds": 4.16e-06,
+      "reason": "ensurepip unavailable; no repository environment changed."
+    },
+    {
+      "command": "python3 foundations/verify_tt_hadamard_cutoff_obstruction.py (initial strict import check)",
+      "status": "FAIL",
+      "elapsed_seconds": 0.121955983,
+      "reason": "Existing reference causal_pairing_transport hash drift; retained as explicit failed import, not silently rehashed."
+    }
+  ],
+  "environment_setup": "python3 -m pip install --target /tmp/tt-hadamard-check-deps sympy==1.14.0 mpmath==1.3.0",
+  "higher_tiers": {
+    "tier_2": "Existing direct reduced-reference verifier was run and FAILED. Transitive hashes were audited; no upstream regeneration or repair attempted. No current-programme activation or dependent promotion.",
+    "tier_3": "NOT_RUN: isolated foundations analysis with unchanged shared core, no freeze/tag/release, no paper theorem or quantum lifecycle promotion. New infinite argument is human and explicitly conditional on the stated spectral model."
+  },
+  "human_review": [
+    "Completed: full exact staged diff inspected; six content hashes match the reviewed staged blobs and worktree; no unrelated files staged.",
+    "No gauge-complex observable crosswalk, no full-BV positivity decision, and no publication novelty claim."
+  ],
+  "content_sha256": {
+    "foundations/README.md": "c0ce18e4c5890c2a6b34a16f0cdeb6ff40ff58d0f17effb6632cc1f88e1f3f36",
+    "foundations/build_tt_hadamard_cutoff_obstruction.py": "9e5e7f31f89c6975184719a328a85f1e87bc18b19b28143f134189b0a4f3be4f",
+    "foundations/verify_tt_hadamard_cutoff_obstruction.py": "f7be29e389544bd42ae36eef88076be83bbcaac50ce35ecdacdcac38fdee4d98",
+    "foundations/tests/test_tt_hadamard_cutoff_obstruction.py": "71cdaaeb0d15707bcf5b71536df8b4fcb1c8dad5ac7de1169efdb2ee60fda708",
+    "foundations/reports/tt-hadamard-cutoff-obstruction-v1.md": "b4786b5f87b6b2fb384d5ae1831ef54f922c958f2b41bda6ae66905308485ed4",
+    "foundations/results/TT_HADAMARD_CUTOFF_OBSTRUCTION_V1.json": "f874b951149291d46d4c692fb7f9cc37284bf88ce3a2c6e9188093a9c7a85321"
+  },
+  "receipt_hash_policy": "This receipt does not hash itself; it records review of the other six staged files."
+}

@@ -1,5 +1,14 @@
 # Reverse foundations
 
+The [TT Hadamard cutoff obstruction](reports/tt-hadamard-cutoff-obstruction-v1.md)
+shows why finite-mode positivity can be misleading: every finite reduced tensor
+cutoff can be repaired while retaining its commutator, but no smooth repair
+makes the complete imported Hadamard carrier positive. It includes a human
+all-energy proof and independent exact algebra checks. The result is scoped
+to the reduced cylinder and does not decide strict-386 physical positivity.
+The current reduced-reference import has a stale dependency hash; the proof
+is for the stated spectral model and programme activation is withheld.
+
 This directory couples the repository's reverse-physics programme to reverse
 mathematics and foundational analysis.  Its question is not merely which
 physical assumptions select a law, but which combinations of

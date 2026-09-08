@@ -1,0 +1,244 @@
+{
+  "analytic_obligations": [
+    "Imported reduced TT spectral reference has the stated commutator and oriented wavefront set.",
+    "Same commutator and oriented wavefront set imply a smooth symmetric difference by disjoint transpose cones.",
+    "Compactly supported filtered tests annihilate both E frequencies and select L frequency n with unit amplitude.",
+    "Two spatial integrations by parts bound every smooth correction by B^2*M/(n-1)^4.",
+    "Every finite spectral repair is a smooth symmetric bisolution; its truncated covariance is positive."
+  ],
+  "claim_flags": {
+    "CURRENT_PROGRAMME_PHYSICAL_RESULT_ACTIVATED": false,
+    "EVERY_FINITE_TT_CUTOFF_ADMITS_POSITIVE_COVARIANCE": true,
+    "EXACT_FILTER_AND_FINITE_REPAIR_IDENTITIES": true,
+    "FULL_STRICT_386_PHYSICAL_POSITIVITY_DECIDED": false,
+    "INFINITE_ANALYSIS_MACHINE_VERIFIED": false,
+    "LORENTZIAN_CERTIFICATE_PROMOTED": false,
+    "NEW_GHOST_DISCOVERY_CLAIMED": false,
+    "REDUCED_TT_NO_SMOOTH_POSITIVITY_REPAIR_HUMAN_PROOF": true,
+    "STATIONARITY_REQUIRED_FOR_OBSTRUCTION": false
+  },
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "evidence_status": "HUMAN_ANALYTIC_PROOF_WITH_EXACT_ALGEBRA_REPLAY",
+  "exact_examples": [
+    {
+      "E_frequency": 2,
+      "L_frequency": 4,
+      "curl_squared_eigenvalue": 9,
+      "filtered_reference_expectation": "-1/96",
+      "finite_repair_coefficients": [
+        "0",
+        "1/96",
+        "1/96"
+      ],
+      "necessary_B_squared_M_for_nonnegative_test": "27/32",
+      "reference_coefficients": [
+        "1/48",
+        "-1/96",
+        "0"
+      ],
+      "repaired_coefficients": [
+        "1/48",
+        "0",
+        "1/96"
+      ]
+    },
+    {
+      "E_frequency": 3,
+      "L_frequency": 5,
+      "curl_squared_eigenvalue": 16,
+      "filtered_reference_expectation": "-1/160",
+      "finite_repair_coefficients": [
+        "0",
+        "1/160",
+        "1/160"
+      ],
+      "necessary_B_squared_M_for_nonnegative_test": "8/5",
+      "reference_coefficients": [
+        "1/96",
+        "-1/160",
+        "0"
+      ],
+      "repaired_coefficients": [
+        "1/96",
+        "0",
+        "1/160"
+      ]
+    },
+    {
+      "E_frequency": 6,
+      "L_frequency": 8,
+      "curl_squared_eigenvalue": 49,
+      "filtered_reference_expectation": "-1/448",
+      "finite_repair_coefficients": [
+        "0",
+        "1/448",
+        "1/448"
+      ],
+      "necessary_B_squared_M_for_nonnegative_test": "343/64",
+      "reference_coefficients": [
+        "1/336",
+        "-1/448",
+        "0"
+      ],
+      "repaired_coefficients": [
+        "1/336",
+        "0",
+        "1/448"
+      ]
+    },
+    {
+      "E_frequency": 14,
+      "L_frequency": 16,
+      "curl_squared_eigenvalue": 225,
+      "filtered_reference_expectation": "-1/1920",
+      "finite_repair_coefficients": [
+        "0",
+        "1/1920",
+        "1/1920"
+      ],
+      "necessary_B_squared_M_for_nonnegative_test": "3375/128",
+      "reference_coefficients": [
+        "1/1680",
+        "-1/1920",
+        "0"
+      ],
+      "repaired_coefficients": [
+        "1/1680",
+        "0",
+        "1/1920"
+      ]
+    },
+    {
+      "E_frequency": 62,
+      "L_frequency": 64,
+      "curl_squared_eigenvalue": 3969,
+      "filtered_reference_expectation": "-1/32256",
+      "finite_repair_coefficients": [
+        "0",
+        "1/32256",
+        "1/32256"
+      ],
+      "necessary_B_squared_M_for_nonnegative_test": "250047/512",
+      "reference_coefficients": [
+        "1/31248",
+        "-1/32256",
+        "0"
+      ],
+      "repaired_coefficients": [
+        "1/31248",
+        "0",
+        "1/32256"
+      ]
+    },
+    {
+      "E_frequency": 254,
+      "L_frequency": 256,
+      "curl_squared_eigenvalue": 65025,
+      "filtered_reference_expectation": "-1/522240",
+      "finite_repair_coefficients": [
+        "0",
+        "1/522240",
+        "1/522240"
+      ],
+      "necessary_B_squared_M_for_nonnegative_test": "16581375/2048",
+      "reference_coefficients": [
+        "1/518160",
+        "-1/522240",
+        "0"
+      ],
+      "repaired_coefficients": [
+        "1/518160",
+        "0",
+        "1/522240"
+      ]
+    }
+  ],
+  "formulas": {
+    "E_frequency": "n - 2",
+    "envelope_L1_bound": "B=1+(2/3)||chi'||_1+(1/12)||chi''||_1",
+    "filter_at_E_plus_minus": [
+      "0",
+      "0"
+    ],
+    "filter_at_L_plus_minus": [
+      "1",
+      "1"
+    ],
+    "filter_denominator": "4 - 4*n",
+    "fourier_filter": "(-n + z + 2)*(n + z - 2)/(4*(n - 1))",
+    "frequency_domain": "integer n >= 4",
+    "gap": "4*n - 4",
+    "necessary_repair_cost": "B^2*M >= (n-1)^3/(8*n)",
+    "negative_L_coefficient": "-1/(8*n*(n - 1))",
+    "positive_E_coefficient": "1/(8*(n - 2)*(n - 1))",
+    "smooth_repair_bound": "abs(S(f_n,f_n)) <= B^2*M/(n-1)^4",
+    "spectral_coefficient_order": [
+      "E_positive_frequency",
+      "L_positive_frequency",
+      "L_negative_frequency"
+    ],
+    "strict_negativity_condition": "8*B^2*M*n < (n-1)^3"
+  },
+  "import_audit": {
+    "consequence": "Proof is for the explicitly stated spectral model; current programme activation is withheld.",
+    "drift": [
+      {
+        "actual_sha256": "0ad3161cf1f881294cda1b0d5902855949e93d782023f90b00dc31cdc9670b1e",
+        "dependency": "causal_pairing_transport",
+        "expected_sha256": "5de7aa9abc9c5c276092cc9c8e61c1046c870fca3a528464410986535a14704b",
+        "path": "covariant_completion/certificates/curved_direct_causal_pairing_transport.json"
+      }
+    ],
+    "reference_gate": "FAIL_DEPENDENCY_DRIFT"
+  },
+  "input_source_commit": "08bf00a7c15e9593ad64f4a91dd7a03623ae222f",
+  "inputs": [
+    {
+      "path": "covariant_completion/certificates/branch_residue_operators.json",
+      "sha256": "e9ab15b1b9462341b4576a7838bc5d4f119815aa8424cd5f165542954e73b7d9"
+    },
+    {
+      "path": "covariant_completion/certificates/branch_spectrum.json",
+      "sha256": "982575ea579f52a8bd43bc9a477f677b2a1fee87facd9cdc9de447d0549d2b1c"
+    },
+    {
+      "path": "covariant_completion/certificates/tt_local_factorization.json",
+      "sha256": "42ce4c10b09ac7dd6a8dfee410f3dac21725735d0d02a13d8f9e9b9426afb291"
+    },
+    {
+      "path": "quantum-weyl/lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
+      "sha256": "f49edce04b39d1e600d0072bfabc784b8ef6edf0d5a1fc39c8ad89f7fe031d48"
+    }
+  ],
+  "positive_polynomial_witnesses_n_equals_m_plus_4": {
+    "E_frequency": [
+      "2",
+      "1"
+    ],
+    "L_frequency": [
+      "4",
+      "1"
+    ],
+    "L_one_chirality_multiplicity": [
+      "5",
+      "6",
+      "1"
+    ],
+    "gap": [
+      "12",
+      "4"
+    ]
+  },
+  "report": "foundations/reports/tt-hadamard-cutoff-obstruction-v1.md",
+  "result_id": "TT_HADAMARD_CUTOFF_OBSTRUCTION_V1",
+  "schema_version": "tt-hadamard-cutoff-obstruction-v1",
+  "scope": "free reduced physical TT metric carrier on unit R x S3; action -alpha_g integral C^2, alpha_g=1",
+  "unresolved": [
+    "A same-background pairing-preserving distributional observable map from this TT carrier to strict 386 physical cohomology.",
+    "Independent expert review of the human microlocal and smooth-kernel argument.",
+    "Publication novelty beyond the known higher-derivative ghost obstruction is not established.",
+    "Reduced reference verifier fails on causal_pairing_transport hash drift; no upstream certificate repaired or promoted."
+  ]
+}
