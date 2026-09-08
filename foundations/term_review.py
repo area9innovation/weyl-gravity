@@ -29,6 +29,10 @@ def generated(matrix_bytes,dictionary_page=None):
     outputs={'dictionary.html':page.encode(),'term-review.html':redirect.encode()}
     for name in ['term-review.js','term-review.css']:outputs[name]=(ASSETS/name).read_bytes()
     summary={k:v for k,v in data.items() if k not in ['units','candidates']}
+    if 'source_filtering' in summary:
+        filtering=summary['source_filtering']
+        summary['source_filtering']={k:v for k,v in filtering.items() if k not in ['excluded_spans','kept_symbolic_terms']}
+        summary['source_filtering'].update(excluded_span_count=len(filtering['excluded_spans']),kept_symbolic_term_count=len(filtering['kept_symbolic_terms']),unclosed_span_count=sum(bool(s.get('unclosed')) for s in filtering['excluded_spans']))
     outputs['term-extraction-summary.json']=(json.dumps(summary,ensure_ascii=False,indent=2)+'\n').encode()
     extraction_hash=hashlib.sha256(OUT.read_bytes()).hexdigest()
     for scope in ['all','ladder','matrix','atlas','reading','dictionary','papers']:

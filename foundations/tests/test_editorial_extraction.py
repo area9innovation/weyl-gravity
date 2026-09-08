@@ -1,4 +1,4 @@
-import gzip,hashlib,json,tempfile,unittest
+import bisect,gzip,hashlib,json,tempfile,unittest
 from unittest.mock import patch
 from pathlib import Path
 from foundations.extract_editorial_terms import ROOT,OUT,check_cached,paper_paths
@@ -36,6 +36,29 @@ class ExtractionTests(unittest.TestCase):
         self.assertTrue(any('keyphrase-vectorizers' in c['methods'] for c in d['candidates']))
         self.assertTrue(any('spacy-noun-phrase' in c['methods'] for c in d['candidates']))
         self.assertTrue(any(c['vocabulary_ids'] for c in d['candidates']))
+    def test_paper_spans_exclude_math_and_references(self):
+        spans={}
+        for span in self.data['source_filtering']['excluded_spans']:
+            spans.setdefault(span['source'],[]).append(span)
+        indices={}
+        for source,items in spans.items():
+            items.sort(key=lambda s:s['start']);maximum=0;ends=[]
+            for item in items:
+                maximum=max(maximum,item['end']);ends.append(maximum)
+            indices[source]=([s['start'] for s in items],ends)
+        for unit in self.data['units']:
+            if unit['scope']!='papers':continue
+            self.assertIn('raw_start',unit)
+            starts,ends=indices.get(unit['source'],([],[]))
+            i=bisect.bisect_left(starts,unit['raw_end'])-1
+            if i>=0:self.assertLessEqual(ends[i],unit['raw_start'])
+        phrases={c['phrase'].casefold() for c in self.data['candidates']}
+        self.assertNotIn('abbott',phrases)
+        self.assertFalse(any('abbottgw' in p or 'abottgw' in p for p in phrases))
+        self.assertIn('pointwise polynomial identity',phrases)
+        self.assertIn('cauchy sequence',phrases)
+        self.assertTrue(any('weyl curvature' in p for p in phrases))
+        self.assertFalse(any('A^2B^2C^2' in u['text'] for u in self.data['units'] if u['scope']=='papers'))
     def test_user_ladder_example(self):
         fixture=json.loads((ROOT/'foundations/tests/fixtures/ladder-explanation-coverage.json').read_text())
         unit_ids={u['id'] for u in self.data['units'] if u['scope']=='ladder' and u['location'].startswith('/ladder/0/')}

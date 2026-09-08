@@ -13,6 +13,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from foundations.build_term_inventory import TEXT_KEYS,normalize
 from foundations.ladder_terms import displayed_fields
+from foundations.term_source_filter import source_spans,prose_text
 OUT=ROOT/'foundations/results/TERM_EXTRACTION_V1.json.gz'
 VOCAB=ROOT/'foundations/editorial/vocabularies/physh-2.8.0-terms.json'
 DICTIONARY=ROOT/'foundations/editorial/dictionary.json'
@@ -23,10 +24,10 @@ def paper_paths():
     return sorted((ROOT/'paper').glob('*.tex'))+sorted(p for p in (ROOT/'paper').glob('*.md') if not p.with_suffix('.tex').exists())
 
 def corpus():
-    units=[];inputs={}
+    units=[];inputs={};excluded=[];kept=[]
     def read(p):inputs[str(p.relative_to(ROOT))]=digest(p);return p.read_text()
-    def add(text,source,location,scope,normalized=False):
-        if text.strip():units.append(dict(id=len(units),source=source,location=location,scope=scope,text=text,normalized=normalized))
+    def add(text,source,location,scope,normalized=False,**provenance):
+        if text.strip():units.append(dict(id=len(units),source=source,location=location,scope=scope,text=text,normalized=normalized,**provenance))
     def walk(value,source,scope,path='',key=''):
         if isinstance(value,dict):
             for k,v in value.items():walk(v,source,scope,path+'/'+k.replace('~','~0').replace('/','~1'),k)
@@ -48,14 +49,31 @@ def corpus():
         for a,text in t['definitions'].items():add(text,str(DICTIONARY.relative_to(ROOT)),f'{t["id"]}/definitions/{a}','dictionary')
         for a,blocks in t['explanations'].items():
             for i,b in enumerate(blocks):add(b['text'],str(DICTIONARY.relative_to(ROOT)),f'{t["id"]}/explanations/{a}/{i}','dictionary')
+    from paper.generate_21_reverse_foundations_appendices import tex
+    citations=set()
+    def bibliography(value):
+        if isinstance(value,dict):
+            for key,item in value.items():
+                if key=='citation' and isinstance(item,str):citations.update([item,tex(item)])
+                else:bibliography(item)
+        elif isinstance(value,list):
+            for item in value:bibliography(item)
+    bibliography(data)
+    aliases=[alias for term in dictionary['terms'] for alias in term['aliases']]
     for p in paper_paths():
-        source=str(p.relative_to(ROOT));raw=read(p);offset=0
-        for block in re.split(r'\n\s*\n',raw):
-            start=raw.find(block,offset);offset=start+len(block)
-            text=normalize(block)
-            if text:add(text,source,f'line:{raw[:start].count(chr(10))+1}','papers',True)
+        source=str(p.relative_to(ROOT));raw=read(p)
+        ranges,removed,preserved=source_spans(raw,aliases,markdown=p.suffix=='.md',citations=citations)
+        excluded.extend(dict(span,source=source) for span in removed)
+        kept.extend(dict(span,source=source) for span in preserved)
+        for left,right in ranges:
+            offset=left
+            for block in re.split(r'\n\s*\n',raw[left:right]):
+                start=raw.find(block,offset);offset=start+len(block)
+                text=prose_text(block)
+                if text and any(ch.isalpha() for ch in text):
+                    add(text,source,f'line:{raw[:start].count(chr(10))+1}','papers',True,raw_start=start,raw_end=offset)
     inputs[str(VOCAB.relative_to(ROOT))]=digest(VOCAB)
-    return units,inputs
+    return units,inputs,dict(policy_version=1,counts=dict(Counter(s['reason'] for s in excluded)),excluded_spans=excluded,kept_symbolic_terms=kept)
 
 def extract(units):
     import spacy
@@ -68,13 +86,18 @@ def extract(units):
     # are subsequently recovered against each original unit, never across units.
     # KPV flattens documents before its grammar pass; bound batches to avoid
     # pathological regex costs. No corpus-frequency pruning is applied.
-    features=set()
+    features=set();empty_batches=0;original_max_length=nlp.max_length
     with nlp.select_pipes(disable=['parser','lemmatizer']):
         for offset in range(0,len(texts),32):
             vectorizer=KeyphraseCountVectorizer(spacy_pipeline=nlp,stop_words=None,workers=1,spacy_exclude=[])
-            vectorizer.fit(texts[offset:offset+32])
+            try:vectorizer.fit(texts[offset:offset+32])
+            except ValueError as error:
+                if not str(error).startswith('Empty keyphrases.'):raise
+                empty_batches+=1;continue
             features.update(vectorizer.get_feature_names_out())
     features=sorted(features)
+    # KPV shrinks this shared pipeline limit to its last internal batch.
+    nlp.max_length=original_max_length
     phrases=PhraseMatcher(nlp.vocab,attr='LOWER');phrases.add('KPV',[nlp.make_doc(str(f)) for f in features])
     known=PhraseMatcher(nlp.vocab,attr='LOWER');known_meta={}
     dictionary=json.loads(DICTIONARY.read_text())['terms'];vocabulary=json.loads(VOCAB.read_text())['terms']
@@ -83,6 +106,7 @@ def extract(units):
             key=provider+':'+str(i);known_meta[key]=(provider,term['id'])
             known.add(key,[nlp.make_doc(a) for a in term['aliases']])
     candidates={};cached={}
+    registered={alias.casefold() for t in dictionary for alias in t['aliases']}
     for text,doc in docs.items():
         spans=defaultdict(lambda:dict(methods=set(),dictionary=set(),physh=set()))
         def put(start,end,method,provider=None,target=None):
@@ -90,6 +114,7 @@ def extract(units):
             value=text[start:end].strip()
             # Generic parsers can label punctuation or articles as noun chunks.
             if len(value)<2 or not any(ch.isalpha() for ch in value):return
+            if value.casefold() not in registered and re.search(r'[\\^={}₁₂₃∑∫]|(?<=\w)_(?=\w)',value):return
             if not any(ch.isspace() for ch in value) and nlp.vocab[value].is_stop:return
             item=spans[(start,end)];item['methods'].add(method)
             if provider:item[provider].add(target)
@@ -134,21 +159,21 @@ def extract(units):
     versions={p:importlib.metadata.version(p) for p in ['spacy','keyphrase-vectorizers','en-core-web-sm','numpy','scikit-learn','scipy','nltk','psutil','thinc','blis']}
     package=Path(__import__(MODEL).__file__).parent
     model_hashes={str(p.relative_to(package)):digest(p) for p in sorted(package.rglob('*')) if p.is_file() and '__pycache__' not in p.parts}
-    return result,dict(packages=versions,model_files_sha256=model_hashes,keyphrase_feature_count=len(features),pipeline='spaCy tagging/parser + KeyphraseVectorizers + nested phrases + acronym/compound rules + PhraseMatcher')
+    return result,dict(packages=versions,model_files_sha256=model_hashes,keyphrase_feature_count=len(features),empty_keyphrase_batches=empty_batches,pipeline='spaCy tagging/parser + KeyphraseVectorizers + nested phrases + acronym/compound rules + PhraseMatcher')
 
 def build():
-    units,inputs=corpus();terms,engine=extract(units)
+    units,inputs,filtering=corpus();terms,engine=extract(units)
     inputs[str(Path(__file__).relative_to(ROOT))]=digest(Path(__file__))
     inputs['foundations/build_term_inventory.py']=digest(ROOT/'foundations/build_term_inventory.py')
     inputs['foundations/ladder_terms.py']=digest(ROOT/'foundations/ladder_terms.py')
-    for p in ['foundations/editorial-nlp-requirements.txt','foundations/setup_editorial_nlp.sh','foundations/import_editorial_vocabulary.py','foundations/editorial/vocabularies/physh-2.8.0.json.gz','foundations/editorial/vocabularies/PHYSH-LICENSE.md']:
+    for p in ['paper/generate_21_reverse_foundations_appendices.py','foundations/term_source_filter.py','foundations/editorial-nlp-requirements.txt','foundations/setup_editorial_nlp.sh','foundations/import_editorial_vocabulary.py','foundations/editorial/vocabularies/physh-2.8.0.json.gz','foundations/editorial/vocabularies/PHYSH-LICENSE.md']:
         inputs[p]=digest(ROOT/p)
-    result=dict(schema_version=1,kind='AUTOMATIC_EDITORIAL_CANDIDATES',scientific_claims_promoted=False,inputs_sha256=inputs,engine=engine,counts=dict(units=len(units),candidates=len(terms),coverage=dict(Counter(t['coverage'] for t in terms)),kinds=dict(Counter(t['kind'] for t in terms))),units=units,candidates=terms,limits=['Candidate discovery is not proof of technical meaning or complete reader coverage','Generic English tagging may misparse mathematical phrases','Dictionary/PhySH lexical matches require contextual sense review','Paper offsets refer to normalized blocks; original source line is retained','No external vocabulary supplies the four audience explanations','No automatic dictionary publication; no scientific claim is promoted'])
+    result=dict(schema_version=1,kind='AUTOMATIC_EDITORIAL_CANDIDATES',scientific_claims_promoted=False,inputs_sha256=inputs,engine=engine,source_filtering=filtering,counts=dict(units=len(units),candidates=len(terms),coverage=dict(Counter(t['coverage'] for t in terms)),kinds=dict(Counter(t['kind'] for t in terms))),units=units,candidates=terms,limits=['Candidate discovery is not proof of technical meaning or complete reader coverage','Generic English tagging may misparse mathematical phrases','Dictionary/PhySH lexical matches require contextual sense review','Paper offsets refer to normalized blocks; original source line is retained','No external vocabulary supplies the four audience explanations','No automatic dictionary publication; no scientific claim is promoted'])
     return result
 
 def check_cached(matrix_bytes=None):
     data=json.loads(gzip.decompress(OUT.read_bytes()))
-    recorded={p for p in data['inputs_sha256'] if p.startswith('paper/')}
+    recorded={p for p in data['inputs_sha256'] if p.startswith('paper/') and Path(p).suffix in {'.tex','.md'}}
     current={str(p.relative_to(ROOT)) for p in paper_paths()}
     if current!=recorded:raise ValueError('Extraction stale: paper corpus membership changed')
     for p,h in data['inputs_sha256'].items():

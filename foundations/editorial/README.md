@@ -290,3 +290,32 @@ preserves audience and source filters; it no longer hosts a competing interface.
 The ladder links directly to the same dictionary with its source filter set.
 The global corpus shard is larger than a page-specific shard; full definitions
 remain available without JavaScript while the index loads.
+
+## Excluding equations and references at the source
+
+`term_source_filter.py` identifies source spans before prose normalization and
+NLP. It excludes marked inline/display math, standard math environments,
+bibliography blocks and known citation records copied into the atlas appendix,
+citation/reference arguments, author metadata and explicit
+initials/“et al.” attributions, code blocks and structural markup. Prose before
+and after an excluded span is processed separately: removing an equation cannot
+join its two neighboring phrases into an invented term. Source units retain raw
+start/end offsets and original line locations, in addition to normalized-text
+occurrence offsets.
+
+An exact registered dictionary alias inside inline math is retained (for
+example ACA₀). Names are not globally blacklisted: Weyl curvature and Cauchy
+sequence remain eligible concepts. Unmarked residual notation is rejected at
+the candidate boundary unless it is a registered alias. Unknown custom TeX
+macros are not expanded; this is a source filter, not a general TeX engine or a
+semantic classifier of every name. Unclosed recognized math/code environments
+are excluded through end of file and reported in the exclusion ledger.
+
+The compressed extraction artifact records every excluded span and its reason,
+plus retained symbolic aliases. The website summary exposes the counts; the
+complete ledger remains in the extraction artifact. No dictionary definitions
+or scientific claims are changed by filtering. Independent checks:
+
+```sh
+python3 -m unittest foundations.tests.test_term_source_filter foundations.tests.test_editorial_extraction
+```

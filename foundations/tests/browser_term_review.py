@@ -22,6 +22,10 @@ try:
     assert page.locator('.term-definition-status').first.is_visible()
     assert page.locator('.term-candidate .term-label').evaluate_all("nodes=>nodes.every(n=>/^\\p{L}/u.test(n.textContent))")
     assert page.evaluate("(() => {const terms=[...document.querySelectorAll('.term-candidate .term-label')].map(n=>n.textContent);const c=new Intl.Collator('en',{sensitivity:'base',numeric:true,ignorePunctuation:true});return terms.every((t,i)=>!i||c.compare(terms[i-1],t)<=0);})()")
+    page.locator('#term-search').fill('Abbott')
+    assert page.locator('.term-candidate').count()==0
+    page.locator('#term-search').fill('pointwise polynomial identity')
+    assert page.locator('.term-candidate').count()>0
     page.goto(base+'term-review.html?audience=mathematics&scope=ladder')
     page.wait_for_url('**/dictionary.html?audience=mathematics&scope=ladder#terminology-index')
     page.wait_for_selector('.term-candidate')

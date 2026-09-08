@@ -10,7 +10,7 @@
   let data=null,page=0,request=0;const selected=new Map(),size=40;
   function node(tag,text){const n=document.createElement(tag);n.textContent=text;return n;}
   function audience(){try{return new URLSearchParams(location.search).get('audience')||localStorage.getItem('reading-audience')||'general';}catch(_){return 'general';}}
-  function context(c,o){const u=data.units[o[0]];return {source:u.source,location:u.location,scope:u.scope,normalized:u.normalized,text:u.text,start:o[1],end:o[2]};}
+  function context(c,o){const u=data.units[o[0]];return {source:u.source,location:u.location,scope:u.scope,normalized:u.normalized,raw_start:u.raw_start,raw_end:u.raw_end,text:u.text,start:o[1],end:o[2]};}
   function selectionStatus(){document.getElementById('download-brief').textContent=`Download drafting brief (${selected.size} selected)`;document.getElementById('download-brief').disabled=!selected.size;}
   function render(){
     if(!data)return;

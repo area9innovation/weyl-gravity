@@ -45,9 +45,11 @@
     "paper/99-how-to-build-a-universe.md": "5828cd053ee65670f3297ebd6541c6fac049b0a0140f07be4d34fa35a6c747b1",
     "paper/video-background-guide.md": "6a77e8e73b897dc83c628feb516fe3bcd02863487d6d713b37fa43a3c2d71dcb",
     "foundations/editorial/vocabularies/physh-2.8.0-terms.json": "8b45034abd43949e62118d6121185a24ee056621348c5a1ab6d874f018b9040e",
-    "foundations/extract_editorial_terms.py": "c411e58dbdcd6f8d2c3537a7bcbb41267183994ab00bc56c7866ef125cd8661c",
+    "foundations/extract_editorial_terms.py": "aaf4bc5ab619b4848d75f0a877cdb483fc61e7ec038e823e69fd215dc40f74a7",
     "foundations/build_term_inventory.py": "2c6fd43aa271ecbb66b16c4e44a88201e9ed8645bda89b500464987d35e2cf4b",
     "foundations/ladder_terms.py": "70fbcfddf7361ffe6cbbed81f9af1922e62285c9b2c833c379c3d58bccfefc42",
+    "paper/generate_21_reverse_foundations_appendices.py": "1f00bf2488ef9d42073107b0e1fdd6a361ee0c344af18b43fbc269dbfbf4f7f1",
+    "foundations/term_source_filter.py": "250e7ff7140e8c602d861677967b1fd42b46f8ad90ff169e7921897d0c53315c",
     "foundations/editorial-nlp-requirements.txt": "975c499119ff3912c08daf58e204654f1f3797ffc54d08b9623f59ee8eb3bea1",
     "foundations/setup_editorial_nlp.sh": "8327e713e701c42cda77104c6adeea09fea2317c65dd89a035aaf37fff6f7411",
     "foundations/import_editorial_vocabulary.py": "92ec1b034f773017654991854db721538ba5c4e51bedf05fd707e28a6d54dc12",
@@ -97,20 +99,40 @@
       "en_core_web_sm-3.8.0/vocab/vectors.cfg": "ff4359091952c8cd16f1f0482f5770fb82d1707368d5cca3c46aa501f552e3c5",
       "meta.json": "7456349002fa8cf31111051bd37fdbea67a1b7f7a0a60ce235466f98a6758125"
     },
-    "keyphrase_feature_count": 48199,
+    "keyphrase_feature_count": 34880,
+    "empty_keyphrase_batches": 0,
     "pipeline": "spaCy tagging/parser + KeyphraseVectorizers + nested phrases + acronym/compound rules + PhraseMatcher"
   },
+  "source_filtering": {
+    "policy_version": 1,
+    "counts": {
+      "COMMENT": 14,
+      "REFERENCE_OR_METADATA": 5767,
+      "AUTHOR": 28,
+      "STRUCTURAL_MARKUP": 976,
+      "MATH": 15962,
+      "CITATION": 426,
+      "BIBLIOGRAPHY": 24,
+      "CODE": 61,
+      "AUTHOR_ATTRIBUTION": 14,
+      "BIBLIOGRAPHIC_RECORD": 51,
+      "CODE_OR_REFERENCE": 295
+    },
+    "excluded_span_count": 23618,
+    "kept_symbolic_term_count": 0,
+    "unclosed_span_count": 0
+  },
   "counts": {
-    "units": 7699,
-    "candidates": 131584,
+    "units": 24391,
+    "candidates": 110990,
     "coverage": {
-      "UNEXPLAINED_CANDIDATE": 131424,
+      "UNEXPLAINED_CANDIDATE": 110845,
       "DICTIONARY_MATCH_REVIEW_SENSE": 18,
-      "VOCABULARY_MATCH_NO_EXPLANATION": 142
+      "VOCABULARY_MATCH_NO_EXPLANATION": 127
     },
     "kinds": {
-      "term-candidate": 129291,
-      "explanation-unit": 2293
+      "term-candidate": 95322,
+      "explanation-unit": 15668
     }
   },
   "limits": [
