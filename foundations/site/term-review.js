@@ -16,7 +16,7 @@
     if(!data)return;
     const expanded=new Set([...results.querySelectorAll('details[open]')].map(n=>n.dataset.candidate));
     const q=search.value.trim().toLocaleLowerCase();
-    const matches=data.candidates.filter(c=>(editing.checked||c.dictionary_ids.length||((c.phrase.match(/\p{L}/gu)||[]).length>1&&/^[\p{L}][\p{L}\p{M}\p{N}\s–’',.\-]*$/u.test(c.phrase)))&&(!q||c.phrase.toLocaleLowerCase().includes(q))&&(coverage.value==='all'||c.coverage===coverage.value)&&(kind.value==='all'||c.kind===kind.value));
+    const matches=data.candidates.filter(c=>(editing.checked||c.dictionary_ids.length||((c.phrase.match(/\p{L}/gu)||[]).length>1&&/^[\p{L}][\p{L}\p{M}\p{N}\s–’',.\-]*$/u.test(c.phrase)))&&(!q||[c.phrase,...(c.aliases||[])].some(alias=>alias.toLocaleLowerCase().includes(q)))&&(coverage.value==='all'||c.coverage===coverage.value)&&(kind.value==='all'||c.kind===kind.value));
     if(order.value==='alphabetical')matches.sort((a,b)=>collator.compare(a.phrase,b.phrase));
     page=Math.min(page,Math.max(0,Math.ceil(matches.length/size)-1));results.replaceChildren();
     status.textContent=`${matches.length} indexed phrases match. ${data.candidates.length} indexed here. Expand a term to see its context.`;
@@ -24,6 +24,7 @@
       const card=node('details','');card.className='term-candidate';card.dataset.candidate=c.id;card.open=expanded.has(c.id);
       const summary=node('summary',''),term=node('span',c.phrase);term.className='term-label';const badge=node('small',c.dictionary_ids.length?'Related explanation':'Definition pending');badge.className='term-definition-status';summary.append(term,badge);
       card.append(summary,node('small',labels[c.coverage]+` · ${c.occurrences.length} occurrences in this view (${c.global_occurrence_count} across the project) · ${c.kind==='explanation-unit'?'short explanation task':'term candidate'}`));
+      if(c.aliases?.some(alias=>alias!==c.phrase))card.append(node('small','Also indexed as: '+c.aliases.filter(alias=>alias!==c.phrase).join(', ')));
       const label=node('label','');label.className='draft-choice editorial-only';const box=document.createElement('input');box.type='checkbox';box.checked=selected.has(c.id);
       box.addEventListener('change',()=>{if(box.checked){selected.set(c.id,{...c,selected_scope:data.scope,contexts:c.occurrences.map(o=>context(c,o)),extraction_hash:data.extraction_hash});}else selected.delete(c.id);selectionStatus();});
       label.append(box,document.createTextNode(' Include in drafting brief'));card.append(label);

@@ -1,26 +1,64 @@
 """Publish one global dictionary, with optional editorial tools in the index."""
-import gzip,hashlib,json
+import gzip,hashlib,json,re
 from pathlib import Path
 from foundations import reading_site
 from foundations.extract_editorial_terms import OUT,check_cached
 ROOT=Path(__file__).resolve().parents[1]
 ASSETS=ROOT/'foundations/matrix_site_v2_assets'
 MIN_OCCURRENCES=5
+POLICY=ROOT/'foundations/editorial/term-publication-policy.json'
 
 
 def publication_candidates(candidates):
-    """Count corpus occurrences before slicing into website scopes."""
-    return [dict(c,global_occurrence_count=len(c['occurrences'])) for c in candidates
-            if len(c['occurrences'])>=MIN_OCCURRENCES or c['dictionary_ids']]
+    """Merge explicit aliases, then apply lexical and corpus-frequency gates."""
+    policy=json.loads(POLICY.read_text())
+    aliases={alias.casefold():row['canonical'] for row in policy['canonical_forms']
+             for alias in [row['canonical'],*row['aliases']]}
+    retained={word.casefold() for word in policy['retained_single_words']}
+    retained.update(row['canonical'].casefold() for row in policy['canonical_forms'])
+    groups={}
+    for candidate in candidates:
+        phrase=candidate['phrase']
+        canonical=aliases.get(phrase.casefold(),phrase)
+        key=(candidate['kind'],canonical.casefold())
+        if key not in groups:
+            groups[key]=dict(candidate,phrase=canonical,aliases=[],source_candidate_ids=[],occurrences=[],
+                             dictionary_ids=[],vocabulary_ids=[],methods=[],scopes=[])
+        group=groups[key]
+        group['aliases'].append(phrase)
+        group['source_candidate_ids'].append(candidate['id'])
+        for field in ['occurrences','dictionary_ids','vocabulary_ids','methods','scopes']:
+            group[field].extend(candidate[field])
+    published=[]
+    for group in groups.values():
+        for field in ['aliases','source_candidate_ids','dictionary_ids','vocabulary_ids','methods','scopes']:
+            group[field]=sorted(set(group[field]))
+        group['occurrences']=[list(o) for o in sorted(set(map(tuple,group['occurrences'])))]
+        group['global_occurrence_count']=len(group['occurrences'])
+        # A single lexical word needs explicit evidence of technical use. Hyphenated
+        # phrases remain phrases; capitalization alone is not evidence (e.g. Appendix).
+        single=bool(re.fullmatch(r"[^\W\d_]+",group['phrase'],re.UNICODE))
+        supported=bool(group['dictionary_ids'] or group['vocabulary_ids'] or
+                       group['phrase'].casefold() in retained)
+        if single and not supported:
+            continue
+        if group['global_occurrence_count']<MIN_OCCURRENCES and not group['dictionary_ids']:
+            continue
+        group['id']=hashlib.sha256((group['kind']+':'+group['phrase'].casefold()).encode()).hexdigest()[:20]
+        group['coverage']=('DICTIONARY_MATCH_REVIEW_SENSE' if group['dictionary_ids'] else
+                           'VOCABULARY_MATCH_NO_EXPLANATION' if group['vocabulary_ids'] else
+                           'UNEXPLAINED_CANDIDATE')
+        published.append(group)
+    return sorted(published,key=lambda c:(-c['global_occurrence_count'],c['phrase'].casefold()))
 
 
 def generated(matrix_bytes,dictionary_page=None):
     data=check_cached(matrix_bytes)
     published=publication_candidates(data['candidates'])
-    publication_filter=dict(min_occurrences=MIN_OCCURRENCES,counting_unit="occurrences across the whole corpus, including repeated representations",dictionary_match_exception=True,raw_candidates=len(data['candidates']),published_candidates=len(published),excluded_candidates=len(data['candidates'])-len(published))
+    publication_filter=dict(min_occurrences=MIN_OCCURRENCES,counting_unit="occurrences across the whole corpus, including repeated representations",dictionary_match_exception=True,raw_candidates=len(data['candidates']),published_candidates=len(published),raw_to_published_reduction=len(data['candidates'])-len(published),canonicalization="explicit reviewed aliases; unique source spans counted after merging",single_word_policy="dictionary, vocabulary or explicit project list",policy_sha256=hashlib.sha256(POLICY.read_bytes()).hexdigest())
     body='''<section id="terminology-index" class="term-review" data-no-dictionary>
 <h2>Alphabetical word list</h2>
-<p>Search across the whole project, or narrow the index to a page or collection. Automatically extracted phrases appear here after at least five occurrences across the project; matches to existing dictionary entries are retained at any frequency. Indexed phrases without an explanation are marked <strong>Definition pending</strong>. Automatic indexing can include noisy phrases; a related dictionary entry may use a different meaning.</p>
+<p>Search across the whole project, or narrow the index to a page or collection. Automatically extracted phrases appear here after at least five occurrences across the project; matches to existing dictionary entries are retained at any frequency. Notation variants share one entry. Single words require a dictionary or vocabulary match, or inclusion in the project’s technical-term list. Indexed phrases without an explanation are marked <strong>Definition pending</strong>. Automatic indexing can include noisy phrases; a related dictionary entry may use a different meaning.</p>
 <div class="review-filters"><label>Search terms<input id="term-search" type="search" placeholder="e.g. chiral, PRA, residual"></label><label>Used in<select id="term-scope"><option value="all">Whole project</option><option value="ladder">Strength ladder</option><option value="matrix">576 matrix cells</option><option value="atlas">Other atlas prose</option><option value="reading">Reading accounts</option><option value="dictionary">Dictionary explanations</option><option value="papers">Papers</option></select></label><label>Explanation<select id="term-coverage"><option value="all">All terms</option><option value="UNEXPLAINED_CANDIDATE">Definition pending</option><option value="VOCABULARY_MATCH_NO_EXPLANATION">External reference only</option><option value="DICTIONARY_MATCH_REVIEW_SENSE">Related dictionary entry</option></select></label><label>Order<select id="term-sort"><option value="alphabetical">Alphabetical</option><option value="frequency">Most widely used</option></select></label></div>
 <p><label><input id="editing-tools" type="checkbox"> Show editing tools</label></p>
 <div class="editorial-only"><label>Candidate type<select id="term-kind"><option value="term-candidate">Term candidates</option><option value="all">Terms and short claims</option><option value="explanation-unit">Short explanation tasks</option></select></label><p>All extracted candidates await contextual review. Select phrases to prepare explanations for General, Physics, Mathematics and Specialist readers.</p></div>
@@ -58,4 +96,4 @@ def generated(matrix_bytes,dictionary_page=None):
     return outputs
 
 
-def inputs():return [Path(__file__).resolve(),OUT,ASSETS/'term-review.js',ASSETS/'term-review.css']
+def inputs():return [Path(__file__).resolve(),POLICY,OUT,ASSETS/'term-review.js',ASSETS/'term-review.css']

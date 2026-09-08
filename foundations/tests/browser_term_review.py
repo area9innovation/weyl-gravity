@@ -22,6 +22,13 @@ try:
     assert page.locator('.term-definition-status').first.is_visible()
     assert page.locator('.term-candidate .term-label').evaluate_all("nodes=>nodes.every(n=>/^\\p{L}/u.test(n.textContent))")
     assert page.evaluate("(() => {const terms=[...document.querySelectorAll('.term-candidate .term-label')].map(n=>n.textContent);const c=new Intl.Collator('en',{sensitivity:'base',numeric:true,ignorePunctuation:true});return terms.every((t,i)=>!i||c.compare(terms[i-1],t)<=0);})()")
+    page.locator('#term-search').fill('ACA_0')
+    assert page.locator('.term-candidate .term-label').all_text_contents()==['ACA₀']
+    page.locator('.term-candidate').first.locator('summary').click()
+    assert 'Also indexed as:' in page.locator('.term-candidate').first.inner_text()
+    for word in ['absence','absent','absolute']:
+        page.locator('#term-search').fill(word)
+        assert word not in page.locator('.term-candidate .term-label').all_text_contents()
     page.locator('#term-search').fill('Abbott')
     assert page.locator('.term-candidate').count()==0
     page.locator('#term-search').fill('pointwise polynomial identity')

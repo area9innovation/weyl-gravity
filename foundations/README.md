@@ -9,6 +9,10 @@ audience editions and publication corrections without creating parallel entrance
 The global [dictionary](site/dictionary.html) publishes automatically extracted
 phrases with at least five corpus occurrences, retaining dictionary matches at
 any frequency. Counts include repeated representations, not independent sources.
+Reviewed notation aliases now share one entry, and standalone words require
+a dictionary/vocabulary match or the explicit project technical-term list.
+See the [canonicalization policy](editorial/term-publication-policy.json) and
+[canonicalization report](reports/terminology-canonicalization-v1.md).
 The full extraction remains available for editorial review; see the
 [frequency-filter report](reports/terminology-frequency-filter-v1.md).
 
