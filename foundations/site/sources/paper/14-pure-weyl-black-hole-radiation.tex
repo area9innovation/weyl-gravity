@@ -1,0 +1,3237 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,booktabs,tabularx,longtable}
+\usepackage{microtype,xurl}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,
+            citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\Lie}{\mathcal L}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Diff}{\operatorname{Diff}}
+\newcommand{\Weyl}{\operatorname{Weyl}}
+\newcommand{\cert}[1]{\nolinkurl{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{Fourth-Order Perturbations of Pure-Weyl Black Holes\\
+\large Exact Ricci--Bach Composition, Horizon Pairing, and Endpoint Nonselection}
+\author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
+\and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human contact; Honorary Professor, DTU Compute, Technical University of Denmark. \texttt{asger@area9.dk}.}}
+\date{Working draft, 23 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We ask whether familiar one-ended Lorentzian endpoint conditions isolate the
+Einstein sector of four-dimensional pure Weyl gravity around a black hole.
+We first classify the Bach-flat locus in a declared static Laurent ansatz,
+recover the Mannheim--Kazanas component, and derive a residual-basic horizon
+generator.  On its nondegenerate static domain, the associated Lee--Wald
+Hamiltonian, Wald entropy, and signed surface-gravity temperature obey an
+exact first law at every simple horizon.  We correct an important sheet
+distinction: on the complete Laurent locus the metric is Einstein precisely
+when \(\gamma=0\) and \(w=1\), whereas \(\gamma=0\) alone suffices only on
+the Mannheim--Kazanas component through \(w=1\).
+
+On Schwarzschild, linearizing the Bach tensor gives an exact Ricci-carrier
+composition.  It defines an exact sequence from Bach solutions to curvature
+solutions, not a canonical Einstein/additional direct sum.  In the axial
+\(\ell=2\) carrier, \(\psi_{ab}=\delta R_{ab}\) obeys a second-order
+Lichnerowicz-type equation.  For nonzero real frequency its horizon system
+has a two-dimensional analytic ingoing \(\psi\)-space, so future-horizon
+regularity does not force \(\psi=0\).  The action-derived Lee--Wald current
+makes the Einstein self-block isotropic for conjugate Regge--Wheeler waves.
+Controlled finite-series fixtures at three frequencies exhibit nonzero
+Einstein--additional cross pairing and nonzero additional-sector pairing;
+these fixture results are not promoted to a symbolic all-frequency theorem.
+
+At infinity the earlier \(\ell=2\), \(M_{\rm BH}\omega=3/5\) claim that finite radial
+pairing selects exactly the Einstein sector is superseded.  A Phase-3 audit
+found that the axial metric reconstruction had also omitted the independent
+\(v\varphi\) Ricci equation.  On the declared \(\ell=2\),
+\(M_{\rm BH}=1\), \(\omega\in[1/2,3/4]\) pilot this equation propagates as
+\(C'=-2C/r\); its zero fibre is an exact six-dimensional formal module.  The
+repaired non-Einstein \(X_0\) direction is radially finite in the fixed
+representative and under the true rate-zero Einstein shear, but its cross
+pairing with the true oscillatory Einstein shear diverges.  Thus no
+representative-independent axial selection theorem follows.  Independently, the polar
+restriction-stable module contains a mixed Einstein/additional line that is
+finite and generically nonradical, with an explicit algebraic exceptional
+locus.  Thus neither leading endpoint diagnostics nor finite formal radial
+pairing isolates the Einstein image.  Separately, on the same axial pilot,
+the exact three-dimensional \(L^2\) wave-packet trace spaces at
+\(\mathscr I^-\) and \(\mathscr I^+\) carry action-derived endpoint flux
+Grams of rank three, zero radical, and inertia \((1,2,0)\) for
+\(\alpha_{\rm W}>0\), with no frequency wall on the pilot interval.  An
+exact differential-module reduction further gives two spin-two
+Regge--Wheeler factors and one spin-one Regge--Wheeler factor.  Their
+real-potential Wronskians prove that the global map from future-horizon-regular
+data to the incoming \(\mathscr I^-\) trace is invertible for every real
+\(\omega>0\).  Hence the complete indefinite incoming endpoint space is
+globally populated; its spin-two extension is hyperbolic and its orthogonal
+spin-one quotient line is negative.  On the real-frequency cell
+\(0.49995\le\omega\le0.50005\), certified uniform nonzero spin-one and
+spin-two reflection amplitudes and boundary dévissage prove that the
+complete outgoing trace is also globally populated.  Holomorphy then gives
+outgoing population off a locally finite positive-real exceptional set and
+dense range on every compact positive-frequency band.  Its explicit
+reflection matrix, the exceptional set, complete-pilot pointwise outgoing
+rank, non-real poles, a complete
+asymptotically flat scattering operator, full
+time-domain stability, damped quasinormal spectrum, Hawking state, and
+quantum unitarity remain open.  The exact filtration does, however, exclude
+exponentially growing axial \(\ell=2\) separated modes.  The local Cauchy restriction
+\(\psi|_\Sigma=\nabla_n\psi|_\Sigma=0\) still selects the Einstein kernel at
+the linear level.
+\end{abstract}
+
+\section*{AI authorship and computational accountability}
+The named AI systems developed the programme, derivations, symbolic
+implementations, independent verification architecture, claim audits, and
+this manuscript.  Asger Alstrup Palm commissioned and coordinated the work
+and is the corresponding human contact.  Every certified statement below is
+bound to a machine-readable certificate and a separately implemented
+verifier.  The cross-flux result uses controlled high-precision series
+evaluation with exact recurrence data and independent frequencies; it is
+reported as fixture-level evidence, not interval-certified nonvanishing.
+All local tensor identities and polynomial classifications are exact.  The
+manuscript remains conditional on final human review.
+
+\section*{Series status and focused successors}
+This long-form programme paper preserves the development and correction
+history of the black-hole calculation.  Three later papers are the
+authoritative focused accounts of results extracted from it:
+\begin{itemize}
+\item Paper~16 proves the one-ended Lorentzian endpoint nonselection theorem
+  and its exact axial filtration and flux consequences.
+\item Paper~17 proves the axial \(\ell=2\) non-split Regge--Wheeler
+  self-extension, the certified defective resonance, and the exterior
+  cut-off radial Green pole.
+\item Paper~18 gives the corrected, standalone Mannheim--Kazanas
+  classification, residual-basic charges, entropy, and simultaneous
+  horizon first laws.
+\end{itemize}
+Those successors do not retroactively enter the dependency chain of results
+proved here; where their conclusions are stronger, they supersede this
+paper's programme-level status statements.  The explicit typed \(T_+\),
+same-frame reflection matrix, and global causal inverse-Laplace theorem
+remain open.
+
+\tableofcontents
+
+\section{The physical question}
+
+Fourth-order gravitational equations contain more local solutions than the
+Einstein equations.  A common proposal is to retain the Einstein branch by a
+boundary condition.  Around a one-ended Lorentzian black hole, a first test
+is:
+
+\begin{quote}
+Do future-horizon analyticity and the same leading outer admissibility tests
+used for Einstein waves force the additional Ricci carrier to vanish?
+\end{quote}
+
+The answer in the certified Schwarzschild axial \(\ell=2\) mode laboratory
+is no: the curvature carrier has regular ingoing horizon data, the leading
+real-frequency symbol does not separate it from the Einstein carrier, and
+controlled fixtures have nonzero action-derived horizon pairing.  This is
+an endpoint-admissibility result, not a classification of all local
+differential boundary conditions.  In particular, setting the Ricci carrier
+and its normal derivative to zero on a Cauchy surface is a local linear
+Einstein-sector restriction.  Whether that restriction is natural,
+interaction-stable, or compatible with a physical asymptotic phase space is
+open.
+
+\subsection{Claims and dependency tags}
+
+The static family and local operator identities carry
+\textsc{local-algebraic}.  Harmonic branch, horizon, current, and asymptotic
+statements also carry \textsc{reduced-mode}.  The real-frequency incoming
+population, real-cell and generic outgoing population, compact-band
+dense-range theorem, boundary dévissage, and separated-mode stability
+statements additionally carry
+\textsc{lorentzian-causal}, each with its declared reduced-mode scope.  This
+does not supply a complete exterior Green-hyperbolicity theorem,
+metric-falloff phase space, or classified set of local differential boundary
+operators.
+
+\section{Relation to existing branch-selection programmes}
+
+The static Bach-flat family itself is classical
+\cite{Riegert,MannheimKazanas}.  Conformal-gravity thermodynamics with
+additional spin-two hair has also been studied in asymptotically AdS and
+Einstein--Weyl settings \cite{LuPangPopeVP}.  Our static contribution is
+therefore not a new family: it is the exact residual-basic normalization and
+simultaneous signed first-law identity within a declared local quotient.  A
+physical asymptotic normalization has not yet been selected.  In particular,
+L\"u, Pang, Pope, and V\'azquez-Poritz organize AdS thermodynamics with an
+independent massive-spin-two-hair conjugate pair.  Our one-term identity
+instead follows after quotient-basic normalization on a restricted static
+parameter family.  The different boundary ensemble, generator normalization,
+and independent variables mean that the two first laws are complementary,
+not contradictory.
+
+Maldacena's Einstein-from-conformal construction selects an Einstein sector
+by Euclidean AdS or late-time de Sitter boundary data \cite{Maldacena}.
+Critical- and logarithmic-gravity analyses similarly separate massless,
+massive, and generalized modes by asymptotic conditions
+\cite{LuPangPope,BergshoeffLog,DeserJoungWaldron,LiuLuLuo,ChenLuShao}.
+The null Einstein self-pairing and nonzero cross pairing found below should
+be read in that established degenerate-operator context, rather than as the
+first appearance of null massless modes paired with generalized solutions.
+Our different question is whether one-ended Lorentzian Schwarzschild endpoint
+tests force the Ricci carrier to vanish.
+
+Using \(\delta R_{ab}\) to expose higher-derivative spin-two modes is also a
+known strategy in fourth-order gravity \cite{Myung}.  Previous Weyl-black-hole
+quasinormal analyses often deliberately obtained a second-order master
+equation by conformal transport rather than retaining the full fourth-order
+Bach solution space \cite{MomenniaHendi}.  Effective-Einstein perturbations
+of conformally related nonsingular metrics \cite{ChenChen} and scalar or
+electromagnetic test-field spectra \cite{MomenniaHendiBidgoli} are different
+problems: test-field stability is not stability of the dynamical fourth-order
+Bach sector.  Contemporary quadratic-gravity ringdown work finds both
+ordinary and additional spin-two sectors \cite{AntoniouGualtieriPani}, while
+time-domain quadratic-gravity studies track massive-sector tails
+\cite{KonoplyaSpinaZhidenko}.  The prospective advance here is narrower:
+the exact pure-Weyl Ricci--Bach sequence, its action-derived Schwarzschild
+horizon pairing, and failure of the tested endpoint conditions to imply
+\(\delta R_{ab}=0\).  The first-order-system analysis follows the general
+modified-gravity asymptotic methodology of \cite{LangloisNouiRoussille}; in
+particular, that methodology makes the unresolved repeated-root Jordan audit
+an essential next step rather than a technical detail.  Precise decay of the
+metric coefficients must ultimately be compared with the Schwarzschild
+Einstein benchmark \cite{HungKellerWang}, not inferred from bounded curvature
+carrier variables alone.
+
+\section{Pure Weyl gravity and its covariant current}
+
+We use signature \((-+++)\) and action
+\begin{equation}
+ S_W[g]=\alpha\int_M\sqrt{-g}\,C_{abcd}C^{abcd}\,\dd^4x.
+\end{equation}
+The field equation is the Bach equation \(B_{ab}=0\), with convention
+\begin{equation}
+ B_{ab}=\nabla^c\nabla^dC_{acbd}
+       +\frac12R^{cd}C_{acbd}.
+\end{equation}
+The covariant presymplectic current is obtained from the literal variation
+of the curvature-momentum potential of this action.  Its normalization is
+fixed by the off-shell Green identity
+\begin{equation}\label{eq:green-identity}
+ \partial_tF^t(h_A,h_B)+\partial_rF^r(h_A,h_B)
+ =4\alpha\int_{S^2}\sqrt{q}\,
+ \bigl(h_B^{ab}\delta B_{ab}[h_A]
+      -h_A^{ab}\delta B_{ab}[h_B]\bigr).
+\end{equation}
+Thus the current is conserved for pairs of linearized Bach solutions and is
+not a freely rescaled master-equation Wronskian.
+
+\section{Static spherical Bach-flat family}
+
+In Schwarzschild gauge,
+\begin{equation}
+ \dd s^2=-B(r)\dd t^2+B(r)^{-1}\dd r^2+r^2\dd\Omega_2^2,
+\end{equation}
+the declared Laurent ansatz is
+\begin{equation}
+ B(r)=w-\frac{u}{r}+\gamma r-kr^2+\frac{c_2}{r^2}+c_3r^3.
+\end{equation}
+
+\begin{theorem}[Complete Bach-flat locus in the Laurent ansatz]
+The metric is Bach-flat if and only if
+\begin{equation}
+ c_2=c_3=0,
+ \qquad
+ w^2+3u\gamma=1.
+\end{equation}
+The Mannheim--Kazanas parametrization is recovered by
+\[
+ w=1-3\beta\gamma,\qquad
+ u=\beta(2-3\beta\gamma).
+\]
+On the complete Laurent locus the metric is Einstein if and only if
+\begin{equation}\label{eq:einstein-static-locus}
+ \gamma=0,\qquad w=1.
+\end{equation}
+On the Mannheim--Kazanas component through \(w=1\), this reduces to the
+single condition \(\gamma=0\).
+\end{theorem}
+
+Completeness here refers only to the Laurent ansatz.  The certificate does
+not claim a new proof of the global static spherical classification.  The
+sheet qualification in \eqref{eq:einstein-static-locus} follows already from
+the scalar curvature
+\begin{equation}
+ R=12k-\frac{6\gamma}{r}+\frac{2(1-w)}{r^2}.
+\end{equation}
+In particular, the allowed point \((\gamma,w)=(0,-1)\) is not Einstein.
+The original static certificate's phrase ``Einstein iff \(\gamma=0\)'' is
+therefore used only on its explicitly parametrized Mannheim--Kazanas sheet;
+the manuscript does not propagate it to the complementary Laurent sheet.
+
+The form-preserving local \(\Diff\times\mathrm{Weyl}\) transformations act
+as dilation and translation on the cubic
+\[
+ Q(x)=-ux^3+wx^2+\gamma x-k,\qquad x=r^{-1}.
+\]
+Their orbit rank is two.  A single continuous invariant may be taken as
+\[
+ J=u^2\operatorname{disc}(Q),
+\]
+while \(\operatorname{disc}(Q)=0\) is the degenerate-horizon locus.
+The conformal translation may fail globally where its Weyl factor vanishes;
+it is used only as a local orbit statement.
+
+An exact non-Einstein three-horizon fixture is
+\[
+ (\beta,\gamma,k)=\left(\frac32,\frac{12}{19},\frac1{19}\right),
+ \qquad
+ rB(r)=-\frac1{19}(r-1)(r-3)(r-8).
+\]
+All curvature invariants are finite at the simple horizons.  In ingoing
+Eddington--Finkelstein coordinates,
+\[
+ \dd s^2=-B(r)\dd v^2+2\dd v\dd r+r^2\dd\Omega_2^2,
+\]
+the metric and Bach equation are regular there.
+
+\section{Residual-basic energy and the static first law}
+
+For the chart generator \(\partial_t\), the bare static Lee--Wald one-form
+is not integrable.  The obstruction disappears when the generator is
+normalized consistently with the residual quotient.
+
+\begin{theorem}[Normalized static generator]
+On a connected component with \(u\neq0\), choose the oriented generator
+\begin{equation}
+ \chi=u\,\partial_t,
+ \qquad u=\beta(2-3\beta\gamma).
+\end{equation}
+Residual basicness and dilation weight determine the general normalization
+as \(u f(J)\partial_t\).  We select \(f(J)=1\).  Its Hamiltonian is
+\begin{equation}
+ H=-16\pi\alpha\beta^2D_2,
+ \qquad
+ D_2=9\beta^2\gamma^2k-\beta\gamma^3
+     -12\beta\gamma k+\gamma^2+4k.
+\end{equation}
+At every simple horizon \(r_h\), the Wald entropy
+\begin{equation}
+ S_h=64\pi^2\alpha\beta
+ \frac{2-3\beta\gamma+\gamma r_h}{r_h}
+\end{equation}
+and normalized temperature
+\begin{equation}
+ T_h=\frac{uB'(r_h)}{4\pi}
+\end{equation}
+satisfy
+\begin{equation}
+ \dd H=T_h\,\dd S_h
+\end{equation}
+identically modulo \(B(r_h)=0\).
+\end{theorem}
+
+Here \(T_h\) is the \emph{signed} surface-gravity temperature appropriate to
+the oriented first-law identity; the positive Hawking temperature would use
+\(|uB'(r_h)|/(4\pi)\).  On a component where \(u<0\), future-directedness
+uses \(-\chi\), flipping both \(H\) and \(T_h\) and preserving the first
+law.  The locus \(u=0\) is excluded because this normalization degenerates.
+For another allowed \(f(J)\), one has \(T_f=f(J)T_h\) and a reparametrized
+Hamiltonian satisfying \(\dd H_f=f(J)\dd H\); the first law remains true.
+Thus residual basicness fixes a class, not a unique physical normalization
+in the absence of an asymptotic clock.
+
+This is a theorem on the static parameter slice, not yet a general
+physical-process first law.  Its linear dynamical extension nevertheless
+passes a strong gauge audit: arbitrary time-dependent spherical Weyl
+rescalings and diffeomorphisms have exactly zero charge and flux, the entropy
+is conformally invariant on the symbolic family, and the normalized
+generator extension is unique at linear order under the declared boundary
+scalar rule.
+
+\section{Ricci--Bach composition and the axial exact sequence}
+
+The parity-specific formulas are restrictions of one Ricci-flat identity.
+
+\begin{proposition}[Linearized Bach tensor on a Ricci-flat background]
+\label{prop:universal-ricci-bach}
+For a perturbation of a four-dimensional Ricci-flat metric,
+\begin{equation}\label{eq:universal-ricci-bach}
+ \delta B_{ab}=\frac12\Box(\delta R_{ab})
+ +C_{acbd}(\delta R)^{cd}
+ -\frac16\nabla_a\nabla_b\delta R
+ -\frac1{12}g_{ab}\Box\delta R.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Rewrite the four-dimensional Bach tensor in Ricci variables using the
+contracted Bianchi identity, then retain the terms linear in Ricci curvature
+about \(R_{ab}=0\).  Background derivatives and the curvature commutator give
+the displayed Weyl action.  The repository verifies
+\eqref{eq:universal-ricci-bach} independently, component by component, on the
+complete axial and polar \(\ell=2\) Regge--Wheeler-gauge carriers.  That
+computer check is carrier-complete but is not presented as a machine proof
+for arbitrary harmonic content.
+\end{proof}
+
+We now specialize the background to Schwarzschild and use axial
+Regge--Wheeler gauge,
+\[
+ h_{t\phi}=h_0(t,r)S_{\ell m},
+ \qquad
+ h_{r\phi}=h_1(t,r)S_{\ell m}.
+\]
+The \(\ell=2\) linearized Bach tensor is fourth order, trace-free, and obeys
+the exact linearized Noether identity.  Eliminating the constraint on the
+Einstein subbranch reproduces the Regge--Wheeler equation for
+\(\Psi=Bh_1/r\),
+\begin{equation}
+ B(B\Psi')'+(\omega^2-V_{\rm RW})\Psi=0,
+ \qquad
+ V_{\rm RW}=B\left(\frac6{r^2}-\frac{6m}{r^3}\right).
+\end{equation}
+
+\begin{corollary}[Axial composition]
+For the certified axial carrier, parity gives \(\delta R=0\), so
+\begin{equation}\label{eq:axial-split}
+ \boxed{\delta B_{ab}
+ =\frac12\Box(\delta R_{ab})
+  +C_{acbd}(\delta R)^{cd}.}
+\end{equation}
+Consequently the Einstein kernel \(\delta R_{ab}=0\) injects into the Bach
+kernel, while its curvature image obeys
+\begin{equation}
+ \frac12\Box\psi_{ab}+C_{acbd}\psi^{cd}=0,
+ \qquad \psi_{ab}:=\delta R_{ab}.
+\end{equation}
+\end{corollary}
+
+Let \(\mathcal C_{\rm ax}\) be the fixed axial carrier and define
+\begin{align}
+ \mathcal H_B&=\{h\in\mathcal C_{\rm ax}:\delta B[h]=0\},&
+ \mathcal H_E&=\{h\in\mathcal H_B:\delta R[h]=0\},\\
+ \mathcal H_R&=\ker\!\left(\tfrac12\Box+C\circ\right)
+                \cap\operatorname{im}(\delta R|_{\mathcal C_{\rm ax}}).
+\end{align}
+Then the invariant statement supplied by the composition is the exact
+sequence
+\begin{equation}\label{eq:axial-exact-sequence}
+ 0\longrightarrow\mathcal H_E
+ \longrightarrow\mathcal H_B
+ \xrightarrow{\ \delta R\ }\mathcal H_R
+ \longrightarrow0.
+\end{equation}
+It does \emph{not} supply a canonical direct sum.  A metric lift \(h_X\) of
+\(\psi\in\mathcal H_R\), when it exists in the chosen domain, may be shifted
+by any \(h_E\in\mathcal H_E\).  Global lift existence, boundary conditions,
+and a gauge-independent splitting must therefore be proved separately.  In
+particular, ``additional branch'' below refers either to the curvature image
+\(\mathcal H_R\) or to an explicitly constructed lift, never to an assumed
+canonical complement.
+
+The identity is componentwise and off shell in the perturbation.  It does
+not extend in this two-term form to the certified non-Einstein static
+fixture.  Thus the clean composition is a Ricci-flat-background theorem.
+
+\section{The Ricci carrier reaches the future horizon}
+
+In ingoing coordinates \((v,r)\), Fourier modes are written
+\(e^{i\omega v}\).  The extra carrier's divergence constraint solves its
+third component polynomially; the apparent Schwarzschild-coordinate pole is
+a chart artifact.
+
+\begin{theorem}[Analytic ingoing curvature family]
+For axial \(\ell=2\) and \(\omega\in\R\setminus\{0\}\), the future horizon
+\(r=2m\) is a regular singular point of the extra first-order radial system.
+Its residue spectrum is
+\begin{equation}
+ \{0,0,-4im\omega,-2-4im\omega\},
+\end{equation}
+and the zero eigenspace has dimension two.  Hence there is a two-parameter
+family of \(\psi\)-solutions analytic at the future horizon, with no leading
+logarithm at the zero exponent.
+\end{theorem}
+
+The restriction excludes \(\omega=0\), where the algebraic multiplicity of
+the zero residue exponent changes, and makes no claim at resonant complex
+frequencies.  Most importantly, the theorem counts the curvature carrier,
+not a quotient of metric solutions.  The currently certified dimensions are:
+
+\begin{center}
+\begin{tabularx}{0.94\textwidth}{@{}Y c Y@{}}
+\toprule
+Space & Ingoing/analytic dimension & Status\\
+\midrule
+Einstein Regge--Wheeler carrier & 1 & second-order control\\
+Ricci carrier \(\psi\) & 2 & exact residue calculation\\
+Full Bach metric solution space & not certified & reconstruction/domain open\\
+Metric quotient by the Einstein kernel & not certified & lift and gauge open\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Thus future-horizon regularity does not force \(\psi=0\).  Explicit metric
+lifts are constructed in the flux fixtures below, but the exact sequence
+\eqref{eq:axial-exact-sequence} has not yet been split globally.
+
+\section{Action-derived horizon flux}
+
+Substituting two on-shell Regge--Wheeler solutions into the current
+\eqref{eq:green-identity} gives
+\begin{equation}\label{eq:rw-null}
+ F^r_{EE}
+ =-\frac{192\pi\alpha(\omega_1^2-\omega_2^2)}
+          {5\omega_1\omega_2r}\Psi_1\Psi_2.
+\end{equation}
+For conjugate pairs \(\omega_2=\pm\omega_1\), this vanishes identically.
+
+\begin{theorem}[Exact Einstein isotropy]
+On Schwarzschild in axial \(\ell=2\), the pure-Weyl Lee--Wald pairing of an
+Einstein Regge--Wheeler mode with its conjugate vanishes exactly:
+\begin{equation}
+ F^r(E_\omega,\overline{E_\omega})=0.
+\end{equation}
+Thus the Einstein line is isotropic in the presymplectic structure inherited
+from the pure \(C^2\) action.  This statement does not identify the Einstein
+symplectic form with the ordinary Einstein--Hilbert one.
+\end{theorem}
+
+\begin{proposition}[Controlled horizon-pairing fixtures]
+For \(m=1\), axial \(\ell=2\), and conjugate-frequency Hermitian pairings,
+order-16 ingoing series give
+\begin{equation}
+ F^r(E_\omega,\overline{X_\omega})\neq0,
+ \qquad
+ F^r(X_\omega,\overline{X_\omega})\neq0
+\end{equation}
+at producer frequencies \(\omega=3/5,2/7\); an independent verifier repeats
+the nonvanishing gates at \(\omega=1/2\).  At the two stored frequencies the
+values, divided by \(\pi\alpha\) and sampled at two interior radii, are
+approximately
+\begin{center}
+\begin{tabular}{@{}c c c@{}}
+\toprule
+\(\omega\) & \(F^r(X,\bar X)/(\pi\alpha)\) &
+\(F^r(E,\bar X)/(\pi\alpha)\)\\
+\midrule
+\(3/5\) & \(-330.58i,-329.98i\) &
+\(-218.17+43.55i,-215.97+51.53i\)\\
+\(2/7\) & \(-71.92i,-71.95i\) &
+\(-162.82+27.99i,-163.92+33.03i\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+The exact Regge--Wheeler null identity is the in-run control.  These data are
+controlled numerical fixtures: they prove neither symbolic nonvanishing for
+all real \(\omega\) nor an interval-certified error bound.
+\end{proposition}
+
+For a chosen lift basis \((E,X)\), the horizon block has the form
+\begin{equation}
+ \Omega_h=\begin{pmatrix}0&a\\-\bar a&b\end{pmatrix}.
+\end{equation}
+Under the admissible lift change \(X\mapsto X+cE\), the cross entry \(a\) is
+invariant while \(b\) changes.  The robust fixture-level conclusions are
+therefore Einstein isotropy, nonzero cross pairing, and full rank of the
+tested two-dimensional block.  The sign of \(iF^r_{XX}\) for one chosen lift
+is basis dependent and is not promoted to a branch signature or Hilbert
+norm.
+
+The stored report also records a repaired calculation: an earlier flux
+evaluation dropped the Fourier factor \(e^{i\omega t}\), causing all time
+derivatives to vanish silently.  The exact Regge--Wheeler null control exposed
+the defect; all displayed fixtures use the repaired full-time current.
+
+\section{Asymptotic symbol and endpoint nonselection}
+
+At real frequency and large radius, the extra carrier has dispersion
+\begin{equation}
+ (\lambda_r^2-\omega^2)^2=0
+\end{equation}
+and growth exponents
+\begin{equation}
+ \sigma\in\{\pm2im\omega,\ \pm2im\omega-1\}.
+\end{equation}
+The simple-root reading would identify Coulomb logarithmic phases with
+amplitudes of order \(r^0\) and \(r^{-1}\).  But the characteristic is
+\emph{double}.  The polynomial alone does not determine geometric
+multiplicity.  As in \((D^2+\omega^2)^2h=0\), a Jordan chain may produce
+\(r_*e^{\pm i\omega r_*}\) even though every characteristic exponent is
+oscillatory.  The axial Ricci-carrier recurrences are known to all formal
+orders for every integer \(\ell\ge2\) and real \(\omega\ne0\).  The earlier
+generic-\(\ell\) metric lifts, however, did not impose the independent
+\(v\varphi\) Ricci row.  The complete metric endpoint module is certified
+here only at \(\ell=2\) on the real pilot interval.  In the polar calculation
+below we use only the maximal
+restriction-stable module through the certified depth.  Two additional
+terminal-only prefix vectors still require their next compatibility test and
+are not promoted to formal solutions.
+
+\begin{theorem}[Endpoint regularity-and-leading-symbol nonselection]
+On the declared Schwarzschild axial \(\ell=2\), nonzero-real-frequency mode
+carrier, future-horizon analyticity does not imply \(\delta R_{ab}=0\).
+Moreover, the presently certified leading characteristic polynomial and
+formal exponents do not supply an outer condition that distinguishes the
+Ricci carrier from the Einstein characteristic.  Hence these tested local
+endpoint diagnostics do not select the Einstein kernel.
+\end{theorem}
+
+This deliberately does \emph{not} say that every ordinary asymptotically
+flat radiation condition admits an additional metric mode.  That stronger
+statement requires convergence or another completion of the formal series,
+falloff in a regular tetrad or asymptotic gauge, a differentiable
+Lee--Wald phase space, and a horizon-to-infinity connection map.  None is
+supplied by the formal calculations below.
+
+\subsection{Complete axial reconstruction on the \texorpdfstring{\(\ell=2\)}{ell=2} pilot}
+
+The earlier generic-angular metric audit imposed the \(x\varphi\) and
+\(r\varphi\) reconstruction equations but omitted the independent
+\(v\varphi\) equation.  Put
+\begin{equation}
+ C=\frac{\delta R_{v\varphi}}{S_2}-P .
+\end{equation}
+On every solution of the two differential rows and the Ricci-carrier
+equations, exact differentiation gives
+\begin{equation}
+ C'=-\frac2r C,
+ \qquad \kappa=r^2C=\text{constant}.
+\end{equation}
+The complete reconstruction is therefore the \(\kappa=0\) fibre.  Solving
+this algebraic constraint for \(H_0\) produces an exact six-state flow on
+\((P,P',Q,Q',H_1,H_1')\) and the short exact sequence
+\begin{equation}
+ 0\longrightarrow\mathcal E_{\rm ker}^{2}
+ \longrightarrow\mathcal E_{\rm Bach,ax}^{6}
+ \longrightarrow\mathcal E_{\rm Ricci}^{4}
+ \longrightarrow0 .
+\end{equation}
+It supplies six independent formal columns at each endpoint: four carrier
+lifts and two complete Einstein-kernel columns.  This statement is exact for
+\(\ell=2\), \(M=1\), and real \(\omega\in[1/2,3/4]\); it is not a
+generic-\(\ell\) metric theorem.
+
+The legacy Phase-2 \(X_0\) has
+\begin{equation}
+ C_{X_0}=\frac{i(\omega-18i)}{2\omega^2}r^{-2}.
+\end{equation}
+It becomes a complete non-Einstein lift after an exact transverse addition.
+The vector formerly labelled \(E_0\) is one half of that transverse vector
+and is not itself a complete Einstein solution; all claims using it as an
+Einstein representative are superseded.
+
+For the repaired \(X_0\), the literal current audit has no coefficient at
+any nonintegrable power \(p\ge-1\).  Its first self coefficient is
+\begin{equation}
+ F^v(X_0,\overline X_0)=
+ \frac{32i\pi\alpha_{\rm W}(540-\omega^2)}
+ {15\omega^3(\omega^2+4)}r^{-2}+O(r^{-3}),
+\end{equation}
+which is nonzero on the pilot interval.  The same finite class is preserved
+under the true rate-zero Einstein-kernel shear.  It is \emph{not} preserved
+under an arbitrary Einstein shear: the true oscillatory Einstein kernel has
+cross term
+\begin{equation}
+ F^v(E_{\rm osc},\overline X_0)=
+ \frac{48\pi\alpha_{\rm W}\omega^3(4\omega+i)}5
+ e^{-2i\omega r}r^{3-4i\omega}+\cdots,
+\end{equation}
+with a nonzero coefficient throughout the real pilot interval.
+
+\begin{theorem}[Scoped axial reconstruction and radial disposition]
+For \(\ell=2\), \(M=1\), and real \(\omega\in[1/2,3/4]\), the complete
+axial formal endpoint module has dimension six.  Its repaired \(X_0\)
+direction is non-Einstein and radially finite in the fixed representative and
+under true rate-zero Einstein shears, while true oscillatory Einstein shears
+produce divergent cross terms.  Thus the pilot supplies a finite formal
+non-Einstein direction but no representative-independent axial selection or
+quotient theorem.
+\end{theorem}
+
+This is an exact formal asymptotic coefficient audit.  It establishes no
+convergence or endpoint wave-packet flux space \emph{by itself}, and it
+establishes no horizon-to-infinity matching, global scattering channel,
+stability, or CPT property.  The endpoint flux construction below is a
+separate completion of one part of that boundary problem.  The other axial
+additional direction and the generic angular tower require separate all-row
+audits.
+
+\subsection{Exact axial null-endpoint wave-packet flux}
+
+The complete axial pilot admits exact matching trace spaces
+\begin{equation}
+ \mathcal X_{\mathscr I^-}
+ =\operatorname{span}\{\mathrm{XI0},\mathrm{XI1},\mathrm{EI0}\},
+ \qquad
+ \mathcal X_{\mathscr I^+}
+ =\operatorname{span}\{\mathrm{XI2},\mathrm{XI3},\mathrm{EI2}\}.
+\end{equation}
+Positive-frequency amplitudes lie initially in
+\(C_c^\infty((1/2,3/4);\mathbb C^3)\), with negative frequencies fixed by
+the real-field involution; the completion is
+\(L^2([1/2,3/4];\mathbb C^3)\) at each endpoint.  Pulling the frozen
+action-derived current from Schwarzschild \(t\) coordinates to the ingoing
+Eddington--Finkelstein reconstruction, including differentiated
+reconstruction terms, gives Stokes-oriented Hermitian Grams \(G_-\) and
+\(G_+\).  After division by \(\pi\alpha_{\rm W}\),
+\begin{equation}
+ \det G_-=\frac{14155776}{125}\omega^3,
+ \qquad
+ \det G_+=\frac{3538944}{125}\omega .
+\end{equation}
+The past sign includes the reversal between the coordinate-radial direction
+and the outward Stokes orientation at \(\mathscr I^-\).
+
+\begin{theorem}[Scoped axial null-endpoint flux]
+For strict pure Weyl gravity with \(M=1\), axial \(\ell=2\), and
+\(\omega\in[1/2,3/4]\), both exact wave-packet endpoint trace spaces have
+dimension three.  Their action-derived Stokes Grams have rank three, zero
+radical, no frequency wall, and
+\[
+ \operatorname{inertia}(G_-)
+ =\operatorname{inertia}(G_+)=(1,2,0)
+ \qquad(\alpha_{\rm W}>0).
+\]
+Reversing the overall action sign reverses the positive and negative counts.
+\end{theorem}
+
+The signature has a simple exact anatomy.  With the displayed Stokes
+orientations and after division by \(\pi\alpha_{\rm W}\), at
+\(\mathscr I^-\) set
+\[
+ E_-=\mathrm{EI0},\qquad X_-=\mathrm{XI0},\qquad
+ Y_-=-\omega^2\mathrm{XI0}-2i\omega\mathrm{XI1}+\mathrm{EI0}.
+\]
+Then
+\[
+ G_-(E_-,E_-)=0,\quad
+ G_-(E_-,X_-)=\frac{384\omega}{5},\quad
+ G_-(Y_-,Y_-)=-\frac{384\omega^3}{5},
+\]
+and \(Y_-\) is orthogonal to \(E_-\) and \(X_-\).  Likewise, at
+\(\mathscr I^+\) set
+\[
+ E_+=\mathrm{EI2},\qquad X_+=\mathrm{XI3},\qquad
+ Y_+=i\omega\mathrm{XI2}
+      +4(4\omega^2-i\omega-2)\mathrm{XI3}.
+\]
+Here
+\[
+ G_+(E_+,E_+)=0,\quad
+ G_+(E_+,X_+)=\frac{96\omega}{5},\quad
+ G_+(Y_+,Y_+)=-\frac{384\omega}{5},
+\]
+with the same orthogonality.  The Einstein--additional planes have
+determinants \(-147456\omega^2/25\) and
+\(-9216\omega^2/25\), respectively.  Thus each endpoint has the exact Witt
+decomposition
+\[
+ (1,2,0)=(1,1,0)\oplus(0,1,0).
+\]
+This identifies a hyperbolic Einstein--additional plane and a separate
+negative line.  It does not identify the additional column as a spectral
+derivative or time-translation Jordan partner.  Indeed, the complete
+six-dimensional axial module is not conjugate by an endpoint-regular
+invertible change of variables to a scalar Regge--Wheeler square: the latter
+has only four local columns, whereas the certified exact sequence has
+dimensions \(2+4=6\).  Exact cyclic elimination of the four-dimensional
+Ricci carrier instead gives
+\[
+ L_4=L_x\circ L_{\rm RW},
+\]
+and exact embedding and quotient maps certify
+\[
+ 0\longrightarrow M_{\rm RW}
+ \longrightarrow M_{A_4}
+ \longrightarrow M_x
+ \longrightarrow0.
+\]
+The carrier-zero metric kernel is independently equivalent to
+\(M_{\rm RW}\).  After the rational rescaling
+\(Z=y/[r^2(r-2)]\), the quotient equation is
+\[
+ D_{r_*}^2y+2i\omega D_{r_*}y
+ -\frac{6(r-2)}{r^3}y=0,
+\]
+the \(\ell=2\) spin-one Regge--Wheeler equation in the ingoing-EF
+convention.  Thus the full module has a certified triangular filtration
+with diagonal factors \(M_{\rm RW},M_{\rm RW},M_x\).  The natural exact
+gauge retains a nonzero extension term, so a direct
+\(\ker L_{\rm RW}^2\oplus\ker L_x\) splitting and a time-translation
+Jordan interpretation are not claimed.
+
+The incoming quotient map nevertheless resolves the Witt signs by
+differential factor.  In the basis
+\((\mathrm{XI0},\mathrm{XI1},\mathrm{EI0})\), it obeys
+\[
+ \pi_x(\mathrm{XI0})=2,\qquad
+ \pi_x(\mathrm{XI1})=-2i\omega,\qquad
+ \pi_x(\mathrm{EI0})=0.
+\]
+Set
+\[
+ R=\mathrm{XI0}-\frac{i}{\omega}\mathrm{XI1},\qquad
+ S=-\omega^2\mathrm{XI0}-2i\omega\mathrm{XI1}
+   +\frac43\mathrm{EI0},\qquad E=\mathrm{EI0}.
+\]
+Then \(\ker\pi_x=\operatorname{span}\{E,R\}\), while
+\(\pi_x(S)=-6\omega^2\).  In the ordered basis \((R,S,E)\), the exact
+incoming Gram divided by \(\pi\alpha_{\rm W}\) is
+\[
+ \begin{pmatrix}
+  624/(5\omega)&0&576\omega/5\\
+  0&-384\omega^3/5&0\\
+  576\omega/5&0&0
+ \end{pmatrix}.
+\]
+Consequently the metric/carrier spin-two extension has inertia
+\((1,1,0)\), and its orthogonal spin-one quotient lift is strictly
+negative, of inertia \((0,1,0)\).  Equivalently, after
+\(R\mapsto R-13E/(24\omega^2)\), this is the canonical orthogonal sum
+\[
+ \begin{pmatrix}0&576\omega/5\\576\omega/5&0\end{pmatrix}
+ \widehat\oplus
+ \begin{pmatrix}-384\omega^3/5\end{pmatrix}.
+\]
+This factor attribution does not require the differential extension to
+split.  With the quotient normalized to one,
+\[
+ S_{\rm unit}=-\frac{S}{6\omega^2},\qquad
+ \pi_x(S_{\rm unit})=1,\qquad
+ \frac{G_-(S_{\rm unit},S_{\rm unit})}{\pi\alpha_{\rm W}}
+ =-\frac{32}{15\omega}.
+\]
+In this canonical basis the fiberwise form is congruent to
+\(\operatorname{diag}(1,-1,-1)\).  Across the whole positive frequency
+axis its natural Hilbert majorant is weighted:
+\[
+ \int_0^\infty\left[
+ \frac{576\omega}{5}(|e|^2+|r|^2)
+ +\frac{32}{15\omega}|s|^2
+ \right]d\omega.
+\]
+Thus a finite-flux spin-one amplitude must obey
+\(\int_0^\epsilon |s(\omega)|^2d\omega/\omega<\infty\) near threshold.
+On the positive-frequency Fourier core these are the homogeneous fractional
+Sobolev weights
+\[
+ (e,r)\in\dot H^{1/2},\qquad s\in\dot H^{-1/2},
+\]
+up to Fourier normalization and the real-field extension.  Weighted
+integrability alone does not define \(s(0)\); if a continuous threshold trace
+is separately available, it must vanish.
+The unweighted \(L^2\) topology remains equivalent on compact frequency
+bands away from zero, while the static/memory sector at \(\omega=0\) is
+separate.  Pointwise invertibility of \(T_-\) does not by itself give a
+bounded global operator on this weighted direct integral.
+In weight-normalized factor frames, write
+\[
+ T_-=\begin{pmatrix}
+ a_2&b&c\\0&a_2&d\\0&0&a_1
+ \end{pmatrix},
+ \qquad a_s=A_{{\rm in},s}.
+\]
+Since the scalar Wronskians give \(\lvert a_s^{-1}\rvert\leq1\) on the
+positive real axis, boundedness of the incoming-to-horizon population map
+\(T_-^{-1}\) reduces to weighted bounds on only
+\[
+ \frac{b}{a_2^2},\qquad
+ \frac{d}{a_2a_1},\qquad
+ \frac{bd-a_2c}{a_2^2a_1}.
+\]
+These are not three unrelated functions.  Introduce the partially dualized
+two-channel family
+\[
+ C(\tau)=
+ \begin{pmatrix}a_2(\tau)&d(\tau)\\0&a_1\end{pmatrix},
+ \qquad
+ a_2'(0)=b,\qquad d'(0)=c,
+\]
+where the spin-one quotient is held \(\tau\)-constant.  In the ordered basis
+\((\epsilon\,{\rm spin}\text{-}2,{\rm spin}\text{-}2,{\rm spin}\text{-}1)\),
+its first jet is exactly \(T_-\), and
+\[
+ -\frac{b}{a_2^2}
+ =\left.\partial_\tau\frac1{a_2(\tau)}\right|_0,
+ \qquad
+ -\frac{d}{a_2a_1}=:{\cal M}(0),
+ \qquad
+ \frac{bd-a_2c}{a_2^2a_1}={\cal M}'(0),
+\]
+with \({\cal M}(\tau)=-d(\tau)/(a_2(\tau)a_1)\).
+Thus the quantitative gate is a bound for one base spin-two/spin-one
+transfer matrix and its intrinsic first variation.  This algebraic
+repackaging does not itself provide the analytic \(\tau\)-family or its
+uniform threshold, high-frequency, and limiting-absorption bounds.
+
+The normalized signature basis also defines the canonical classical
+fundamental symmetry \(C_{\rm fac}=\operatorname{diag}(1,-1,-1)\).
+In the null basis it exchanges \(EI\) and \(RI_0\), negates
+\(SI_{\rm unit}\), and yields the positive majorant
+\(\operatorname{diag}(a,a,b)\).  This is an endpoint Krein-space
+fundamental symmetry, not a Mannheim \(C\) operator: BRST descent and
+compatibility with the full scattering dynamics are not established.
+
+The \(L^2\) completion here uses the auxiliary positive coefficient norm,
+not the indefinite flux as a norm.  Exact Sturm counts applied to
+\(\|G_\pm(\omega)\|_F^2\) and
+\(\|G_\pm(\omega)^{-1}\|_F^2\) give the uniform normalized estimate
+\begin{equation}\label{eq:endpoint-uniform-l2}
+ \|a\|_{L^2}\leq \|G_\pm a\|_{L^2}
+ \leq 645\,\|a\|_{L^2}.
+\end{equation}
+Thus the endpoint forms are bounded and uniformly nondegenerate, rather
+than merely pointwise invertible.  The continuous fundamental symmetry
+\(J_\pm=\operatorname{sign}(G_\pm)\) and positive majorant \(|G_\pm|\)
+make each endpoint a Krein space with topology equivalent to the auxiliary
+\(L^2\) topology.  This majorant is not a CPT metric, positive energy, or
+particle norm.  The exact matrices and separate endpoint bounds are printed
+in Appendix~\ref{app:endpoint-grams}.
+
+The past-boundary sign is already absorbed into the incoming Gram.  Hence a
+future global relation \(a_{\rm out}=T a_{\rm in}\) must obey
+\begin{equation}\label{eq:endpoint-global-conservation}
+ T^\dagger J_{\rm out}T=J_{\rm in};
+\end{equation}
+without horizon channels this would reduce to
+\(T^\dagger G_+T=G_-\).  No complete outgoing-plus-horizon scattering map is
+constructed here.  The theorem below does, however, prove that the full
+incoming \(\mathscr I^-\) form is globally populated by future-horizon-regular
+solutions.
+
+For the presymplectic ambiguity
+\(\theta\mapsto\theta+\delta Y+dZ\), the \(\delta Y\) term vanishes by
+\(\delta^2=0\), and angular exact terms integrate to zero.  A stationary,
+globally defined local finite-tangential-jet \(dZ\) with finite trace-only
+pullback contributes only cut terms; these vanish on the
+\(C_c^\infty\) frequency core because the inverse Fourier traces are
+Schwartz, and hence on its continuous \(L^2\) extension.  This scoped
+statement does not cover radial or subleading, nonlocal or soft,
+explicit-time, or nondecaying improvements.  Their additive
+\(\Delta G_\pm\) and inertia strata remain open.
+
+\begin{proposition}[Index pullback and local wave-packet consequence]
+\label{prop:endpoint-index-pullback}
+Fix either certified axial endpoint and a frequency at which its Hermitian
+flux form \(G(\omega)\) has inertia \((1,2,0)\).  Let
+\[
+ T_\omega:U_\omega\longrightarrow\mathcal X_\omega
+\]
+be any globally matched, gauge-reduced trace map, and set
+\(K_\omega=T_\omega^\dagger G(\omega)T_\omega\).  After quotienting
+\(\ker T_\omega\), write \(r=\operatorname{rank}T_\omega\).  Then
+\[
+ n_-(K_\omega)\geq r-1.
+\]
+In particular, a populated endpoint image of rank at least two necessarily
+contains a negative-flux direction, while full rank forces inertia
+\((1,2,0)\).
+
+If \(T_\omega\) and the horizon-regular frame vary continuously near an
+interior frequency \(\omega_0\), then
+\(\operatorname{rank}T_{\omega_0}\geq2\) implies the existence of a
+nonzero smooth compact-frequency horizon amplitude whose populated endpoint
+flux is strictly negative.  In fact the negative index of the populated
+wave-packet space is then infinite.
+\end{proposition}
+
+\begin{proof}
+Let \(W=\operatorname{im}T_\omega\).  If the restriction of \(G\) to \(W\)
+has inertia \((a,b,c)\), it has a nonnegative subspace of dimension
+\(a+c\).  Projection of such a subspace onto the one-dimensional positive
+spectral subspace of \(G\) is injective: a vector with zero positive
+projection has nonpositive norm in the negative spectral subspace, and
+nonnegativity forces it to vanish.  Hence \(a+c\leq1\), and
+\(b=r-a-c\geq r-1\).
+
+For the second statement choose \(u\in U_{\omega_0}\) with
+\(u^\dagger K_{\omega_0}u<0\).  In a continuous local trivialization the
+same coefficient vector has negative flux on some open interval
+\(J\ni\omega_0\).  Multiplying it by any nonzero
+\(\chi\in C_c^\infty(J)\) and integrating the diagonal frequency-space
+pairing gives a strictly negative finite wave-packet flux.
+Choose countably many nonzero cutoffs with pairwise disjoint supports inside
+\(J\).  Their cross-pairings vanish, while every self-pairing is negative.
+They therefore span an infinite-dimensional negative subspace.
+\end{proof}
+
+The first global gate can in fact be closed analytically for the incoming
+endpoint.  Let
+\[
+ T_-(\omega):
+ \operatorname{span}\{\mathrm{XH0a},\mathrm{XH0b},\mathrm{EH0}\}
+ \longrightarrow
+ \operatorname{span}\{\mathrm{XI0},\mathrm{XI1},\mathrm{EI0}\}
+\]
+map future-horizon-regular coefficients to incoming
+\(\mathscr I^-\) coefficients.
+
+\begin{theorem}[Global population of the axial incoming trace]
+\label{thm:axial-incoming-connection}
+For every real \(\omega>0\),
+\[
+ T_-(\omega)\in GL(3,\mathbb C).
+\]
+In factor-adapted endpoint frames its determinant is
+\[
+ \det T_-(\omega)=
+ -\frac{(2\omega-i)(4\omega-i)^2}{4(\omega-i)}
+ A_{{\rm in},2}(\omega)^2A_{{\rm in},1}(\omega),
+\]
+where \(A_{{\rm in},2}\) and \(A_{{\rm in},1}\) are the incoming Jost
+coefficients for the spin-two and spin-one real short-range potentials
+\[
+ V_2=\frac{6(r-2)(r-1)}{r^4},
+ \qquad
+ V_1=\frac{6(r-2)}{r^3}.
+\]
+\end{theorem}
+
+\begin{proof}
+The exact module filtration and endpoint quotient maps give one
+horizon-ingoing and one incoming-infinity Jost line for each of the three
+diagonal factors.  The changes from the repository endpoint frames to these
+factor-adapted frames are triangular with determinant one.  The resulting
+connection is triangular and its diagonal entries are the two spin-two and
+one spin-one Jost connection coefficients, multiplied by the displayed
+nonzero endpoint normalizations.  For a unit horizon-ingoing solution of
+either real potential, Wronskian conservation gives
+\[
+ |A_{{\rm in},s}|^2-|A_{{\rm out},s}|^2=1,
+ \qquad s=1,2.
+\]
+Hence \(A_{{\rm in},s}\neq0\).  The rational prefactor is also nonzero,
+since its squared modulus is
+\[
+ \frac{(4\omega^2+1)(16\omega^2+1)^2}
+ {16(\omega^2+1)}.
+\]
+The cyclic and triangular-map determinants are nonzero for \(r>2\) and
+real \(\omega>0\); the horizon recurrence pivots do not vanish, their
+integer-spaced resonance is compatible, and the two infinity rates remain
+distinct.  Thus no endpoint-map or Frobenius collision interrupts the
+argument on the positive real axis.  The zero-frequency sector is separate.
+\end{proof}
+
+Moreover, on the original pilot interval the determinant has the uniform
+exact margin
+\[
+ \left|\det T_-(\omega)\right|\geq\sqrt{\frac52}.
+\]
+Indeed, after \(x=\omega^2\), the derivative of the squared rational
+prefactor is
+\[
+ \frac{(16x+1)(128x^2+208x+35)}{16(x+1)^2}>0,
+\]
+and \(\lvert A_{{\rm in},s}\rvert\geq1\).  This is a volume-determinant
+bound, not by itself a smallest-singular-value estimate.
+On the full positive real axis the same monotonicity gives
+\[
+ \left|\det T_-(\omega)\right|>\frac14,\qquad \omega>0,
+\]
+with \(1/4\) approached only as \(\omega\to0^+\).
+
+Congruence by the invertible \(T_-\) preserves inertia.  The
+horizon-regular pullback of the incoming endpoint form therefore has
+inertia \((1,2,0)\) at every real positive frequency, and its wave-packet
+completion on every compact positive-frequency interval has infinite
+positive and negative index.  In particular, the conditional
+conclusion of Proposition~\ref{prop:endpoint-index-pullback} is activated
+for \(\mathscr I^-\): the incoming indefinite directions are genuine
+globally populated radial channels and cannot be removed by finitely many
+global charge conditions, a finite-dimensional residual quotient, or
+deletion of finitely many exceptional frequencies.
+
+This is a one-sided global connection and flux theorem, not yet a complete
+all-frequency scattering theorem.  The real cell certified below determines
+the rank of the outgoing \(\mathscr I^+\) reflection block \(T_+\), and
+analyticity determines it away from a locally finite positive-real
+exceptional set.  The locations and possible existence of those isolated
+reflection zeros remain open, as do the entries of \(T_+\), the reflection
+amplitudes,
+non-real complex-frequency poles, total canonical energy, a particle norm, CPT
+positivity, time-domain stability, or invariance under unrestricted radial
+or corner improvements of the presymplectic potential.
+It does exclude a future-horizon-regular solution with zero incoming
+\(\mathscr I^-\) trace, and hence excludes purely outgoing real-frequency
+axial modes and real-axis incoming spectral singularities for every
+\(\omega>0\).
+
+There is also a scoped complex-frequency result.  The repository phase is
+\(e^{+i\omega t}\), so exponential growth corresponds to
+\(\operatorname{Im}\omega<0\).  A zero of either reduced incoming Jost
+coefficient in that half-plane would produce an \(L^2(dr_*)\) mode of
+\[
+ -D_{r_*}^2+V_s,\qquad s=1,2,
+\]
+with eigenvalue \(\omega^2\).  Both displayed potentials are nonnegative.
+Self-adjointness excludes a nonreal eigenvalue when
+\(\operatorname{Re}\omega\ne0\), and nonnegativity excludes
+\(\omega^2<0\) on the imaginary axis.  The exact inclusion, quotient, and
+master maps preserve the future-horizon-regular and pure-outgoing germ
+classes throughout that half-plane.  Successive quotient elimination
+therefore proves that the complete non-split six-state axial \(\ell=2\)
+system has no growing separated mode.  Equivalently, its intrinsic factor
+Evans product
+\[
+ {\cal E}_{\rm reg}(\omega)
+ =A_{{\rm in},2}(\omega)^2A_{{\rm in},1}(\omega)
+\]
+is zero-free for \(\operatorname{Im}\omega<0\).  This is a separated-mode
+spectral no-growth theorem, not time-domain boundedness, decay,
+completeness, or a full PDE stability theorem.  The frame events at
+\(\omega=i/4,i/2,i\) lie in the temporally damped half-plane in this
+convention and remain unclassified by the energy argument.
+
+The non-split spin-two extension can also be extracted exactly in local
+Regge--Wheeler companion frames.  Its rational \(2\times2\) source matrix
+\(\mathcal E_{\rm RW}\) has rank one, but it is not a pointwise scalar
+multiple of \(\partial_\omega A_{\rm RW}\).  More strongly, a putative
+global rational-gauge identity
+\[
+ \mathcal E_{\rm RW}
+ =q(\omega)\partial_\omega A_{\rm RW}
+ +B'+BA_{\rm RW}-A_{\rm RW}B
+\]
+has trace residue \(4iq\) at \(r=2\), whereas a rational derivative has
+zero residue.  It therefore forces \(q=0\) in that gauge class.  This does
+not exclude endpoint-analytic logarithmic spectral-phase gauges.
+
+At a simple damped spin-two zero, the invariant scattering datum remains
+\([b]\in\mathcal O/(A_{{\rm in},2})\), where \(b\) is the off-diagonal
+entry between the repeated spin-two factors in the triangular connection.
+The congruence
+\(b\equiv qA_{{\rm in},2}'\pmod{A_{{\rm in},2}}\) with unspecified \(q\)
+is not predictive: \([A_{{\rm in},2}']\) is a unit, so such a class
+\([q]\) always exists.  Selecting the local Smith type requires a certified
+QNM and adjoint germ together with a convergent Fredholm pairing; no
+nonzero extension resonance is promoted here.
+
+\begin{proposition}[Local QNM Smith dichotomy]
+\label{prop:axial-qnm-smith-dichotomy}
+Let \(\omega_n\) be a simple zero of the spin-two incoming Jost
+coefficient \(a=A_{{\rm in},2}\), and suppose the spin-one coefficient
+\(f=A_{{\rm in},1}\) is nonzero there.  After analytic elimination of the
+spin-one factor, the local connection is equivalent to
+\[
+ \begin{pmatrix}a&b\\0&a\end{pmatrix}.
+\]
+If \([b]\ne0\) in \(\mathcal O_{\omega_n}/(a)\), its Smith valuations are
+\((0,2)\): the resonance has one root vector, a length-two chain, and a
+second-order pole of the inverse connection matrix.  A second-order pole of
+the full differential resolvent is a conditional corollary once the physical
+QNM boundary problem is realized as the corresponding analytic Fredholm
+pencil.  If \([b]=0\), the valuations are \((1,1)\): there are two independent
+root vectors and only simple poles of the inverse connection matrix.
+
+More explicitly, write \(z=\omega-\omega_n\),
+\(a=\alpha_n z+O(z^2)\), and \(b=\beta_n+O(z)\).  When
+\(\beta_n\ne0\), the double-pole coefficient is
+\[
+ P_{-2}=-\frac{\beta_n}{\alpha_n^2}E_{12},
+\]
+and the generalized root coefficient is controlled by
+\(\kappa_n=\beta_n/\alpha_n\).
+
+At the resonant frequency the full connection has the exact minor
+\[
+ \Delta_n=
+ \det T_-[\{1,3\},\{2,3\}]
+ =b(\omega_n)A_{{\rm in},1}(\omega_n).
+\]
+Since the spin-one factor is a unit,
+\[
+\beta_n\ne0
+\Longleftrightarrow \Delta_n\ne0
+\Longleftrightarrow \operatorname{rank}T_-(\omega_n)=2;
+\]
+the zero-class branch has rank one.  This supplies a direct validated-minor
+test of the binary Smith case without first constructing an adjoint germ.
+The chosen minor is tied to the normalized triangular factor frame.
+Invariantly, the second Fitting ideal generated by all \(2\times2\) minors
+is the unit ideal in the nonzero class and \((a)\) in the zero class; the
+full Smith valuations are therefore \((0,0,2)\) and \((0,1,1)\),
+respectively.
+
+Under compatible endpoint normalizations the selector is the invariant
+Fredholm overlap
+\[
+ \alpha_n=\left\langle\widetilde u_n,\,
+ \partial_\omega L_{\rm RW}(\omega_n)u_n\right\rangle,\qquad
+ \beta_n=
+ \left\langle\widetilde u_n,\,
+ \mathcal E_{\rm RW}(\omega_n)u_n\right\rangle,
+ \qquad
+ [b]\ne0\ \Longleftrightarrow\ \beta_n\ne0 .
+\]
+For an endpoint-preserving analytic triangular change,
+\(\mathcal E_{\rm RW}\mapsto
+\mathcal E_{\rm RW}+L_{\rm RW}Q-QL_{\rm RW}\), its change in the overlap is
+\[
+ \left\langle\widetilde u_n,(L_{\rm RW}Q-QL_{\rm RW})u_n\right\rangle
+ =
+ \left\langle L_{\rm RW}^\dagger\widetilde u_n,Qu_n\right\rangle
+ -\left\langle\widetilde u_n,QL_{\rm RW}u_n\right\rangle=0.
+\]
+Thus \(\beta_n\) represents the intrinsic extension class.  The present
+certificate proves this dichotomy and invariance, but does not evaluate
+\(\beta_n\) at any physical QNM.
+
+More precisely, on any analytic Fredholm realization for which the repeated
+spin-two operator has block form
+\[
+ \mathbb L(\omega)=
+ \begin{pmatrix}L(\omega)&\mathcal E(\omega)\\0&L(\omega)\end{pmatrix},
+\]
+the exact inverse identity gives
+\[
+ \mathbb L(\omega)^{-1}
+ =
+ -\frac{\beta_n}{\alpha_n^2}
+ \frac{1}{(\omega-\omega_n)^2}
+ \begin{pmatrix}
+ 0&u_n\otimes\widetilde u_n\\0&0
+ \end{pmatrix}
++O((\omega-\omega_n)^{-1}).
+\]
+Hence \(\beta_n\ne0\) implies a genuine second-order pole of that full
+differential resolvent.  Generic sources with nonzero adjoint-QNM projection
+then excite a \(t e^{i\omega_n t}\) term.  The analytic Fredholm realization
+of the physical QNM boundary problem is not constructed here.
+\end{proposition}
+
+\begin{proposition}[No Schwarzschild-parameter trivialization]
+\label{prop:axial-qnm-no-parameter-trivialization}
+Reissue the axial spin-two Regge--Wheeler companion
+\(A_{\rm RW}(r,\omega;M)\) with dimensionful areal radius \(r\), frequency
+\(\omega\), and Schwarzschild mass \(M\).  If its rational extension source
+admits
+\[
+ \mathcal E_{\rm RW}
+ =q_\omega\partial_\omega A_{\rm RW}
+ +q_M\partial_M A_{\rm RW}
+ +D_AB,\qquad
+ D_AB=B'+BA_{\rm RW}-A_{\rm RW}B,
+\]
+then the horizon and infinity trace residues require
+\[
+ q_\omega+\omega q_M=0.
+\]
+At \(M=1\), however,
+\[
+ \partial_MA_{\rm RW}-\omega\partial_\omega A_{\rm RW}
+ =D_A\!\left(-rA_{\rm RW}-\operatorname{diag}(0,1)\right).
+\]
+Hence every residue-compatible mass/frequency parameter contribution is
+rationally exact.  Thus the mixed parameter ansatz reduces to the pure
+rational-coboundary question addressed next; it supplies no independent
+Schwarzschild-family trivialization.
+\end{proposition}
+
+The proposition by itself does not decide whether \(\mathcal E_{\rm RW}\)
+is a pure rational \(D_A\)-coboundary, and it does not evaluate
+\(\beta_n\).  It excludes the direct interpretation of a future generalized
+resonance as \(\partial_Mu_n\), \(\partial_\omega u_n\), or their
+residue-compatible combination.  Cosmological-constant variation requires a
+separately certified Schwarzschild--(A)dS boundary problem.
+
+\begin{proposition}[Projective cocycle of the spin-two self-extension]
+\label{prop:axial-qnm-projective-cocycle}
+Put the scalar Regge--Wheeler factor in Liouville form
+\[
+ Ly=(D^2+U)y=0,\qquad
+ D=\frac{r-2}{r}\partial_r,\qquad
+ U=\omega^2-\frac{6(r-2)(r-1)}{r^4}.
+\]
+Elimination of the auxiliary component from the repeated spin-two
+extension gives
+\[
+ Lx=(s_1D+s_0)y.
+\]
+The scalar
+\[
+ {\cal I}=s_0-\frac12Ds_1
+\]
+transforms under every rational triangular companion-frame change as
+\[
+ {\cal I}\longmapsto {\cal I}-\frac12{\cal K}_Uq,\qquad
+ {\cal K}_U=D^3+4UD+2D(U).
+\]
+Hence it defines a projective class
+\[
+ [{\cal I}]\in
+ \mathbb Q(i,\omega)(r)\big/{\cal K}_U\mathbb Q(i,\omega)(r).
+\]
+For the action-derived extension this class is nonzero over the generic
+rational field.  A declared pole reduction gives the representative
+\[
+ \boxed{
+ {\cal I}_{\rm red}
+ =\frac{i(r-2)(2r\omega^2+3\omega^2+12)}
+ {5r^4\omega}.}
+\]
+The local pole analysis makes the rational gauge ansatz exhaustive:
+after removal of the order-four apparent pole at \(r=2i/\omega\), only
+\[
+ \frac{c_{-2}}{r^2}+\frac{c_{-1}}r+c_0
+\]
+can remain.  The exact coefficient system has rank three and augmented
+rank four.  Thus no rational gauge annihilates the class.
+
+Moreover, with \(f=(r-2)/r\),
+\[
+ [{\cal I}]\ne q(\omega)[-f/r^2]
+\]
+for every generic rational \(q\): the corresponding coefficient system
+has rank four and augmented rank five.  The axial extension is therefore
+neither a physical Schwarzschild-parameter tangent nor the natural
+algebraic continuation in \(\ell(\ell+1)\).
+
+The left-null inconsistency witnesses also make the possible specialization
+locus finite.  Rational splitting is excluded whenever
+\[
+ \omega\ne0,\quad \omega\ne i,\quad \omega^2\ne3,
+\]
+while angular proportionality is excluded whenever
+\[
+ \omega\ne0,\quad \omega\ne i,\quad \omega^2\ne-4.
+\]
+No splitting or nonsplitting conclusion is inferred at the excluded or
+witness-zero specializations.
+\end{proposition}
+
+Equivalently, the repeated block defines an intrinsic class
+\[
+ e_{\rm Bach}\in
+ \operatorname{Ext}^1_{\mathbb Q(i,\omega)(r)[D]}
+ (M_{\rm RW},M_{\rm RW}),
+\]
+whose projective image is \([{\cal I}]\).  The results above show that this
+generic class is not the jet of the frequency, Schwarzschild-mass, or
+angular-barrier families.
+
+\begin{proposition}[Intrinsic deformation jet and contour selector]
+\label{prop:axial-qnm-intrinsic-jet}
+Let \(S=s_1D+s_0\) be the scalar source of the repeated spin-two block and
+introduce the auxiliary family
+\[
+ L_\tau=L+\tau S.
+\]
+The equations \(Ly=0\) and \(Lx+Sy=0\) are exactly the first jet of
+\(L_\tau(y+\tau x)=0\) at \(\tau=0\).  Over the dual numbers, multiplication
+by \(a+\epsilon b\) in the ordered column basis \((\epsilon,1)\) is
+\[
+ \begin{pmatrix}a&b\\0&a\end{pmatrix}.
+\]
+More generally, for
+\[
+ C(\tau)=\begin{pmatrix}a(\tau)&d(\tau)\\0&f\end{pmatrix},
+ \qquad f'(0)=0,
+\]
+the partial jet in the ordered basis
+\((\epsilon\,{\rm spin}\text{-}2,{\rm spin}\text{-}2,{\rm spin}\text{-}1)\)
+is
+\[
+ J(C)=
+ \begin{pmatrix}
+ a&a_\tau&d_\tau\\
+ 0&a&d\\
+ 0&0&f
+ \end{pmatrix}_{\tau=0}.
+\]
+On this partially dualized triangular category,
+\[
+ J(C_1C_2)=J(C_1)J(C_2),\qquad
+ J(C^{-1})=J(C)^{-1}.
+\]
+The exact factor gauge realizes this structure locally.  Use the state order
+\[
+ (x_0,x_1,z)
+ =({\rm metric\ RW},{\rm carrier\ RW},L_x).
+\]
+Direct transformation of the complete six-state connection gives
+\[
+ \frac{d}{dr}
+ \begin{pmatrix}x_0\\x_1\\z\end{pmatrix}
+ =
+ \begin{pmatrix}
+ A&E&C\\
+ 0&A&D\\
+ 0&0&A_x
+ \end{pmatrix}
+ \begin{pmatrix}x_0\\x_1\\z\end{pmatrix},
+ \qquad
+ E=USJ,\qquad C=USN,
+\]
+where both \(E\) and the newly extracted mixed block \(C\) have rank one.
+In fact the statement is stronger:
+\[
+ [E\ C]=US[J\ N],\qquad \operatorname{rank}[E\ C]=1.
+\]
+Writing the rank-one matrix \(US=\ell\rho\), the complete forcing of the
+upper spin-two row is the single scalar channel
+\[
+ \ell\,\sigma,\qquad \sigma=\rho(Jx_1+Nz).
+\]
+This is precisely the spin-two-row partial jet of
+\[
+ {\cal B}(\tau)=
+ \begin{pmatrix}A+\tau E&D+\tau C\\0&A_x\end{pmatrix},
+\]
+with \(z\) held \(\tau\)-independent.  It is not the full jet of all four
+base states, which would be eight-dimensional.
+Accordingly, if the four-state fundamental map is
+\[
+ \Phi_4(\tau)=
+ \begin{pmatrix}P(\tau)&Q(\tau)\\0&R\end{pmatrix},
+\]
+then every interior six-state fundamental map has the exact form
+\[
+ \Phi_6=
+ \begin{pmatrix}
+ P&\dot P&\dot Q\\
+ 0&P&Q\\
+ 0&0&R
+ \end{pmatrix}_{\tau=0},
+ \qquad
+ \det\Phi_6=(\det P)^2\det R.
+\]
+Consequently a typed identity \(T_\pm=J(C_\pm)\) would imply
+\[
+ T_+T_-^{-1}=J(C_+C_-^{-1})
+\]
+without reconstructing the cancellation between the jet coefficients after
+transport.  This last reading requires both endpoint frames to be induced
+by the same analytic \(\tau\)-family; that compatibility and the resulting
+typed \(T_+\) are not established here.
+An exact endpoint audit nevertheless closes the base-germ part of this
+requirement.  After explicit scalar rescalings and the common permutation
+\((R,S,E)\mapsto(E,R,S)\), the metric column at the future horizon and at
+both null infinities is the \(\epsilon\)-copy of the same scalar RW germ as
+the carrier base column; the spin-one normalization can be held
+\(\tau\)-constant.  The audit also recomputes the outgoing factor line.
+The endpoint audit itself leaves the differentiated recurrences and the
+upper-triangular shears \(K_H,K_-,K_+\) open.  A dedicated moving-phase
+successor answers the first horizon question.  In the exact factor gauge,
+\[
+ R_H=\begin{pmatrix}0&0\\[1mm]3/2&-1-4i\omega\end{pmatrix},
+ \qquad E_{-1}=0,
+\]
+so the perturbation of the selected regular exponent is
+\[
+ \dot\lambda_H
+ =\frac{\ell_H^TE_{-1}r_H}{\ell_H^Tr_H}=0.
+\]
+There is therefore no intrinsic \(\tau\log(r-2)\) term.  Five coupled
+base/tangent Frobenius orders have been constructed in the shared
+\(\omega\)-Taylor/dual-\(\tau\) arithmetic.  Exact Cauchy and pivot
+majorants bound the omitted base and tangent tails by
+\(3.5490\times10^{-36}\) and \(1.1768\times10^{-34}\) at
+\(\rho_0=2^{-22}\).  Across the first reduced pure-spin-two panel, the
+direct repeated-block and dual-number transports have equal Taylor
+coefficients and overlapping tail-enclosed output hulls.  The spin-one
+Levelt initializer, mixed column, further panels, and hence the endpoint
+shear \(K_H\), remain open.
+Thus, conditional on analytic endpoint-compatible scalar Jost frames, the
+off-diagonal incoming coefficient is
+\[
+ b(\omega)=
+ \left.\partial_\tau a(\omega,\tau)\right|_{\tau=0}.
+\]
+For a simple zero branch \(a(\omega_n(\tau),\tau)=0\),
+\[
+ \omega_n'(0)
+ =-\frac{b(\omega_n)}{a'(\omega_n)}
+ =-\frac{\beta_n}{\alpha_n}
+\]
+under the compatible Fredholm normalization.
+
+Let \(D_\omega\) be a spectral disk whose boundary is zero-free and contains
+distinct simple zeros \(\omega_1,\ldots,\omega_N\).  The contour moments
+\[
+ K_k(D_\omega)=\frac1{2\pi i}
+ \oint_{\partial D_\omega}
+ \omega^k\frac{b(\omega)}{a(\omega)}\,d\omega
+\]
+obey
+\[
+ K_k(D_\omega)
+ =\sum_{j=1}^N
+ \omega_j^k\frac{b(\omega_j)}{a'(\omega_j)}.
+\]
+They are invariant under zero-free analytic endpoint renormalizations
+\(a\mapsto ua\).  In particular, if \(N=1\), then
+\[
+ K_0(D_\omega)=\frac{\beta_n}{\alpha_n};
+\]
+a certified nonzero contour moment would therefore select the defective
+Smith branch without evaluating the unknown root itself.
+
+For a cluster of \(N\) distinct simple zeros, the first \(N\) moments form a
+complete coordinate system for
+\(\mathscr A_D=\mathcal O(D_\omega)/(a)\).  If
+\[
+ P_D(z,\tau)=\prod_{j=1}^N(z-\omega_j(\tau)),
+ \qquad
+ Q_D(z)=\left.\partial_\tau P_D(z,\tau)\right|_{\tau=0},
+\]
+then
+\[
+ Q_D(\omega_j)
+ =\frac{b(\omega_j)}{a'(\omega_j)}P_D'(\omega_j).
+\]
+Consequently \(Q_D\not\equiv0\) selects at least one defective QNM in the
+cluster, while
+\(\operatorname{Res}(P_D,Q_D)\ne0\) selects every QNM in the cluster as
+defective.  Both polynomials can in principle be reconstructed from the
+ordinary argument-principle moments and the extension moments, without
+locating the individual roots.
+
+The intrinsic organizing element is the QNM-velocity class
+\[
+ \boldsymbol\kappa_D=[b]\,[a']^{-1}\in\mathscr A_D.
+\]
+The simple-root hypothesis makes \([a']\) a unit, and evaluation sends this
+class to
+\[
+ \left(
+ \frac{b(\omega_1)}{a'(\omega_1)},\ldots,
+ \frac{b(\omega_N)}{a'(\omega_N)}
+ \right).
+\]
+Multiplication by \(\boldsymbol\kappa_D\) therefore has rank equal to the
+number of defective QNMs in the cluster.  In the monomial basis define
+\[
+ G=(S_{p+q}),\quad G_1=(S_{p+q+1}),\quad
+ H=(K_{p+q}),\quad H_1=(K_{p+q+1}),
+\]
+where \(S_k=(2\pi i)^{-1}\oint\omega^ka'/a\,d\omega\).  Then
+\[
+ M_\omega=G^{-1}G_1,\qquad M_\kappa=G^{-1}H
+\]
+commute, obey
+\[
+ H_1=G_1G^{-1}H,
+\]
+and have joint eigenpairs
+\[
+ \left(\omega_j,\frac{b(\omega_j)}{a'(\omega_j)}\right).
+\]
+These are exact conditional cluster identities, not evaluated QNM data.
+
+Equivalently, the Cauchy transform
+\[
+ R_D(z)=\frac1{2\pi i}
+ \oint_{\partial D_\omega}
+ \frac{b(\omega)}
+ {(z-\omega)a(\omega)}\,d\omega
+ =\sum_{j=1}^N
+ \frac{\beta_j/\alpha_j}{z-\omega_j}
+\]
+has poles precisely at the defective QNMs; semisimple QNMs are removable.
+Its reduced denominator is
+\[
+ \frac{P_D}{\gcd(P_D,Q_D)}.
+\]
+If \(H_N=(K_{p+q})_{p,q=0}^{N-1}\), then
+\[
+ H_N=V\,
+ \operatorname{diag}\!\left(
+ \frac{\beta_1}{\alpha_1},\ldots,\frac{\beta_N}{\alpha_N}
+ \right)V^T,
+\]
+where \(V\) is the cluster Vandermonde matrix.  Thus
+\(\operatorname{rank}H_N\) is exactly the number of defective QNMs.
+A generic Loewner realization of \(R_D\) has the same rank, and its shifted
+pencil has precisely the defective QNM frequencies as finite generalized
+eigenvalues.
+\end{proposition}
+
+\begin{proposition}[Projective reduction of the intrinsic QNM shift]
+\label{prop:axial-qnm-projective-shift}
+Let \(Y_H(\omega,\tau)\) and \(Y_\infty(\omega,\tau)\) be analytic selected
+spin-two endpoint lines transported to a common interior point.  In a
+projective chart valid on a spectral domain, write
+\[
+ Y_\star=\gamma_\star\binom{1}{v_\star},
+ \qquad
+ \delta=v_\infty-v_H .
+\]
+Then the scalar Evans coefficient factors as
+\[
+ a(\omega,\tau)=g(\omega,\tau)\delta(\omega,\tau),
+ \qquad g=\gamma_H\gamma_\infty,
+\]
+up to the fixed orientation sign.  Whenever the chart is valid,
+\(g\) is analytic and nonzero.  At every simple QNM,
+\[
+ \frac{\partial_\tau a}{\partial_\omega a}
+ =
+ \frac{\partial_\tau\delta}{\partial_\omega\delta}.
+\]
+Moreover, on every contour contained in the chart domain,
+\[
+ \oint\omega^k\frac{\partial_\omega a}{a}\,d\omega
+ =
+ \oint\omega^k\frac{\partial_\omega\delta}{\delta}\,d\omega,
+ \qquad
+ \oint\omega^k\frac{\partial_\tau a}{a}\,d\omega
+ =
+ \oint\omega^k\frac{\partial_\tau\delta}{\delta}\,d\omega .
+\]
+Thus the QNM count, the local velocity
+\(\kappa_n=\delta_\tau/\delta_\omega\), and all finite-cluster extension
+moments depend only on the two transported projective endpoint lines.
+
+For a companion system \(Y_x=A Y\), the chart
+\(v=Y_2/Y_1\) obeys
+\[
+ v_x=A_{21}+(A_{22}-A_{11})v-A_{12}v^2,
+\]
+while \(v_\tau\) and \(v_\omega\) obey the corresponding linearized
+inhomogeneous equations.  A fixed \(GL(2,\mathbb C)\) chart change acts by a
+M\"obius transformation and preserves holomorphic parameter dependence.
+Consequently amplitude transport is unnecessary for the Evans/Smith
+selector; it is required only later for physically normalized \(T_+\) and
+fluxes.
+\end{proposition}
+
+The auxiliary \(\tau\) is a bookkeeping coordinate on the intrinsic
+deformation class, not a physical parameter or a changed fundamental
+theory.  The analytic complex-frequency Jost frames and the contour moment
+have not been constructed here.  One exact contour prerequisite is now
+available: on the rational radius-\(0.025\) seed disk, the horizon recurrence
+divisor
+\[
+ (n+1)(n+1+4i\omega)
+\]
+and the infinity formal-recurrence divisor
+\[
+ 2i\omega(n+1)
+\]
+are uniformly nonzero, and all declared frame events and the real-exterior
+moving divisor \(r\omega-2i\) are excluded.  The infinity series still lacks
+a direct recurrence remainder.  A separate exterior-complex-scaled Volterra
+certificate now supplies a uniform scalar outgoing initializer on the same
+disk, but not yet the intrinsic-deformation tangent column, inward matching,
+an Evans boundary, or a root count.  Likewise, differentiating a scalar flux
+identity requires an additional real/self-adjoint realization of
+\(L_\tau\), which is not supplied by the local algebra.
+
+The operator \({\cal K}_U\) is the symmetric-square Regge--Wheeler
+operator: if \(y_1,y_2\in\ker L\), then
+\[
+ {\cal K}_U(y_1^2)
+ ={\cal K}_U(y_1y_2)
+ ={\cal K}_U(y_2^2)=0.
+\]
+After an endpoint-admissible analytic gauge, the complete off-diagonal
+spin-two connection is consequently determined by the three periods
+\[
+ \int_\Gamma{\cal I}y_1^2\,dr_*,
+ \qquad
+ \int_\Gamma{\cal I}y_1y_2\,dr_*,
+ \qquad
+ \int_\Gamma{\cal I}y_2^2\,dr_*.
+\]
+At a simple QNM the Smith selector is the rapid-decay period against
+\(y_n^2\), together with the fixed endpoint-normalization term.  Rational
+nontriviality does not force that particular period to be nonzero, so this
+proposition does not evaluate \(\beta_n\), select a QNM Smith branch, or
+establish a double pole.
+
+\begin{theorem}[Exact future-horizon flux]
+\label{thm:axial-future-horizon-gram}
+For axial \(\ell=2\) and every real \(\omega>0\), the exact
+outward-oriented future-horizon Gram \(H_{\mathcal H^+}\), evaluated from
+the correlated Frobenius series and the action current, has rank three and inertia
+\[
+ \operatorname{inertia}H_{\mathcal H^+}=(1,2,0)
+ \qquad(\alpha_{\rm W}>0).
+\]
+Its metric/carrier spin-two kernel plane has inertia \((1,1,0)\), while the
+orthogonal unit spin-one quotient has exact norm
+\[
+ -\pi\alpha_{\rm W}\frac{32}{15\omega}.
+\]
+Neither \(H_{\mathcal H^+}\) nor \(-H_{\mathcal H^+}\) is positive
+semidefinite.
+\end{theorem}
+
+The all-positive-frequency extension follows from the symbolic recurrence:
+its residue eigenbasis and all factor-frame denominators are collision-free
+on \(\omega>0\), the three integer resonances have exact zero residual, and
+the omitted-head power count cannot change the Laurent constant.
+
+The oriented Stokes identity is therefore
+\[
+ H_{\mathcal H^+}
+ +T_+^\dagger G_+T_+
+ -T_-^\dagger G_-T_-=0.
+\]
+The horizon theorem independently reproduces the hyperbolic-spin-two plus
+negative-spin-one anatomy of the incoming endpoint.  Its indefiniteness
+also means that a semidefinite shortcut cannot determine
+\(\operatorname{rank}T_+\).
+
+\begin{theorem}[Transport-free one-sided pseudo-isometry]
+\label{thm:axial-transport-free-pseudo-isometry}
+On the pilot band the selected future-regular horizon family defines exact
+global ODE solutions.  Unique expansion in the certified six-column
+infinity basis defines the typed maps \(T_-\) and \(T_+\), without requiring
+their entries to be assembled at a common finite radius.  Exact radial
+current conservation, the null trace-limit interchange, wrong-endpoint
+suppression, and the outward horizon orientation give
+\[
+ H_{\mathcal H^+}
+ +T_+^\dagger G_+T_+
+ -T_-^\dagger G_-T_-=0
+\]
+on the complete future-regular three-space.  Since \(T_-\) is invertible,
+\[
+ R=T_+T_-^{-1},\qquad A=T_-^{-1},\qquad
+ \mathsf S=\binom RA
+\]
+satisfy
+\[
+ \mathsf S^\dagger
+ (G_+\oplus H_{\mathcal H^+})\mathsf S=G_-.
+\]
+In particular, \(\mathsf S\) is injective because \(A\) is invertible.
+\end{theorem}
+
+Normalize the
+incoming, outgoing, and horizon forms either to
+\[
+ J_\sigma=\operatorname{diag}(1,-1,-1)
+ \quad\hbox{or}\quad
+ J_0=\begin{pmatrix}0&1&0\\1&0&0\\0&0&-1\end{pmatrix}.
+\]
+The signature frame \(J_\sigma\) carries the invariant sign
+decomposition; the null frame \(J_0\) carries factor triangularity.  They
+must not be conflated.  Sylvester congruences to either common form exist,
+although their explicit matrices have not been computed.  In such
+normalized frames, with
+\[
+ R=\widehat T_+\widehat T_-^{-1},\qquad
+ A=\widehat T_-^{-1},\qquad
+ \mathsf S=\binom RA,
+\]
+one has
+\[
+ \mathsf S^\dagger(J\oplus J)\mathsf S=J,\qquad
+ D:=J-R^\dagger JR=A^\dagger JA.
+\]
+Thus \(D\) is nondegenerate with inertia \((1,2,0)\), and
+\(\mathsf S\) admits a noncanonical algebraic completion to \(U(2,4)\).
+The determinant is normalization-sensitive:
+\[
+ \det D=|\det\widehat T_-|^{-2}
+ =|A_{{\rm in},2}|^{-4}|A_{{\rm in},1}|^{-2}.
+\]
+Using the raw \(T_-\) without the endpoint normalizer ratio is incorrect.
+Equivalently, with the Krein adjoint \(M^\sharp=J^{-1}M^\dagger J\),
+the identity is
+\[
+ R^\sharp R+A^\sharp A=I.
+\]
+Because \(A\) is invertible, \(I-R^\sharp R\) is invertible and hence
+\(1\notin\sigma(R^\sharp R)\).  This does not exclude nonzero horizon
+waves of zero scalar flux: a nondegenerate indefinite horizon form still
+has a null cone.
+
+\begin{proposition}[Transport-free outgoing pullback test]
+\label{prop:axial-outgoing-pullback}
+In the raw horizon basis define
+\[
+ {\cal O}:=T_-^\dagger G_-T_- -H_{\mathcal H^+}.
+\]
+Then
+\[
+ {\cal O}=T_+^\dagger G_+T_+,\qquad
+ \det{\cal O}=\det(G_+)|\det T_+|^2.
+\]
+Since \(G_+\) is nondegenerate,
+\[
+ T_+\in GL(3,\mathbb C)
+ \quad\Longleftrightarrow\quad
+ \det{\cal O}\ne0.
+\]
+The zero/nonzero decision is invariant under every typed horizon and
+incoming basis change.
+\end{proposition}
+
+The following real-cell certificate decides this criterion without
+assembling either raw matrix.
+
+\begin{theorem}[Full outgoing population on a real-frequency cell]
+\label{thm:axial-outgoing-population-cell-half}
+For Schwarzschild \(M=1\), axial \(\ell=2\), and every
+\[
+ 0.49995\le\omega\le0.50005,
+\]
+validated scalar transport with one real Arb frequency ball gives the
+uniform bounds
+\[
+ |A_{{\rm out},2}|>0.011326240435330133,\qquad
+ |A_{{\rm out},1}|>0.14680548488890086.
+\]
+The exact endpoint-compatible RW/RW/spin-one filtration then implies
+\[
+ \ker T_+(\omega)=0,\qquad T_+(\omega)\in GL(3,\mathbb C)
+\]
+throughout the declared cell.  Consequently the complete
+three-dimensional outgoing trace space is populated on a nonzero
+real-frequency interval, and
+\[
+ \det{\cal O}(\omega)\ne0,\qquad
+ \operatorname{inertia}{\cal O}(\omega)=(1,2,0)
+\quad(\alpha_{\rm W}>0).
+\]
+\end{theorem}
+
+\begin{proof}
+If a future-horizon-regular datum belongs to \(\ker T_+\), its outgoing
+spin-one quotient vanishes.  The spin-one strict bound forces that scalar
+quotient solution to vanish, leaving the carrier spin-two subfiltration.
+Its outgoing quotient then vanishes, and the spin-two strict bound removes
+it.  The remaining metric spin-two solution has the same nonzero scalar
+coefficient and therefore vanishes.  Thus the kernel is zero.  Since
+\(T_+\) is \(3\times3\), it is invertible.  The conclusions for \({\cal O}\)
+follow from Proposition~\ref{prop:axial-outgoing-pullback} and Sylvester
+congruence.
+\end{proof}
+
+The frequency dependence is enclosed directly in the coefficient balls and
+accumulated into the spatial defect at every Taylor step; the theorem is not
+an inference from finitely many sampled frequencies.  In the intrinsic
+factor normalization the scalar diagonal product obeys uniformly
+\[
+ |A_{{\rm out},2}|^2|A_{{\rm out},1}|
+ >0.00001883275407012474144974643389146.
+\]
+No raw six-state determinant lower bound is inferred, because the endpoint
+frame units have not been numerically normalized.  An older raw point
+calculation gives \(\det{\cal O}\simeq2.38117\), inertia \((1,2,0)\), and
+minimum absolute eigenvalue \(0.0298\); it remains explicitly classified as
+unvalidated numerical evidence and is not used in the theorem.
+An explicit \(T_+\) remains useful for amplitudes and an independent
+end-to-end audit, but is no longer a prerequisite for the abstract
+pseudo-isometry or the outgoing-rank test.  A three-parameter
+\((\alpha,\gamma,\mu)\) reduction of the null-frame extension entries also
+remains open.
+
+\begin{corollary}[Generic and band-limited outgoing completeness]
+\label{cor:axial-generic-outgoing-completeness}
+Assume the standard holomorphic dependence of the selected scalar Jost
+coefficients and typed factor connection on connected complex
+neighbourhoods of the positive real axis, with the threshold
+\(\omega=0\) excluded.  Let
+\[
+ Z_+=\{\omega>0:A_{{\rm out},2}(\omega)A_{{\rm out},1}(\omega)=0\}.
+\]
+Then \(Z_+\) is locally finite and
+\[
+ T_+(\omega)\in GL(3,\mathbb C)
+ \qquad(\omega\in(0,\infty)\setminus Z_+).
+\]
+Thus all three outgoing channels are populated on an open dense,
+full-measure subset of the positive real axis.
+
+On \(I_0=[0.49995,0.50005]\), multiplication by \(T_+(\omega)\) is a
+bounded isomorphism of \(L^2(I_0;\mathbb C^3)\).  Hence every
+square-integrable outgoing packet supported in \(I_0\) has a unique
+horizon-regular preimage.  The pointwise Stokes identity integrates to
+\[
+ \int_{I_0}x^\dagger G_-x\,d\omega
+ =
+ \int_{I_0}(Rx)^\dagger G_+(Rx)\,d\omega
+ +
+ \int_{I_0}(Ax)^\dagger H_{\mathcal H^+}(Ax)\,d\omega,
+\]
+where \(R=T_+T_-^{-1}\) and \(A=T_-^{-1}\).
+
+On every compact \(I\Subset(0,\infty)\), multiplication by \(T_+\) is
+injective with dense range.  It is a bounded isomorphism if
+\(I\cap Z_+=\varnothing\); if \(I\) contains an actual reflection zero,
+the range is dense and nonclosed.
+\end{corollary}
+
+\begin{proof}
+The cell theorem shows that neither scalar outgoing coefficient is
+identically zero.  Holomorphy makes each positive-real zero set locally
+finite, while the exact triangular determinant has only the diagonal zero
+divisor
+\[
+ \det T_+=\rho_+A_{{\rm out},2}^{\,2}A_{{\rm out},1},
+ \qquad \rho_+\ne0.
+\]
+Continuity and compactness then give a bounded inverse on \(I_0\), and the
+integrated identity follows from the pointwise Stokes theorem.
+
+For arbitrary compact \(I\), \(T_+\) is invertible almost everywhere.
+The multiplication operator and its adjoint consequently have zero kernel,
+so its range is dense.  If \(I\) meets \(Z_+\), continuity of the least
+singular value supplies unit vectors supported in shrinking neighbourhoods
+of a zero whose images tend to zero.  The multiplier is not bounded below,
+and its dense range cannot be closed.
+\end{proof}
+
+In the intrinsic factor normalization \(\rho_+=1\), the cell certificate
+also gives
+\[
+ |\det T_+|
+ =
+ |A_{{\rm out},2}|^2|A_{{\rm out},1}|
+ >
+ 1.8832754070124741\times10^{-5}.
+\]
+In any other typed raw frame the right-hand side is multiplied by the
+corresponding nonzero endpoint unit.  The diagonal inverse factors satisfy
+\[
+ |A_{{\rm out},2}^{-1}|<88.291,\qquad
+ |A_{{\rm out},1}^{-1}|<6.812.
+\]
+These are not bounds on the complete inverse: the uncomputed extension
+shears can still be large.  On any simply connected zero-free complex
+neighbourhood of the cell one may instead write
+\[
+ T_+=
+ \operatorname{diag}(a,a,f)
+ \begin{pmatrix}
+ 1&b/a&c/a\\
+ 0&1&d/a\\
+ 0&0&1
+ \end{pmatrix},
+ \qquad
+ a=A_{{\rm out},2},\quad f=A_{{\rm out},1}.
+\]
+The scalar diagonal therefore controls population and singularities, while
+the extension contributes a holomorphic unipotent shear.
+
+At an isolated pure spin-two reflection zero with
+\(m=\operatorname{ord}a\), \(q=\operatorname{ord}b\), and \(f\ne0\), the
+full local Smith valuations are
+\[
+ \bigl(0,\min(m,q),2m-\min(m,q)\bigr).
+\]
+For a simple zero this is \((0,0,2)\) when \(b(\omega_*)\ne0\) and
+\((0,1,1)\) when \(b(\omega_*)=0\).  At a pure spin-one zero of order \(n\)
+with \(a\ne0\), they are \((0,0,n)\).  At a simultaneous zero the complete
+classification is determined by
+\[
+ I_1=(a,b,c,d,f),\qquad
+ I_2=(a^2,ad,bd-ac,af,bf),\qquad
+ I_3=(a^2f).
+\]
+This classifies a reflection zero if one is found; it does not assert that
+such a positive-real exceptional frequency exists.
+
+For comparison, the Einstein problem admits a global finite-energy
+Schwarzschild scattering theory relating initial data and radiation spaces
+by Hilbert-space isomorphisms \cite{MasaoodScattering}.  Flat-space
+conformal-higher-spin scattering also admits conformal-gravity states beyond
+ordinary Einstein gravitons \cite{AdamoNakachTseytlin}; it does not construct
+the Schwarzschild Bach connection considered here.
+
+\subsection{Polar mixed finite line and its exceptional wall}
+
+On the maximal restriction-stable polar module, choose the ordered formal
+basis \((E,X_0,X_1,X_2)\).  The denominator-cleared current matrices at
+powers \(p=0,-1,-2\) are anti-Hermitian.  The \(p=0\) matrix has rank three
+and a one-dimensional mixed Einstein/additional radical.  If \(y\) spans
+that line, then
+\begin{equation}
+ y^\dagger N^{(-1)}y=0,
+\end{equation}
+while its first finite coefficient factors as
+\begin{equation}\label{eq:polar-q21-wall}
+ y^\dagger N^{(-2)}y=
+ C\,\omega^{51}\Lambda^3(\Lambda-2)^5P_6^2P_{20}
+ Q_{21}(\Lambda,\omega^2).
+\end{equation}
+The constant \(C\) is nonzero, and the exact sum-of-squares and resultant
+certificates show that \(P_6P_{20}\ne0\) for integer \(\ell\ge2\) and real
+\(\omega\ne0\).  Therefore the filtered line is generically nonradical.  At
+\(Q_{21}=0\) its deeper disposition remains open.
+
+Writing \(x=\widehat\omega^2>0\), the exact positive-root phase diagram is
+\begin{center}
+\begin{tabular}{@{}c c c@{}}
+\toprule
+Harmonic & positive \(x\)-roots & real nonzero \(\widehat\omega\)-roots\\
+\midrule
+\(\ell=2\) & 0 & 0\\
+\(\ell=3\) & 3 & 6\\
+\(4\le\ell\le10\) & 1 & 2\\
+\(11\le\ell\le40\) & 3 & 6\\
+\(\ell\ge41\) & 1 & 2\\
+\bottomrule
+\end{tabular}
+\end{center}
+At the legacy fixture \((\Lambda,x)=(6,9/25)\),
+\begin{equation}
+ Q_{21}(6,9/25)=
+ -\frac{174226120816040380076641138108451235935620694016}
+ {227373675443232059478759765625}\ne0.
+\end{equation}
+The previously recorded longer rational was \(Q_{21}(6,81/625)\), caused by
+squaring \(x\) twice; it was neither the fixture value nor a Hilbert norm.
+
+\begin{theorem}[Generic polar formal radial disposition]
+Away from the explicit \(Q_{21}\) wall, a one-dimensional mixed
+Einstein/additional polar line is finite through the nonintegrable layers and
+has nonzero first finite pairing.  Thus formal radial pairing finiteness does
+not canonically select a polar Einstein representative.
+\end{theorem}
+
+This theorem neither extends the terminal-only polar prefixes nor matches the
+mixed line to future-horizon-regular data.  In particular, the axial and
+polar infinity results do not identify a global solution admitted at both
+ends of the exterior.
+
+\subsection{Local Cauchy selection remains available}
+
+There is no no-go against local causal selection.  On the globally
+hyperbolic exterior with
+Cauchy surface \(\Sigma=\{t=\mathrm{const},\,r>2m\}\), the local Cauchy
+condition
+\begin{equation}
+ \psi|_\Sigma=0,
+ \qquad
+ \nabla_n\psi|_\Sigma=0
+\end{equation}
+propagates \(\psi=0\) in the axial sector unconditionally: the carrier
+operator equals \(\tfrac12\Box+C\!\circ\!(-)\) exactly there (the trace
+vanishes identically on the class), is normally hyperbolic, and its
+Bianchi constraint obeys the exact transport identity
+\(\nabla^a(L\psi)_{a\varphi}=\tfrac12\Box B_\varphi\).  In the polar
+sector the operator is identically traceless at the PDE level, the
+conformal direction is uncontrolled, and
+\(\psi_{\rm conf}(t^4\chi(r)P_2)\) is an exact nonuniqueness witness with
+vanishing Cauchy data; the certified conformal trace relation
+\(S(\psi_{\rm conf}(\Phi))=-3\Box\Phi\) then reduces any zero-data
+solution to the conformal-gauge orbit, so local Cauchy data selects the
+Einstein image exactly \emph{modulo conformal gauge} (and exactly on the
+traceless slice).  Dropping the normal-derivative datum is certified to
+fail by a time-odd mode witness.  The open physical questions are whether
+this restriction is preserved by nonlinear interactions and whether it
+follows from a differentiable asymptotic phase space rather than being
+imposed by hand.
+
+\section{Polar chain: composition, reach, current, and disposition}
+
+For polar \(\ell=2\) Regge--Wheeler-gauge perturbations, the trace variation
+\(\delta R\) need not vanish.  The axial formula acquires two universal
+trace terms.
+
+\begin{corollary}[Polar trace-coupled composition]
+On the certified polar \(\ell=2\) carrier,
+Proposition~\ref{prop:universal-ricci-bach} gives
+\begin{equation}\label{eq:polar-split}
+ \boxed{
+ \delta B_{ab}=\frac12\Box(\delta R_{ab})
+ +C_{acbd}(\delta R)^{cd}
+ -\frac16\nabla_a\nabla_b\delta R
+ -\frac1{12}g_{ab}\Box\delta R.}
+\end{equation}
+The Einstein polar kernel injects by \(\delta R_{ab}=0\), while the curvature
+image obeys a second-order trace-coupled Lichnerowicz system for
+\((\delta R_{ab},\delta R)\).
+\end{corollary}
+
+The polar chain is now certified through the same stations as the axial
+chain.  Four structural facts organise it.
+
+\emph{(i) Polar Einstein kernel.}  In the \(t\)-chart Regge--Wheeler polar
+gauge the traceless angular row of \(\delta R_{ab}\) equals
+\((H_0-H_2)/2\), forcing \(H_2=H_0\); the remaining rows reduce exactly to
+a two-dimensional first-order system \(dY/dr=M(r)Y\), \(Y=(K,H_1)\), with
+\(H_0\) algebraic.  In horizon-adapted variables \((K,BH_1)\) the ingoing
+residue spectrum is \(\{0,-4im\omega\}\), matching the axial
+Regge--Wheeler control.  A Schr\"odinger-form master scalar with
+\(\omega\)-free potential was \emph{not} found within the searched bounded
+rational ansatz classes; that anchor is recorded fail-closed open and
+nothing below depends on it.
+
+\emph{(ii) Conformal gauge and polar reach.}  The polar carrier system on
+the Bianchi-constrained \((\delta R_{ab},\delta R)\) is exactly three
+second-order equations in four radial functions: the operator
+\eqref{eq:polar-split} is identically traceless and divergence-free on the
+constraint surface, and the one-function underdeterminacy is linearized
+conformal gauge (\(h=\Phi g\) is pure gauge and
+\(\psi_{\rm conf}=\delta\mathrm{Ric}[\Phi g]\) annihilates every row for
+arbitrary \(\Phi\)); this direction is absent in the axial sector.  On the
+algebraic traceless slice the principal part diagonalises and the future
+horizon is a regular singular point with residue spectrum
+\(\{0,0,0,\,1-4im\omega,\,-1-4im\omega,\,-3-4im\omega\}\).  Quotienting the
+regular conformal-gauge direction leaves a \emph{two}-parameter physical
+ingoing-analytic polar carrier family at every
+\(\omega\in\R\setminus\{0\}\) --- the polar twin of the axial reach
+theorem.
+
+\emph{(iii) Polar current.}  The sphere-integrated action-derived polar
+bilinear obeys the same off-shell \(4\alpha\) identity.  On shell of the
+two-dimensional polar Einstein system every bilinear coefficient carries
+the factor \((\omega_1+\omega_2)\): the polar Einstein self-block is
+exactly null for conjugate pairs, as in the axial sector.  In addition the
+conformal direction \(\Phi g\) pairs to zero with an \emph{arbitrary}
+off-shell polar perturbation: the sphere-integrated polar presymplectic
+form needs no conformal quotient at the bilinear level.  Composition
+fixtures (\(\omega=3/5\), two interior radii, exact arithmetic) certify
+that the realized Ricci image closes on the full three-dimensional
+analytic carrier space --- every ingoing-analytic polar carrier mode lifts
+to a metric perturbation with all seven \(\delta\mathrm{Ric}\) rows
+verified --- and that the Einstein--carrier cross pairing is nonzero.
+Cross-pairing nonvanishing is representative-independent because the
+Einstein block is null; the positive carrier self-norms are certified at
+the canonical composed representatives only, and the
+representative-invariant sign theory is open.
+
+\emph{(iv) Polar disposition.}  The polar carrier's asymptotic symbol is
+\((\lambda^2-\omega^2)^3\): it propagates on the Einstein characteristics,
+with Coulomb log-phases and amplitude falloffs \(r^{-1},r^{-2},r^{-3}\)
+--- all decaying at real frequencies, strictly stronger than the axial
+\(r^0,r^{-1}\) case.  The tested endpoint diagnostics (future-horizon
+analyticity, leading outer symbol and falloff class) therefore fail to
+separate the polar Ricci carrier from the polar Einstein carrier, exactly
+as in the axial sector: the endpoint-nonselection result is now
+\emph{parity complete} at the \(\ell=2\) linear mode level.  As before,
+this is not a classification of all local differential boundary
+operators.
+
+\emph{(v) Polar formal infinity module.}  A later full-seven-row audit found
+that the shallow four-state master used in the earlier norm-selection table
+contained a source-zero direction that did not satisfy the complete Ricci
+system.  The restriction-stable replacement and its current filtration are
+summarized by Equation~\eqref{eq:polar-q21-wall}: a mixed Einstein/additional line is
+finite and generically nonradical.  The former power-enhanced/logarithmic
+fixture and parity-complete Einstein-only norm-selection theorem are therefore
+superseded.  The independently verified polar composition, horizon reach,
+Einstein isotropy, conformal degeneracy, and controlled horizon pairings in
+items (i)--(iv) are unaffected.
+
+\section{Horizon monodromy temperature}
+
+One statement of Hawking type is available at the
+\textsc{reduced-mode} level without any Lorentzian quantum construction.
+The surface gravity of the certified background is \(\kappa=1/(4m)\) with
+\(T_H=\kappa/2\pi=1/(8\pi m)\); the geometric-clock value agrees exactly
+with the certified normalized-frame first-law temperature.
+
+\begin{theorem}[Monodromy universality]
+Under the horizon continuation \(\rho\to e^{2\pi i}\rho\), every certified
+ingoing residue exponent of the four \(\ell=2\) mode families (axial and
+polar, Einstein and Ricci carrier) has continuation factor exactly \(1\) or
+\(e^{8\pi m\omega}=e^{\omega/T_H}\), and every family contains exponents
+with the nontrivial factor.
+\end{theorem}
+
+The integer parts of the exponents are monodromy-trivial; the universal
+\(-4im\omega\) part carries the thermal factor.  Hence the Boltzmann ratio
+\(|\beta/\alpha|^2=e^{-\omega/T_H}\) of the Damour--Ruffini continuation is
+identical for the Einstein and additional curvature families in both parity
+sectors: at the mode level, the additional carrier is thermally weighted at
+exactly the Hawking temperature, and by the certified nonzero mixed
+pairings it participates in the horizon flux with that weight.  This is a
+mode-level (\textsc{reduced-mode}) statement only: no Hadamard state,
+renormalized stress tensor, grey-body factor, luminosity, back-reaction, or
+\textsc{lorentzian-causal} Hawking theorem is claimed, and none exists in
+the repository.
+
+\section{Result ledger}
+
+{\footnotesize
+\begin{center}
+\begin{tabularx}{0.98\textwidth}{@{}Y Y Y@{}}
+\toprule
+Question & Certified answer & Scope\\
+\midrule
+Static Bach-flat black holes? & exact Laurent-family classification and
+three-horizon fixture; Einstein sheet corrected & local/static\\
+Differentiable energy? & residual-basic normalized generator, exact static
+first law & \(u\neq0\); signed orientation; \(f(J)\) freedom\\
+Einstein axial waves present? & yes; exact Regge--Wheeler injection &
+Schwarzschild, axial $\ell=2$\\
+Additional axial content? & nonzero second-order Ricci carrier; no canonical
+metric split & same\\
+Reach future horizon? & two analytic ingoing \(\psi\) amplitudes &
+nonzero-real-frequency carrier\\
+Carry current? & Einstein self-block exactly null; mixed/additional blocks
+nonzero in fixtures & exact identity plus three frequencies\\
+Selected by tested endpoints? & no: horizon and leading-symbol tests do not
+force \(\psi=0\) & not a general causal no-go\\
+Formal radial infinity? & On the complete axial $\ell=2$ pilot, repaired
+$X_0$ is finite in the fixed representative and under rate-zero Einstein
+shears, but oscillatory Einstein shears cross it divergently; the polar
+sector has a generic-angular mixed finite line & no representative-invariant
+axial quotient, phase space, norm, or global matching\\
+Null-endpoint wave-packet flux? & Exact three-dimensional axial
+$L^2$ trace spaces at both null ends; Grams have rank three, zero radical,
+and inertia $(1,2,0)$ for $\alpha_{\rm W}>0$ & $\ell=2$, $M=1$,
+$\omega\in[1/2,3/4]$\\
+Incoming global channels? & Exact RW/RW/spin-one triangular filtration and
+$T_-(\omega)\in GL(3,\mathbb C)$ for every real $\omega>0$; the full
+incoming indefinite trace is populated; on
+$0.49995\le\omega\le0.50005$, $T_+\in GL(3,\mathbb C)$ and the full
+outgoing trace is populated; analyticity gives outgoing population off a
+locally finite positive-real exceptional set and dense range on every
+compact positive-frequency band &
+outgoing amplitudes, absence or location of isolated reflection zeros,
+complete-pilot pointwise $T_+$ rank, non-real damped poles,
+time-domain stability, CPT and complete scattering open\\
+Polar exceptional wall? & generically nonradical finite line; exact wall
+$Q_{21}(\ell(\ell+1),\widehat\omega^2)=0$ with certified harmonic root counts &
+deeper filtration open on the wall\\
+Einstein--extra horizon pairing invariant? & Einstein block isotropic;
+nonzero cross pairing and full rank in controlled fixtures; extra self-pairing
+sign not invariant & axial $\ell=2$, real $\omega\neq0$\\
+Complex-frequency structure? & the complete non-split axial $\ell=2$
+system has no lower-half-plane growing separated mode in the
+$e^{+i\omega t}$ convention;
+the selected frames have damped-half-plane events at
+$\{i/4,i/2,i\}$ & time-domain PDE stability, regularized damped poles, and
+the quasinormal spectrum remain open\\
+Static ($\omega=0$) sectors? & log-classified: two-parameter log-free
+families both parities; polar Einstein variables degenerate &
+classification only; static composition open\\
+Polar composition? & exact trace-coupled identity; realized image closes on
+the full analytic carrier space & Schwarzschild, polar $\ell=2$\\
+Polar reach and current? & two physical ingoing amplitudes modulo conformal
+gauge; Einstein self-block null; nonzero mixed fixtures & conformal
+direction an exact off-shell degeneracy\\
+Polar disposition? & Einstein characteristics, all-decaying Coulomb
+asymptotics; endpoint nonselection parity complete & real frequencies,
+$\ell=2$\\
+Thermal weighting? & monodromy factor $e^{-\omega/T_H}$ universal across
+branches and parities & \textsc{reduced-mode}; no quantum state\\
+Stable/ringing? & not established & complex frequencies open; no QNM\\
+\bottomrule
+\end{tabularx}
+\end{center}
+}
+
+\section{What is not proved}
+
+The paper does not establish:
+\begin{itemize}
+\item a complete exterior initial-boundary well-posedness theorem: the
+      real-frequency incoming connection is now exact and invertible on the
+      entire positive real axis, and a real cell around \(\omega=1/2\)
+      has full outgoing population and a bounded \(L^2\) multiplier inverse;
+      analyticity gives generic positive-real outgoing population off a
+      locally finite exceptional set, but explicit outgoing amplitudes,
+      pointwise classification at the exceptional frequencies and the
+      complex-frequency connection remain unclassified;
+\item convergence or summability of the generic-\(\ell\) formal series,
+      axial \(X_2\), the deeper polar filtration on the \(Q_{21}=0\) wall,
+      the terminal-only polar prefixes, or a non-Einstein-background
+      Ricci-carrier composition;
+\item a canonical splitting of the Bach solution space, or complete metric
+      reconstruction from every Ricci-carrier solution;
+\item a representative-invariant sign theory for the carrier self-pairing
+      (the null-quotient pairing);
+\item time-domain boundedness, decay, completeness, quasinormal modes, or
+      ringdown waveforms: boundary d\'evissage excludes growing separated
+      modes of the complete non-split axial \(\ell=2\) system, but does not
+      prove a full PDE stability theorem; the damped-half-plane frame events
+      \(\{i/4,i/2,i\}\) are not classified as Evans zeros or nonzeros;
+\item a second-order physical-process first law or nonlinear horizon
+      dynamics;
+\item asymptotically flat conformal-gravity scattering with a complete
+      boundary phase space, metric/tetrad falloffs, gauge-audited charge
+      algebra, and horizon-to-infinity connection map: the scoped endpoint
+      \(L^2\) trace spaces and Grams do not by themselves supply these global
+      structures;
+\item Hawking states, particles, grey-body factors, luminosity, a quantum
+      BRST quotient, positivity, or unitarity: the monodromy temperature is
+      a mode-level continuation factor, not a quantum state construction.
+\end{itemize}
+In particular, the paper withdraws the broad phrase ``no local causal
+truncation.''  Zero Cauchy data for the Ricci carrier is a local linear
+truncation.  What is established is failure of the tested endpoint
+diagnostics to imply that truncation.
+
+\section{Certificate and reproduction ledger}
+
+The manuscript is an \textsc{outline-allowed}/\textsc{draft-allowed}
+integration of committed certificates at repository baseline recorded in
+its generated claim map.
+
+{\footnotesize
+\begin{longtable}{@{}p{0.30\textwidth}p{0.66\textwidth}@{}}
+\toprule
+Claim & Authoritative certificate\\
+\midrule
+Static spherical family &
+\cert{black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json}\\
+Normalized generator and first law &
+\cert{black_hole_programme/certificates/BH1A_NORMALIZED_GENERATOR.json}\\
+Linear spherical dynamical extension &
+\cert{black_hole_programme/certificates/BH1B_DYNAMICAL_EXTENSION.json}\\
+Axial operator and Ricci--Bach composition &
+\cert{black_hole_programme/certificates/BH2A_AXIAL_OPERATOR.json}\\
+Extra horizon reach &
+\cert{black_hole_programme/certificates/BH2A_HORIZON_REACH.json}\\
+Action-derived axial current &
+\cert{black_hole_programme/certificates/BH2A_FLUX_MATRIX.json}\\
+Mixed and extra horizon flux fixtures &
+\cert{black_hole_programme/certificates/BH2A_CROSS_FLUX.json}\\
+Axial causal disposition &
+\cert{black_hole_programme/certificates/BH2A_CAUSAL_DISPOSITION.json}\\
+Polar trace-coupled split &
+\cert{black_hole_programme/certificates/BH2B_POLAR_SPLIT.json}\\
+Polar carrier horizon reach (conformal gauge quotient) &
+\cert{black_hole_programme/certificates/BH2B_POLAR_REACH.json}\\
+Polar Einstein two-dimensional reduction &
+\cert{black_hole_programme/certificates/BH2B_POLAR_EINSTEIN.json}\\
+Polar Einstein self-block null; conformal degeneracy &
+\cert{black_hole_programme/certificates/BH2B_POLAR_FLUX.json}\\
+Polar composition and mixed flux fixtures &
+\cert{black_hole_programme/certificates/BH2B_POLAR_CROSS_FLUX.json}\\
+Polar causal disposition &
+\cert{black_hole_programme/certificates/BH2B_POLAR_DISPOSITION.json}\\
+Horizon monodromy temperature &
+\cert{black_hole_programme/certificates/BH4_HAWKING_MONODROMY.json}\\
+Static-sector log classification &
+\cert{black_hole_programme/certificates/BH2_OMEGA_ZERO.json}\\
+Generic-\(\ell\) axial Ricci-carrier recurrences (complete metric and current
+dispositions superseded) &
+\cert{black_hole_programme/phase2/general_l_axial_asymptotics/certificate.json}\\
+Complete axial six-dimensional module, repaired \(X_0\), and legacy
+\(E_0\) supersession &
+\cert{black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json};
+\cert{reports/phase3-black-hole-axial-complete-reconstruction-repair-2026-07-22.md}\\
+Exact axial null-endpoint wave-packet traces and action-derived flux Grams &
+\cert{black_hole_programme/phase3/axial_wavepacket_null_trace/certificate.json};
+\cert{black_hole_programme/phase3/axial_null_flux_gram/certificate.json};
+\cert{reports/phase3-black-hole-axial-null-flux-gram-2026-07-23.md}\\
+Axial RW/RW/spin-one filtration and invertible incoming connection &
+\cert{black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json};
+\cert{black_hole_programme/phase3/axial_incoming_connection_analytic/certificate.json};
+\cert{black_hole_programme/phase3/axial_incoming_extended_domain_audit/certificate.json};
+\cert{reports/phase3-axial-incoming-extended-domain-audit-2026-07-23.md};
+\cert{black_hole_programme/phase3/axial_boundary_devissage_no_growth/certificate.json};
+\cert{reports/phase3-axial-boundary-devissage-no-growth-2026-07-23.md};
+\cert{black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/future_horizon_outward_gram.json};
+\cert{black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/future_horizon_factor_quotient.json};
+\cert{black_hole_programme/phase3/axial_spin_two_scattering_extension_preflight/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_local_smith_dichotomy/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_parameter_deformation_cohomology_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_cocycle_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_intrinsic_deformation_jet_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_endpoint_germ_divisor_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_infinity_tail_gate_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_ecs_inverse_tortoise_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_ecs_inward_transport_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_ecs_tangent_initializer_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_ecs_panel_transport_preflight_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_ecs_riccati_transport_preflight_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_sensitivity_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v2/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v3/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_ecs_centered_projective_initializer_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_ecs_affine_projective_transport_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_horizon_projective_preflight_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_horizon_reciprocal_chart_transport_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_horizon_reciprocal_checkpoint_transport_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_two_sided_projective_mismatch_preflight_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_common_affine_export_contract_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_common_affine_evans_boundary_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_endpoint_frames_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_transport_preflight_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_moving_phase_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_spin_one_levelt_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_multipanel_preflight_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_projective_multipanel_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/pivot-switch-certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/pivot-switch-continuation-certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/pivot-switch-subdivision-retry-certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/pivot-switch-shared-remainder-preflight-certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/shared-remainder-multipanel-successor-certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/adaptive-chart-separation-certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/correlated-affine-export-audit-certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/correlated-affine-seed-successor-certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/correlated-multipanel-throughput-shortfall-certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/joint-kernel-serialization-timeout-certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_infinity_reduced_phase_preflight_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_multipanel_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_frame_completion_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_splus_common_remainder_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_resume_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_resume32_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_splus_step_ladder_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_joint_frame_r31_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_kplus_moving_phase_gate_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_moving_frame_r31_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk01_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk02_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk03_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v2/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v3/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v4/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v5/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v6/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v7/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v4/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v5/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v6/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v7/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_horizon_center_self_map_repair_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v8/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v9/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v10/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_panel98_contour_subdivision_repair_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v2/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v3/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v4/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v5/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v6a/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v6b/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v7/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v7b/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v8/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v9/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_254_261_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_262_269_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_270_277_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_278_285_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/phase_ledger_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_scalar_reflection_cell_half_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_outgoing_population_cell_half_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_transport_free_outgoing_defect_preflight_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/certificate.json}\\
+Polar restriction-stable module and invariant current filtration &
+\cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/certificate.json}\\
+Generic-\(\ell\) two-parity formal-infinity phase diagram &
+\cert{black_hole_programme/phase2/generic_l_synthesis/certificate.json}\\
+Local Cauchy truncation selects Einstein modulo conformal gauge &
+\cert{black_hole_programme/certificates/BH_LOCAL_EINSTEIN_CAUCHY_TRUNCATION.json}\\
+Horizon cross invariant and complex-frequency continuation &
+\cert{black_hole_programme/certificates/BH2_SYMBOLIC_CROSS_INVARIANT.json};
+\cert{black_hole_programme/certificates/BH3_ANALYTIC_CONTINUATION_GATE.json}\\
+\bottomrule
+\end{longtable}
+}
+
+Every certificate records a schema, exact or controlled-numerical payload,
+independent verifier, mutations or controls, command receipt, dependency
+tags, and missing claims.  The former axial and polar infinity-flux
+certificates, the infinity-selection half of the endpoint assembly, and the
+additional-log-tail half of the exterior boundary-value gate are historical
+inputs, not active authorities for infinity selection.  Their unaffected
+Einstein, horizon, and leading-symbol components are represented above by
+independent certificates.  The exact superseded identifiers are recorded in
+the machine-readable claim map.  Exact axial endpoint trace spaces and flux
+Grams now combine with the invertible incoming connection to give globally
+populated incoming channels.  A complete asymptotically flat scattering
+theorem still requires the outgoing/horizon map, regular-tetrad falloff,
+differentiable phase space, charge algebra, and complex-frequency audit.
+
+\section{Outlook}
+
+The formal infinity problem now has a different shape from the one suggested
+by the original fixture.  The complete axial \(\ell=2\) pilot contains a
+finite repaired non-Einstein direction, but that finite class is stable only
+under the rate-zero Einstein shear and not under the true oscillatory shear.
+The polar module separately contains a generic-angular, generically
+nonradical mixed finite line, with a finite algebraic set of exceptional
+frequencies at each harmonic.  These facts neither establish a
+representative-independent axial quotient nor restore an Einstein-selection
+principle.
+
+The first global map is now exact:
+\[
+ \text{future-horizon-regular data}
+ \xrightarrow[\cong]{\,T_-\,}
+ \text{incoming }\mathscr I^- \text{ trace}.
+\]
+The remaining decisive map is the outgoing/horizon scattering relation.  It
+must include a regular tetrad or gauge, a gauge-audited Lee--Wald charge
+algebra, and the connection amplitudes at both future boundaries.  A first
+validated full-amplitude attempt certified its diagonal carrier and kernel
+ranks and all local lower-lift solves on the first frequency cell, but ended
+in \textsc{shortfall}: fixed interval frames discarded the shared
+\(\omega\)-dependence needed for cumulative lower-block cancellation.  The
+analytic triangular proof bypasses that limitation for \(T_-\), not for
+\(T_+\).  The partial-jet identity above now gives a representation-level
+successor: propagate the base spin-two/spin-one connection and its intrinsic
+dual-number tangent in one correlated algebra, so that inversion and frame
+composition retain the \(bd-a_2c\) cancellation exactly.  This is an
+implementation route, not yet a recovered outgoing map; the endpoint
+recurrences and frame normalizers must first be shown to arise from the same
+analytic jet family.  Moreover the dual-number coefficient ring must sit
+over a shared validated \(\omega\)-Taylor model.  Dual numbers over
+independent interval boxes would retain the \(\tau\)-jet but still lose the
+frequency correlations that caused the original refusal.  This construction
+does not repair the separate H4 exterior-norm witness, whose shared-frequency
+rail failed for a different sum-of-squares conditioning reason.
+The first mixed-arithmetic rail
+\(\operatorname{Taylor}_4(\omega)\otimes
+\mathbb Q[\epsilon]/(\epsilon^2)\) has now been exercised on the first
+near-horizon panel.  It refuses at its analytic-tail gate: the direct
+majorant is noncontractive.  This is a certified method shortfall, not a
+failure of the partial-jet identity or of the physical transport.  A useful
+successor must factor the endpoint singular structure before applying the
+Taylor tail bound.  The phase-factored horizon successor confirms this
+diagnosis: \(\dot\lambda_H=0\), so no new tangent logarithm occurs, and a
+tail-enclosed reduced Frobenius seed and first pure-spin-two panel pass.  The
+spin-one companion block requires its own Levelt/phase reduction before
+a three-channel initializer and mixed column are bounded.  That reduction
+is now exact:
+\[
+ \widehat Z=\operatorname{diag}(\rho,\rho^2)Z,\qquad
+ \widehat X=\rho X,\qquad \widehat Y=\rho Y.
+\]
+The order-one resonance is compatible with no forced logarithm; its omitted
+base and tangent tails are below \(2.736\times10^{-32}\) and
+\(6.867\times10^{-31}\).  The complete mixed first panel passes, including
+agreement of the direct regular six-state and partial-jet routes.  The two
+routes continue to overlap for 27 geometric panels.  They then refuse on
+cumulative rectangular width \(1.164\times10^6\), while the local
+order-24 operator tail is only \(5.56\times10^{-27}\).  Thus the remaining
+horizon obstruction is correlation-preserving multipanel reconditioning,
+not endpoint singularity or local truncation.  A fixed projective pivot
+improves the local scaling and completes five finer panels, but its generic
+complex Krawczyk inversion then refuses because the rectangular enclosure of
+the pivot norm spans zero; the local scaled norm is only \(0.08741\) and the
+operator tail \(2.81\times10^{-24}\), so this is again a dependency failure
+rather than evidence of a physical pivot zero.  The permitted
+midpoint/Lohner alternate exceeded a bounded 240-second runtime before
+flushing a panel checkpoint.  It is recorded as a throughput shortfall, not
+as a transport obstruction.  The endpoint normalization question can,
+however, be separated from that radial transport.  In the canonical
+\(\tau\)-analytic Frobenius/Levelt frame, the spin-two leading pairing and
+spin-one quotient leading coefficient are fixed independently of \(\tau\),
+and the sole compatible order-one Levelt free coefficient is set to zero
+for the complete analytic family.  The exact recurrence audit then gives
+\[
+ K_H^{\rm canonical}=
+ \begin{pmatrix}0&0\\0&0\end{pmatrix}.
+\]
+This is the endpoint jet-frame shear, not the future-horizon Gram and not an
+\(r=4\) horizon frame.  A new correlation-preserving checkpoint rail accepts
+27 panels at \(\omega=4097/8192\); it then refuses because the mixed
+spin-one projective pivot enclosure contains zero at
+\(\rho=91/268435456\), while the pure spin-two pivot still has certified
+modulus lower bound \(0.839407\).  Thus the canonical endpoint shear is
+fixed, but the complete three-column \(H_4\) handoff remains open.  A
+pre-emptive chart repair now switches at the last nondegenerate checkpoint
+using the fixed row \(e_2-e_3\).  Its modulus lower bound is \(1.35225\);
+the exact dual normalization restores base pivot \(1\) and tangent pivot
+\(0\).  One post-switch panel passes with scaled norm \(0.39018\), local
+tail \(8.36\times10^{-8}\), and next-pivot lower bound \(0.920325\).
+This supplies a resumable correlation-preserving checkpoint beyond the
+former obstruction.  A subsequent audit found, however, that the first
+continuation rail tested finiteness before rather than after projective
+normalization.  Its advertised panel 31 is therefore superseded: the raw
+Taylor state and pivot pass, but normalization creates non-finite tangent
+balls.  A mutation test reproduces the old false acceptance and the
+corrected gate rejects it.  The last certified checkpoint is panel 30 at
+\(\rho=95/268435456\).  A bounded retry grid comprising Taylor orders
+\(16,20,24,32,40\) and subdivisions \(2,4,8,16,32,64\) completes none of
+the 30 attempted next panels: 20 stop at non-finite projective
+normalization and 10 because the sole admissible \(e_2\) pivot contains
+zero.  Thus the endpoint switch itself remains certified, but its radial
+continuation beyond panel 30 requires a correlation-preserving
+representation stronger than rectangular Taylor balls.  A bounded
+shared-remainder repair now supplies exactly that representation for the
+next step.  It computes one certified reciprocal of the projective pivot and
+reuses it in every normalized base and tangent coordinate, rather than
+forming a dependency-destroying squared-denominator enclosure.  Starting
+from the corrected panel-30 checkpoint, all post-normalization state and
+amplitude balls remain finite and panel 31 at
+\(\rho=3/8388608\) is certified.  A mutation test confirms that the eager
+squared-denominator implementation contains zero and fails.  This is one
+positive repaired panel, not yet a continuation to \(r=4\).  Subdividing
+the same shared-reciprocal rail by 128 certifies nine more normalized
+substeps, reaching
+\[
+ \rho=\frac{12297}{34359738368}.
+\]
+The Taylor gate remains healthy at the terminal attempt, with scaled norm
+\(0.002761\) and finite tail \(0.01921\), but every member of the fixed
+projective atlas then has zero modulus lower bound.  A midpoint-derived
+M\"obius row also fails on the full ball.  In fact each Cartesian base
+component contains zero, so the product enclosure contains the zero vector;
+no fixed linear chart can certify a nonzero denominator from this
+representation.  The checkpoints cannot be upgraded after the fact:
+frequency was specialized before transport, seed coordinates were inflated
+independently, and the radial Taylor coefficients were discarded.  A
+correlation-preserving rerun must therefore restart at the symbolic mixed
+Levelt seed \(\rho=2^{-22}\), before fixed-frequency substitution and
+initial normalization, and serialize a shared \(\omega\)-Taylor/dual-\(\tau\)
+affine state.  This is a representation obstruction, not evidence that the
+true horizon line contains zero.  The required restart has now passed its
+first constructive gate.  On the disk
+\[
+ \left|\omega-\frac{4097}{8192}\right|\le 2^{-22},
+\]
+a degree-four seed carries one shared complex-frequency generator through
+both base and dual-\(\tau\) rails, uses one coupled
+\(\ell^\infty\) residual rather than independent component boxes, and
+certifies one radial successor.  The initial and successor pivot lower
+bounds are \(0.999874\) and \(0.997894\); the residual grows from
+\(0.00130228\) to \(0.00553187\), while the radial Cauchy scaled norm is
+\(0.480079\) and its tail \(0.000626096\).  This certifies the correlation
+format and one content-addressed step only.  A multipanel continuation and
+the horizon \(H_4\) gate remain open.  A first 33-step continuation attempt
+was terminated after 344 seconds without producing an artifact and is
+recorded as a throughput shortfall, not a pass.  The replacement contract is
+to serialize and independently verify the joint derivative kernel once,
+then emit one durable content-addressed radial child per invocation bounded
+by 60 seconds.
+Two subsequent 58-second attempts to serialize the complete joint
+derivative kernel also time out, including a unique-expression cache
+variant.  They emit neither a kernel nor a radial child.  The exact resume
+state remains
+\(\rho=65/268435456\) with model hash
+\texttt{48683b91...1f250}; the next admissible implementation must shard the
+kernel by generator entry and derivative order, hash-assemble those shards,
+and only then attempt one radial child.
+
+At outgoing real infinity the corresponding reduced-phase representation
+has also passed its first local test.  Keeping \(e^{-2i\omega r_*}\)
+symbolic, the exact \(R_+\) factor head has base and tangent residual
+valuations \(6\) and \(4\).  The exact RW potential integral from \(r=32\)
+is \(189/1024\), giving the uniform Volterra contraction
+\(189/512<1\) on the first frequency child.  The resulting all-order
+shared-\(\omega,\tau\) seed remainder is attached before transport, and the
+macropanel \(32\to1023/32\) passes with identical direct and dual-number
+Taylor coefficients.  This certifies one repeated-spin-two outgoing Jost
+column.  A checkpointed successor carries the same correlated column through
+16 further panels to \(r=63/2\), again with exact direct/dual coefficient
+agreement; its final width is \(1.61820\) and its largest local tail is
+\(1.951\times10^{-9}\).  The abandoned monolithic 896-panel attempt exceeded
+the scoped runtime budget and is recorded only as a throughput failure.
+Continuation must resume from a serialized correlated checkpoint rather than
+replay from \(r=32\).  The complementary columns, \(K_+\), and \(T_+\) remain
+open.  The required restart format is now certified: it serializes the full
+mixed base/tangent \(\operatorname{Taylor}_4(\omega)\) state at \(r=63/2\),
+including exact coefficients, IEEE-754 interval endpoints, the shared
+frequency generator and content hashes.  Its loader round-trips bit exactly,
+and a replay-free 16-panel continuation reaches \(r=31\) and agrees exactly
+with an independent 32-panel reference.  The timing also isolates the
+implementation bottleneck: about 60 seconds are spent in Python symbolic
+preparation, while native 32-panel transport takes 9.00 seconds and the
+restarted 16-panel chunk 5.66 seconds.  Checkpoint reuse, rather than a
+different ODE integrator, is therefore the immediate performance repair.
+The outgoing endpoint algebra is now sharper.  In the typed factor order
+\((E,R,S)\), the exact formal frame is
+\[
+ \left(
+ 2\,{\rm EI2},\,
+ {\rm XI2}-\frac{i(16\omega^2-4i\omega-5)}{\omega}{\rm XI3},\,
+ \frac{i}{2\omega}{\rm XI3}
+ \right),
+\]
+with \(\pi_x(R)=0\) and \(\pi_x(S)=1\).  The \(E\) line is the unit
+\(\epsilon\)-copy of the already certified \(R\) scalar Jost column.
+The log-free formal recurrences, with the free \({\rm EI2}\) coefficient
+fixed to zero throughout the family, give
+\(K_+^{\rm formal}=0\).  This is not yet an analytic endpoint-frame theorem.
+The existing all-order six-state enclosure for \({\rm XI3}\) originally
+rectangularized its base and tangent data and exported neither the common
+\(\omega\) generator nor the dual-\(\tau\) remainder required for the
+normalized \(S\) column.  A new endpoint adapter now applies the exact
+factor transform \(S=i\,{\rm XI3}/(2\omega)\), preserves generator \(7315\)
+and the degree-four head, and encloses the transformed all-order hull in one
+partial dual-\(\tau\) remainder.  This closes the representation contract at
+\(r=32\), but the tangent width is \(369.996\), against base width
+\(1.35\times10^{-3}\).  No inward \(S\) transport or jointly propagated
+\((E,R,S)\) frame follows from that endpoint result alone.  After exact
+internal tangent normalization by \(512\), however, a first inward panel of
+width \(1/256\) is now certified:
+\[
+ r:32\longrightarrow 8191/256 .
+\]
+The direct and partial-dual Taylor coefficients agree exactly, the interval
+difference contains zero, and the rigorous local tail is
+\(7.72\times10^{-10}\).  The normalized tangent width changes only from
+\(0.722649\) to \(0.723408\), although restoring the physical normalization
+gives width \(370.385\).  This is a valid correlated checkpoint, not yet a
+jointly propagated frame.  A replay-free successor now advances the same
+normalized \(S_+\) state through 16 further panels,
+\[
+ r:8191/256\longrightarrow8175/256 .
+\]
+All generator and direct/dual correlation gates pass; the largest local
+tail is \(7.68\times10^{-10}\), the final base width is \(0.00135325\), and
+the normalized tangent width is \(0.737306\) (physical width \(377.501\)
+after restoring the factor 512).  A second checkpointed successor adds
+32 panels,
+\[
+ r:8175/256\longrightarrow8143/256 ,
+\]
+with generator 7315 and all direct/dual gates preserved.  Its largest tail
+is \(7.10\times10^{-10}\), final base width \(0.00147618\), and normalized
+tangent width \(0.775139\) (physical width \(396.871\)).  Consequently
+analytic \(K_+\), the joint \((E,R,S)\) frame, and \(T_+\) remain fail
+closed.  A one-step width ladder at this checkpoint distinguishes
+mathematical finiteness from an operational enclosure: width \(1/128\)
+has tail \(5.53\times10^{-6}\), base width \(0.001497\), and normalized
+tangent width \(0.7780\), while widths \(1/64\) and \(1/32\) remain finite
+but fail the declared tail/base thresholds.  Using the admissible width,
+a content-addressed replay-free continuation advances through 103 panels
+of width \(1/128\) and one final panel of width \(1/256\), reaching
+\[
+ r=31 .
+\]
+All panelwise generator and direct/dual correlation gates pass.  At the
+common radius with the existing \(R_+\) checkpoint, the \(S_+\) base width
+is \(0.006021\), the normalized tangent width is \(1.564\), and the restored
+physical tangent width is \(800.528\).  The typed assembly has now been
+checked.  In complex factor order \((X,Y,Z)\),
+\[
+ E=(R_{\rm base},0,0),\qquad
+ R=(R_\tau,R_{\rm base},0),\qquad
+ S=(S_{\tau,Y},S_Y,S_Z).
+\]
+The minor on rows \((X_0,Y_0,Z_0)\) is
+\(R_{{\rm base},0}^{\,2}S_{Z,0}\).  Exact hulls give
+\[
+ \Re R_{{\rm base},0}\in[1.00307,1.00508],
+ \qquad
+ \Re S_{Z,0}\in[3.31\times10^{-5},2.209\times10^{-3}],
+\]
+so the reduced outgoing \(E/R/S\) frame has complex rank three throughout
+the frequency child.  The \(R/E\) and \(S\) artifacts still use different
+nonzero analytic phase gauges, however.  Formal canonical \(K_+=0\) is
+preserved, but its analytic endpoint-\(\tau\) promotion and \(T_+\) remain
+unproved.  The exact moving-phase audit explains why a static rephasing is
+insufficient.  For the outgoing spin-two pencil,
+\[
+ \dot q_+=-\frac34,\qquad \dot p_+=0,
+\]
+and the irregular coefficient is removed by
+\[
+ B=\operatorname{diag}\!\left(\frac34,0\right),
+ \qquad E_{-1}+[A_0,B]=0.
+\]
+The combined scalar and polynomial-eigenvector generator is therefore
+\(\operatorname{diag}(0,-3/4)\), whereas the spin-one phase is
+\(\tau\)-independent.  At \(r=31\), a common moving gauge requires the exact
+tangent correction
+\[
+ \operatorname{diag}\!\left(0,\frac{93}{4}\right).
+\]
+The checkpoint has now been reissued with this correction on the \(R\) and
+\(S\) spin-two rows, while retaining the shared generator 7315 and the
+entire zero-free scalar gauge
+\[
+ h_0=\frac{32}{31}\exp\!\bigl(i\omega(64+4\log32)\bigr).
+\]
+The independent verifier reconstructs the corrected rows from the original
+checkpoints.  The rank minor
+\(h_0R_{{\rm base},0}^{\,2}S_{Z,0}\) excludes zero throughout the child, and
+the analytic first-jet endpoint shear is now
+\[
+ K_+=0
+\]
+in the complete common moving factor gauge.  The next \(T_+\) dependency is
+the correlated transport of this sole admissible checkpoint from \(r=31\)
+to the common \(r=4\) section.  Its first bounded chunk is now certified:
+one shared \(8\times2\)
+\(\operatorname{Taylor}_4(\omega)\otimes{\rm dual}_\tau\) state advances
+\[
+ r:31\longrightarrow \frac{247}{8}
+\]
+with generator 7315, order 96, tail \(0.00742651\), and width \(1.78454\).
+An independent direct 16-state calculation agrees coefficientwise, the
+frozen spin-one tangent stays exactly zero, and the typed rank-three frame is
+preserved.  A monolithic one-unit continuation did not finish within 180
+seconds.  Therefore \(B_+|_{r=4}\), the explicit \(T_+\), and a
+common-section numerical Stokes audit remain open; the exact
+transport-free Stokes theorem above is unaffected.  The next rail must
+resume from this checkpoint in bounded high-order chunks.  The
+first such replay-free successor advances
+\[
+ \frac{247}{8}\longrightarrow\frac{123}{4}
+\]
+in 25.80 seconds with order 96, tail \(0.00167831\), and width \(2.51500\).
+Its direct 16-state boundary comparison agrees exactly in coefficients and
+by interval containment, and it emits the successor payload hash
+\texttt{42170721...e196}.  This validates the bounded checkpoint architecture
+but is still only one radial child, not \(B_+|_{r=4}\).  A second adaptive
+successor uses a larger certified step and advances
+\[
+ \frac{123}{4}\longrightarrow\frac{979}{32}
+\]
+in 38.20 seconds.  Its order is 120, tail \(2.80109\times10^{-4}\), and
+width \(3.69395\); the same direct boundary gate passes.  Thus the bounded
+driver is beginning to increase radial progress.  A proposed \(7/32\),
+order-168 successor then reaches the 42-second execution cap without output.
+It emits no checkpoint and proves no branch or tail bound; the last usable
+state remains the chunk-02 payload \texttt{047f7f...b7ff}.  The common
+section at \(r=4\) therefore remains distant.
+Complex-frequency work has excluded the entire growth half-plane, but no
+damped QNM root, contour moment, or local Smith branch has been computed.
+At the QNM seed disk, the direct inverse-\(r\) forward recurrence also fails
+as an all-order infinity remainder: at \(R=45\) its scaled direct gain is
+already \(>1\) from order \(49\) onward.  Exterior complex scaling at angle
+\(\pi/4\) supplies the replacement.  The analytic inverse-tortoise branch
+from \(r=45\) is now certified to remain in
+\(\Re r\ge45,\Im r\ge0\), and the scalar spin-one and spin-two Volterra norms
+are bounded respectively by \(0.306682\) and \(0.310263\).  The resulting
+coarse reduced outgoing Jost balls exclude zero at the seed radius.  Inward
+complex transport exists analytically, but a one-piece Gr\"onwall estimate
+from \(r=45\) to \(r=4\) grows to \(3^{69}\) and produces unusable
+\(10^{33}\)-scale matching balls.  The next quantitative rail must use
+panelwise centered/Lohner transport and construct the correlated
+\(\tau\)-derivative initializer.  The canonical projective tangent
+initializer is now bounded by
+\(\lvert v_\tau(45)\rvert\le0.041595\) and
+\(\lvert\partial_xv_\tau(45)\rvert\le0.001458\), but its conversion to the
+factor-frame coefficient \(b\) still needs the analytic endpoint gauge.  A
+16-panel order-16 complex-ball transport improves the global bound but still
+widens past \(10^{17}\).  Affine Lohner/Taylor-model or
+Riccati/Grassmannian transport is therefore required.  The corresponding
+typed projective rail has now been emitted explicitly.  It certifies the
+generic Riccati laws for \(v,v_\tau,v_\omega\), the outgoing reduced-phase
+chart \(q=(\partial_xP_{\rm out})/P_{\rm out}\), and the refined panel-zero
+pivot lower bound \(0.958711\).  One correlated order-26 step
+\[
+ r:45\longrightarrow899/20
+\]
+passes with remainder radii \(9.61\times10^{-5}\),
+\(1.88\times10^{-5}\), and \(2.25\times10^{-3}\) for
+\(q,q_\tau,q_\omega\), respectively.  This removes the homogeneous
+amplitude from the propagated state.  A typed successor constructs the
+moving-phase horizon chart \(q_H=(\partial_xP_H)/P_H\), certifies
+\(\dot\lambda_H=0\), a pivot lower bound \(1.0000000974\), and one finite
+correlated horizon step.  At \(r=32\), reassembly from the content-addressed
+common-affine exports with the identical panel-zero generator gives
+\[
+ \Delta=q_H-q_++2i\omega,\qquad
+ \Delta_\tau=q_{H,\tau}-q_{+,\tau},\qquad
+ \Delta_\omega=q_{H,\omega}-q_{+,\omega}+2i .
+\]
+The physical mismatch again has modulus lower bound
+\(1.7797152291\times10^{-4}\).  Its tangent enclosures are finite but do not
+exclude zero, so no sensitivity or Smith conclusion is drawn.  The mixed
+four-state tangent frame, the other 511 contour panels, a closed Evans
+boundary enclosure, and a root count remain open.
+The first two-chart Riccati rail correctly removes amplitudes, but its
+coarse norm-only seed loses chart separation near \(r\simeq43.3\): the
+\(v_x/v\) enclosure contains zero while the reciprocal chart cannot yet be
+certified.  This is an enclosure obstruction, not a physical Jost zero.
+A centered order-16 reduced-amplitude initializer now constructs
+\((v,v_\tau,v_\omega)\) on all contour panels, proves the amplitude
+denominator nonzero, and certifies the first inward projective segment.  A
+rectangular Riccati continuation reaches \(r\simeq40\) before its quadratic
+majorant loses positivity.  A midpoint-recentered affine successor now
+retains the shared parameter dependence of
+\((q,\eta,\xi)=(v_x/v,\partial_\tau q,\partial_\omega q)\) and certifies all
+16 contour panels from \(r=45\) to the common radius \(r=32\).  At that
+radius the remainder radii lie in the ranges
+\[
+ 0.02603\le r_q\le0.18090,\qquad
+ 0.006735\le r_\eta\le0.07841,\qquad
+ 1.466\le r_\xi\le16.873 .
+\]
+The broad but valid \(\omega\)-sensitivity is not yet sufficient for a
+simple-root gate.  Continued inward, the scalar Riccati self-map first loses
+its positive discriminant between \(r=20.5\) and \(r=29.05\), depending on
+the contour panel.  Thus the outgoing projective line reaches a useful
+common match radius, while the complementary horizon line, the mismatch
+\(\delta\), and its root/Smith gates remain open.  On the horizon side, the
+moving-phase QNM-band Frobenius construction independently supplies
+certified \(q,\eta,\xi\) seeds on all 16 panels and again gives
+\(\dot\lambda_H=0\).  Its first affine outward continuation refuses at the
+reference-trajectory Riccati discriminant, at
+\(r\simeq2.672868\) on panels 0--7 and \(r\simeq2.714923\) on panels 8--15.
+At that obstruction the full-panel \(q\) enclosures nevertheless exclude
+zero, with certified modulus lower bounds between \(0.21078\) and \(0.24612\).
+The reciprocal chart
+\[
+ p=q^{-1},\qquad
+ p_\tau=-q_\tau/q^2,\qquad
+ p_\omega=-q_\omega/q^2
+\]
+is therefore admissible on every panel.  A logarithmic-norm successor carries
+all 16 horizon lines to \(r=4\), accepting 129 or 133 steps with no rejected
+trial.  A checkpointed continuation then reaches \(r=8,16,32\) on all
+panels, with 680 accepted steps per panel, no rejected trial, and no second
+chart change.  At \(r=32\) the reciprocal-base radii lie between \(0.104\)
+and \(0.205\), the \(\tau\)-sensitivity radii between \(1.06\) and \(7.65\),
+and the \(\omega\)-sensitivity radii between \(1.26\) and \(4.62\).  Thus the
+two selected endpoint lines now reach the same projective matching radius.
+Because their reduced amplitudes carry opposite oscillatory phases, the
+physical common-chart mismatch is
+\[
+ \Delta=q_H-q_++2i\omega,\qquad
+ \Delta_\tau=q_{H,\tau}-q_{+,\tau},\qquad
+ \Delta_\omega=q_{H,\omega}-q_{+,\omega}+2i.
+\]
+This corrected mismatch has now been assembled on all 16 panels.  Its
+midpoint magnitudes, \(4\times10^{-5}\) to \(2\times10^{-3}\), exhibit the
+expected near-resonant cancellation.  The separately serialized endpoint
+remainders do not retain a common cross-endpoint affine generator, however,
+so their rigorous radii must be added and lie between \(0.304\) and \(0.393\).
+Every boundary panel then contains zero.  The boundary-nonvanishing gate
+therefore refuses with
+\texttt{SERIALIZED\_CROSS\_ENDPOINT\_DEPENDENCY\_WIDTH\_CONTAINS\_ZERO};
+the argument-principle and defect-moment gates are deliberately not run.
+An export audit makes the required repair contract explicit.  Both endpoint
+artifacts must carry the same frequency-generator identity, the centered
+polynomial coefficients of \(q,q_\tau,q_\omega\), residuals enclosed only
+after subtraction of those polynomials, and an explicit reduced-phase
+convention tied to that generator.  The present serialized balls do not
+supply those fields.  A bounded singleton-frequency prototype passes its
+first horizon Taylor reference but refuses immediately at the horizon
+\(q\)-remainder self-map; no long joint rerun or downstream contour gate is
+therefore inferred.  A first implementation of the complete common-affine
+export contract has now made the phase rule
+\(\Delta=q_H-q_++2i\omega\) and one panel-local generator identity explicit.
+Adaptive halving repairs the outgoing singleton self-map, while scaling the
+reciprocal horizon step by \((r-2)/16\) repairs its near-horizon
+discriminant.  Both box and singleton endpoint polynomial exports then reach
+\(r=32\) on panel zero of the 512-panel contour under the common generator
+\texttt{qnm-boundary-omega-0000-of-0512}.  The physical boundary gate still
+initially refuses because its independent residual radius is \(0.0335412\).
+Replacing the singleton endpoint transports by order-26 direct-\(q\)
+transport with adaptive radial recentering reduces the combined residual to
+\(3.25322\times10^{-5}\).  The physical mismatch then has certified modulus
+lower bound
+\[
+ 1.77972\times10^{-4}>0
+\]
+on panel zero.  This is the first strict common-affine Evans-boundary gate,
+but only for one of 512 panels.  A checkpointed four-worker successor now
+extends the same panel-local shared-generator construction through panel 76.
+All 77 physical mismatch enclosures on this contiguous prefix exclude zero;
+the smallest modulus lower bound is \(9.49348\times10^{-6}\), on panel 76.
+This remains a strict boundary segment, not a closed contour.  Typed Riccati
+audits independently emit \((\Delta,\Delta_\tau,\Delta_\omega)\) on every
+co-located panel.  Every current rectangular \(\Delta_\tau\) and
+\(\Delta_\omega\) ball contains zero, so neither the intrinsic selector nor
+the simple-root Newton denominator is certified.  The initial panel-77
+refusal was traced to cancellation in the subtractive binary64 formula for
+the smaller quadratic self-map root, not to a loss of the Riccati
+enclosure.  The stable formula
+\[
+ \frac{2q_c}{-q_b+\sqrt{q_b^2-4q_aq_c}}
+\]
+with an exact \(1000001/1000000\) outward enlargement proves the unchanged
+strict self-map margin \(8.62645\times10^{-31}\).  Both reciprocal pivots
+exclude zero, and panel 77 then has
+\[
+ |\Delta|\ge 8.86836\times10^{-6}.
+\]
+The repaired rail then certifies twenty further panels without changing any
+threshold.  The certified contiguous boundary prefix is therefore panels
+\(0\)--\(97\); its smallest modulus lower bound is
+\[
+ 2.47379\times10^{-7}
+\]
+at panel 97.  The parent enclosure for panel \(98/512\) contains zero even
+though both endpoint transports pass.  Exact dyadic subdivision repairs this
+without changing any threshold: the children \(196/1024\) and \(197/1024\)
+have modulus lower bounds \(2.55042\times10^{-5}\) and
+\(2.53795\times10^{-5}\), respectively.  Two subsequent bounded adaptive
+chunks apply the same rule to parents \(99/512\) and \(100/512\).  Their four
+dyadic children all exclude zero.  A third bounded continuation repairs
+parents \(101/512\) and \(102/512\) with the four children
+\(202/1024,\ldots,205/1024\), extending the exact contiguous boundary
+coverage through \(103/512\).  Parent \(103/512\) is the next
+gap.  Its coarse enclosure has now been evaluated and content-addressed,
+but it fails; the bounded invocation ended before the two required children
+\(206/1024\) and \(207/1024\) could be launched.  A child-only successor
+then certifies those two intervals with modulus lower bounds
+\(2.44667\times10^{-5}\) and \(2.43794\times10^{-5}\).  Exact coverage
+therefore reaches \(104/512=13/64\).  Parent \(104/512\) likewise fails
+closed at coarse resolution; its dyadic children \(208/1024\) and
+\(209/1024\) exclude zero with modulus lower bounds
+\(2.42977\times10^{-5}\) and \(2.42106\times10^{-5}\).  Exact contiguous
+coverage now reaches \(105/512\), with \(105/512\) the next gap.
+The unchanged rail then repairs parents \(105/512\) and \(106/512\)
+through children \(210,\ldots,213\) at denominator \(1024\).  A fixed
+\(1/1024\) continuation evaluates and accepts the next 32 ordered panels
+\(214,\ldots,245\), with mismatch lower bounds remaining above
+\(2.32\times10^{-5}\).  Exact contiguous coverage now reaches
+\[
+ \frac{246}{1024}=\frac{123}{512},
+\]
+with \(246/1024\) the next gap.  The 32-panel producer took \(108.81\)
+seconds, so it is retained as an affected-chain exhaustive run with a fast
+replayless verifier; subsequent compute chunks must be smaller.
+The first bounded successor chunk evaluates and accepts panels
+\(246,\ldots,253\) at denominator \(1024\) in \(27.94\) seconds.  Exact
+contiguous coverage therefore reaches
+\[
+ \frac{254}{1024}=\frac{127}{512},
+\]
+The next four bounded successors accept panels \(254,\ldots,285\), extending
+the exact contiguous coverage to
+\[
+ \frac{286}{1024}=\frac{143}{512},
+\]
+with \(286/1024\) the next gap.  A separate replayless phase ledger places
+all \(188\) accepted affine segments in certified rational separating
+half-planes.  Their argument sectors have width strictly below \(\pi\) and
+overlap consecutively, so the open prefix admits a single continuous lifted
+argument.  Its current partial increment is enclosed by
+\[
+ -1.3477818932
+ <
+ \Delta\arg\Delta\big|_{[0,143/512]}
+ <
+ -0.3410830218 .
+\]
+This is an open-path phase enclosure, not a winding number.
+The remaining boundary, interval-Newton, argument-principle, and Smith/EP2
+gates are not run.
+Uniform time-domain boundedness, decay, and completeness remain open.
+
+The present result already fixes an important baseline:
+\begin{center}
+\fbox{\parbox{0.82\textwidth}{\centering
+Additional curvature directions occur in the future-horizon carrier, and
+independently the formal infinity modules contain finite non-Einstein or
+mixed directions.  Neither leading endpoint diagnostics nor formal radial
+pairing finiteness selects the Einstein kernel.  More strongly, the complete
+three-dimensional indefinite incoming trace is globally populated by
+future-horizon-regular solutions at every real positive frequency.  The
+complete outgoing trace is also populated throughout the certified cell
+\(0.49995\le\omega\le0.50005\); analyticity extends population to an open
+dense full-measure positive-frequency set and gives dense outgoing range on
+every compact positive-frequency band.  Explicit outgoing amplitudes,
+the isolated reflection-zero set and complete-pilot pointwise outgoing rank,
+the damped QNM spectrum, time-domain stability, CPT positivity, and a
+complete scattering operator remain open; exponentially growing separated
+axial modes are already excluded.}}
+\end{center}
+
+\appendix
+\section{Explicit axial endpoint Grams and uniform bounds}
+\label{app:endpoint-grams}
+
+In the ordered bases
+\[
+ \mathscr I^-:(\mathrm{XI0},\mathrm{XI1},\mathrm{EI0}),\qquad
+ \mathscr I^+:(\mathrm{XI2},\mathrm{XI3},\mathrm{EI2}),
+\]
+the normalized incoming past Gram is
+\begin{equation}
+G_-=
+\begin{pmatrix}
+ \dfrac{576}{5\omega} & \dfrac{96i}{5} & \dfrac{384\omega}{5}\\
+ -\dfrac{96i}{5} &-\dfrac{144\omega}{5}&-\dfrac{192i\omega^2}{5}\\
+ \dfrac{384\omega}{5}&\dfrac{192i\omega^2}{5}&0
+\end{pmatrix},
+\end{equation}
+and the normalized outgoing future Gram is
+\begin{equation}
+\resizebox{0.98\textwidth}{!}{$
+G_+=
+\begin{pmatrix}
+\dfrac{384(-512\omega^6+640\omega^4-278\omega^2+39)}{5\omega}
+&
+\dfrac{12288i\omega^4-3072\omega^3-9984i\omega^2}{5}
+ +192\omega+384i
+&
+\dfrac{-1536i\omega^2+384\omega+768i}{5}
+\\[1mm]
+\dfrac{-12288i\omega^4-3072\omega^3+9984i\omega^2}{5}
+ +192\omega-384i
+&
+-\dfrac{768\omega^3}{5}+48\omega
+&
+\dfrac{96\omega}{5}
+\\[1mm]
+\dfrac{1536i\omega^2+384\omega-768i}{5}
+&
+\dfrac{96\omega}{5}
+&
+0
+\end{pmatrix}
+$}.
+\end{equation}
+The full current Grams are \(\pi\alpha_{\rm W}G_\pm\).
+
+The exact squared Frobenius functions have certified maxima
+\begin{equation}
+\begin{array}{c|cc}
+ & \max_{\omega\in[1/2,3/4]}\|G_\pm\|_F^2
+ & \max_{\omega\in[1/2,3/4]}\|G_\pm^{-1}\|_F^2\\ \hline
+G_- & 1429056/25 & 7025/65536\\
+G_+ & 10389888/25 & 19825/65536 .
+\end{array}
+\end{equation}
+For \(G_-\), both functions are strictly decreasing.  For \(G_+\), exact
+Sturm counts find one interior critical point for each function, and the
+endpoint derivative signs are \((-,+)\), proving that the critical point is
+a minimum.  These facts prove \eqref{eq:endpoint-uniform-l2} without
+inferring a lower bound merely from the determinants.
+
+\begingroup
+\raggedright
+\begin{thebibliography}{99}
+\bibitem{Bach}
+R.~Bach,
+\emph{Zur Weylschen Relativit\"atstheorie und der Weylschen Erweiterung des
+Kr\"ummungstensorbegriffs}, Math. Z. \textbf{9} (1921) 110--135,
+\href{https://doi.org/10.1007/bf01378338}{doi:10.1007/bf01378338}.
+
+\bibitem{Riegert}
+R.~J.~Riegert,
+\emph{Birkhoff's theorem in conformal gravity},
+Phys. Rev. Lett. \textbf{53} (1984) 315--318,
+\href{https://doi.org/10.1103/physrevlett.53.315}{doi:10.1103/physrevlett.53.315}.
+
+\bibitem{MannheimKazanas}
+P.~D.~Mannheim and D.~Kazanas,
+\emph{Exact vacuum solution to conformal Weyl gravity and galactic rotation
+curves}, Astrophys. J. \textbf{342} (1989) 635--638,
+\href{https://doi.org/10.1086/167623}{doi:10.1086/167623}.
+
+\bibitem{ReggeWheeler}
+T.~Regge and J.~A.~Wheeler,
+\emph{Stability of a Schwarzschild singularity},
+Phys. Rev. \textbf{108} (1957) 1063--1069,
+\href{https://doi.org/10.1103/physrev.108.1063}{doi:10.1103/physrev.108.1063}.
+
+\bibitem{Zerilli}
+F.~J.~Zerilli,
+\emph{Effective potential for even-parity Regge--Wheeler gravitational
+perturbation equations}, Phys. Rev. Lett. \textbf{24} (1970) 737--738,
+\href{https://doi.org/10.1103/physrevlett.24.737}{doi:10.1103/physrevlett.24.737}.
+
+\bibitem{LeeWald}
+J.~Lee and R.~M.~Wald,
+\emph{Local symmetries and constraints},
+J. Math. Phys. \textbf{31} (1990) 725--743,
+\href{https://doi.org/10.1063/1.528801}{doi:10.1063/1.528801}.
+
+\bibitem{IyerWald}
+V.~Iyer and R.~M.~Wald,
+\emph{Some properties of Noether charge and a proposal for dynamical black
+hole entropy}, Phys. Rev. D \textbf{50} (1994) 846--864,
+\href{https://arxiv.org/abs/gr-qc/9403028}{arXiv:gr-qc/9403028}.
+
+\bibitem{Maldacena}
+J.~Maldacena,
+\emph{Einstein gravity from conformal gravity},
+\href{https://arxiv.org/abs/1105.5632}{arXiv:1105.5632}.
+
+\bibitem{LuPangPope}
+H.~L\"u, Y.~Pang, and C.~N.~Pope,
+\emph{Conformal gravity and extensions of critical gravity},
+\href{https://arxiv.org/abs/1106.4657}{arXiv:1106.4657}.
+
+\bibitem{DeserJoungWaldron}
+S.~Deser, E.~Joung, and A.~Waldron,
+\emph{Partial masslessness and conformal gravity},
+\href{https://arxiv.org/abs/1208.1307}{arXiv:1208.1307}.
+
+\bibitem{LiuLuLuo}
+H.~Liu, H.~L\"u, and M.~Luo,
+\emph{On black hole stability in critical gravities},
+\href{https://arxiv.org/abs/1104.2623}{arXiv:1104.2623}.
+
+\bibitem{ChenLuShao}
+Y.-X.~Chen, H.~L\"u, and K.-N.~Shao,
+\emph{Linearized modes in extended and critical gravities},
+\href{https://arxiv.org/abs/1108.5184}{arXiv:1108.5184}.
+
+\bibitem{BergshoeffLog}
+E.~A.~Bergshoeff, O.~Hohm, J.~Rosseel, and P.~K.~Townsend,
+\emph{Modes of log gravity},
+\href{https://arxiv.org/abs/1102.4091}{arXiv:1102.4091}.
+
+\bibitem{LuPangPopeVP}
+H.~L\"u, Y.~Pang, C.~N.~Pope, and J.~F.~V\'azquez-Poritz,
+\emph{AdS and Lifshitz black holes in conformal and Einstein--Weyl
+gravities},
+\href{https://arxiv.org/abs/1204.1062}{arXiv:1204.1062}.
+
+\bibitem{Myung}
+Y.~S.~Myung,
+\emph{Stability of Schwarzschild black holes in fourth-order gravity
+revisited},
+\href{https://arxiv.org/abs/1306.3725}{arXiv:1306.3725}.
+
+\bibitem{MomenniaHendi}
+M.~Momennia and S.~H.~Hendi,
+\emph{Quasinormal modes of black holes in Weyl gravity: electromagnetic and
+gravitational perturbations},
+\href{https://arxiv.org/abs/1910.00428}{arXiv:1910.00428}.
+
+\bibitem{ChenChen}
+C.-Y.~Chen and P.~Chen,
+\emph{Gravitational perturbations of non-singular black holes in conformal
+gravity},
+\href{https://arxiv.org/abs/1902.01678}{arXiv:1902.01678}.
+
+\bibitem{MomenniaHendiBidgoli}
+M.~Momennia, S.~H.~Hendi, and F.~S.~Bidgoli,
+\emph{Stability and quasinormal modes of black holes in conformal Weyl
+gravity},
+\href{https://arxiv.org/abs/1807.01792}{arXiv:1807.01792}.
+
+\bibitem{AntoniouGualtieriPani}
+G.~Antoniou, L.~Gualtieri, and P.~Pani,
+\emph{Gravitational quasinormal modes in quadratic gravity},
+Phys. Rev. D \textbf{111} (2025) 064059.
+
+\bibitem{KonoplyaSpinaZhidenko}
+R.~A.~Konoplya, A.~Spina, and A.~Zhidenko,
+\emph{Time evolution of black hole perturbations in quadratic gravity},
+\href{https://arxiv.org/abs/2505.01128}{arXiv:2505.01128}.
+
+\bibitem{LangloisNouiRoussille}
+D.~Langlois, K.~Noui, and H.~Roussille,
+\emph{Black hole perturbations in modified gravity},
+\href{https://arxiv.org/abs/2103.14750}{arXiv:2103.14750}.
+
+\bibitem{HungKellerWang}
+P.-K.~Hung, J.~Keller, and M.-T.~Wang,
+\emph{Linear stability of Schwarzschild spacetime: decay of metric
+coefficients},
+\href{https://arxiv.org/abs/1702.02843}{arXiv:1702.02843}.
+
+\bibitem{MasaoodScattering}
+H.~Masaood,
+\emph{A scattering theory for linearised gravity on the exterior of the
+Schwarzschild black hole II: the full system},
+\href{https://arxiv.org/abs/2211.07462}{arXiv:2211.07462}.
+
+\bibitem{AdamoNakachTseytlin}
+T.~Adamo, S.~Nakach, and A.~A.~Tseytlin,
+\emph{Scattering of conformal higher spin fields},
+JHEP \textbf{07} (2018) 016,
+\href{https://arxiv.org/abs/1805.00394}{arXiv:1805.00394}.
+
+\bibitem{Stelle}
+K.~S.~Stelle,
+\emph{Renormalization of higher-derivative quantum gravity},
+Phys. Rev. D \textbf{16} (1977) 953--969,
+\href{https://doi.org/10.1103/physrevd.16.953}{doi:10.1103/physrevd.16.953}.
+\end{thebibliography}
+\endgroup
+
+\end{document}

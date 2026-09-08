@@ -1,0 +1,439 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,tabularx,array}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+
+\title{Computational supplement for\\
+A backreacting phase clock with fixed momentum in pure-Weyl gravity}
+\author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
+\and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human contact; Honorary Professor, DTU Compute, Technical University of Denmark. \texttt{asger@area9.dk}.}}
+\date{Theorem-frozen version, July 2026}
+
+\begin{document}
+\raggedbottom
+\maketitle
+
+\begin{abstract}
+This supplement records the claim-to-certificate map, sparse-operation
+inventory, replay commands and release gates for
+\path{09-relational-clocks-berger-d-cartan.tex}.  It separates mathematical
+arguments from machine receipts and keeps the paper fail-closed: a certificate
+supports only the claim inside its declared phase space and boundary.  The
+manuscript is marked \texttt{THEOREM\_FROZEN} for the ten classical
+gravity--clock claims below.  Maxwell and observer results are not
+main-theorem dependencies; a separate publication-current ledger now types
+their conditional, carrier-scoped and nonactivation dispositions.
+\end{abstract}
+
+The authorship line describes the research archive.  Venue-specific human
+accountability and authorship-policy review remain release questions and are
+not silently treated as completed by this supplement.
+
+\section{Focused claim ledger}
+
+The authoritative machine-readable ledger is
+\path{../d_quotient_classical/certificates/PAPER_09_BERGER_CLAIM_TABLE.json}.
+The table below is its human-readable projection.  The publication-current
+superset, including the observer dispositions, is
+\path{09-relational-clocks-berger-d-cartan-claim-map.json}; it imports this
+ten-claim ledger without replacing it.
+
+\begin{center}
+\footnotesize
+\begin{tabularx}{\textwidth}{
+  >{\raggedright\arraybackslash}p{0.09\textwidth}
+  >{\raggedright\arraybackslash}p{0.34\textwidth}
+  >{\raggedright\arraybackslash}X}
+\toprule
+Claim & Mathematical content & Authoritative certificate \\
+\midrule
+\texttt{P09-C1} & Exact smooth non-conformally-flat Berger clock family &
+\path{POSITIVE_BERGER_CLOCK_BACKGROUND.json} \\
+\texttt{P09-C2} & Standard-sign target, timelike phase, positive quartic and
+energy inequalities & \path{POSITIVE_BERGER_CLOCK_BACKGROUND.json} \\
+\texttt{P09-C3} & Internal current, nonzero $Q_R$ and
+$\Omega_{\rm total}(\delta,\mathcal L_D)=\omega\delta Q_R$ &
+\path{BERGER_CLOCK_REDUCED_CHARGE_SEED.json} \\
+\texttt{P09-C4} & Fixed-coupling lapse constraint, compact averaging,
+$\delta Q_R=0$ and linear presymplectic nullity &
+\path{BERGER_FIXED_COUPLING_DELTA_CHARGE.json} \\
+\texttt{P09-C5} & Complete cyclic gauge-fixed $54$-row unary complex and
+support-local $54\to26$ contraction &
+\path{BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json} \\
+\texttt{P09-C6} & Advanced/retarded all-row chain contractions, support,
+adjointness and $K$-equivariance &
+\path{BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json} \\
+\texttt{P09-C7} & Complete arbitrary-input support-local $q_2$, cyclicity,
+$L_\infty$ identity and $K$ derivation &
+\path{BERGER_SUPPORT_LOCAL_Q2.json} \\
+\texttt{P09-C8} & Complete arbitrary-input support-local $q_3$, quartic
+cyclicity, arity-three identity and $L_K^{(3)}=0$ &
+\path{BERGER_SUPPORT_LOCAL_Q3.json} \\
+\texttt{P09-C9} & Cyclic causal $K$-Cartan contraction through arity two &
+\path{BERGER_CAUSAL_D_CARTAN_V2.json} \\
+\texttt{P09-C10} & Closed arity-three $K$-source and cyclic $C_4$ causal
+primitive on all $54$ rows &
+\path{BERGER_ARITY_THREE_D_CARTAN_FULL_4D.json} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+All paths in the JSON ledger are relative to
+\path{d_quotient_classical/certificates/} and are pinned by SHA-256.  The
+verifier rejects missing files, digest drift, a false required flag, a true
+forbidden downstream flag, or a manuscript claim identifier absent from both
+paper sources.
+
+Two independent interpretation checks are pinned separately.  The exact
+co-rotating audit
+\path{BERGER_GENERATOR_CONJUGATION_AUDIT.json} proves that the legacy
+all-row $e_0$ operation represents $K=D-\omega R$, while raw $D$ has a
+nonzero zeroth Taylor component.  It supports \texttt{P09-C6}--
+\texttt{P09-C10} and forbids interpreting those certificates as an affine
+$D$-Cartan theorem.  The strategic producer-boundary check is
+\path{BERGER_Q3_ACTION_SECTOR_CROSSCHECK.json}; it supports the
+action-to-payload provenance of \texttt{P09-C8} in two exact sectors but does
+not replace the complete \path{BERGER_SUPPORT_LOCAL_Q3.json} certificate.
+
+\section{Observer publication disposition}
+
+The observer column is deliberately fail-closed.  The following entries are
+material Paper~9 statements, but none is promoted into the ten classical main
+theorems.
+
+\begin{center}
+\footnotesize
+\begin{tabularx}{\textwidth}{
+  >{\raggedright\arraybackslash}p{0.09\textwidth}
+  >{\raggedright\arraybackslash}p{0.22\textwidth}
+  >{\raggedright\arraybackslash}X}
+\toprule
+Claim & Type & Publication disposition \\
+\midrule
+\texttt{P09-O1} & \texttt{CONDITIONAL\_THEOREM} & Charged-time event current; nonzero evaluation still requires a descended receiver period. \\
+\texttt{P09-O2} & \texttt{CONDITIONAL\_THEOREM} & Finite-resolution sampling and its profile-error bound preserve that condition. \\
+\texttt{P09-O3} & \texttt{CONDITIONAL\_THEOREM} & Reciprocity, composition and loop laws require retarded paths and explicit fibre crosswalks. \\
+\texttt{P09-O4} & \texttt{CONDITIONAL\_THEOREM} & Receiver admissibility is a certified interface, not a populated receiver. \\
+\texttt{P09-O5} & \texttt{KINEMATIC\_FIXTURE} & The legacy $G0$ value $1+z=2$ survives only as a spatially global retarded probe-mode result; it is not operational redshift. \\
+\texttt{P09-O6} & \texttt{KINEMATIC\_FIXTURE} & Three distinct pre-quotient source-to-probe maps retain exact rank two on their own carriers. \\
+\texttt{P09-O7} & \texttt{NOT\_ACTIVATED} & The legacy frequency-ratio domain is absent; its coordinate ratio one is not relational redshift. \\
+\texttt{P09-O8} & \texttt{LOCAL\_BV\_CLASS} & The standalone $D0$ memory-shift receiver has a local BV descent only. \\
+\texttt{P09-O9} & \texttt{ACTION\_INTEGRATION} & A degree-zero local-cochain-to-repaired-$q_{70}$-chain map is exactly obstructed. \\
+\texttt{P09-O10} & \texttt{PHYSICAL\_DESCENT} & Phase~1 ends with no residual nonradical receiver period and no operational frequency-ratio map. \\
+\texttt{P09-O11} & \texttt{OPEN} & For $j\geq\frac32$ the quotient, divisor and pairing have \texttt{NO\_CERTIFIED\_MAP}. \\
+\texttt{P09-O12} & \texttt{NOT\_ACTIVATED} & All certified $j=0,\frac12,1$ repaired-$q_{70}$ blocks are unstable; fixed $Q_{\rm rel}$ removes the clock, so the thirteen-field operational ratio domain is empty. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The machine ledger consequently records zero entries of type
+\texttt{OPERATIONAL\_OBSERVABLE}.  This zero is a checked disposition, not an
+omission.  Each imported result, payload, receipt, terminal lifecycle event
+and transitive health input has an exact hash, a materiality annotation and a
+result-to-paper edge.  The independent verifier rejects a stale healthy
+carrier, a coordinate ratio relabelled as redshift, or an identification
+$K=D$.
+
+\section{Invariant complex and component realization}
+
+The invariant retained complex consists of spatial diffeomorphism ghosts,
+the dressed symmetric metric, its antifield, and the spatial identity row,
+with component ranks
+\[
+ 3\longrightarrow10\longrightarrow10\longrightarrow3.
+\]
+The $54$-component gauge-fixed realization adds eight minimal clock,
+temporal-diffeomorphism and Weyl components and twenty nonminimal components:
+\[
+ 54=26+8+20=26+28.
+\]
+The exact degree decomposition is
+\[
+ 5z^{-1}+22+22z+5z^2.
+\]
+The retained $26$ components are the propagating/constraint endpoint of the
+support-local contraction; the complementary $28$ components form explicit
+contractible pairs.  This separation keeps the theorem invariant under a
+different ordering of the same gauge-fixed rows.
+
+\section{Exact operation inventory}
+
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+Operation & Rows & Nonzero rows & Sparse PBW terms & Maximum jet order \\
+\midrule
+$q_2$ & 54 & 39 & 150,305 & 6 \\
+$q_3$ & 54 & 12 & 5,812,130 & 8 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Both operations use exact coefficients in $\mathbb Q(\sqrt{10})$ at the
+rational Berger fixture.  The $q_3$ portable representation is a strict-JSON
+manifest plus $54$ deterministic gzip-compressed strict-JSON row chunks.
+Compression is storage only; the operation acts on arbitrary four-dimensional
+jets and is not a reduced-mode artifact.
+
+The Taylor normalization is
+\[
+ Q(\phi)=q_1(\phi)+\frac12q_2(\phi,\phi)
+ +\frac16q_3(\phi,\phi,\phi)+O(\phi^4),
+\]
+and the invariant producer contract is
+\[
+ \langle x_0,q_n(x_1,\ldots,x_n)\rangle_{\rm BV}
+ =\partial_{t_0}\cdots\partial_{t_n}
+ S_{\rm BV}[\bar\Phi+\textstyle\sum t_ix_i]\big|_{t=0}.
+\]
+The PBW payload is therefore an implementation of a variationally defined
+operation, not its definition.
+
+The recorded $q_3$ Tier-2 stages are:
+\begin{enumerate}
+\item action differentiation on the raw minimal complex;
+\item canonical clock and gauge-fermion transport to all $54$ rows;
+\item row-bounded exact replay of graded symmetry, $Q^2$, quartic cyclicity
+and $K$ derivation (under the generator-conjugation audit);
+\item portable row-chunk finalization;
+\item independent schema, hash, PBW and adjacent-Koszul audit.
+\end{enumerate}
+The independent consumer audits the frozen operation but does not independently
+rederive the Bach--clock expansion from the action.  The paper states this
+distinction explicitly.
+
+\section{Independent action-to-q3 sector check}
+
+The targeted second route writes the homogeneous reduced density independently
+in
+\[
+ h=\widehat h_{00},\qquad r=R,qquad
+ N=\sqrt{1-h-2r},\qquad k=1-2r,qquad\rho=1+r,
+\]
+as
+\[
+ \mathcal L(h,r)=Nk^{3/2}\left[
+ \frac{\alpha_B\bar C^2}{8k^2}
+ +\frac{\rho^2\omega^2}{2N^2}
+ -\frac{\bar R\rho^2}{12k}-\frac{\lambda\rho^4}{4}
+ \right].
+\]
+It imports neither the jet classes nor the $q_3$ producer.  In the frozen
+twice-Euler-density convention, the direct fourth derivatives give
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+Output & $h^0r^3$ & $h^1r^2$ & $h^2r^1$ & $h^3r^0$\\
+\midrule
+$\widehat h^*_{00}$ & $-27$ & $27/8$ & $81/16$ & $405/128$\\
+$R^*$ & $-1071/40$ & $-27$ & $27/8$ & $81/16$\\
+\bottomrule
+\end{tabular}
+\end{center}
+All sixteen ordered permutations agree with the published row chunks.  This
+is a genuine action-to-payload cross-check in the lapse and dressed
+radial/Weyl directions.  It does not independently regenerate the remaining
+millions of coefficients, and the certificate forbids that broader reading.
+
+\section{Generator-conjugation audit}
+
+With $R(T_1,T_2)=(-T_2,T_1)$ and
+$U(t)=\exp(\omega tR)$, write
+$T=U(t)((\rho,0)+\psi)$.  Direct exact differentiation gives
+\[
+ U^{-1}DT=\partial_t\psi+\omega R\psi+\omega R(\rho,0),
+ \qquad
+ U^{-1}(D-\omega R)T=\partial_t\psi.
+\]
+The frozen $54$-row coordinate rule is $e_0I_{54}$, hence it represents
+$K=D-\omega R$.  The strict audit pins both the frozen unary certificate and
+the charge convention, and requires
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+Flag & Value\\
+\midrule
+\texttt{EXPORTED\_UNARY\_GENERATOR\_IS\_K} & true\\
+\texttt{EXPORTED\_UNARY\_GENERATOR\_IS\_ORIGINAL\_D} & false\\
+\texttt{AFFINE\_D\_ZERO\_ARITY\_NONZERO} & true\\
+\texttt{AFFINE\_D\_CARTAN\_CONSTRUCTED} & false\\
+\bottomrule
+\end{tabular}
+\end{center}
+This corrects the interpretation of the legacy artifact names without
+changing their coefficientwise algebra.
+
+\section{Causal domains}
+
+The unary maps have the typed domains
+\[
+ \Lambda_{54,\pm}:\Gamma_c(\mathcal C_{54})
+ \longrightarrow\Gamma_{J^\pm}(\mathcal C_{54})[-1].
+\]
+The local Taylor operations preserve intersections of input supports.  The
+cyclic higher primitives use both time orientations and land in the
+two-sided causal hull.  They are not the causal difference
+$\Lambda_+-\Lambda_-$ and are not claimed to be separately retarded or
+advanced.
+
+\section{Cartan sign and support audit}
+
+At arity three, the source
+\[
+ A_K^{(3)}=[q_3,\iota_K^{(1)}]+[q_2,\iota_K^{(2)}]-L_K^{(3)}
+\]
+has two normalized closure channels.  Their exact coefficients are
+\[
+ -\frac12+\frac12=0,
+ \qquad [q_3,K]=0.
+\]
+The first equality is graded Jacobi; the second is the imported local
+$K$-derivation identity with $L_K^{(3)}=0$.
+
+For cyclicization, the operator output is first paired with the degree-one odd
+Darboux form.  The resulting four-linear tensor uses the Koszul rotation
+\[
+ (-1)^{|x_0|(|x_1|+|x_2|+|x_3|)}.
+\]
+The actual degree multiplicities are
+\[
+ 5z^{-1}+22+22z+5z^2.
+\]
+The coefficient of $z^0$ in its fourth power is $978{,}736$.  Exhaustion over
+these actual degree classes gives zero $C_4$ group-law defects.  Exact group
+algebra arithmetic verifies
+\[
+ \left(\frac{1+\tau+\tau^2+\tau^3}{4}\right)^2
+ =\frac{1+\tau+\tau^2+\tau^3}{4}.
+\]
+
+The support claim is
+\[
+ \operatorname{supp}\iota_{K,\mathrm{cyc}}^{(3)}(f,g,h)
+ \subseteq J(\operatorname{supp}f\cup\operatorname{supp}g
+ \cup\operatorname{supp}h).
+\]
+The certificate deliberately rejects the stronger statement that this cyclic
+primitive is separately retarded or advanced.
+
+\section{Fast replay and frozen heavy tier}
+
+From the repository root for this programme, the focused fast checks are:
+\begin{verbatim}
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  verify_berger_causal_d_cartan_arity_three.py
+
+PYTHONPATH=. pytest -q \
+  d_quotient_classical/backreacted_clock/tests/\
+  test_berger_causal_d_cartan_arity_three.py \
+  d_quotient_classical/backreacted_clock/tests/\
+  test_paper_09_claim_table.py
+
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  berger_q3_action_sector_crosscheck.py --check --guards
+
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  verify_berger_q3_action_sector_crosscheck.py
+
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  berger_generator_conjugation_audit.py --check --guards
+
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  verify_berger_generator_conjugation_audit.py
+\end{verbatim}
+
+The complete $q_3$ derivation is not part of this fast rail.  Its recorded
+Tier-2 receipt is
+\path{../d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q3_TIER2_RECEIPT.json}.
+Recompute that tier only when the action, convention, canonical maps, PBW
+engine or payload changes; otherwise verify and import its content-addressed
+output.
+
+\section{Fail-closed boundaries}
+
+The main theorem depends on the conjunction of the ten claims above.  It does
+not promote any of the following:
+\begin{itemize}
+\item a curved/affine $D$-Cartan contraction at any nonlinear order;
+\item an unconditional or convergent all-orders $K$-Cartan contraction;
+\item arity-four closure;
+\item an integrated nonlinear gauge quotient or global complete observable;
+\item a general-background nonlinear Koszul--Tate export;
+\item Hadamard or Feynman two-point functions;
+\item renormalized composites, anomaly cancellation or the quantum master
+equation;
+\item a positive graviton Hilbert space or interacting unitarity;
+\item a boundary, asymptotic, black-hole or scattering charge theorem.
+\end{itemize}
+The positive matter clock and the vanishing compact-universe tangent charge
+must not be transported to those settings without a new phase-space and
+boundary calculation.
+
+\section{Post-freeze two-phase counterflow successor disposition}
+
+A separate two-phase counterflow successor does not furnish a healthier
+replacement for the frozen theorem.  Its repaired 70-row causal BV parent is
+now physically quotiented on the maximal certified Peter--Weyl domain
+\[
+ j=0,\qquad j=\frac12,\qquad j=1,
+\]
+with every left and right weight retained.  Across the full degeneracy
+orbits these blocks contain 980 q70 coordinates, 364 coordinates after the
+26-row contraction, and 98 nonzero-frequency physical quotient coordinates.
+They contain, respectively, a real exponential direction, a
+Hamiltonian--Hopf quartet, and complex-frequency sectors; every displayed
+characteristic pairing has zero radical.
+
+All nonzero-frequency witnesses survive the fixed-$Q_{\rm rel}$ restriction.
+Fixing the charge instead removes the separate global relative action--angle
+pair.  Linear physical health is therefore obstructed on both charge
+branches.  This conclusion is complete as an obstruction but not as a mode
+census: for $j\ge\frac32$ the support-local causal parent is imported while
+the physical quotient, characteristic divisor and pairing inertia are all
+\texttt{NO\_CERTIFIED\_MAP}.  No higher-$j$ spectrum is extrapolated from the
+first generic counterexample.  The certificate is
+\path{../d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_HEALTH_ASSEMBLY_MAXIMAL_DOMAIN_V1.json}.
+
+\section{Theorem-freeze receipt}
+
+The frozen release satisfied the following checklist:
+\begin{enumerate}
+\item every pinned certificate and independent verifier passes from a clean
+committed tree;
+\item the release manifest records the source commit, operating system,
+Python, SymPy, JSON Schema and pytest versions, and distinguishes the fast and
+heavy rails;
+\item the JSON claim ledger, this table and the manuscript theorem have no
+missing or broadened dependency;
+\item the nonlinear team independently imports the frozen $q_2$, $q_3$ and
+arity-three Cartan hashes and signs off Sections 6--7;
+\item the action-to-$q_3$ strategic cross-check remains exact and is described
+as partial rather than a full second producer;
+\item the generator-conjugation audit remains exact, the BV theorem is stated
+for $K$, and no legacy artifact name is read as an affine $D$ theorem;
+\item the abstract, theorem and conclusion retain the classical,
+fixed-coupling, compact-Berger and arity-three limitations;
+\item the compiled main paper and supplement are reproduced from a clean
+checkout.
+\end{enumerate}
+
+The original machine-readable replay and environment manifest is
+\path{../d_quotient_classical/certificates/PAPER_09_THEOREM_FREEZE.json}.
+The publication-current observer audit is
+\path{09-relational-clocks-berger-d-cartan-claim-map.json}, independently
+checked by \path{verify_09_relational_clocks_claim_map.py}.  The original ten
+scientific claims retain their frozen scope, but this publication-current
+edition is \texttt{DRAFT\_ALLOWED}: the legacy ledger's TeX source binding
+must be formally superseded or repinned, and the pre-existing 84-row apparatus
+certificate drift must be repaired before an uninterrupted full observer
+suite can pass.  This disposition records the observer nonactivation; it does
+not promote Maxwell apparatus, Hadamard, QME or all-orders claims.
+
+\end{document}

@@ -114,22 +114,27 @@ def topic_page(data,key):
     return shell(topic['title'],body,'introduction' if key=='introduction' else 'questions',True)
 
 
+def display_label(term):
+    label=term['label']
+    return label.capitalize() if label in {'LOCAL-ALGEBRAIC','EUCLIDEAN-SPECTRAL','REDUCED-MODE','LORENTZIAN-CAUSAL'} else label
+
+
 def generated():
     data=load()
     outputs={'index.html':topic_page(data,'introduction').encode(),'wave.html':topic_page(data,'wave').encode(),
         'reading.css':(ASSETS/'reading.css').read_bytes(),'reading.js':(ASSETS/'reading.js').read_bytes(),
         'editorial-record.json':(json.dumps({k:v for k,v in data.items() if k!='concepts'},indent=2,ensure_ascii=False)+'\n').encode()}
     dictionary=json.loads(DICTIONARY.read_text())
-    for name in ['dictionary.js','dictionary.css','site-shell.css']:
+    for name in ['dictionary.js','dictionary.css','site-shell.css','term-occurrences.js']:
         outputs[name]=(ASSETS/name).read_bytes()
     outputs['dictionary.json']=DICTIONARY.read_bytes()
     ordered=sorted(dictionary['terms'],key=lambda t:t['label'].casefold())
     body='<header class="reading-hero"><p class="eyebrow">Concepts and connections</p><h1>Terminology &amp; dictionary</h1><p class="deck">Explanations for General, Physics, Mathematics and Specialist readers.</p></header>'
     body+='<!-- GLOBAL_TERMINOLOGY_INDEX -->'
     outputs['dictionary.html']=shell('Dictionary',body,'dictionary',True).encode()
-    labels={t['id']:t['label'] for t in ordered}
+    labels={t['id']:display_label(t) for t in ordered}
     for term in ordered:
-        body=f'<section class="reading-section dictionary-entry" id="{e(term["id"])}"><header class="dictionary-entry-heading"><a class="dictionary-back" href="dictionary.html">Back to A–Z</a><h1>{e(term["label"])}</h1><p>{e(term["scope"])}</p>'+ (f'<p class="abbreviation-expansion"><strong>Stands for:</strong> {e(term["expansion"])}</p>' if term.get('expansion') else '')+'</header>'
+        body=f'<section class="reading-section dictionary-entry" id="{e(term["id"])}"><header class="dictionary-entry-heading"><a class="dictionary-back" href="dictionary.html">Back to A–Z</a><h1>{e(display_label(term))}</h1><p>{e(term["scope"])}</p>'+ (f'<p class="abbreviation-expansion"><strong>Stands for:</strong> {e(term["expansion"])}</p>' if term.get('expansion') else '')+'</header>'
         for audience,definition in term['definitions'].items():
             body+=f'<div data-edition="{audience}"'+(' hidden' if audience!='general' else '')+f'><span class="edition-label">{e(data["audiences"][audience]["label"])}</span><p class="definition-summary">{linked_text(definition,ordered,term['id'])}</p>'
             for block in term['explanations'][audience]:
@@ -142,7 +147,8 @@ def generated():
         for ref in term.get('references',[]):
             body+=f'<li><a href="{e(ref["url"])}">{e(ref["title"])}</a></li>'
         body+='</ul></details><a href="dictionary.html">Back to word list</a></footer></section>'
-        outputs['term-'+term['id']+'.html']=shell(term['label'],body,'dictionary',True).encode()
+        body+=f'<section class="term-occurrences" data-term="{e(term["id"])}" data-no-dictionary><h2>Where this term appears</h2><p>Indexed phrase matches, not confirmation that every passage uses the same meaning. Repeated representations may be counted separately.</p><p class="occurrence-status" role="status">Loading indexed passages…</p><ol class="occurrence-results"></ol><button class="occurrence-previous" type="button" disabled>Previous</button> <button class="occurrence-next" type="button" disabled>Next</button><p><a href="term-uses-{e(term["id"])}.json">Download all indexed passages and source hashes</a></p><noscript><p>Use the download link to read the indexed passages without JavaScript.</p></noscript></section><script src="term-occurrences.js" defer></script>'
+        outputs['term-'+term['id']+'.html']=shell(display_label(term),body,'dictionary',True).encode()
     questions='''<header class="reading-hero"><p class="eyebrow">Explore a question</p><h1>Where do the assumptions enter?</h1><p class="deck">Begin with one problem. Follow its explanation to the precise result and its evidence.</p></header>
 <div class="question-grid"><a class="question-card" href="wave.html"><span class="eyebrow">Physics and reverse mathematics</span><h2>When does an approximation justify a prediction?</h2><p>The same wave and detector, with and without a supplied error schedule.</p><span>General · Physics · Mathematics · Specialist →</span></a>
 <a class="question-card" href="cutoff-positivity.html"><span class="eyebrow">Finite models and the continuum</span><h2>Can every finite test pass while the full model fails?</h2><p>A conditional reduced-model positivity result and its limits.</p><span>Existing interactive account · audience migration pending →</span></a></div>'''
@@ -163,4 +169,4 @@ def generated():
 
 def inputs():
     data=load()
-    return [Path(__file__).resolve(),CONTENT,DICTIONARY,*[ROOT/s['path'] for t in json.loads(DICTIONARY.read_text())['terms'] for s in t['sources']],ASSETS/'dictionary.js',ASSETS/'dictionary.css',ASSETS/'site-shell.css',ASSETS/'reading.css',ASSETS/'reading.js',*[ROOT/r['path'] for r in data['sources'].values()],*[ROOT/'paper'/p for p in PAPERS]]
+    return [Path(__file__).resolve(),CONTENT,DICTIONARY,*[ROOT/s['path'] for t in json.loads(DICTIONARY.read_text())['terms'] for s in t['sources']],ASSETS/'dictionary.js',ASSETS/'term-occurrences.js',ASSETS/'dictionary.css',ASSETS/'site-shell.css',ASSETS/'reading.css',ASSETS/'reading.js',*[ROOT/r['path'] for r in data['sources'].values()],*[ROOT/'paper'/p for p in PAPERS]]

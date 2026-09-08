@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Independent structural/provenance checks; not a semantic prose verifier."""
+import gzip
 import hashlib
 from html.parser import HTMLParser
 import json
@@ -35,7 +36,28 @@ def verify():
     assert len(dp.ids)==len(set(dp.ids)), 'dictionary duplicate anchors'
     terms=sorted(dictionary['terms'],key=lambda t:t['label'].casefold())
     assert not any(t['id'] in dp.ids for t in terms)
+    extraction_path=ROOT/'foundations/results/TERM_EXTRACTION_V1.json.gz'
+    extraction=json.loads(gzip.decompress(extraction_path.read_bytes()))
+    units={u['id']:u for u in extraction['units']}
+    expected={t['id']:set() for t in terms}
+    for candidate in extraction['candidates']:
+        for tid in candidate['dictionary_ids']:
+            if tid in expected:expected[tid].update(map(tuple,candidate['occurrences']))
+    views={p.name:p.read_text() for p in SITE.glob('term-source-*.html')}
+    extraction_hash=hashlib.sha256(extraction_path.read_bytes()).hexdigest()
     for term in terms:
+        uses=json.loads((SITE/('term-uses-'+term['id']+'.json')).read_text())
+        assert uses['extraction_sha256']==extraction_hash
+        actual=set()
+        for passage in uses['passages']:
+            unit=units[passage['id']]
+            assert all(passage[k]==v for k,v in unit.items())
+            assert 0<=passage['start']<passage['end']<=len(unit['text'])
+            actual.add((passage['id'],passage['start'],passage['end']))
+            view,anchor=passage['reading_url'].split('#')
+            assert anchor in views[view]
+            assert (SITE/'sources'/unit['source']).is_file()
+        assert actual=={o for o in expected[term['id']] if not (units[o[0]]['scope']=='dictionary' and units[o[0]]['location'].split('/')[0]==term['id'])}
         entry=Page((SITE/('term-'+term['id']+'.html')).read_text())
         assert term['id'] in entry.ids and entry.editions==list(d['audiences'])
         if term.get('abbreviation'):assert term['expansion'] in term['definitions']['general']

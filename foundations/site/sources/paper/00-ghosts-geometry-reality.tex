@@ -1,0 +1,498 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=0.95in]{geometry}
+\usepackage{amsmath,booktabs,array,microtype,xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,
+            citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\hypersetup{
+  pdftitle={Ghosts, Geometry, and Reality in Fourth-Order Gravity},
+  pdfauthor={GPT-5.6.sol; Claude Fable 5; Asger Alstrup Palm},
+  pdfsubject={A thematic guide to the Weyl-gravity and reverse-foundations manuscript programme}
+}
+
+\newcommand{\keybox}[1]{%
+  \begin{center}
+  \fbox{\parbox{0.88\linewidth}{\centering #1}}
+  \end{center}}
+\newcommand{\paperlink}[2]{\href{#1}{\textbf{Paper #2}}}
+\emergencystretch=1em
+
+\title{Ghosts, Geometry, and Reality in Fourth-Order Gravity\\[4pt]
+\large A thematic guide to the manuscript programme}
+\author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
+\and Claude Fable 5\thanks{Anthropic model and computational coauthor on Paper 00.}
+\and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human
+contact; Honorary Professor, DTU Compute, Technical University of Denmark.
+\texttt{asger@area9.dk}.}}
+\date{17 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This document is a guide, not another synthesis.  It explains how the papers
+in the programme fit together, which question each paper is designed to
+answer, which conclusions may be carried forward, and which stronger
+interpretations are explicitly excluded.
+
+The manuscript series follows four connected threads.  Papers 01--06 study
+positive and indefinite completions of fourth-order systems and the
+interaction problem.  Papers 07--13 move to gauge reduction, causal BV--BFV
+transport, compact laboratories, observables, anomaly, and nonlinear
+continuation.  Papers 14--18 study pure-Weyl black holes and the four-level
+ghost classification.  Papers 19--22 separate physical assumptions from
+mathematical carriers through Mannheim gravity, gauge algebra, reverse
+foundations, and a Bateman--Turok counterfamily.  Papers 98 and 99 provide
+physicist and general-audience entrances; Papers 90--92 and the computational
+supplements expose selected interfaces and verification details.
+
+The guide is organized by reading purpose rather than release order.  A
+reader can enter through a physical question---ghosts, causal gauge theory,
+black holes, galactic data, or mathematical foundations---and follow only the
+papers and evidence rails needed for that question.
+\end{abstract}
+
+\section*{Authorship and use}
+
+Asger Alstrup Palm, a computer scientist and Honorary Professor at DTU
+Compute, orchestrates the programme and is the accountable human contact.
+AI systems perform substantial derivation, programming, literature work,
+adversarial review, and drafting.  Claude Fable~5 contributed to this guide.
+Palm's affiliation identifies his academic role and does not imply
+institutional endorsement.
+
+The papers are research manuscripts, not substitutes for independent expert
+review.  This guide describes their intended logical relationships; it does
+not strengthen any theorem.  Follow each technical claim to its assumptions,
+certificate, verifier, and explicit non-claims in the
+\href{https://github.com/area9innovation/weyl-gravity}{public repository}.
+
+\tableofcontents
+
+\section{Choose an entrance}
+
+The three public-facing documents have deliberately different jobs.
+
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.18\linewidth}
+                >{\raggedright\arraybackslash}p{0.29\linewidth}
+                >{\raggedright\arraybackslash}p{0.43\linewidth}}
+\toprule
+Reader & Begin with & Purpose\\
+\midrule
+General audience
+& \href{99-how-to-build-a-universe.pdf}{\textbf{Paper 99}}
+& Why a theory depends on physical, mathematical, logical, operational, and
+empirical assumptions.\\
+Physicist or referee
+& \href{98-physicist-executive-summary.pdf}{\textbf{Paper 98}}
+& Compact technical synthesis, exact claim boundaries, and routes into the
+certificate atlas.\\
+Reader choosing a specialist route
+& \textbf{Paper 00} (this guide)
+& Which manuscript answers which question, how papers depend on one another,
+and where an inference must stop.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+For a single theme, the shortest routes are:
+\begin{itemize}
+\item \textbf{What is a ghost?}  Read Papers 01, 03, 04, 05, and 15.
+\item \textbf{What survives gauge reduction?}  Read Papers 07, 08, 10, and 15.
+\item \textbf{What survives interaction?}  Read Papers 05, 06, 11, and 13.
+\item \textbf{What is the quantum obstruction?}  Read Paper 12, then Paper 98
+for the Lorentzian boundary.
+\item \textbf{What happens around Schwarzschild?}  Read Papers 16 and 17;
+use Papers 14 and 18 for architecture and the separate static problem.
+\item \textbf{What must Mannheim gravity assume?}  Read Papers 19 and 18.
+\item \textbf{What changes when the mathematics changes?}  Read Papers 20,
+21, and 22.
+\end{itemize}
+
+\section{How claims move through the series}
+
+The series began from a four-level distinction that remains the safest way to
+read it.  The word ``ghost'' can denote:
+\begin{enumerate}
+\item a local solution of a differential equation;
+\item a classical direction surviving gauge symmetry, constraints, charges,
+boundaries, and the symplectic radical;
+\item a direction admitting consistent nonlinear continuation;
+\item a state or particle in a positive quantum theory.
+\end{enumerate}
+
+A paper can establish one level while leaving the next untouched.  This is
+why the guide gives every manuscript both a \emph{use} and a \emph{boundary}.
+The boundary is part of the result, not a disclaimer added afterward.
+
+Quantum claims also retain one or more exact dependency tags:
+\begin{center}
+\texttt{LOCAL-ALGEBRAIC}\quad
+\texttt{EUCLIDEAN-SPECTRAL}\quad
+\texttt{REDUCED-MODE}\quad
+\texttt{LORENTZIAN-CAUSAL}.
+\end{center}
+A Euclidean determinant does not become a Lorentzian state.  A reduced mode
+does not become a full metric/BV propagator.  A residual cohomology class does
+not become a one-particle graviton without a separate transfer theorem.
+
+\keybox{\textbf{How to use the guide.}
+Choose a question, read the paper listed for that question, and stop at the
+boundary stated in the same row.  Cross the boundary only through an explicit
+paper, bridge note, or certificate.}
+
+\section{Thread I: completion and interaction---Papers 01--06}
+
+This thread starts with the Pais--Uhlenbeck oscillator, separates positive
+metrics from vacuum and representation data, carries the distinction into
+gravity, and then tests whether free completions survive interactions.
+
+\begin{description}
+\item[\paperlink{01-symplectic-diagonalization.pdf}{01}: canonical positive
+symplectic diagonalization.]
+Use this paper for its exact unequal-frequency normal form and positive
+finite-dimensional metric.  Do not infer a field representation,
+equal-frequency completion, interacting metric, or gravitational state.
+
+\item[\paperlink{02-variational-fock.pdf}{02}: minimum distortion and field
+representation.]
+Use this paper to distinguish the variationally selected oscillator metric
+from the ultraviolet requirements of a fourth-order field representation.
+Do not treat a finite similarity transform as an automatically implementable
+Fock-space transformation.
+
+\item[\paperlink{03-fourth-order-vacuum.pdf}{03}: vacuum, Fock sectors, and
+the Krein boundary.]
+Use this paper for the classification of vacuum covariance, metric orbits,
+Fock sectors, and the equal-frequency Jordan limit.  Do not infer that a
+Krein carrier selects a positive physical state or survives interaction.
+
+\item[\paperlink{04-fourth-order-gravity.pdf}{04}: gauge reduction in
+fourth-order gravity.]
+Use this paper to see how Lorentz covariance, helicity, constraints, and the
+conformal Jordan boundary alter the scalar completion problem.  Do not model
+the gravity system as independent copies of the oscillator or infer a
+nonlinear quantum theory.
+
+\item[\paperlink{05-interaction-obstructions.pdf}{05}: resonant interaction
+obstruction.]
+Use this paper for the scoped failure of the canonical analytic positive
+metric under branch-changing interaction in fourth-order scalar systems.  It
+does not exclude indefinite, nonlocal, singular, or nonperturbative
+prescriptions.
+
+\item[\paperlink{06-einstein-weyl-interaction-obstructions.pdf}{06}:
+Einstein--Weyl interaction obstruction.]
+Use this paper for cubic protection followed by a second-order metric failure
+in a declared gravitational channel.  Do not promote the obstruction to all
+interactions, all backgrounds, or strict pure-Weyl gravity.
+\end{description}
+
+\textbf{Thread logic:}
+Paper 01 constructs a positive finite model; Papers 02--04 expose the extra
+representation and gauge obligations; Papers 05--06 test the first nonlinear
+promotion.  The correct conclusion is not ``positive'' or ``ghostly'' in the
+abstract, but a typed map of which completion survives which gate.
+
+\section{Thread II: causal and compact pure-Weyl theory---Papers 07--13}
+
+This thread replaces local mode counting with full complexes, support
+conditions, residual reduction, action-derived pairings, relational
+observables, anomaly classes, and second-order continuation.
+
+\begin{description}
+\item[\paperlink{07-conformal-residual-cohomology-krein.pdf}{07}: residual
+cohomology on the conformal cylinder.]
+Use this paper for the declared zero-charge residual reduction and the
+centered Weyl-square classes.  The classes are deformation or vertex classes,
+not one-particle gravitons, and their positive residual pairing is not a
+positive interacting Hilbert space.
+
+\item[\paperlink{08-conformal-covariant-causal-transport.pdf}{08}: covariant
+causal transport.]
+Use this paper for the complete free BV--BFV transport between support
+conditions and for the transported pairing.  Do not infer interacting causal
+products, a positive Hadamard state, or a Lorentzian QME.
+
+\item[\paperlink{09-relational-clocks-berger-d-cartan.pdf}{09}: a
+backreacting phase clock.]
+Use this paper for a controlled compact relational-clock construction and its
+Cartan analysis.  The fixture is a model laboratory, not a realistic matter
+clock, cosmology, or universal resolution of the problem of time.
+
+\item[\paperlink{10-compact-einstein-maxwell-weyl-phase-space.pdf}{10}:
+Einstein--Maxwell inside Weyl--Maxwell.]
+Use this paper for the exact inclusion of the Einstein--Maxwell tangent and
+the identification of additional nonradical branches on a compact product.
+Classical quotient directions and Lee--Wald signs are not quantum particles
+or probabilities.
+
+\item[\paperlink{11-gravity-light-cyclic-causal-ell3.pdf}{11}: retained
+gravity--light bracket.]
+Use this paper for an exact mixed bracket surviving cyclic homological
+reduction through the declared third operation.  Do not infer an all-order
+interacting observable algebra or scattering construction.
+
+\item[\paperlink{12-pure-weyl-one-loop-bv-anomaly.pdf}{12}: local one-loop BV
+obstruction.]
+Use this paper for the strict local Euclidean anomaly classification and the
+formal compensator restoration in an enlarged theory.  The compensator
+changes the field content; neither branch supplies a Lorentzian QME, positive
+state, particles, or unitarity.
+
+\item[\paperlink{13-compact-weyl-maxwell-second-order-tangent-cone.pdf}{13}:
+formal second-order tangent cone.]
+Use this paper for stabilizer moment maps, finite-harmonic continuation, and
+declared bounded-resonance tests.  A formal second-order jet is not an exact
+family, an all-orders solution, or a complete bounded nonlinear cone.
+\end{description}
+
+\textbf{Thread logic:}
+Papers 07--08 construct the free residual and causal base.  Papers 09--11 ask
+how clocks, phase space, and observables sit on that kind of structure.
+Papers 12--13 test two different nonlinear promotions: quantum consistency
+and classical second-order continuation.  Their outcomes do not substitute
+for one another.
+
+\section{Thread III: black holes and the four-level classification---Papers 14--18}
+
+The black-hole thread separates operator factorization, endpoint selection,
+resonance, causal response, and static charges.  It should not be read as one
+undifferentiated ringdown claim.
+
+\begin{description}
+\item[\paperlink{14-pure-weyl-black-hole-radiation.pdf}{14}: black-hole
+radiation architecture.]
+Use this paper for the Ricci--Bach composition, horizon pairing, and the
+operator architecture that motivates the later endpoint and resonance
+theorems.  For theorem-strength endpoint and double-pole claims, continue to
+Papers 16 and 17 rather than treating the architecture as their substitute.
+
+\item[\paperlink{15-four-level-ghost-classification-phase1-synthesis.pdf}{15}:
+four-level ghost classification.]
+Use this paper to compare local solutions, classical reduced directions,
+nonlinear continuation, and positive quantum states across the controlled
+laboratories.  It is a synthesis of scoped results, not a universal rescue or
+universal no-go theorem.
+
+\item[\paperlink{16-lorentzian-endpoint-nonselection-pure-weyl.pdf}{16}:
+Lorentzian endpoint non-selection.]
+Use this paper for the theorem that future-horizon regularity and ordinary
+one-sided radiative traces do not select the Einstein subsector of the
+complete axial system in the stated scope.  Do not infer all-multipole,
+polar, nonlinear, or quantum non-selection.
+
+\item[\paperlink{17-pure-weyl-schwarzschild-extension-structure.pdf}{17}:
+non-split extension and defective resonance.]
+Use this paper for the repeated Regge--Wheeler self-extension, one certified
+Smith type \((0,0,2)\), the nonzero double radial Green pole, and its retarded
+mode-reduced parent.  It does not establish a full metric/BV causal resolvent,
+global contour theorem, complete late-time expansion, real astrophysical
+excitation, or detector waveform.
+
+\item[\paperlink{18-static-bach-flat-black-hole-thermodynamics.pdf}{18}:
+static Bach-flat charges and first laws.]
+Use this paper for residual-basic normalization of Hamiltonian, entropy, and
+signed temperature across the certified static Mannheim--Kazanas family.  It
+is a static charge theorem, not a physical-process or radiative
+thermodynamics theorem.
+\end{description}
+
+\textbf{Thread logic:}
+Paper 14 supplies architecture; Paper 15 supplies the cross-laboratory claim
+grammar; Paper 16 answers the endpoint-selection question; Paper 17 answers a
+spectral and mode-reduced causal-response question; Paper 18 deliberately
+returns to the separate static problem.
+
+\section{Thread IV: assumptions and reverse foundations---Papers 19--22}
+
+This thread asks which parts of a physical conclusion come from the equation,
+which come from matter and boundary premises, which come from the gauge or
+mathematical carrier, and which survive explicit counterexamples.
+
+\begin{description}
+\item[\paperlink{19-what-conformal-gravity-must-assume.pdf}{19}: what
+conformal gravity must assume.]
+Use this paper to separate the Mannheim--Kazanas radial solution from its
+matter, conformal-frame, source-moment, boundary, and galactic-data premises.
+Its NGC~3198 comparison is one frozen 39-point protocol, not population-level
+model selection or a universal verdict on conformal gravity.
+
+\item[\paperlink{20-is-the-gauge-algebra-an-assumption.pdf}{20}: direct check
+of the Bach gauge algebra.]
+Use this paper for a polynomial-jet search for Noether identities.  Within
+the tested derivative orders and curvature degrees, it finds no additional
+local generator after quotienting differential reparametrizations and
+trivial symmetries.  It is a lower bound on completeness, not an all-orders
+closure theorem.
+
+\item[\paperlink{21-reverse-foundations-of-physics.pdf}{21}: reverse
+foundations of physics.]
+Use this paper for the literature synthesis and typed separation of logic,
+existence theory, mathematical carrier, physical postulates, and one physical
+obligation.  Its \(6\times6\times16=576\) atlas coordinates are questions,
+not complete theories; populated cells and programme coverage do not compose
+without interface theorems.
+
+\item[\paperlink{22-bateman-turok-euclidean-torus-collapse.pdf}{22}: a
+Bateman--Turok Green-tail counterfamily.]
+Use this paper for the exact positive, nonseparable torus family that refutes
+one deterministic all-field scaled-PL route.  It does not decide Gibbs
+typicality, the interacting Witten or \(H^{-1}\) estimate, continuum
+reconstruction, positivity, or any Lorentzian claim.
+\end{description}
+
+\textbf{Thread logic:}
+Paper 19 separates a solution from its physical interpretation.  Paper 20
+tests whether a familiar algebra is premise or consequence.  Paper 21 turns
+that separation into a general research atlas.  Paper 22 demonstrates how the
+atlas should behave when an attractive bridge fails: refute the bridge
+precisely without inflating the result into a verdict on the entire programme.
+
+\section{Public syntheses, supplements, and bridge notes}
+
+\subsection{Public syntheses}
+
+\begin{description}
+\item[\href{98-physicist-executive-summary.pdf}{\textbf{Paper 98: Reverse
+physics and pure-Weyl gravity.}}]
+The physicist-facing synthesis.  Use it for the compact programme argument,
+exact dependency boundaries, principal numerical comparisons, and reviewer
+route into the interactive evidence atlas.
+
+\item[\href{99-how-to-build-a-universe.pdf}{\textbf{Paper 99: How to Build a
+Universe.}}]
+The general-audience introduction.  Use it for the theory-as-a-stack idea,
+the purpose of the 576-coordinate atlas, and the role of exposition and
+verification in AI-assisted research.
+\end{description}
+
+\subsection{Computational supplements and archival manuscript}
+
+The supplements document derivations, conventions, tables, and reproduction
+commands without changing the claim boundary of their parent paper:
+\begin{itemize}
+\item \href{07-08-conformal-residual-cohomology-computational-supplement.pdf}{Papers
+07--08 computational supplement};
+\item \href{09-relational-clocks-berger-d-cartan-computational-supplement.pdf}{Paper
+09 computational supplement};
+\item \href{12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf}{Paper
+12 computational supplement};
+\item \href{16-endpoint-nonselection-computational-supplement.pdf}{Paper 16
+computational supplement}.
+\end{itemize}
+The \href{07-08-conformal-residual-cohomology-archive.pdf}{combined Papers
+07--08 archival manuscript} preserves the earlier paired presentation; use
+the separate Papers 07 and 08 for the cleaner residual/causal division.
+
+\subsection{Bridge notes 90--92}
+
+Bridge notes translate between communities and expose interfaces; they are
+not additional headline-paper conclusions.
+\begin{description}
+\item[\href{90-cyclic-green-transfer-bridge.pdf}{\textbf{Paper 90: cyclic
+Green transfer.}}]
+Connects Green-hyperbolic complexes, support-local cyclic deformation
+retracts, and conformal detour constructions.  Use it with Papers 08 and 11.
+
+\item[\href{91-charge-fibre-taub-bridge.pdf}{\textbf{Paper 91: charge-fibre
+Taub bridge.}}]
+Connects compact pure-extra obstruction and a balanced Einstein--extra
+second-order extension.  Use it with Papers 10 and 13; its formal second-order
+jet is not an all-orders family.
+
+\item[\href{92-extra-axial-lee-wald-bridge.pdf}{\textbf{Paper 92: compact
+currents and black-hole endpoints.}}]
+Compares extra classical Lee--Wald directions with adjacent positive-metric,
+BRST/Fock, and boundary-selection questions.  Use it between Papers 10,
+16, and 17; classical signs remain distinct from quantum norms.
+\end{description}
+
+\section{Reading routes by research question}
+
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.31\linewidth}
+                >{\raggedright\arraybackslash}p{0.59\linewidth}}
+\toprule
+Question & Route\\
+\midrule
+Can a fourth-order free theory have a positive completion?
+& 01 \(\rightarrow\) 02 \(\rightarrow\) 03 \(\rightarrow\) 04.\\
+Does that completion survive interaction?
+& 05 \(\rightarrow\) 06; compare 13 for a different nonlinear gate.\\
+What survives the classical gauge quotient?
+& 07 \(\rightarrow\) 08 \(\rightarrow\) 10; synthesize with 15.\\
+Can an observable or clock be transported?
+& 09 and 11, with Bridge 90 for the causal-transfer interface.\\
+Where does quantization first fail or remain incomplete?
+& 12 \(\rightarrow\) 98; keep Euclidean anomaly and Lorentzian pseudo-state
+as separate questions.\\
+Do black-hole boundary conditions remove the extra sector?
+& 14 \(\rightarrow\) 16 \(\rightarrow\) 17; use 18 only for the separate
+static charge problem.\\
+Does conformal gravity explain rotation curves?
+& 19, then 18 for static geometry and 21 for the assumption map.\\
+Is the gauge algebra assumed or derived?
+& 20 \(\rightarrow\) 21.\\
+What if Choice, Hilbert space, or the continuum is changed?
+& 21, using 03 for Krein structure and 22 for a concrete Euclidean
+counterexample.\\
+How should an external reviewer begin?
+& 98 \(\rightarrow\) relevant technical paper \(\rightarrow\) certificate
+\(\rightarrow\) independent verifier.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{How to inspect a claim}
+
+The \href{../foundations/site/index.html}{Reverse Physics Atlas} is the
+interactive companion to this guide.  It exposes the dimensions, matrix
+cells, theory profiles, programme assemblies, end-to-end journeys, Weyl BV
+routes, literature records, certificates, and formal-proof passports.
+
+For a computer-assisted result, follow
+\[
+\begin{aligned}
+ \text{paper claim}
+ &\longrightarrow \text{producer}
+ \longrightarrow \text{machine-readable certificate}\\
+ &\longrightarrow \text{independent verifier}
+ \longrightarrow \text{adversarial or mutation test}.
+\end{aligned}
+\]
+Re-running the producer is reproduction, not independent verification.
+Exact algebra and numerical evidence are different types.  A skip, missing
+input, or timeout is not a pass.
+
+The manuscript sequence alone is not a dependency proof.  Two papers may use
+different actions, backgrounds, carriers, support conditions, or empirical
+protocols.  A later paper can sharpen an earlier question without promoting
+all of its claims.  The certificate and non-claim boundary determine what may
+be transferred.
+
+\section{What the whole series does and does not claim}
+
+Across the four threads, the programme establishes examples of positive and
+Krein free completions, interaction obstructions, residual and causal gauge
+constructions, additional nonradical classical directions, nonlinear balance
+and obstruction, a strict local Euclidean anomaly, a full-complex indefinite
+BRST--Hadamard pseudo-state pair, black-hole endpoint non-selection and a
+defective mode-reduced response, bounded empirical controls, and a
+deterministic Euclidean counterfamily.
+
+Those ingredients do not compose automatically into a complete theory.  The
+series does not establish a positive full-BV particle space, Lorentzian
+interacting quantum gravity, scattering or unitarity, a complete causal
+black-hole waveform, population-level galactic model selection, a continuum
+Bateman--Turok reconstruction, or a universal weakest-foundation theorem.
+
+\keybox{\textbf{Role of Paper 00.}
+Paper 99 explains why the programme matters.  Paper 98 states the compact
+physicist-level synthesis.  Paper 00 tells the reader where to go next and
+where each route must stop.}
+
+\end{document}

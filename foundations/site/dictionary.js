@@ -24,7 +24,7 @@
     clearTimeout(timer); active?.setAttribute('aria-expanded','false'); active = button;
     button.setAttribute('aria-expanded','true'); popup.replaceChildren();
     const heading = document.createElement('strong');
-    const titleLink = document.createElement('a'); titleLink.textContent = term.label;
+    const titleLink = document.createElement('a'); titleLink.textContent = ['LOCAL-ALGEBRAIC','EUCLIDEAN-SPECTRAL','REDUCED-MODE','LORENTZIAN-CAUSAL'].includes(term.label) ? term.label[0]+term.label.slice(1).toLowerCase() : term.label;
     titleLink.addEventListener('click',hide); heading.append(titleLink); popup.append(heading);
     const scope = document.createElement('p'); scope.textContent = term.scope; popup.append(scope);
     let raw = new URLSearchParams(location.search).get('audience');

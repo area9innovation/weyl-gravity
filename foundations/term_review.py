@@ -2,7 +2,7 @@
 import gzip,hashlib,json,re
 from html import escape
 from pathlib import Path
-from foundations import reading_site
+from foundations import reading_site, term_passages
 from foundations.extract_editorial_terms import OUT,check_cached
 ROOT=Path(__file__).resolve().parents[1]
 ASSETS=ROOT/'foundations/matrix_site_v2_assets'
@@ -74,7 +74,7 @@ def generated(matrix_bytes,dictionary_page=None):
     public='<section id="terminology-index" class="core-dictionary-index" data-no-dictionary><h2>Dictionary A–Z</h2><p>Search by name or abbreviation. Hover, focus or tap a term for its explanation; open the full entry to compare perspectives.</p><label>Find an explained concept<input id="dictionary-search" type="search" placeholder="Name or abbreviation, e.g. ACA_0, energy, ghost"></label><p id="dictionary-index-status" role="status">'+str(len(ordered))+' explained concepts</p><ul id="dictionary-word-list">'
     for term in ordered:
         names=' '.join([term['label'],*term['aliases'],term.get('expansion','')])
-        public+='<li data-search="'+escape(names.casefold(),quote=True)+'"><a class="dictionary-term" data-dictionary-id="'+escape(term['id'],quote=True)+'" href="term-'+escape(term['id'],quote=True)+'.html">'+escape(term['label'])+'</a></li>'
+        public+='<li data-search="'+escape(names.casefold(),quote=True)+'"><a class="dictionary-term" data-dictionary-id="'+escape(term['id'],quote=True)+'" href="term-'+escape(term['id'],quote=True)+'.html">'+escape(reading_site.display_label(term))+'</a></li>'
     public+='</ul><details id="editorial-inventory"><summary>Editorial inventory — extracted phrases awaiting review</summary><p>This discovery queue is not the public dictionary. A detected phrase may be ordinary language, notation or a different sense of an explained term.</p>'+body+'</details></section>'
     page=dictionary_page.decode().replace('<!-- GLOBAL_TERMINOLOGY_INDEX -->',public)
     page=page.replace('</head>','<link rel="stylesheet" href="term-review.css"><script src="term-review.js" defer></script></head>')
@@ -91,6 +91,35 @@ def generated(matrix_bytes,dictionary_page=None):
     summary['publication_filter']=publication_filter
     outputs['term-extraction-summary.json']=(json.dumps(summary,ensure_ascii=False,indent=2)+'\n').encode()
     extraction_hash=hashlib.sha256(OUT.read_bytes()).hexdigest()
+    units_by_id={u['id']:u for u in data['units']}
+    uses={t['id']:set() for t in dictionary['terms']}
+    for candidate in data['candidates']:
+        for tid in candidate['dictionary_ids']:
+            if tid in uses:uses[tid].update(map(tuple,candidate['occurrences']))
+    source_names=sorted({units_by_id[o[0]]['source'] for spans in uses.values() for o in spans})
+    source_views={source:'term-source-'+hashlib.sha256(source.encode()).hexdigest()[:16]+'.html' for source in source_names}
+    referenced_units={o[0] for spans in uses.values() for o in spans}
+    for source,name in source_views.items():
+        content='<header class="reading-hero"><h1>Indexed passages</h1><p>'+escape(source)+'</p><p>Readable prose from the extraction snapshot. Mathematical displays and excluded material are omitted; this is not a replacement for the original document.</p></header>'
+        pdf=(ROOT/source).with_suffix('.pdf')
+        if source.startswith('paper/') and pdf.exists():
+            outputs['papers/'+pdf.name]=pdf.read_bytes()
+            content+='<p><a href="papers/'+escape(pdf.name)+'">Read the typeset paper (PDF)</a></p>'
+        content+='<p><a href="sources/'+escape(source)+'">Original source file</a></p>'
+        outputs['sources/'+source]=matrix_bytes if source=='foundations/site/data.json' else (ROOT/source).read_bytes()
+        for unit in data['units']:
+            if unit['source']==source and unit['id'] in referenced_units:
+                content+='<section class="indexed-passage" data-no-dictionary id="passage-'+str(unit['id'])+'"><h2>'+escape(unit['location'])+'</h2>'+term_passages.render(unit['text'])+'</section>'
+        outputs[name]=reading_site.shell('Indexed passages',content,'dictionary').encode()
+    for tid,spans in uses.items():
+        passages=[]
+        for uid,start,end in sorted(spans):
+            unit=units_by_id[uid]
+            if unit['scope']=='dictionary' and unit['location'].split('/')[0]==tid:continue
+            passages.append(dict(unit,start=start,end=end,rendered_html=term_passages.render(unit['text'],start,end),reading_url=source_views[unit['source']]+'#passage-'+str(uid)))
+        payload=dict(schema_version=1,term_id=tid,extraction_sha256=extraction_hash,source_sha256=data['inputs_sha256'],passages=passages)
+        outputs['term-uses-'+tid+'.json']=(json.dumps(payload,ensure_ascii=False,separators=(',',':'))+'\n').encode()
+
     for scope in ['all','ladder','matrix','atlas','reading','dictionary','papers']:
         units={u['id']:u for u in data['units'] if scope=='all' or u['scope']==scope}
         candidates=[]
@@ -104,4 +133,4 @@ def generated(matrix_bytes,dictionary_page=None):
     return outputs
 
 
-def inputs():return [Path(__file__).resolve(),POLICY,OUT,ASSETS/'term-review.js',ASSETS/'term-review.css']
+def inputs():return [Path(__file__).resolve(),Path(term_passages.__file__),ROOT/'foundations/site-rendering-requirements.txt',*sorted((ROOT/'paper').glob('*.pdf')),POLICY,OUT,ASSETS/'term-review.js',ASSETS/'term-review.css']

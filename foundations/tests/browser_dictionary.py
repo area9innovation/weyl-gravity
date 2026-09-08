@@ -44,7 +44,7 @@ try:
     page.wait_for_function("document.querySelector('#dictionary-popup') !== null")
     page.evaluate("""() => {
       const p=document.createElement('p');p.id='dictionary-probe';
-      p.innerHTML='RCA₀ and convergence rate; Xmodulus <code>ACA₀</code> <a href="#">RCA₀</a>';
+      p.innerHTML='rCa₀ and convergence rate; Xmodulus <code>ACA₀</code> <a href="#">RCA₀</a>';
       document.body.append(p);
     }""")
     probe=page.locator('#dictionary-probe');page.wait_for_function("document.querySelectorAll('#dictionary-probe .dictionary-term').length === 2")
@@ -58,6 +58,17 @@ try:
     probe.locator('.dictionary-term').first.click()
     box=popup.bounding_box();assert box['x']>=0 and box['x']+box['width']<=390
     page.screenshot(path='/tmp/dictionary-mobile.png')
+    page.goto(base+'term-local-algebraic.html')
+    assert page.locator('h1').inner_text()=='Local-algebraic'
+    page.goto(base+'term-aca.html')
+    page.wait_for_function("document.querySelector('.occurrence-status').textContent.includes('indexed passages')")
+    assert 0<page.locator('.occurrence-results > li').count()<=8
+    assert page.locator('.occurrence-results mark').first.inner_text()
+    page.locator('.occurrence-next').click()
+    assert page.locator('.occurrence-results').get_attribute('start')=='9'
+    page.locator('.occurrence-results > li > a').first.click()
+    assert page.locator('.indexed-passage:visible').count()==1
+    assert page.locator('.indexed-passage:visible p').count()>0
     page.goto(base+'term-observable.html?audience=general,mathematics')
     assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
     assert page.locator('#observable [data-edition]:visible').count()==2

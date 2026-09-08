@@ -1,0 +1,3434 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,booktabs,tabularx,longtable}
+\usepackage{microtype,xurl}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,
+            citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\Xep}{\mathscr X_{\mathrm{ep}}}
+\newcommand{\Xqp}{\mathscr X_{\mathrm{qp}}}
+\newcommand{\Diff}{\operatorname{Diff}}
+\newcommand{\Sol}{\operatorname{Sol}}
+\newcommand{\coker}{\operatorname{coker}}
+\newcommand{\cert}[1]{\nolinkurl{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{The Finite-Harmonic Formal Second-Order Tangent Cone\\
+of Compact Weyl--Maxwell Gravity\\
+\large Moment Maps, Bounded Resonances, and a Balanced Cubic Test}
+\author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
+\and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human contact; Honorary Professor, DTU Compute, Technical University of Denmark. \texttt{asger@area9.dk}.}}
+\date{Theorem-frozen draft, 21 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Linearized solutions of a nonlinear gauge theory need not be tangent to exact
+solutions.  We classify this failure at second order for finite harmonic
+configurations of Weyl--Maxwell gravity on the compact magnetically supported
+product
+\(
+ \R_t\times S^1\times S^2.
+\)
+The certified linear inventory contains the ordinary Einstein--Maxwell
+branches, two additional fourth-order branches in each generic parity,
+exceptional dipoles, a homogeneous generalized block, and axial twist modes.
+
+For spatially periodic corrections with finite exponential-polynomial time
+dependence, the complete second-order obstruction space is five-dimensional.
+Its covectors are precisely the Taub pairings with time translation, circle
+translation, and the three sphere rotations.  Thus the complete
+finite-support exponential-polynomial tangent cone is
+\[
+ \cZ^{\rm ep}_2
+ =\{u:\mu_H(u)=\mu_{P_x}(u)=\mu_{J_1}(u)=
+              \mu_{J_2}(u)=\mu_{J_3}(u)=0\}.
+\]
+This is a necessary-and-sufficient theorem in the declared correction class,
+not merely a list of examples.
+
+Bounded corrections obey additional conditions.  Polynomial-growth source
+coefficients and nonzero-shell adjoint pairings survive independently of the
+five moment maps.  We classify the complete standard generalized-zero
+subcone, prove that electric-charge and flat-Wilson oscillator columns are
+bounded-removable, and determine the full circumference column: a nonzero
+circle-radius tangent is compatible with a finite oscillator precisely when
+that oscillator has zero circle momentum.  A repaired full-time
+circumference-velocity fixture also exposes a nonzero polar polynomial
+obstruction that was invisible at \(t=0\); its full \(a,d\)-cross ideal on
+the \(\ell=2,k=0\) extra block is now classified.  On the complete
+global-plus-\(\ell=2,k=0\)-extra carrier, the bounded cone then collapses
+exactly to the standard static-global cone: no nonzero extra amplitude
+survives.  At one tuned nonzero momentum, by contrast, we classify the
+complete axisymmetric all-primary bounded cone.  Its only shell resonance
+cuts out two mixed axial--polar Einstein-minus sheets, and the lower-frequency
+extra primary widens the exact interval on which positive-primary
+occupations can balance their energy and momentum.  The remaining oscillator
+columns are stated as open gates.  A successor theorem promotes the
+standard-branch part of this calculation to every \(\ell\geq2\): the exact
+two-parity resonance matrix has two mixed sheets and two one-sided planes,
+and charge balance reduces the complete tuned axisymmetric bounded cone to
+the origin together with the two mixed sheets on an explicit occupation
+interval.  A separate two-absolute-momentum computation has certified all
+108 axisymmetric \(L=4\) branch-basis coefficients and all 56 declared
+nonaxisymmetric \(L=1,3\) coefficients; every individual basis fixture is
+obstructed, while amplitude-level cancellations remain open.
+Consequently formal
+exponential-polynomial extendibility is a moment-map theorem, whereas
+bounded quasiperiodic extendibility is a strict resonance problem.
+
+For one balanced real Einstein-minus/additional-primary tangent, we also
+evaluate the first action-normalized third-order obstruction.  Its intrinsic
+compact-stabilizer class vanishes in the correction-independent quotient
+\(\mathfrak o/\operatorname{im}\ell_2\), but the certified second-order
+representative has nonzero adjoint pairings on every occupied original
+characteristic shell.  Hence it has no bounded finite-quasiperiodic
+third-order correction, while a finite exponential-polynomial correction
+with controlled secular degree exists.  The shell verdict is scoped to that
+second-order representative; its quotient by arbitrary homogeneous
+second-order additions remains open.
+
+All results are \textsc{local-algebraic} and \textsc{reduced-mode}.  They do
+not establish an all-orders family, a causal retarded correction, a final
+residual quotient, or a quantum state space.
+\end{abstract}
+
+\section*{AI authorship and computational accountability}
+The named AI systems developed the programme, derivations, symbolic
+implementations, independent verification architecture, claim audits, and
+this manuscript.  Asger Alstrup Palm commissioned and coordinated the work
+and is the corresponding human contact.  Every theorem stated as certified
+below is bound to an exact machine-readable certificate and a separately
+implemented verifier.  Exact rational or algebraic arithmetic is used for
+all ranks, cokernels, polynomial reductions, and source remainders.  The
+manuscript remains conditional on final human review of its mathematical
+scope, references, and exposition.
+
+\tableofcontents
+
+\section{Question, answer, and claim boundary}
+
+Let \(\Phi(s)\) be a putative curve of solutions of the Weyl--Maxwell
+equations \(\cE(\Phi)=0\), expanded as
+\[
+ \Phi(s)=\bar\Phi+s u+s^2v+O(s^3).
+\]
+The first two equations are
+\begin{equation}\label{eq:second-order-equation}
+ \cL u=0,
+ \qquad
+ \cL v=-\cE^{(2)}_{\bar\Phi}(u,u),
+ \qquad
+ \cL:=D\cE_{\bar\Phi},
+ \qquad
+ \cE^{(2)}_{\bar\Phi}:=\frac12D^2\cE_{\bar\Phi}.
+\end{equation}
+The first equation describes the linear solution space.  The second asks
+whether the quadratic source lies in the image of the linearized operator in
+a specified function class.  Changing that function class changes the
+answer: a resonant source may have a finite exponential-polynomial secular
+primitive but no bounded quasiperiodic primitive.
+
+The paper answers the following finite-harmonic question.
+
+\begin{quote}
+For the complete certified linear inventory on the compact product, which
+real finite-support tangents admit a spatially periodic second-order
+correction, and which additional conditions appear when that correction is
+required to remain bounded in time?
+\end{quote}
+
+The answer has two layers:
+\begin{align}
+ u\in\cZ^{\rm ep}_2
+ &\Longleftrightarrow \mu_H=\mu_{P_x}=\mu_{J_1}=\mu_{J_2}=\mu_{J_3}=0,
+ \label{eq:ep-summary}\\
+ u\in\cZ^{\rm qp}_2
+ &\Longleftrightarrow u\in\cZ^{\rm ep}_2,
+ \quad \cP_{j,r}(u)=0,
+ \quad \cR_{j,a}(u)=0 .
+ \label{eq:qp-summary}
+\end{align}
+Here \(\cP_{j,r}\) are positive polynomial-growth coefficients and
+\(\cR_{j,a}\) are reduced adjoint pairings on nonzero characteristic shells.
+Both obstruction ledgers are complete in the declared finite carrier.  The
+paper gives several complete columns of the second line but does not claim a
+classification of the common quadratic zero locus of all bounded
+obstructions.
+
+At third order we make one further, fixture-scoped statement.  For the
+balanced tangent \(u\) and its certified no-homogeneous-addition correction
+\(v\),
+\begin{equation}\label{eq:third-order-summary}
+ [K_3(u;v)]=0\quad\hbox{in}\quad
+ \mathfrak o/\operatorname{im}\ell_2(u,-),
+ \qquad
+ \cR^{(3)}_{\rm occupied}(u;v)\ne0.
+\end{equation}
+The first statement is correction independent.  The second proves bounded
+third-order obstruction for the displayed representative only; finite
+exponential-polynomial inversion with secular terms remains possible.
+
+\subsection{Dependency typing}
+
+The spacetime is Lorentzian, but the proof is an exact harmonic and
+finite-module calculation.  It carries the dependency tags
+\begin{center}
+\textsc{local-algebraic}\qquad\textsc{reduced-mode}.
+\end{center}
+No theorem below carries \textsc{lorentzian-causal}.  In particular, a
+finite exponential-polynomial right inverse is not a retarded Green operator,
+and a bounded quasiperiodic correction is not an all-orders nonlinear
+solution.
+
+\section{Relation to classical linearization stability}
+
+The structural origin of the five quadratic conditions is classical.
+Brill and Deser exhibited nonintegrable linearized solutions on closed
+spatial sections \cite{BrillDeser}; Fischer and Marsden formulated
+linearization stability as a nonlinear functional-analytic problem
+\cite{FischerMarsden}; and Moncrief identified spacetime symmetries with the
+adjoint-kernel constraints governing second-order integrability
+\cite{MoncriefI,MoncriefII}.  Arms treated the coupled Einstein--Maxwell
+problem on the appropriate electromagnetic bundle \cite{ArmsEM}.  The
+Arms--Marsden--Moncrief momentum-map normal form then described the local
+solution space near a symmetric point as a smooth factor times the zero set
+of a homogeneous quadratic map \cite{AMMBifurcation,ArmsMarsdenMoncrief}.
+Higher-curvature Taub constraints and their second-order interpretation have
+also been developed in general form \cite{AltasTekin,AltasTekinTaub}.
+
+Accordingly, this paper does \emph{not} claim to discover the general
+principle ``tangent cone equals moment-map zero.''  Its contribution is an
+explicit exhaustive realization in the declared fourth-order Weyl--Maxwell
+model: the complete certified finite carrier, a proof that exactly five
+covectors exhaust the exponential-polynomial cokernel, and a bounded
+refinement by independent polynomial-growth and characteristic-shell
+obstructions.  The latter belongs to the broader problem of secular
+perturbation theory \cite{Pound}, but the concrete
+\(\{\mu,\mathcal P,\mathcal R\}\) ledger and exceptional mixed resonance are
+model-specific results.
+
+The third-order contribution is narrower and logically separate: for one
+balanced mixed-primary fixture it computes the action-normalized cubic
+compact-stabilizer quotient and the original-shell Fredholm pairings in the
+same calculation.  The resulting contrast---zero intrinsic global class but
+nonzero bounded shell obstruction for the certified second-order
+representative---is not supplied by the general momentum-map normal form or
+by the existence of a secular right inverse.  To our knowledge, this exact
+branch-resolved comparison has not previously been exhibited for the compact
+Weyl--Maxwell product.
+
+The relation is conceptual rather than a claim that the classical
+functional-analytic normal-form theorem has been reproved for this theory.
+A separate action-derived compact-Cauchy audit, using the canonical Weyl
+variables of Refs.~\cite{KieferNikolic,ChenMa}, finds that the raw seven-row
+Weyl--Maxwell constraint symbol is underdetermined elliptic on the fixed
+bundle.  It therefore has closed range and finite-dimensional cokernel on
+the compact slice.  After seven legitimate local gauge conditions are
+appended, however, the symbol still maps a rank~30 phase-space bundle to
+rank~14 and has an exact rank~16 physical kernel, including two
+transverse-traceless Ostrogradsky-momentum directions.  Thus this
+constraint-plus-gauge operator is right semi-Fredholm, not Fredholm.
+The global adjoint kernel can nevertheless be determined exactly.  For the
+canonical constraint generator, the Hamiltonian transpose identity identifies
+\(\ker(D\mathcal C_{\bar z})^*\) with the infinitesimal stabilizer algebra of
+the background canonical data.  The complete Fourier--spherical decomposition
+leaves only \(H,P_x\) in the \((k,\ell)=(0,0)\) block and the three coexact
+\(\ell=1\) rotations in the \(k=0\) block.  Each rotation includes its unique
+based bundle lift \(\iota_J\bar F+d\chi_J=0\).  Hence
+\[
+ \ker(D\mathcal C_{\bar z})^*
+ =\operatorname{span}_{\mathbb R}\{H,P_x,J_1,J_2,J_3\}.
+\]
+The constant Maxwell reducibility is removed by the mean-zero Gauss codomain
+and is not a sixth Taub covector.  This closes the compact-Cauchy adjoint
+classification.  Closed range then gives orthogonal Hilbert splittings of the
+domain and target, so a Banach Kuranishi reduction applies.  Its quadratic
+obstruction is precisely the projection onto these five adjoint covectors.
+Consequently the full Sobolev second-order \emph{Cauchy} tangent cone is the
+common zero of the five Taub maps, with their vanishing necessary and
+sufficient for a Cauchy second-order correction.
+
+There is nevertheless a sharp boundary to the usual momentum-map slogan.  On
+the unextended canonical phase space the normal-deformation bracket contains
+the structure function
+\[
+ \{H[N],H[M]\}=H_i\!\left[h^{ij}
+ (N\partial_jM-M\partial_jN)\right]+\cdots .
+\]
+Thus the full lapse sector is not the infinitesimal action of a fixed Lie group
+on a phase-space neighborhood, one of the hypotheses of the direct
+Arms--Marsden--Moncrief momentum-map normal form.  For example,
+\(N=\sin x\), \(M=\cos x\) gives shift coefficient \(-1\) at \(h_{xx}=1\)
+and \(-1/4\) at \(h_{xx}=4\).  The Kuranishi obstruction may therefore have
+higher terms: identifying the exact nonlinear zero set with the homogeneous
+quadratic cone requires embedding variables, an algebroid/groupoid slice, or a
+Weyl--Maxwell-specific extension of the several-Killing-field theorem.
+
+The classical normal-form theorems use Sobolev-completed initial-data
+manifolds, a split constraint map, gauge slices, and control of the full
+adjoint kernel.  The compact audit now supplies the split Kuranishi reduction
+and its complete second-order cone, but not an exact homogeneous-quadratic
+all-orders normal form.  Here we instead prove an
+algebraic surjectivity and cokernel theorem on a complete \emph{declared
+finite harmonic module} of the fourth-order Weyl--Maxwell equations.  We do
+not establish the hypotheses needed to promote it to an infinite-mode
+Sobolev normal form.  Conversely, the classical structural theorem does not
+by itself supply our block inventory, five-covector sufficiency statement,
+or bounded \(\mathcal P/\mathcal R\) refinement.
+
+\section{Theory and common background}
+
+We use the compactified Pleba\'nski--Hacyan product
+\begin{equation}
+ M=\R_t\times S^1_L\times S^2,
+\end{equation}
+with unit sphere curvature and a parallel unit magnetic flux on a fixed
+compact \(U(1)\) bundle.  With the conventions of the companion linear
+phase-space paper, the background solves both Einstein--Maxwell and
+Weyl--Maxwell theory.  The latter has local gauge group
+\[
+ \Diff(M)\times\mathrm{Weyl}(M)\times U(1).
+\]
+
+The spatial slice \(\Sigma=S^1\times S^2\) is compact.  Its background
+stabilizer algebra contains
+\[
+ H=\partial_t,\qquad P_x=\partial_x,\qquad
+ J_1,J_2,J_3\in\mathfrak{so}(3).
+\]
+For a linear tangent \(u\), the corresponding covariant phase-space moment
+maps are quadratic forms
+\[
+ \mu_X(u)=\frac12\Omega(u,\mathcal L_Xu),
+ \qquad X\in\{H,P_x,J_1,J_2,J_3\}.
+\]
+On a closed slice, the covariant Taub bridge identifies these with the
+pairings of the quadratic field-equation source against the stabilizer
+cokernel covectors.
+
+Let \(\cC\) denote the spatial constraint projection of the Euler--Lagrange
+operator and put
+\(
+ \cC^{(2)}_{\bar\Phi}:=\tfrac12D^2\cC_{\bar\Phi}.
+\)
+For a constraint source \(S_A\), our pairing convention is
+\(
+ \langle\zeta,S\rangle_\Sigma
+ =\int_\Sigma\zeta^A S_A\,\dd\Sigma.
+\)
+
+\begin{proposition}[Taub moment maps on ordinary and generalized modes]
+\label{prop:generalized-taub}
+The five displayed automorphisms lift to the fixed magnetic bundle and act
+symplectically on every certified linear block.  For every linear solution,
+including the homogeneous and twist Jordan blocks,
+\begin{equation}\label{eq:taub-bridge}
+ \left\langle\zeta_X,
+ \cC^{(2)}_{\bar\Phi}(u,u)\right\rangle_\Sigma
+ =\mu_X(u)
+ =\frac12\Omega_\Sigma(u,\mathcal L_Xu),
+ \qquad X\in\{H,P_x,J_1,J_2,J_3\}.
+\end{equation}
+The right side is independent of the closed Cauchy slice \(\Sigma\).
+There is no sixth \(U(1)\) Taub covector in the fixed-bundle problem.
+\end{proposition}
+
+\begin{proof}
+Twice differentiating the action Noether identity pairs the quadratic
+constraint source with the adjoint reducibility parameter and gives
+\eqref{eq:taub-bridge}.  Because \(u\) and \(\mathcal L_Xu\) solve the
+linearized equations, their Lee--Wald current is conserved.  The difference
+between its integrals on two closed Cauchy slices is therefore the integral
+of an exact spacetime divergence and vanishes.  This argument uses neither a
+frequency eigenbasis nor boundedness, so it applies to polynomial Jordan
+solutions.
+
+Concretely, time translation acts on the homogeneous coordinates by
+\[
+ (a,b,c,d,Q_e,W_x)\longmapsto(b,0,d,2a,0,Q_e)
+\]
+and on each twist pair by \((A,B)\mapsto(B,0)\).  Substitution into the
+conserved Cauchy form gives, after omission of the common positive harmonic
+normalizations,
+\begin{align}
+ \mu_H^{\ell=0}&=-a^2-b^2+bd-Q_e^2,\\
+ \mu_H^{\rm twist}&=2|B|^2,
+ &\mu_{\mathbf J}^{\rm twist}&=-4A\times B.
+\end{align}
+Although the representatives contain powers of \(t\), these expressions are
+constant; the apparent time-dependent contributions cancel in the conserved
+current.
+
+The rotations lift as bundle automorphisms
+\(\widehat J_a=(J_a,\chi_a)\), with
+\(\iota_{J_a}\bar F+\dd\chi_a=0\) patchwise.  A constant \(U(1)\) parameter
+acts trivially on connection differences and is a reducibility parameter,
+not an independent Hamiltonian stabilizer.  Finally, fixing the Chern class
+of the magnetic bundle forbids a harmonic magnetic variation.  These facts
+leave exactly the five covectors in \eqref{eq:taub-bridge}.
+\end{proof}
+
+\section{The complete finite harmonic carrier}
+
+The real finite-support carrier \(V_{\rm fin}\) is the direct sum of the
+following certified linear blocks:
+\begin{enumerate}
+\item generic Einstein and extra primaries for every \(\ell\ge2\), parity,
+      magnetic label, and compact momentum;
+\item standard and extra exceptional dipoles for every compact momentum;
+\item the axial twist Jordan block;
+\item the six-coordinate homogeneous generalized block; and
+\item the electric and Wilson global directions on the fixed bundle.
+\end{enumerate}
+Reality pairs opposite frequencies and momenta.  A finite input therefore
+produces a finite quadratic source.  Its complete output decomposition is
+indexed by
+\[
+ (L,M,K,\Omega,\text{parity}).
+\]
+Angular Clebsch--Gordan selection gives finitely many \(L\), while temporal
+and circle products give finite sums of input frequencies and momenta.
+
+\begin{definition}[Finite correction modules]
+Let \(\Xep\) be the spatially periodic fields whose time coefficients are
+finite sums of \(t^p e^{-i\Omega t}\), with \(p\in\mathbb N_0\) and a finite
+set of real frequencies.  Let \(\Xqp\subset\Xep\) be the finite bounded
+quasiperiodic subclass with \(p=0\).  Define
+\[
+ \cZ_2^{\mathscr X}
+ =\{u\in V_{\rm fin}:\exists v\in\mathscr X,
+             \ \cL v=-\cE^{(2)}(u,u)\}.
+\]
+\end{definition}
+
+Every element of \(\Xep\) is smooth, but \(\Xep\) is not the full
+\(C^\infty\), Sobolev, distributional, or retarded function space.  The
+subscripts ``ep'' and ``qp'' are therefore load-bearing.  A secular
+coefficient is finite at every finite time but prevents a uniformly bounded
+perturbative expansion.  It may signal a nearby family with shifted
+frequency, a required renormalization of parameters, or genuine resonant
+growth.  The certificates decide only these two finite-module dispositions.
+
+\section{Finite exponential-polynomial tangent-cone theorem}
+
+The sufficiency statement rests on a simple algebraic fact which we state
+explicitly because it is the step that distinguishes \(\Xep\) from
+\(\Xqp\).
+
+\begin{lemma}[Exponential-polynomial surjectivity]
+\label{lem:ep-surjectivity}
+Let \(P(D_t)\ne0\) be a constant-coefficient scalar differential operator.
+For every polynomial \(f(t)\) and real \(\Omega\), there is a polynomial
+\(g(t)\) such that
+\begin{equation}
+ P(D_t)\bigl(g(t)e^{-i\Omega t}\bigr)
+ =f(t)e^{-i\Omega t}.
+\end{equation}
+If \(-i\Omega\) is a root of \(P\) of multiplicity \(m\), one may take
+\(\deg g\leq\deg f+m\).  Consequently every nonzero invariant factor of a
+matrix operator over the fibre ring \(K[D_t]\) is surjective on \(\Xep\);
+only zero Smith factors contribute to its \(\Xep\)-cokernel.
+\end{lemma}
+
+\begin{proof}
+Conjugation by \(e^{-i\Omega t}\) replaces \(P(D_t)\) by
+\(P(D_t-i\Omega)\).  Factor
+\[
+ P(z-i\Omega)=z^mQ(z),\qquad Q(0)\ne0.
+\]
+The operator \(D_t^m\) is surjective on polynomials, increasing the required
+degree by at most \(m\).  On each finite-dimensional polynomial-degree
+filtration, \(Q(D_t)=Q(0)(1+N)\) with \(N\) nilpotent, hence has the finite
+inverse \(Q(0)^{-1}\sum_r(-N)^r\).  For a matrix operator, unimodular Smith
+transformations preserve \(\Xep\) and reduce the assertion to its scalar
+invariant factors.
+\end{proof}
+
+The complete output ledger after Noether restriction and local
+\(\Diff\times\mathrm{Weyl}\times U(1)\) reduction is as follows.  Here
+\(p\) and \(q\) are respectively the extra and Einstein characteristic
+polynomials; ``zero factors'' means persistent factors in the \(\Xep\)
+cokernel, not roots of a nonzero characteristic polynomial.
+
+\begin{center}
+\small
+\begin{tabularx}{0.99\textwidth}{@{}Y Y c Y@{}}
+\toprule
+Output stratum & Reduced operator or invariant factors & Zero factors &
+Cokernel interpretation\\
+\midrule
+Generic $L\ge2$, nonstatic & $1,1,p,pq$; off-shell inverse and Lemma
+\ref{lem:ep-surjectivity} on $p/q$ shells & 0 & none\\
+Generic $L\ge2$, static & $p=-(3\Lambda+3\kappa^2-2)/3<0$ and
+$q>0$ for $\Lambda\ge6$ & 0 & none\\
+Exceptional $L=1$, nonstatic & invertible off shell; nonzero factors on
+$\Omega^2-K^2=4,4/3$ & 0 & none in $\Xep$\\
+Scalar $L=0$, $(\Omega,K)\ne(0,0)$ & exact modulo local gauge and Noether
+identities & 0 & none\\
+Homogeneous $L=0$, $(\Omega,K)=(0,0)$ & constraints plus
+$D_t^4(C-K)$ and $D_t^2A_x$ & 2 & $\zeta_H,\zeta_{P_x}$\\
+Axial dipole $L=1$, $(\Omega,K)=(0,0)$ & twist polynomial operator;
+polar block invertible & 3 & $\zeta_{J_1},\zeta_{J_2},\zeta_{J_3}$\\
+Remaining certified global/twist outputs & contained in the preceding
+$L=0,1$ blocks & 0 additional & none additional\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+For completeness, put \(\kappa:=K_{\rm out}\) for the output circle
+momentum (unrelated to the homogeneous function \(K(t)\) below).  The static
+generic entries use
+\[
+ p=-\frac{3\Lambda+3\kappa^2-2}{3}<0,
+ \qquad
+ q=\Lambda^2+2\Lambda\kappa^2-2\Lambda+\kappa^4.
+\]
+Putting \(s=\Lambda-6\ge0\) and \(u=\kappa^2\ge0\) gives
+\[
+ q=s^2+2su+u^2+10s+12u+24>0,
+\]
+so no static \(L\ge2\) zero factor is hidden in the table.
+
+For the homogeneous source, quadratic products have degree at most six.
+The two dynamical invariants therefore have the explicit polynomial right
+inverses
+\[
+ D_t^4\!\left(\frac{t^{r+4}}{(r+1)(r+2)(r+3)(r+4)}\right)=t^r,
+ \qquad
+ D_t^2\!\left(\frac{t^{r+2}}{(r+1)(r+2)}\right)=t^r,
+ \quad 0\le r\le6.
+\]
+This displays rather than merely asserts the zero-block surjectivity.
+
+\begin{theorem}[Complete finite-support exponential-polynomial cone]
+\label{thm:ep-cone}
+For the complete carrier \(V_{\rm fin}\),
+\begin{equation}\label{eq:ep-cone}
+ \boxed{
+ \cZ^{\rm ep}_2
+ =\{u\in V_{\rm fin}:\mu_H(u)=\mu_{P_x}(u)=
+    \mu_{J_1}(u)=\mu_{J_2}(u)=\mu_{J_3}(u)=0\}.}
+\end{equation}
+Every point of this cone admits a real, spatially periodic second-order
+correction in \(\Xep\), and each of the five equations is necessary.
+\end{theorem}
+
+\begin{proof}
+Finite input support and Clebsch--Gordan selection produce finitely many
+output labels \(j=(L,M,K,\Omega,\text{parity})\), with temporal polynomial
+degree at most six.  The table exhausts those labels.  Lemma
+\ref{lem:ep-surjectivity} removes every nonzero invariant factor, including
+every nonzero-frequency resonance.  The displayed polynomial primitives
+remove the homogeneous dynamical rows.  Exactly five zero factors remain,
+so
+\[
+ \coker\cL_{\rm ep}
+ =\operatorname{span}\{\zeta_H,\zeta_{P_x},
+       \zeta_{J_1},\zeta_{J_2},\zeta_{J_3}\}.
+\]
+Pairing the second-order equation with them and applying Proposition
+\ref{prop:generalized-taub} proves necessity.  Conversely, when all five
+moment maps vanish, every output source lies in the blockwise image.  The
+finite corrections and their conjugates assemble a real element of
+\(\Xep\), proving sufficiency.
+\end{proof}
+
+\begin{remark}
+The theorem covers arbitrary finite sums across the certified generic,
+exceptional, homogeneous, and twist blocks.  It is not a theorem for the
+full smooth, Sobolev, distributional, infinite-mode, or causal function
+space.
+\end{remark}
+
+\section{Complete bounded-obstruction decomposition}
+
+On \(\Xqp\), differentiation cannot produce a positive power of \(t\), and
+a resonant pure exponential has no bounded quasiperiodic primitive.  For each
+finite output block \(j\), let \(\cP_{j,r}\) extract the coefficient of
+\(t^re^{-i\Omega_jt}\) for \(r>0\).  After all such coefficients vanish,
+let \(\cR_{j,a}\) pair the remaining pure exponential with an exact basis of
+the reduced left kernel of \(\cL_j(-i\Omega_j)\).  This definition includes
+the dynamical reduced left kernel at \(\Omega_j=0\).  The stabilizer
+covectors inside the genuine zero block are split off and recorded separately
+as \(\mu_X\); no other zero-root covector is silently identified with them.
+
+\begin{theorem}[Complete finite bounded-obstruction ledger]
+\label{thm:bounded-ledger}
+For every \(u\in V_{\rm fin}\), a second-order correction in \(\Xqp\) exists
+if and only if
+\begin{equation}\label{eq:bounded-cokernel}
+ \mu_H(u)=\mu_{P_x}(u)=\mu_{J_i}(u)=0,
+ \qquad
+ \cP_{j,r}(u)=0,
+ \qquad
+ \cR_{j,a}(u)=0
+\end{equation}
+for all finite output blocks and all corresponding indices.  These are the
+complete linear obstruction types in the declared finite module.  The common
+quadratic zero set of the resulting functionals is only partly classified.
+\end{theorem}
+
+\begin{proof}
+If a bounded quasiperiodic \(v\) exists, then \(\cL v\) is also bounded and
+quasiperiodic, so every positive polynomial coefficient \(\cP_{j,r}\)
+vanishes.  For each remaining pure-frequency block, finite-dimensional linear
+algebra says that \(\cL_j(-i\Omega_j)v_j=S_j\) is solvable precisely when
+\(S_j\) annihilates its reduced left kernel.  At the genuine zero block those
+pairings split into the five Taub moment maps and any remaining dynamical
+zero-root functionals \(\cR_{j,a}\); at nonzero shells they are the
+finite-frequency \(\cR_{j,a}\).  Off-shell blocks are invertible.  Conversely, these
+conditions put every finite block source in the corresponding image, and the
+finite collection of solutions and conjugates assembles an element of
+\(\Xqp\).
+\end{proof}
+
+The certificates contain a moment-map-zero fixture with a nonzero
+\(\cP_{j,2}\) and another with a nonzero \(\cR_{j,a}\).  Thus both new
+families are independent of the five global charges, and
+\(\cZ_2^{\rm qp}\subsetneq\cZ_2^{\rm ep}\).
+
+For finite generic oscillatory inputs the complete bounded
+\(K=\Omega=0\) receiver can be made fully explicit.  Its nonzero source map is
+\[
+ (\mu_H,\mu_{P_x},\mu_{J_1},\mu_{J_2},\mu_{J_3},R_c),
+ \qquad
+ R_c=\frac12\sum_j k_j^2 h_j .
+\]
+Here \(h_j\) is the complete normalized Hermitian current block, including
+cross terms within a degenerate shell.  The second formal homogeneous mean
+covector is the Wilson-acceleration row; its quadratic source vanishes by the
+integrated Maxwell identity.  The polar \(L=1\) zero block contributes no
+physical cokernel, the axial block contributes exactly the three lifted
+rotations, and every static \(L\ge2\) block is reduced-invertible.  Thus the
+six displayed conditions are necessary and sufficient for bounded inversion
+of the zero-frequency source.  On the candidate-13 two-fibre carrier, joining
+them to the eighteen finite-frequency coefficients gives the complete formula
+\[
+ \cZ^{\rm qp}_{2,13}
+ =\{\mu_H=\mu_{P_x}=\mu_{J_1}=\mu_{J_2}=\mu_{J_3}
+      =R_c=\cR_{13,1}=\cdots=\cR_{13,18}=0\}.
+\]
+\begin{theorem}[Candidate-13 bounded-origin theorem]
+On the complete real candidate-13 generic two-fibre carrier,
+\[
+ \cZ^{\rm qp}_{2,13}=\{0\}.
+\]
+The finite exponential-polynomial cone does not collapse: it remains the
+common zero of the five stabilizer moment maps and contains the explicit
+three-occupation Einstein--extra fixture.
+\end{theorem}
+
+\begin{proof}
+Put
+\[
+ D=-\frac{8}{5L}\mu_H
+   -\frac{3}{2L\sqrt\rho}\mu_{P_x}
+   -\frac{2}{\rho}R_c,
+ \qquad
+ \rho=\frac{-250+461\sqrt{10}}{2132}.
+\]
+In occupation variables this is
+\[
+ D=\frac25\sum\omega^2h-\frac38\sum n\omega h-
+   \sum n^2h,
+ \qquad n\in\{1,-2\}.
+\]
+The Einstein-minus current is negative, while the extra and Einstein-plus
+current blocks are positive in both parities.  Since
+\(1/2<\rho<3/5\), exact rational bounds give positive coefficients at least
+\(379/1000\) and \(23/80\) on the two signed Einstein-minus fibres, and at
+least \(101/250\) and \(38/45\) on the corresponding extra fibres.  The
+Einstein-plus frequencies are larger and their common positive-branch
+coefficient is increasing.  Thus \(D\) is a strictly positive sum of the
+absolute-current Gram occupations for every parity and \(m\).  Vanishing of
+\(\mu_H,\mu_{P_x},R_c\) forces every occupation, hence the tangent, to vanish.
+The rotations and eighteen resonance equations are then automatic.  In the
+finite exponential-polynomial correction class \(R_c\) and the
+finite-frequency resonances have
+secular inverses, so only the five moment maps remain.
+\end{proof}
+
+The earlier three-occupation fixture has \(R_c<0\), consistently placing it
+in the finite exponential-polynomial cone but outside the bounded cone.  The theorem is a real
+positivity result on this exact circumference; it makes no identification
+with another collision fibre and does not classify the complex zero variety.
+
+\section{Complete standard generalized-zero subcone}
+
+The coordinates in the next theorem are concrete perturbations, not abstract
+labels.  In coordinates \((t,x,\theta,\phi)\), write
+\begin{align}
+ h_{xx}&=C(t),
+ &h_{\theta\theta}&=K(t),
+ &h_{\phi\phi}&=K(t)\sin^2\theta,
+ &a_x&=W_x+Q_et,\\
+ K(t)&=a+bt,
+ &C(t)&=at^2+\frac b3t^3+c+dt.
+\end{align}
+For an orthonormal real \(\ell=1\) basis \((Y_{1a},X_a)\), the twist block is
+\begin{equation}
+ h_{xA}=(A_a+B_at)X^a_A,
+ \qquad
+ a_x=-(A_a+B_at)Y_{1a}.
+\end{equation}
+
+\begin{center}
+\small
+\begin{tabularx}{0.98\textwidth}{@{}c Y c Y@{}}
+\toprule
+Coordinate & Linear representative & Time behaviour & Geometric meaning\\
+\midrule
+$a$ & sphere scale $K=a$ with induced $C=at^2$ & constant/quadratic &
+homogeneous radion/Jordan seed\\
+$b$ & $K=bt$, $C=bt^3/3$ & linear/cubic & homogeneous Jordan partner\\
+$c$ & $C=c$ & constant & circle circumference modulus\\
+$d$ & $C=dt$ & linear & circumference velocity\\
+$Q_e$ & $a_x=Q_et$ & linear & uniform electric tangent\\
+$W_x$ & $a_x=W_x$, $\dd a=0$ & constant & flat circle Wilson line\\
+$A\in\R^3$ & twist $h_{xA},a_x$ & constant & lifted $SO(3)$ mapping-torus holonomy\\
+$B\in\R^3$ & same twist carrier & linear & twist velocity/Jordan partner\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{theorem}[Standard generalized-zero bounded cone]
+\label{thm:standard-global-bounded}
+On the complete standard generalized-zero carrier with homogeneous
+coordinates \((a,b,c,d,Q_e,W_x)\) and axial twist position/velocity
+\((A,B)\), bounded second-order extension holds exactly on
+\begin{equation}
+ a=b=Q_e=0,\qquad B=0,\qquad
+ c,d,W_x\ \text{arbitrary},\qquad A\in\R^3\ \text{arbitrary}.
+\end{equation}
+The surviving source has an explicit bounded correction.
+\end{theorem}
+
+The triangular positive-degree ideal supplies the proof.  The complete
+homogeneous positive-degree coefficients are
+\begin{center}
+\begin{tabular}{@{}c cc@{}}
+\toprule
+Equation row & coefficient of $t$ & coefficient of $t^2$\\
+\midrule
+$E_{11}$ & $15ab$ & $15b^2/2$\\
+sphere trace & $-15ab/2$ & $-15b^2/4$\\
+Maxwell $x$ row & $Q_ea$ & $Q_eb/2$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The remaining leading polynomial tensor is
+\(\operatorname{STF}(B\otimes B)t^2\), whose squared real coefficient is
+\(2|B|^4/3\).
+They force \(b=B=0\) and \(Q_ea=0\).  Intersecting with the five moment maps
+leaves
+\[
+ \mu_H=-(a^2+Q_e^2),\qquad \mu_{P_x}=0,\qquad\mu_{\mathbf J}=0,
+\]
+and hence forces \(a=Q_e=0\) on this carrier.  The remaining homogeneous
+source vanishes, while constant twist position is tangent to an exact lifted
+mapping-torus family and has a constant polar correction.
+
+Explicitly, on the universal cover identify
+\begin{equation}
+ (x,p)\sim(x+L,\exp(A^aJ_a)p),
+ \qquad p\in S^2,
+\end{equation}
+and lift the rotation to the magnetic bundle with its patchwise Maxwell
+compensator.  The local product fields descend by covariance.  Differentiating
+this exact quotient family at \(A=0\) gives the constant twist representative;
+the stored quadratic correction is its constant polar \(L=2\) Taylor term.
+
+\begin{corollary}[Universal polynomial elimination]
+For every point of the complete finite-support bounded cone,
+\[
+ b=0,\qquad B=0,\qquad Q_ea=0.
+\]
+Oscillatory products cannot cancel these zero-frequency polynomial rows.
+\end{corollary}
+
+\section{Natural transport columns}
+
+Several apparently dangerous global--oscillator products are derivatives of
+exact families and can therefore be classified without solving each harmonic
+source independently.
+
+\begin{proposition}[Electric and Wilson columns]
+For every certified nonzero-frequency standard or extra primary, the
+electric-charge cross source has a bounded correction obtained by
+differentiating electromagnetic duality,
+\[
+ F_\theta=\cos\theta F+\sin\theta\,{\star_g F}.
+\]
+At the background,
+\[
+ h_{\rm cross}=0,\qquad
+ f_{\rm cross}=\star_{\bar g}f+(D_g\star)[h]F_{\rm bg}.
+\]
+This is the mixed derivative at the purely magnetic background, not a claim
+that the finite duality orbit remains in one magnetic bundle component.  Its
+sphere period vanishes for \(\ell\ge1\), so this mixed correction itself
+lifts globally as a fixed-bundle connection difference.  Every
+Wilson--oscillator source vanishes because
+\(\delta A=W_xdx\) has \(\delta F=0\) and the local action depends on the
+connection through \(F\).
+\end{proposition}
+
+This removes the complete \(Q_e\) and \(W_x\) oscillator columns from the
+bounded frontier.  It does not remove the separate homogeneous condition
+\(Q_ea=0\).
+
+\begin{theorem}[Complete circumference column]
+Let \(c\) vary the circle radius and let a certified oscillator have compact
+momentum \(k\).  The \(c\)-times-oscillator source admits a bounded correction
+if and only if
+\[
+ c=0\qquad\text{or}\qquad k=0.
+\]
+For \(k\ne0\), the radius family gives a correction in \(\Xep\) but none in
+\(\Xqp\).
+\end{theorem}
+
+Indeed, writing \(R^2=1+\eta c\),
+\[
+ \omega_R^2=\frac{k^2}{R^2}+m_{\rm branch}^2,
+ \qquad
+ \left.\partial_\eta\omega_R\right|_0=-\frac{ck^2}{2\omega}.
+\]
+Differentiating the exact family produces
+\[
+ \left.\partial_\eta e^{-i\omega_Rt}\right|_0
+ =\frac{i ck^2}{2\omega}t e^{-i\omega t}.
+\]
+To make the shell inference explicit, write the reduced matrix equation as
+\(L(\omega_R,R)u_R=0\), choose a left on-shell vector \(u^\dagger\), and
+differentiate at \(R=1\).  The Feynman--Hellmann identity is
+\begin{equation}\label{eq:circumference-FH}
+ \left\langle u^\dagger,(\partial_\eta L)u\right\rangle
+ =-\omega'_0
+   \left\langle u^\dagger,(\partial_\omega L)u\right\rangle
+ =\frac{ck^2}{2\omega}
+   \left\langle u^\dagger,(\partial_\omega L)u\right\rangle .
+\end{equation}
+The last factor is the current-normalized shell form.  It is nonzero on each
+standard branch and nondegenerate on every extra multiplicity block.  Hence
+the particular circumference source, not merely some source, has nonzero
+adjoint pairing whenever \(ck\ne0\) and the corresponding mode coefficient
+is nonzero.  This is a genuine \(\cR_{j,a}\) obstruction, not a polynomial
+\(\cP_{j,r}\) obstruction.  At \(k=0\), \(\omega'_0=0\) and differentiating
+the covariant circle indices gives an ordinary same-frequency correction.
+
+\section{Exceptional resonance as an independent obstruction}
+
+Moment-map cancellation does not guarantee bounded or even nonsecular
+second-order closure in a restricted exceptional carrier.  For the
+axisymmetric exceptional \(\ell=1,k=0\) axial and polar amplitudes
+\((a_x,a_p)\), a twist velocity can cancel the time-translation moment map.
+The two parity self-sources can also be tuned to cancel their even
+\(L=2\) resonance.  But the required interior point has
+\(a_xa_p\ne0\), and the mixed axial \(L=2\) source has exact nonzero adjoint
+pairing
+\[
+ -\frac{8\sqrt3}{9}.
+\]
+The boundary axes retain their individual bounded resonant
+self-obstructions.  Thus the only axisymmetric two-polarization exceptional
+configuration in this carrier admitting a correction in \(\Xqp\) is
+\(a_x=a_p=0\).  Nonzero configurations on the moment-map cone still admit
+the secular \(\Xep\) corrections guaranteed by Theorem~\ref{thm:ep-cone}.
+The example proves that bounded resonant cokernel equations contain
+information independent of global charges; it does not contradict the
+exponential-polynomial theorem.
+
+\section{A complete tuned nonzero-momentum all-primary cone}
+
+The preceding exceptional result is a no-go on a restricted carrier.  The
+next fixture shows that a bounded mixed cone can instead survive after every
+primary at the same angular and compact-momentum fibre is admitted.  Fix
+\begin{equation}\label{eq:tuned-k}
+ \ell=2,\qquad m_A=0,\qquad
+ k^2=2\sqrt3-\frac76,
+\end{equation}
+choosing the circle circumference so that \(\pm k\) are allowed compact
+momenta.  The three positive input frequencies are
+\begin{equation}
+ \omega_-^2=\frac{29}{6},\qquad
+ \omega_e^2=2\sqrt3+\frac{25}{6},\qquad
+ \omega_+^2=\frac{29}{6}+4\sqrt3,
+ \qquad \omega_-<\omega_e<\omega_+.
+\end{equation}
+Here \(q_-\) and \(q_+\) denote the two Einstein primaries, while \(X\)
+denotes the complete extra-primary multiplicity.  Include both momentum
+signs, both axial and polar \(q_-\) amplitudes, arbitrary normalized \(X\)
+and \(q_+\) multiplicities, and one constant twist position.  No
+nonaxisymmetric input is included.
+
+Write \(A_\pm,P_\pm\) for the axial and polar \(q_-\) coefficients at
+momenta \(\pm k\).  The exact 140-row collision census covers every output
+\(L=1,2,3,4\), momenta \(K=0,\pm2k\), and every zero, sum, and difference
+frequency of \(q_-\), \(X\), and \(q_+\).  Its unique characteristic hit is
+the polar extra shell
+\begin{equation}
+ L=4,\qquad K=0,\qquad \Omega=2\omega_-,
+\end{equation}
+generated only by the \(q_-q_-\) product.  Its two independent adjoint
+pairings are nonzero multiples of
+\begin{equation}\label{eq:tuned-resonance-ideal}
+ A_+A_- -3P_+P_-,
+ \qquad
+ A_+P_- -A_-P_+.
+\end{equation}
+Their complete complex zero set consists of the two mixed sheets
+\begin{equation}\label{eq:tuned-mixed-sheets}
+ A_\pm=\sigma\sqrt3\,P_\pm,
+ \qquad \sigma\in\{+1,-1\},
+\end{equation}
+and the two one-sided planes
+\(A_+=P_+=0\) or \(A_-=P_-=0\).
+
+On a mixed sheet define the nonnegative Einstein-minus occupations
+\begin{equation}
+ N_\pm=-h_-(A_\pm e_A+P_\pm e_P,
+                   A_\pm e_A+P_\pm e_P),
+\end{equation}
+and let \(E_\pm\) and \(B_\pm\) be the total nonnegative occupations in the
+extra and Einstein-plus multiplicities.  The complete Hamiltonian and circle
+momentum equations are
+\begin{align}
+ \omega_e^2(E_++E_-)+\omega_+^2(B_++B_-)
+   &=\omega_-^2(N_++N_-),\label{eq:tuned-energy}\\
+ \omega_e(E_+-E_-)+\omega_+(B_+-B_-)
+   &=\omega_-(N_+-N_-).\label{eq:tuned-momentum}
+\end{align}
+
+\begin{theorem}[Tuned axisymmetric all-primary bounded cone]
+\label{thm:tuned-all-primary-bounded}
+In the carrier just declared, a bounded finite-quasiperiodic second-order
+correction exists precisely at the origin or on one of the two mixed sheets
+\eqref{eq:tuned-mixed-sheets} with
+\begin{equation}\label{eq:tuned-imbalance-interval}
+ \frac{1-r_e}{1+r_e}
+ \leq \frac{|P_+|^2}{|P_-|^2}
+ \leq \frac{1+r_e}{1-r_e},
+ \qquad r_e:=\frac{\omega_-}{\omega_e},
+\end{equation}
+and with nonnegative positive-primary occupations satisfying
+\eqref{eq:tuned-energy}--\eqref{eq:tuned-momentum}.  Their phases and
+multiplicity factorizations are otherwise arbitrary.  The declared constant
+twist coordinate remains free and bounded-removable.
+\end{theorem}
+
+\begin{proof}
+Equations \eqref{eq:tuned-resonance-ideal} give the four components displayed
+above.  On either one-sided plane, positivity and \(r_e<1\)
+force the negative occupation to vanish when \(\mu_H=\mu_{P_x}=0\); hence
+only the origin survives.  On a mixed sheet, the raw axial and polar weights
+cancel.  At fixed positive-branch energy, the largest possible compact
+momentum is supplied by the lower positive frequency \(\omega_e\), so
+\eqref{eq:tuned-energy}--\eqref{eq:tuned-momentum} have a nonnegative solution
+if and only if
+\begin{equation}
+ |N_+-N_-|\leq r_e(N_++N_-),
+\end{equation}
+which is equivalent to \eqref{eq:tuned-imbalance-interval}.  Sufficiency is
+explicit: set \(B_+=B_-=0\) and choose
+\begin{equation}
+ E_++E_-=r_e^2(N_++N_-),\qquad
+ E_+-E_-=r_e(N_+-N_-).
+\end{equation}
+The interval makes both \(E_\pm\) nonnegative.  The five stabilizer pairings
+and the unique nonzero-shell adjoint pairings then vanish.  Every other entry
+in the exact collision ledger is off shell, while the nonzero-Fourier scalar
+complex and constant-twist cross column are boundedly removable.  Theorem
+\ref{thm:bounded-ledger} therefore supplies a bounded correction.  Necessity
+follows from the same complete obstruction ledger.
+\end{proof}
+
+Because \(\omega_-<\omega_e<\omega_+\), the interval
+\eqref{eq:tuned-imbalance-interval} strictly contains the interval obtained
+when only the Einstein-plus primary is allowed to balance the negative
+branch.  Thus the extra primary creates no new resonance at this fixture but
+does enlarge the bounded nonlinear cone.  This is a theorem for one tuned
+\(\ell=2,m_A=0,|k|\) fibre, not for nonaxisymmetric modes, other harmonics or
+circumferences, or multiple absolute-momentum fibres.
+
+\section{All-angular-momentum promotion and the two-momentum workload}
+
+\subsection{The tuned standard-branch cone for every \texorpdfstring{\(\ell\geq2\)}{ell >= 2}}
+
+The standard Einstein-minus calculation admits a uniform angular-momentum
+promotion.  For each integer \(\ell\geq2\), tune the compact momentum by
+\begin{equation}\label{eq:symbolic-ell-tuning}
+ k^2=\sqrt{2\ell(\ell+1)}-\frac{\ell}{2}-\frac16.
+\end{equation}
+Let \(a_\pm\) and \(p_\pm\) denote the axial and polar Einstein-minus
+amplitudes at momenta \(\pm k\).  The complete standard-branch collision
+census has one relevant opposite-momentum characteristic shell.  Up to
+nonzero exact normalizations \(R_\ell>0\) and \(X_\ell\neq0\), its two
+adjoint pairings are
+\begin{align}
+ \mathcal R_{\rm polar}
+  &=R_\ell\left(a_+a_--\frac{\ell(\ell+1)}2p_+p_-\right),
+  \label{eq:symbolic-ell-polar}\\
+ \mathcal R_{\rm axial}
+  &=X_\ell\left(a_+p_--a_-p_+\right).
+  \label{eq:symbolic-ell-axial}
+\end{align}
+Their complex zero variety consists of two mixed sheets
+\begin{equation}\label{eq:symbolic-ell-sheets}
+ a_\pm=\sigma\sqrt{\frac{\ell(\ell+1)}2}\,p_\pm,
+ \qquad \sigma\in\{+1,-1\},
+\end{equation}
+and the two one-sided planes on which one momentum sign vanishes.
+
+\begin{theorem}[All-\(\ell\) tuned axisymmetric standard cone]
+\label{thm:symbolic-ell-standard-cone}
+For every \(\ell\geq2\) at the tuning \eqref{eq:symbolic-ell-tuning}, the
+complete bounded quasiperiodic cone on the declared axisymmetric standard
+Einstein-minus/Einstein-plus carrier is the origin together with the two
+mixed sheets \eqref{eq:symbolic-ell-sheets} satisfying
+\begin{equation}\label{eq:symbolic-ell-occupation-interval}
+ \frac{1-r_\ell}{1+r_\ell}
+ \leq \frac{|p_+|^2}{|p_-|^2}
+ \leq \frac{1+r_\ell}{1-r_\ell},
+ \qquad r_\ell:=\frac{\omega_-}{\omega_+}.
+\end{equation}
+The one-sided resonance planes meet the Hamiltonian and circle-momentum
+balance equations only at the origin.
+\end{theorem}
+
+The proof is uniform in \(\ell\): the exact collision census excludes every
+other standard-branch shell, equations
+\eqref{eq:symbolic-ell-polar}--\eqref{eq:symbolic-ell-axial} give the full
+resonance ideal, and the two global charge equations reduce to the elementary
+occupation interval \eqref{eq:symbolic-ell-occupation-interval}.  This is a
+genuine all-\(\ell\) theorem, but it is still separately tuned at each
+\(\ell\), axisymmetric, and confined to the standard branches.  It does not
+join different angular momenta or different absolute compact momenta.
+
+\subsection{Two absolute momenta: a branch-basis obstruction census}
+
+The first two-absolute-momentum enlargement has closed all 164 declared
+branch-basis coefficients.  The axisymmetric \(L=4\) calculation is
+complete: all 108 coefficients across axial--axial, polar--polar, and the two
+ordered cross-parity sectors are exact.  The nonaxisymmetric \(L=3\)
+calculation contributes 44 exact coefficients and the \(L=1\) companion the
+remaining 12.  Every declared
+individual branch-basis fixture in these two blocks has nonzero cokernel and
+a bounded obstruction.
+
+This census by itself is only an exhaustive coefficient statement for the
+named basis columns: different columns may cancel after amplitudes are joined.
+The candidate-13 fibre is the first case where the arbitrary-amplitude ideal,
+the zero-frequency receiver, and the correction-class-dependent range have
+all been joined, giving the complete formula displayed after
+Theorem~\ref{thm:bounded-ledger}.  The other collision circumferences admit a
+sharp scalar classification.
+
+\begin{theorem}[Collision scalar-separation classification]
+On every positive-\(\rho\) generic carrier with signed momenta \((1,-2)\),
+the common zero of \(\mu_H,\mu_{P_x},R_c\) is the origin.  Consequently the
+complete bounded generic cone is \(\{0\}\) at collision candidates (1)
+through (15).  At each same-sign candidate (16) through (21), the scalar
+common zero is nontrivial and no strict separator in
+\(\operatorname{span}(\mu_H,\mu_{P_x},R_c)\) exists.  The six full
+resonance-joined bounded cones are not classified by this scalar theorem.
+\end{theorem}
+
+\begin{proof}
+For the opposite-sign carrier let \((t_1,t_2)\) be the frequency midpoints
+between the Einstein-minus and extra branches at absolute momenta one and
+two.  The shell polynomial associated with
+\((a,b,c)=(1,t_2/2-t_1,-t_1t_2/2)\) factors as
+\[
+ Q_1(\omega)=(\omega-t_1)(\omega+t_2/2),\qquad
+ Q_{-2}(\omega)=(\omega-t_2)(\omega+2t_1).
+\]
+The second factors are positive.  The first factors are negative on the
+negative-current Einstein-minus branch and positive on the extra and
+Einstein-plus branches.  After the current sign is included, the resulting
+charge/pressure functional is a strictly positive sum of all absolute-current
+occupations.  For each of the six same-sign collision values, the certificate
+instead gives four positive exact cofactors \(y_i\) satisfying
+\[
+ \sum_i y_i s_i(\omega_i^2,n_i\omega_i,n_i^2)=0.
+\]
+Farkas duality excludes a strict scalar separator, while the same positive
+weights give a nonzero scalar common-zero occupation.  Finite-frequency
+resonances are separate conditions and are not inferred to vanish.
+\end{proof}
+
+\begin{theorem}[Sharp collision nonemptiness split]\label{thm:collision-nonemptiness}
+On each of the six distinct same-sign collision backgrounds (16)--(21), the
+complete generic bounded second-order cone contains a nonzero real point.
+Together with the preceding theorem, the twenty-one collision fibres split
+sharply as
+\[
+ \cZ_{2,\mathrm{bounded}}^{(i)}=\{0\}\quad(1\leq i\leq15),
+ \qquad
+ \cZ_{2,\mathrm{bounded}}^{(i)}\neq\{0\}\quad(16\leq i\leq21).
+\]
+This is a nonemptiness theorem for the last six cones, not a classification
+of their full real algebraic geometry.
+\end{theorem}
+
+\begin{proof}
+For each same-sign fibre, use the four positive exact Farkas cofactors as
+absolute-current occupations and take axisymmetric input, so all three
+lifted rotation moment maps vanish.  The same cofactors set
+\(\mu_H=\mu_{P_x}=R_c=0\).  All 108 nonzero-frequency same-fibre temporal
+channels are off shell: the exact census contains 864 nonzero target-shell
+defects, while its \(L=0\) rows use the separately empty nonzero-Fourier and
+homogeneous nonzero-frequency quotients.
+
+It remains only to kill the one cross-fibre resonance assigned to each
+candidate.  On (17)--(19), the Farkas support omits one required resonant
+factor.  On (16) and (20), choose the occupied modes axial with \(m=0\);
+the relevant \(L=3\) or \(L=1\) coefficient contains
+\(\langle2,0;2,0\mid L,0\rangle=0\).  On (21), put the resonant
+\(q_+(1),q_-(2)\) pair on the certified real mixed-parity \(L=4\) component
+\(A_{\rm pol}=rA_{\rm ax}\), \(B_{\rm pol}=sB_{\rm ax}\).  Its two real
+nonzero parity vectors have positive absolute-current norms and may be scaled
+independently to the prescribed occupations.  The complete finite-harmonic
+cokernel criterion then supplies a bounded finite-quasiperiodic second-order
+correction on each of the six backgrounds.
+\end{proof}
+
+\begin{corollary}[Universal scalar cone and bounded section]\label{cor:collision-rays}
+For every \(\rho>0\) on a same-sign \(n=(1,2)\) carrier, the nonnegative
+\((\mu_H,\mu_{P_x},R_c)\)-null occupation cone has exactly four extreme
+rays.  Each contains both Einstein-minus nodes and chooses one of
+\(p_{\rm extra},q_+\) independently on each momentum fibre.  On each of
+the six collision backgrounds (16)--(21), all four scalar extreme rays admit
+a nonzero bounded amplitude lift.  More strongly, every point of each complete
+four-ray scalar cone has a bounded amplitude lift.  Thus the bounded cone
+projects surjectively onto the scalar occupation cone on all six backgrounds.
+\end{corollary}
+
+\begin{proof}
+Divide the scalar receiver column on branch \(b\) and fibre \(n\) by the
+positive factor \(n^2\), and put
+\(x_{b,n}=\omega_{b,n}/n=\sqrt{\rho+\mu_b/n^2}\).  The columns lie on
+\((x^2,x,1)\), with \(\rho\)-independent order
+\[
+ q_-^{(2)}<p^{(2)}<q_+^{(2)}<q_-^{(1)}<p^{(1)}<q_+^{(1)}.
+\]
+The only non-obvious gap is
+\((9-5\sqrt3)/2>0\), which follows from \(81>75\).  The current signs in
+this order are \((-,+,+,-,+,+)\).  Four ordered moment-curve columns have
+the unique dependence
+\[
+ z_i=\frac1{\prod_{j\ne i}(x_i-x_j)},
+ \qquad \sum_i z_i x_i^d=0\quad(d=0,1,2),
+\]
+whose signs alternate.  Hence exactly four supports agree with the current
+signs, proving the extreme-ray classification.
+
+For the 24 lifts, ten supports omit a resonant factor and ten use the
+axisymmetric odd-\(L\) zero.  The remaining four use real \(L=4\) components:
+two on candidate (19)'s regular-pencil eigenline and two on candidate (21)'s
+mixed-parity component.  Independent fibre rescaling matches the extreme-ray
+occupations.  This proves ray saturation only; cross terms between different
+ray lifts can reactivate the bilinear resonance map.
+
+For occupation-surjectivity, do not add fixed ray representatives.  Instead,
+given an arbitrary point of the scalar cone, choose all occupied vectors
+axial and axisymmetric on candidates (16), (17), (18), and (20).  The odd-
+\(L\) coefficient then vanishes independently of the six occupation values.
+On (19) and (21), place the two resonant vectors on one fixed real mixed
+\(L=4\) component and rescale the two fibres independently to their prescribed
+absolute-current norms; choose all spectator vectors axial with \(m=0\).
+This defines a section on every cone face, including pairwise ray sums and the
+origin.  It does not imply that every amplitude in the fibre over a given
+occupation is bounded.
+\end{proof}
+
+\begin{proposition}[Exact same-sign bounded fibre products]
+For each candidate $i=16,\ldots,21$, let \(\pi_i\) be the six-node
+absolute-current occupation map, \(C_i\) its four-ray
+\((\mu_H,\mu_{P_x},R_c)\)-zero cone, \(\mu_J\) the three lifted rotation
+moment maps, and \(B_i\) the complete isolated cross-fibre resonance map.
+Then the bounded or finite-quasiperiodic second-order tangent cone is exactly
+\[
+ \mathcal Z^{\rm bnd}_i
+ =\pi_i^{-1}(C_i)\cap\mu_J^{-1}(0)\cap\mathcal V(B_i).
+\]
+All relative phases, both parities and all $m=-2,\ldots,2$ coefficients are
+retained.
+\end{proposition}
+
+\begin{proof}
+Necessity is the complete finite-harmonic adjoint-cokernel theorem: the scalar
+factor gives $H,P_x,R_c$, the rotation factor gives the three lifted
+rotations, and \(\mathcal V(B_i)\) kills the unique candidate-specific
+cross-fibre shell.  Conversely, the 864-defect same-fibre census makes every
+other nonzero-frequency source block invertible, so simultaneous vanishing is
+sufficient.  This gives an exact equation, not yet a decomposition of its
+real Hermitian components or singular strata.
+\end{proof}
+
+\begin{proposition}[Resonance fibres over the scalar-cone faces]
+On each same-sign collision background (16)--(21), the complete complex
+positive-frequency phase/parity resonance fibre is stratified over the
+four-ray scalar cone.  The two $q_-$ occupations are strictly positive at
+every nonzero scalar-cone point.  The automatic and active strata are
+\[
+\begin{array}{c|c|c|c|c}
+\text{candidate}&\text{resonant pair}&\text{automatic face}
+ &\dim_{\mathbb C}\mathcal V_{\rm active}&\#\operatorname{Irr}_{\mathbb C}\mathcal V_{\rm active}\\ \hline
+16&q_-^{(1)}q_-^{(2)}&\{0\}&12&1\\
+17&q_-^{(1)}q_+^{(2)}&\operatorname{cone}(R_1,R_2)&14&1\\
+18&p^{(1)}q_-^{(2)}&\operatorname{cone}(R_2,R_4)&22&1\\
+19&p^{(1)}q_-^{(2)}&\operatorname{cone}(R_2,R_4)&10&4\\
+20&q_+^{(1)}q_-^{(2)}&\operatorname{cone}(R_1,R_3)&14&1\\
+21&q_+^{(1)}q_-^{(2)}&\operatorname{cone}(R_1,R_3)&10&2
+\end{array}
+\]
+Candidates (17) and (20) use their isolated difference-frequency channel;
+the other four rows use the isolated sum-frequency channel.
+On an automatic face one bilinear factor vanishes.  Off it, the table lists
+the complete active all-$m$ complex resonance variety.  The four components
+on (19) are the real-supported regular-pencil eigenline components, and the
+two on (21) are the real mixed parity-proportionality components.  Every
+scalar-cone point has at least one real representative in the corresponding
+stratum.
+\end{proposition}
+
+\begin{proof}
+Every extreme ray contains $q_-^{(1)}$ and $q_-^{(2)}$ with positive
+weight.  Reading the optional resonant node from the four ray supports gives
+the automatic faces in the table.  On their complements, restrict the
+complete binary-form zero-variety decompositions: the target-doublet
+first-transvectant variety for (16), the third-transvectant kernels for
+(17),(20), the multiplicity-two first-transvectant variety for (18), the
+regular pencil for (19), and the scalar highest-spin product for (21).
+Their certified dimensions and component counts give the last two columns.
+The scalar-cone section in the preceding corollary supplies real points.
+Combined with the exact fibre-product formula, these strata are intersected
+with the prescribed real norm levels and the three lifted rotation moment
+maps to give a necessary-and-sufficient bounded equation.  The proposition
+does not decompose that real intersection into connected components or
+singular strata.
+\end{proof}
+
+\begin{proposition}[Connected automatic-face rotation links]
+For candidates (17)--(21), fix a nonzero occupation in any relative support
+stratum of the automatic two-ray face in the preceding table.  The complete
+amplitude link satisfying
+\[
+ B_i=0,
+ \qquad
+ \mu_{J_1}=\mu_{J_2}=\mu_{J_3}=0
+\]
+is nonempty and connected.  Candidate (16) has no nonzero automatic face, so
+this statement is not applicable there.  This is a fixed-occupation theorem;
+it neither glues distinct occupation strata nor classifies the active
+resonance varieties.
+\end{proposition}
+
+\begin{proof}
+On an automatic face, one complete factor of the bilinear map \(B_i\)
+vanishes.  For each occupied branch--momentum node, fix its positive
+absolute-current norm.  The amplitude space is then a product of odd
+spheres.  Quotienting by the independent node phases gives a compact
+connected product of complex projective spaces.  The action-derived
+Lee--Wald form descends to a signed product of Fubini--Study forms.  A
+negative \(q_-\) factor reverses orientation but remains nondegenerate.
+
+The diagonal lifted \(SO(3)\) action is Hamiltonian, and its moment map is
+the descended triple \((\mu_{J_1},\mu_{J_2},\mu_{J_3})\).  Compactness makes
+this moment map proper.  The connected-fibre theorem of Lerman,
+Meinrenken, Tolman and Woodward~\cite{LMTW} therefore makes its zero fibre
+connected.  The certified axisymmetric representative proves nonemptiness.
+Finally, its inverse image in the product of norm spheres has the connected
+node-phase torus as fibre, and is therefore connected.
+\end{proof}
+
+\begin{proposition}[The axisymmetric section is rotation-critical]
+On the certified all-\(m=0\) section over every scalar-cone point of each
+candidate (16)--(21), the Jacobian of the three lifted rotation moment maps
+has rank zero at the origin and exactly two at every nonzero point.  Hence
+zero is not a regular value along this section, and these explicit bounded
+points cannot seed a codimension-three implicit-function chart.
+\end{proposition}
+
+\begin{proof}
+In the spin-two basis \(m=-2,-1,0,1,2\), let \(e_0\) denote the \(m=0\)
+vector.  The exact invariant angular form gives
+
+\[
+ T_3e_0=0,
+ \qquad
+ W_2T_1e_0\ \hbox{and}\ W_2T_2e_0
+ \quad\hbox{real-linearly independent}.
+\]
+
+Thus \(d\mu_{J_3}=0\) on every occupied axisymmetric block, giving rank at
+most two.  At a nonzero section point, at least one block has nonzero norm;
+variations supported in that block retain the two independent \(T_1,T_2\)
+covectors with a nonzero current coefficient, giving rank at least two.  At
+the origin all three differentials vanish because the moment map is
+quadratic.  In particular, the connected automatic-face links above may
+contain critical points: connectedness does not imply regularity.  The next
+local gate is the quadratic normal form of the missing \(J_3\) equation on
+the kernel of the two transverse differentials.
+\end{proof}
+
+\begin{proposition}[Automatic-face hyperbolic normal form]
+Fix a nonzero axisymmetric section point on any automatic-face support
+stratum of candidates (17)--(21), and let \(N\) be the number of occupied
+current eigenlines.  On the angular slice aligned with those eigenlines, the
+quadratic \(\mu_{J_3}\) form restricted to
+
+\[
+ \ker d(\mu_{J_1},\mu_{J_2})
+\]
+
+has real inertia
+
+\[
+ (n_+,n_-,n_0)=(4N-2,4N-2,2).
+\]
+
+In particular it is indefinite.  Moreover, through every such point there
+is an exact fixed-occupation nonaxisymmetric curve inside the complete
+bounded fibre product.  Candidate (16) has no nonzero automatic face, so the
+statement is not applicable there.
+\end{proposition}
+
+\begin{proof}
+The spin-two angular form and \(J_3\) form in the ordered basis
+\(m=-2,-1,0,1,2\) are
+
+\[
+ W_2=\operatorname{diag}\left(1,\frac14,\frac16,\frac14,1\right),
+ \qquad
+ W_2T_3=\operatorname{diag}\left(-2,-\frac14,0,\frac14,2\right).
+\]
+
+Rescale each node by the square root of its nonzero current magnitude and
+swap the \(m=+1\) and \(m=-1\) variables on negative-current nodes.  This
+normalizes all coefficients simultaneously.  Put
+\(u_j=\delta z_{j,+1}\) and
+\(v_j=\overline{\delta z_{j,-1}}\).  The two real transverse rotation
+equations combine into one complex equation
+
+\[
+ \sum_{j=1}^{N} a_j(u_j+v_j)=0,
+ \qquad a_j>0.
+\]
+
+With \(w_j=u_j+v_j\) and \(z_j=u_j-v_j\), the \(m=\pm1\) part of
+\(\mu_{J_3}\) is proportional to
+\(\operatorname{Re}\sum_j w_j\overline{z_j}\).  The constraint places \(w\)
+in \(a^\perp\).  Its pairing with the \(a^\perp\) part of \(z\) gives real
+inertia \((2N-2,2N-2)\), while the complex component of \(z\) parallel to
+\(a\) is a two-real-dimensional radical.  The unrestricted \(m=\pm2\)
+coordinates contribute \((2N,2N,0)\), proving the displayed inertia.
+
+For the exact curve, choose any occupied eigenline, fix its phase so that
+its \(m=0\) coefficient is \(a>0\), and replace its angular vector by
+
+\[
+ z(t)=\sqrt{a^2-12t^2}\,e_0+t e_{+2}+t e_{-2},
+ \qquad 12t^2<a^2.
+\]
+
+Its norm is fixed because
+\((a^2-12t^2)/6+t^2+t^2=a^2/6\).  No adjacent magnetic weights are
+simultaneously occupied, so \(\mu_{J_1}=\mu_{J_2}=0\), while the two endpoint
+terms cancel in \(\mu_{J_3}\).  The absent resonant node stays zero on an
+automatic face, hence \(B_i=0\) remains exact.  This proves the curve lies in
+the necessary-and-sufficient bounded fibre product.  The proposition does
+not classify internal current-orthogonal directions or the two-dimensional
+radical, and therefore is not a complete singular-stratum theorem.
+\end{proof}
+
+\begin{corollary}[Complete fixed-norm rotation Hessian]
+At the same axisymmetric points, let \(N\) be the number of occupied scalar
+branch--momentum nodes and let \(D\) be the sum of their complex internal
+current-space dimensions.  A \(q_-\) or \(q_+\) node has \(D_j=2\), one
+axial and one polar current eigenline, whereas a \(p\)-extra node has
+\(D_j=4\), two eigenlines in each parity.  On the complete tangent to the
+fixed-node-norm link, restricted by
+\(\mathrm d(\mu_{J_1},\mu_{J_2})=0\), the real inertia of the quadratic
+\(\mu_{J_3}\) form is
+\[
+ (4D-2,4D-2,2D-N+2).
+\]
+After quotienting the \(N\) independent node phases it is
+\[
+ (4D-2,4D-2,2D-2N+2).
+\]
+Thus every ray and two-ray relative-interior stratum of the five nonzero
+automatic faces remains a transverse rotation saddle after all axial and
+polar internal directions are restored.  Candidate \((16)\) remains not
+applicable.
+\end{corollary}
+
+\begin{proof}
+The aligned block is the preceding proposition.  A current-orthogonal
+internal eigenline does not enter the two linear transverse-rotation
+equations.  Its five complex angular coefficients see the exact weighted
+\(J_3\) diagonal
+\[
+ \left(-2,-\frac14,0,\frac14,2\right),
+\]
+and hence add real inertia \((4,4,2)\).  Summing over the \(D-N\)
+orthogonal eigenlines gives angular-kernel inertia
+\((4D-2,4D-2,2)\).  The \(m=0\) fixed-node-norm tangent is radical of real
+dimension \(2D-N\), which yields the first formula.  The node-phase torus
+lies in that radical and removes \(N\) real directions, yielding the second.
+The dimensions are respectively \(10D-N-2\) and \(10D-2N-2\), equal to
+the sums of the displayed inertia triples.  Exact enumeration of all
+fifteen ray/interior support strata gives phase-reduced inertias ranging
+from \((30,30,10)\) to \((54,54,20)\).
+
+This is a complete quadratic Hessian theorem at fixed node norms, not a
+classification of the nonlinear zero set along its radical.  It neither
+glues occupation strata nor treats active resonance components.
+\end{proof}
+
+\begin{proposition}[Candidate-(16) active restricted current]
+Fix both nonzero \(q_-^{(1)}\) and \(q_-^{(2)}\) current norms on candidate
+(16), and quotient their independent phases.  The irreducible active
+resonance variety is a complex projective tenfold in
+\(\mathbb{CP}^9\times\mathbb{CP}^9\).  On every complex smooth stratum, the restricted
+Lee--Wald form is nondegenerate and negative K\"ahler.  On the generic
+smooth locus its real symplectic rank is \(20\).
+\end{proposition}
+
+\begin{proof}
+Before projectivization, the exact target-doublet \(L=3\) resonance equations
+factor into two rank-at-most-one determinantal cones.  Their product is
+irreducible of complex dimension \(12\) in the \(20\)-dimensional affine
+input space.  The equations are bihomogeneous in the two nonzero nodes, so
+quotienting their two complex scalings gives the stated projective dimension.
+
+Both resonant nodes are on the \(q_-\) branch.  The complete axial/polar
+current is therefore negative definite on each node.  Writing its descended
+Hermitian form as
+\[
+ h=-c_1H_1\mathbin{\oplus}-c_2H_2,
+ \qquad c_1,c_2>0,
+\]
+gives \(h(v,v)<0\) for every nonzero complex tangent vector on every smooth
+stratum.  Its imaginary part is consequently nondegenerate there.  The
+projective variety itself is singular, so this proposition does not apply a
+smooth-orbifold connected-fibre theorem to its full rotation-zero set.
+\end{proof}
+
+\begin{proposition}[Active linear-sheet rotation links]
+Each of the four real pencil-eigenline components on candidate (19) and the
+two real parity-proportional components on candidate (21) has a nondegenerate
+restricted Lee--Wald current.  Its resonant core has Hermitian inertia
+\((5,5,0)\).  At every fixed nonzero active occupation, each component has a
+nonempty connected lifted-rotation zero link, including arbitrary occupied
+spectator nodes.  The four and two components remain distinct.
+\end{proposition}
+
+\begin{proof}
+Every declared sheet is the direct sum of one complex five-dimensional
+subspace of a positive-current node and one complex five-dimensional
+subspace of a negative-current node.  Each ambient node form is definite,
+so its restriction to a nonzero linear graph or pencil eigenline remains
+definite.  Spectral orthogonality between distinct branch--momentum nodes
+then gives inertia \((5,5,0)\); occupied spectators add definite orthogonal
+blocks and cannot create a radical.
+
+After fixing the two resonant-node norms and quotienting their phases, the
+core is \(\mathbb{CP}^4\times\mathbb{CP}^4\) with one positive and one
+negative weighted Fubini--Study factor.  Spectators add projective factors.
+The diagonal lifted \(SO(3)\) action preserves each internal graph or
+eigenline and is Hamiltonian.  Its zero fibre is nonempty by choosing the
+spin-two \(m=0\) vector in every factor.  Compactness makes the moment map
+proper, so the connected-fibre theorem gives a connected zero fibre;
+restoring the connected node-phase torus preserves connectedness.  Distinct
+parity ratios and pencil eigenlines are unchanged by node phases, and the
+active nonzero-norm condition prevents passage through a one-sided component.
+\end{proof}
+
+\begin{proposition}[Candidate-(17)/(20) axisymmetric Zariski currents]
+At every nonzero active scalar-cone point on the certified all-axial
+\(m=0\) sections of candidates (17) and (20), the affine Zariski tangent to
+the complete third-transvectant resonance variety has complex dimension
+\(16\) and restricted Hermitian current inertia
+\[
+ (6,10,0).
+\]
+The section is algebraically singular because the irreducible variety has
+complex dimension \(14\).  Nevertheless, the restricted current is
+nondegenerate.  After removing the two node scalings, the projective Zariski
+tangent has inertia \((5,9,0)\) and real symplectic rank \(28\).
+\end{proposition}
+
+\begin{proof}
+For the axisymmetric binary quartic \(e_0=(0,0,1,0,0)\), the exact
+third-transvectant matrix has rank two and a three-dimensional kernel.  The
+two linearized parity equations therefore have total rank four in the
+twenty-dimensional affine input space, giving the stated tangent dimension.
+
+The only possible current radical is controlled by equality of the absolute
+currents on the positive and negative resonant nodes.  Exact outward rational
+intervals prove the strict opposite inequality on both active extreme rays
+of each scalar cone:
+\[
+ \mathsf n(q_-^{(1)})>\mathsf n(q_+^{(2)})
+ \quad\hbox{on candidate (17)},
+ \qquad
+ \mathsf n(q_-^{(2)})>\mathsf n(q_+^{(1)})
+ \quad\hbox{on candidate (20)}.
+\]
+Every inactive ray adds only to the negative occupation, so the inequalities
+hold throughout the active cones.  In each parity channel, the three kernel
+directions give three positive/negative pairs and the two constrained
+directions are negative, yielding \((3,5,0)\).  Doubling parity gives
+\((6,10,0)\).  The two complex node-scaling directions have inertia
+\((1,1,0)\), and their removal gives \((5,9,0)\).
+
+This is a Zariski-tangent theorem at singular points.  It does not classify
+the restricted current on the full smooth locus or justify a connected-fibre
+argument there.
+\end{proof}
+
+\begin{proposition}[Smooth current radicals on candidates (17) and (20)]
+\label{prop:candidate-17-20-smooth-current-radical}
+Each complete active third-transvectant variety contains a smooth bounded
+point, with all five stabilizer moment maps zero, at which the fixed-norm
+projective Lee--Wald current has a nonzero radical.  Consequently neither
+active variety is globally symplectic, and the smooth symplectic-orbifold
+connected-fibre theorem cannot be applied globally.
+\end{proposition}
+
+\begin{proof}
+The exact parity pencil has coefficient matrix
+\(C_0=\bigl(\begin{smallmatrix}a&b\\b&3a\end{smallmatrix}\bigr)\), with
+\(b/(a\lambda)=\epsilon\sqrt3\), \(\epsilon=\pm1\), and
+\(\lambda^2=128/5\).  Put
+\[
+ D=\operatorname{diag}(1,3),\qquad
+ Q=\begin{pmatrix}\epsilon\sqrt3&-\epsilon\sqrt3\\1&1\end{pmatrix},
+ \qquad P^{T}=(C_0Q)^{-1}.
+\]
+Then \(Q^TDQ=6I\), while
+\[
+ P=Q\operatorname{diag}\!\left(
+ \frac1{6a(\lambda+1)},-\frac1{6a(\lambda-1)}\right).
+\]
+Thus the second transform is not a scalar multiple of the first.  After the
+independent channel rescaling
+\[
+ S=\operatorname{diag}\!\left(
+ \frac32a(\lambda+1),\frac32a(\lambda-1)\right),
+ \qquad PS=Q\operatorname{diag}(1/4,-1/4),
+\]
+both eigenchannels have normalized positive-to-negative current coefficient
+ratio \(1/16\).
+
+In either channel take
+\[
+ f=(1,0,0,0,1),\qquad g=(1,0,1,0,1).
+\]
+The third-transvectant equations vanish and their Jacobian has rank three,
+so this is a smooth point with seven-dimensional affine tangent.  Restricting
+\(-H\oplus H/16\), where
+\(H=\operatorname{diag}(1,1/4,1/6,1/4,1)\), gives rank six and the exact
+radical
+\[
+ \delta f=(0,1/4,0,1/4,0),\qquad
+ \delta g=(0,1,0,1,0).
+\]
+It is tangent to both norm levels and orthogonal to both phase directions,
+so it survives projectivization.  Since
+\(H(f,f)=2\) and \(H(g,g)=13/6\), its positive-to-negative occupation ratio
+is \(13/192\).  Exact positive mixtures \(R_3+sR_1\) on candidate (17) and
+\(R_2+sR_1\) on candidate (20) realize that ratio inside their scalar cones.
+The reflection-symmetric representatives and their spectators have zero
+angular moments, while the scalar-cone equations kill the time and circle
+moments.  The exact bounded fibre-product theorem then supplies the stated
+bounded points.
+
+This is the explicit bounded point used below to calibrate the complete
+smooth determinantal locus.
+\end{proof}
+
+\begin{proposition}[Smooth current radicals on candidate (18)]
+\label{prop:candidate-18-smooth-current-radical}
+The complete candidate-(18) active resonance variety contains two exact
+families of smooth bounded points with all five stabilizer moment maps zero.
+On either family, the fixed-norm projective Lee--Wald current has a
+four-complex-dimensional radical.  Hence this active variety is not globally
+symplectic either.
+\end{proposition}
+
+\begin{proof}
+Write \(X,Y\) for the current-orthogonal active functionals on the axial and
+polar \(p\)-extra doublets and \(U,V\) for the axial and polar \(q_-\)
+amplitudes.  The exact \(L=3\) source pencil is equivalent to
+\[
+ T_1(X,U)+T_1(Y,V)=0,\qquad
+ 3T_1(X,V)+T_1(Y,U)=0.
+\]
+With
+\[
+ Q=\begin{pmatrix}\sqrt3&-\sqrt3\\1&1\end{pmatrix},
+ \qquad P=Q^{-T},
+\]
+one has \(P^TQ=I\) and
+\(P^T\bigl(\begin{smallmatrix}0&3\\1&0\end{smallmatrix}\bigr)Q
+=\operatorname{diag}(\sqrt3,-\sqrt3)\).  The resonance equations therefore
+factor into two rank-one conditions
+\(T_1(f_+,g_+)=T_1(f_-,g_-)=0\).
+
+Let \(w_x,w_y>0\) be the exact quotient-current weights of \(X,Y\), and let
+\(h_->0\) be the absolute axial \(q_-\) weight.  Direct reduction of the
+action-derived current gives
+\[
+ G_p=\begin{pmatrix}
+ w_x/12+w_y/4&-w_x/12+w_y/4\\
+ -w_x/12+w_y/4&w_x/12+w_y/4
+ \end{pmatrix},qquad
+ |G_-|=6h_-I.
+\]
+Thus \(z_+=(1,1)\) and \(z_-=(1,-1)\) are exact eigenlines of \(G_p\),
+with eigenvalues \(w_y/2\) and \(w_x/6\), respectively.  On either line set
+\(f=z_\pm\otimes e_0\), \(g=t_\pm z_\pm\otimes e_0\), where
+\(e_0=(0,0,1,0,0)\) and
+\[
+ t_+^2=\frac{w_y/2}{6h_-},qquad
+ t_-^2=\frac{w_x/6}{6h_-}.
+\]
+Both entries of \(z_\pm\) are nonzero, so both rank-one factors are at smooth
+nonzero proportional pairs.  For every \(r\perp e_0\),
+\[
+ \delta f=z_\pm\otimes r,\qquad
+ \delta g=t_\pm z_\pm\otimes r
+\]
+is tangent and current-orthogonal to the complete tangent.  These four
+complex directions are tangent to both norm levels and transverse to the
+two phase directions, so they survive projectivization.
+
+Finally, exact rational intervals put the active occupation ratio below one
+on \(R_1\) and above one on \(R_3\).  The unique positive mixture
+\(R_3+s_{18}R_1\) therefore gives equal \(p_{\rm extra}^{(1)}\) and
+\(q_-^{(2)}\) absolute-current occupations, precisely the scaling above.
+The \(m=0\) resonant carriers and spectators kill the three rotation moments,
+while the scalar cone kills the time and circle moments.  The exact bounded
+fibre-product theorem completes the claim.
+
+This proves the two aligned branches used below to calibrate the complete
+smooth determinantal locus.
+\end{proof}
+
+\begin{proposition}[Smooth presymplectic divisors and quotients]
+\label{prop:smooth-presymplectic-divisors}
+On the complete smooth active resonance varieties of candidates
+\((17),(18),(20)\), let \(J\) denote the full-row-rank constraint Jacobian
+and \(H\) the invertible ambient Lee--Wald Hermitian current.  Then
+\[
+ K=JH^{-1}J^\dagger
+\]
+has
+\[
+ \ker K\cong\operatorname{rad}\!\left(H|_{\ker J}\right),
+ \qquad
+ \lambda\longmapsto H^{-1}J^\dagger\lambda .
+\]
+Consequently \(\det K=0\) is the complete smooth current-degeneracy locus,
+the determinantal ideals of \(K\) classify its higher-corank strata, and
+\(\ker J/\operatorname{rad}\) carries an induced nondegenerate Hermitian
+current.
+
+For candidates \((17)\) and \((20)\), each parity factor has
+\[
+ K_3(f,g)=J_3(f,g)H_3^{-1}J_3(f,g)^\dagger,
+ \qquad H_3=-H_{\rm ang}\oplus H_{\rm ang}/16,
+\]
+and the two-parity divisor is
+\(\det K_3(f_+,g_+)\det K_3(f_-,g_-)=0\).
+At the smooth bounded point of the preceding proposition,
+\[
+ K_3=
+ \begin{pmatrix}
+ 24&0&24\\
+ 0&30&0\\
+ 24&0&24
+ \end{pmatrix},
+\]
+so its nullity is one.
+At the second exact smooth point
+\[
+ f=(-2,-2,-2,-2,-1),\qquad g=(12,12,11,9,0),
+\]
+the same conormal determinant is \(8293671904\).  The degeneracy determinant
+is therefore not identically zero, so this is a proper smooth locus.
+
+For candidate \((18)\), the same formula on every regular rank-one chart
+gives a chart-independent divisor.  On the aligned section, writing
+\(r=|t|^2\) and \(b=6h_->0\), its internal conormal factor satisfies
+\[
+ \det C(r)=
+ \frac{(2br-w_y)(6br-w_x)}{b^2w_xw_y}.
+\]
+The two factors are the symmetric and antisymmetric branches above.  Since
+\(3w_y-w_x>0\), each is a simple internal branch with full conormal nullity
+four.  Including the ten nondegenerate current-orthogonal spectators, the
+affine presymplectic quotient has complex dimension \(18\) there.
+\end{proposition}
+
+\begin{proof}
+If \(v\in\ker J\) is radical, nondegeneracy of \(H\) implies
+\(Hv=J^\dagger\lambda\) for a unique conormal coefficient \(\lambda\).
+The tangent equation is then
+\(0=Jv=JH^{-1}J^\dagger\lambda=K\lambda\).
+Conversely every \(\lambda\in\ker K\) gives such a radical vector.  Full row
+rank of \(J\) makes the displayed map injective.  This proves the general
+claim and its quotient statement.
+
+For the third-transvectant factors, direct exact substitution of the three
+constraint rows and \(H_3\) gives the displayed matrix at the bounded point.
+For candidate \((18)\), use a regular chart
+\(F_i=f_\alpha g_i-f_i g_\alpha\), \(i\ne\alpha\), on each rank-one factor.
+Chart changes act on \(J\) by an invertible conormal matrix and hence on
+\(K\) by congruence, preserving its zero locus and nullity.  At the aligned
+point the angular conormal factor is invertible, while the internal factor is
+\(C(r)=rG_p^{-1}-I/b\) up to invertible diagonal congruence.  Its determinant
+is the displayed factorization.  The certified strict inequality
+\(3w_y-w_x>0\) makes the complementary eigenvalue nonzero on either branch,
+so tensoring with the four-dimensional angular conormal factor gives nullity
+four.  The spectator statement follows from their certified
+current-orthogonal positive complement.
+\end{proof}
+
+\begin{proposition}[Complete complex singular carrier for candidates (17) and (20)]
+\label{prop:third-transvectant-singular-locus}
+For one parity factor, write
+\[
+ K_{T_3}=\{(f,g)\in\mathbb C^5\oplus\mathbb C^5:T_3(f,g)=0\}.
+\]
+Its Jacobian has rank below three precisely on
+\[
+ \operatorname{Sing}(K_{T_3})
+ =
+ \left\{
+ \bigl(a\,v(\lambda),b\,v(\lambda)\bigr):
+ [\lambda_0:\lambda_1:\lambda_2]\in\mathbb P^2,
+ (a,b)\in\mathbb C^2
+ \right\},
+\]
+where
+\[
+ v(\lambda)=
+ \left(
+ 3\lambda_2^2,-3\lambda_1\lambda_2,
+ \lambda_0\lambda_2+2\lambda_1^2,
+ -3\lambda_0\lambda_1,3\lambda_0^2
+ \right).
+\]
+This singular locus has complex dimension four, is smooth away from the
+origin, and has projectivization \(\mathbb P^2\times\mathbb P^1\) embedded
+by \(\mathcal O(2,1)\).  Its incidence resolution is
+\[
+ \operatorname{Tot}\!\left(
+ \mathcal O_{\mathbb P^2}(-2)\oplus
+ \mathcal O_{\mathbb P^2}(-2)
+ \right)\longrightarrow\operatorname{Sing}(K_{T_3}).
+\]
+For the two parity factors, the complete singular locus has exactly two
+irreducible components,
+\[
+ (S_+\times K_-)\cup(K_+\times S_-),
+\]
+each of complex dimension eleven, meeting in the dimension-eight product
+\(S_+\times S_-\).
+\end{proposition}
+
+\begin{proof}
+A nonzero left-Jacobian covector
+\(\lambda=(\lambda_0,\lambda_1,\lambda_2)\) gives
+\[
+ \lambda^TJ(f,g)
+ =\bigl(-(B_\lambda g)^T,(B_\lambda f)^T\bigr),
+\]
+where \(B_\lambda\) is skew.  Its determinant vanishes, while the three
+selected rank-four minors are
+\[
+ 9\lambda_0^4,\qquad
+ (\lambda_0\lambda_2+2\lambda_1^2)^2,\qquad
+ 9\lambda_2^4.
+\]
+If the outer coordinates vanish, the middle expression is
+\(4\lambda_1^4\), so \(B_\lambda\) has rank four for every nonzero
+\(\lambda\).  Its kernel is generated by \(v(\lambda)\).  Thus a Jacobian
+rank loss is equivalent to \(f\) and \(g\) being proportional to this common
+kernel vector.  The parametrization and incidence resolution follow.
+For the product, the Jacobian is block diagonal; hence it loses rank exactly
+when either factor does, giving the two components and their intersection.
+
+This is a complex-algebraic theorem before real norm levels, node phases,
+lifted rotations, or Lee--Wald reduction.
+\end{proof}
+
+\begin{corollary}[Candidate-(17)/(20) singular-component images intersect]
+\label{cor:candidate-17-20-singular-component-incidence}
+At every positive active-occupation pair on candidate \((17)\) or \((20)\),
+the two algebraic singular-component images meet in the node-phase and lifted
+rotation-zero quotient.  Consequently their component labels supply no
+quotient-separation lower bound.
+\end{corollary}
+
+\begin{proof}
+The components
+\[
+ \Sigma_+=S_+\times K_-,\qquad
+ \Sigma_-=K_+\times S_-
+\]
+meet in \(S_+\times S_-\).  Put
+\[
+ f=\sqrt{6N_-}\,e_0,\qquad
+ g=\sqrt{96N_+}\,e_0
+\]
+in one parity factor and set the other factor to zero.  The occupied pair is
+a common-square singular pair and the zero pair lies in the second singular
+cone, so this point is in the intersection.  The exact current weights give
+occupations \(N_-\) and \(N_+\).  Its real completion is axisymmetric, hence
+rotation-zero, and both total node norms are positive, so both node phases
+act freely.  The orbit of this point belongs to both quotient images.
+
+This proves incidence, not connectedness within either image or of their
+union.
+\end{proof}
+
+\begin{proposition}[Connected candidate-(17)/(20) double-singular hub]
+\label{prop:candidate-17-20-double-singular-hub}
+At every positive active-occupation pair on candidate \((17)\) or \((20)\),
+the complete double-singular intersection \(S_+\times S_-\), after both
+common node-phase quotients, has a connected lifted-rotation moment-map zero
+fibre.  Its compact incidence resolution is Kähler of complex dimension six.
+\end{proposition}
+
+\begin{proof}
+For either parity factor, the common-square incidence resolution is
+\[
+ \operatorname{Tot}\!\left(
+   \mathcal O_{\mathbb P^2}(-2)\oplus
+   \mathcal O_{\mathbb P^2}(-2)\right)\longrightarrow S.
+\]
+Taking the product over
+\(B=\mathbb P^2_+\times\mathbb P^2_-\), fixing the positive and negative
+node norms, and dividing their two free phases gives
+\[
+ \mathbb P(L_+\oplus L_-)_{\mathrm{negative}}
+ \mathop{\times}_{B}
+ \mathbb P(L_+\oplus L_-)_{\mathrm{positive}},
+ \qquad
+ L_\pm=\mathcal O_{\mathbb P^2_\pm}(-2).
+\]
+This is a compact connected Kähler manifold of complex dimension
+\(4+1+1=6\).  The construction is equivariant for the lifted diagonal
+\(\mathrm{SO}(3)\) action.  Its Hamiltonian moment-map zero fibre is nonempty:
+the axisymmetric common-square representative used in
+Corollary~\ref{cor:candidate-17-20-singular-component-incidence} supplies a
+point at every positive occupation pair.  Kirwan connectedness therefore
+makes the resolved zero fibre connected.  The resolution is surjective onto
+the target double-singular hub and has connected fibres, so the target
+zero fibre is its connected continuous image.
+
+The proposition concerns only the common hub.  It does not assert that every
+component of \(S_+\times K_-\) or \(K_+\times S_-\) meets it.
+\end{proof}
+
+\begin{proposition}[Frequency-weighted common-square quotient]
+\label{prop:candidate-17-20-common-square-quotient}
+Fix positive active occupations and restrict candidate \((17)\) or \((20)\)
+to one declared common-square parity factor, with the other factor at its
+vertex.  After the two free node phases, the carrier is \(\mathbb{CP}^2\).
+Put
+\[
+ \delta=\omega_+N_+-\omega_-N_-.
+\]
+If \(\delta\neq0\), the lifted-rotation zero set is
+\(\mathbb{RP}^2\) and its \(\mathrm{SO}(3)\) quotient is one point.  If
+\(\delta=0\), the complete \(\mathbb{CP}^2\) is rotation-zero and its
+\(\mathrm{SO}(3)\) quotient is a closed interval.
+
+Candidate \((17)\) has \(\delta<0\) throughout its complete nonzero active
+scalar cone.  Candidate \((20)\) has a nonempty exact balance divisor:
+\(\delta<0\) on \(R_2\), \(\delta>0\) on \(R_4\), and
+\[
+ \left(-\frac{\delta_{R_4}}{\delta_{R_2}}\right)R_2+R_4
+\]
+has \(\delta=0\) with a strictly positive coefficient.
+\end{proposition}
+
+\begin{proof}
+In descending binary-weight coordinates the common-square map is
+\[
+ [a,b,c]\longmapsto
+ \left[a^2,ab,\frac{ac+2b^2}{3},bc,c^2\right].
+\]
+The certificate checks equivariance against \(J_0,J_+,J_-\).  In the
+equivalent Cartesian Cartan model,
+\[
+ S(z)=zz^T-\frac{z^Tz}{3}I\in\operatorname{Sym}^2_0(\mathbb C^3),
+\]
+and direct multiplication gives
+\[
+ [S(z),S(z)^\dagger]
+ =(z^\dagger z)\bigl(zz^\dagger-\overline z\,z^T\bigr).
+\]
+Thus the Cartan-square moment map vanishes exactly when \([z]\) is
+phase-real.  These directions form \(\mathbb{RP}^2\), on which
+\(\mathrm{SO}(3)\) is transitive.
+
+The two occupied nodes have the same angular square direction, so their
+action-derived rotational moments combine as a positive normalization times
+\(\delta\) and this Cartan-square moment map.  At \(\delta=0\) the angular
+equation vanishes identically.  Writing \(z=x+iy\), a projective phase makes
+\(x\cdot y=0\); rotation and normalization then leave the complete orbit
+parameter
+\[
+ \eta=\frac{|z^Tz|}{z^\dagger z}\in[0,1].
+\]
+Hence \(\mathbb{CP}^2/\mathrm{SO}(3)\cong[0,1]\).
+
+Finally, exact substitution of the four circuit weights into
+\(\omega_+N_+-\omega_-N_-\) gives negative signs on \(R_3,R_4\) for
+candidate \((17)\), negative sign on \(R_2\) and positive sign on \(R_4\)
+for candidate \((20)\).  Candidate-\((17)\) inactive rays contribute only
+\(-\omega_-N_-\).  The displayed positive candidate-\((20)\) combination
+therefore proves the balance claim.
+
+This proposition concerns one parity endpoint of the connected hub.  It does
+not classify either complete two-parity singular component.
+\end{proof}
+
+\begin{proposition}[Balanced singular radial contraction]
+\label{prop:candidate-17-20-singular-radial-contraction}
+Fix positive active occupations on candidate \((17)\) or \((20)\).  On either
+complete singular component
+\[
+ \Sigma_+=S_+\times K_-,
+ \qquad
+ \Sigma_-=K_+\times S_-,
+\]
+there is an occupation-preserving radial path from every point to the
+double-singular hub whose rotational residual is exactly
+\[
+ \mu_{\rm rot}(t)
+   =(1-t^2)\delta\,\mu_{\rm sq},
+ \qquad
+ \delta=\omega_+N_+-\omega_-N_-.
+\]
+Consequently, on candidate \((20)\)'s exact balance divisor
+\(\delta=0\), the complete fixed-occupation singular-union
+rotation-zero fibre is connected.
+
+For candidate \((17)\), and for candidate \((20)\) off balance, the same
+conclusion is certified only on the phase-real common-square sublocus
+\(\mu_{\rm sq}=0\).
+\end{proposition}
+
+\begin{proof}
+Consider first a point of \(S\times K\).  Write \(A_\pm\) for the two node
+occupations carried by the common-square factor and \(B_\pm\) for those
+carried by the arbitrary kernel factor.  Scale the latter amplitudes by
+\(t\in[0,1]\), so their occupations become \(t^2B_\pm\), and add
+\((1-t^2)B_\pm\) to the square factor along one common-square direction.
+The total occupations \(N_\pm=A_\pm+B_\pm\) are unchanged.  Scaling
+preserves the third-transvectant kernel equation, and the receiving factor
+remains common-square, so the complete bilinear resonance continues to
+vanish.
+
+Let
+\(\alpha=\omega_+A_+-\omega_-A_-\) and let \(M_K\) denote the initial
+rotational moment of the kernel factor.  Initial rotation zero says
+\[
+ M_K=-\alpha\,\mu_{\rm sq}.
+\]
+Along the path, the kernel contribution scales by \(t^2\), whereas the
+square coefficient becomes
+\(\alpha+(1-t^2)(\omega_+B_+-\omega_-B_-)\).  Hence
+\[
+\begin{aligned}
+ \mu_{\rm rot}(t)
+ &=t^2M_K+
+   \bigl[\alpha+(1-t^2)(\omega_+B_+-\omega_-B_-)\bigr]\mu_{\rm sq}\\
+ &=(1-t^2)(\omega_+N_+-\omega_-N_-)\mu_{\rm sq}.
+\end{aligned}
+\]
+If the receiving square factor starts at its vertex, choose any square
+direction for \(t<1\).  Its transferred amplitude vanishes as \(t\to1\);
+initial rotation zero gives \(M_K=0\), and the same formula supplies a
+continuous balance-divisor path.  At \(t=0\) the arbitrary kernel factor is
+at its vertex, so the endpoint lies in \(S_+\times S_-\).  The construction
+is symmetric under exchange of the two parity factors.
+
+On candidate \((20)\)'s balance divisor the displayed residual vanishes for
+every initial point.  Every point of both singular components therefore
+joins the connected hub of
+Proposition~\ref{prop:candidate-17-20-double-singular-hub}, proving the
+claim.  Off balance, \(\mu_{\rm sq}=0\) is sufficient for the same radial
+path.  A nonzero residual obstructs this particular path only; it is not a
+nonradial no-go.
+\end{proof}
+
+\begin{proposition}[Moving-square contraction and its sharp ansatz obstruction]
+\label{prop:candidate-17-20-moving-square-contraction}
+On either candidate-\((17)/(20)\) singular component, retain uniform scaling
+of the arbitrary \(K\) factor and exact transfer of its released occupations,
+but allow the receiving common-square direction to move continuously.  Put
+\[
+ \alpha=\omega_+A_+-\omega_-A_-,
+ \qquad
+ \delta=\omega_+N_+-\omega_-N_-.
+\]
+Then every point with \(\alpha\delta>0\) contracts to the connected
+double-singular hub.  The same holds for phase-real square directions and
+for the square-factor vertex.
+
+For a non-phase-real point with \(\delta\neq0\), the remaining complementary
+declared ansatz is obstructed when \(\alpha\delta<0\): its receiving
+coefficient has one interior zero at which the scaled kernel moment is
+nonzero.  If \(\alpha=0\), by contrast, every point contracts by a
+coefficient-zero square pre-rotation followed by the phase-real uniform
+contraction.
+\end{proposition}
+
+\begin{proof}
+In the normalized Cartesian Cartan model, choose a projective phase so that
+\(z=x+iy\), \(x\cdot y=0\), and
+\(\lVert x\rVert^2+\lVert y\rVert^2=1\).  With
+\(u=2\lVert x\rVert\lVert y\rVert\), direct use of
+\[
+ [S(z),S(z)^\dagger]
+ =\bigl(z^\dagger z\bigr)
+  \bigl(zz^\dagger-\overline z\,z^T\bigr)
+\]
+and
+\(\lVert S(z)\rVert^2=(2+u^2)/3\) gives the normalized moment radius
+\[
+ F(u)=\frac{3u}{2+u^2},
+ \qquad
+ F'(u)=\frac{3(2-u^2)}{(2+u^2)^2}>0
+ \quad(0\leq u\leq1).
+\]
+Rotations supply every direction, so the complete normalized
+Cartan-square moment image is a closed ball.  In particular, every multiple
+\(r\mu_0\), \(0\leq r\leq1\), is reached continuously from an initial
+moment \(\mu_0\).
+
+Let \(s=t^2\) be the remaining occupation fraction in the uniformly scaled
+kernel factor.  The receiving square coefficient is
+\[
+ c(s)=s\alpha+(1-s)\delta.
+\]
+Initial rotation zero gives \(M_K=-\alpha\mu_0\).  Hence the moving-square
+choice
+\[
+ \mu_{\rm sq}(s)=r(s)\mu_0,
+ \qquad
+ r(s)=\frac{s\alpha}{c(s)}
+\]
+satisfies
+\[
+ -s\alpha\mu_0+c(s)\mu_{\rm sq}(s)=0.
+\]
+If \(\alpha\delta>0\), then
+\[
+ \frac{dr}{ds}=\frac{\alpha\delta}{c(s)^2}>0,
+ \qquad r(0)=0,\quad r(1)=1,
+\]
+so the Cartan moment ball supplies the entire path.  At \(s=0\) the kernel
+factor is at its vertex and the receiving square is phase-real, placing the
+endpoint in the connected hub.  The phase-real and square-vertex cases use
+zero square moment directly.
+
+If \(\alpha\delta<0\), then
+\[
+ s_0=-\frac{\delta}{\alpha-\delta}\in(0,1),
+ \qquad c(s_0)=0.
+\]
+For nonzero \(\mu_0\), the remaining kernel moment
+\(-s_0\alpha\mu_0\) is nonzero, so no square direction repairs this ansatz.
+If \(\alpha=0\), initial rotation zero instead gives \(M_K=0\).  At
+\(s=1\) the square coefficient is also zero, so the Cartan moment-ball path
+may first move the square direction continuously from \(\mu_0\) to a
+phase-real direction without changing any occupation or rotational moment.
+Keeping that square moment zero while \(s\) then decreases from one to zero
+gives a second rotation-zero segment ending in the hub.  This admissible
+pre-rotation was omitted by the former endpoint-continuity argument.
+
+This classifies the stated ansatz, not independent node scaling or a general
+deformation of the \(K\) factor inside \(T_3(f,g)=0\).
+\end{proof}
+
+\begin{proposition}[Independent-node bottleneck incidence]
+\label{prop:candidate-17-20-independent-node-scaling}
+Fix the two directions of the arbitrary \(K\) factor on either
+candidate-\((17)/(20)\) singular component, but scale their squared
+amplitudes independently by \((x,y)\in[0,1]^2\), transferring the released
+occupations to the receiving common-square factor.  Write
+\[
+ a=\omega_-B_->0,\qquad b=\omega_+B_+>0,
+\]
+and let \(U=a\mu_f\), \(V=b\mu_g\) be the fixed weighted node moments.  On a
+strict opposite-sign stratum \(\alpha\delta<0\), define
+\[
+ c(x,y)=\delta+ax-by,\qquad
+ M_K(x,y)=-xU+yV,
+\]
+and
+\[
+ \mathcal I=\{(x,y)\in[0,1]^2:c(x,y)=0,\ M_K(x,y)=0\}.
+\]
+Then the declared fixed-direction independent-node-scaling ansatz contracts
+to the connected double-singular hub if and only if
+\(\mathcal I\neq\varnothing\).
+
+If \(U,V\neq0\), incidence is possible only when
+\(V=\kappa U\) for some \(\kappa>0\).  In that case its unique candidate is
+\[
+ y_*=-\frac{\delta}{a\kappa-b},
+ \qquad x_*=\kappa y_*,
+\]
+and it exists exactly when \(a\kappa\neq b\) and
+\((x_*,y_*)\in[0,1]^2\).  The one-zero cases are
+\[
+ U=0,\ V\neq0:\quad (x_*,y_*)=(-\delta/a,0),
+ \qquad
+ U\neq0,\ V=0:\quad (x_*,y_*)=(0,\delta/b),
+\]
+again subject to the displayed nonzero coordinate belonging to \([0,1]\).
+Thus non-positively-collinear nonzero node moments are obstructed within
+this ansatz, whereas every physical incidence point gives an explicit
+contraction.
+\end{proposition}
+
+\begin{proof}
+Exact occupation transfer gives
+\[
+ A_-(x)=A_-+(1-x)B_-,
+ \qquad
+ A_+(y)=A_++(1-y)B_+,
+\]
+so the receiving coefficient is \(c(x,y)\), with
+\[
+ c(1,1)=\alpha,\qquad c(0,0)=\delta.
+\]
+Independent nonnegative scaling preserves \(T_3(f,g)=0\), and the rotational
+equation is
+\[
+ M_K(x,y)+c(x,y)\mu_{\rm sq}=0,
+\]
+where \(\mu_{\rm sq}\) ranges over the closed Cartan moment ball proved in
+Proposition~\ref{prop:candidate-17-20-moving-square-contraction}.
+Since \(\alpha\delta<0\), every continuous path from \((1,1)\) to
+\((0,0)\) meets \(c=0\).  At such a point the rotational equation forces
+\(M_K=0\), proving necessity.
+
+Conversely, choose \((x_*,y_*)\in\mathcal I\).  Along the straight segment
+from \((1,1)\) to \((x_*,y_*)\), affine linearity gives
+\[
+ c=(1-\tau)\alpha,\qquad
+ M_K=(1-\tau)M_K(1,1).
+\]
+The initial square direction therefore cancels this entire segment.  Hold
+\((x_*,y_*)\) fixed and move the square moment continuously to zero; this
+preserves the equation because \(c=M_K=0\).  Finally, along the straight
+segment from \((x_*,y_*)\) to \((0,0)\),
+\[
+ M_K=0,\qquad c=\tau\delta,
+\]
+so a fixed phase-real square direction completes the path to the hub.
+
+For nonzero \(U,V\), the equation \(xU=yV\) with \(x,y\geq0\) has a nonzero
+solution precisely when \(U,V\) lie on the same positive ray.  Substitution
+of \(V=\kappa U\) into \(M_K=c=0\) gives the displayed formula and box
+criterion.  If exactly one moment vanishes, the same two equations give the
+two boundary formulae directly.
+\end{proof}
+
+\begin{proposition}[Deformable-kernel component-incidence normal form]
+\label{prop:candidate-17-20-deformable-kernel-incidence}
+On a strict opposite-sign candidate-\((17)/(20)\) stratum, let
+\(F,G\in\mathbb C^5\) be the actual amplitudes of the two nodes in the
+arbitrary third-transvectant-kernel factor and put
+\[
+ \overline{\mathcal K}
+ =\{(F,G):T_3(F,G)=0,\ \|F\|_W\leq1,\ \|G\|_W\leq1\}.
+\]
+Thus a vanished node carries no auxiliary projective direction.  Let
+\[
+ \mathcal M
+ =\overline{\mathcal K}/
+ \bigl(U(1)_F\times U(1)_G\times SO(3)_{\rm lift}\bigr)
+\]
+be the compact stratified semialgebraic orbit space, including its nonfree
+and algebraically singular strata.  With
+\[
+ c(F,G)=\delta+a\|F\|_W^2-b\|G\|_W^2,\qquad
+ M_K(F,G)=-a\,m(F)+b\,m(G),
+\]
+define
+\[
+ \mathcal A
+ =\{[F,G]\in\mathcal M:\|M_K(F,G)\|\leq|c(F,G)|\},
+ \qquad
+ \mathcal I
+ =\{[F,G]\in\mathcal A:c(F,G)=0=M_K(F,G)\}.
+\]
+Then a rotation-zero initial point contracts to the connected
+double-singular hub if and only if its path component in \(\mathcal A\)
+meets \(\mathcal I\).
+
+The incidence is nonempty in both strict sign chambers.  If
+\(\delta<0<\alpha\), it contains the boundary point
+\[
+ G=0,\qquad \|F\|_W^2=-\delta/a,\qquad m(F)=0.
+\]
+If \(\alpha<0<\delta\), it contains
+\[
+ F=0,\qquad \|G\|_W^2=\delta/b,\qquad m(G)=0.
+\]
+These statements apply separately to candidate \((17)\) and to the two
+candidate-\((20)\) sign chambers; they do not identify their carriers or
+assert that every component of \(\mathcal A\) meets \(\mathcal I\).
+\end{proposition}
+
+\begin{proof}
+The receiving common-square moment has the complete closed unit ball as its
+image.  Hence a square direction solving
+\[
+ M_K+c\mu_{\rm sq}=0
+\]
+exists exactly on \(\mathcal A\).  Compact real-algebraic invariant theory
+makes \(\mathcal M\), \(\mathcal A\), and their components semialgebraic;
+each connected component is semialgebraically path connected.  The compact
+group slice theorem lifts paths in the orbit space across all stabilizer
+types.
+
+For completeness, the required square-moment path lift is explicit.  In the
+Cartan model write \(z=x+iy\), use projective phase to impose
+\(x\cdot y=0\), and rotate the resulting oriented orthogonal frame.  If
+\(u\in[0,1]\) is its norm ratio, the normalized moment radius and inverse
+branch are
+\[
+ r(u)=\frac{3u}{2+u^2},\qquad
+ u(r)=\frac{3-\sqrt{9-8r^2}}{2r},\qquad u(0)=0.
+\]
+For \(0<r\leq1\) the fibre is the connected rotation orbit about the moment
+axis; at \(r=0\) it is the connected phase-real
+\(\mathbb{RP}^2\).  Thus every semialgebraic path in \(\mathcal A\) lifts
+from the declared initial square direction.
+
+If a contraction exists, \(c\) changes from \(\alpha\) to \(\delta\), so
+the intermediate-value theorem supplies a point with \(c=0\).  Rotation
+zero then forces \(M_K=0\); hence the initial component meets
+\(\mathcal I\).
+
+Conversely, lift a path in that component to an incidence point.  There
+\(c=M_K=0\), so the square direction is unconstrained and may be moved to a
+phase-real zero-moment direction.  Now set
+\[
+ F_s=\sqrt{s}F_*,\qquad G_s=\sqrt{s}G_*.
+\]
+Odd bilinearity preserves \(T_3(F_s,G_s)=0\), while
+\[
+ M_K(F_s,G_s)=sM_K(F_*,G_*)=0,\qquad
+ c(F_s,G_s)=(1-s)\delta.
+\]
+The phase-real square therefore completes the path to the hub.
+
+Finally, \(\alpha=\delta+a-b\).  If \(\delta<0<\alpha\), then
+\(a>b-\delta>-\delta\), so \(0<-\delta/a<1\).  If
+\(\alpha<0<\delta\), then \(b>\delta+a>\delta\), so
+\(0<\delta/b<1\).  Phase-real spin-two directions have zero moment and give
+the two displayed boundary incidences.
+\end{proof}
+
+\begin{proposition}[Candidate-(18) complete complex singular resolution]
+\label{prop:candidate-18-complex-singular-resolution}
+Let \(R_\pm=\operatorname{Rank}_{\leq1}(5\times2)_\pm\).  The complete
+candidate-(18) complex carrier is
+\[
+ \mathbb C^{10}_{\mathrm{spect}}\times R_+\times R_-.
+\]
+Its singular locus has exactly two irreducible components,
+\[
+ \Sigma_+=\mathbb C^{10}\times\{0\}\times R_-,
+ \qquad
+ \Sigma_-=\mathbb C^{10}\times R_+\times\{0\},
+\]
+each of complex dimension sixteen.  They meet in the dimension-ten spectator
+space.  A smooth connected dimension-twenty-two resolution with connected
+fibres is
+\[
+ \mathbb C^{10}\times
+ \operatorname{Tot}\!\left(\mathcal O_{\mathbb P^4}(-1)^{\oplus2}\right)
+ \times
+ \operatorname{Tot}\!\left(\mathcal O_{\mathbb P^4}(-1)^{\oplus2}\right).
+\]
+\end{proposition}
+
+\begin{proof}
+The ten \(2\times2\) minors defining one factor have Jacobian rank four at a
+canonical nonzero rank-one matrix and rank zero at the vertex.
+The \(GL(5,\mathbb C)\times GL(2,\mathbb C)\) action is transitive on the
+nonzero rank-one locus, so the vertex is the complete singular locus of
+each factor.  The standard incidence resolution
+\[
+ \operatorname{Tot}\!\left(\mathcal O_{\mathbb P^4}(-1)^{\oplus2}\right)
+ \longrightarrow R_\pm
+\]
+is smooth and connected, with exceptional fibre \(\mathbb P^4\).
+The product formula gives the two singular components, their intersection,
+and the global resolution.  The ten positive current-orthogonal spectators
+remain explicit throughout.
+
+This does not impose real fixed occupations, restrict the Lee--Wald current
+to the resolution, or reduce node phases and lifted rotations.
+\end{proof}
+
+\begin{corollary}[Singular rotation-zero sections are unavoidable]
+\label{cor:active-singular-rotation-zero-sections}
+For each candidate \((17)\), \((18)\), and \((20)\), and for every pair of
+positive active occupations \(N_->0\), \(N_+>0\), the real
+fixed-occupation carrier contains a singular point at which all three lifted
+rotational moment maps vanish.  Both total node norms are nonzero, so the two
+node-phase actions remain free.
+\end{corollary}
+
+\begin{proof}
+Let \(e_0=(0,0,1,0,0)\).  It is axisymmetric, so its real conjugate
+completion has vanishing rotational moment maps.  For candidates \((17)\)
+and \((20)\), put
+\[
+ f=\sqrt{6N_-}\,e_0,\qquad
+ g=\sqrt{96N_+}\,e_0
+\]
+in one parity factor and set the other to zero.  Since
+\(e_0=v([0:1:0])/2\), the occupied factor lies in the common-square
+singular locus and the other lies at its vertex.  The exact current weights
+give the prescribed occupations.
+
+For candidate \((18)\), let
+\[
+ \alpha=\frac{w_x+3w_y}{12}>0,\qquad \beta=6h_->0,
+\]
+put
+\[
+ f=\sqrt{\frac{6N_+}{\alpha}}\,e_0,\qquad
+ g=\sqrt{\frac{6N_-}{\beta}}\,e_0
+\]
+in one rank-one factor, and set the other factor and all ten spectators to
+zero.  This has the prescribed occupations and lies on a complete singular
+component.  Positive total occupations make both common node-phase actions
+free in every case.
+
+The corollary supplies an existence section, not a real component,
+connectedness, or singular-quotient classification.
+\end{proof}
+
+\begin{proposition}[Candidate-(18) singular quotient has at least two components]
+\label{prop:candidate-18-singular-component-separation}
+At every fixed level with \(N_->0\), the candidate-(18) singular locus is
+the disjoint union of two nonempty clopen subsets preserved separately by
+the two node phases and lifted \(SO(3)\).  Both subsets meet the rotational
+moment-map zero fibre.  Consequently the singular rotation-zero quotient has
+at least two components.
+\end{proposition}
+
+\begin{proof}
+The two singular components are
+\[
+ \Sigma_+=\mathbb C^{10}\times\{0\}\times R_-,
+ \qquad
+ \Sigma_-=\mathbb C^{10}\times R_+\times\{0\},
+\]
+and meet only in \(\mathbb C^{10}\times\{0\}\times\{0\}\).
+The negative-current active occupation is carried by the \(g\)-columns of
+the two rank-one factors; the spectators are positive-current directions.
+On the intersection both \(g\)-columns vanish, so \(N_-=0\).  Hence every
+\(N_->0\) level separates the singular locus into two nonempty relatively
+closed-and-open pieces.  The central sections of
+Corollary~\ref{cor:active-singular-rotation-zero-sections}, with the occupied
+factor exchanged, give a rotation-zero point in each piece.  Node phases and
+lifted rotations preserve the labelled vanishing-factor conditions, so no
+orbit meets both pieces.
+
+This does not prove either quotient component connected or the full
+smooth-plus-singular rotation-zero fibre disconnected; smooth paths may still
+join the two singular pieces.
+\end{proof}
+
+\begin{proposition}[Candidate-(18) smooth bridge between singular components]
+\label{prop:candidate-18-singular-smooth-bridge}
+For every \(N_->0\), \(N_+>0\), one certified point in each candidate-(18)
+singular component is joined inside the fixed-occupation rotation-zero
+carrier by a path whose interior lies in the smooth complex carrier.  Both
+node-phase actions remain free along the path.
+\end{proposition}
+
+\begin{proof}
+Let \(w(\theta)=(\cos\theta,\sin\theta)\),
+\(0\leq\theta\leq\pi/2\), and let \(e_0\) be the central angular vector.
+With
+\[
+ A=\begin{pmatrix}a&c\\c&a\end{pmatrix},
+ \qquad a+c=\frac{w_y}{2}>0,\quad a-c=\frac{w_x}{6}>0,
+ \qquad \beta=6h_->0,
+\]
+set the two positive and negative parity amplitudes to
+\[
+ u(\theta)=
+ \sqrt{\frac{6N_+}{w(\theta)^TAw(\theta)}}\,w(\theta),
+ \qquad
+ v(\theta)=\sqrt{\frac{6N_-}{\beta}}\,w(\theta),
+\]
+and multiply every column by \(e_0\); set all spectators to zero.
+The two fixed occupations are constant by construction.  Only \(m=0\) is
+occupied, so all rotational moment maps vanish.  At the endpoints one
+rank-one factor vanishes, placing the path in the two different singular
+components.  In the open interval both factors are nonzero rank one, so the
+complex carrier is smooth.  Positive occupations keep both total node norms
+nonzero.
+
+This joins the two distinguished singular sections, not every point or
+component of the complete rotation-zero fibre.
+\end{proof}
+
+\begin{proposition}[Fixed-occupation node-phase-reduced divisors]
+\label{prop:phase-reduced-presymplectic-divisors}
+On the regular nonzero-occupation locus, append to the smooth resonance
+Jacobian \(J\) the two Hermitian-orthogonality rows for the negative and
+positive physical nodes:
+\[
+ \widehat A=\begin{pmatrix}J\\ C_-\\ C_+\end{pmatrix},
+ \qquad
+ \widehat K=\widehat A H^{-1}\widehat A^\dagger .
+\]
+Then \(\ker\widehat A\) is a horizontal model for the two fixed norm levels
+modulo their common node phases, and
+\[
+ \ker\widehat K
+ \cong
+ \operatorname{rad}\!\left(H|_{\ker\widehat A}\right).
+\]
+Thus \(\det\widehat K=0\) is the complete regular current-degeneracy locus
+after the two node-phase quotients.
+
+For candidates \((17)\) and \((20)\), \(\widehat A\) is \(8\times20\).
+The two total-node rows couple the parity factors, so the reduced equation is
+one \(8\times8\) determinant, not the product of the two affine
+\(3\times3\) determinants.  The bounded point above has
+\(\operatorname{rank}\widehat K=6\), horizontal complex dimension \(12\), reduced radical
+dimension \(2\), and linear quotient dimension \(10\).  At
+\[
+ f=(1,1,0,0,0),\qquad g=(1,0,0,0,0)
+\]
+in both parity channels, \(\det\widehat K=-3845153895680\), so the reduced
+divisor is proper.
+
+For candidate \((18)\), the ten positive current-orthogonal spectators are
+retained.  The \(100\) product charts have
+\(\widehat A\in\operatorname{Mat}_{10\times30}\) and horizontal complex
+dimension \(20\).  On the common central-angular section, set
+\[
+ a=\frac{w_x}{12}+\frac{w_y}{4},\qquad
+ c=-\frac{w_x}{12}+\frac{w_y}{4},\qquad b=6h_- .
+\]
+For real proportionality parameters \(t_1,t_2\),
+\[
+ \det\widehat K=
+ -\frac{128(t_1^2+t_2^2)
+ \left[
+ a^2-ab(t_1^2+t_2^2)+b^2t_1^2t_2^2-c^2
+ \right]^4}
+ {9b^7(a-c)^4(a+c)^3}.
+\]
+The symmetric and antisymmetric aligned branches have
+\(\operatorname{rank}\widehat K=6\), reduced radical dimension \(4\), and linear quotient
+dimension \(16\).  The point \((t_1,t_2)=(0,1)\) is nondegenerate.
+\end{proposition}
+
+\begin{proof}
+The fixed-norm tangent and phase gauge condition for each nonzero node combine
+into the single complex equation \(C_\pm v=0\).  Hence
+\(\ker\widehat A\) is the standard complex horizontal model.  The conormal
+proof of Proposition~\ref{prop:smooth-presymplectic-divisors}, with \(J\)
+replaced by \(\widehat A\), gives the radical isomorphism and determinantal
+criterion.
+
+For candidates \((17)\) and \((20)\), exact substitution of the two
+third-transvectant Jacobians and the two total-node rows gives the stated
+ranks and determinant.  For candidate \((18)\), choose one nonzero entry of
+each rank-one \(5\times2\) matrix.  The four proportionality equations in
+each factor, the two node rows and all ten spectators give the stated
+\(10\times30\) matrix.  On chart overlaps its conormal rows change
+invertibly, so the augmented normal Grams are congruent.  Direct determinant
+reduction gives the displayed factor.  On the two aligned roots the
+augmented normal rank is six.  Finally,
+\[
+ a^2-ab-c^2=\frac{w_xw_y-bw_x-3bw_y}{12}<0,
+\]
+because the exact intervals give \(w_x>0\), \(0<w_y<1\), while
+\(\sqrt3>17/10\) gives \(b=5760\sqrt3-6912>2880\).  This proves the
+nondegenerate control.
+
+On every smooth constant-corank stratum, closedness of the reduced
+Lee--Wald form makes its radical distribution involutive.  The resulting
+simple local leaf spaces are symplectic.  This does not construct a global
+Hausdorff leaf space or perform the lifted \(SO(3)\) reduction.
+\end{proof}
+
+\begin{proposition}[Local lifted-rotation descent through current leaves]
+\label{prop:local-rotation-leaf-descent}
+Let \(U\) be any smooth constant-corank fixed-occupation stratum of
+candidate \((17)\), \((18)\), or \((20)\), after the two common node phases,
+and let
+\[
+ \mathcal R=\ker\Omega_U .
+\]
+Every lifted rotational moment-map component is constant on the connected
+leaves of \(\mathcal R\).  On a simple saturated neighbourhood
+\(q:U_0\to\overline U=U_0/\mathcal R\), there are unique
+\(\overline\Omega\) and \(\overline\mu\) satisfying
+\[
+ q^*\overline\Omega=\Omega_U,\qquad q^*\overline\mu=\mu,
+ \qquad
+ d\langle\overline\mu,\xi\rangle
+ =\iota_{\overline{\xi^\#}}\overline\Omega .
+\]
+In particular,
+\[
+ \bigl(\mu^{-1}(0)\cap U_0\bigr)/\mathcal R
+ \cong \overline\mu^{-1}(0).
+\]
+Thus removing the Lee--Wald radical and imposing the lifted rotational
+constraint commute locally.  The two operations remain distinct.
+\end{proposition}
+
+\begin{proof}
+The lifted \(SO(3)\) action preserves \(\Omega_U\), hence it preserves
+\(\mathcal R\).  Hamiltonianity gives, for every \(r\in\mathcal R\),
+\[
+ d\langle\mu,\xi\rangle(r)
+ =\Omega_U(\xi^\#,r)=0.
+\]
+Therefore \(\mu\) is basic on connected radical leaves.  Closedness and
+constant rank make \(\Omega_U\) basic as well, so both descend uniquely to
+the simple local leaf space.  Pulling back the descended Hamiltonian
+identity gives the original one, and surjectivity of \(q\) proves it.
+The zero-fibre identity follows immediately.  Where the residual lifted
+\(SO(3)\) action has a regular local quotient, this also identifies the two
+orders of local reduction.
+
+This argument does not construct a global Hausdorff leaf space, prove
+connectedness of a complete rotation-zero fibre, resolve singular strata,
+or glue occupations.
+\end{proof}
+
+\begin{proposition}[Candidate-(16) singular rotation-zero link]
+\label{prop:candidate-16-singular-rotation-link}
+At every fixed pair of positive active-node occupations, the candidate-(16)
+projective active variety has exactly two disjoint singular endpoint strata,
+each isomorphic to \(\mathbb{CP}^4\).  Its complete lifted-\(SO(3)\)
+moment-map zero fibre is nonempty and connected.
+\end{proposition}
+
+\begin{proof}
+Each transformed parity factor is the rank-at-most-one cone of \(5\times2\)
+matrices.  Its ten minors have Jacobian rank four at rank one and rank zero
+only at the vertex.  On the positive two-node-norm link, the product singular
+locus therefore consists precisely of the two strata where one factor is the
+vertex; after the node-phase quotient each is \(\mathbb{CP}^4\).
+
+Resolve one factor by
+\[
+ \operatorname{Tot}\!\left(
+ \mathcal O_{\mathbb{CP}^4}(-1)\oplus
+ \mathcal O_{\mathbb{CP}^4}(-1)
+ \right)
+ \longrightarrow \operatorname{Rank}_{\leq1}(5\times2).
+\]
+The product resolution has complex dimension \(12\).  Fixing both positive
+node norms gives compact connected weighted \(S^3\times S^3\) fibres over
+\(\mathbb{CP}^4\times\mathbb{CP}^4\); quotienting the two free node phases
+gives a compact connected K\"ahler tenfold.  The resolution is equivariant
+for the lifted diagonal \(SO(3)\), and the imported axisymmetric bounded point
+makes its zero fibre nonempty.  Kirwan connectedness makes that resolved zero
+fibre connected.  Its continuous image is the complete singular target zero
+fibre, because the exceptional fibres are connected.  No orbifold claim is
+used.
+\end{proof}
+
+\begin{corollary}[Candidate-(16) occupation gluing]
+\label{cor:candidate-16-occupation-gluing}
+After normalizing total absolute-current occupation to one, the complete
+candidate-(16) active lifted-rotation zero link is connected over all
+nonzero scalar occupations.
+\end{corollary}
+
+\begin{proof}
+The three-dimensional scalar cone has four positive extreme rays.  Its
+total-occupation-one section is a compact connected two-dimensional convex
+polytope, and both active \(q_-\) norms stay strictly positive.  Projection
+of the complete rotation-zero link to this polytope is surjective by the
+exact bounded section and proper because its source is closed in a compact
+product.  Every fibre is connected by
+Proposition~\ref{prop:candidate-16-singular-rotation-link}.  A proper
+surjection with connected fibres over a connected base has connected total
+space.
+\end{proof}
+
+\section{Current bounded frontier}
+
+The electric, Wilson, and circumference columns are closed, and the first
+full-time velocity repair sharpens the \(a,d\)-frontier.  Earlier direct
+\(d\)-source fixtures were evaluated at \(t=0\).  They correctly proved that
+the constant shell-projection matrix is invertible, but they could not prove
+that the full source was bounded.  No frozen paper theorem asserted the
+stronger conclusion; the intermediate ``complete \(d\)-column'' reading is
+withdrawn and replaced by the following full-time statement.
+
+Locality gives
+\[
+ \cE^{(2)}[dt,u](t)=t\,\cE^{(2)}[c,u](t)
+                    +\cE^{(2)}[dt,u](0).
+\]
+For the two axial extra representatives and the first polar representative,
+the coefficient of \(t\) vanishes.  For the second polar representative it
+is the nonzero eight-row vector
+\[
+ (-36,0,164,-8\sqrt3 i,0,-100,-24,-20).
+\]
+Thus the isolated fixture has polynomial zero locus
+\(d z_{\mathrm{polar},2}=0\).  The previously computed constant-shell
+adjoint matrix remains valid, but cannot by itself establish boundedness.
+Combining this restored term with the four direct radion-position columns
+gives the complete positive-degree cross ideal on the
+\(\ell=2,k=0\) extra multiplet:
+\begin{equation}\label{eq:ad-polynomial-ideal}
+ \bigl\langle
+ a z_{\rm ax,1},a z_{\rm ax,2},a z_{\rm pol,1},a z_{\rm pol,2},
+ d z_{\rm pol,2}\bigr\rangle .
+\end{equation}
+These five monomials are already a Gr\"obner basis in the declared amplitude
+order.  Their zero locus has three faces:
+\begin{enumerate}
+\item all extra amplitudes zero, with \(a,d\) unrestricted by this cross
+      ledger;
+\item \(a=0\) and \(z_{\rm pol,2}=0\), with \(d\) and the two axial plus
+      first polar amplitudes free;
+\item \(a=d=0\), with all four extra amplitudes free.
+\end{enumerate}
+This is a complete \(\cP\)-zero locus for the declared cross block, not by
+itself a complete bounded cone.  Before the other conditions are imposed,
+its surviving faces must still satisfy moment maps, constant shell pairings,
+self-products, and twist cross terms.  On the complete global-plus-extra
+carrier those remaining conditions now close as follows.
+
+\begin{theorem}[Complete global plus \(\ell=2,k=0\) extra bounded cone]
+\label{thm:global-ell2-bounded}
+Adjoin all four axial/polar \(\ell=2,k=0\) extra-primary amplitudes
+\((x_{\rm ax,1},x_{\rm ax,2},x_{\rm pol,1},x_{\rm pol,2})\) to the complete
+homogeneous and twist carrier.  The \(\Xqp\) tangent cone is exactly
+\begin{equation}
+ \cZ^{\rm qp}_{2,\,\mathrm{global}+\ell2X}
+ =\{(c,d,W_x,A):c,d,W_x\in\R,\ A\in\R^3\}.
+\end{equation}
+In particular, it contains no nonzero \(\ell=2,k=0\) extra-primary
+direction.
+\end{theorem}
+
+\begin{proof}
+The universal polynomial rows first force \(b=B=0\) and \(Q_ea=0\).
+The remaining Hamiltonian moment map is
+\begin{align}
+ \mu_H&=-a^2-Q_e^2-\frac43X,\\
+ X&=1296|x_{\rm ax,1}|^2+\frac{208}{3}|x_{\rm ax,2}|^2
+   +22464|x_{\rm pol,1}|^2+12288|x_{\rm pol,2}|^2.
+\end{align}
+It is a strictly negative sum of squares, so its real zero locus has
+\(a=Q_e=x_{\rm ax,1}=x_{\rm ax,2}=x_{\rm pol,1}=x_{\rm pol,2}=0\).
+What remains is precisely the standard cone of
+Theorem~\ref{thm:standard-global-bounded}, whose bounded correction is already
+explicit.  The repaired ideal
+\eqref{eq:ad-polynomial-ideal} is automatically satisfied there.
+\end{proof}
+
+After these repairs, the still-open full-carrier work is:
+\begin{enumerate}
+\item standard Einstein oscillators and exceptional \(\ell=1\) inputs
+      outside the separately classified fixtures, other harmonics, and
+      generic nonzero momenta;
+\item their \(a,d\) polynomial columns and shell-pairing zero loci;
+\item shell resonances among bounded wave products and remaining mixed
+      blocks; and
+\item the common zero locus for arbitrary finite sums.
+\end{enumerate}
+Any future completion must preserve the separation between positive-degree
+obstructions \(\cP\) and shell pairings \(\cR\).
+
+\begin{center}
+\begin{tabularx}{0.96\textwidth}{@{}Y Y Y@{}}
+\toprule
+Carrier or column & $\Xep$ correction & $\Xqp$ correction\\
+\midrule
+Complete finite-support cone & iff five moment maps vanish & additional
+\(\cP\) and \(\cR\) conditions\\
+Standard generalized-zero block & classified & classified completely\\
+Global plus $\ell=2,k=0$ extra & moment-map cone contains balanced extra
+directions & bounded cone equals $(c,d,W_x,A)$; no extra wave\\
+Electric charge $\times$ oscillator & finite quasiperiodic & removable by
+duality transport\\
+Wilson $\times$ oscillator & zero source & zero source\\
+Circumference $\times$ $k=0$ mode & ordinary same-frequency & removable\\
+Circumference $\times$ $k\ne0$ mode & secular radius derivative & obstructed\\
+Velocity $d\times$ selected polar extra mode & finite polynomial source &
+nonzero $\cP_{j,1}$ unless canceled jointly\\
+Exceptional axial--polar interior & secular primitive on moment cone &
+bounded-resonance obstructed\\
+Tuned $\ell=2,m_A=0$, nonzero $|k|$, all primaries & moment-map cone &
+Theorem~\ref{thm:tuned-all-primary-bounded}: two mixed sheets over the exact
+occupation polytope\\
+$a,d\times\ell=2,k=0$ extra & allowed on moment cone & polynomial ideal
+\eqref{eq:ad-polynomial-ideal}, then $\cR$ still required\\
+Remaining $a,d$ oscillator columns & allowed by ep theorem on moment cone
+& open\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{Interpretation}
+
+The solution set near a symmetric compact background is not generally a
+linear space.  Its second-order approximation is a cone cut out first by a
+moment map and then, if uniform boundedness is demanded, by resonance
+conditions.  Three points are important.
+
+First, a linearly nonradical extra Weyl mode may fail to be tangent to the
+nonlinear fixed-charge solution space.  This is nonlinear selection, not
+linear gauge removal.  Second, mixing Einstein and extra directions can
+cancel the moment maps, so no conclusion follows from the sign of a pure
+branch alone.  Third, even complete moment-map cancellation leaves bounded
+resonances.  Exponential-polynomial formal continuation and bounded
+perturbative stability are therefore different claims.
+
+The tuned nonzero-momentum theorem adds a complementary point: enlarging the
+positive branch can widen a surviving bounded cone without introducing a new
+shell collision.  The extra primary is therefore neither uniformly deleted
+nor uniformly liberated by the quadratic test; its disposition depends on
+the complete carrier and correction class.
+
+The action-normalized cubic fixture sharpens the same lesson.  Its global
+compact-stabilizer class vanishes after the complete homogeneous-correction
+quotient, while bounded shell inversion fails for the certified
+second-order representative.  Global charge cancellation and bounded
+resonant solvability are therefore independent tests at third order as well
+as at second order.  Since the shell quotient by arbitrary second-order
+homogeneous additions has not been computed, this is not a no-go for every
+representative of the balanced two-jet.
+
+The result supplies the middle map in the programme's residual atlas:
+\[
+ X_\alpha
+ \longmapsto \Omega(X_\alpha,\overline X_\alpha)
+ \longmapsto \mu(X_\alpha)
+ \longmapsto D^2\cE[X_\alpha,X_\alpha].
+\]
+Interaction sourcing, detector response, and BRST status are separate later
+maps.
+
+\section{What is not proved}
+
+The following remain outside the theorem:
+\begin{itemize}
+\item infinite harmonic sums and Sobolev completion;
+\item retarded or advanced solvability and nonlinear causal dependence;
+\item integration of a second-order jet to an exact or all-orders family;
+\item a bounded third-order verdict after quotienting the shell functionals
+      by every admissible homogeneous second-order addition;
+\item a third-order classification for arbitrary finite harmonic sums;
+\item the final residual/background-stabilizer quotient;
+\item asymptotically flat, de Sitter, anti-de Sitter, or black-hole boundary
+      conditions;
+\item observer coupling, particles, quantum BRST cohomology, and unitarity.
+\end{itemize}
+These exclusions are not cosmetic.  In particular, Theorem~\ref{thm:ep-cone}
+does not establish nonlinear stability.
+
+\section{Certificate and reproduction ledger}
+
+The scoped mathematical claims in this manuscript are
+\textsc{theorem-frozen} for external specialist review.  Its third-order
+source baseline is repository commit
+\nolinkurl{aa7f7ff984e930f71e208538deac6e22b9cc22cf}.
+
+\begingroup
+\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.31\textwidth} >{\raggedright\arraybackslash}p{0.63\textwidth}@{}}
+\toprule
+Claim & Authoritative certificate\\
+\midrule
+\endfirsthead
+\toprule
+Claim & Authoritative certificate\\
+\midrule
+\endhead
+\midrule
+\multicolumn{2}{r}{\small Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Complete finite-support exponential-polynomial cone and bounded ledger &
+\cert{bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json}\\
+Finite-generic bounded zero-frequency receiver &
+\cert{bridge/certificates/einstein_maxwell_weyl_finite_generic_bounded_zero_block.json}\\
+Complete candidate-13 bounded and smooth cone formulas &
+\cert{bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.json}\\
+Candidate-13 scalar-separation bounded-origin theorem &
+\cert{bridge/certificates/einstein_maxwell_weyl_candidate13_scalar_separation_no_go.json}\\
+All-collision scalar-separation classification &
+\cert{bridge/certificates/einstein_maxwell_weyl_collision_scalar_separation_classification.json}\\
+Same-sign collision same-fibre shell census &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_collision_same_fibre_census.json}\\
+Six same-sign collision bounded witnesses &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_collision_bounded_witnesses.json}\\
+Universal same-sign scalar extreme rays &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_extreme_rays.json}\\
+Candidatewise 120-minor/90-circuit scalar audit &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_collision_scalar_occupation_cones.json}\\
+All 24 same-sign scalar extreme-ray lifts &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_extreme_ray_lifts.json}\\
+Bounded sections over the complete same-sign scalar cones &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_cone_sections.json}\\
+Exact same-sign bounded phase/parity fibre products &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_phase_parity_fibre_product.json}\\
+Complete same-sign resonance fibres over scalar-cone faces &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_resonance_face_fibres.json}\\
+Connected fixed-occupation rotation-zero links on automatic faces &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_links.json}\\
+Axisymmetric rotation critical-locus theorem &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity.json}\\
+Automatic-face aligned rotation normal form and exact arcs &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form.json}\\
+Complete phase-reduced internal rotation normal form &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_internal_rotation_normal_form.json}\\
+Complete unquotiented and phase-quotiented fixed-norm rotation Hessians &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_rotation_normal_form.json}\\
+Candidate-(16) active restricted-current theorem &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate16_active_restricted_current.json}\\
+Candidate-(16) singular strata and connected rotation-zero fibre &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate16_singular_rotation_zero_fibre.json}\\
+Candidate-(16) nonzero occupation gluing &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate16_occupation_gluing.json}\\
+Candidate-(19)/(21) active linear-sheet rotation links &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_active_linear_sheet_rotation_links.json}\\
+Candidate-(17)/(20) axisymmetric Zariski-tangent currents &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_axisymmetric_restricted_current.json}\\
+Candidate-(17)/(20) smooth active-current radicals &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.json}\\
+Candidate-(18) smooth active-current radical families &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy.json}\\
+Complete smooth active presymplectic divisors and tangent quotients &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_active_presymplectic_divisors.json}\\
+Complete candidate-(17)/(20) complex singular carrier &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_third_transvectant_singular_locus.json}\\
+Candidate-(18) complete complex singular resolution &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_complex_singular_resolution.json}\\
+Unavoidable singular rotation-zero sections at every positive occupation &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_active_singular_rotation_zero_sections.json}\\
+Candidate-(18) singular quotient component lower bound &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_singular_component_separation.json}\\
+Candidate-(18) smooth bridge between singular components &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_singular_smooth_bridge.json}\\
+Candidate-(17)/(20) physical singular-component incidence &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence.json}\\
+Candidate-(17)/(20) connected double-singular rotation-zero hub &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_double_singular_rotation_zero_fibre.json}\\
+Candidate-(17)/(20) one-parity common-square rotation quotient &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.json}\\
+Candidate-(17)/(20) singular radial contraction &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.json}\\
+Candidate-(17)/(20) moving-square contraction and ansatz obstruction &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.json}\\
+Candidate-(17)/(20) independent-node bottleneck incidence &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_independent_node_scaling_contraction.json}\\
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_incidence_normal_form.json}\\
+Fixed-occupation node-phase-reduced divisors and local quotients &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json}\\
+Local lifted-rotation descent through current leaves &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent.json}\\
+Stabilizer action and lifted rotations &
+\cert{bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json}\\
+Generalized-mode symplectic form &
+\cert{bridge/certificates/einstein_maxwell_exceptional_global_symplectic.json}\\
+Generalized-mode moment maps &
+\cert{bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json}\\
+Standard generalized-zero bounded cone &
+\cert{bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json}\\
+Electric and Wilson transport &
+\cert{bridge/certificates/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.json}\\
+Complete circumference column &
+\cert{bridge/certificates/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.json}\\
+First full-time velocity polynomial column &
+\cert{bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_full_time_polynomial.json}\\
+Repaired $a,d\times\ell=2$ polynomial zero locus &
+\cert{bridge/certificates/einstein_maxwell_weyl_ad_ell2_extra_polynomial_zero_locus.json}\\
+Complete global plus $\ell=2,k=0$ extra bounded cone &
+\cert{bridge/certificates/einstein_maxwell_weyl_complete_global_ell2_extra_bounded_cone.json}\\
+Exceptional two-polarization resonance &
+\cert{bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_two_polarization_resonance.json}\\
+Opposite-momentum exponential-polynomial theorem &
+\cert{bridge/certificates/einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order.json}\\
+Tuned axisymmetric all-primary bounded cone &
+\cert{bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_tuned_all_primary_bounded_cone.json}\\
+All-\(\ell\) standard-branch resonance and bounded cone &
+\cert{bridge/certificates/einstein_maxwell_weyl_symbolic_ell_tuned_axisymmetric_bounded_cone.json}\\
+Two-momentum axisymmetric \(L=4\) matrices &
+\cert{bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_axial_L4_matrix.json} and the three parity companion matrices\\
+Two-momentum nonaxisymmetric \(L=3\) matrix &
+\cert{bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L3_matrix.json}\\
+Two-momentum nonaxisymmetric \(L=1,3\) completion &
+\cert{bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L1_L3_matrix.json}\\
+Moment-map/Taub bridge &
+\cert{bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json}\\
+Balanced third-order global quotient and four-shell bounded obstruction &
+\cert{bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KURANISHI_EVALUATION_V1.json}\\
+\end{longtable}
+\endgroup
+
+Each certificate records its schema, imported hashes, exact commands, test
+tier, assumptions, and missing-object ledger.  The independent verifier for
+each named certificate has passed before the scoped claims were marked
+\textsc{theorem-frozen}.  This lifecycle state promotes only the complete
+formulas displayed above.  The candidate-13 real bounded geometry and all
+fifteen opposite-sign collision carriers are closed.  Each same-sign
+collision cone has a certified nonzero bounded point, while its full real
+component geometry remains open; so does the unrestricted finite-support
+bounded zero set.
+
+\section{Outlook}
+
+The immediate mathematical target is the full real component geometry of the
+six same-sign collision cones.  Their nonemptiness, same-fibre shell census,
+universal four-ray scalar projection, all 24 extreme-ray lifts, and a bounded
+section over every scalar-cone point are now closed.  The complete complex
+resonance fibre is also stratified over every scalar-cone face.  The remaining
+same-sign gate has now split.  On the five nonzero automatic faces, every
+fixed-occupation rotation-zero link is nonempty and connected.  On all six
+candidates, however, the explicit axisymmetric section lies in the rotation
+critical locus with Jacobian rank two.  The active resonance strata still
+require a restricted-current nondegeneracy test before any connected-fibre
+theorem can be applied, while the critical section requires the quadratic
+normal form of the missing rotation equation.  On the automatic faces that
+normal form is now exact on the complete axial/polar fixed-node-norm tangent.
+For \(N\) occupied nodes of total complex internal dimension \(D\), its
+unquotiented inertia is \((4D-2,4D-2,2D-N+2)\), and after node-phase
+reduction it is \((4D-2,4D-2,2D-2N+2)\).  Every axisymmetric point also
+lies on an explicit nonaxisymmetric fixed-occupation arc.  The transverse
+part is therefore hyperbolic on every automatic-face support stratum; what
+remains locally is to resolve the displayed radical into nonlinear
+semialgebraic components.  On the active candidate-(16) component the
+separate restricted-current gate is now closed: both resonant nodes are
+\(q_-\), so the complete axial/polar restriction is negative K\"ahler on
+every complex smooth stratum, with generic real rank \(20\).  Its singular
+projective locus consists of two endpoint \(\mathbb{CP}^4\) strata, and its
+complete fixed-occupation rotation-zero fibre is connected by
+Proposition~\ref{prop:candidate-16-singular-rotation-link}; occupation gluing
+over every nonzero normalized scalar occupation is closed by
+Corollary~\ref{cor:candidate-16-occupation-gluing}.  The cone origin remains
+excluded.  On the
+candidate-(17)/(20) axisymmetric
+sections, exact occupation inequalities make the complete Zariski-tangent
+current nondegenerate, with affine inertia \((6,10,0)\) and projective inertia
+\((5,9,0)\); those section points remain algebraically singular.  Away from
+that section, each active variety also contains an exact smooth bounded point
+with a surviving projective current radical.  Hence neither is a global
+symplectic orbifold.  Candidate (18) has the same global verdict by a different exact
+mechanism: its two rank-one parity channels have current eigenlines
+\((1,1)\) and \((1,-1)\), the scalar cone crosses equal active occupation on
+the positive mixture \(R_3+s_{18}R_1\), and each resulting smooth bounded
+family has a four-complex-dimensional projective radical.  The complete
+smooth affine presymplectic loci are classified by
+Proposition~\ref{prop:smooth-presymplectic-divisors}.  For candidates
+\((17)\) and \((20)\), the complete complex singular carrier is also
+classified by Proposition~\ref{prop:third-transvectant-singular-locus}: its
+two parity-product components are controlled by a common-square incidence
+resolution.  Its real fixed-occupation intersection and lifted-rotation
+reduction remain open.  The two algebraic singular-component images already
+meet physically at every positive occupation by
+Corollary~\ref{cor:candidate-17-20-singular-component-incidence}; unlike
+candidate \((18)\), their labels cannot imply quotient separation.  The
+complete double-singular intersection is a connected rotation-zero hub at
+every positive occupation by
+Proposition~\ref{prop:candidate-17-20-double-singular-hub}.  It remains open
+whether every component of either larger singular image meets this hub.
+One endpoint of that hub has the exact frequency-weighted bifurcation of
+Proposition~\ref{prop:candidate-17-20-common-square-quotient}: candidate
+\((17)\) always reduces to one orbit, whereas candidate \((20)\) acquires an
+interval quotient on its balance divisor.  In particular, the unweighted
+inequality \(N_->N_+\) is not sufficient to exclude rotational balance.  The
+complete candidate-\((20)\) singular union on that balance divisor now
+contracts to the connected hub by
+Proposition~\ref{prop:candidate-17-20-singular-radial-contraction}, including
+the receiving-square vertex.  Off balance, the same radial path covers the
+phase-real common-square sublocus, but its exact residual is not a nonradial
+no-go; complete singular connectedness remains open there and on candidate
+\((17)\).  Proposition~\ref{prop:candidate-17-20-moving-square-contraction}
+then classifies the complete uniform-scaling ansatz with a moving square
+direction.  Candidate \((17)\)'s \(\alpha\leq0\) stratum and candidate
+\((20)\)'s off-balance \(\alpha\delta>0\) or \(\alpha=0\) strata contract
+to the hub; the opposite-sign non-phase-real region has an exact
+coefficient-zero obstruction within this ansatz.
+Proposition~\ref{prop:candidate-17-20-independent-node-scaling} classifies
+the enlarged fixed-direction independent-node ansatz.  A path exists
+exactly when the coefficient-zero line meets the kernel-moment-zero locus
+inside the physical scaling square; positive-collinear incidence points
+contract by an explicit three-stage path, while generic fixed directions
+remain obstructed.  Allowing the \(K\)-node directions themselves to deform
+gives the invariant normal form of
+Proposition~\ref{prop:candidate-17-20-deformable-kernel-incidence}: a point
+contracts exactly when its component of the compact admissible orbit space
+meets the coefficient-zero/kernel-moment-zero incidence.  Both strict sign
+chambers contain explicit one-zero-node incidence points, but it remains
+open whether every admissible component reaches them.  The
+regular fixed-occupation node-phase reductions are classified by
+Proposition~\ref{prop:phase-reduced-presymplectic-divisors}.  The latter
+retains the common parity-node phases and candidate-(18) spectators rather
+than quotienting them factorwise.  On every smooth constant-corank
+fixed-occupation stratum, the lifted rotational moment map is basic along
+the current radical and the two reductions commute locally by
+Proposition~\ref{prop:local-rotation-leaf-descent}.  What remains is the
+global lifted-rotation zero-fibre geometry, global/Hausdorff leaf-space
+topology, real singular-locus reduction, constant-rank gluing and occupation
+gluing.  Candidate \((18)\)'s complete complex singular carrier is already
+resolved by Proposition~\ref{prop:candidate-18-complex-singular-resolution},
+with all ten spectators retained; its real fixed-occupation current remains
+open.  Corollary~\ref{cor:active-singular-rotation-zero-sections} shows that
+positive norms and all three lifted rotational constraints do not avoid any
+of these three singular carriers.  A complete global theorem must therefore
+reduce the singular strata rather than restrict to the regular atlas.
+Within candidate \((18)\)'s singular quotient, the two labelled components
+remain separated at every \(N_->0\), giving the two-component lower bound of
+Proposition~\ref{prop:candidate-18-singular-component-separation}.  The full
+zero fibre may still be connected through smooth strata; indeed,
+Proposition~\ref{prop:candidate-18-singular-smooth-bridge} joins one certified
+point in each singular component through the smooth central-\(m\) carrier at
+every positive occupation.  It does not prove global connectedness.  The four
+candidate-(19) and two candidate-(21) real linear sheets
+are closed
+separately: every core has current inertia \((5,5,0)\) and one connected
+fixed-occupation rotation-zero link, with spectator factors included.  No
+distinct sheets are identified.  The exact fibre-product equation is already
+certified; complex resonance components and occupation-level sums need not
+be recomputed.
+The symbolic-\(\ell\) standard-branch resonance and collision theorem is now
+closed, as is the complete 164-coefficient two-momentum branch-basis census.
+The next exact enlargement is to classify the real connected components of
+the fixed-norm resonance strata after imposing all three lifted rotation
+moment maps.  Occupation-level pairwise sums and complex resonance ideals need
+not be retested.  This is followed by joins of distinct \(|k|\)
+fibres without identifying their phase carriers or circumference backgrounds.
+The immediate physical target is to compare its strata with the transferred
+Einstein/extra/Maxwell interaction tensor and with observer response.  A
+later causal theorem would replace the finite secular right inverses by
+support-controlled Green operators or prove that this cannot be done.
+
+The intended final synthesis is not that every fourth-order mode disappears.
+It is that each mode receives an exact disposition:
+\[
+ \boxed{\text{linear mode}\;\to\;\text{moment map}\;\to\;
+ \text{resonance}\;\to\;\text{interaction and observation}.}
+\]
+
+\section{Two-jet derived charge carrier}
+
+The full compact-Cauchy replacement for a fixed-group moment-map model is a
+constraint algebroid: the lapse bracket retains the inverse-metric structure
+function.  The associated two-jet Kuranishi carrier is the Koszul derived zero
+fibre of the five charges, with $d\eta_A=\mu_A$.  Its finite-harmonic
+restriction reproduces the five Taub maps in this paper.
+
+This derived fibre is not compatible with the ambient linear
+Einstein/additional cofiber projection.  The certified balanced
+Einstein-minus/extra tangent has total moment map zero while its two primary
+projections have nonzero opposite Hamiltonian charges.  Hence the common
+zero fibre is intrinsically mixed; it is not the direct sum, nor the quotient,
+of separately neutral primary fibres.  A later residual sequence must be
+formulated as a derived correspondence or fibre product.  This statement is
+quadratic and does not remove the higher Kuranishi terms left open here.
+
+\section{Mixed-charge derived correspondence}
+
+The obstruction above has a minimal two-jet repair which does not reinstate a
+quotient of separately neutral branches.  Let $E\to W\to X$ denote the
+certified pre-residual Einstein, Weyl and additional-primary sequence and let
+\[
+  \kappa_E:E\longrightarrow\mathfrak o,
+  \qquad
+  \kappa_X:X\longrightarrow\mathfrak o,
+  \qquad
+  \mathfrak o=\operatorname{span}\{H,P_x,J_1,J_2,J_3\}.
+\]
+The correct branch-readable carrier is the homotopy pullback
+\[
+ \mathfrak C
+ = (E\times X)\mathop{\times}^{h}_{\mathfrak o\times\mathfrak o}
+   \mathfrak o_{\rm anti},
+ \qquad
+ \Delta_{\rm anti}(c)=(c,-c).
+\]
+Its strict Koszul presentation has coordinates
+$(e,x,c;\eta_E,\eta_X)$ and differential
+\[
+ d\eta_E=\kappa_E(e)-c,
+ \qquad
+ d\eta_X=\kappa_X(x)+c,
+ \qquad d(e,x,c)=0.
+\]
+Thus $d^2=0$ exactly at the declared two-jet order.  Moreover, with
+\[
+ \alpha=\eta_E+\eta_X,
+ \quad
+ \beta={1\over2}(\eta_X-\eta_E),
+ \quad
+ c'=c+{1\over2}(\kappa_X-\kappa_E),
+\]
+one has $d\alpha=\kappa_E+\kappa_X$ and $d\beta=c'$.  The pair
+$(\beta,c')$ is contractible, so this strict charge-transfer presentation is
+quasi-isomorphic to the five-generator Koszul model for the total moment map.
+It is nevertheless the useful presentation because $c$ records the charge
+carried from one primary to the other.
+
+On the real balanced two-amplitude fixture the strict tangent complex has
+dimensions $7\to10$, rank five, and hence
+\[
+ \dim H^0=2,
+ \qquad
+ \dim H^1=5.
+\]
+The certified point is represented by
+\[
+ c=(\tau_E,0,0,0,0),
+ \qquad
+ \tau_E={48\over5}(-6+5\sqrt3),
+ \qquad
+ \tau_X=-\tau_E.
+\]
+It maps to the total Weyl derived zero fibre, while its Einstein and extra
+projections have the nonzero charges $c$ and $-c$.  This simultaneously
+proves that the correspondence contains the balanced ray and that no map
+$\mathfrak C\to Z_E\times Z_X$ exists with the declared projections.
+
+The map/form ledger is correspondingly asymmetric.  The maps
+$\mathfrak C\to Z_W$, $\mathfrak C\to E$, and
+$\mathfrak C\to X$ are honest derived or ambient maps.  The pullbacks
+$j^*\Omega_W$ and $p_X^*S_X$ are defined, where $S_X$ is the
+lift-invariant Schur-complement form.  But $S_X$ is not obtained by
+quotienting the nonlinear correspondence, and a raw lifted extra Gram matrix
+remains lift dependent.  The diagonal compact stabilizer action does descend:
+the transfer coordinate transforms coadjointly and the anti-diagonal equations
+are equivariant.  No all-orders Kuranishi, bounded-evolution, causal, particle,
+positivity or quantum statement is inferred.
+
+\section{Third-order Kuranishi input gate}
+
+The two-jet correspondence fixes the correct carrier but does not by itself
+define its first higher obstruction.  With the convention
+\[
+ \Phi(\epsilon)=\bar\Phi+\epsilon u+\epsilon^2v+\epsilon^3w
+ +O(\epsilon^4),
+\]
+the next equation and its projected constraint representative are
+\[
+ Lw=-D^2E[u,v]-{1\over6}D^3E[u,u,u],
+ \qquad
+ K_3(u;v)=P_{\mathfrak o}\left(
+ D^2C[u,v]+{1\over6}D^3C[u,u,u]\right).
+\]
+If $v$ is replaced by $v+z$ with $Lz=0$, then
+\[
+ K_3(u;v+z)-K_3(u;v)=P_{\mathfrak o}D^2C[u,z]
+ =\ell_2(u,z).
+\]
+The correction-independent object is therefore the class
+\[
+ [K_3(u;v)]\in
+ \mathfrak o/\operatorname{im}\ell_2(u,-).
+\]
+The earlier two-amplitude preflight saw only the Hamiltonian column of this
+map and hence rank one.  On the complete same-frequency spin-two correction
+space, the $m=\pm1$ directions add the $J_1$ and $J_2$ columns.  The exact
+spin-two matrices give
+\[
+ \operatorname{im}\ell_2(u,-)=\operatorname{span}\{H,J_1,J_2\},
+ \qquad \operatorname{rank}\ell_2(u,-)=3,
+\]
+while $P_x$ and $J_3$ vanish by $k=m=0$.  Thus the intrinsic global quotient
+has basis $\{P_x,J_3\}$ and dimension two.
+
+The smallest finite third-order closure can be fixed before its coefficients
+are known.  Its axial angular outputs are $\ell=2,4,6$.  Writing
+$\omega_-$ for the Einstein-minus frequency and $\omega_e$ for the additional
+frequency, its sixteen signed frequencies are
+\[
+ n_-\omega_-+n_e\omega_e,
+ \qquad
+ |n_-|+|n_e|\leq3,
+ \qquad
+ 3-|n_-|-|n_e|\in2\mathbb Z.
+\]
+An exact shell comparison shows that the only coincidences are the original
+$\ell=2$ shells: $(n_-,n_e)=(\pm1,0)$ on the Einstein-minus branch and
+$(0,\pm1)$ on the additional branch.  Thus no new kinematic shell type
+appears.  The action-normalized coefficients can now also be evaluated.
+
+\begin{theorem}[Correction-independent global cubic class versus a
+representative-scoped bounded shell obstruction]
+\label{thm:balanced-third-order}
+Let $u$ be the real balanced Einstein-minus/additional-primary tangent and
+let $v$ be its certified no-homogeneous-addition second-order correction from
+the companion construction.  Then:
+\begin{enumerate}
+\item the compact stabilizer representative vanishes componentwise,
+\[
+ P_{\mathfrak o}\left(D^2C[u,v]+{1\over6}D^3C[u,u,u]\right)=0,
+\]
+and hence $[K_3(u;v)]=0$ in
+$\mathfrak o/\operatorname{im}\ell_2(u,-)$;
+\item for this certified \(v\), in the bounded or finite-quasiperiodic
+correction class, each occupied original branch has a nonzero adjoint-shell
+functional.  Numerically, in the declared action-row normalization, the
+positive-frequency values are
+\[
+ \begin{aligned}
+ R_-(u;v)&=-2323.7892958977675\ldots,\\
+ (R_{e,1}(u;v),R_{e,2}(u;v))
+   &=(0,-723.39760902920997\ldots).
+ \end{aligned}
+\]
+The negative-frequency values are their reality conjugates.  All nonzero
+claims are exact: the certificate records their algebraic expressions and
+minimal polynomials with nonzero constant coefficient;
+\item a finite exponential-polynomial third-order correction exists if
+secular terms are allowed.  The bounded obstruction is therefore not a
+global compact-stabilizer Kuranishi obstruction.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The selected action
+$\int\sqrt{-g}(3C^2/8-F^2/4)$ supplies exact action-derived $q_2=D^2E$ and
+$q_3=D^3E$.  Substitution of all 27 signed $\ell=0,2,4$ correction rows gives
+the mixed term $D^2E[u,v]$; the four signed first-order modes give
+$D^3E[u,u,u]/6$.  Their axial output has only even
+$\ell=2,4,6$.  Resolving its $\ell=2$ dual-vector density requires the
+equatorial derivatives of orders $1,3,5$; the scalar rows use orders
+$0,2,4$.  The fifth derivative is retained from the content-addressed
+order-ten checkpoint rather than inferred from the order-four public PBW
+payload.  Deleting it changes the certified source and is a rejecting
+mutation.
+
+The global projections vanish before any numerical simplification: $H$ and
+$P_x$ are scalar $\ell=0$ covectors, whereas the lifted rotations are axial
+$\ell=1$ covectors, so all pairings with the even-$\ell$ axial source vanish
+on the closed slice.  The standard spin-two matrices then give the displayed
+rank-three image of $\ell_2(u,-)$.  The action-derived arity-three $Q^2$
+identity has zero defect on all four relevant Euler rows; a nonlinear gauge
+change therefore changes the representative only by the same $\ell_2$ image
+and a closed-slice exact term.
+
+Projection onto the four original shells gives the exact nonzero functionals
+recorded in
+\cert{bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KURANISHI_EVALUATION_V1.json}.
+Thus the Fredholm alternative forbids a bounded quasiperiodic primitive.
+For the finite exponential-polynomial class, the square axial
+constant-coefficient pencil
+has nonzero determinant proportional to $p^2q$.  Its adjugate reduces the
+system to scalar constant-coefficient equations, which are surjective on
+finite exponential-polynomials after polynomial factors in $t$ are allowed.
+The required secular degree is at most one on the $q$ shell and at most two
+on the $p$ shell.  This proves the three distinct assertions.  Notice that
+only the quotient class in item~1 has been divided by the complete
+homogeneous second-order-correction freedom.  Items~2 and~3 retain the
+explicitly declared representative $v$.
+\end{proof}
+
+The theorem hierarchy is therefore:
+\begin{center}
+\small
+\begin{tabularx}{0.98\textwidth}{@{}Y Y Y@{}}
+\toprule
+Carrier and order & Correction class & Frozen disposition\\
+\midrule
+Arbitrary $u\in V_{\rm fin}$, second order & finite
+exponential-polynomial & iff the five Taub moment maps vanish\\
+Arbitrary $u\in V_{\rm fin}$, second order & bounded finite
+quasiperiodic & iff the complete finite $\{\mu,\cP,\cR\}$ ledger
+vanishes; its common real zero set is only partly classified\\
+Balanced $u$, third-order global projection & quotient by all homogeneous
+second-order corrections & $[K_3]=0$ in the two-dimensional quotient with
+basis $\{P_x,J_3\}$\\
+Balanced $u$ with certified $v$, third order & bounded finite
+quasiperiodic & obstructed on all four occupied original shells\\
+Balanced $u$ with certified $v$, third order & finite
+exponential-polynomial & solvable with secular degree at most one on $q$
+and at most two on $p$\\
+Balanced $u$, arbitrary admissible second-order correction & bounded finite
+quasiperiodic & open\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The theorem is deliberately not an all-orders result.  It says that the
+quadratic charge balance survives the global cubic quotient, while uniform
+boundedness fails for the chosen second-order representative because of a
+different, local-in-time resonant cokernel.  Causal/retarded inversion and
+the effect of allowing arbitrary homogeneous second-order additions on the
+shell representatives remain separate gates.
+
+\begin{thebibliography}{99}
+\bibitem{BrillDeser}
+D.~R.~Brill and S.~Deser,
+\emph{Instability of closed spaces in general relativity},
+Commun. Math. Phys. \textbf{32} (1973) 291--304,
+\href{https://doi.org/10.1007/bf01645610}{doi:10.1007/bf01645610}.
+
+\bibitem{FischerMarsden}
+A.~E.~Fischer and J.~E.~Marsden,
+\emph{Linearization stability of the Einstein equations},
+Bull. Am. Math. Soc. \textbf{79} (1973) 997--1003,
+\href{https://doi.org/10.1090/s0002-9904-1973-13299-9}{doi:10.1090/s0002-9904-1973-13299-9}.
+
+\bibitem{MoncriefI}
+V.~Moncrief,
+\emph{Spacetime symmetries and linearization stability of the Einstein
+equations. I}, J. Math. Phys. \textbf{16} (1975) 493--498,
+\href{https://doi.org/10.1063/1.522572}{doi:10.1063/1.522572}.
+
+\bibitem{MoncriefII}
+V.~Moncrief,
+\emph{Spacetime symmetries and linearization stability of the Einstein
+equations. II}, J. Math. Phys. \textbf{17} (1976) 1893--1902,
+\href{https://doi.org/10.1063/1.522572}{doi:10.1063/1.522572}.
+
+\bibitem{ArmsEM}
+J.~M.~Arms,
+\emph{Linearization stability of the Einstein--Maxwell system},
+J. Math. Phys. \textbf{18} (1977) 830--833,
+\href{https://doi.org/10.1063/1.523312}{doi:10.1063/1.523312}.
+
+\bibitem{AMMBifurcation}
+J.~M.~Arms, J.~E.~Marsden, and V.~Moncrief,
+\emph{Symmetry and bifurcations of momentum mappings},
+Commun. Math. Phys. \textbf{78} (1981) 455--478,
+\href{https://doi.org/10.1007/bf02046759}{doi:10.1007/bf02046759}.
+
+\bibitem{FischerMarsdenMoncrief}
+A.~E.~Fischer, J.~E.~Marsden, and V.~Moncrief,
+\emph{The structure of the space of solutions of Einstein's equations. I.
+One Killing field}, Ann. Inst. H. Poincar\'e A \textbf{33} (1980) 147--194.
+
+\bibitem{ArmsMarsdenMoncrief}
+J.~M.~Arms, J.~E.~Marsden, and V.~Moncrief,
+\emph{The structure of the space of solutions of Einstein's equations. II.
+Several Killing fields and the Einstein--Yang--Mills equations},
+Ann. Phys. \textbf{144} (1982) 81--106,
+\href{https://doi.org/10.1016/0003-4916(82)90105-1}{doi:10.1016/0003-4916(82)90105-1}.
+
+\bibitem{LMTW}
+E.~Lerman, E.~Meinrenken, S.~Tolman, and C.~Woodward,
+\emph{Non-abelian convexity by symplectic cuts},
+Topology \textbf{37} (1998) 245--259,
+\href{https://arxiv.org/abs/dg-ga/9603015}{arXiv:dg-ga/9603015}.
+
+\bibitem{AltasTekin}
+E.~Alta\c{s} and B.~Tekin,
+\emph{Linearization instability for generic gravity in AdS},
+Phys. Rev. D \textbf{97} (2018) 024028,
+\href{https://arxiv.org/abs/1705.10234}{arXiv:1705.10234}.
+
+\bibitem{AltasTekinTaub}
+E.~Alta\c{s} and B.~Tekin,
+\emph{Second order perturbation theory in general relativity: Taub charges
+as integral constraints}, Phys. Rev. D \textbf{99} (2019) 104078,
+\href{https://arxiv.org/abs/1903.11982}{arXiv:1903.11982}.
+
+\bibitem{Pound}
+A.~Pound,
+\emph{Second-order perturbation theory: problems on large scales},
+Phys. Rev. D \textbf{92} (2015) 104047,
+\href{https://arxiv.org/abs/1510.05172}{arXiv:1510.05172}.
+
+\bibitem{Carlotto}
+A.~Carlotto,
+\emph{The general relativistic constraint equations},
+Living Rev. Relativ. \textbf{24} (2021) 2,
+\href{https://doi.org/10.1007/s41114-020-00030-z}{doi:10.1007/s41114-020-00030-z}.
+
+\bibitem{KieferNikolic}
+C.~Kiefer and B.~Nikoli\'c,
+\emph{Conformal and Weyl--Einstein gravity: Classical geometrodynamics},
+Phys. Rev. D \textbf{95} (2017) 084018,
+\href{https://doi.org/10.1103/physrevd.95.084018}{doi:10.1103/physrevd.95.084018}.
+
+\bibitem{ChenMa}
+Q.~Chen and Y.~Ma,
+\emph{Hamiltonian structure and connection-dynamics of Weyl gravity},
+Phys. Rev. D \textbf{98} (2018) 064009,
+\href{https://doi.org/10.1103/physrevd.98.064009}{doi:10.1103/physrevd.98.064009}.
+
+\bibitem{PlebanskiHacyan}
+J.~F.~Pleba\'nski and S.~Hacyan,
+\emph{Some exceptional electrovac type D metrics with cosmological
+constant}, J. Math. Phys. \textbf{20} (1979) 1004--1010,
+\href{https://doi.org/10.1063/1.524174}{doi:10.1063/1.524174}.
+
+\bibitem{LeeWald}
+J.~Lee and R.~M.~Wald,
+\emph{Local symmetries and constraints},
+J. Math. Phys. \textbf{31} (1990) 725--743,
+\href{https://doi.org/10.1063/1.528801}{doi:10.1063/1.528801}.
+
+\bibitem{Paper10}
+GPT-5.6.sol and A.~A.~Palm,
+\emph{Einstein--Maxwell waves inside Weyl--Maxwell gravity on a compact
+product},
+Paper~X of the pure-Weyl gravity programme, 2026;
+file \path{paper/10-compact-einstein-maxwell-weyl-phase-space.pdf} in the
+repository \url{https://github.com/area9innovation/weyl-gravity}.
+
+\bibitem{Paper91}
+GPT-5.6.sol and A.~A.~Palm,
+\emph{Pure-extra Taub obstruction and a balanced second-order extension in
+compact Weyl--Maxwell gravity},
+bridge note 91 of the pure-Weyl gravity programme, 2026;
+file \path{paper/91-charge-fibre-taub-bridge.pdf} in the repository
+\url{https://github.com/area9innovation/weyl-gravity}.
+\end{thebibliography}
+
+\end{document}

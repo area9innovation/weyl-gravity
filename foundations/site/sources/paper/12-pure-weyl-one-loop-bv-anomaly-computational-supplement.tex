@@ -1,0 +1,2381 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,tabularx,longtable}
+\usepackage{microtype,xurl}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,
+            citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\cA}{\mathcal A}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\cert}[1]{\nolinkurl{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{Computational Supplement to\\
+``A One-Loop BV Obstruction in Pure Weyl Gravity\\
+and Its Formal \texorpdfstring{$\tau$}{tau}-adic Wess--Zumino Resolution''}
+\author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
+\and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human contact; Honorary Professor, DTU Compute, Technical University of Denmark. \texttt{asger@area9.dk}.}}
+\date{Working supplement, July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This supplement records the exact finite computations underlying the strict
+one-loop BV obstruction and its formal $\tau$-adic compensator resolution.  It
+separates basis exhaustiveness, relative-cohomology ranks, antifield and
+gauge-fixing transport, analytic coefficient provenance, the compensator
+cotangent lift, quartet contraction, the extended quotient, and QME
+restoration.  Tables and matrices carrying numerical or discrete claims are
+generated directly from content-addressed JSON certificates.  Independent
+verifiers reject stale generated material, altered ranks, missing classes,
+over-promoted lifecycle states, and dependency-hash drift.
+\end{abstract}
+
+\section*{Scope and dependency labels}
+
+The supplement proves only the claims labeled \textsc{local-algebraic} and
+\textsc{euclidean-spectral} in the companion manuscript.  It does not prove
+a Lorentzian QME, renormalized causal products, a Hadamard state, positivity,
+particles, residual transfer, or an all-loop theorem.  The strict and
+compensator-extended theories remain different rows throughout.
+
+\tableofcontents
+
+\section{Certificate graph}
+
+The calculation is organized as a directed acyclic graph rather than a single
+symbolic notebook:
+\[
+\begin{gathered}
+\text{canonical AFN0 bases and descents}
+\longrightarrow \text{minimal Koszul--Tate collapse}
+\\[1mm]
+\downarrow\\[-1mm]
+\text{nonminimal/gauge-fixed quotient plus analytic coefficients}
+\\[1mm]
+\downarrow\\[-1mm]
+\text{regulated Slavnov class}
+\longrightarrow \text{strict QME disposition},
+\end{gathered}
+\]
+and independently
+\[
+\begin{gathered}
+\text{compensator master term}
+\longrightarrow \text{cotangent lift and quartet}
+\\[1mm]
+\downarrow\\[-1mm]
+\text{dressed pure-Diff quotient}
+\longrightarrow \text{extended QME disposition}.
+\end{gathered}
+\]
+
+No determinant row is promoted directly into BV cohomology.  The analytic
+coefficient vector is accepted only after it is reduced against the complete
+gauge-fixed quotient with the same normalization and classical snapshot.
+
+\section{Exact strict quotient}
+
+\subsection{Declared local algebra}
+
+The production slice is four-dimensional, form degree four, engineering
+dimension four, and ghost number zero or one.  Tensor generators include the
+metric, curvature and covariant derivatives, the Diff and Weyl ghosts, the
+minimal antifields, and the declared nonminimal doublets.  Epsilon tensors
+are included in the odd sector.  The canonical quotient imposes:
+\begin{itemize}
+\item algebraic and differential Bianchi identities;
+\item tensor symmetries and four-dimensional antisymmetrization;
+\item graded factor permutations and Grassmann signs;
+\item dummy-index graph isomorphism;
+\item integration by parts and horizontal exactness.
+\end{itemize}
+
+The basis generator is checked twice: forward tensor-graph generation and
+reverse coverage of every grading-admissible signature.  A class receives a
+complete nontriviality witness only after the top, lower-form cocycle, and
+lower-form boundary spaces are exhaustive.
+
+\subsection{Orbit-first reduction}
+
+The even ghost-one basis has seven canonical top carriers before closure and
+boundary reduction.  Orbit-first contraction resolves the two formerly
+pending mixed signatures by materializing only thirty raw pairings.  The odd
+calculation resolves all three pending mixed signatures: forty-five raw
+graphs reduce to nine signed orbits, all of which vanish by the Bianchi
+relations.  The single odd Weyl pseudoscalar remains.
+
+The exact rank data and final dimensions are generated below.
+
+\input{paper/generated/12-quantum-anomaly-certificate-tables.tex}
+
+\subsection{Antifields and gauge fixing}
+
+The imported minimal classical export supplies every Koszul--Tate row.  On
+the regular Bach locus the positive-antifield sector is an explicit sum of
+adapted pairs, and its contracting homotopy verifies
+\[
+ \delta\sigma+\sigma\delta=N_{\rm pair}.
+\]
+Consequently the AFN0 Weyl representatives lift through the minimal spectral
+sequence.  A separate total-complex computation proves that the pure-Diff and
+mixed Diff--Weyl sectors add no independent dimension-four class.
+
+Concretely, the six adapted pairs are $(g^*,E_g)$,
+$(\xi^*,N_\xi)$, $(\omega^*,N_\omega)$ and their Lie-prolonged partners.
+The $E_0$ positive-antifield columns vanish, $E_1$ is AFN0 modulo the
+Euler--Noether ideal, and the sequence collapses at $E_2$.  Since every
+positive-antifield generator in this slice has form degree four, no omitted
+lower-form positive-AFN carrier can alter the relative quotient.  This is a
+chart theorem: replacing highest TT metric jets by the Bach Euler row assumes
+the declared regular Bach locus.
+
+Ten general nonminimal pairs then contract on $25{,}080$ graded regression
+monomials.  Their covariant jet prolongations commute with $\dd_h$, and a
+free-word normal-form computation transports the SDR through an arbitrary
+invertible local BV-canonical gauge-fixing transformation.  Thus the minimal,
+nonminimal, and gauge-fixed quotient dimensions agree.  This explicit chain
+comparison is why the main theorem is not labeled AFN0-only.
+
+\section{Coefficient and Slavnov route}
+
+\subsection{Analytic input}
+
+The accepted Euclidean principal-symbol sequence is
+\[
+ (T\oplus\mathbf1)_5\xrightarrow{\sigma(K)}(S^2T^*)_{10}
+ \xrightarrow{\sigma(P_{\rm TT})}(S^2_{\rm TT}T^*)_5.
+\]
+The first bundle contains four Diff plus one Weyl gauge parameter; the middle
+bundle is the metric perturbation; the last is the TT symbol slice, not a
+five-component claim about the unreduced Bach equation.  It has ranks $(5,5)$
+at nonzero covector, zero composition, and exact image--kernel equality.  The
+formal adjoint sequence, Diff/Weyl nonminimal
+doublets, and four kinetic blocks replay independently.  The determinant
+bundle ranks and exponents are
+\[
+ (5,1,5,3),\qquad
+ \left(-\frac12,+\frac12,-\frac12,+\frac12\right),
+\]
+with priming dimensions $(0,5,0,10)$.
+The generated determinant table prints each operator, differential order,
+rank, statistics, exponent, and zero-mode subtraction separately.  Every
+displayed factor is second order; the fourth-order TT determinant is the
+product of its two displayed second-order factors.
+
+For each factor, the two invariant coordinates are reconstructed from
+independent carriers: the Ricci-flat row supplies $c_i-a_i$ and the
+round-$S^4$ row supplies $a_i$, so the generated table forms
+$c_i=(c_i-a_i)+a_i$ before summing factors.  The parity-odd zero is factorwise
+for the declared real parity-even operator family.  The $\Box R=0$ column is
+instead the chosen scheme for the total functional, implemented by one local
+$R^2$ counterterm; no factorwise scheme-invariant type-D claim is made.
+
+The local $C^2$ coordinate is exposed on a non-conformally-flat Ricci-flat
+carrier.  The Euler coordinate is independently fixed on round $S^4$.  The
+measure ledger includes York and ghost super-Jacobians, all nonminimal
+quartets, conformal-Killing zero modes, the oriented auxiliary contour, and
+the local parity Ward identity.  Global determinant phase and conformal-group
+volume are not used to infer a local coefficient.
+
+\subsection{Cohomological reduction}
+
+Let the ordered strict basis be
+\[
+ (\omega C^2,\omega E_4,\omega C\widetilde C,\omega\Box R).
+\]
+The raw analytic vector is the one displayed in
+Table~\ref{tab:generated-coefficients}.  The fourth coordinate is removed with
+the stored local identity
+\[
+ \sqrt g\,\omega\Box R\,\dd^4x
+ =-\frac1{12}s\bigl(\sqrt g\,R^2\,\dd^4x\bigr)
+  -\dd\,\star\bigl(R\,\dd\omega-\omega\,\dd R\bigr).
+\]
+The first two normalized dual
+functionals evaluate to $199/30$ and $-87/20$, while the odd functional
+evaluates to zero by the Ward identity.  Therefore
+\[
+ [\cA^{(1)}]
+ =\frac{1}{(4\pi)^2}
+ \left(\frac{199}{30}[\omega C^2]
+       -\frac{87}{20}[\omega E_4]\right)\neq0.
+\]
+
+The strict QME verdict is determined by this nonzero cohomology class.  The
+beta function, determinant logarithm, and background trace anomaly are not
+used as substitutes for the regulated Slavnov insertion.
+
+The bridge is the regulated identity
+\[
+ \mathcal S_S\Gamma_{\rm reg}^{(1)}
+ =\lim_{d\to4}s_d\left[
+ \frac{\mu^{d-4}}{(4\pi)^2(d-4)}
+ \int\sqrt g\,(cC^2-aE_4+b\Box R+\text{exact rows})\right].
+\]
+The $(d-4)$ Weyl variation of the continued densities cancels the pole.
+Replacing the bosonic Weyl parameter by $\omega$, adjoining the certified
+universal Diff descent, and reducing exact, parameter-dependent, and total
+derivative rows produces the ghost-one insertion.  Thus the determinant
+ledger supplies coefficients to an independently assembled Slavnov carrier;
+it is not itself called a BV anomaly.
+
+In certificate notation the residue map is
+\[
+ s_d I_i(d)=(d-4)A_i^4+s_dB_i(d)+\dd_hC_i(d)
+             +O((d-4)^2),
+\]
+with $A_i^4$ the complete ghost-one carrier.  The pole residue is paired with
+the normalized quotient duals only after the exact and horizontal rows are
+removed.  This is the machine-readable distinction among determinant
+coefficients, a bosonic Weyl Ward variation, and the BV Slavnov class.
+
+\subsection{Matter cone}
+
+For standard-sign free conformal scalars, Weyl/Dirac fermions, and gauge
+vectors, cancellation is an exact rational cone-feasibility problem.  A
+separating dual covector is positive on every allowed matter ray and on the
+pure-gravity breaking.  Hence no nonnegative real multiplicity vector, and
+therefore no nonnegative integral multiplicity vector, cancels both even
+coordinates.  This theorem deliberately excludes nonunitary signs,
+interacting fixed points, conformal higher spin, and compensators.
+
+\section{Compensator BV extension}
+
+\subsection{Rows derived from one master term}
+
+The extension is generated from
+\[
+ S_{\tau,\min}
+ =\int\tau^*(\xi^\mu\nabla_\mu\tau+\omega).
+\]
+Its four Euler derivatives force
+\begin{align*}
+ Q\tau&=\mathcal L_\xi\tau+\omega,\\
+ \delta\omega^*&=N_\omega+\tau^*,\\
+ \delta\xi^*_{\mu}&=N_{\xi,\mu}+\tau^*\nabla_\mu\tau,\\
+ \gamma\tau^*&=\mathcal L_\xi\tau^*.
+\end{align*}
+The Lie-prolonged cotangent rows carry the opposite formal-adjoint signs.  No
+coefficient is fitted to a nilpotency defect.
+
+On all twenty-four strict-plus-compensator generators and jet generators the
+independent replay finds
+$\delta^2=0$, $\delta\gamma+\gamma\delta=0$, and $Q^2=0$.  It also checks
+every ghost number, antifield number, parity, and tensor component type.
+
+\subsection{Dressed canonical coordinates}
+
+The change
+\[
+ \widehat g=e^{-2\tau}g,\qquad
+ \widehat g^*=e^{2\tau}g^*,qquad
+ \widehat\tau^*=\tau^*+2g_{\mu\nu}g^{*\mu\nu}
+\]
+obeys the canonical one-form identity
+\[
+ g^*\delta g+\tau^*\delta\tau
+ =\widehat g^*\delta\widehat g
+  +\widehat\tau^*\delta\tau.
+\]
+It sends the Weyl Noether row to
+$\delta\omega^*=\widehat\tau^*$ and yields the quartet matrices in
+Equation~\ref{eq:generated-quartet-matrices}.
+
+Equivalently, $h\omega=\tau$, $h\widehat\tau^*=\omega^*$ and $h$ vanishes on
+$\tau,\omega^*$.  Extending $h$ to covariant jets as a graded derivation and
+dividing by positive quartet number gives the contraction
+$Q_Wh+hQ_W=N_{\rm quartet}$.  Diff transport and $\dd_h$ preserve the
+filtration, so homological perturbation lifts this contraction to the total
+formal complex.
+
+More directly, write the total differential as
+$\mathcal D=Q_W+\delta$.  In dressed covariant jets the quartet members occur
+in matched Diff modules, so the covariant graded derivation $h$ obeys
+$[\delta,h]_+=0$ and $[N_{\rm quartet},\delta]=0$.  Thus
+\[
+ \mathcal D h+h\mathcal D=N_{\rm quartet}.
+\]
+Every closed component of positive quartet number $n$ is explicitly the
+boundary $\mathcal D(n^{-1}h\mathbf a_n)$.  At quartet number zero the total
+differential is the pure-Diff BV differential of $\widehat g$.  The
+independently certified pure-Diff ghost-one zero, rather than the four
+primitive matrix alone, therefore completes the proof of
+$H^{1,4}_{\rm ext}=0$.
+
+The coordinate change is interpreted in the formal $\tau$-adic local analytic
+completion.  Exact inverse series are checked through order eight, and the
+all-orders coefficient convolution is
+\[
+ \sum_{k=0}^{n}\frac{(-2)^k}{k!}\frac{2^{n-k}}{(n-k)!}
+ =\frac{2^n}{n!}(1-1)^n=\delta_{n0}.
+\]
+
+\section{Extended quotient and restoration}
+
+Quartet contraction reduces the extended complex to pure Diff BV cohomology
+in $\widehat g$.  The dimension-four ghost-zero basis therefore contains the
+new invariant $R(\widehat g)^2$ in addition to $C(\widehat g)^2$, $E_4$, and
+the odd Pontryagin density.  $\Box R(\widehat g)$ remains horizontally exact.
+
+The only dimension-zero natural symmetric tensor that could generate an
+incoming positive-antifield boundary is $\widehat g$ itself.  Its image is the
+trace of the Bach Euler row and vanishes.  Normalized coordinate duals for all
+four surviving ghost-zero classes annihilate both the horizontal and
+positive-antifield boundary spaces.
+
+At ghost number one the primitives
+$(B_C,B_E,B_P,B_{\Box})$ map to the complete strict four-candidate carrier by
+the identity matrix in Equation~\ref{eq:generated-extended-boundary}.  The
+independently certified pure-Diff anomaly quotient is zero.  Hence the full
+extended dimension-four $H^{1,4}$ vanishes in both parities.
+
+The coefficient-bearing counterterm is
+\[
+ S_{\rm ct}^{(1)}
+ =-\frac{\hbar}{(4\pi)^2}
+ \left(\frac{199}{30}B_C-\frac{87}{20}B_E\right),
+\]
+and exact coordinate replay gives
+\[
+ \cA^{(1)}+s_{\rm ext}S_{\rm ct}^{(1)}=0\pmod{\dd_h}.
+\]
+This is the one-loop local Euclidean QME restoration theorem in the declared
+formal $\tau$-adic theory.  It changes the theory: setting $\tau=0$ does not
+make the strict quotient anomaly-free, and the dressed algebra contains the
+new $R(\widehat g)^2$ counterterm direction.
+
+\section{First Slavnov operator: fixed part and exact ambiguity}
+
+The counterterm fixes the local Hamiltonian contribution
+\[
+ Q_1^{\rm WZ}=(C_1^{\rm WZ},\,\cdot).
+\]
+Here
+\[
+ C_1^{\rm WZ}=-(4\pi)^{-2}
+ \left(\frac{199}{30}B_C-\frac{87}{20}B_E\right).
+\]
+Since $C_1^{\rm WZ}$ has antifield number zero, its field and ghost rows
+vanish and its cotangent rows are the Euler derivatives with respect to
+$\widehat g$ and $\tau$.  This is an actual coefficient-bearing part of
+$Q_1$, but not the complete renormalized operator.
+
+The exact non-uniqueness witness uses flat Euclidean momentum
+$p=(1,0,0,0)$, a TT polarization $h_{11}=1,h_{22}=-1$, and the conformal
+polarization $h_{\mu\nu}=\delta_{\mu\nu}$.  Direct contraction of the
+linearized Riemann tensor gives
+\[
+ \begin{array}{c|cc}
+ & C^{(1)2}&R^{(1)2}\\ \hline
+ \mathrm{TT}&1&0\\
+ \mathrm{conformal}&0&9
+ \end{array}.
+\]
+Including the topological Euler and Pontryagin columns, the allowed extended
+$H^{0,4}$ response matrix is
+\[
+ \begin{pmatrix}1&0&0&0\\0&0&9&0\end{pmatrix},
+ \qquad \operatorname{rank}=2.
+\]
+The topological columns have zero compactly supported bulk Euler derivative;
+their boundary and global content is retained separately.  Therefore finite
+$C(\widehat g)^2$ and $R(\widehat g)^2$ counterterms change the bulk
+Hamiltonian vector field independently.  This receipt alone does not supply
+a nonlocal $\Gamma_1$ representative, the renormalized BV Laplacian or
+time-ordered product, or finite normalization conditions.  The follow-up
+below supplies the anomaly-induced component but not the Weyl-invariant
+finite remainder.  Complete $Q_1$ remains fail-closed as
+\texttt{NO\_CERTIFIED\_OPERATOR}.
+
+\subsection{Anomaly-induced nonlocal representative}
+
+The follow-up receipt solves the exact Weyl-response system rather than
+declaring the whole finite effective action absent.  With
+\[
+ \mathcal E_4=E_4-\frac23\Box R,
+ \qquad
+ \Delta_4=\Box^2+2R^{\mu\nu}\nabla_\mu\nabla_\nu
+ -\frac23R\Box+\frac13(\nabla^\mu R)\nabla_\mu,
+\]
+the carrier basis
+\[
+ \left(
+ \langle\mathcal E_4,G_4C^2\rangle,
+ \langle\mathcal E_4,G_4\mathcal E_4\rangle,
+ \int\sqrt g R^2
+ \right)
+\]
+has Weyl-response matrix $\operatorname{diag}(4,8,-12)$.  Exact rational
+elimination against the modified-basis target
+$(199/30,-87/20,-29/10)$ gives
+\[
+ \left(\frac{199}{120},-\frac{87}{160},\frac{29}{120}\right).
+\]
+Re-expansion in $(C^2,E_4,\Box R)$ returns
+$(199/30,-87/20,0)$ exactly.  Thus
+\[
+ \Gamma_{1,\mathrm{anom}}
+ =\frac1{(4\pi)^2}\left\{
+ \frac18\langle\mathcal E_4,G_4(2cC^2-a\mathcal E_4)\rangle
+ +\frac{a}{18}\int\sqrt g R^2
+ \right\}
+\]
+is one anomaly-induced Euclidean representative.
+
+The inverse contract is fail-closed.  Either the Euclidean boundary problem
+is invertible, or $G_4$ is a self-adjoint generalized inverse and every
+displayed source lies in the complement of $\ker\Delta_4$.  A compact
+Paneitz zero mode is not silently discarded: its global anomaly, homogeneous
+solutions, and boundary transgressions remain separate data.  The
+Weyl-invariant finite functional, finite $C^2$ and absolute dressed
+$R(\widehat g)^2$ normalization, and renormalized BV product are still absent,
+so this result does not promote complete $\Gamma_1$ or $Q_1$.
+
+\subsection{Universal nonzero-momentum flat-TT logarithm}
+
+The conformal-sector receipt next fixes the part left invariant by the
+inhomogeneous anomaly solve at quadratic order on a declared flat Euclidean
+TT carrier.  With the fixture normalized by
+$\langle C^{(1)},C^{(1)}\rangle=1$, exact rational arithmetic gives
+\[
+ F_C(p^2;\mu)=-\frac{199}{60}\log\frac{p^2}{\mu^2}+z_C(\mu),
+ \qquad
+ -\frac{199}{60}=-\frac c2=-\frac{\beta_2}{4}.
+\]
+The independent checks replay
+\[
+ \mu\partial_\mu F_C=\frac{199}{30},
+ \qquad
+ F_C(p^2)-F_C(q^2)=-\frac{199}{60}\log\frac{p^2}{q^2},
+\]
+and verify that the prior Riegert representative begins at $O(h^4)$ on this
+pure-TT slice.  A finite reference condition only determines the family
+\[
+ z_C(\mu)=N_C+\frac{199}{60}
+ \log\frac{\kappa_{\rm ref}^2}{\mu^2};
+\]
+neither $N_C$ nor $\kappa_{\rm ref}$ is selected by the anomaly.  The receipt
+therefore rejects promotion to a curved completion, a zero-momentum result,
+a Lorentzian branch prescription, complete $\Gamma_1/Q_1$, or a particle
+entry.
+
+\subsection{Curvature-squared covariantization}
+
+The next receipt replaces the flat momentum logarithm by the spectral
+logarithm of a positive self-adjoint Laplace-type operator $\Delta_C$ on the
+Weyl-tensor bundle.  On the complement of its kernel,
+\[
+ \Gamma_{1,C^2\log}^{(2)}
+ =-\frac1{(4\pi)^2}\frac{199}{60}
+ \langle C,\Pi_\perp\log(\Delta_C/\mu^2)\Pi_\perp C\rangle.
+\]
+The verifier replays the coefficient and scale response and applies the
+curvature filtration to the resolvent Fréchet derivative.  For
+$\Delta_C'=\Delta_C+V_1+O(\mathcal R^2)$,
+\[
+ d\log(\Delta_C)[V_1]
+ =\int_0^\infty(\Delta_C+s)^{-1}V_1
+ (\Delta_C+s)^{-1}\,ds,
+\]
+so the sandwiched change has exact order $1+1+1=3$.  Operator-choice
+dependence for this $C^2$ carrier therefore starts with cubic form
+factors within the class sharing principal symbol, connection, domain, and
+source complement and differing at first curvature order only by the
+self-adjoint endomorphism $V_1$.  Connection variations, which can introduce
+first-order differential terms, are not covered.  Kernel and boundary
+data, derivative-decorated nonlocal cubic form factors, finite $C^2$ constant and absolute dressed
+$R(\widehat g)^2$ normalization remain fail-closed.  The selected carrier's
+Weyl-orbit completion is handled separately below.
+
+\subsection{Fradkin--Vilkovisky completion of the selected carrier}
+
+The conformization receipt constructs
+\[
+ L_g=\Box_g-\frac16R_g,\qquad
+ u_g=1+\frac16L_g^{-1}R_g,\qquad
+ \bar g[g]=u_g^2g.
+\]
+It independently checks $L_gu_g=0$, $R[\bar g]=0$, the Weyl-weight ledger
+$2(-1)+2=0$, and the boundary-normalized transformation
+$u_{e^{2\sigma}g}=e^{-\sigma}u_g$.  Consequently $\bar g[e^{2\sigma}g]=\bar
+g[g]$, and evaluation of the full selected $C\log\Delta_C C$ carrier---its
+tensors, pairing, projector, domain and logarithm---on $\bar g$ gives an exact
+nonlocal functional invariant under the declared local Weyl transformations.
+
+The verifier retains the inverse-domain hypothesis, replays the coefficient
+$-199/60$ and the first correction order three, and rejects promotion to
+derivative-decorated nonlocal cubic form factors, complete
+$\Gamma_1/Q_1$, residual transfer or a Lorentzian result.  It also enforces a
+carrier crosswalk: the nonlocal $\bar g[g]$ is distinct from the local
+$\tau$-adic field $\widehat g[g,\tau]$.
+
+\subsection{FV anomaly action and dependent Ricci sector}
+
+The coefficient-bearing anomaly action is replayed as
+\[
+ \Gamma_{1,\mathrm{FV}}=\frac1{(4\pi)^2}\int\!\sqrt g\,
+ \left[\left(\frac{199}{30}C^2-\frac{87}{20}\mathcal E_4\right)
+ \Sigma_{\mathrm{FV}}
+ +\frac{87}{10}\Sigma_{\mathrm{FV}}\Delta_4\Sigma_{\mathrm{FV}}
+ +\frac{29}{120}R^2\right],
+ \qquad \mathcal E_4=E_4-\frac23\Box R.
+\]
+The independent verifier checks both exact cancellations
+\[
+ -\frac{87}{5}+\frac{87}{5}=0,
+ \qquad
+ \frac{29}{10}-\frac{29}{10}=0,
+\]
+and the RFT specialization
+\((199/120,-87/160,29/120)\).
+
+The decomposition
+\(
+ \Gamma_1[g]=\Gamma_{1,\mathrm{FV}}[g]+W_1[\bar g[g]]
+\)
+with \(R[\bar g]=0\) makes the Ricci-scalar sector dependent.  A generic-basis
+term \(R F(\Box)R\) can appear after re-expansion, but its form factor is fixed
+by the anomaly action and the conformized Weyl sector.  It is not a separate
+coefficient gate in the declared massless conformal FV scope.  Derivative-decorated
+nonlocal cubic-and-higher Weyl form factors, finite normalizations, global inverse data
+and renormalized products remain open.
+
+\subsection{Four-dimensional algebraic cubic Weyl carriers}
+
+The next exact receipt isolates the zero-derivative part of the open cubic
+seam.  In four Euclidean dimensions the Weyl tensor is a pair of symmetric
+tracefree rank-two blocks on self-dual and anti-self-dual two-forms.  For
+three identical blocks, the generator enumerates all fifteen complete
+pairings of six slots and reduces them under identical-factor permutations:
+\[
+ 15\ \hbox{pairings}\longrightarrow 3\ \hbox{orbits}
+ \longrightarrow 2\ \hbox{tracefree zeros}+1\ \hbox{triangle}.
+\]
+The triangle is \(\operatorname{tr}(C_\pm^3)\).  Orthogonality of the chiral
+projectors kills cross-block edges, and both mixed allocations then vanish by
+the trace of the lone block.  Thus the parity basis has
+the exact dimensions
+\[
+ \dim V_{C^3}^{\rm even}=1,
+ \qquad
+ \dim V_{C^3}^{\rm odd}=1,
+\]
+with carriers
+\[
+ C_{ab}{}^{cd}C_{cd}{}^{ef}C_{ef}{}^{ab},
+ \qquad
+ ({*C})_{ab}{}^{cd}C_{cd}{}^{ef}C_{ef}{}^{ab}.
+\]
+The verifier independently checks the raw pairing count, every orbit
+disposition, the exact rank-two sample matrix, the inverse chiral/parity
+crosswalk, and the even carrier's coordinate in the earlier Schouten-zero
+Weyl quotient.
+
+This closes only the algebraic carrier subspace.  A nonlocal third-curvature
+functional contains independently labelled \(\Box_i\), derivative
+placements and functions \(\Gamma_m(\Box_1,\Box_2,\Box_3)\); unrestricted
+local integration by parts does not classify that space.  The receipt
+therefore keeps derivative-decorated carriers, form-factor functions and all
+cubic coefficients at \texttt{NOT\_COMPUTED}.  It also records that the
+dimension-six \(C^3\) density is not a new dimension-four local one-loop
+counterterm.
+
+\subsection{Parity-even third-curvature carrier quotient}
+
+The next receipt imports the complete pure-gravity parity-even conformal
+carrier list in terms of
+\[
+ K_{\mu\nu}=\frac{2}{\Box}\nabla^\beta\nabla^\alpha
+ C_{\alpha\mu\beta\nu}.
+\]
+The symbol $K$ here denotes this derived nonlocal symmetric tensor, not the
+four-index Weyl tensor or a kinetic operator.  The five rows
+$I_{10},I_{24},I_{25},I_{28},I_{29}$ have source-generic stabilizers
+$S_3,S_2(23),S_2(23),S_2(12),C_3$, respectively.  On the scalar-flat
+transverse $K$ carrier, $I_{29}$ factorizes in momentum space as
+\[
+ -(k_2K_1k_2)(k_3K_2k_3)(k_1K_3k_1).
+\]
+Momentum conservation and $k_iK_i=0$ equate its two orientations, enhancing
+its effective stabilizer to $S_3$.  Independent coset enumeration therefore
+gives effective scalar-flat label dimensions
+\[
+ 1+3+3+3+1=11
+\]
+and character $(11,5,2)$, hence multiplicities
+$5\mathbf1\oplus3\mathbf2_{\rm std}$.
+
+The exact four-dimensional identity from CPT-IV (A.35), restricted to the
+pure-$K$ scalar-flat sector, has one arbitrary completely symmetric form
+factor.  Its coefficient rows contain $I_{10},I_{24},I_{25},I_{28}$ and
+omit $I_{29}$.  Deleting the trivial $S_3$ component of $I_{28}$ is one
+section of the quotient.  The resulting character is $(10,4,1)$, with
+multiplicities
+\[
+ 4\mathbf1\oplus3\mathbf2_{\rm std}.
+\]
+The verifier separately checks every subgroup index, both character
+decompositions, the symmetry of the coefficient polynomials, and the absence
+of $I_{29}$ from (A.35).  It also evaluates all carriers on an exact
+$125\times11$ rational TT fixture, proves the $I_{29}$ reversal identity,
+finds rank ten and nullity one, and identifies the sole null vector with
+(A.35).  Dependency hashes and fail-closed coefficient flags are checked
+independently.
+
+This result does not mean that ten analytic form factors have been computed.
+It means that five carrier-labelled functions, with separately recorded
+source and effective stabilizers, are subject to one arbitrary symmetric
+functional relation.  The
+repository functions and coefficients and the parity-odd derivative sector
+remain at \texttt{NOT\_COMPUTED}.
+
+\subsection{Exact universal CPT source kernels}
+
+The next receipt imports the five corresponding third-curvature kernels from
+the primary CPT source archive and its ancillary symbolic file.  It records
+both source SHA-256 hashes, the source effective-action normalization, the
+exact rational alpha-parameter numerator, explicit tree and logarithmic
+terms, the stabilizer symmetrization and the resulting formula-row digest.
+The common convention is
+\[
+ \Gamma_i=\left\langle\frac{dff_i}{-\Omega}\right\rangle_3+T_i+L_i,
+ \qquad
+ \Omega=\alpha_2\alpha_3\Box_1+
+ \alpha_1\alpha_3\Box_2+
+ \alpha_1\alpha_2\Box_3.
+\]
+Exact rescaling verifies homogeneities
+\((-1,-2,-2,-3,-4)\) for
+\((I_{10},I_{24},I_{25},I_{28},I_{29})\), and independent parsing checks
+selected source terms and the full formula digest.
+The source-generic $C_3$ provenance of $I_{29}$ is retained, while its raw
+alpha kernel is independently verified to be fully $S_3$ symmetric, in
+agreement with the effective scalar-flat carrier identity above.
+
+The coefficient-bearing source fixture is deliberately narrow:
+\(F=-\Box\) on one real scalar, with \(P=0\) and zero bundle curvature.
+It is not the conformal-graviton determinant.  On tensor and ghost bundles,
+\(P\) and \(\mathcal R_{\mu\nu}\) are linear in the background curvature
+and their other CPT rows mix into the same pure-gravity carrier functions.
+Thus neither constrained Einstein-background ranks nor finitely many local
+\(b_4\) coordinates identify five functions of three box variables.  The
+receipt fails closed until the repository supplies the same-gauge
+generic-background full-BV Hessian and complete trace-substitution map through
+third curvature order, or an equivalent nonminimal fourth-order CPT kernel,
+with the matching measure.
+
+The production and independent replay commands are
+\begin{verbatim}
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.cpt_universal_third_curvature_kernels --check
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_cpt_universal_third_curvature_kernels
+PYTHONPATH=quantum-weyl python3 -m unittest \
+  transfer.tests.test_cpt_universal_third_curvature_kernels
+\end{verbatim}
+
+\subsection{Generic Diff--Weyl ghost matching obstruction}
+
+The generic-background gauge rows provide an exact test of whether the
+minimal scalar source kernels can receive the repository ghost block by a
+direct trace substitution.  Eliminating the algebraic Weyl-ghost row gives
+\[
+ (M_{\rm eff}\xi)_\mu=\Box\xi_\mu+R_{\mu\nu}\xi^\nu
+ +\frac12\nabla_\mu\nabla\!\cdot\!\xi,
+\]
+independently of the gauge parameter $\beta$.  The verifier reconstructs the
+Schur complement at $\beta=0,1/4,1/2$, computes the unit-covector principal
+spectrum $(3/2,1,1,1)$, and proves a fixed two-sided scalarization no-go from
+the exact spectrum $(2/3,3/2,1,1)$ of the two-covector comparison matrix.
+It also applies the curvature term to an explicit tracefree-Ricci jet and
+finds the transverse mixing vector $2e_1$ from longitudinal input $e_0$.
+
+The Einstein specialization reproduces
+$M_{\rm eff}(\nabla c)=-(3/2)\nabla(\Delta_0-R/3)c$, so this receipt explains
+both why the accepted special-background scalar factor is correct and why it
+does not define the generic determinant.  The current minimal-CPT matching
+architecture is therefore marked \texttt{OBSTRUCTED}; the anomaly and QME
+theorems are unchanged.  The production and independent replay commands are
+\begin{verbatim}
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.generic_background_ghost_cpt_obstruction --check
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.verify_generic_background_ghost_cpt_obstruction
+PYTHONPATH=quantum-weyl python3 -m unittest \
+  spectral.euclidean.tests.test_generic_background_ghost_cpt_obstruction
+\end{verbatim}
+
+\subsection{Exact Endo--Duhamel ghost reduction}
+
+The architecture obstruction admits a constructive reduction.  With
+$H=-M_{\rm eff}$, the verifier reconstructs the coefficient triples in the
+basis $(-\Box\mathbf1,\operatorname{Ric},\nabla\nabla\!\cdot)$:
+\[
+ H=(1,-1,-\tfrac12),\quad
+ F=(1,1,0),\quad
+ H_0=(1,1,-\tfrac12),\quad
+ W=(0,-2,0),
+\]
+and checks $H=H_0+W$.  The version-pinned primary Endo formula specializes
+at $\alpha=-1/2$ to
+\[
+ K_{H_0}(t)=K_F(t)-\nabla\nabla'\int_t^{3t/2}ds\,K_{\Delta_0}(s).
+\]
+The independent replay verifies the flat projector exponents, the
+longitudinal inverse coefficient $2/3$, the finite proper-time interval, and
+the nonzero-mode determinant identity.  It then constructs the complete
+cubic work table
+\[
+ (n,\,\text{maximum Endo-kernel order})=(0,3),(1,2),(2,1),(3,0).
+\]
+The remaining ghost coefficient calculation is therefore finite, but the
+listed insertion traces are not silently marked evaluated.
+
+\begin{verbatim}
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.generic_background_ghost_endo_duhamel_reduction --check
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.verify_generic_background_ghost_endo_duhamel_reduction
+PYTHONPATH=quantum-weyl python3 -m unittest \
+  spectral.euclidean.tests.test_generic_background_ghost_endo_duhamel_reduction
+\end{verbatim}
+
+\subsection{Exact Hodge--resolvent reduction of the one- and two-insertion rows}
+
+Integrating the Endo identity on primed nonzero modes and exchanging the
+proper-time integrals gives the fixed-$s$ interval $2s/3\leq t\leq s$.
+Its width $s/3$, together with
+$\int_0^\infty sK_{\Delta_0}(s)\,ds=\Delta_0^{-2}$, yields
+\[
+ G_{H_0}=G_F-\frac13d\Delta_0^{-2}\delta .
+\]
+Substitution in the trace logarithm and exact cyclic reduction leave five
+minimal carriers:
+\begin{align*}
+ \Gamma^{(1)}_{\rm gh}
+ &=\operatorname{Tr}_1(G_FW)-\frac13\operatorname{Tr}_0(\Delta_0^{-2}\delta Wd),\\
+ \Gamma^{(2)}_{\rm gh}
+ &=-\frac12\operatorname{Tr}_1(G_FW G_FW)
+   +\frac13\operatorname{Tr}_0(\Delta_0^{-2}\delta W G_FWd)\\
+ &\qquad-\frac1{18}\operatorname{Tr}_0(\Delta_0^{-2}\delta Wd\,
+                              \Delta_0^{-2}\delta Wd).
+\end{align*}
+The independent fixture uses an exact symmetric noncommuting $W$ which mixes
+the Hodge sectors.  It checks $H_0G_{H_0}=1$, equality of the direct and
+reduced traces for $n=1,2,3$, and the cyclic $n=3$ longitudinal coefficients
+$(1/3,-1/3,1/9,-1/81)$.
+
+The reduction is architectural.  The pure-vector physical sum is evaluated
+next; the three rows containing $\delta Wd$ require nonminimal
+principal-symbol kernels.
+
+\begin{verbatim}
+P=spectral.euclidean
+M=generic_background_ghost_n1_n2_hodge_resolvent_reduction
+PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
+PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
+PYTHONPATH=quantum-weyl python3 -m unittest "$P.tests.test_$M"
+\end{verbatim}
+
+\subsection{Exact pure-vector one-/two-insertion CPT projection}
+
+In the CPT-IV convention $H=\Box+P-R/6$, the scalar-flat positive vector
+operators $F=-\Box+\operatorname{Ric}$ and
+$F+W=-\Box-\operatorname{Ric}$ correspond to
+$P_F=-\operatorname{Ric}$ and $P_H=+\operatorname{Ric}$.  Of the $P$-dependent source rows
+\[
+ 1,3,4,5,6,13,14,15,16,17,26,
+\]
+rows $6,13,17$ cancel under $P\mapsto-P$, while $4,5,15,16,26$ vanish by
+$\operatorname{tr}P=R=0$.  Calibration against the independently certified pure-vector
+$n=3$ zero-longitudinal sector fixes the positive-determinant/source sign.
+Thus
+\[
+ \Gamma^{(1)}_{\rm vector}+\Gamma^{(2)}_{\rm vector,vector}
+ =6\Gamma_1\mathcal S_1-2\Gamma_3\mathcal S_3
+  -2\Gamma_{14}\mathcal S_{14}.
+\]
+The source parameter rows are
+\[
+ \Gamma_1=\left\langle\frac{1/3}{\Delta}\right\rangle_3,
+ \quad
+ \Gamma_3=\left\langle\frac{2\alpha_1\alpha_2}{\Delta}\right\rangle_3,
+ \quad
+ \Gamma_{14}=
+ -\left\langle\frac{2\alpha_3-4\alpha_3^2}{x_3\Delta}\right\rangle_3,
+\]
+with
+\[
+ \Delta=\alpha_2\alpha_3x_1+
+        \alpha_1\alpha_3x_2+
+        \alpha_1\alpha_2x_3.
+\]
+The machine-readable result stores all eleven ordered
+$I_{10}/I_{24}/I_{25}/I_{28}/I_{29}$ channel integrands.  Ten momentum
+fixtures times $125$ TT tensor products and two source structures give 2,500
+exact projection identities.  Another 750 identities verify the linearized
+Riemann/Ricci contraction and contracted Bianchi identity.  Two unseen
+fixtures independently replay the coordinates and detect a deliberate
+coordinate mutation.
+
+The exact missing-carrier theorem is equally important.  The other three
+Hodge rows contain
+\[
+ D_W=\delta Wd,
+ \qquad \sigma_2(D_W)(p)=W^{\mu\nu}p_\mu p_\nu.
+\]
+This anisotropic curvature-dependent principal symbol is not a minimal
+bundle endomorphism $P$, and the mixed row couples scalar and vector
+resolvents.  Minimal CPT $P$ rows cannot evaluate them.  Dedicated kernels
+with one and two $D_W$ insertions, or an equivalent direct nonminimal Endo
+form-factor calculation, were therefore the smallest missing input before
+the Schur resummation below.
+
+\begin{verbatim}
+P=spectral.euclidean
+M=generic_background_ghost_n1_n2_vector_cpt_projection
+PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
+PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
+PYTHONPATH=quantum-weyl python3 -m unittest "$P.tests.test_$M"
+\end{verbatim}
+
+\subsection{Exact longitudinal Schur resummation}
+
+Let $A=F+W$, $H=A+\frac12d\delta$, and
+$H_0=F+\frac12d\delta$ in the differential-form sign convention.  The
+matrix determinant lemma and the Hodge Ward identities give
+\[
+ S_L(W)=\frac23\mathbf1+\frac13\delta(F+W)^{-1}d,
+\]
+and, for one compatible determinant-class relative prescription,
+\[
+ \operatorname{Det}_{\rm rel}(H,H_0)
+ =\operatorname{Det}_{\rm rel}(F+W,F)
+  \operatorname{Det}_{F}(S_L(W),\mathbf1).
+\]
+The factor $2/3$ removes the base scalar determinant
+$\mathbf1+\frac12\delta F^{-1}d=\frac32\mathbf1$.
+
+With
+\[
+ B_n=\Delta_0^{-1}\delta W(G_FW)^{n-1}d\Delta_0^{-1},
+\]
+the exact resolvent series is
+$S_L=\mathbf1+\sum_{n\geq1}(-1)^nB_n/3$.  Expansion of
+$\operatorname{Tr}\log S_L$ gives
+\[
+ -\frac13\operatorname{Tr}B_1,
+\]
+\[
+ \frac13\operatorname{Tr}B_2-\frac1{18}\operatorname{Tr}B_1^2,
+\]
+and
+\[
+ -\frac13\operatorname{Tr}B_3
+ +\frac19\operatorname{Tr}(B_1B_2)
+ -\frac1{81}\operatorname{Tr}B_1^3.
+\]
+The first two rows coincide coefficientwise with the three previously open
+one-/two-insertion $D_W$ carriers.  Thus they are not three independent
+analytic kernels; all longitudinal insertion orders are one scalar Schur
+trace-log series.  The cubic longitudinal weights are
+$(-1/3,1/9,-1/81)$.
+
+The producer checks a noncommuting $4\times4$ vector/$2\times2$ scalar
+fixture.  The verifier uses an unrelated $5\times5$ vector/$3\times3$ scalar
+fixture, replays the determinant and all three trace-log orders, and rejects
+the mutation $1/9\mapsto1/8$.  For
+$\operatorname{Ric}=(R/4)g$, the minimal-vector longitudinal ratio
+$(\Delta_0-R/2)/\Delta_0$ times the Schur ratio
+$(\Delta_0-R/3)/(\Delta_0-R/2)$ reproduces the accepted scalar ghost factor.
+
+The regularization boundary is explicit.  The finite-dimensional identity
+and formal trace-log series are exact.  Since $S_L-\mathbf1$ begins at
+pseudodifferential order $-2$ in dimension four, ordinary trace-class
+Fredholm determinacy does not follow from order counting.  The Fredholm
+identity applies if determinant-class hypotheses hold on a restricted
+domain; generically a regularized relative determinant or equivalent common
+trace regulator is required.  Separate zeta determinants may also add a
+local multiplicative anomaly.  The selected generic weight-raised local term
+is evaluated below; the generic Schur relative finite kernel is not, so no
+repository coefficient or complete ghost form factor is promoted.
+
+\begin{verbatim}
+P=spectral.euclidean
+M=generic_background_ghost_longitudinal_schur_resummation
+PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
+PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
+PYTHONPATH=quantum-weyl pytest -q \
+ quantum-weyl/spectral/euclidean/tests/test_$M.py
+\end{verbatim}
+
+\subsection{Non-Einstein product Schur spectrum and coupled priming}
+
+On $S^2(k_1)\times S^2(k_2)$, scalar product harmonics give
+\[
+ a=k_1\ell(\ell+1),\quad b=k_2m(m+1),\quad \lambda=a+b,
+ \quad d_{\ell m}=(2\ell+1)(2m+1),
+\]
+and
+\[
+ s_{\ell m}=\frac23+\frac13\sum_{i\in\mathrm{active}}
+ \frac{a_i}{\lambda-2k_i}.
+\]
+The checked $(k_1,k_2)=(1,2)$ fixture includes pure-factor and mixed modes,
+factor exchange, an exact rectangular cutoff product, and the residue value
+$\operatorname{Wres}(K^2)=28/27$.  Direct one- and two-dimensional exact
+matrix determinants independently replay every stored paired ratio.
+
+The $(1,0)$ and $(0,1)$ levels each have degeneracy three.  At those levels
+the minimal-vector factor is zero and the separately written Schur factor is
+singular, while their coupled product is $1/3$ per mode.  The correct
+regular-complement prescription therefore carries the finite correction
+$3^{-6}$.  The checked finite-cutoff fixture is exact; the infinite
+bivariate weighted finite-part continuation remains fail-closed.
+
+\begin{verbatim}
+P=spectral.euclidean
+M=product_s2_s2_ghost_schur_spectral_carrier
+PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
+PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
+PYTHONPATH=quantum-weyl python3 -m unittest \
+ quantum-weyl/spectral/euclidean/tests/test_$M.py
+\end{verbatim}
+
+\subsection{Product-background Schur det3 enclosure}
+
+On the $(k_1,k_2)=(1,2)$ fixture, the regular-complement sum is
+\[
+ \log\det{}_3(\mathbf1+K)=
+ \sum_{(\ell,m)\notin\{(0,0),(1,0),(0,1)\}}d_{\ell m}
+ \left[\log(1+K_{\ell m})-K_{\ell m}+\frac12K_{\ell m}^2\right].
+\]
+At rectangular cutoff $L=2400$, the exact bound
+$K\leq4/[3(\lambda-4)]$ reduces the $K>1/100$ sector to the 54 modes with
+$\lambda\leq137$.  Their values are enclosed by the rational alternating
+Taylor series through order 100.  The remaining $5{,}764{,}744$ modes use the
+even order-eight lower sum.  Since all terms are positive, the standard
+$\gamma_N$ estimate for ordinary summation applies.  Exact integer inputs are
+below $2^{53}$, a forty-operation bound and the $51/50$ polynomial condition
+bound give relative per-term error below $10^{-12}$, and the observed sum
+proves the exact small-mode sum is below $1/500$.  The derived absolute
+roundoff bound is below $1.283\times10^{-12}$, hence the declared $10^{-10}$
+cushion is rigorous.  The exact Taylor remainder bound is
+\[
+ \frac{943}{4{,}800{,}000{,}000{,}000}.
+\]
+
+Writing $x=\ell+1/2$, $y=m+1/2$, and $q=x^2+2y^2$, the exterior rectangle is
+bounded using
+\[
+ \sum_m\frac{4xy}{q^3}\leq\frac1{2x^3}+\frac{125}{162x^4},
+ \qquad
+ \sum_\ell\frac{4xy}{q^3}\leq\frac1{4y^3}+\frac{125}{432y^4}.
+\]
+The resulting exact rational tail is below $5.144\times10^{-8}$.  Combining
+the three errors yields
+\[
+ 0.32630391405410603404\ldots
+ <\log\det{}_3(\mathbf1+K)<
+ 0.32630396588976784255\ldots .
+\]
+The independent consumer directly evaluates the large modes and uses an
+order-twelve stable series on the small modes.  It rederives the exterior
+bound and verifies that the exceptional correction remains the separate
+factor $3^{-6}$.
+
+\begin{verbatim}
+P=spectral.euclidean
+M=product_s2_s2_ghost_schur_det3_enclosure
+PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
+PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
+PYTHONPATH=quantum-weyl python3 -m unittest \
+ quantum-weyl/spectral/euclidean/tests/test_$M.py
+\end{verbatim}
+
+\subsection{Sharp Schatten split and critical Schur residue}
+
+Write $S_L=\mathbf1+K$.  The exact resolvent identity gives
+\[
+ K=-\frac13\delta(F+W)^{-1}Wd\Delta_0^{-1},
+ \qquad
+ \sigma_{-2}(K)=-\frac13\frac{\langle\xi,W\xi\rangle}{|\xi|^4}.
+\]
+On a closed compact four-manifold, $K\in\mathcal S_p$ for every $p>2$.
+Thus $K\in\mathcal S_3$, $K^3$ is trace class, and
+\[
+ \det{}_3(\mathbf1+K)
+ =\det\!\left[(\mathbf1+K)e^{-K+K^2/2}\right]
+\]
+is a genuine modified Fredholm determinant.  Its small-norm series begins at
+cubic order:
+\[
+ \log\det{}_3(\mathbf1+K)
+ =\sum_{m\geq3}\frac{(-1)^{m+1}}m\operatorname{Tr}K^m.
+\]
+For one declared trace extension $\mathcal R$, the complete bookkeeping split
+is therefore
+\[
+ \log\operatorname{Det}_{3,\mathcal R}(\mathbf1+K)
+ =\mathcal R(K)-\frac12\mathcal R(K^2)+\log\det{}_3(\mathbf1+K).
+\]
+With $K_1=-B_1/3$, $K_2=B_2/3$, and $K_3=-B_3/3$, this reproduces
+\begin{align*}
+O(W)&:-\tfrac13\mathcal R(B_1),\\
+O(W^2)&:\tfrac13\mathcal R(B_2)-\tfrac1{18}\mathcal R(B_1^2),\\
+O(W^3)&:-\tfrac13\mathcal R(B_3)+\tfrac19\mathcal R(B_1B_2)
+        -\tfrac1{81}\operatorname{Tr}B_1^3.
+\end{align*}
+Only the last cubic term is already in the canonical $\det_3$ tail.
+
+The order-$-4$ symbol of $K^2$ is simply
+\[
+ \sigma_{-4}(K^2)=\frac19\frac{\langle\xi,W\xi\rangle^2}{|\xi|^8}.
+\]
+Using $\operatorname{vol}S^3=2\pi^2$ and
+\[
+ \left\langle n_i n_j n_k n_l\right\rangle_{S^3}
+ =\frac{\delta_{ij}\delta_{kl}+\delta_{ik}\delta_{jl}
+ +\delta_{il}\delta_{jk}}{24}
+\]
+gives
+\[
+ \operatorname{Wres}(K^2)
+ =\frac1{(4\pi)^2}\int
+ \frac{(\operatorname{tr}W)^2+2\operatorname{tr}(W^2)}{108}
+ =\frac1{(4\pi)^2}\int
+ \frac{R^2+2R_{\mu\nu}R^{\mu\nu}}{27}.
+\]
+The producer performs this contraction symbolically for a generic symmetric
+endomorphism.  The verifier uses a different fixed endomorphism, integrates
+its degree-four sphere polynomial monomial by monomial, and rejects
+$108\mapsto109$.  A separate noncommuting $4\times4$ fixture verifies the
+$\det_3$ series through sixth order.
+
+The remaining local residue is obtained without expanding the full symbol
+recursively.  Through order $-4$,
+\[
+ K=-\frac13B_1+\frac13B_2+O(\Psi^{-6}),\quad
+ B_1=\Delta_0^{-1}\delta Wd\Delta_0^{-1},\quad
+ B_2=\Delta_0^{-1}\delta W G_FWd\Delta_0^{-1}.
+\]
+Cyclicity reduces $B_1$ to the heat insertion
+$(\delta Wd)\Delta_0^{-2}$.  The mixed scalar kernel and the principal symbol
+of $B_2$ give
+\begin{align*}
+ \operatorname{Wres}(B_1)
+ &=\frac1{(4\pi)^2}\int
+   \left[-\frac13W^{\mu\nu}R_{\mu\nu}
+          +\frac16(\operatorname{tr}W)R\right],\\
+ \operatorname{Wres}(B_2)
+ &=\frac1{(4\pi)^2}\int\frac12\operatorname{tr}(W^2).
+\end{align*}
+Consequently, for $W=-2\operatorname{Ric}$,
+\[
+ \operatorname{Wres}(K)=\frac1{(4\pi)^2}\int
+ \frac{R^2+4R_{\mu\nu}R^{\mu\nu}}9,
+ \qquad
+ \operatorname{Wres}\log S_L=\frac1{(4\pi)^2}\int
+ \frac{5R^2+22R_{\mu\nu}R^{\mu\nu}}{54}.
+\]
+The latter uses $\operatorname{Wres}\log(1+K)=\operatorname{Wres}(K)
+-\tfrac12\operatorname{Wres}(K^2)$ because every higher power has order
+below $-4$.  The independent verifier reconstructs both coefficients from
+the mixed heat row and the sphere second moment.  It also replays the exact
+Einstein ratio and the isotropic test $W=w\mathbf1$, and rejects a mutated
+mixed-kernel Ricci coefficient.
+
+Choose the positive order-two scalar weight
+\[
+ Q=\Delta_0+\Pi_0,\qquad Q_\mu=Q/\mu^2,qquad
+ \mathcal R_\mu(A)=\underset{z=0}{\operatorname{FP}}
+ \operatorname{TR}'(AQ_\mu^{-z}).
+\]
+The smoothing projector changes no residue.  The weighted-trace Laurent row
+and the square on the dimensionful scale give
+\[
+ \operatorname{TR}'(AQ^{-z})
+ =\frac{\operatorname{Wres}(A)}{2z}+\mathcal R_Q(A)+O(z),qquad
+ \mathcal R_{e^t\mu}(A)-\mathcal R_\mu(A)=t\operatorname{Wres}(A).
+\]
+Thus the exact Schur pole and scale rows are
+\[
+ \underset{z=0}{\operatorname{Res}}\,
+ \operatorname{TR}'((\log S_L)Q^{-z})
+ =\frac1{(4\pi)^2}\int\frac{5R^2+22\operatorname{Ric}^2}{108},
+\]
+\[
+ \frac{\dd}{\dd\log\mu}
+ \log\operatorname{Det}_{3,\mathcal R_\mu}(S_L)
+ =\frac1{(4\pi)^2}\int\frac{5R^2+22\operatorname{Ric}^2}{54}.
+\]
+The independent verifier reconstructs the factor
+`scale power / weight order = 2/2` and rejects the mutated choice $Q/\mu$.
+The generic-background reference-scale finite $\mathcal R_{\mu_0}(K)$ row
+and the finite part of $\mathcal R_{\mu_0}(K^2)$ remain open.  They are not
+determined by these local residue data.  The selected generic weight-raised
+noncommuting multiplicative term is fixed below because it is local.
+
+On the round unit $S^4$, however, the complete scalar spectrum supplies an
+exact benchmark.  After deleting the absent $\ell=0$ gradient and the five
+$\ell=1$ proper-conformal-Killing ghost zero modes,
+\[
+ \lambda_\ell=\ell(\ell+3),\qquad
+ d_\ell=\frac{(2\ell+3)(\ell+2)(\ell+1)}6,
+ \qquad K_\ell=\frac2{\lambda_\ell-6},\qquad \ell\geq2.
+\]
+Write $u_\pm=(7\pm\sqrt{33})/2$,
+$\Psi=\psi(u_-)+\psi(u_+)$ and
+$\Psi_1=\psi^{(1)}(u_-)-\psi^{(1)}(u_+)$.  At $\mu_0=1$ in inverse-radius
+units, exact Hurwitz-zeta continuation and the $B=\Delta_0-6$ to
+$Q=\Delta_0$ weight change give
+\[
+ \mathcal R_{\Delta_0}(K)=-\frac{20}{9}-\frac83\Psi,
+ \qquad
+ \operatorname{FP}\mathcal R_{\Delta_0}(K^2)
+ =-\frac23\Psi+\frac{16}{3\sqrt{33}}\Psi_1.
+\]
+The independent verifier reconstructs the finite parts from a convergent
+Hurwitz-zeta binomial series and obtains
+\[
+ -3.0967576144286354\ldots,qquad
+ 2.7591028732128106\ldots.
+\]
+It also checks the exact weight shift $(-2,0)$ and the five-dimensional
+$\ell=1$ kernel.  The remaining trace-class series is bounded without a
+floating-point tail assumption.  Even alternating-log bounds cover
+$2\leq\ell\leq20$; the rest is reduced to positive Hurwitz-zeta tails whose
+Euler--Maclaurin remainders are bounded in exact rational arithmetic.  This
+gives
+\[
+ \log\det{}_3(I+K)
+ =0.4981635654196290984312532999414818723861192934\ldots
+\]
+with interval width below $5.8\times10^{-48}$, and therefore
+\[
+ \log\operatorname{Det}_{3,\mathcal R_{\Delta_0}}(S_L)
+ =-3.9781454856154116274753955548059869205821661933\ldots.
+\]
+An independent direct infinite-mode summation lies strictly inside the
+rational enclosure.  A rank-one smoothing mutation changes the two finite rows
+by $7/11$ and $126/121$ without changing any homogeneous symbol or residue.
+This proves that the generic gate needs a full primed Green kernel or
+spectral measure rather than another local heat coefficient.
+
+The commuting round-sphere factorization has one further exact local row.
+On the primed $\ell\geq2$ carrier let
+$Q=\Delta_0$, $A=\Delta_0-4$ and $B=\Delta_0-6$, so $S_L=AB^{-1}$.
+The zeta-to-weighted determinant comparison gives
+\[
+ m_Q(A,B)=-\frac14(4^2-6^2)\operatorname{Wres}(Q^{-2}),
+ \qquad
+ \operatorname{Wres}(Q^{-2})=\frac13,
+\]
+and hence
+\[
+ m_Q(A,B)=\frac53.
+\]
+Combining this with the weighted modified determinant yields
+\[
+ \log\det_\zeta A-\log\det_\zeta B
+ =-2.3114788189487449608087288881393202539\ldots.
+\]
+The independent verifier reconstructs the same value from 320 exact
+Hurwitz-zeta continuation terms and rejects mutations of the residue, shift
+pair, zero-mode policy, or generic-background claim flag.  This special
+commuting result uses an Einstein numerator/denominator factorization.  It is
+not the generic weight-raised prescription computed next.
+
+For the generic carrier, no canonical numerator/denominator pair exists.
+The already frozen weight instead selects
+\[
+ A=S_LQ,\qquad B=Q,\qquad Q=\Delta_0+\Pi_0,
+\]
+with the left-Schur ordering and a common Agmon sector on one connected
+admissible stratum.  If $X=\log S_L\in\Psi^{-2}$ and $Y=\log Q$, then
+\[
+ \log(S_LQ)-X-Y
+ =\frac12[X,Y]+\frac1{12}[Y,[Y,X]]\pmod{\Psi^{-5}}.
+\]
+The two displayed rows have orders $-3$ and $-4$; the next independent row
+has order $-6$.  Applying the $Q$-weighted commutator defect with
+$Y=\log Q$ makes both surviving commutator traces vanish.  Cross terms with
+$X$ lie below residue order and $(\log(1+K))^2=K^2\pmod{\Psi^{-6}}$.
+Consequently
+\[
+ \boxed{
+ m_Q^{\rm wr}(S_L)
+ =\log\det_\zeta(S_LQ)-\log\det_\zeta Q-\operatorname{tr}^Q\log S_L
+ =-\frac14\operatorname{Wres}(K^2)}
+\]
+and hence
+\[
+ m_Q^{\rm wr}(S_L)
+ =-\frac1{(4\pi)^2}\int
+ \frac{R^2+2\operatorname{Ric}^2}{108}.
+\]
+On round unit $S^4$ the residue is $4/3$, the defect is $-1/3$, and the
+zeta ratio is
+\[
+ -4.3114788189487449608087288881393202539\ldots .
+\]
+An independent Hurwitz-zeta continuation replays the last number.  Its
+difference from the preceding $5/3$ defect is exactly $2$ because the
+factorization conventions differ.  This closes the selected generic local
+BCH row while leaving the global generic finite rows open.
+
+\begin{verbatim}
+P=spectral.euclidean
+M=generic_background_ghost_schur_schatten_split
+PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
+PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
+PYTHONPATH=quantum-weyl pytest -q \
+ quantum-weyl/spectral/euclidean/tests/test_$M.py
+
+M=generic_background_ghost_schur_wodzicki_residue
+PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
+PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
+PYTHONPATH=quantum-weyl pytest -q \
+ quantum-weyl/spectral/euclidean/tests/test_$M.py
+
+M=generic_background_ghost_schur_weighted_trace_scale
+PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
+PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
+PYTHONPATH=quantum-weyl pytest -q \
+ quantum-weyl/spectral/euclidean/tests/test_$M.py
+
+M=round_s4_ghost_schur_finite_weighted_traces
+PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
+PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
+PYTHONPATH=quantum-weyl pytest -q \
+ quantum-weyl/spectral/euclidean/tests/test_$M.py
+
+M=round_s4_ghost_schur_zeta_factorization
+PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
+PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
+PYTHONPATH=quantum-weyl pytest -q \
+ quantum-weyl/spectral/euclidean/tests/test_$M.py
+
+M=generic_background_ghost_schur_weight_raised_zeta_factorization
+PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
+PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
+PYTHONPATH=quantum-weyl pytest -q \
+ quantum-weyl/spectral/euclidean/tests/test_$M.py
+\end{verbatim}
+
+\subsection{Same-gauge physical-Hessian linear-curvature import}
+
+The source gauge
+$(\gamma_1,\gamma_2,\tau)=(1/2,-1/6,-1/4)$, together with $h=0$, is
+exactly the repository gauge
+$F_\mu=\nabla^\nu h_{\mu\nu}-(1/4)\nabla_\mu h$, $F_W=h$.
+The imported traceless rank-nine operator is
+\[
+ \mathcal H_{\rm src}=\widehat1\Box^2
+  +V^{\rho\sigma}\nabla_\rho\nabla_\sigma
+  +N^\rho\nabla_\rho+U+O(\mathcal R^2).
+\]
+The exact coefficient-ledger sizes are
+\[
+\begin{array}{c|ccc}
+ &V^{\rho\sigma}&N^\rho&U\\ \hline
+ \text{source rows}&9&8&5\\
+ R=0\text{ surviving rows}&7&6&3.
+\end{array}
+\]
+Every row carries its rational coefficient, source index seed, derivative
+orders, scalar-flat disposition and common formula digest.  The source
+archive and decompressed TeX hashes are also pinned, so the imported formula
+can be checked without trusting a paraphrase.
+
+The source quadratic prefactor $1/4$ means
+$\mathcal H_{\rm repo}=\mathcal H_{\rm src}/2$.  The generator independently
+constructs the traceless projector and verifies rank nine and idempotence.  It
+also checks the round-$S^4$ linear restriction: the source gives
+$A^2+6KA$, while the full repository fixture is
+$\tfrac12(A+2K)(A+4K)$.  The missing $+8K^2$ source term is retained as a
+negative control against promotion to a full generic Hessian.
+
+This input closes the tensor vertex
+$\operatorname{Tr}[(\mathcal H_0^{-1}\mathcal H_1)^3]$.  The exact raw
+mixed fixture below makes $\mathcal H_2$ operational and its Mellin scale row
+exact; the later five-carrier receipt closes the generic covariant
+triangle/contact assembly for the physical Hessian.
+
+\begin{verbatim}
+MOD="spectral.euclidean.generic_background_physical_hessian_"
+MOD="${MOD}linear_curvature"
+PYTHONPATH=quantum-weyl python3 -m "$MOD" --check
+MOD="spectral.euclidean.verify_generic_background_physical_hessian_"
+MOD="${MOD}linear_curvature"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+TEST="spectral.euclidean.tests.test_generic_background_physical_"
+TEST="${TEST}hessian_linear_curvature"
+PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
+\end{verbatim}
+
+\subsection{Projected algebraic curvature-squared Hessian import}
+
+The missing zero-order block is imported from the projected monic $U$ in the
+linear-split appendix of Ohta--Percacci, arXiv:1506.05526.  The source archive
+and decompressed TeX hashes are respectively
+\begin{verbatim}
+f340a38925ea92a23b8ec0b08d0a871a77f549c79d7c41962158bcac6787fe39
+03b79eb2fa03754c04aa1e1d653d4690e7a44a7f48f9ad402826ea670a8529e0
+\end{verbatim}
+The exact pure-Weyl specialization is
+\[
+ (\alpha,\beta,\gamma)=\left(\frac16,-1,\frac12\right),
+ \qquad K=\frac14P,
+ \qquad \mathcal H_2=4PWP.
+\]
+All eighteen projected rows are retained.  Six are killed by the traceless
+projector, one has the exact zero coefficient $\beta/2+\gamma=0$, and nine
+nonzero rows survive after imposing $R=0$.
+
+The source choice $(c,d)=(2/3,1)$ and repository choice
+$(-1/3,0)$ obey the same minimality condition $c-d=-1/3$.  Their exact
+ordering difference is
+\[
+ S_{\rm gf}(0)-S_{\rm gf}(1)
+ =\frac12\int\!\sqrt g\,
+ (\nabla\!\cdot h)_\mu R^{\mu\nu}(\nabla\!\cdot h)_\nu,
+\]
+or $\mathcal H_{1,\rm repo}-\mathcal H_{1,\rm src}=2G_{\rm Ric}$ in the
+monic Hessian.  Five rational component fixtures give the ratio two exactly.
+Because this carrier is linear in background curvature and differentiated in
+both fluctuation slots, it changes $\mathcal H_1$ but not algebraic
+$\mathcal H_2$.
+
+As a normalization guard, the thirteen unprojected source-$W$ rows evaluated
+on a unit round-$S^4$ TT tensor contribute
+\[
+ (18,-8,-6,6,36,0,32,0,0,-18,0,0,-36),
+\]
+which sum to $24$.  The separately known contracted-derivative contribution
+from $\mathcal H_1$ is $-16$, leaving the monic round remainder $+8$.
+
+\begin{verbatim}
+MOD="spectral.euclidean.generic_background_physical_hessian_"
+MOD="${MOD}curvature_squared"
+PYTHONPATH=quantum-weyl python3 -m "$MOD" --check
+MOD="spectral.euclidean.verify_generic_background_physical_hessian_"
+MOD="${MOD}curvature_squared"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+TEST="spectral.euclidean.tests.test_generic_background_physical_"
+TEST="${TEST}hessian_curvature_squared"
+PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
+\end{verbatim}
+
+This closes the algebraic $\mathcal H_2$ input, not the physical coefficient
+row.  Its exact polarization and first mixed trace fixture are supplied next.
+
+\subsection{Exact raw mixed physical corner/endpoint fixture}
+
+Use the rational equal-box scalar-flat TT momenta
+\[
+ k_1=(1,0,0,0),\quad
+ k_2=\tfrac12(-1,1,1,1),\quad
+ k_3=\tfrac12(-1,-1,-1,-1),
+ \qquad k_1+k_2+k_3=0,\quad k_i^2=1.
+\]
+Polarizing the nine scalar-flat $\mathcal H_2$ rows between each labelled
+pair of external curvatures produces three rank-nine, formally self-adjoint
+matrices.  An independent regression reconstructs the relevant round-source
+rows term by term.
+
+The trace-log terms have different parameter carriers:
+\[
+ \frac16\operatorname{Tr}(G\mathcal H_1)^3,
+ \qquad
+ -\frac12\operatorname{Tr}(G\mathcal H_1G\mathcal H_2).
+\]
+The first is a two-dimensional triangle density; the second is a
+one-dimensional bubble with two endpoints.  With one common dimensionless
+endpoint cutoff, the two cyclic triangle orientations have corner weights
+\[
+ \left(-\frac{161}{72},-\frac{137}{108},-\frac{461}{432}\right),
+ \qquad
+ \left(-\frac{461}{432},-\frac{137}{108},-\frac{161}{72}\right).
+\]
+Including cyclic multiplicity three gives
+\[
+ c^{\rm raw}_{\mathcal H_1^3}=-\frac{1975}{72}.
+\]
+The equal left/right endpoint weights of the three mixed bubbles are
+\[
+ \frac{1127}{54},\qquad \frac{115}{9},\qquad \frac{887}{54},
+\]
+and hence
+\[
+ c^{\rm raw}_{\mathcal H_1\mathcal H_2}=\frac{2704}{27},
+ \qquad
+ c^{\rm raw}_{\rm physical}=\frac{15707}{216}\ne0,
+\]
+before the common $(4\pi)^{-2}$ factor.  This exact fixture rejects universal
+raw algebraic cancellation by $\mathcal H_2$.  By itself it does not identify
+the triangle and bubble carriers in a renormalized distribution; the following
+prescription fixes that extension only on the declared equal-box fixture.
+
+The fixture-level distribution is fixed by a symmetric sector prescription.
+Each labelled triangle is decomposed into
+$S_i=\{\alpha_i\geq\alpha_j,\alpha_k\}$ and parameterized by
+\[
+ \alpha_i=1-r,\qquad \alpha_j=rt,\qquad \alpha_k=r(1-t),
+\]
+with the exact piecewise $r_{\max}(t)$ imposed by the sector inequalities.
+Each bubble is divided into the two half-intervals.  A common Mellin parameter
+$s$ and $z=\mu^2/Q^2$ on all eighteen labelled triangle boundaries and six
+bubble endpoints gives
+\[
+ \frac{z^s}{s}=\frac1s+\log z+O(s),\qquad
+ \frac{\partial\Gamma_{\rm fixture}^{\rm MS}}{\partial\log\mu^2}
+ =\frac1{(4\pi)^2}\frac{15707}{216}.
+\]
+Thus the scale row is exact on the fixture.  The generic covariant Volterra
+lift is now fixed as follows.  With $H_0=L^2$,
+\[
+ G_0=\int_0^\infty u e^{-uL}\,du.
+\]
+There are six ordered three-$H_1$ cells and three labelled $H_1$--$H_2$
+contact cells.  The exact changes of variables and squared-propagator measures
+are
+\[
+ (u_1,u_2,u_3)=T(1-r,rt,r(1-t)),\quad
+ d^3u\,u_1u_2u_3=T^5r^3(1-r)t(1-t)\,dT\,dr\,dt,
+\]
+and
+\[
+ (u_1,u_2)=T(x,1-x),\quad
+ d^2u\,u_1u_2=T^3x(1-x)\,dT\,dx.
+\]
+The same Mellin parameter extends every resolved boundary.  Exact
+noncommuting-matrix replay verifies the trace-log coefficients and cyclicity.
+For each singled $H_1$ leg $i$, exact endpoint evaluation gives
+\[
+ -\frac{\operatorname{tr}(H_{2,jk}H_{1,i}(k_i,0))}{2(k_i^2)^2}
+ =-\frac{\operatorname{tr}(H_{2,jk}H_{1,i}(k_i,-k_i))}{2(k_i^2)^2}.
+\]
+All three contacts are projected to 33 raw five-carrier rows using 28 exact
+training fixtures and two unseen replays.  Each row has denominator
+$(x_1x_2x_3)^2$, the prescribed homogeneous numerator degree, and preserves
+the symmetric $I_{28}$ quotient relation coefficientwise.  The generic scale
+kernel is twice the endpoint residue times $\log(\mu^2/x_i)$.  Combining the
+six ordered triangle corner rows with all six contact endpoints at
+$x_1=x_2=x_3=1$ gives
+\[
+ -\frac{1975}{72}+\frac{2704}{27}=\frac{15707}{216}.
+\]
+This exact incidence refutes algebraic $H_2$ cancellation at the symmetric
+point.  The three generic-box triangle corner residues are now integrated
+exactly for all eleven channels.  Their full contact incidence is nonzero,
+so $M_{14}$ is disposed as a Mellin-renormalized scale row.  The complete
+quadratic contact density is then reconstructed from its two endpoints,
+midpoint and Wick-pair coefficient.  Common Mellin minimal subtraction gives
+the exact regular remainder
+\[
+ -\frac{4C(-p/2)-2C(-p)-2C(0)}{2p^4}-\frac{P}{4p^2}.
+\]
+All three finite contacts project to another 33 exact homogeneous rational
+rows; two unseen tensor fixtures pass, the $I_{28}$ relation is zero
+coefficientwise, and the equal-box TT sum is $3188/27$.  The renormalized
+triangle carrier span is now complete.  Starting from the rank-49 tangent
+plus scalar-triangle system, the $e_3$ singlet and the pair
+$e_3(\alpha_1-\alpha_2)$, $e_3(\alpha_2-\alpha_0)$ raise the exact generic
+rank to $50,51,52$.  The pair is the standard $S_3$ representation, and five
+orbit-representative generic rank tests plus an exact generated crosswalk
+cover all eleven physical rows.  The three renormalized new-master values are
+exact, as are all sixty-six reduced rational master-coordinate functions.
+The selected minor factors into chart terms times $\lambda^5$; individual
+coordinates are reduced separately.  All eleven relative-IBP boundary fluxes
+are now exact.  The 33 quadratic angular corner rows reduce to two global
+bubble-log ratios and one rational corner term, producing complete
+seven-function structured decompositions for every channel.  An independent
+two-point exact replay checks the tangent primitive, corner moments, basis
+assembly and scale recipes; all eleven symmetric scale rows reproduce the
+earlier obstruction ledger.  Adding the three finite contact rows for each
+orientation and the combined triangle/contact scale row now gives five exact
+carrier-labelled physical-Hessian form-factor functions in the common
+Mellin-MS representative.  The $1+3+3+3+1$ orientation channels satisfy the
+symmetric-$I_{28}$ relation coefficientwise and span the ten-dimensional
+quotient.  Independent finite-$C^2$ normalization and the generic ghost and
+remaining BV finite rows remain open, so these are not yet the complete
+repository form factors.
+
+The complete integrated scalar-flat ghost $n=3$ triangle is now added to
+this physical representative channel by channel.  The source determinant
+multipliers are already included, and the resulting seven coordinate recipes
+pass two exact generic holdouts per channel.  The symmetric-$I_{28}$ relation
+remains zero coefficientwise, so this coefficient-bearing partial-BV
+representative still has quotient dimension ten.  Curved-Endo ghost
+$n=1/n=2$, generic finite Schur rows, remaining BV sectors and finite-$C^2$
+normalization remain open.
+
+The pure minimal-vector $n=1+n=2$ slice is now integrated separately.  Since
+every projected numerator has degree at most two, five exact simplex boundary
+identities solve its complete moment system.  Six channels are nonzero, five
+vanish, and all results use only the already certified scalar triangle, two
+bubble-log ratios and rational terms.  No new transcendental master is
+introduced.  The independent consumer reconstructs the exact moment matrix
+without importing producer formulas and numerically quadratures every
+nonzero channel at $(x_1,x_2,x_3)=(2,3,5)$.
+
+Adding these functions to the physical-plus-ghost-$n=3$ ledger yields the
+future-proof partial-BV five-carrier representative.  The symmetric-$I_{28}$
+relation remains zero in all seven function coordinates and the scale row,
+so the quotient dimension remains ten.  Exactly three longitudinal/mixed
+$D_W$ carriers, their generic finite Schur data and the remaining BV sectors
+remain open.
+
+\begin{verbatim}
+MOD="spectral.euclidean.generic_background_ghost_n1_n2_vector_"
+MOD="${MOD}integrated_functions"
+PYTHONPATH=quantum-weyl python3 -m "$MOD" --check
+CHECK="spectral.euclidean.verify_generic_background_ghost_n1_n2_vector_"
+CHECK="${CHECK}integrated_functions"
+PYTHONPATH=quantum-weyl python3 -m "$CHECK"
+MOD="spectral.euclidean.generic_background_partial_bv_"
+MOD="${MOD}third_curvature_form_factors"
+PYTHONPATH=quantum-weyl python3 -m "$MOD" --check
+CHECK="spectral.euclidean.verify_generic_background_partial_bv_"
+CHECK="${CHECK}third_curvature_form_factors"
+PYTHONPATH=quantum-weyl python3 -m "$CHECK"
+\end{verbatim}
+
+\begin{verbatim}
+MOD="spectral.euclidean.generic_background_physical_plus_ghost_n3_"
+MOD="${MOD}third_curvature_form_factors"
+PYTHONPATH=quantum-weyl python3 -m "$MOD" --check
+MOD="spectral.euclidean.verify_generic_background_physical_plus_ghost_n3_"
+MOD="${MOD}third_curvature_form_factors"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+\end{verbatim}
+
+\begin{verbatim}
+MOD="spectral.euclidean.generic_background_physical_hessian_"
+MOD="${MOD}third_curvature_form_factors"
+PYTHONPATH=quantum-weyl python3 -m "$MOD" --check
+MOD="spectral.euclidean.verify_generic_background_physical_hessian_"
+MOD="${MOD}third_curvature_form_factors"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+MOD="spectral.euclidean.generic_background_physical_hessian_"
+MOD="${MOD}mixed_h1_h2_corner_fixture"
+PYTHONPATH=quantum-weyl python3 -m "$MOD" --check
+MOD="spectral.euclidean.verify_generic_background_physical_hessian_"
+MOD="${MOD}mixed_h1_h2_corner_fixture"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+TEST="spectral.euclidean.tests.test_generic_background_physical_"
+TEST="${TEST}hessian_mixed_h1_h2_corner_fixture"
+PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
+MOD="spectral.euclidean.generic_background_physical_hessian_"
+MOD="${MOD}mellin_subtraction_scale_row"
+PYTHONPATH=quantum-weyl python3 -m "$MOD" --check
+MOD="spectral.euclidean.verify_generic_background_physical_hessian_"
+MOD="${MOD}mellin_subtraction_scale_row"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+MOD="spectral.euclidean.generic_background_physical_hessian_"
+MOD="${MOD}covariant_volterra_carrier"
+PYTHONPATH=quantum-weyl python3 -m "$MOD" --check
+MOD="spectral.euclidean.verify_generic_background_physical_hessian_"
+MOD="${MOD}covariant_volterra_carrier"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+\end{verbatim}
+
+\subsection{Exact physical three-linear interior triangle fixture}
+
+The scalar-flat source rows are converted to an operational rank-nine
+traceless-metric vertex using the Fourier convention
+$\nabla\mapsto+iq$.  The source seed is not itself a valid oriented kernel;
+formal adjunction gives
+\[
+ A(k,q)=\frac12\bigl[S(k,q)+S(-k,q+k)^T\bigr],
+ \qquad A(k,q)=A(-k,q+k)^T.
+\]
+The independent verifier finds no defects in the completed identity and 62
+defects when the completion is omitted.  It also reconstructs each external
+linearized Riemann tensor from a transverse-traceless Ricci carrier and checks
+both pair antisymmetries, pair exchange, the first Bianchi identity and Ricci
+contraction.
+
+For
+\[
+ k_1=(1,-1,-2,-2),\quad k_2=(-2,1,0,2),\quad k_3=(1,0,2,0)
+\]
+and $(\alpha_0,\alpha_1,\alpha_2)=(7/15,1/5,1/3)$, the Feynman denominator is
+$\Delta=104/45$.  The oriented rank-nine trace
+\[
+ \operatorname{tr}[A_3(k_3,q_2)A_2(k_2,q_1)A_1(k_1,q_0)]
+\]
+has 210 canonical monomials through loop degree six.  After the six-
+denominator Feynman identity and the bosonic $\tfrac12\operatorname{Tr}\log$
+coefficient, its loop degrees $0,2,4,6$ carry exact Wick weights
+\[
+ 1,\qquad\frac16,\qquad\frac1{24},\qquad\frac1{48}.
+\]
+Their common $\Delta^{-4}$ numerator and final kernel are respectively
+\[
+ -\frac{3532544138843839}{11210083593750},\qquad
+ -\frac{3532544138843839}{319810083840000}\,(4\pi)^{-2}.
+\]
+This nonzero value is one generic interior fixture.  The separate projection
+receipt below closes the full alpha polynomial and five-carrier projection;
+the integrated renormalized triangle remains fail-closed.
+
+\begin{verbatim}
+MOD="spectral.euclidean.generic_background_physical_hessian_"
+MOD="${MOD}n3_triangle_fixture"
+PYTHONPATH=quantum-weyl python3 -m "$MOD" --check
+MOD="spectral.euclidean.verify_generic_background_physical_hessian_"
+MOD="${MOD}n3_triangle_fixture"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+TEST="spectral.euclidean.tests.test_generic_background_physical_"
+TEST="${TEST}hessian_n3_triangle_fixture"
+PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
+\end{verbatim}
+
+\subsection{Exact physical three-linear five-carrier projection}
+
+The full rank-nine trace is evaluated as an exact sparse polynomial in
+$(\alpha_1,\alpha_2,\ell_0,\ldots,\ell_3)$, avoiding raw tensor-graph
+expansion.  On the scalar-flat TT carrier, reconstruction of each external
+linearized Riemann tensor supplies at most one inverse box.  Thus the uniform
+form is
+\[
+ (4\pi)^{-2}\sum_A I_A
+ \frac{N_A(\alpha_1,\alpha_2;x_1,x_2,x_3)}
+ {x_1x_2x_3\,\Delta^4},
+\]
+and after clearing $x_1x_2x_3$ the numerator degree is $6-d_A/2$.
+The degree-six box space has 28 monomials.  Twenty-eight deterministic exact
+momentum fixtures have modular rank 28 at the prime $1000003$, which proves
+the integral evaluation determinant is nonzero over $\mathbb Q$.  Exact
+rational interpolation gives 5755 nonzero terms across the eleven raw
+channels in the symmetric-$I_{28}$ quotient section.  Two unseen momentum
+fixtures replay all channels with zero defects.  The formula digest is
+\begin{verbatim}
+7c91744da094939e86e96a6807b8f406c01b1e4b2991ef235e11dea2c2b3b3fe
+\end{verbatim}
+The uniform inverse boxes are a feature of the declared scalar-flat
+$K/\mathrm{Ricci}$ coordinate and are not promoted to physical poles.
+
+\begin{verbatim}
+MOD="spectral.euclidean.generic_background_physical_hessian_"
+MOD="${MOD}n3_five_carrier_projection"
+PYTHONPATH=quantum-weyl python3 -m "$MOD" --check-stored
+MOD="spectral.euclidean.verify_generic_background_physical_hessian_"
+MOD="${MOD}n3_five_carrier_projection"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+TEST="spectral.euclidean.tests.test_generic_background_physical_"
+TEST="${TEST}hessian_n3_five_carrier_projection"
+PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
+\end{verbatim}
+
+The exhaustive generator uses \texttt{--check}; its exact fixture coordinates are
+content-addressed under ignored build storage.  Neither rail integrates the
+generic simplex rows.  The exact raw mixed fixture above does not replace the
+missing covariant subtraction and renormalized assembly.
+
+\subsection{\texorpdfstring{Exact obstruction to isolated three-$\mathcal H_1$ integration}{Exact obstruction to isolated three-H1 integration}}
+
+At the symmetric box fixture, write
+\[
+ e_2=\alpha_0\alpha_1+\alpha_1\alpha_2+\alpha_2\alpha_0,
+ \qquad e_3=\alpha_0\alpha_1\alpha_2.
+\]
+The independent replay averages each of the eleven exact physical rows over
+$S_3$ and reconstructs it in the invariant monomials $e_2^ie_3^j$ through
+alpha degree nine.  The occupied pole-four relative-IBP-plus-master span has
+rank $49$.  Every occupied invariant signature remains in that span except
+\[
+ M_{14}=\frac{e_3}{e_2^4},
+\]
+which raises the rank to $50$.  The certificate stores a normalized dual
+functional on all 55 affine alpha monomials: it annihilates the rank-$49$
+span and evaluates to one on $e_3$.
+
+With corner coordinates
+$\alpha_0=1-\epsilon$, $\alpha_1=\epsilon t$ and
+$\alpha_2=\epsilon(1-t)$, including the simplex Jacobian,
+\[
+ M_{14}\,\dd^2\alpha
+ =\frac{t(1-t)}{\epsilon}\,\dd\epsilon\,\dd t+O(1).
+\]
+The angular integral is $1/6$ at each of three corners.  The raw-channel
+$M_{14}$ coefficients are $15/2$ for $I_{10}$, $17/18$ for each $I_{24}$,
+$-121/9$ for each $I_{25}$, zero for each $I_{28}$, and $176/3$ for
+$I_{29}$.  Thus the isolated physical three-$\mathcal H_1$ trace is
+logarithmically corner divergent.  This is a minimal-missing-input theorem.
+The later equal-box mixed fixture excludes universal raw algebraic
+cancellation by $\mathcal H_2$, but the triangle and bubble carriers still
+require an explicit local covariant subtraction/distribution extension before
+this class can be disposed.
+
+\begin{verbatim}
+MOD="spectral.euclidean.generic_background_physical_hessian_"
+MOD="${MOD}n3_integration_obstruction"
+PYTHONPATH=quantum-weyl python3 -m "$MOD" --check
+PYTHONPATH=quantum-weyl python3 \
+  quantum-weyl/spectral/euclidean/verify_generic_background_\
+physical_hessian_n3_integration_obstruction.py
+TEST="spectral.euclidean.tests.test_generic_background_physical_"
+TEST="${TEST}hessian_n3_integration_obstruction"
+PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
+\end{verbatim}
+
+\subsection{Exact three-insertion adiabatic angular carrier}
+
+At cubic curvature order the three-insertion row uses only the flat Endo
+inverse
+\[
+ G_0(p)=\frac1{p^2}P(n),\qquad
+ P(n)=I-\frac13nn^T,\qquad n=\frac p{|p|}.
+\]
+For a symmetric Ricci endomorphism $R$, the independent verifier enumerates
+all pairings in the second, fourth, and sixth isotropic sphere moments and
+obtains
+\[
+ \left\langle\operatorname{tr}(PRPRPR)\right\rangle_{S^3}
+ =\frac{503}{648}\operatorname{tr}R^3
+ +\frac{11}{864}(\operatorname{tr}R)(\operatorname{tr}R^2)
+ -\frac1{5184}(\operatorname{tr}R)^3.
+\]
+Multiplication by $W^3=(-2R)^3$ and by the $1/3$ coefficient in
+$\operatorname{Tr}\log(1+G_0W)$ gives
+\[
+ J_3\left[-\frac{503}{243}\operatorname{tr}R^3
+ -\frac{11}{324}(\operatorname{tr}R)(\operatorname{tr}R^2)
+ +\frac1{1944}(\operatorname{tr}R)^3\right],
+ \qquad
+ J_3=\int\frac{d^4p}{(2\pi)^4}\frac1{(p^2)^3}.
+\]
+On the scalar-flat carrier only the first term remains.  This is an exact
+tensor numerator, not the full triangle form factor: at zero external
+momentum $J_3$ is scaleless and infrared singular.  The nonzero-momentum
+triangle and its repository projection are certified separately; the three
+longitudinal $D_W$ one-/two-insertion towers are resummed by the preceding
+Schur factor.  Its $K$, $K^2$, and logarithmic residues and the declared
+order-two weighted-trace pole/scale row are exact; the round-$S^4$ finite
+rows, canonical $\det_3$ tail, weighted modified determinant, and
+zeta-to-weighted defect $5/3$ are complete.  Their generic finite versions
+require a full primed Green/spectral carrier.  For the selected generic
+weight-raised convention the noncommuting BCH trace and local
+$-\tfrac14\operatorname{Wres}(K^2)$ term are exact.
+Polarizing the cubic polynomial gives the complete zero-momentum $S_3$
+carrier on $(R_1,R_2,R_3)$: its three basis elements are the symmetrized
+cyclic trace, the cyclic sum of one trace times one pair trace, and the product
+of three traces, with the same three coefficients shown above.  The verifier
+checks all six permutations on noncommuting symmetric matrices and recovers
+the diagonal polynomial.
+
+\begin{verbatim}
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.generic_background_ghost_n3_adiabatic_carrier --check
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.verify_generic_background_ghost_n3_adiabatic_carrier
+PYTHONPATH=quantum-weyl python3 -m unittest \
+  spectral.euclidean.tests.test_generic_background_ghost_n3_adiabatic_carrier
+\end{verbatim}
+
+\subsection{Exact nonzero-momentum three-insertion parametric kernel}
+
+For generic nonexceptional Euclidean momenta $k_1+k_2+k_3=0$, route
+$q_0=p$, $q_1=p+k_1$, and $q_2=p-k_3$.  The complete labelled-Ricci
+integrand is
+\[
+ \frac{\operatorname{tr}[\Pi(q_0)R_1\Pi(q_1)R_2\Pi(q_2)R_3]}
+ {q_0^2q_1^2q_2^2},
+ \qquad
+ \Pi(q)=I-\frac13\frac{qq^T}{q^2}.
+\]
+Expansion of the three longitudinal projectors gives exactly eight sectors,
+with multiplicities $(1,3,3,1)$.  If a sector contains $s$ longitudinal
+projectors, Feynman parametrization and the shifted four-dimensional loop
+integral give rows $m=0,\ldots,s$ with coefficient and denominator
+\[
+ c_{s,m}=\frac{(s-m)!}{2^m},\qquad
+ \Delta^{m-s-1},
+ \]
+where
+\[
+ \Delta=\alpha_0\alpha_1k_1^2+
+        \alpha_1\alpha_2k_2^2+
+        \alpha_2\alpha_0k_3^2,
+ \qquad \alpha_0+\alpha_1+\alpha_2=1.
+\]
+There are twenty rational Wick rows in total.  The combined $W^3$ and
+$\operatorname{Tr}\log$ multiplier is
+\[
+ -\frac83(4\pi)^{-2}.
+\]
+An independent
+exact replay checks the direct eight-sector integrand and cyclic covariance
+on noncommuting symmetric endomorphisms.  This closes the generic labelled-
+Ricci parametric triangle before its separately certified repository
+projection.  The zero-derivative sector can feed $I_{10}$, while the
+longitudinal sectors carry two, four, and six external derivatives and can
+feed $I_{24},I_{25},I_{28},I_{29}$.  The three longitudinal $D_W$
+one-/two-insertion towers are resummed by the preceding Schur factor; its
+$K$, $K^2$, and logarithmic residues and the declared order-two
+weighted-trace pole/scale row are fixed.  On round $S^4$ the two finite trace
+rows, canonical $\det_3$ tail, weighted modified determinant, and
+zeta-to-weighted defect $5/3$ are complete.  Their generic finite versions
+and the renormalized physical tensor trace remain unevaluated.  The exact raw
+mixed fixture is nonzero, but still lacks the covariant subtraction joining
+triangle corners to bubble endpoints; the selected generic
+weight-raised BCH residue is exact.
+
+\begin{verbatim}
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.generic_background_ghost_n3_triangle_kernel --check
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.verify_generic_background_ghost_n3_triangle_kernel
+PYTHONPATH=quantum-weyl python3 -m unittest \
+  spectral.euclidean.tests.test_generic_background_ghost_n3_triangle_kernel
+\end{verbatim}
+
+\subsection{Scalar-flat \texorpdfstring{$K$}{K}--Ricci normalization crosswalk}
+
+The carrier convention is
+\[
+ K_{\mu\nu}=\frac{2}{\Box}\nabla^\beta\nabla^\alpha
+ C_{\alpha\mu\beta\nu}.
+\]
+In four dimensions, the contracted Weyl identity contributes the coefficient
+$(d-3)/(d-2)=1/2$.  On the declared scalar-flat source complement, the
+contracted Bianchi identity and
+$[\nabla,\nabla]\operatorname{Ric}=O(\mathcal R^2)$ therefore give
+\[
+ \nabla^\beta\nabla^\alpha C_{\alpha\mu\beta\nu}
+ =\frac12\Box R_{\mu\nu}+O(\mathcal R^2),
+ \qquad
+ K_{\mu\nu}=R_{\mu\nu}+O(\mathcal R^2).
+\]
+Replacing one of three linear $K$ factors by the remainder first contributes
+at order $2+1+1=4$.  Thus the labelled cubic $K$ product and labelled cubic
+Ricci product agree through $O(\mathcal R^3)$.  An independent exact fixture
+with $k=(1,0,0,0)$ and a nontrivial TT polarization verifies componentwise
+$k^\alpha k^\beta C_{\alpha\mu\beta\nu}
+=(1/2)k^2R_{\mu\nu}$, guarding the sign and index order.
+
+This receipt closes the normalization seam.  Derivative counting maps
+the zero-, one-, two- and three-longitudinal-projector sectors respectively
+to possible derivative orders $(0)$, $(0,2)$, $(0,2,4)$ and $(0,2,4,6)$.
+Consequently the complete target is
+$(I_{10},I_{24},I_{25},I_{28},I_{29})$.  The next subsection performs the
+parametric tensor/form-factor projection.
+
+\begin{verbatim}
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.scalar_flat_k_ricci_crosswalk --check
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_scalar_flat_k_ricci_crosswalk
+PYTHONPATH=quantum-weyl python3 -m unittest \
+  transfer.tests.test_scalar_flat_k_ricci_crosswalk
+\end{verbatim}
+
+\subsection{Exact ghost \texorpdfstring{$n=3$}{n=3} five-carrier projection}
+
+The five carrier labels have eleven effective labelled orientations with
+multiplicities $(1,3,3,3,1)$.  On each of ten generic momentum fixtures the
+producer constructs five exact TT polarizations on every leg and evaluates
+all $5^3=125$ tensor products.  The resulting carrier matrix has shape
+$125\times11$ and exact rank ten.  The appended section row
+\[
+ (0,\ldots,0,1,1,1,0)
+\]
+imposes
+$\Gamma_{28}^{123}+\Gamma_{28}^{132}+\Gamma_{28}^{231}=0$ and completes the
+rank to eleven.  This fixes a representative modulo the unique arbitrary
+symmetric CPT-IV relation; it does not add an independent identity.
+
+The exact triangle solve retains $(\alpha_1,\alpha_2)$ symbolically.  After
+multiplication by the common $\Delta^4$, each channel numerator is a
+rational polynomial.  Its box degree is $3-d/2$ for explicit derivative
+order $d=0,2,4,6$, and its alpha degree is at most nine.  Homogeneous box
+interpolation uses ten unisolvent fixtures, enough for the maximum degree-
+three sector.  The stored row counts are
+\[
+ (195;\ 65,103,65;\ 97,91,97;\ 37,40,37;\ 10),
+\]
+for a total of 837 nonzero rational terms.
+
+The independent fast verifier evaluates the stored formula on two momentum
+fixtures absent from interpolation and two rational simplex points absent
+from generation.  At each fixture it compares the reconstructed carrier
+combination against all 125 direct Endo-triangle tensor amplitudes.  Every
+exact residual and the symmetric $I_{28}$ coordinate vanish.  It also rejects
+a changed coefficient after recomputing the formula digest.  Full symbolic
+regeneration takes about 163 seconds and is assigned to the scientific/
+release tier; the unseen exact replay takes about four seconds.
+
+\begin{verbatim}
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.verify_generic_background_ghost_n3_five_carrier_projection
+TEST="spectral.euclidean.tests."
+TEST="${TEST}test_generic_background_ghost_n3_five_carrier_projection"
+PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
+\end{verbatim}
+
+The result is the parametric $n=3$ ghost contribution in the declared
+scalar-flat quotient section. The generic kinematic simplex integrals,
+normalized longitudinal Schur $\mathcal R(K)$ and finite $\mathcal R(K^2)$
+rows, a covariantly subtracted physical tensor triangle/bubble assembly, and
+its complete sum into five
+repository functions and coefficients remain open.
+
+\subsection{Generic barycentric factorization}
+
+The independent generic reduction substitutes $C=1-A-B$ only after testing
+divisibility by
+\[
+ \Delta=CAx_1+ABx_2+BCx_3.
+\]
+For ten rows the polynomial remainder after division by $\Delta$ vanishes
+exactly.  Rehomogenizing their quotients to alpha degree seven gives pole-
+three integrands.  The remaining $I_{29}$ numerator rehomogenizes directly
+to $-16A^3B^3C^3/27$ at pole four.
+
+The certificate stores every reduced rational coefficient and independently
+reconstructs all 837 upstream terms.  Monomial valuations then give the exact
+edge and vertex orders printed in the main paper.  The current integrands are
+locally integrable because every $v-p+2$ is positive, but this does not settle
+the flux of a future primitive.  The three pole-three $I_{28}$ rows reduce to
+\[
+\begin{aligned}
+ \widetilde N_{28}^{123}&=\frac{32}{243}A^2B^2C^2(2A-B-C),\\
+ \widetilde N_{28}^{132}&=-\frac{32}{243}A^2B^2C^2(A+B-2C),\\
+ \widetilde N_{28}^{231}&=-\frac{32}{243}A^2B^2C^2(A-2B+C),
+\end{aligned}
+\]
+so the quotient relation is a pointwise polynomial identity.
+
+\begin{verbatim}
+MOD="spectral.euclidean.verify_generic_background_ghost_n3_"
+MOD="${MOD}barycentric_factorization"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+TEST="spectral.euclidean.tests.test_generic_background_ghost_n3_"
+TEST="${TEST}barycentric_factorization"
+PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
+\end{verbatim}
+
+The next subsection performs this reduction for the ten pole-three rows.  No
+generic integrated form factor follows from the factorization alone.
+
+\subsection{Pole-three relative-simplex IBP reduction}
+
+With $C=1-A-B$, every open-edge tangent polynomial vector field in the
+declared ansatz is parameterized as
+\[
+ P=A(CU+BW),\qquad Q=B(CV-AW),
+\]
+where $U,V,W$ have affine degree at most four.  The producer solves the exact
+rational-function identity
+\[
+ N=\Delta(\partial_AP+\partial_BQ)
+ -2(P\partial_A\Delta+Q\partial_B\Delta)
+ +c_J\Delta^2+c_1AC\Delta+c_2AB\Delta
+\]
+for four orbit representatives.  Exact barycentric/kinematic permutations
+then cover all ten rows.  The quotient coordinates multiply
+$J_\triangle$, $-\partial_{x_1}J_\triangle$, and
+$-\partial_{x_2}J_\triangle$.
+
+The affine degree-seven carrier has dimension $36$.  Exact ranks are
+\[
+ \operatorname{rank}B_{\rm edge}=27,
+ \qquad
+ \operatorname{rank}(B_{\rm edge},M)=30,
+ \qquad
+ \operatorname{rank}(B_{\rm edge},M,N_1,\ldots,N_{10})=30.
+\]
+The stronger corner-zero subspace, obtained by imposing
+$U_A=W_A=V_B=W_B=U_C=V_C=0$, has rank $26$ after the masters are added.
+Each target raises the rank to $27$.  For every orbit representative the
+certificate stores an exact rational dual at the rank-stable fixture
+$(x_1,x_2,x_3)=(2,3,5)$ that annihilates the corner-zero span and evaluates
+to one on the target.  The equality of generic and fixture base ranks makes
+the resulting nonzero augmented minor a generic non-membership proof.
+
+The fast verifier uses two exact rational fixtures and replays every stored
+primitive, permutation orbit, normalized dual, hash and claim flag.  The
+full rational-function producer takes roughly $73$ seconds and is therefore
+the explicit Tier-2 exhaustive rail rather than an implicit per-test rebuild.
+
+\begin{verbatim}
+MOD="spectral.euclidean.verify_generic_background_ghost_n3_"
+MOD="${MOD}pole3_relative_ibp"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+TEST="spectral.euclidean.tests.test_generic_background_ghost_n3_"
+TEST="${TEST}pole3_relative_ibp"
+PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
+\end{verbatim}
+
+The nonzero corner flux is unavoidable, but the next calculation shows that
+it is rational for the canonical primitives rather than a new logarithmic
+master.
+
+\subsection{Scalar-triangle system and complete pole-three functions}
+
+The independently replayed scalar-triangle equations reduce
+$-\partial_{x_1}J_\triangle$ and $-\partial_{x_2}J_\triangle$ to the basis
+\[
+ J_\triangle,\qquad \log(x_2/x_1),\qquad \log(x_3/x_1).
+\]
+The producer verifies $S_3$ covariance, Euler homogeneity, all three mixed
+derivative identities, and the symmetric normalization
+$\partial_{x_i}J_\triangle=-J_\triangle/3$ at $x_1=x_2=x_3=1$.
+
+For all four orbit representatives the two coordinate-corner leading pairs
+vanish and the remaining pair obeys $U_C=V_C$.  Independent rational
+partial-fraction integration gives
+\[
+ \int_0^{\pi/2}
+ \frac{\cos^2\theta+\sin^2\theta}
+ {(a\cos\theta+b\sin\theta)^2}\,\dd\theta=\frac1{ab}.
+\]
+Thus the stored oriented corner carrier contributes the rational function
+$-U_C/(x_1x_3)$.  After the certified kinematic permutations, every one of
+the ten rows is stored as a rational linear combination of the three masters
+above and $1$.  The exact $I_{28}$ relation holds basis-coordinate by
+basis-coordinate, and all ten formulas reproduce the independent
+symmetric-point rational and Clausen coefficients.
+
+\begin{verbatim}
+MOD="spectral.euclidean.verify_generic_scalar_triangle_"
+MOD="${MOD}differential_system"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+MOD="spectral.euclidean.verify_generic_background_ghost_n3_"
+MOD="${MOD}pole3_integrated_functions"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+\end{verbatim}
+
+\subsection{Complete pole-four I29 function}
+
+The remaining carrier is
+\[
+ I_{29}^{123}=-\frac{16}{27}\int_{\Delta_2}
+ \frac{(\alpha_0\alpha_1\alpha_2)^3}{\Delta^4}.
+\]
+For a pole-four primitive the relative-IBP operator is
+\[
+ \frac{\partial_AP+\partial_BQ}{\Delta^3}
+ -3\frac{P\partial_A\Delta+Q\partial_B\Delta}{\Delta^4}.
+\]
+The ambient numerator dimension is $55$.  The 84 raw tangent columns reduce
+to a canonical rank-$46$ image.  With the scalar triangle and two derivative
+masters the exact ranks are
+\[
+ 46,\qquad 49,\qquad 49
+\]
+for the tangent, tangent-plus-master, and tangent-plus-master-plus-target
+spans.  Therefore $I_{29}$ introduces no new transcendental master.
+
+The three master coefficients have common denominator $\lambda^5$ and
+numerator degrees $7,8,8$.  The producer reconstructs them from 45 exact
+unisolvent fixtures, checks five independent holdouts, and then solves the
+remaining primitive coefficients and verifies the complete 55-row symbolic
+identity.  The last step, rather than interpolation, is the membership proof.
+
+All corner numerator degrees are one.  The exact moments
+\[
+ \int_0^1\frac{\dd t}{(a+(b-a)t)^3}
+ =\frac{a+b}{2a^2b^2},\qquad
+ \int_0^1\frac{t\,\dd t}{(a+(b-a)t)^3}
+ =\frac1{2ab^2}
+\]
+make the total corner flux rational.  Substitution of the independently
+certified scalar-triangle differential system gives the same
+$J_\triangle$, two-log, rational basis as the pole-three functions.  All six
+$S_3$ relabellings vanish, and the symmetric specialization is
+\[
+ I_{29}(1,1,1)=-\frac{496}{6561}J_\triangle+\frac{1160}{6561}.
+\]
+
+\begin{verbatim}
+TEST="spectral.euclidean.tests.test_generic_background_ghost_n3_"
+TEST="${TEST}i29_integrated_function"
+PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
+MOD="spectral.euclidean.verify_generic_background_ghost_n3_"
+MOD="${MOD}i29_integrated_function"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+\end{verbatim}
+
+The first command is the fast stored-artifact tier.  The second independently
+replays the exact 46-column solve and full identity.  The producer's
+approximately 45-second reconstruction is reserved for the publication tier.
+All eleven generic ghost $n=3$ functions are now complete and are added by
+the later physical-plus-ghost receipt.  The full ghost determinant and its
+generic finite Green/spectral rows remain open.  The physical receipt
+integrates the tensor triangle and mixed $\mathcal H_1\mathcal H_2$ contacts,
+but complete full-BV repository form factors still require ghost $n=1/n=2$,
+finite Schur and remaining BV rows.
+
+\subsection{Exact symmetric-point simplex integration}
+
+At $x_1=x_2=x_3=1$, permutation averaging preserves every simplex integral
+and reduces the eleven stored numerators to symmetric polynomials in
+\[
+ e_2=\alpha_0\alpha_1+\alpha_1\alpha_2+\alpha_2\alpha_0,
+ \qquad e_3=\alpha_0\alpha_1\alpha_2.
+\]
+The only transcendental master is
+\[
+ J_\triangle=\int_{\Delta_2}\frac{\dd^2\alpha}{e_2}
+ =\frac4{\sqrt3}\operatorname{Cl}_2\!\left(\frac\pi3\right)
+ =2.343907238689458890601562288872277\ldots .
+\]
+Four exact integration-by-parts identities give
+\[
+\begin{aligned}
+ \int\frac{e_3}{e_2}&=\frac{11-4J_\triangle}{54},&
+ \int\frac{e_3}{e_2^2}&=\frac{J_\triangle-2}{3},\\
+ \int\frac{e_3^2}{e_2^3}&=\frac{10J_\triangle-23}{54},&
+ \int\frac{e_3^3}{e_2^4}&=\frac{62J_\triangle-145}{486}.
+\end{aligned}
+\]
+For each row the receipt stores the rational polynomial defining the
+divergence vector field, verifies the divergence identity exactly, and
+records both open-edge and punctured-corner flux vanishing.  Substitution in
+the symmetrized carrier numerators gives the eleven values printed in the
+main paper.  The independent verifier reconstructs those numerators from the
+upstream 837-term projection, checks every rational identity, and separately
+quadratures the four smooth sector integrals and the one-dimensional Clausen
+master.  This second path is important: direct iterated symbolic integration
+of the unsymmetrized functions can choose inconsistent logarithm branches at
+the moving simplex endpoint.
+
+\begin{verbatim}
+MOD="spectral.euclidean.verify_generic_background_ghost_n3_"
+MOD="${MOD}symmetric_point_simplex_integration"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+TEST="spectral.euclidean.tests.test_generic_background_ghost_n3_"
+TEST="${TEST}symmetric_point_simplex_integration"
+PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
+\end{verbatim}
+
+This remains an independent normalized symmetric-point fixture.  The ten
+pole-three functions and the pole-four $I_{29}$ function are now complete by
+the preceding calculations.  The complete ghost determinant, physical
+fourth-order Hessian, combined repository coefficients and complete
+$\Gamma_1/Q_1$ remain open.
+
+\subsection{Exact local BoxR scheme conversion}
+
+The zeta/proper-time calculation imports the published local heat-kernel rows
+for the traceless tensor, gauge-weight and diffeomorphism-ghost operators.  An
+independent exact replay of their $(2,-1,-2)$ determinant combination gives
+\[
+ b_{\Box}^{\rm raw}=\frac72\log\frac32-\frac{159}{80}<0.
+\]
+The repository primitive $\omega\Box R=-(1/12)s(R^2)$ modulo $\dd$ then fixes
+\[
+ z_R^{\rm raw\to0}=\frac7{24}\log\frac32-\frac{53}{320}.
+\]
+The verifier checks that $b_{\Box}^{\rm raw}-12z_R^{\rm raw\to0}=0$ and that
+adding the same shift to $391/960-(7/24)\log(3/2)$ gives the stored local
+coefficient $29/120$.  Alternating-series rational bounds certify the strict
+sign without floating-point arithmetic.  The receipt keeps the strict-metric
+local scheme counterterm separate from the independent dressed
+$R(\widehat g)^2$ class in the compensator theory.  The subsequent FV
+certificate, not the local scheme conversion alone, proves that generic-basis
+nonlocal Ricci terms are structurally determined.
+
+The same certificate binds the contraction non-merge: the Berger `tau` row
+is the temporal diffeomorphism ghost in the positive-Berger clock complex,
+whereas the Wess--Zumino `tau` row obeys $Q\tau=\mathcal L_\xi\tau+\omega$.
+The identical printed symbol is not a cross-background carrier map.
+
+\section{Independent verifiers and mutation tests}
+
+The producer and verifier paths are distinct.  The verifiers independently:
+\begin{itemize}
+\item validate strict Draft 2020--12 schemas;
+\item replay exact matrix ranks and contraction identities;
+\item compare generated certificates with fresh deterministic builds;
+\item reject deletion of the dressed $R^2$ class;
+\item reject authorization of residual transfer;
+\item reject promotion of the fixed Wess--Zumino contribution to a complete
+renormalized $Q_1$;
+\item replay the diagonal Paneitz/Riegert response solve and reject promotion
+of a generalized inverse to an unconditional global inverse;
+\item replay the flat-TT logarithmic coefficient, scale response and momentum
+difference, and reject promotion of its additive constant or curved
+completion;
+\item replay the curvature-order filtration for the covariant logarithm and
+reject promotion of the cubic remainder, finite constants or Berger/WZ
+contraction merge;
+\item replay the Fradkin--Vilkovisky scalar-flat and Weyl-weight identities,
+and reject identification of its nonlocal representative with the local
+$\tau$-adic dressed metric or promotion to derivative-decorated nonlocal cubic form factors;
+\item replay the exact FV anomaly-action response cancellations and RFT
+specialization, while rejecting a separate nonlocal $R^2$ datum or a complete
+$\Gamma_1$;
+\item replay the raw $\Box R$ heat-kernel arithmetic, its exact strict-metric
+$R^2$ scheme shift and the $29/120$ cross-check, while rejecting promotion to
+an absolute dressed normalization;
+\item replay the five third-curvature carrier stabilizers, the raw and
+four-dimensional quotient characters, and reject promotion of carrier labels
+to repository form-factor functions or coefficients;
+\item replay the generic Diff--Weyl ghost Schur complement, nonminimal
+principal spectrum and tracefree-Ricci Hodge mixing, while rejecting direct
+minimal-CPT substitution and any promotion to a completed ghost determinant;
+\item replay the exact Endo split, finite-proper-time heat kernel,
+nonzero-mode determinant identity and cubic Duhamel insertion bound, while
+rejecting promotion of the unevaluated insertion traces;
+\item integrate the Endo identity to the exact Hodge resolvent, reduce the
+$n=1,2$ rows to five minimal vector/scalar carriers, and reject promotion of
+that architecture to evaluated form factors or coefficients;
+\item import CPT rows $1,3,14$, project the combined pure-vector $n=1+n=2$
+slice, replay unseen fixtures, and reject promotion across the three
+longitudinal $D_W$ carriers;
+\item replay the longitudinal Schur determinant on a distinct noncommuting
+fixture through cubic order, detect a mixed-cubic mutation, and reject both
+evaluation of its generic relative finite kernel and an undeclared change of
+zeta-factorization convention;
+\item replay the complete $S^2(k_1)\times S^2(k_2)$ Schur spectrum, its
+factor-exchange symmetry, the matched six-mode zero--pole correction $3^{-6}$,
+the exact finite-cutoff product and the product $\operatorname{Wres}(K^2)$,
+while rejecting promotion of the unevaluated bivariate infinite sums;
+\item compute the commuting round-$S^4$ zeta-to-weighted defect $5/3$ from
+$\operatorname{Wres}(\Delta_0^{-2})=1/3$, replay the determinant ratio by
+independent Hurwitz-zeta continuation, then compute the distinct generic
+weight-raised local defect $-\tfrac14\operatorname{Wres}(K^2)$ and its
+round-$S^4$ value $-1/3$ by an independent spectral continuation;
+\item prove the sharp $\mathcal S_3$ trace-ideal disposition, replay the
+modified Fredholm series through sixth order, compute the critical
+$\operatorname{Wres}(K^2)$ coefficient by two independent sphere-moment
+calculations, and reject promotion to the regulated $\mathcal R(K)$ or finite
+$\mathcal R(K^2)$ rows;
+\item enumerate the second, fourth, and sixth isotropic sphere moments for the
+three-insertion adiabatic angular carrier, while rejecting promotion of its
+IR-singular radial integral to a nonzero-momentum triangle or $I_{10}$ map;
+\item replay the eight projector sectors and twenty exact simplex/Wick rows
+of the generic nonzero-momentum three-insertion kernel, while rejecting
+promotion of the labelled-Ricci kernel to the repository five-carrier form
+factors;
+\item replay the contracted-Weyl coefficient, direct TT sign fixture and
+fourth-order first replacement error in the scalar-flat $K$--Ricci crosswalk,
+while rejecting promotion of normalization alone to a five-carrier projection;
+\item replay the stored eleven-to-ten five-carrier projection on unseen exact
+momentum/simplex fixtures across all 125 TT tensor products, and reject a
+coefficient mutation even after its formula digest is recomputed;
+\item divide every generic projected numerator by $\Delta$, reconstruct the
+ten exact cancellations and one pole-four remainder, verify every homogeneous
+edge/vertex order and the pointwise $I_{28}$ relation, while rejecting any
+promotion to a completed relative-IBP reduction;
+\item reconstruct the symmetric-point numerators from the upstream 837 terms,
+verify the four rational divergence identities and all boundary-flux orders,
+and compare the exact Clausen reduction with independent quadrature;
+\item reject changes to the cotangent signs, gradings, or quartet identity;
+\item validate every content hash used by the paper claim map.
+\end{itemize}
+
+The generated tables add a publication-layer drift guard.  Their verifier
+loads all authoritative table inputs, checks the exact extended boundary
+matrix and coefficient image, rebuilds the TeX byte-for-byte, and rejects a
+stale include.
+
+\section{Reproduction commands}
+
+Run from the repository root:
+\begingroup\small
+\begin{verbatim}
+PYTHONPATH=quantum-weyl python3 -m \
+  anomalies.wess_zumino_minimal_bv_cotangent_lift --check
+PYTHONPATH=quantum-weyl python3 -m \
+  anomalies.verify_wess_zumino_minimal_bv_cotangent_lift
+PYTHONPATH=quantum-weyl python3 -m \
+  anomalies.wess_zumino_extended_local_bv_cohomology --check
+PYTHONPATH=quantum-weyl python3 -m \
+  anomalies.verify_wess_zumino_extended_local_bv_cohomology
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.one_loop_slavnov_q1_disposition --check
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_one_loop_slavnov_q1_disposition
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.flat_tt_logarithmic_gamma1 --check
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_flat_tt_logarithmic_gamma1
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.curvature_squared_covariant_log_gamma1 --check
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_curvature_squared_covariant_log_gamma1
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.fv_conformized_c2_log_gamma1 --check
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_fv_conformized_c2_log_gamma1
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.fv_anomaly_action_ricci_sector --check
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_fv_anomaly_action_ricci_sector
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_third_curvature_weyl_manifest
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_cpt_universal_third_curvature_kernels
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_cubic_weyl_carrier_basis
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.verify_generic_background_ghost_n3_five_carrier_projection
+MOD="spectral.euclidean.verify_generic_scalar_triangle_"
+MOD="${MOD}differential_system"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+MOD="spectral.euclidean.verify_generic_background_ghost_n3_"
+MOD="${MOD}pole3_integrated_functions"
+PYTHONPATH=quantum-weyl python3 -m "$MOD"
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.verify_generic_background_ghost_longitudinal_schur_resummation
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.verify_box_r_scheme_conversion
+python3 paper/generate_12_quantum_anomaly_tables.py --check
+python3 paper/verify_12_quantum_anomaly_tables.py
+python3 paper/generate_12_pure_weyl_one_loop_bv_anomaly_claim_map.py --check
+python3 paper/verify_12_pure_weyl_one_loop_bv_anomaly_claim_map.py
+\end{verbatim}
+\endgroup
+
+The intentionally slow repository-wide suite is not required for this
+scoped artifact.  The relevant exact unit modules, independent verifiers,
+atlas validator, and clean warning-free LaTeX build form the declared
+publication tier.  From a clean output directory the main manuscript settles
+in two passes and this supplement in three.
+
+\section{Remaining gate}
+
+The next theorem requires actual new physical input:
+\begin{enumerate}
+\item a same-background compensator-inclusive classical contraction
+$(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
+	\item analytically continue the exact $S^2(k_1)\times S^2(k_2)$ bivariate
+Schur sums with the matched exceptional factor $3^{-6}$, then add them and the
+remaining BV sectors to the physical-plus-ghost-$n=3$-plus-vector-$n=1+n=2$
+partial-BV five-carrier representative while keeping the independent
+finite-counterterm normalization explicit; arbitrary-background finite rows
+still require a generic primed Green/resolvent kernel or complete spectral
+measure; then assemble the
+complete repository parity-even third-curvature functions and coefficients,
+the parity-odd derivative carrier manifest, finite
+$C^2$ and absolute dressed $R(\widehat g)^2$ normalization,
+global Paneitz Green data, and renormalized BV operator data fixing a complete
+$Q_1$ beyond its certified local Wess--Zumino, anomaly-induced, and flat-TT
+logarithmic contributions;
+\item the induced residual operator
+$q_1=\pi_{\rm ext}Q_1\iota_{\rm ext}$;
+\item nilpotency, adjacent-cohomology, Cartan, mixing, and pairing checks.
+\end{enumerate}
+Until these land, residual transfer is forbidden.  Same-background free-state
+and Hadamard constructions belong to a separate companion programme and are
+not claims of this paper.  The classical-obstruction-to-interacting-BRST
+bridge also remains independently fail-closed.
+
+\end{document}

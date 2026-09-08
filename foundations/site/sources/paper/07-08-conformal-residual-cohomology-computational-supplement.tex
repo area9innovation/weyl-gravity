@@ -1,0 +1,290 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,longtable,array}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\rank}{\operatorname{rank}}
+
+\title{Computational supplement for\\
+Residual cohomology and causal transport in free pure-Weyl gravity}
+\author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
+\and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human contact; Honorary Professor, DTU Compute, Technical University of Denmark. \texttt{asger@area9.dk}.}}
+\date{Draft for external review, August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This versioned supplement records the computational claim boundaries,
+generated-input inventory, independent checks and clean-release procedure for
+the two standalone articles
+\path{07-conformal-residual-cohomology-krein.tex} and
+\path{08-conformal-covariant-causal-transport.tex}.  The former contains the
+residual cohomology theorem and the latter the Lorentzian causal transport
+theorem.  The combined source \path{07-08-conformal-residual-cohomology-archive.tex} is
+retained as an archival cross-reference, not as the primary submission.
+Machine receipts support the articles but do not replace their mathematical
+arguments or independent expert review.
+\end{abstract}
+
+\section*{Authorship and generated inputs}
+The named model author produced the mathematical programme, derivations,
+verification code, referee responses, and manuscript.  Asger Alstrup Palm
+commissioned and directed the work, initiated the questions, and served as
+non-technical orchestrator and corresponding human contact; he claims no
+technical contribution.  Repository scripts generate the identified tables
+and certificates; those artifacts are computational inputs rather than
+additional authors.
+
+\section{Scope and publication split}
+
+The section-level extraction map and submission gates are maintained in
+\path{../notes/conformal-paper-split-roadmap.md}.  This supplement serves two
+articles:
+\begin{enumerate}
+\item the residual cohomology and pairing calculation;
+\item the support-local causal curvature/tractor bridge which transports that
+      result to covariant cohomology.
+\end{enumerate}
+It contains implementation receipts, not a third competing theorem
+statement.  Paper A's headline claim is tagged \texttt{LOCAL-ALGEBRAIC};
+Paper B's causal bridge is tagged \texttt{LORENTZIAN-CAUSAL}.  Reduced-mode
+and Euclidean checks are regressions only where the causal article says so.
+
+\section{Focused article dependency ledgers}
+
+\subsection*{Paper A: residual cohomology and pairing}
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.28\textwidth}
+                  >{\raggedright\arraybackslash}p{0.64\textwidth}}
+\toprule
+Claim & Authoritative executable or receipt \\
+\midrule
+\endhead
+Weyl module and exact generator action &
+\path{symbolic/verify_conformal_generator_all_levels.py},
+\path{symbolic/verify_conformal_energy_mode_krein.py}. \\
+Relative weight-four kernel &
+\path{symbolic/verify_conformal_relative_brst_weight4.py} and the independent
+rank-$53$ check below. \\
+Absolute one-particle acyclicity and two-particle rank &
+\path{symbolic/verify_conformal_global_brst_window.py}. \\
+Cartan reduction and completed residual theorem &
+\path{symbolic/verify_conformal_cartan_contraction.py},
+\path{analytic_completion/certificates/completed_H4.json}. \\
+Residual Gram matrix and selected BV--BFV transfer &
+\path{analytic_completion/certificates/completed_gram.json} and the
+\path{field_bv_identification/} certificate chain. \\
+\bottomrule
+\end{longtable}
+
+Paper A computes vertex/deformation classes in the selected residual
+polarization.  It does not claim a positive graviton Hilbert space or a
+Lorentzian off-shell propagator.
+
+\subsection*{Paper B: covariant causal transport}
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.28\textwidth}
+                  >{\raggedright\arraybackslash}p{0.64\textwidth}}
+\toprule
+Claim & Authoritative executable or receipt \\
+\midrule
+\endhead
+Curved auxiliary identities, local retract and current comparison &
+\path{symbolic/verify_conformal_covariant_completion.py} and the curved
+certificate chain indexed by the proof ledger. \\
+Weyl--Cotton closure and sourced constraint propagation &
+\path{symbolic/verify_conformal_weyl_cotton_causal_pde.py} and
+\path{covariant_completion/certificates/curved_weyl_cotton_hyperbolic.json}.
+\\
+All-row local prolongation and $356+30$ cyclic retract &
+\path{symbolic/verify_conformal_full_prolonged_green_homotopy_assembly.py}.
+\\
+Adjoint-tractor causal homotopies &
+\path{symbolic/verify_conformal_adjoint_tractor_green_transfer.py} and
+\path{covariant_completion/certificates/adjoint_tractor_green_transfer.json}.
+\\
+Causal quasi-isomorphism, endpoint recovery and equivariance &
+\path{symbolic/verify_conformal_final_covariant_transport.py}. \\
+Pairing transport and final $H^4_{\rm cov}$ theorem &
+\path{covariant_completion/generated/covariant_H4_proof_ledger.md}. \\
+\bottomrule
+\end{longtable}
+
+Paper B transports Paper A's residual calculation; it does not perform a
+second finite-cutoff CE computation.  The false legacy flags for a canonical
+endpoint inverse and monolithic prolonged witness are not dependencies of
+the direct tractor causal route.
+
+The status file
+\path{covariant_completion/certificates/curved_curvature_prolongation_status.json}
+also preserves historical false subflags from the superseded rank-$14$
+equation-cone, direct-Weyl--Cotton inverse, and first-order search routes.
+They are intentionally not promoted by the successful tractor construction.
+For the publication theorem the authoritative dependency set is the
+23-requirement terminal DAG in
+\path{covariant_completion/generated/covariant_H4_proof_ledger.md}; its true
+\path{direct_tractor_causal_homotopy} and
+\path{causal_green_homotopy} gates do not imply that the legacy objects now
+exist.
+
+\section{Independent central residual-rank check}
+
+The command
+\begin{verbatim}
+python3 symbolic/verify_conformal_residual_rank53_independent.py
+\end{verbatim}
+uses only the Python standard library.  It constructs the integral spin-two
+$\mathfrak{sl}_2\oplus\mathfrak{sl}_2$ action on
+\[
+ \operatorname{Sym}^2\bigl((2,0)\oplus(0,2)\bigr),
+ \qquad 55=15+25+15,
+\]
+and obtains exact block ranks
+\[
+ 53=14+25+14.
+\]
+The two exact kernel vectors are the chiral binary-quartic singlets
+\[
+ e_0e_4-4e_1e_3+3e_2^2.
+\]
+Ranks are computed over two prime fields.  Since modular rank is a
+characteristic-zero lower bound and the two displayed independent exact
+kernel vectors give the complementary upper bound, the characteristic-zero
+rank is exactly $53$.
+
+This independent check is intentionally narrow.  It does not replace the
+one-particle $290\to1311\to3657$ absolute window, full Chevalley--Eilenberg
+nilpotency, BV--BFV transfer or covariant causal certificates.
+
+\section{Generated-input inventory}
+
+The archival paper has one active generated TeX input.  It is tracked by Git
+and its header binds the source certificate digest:
+\begin{center}
+\path{generated/endpoint_factorization_nullstellensatz.tex}.
+\end{center}
+The clean-release audit recursively discovers every \verb|\input| and
+\verb|\include| in Paper A, Paper B, this supplement and the archival
+monolith.  It rejects an input absent from the selected Git tree.
+
+Other generated TeX files in \path{analytic_completion/generated/} and
+\path{covariant_completion/generated/} are tracked standalone receipts, not
+active \verb|\input| dependencies.  Their classification is:
+\begin{itemize}
+\item \emph{current theorem receipts}: \path{completed_residual.tex},
+  \path{energy_mode_krein.tex}, \path{cauchy_sobolev.tex},
+  \path{curl_factorization.tex}, and \path{minimal_ghost_witness.tex};
+\item \emph{scoped historical receipts}: \path{auxiliary_green_witness.tex}
+  and \path{covariant_bv_last_mile_status.tex}, which record superseded
+  canonical-witness checkpoints and are not current terminal gates;
+\item \emph{active generated input}: the Nullstellensatz receipt included
+  below, whose generator is checked for byte-for-byte freshness.
+\end{itemize}
+
+\section{Endpoint factorization receipt}
+
+For continuity with the archival appendix, the active generated input is
+included below.  It is a scoped no-go receipt for the complete parallel
+invariant two-wave-factor family; it is not used as evidence against the
+direct tractor causal homotopy.
+
+\input{generated/endpoint_factorization_nullstellensatz.tex}
+
+\section{Post-freeze import provenance}
+
+The quantum programme consumes the certified classical theorem through a
+content-addressed import chain.  This chain is a provenance and compatibility
+result; it neither recomputes Paper~A's cohomology nor changes its theorem.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.34\textwidth}
+                  >{\raggedright\arraybackslash}p{0.58\textwidth}}
+\toprule
+Authority & Role and boundary \\
+\midrule
+\endhead
+\path{quantum-weyl/classical_import/certificates/STRICT_CENTERED_COHOMOLOGY_PAYLOAD_V1.json}
+& Hash-pinned centered representatives and normalized pairing data for
+\([W_+^2]\) and \([W_-^2]\).  They are deformation/vertex classes, not
+one-particle states. \\
+\path{quantum-weyl/classical_import/certificates/STRICT_RESIDUAL_ZERO_MODE_PAYLOAD_V1.json}
+& Typed residual zero-mode payload and comparison data; no arbitrary-smooth
+or all-energy completion follows. \\
+\path{quantum-weyl/classical_import/certificates/STRICT_M1C_COMMON_SNAPSHOT_V1.json}
+& Immutable authoritative classical BV snapshot used by the quantum brief;
+finite verification cores are checks, not replacement sources. \\
+\path{quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V30_RECONCILIATION.json}
+& Independent Gate-A decision over nilpotency, contraction, chain maps,
+cyclicity, residual cohomology and pairing.  It does not certify nonlinear
+Green compatibility, a positive Hadamard state, QME restoration or quantum
+residual transfer. \\
+\bottomrule
+\end{longtable}
+
+The dependency tags on this import chain separate
+\texttt{LOCAL-ALGEBRAIC}, \texttt{REDUCED-MODE} and
+\texttt{LORENTZIAN-CAUSAL} content.  Passing the import gate authorizes use of
+the frozen classical data; it does not allow a reduced-mode computation to
+stand in for a Lorentzian causal theorem.
+
+\section{Repository computational material}
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.31\textwidth}
+                  >{\raggedright\arraybackslash}p{0.61\textwidth}}
+\toprule
+Block & Versioned computational content \\
+\midrule
+\endhead
+Finite-jet convention audit & Coordinate bases, globalization coverage and
+independent convention checks. \\
+Residual ranks & Sparse formats, good-prime embeddings, pivot/minor witnesses,
+exact kernel representatives and the independent rank-$53$ check. \\
+BV--BFV dictionaries & Raw/minimal/gauge-fixed basis ledgers, zero-mode
+sections, contraction maps and sign conventions. \\
+Curvature prolongation & Weyl--Cotton row tables, sourced subsidiary system,
+mapping-cylinder rows, PBW normal forms and cyclic projectors. \\
+Alternative witnesses & Scoped scalar-wave, first-order, factorization and
+relative-saddle searches, including exact negative receipts. \\
+Publication provenance & Certificate schemas, content hashes, terminal proof
+ledger, commands, timeouts and artifact policy. \\
+\bottomrule
+\end{longtable}
+
+\section{Clean release and reproduction}
+
+From the repository project directory, the isolated release audit is
+\begin{verbatim}
+python3 symbolic/audit_conformal_publication_release.py \
+  --tree-ish HEAD \
+  --receipt conformal-publication-release-audit.json
+\end{verbatim}
+The selected tree-ish must already contain the four TeX sources and four
+PDFs.  Untracked or merely staged working-tree files are deliberately
+ignored, so this command is a post-commit release gate rather than a
+development-tree preview.
+It uses \verb|git archive| rather than the development working tree, verifies
+that all four TeX entrypoints, all four publication PDFs and every recursively
+active TeX input are tracked in the selected tree, checks the generated
+Nullstellensatz input, builds each document to reference stability, and runs the independent
+rank, provenance and proof-ledger checks.  The JSON receipt is a CI artifact,
+not an authoritative mathematical input.
+
+The focused clean-release audit complements, rather than replaces, the full
+theorem rail
+\begin{verbatim}
+python3 symbolic/verify_conformal_paper_free.py --reproduce --timeout 1800
+\end{verbatim}
+and the content manifest check
+\begin{verbatim}
+python3 symbolic/update_conformal_paper_snapshot.py --check
+\end{verbatim}
+
+The release audit is fail-closed on missing tracked entrypoints, unresolved
+TeX inputs, stale generated TeX, failed independent checks, failed stabilized
+builds, undefined references and stale manifests.  The archival equation
+labels remain available for referee auditability even though Papers A and B
+are now the primary reading entrypoints.
+
+\end{document}

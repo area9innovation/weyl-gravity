@@ -1,0 +1,299 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage{microtype,xurl}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,
+            citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{Computational Supplement to\\
+``Future-Horizon Regularity and One-Sided Radiative Traces Do Not Select the Einstein Sector
+of Pure Weyl Gravity''}
+\author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
+\and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human contact; Honorary Professor, DTU Compute, Technical University of Denmark. \texttt{asger@area9.dk}.}}
+\date{Working supplement, 25 July 2026}
+
+\begin{document}
+\maketitle
+
+\section{Purpose}
+
+This supplement is the destination for verification details removed from the
+main narrative: recurrence bounds, interval cells, projective chart changes,
+contour panels, mutation tests, content hashes, and exact commands.  The
+theorem statements and proofs in the main paper are the mathematical
+authority.  The machine-readable certificates provide pinned reproducibility
+records, exact witnesses, validation margins, and independent implementation
+checks.  A timeout, skipped verification, or reproduced producer output is never
+recorded as an independent verification pass.
+
+\section{Logical dependency of the title theorem}
+
+The title theorem is computer-assisted but has a closed proof chain.  It does
+not use an explicit \(T_+\) matrix, a retarded convolution, the separately
+certified finite-interval radial Fredholm pole, or a raw-Weyl/current
+comparison not already cited as an endpoint authority.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.19\textwidth}Y
+p{0.19\textwidth}p{0.11\textwidth}@{}}
+\toprule
+Result & Proof dependency & Status and domain & Title theorem\\
+\midrule
+Gauge-invariant carrier discriminator &
+Schouten carrier modulo source diffeomorphism/Weyl gauge; nonzero Maxwell
+two-form witness &
+Exact; Ricci-flat background &
+Required\\
+Axial carrier filtration &
+RW/RW/Maxwell exact filtered system and quotient maps &
+Exact; Schwarzschild, axial \(\ell=2\) &
+Required\\
+Incoming realization &
+Scalar Wronskians, boundary d\'evissage, \(T_-\in GL(3,\mathbb C)\) &
+Analytic plus certified computation; every real \(\omega>0\) &
+Required\\
+Outgoing realization &
+Triangular determinant and nonzero scalar outgoing factors &
+Validated; \([1/2,10001/20000]\) &
+Required only for outgoing clause\\
+Finite-interval radial QNM Green pole &
+Analytic initial-value reduction and certified Smith transfer &
+Exact reduced-mode theorem; no causal inverse transform &
+Not required\\
+Explicit \(T_+\), simultaneous pure-outgoing non-Einstein mode, and
+retarded/causal extensions &
+Separate programme items &
+Not established &
+Not required\\
+\bottomrule
+\end{tabularx}
+\normalsize
+\end{center}
+
+\section{Evidence taxonomy}
+
+\begin{center}
+\begin{tabularx}{0.96\textwidth}{@{}Y Y@{}}
+\toprule
+Evidence kind & Required supplement record\\
+\midrule
+Exact symbolic & input hashes, exact arithmetic kernel, canonical witness,
+independent verifier\\
+Validated numerical & declared domain, interval backend, nonzero margins,
+subdivision policy, independent verifier\\
+Numerical fixture & precision, residuals, purpose, and explicit
+non-theorem status\\
+Open computation & last valid checkpoint, failure mode, and
+\texttt{does\_not\_establish} ledger\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Independence profile}
+
+Independence is recorded as four separate Boolean dimensions, not as a
+hierarchy:
+\begin{center}
+\begin{tabularx}{0.96\textwidth}{@{}p{0.26\textwidth} Y@{}}
+\toprule
+Dimension & Meaning\\
+\midrule
+Independent code & Separate executable rather than a producer rerun\\
+Independent representation & Different elimination, variables, or
+mathematical representation\\
+Independent backend & Different exact-arithmetic, interval, or CAS backend\\
+Independent derivation & Independently derived mathematical formulation\\
+\bottomrule
+\end{tabularx}
+\end{center}
+Rerunning a producer is reproduction, not verification.  Each manifest
+records its independence profile and all shared dependencies.
+
+Every publication record pins
+\[
+(\text{repository commit},\ \text{certificate SHA-256},\
+\text{producer SHA-256},\ \text{verifier SHA-256})
+\]
+together with dependency versions, arithmetic or interval backend,
+platform metadata where relevant, the canonical command, expected exit
+status, and deterministic generator definition.
+
+\section{Trusted computing base}
+
+Exact symbolic certificates rely on Python integer/rational arithmetic or on
+the exact backend named in their manifests; every denominator assumption and
+parameter domain is part of the corresponding certificate.  Validated
+numerical certificates use outward-rounded interval endpoints, retain the
+complete enclosing interval in machine-readable form, and state the
+subdivision and refusal policy.  JSON parsing, the Python runtime, the
+declared exact/interval kernel, and the operating system are inside the
+trusted computing base unless an independent-backend check explicitly
+removes one of them.
+
+The publication release must contain an immutable archive identifier in
+addition to the Git commit and file hashes.  No DOI has yet been assigned, so
+this working draft does not claim that archival gate.
+
+\section{Concrete title-theorem records}
+
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}p{0.17\textwidth}Y
+p{0.19\textwidth}p{0.12\textwidth}@{}}
+\toprule
+Claim & Primary record and SHA-256 & Domain/margin & Independence profile\\
+\midrule
+Carrier discriminator &
+\path{phase4/covariant_einstein_maxwell_carrier_v1/certificate.json}\\
+\path{ff86f50e88d07c0ec8fcdbca4788e60058db07f90a7a96a9be5164e033952908} &
+Exact Ricci-flat identities; declared gauge quotient &
+code, representation, derivation\\
+Axial filtration &
+\path{phase3/axial_rw_lx_triangular_preflight/certificate.json}\\
+\path{1a6ac48dcc52659997cb0ed47709117308ef258c05e6996c559d9ad81f9ae579} &
+Exact, \(M=1,\ell=2\); denominators listed in record &
+code, representation\\
+Incoming realization &
+\path{phase3/axial_incoming_extended_domain_audit/certificate.json}\\
+\path{f223358ca9de0f6d819684ce61d62677d6e5f8c5d4edaa600e2bae02719af0ef} &
+Every real \(\omega>0\); Wronskian/d\'evissage margins in record &
+code, representation\\
+Outgoing cell &
+\path{phase3/axial_outgoing_population_cell_half_v1/certificate.json}\\
+\path{de7e3a944e945b00fea9e2b5f7abffc8789c7449cae9eae222c047912a4f3d0f} &
+\(|A_{\rm out,2}|>0.0113262\),
+\(|A_{\rm out,1}|>0.146805\) &
+code, representation, interval verifier\\
+Radial QNM Green pole &
+\path{phase4/axial_qnm_fredholm_promotion_v1/certificate.json}\\
+\path{e3f5e28d426305f0e68f7c11c7f63e1f0618cc63ad20fc1ff5b221fb38d34110} &
+One certified QNM disk; rank-one order-two finite-interval radial inverse &
+code, representation\\
+\bottomrule
+\end{tabularx}
+\normalsize
+
+The paths above are relative to \path{black_hole_programme/}.  The
+machine-readable records contain the complete intervals, producer/verifier
+commands, expected exit status, dependencies, and mutation results; the
+decimals in the table are readability-only lower bounds.
+
+\section{Principal certificate chains}
+
+The publication dependency set consists of the following independently
+audited chains:
+\begin{enumerate}
+\item the established conformal detour context, the universal
+Ricci-factorized Hessian, the Schouten--Einstein/Maxwell carrier, and its
+Euler-current boundary;
+\item the second-order auxiliary-tensor parent action, its factorized
+Einstein Green current, canonical null lift, and QNM divisor count;
+\item the parent-Hessian inverse, rank-one QNM Laurent algebra,
+simple-self-extension involution lemma, and endpoint Krein graph/cotangent
+obstructions;
+\item axial operator extraction and Ricci reconstruction;
+\item RW/RW/spin-one factorization, partial-jet identities, and the exact
+no-rational-intertwiner test;
+\item incoming and horizon Lee--Wald Grams;
+\item global incoming population and the common scattering cell;
+\item boundary d\'evissage and the no-growing-mode theorem;
+\item projective Evans winding, local selector, spin-one local-unit test,
+and finite-interval radial Fredholm promotion.
+\end{enumerate}
+
+The primary local-structure reproducibility record is
+\path{black_hole_programme/phase4/
+axial_universal_hessian_intertwiner_v1/certificate.json}.
+Its independent verifier re-derives the curvature-invariant coefficients,
+the \(2\times2\) positivity determinant, the fourth-order intertwiner
+compatibility equation in both spin directions, the indicial factors, and
+the terminal \(A+B/r\) substitution.  Five mutation tests fail closed on
+the Hessian trace coefficient, horizon exponents, terminal residual, and a
+forbidden nonlocal promotion.
+
+The parent-current reproducibility record is
+\path{black_hole_programme/phase4/
+second_order_parent_flux_v1/certificate.json}.  Its
+independent-representation verifier
+independently repeats the four-dimensional trace elimination and null-lift
+algebra, checks the imported Euler and physical connection-EP2 boundaries,
+and fails closed on generic radial-to-time-Jordan promotion,
+Green-resolvent promotion, all-frequency reflection-zero exclusion, and a
+complete polar Gram.  The principal future current audit is
+\[
+G_{\rm raw\ Weyl}-G_{\rm parent}=G_{\rm Euler\ cut}
+\]
+at the horizon, a finite matching section, and null infinity.  Until those
+endpoint comparisons are separately certified, the universal parent
+identity does not substitute for the existing raw-Weyl endpoint
+certificates.
+
+\subsection{Parent-resolvent and Krein-obstruction chain}
+
+The exact record
+\path{black_hole_programme/phase4/
+parent_resolvent_krein_obstructions_v1/certificate.json}
+checks the auxiliary-tensor Hessian inverse by two-sided block
+multiplication and independently verifies the rank-one identity
+\[
+P\mathcal AP
+=\frac{\langle\widetilde u,\mathcal Au\rangle}{\alpha^2}
+u\otimes\widetilde u .
+\]
+It also certifies the characteristic-zero involution lemma for a nonsplit
+self-extension of a simple object, the endpoint positive-graph
+obstruction, and the quotient duality \(B_2/E\simeq E^*\).
+
+That algebraic record is deliberately fail-closed at a differential QNM pole.
+The separate
+\path{black_hole_programme/phase4/
+axial_qnm_fredholm_promotion_v1/certificate.json}
+closes the fixed-finite-interval radial gate by exact variation of constants,
+boundary Schur reduction, and Smith transfer.  It certifies a nonzero
+rank-one second-order radial inverse pole and survival under exact metric
+reconstruction.  It remains fail-closed at the causal exterior spacetime
+resolvent, inverse-Laplace deformation, and generalized ringdown statement.
+Real-axis simplicity and scalar
+endomorphism rings are independently certified in
+\path{black_hole_programme/phase4/
+rw_maxwell_simplicity_endomorphisms_v1/certificate.json}.  Consequently the
+statement that every rational involution of the nonsplit axial spin-two
+block is \(\pm I\) is unconditional for real \(\omega>0\), while the
+complex-frequency classification remains open.
+
+\section{Computations excluded from the publication proof}
+
+The explicit-\(T_+\), parent-overlap, retarded-convolution, and Schwarzschild
+time-domain calculations are maintained in the programme reports rather than
+in this paper-specific supplement.  They are not dependencies of the title
+theorem.
+
+The most recent explicit-\(T_+\) attempt has the concrete fail-closed record
+\path{black_hole_programme/phase4/
+axial_explicit_tplus_band_v1/amplitude_certificate.json}.
+It preserves the physical endpoint-amplitude cocycle and reaches \(r=4\),
+but its rectangular terminal remainders exceed the coefficient scale by
+more than \(10^6\) in both frames.  It therefore certifies neither the
+terminal inverse nor \(T_+\).  This is a shortfall of that enclosure
+representation, not evidence that \(T_+\) is singular.  Its certificate
+SHA-256 is
+\path{d8322b37a637e12cd078872d22c083c0b109ede0dcfc71b3ba6b230551aafd43}.
+
+\section{Explicit non-results}
+
+Neither the main paper nor this supplement establishes:
+\begin{itemize}
+\item a non-Einstein separated solution that is simultaneously
+future-horizon regular and purely outgoing at infinity;
+\item explicit \(T_+\) entries or reflection amplitudes;
+\item a causal exterior spacetime resolvent, inverse-Laplace deformation,
+generalized ringdown term, or retarded convolution on
+Schwarzschild;
+\item a complete polar global connection;
+\item a canonical positive quantum metric or unitarity.
+\end{itemize}
+
+\end{document}

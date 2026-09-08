@@ -1,0 +1,2919 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,booktabs,tabularx,longtable,graphicx}
+\usepackage{microtype,xurl}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,
+            citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\coker}{\operatorname{coker}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\inertia}{\operatorname{inertia}}
+\newcommand{\cert}[1]{\nolinkurl{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{Future-Horizon Regularity and One-Sided Radiative Traces Do Not Select\\
+the Einstein Sector of Pure Weyl Gravity}
+\author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
+\and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human contact; Honorary Professor, DTU Compute, Technical University of Denmark. \texttt{asger@area9.dk}.}}
+\date{Focused working draft, 27 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Maldacena-type boundary selection isolates an Einstein sector of conformal
+gravity in Euclidean anti-de Sitter or late-time de Sitter settings.  We ask
+whether future-horizon regularity and one-sided Lorentzian radiative trace
+conditions do the same for
+linear perturbations of a Schwarzschild black hole in four-dimensional pure
+Weyl gravity.  They do not.
+
+Modulo the four-dimensional Euler boundary term, the Hessian of the
+Weyl-squared action about any Ricci-flat background factors through the
+trace-adjusted linearized Ricci tensor \(q_{ab}\), which obeys a constrained
+linearized Einstein equation.  Its target-gauge sector is a Maxwell field
+with the opposite bulk kinetic sign to ordinary Maxwell theory.  The
+Einstein kernel is consequently a universal null subspace of the bulk
+Hessian.  Its literal \(C^2\) self-current is an Euler cut current, so the
+complete smooth compact-frequency Einstein wave-packet space is totally
+isotropic.  Any nondegenerate restriction of the inherited form that retains
+an Einstein direction is nevertheless indefinite because populated
+additional modes pair nontrivially with it.
+
+In the axial \(\ell=2\) sector we identify an exact filtered differential
+module with successive quotients
+\[
+M_{\rm RW}^{(2)},\qquad M_{\rm RW}^{(2)},\qquad M_{\rm RW}^{(1)}.
+\]
+The two spin-two factors form a non-split self-extension.  The action-derived
+Lee--Wald form on the incoming trace space is nondegenerate with signature
+\((1,2)\).  In factor coordinates it is congruent, for every real
+\(\omega>0\), to
+\[
+\pi\alpha_{\rm W}
+\begin{pmatrix}
+0&576\omega/5&0\\
+576\omega/5&0&0\\
+0&0&-32/(15\omega)
+\end{pmatrix}.
+\]
+Scalar Regge--Wheeler Wronskians and boundary d\'evissage prove that the map
+from future-horizon-regular data to this complete incoming Krein space is
+invertible for every positive real frequency.  Negative-flux directions are
+therefore populated by regular exterior solutions, rather than being formal
+endpoint artefacts.
+
+For every integer \(\ell\ge2\) and every real \(\omega>0\), the scalar
+spin-two Regge--Wheeler and spin-one Maxwell differential modules are simple
+over \(\C(r)[D]\), with rational endomorphism ring \(\C\).  Together with
+specialization-safe nonsplitting of the axial \(\ell=2\) self-extension, this
+implies that its complete local commutant is the dual-number algebra and its
+only rational local dynamical involutions are \(\pm I\); neither can make the
+hyperbolic spin-two form positive.  A nonlocal spectral fundamental symmetry
+does exist on each positive-real-frequency fiber and on every compact band,
+but its natural all-frequency completion is threshold-weighted.
+
+On the certified cell
+\(\omega\in[0.49995,0.50005]\) the outgoing and future-horizon spaces are
+matching three-channel Krein spaces, the outgoing map is invertible, and the
+one-sided scattering map obeys the exact integrated pseudo-isometry.  Analytic
+continuation gives outgoing population on an open dense, full-measure subset
+of the positive axis; possible failures are isolated scalar reflection zeros.
+The same filtration excludes exponentially growing separated axial modes.
+
+Finally, a validated projective Evans calculation encloses one simple damped
+spin-two quasinormal frequency and certifies a nonzero intrinsic extension
+selector.  The spin-one factor is a local unit there.  The complete connection
+therefore has Smith valuations \((0,0,2)\), algebraic multiplicity two,
+geometric multiplicity one, and one length-two connection root chain.  This is
+an intrinsic exceptional point: its generalized root vector has a nonzero
+Ricci-carrier quotient.  Exact finite-radius boundary reduction further
+promotes it to a nonzero rank-one second-order pole of the reduced radial
+Green operator.  No causal spacetime resolvent, inverse-Laplace deformation,
+or global \(t e^{i\omega t}\) ringdown theorem is inferred in this paper.
+The successor Paper~17 identifies the compactly cut-off transfer as the
+meromorphic continuation of a retarded mode-reduced parent response; the
+inverse-Laplace deformation remains open.
+\end{abstract}
+
+\section{Question, answer, and scope}
+
+Pure Weyl gravity is defined by
+\begin{equation}
+ S_{\rm W}[g]
+ =\alpha_{\rm W}\int_M\sqrt{-g}\,
+ C_{abcd}C^{abcd}\,\dd^4x,
+ \qquad
+ B_{ab}=0.
+\end{equation}
+Every Einstein metric is Bach-flat, but the fourth-order Bach equation has
+additional local solutions.  The question addressed here is deliberately
+narrow:
+
+\begin{quote}
+Do future-horizon regularity and standard one-ended incoming or outgoing
+real-frequency trace conditions at null infinity force a Schwarzschild
+perturbation of pure Weyl gravity into the Einstein conformal sector?
+\end{quote}
+
+For the complete axial \(\ell=2\) system the answer is no.  The extra
+curvature carrier survives these one-ended conditions, participates in the
+action-derived current, and supplies populated negative directions in a
+nondegenerate Krein space.  The title theorem is a scattering statement:
+at real frequency, future-horizon-regular solutions generally have both
+incoming and outgoing null-infinity traces.  It does \emph{not} assert a
+non-Einstein separated solution that is simultaneously future-horizon
+regular and purely outgoing at infinity.  That two-ended condition is the
+quasinormal boundary problem and is kept logically separate below.
+
+\begin{definition}[Radiative endpoint class tested here]
+\label{def:radiative-class}
+The tested class consists of phase-factored solutions that are analytic
+future-horizon ingoing germs, extend through the Schwarzschild exterior, and
+have finite factor-normalized Regge--Wheeler/Maxwell traces at null infinity.
+On the real axis we study either one-sided trace map \(T_-\) or \(T_+\).
+``Outgoing population'' means surjectivity onto the outgoing trace; it does
+not mean that the incoming trace vanishes.  The complex-frequency theorem
+uses its separately declared future-horizon-regular/pure-outgoing
+quasinormal class.  We do not rule out stronger curvature conditions, mixed
+field/normal-derivative conditions, or the direct carrier constraint
+\(q_{ab}=0\).
+\end{definition}
+
+This is not a statement that no boundary condition can select the Einstein
+sector.  The local Cauchy restriction
+\[
+\delta R_{ab}|_\Sigma=0,
+\qquad
+\nabla_n\delta R_{ab}|_\Sigma=0
+\]
+does select the linearized Einstein kernel in the axial carrier problem.
+Moreover, the vacuum Einstein metrics form an exact nonlinear Bach-flat
+submanifold, so the Einstein equations define an algebraically consistent
+nonlinear truncation.  What remains open is narrower: whether the Ricci-zero
+Cauchy restriction determines a unique gauge-fixed Bach development and
+whether a differentiable physical phase space selects that restriction
+rather than imposing it externally.
+Nor is this paper a quantum-positivity theorem.  ``Negative'' below always
+means negative with respect to the classical Lee--Wald flux form.
+
+\subsection{Five principal results}
+
+The paper is organized around five statements.
+
+\begin{enumerate}
+\item On every four-dimensional Ricci-flat background, the bulk pure-Weyl
+Hessian modulo the Euler term factors through linearized Ricci curvature.
+The trace-adjusted carrier obeys a constrained linearized Einstein equation;
+its target-gauge sector is wrong-sign Maxwell.  The Einstein wave-packet
+space is totally isotropic but nonradical, and no nondegenerate semidefinite
+restriction can retain its line.
+\item The complete axial system has an exact RW/RW/spin-one filtration, with
+a nontrivial repeated-spin-two extension and no rational local
+spin-one/spin-two intertwiner.  The repeated block has dual-number local
+commutant and no nontrivial semisimple local branch observable.  Its
+associated graded pieces are the source Einstein graviton, the physical
+target Einstein carrier, and the Maxwell target-gauge vector.
+\item Its incoming action-flux space has signature \((1,2)\), and every
+incoming trace is realized at every \(\omega>0\) by a
+future-horizon-regular solution.  A spectral
+fundamental symmetry gives a positive compact-band norm, with exact
+\(\omega,\omega,\omega^3\) factor weights at threshold.
+\item On a certified nonzero frequency cell every outgoing trace is likewise
+realized by a future-horizon-regular solution; this is a one-ended
+surjectivity statement, not a pure-outgoing quasinormal statement.  Outgoing
+surjectivity is generic on the positive real axis, and the filtered system
+has no exponentially growing separated axial mode.
+\item One enclosed damped spin-two quasinormal frequency is a certified
+exceptional point with Smith valuations \((0,0,2)\).  Its generalized root
+vector has nonzero carrier quotient, and the corresponding finite-interval
+radial Green operator has a nonzero rank-one second-order pole.  The
+successor Paper~17 places the same pole in a fixed-domain, global
+exterior-complex-scaled radial Fredholm pencil of index zero and identifies
+its compactly cut-off matrix elements as the meromorphic continuation of a
+retarded mode-reduced transfer.
+\end{enumerate}
+
+\subsection{Controlled vocabulary}
+
+\begin{definition}
+In a fixed conformal gauge, the \emph{Einstein kernel} is the kernel of the
+linearized Ricci map \(h\mapsto\delta R_{ab}[h]\).  Gauge-invariantly, the
+\emph{Einstein conformal sector} is the kernel of the carrier class
+\[
+\mathfrak q[h]
+=
+\left[
+\delta R_{ab}[h]-\frac16g_{ab}\delta R[h]
+\right],
+\]
+where the brackets quotient target Einstein gauge transformations induced by
+source Weyl transformations.  Source diffeomorphisms leave this carrier zero
+on a Ricci-flat background, while \(h\mapsto h+2\sigma g\) sends
+\(q_{ab}\mapsto q_{ab}-2\nabla_a\nabla_b\sigma\).  Thus
+\(\mathfrak q[h]\) is invariant under the allowed source
+diffeomorphism/Weyl gauge.  Its target-gauge part is represented by
+\(F_{ab}=2\nabla_{[a}\eta_{b]}\); \(F\ne0\) is a direct gauge-invariant
+witness that \(\mathfrak q[h]\ne0\).
+\emph{Population} of an endpoint trace space means surjectivity of the
+relevant horizon-to-endpoint connection map.
+\emph{Factor frame} means a basis adapted to the differential-module
+filtration.  A \emph{signature frame} diagonalizes a Hermitian flux form.
+These two frames are not identified.
+\end{definition}
+
+The result tags used below have the repository meanings
+\textsc{local-algebraic}, \textsc{reduced-mode}, and
+\textsc{lorentzian-causal}.  A reduced-mode theorem is never used as evidence
+for a complete Lorentzian quantum or time-domain construction.
+
+\section{Relation to existing work}
+
+Maldacena's conformal-gravity construction uses a Neumann condition in
+Euclidean AdS or at late times in de Sitter space to select Einstein
+solutions \cite{Maldacena}.  The present problem has a different signature,
+background, and boundary geometry: a one-ended Lorentzian Schwarzschild
+exterior with a future event horizon and null infinity.
+
+The abstract operator complex is established in the conformal-geometry
+literature.  Branson and Gover constructed the conformal deformation detour
+complex on obstruction-flat, and hence Bach-flat in four dimensions,
+backgrounds \cite{BransonGover}.  Gover, Somberg, and Sou\v cek embedded such
+constructions in Yang--Mills detour complexes \cite{GoverSombergSoucek}.
+Deser, Joung, and Waldron wrote the nonlinear Bach factorization through
+Einstein and Schouten operators and discussed the corresponding local
+tensor/vector content \cite{DeserJoungWaldron}.  We therefore do not claim
+the abstract Schouten--Bach factorization, detour complex, or local
+two-tensor-plus-vector count as new.
+
+Ricci-tensor variables have long been useful for exposing higher-derivative
+spin-two sectors.  Recent quadratic-gravity work computes axial quasinormal
+modes of massless and massive spin-two fields \cite{Antoniou2025}, develops a
+Ricci-tensor treatment of Kerr perturbations \cite{Knoska2025}, evolves
+Einstein--Weyl perturbations in time \cite{Konoplya2025}, and studies the
+excitation and suppression of beyond-GR ringdown by point-particle sources
+\cite{Antoniou2026}.  A recent thesis gives a complementary radial
+Ricci-tensor reconstruction and its relation to the Schwarzschild--Bach
+family \cite{Tajcovsky2026}.
+
+The distinctive result here is the explicit Schwarzschild realization of
+the detour structure as a non-split RW/RW/Maxwell filtration, together with
+its action-derived Krein form, exact horizon and incoming population, and the
+failure of ordinary Lorentzian endpoint conditions to select the Einstein
+kernel.  The recent black-hole works above concern quadratic or
+Einstein--Weyl theories, massive sectors, radial reconstructions, or
+observable excitation.  The claims are complementary: we do not infer
+excitation amplitudes or a complete waveform from endpoint population alone.
+
+\section{Universal Ricci factorization and the Bach complex}
+\label{sec:ricci-factorization}
+
+In four dimensions,
+\begin{equation}
+\label{eq:weyl-euler}
+C_{abcd}C^{abcd}
+=
+E_4+2R_{ab}R^{ab}-\frac23R^2,
+\qquad
+E_4=R_{abcd}R^{abcd}-4R_{ab}R^{ab}+R^2.
+\end{equation}
+The integral of \(E_4\) has only boundary and corner variation.  Around a
+Ricci-flat background define
+\[
+\mathcal R:h_{ab}\longmapsto\delta R_{ab}[h],
+\qquad
+\Pi(\psi)_{ab}=\psi_{ab}-\frac13g_{ab}\psi.
+\]
+
+\begin{theorem}[Ricci-factorized pure-Weyl Hessian]
+\label{thm:ricci-hessian}
+Let \(g\) be any four-dimensional Ricci-flat metric.  Modulo the Euler
+boundary/corner term, the mixed Hessian of the pure-Weyl action is
+\begin{equation}
+\label{eq:ricci-hessian}
+\delta_1\delta_2 S_{\rm W}
+=
+4\alpha_{\rm W}\int_M\sqrt{-g}\,
+\left(
+\psi_{1,ab}\psi_2^{ab}-\frac13\psi_1\psi_2
+\right)\dd^4x.
+\end{equation}
+Equivalently, up to the overall sign fixed by the Euler--Lagrange
+convention,
+\[
+\delta B\sim\mathcal R^\dagger\Pi\mathcal R.
+\]
+In particular, the linearized Einstein kernel lies in the radical of the
+bulk Hessian:
+\[
+\mathcal Rh_E=0
+\quad\Longrightarrow\quad
+\delta^2S_{\rm W,bulk}(h_E,h)=0
+\quad\text{for every }h.
+\]
+\end{theorem}
+
+\begin{proof}
+Substitute \eqref{eq:weyl-euler} into the action.  On a Ricci-flat
+background all terms involving a background Ricci tensor, scalar curvature,
+or the first variation of the volume density vanish.  Polarizing the
+remaining quadratic term gives \eqref{eq:ricci-hessian}.  Formal integration
+by parts gives the normal-operator form.
+\end{proof}
+
+This explains why Einstein isotropy is neither an axial nor a Schwarzschild
+accident.  The result holds around every four-dimensional Ricci-flat
+background.  It is deliberately a bulk statement modulo the Euler density:
+the literal \(C^2\) Lee--Wald representative can retain an exact Euler or
+corner contribution.  That caveat is compatible with the unequal-frequency
+Einstein current being a nonzero exact expression while the Hermitian
+Einstein self-flux vanishes.
+
+\begin{theorem}[Schouten--Einstein carrier factorization]
+\label{thm:schouten-einstein}
+On every four-dimensional Ricci-flat background, define
+\[
+q_{ab}[h]
+=
+\delta R_{ab}[h]-\frac16g_{ab}\delta R[h].
+\]
+Then
+\begin{equation}
+\label{eq:schouten-einstein}
+\delta B_{ab}[h]=-\delta G_{ab}[q[h]],
+\qquad
+q=\frac13\delta R[h],
+\qquad
+\nabla^aq_{ab}=\nabla_bq .
+\end{equation}
+Moreover \(q[h]=0\) if and only if \(\delta R_{ab}[h]=0\).  Hence the
+linearized solution spaces fit into the covariant exact sequence
+\[
+0\longrightarrow\mathcal H_E
+\longrightarrow\mathcal H_B
+\overset{\mathcal Q}{\longrightarrow}
+\left\{
+q:\delta G[q]=0,\ \nabla^aq_{ab}=\nabla_bq
+\right\}\cap\operatorname{im}\mathcal Q
+\longrightarrow0 .
+\]
+\end{theorem}
+
+\begin{proof}
+The linearized Bianchi identity gives
+\(\nabla^a\delta R_{ab}=\nabla_b\delta R/2\), from which the trace and
+divergence constraints follow.  Substitution into the general Ricci-flat
+formula for \(\delta G[q]\) reproduces
+\eqref{eq:ricci-bach} coefficient by coefficient.  Taking the trace of
+\(q=0\) gives \(\delta R=0\), and hence \(\delta R_{ab}=0\).
+\end{proof}
+
+\begin{theorem}[Second-order parent system and factorized current]
+\label{thm:parent-system}
+On a four-dimensional Ricci-flat background, the bulk quadratic pure-Weyl
+action is equivalent, modulo the Euler boundary/corner term, to
+\begin{equation}
+\label{eq:parent-action}
+S_{\rm par}^{(2)}[h,f]
+=
+4\alpha_{\rm W}\int_M\sqrt{-g}\left[
+f^{ab}\delta G_{ab}[h]
+-\frac12\left(f_{ab}f^{ab}-f^2\right)
+\right]\dd^4x ,
+\end{equation}
+where \(f_{ab}\) is an independent symmetric tensor.  Its Euler--Lagrange
+equations are
+\begin{equation}
+\label{eq:parent-equations}
+\delta G_{ab}[f]=0,
+\qquad
+f_{ab}=q_{ab}[h].
+\end{equation}
+Let \(\boldsymbol\omega_E(a,b)\) denote the antisymmetric Green current of
+the linearized Einstein operator.  Then
+\begin{equation}
+\label{eq:parent-current}
+\boldsymbol\omega_{\rm W}\big((h_1,f_1),(h_2,f_2)\big)
+=
+4\alpha_{\rm W}\left[
+\boldsymbol\omega_E(h_1,f_2)
++\boldsymbol\omega_E(f_1,h_2)
+\right]
++d k_{E_4}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Variation of \eqref{eq:parent-action} with respect to \(f\) gives
+\[
+\delta G_{ab}[h]=f_{ab}-g_{ab}f.
+\]
+Since \(\delta G_{ab}[h]=q_{ab}-g_{ab}q\), the trace equation in four
+dimensions gives \(f=q\), and hence \(f_{ab}=q_{ab}\).  Substitution leaves
+\(2\alpha_{\rm W}(q_{ab}q^{ab}-q^2)\), the bulk quadratic Weyl density.
+Formal self-adjointness of the linearized Einstein operator gives the
+\(h\)-equation in \eqref{eq:parent-equations}.  The algebraic mass term has
+no derivative current; polarizing the remaining off-diagonal term gives
+\eqref{eq:parent-current}.  The final term is the Euler transgression
+displayed explicitly in Theorem~\ref{thm:euler-cut}.
+\end{proof}
+
+The parent field \(f\) is the target Einstein carrier, while \(h\) contains
+the source Einstein kernel and its metric lifts.  Thus, modulo the Euler cut,
+\[
+\boldsymbol\omega_{\rm W}(h_E,h'_E)=0,
+\qquad
+\boldsymbol\omega_{\rm W}(h_E,X)
+=4\alpha_{\rm W}\boldsymbol\omega_E(h_E,f_X).
+\]
+The mixed block is the ordinary Einstein Green pairing between the source
+Einstein perturbation and the target carrier.  By contrast, the
+additional--additional entry depends on the choice of metric lift \(h_X\),
+as the direct calculation found.
+
+\begin{proposition}[Parent resolvent identity]
+\label{prop:parent-resolvent}
+Let \(\mathcal E(\omega)\) be the gauge-fixed linearized Einstein operator
+and let
+\[
+(\mathcal Af)_{ab}=f_{ab}-g_{ab}f.
+\]
+At every spectral point where \(\mathcal E(\omega)\) is invertible, the
+parent Hessian and its inverse are
+\[
+\mathbb H(\omega)
+=4\alpha_{\rm W}
+\begin{pmatrix}
+0&\mathcal E\\
+\mathcal E&-\mathcal A
+\end{pmatrix},
+\qquad
+\mathbb H(\omega)^{-1}
+=\frac1{4\alpha_{\rm W}}
+\begin{pmatrix}
+\mathcal E^{-1}\mathcal A\mathcal E^{-1}&\mathcal E^{-1}\\
+\mathcal E^{-1}&0
+\end{pmatrix}.
+\]
+In particular, the metric--metric block is
+\[
+G_{hh}
+=\frac1{4\alpha_{\rm W}}\,
+\mathcal E^{-1}\mathcal A\mathcal E^{-1}.
+\]
+\end{proposition}
+
+\begin{proof}
+Direct block multiplication on either side gives the identity.  No
+commutation of \(\mathcal A\) with \(\mathcal E\) is used.
+\end{proof}
+
+This explains the repeated spin-two divisor without cyclic elimination:
+the metric response is an Einstein resolvent, followed by an algebraic
+trace-reversal insertion, followed by a second Einstein resolvent.  It does
+not by itself provide a causal spacetime QNM resolvent: that requires a
+declared global evolution domain and inverse-transform control.  A
+finite-interval radial Fredholm realization is established below in
+Theorem~\ref{thm:radial-green-pole}.
+
+\begin{corollary}[Conditional simple-QNM Laurent coefficient]
+\label{cor:conditional-parent-pole}
+Assume such an analytic Fredholm realization, graph-norm boundedness of
+\(\mathcal A\), and a simple Einstein resonance \(\omega_n\), with
+\[
+\mathcal E(\omega)^{-1}
+=\frac{P_n}{\omega-\omega_n}+R_n(\omega),
+\qquad
+P_n=\frac{u_n\otimes\widetilde u_n}{\alpha_n}.
+\]
+Then the coefficient of the double pole in the metric block is
+\[
+\operatorname{Coeff}_{(\omega-\omega_n)^{-2}}G_{hh}
+=
+\frac1{4\alpha_{\rm W}}\,
+\frac{\beta_n^{\rm par}}{\alpha_n^2}\,
+u_n\otimes\widetilde u_n,
+\qquad
+\beta_n^{\rm par}
+=\langle\widetilde u_n,\mathcal Au_n\rangle .
+\]
+\end{corollary}
+
+\begin{proof}
+The double coefficient is \(P_n\mathcal AP_n/(4\alpha_{\rm W})\).
+Substitution of the rank-one projector gives the displayed formula.
+\end{proof}
+
+Projection to the scalar master system is expected to identify
+\(\beta_n^{\rm par}\) with the radial extension overlap after endpoint and
+commutator terms are included.  That equality is an experiment gate, not an
+identity silently assumed here.
+
+\begin{remark}[Parent-overlap and retarded-convolution rails]
+\label{rem:parent-experiments}
+The first new QNM audit is to evaluate the regularized parent overlap
+\[
+\beta_n^{\rm par}
+=\operatorname{FP}\langle\widetilde f_n,\mathcal Af_n\rangle
+\text{endpoint terms}
+\]
+on the already certified simple axial QNM disk and compare it with the
+normalized radial projective overlap.  The comparison must include the
+scalar projection and prove cancellation of the induced commutator terms;
+agreement is not inferred merely from the common connection Smith type.
+
+Formally, whenever compatible retarded Einstein inverses exist, the metric
+block has the convolution representation
+\[
+G_{hh}^{\rm ret}(t)
+=\frac1{4\alpha_{\rm W}}
+\int_0^t
+G_E^{\rm ret}(t-s)\,
+\mathcal A\,
+G_E^{\rm ret}(s)\,\dd s .
+\]
+This specifies a second experiment: compare direct six-state evolution with
+two sequential Einstein evolutions and use the flat-space biwave kernel
+\(\theta(t-r)/(8\pi)\), up to the wave-operator sign convention, as the
+first control.  The algebraic convolution identity does not certify a
+Schwarzschild retarded propagator, time-domain boundedness, or decay.
+\end{remark}
+
+The pure-target-gauge part of this carrier has a concrete geometric meaning.
+If \(q_{ab}=\mathcal L_\eta g_{ab}\) and
+\(F_{ab}=2\nabla_{[a}\eta_{b]}\), the carrier constraint is precisely
+\[
+\nabla^aF_{ab}=0.
+\]
+A source Weyl transformation \(h_{ab}\mapsto h_{ab}+\Phi g_{ab}\) induces
+\(\eta_a\mapsto\eta_a-\nabla_a\Phi/2\), so \(F\) is invariant.  Thus source
+Weyl gauge becomes Maxwell gauge of the target Einstein vector.  This target
+gauge is not gauge-trivial as a perturbation of the original Weyl metric.
+
+The action fixes its sign.  With \(\tau=q^a{}_a\), the Ricci-factorized
+quadratic density is
+\[
+2\alpha_{\rm W}\left(q_{ab}q^{ab}-\tau^2\right).
+\]
+For \(q=\mathcal L_\eta g\),
+\[
+q_{ab}q^{ab}-\tau^2
+=
+F_{ab}F^{ab}
++4\nabla_a\!\left(
+\eta_b\nabla^b\eta^a-\eta^a\nabla_b\eta^b
+\right).
+\]
+Consequently the spin-one bulk action is
+\[
+S^{(2)}_{\rm spin1}
+=2\alpha_{\rm W}\int F_{ab}F^{ab}
+=-8\alpha_{\rm W}S_{\rm Maxwell}
+\]
+modulo a boundary term.  For \(\alpha_{\rm W}>0\), this is the opposite
+kinetic sign to conventional Maxwell theory.
+
+The static Schwarzschild family is a finite-dimensional shadow of the same
+nullity.  In the residual-basic normalization of the source archive,
+\(\gamma=k=0\) gives \(D_2=H=0\), while
+\[
+S_h=64\pi^2\alpha_{\rm W},
+\qquad
+T_\chi=\frac1{4\pi},
+\]
+so the restricted first law is the identity \(0=T_\chi\,0\).  We use this
+only as a consistency corollary; the general static thermodynamic
+classification remains in the companion manuscript.
+
+Let the background be Ricci-flat.  For a metric perturbation \(h_{ab}\), put
+\[
+\psi_{ab}=\delta R_{ab}[h],
+\qquad
+\psi=g^{ab}\psi_{ab}.
+\]
+Linearization of the Bach tensor gives
+\begin{equation}
+\label{eq:ricci-bach}
+\delta B_{ab}[h]
+=
+\frac12\Box\psi_{ab}
++C_{acbd}\psi^{cd}
+-\frac16\nabla_a\nabla_b\psi
+-\frac1{12}g_{ab}\Box\psi.
+\end{equation}
+In the axial sector \(\psi=0\), so the carrier equation is a second-order
+Lichnerowicz-type equation
+\begin{equation}
+\label{eq:axial-carrier}
+L_{\rm car}\psi_{ab}
+:=
+\frac12\Box\psi_{ab}+C_{acbd}\psi^{cd}=0.
+\end{equation}
+
+\begin{proposition}[Ricci--Bach exact sequence]
+\label{prop:exact-sequence}
+On the declared axial Schwarzschild \(\ell=2\) mode class, the linearized
+Ricci map fits into the exact sequence
+\begin{equation}
+\label{eq:exact-sequence}
+0\longrightarrow
+\mathcal E_{\rm RW}
+\longrightarrow
+\mathcal B_{\rm axial}
+\overset{\delta\Ric}{\longrightarrow}
+\mathcal C_{\rm axial}
+\longrightarrow0,
+\end{equation}
+where \(\mathcal E_{\rm RW}\) is the two-dimensional Regge--Wheeler
+Einstein module and \(\mathcal C_{\rm axial}\) is the realized
+second-order Ricci carrier.  The sequence is exact but has no certified
+canonical metric splitting.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Equation \eqref{eq:ricci-bach} proves that the Ricci image of a Bach solution
+obeys \eqref{eq:axial-carrier}.  The complete reconstruction audit verifies
+every Ricci row, including the independent \(v\varphi\) equation omitted in an
+earlier shallow reduction.  Its zero fibre is exactly the linearized Einstein
+Regge--Wheeler system.  Exact recurrence and reconstruction certificates show
+that the declared carrier is realized.  A rational splitting is separately
+obstructed by the extension invariants discussed in Section~\ref{sec:jet}.
+\end{proof}
+
+\subsection{Horizon reach}
+
+In ingoing Eddington--Finkelstein coordinates the carrier horizon is a regular
+singular point.  For every nonzero real frequency its ingoing analytic
+solution space is two-dimensional.  Thus horizon regularity alone does not
+imply \(\psi_{ab}=0\).
+
+\begin{corollary}[Local horizon nonselection]
+Future-horizon analyticity admits nonzero Ricci-carrier data in addition to
+the Einstein kernel.  Hence it does not select the Einstein image within the
+axial Bach solution space.
+\end{corollary}
+
+\section{The axial filtration and its partial jet}
+\label{sec:jet}
+
+After exact factor reduction the six-state axial system has a filtration
+\[
+0\subset F_1\subset F_2\subset F_3=M_{\rm axial},
+\]
+with
+\begin{equation}
+\label{eq:filtration}
+F_1\simeq M_{\rm RW}^{(2)},\qquad
+F_2/F_1\simeq M_{\rm RW}^{(2)},\qquad
+F_3/F_2\simeq M_{\rm RW}^{(1)}.
+\end{equation}
+Here \(M_{\rm RW}^{(2)}\) is the axial spin-two Regge--Wheeler module and
+\(M_{\rm RW}^{(1)}\) is the spin-one quotient with potential
+\[
+V_1(r)=\frac{6(r-2)}{r^3}
+\]
+in units \(M=1\).
+
+The filtration now has a covariant associated-graded interpretation:
+\[
+\operatorname{gr}\mathcal H_{B,\rm axial}
+\simeq
+M_{\rm RW}^{(h)}
+\oplus M_{\rm RW}^{(q)}
+\oplus M_{\rm Maxwell}^{(\eta)}.
+\]
+The first factor is the source Einstein kernel, the second is the physical
+target Einstein carrier, and the third is the Maxwell equation for its
+target-gauge vector.  The certified \(\ell=2\) lift proves this complete
+realization.  The analogous all-\(\ell\) lift remains a prediction, not a
+theorem of this paper.
+
+In factor variables \(X,Y,Z\in\C^2\), the generator is
+\begin{equation}
+\label{eq:six-state}
+\begin{aligned}
+X'&=AX+EY+CZ,\\
+Y'&=AY+DZ,\\
+Z'&=A_1Z.
+\end{aligned}
+\end{equation}
+The two upper sources share one image line:
+\[
+E=USJ,\qquad C=USN.
+\]
+Consequently \eqref{eq:six-state} is exactly the spin-two-row first jet of
+the four-state family
+\begin{equation}
+\label{eq:four-state}
+\mathcal B(\tau)=
+\begin{pmatrix}
+A+\tau E&D+\tau C\\
+0&A_1
+\end{pmatrix}.
+\end{equation}
+Over the dual numbers \(\C[\varepsilon]/(\varepsilon^2)\), the six-state
+solution is simply \((Y+\varepsilon X,Z)\).
+
+\begin{theorem}[Exact axial partial-jet filtration]
+\label{thm:jet}
+Every interior transport matrix has the form
+\begin{equation}
+\label{eq:jet-transport}
+\Phi_6=
+\begin{pmatrix}
+P&\dot P&\dot Q\\
+0&P&Q\\
+0&0&R
+\end{pmatrix}_{\tau=0},
+\end{equation}
+where
+\[
+\begin{pmatrix}P(\tau)&Q(\tau)\\0&R\end{pmatrix}
+\]
+is the transport of \eqref{eq:four-state}.  In particular
+\[
+\det\Phi_6=(\det P)^2\det R.
+\]
+The repeated-spin-two extension is non-split over the generic rational
+differential field and is not generated, modulo rational gauge, by frequency,
+Schwarzschild-mass, or angular-eigenvalue differentiation.
+\end{theorem}
+
+The jet identity is useful both conceptually and numerically.  A triangular
+connection
+\[
+T=
+\begin{pmatrix}
+a&b&c\\0&a&d\\0&0&f
+\end{pmatrix}
+\]
+is the jet of
+\[
+C(\tau)=\begin{pmatrix}a(\tau)&d(\tau)\\0&f\end{pmatrix},
+\quad
+\dot a=b,\quad \dot d=c.
+\]
+Therefore
+\begin{equation}
+\label{eq:inverse-ratios}
+T^{-1}=
+\begin{pmatrix}
+a^{-1}&-b/a^2&(bd-ac)/(a^2f)\\
+0&a^{-1}&-d/(af)\\
+0&0&f^{-1}
+\end{pmatrix},
+\end{equation}
+and the three apparently independent extension ratios are one base transfer
+and its intrinsic derivative.
+
+\begin{remark}[Critical Einstein--Weyl mass jet]
+\label{rem:critical-mass-jet}
+The second-order parent action admits the signed squared-mass deformation
+\[
+S_m^{(2)}
+=
+4\alpha_{\rm W}\int\sqrt{-g}\left[
+\phi^{ab}\mathcal E_{ab}[h]
+-\frac12\bigl(\phi_{ab}\phi^{ab}-\phi^2\bigr)
++\frac m2 h^{ab}\mathcal E_{ab}[h]
+\right].
+\]
+Its equations are
+\[
+\mathcal E h=\mathcal A\phi,
+\qquad
+\mathcal E\phi+m\mathcal E h=0,
+\qquad
+(\mathcal E+m\mathcal A)\phi=0.
+\]
+If \(\phi(m)\) is a smooth tensor branch through \(m=0\), then
+\[
+\mathcal E\dot\phi+\mathcal A\phi_0=0,
+\qquad
+\mathcal E(h+\dot\phi)=0,
+\]
+and hence \([h]=-[\partial_m\phi]_{m=0}\) modulo the Einstein kernel.
+On the transverse-traceless sector,
+\[
+\{\mathcal E(\mathcal E+m)\}^{-1}
+=
+\frac1m\{\mathcal E^{-1}-(\mathcal E+m)^{-1}\}
+\longrightarrow\mathcal E^{-2}.
+\]
+This is the exact covariant critical-mass jet underlying the coalescence of
+the massless and massive spin-two branches in Einstein--Weyl
+gravity~\cite{Antoniou2025}.  At infinity,
+\[
+k=\sqrt{\omega^2-m},
+\qquad
+\partial_m k|_0=-\frac1{2\omega},
+\]
+so the moving massive phase produces the generalized
+\(r_*e^{\pm i\omega r_*}\) partner, while the Schwarzschild Coulomb exponent
+has zero first \(m\)-derivative.  The finite-mass branch-sign involution is
+singular in the confluent basis and its renormalized residue is the
+nilpotent jet map.
+
+At the stage proved in this paper, the intrinsic radial parameter \(\tau\)
+in \eqref{eq:four-state} is not identified with a physical massive-system
+parameter.  The focused successor Paper~17 now factors the complete coupled
+massive axial \(Q,Z\) system through its massless
+Maxwell/Regge--Wheeler variables.  For the signed squared-mass parameter
+\(m=\mu^2\), it proves
+\[
+ [\mathcal I_{\rm phys}]
+ =\frac13\left[1-\frac2r\right],
+ \qquad
+ [\mathcal I_{\rm Bach}]
+ =\frac{3i\omega}{2}[\mathcal I_{\rm phys}]
+ \quad\hbox{in}\quad \C(r)/\mathcal K_U\C(r).
+\]
+The spectral-variable-dependent factor is a first-order tangent-cocycle
+normalization, not a global reparametrization of two operator families.  The
+complete local crosswalk also proves that the reverse tensor-to-vector
+first-jet forcing is rationally removable and matches the leading
+differentiated massive phase at infinity.
+
+Paper~17 additionally constructs parameter-analytic matrix Frobenius and
+sectorial Volterra Jost planes for the complete coupled system.  Endpoint
+uniqueness excludes an opposite-Jost admixture, while the certified
+spin-one local unit removes same-sign mixing by a Schur complement.  It
+therefore promotes the reduced-mode identity
+\[
+ \omega_n'(0)=\frac{2i}{3\omega_n}\kappa_n\ne0.
+\]
+The same successor also constructs a fixed-domain two-ended
+exterior-complex-scaled radial Fredholm pencil of index zero containing the
+generalized Jost tangent.  It further proves that the compactly cut-off
+transfer is the meromorphic continuation of an actual retarded
+mode-reduced parent response.  It does not supply a full metric/BV retarded
+propagator or the inverse-Laplace contour deformation, which remain outside
+the present paper.
+\end{remark}
+
+\subsection{The spin-one quotient is not a rational spin-two transform}
+
+The distinct scalar labels in \eqref{eq:filtration} cannot be removed by a
+local rational Darboux redefinition.
+
+\begin{proposition}[No rational spin-one/spin-two intertwiner]
+\label{prop:no-spin-intertwiner}
+For every fixed real \(\omega>0\),
+\[
+\operatorname{Hom}_{\C(r)[D]}
+\bigl(M_{\rm RW}^{(2)},M_{\rm RW}^{(1)}\bigr)=0,
+\qquad
+\operatorname{Hom}_{\C(r)[D]}
+\bigl(M_{\rm RW}^{(1)},M_{\rm RW}^{(2)}\bigr)=0.
+\]
+\end{proposition}
+
+\begin{proof}
+Modulo the source equation, any rational differential map reduces to
+\(P=a(r)D+b(r)\).  Requiring it to map all solutions of one scalar factor
+to the other gives, in either direction,
+\begin{align}
+0=\mathcal H_\omega a={}&
+r^4(r-2)^2a^{(4)}
++r^3(r-2)(3r+4)a^{(3)}
+\notag\\
+&+r^2(4\omega^2r^4-24r^2+62r-12)a''
+\notag\\
+&+r(12\omega^2r^4-90r+60)a'
++(90r-60)a.
+\label{eq:spin-intertwiner}
+\end{align}
+The local exponents are
+\[
+r=0:\ -1,1,3,5,
+\qquad
+r=2:\ 0,1,4i\omega,-4i\omega.
+\]
+A rational solution therefore has at most a simple pole at \(r=0\), no
+pole at the horizon, and no ordinary-point pole.  Dominant balance at
+infinity permits only \(a\sim r^0\) or \(a\sim r^{-2}\).  Hence
+\(a=A+B/r\).  Exact substitution yields
+\[
+\mathcal H_\omega\!\left(A+\frac Br\right)
+=
+90Ar-60A-4B\omega^2r^3-42Br+220B,
+\]
+which vanishes for real \(\omega>0\) only when \(A=B=0\).  The remaining
+compatibility equation then forces \(b=0\).
+\end{proof}
+
+Thus the negative spin-one quotient is neither a disguised spin-two mode nor
+a rational local spin-changing field redefinition.  This is a statement
+about rational differential modules; it does not exclude nonlocal,
+meromorphic, or scattering-dependent transforms.
+
+\subsection{Real-axis simplicity and the local \(C\) obstruction}
+
+The non-split extension also constrains possible positive-metric
+constructions.  The statement is local and classical; it is not a theorem
+about a quantum Hilbert space.
+
+\begin{theorem}[Real-axis simplicity and scalar endomorphism rings]
+\label{thm:rw-simple}
+Let \(\ell\ge2\), \(\Lambda=\ell(\ell+1)\), and
+\[
+L_{2,\ell}
+=D^2+\omega^2
+-f\left(\frac{\Lambda}{r^2}-\frac6{r^3}\right),
+\qquad
+L_{1,\ell}
+=D^2+\omega^2-f\frac{\Lambda}{r^2},
+\quad
+D=f\partial_r.
+\]
+For every real \(\omega>0\), both differential modules are simple over
+\(\C(r)[D]\), and
+\[
+\operatorname{End}_{\C(r)[D]}(M_{2,\ell})
+=
+\operatorname{End}_{\C(r)[D]}(M_{1,\ell})
+=\C.
+\]
+The spin-two equation has the exact same-sign algebraically-special controls
+\[
+\omega=\sigma i\,\frac{\Lambda(\Lambda-2)}{12},
+\qquad
+y=e^{\sigma i\omega r_*}
+\left(1+\frac{6}{(\Lambda-2)r}\right),
+\qquad \sigma=\pm1.
+\]
+For \(\ell=2\), a separate opposite-sign audit excludes
+\(\omega=i/4,i/2,i\) as rational reducibility points.
+\end{theorem}
+
+\begin{proof}
+Reducibility is equivalent to a rational solution of the Riccati equation
+\[
+Dw+w^2+\omega^2-V_{s,\ell}=0.
+\]
+At \(r=0\), the spin-two exponents are \(-1,3\), the Maxwell exponents are
+\(0,2\), and at the horizon both equations have exponents
+\(\pm2i\omega\).  A rational prefactor cannot connect opposite horizon and
+infinity Jost signs for real \(\omega\ne0\), because that would require the
+noninteger rational power \(4i\omega\).  Ordinary-point regularity and
+dominant balance at infinity therefore reduce a possible spin-two
+hyperexponential solution to
+\[
+y=e^{\sigma i\omega r_*}\left(A+\frac Br\right).
+\]
+Exact substitution gives
+\[
+L_{2,\ell}y=
+-\frac{i(r-2)e^{\sigma i\omega r_*}}{r^4}
+\left[
+(-i\Lambda A+2\sigma\omega B)r
++i\{6A+(2-\Lambda)B\}
+\right].
+\]
+A nonzero solution forces
+\[
+B=\frac{6A}{\Lambda-2},
+\qquad
+\omega=\sigma i\,\frac{\Lambda(\Lambda-2)}{12},
+\]
+which is not positive real.  In the Maxwell case the same local analysis
+leaves only a constant rational prefactor, and its residual
+\(-f\Lambda A/r^2\) is nonzero.
+
+For the endomorphism statement, remove the constant trace.  A trace-free
+horizontal endomorphism is determined by \(q\in\C(r)\) satisfying
+\[
+\mathcal K_Uq=0,
+\qquad
+\mathcal K_U=D^3+4UD+2D(U).
+\]
+The spin-two symmetric-square exponents at \(r=0\) are \(-2,2,6\), so
+rationality reduces the search to
+\[
+q=q_0+\frac{q_1}{r}+\frac{q_2}{r^2}.
+\]
+Three exact coefficient consequences are
+\[
+-4\omega^2q_1=0,\qquad
+4(\Lambda q_0-2\omega^2q_2)=0,\qquad
+-12(\Lambda+3)q_0=0,
+\]
+where the last follows after the preceding eliminations.  Hence
+\(q_0=q_1=q_2=0\).  For Maxwell the symmetric-square exponents are
+\(0,2,4\), so \(q=q_0\), while
+\[
+\mathcal K_{U_1}(q_0)
+=\frac{4\Lambda q_0(r-3)(r-2)}{r^5};
+\]
+again \(q_0=0\).  The separately certified finite ans\"atze at the three
+imaginary frame events have zero kernel for both possible Jost signs.
+\end{proof}
+
+\begin{remark}[Complex reducibility confinement]
+For complex \(\omega\), a rational hyperexponential solution with opposite
+horizon and infinity Jost signs requires a rational prefactor carrying the
+horizon exponent difference \(4i\omega\).  Hence every remaining
+opposite-sign reducibility candidate obeys
+\[
+4i\omega\in\mathbb Z.
+\]
+The same-sign terminal ansatz gives only the static and algebraically special
+controls.  Thus rational reducibility is confined to the quarter-integer
+imaginary lattice.  This is a confinement theorem, not a complete
+classification: arbitrarily high integral horizon powers remain to be
+audited.  For \(\ell=2\), \(i/4,i/2,i\) are already excluded and
+\(\omega=\pm2i\) are the algebraically special controls.
+\end{remark}
+
+\begin{proposition}[No branch-resolving rational involution]
+\label{prop:no-local-c}
+Let
+\[
+0\longrightarrow M_{\rm RW}
+\longrightarrow E_{\rm Bach}
+\longrightarrow M_{\rm RW}
+\longrightarrow0
+\]
+be the generic repeated-spin-two extension.  There is no rational
+differential-module endomorphism \(C\) with \(C^2=1\) that acts by \(+1\) on
+the Einstein submodule and by \(-1\) on the quotient.
+\end{proposition}
+
+\begin{proof}
+In a triangular frame,
+\[
+\mathcal A=\begin{pmatrix}A&E\\0&A\end{pmatrix}.
+\]
+A filtration-compatible involution with the declared actions must be
+\[
+C=\begin{pmatrix}I&Q\\0&-I\end{pmatrix}.
+\]
+Covariant constancy,
+\[
+C'+C\mathcal A-\mathcal AC=0,
+\]
+requires
+\[
+Q'+QA-AQ=-2E.
+\]
+Over characteristic zero this says that the extension cocycle is a rational
+coboundary.  It would split the extension, contradicting the certified
+nonzero rational extension class.
+\end{proof}
+
+The scalar classification makes the stronger categorical statement directly
+applicable on the physical real axis.
+
+\begin{lemma}[Involutions of a simple nonsplit self-extension]
+\label{lem:simple-extension-involution}
+Over a characteristic-zero differential field, let
+\[
+0\longrightarrow M\longrightarrow E\longrightarrow M\longrightarrow0
+\]
+be a nonsplit self-extension of a simple differential module \(M\).  Every
+differential-module involution of \(E\) is \(+I\) or \(-I\).
+\end{lemma}
+
+\begin{proof}
+For an involution \(C\), the operators
+\(P_\pm=(I\pm C)/2\) are complementary differential-module idempotents.
+If \(C\ne\pm I\), both images are nonzero.  Since \(E\) has composition
+length two with identical simple factors, both images have length one and
+give a direct-sum splitting of the extension, a contradiction.
+\end{proof}
+
+\begin{corollary}[Only scalar involutions on the physical axial block]
+\label{cor:only-scalar-c}
+For axial \(\ell=2\) and every real \(\omega>0\), the only rational
+differential-module involutions of the repeated-spin-two Bach block are
+\[
+C=+I,\qquad C=-I.
+\]
+Neither makes its hyperbolic flux form positive.
+\end{corollary}
+
+\begin{proof}
+The earlier cocycle reduction used a left-null witness proportional to
+\(\omega^2-3\), which did not classify that specialization.  The same
+exhaustive coefficient system has the fixed minors
+\[
+\det M_{[0,1,2]}=3456\omega^{10},
+\qquad
+\det[M\mid{\rm rhs}]_{[0,1,2,5]}
+=-645120i\omega^9.
+\]
+Thus its coefficient and augmented ranks are respectively three and four
+for every \(\omega>0\), including \(\omega^2=3\); the extension is nonsplit
+throughout the physical real axis.  Apply
+Theorem~\ref{thm:rw-simple} and
+Lemma~\ref{lem:simple-extension-involution}.  Multiplication by either
+remaining scalar sign preserves the inertia of the hyperbolic plane.
+\end{proof}
+
+\begin{theorem}[Complete local commutant]
+\label{thm:local-commutant}
+For axial \(\ell=2\) and every real \(\omega>0\), the commutant of the
+nonsplit repeated-spin-two Bach module is
+\[
+\operatorname{End}(E_{\rm Bach})
+\simeq
+\C[\varepsilon]/(\varepsilon^2).
+\]
+More precisely, every endomorphism is uniquely
+\[
+\Phi=aI+bN,
+\qquad
+N^2=0.
+\]
+Consequently
+\[
+\operatorname{Aut}(E_{\rm Bach})
+=\{aI+bN:a\ne0\},
+\qquad
+\operatorname{Idem}(E_{\rm Bach})=\{0,I\},
+\]
+the only involutions are \(\pm I\), every diagonalizable local endomorphism
+is scalar, and every finite-order local automorphism is scalar.
+\end{theorem}
+
+\begin{proof}
+The embedded copy of \(M_{\rm RW}\) is the unique simple submodule: a second
+simple submodule mapping nontrivially to the quotient would split the
+extension.  Hence every endomorphism preserves it and induces scalars
+\(a,d\) on the submodule and quotient.  Naturality of the nonzero extension
+class \(e\) gives \(ae=ed\), so \(a=d\).  Then \(\Phi-aI\) vanishes on the
+submodule and quotient and factors through the quotient-to-submodule map,
+giving \(bN\), with \(N^2=0\).  The remaining assertions follow from
+\[
+(aI+bN)^k=a^kI+ka^{k-1}bN
+\]
+in characteristic zero.
+\end{proof}
+
+\begin{corollary}[No local positive metric operator]
+\label{cor:no-local-eta}
+No rational local dynamically compatible operator \(\eta\), even without
+the condition \(\eta^2=I\), makes the repeated-spin-two flux positive
+definite.
+\end{corollary}
+
+\begin{proof}
+In the canonical null basis,
+\[
+G_2=\begin{pmatrix}0&g\\g&0\end{pmatrix},
+\qquad
+N=\begin{pmatrix}0&1\\0&0\end{pmatrix},
+\qquad g>0.
+\]
+Theorem~\ref{thm:local-commutant} gives
+\(\eta=aI+bN\).  Krein self-adjointness forces \(a,b\in\mathbb R\), and
+\[
+G_2\eta
+=
+\begin{pmatrix}0&ga\\ga&gb\end{pmatrix},
+\qquad
+\det(G_2\eta)=-g^2a^2.
+\]
+For \(a\ne0\) the form is indefinite; for \(a=0\) it is degenerate.
+\end{proof}
+
+The endpoint Krein diagonalization is algebraic, but a bulk dynamical
+diagonalization would produce nontrivial differential-module projectors and
+split the extension.  The theorem excludes rational local involutions only;
+nonlocal, spectral, scattering-dependent, and BRST constructions remain
+open.
+
+The endpoint form supplies a complementary positivity obstruction, stated
+after its exact Gram is displayed below.
+
+\section{Action-derived endpoint flux}
+
+The sphere-integrated Lee--Wald current is fixed by the off-shell Green
+identity
+\begin{equation}
+\label{eq:green}
+\partial_tF^t(h_A,h_B)+\partial_rF^r(h_A,h_B)
+=4\alpha_{\rm W}\int_{S^2}\sqrt q\,
+\bigl(
+h_B^{ab}\delta B_{ab}[h_A]
+-h_A^{ab}\delta B_{ab}[h_B]
+\bigr).
+\end{equation}
+It is therefore not an arbitrarily normalized Wronskian of a chosen master
+field.
+
+\begin{theorem}[Euler cut current and Einstein wave-packet isotropy]
+\label{thm:euler-cut}
+Let \(\boldsymbol\omega_{C^2}\) be the literal Weyl-action presymplectic
+current and \(\boldsymbol\omega_{\rm Ric}\) the current derived from the
+Ricci-factorized bulk action.  With
+\[
+\Theta_{E_4}(\delta)
+=
+2\alpha_{\rm W}\epsilon_{abcd}\,
+\delta\Gamma^{ab}\wedge R^{cd},
+\qquad
+k_{E_4}(\delta_1,\delta_2)
+=
+2\alpha_{\rm W}\epsilon_{abcd}\,
+\delta_1\Gamma^{ab}\wedge\delta_2\Gamma^{cd},
+\]
+one has
+\[
+\boldsymbol\omega_{C^2}-\boldsymbol\omega_{\rm Ric}
+=d k_{E_4}.
+\]
+On axial Einstein modes, restoring the Fourier factor
+\(e^{i(\omega_1+\omega_2)t}\), the exact radial current is
+\[
+F^r_{EE}
+=-\frac{192\pi\alpha_{\rm W}(\omega_1^2-\omega_2^2)}
+{5\omega_1\omega_2r}\,
+\Psi_1\Psi_2e^{i(\omega_1+\omega_2)t}
+=\partial_tQ_{EE},
+\]
+where
+\[
+Q_{EE}
+=
+\frac{192\pi i\alpha_{\rm W}(\omega_1-\omega_2)}
+{5\omega_1\omega_2r}\,
+\Psi_1\Psi_2e^{i(\omega_1+\omega_2)t}.
+\]
+Therefore every pair of smooth compact-frequency Einstein wave packets with
+support bounded away from \(\omega=0\) has zero integrated
+Einstein--Einstein flux through each finite-radius cylinder.  The Einstein
+wave-packet subspace is totally isotropic.  The same conclusion holds at a
+null or horizon endpoint whenever the declared packet bounds justify
+interchanging the endpoint limit with the time integral.
+\end{theorem}
+
+\begin{proof}
+The Chern--Weil variation
+\(\delta R^{ab}=D\delta\Gamma^{ab}\), metric compatibility, and graded
+antisymmetry give
+\(\boldsymbol\omega_{E_4}=dk_{E_4}\).  The displayed Fourier identity follows
+from
+\(i(\omega_1+\omega_2)i(\omega_1-\omega_2)
+=-(\omega_1^2-\omega_2^2)\).
+On the declared packet core the inverse Fourier transforms and the cut
+bilinear are Schwartz in \(t\); hence
+\(\int_{\mathbb R}F^r_{EE}\dd t=Q_{EE}(+\infty)-Q_{EE}(-\infty)=0\).
+\end{proof}
+
+The theorem does not set the literal monochromatic current to zero
+pointwise.  It identifies that current as an Euler cut contribution.  The
+mixed Einstein--additional block is different: the exact all-\(\omega>0\)
+endpoint Gram below forces it to be nonzero, while the interior fixtures are
+retained only as independent checks.  This cross block is not established to
+be Euler-exact.  Thus the Einstein wave-packet space is isotropic but
+nonradical in the full Weyl phase space.  Theorem~\ref{thm:parent-system}
+identifies its non-Euler part with the ordinary Einstein Green pairing.
+
+Let \(G_-(\omega)\) be the incoming null-infinity Gram in the three-dimensional
+factor trace space.  Define
+\[
+E=EI0,\qquad
+R=XI0-\frac{i}{\omega}XI1,
+\]
+and let \(S\) be the unique \(G_-\)-orthogonal lift of the unit spin-one
+quotient.  After the harmless Einstein shear making the second spin-two
+factor null, the exact factor Gram is
+\begin{equation}
+\label{eq:factor-gram}
+\widehat G_-^{\rm fac}
+:=\frac{G_-}{\pi\alpha_{\rm W}}
+=
+\begin{pmatrix}
+0&\dfrac{576}{5}\omega&0\\[2mm]
+\dfrac{576}{5}\omega&0&0\\[2mm]
+0&0&-\dfrac{32}{15\omega}
+\end{pmatrix}.
+\end{equation}
+
+The availability of this null lift is structural.  Any Hermitian block
+\[
+\begin{pmatrix}0&a\\ \bar a&b\end{pmatrix},
+\qquad a\ne0,
+\]
+changes under \(X\mapsto X+cE\) by
+\(b\mapsto b+c\bar a+\bar c a\).  A choice of \(c\) always sets the second
+diagonal entry to zero, while the determinant remains \(-|a|^2\).
+Accordingly the parent action predicts a canonical off-diagonal
+source/target spin-two kinetic block; the wrong-sign Maxwell quotient then
+supplies the separate negative line.  Direct raw-Weyl current reduction
+remains an independent audit of
+\[
+G_{\rm raw\ Weyl}-G_{\rm parent}=G_{\rm Euler\ cut}.
+\]
+
+\begin{theorem}[Canonical incoming Krein anatomy]
+\label{thm:krein}
+For every real \(\omega>0\),
+\[
+\inertia G_-(\omega)=(1,2,0).
+\]
+The repeated spin-two extension is a hyperbolic plane and the intrinsic
+spin-one quotient metric is strictly negative:
+\[
+g_1=-\pi\alpha_{\rm W}\frac{32}{15\omega}.
+\]
+In normalized channels
+\[
+P_2=\frac{E+R}{\sqrt{2a}},\qquad
+N_2=\frac{E-R}{\sqrt{2a}},\qquad
+N_1=\frac{S}{\sqrt b},
+\]
+where \(a=576\omega/5\) and \(b=32/(15\omega)\), the Gram is
+\[
+\operatorname{diag}(1,-1,-1).
+\]
+\end{theorem}
+
+\begin{proposition}[Einstein-line positivity obstruction]
+\label{prop:positivity-trilemma}
+Let \(W\) be any subspace of an endpoint trace space that contains the
+nonzero Einstein line \(\C E\), with \(G(E,E)=0\).  If \(G|_W\) is
+nondegenerate, then it is indefinite.  Equivalently, every semidefinite
+restriction retaining \(\C E\) is degenerate.
+\end{proposition}
+
+\begin{proof}
+If \(G(E,w)=0\) for every \(w\in W\), then \(E\) lies in the radical of
+\(G|_W\).  Otherwise choose \(x\in W\) with \(a=G(E,x)\ne0\).  On
+\(\operatorname{span}\{E,x\}\) the Gram is
+\[
+\begin{pmatrix}
+0&a\\ \bar a&b
+\end{pmatrix},
+\qquad
+\det=-|a|^2<0.
+\]
+That plane has inertia \((1,1,0)\), independently of \(b\).
+\end{proof}
+
+\begin{corollary}[Positive-graph and cotangent obstructions]
+\label{cor:positive-graph}
+In the normalized endpoint space
+\(J=\operatorname{diag}(1,-1,-1)\), no closed uniformly positive subspace
+contains the pure Einstein channel.  A nonnegative subspace can contain it
+only as a null direction.  Moreover, if \(B_2\) is the two-dimensional
+spin-two trace space and \(E\subset B_2\) the Einstein line, then the flux
+pairing induces the canonical isomorphism
+\[
+B_2/E\cong E^*.
+\]
+\end{corollary}
+
+\begin{proof}
+A maximal uniformly positive line is the graph of
+\(K:\C\to\C^2\) with \(\|K\|<1\).  In the signature basis the Einstein
+vector is \((1,1,0)/\sqrt2\), whose inclusion requires
+\(K(1)=(1,0)\) and hence \(\|K\|=1\).  For the second statement, the
+spin-two plane is nondegenerate and hyperbolic, so \(E^\perp=E\).  The map
+\[
+[x]\longmapsto\bigl(e\mapsto G(e,x)\bigr)
+\]
+is therefore a well-defined nondegenerate duality from \(B_2/E\) to \(E^*\).
+\end{proof}
+
+For wave packets the global graph statement uses an operator contraction
+between the positive and negative Hilbert summands.  The pointwise
+\(K(\omega)\) formulation applies to decomposable,
+frequency-multiplication-invariant subspaces.  The endpoint duality is
+canonical, but choosing a metric lift is only an affine splitting and does
+not split the radial differential module.
+
+Thus the inherited pure-Weyl form presents a trilemma.  Retaining only the
+Einstein directions gives a null, degenerate sector.  Adding a symplectic
+partner makes the spin-two plane nondegenerate but indefinite.  Positivity
+requires a modified inner product.  In particular, if a fundamental
+symmetry preserved the Einstein line, \(CE=\pm E\), then
+\(G(E,CE)=0\); any positive fundamental symmetry must mix the two null
+spin-two directions.  The elementary endpoint exchange is a classical Krein
+fundamental symmetry, not Mannheim's dynamical \(C\).  Together with
+Corollary~\ref{cor:only-scalar-c}, this shows that any successful positive
+dynamical construction cannot be a rational local involution.  A
+nonlocal, spectral, scattering-dependent, or BRST-level construction is not
+excluded.
+
+\begin{theorem}[Spectral fundamental symmetry on compact bands]
+\label{thm:spectral-c}
+For every real \(\omega>0\), define
+\[
+C_-(\omega)
+=
+\operatorname{sgn}G_-(\omega)
+=
+G_-(\omega)\{G_-(\omega)^2\}^{-1/2}.
+\]
+Then
+\[
+C_-^2=I,\qquad
+C_-^\dagger G_-=G_-C_-,
+\qquad
+G_-C_-=|G_-|>0.
+\]
+Its pullback to the horizon-regular solution fiber,
+\[
+C_{\rm sol}=T_-^{-1}C_-T_-,
+\]
+is a positive fundamental symmetry for
+\(G_{\rm sol}=T_-^\dagger G_-T_-\).  On every compact
+\(I\Subset(0,\infty)\), it defines a bounded involution on
+\(L^2(I;\C^3)\), and its positive norm is uniformly equivalent to the
+coefficient norm.
+\end{theorem}
+
+\begin{proof}
+The first three identities are the Hermitian functional calculus for an
+invertible Hermitian matrix.  Pullback gives
+\[
+G_{\rm sol}C_{\rm sol}
+=T_-^\dagger|G_-|T_->0.
+\]
+Continuity, compactness, and invertibility of \(G_-\) and \(T_-\) give the
+uniform band bounds.
+\end{proof}
+
+This proves existence of a nonlocal spectral \(C\), rather than a local
+branch observable.  It does not make \(C_{\rm sol}\) canonical, covariant,
+causal, holomorphic in complex frequency, or BRST compatible.  In
+particular, matrix sign uses the auxiliary positive coefficient inner
+product: for a nonunitary frame change \(G\mapsto M^\dagger GM\), generally
+\[
+\operatorname{sgn}(M^\dagger GM)
+\ne M^{-1}\operatorname{sgn}(G)M.
+\]
+For example, \(G=\operatorname{diag}(1,-1)\) and
+\(M=\left(\begin{smallmatrix}1&1\\0&1\end{smallmatrix}\right)\) make the
+right-hand side non-Hermitian, whereas the left-hand side is Hermitian.
+
+The positive Hilbert majorant associated with this Krein form is
+\begin{equation}
+\label{eq:majorant}
+\|(e,r,s)\|_{\rm maj}^2
+=
+\int_0^\infty
+\left[
+\frac{576}{5}\omega(|e|^2+|r|^2)
++\frac{32}{15\omega}|s|^2
+\right]\dd\omega.
+\end{equation}
+Thus the natural time-domain exponents are
+\[
+(e,r)\in\dot H^{1/2},
+\qquad
+s\in\dot H^{-1/2}.
+\]
+This identifies the canonical completion but does not itself prove global
+boundedness of the scattering multiplier.
+
+In the unrescaled incoming factor-Witt basis, after the exact second-null
+lift, the same construction reads
+\[
+G_-^{\rm fac}
+=
+\frac{384}{5}
+\begin{pmatrix}
+0&\omega&0\\
+\omega&0&0\\
+0&0&-\omega^3
+\end{pmatrix},
+\qquad
+C_-^{\rm fac}
+=
+\begin{pmatrix}
+0&1&0\\
+1&0&0\\
+0&0&-1
+\end{pmatrix}.
+\]
+Hence
+\[
+G_-^{\rm fac}C_-^{\rm fac}
+=
+\frac{384}{5}\operatorname{diag}(\omega,\omega,\omega^3).
+\]
+The natural factor-coefficient completion at threshold has norm
+\[
+\int_0^\epsilon
+\left[
+\omega(|u_E|^2+|u_X|^2)+\omega^3|u_1|^2
+\right]\dd\omega.
+\]
+Equation~\eqref{eq:majorant} uses the separately unit-normalized quotient
+coefficient and is related by a frequency-dependent factor-basis change.
+Neither presentation is uniformly equivalent to unweighted \(L^2\) at
+\(\omega=0\).
+Equivalently, the infrared-regular coefficients are
+\[
+\widehat u_E=\omega^{1/2}u_E,\qquad
+\widehat u_X=\omega^{1/2}u_X,\qquad
+\widehat u_1=\omega^{3/2}u_1.
+\]
+Transfer matrices should be normalized as
+\[
+\widehat T=W_{\rm out}^{1/2}TW_{\rm in}^{-1/2},
+\qquad
+W^{1/2}=\operatorname{diag}
+(\omega^{1/2},\omega^{1/2},\omega^{3/2});
+\]
+this becomes an ordinary conjugation only when the endpoint weights agree.
+
+\section{Every incoming channel is populated}
+
+Let \(T_-(\omega)\) map future-horizon-regular coefficients to incoming
+null-infinity factor traces.  Its factor form is triangular:
+\begin{equation}
+\label{eq:tminus}
+T_-=
+\begin{pmatrix}
+a_2&b&c\\
+0&a_2&d\\
+0&0&a_1
+\end{pmatrix},
+\qquad
+a_s=A_{{\rm in},s}.
+\end{equation}
+
+\begin{lemma}[Boundary d\'evissage]
+\label{lem:devissage}
+Suppose a filtered differential system has boundary-compatible inclusion and
+quotient maps, and none of its scalar quotient problems admits a nonzero
+solution in the declared boundary class.  Then the full filtered system has
+no nonzero solution in that class.
+\end{lemma}
+
+\begin{proof}
+Project a full solution to the top quotient.  The quotient boundary problem
+forces the projection to vanish, so the solution lies in the preceding
+submodule.  Repeat through the filtration.  The last scalar factor then
+forces the remaining solution to vanish.  No diagonalization or splitting of
+the extension is required.
+\end{proof}
+
+For either scalar Regge--Wheeler factor, real-frequency current conservation
+gives
+\begin{equation}
+\label{eq:wronskian}
+|A_{{\rm in},s}|^2-|A_{{\rm out},s}|^2=1.
+\end{equation}
+Thus \(A_{{\rm in},s}\neq0\) for every real \(\omega>0\).
+
+\begin{theorem}[Global incoming population]
+\label{thm:incoming}
+For the complete axial \(\ell=2\) system,
+\[
+T_-(\omega)\in GL(3,\C)
+\qquad\text{for every real }\omega>0.
+\]
+Consequently every positive, negative, and null vector of the incoming
+Krein space is the trace of a unique future-horizon-regular solution.
+\end{theorem}
+
+\begin{proof}
+A vector in \(\ker T_-\) would be horizon regular and purely outgoing at
+infinity.  Its spin-one projection vanishes by
+\eqref{eq:wronskian}.  Boundary d\'evissage then removes the carrier and
+metric spin-two factors successively.  Hence the kernel is zero.  Since
+\(T_-\) is a \(3\times3\) map, it is invertible.
+\end{proof}
+
+The conclusion is stronger than existence of formal negative directions:
+the entire indefinite incoming space is physically reached within the
+declared exterior boundary problem.
+
+\section{Outgoing population and one-sided Krein scattering}
+
+Let \(T_+\) be the future-null-infinity outgoing connection and
+\(H_{\mathcal H^+}\) the outward-oriented future-horizon Gram.  Conservation
+of \eqref{eq:green} gives
+\begin{equation}
+\label{eq:stokes}
+H_{\mathcal H^+}
++T_+^\dagger G_+T_+
+-T_-^\dagger G_-T_-=0.
+\end{equation}
+The explicit entries of \(T_+\) are not needed to decide population on the
+certified cell.  The scalar outgoing factors and the exact filtration give
+\[
+\det T_+=\rho_+A_{{\rm out},2}^2A_{{\rm out},1},
+\qquad \rho_+\neq0.
+\]
+
+\begin{theorem}[Certified outgoing cell]
+\label{thm:outgoing-cell}
+For \(M=1\), axial \(\ell=2\), and
+\[
+I_0=[0.49995,0.50005],
+\]
+validated endpoint calculations prove
+\[
+|A_{{\rm out},2}|>0.011326240435330133,
+\qquad
+|A_{{\rm out},1}|>0.14680548488890086.
+\]
+Hence \(T_+(\omega)\) is invertible throughout \(I_0\).  On the exact common
+cell
+\[
+I_*=[1/2,10001/20000],
+\]
+the incoming, outgoing, and future-horizon coefficient spaces are
+nondegenerate three-channel Krein spaces of inertia \((1,2,0)\).
+\end{theorem}
+
+\begin{theorem}[Global one-ended radiative nonselection]
+\label{thm:radiative-nonselection}
+For \(M=1\), axial \(\ell=2\):
+\begin{enumerate}
+\item for every real \(\omega>0\), there is a global
+future-horizon-regular exterior Bach solution with finite incoming
+null-infinity trace and \(\mathfrak q[h]\ne0\);
+\item for every \(\omega\in I_*\), there is such a solution with any
+prescribed nonzero outgoing Maxwell-quotient trace, and again
+\(\mathfrak q[h]\ne0\).
+\end{enumerate}
+Consequently the standard one-ended radiative conditions of
+Definition~\ref{def:radiative-class} do not imply the linearized Einstein
+constraint, even modulo
+source diffeomorphism and Weyl gauge.
+\end{theorem}
+
+\begin{proof}
+For the first statement choose a nonzero incoming Maxwell factor trace.
+Theorem~\ref{thm:incoming} gives a unique future-horizon-regular exterior
+solution realizing it.  The factor inclusion and quotient maps preserve the
+declared endpoint classes.  If \(\mathfrak q[h]\) vanished, its Maxwell
+two-form and hence its Maxwell quotient trace would vanish, a contradiction.
+For the second statement use Theorem~\ref{thm:outgoing-cell} to invert
+\(T_+\) on \(I_*\), and apply the same gauge-invariant quotient argument.
+No simultaneous pure-outgoing condition is used.
+\end{proof}
+
+In incoming coordinates define
+\[
+R=T_+T_-^{-1},
+\qquad
+A=T_-^{-1}.
+\]
+Multiplying \eqref{eq:stokes} by \(T_-^{-\dagger}\) and \(T_-^{-1}\) gives
+\begin{equation}
+\label{eq:pseudo}
+G_-
+=R^\dagger G_+R+A^\dagger H_{\mathcal H^+}A.
+\end{equation}
+Equivalently,
+\[
+\mathscr S=
+\begin{pmatrix}R\\A\end{pmatrix}
+\]
+is a pseudo-isometric embedding
+\[
+(\C^3,G_-)
+\hookrightarrow
+(\C^3\oplus\C^3,G_+\oplus H_{\mathcal H^+}).
+\]
+
+\begin{proposition}[Exact positive-metric scattering test]
+\label{prop:c-scattering}
+Let
+\[
+J_{\rm out}=G_+\oplus H_{\mathcal H^+},
+\qquad
+C_{\rm out}=C_+\oplus C_H,
+\]
+where \(C_-,C_+,C_H\) are Krein-self-adjoint involutions with positive
+majorants.  Under \eqref{eq:pseudo}, the positive-metric identity
+\[
+\mathscr S^\dagger J_{\rm out}C_{\rm out}\mathscr S
+=G_-C_-
+\]
+is equivalent to
+\[
+C_{\rm out}\mathscr S=\mathscr S C_-.
+\]
+\end{proposition}
+
+\begin{proof}
+The intertwining equation and \eqref{eq:pseudo} immediately imply the
+positive identity.  Conversely set
+\(\Delta_C=C_{\rm out}\mathscr S-\mathscr S C_-\).  Expanding
+\(\Delta_C^\dagger J_{\rm out}C_{\rm out}\Delta_C\), the two norm terms
+and the two cross terms reduce, using the Krein and positive identities, to
+\[
+G_-C_-+G_-C_--G_-C_--G_-C_-=0.
+\]
+Positivity of \(J_{\rm out}C_{\rm out}\) forces \(\Delta_C=0\).
+\end{proof}
+
+Thus explicit \(T_+\) supplies a sharp finite-dimensional test of whether
+independently selected endpoint fundamental symmetries are dynamically
+compatible.  A transported symmetry always exists on
+\(\operatorname{ran}\mathscr S\), but it need not split as independent
+operators on \(\mathscr I^+\) and \(\mathcal H^+\).
+
+\begin{proposition}[Combined-future existence and factorization problem]
+\label{prop:combined-future-c}
+For every incoming fundamental symmetry \(C_-\), there exists a fundamental
+symmetry \(C_{\rm out}\) on the combined future space satisfying
+\[
+C_{\rm out}\mathscr S=\mathscr S C_-.
+\]
+The nontrivial physical question is whether one may choose
+\(C_{\rm out}=C_+\oplus C_H\).
+\end{proposition}
+
+\begin{proof}
+The range of the injective Krein isometry \(\mathscr S\) is nondegenerate.
+Transport \(C_-\) to it by
+\(C_{\rm ran}\mathscr Sx=\mathscr S C_-x\).  The combined future space
+splits as the Krein-orthogonal direct sum of this range and its orthogonal
+complement.  Choose any fundamental symmetry on the complement and take the
+direct sum.  Factorization over the two future boundaries is additional
+structure and is exactly the test in Proposition~\ref{prop:c-scattering}.
+\end{proof}
+
+\begin{corollary}[Band-limited pseudo-isometry]
+Multiplication by \(T_+\) is a bounded isomorphism on
+\(L^2(I_*;\C^3)\).  Equation \eqref{eq:pseudo} therefore integrates to an
+exact pseudo-isometry of the complete band-limited wave-packet spaces.
+\end{corollary}
+
+\begin{corollary}[Generic positive-real outgoing population]
+\label{cor:generic-outgoing}
+Assume the factor-normalized scalar Jost coefficients are holomorphic away
+from the separate threshold \(\omega=0\).  Their strict nonvanishing on
+\(I_0\) proves that neither is identically zero.  Therefore the positive-real
+exceptional set is locally finite and
+\[
+T_+(\omega)\in GL(3,\C)
+\]
+on an open dense, full-measure subset of \((0,\infty)\).
+On every compact positive-frequency band the corresponding multiplication
+operator is injective with dense range.  It is a bounded isomorphism exactly
+when the band contains no exceptional frequency.
+\end{corollary}
+
+This does not prove that the exceptional set is empty.  The next scattering
+experiment is to compute the typed matrix \(T_+\), the reflection map \(R\),
+and their extension shears on a substantial real-frequency band using the
+partial-jet system \eqref{eq:four-state}.
+
+\section{Exact threshold structure}
+\label{sec:threshold}
+
+The threshold \(\omega=0\) is excluded from the preceding holomorphic
+genericity argument and must be treated separately.  Several exact facts can
+nevertheless be established before a uniform low-frequency scattering
+estimate.
+
+For \(s\in\{1,2\}\) and integer \(\ell\ge2\), let
+\[
+D=\frac{r-2}{r}\partial_r,\qquad
+V_{s\ell}
+=
+\left(1-\frac2r\right)
+\left[
+\frac{\ell(\ell+1)}{r^2}
++\frac{2(1-s^2)}{r^3}
+\right],
+\]
+and consider \((D^2-V_{s\ell})\phi=0\).
+
+\begin{proposition}[Exact all-\(\ell\) scalar threshold nonresonance]
+\label{prop:threshold}
+The horizon-normalized regular zero mode is
+\[
+\phi_{s\ell}^{(0)}(r)
+=
+\frac{(2\ell)!}
+{2^{\ell+1}(\ell-s)!(\ell+s)!}
+r^{\ell+1}\,
+{}_2F_1\!\left(
+s-\ell,-s-\ell;-2\ell;\frac2r
+\right).
+\]
+The series terminates, \(\phi_{s\ell}^{(0)}(2)=1\), and
+\[
+\phi_{s\ell}^{(0)}(r)
+\sim
+\frac{(2\ell)!}
+{2^{\ell+1}(\ell-s)!(\ell+s)!}\,r^{\ell+1}.
+\]
+A reduction-of-order companion can be normalized to decay as \(r^{-\ell}\)
+at infinity, but it is logarithmically singular at the horizon.  Hence
+neither scalar factor has a zero-energy resonance for any \(\ell\ge2\).
+For \(\ell=2\), the regular modes reduce to
+\[
+\phi_{0,2}(r)=\frac{r^3}{8},\qquad
+\phi_{0,1}(r)=\frac{r^2(2r-3)}4.
+\]
+Their explicit independent companions are, up to nonzero constant multiples,
+\[
+\widetilde\phi_{0,2}
+=
+\frac{r^3}{32}\log\frac{r-2}{r}
++\frac{r^2}{16}+\frac r{16}+\frac1{12}+\frac1{8r},
+\]
+and
+\[
+\widetilde\phi_{0,1}
+=
+\frac{
+3r^2(2r-3)\log\frac{r-2}{r}
++12r^2-6r-2}{24}.
+\]
+The \(\ell=2\) regular modes grow as nonzero multiples of \(r^3\).  The decaying
+companions behave respectively as
+\(-1/(5r^2)+O(r^{-3})\) and
+\(-1/(10r^2)+O(r^{-3})\).
+\end{proposition}
+
+\begin{proof}
+With \(z=2/r\), substitution reduces the static equation to the Gauss
+hypergeometric equation with
+\[
+a=s-\ell,\qquad b=-s-\ell,\qquad c=-2\ell.
+\]
+Since \(a\) is a nonpositive integer the series terminates.
+Chu--Vandermonde gives the stated horizon normalization.  The second
+solution is
+\[
+\widetilde\phi_{s\ell}
+=
+\phi_{s\ell}^{(0)}
+\int
+\frac{\dd r}
+{(1-2/r)(\phi_{s\ell}^{(0)})^2}.
+\]
+Because \(\phi_{s\ell}^{(0)}(2)=1\), it contains \(\log(r-2)\).  Choosing
+the integration constant from infinity gives \(r^{-\ell}\), while the
+regular solution grows as \(r^{\ell+1}\).  This exhausts the scalar solution
+space.  Direct exact substitution recovers the displayed \(\ell=2\)
+controls.
+\end{proof}
+
+The exact reduced projective cocycle also exposes the relation between the
+three factors:
+\begin{equation}
+\label{eq:threshold-cocycle}
+\mathcal I_{\rm red}
+=
+\frac{i(r-2)(2r\omega^2+3\omega^2+12)}{5r^4\omega}
+=
+\frac{2i}{5\omega}(V_1-V_2)
++\frac{i\omega(r-2)(2r+3)}{5r^4}.
+\end{equation}
+Thus its singular threshold term is exactly the difference of the spin-one
+and spin-two potentials.  On \(\phi_{0,2}\) the leading source is
+\[
+\frac{3i}{10\omega}\frac{r-2}{r}.
+\]
+It has the elementary spin-two primitive
+\begin{equation}
+\label{eq:threshold-primitive}
+(D^2-V_2)p=\frac{r-2}{r},\qquad
+p=-\frac{r^2}{4}-\frac r4-\frac13-\frac1{2r}.
+\end{equation}
+The horizon-fixed choice
+\[
+p_H=p+\frac{25}{12}\phi_{0,2}
+\]
+satisfies \(p_H(2)=0\).
+
+\begin{proposition}[Regular redshift representative of the extension class]
+\label{prop:redshift-cocycle}
+Let
+\[
+U=\omega^2-V_2,\qquad
+\mathcal K_U=D^3+4UD+2D(U),
+\]
+and, for \(\omega\ne0\), set
+\[
+q(r,\omega)
+=-\frac{i}{120\omega}
+\left(15r+13+\frac{12}{r}+\frac9{r^2}\right).
+\]
+Then the exact rational identity
+\begin{equation}
+\label{eq:redshift-cocycle}
+\mathcal I_{\rm red}
+=\mathcal K_Uq+\frac{i\omega}{2}\frac{r-2}{r}
+\end{equation}
+holds.  Consequently
+\[
+[\mathcal I_{\rm red}]
+=\frac{i\omega}{2}\left[\frac{r-2}{r}\right]
+\quad\hbox{in}\quad
+\C(r)/\mathcal K_U\C(r).
+\]
+For real \(\omega>0\), the redshift class on the right is nonzero.
+\end{proposition}
+
+\begin{proof}
+Apply \(D=(r-2)r^{-1}\partial_r\) three times to the displayed \(q\) and
+collect the rational numerator.  The difference between the two sides of
+\eqref{eq:redshift-cocycle} is identically zero.  If the class of
+\((r-2)/r\) vanished at a positive real frequency, so would the certified
+nonsplit Bach extension class, a contradiction.
+\end{proof}
+
+Thus the apparent \(1/\omega\) pole in the displayed cocycle is
+coboundary-exact at every fixed nonzero frequency.  The removing gauge
+\(q\) itself is \(O(\omega^{-1})\), so this is not a threshold-uniform
+splitting.  The successor Paper~17 determines the complete coupled-system
+coefficient exactly:
+\([\mathcal I_{\rm phys}]=\frac13[(r-2)/r]\), and hence
+\([\mathcal I_{\rm Bach}]=(3i\omega/2)[\mathcal I_{\rm phys}]\).
+The remaining threshold and physical-QNM questions concern uniform endpoint
+frames, not an undetermined bulk coefficient.
+
+\begin{remark}[Open matching estimate]
+Formal two-region matching to the far spherical equation predicts, for all
+\(\ell\ge2\),
+\[
+|A_{{\rm in},s\ell}|
+\sim |A_{{\rm out},s\ell}|
+\sim
+\kappa_{s\ell}\omega^{-(\ell+1)},
+\qquad
+\kappa_{s\ell}
+=
+\frac{(2\ell)!(2\ell+1)!!}
+{2^{\ell+2}(\ell-s)!(\ell+s)!},
+\]
+and
+\[
+\Gamma_{s\ell}\sim
+\kappa_{s\ell}^{-2}\omega^{2\ell+2}.
+\]
+For \(\ell=2\), this gives
+\[
+|A_{{\rm in},2}|\sim |A_{{\rm out},2}|
+\sim\frac{15}{16\omega^3},\qquad
+|A_{{\rm in},1}|\sim |A_{{\rm out},1}|
+\sim\frac{15}{4\omega^3},
+\]
+and therefore
+\[
+|\det T_+|\sim\frac{3375}{1024}\omega^{-9}.
+\]
+The primitive \eqref{eq:threshold-primitive} further suggests
+\(b/a^2=O(\omega^2)\) in the compatible intrinsic normalization.  These
+asymptotics are not used as theorems here.  A two-region Volterra remainder
+controlling the Schwarzschild tail and an endpoint-compatible extension
+normalization are still required before one may infer a punctured
+zero-frequency interval of outgoing invertibility or a weighted multiplier
+bound.
+\end{remark}
+
+\section{Separated-mode stability}
+
+In the Fourier convention used here, exponentially growing modes lie in the
+lower half \(\omega\)-plane.  For the scalar spin-one and spin-two
+Regge--Wheeler equations, an ingoing-horizon/outgoing-infinity solution in
+that half-plane decays at both ends.  Their real, nonnegative potentials give
+the standard energy identity, forcing the scalar solution to vanish.
+
+\begin{theorem}[No growing axial separated mode]
+\label{thm:no-growth}
+The complete axial \(\ell=2\) six-state system has no nonzero separated
+solution satisfying the future-horizon-regular and pure-outgoing-infinity
+conditions in the growth half-plane.
+\end{theorem}
+
+\begin{proof}
+The boundary maps preserve the declared complex-frequency classes, including
+regular replacements at the apparent frame events.  Apply
+Lemma~\ref{lem:devissage}: the spin-one projection vanishes by the scalar
+energy identity, then the carrier spin-two quotient vanishes, and finally the
+metric spin-two factor vanishes.
+\end{proof}
+
+This is separated-mode stability.  It does not supply limiting absorption,
+uniform resolvent bounds, threshold control, decay, or bounded time evolution.
+The extension ratios in \eqref{eq:inverse-ratios} can still generate
+non-normal amplification.
+
+\section{A certified intrinsic connection exceptional point}
+\label{sec:ep2}
+
+At a simple spin-two quasinormal frequency \(\omega_n\), assume the spin-one
+factor is a local unit.  Analytic elimination of that unit reduces the
+repeated block to
+\begin{equation}
+\label{eq:local-block}
+T_2(\omega)=
+\begin{pmatrix}
+a(\omega)&b(\omega)\\
+0&a(\omega)
+\end{pmatrix},
+\qquad
+a(\omega_n)=0,\quad a'(\omega_n)\neq0.
+\end{equation}
+
+\begin{proposition}[Local Smith dichotomy]
+\label{prop:smith}
+If \(b(\omega_n)\neq0\), the full \(3\times3\) connection has Smith
+valuations
+\[
+(0,0,2),
+\]
+rank two at the QNM, geometric multiplicity one, and one length-two root
+chain.  If \(b(\omega_n)=0\), the valuations are
+\[
+(0,1,1),
+\]
+the rank is one, and there are two independent root vectors.
+\end{proposition}
+
+\begin{proof}
+Work in the local discrete valuation ring with
+\(z=\omega-\omega_n\).  In the first case \(b\) is a unit, so the ideal of
+\(2\times2\) minors is the unit ideal while
+\(\det T\) has valuation two.  The invariant factors are therefore
+\((0,0,2)\).  In the second case \(b=ag\), every \(2\times2\) minor is
+divisible by \(a\), while the minor \(af\) has valuation one; hence
+\((0,1,1)\).
+\end{proof}
+
+The determinant count is simpler than the local Smith classification.  Let
+\(D_2\) and \(D_1\) be scalar spin-two and Maxwell Evans functions in a
+domain where the endpoint normalizers are analytic units.  Triangularity
+gives
+\begin{equation}
+\label{eq:qnm-count-factorization}
+D_B(\omega)=u(\omega)D_2(\omega)^2D_1(\omega),
+\qquad u(\omega)\ne0 .
+\end{equation}
+Hence every zero-free contour \(\Gamma\) obeys the exact algebraic count
+\begin{equation}
+\label{eq:qnm-count}
+N_B(\Gamma)=2N_2(\Gamma)+N_1(\Gamma).
+\end{equation}
+The extension can change geometric multiplicity and Smith type, but not the
+total algebraic divisor.  Thus scalar argument principles suffice for QNM
+counting; the extension selector is needed only to separate semisimple and
+defective doubled spin-two roots.
+
+The selector can be computed projectively.  Transport the horizon-regular
+and infinity-outgoing scalar lines to a common matching section and use a
+Riccati chart \(v=Y_2/Y_1\).  With
+\[
+\delta(\omega,\tau)=v_\infty(\omega,\tau)-v_H(\omega,\tau),
+\]
+the scalar Evans coefficient has the form \(a=g\delta\), where \(g\) is an
+analytic unit.  At a simple QNM,
+\begin{equation}
+\label{eq:velocity}
+\frac{b(\omega_n)}{a'(\omega_n)}
+=
+\frac{\delta_\tau(\omega_n)}{\delta_\omega(\omega_n)}
+=-\omega_n'(0).
+\end{equation}
+
+\begin{theorem}[Certified axial connection EP2]
+\label{thm:ep2}
+There is a radius-\(10^{-7}\) disk centered at
+\[
+\omega_c
+=-0.3736716844180418
++0.0889623156889357\,i
+\]
+that contains exactly one simple spin-two quasinormal zero in the declared
+\(e^{+i\omega t}\) convention.  On that disk:
+\begin{enumerate}
+\item the validated projective Evans contour has winding \(+1\);
+\item \(\delta_\omega\) excludes zero;
+\item the intrinsic tangent satisfies
+\[
+\delta_\tau\in
+[0.0010932\pm7.60\times10^{-8}]
++i[-0.0002195\pm8.89\times10^{-8}],
+\]
+and therefore excludes zero;
+\item the spin-one projective mismatch has modulus greater than \(1/2500\).
+\end{enumerate}
+Consequently the complete axial connection has Smith valuations
+\((0,0,2)\), algebraic multiplicity two, geometric multiplicity one, and one
+length-two connection root chain at the unique enclosed QNM.
+\end{theorem}
+
+\begin{corollary}[The generalized QNM chain is non-Einstein]
+\label{cor:non-einstein-root-chain}
+In the factor basis \((X,Y)\), with \(X\) the source-Einstein submodule and
+\(Y\) the carrier quotient, the root vector at the certified QNM is
+\(c_0=(1,0)\).  Every length-two root polynomial
+\[
+c(z)=c_0+zc_1+O(z^2),\qquad z=\omega-\omega_n,
+\]
+has quotient component
+\[
+(c_1)_Y=-\frac{a'(\omega_n)}{b(\omega_n)}
+=-\frac1{\kappa_n}\ne0,
+\qquad
+\kappa_n=\frac{b(\omega_n)}{a'(\omega_n)}.
+\]
+Thus the geometric resonant vector is Einstein, whereas its associated
+generalized vector is intrinsically non-Einstein.
+\end{corollary}
+
+\begin{proof}
+Write \(a=a_1z+O(z^2)\), \(b=b_0+O(z)\), with \(a_1b_0\ne0\).
+The coefficient of \(z\) in
+\(T_2(z)(c_0+zc_1)\) is
+\((a_1+b_0(c_1)_Y,0)^T\), which must vanish.
+\end{proof}
+
+The exceptional point is intrinsic: the rational self-extension is not a
+frequency, mass, or angular-eigenvalue tangent modulo admissible rational
+gauge.  A generic non-split \emph{radial} differential-module extension is
+not, by itself, a Jordan block of the time-translation generator and does
+not imply a \(t e^{i\omega t}\) term.  Such a temporal interpretation
+requires a discrete spectral obstruction.  Theorem~\ref{thm:ep2} supplies
+that obstruction at one physical QNM, and the following result promotes it
+from connection algebra to a declared radial differential boundary problem.
+
+\begin{theorem}[Finite-interval radial Green pole]
+\label{thm:radial-green-pole}
+Choose ordinary radii \(2<r_H<r_I<\infty\) inside the certified analytic
+continuation domains, and let \(B_H(\omega)\) and \(B_I(\omega)\) annihilate
+the transported horizon-regular and infinity-outgoing three-planes there.
+The phase-factored operator
+\[
+\mathscr L(\omega)Y
+=\bigl(
+Y'-\mathbb A(r,\omega)Y,\,
+B_H(\omega)Y(r_H),\,
+B_I(\omega)Y(r_I)
+\bigr)
+\]
+is an analytic Fredholm pencil of index zero from
+\[
+H^1([r_H,r_I];\C^6)
+\longrightarrow
+L^2([r_H,r_I];\C^6)\oplus\C^3\oplus\C^3 .
+\]
+At the QNM enclosed by Theorem~\ref{thm:ep2},
+\[
+\mathscr L(\omega)^{-1}
+=\frac{\Pi_{-2}}{(\omega-\omega_n)^2}
++\frac{\Pi_{-1}}{\omega-\omega_n}+O(1),
+\qquad
+\operatorname{rank}\Pi_{-2}=1,
+\qquad
+\Pi_{-2}\ne0.
+\]
+The principal range is the source-Einstein root line and survives the exact
+axial metric reconstruction.  Equivalently, compactly supported radial
+sources and local metric observations detect a genuine second-order pole.
+\end{theorem}
+
+\begin{proof}
+The initial-value map
+\[
+Y\longmapsto(Y'-\mathbb A Y,Y(r_H))
+\]
+is an analytic isomorphism by variation of constants.  If
+\(H(\omega):\C^3\to\C^6\) spans \(\ker B_H(\omega)\), analytic boundary
+elimination reduces \(\mathscr L(\omega)\) to the identity on \(L^2\) and
+the effective matrix
+\[
+M(\omega)
+=B_I(\omega)\Phi(r_I,r_H;\omega)H(\omega).
+\]
+This matrix is the certified factor-adapted QNM connection up to analytic
+invertible endpoint units.  Its Smith valuations \((0,0,2)\) therefore give
+a nonzero rank-one coefficient at order \((\omega-\omega_n)^{-2}\), and
+analytic reconstruction preserves its rank.
+
+For the source statement, multiply an arbitrary selected incoming Jost
+solution by a cutoff that vanishes near \(r_H\) and equals one near \(r_I\).
+Applying the radial operator produces a compactly supported source whose
+zero-horizon particular solution has the prescribed incoming trace.  Hence
+the source-to-trace map is onto.  The horizon Poisson map is injective, and
+the exact reconstruction maps its source-Einstein range to the nonzero
+metric kernel state \((H_1,H_1')\); the principal coefficient cannot be
+annihilated.
+\end{proof}
+
+This is a \emph{finite-interval reduced radial} Green-operator theorem.  It
+does not construct a causal exterior spacetime resolvent, justify a
+Laplace-contour deformation, control the nonpole inverse-transform contour,
+or establish a \(t e^{i\omega_n t}\) term for physical initial data.
+Paper~17 subsequently proves that the same Smith pole is realized by a
+global two-ended complex-scaled \(H^1\to L^2\) Fredholm pencil of index
+zero.  Complex scaling does not remove the causal qualifications just
+listed.
+
+\section{Polar endpoint reach}
+
+The polar carrier includes trace terms:
+\begin{equation}
+\delta B_{ab}
+=\frac12\Box\psi_{ab}+C_{acbd}\psi^{cd}
+-\frac16\nabla_a\nabla_b\psi
+-\frac1{12}g_{ab}\Box\psi.
+\end{equation}
+On the Bianchi-constrained polar \(\ell=2\) system the operator is traceless
+and has a one-function linearized conformal-gauge direction.  On a traceless
+slice the horizon residue analysis yields, after quotienting the regular
+conformal direction, a two-parameter physical ingoing-analytic carrier
+family.
+
+The source and target physical Einstein classes in even parity are governed
+by the standard gauge-invariant Zerilli--Moncrief scalar
+\cite{MartelPoisson}.  The earlier failure to find an
+\(\omega\)-independent Schr\"odinger scalar within one rational ansatz is
+therefore only an ansatz failure, not a missing physical master equation.
+The covariant detour interpretation predicts the polar associated graded
+\[
+M_{\rm Zerilli}^{(h)}
+\oplus M_{\rm Zerilli}^{(q)}
+\oplus M_{\rm Maxwell}^{(\eta)}.
+\]
+The Regge--Wheeler and Zerilli scalar equations are related by the
+Chandrasekhar--Darboux transformation \cite{DarbouxBH}.  What remains to be
+certified is the complete polar image/lift, endpoint units, extension shears,
+and action Gram; the displayed polar associated graded and its expected
+inertia are not promoted here to a global polar theorem.
+
+\begin{corollary}[Parity-complete local endpoint nonselection]
+At the linear \(\ell=2\) mode level, both axial and polar Ricci carriers have
+nonzero future-horizon-regular data and propagate on the Einstein
+characteristics with admissible leading outer falloff.  The tested local
+endpoint diagnostics therefore fail to select the Einstein image in either
+parity.  The global populated Krein and connection theorems of this paper are
+axial only.
+\end{corollary}
+
+\section{Logical map and evidence states}
+
+The title theorem has the following closed dependency chain.  Here
+\emph{fail closed} means that missing data, a timeout, an unsupported domain,
+or an unverifiable claim is rejected rather than counted as a partial pass.
+The unfinished explicit \(T_+\) and retarded-convolution calculations are
+absent from this chain.  The finite-interval radial Fredholm theorem is
+independently certified but is not required for the title theorem.
+
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}p{0.20\textwidth}Y Y
+>{\centering\arraybackslash}p{0.09\textwidth}@{}}
+\toprule
+Statement & Mathematical dependency and primary reproducibility record &
+Status and scope & Required for title theorem\\
+\midrule
+Gauge-invariant non-Einstein discriminator &
+Schouten carrier and Maxwell quotient;
+\cert{black_hole_programme/phase4/covariant_einstein_maxwell_carrier_v1/certificate.json} &
+Exact symbolic; Ricci-flat backgrounds, with source diffeomorphism/Weyl
+quotient stated above & Yes\\
+Axial filtered carrier with a nonzero Maxwell quotient &
+RW/RW/Maxwell filtration;
+\cert{black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json} &
+Exact symbolic; Schwarzschild, axial \(\ell=2\) & Yes\\
+Global future-horizon-regular realization of every incoming trace &
+Scalar Wronskians, boundary d\'evissage, and \(T_-\) invertibility;
+\cert{black_hole_programme/phase3/axial_incoming_extended_domain_audit/certificate.json} &
+Analytic plus computer-assisted; every real \(\omega>0\) & Yes\\
+Outgoing realization on \(I_*\) &
+Triangular determinant and certified nonzero scalar outgoing factors;
+\cert{black_hole_programme/phase3/axial_outgoing_population_cell_half_v1/certificate.json} &
+Validated interval theorem; \(M=1\), axial \(\ell=2\),
+\(I_*=[1/2,10001/20000]\) & Yes, for the outgoing clause only\\
+Finite-interval radial QNM Green pole &
+Analytic initial-value reduction and certified Smith transfer;
+\cert{black_hole_programme/phase4/axial_qnm_fredholm_promotion_v1/certificate.json} &
+Exact reduced-mode theorem on fixed ordinary radii; no causal
+inverse-transform statement & No\\
+Explicit \(T_+\) entries and retarded convolution &
+Separate open computations & Not established & No\\
+\bottomrule
+\end{tabularx}
+\normalsize
+
+The theorem statements and proofs are the mathematical authority.  The
+machine-readable records are proof objects where a computer-assisted lemma
+is used and reproducibility evidence elsewhere; rerunning a producer is
+reproduction, not independent verification.
+
+The core structure is
+\[
+\begin{array}{ccccccccc}
+0&\longrightarrow&M_{\rm RW}^{(2)}
+&\longrightarrow&M_{\rm Bach}^{\rm axial}
+&\overset{\delta\Ric}{\longrightarrow}&M_{\rm car}
+&\longrightarrow&0\\[1mm]
+&&\rotatebox{90}{$\subset$}&&&&
+\rotatebox{90}{$\supset$}&&\\[-1mm]
+&&F_1&\subset&F_2&\subset&F_3=M_{\rm axial},&&
+\end{array}
+\]
+with successive factors \((2,2,1)\).  For real frequency, horizon data
+\(h\in\C^3\) maps to
+\[
+\begin{array}{ccc}
+&h&\\[-1mm]
+T_- \swarrow && \searrow T_+\\[-1mm]
+\mathscr I^-_{\rm in}&&\mathscr I^+_{\rm out},
+\end{array}
+\]
+and the action current supplies
+\[
+H_{\mathcal H^+}+T_+^\dagger G_+T_+-T_-^\dagger G_-T_-=0.
+\]
+
+\small
+\begin{longtable}{@{}p{0.30\textwidth}p{0.28\textwidth}p{0.36\textwidth}@{}}
+\toprule
+Statement & Evidence state & Boundary\\
+\midrule
+\endfirsthead
+\toprule
+Statement & Evidence state & Boundary\\
+\midrule
+\endhead
+Ricci-factorized Hessian and null Einstein kernel &
+Exact symbolic theorem &
+Every four-dimensional Ricci-flat background, modulo Euler boundary/corner terms\\
+Schouten--Einstein carrier and wrong-sign Maxwell target gauge &
+Exact symbolic theorem with independent certificate &
+Every four-dimensional Ricci-flat background; boundary divergence retained\\
+Second-order parent system and factorized Einstein current &
+Exact symbolic theorem with independent certificate &
+Every four-dimensional Ricci-flat background modulo Euler boundary/corner terms\\
+Parent resolvent identity and rank-one Laurent algebra &
+Exact algebra; QNM specialization conditional &
+Gauge-fixed invertible Einstein operator; identification with the parent
+overlap requires the common Fredholm and bounded-insertion hypotheses\\
+Critical Einstein--Weyl parent mass jet and confluent branch-sign limit &
+Exact parent algebra with fail-closed radial crosswalk &
+Covariant parent and transverse-traceless sector; successor Paper~17 proves
+the complete coupled axial first-jet projective comparison\\
+Regular redshift representative of the Bach cocycle &
+Exact rational identity independently checked against the certified cocycle &
+Axial \(\ell=2\), \(\omega\ne0\); successor factor is
+\([\mathcal I_{\rm Bach}]=(3i\omega/2)[\mathcal I_{\rm phys}]\), while
+Paper~17 supplies the endpoint-analytic Jost promotion and nonzero
+signed squared-mass QNM velocity\\
+Euler cut current and Einstein packet isotropy &
+Exact symbolic and reduced-mode theorem with mutation tests &
+Finite-radius smooth compact-frequency core; endpoint interchange conditional\\
+Ricci--Bach composition and exact sequence &
+Exact symbolic theorem &
+Schwarzschild, linearized, declared mode classes\\
+RW/RW/spin-one filtration and partial jet &
+Exact symbolic theorem with independent certificate &
+Axial \(\ell=2\)\\
+No rational spin-one/spin-two intertwiner &
+Exact symbolic theorem with mutation tests &
+Axial \(\ell=2\), fixed real \(\omega>0\)\\
+RW/Maxwell simplicity, scalar endomorphisms, and axial local-\(C\) obstruction &
+Exact symbolic theorem with independent certificate &
+Every integer \(\ell\ge2\) and real \(\omega>0\) for the scalar factors;
+the nonsplit Bach involution conclusion is axial \(\ell=2\)\\
+Complete dual-number commutant of the repeated-spin-two block &
+Exact categorical and symbolic theorem with independent certificate &
+Axial \(\ell=2\), every real \(\omega>0\); not the full six-state commutant\\
+Positive-graph obstruction and \(B_2/E\simeq E^*\) &
+Exact endpoint Krein theorem &
+Axial spin-two endpoint trace space; pointwise packet graph form only for
+decomposable frequency-invariant subspaces\\
+Spectral fundamental symmetry and weighted threshold completion &
+Exact finite-dimensional functional-calculus theorem &
+Each real-frequency incoming fiber and compact positive-frequency bands;
+no canonical, causal, holomorphic, or BRST claim\\
+Incoming factor Gram and \(T_-\in GL(3,\C)\) &
+Exact plus computer-assisted theorem &
+Every real \(\omega>0\), \(M=1\) normalization\\
+Outgoing population and pseudo-isometry &
+Validated interval theorem &
+\(I_*\); genericity off a locally finite set\\
+Exact all-\(\ell\) scalar threshold nonresonance &
+Exact symbolic theorem &
+Spin one and spin two, every integer \(\ell\ge2\); no punctured zero-free scattering interval claimed\\
+No growing separated mode &
+Analytic filtered energy theorem &
+Axial \(\ell=2\), declared complex boundary classes\\
+Connection Smith valuations \((0,0,2)\) &
+Validated projective Evans and local-unit theorem &
+One enclosed simple damped QNM\\
+Non-Einstein generalized root-chain vector &
+Exact local root-polynomial algebra plus the nonzero selector &
+The generalized vector, not the geometric resonant vector, has nonzero
+carrier quotient\\
+QNM divisor count \(N_B=2N_2+N_1\) &
+Exact triangular determinant theorem &
+Contours avoiding scalar zeros, poles, and endpoint-normalization singularities\\
+Second-order Green-resolvent pole &
+Exact finite-interval radial Fredholm theorem &
+Reduced six-state boundary problem; rank-one principal part survives metric
+reconstruction, but no causal spacetime or inverse-transform claim\\
+Time-domain boundedness and decay &
+Open &
+Requires threshold, limiting-absorption and resolvent bounds\\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\section{Conclusions}
+
+The Einstein sector of pure Weyl gravity is a null bulk sector, not a
+positive subtheory with the inherited Hessian.  Making an Einstein direction
+nondegenerate requires a partner and thereby produces an indefinite
+hyperbolic plane.  In the Schwarzschild problem the additional carrier is
+not removed by the ordinary one-ended Lorentzian endpoint conditions tested
+here.  The result is stronger than a local degree-of-freedom count:
+\begin{itemize}
+\item the pure-Weyl bulk Hessian factors universally through linearized Ricci
+curvature on Ricci-flat backgrounds;
+\item the trace-adjusted carrier is a constrained linearized Einstein field,
+whose target-gauge sector is a wrong-sign Maxwell field;
+\item a second-order auxiliary-tensor parent action makes the source/target
+Einstein pairing and its canonical null lift explicit;
+\item its exact inverse expresses the metric response as two Einstein
+resolvents separated by one algebraic trace-reversal insertion;
+\item the Einstein packet self-current is an Euler cut contribution, so the
+Einstein wave-packet subspace is isotropic but nonradical;
+\item no uniformly positive closed endpoint subspace contains the pure
+Einstein channel, and the spin-two quotient is canonically dual to the
+Einstein line;
+\item the carrier belongs to an exact non-split filtered module;
+\item neither the spin-one quotient nor the repeated spin-two partner can be
+reorganized into a positive local branch decomposition by the rational
+maps tested here;
+\item the complete local commutant of the repeated-spin-two block is the
+dual-number algebra, so it has no nontrivial local semisimple branch
+observable;
+\item a nonlocal spectral fundamental symmetry nevertheless exists on every
+positive-real-frequency solution fiber and on every compact band, with a
+weighted rather than unweighted threshold completion;
+\item it enters the current derived from the Weyl action;
+\item the complete incoming flux space is nondegenerate and indefinite;
+\item every incoming direction is populated by a future-horizon-regular
+solution at every positive real frequency;
+\item outgoing population holds on a certified band and generically on the
+positive axis;
+\item the full filtered system has no growing separated mode;
+\item one physical spin-two QNM is a defective connection-level double root
+whose generalized chain vector is non-Einstein;
+\item the corresponding finite-interval and global complex-scaled radial
+Green operators have a nonzero rank-one second-order pole.
+\end{itemize}
+
+Thus negative classical flux directions coexist with separated-mode
+stability.  The remaining threat to time-domain control is quantitative
+resolvent or pseudospectral growth, not an exponentially growing separated
+frequency.
+
+The publication theorem above is closed without any of the following
+strengthenings.  The first scattering extension is to compute the explicit
+typed \(T_+\) and reflection matrix over a substantial real-frequency band
+using a better-conditioned correlated partial-jet transport and then
+evaluate the exact \(C\)-intertwining defect of
+Proposition~\ref{prop:c-scattering}.  A separate spectral extension is to
+certify a global non-Einstein solution satisfying the simultaneous
+future-horizon-regular and pure-outgoing quasinormal conditions, including a
+nonzero carrier reconstruction.  Paper~17 subsequently proves the complete
+coupled-system first-jet comparison
+\([\mathcal I_{\rm phys}]=\frac13[1-2/r]\) and
+\([\mathcal I_{\rm Bach}]=(3i\omega/2)[\mathcal I_{\rm phys}]\), constructs
+the all-orders analytic differentiated Jost planes, and obtains the
+nonzero complete massive-QNM velocity.  It also places the generalized
+tangent in a fixed global complex-scaled Sobolev domain.  The reduced
+radial Fredholm promotion is therefore complete.  Paper~17 also identifies
+the compactly cut-off meromorphic transfer with the continuation of a
+retarded mode-reduced parent response.  The remaining spectral task is to
+justify the inverse-Laplace deformation, control thresholds and
+high-frequency remainders, extend bounded reconstruction to the full metric
+and Bondi observables, and prove that real causal data couple to the
+principal coefficient before inferring global generalized ringdown.
+The parent formulation gives an independent audit inside that task: compare
+\(\langle\widetilde f_n,\mathcal Af_n\rangle\) with the radial extension
+overlap.  A separate
+time-domain control should compare direct six-state evolution with the
+sequential retarded convolution of Remark~\ref{rem:parent-experiments}.  In
+parallel, the polar problem should be reorganized around the standard
+Zerilli--Moncrief map and the target-gauge Maxwell scalar, so that only the
+lift, endpoint units, and extension shears are computed afresh.
+
+\appendix
+
+\section{Typed endpoint frames and explicit Grams}
+\label{app:typed-grams}
+
+The triangular factor frame and the diagonal signature frame serve different
+purposes.  After normalizing the repeated-spin-two hyperbolic plane, write
+\[
+\mathcal B_0=(E,R,S),\qquad
+J_0=
+\begin{pmatrix}
+0&1&0\\
+1&0&0\\
+0&0&-1
+\end{pmatrix}.
+\]
+The corresponding signature frame is
+\[
+P=\frac{E+R}{\sqrt2},\qquad
+N=\frac{E-R}{\sqrt2},\qquad
+S=S,
+\]
+with
+\[
+J_\sigma=\operatorname{diag}(1,-1,-1),\qquad
+C=
+\begin{pmatrix}
+1/\sqrt2&1/\sqrt2&0\\
+1/\sqrt2&-1/\sqrt2&0\\
+0&0&1
+\end{pmatrix},
+\quad C^\dagger J_0C=J_\sigma.
+\]
+If \(M_0\) is written in the factor frame, then
+\[
+M_\sigma=C^{-1}M_0C.
+\]
+For
+\[
+M_0=
+\begin{pmatrix}
+m&x&y\\0&m&z\\0&0&n
+\end{pmatrix},
+\]
+one finds
+\[
+M_\sigma=
+\begin{pmatrix}
+m+x/2&-x/2&(y+z)/\sqrt2\\
+x/2&m-x/2&(y-z)/\sqrt2\\
+0&0&n
+\end{pmatrix}.
+\]
+Thus triangularity is a statement about the filtration frame, not the
+signature frame.  In particular a nonzero extension entry \(x\) produces
+both upper and lower off-diagonal entries after signature normalization.
+
+In the original incoming order
+\((XI0,XI1,EI0)\), the normalized action Gram is
+\begin{equation}
+\label{eq:raw-gminus}
+G_-^{\rm raw}=
+\begin{pmatrix}
+\dfrac{576}{5\omega}&\dfrac{96i}{5}&\dfrac{384\omega}{5}\\
+-\dfrac{96i}{5}&-\dfrac{144\omega}{5}&-\dfrac{192i\omega^2}{5}\\
+\dfrac{384\omega}{5}&\dfrac{192i\omega^2}{5}&0
+\end{pmatrix}.
+\end{equation}
+The factor shear and orthogonal quotient lift reduce
+\eqref{eq:raw-gminus} to \eqref{eq:factor-gram}.
+
+For reference, in the original outgoing order
+\((XI2,XI3,EI2)\), the normalized future Gram is
+\begin{equation}
+\resizebox{0.98\textwidth}{!}{$
+G_+^{\rm raw}=
+\begin{pmatrix}
+\dfrac{384(-512\omega^6+640\omega^4-278\omega^2+39)}{5\omega}
+&
+\dfrac{12288i\omega^4-3072\omega^3-9984i\omega^2}{5}
++192\omega+384i
+&
+\dfrac{-1536i\omega^2+384\omega+768i}{5}
+\\[1mm]
+\dfrac{-12288i\omega^4-3072\omega^3+9984i\omega^2}{5}
++192\omega-384i
+&
+-\dfrac{768\omega^3}{5}+48\omega
+&
+\dfrac{96\omega}{5}
+\\[1mm]
+\dfrac{1536i\omega^2+384\omega-768i}{5}
+&
+\dfrac{96\omega}{5}
+&
+0
+\end{pmatrix}.
+$}
+\end{equation}
+The full physical Grams are \(\pi\alpha_{\rm W}G_\pm^{\rm raw}\).
+On \([1/2,3/4]\), exact rational/Sturm bounds give
+\[
+\begin{array}{c|cc}
+&\max\|G_\pm\|_F^2&\max\|G_\pm^{-1}\|_F^2\\ \hline
+G_-&1429056/25&7025/65536\\
+G_+&10389888/25&19825/65536 .
+\end{array}
+\]
+These estimates give uniform equivalence of the finite-band coefficient
+norms without inferring inverse bounds from determinants alone.
+
+\subsection{The quotient metric is intrinsic}
+
+Let \(K\) be the repeated-spin-two plane and \(M_1\) the spin-one quotient.
+Because \(G_-|_K\) is nondegenerate,
+\[
+\pi_1:K^{\perp_{G_-}}\longrightarrow M_1
+\]
+is an isomorphism.  If \(s_\perp\) denotes its inverse, then
+\[
+g_1(q_1,q_2)=G_-(s_\perp q_1,s_\perp q_2)
+\]
+is independent of every arbitrary lift.  In a nonorthogonal adapted frame it
+is the Schur complement
+\[
+g_1=G_{11}-G_{1K}G_{KK}^{-1}G_{K1}.
+\]
+The value \(g_1=-32\pi\alpha_{\rm W}/(15\omega)\) is therefore a
+quotient-theoretic statement, not a sign attached to one chosen Witt vector.
+
+\section{Krein scattering identities}
+\label{app:krein-scattering}
+
+In either typed frame define the Krein adjoint
+\[
+M^\sharp=J^{-1}M^\dagger J.
+\]
+After separate endpoint normalizations, the one-sided conservation law is
+\[
+R^\sharp R+A^\sharp A=I.
+\]
+The horizon defect operator and its Hermitian form are
+\[
+\mathfrak D_H=I-R^\sharp R=A^\sharp A,
+\qquad
+D_H=J-R^\dagger JR=A^\dagger JA.
+\]
+On the certified cell \(A=T_-^{-1}\) is invertible and the horizon Gram has
+inertia \((1,2,0)\).  Hence
+\[
+\mathfrak D_H\in GL(3,\C),\qquad
+1\notin\sigma(R^\sharp R),\qquad
+\inertia D_H=(1,2,0).
+\]
+The defect is nondegenerate but indefinite.  It is not a positive absorption
+operator, and the conservation theorem supplies no inequality of the form
+``outgoing flux is at most incoming flux'' on the complete Weyl trace space.
+
+In canonical normalized frames \(\det J=1\), so
+\[
+\det D_H=|\det A|^2=|\det T_-|^{-2}.
+\]
+Using
+\[
+\det T_-=A_{{\rm in},2}^2A_{{\rm in},1}
+\]
+and the scalar Wronskians,
+\[
+\det D_H=
+|A_{{\rm in},2}|^{-4}|A_{{\rm in},1}|^{-2},
+\qquad
+0<\det D_H\le1.
+\]
+This positive signed three-volume is the surviving determinant-level remnant
+of ordinary scalar absorption; the individual defect eigenvalues need not
+lie in \([0,1]\).
+
+An algebraic two-sided completion also follows.  The range of
+\(\mathscr S=(R,A)^T\) is nondegenerate with inertia \((1,2)\) in a target of
+inertia \((2,4)\).  Its orthogonal complement has inertia \((1,2)\).
+Appending a \(J\oplus J\)-orthonormal basis of that complement gives an
+element of \(U(2,4)\).  This is only an algebraic completion; it does not
+construct the physical past-horizon channels.
+
+\section{Projective Evans reduction and the certified disk}
+\label{app:projective-evans}
+
+For a scalar companion system
+\[
+Y_x=
+\begin{pmatrix}A_{11}&A_{12}\\A_{21}&A_{22}\end{pmatrix}Y
+\]
+use the projective coordinate \(v=Y_2/Y_1\).  It satisfies
+\[
+v_x=A_{21}+(A_{22}-A_{11})v-A_{12}v^2.
+\]
+Let \(v_H\) and \(v_\infty\) be the horizon-regular and infinity-outgoing
+lines transported to a common section.  Their mismatch
+\[
+\delta=v_\infty-v_H
+\]
+obeys the exact scalar equation
+\[
+\delta_x=
+\bigl[A_{22}-A_{11}-A_{12}(v_\infty+v_H)\bigr]\delta.
+\]
+It follows that projective Evans functions at two matching sections differ
+by an analytic nonzero factor.  Their zero divisors, logarithmic contour
+moments, and local velocity ratios are match-section independent.
+
+If \(\tau\) denotes the intrinsic partial-jet deformation, the tangent
+variables satisfy
+\[
+(v_p)_x=F_vv_p+F_p,\qquad p\in\{\omega,\tau\},
+\]
+where \(F\) is the Riccati right-hand side.  At a simple zero,
+\[
+\kappa_n=
+\frac{b(\omega_n)}{a'(\omega_n)}
+=\frac{\delta_\tau(\omega_n)}{\delta_\omega(\omega_n)}.
+\]
+This removes every homogeneous amplitude from the Smith selector.
+
+On a boundary contour avoiding zeros,
+\[
+\frac1{2\pi i}\oint\frac{\delta_\omega}{\delta}\,\dd\omega
+\]
+counts scalar QNMs, while
+\[
+\frac1{2\pi i}\oint\frac{\delta_\tau}{\delta}\,\dd\omega
+\]
+is the sum of their intrinsic velocity classes.  A projective chart change is
+a M\"obius transformation.  It multiplies \(\delta\) by an analytic nonzero
+unit whenever both endpoint lines remain in the chart, so the closed-contour
+invariants are unchanged.
+
+The certified disk in Theorem~\ref{thm:ep2} was closed in two stages.  First,
+validated projective panels excluded zero on the boundary and supplied a
+lifted argument change of \(2\pi\).  Second, a local interval-Newton rail
+excluded zero from \(\delta_\omega\) and enclosed the unique simple root.
+The intrinsic tangent and the independent spin-one mismatch were then
+evaluated on the same disk.  This separation prevents a numerical root
+approximation from being reused as its own simplicity or local-unit proof.
+
+\section{Certificate authorities}
+
+The principal machine authorities are:
+\begin{itemize}
+\item \cert{black_hole_programme/certificates/BH2A_AXIAL_OPERATOR.json};
+\item \cert{black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json};
+\item \cert{black_hole_programme/phase3/axial_null_flux_gram/certificate.json};
+\item \cert{black_hole_programme/phase3/axial_incoming_extended_domain_audit/certificate.json};
+\item \cert{black_hole_programme/phase3/axial_boundary_devissage_no_growth/certificate.json};
+\item \cert{black_hole_programme/phase3/axial_outgoing_population_cell_half_v1/certificate.json};
+\item \cert{black_hole_programme/phase3/axial_global_finite_flux_channel_classification_v3/certificate.json};
+\item \cert{black_hole_programme/phase4/axial_threshold_exact_structure_v1/certificate.json};
+\item \cert{black_hole_programme/phase4/axial_all_ell_threshold_structure_v1/certificate.json};
+\item \cert{black_hole_programme/phase4/axial_universal_hessian_intertwiner_v1/certificate.json};
+\item \cert{black_hole_programme/phase4/covariant_einstein_maxwell_carrier_v1/certificate.json};
+\item \cert{black_hole_programme/phase4/weyl_euler_current_transgression_v1/certificate.json};
+\item \cert{black_hole_programme/phase4/second_order_parent_flux_v1/certificate.json};
+\item \cert{black_hole_programme/phase4/parent_resolvent_krein_obstructions_v1/certificate.json};
+\item \cert{black_hole_programme/phase4/rw_maxwell_simplicity_endomorphisms_v1/certificate.json};
+\item \cert{black_hole_programme/phase4/einstein_weyl_critical_mass_jet_v1/certificate.json};
+\item \cert{black_hole_programme/phase4/axial_local_commutant_spectral_c_v1/certificate.json};
+\item \cert{black_hole_programme/phase4/axial_local_nonlocal_positivity_v1/certificate.json};
+\item \cert{black_hole_programme/certificates/BH1A_NORMALIZED_GENERATOR.json};
+\item \cert{black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/full_contour_winding_v1/certificate.json};
+\item \cert{black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/local_selector_v1/certificate.json};
+\item \cert{black_hole_programme/phase3/axial_qnm_spin_one_local_unit_v1/certificate.json};
+\item \cert{black_hole_programme/certificates/BH2B_POLAR_REACH.json}.
+\end{itemize}
+Each numerical theorem has a separately implemented verifier and mutation
+tests.  Reproduction commands and content hashes are recorded in the generated
+claim map and receipt accompanying this paper.
+
+\section{What this paper does not establish}
+
+It does not establish:
+\begin{itemize}
+\item explicit \(T_+\) entries or reflection amplitudes over a substantial
+frequency band;
+\item a non-Einstein separated mode that is simultaneously
+future-horizon regular and purely outgoing (or no-incoming) at infinity;
+the real-frequency title theorem concerns the one-sided trace maps of
+Definition~\ref{def:radiative-class};
+\item absence of isolated positive-real reflection zeros;
+\item a punctured threshold interval of outgoing invertibility or the formal
+low-frequency Jost and extension-ratio asymptotics in
+Section~\ref{sec:threshold};
+\item a complete asymptotically flat metric/tetrad phase space and charge
+algebra;
+\item unconditional interchange of the null or horizon limit with the
+Einstein wave-packet time integral;
+\item Euler exactness or removability of the mixed Einstein--additional
+pairing;
+\item a polar global connection theorem;
+\item a generic implication from radial nonsplitting to a time-translation
+Jordan block;
+\item a complete classification of the complex-frequency reducibility locus,
+or the absence of nonlocal, spectral, scattering-dependent, or BRST
+\(C\) operators;
+\item a causal exterior spacetime resolvent, inverse-Laplace contour
+deformation, or generalized ringdown term;
+\item equality of the parent QNM overlap with the normalized radial overlap
+before scalar-projection, commutator, and endpoint terms are audited;
+\item a Schwarzschild retarded-convolution evolution theorem or the
+flat-space biwave control in the curved implementation;
+\item limiting absorption, uniform resolvent bounds, threshold control,
+bounded time evolution, decay, or completeness;
+\item a positive quantum metric, particles, a BRST physical Hilbert space,
+CPT, or unitarity.
+\end{itemize}
+
+\begin{thebibliography}{99}
+
+\bibitem{Maldacena}
+J.~Maldacena,
+\emph{Einstein gravity from conformal gravity},
+arXiv:1105.5632 (2011).
+
+\bibitem{BransonGover}
+T.~Branson and A.~R.~Gover,
+\emph{The conformal deformation detour complex for the obstruction tensor},
+arXiv:math/0605192 (2006).
+
+\bibitem{GoverSombergSoucek}
+A.~R.~Gover, P.~Somberg, and V.~Sou\v cek,
+\emph{Yang--Mills detour complexes and conformal geometry},
+Commun.\ Math.\ Phys.\ \textbf{278}, 307 (2008);
+arXiv:math/0606401.
+
+\bibitem{DeserJoungWaldron}
+S.~Deser, E.~Joung, and A.~Waldron,
+\emph{Partial masslessness and conformal gravity},
+Phys.\ Rev.\ D \textbf{86}, 104004 (2012);
+arXiv:1208.1307.
+
+\bibitem{ReggeWheeler}
+T.~Regge and J.~A.~Wheeler,
+\emph{Stability of a Schwarzschild singularity},
+Phys.\ Rev.\ \textbf{108}, 1063 (1957),
+\href{https://doi.org/10.1103/physrev.108.1063}{doi:10.1103/physrev.108.1063}.
+
+\bibitem{MartelPoisson}
+K.~Martel and E.~Poisson,
+\emph{Gravitational perturbations of the Schwarzschild spacetime: A
+practical covariant and gauge-invariant formalism},
+Phys.\ Rev.\ D \textbf{71}, 104003 (2005);
+arXiv:gr-qc/0502028.
+
+\bibitem{DarbouxBH}
+K.~Glampedakis, A.~D.~Johnson, and D.~Kennefick,
+\emph{The Darboux transformation in black hole perturbation theory},
+Phys.\ Rev.\ D \textbf{96}, 024036 (2017);
+arXiv:1702.06459.
+
+\bibitem{LeeWald}
+J.~Lee and R.~M.~Wald,
+\emph{Local symmetries and constraints},
+J.\ Math.\ Phys.\ \textbf{31}, 725 (1990),
+\href{https://doi.org/10.1063/1.528801}{doi:10.1063/1.528801}.
+
+\bibitem{IyerWald}
+V.~Iyer and R.~M.~Wald,
+\emph{Some properties of Noether charge and a proposal for dynamical black
+hole entropy},
+Phys.\ Rev.\ D \textbf{50}, 846 (1994),
+\href{https://doi.org/10.1103/physrevd.50.846}{doi:10.1103/physrevd.50.846}.
+
+\bibitem{Antoniou2025}
+G.~Antoniou, L.~Gualtieri, and P.~Pani,
+\emph{Gravitational quasinormal modes of black holes in quadratic gravity},
+Phys.\ Rev.\ D \textbf{111}, 064059 (2025),
+\href{https://doi.org/10.1103/physrevd.111.064059}{doi:10.1103/physrevd.111.064059}.
+
+\bibitem{Knoska2025}
+S.~Knoska, D.~Kofro\v n, and R.~\v Svarc,
+\emph{Linear perturbations of Kerr black hole in quadratic gravity},
+Phys.\ Rev.\ D \textbf{112}, 104058 (2025);
+arXiv:2507.21923.
+
+\bibitem{Konoplya2025}
+R.~A.~Konoplya, A.~Spina, and A.~Zhidenko,
+\emph{Time evolution of black hole perturbations in quadratic gravity},
+Phys.\ Rev.\ D \textbf{112}, 024060 (2025);
+arXiv:2505.01128.
+
+\bibitem{Antoniou2026}
+G.~Antoniou, L.~Gualtieri, and P.~Pani,
+\emph{Nonperturbative suppression of beyond-general-relativity effects in
+quadratic gravity},
+Phys.\ Rev.\ D \textbf{113}, 124068 (2026),
+\href{https://doi.org/10.1103/8r69-19zy}{doi:10.1103/8r69-19zy}.
+
+\bibitem{Tajcovsky2026}
+J.~V.~Taj\v covsk\'y,
+\emph{Exact and Perturbative Solutions to Quadratic Gravity},
+Master's thesis, Charles University (2026),
+\url{https://hdl.handle.net/20.500.11956/209922}.
+
+\end{thebibliography}
+
+\end{document}

@@ -370,3 +370,22 @@ returns to the compact index. Static links work without JavaScript. Older
 `dictionary.html#<id>` bookmarks redirect when JavaScript is available.
 Introduction and wave pages use inline hover explanations and a dictionary link,
 without appending a duplicate term list. The editorial queue stays closed by default.
+
+## Term occurrence references
+
+Each standalone term page loads its own `term-uses-<id>.json`: paginated indexed
+passages, highlighted spans, readable source-view links and extraction hashes.
+These are lexical occurrences, not independently confirmed uses of the same sense.
+The entry's own dictionary prose is excluded. Source views show indexed prose;
+math displays removed by extraction are not reconstructed. Typeset PDFs are linked
+when available, and original files remain secondary provenance downloads.
+
+Install `python3 -m pip install -r foundations/site-rendering-requirements.txt`
+for the pinned Markdown renderer. Formatting is restricted to passive prose tags;
+source HTML and active links are not injected into excerpts. The independent
+reading verifier checks that every published span comes from the extraction
+snapshot, with no omitted matches other than the documented self-entry exclusion.
+
+Matching was already case-insensitive. The four dependency-tag display labels now
+use sentence case; canonical tag strings in scientific prose and aliases remain
+unchanged. Acronyms such as ACA₀, PRA and WKL₀ retain their conventional capitals.
