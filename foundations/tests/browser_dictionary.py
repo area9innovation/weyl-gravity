@@ -28,11 +28,11 @@ try:
     assert page.locator('.dictionary-term').count()==0
     page.goto(page.url.split('#')[0]+'#aca')
     assert page.url.endswith('#aca')
-    assert page.locator('#aca [data-edition=general] h3').count()==3
-    assert page.locator('#rca [data-edition=physics] h3').count()==3
+    assert page.locator('#aca [data-edition=general] h3').count()>=3
+    assert page.locator('#rca [data-edition=physics] h3').count()>=3
     page.goto(page.url.split('#')[0]+'#modulus')
     assert page.url.endswith('#modulus')
-    page.screenshot(path='/tmp/dictionary-expanded-desktop.png',full_page=True)
+    page.screenshot(path='/tmp/dictionary-expanded-desktop.png')
     page.goto(base+'atlas.html?audience=general,physics')
     page.wait_for_function("document.querySelector('#dictionary-popup') !== null")
     page.evaluate("""() => {
@@ -55,6 +55,11 @@ try:
     assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
     assert page.locator('#observable [data-edition]:visible').count()==2
     page.screenshot(path='/tmp/dictionary-expanded-mobile.png')
+    plain=browser.new_context(java_script_enabled=False).new_page()
+    plain.goto(base+'dictionary.html')
+    assert plain.locator('#dictionary-word-list li').count()==67
+    assert plain.locator('#wave-equation [data-edition=general]').is_visible()
+    assert not plain.locator('#wave-equation [data-edition=physics]').is_visible()
     assert not errors,errors
     browser.close()
  print('PASS: perspective definitions, comparison, hover/focus/tap, Escape, dynamic atlas annotation, word boundaries, excluded elements and mobile bounds')

@@ -1,5 +1,6 @@
 """Publish one global dictionary, with optional editorial tools in the index."""
 import gzip,hashlib,json,re
+from html import escape
 from pathlib import Path
 from foundations import reading_site
 from foundations.extract_editorial_terms import OUT,check_cached
@@ -56,8 +57,8 @@ def generated(matrix_bytes,dictionary_page=None):
     data=check_cached(matrix_bytes)
     published=publication_candidates(data['candidates'])
     publication_filter=dict(min_occurrences=MIN_OCCURRENCES,counting_unit="occurrences across the whole corpus, including repeated representations",dictionary_match_exception=True,raw_candidates=len(data['candidates']),published_candidates=len(published),raw_to_published_reduction=len(data['candidates'])-len(published),canonicalization="explicit reviewed aliases; unique source spans counted after merging",single_word_policy="dictionary, vocabulary or explicit project list",policy_sha256=hashlib.sha256(POLICY.read_bytes()).hexdigest())
-    body='''<section id="terminology-index" class="term-review" data-no-dictionary>
-<h2>Alphabetical word list</h2>
+    body='''<section id="editorial-terminology-index" class="term-review" data-no-dictionary>
+<h3>Extracted phrases for editorial review</h3>
 <p>Search across the whole project, or narrow the index to a page or collection. Automatically extracted phrases appear here after at least five occurrences across the project; matches to existing dictionary entries are retained at any frequency. Notation variants share one entry. Single words require a dictionary or vocabulary match, or inclusion in the project’s technical-term list. Indexed phrases without an explanation are marked <strong>Definition pending</strong>. Automatic indexing can include noisy phrases; a related dictionary entry may use a different meaning.</p>
 <div class="review-filters"><label>Search terms<input id="term-search" type="search" placeholder="e.g. chiral, PRA, residual"></label><label>Used in<select id="term-scope"><option value="all">Whole project</option><option value="ladder">Strength ladder</option><option value="matrix">576 matrix cells</option><option value="atlas">Other atlas prose</option><option value="reading">Reading accounts</option><option value="dictionary">Dictionary explanations</option><option value="papers">Papers</option></select></label><label>Explanation<select id="term-coverage"><option value="all">All terms</option><option value="UNEXPLAINED_CANDIDATE">Definition pending</option><option value="VOCABULARY_MATCH_NO_EXPLANATION">External reference only</option><option value="DICTIONARY_MATCH_REVIEW_SENSE">Related dictionary entry</option></select></label><label>Order<select id="term-sort"><option value="alphabetical">Alphabetical</option><option value="frequency">Most widely used</option></select></label></div>
 <p><label><input id="editing-tools" type="checkbox"> Show editing tools</label></p>
@@ -68,7 +69,14 @@ def generated(matrix_bytes,dictionary_page=None):
 <details class="editorial-only"><summary>Indexing and drafting details</summary><p>The scan combines spaCy, KeyphraseVectorizers, nested phrases, abbreviations, the dictionary and APS’s PhySH vocabulary. Matches identify possible concepts, not verified meanings. Short claims are separate explanation tasks.</p><p>Downloaded briefs contain source contexts and requirements for all four perspectives. Decide whether a candidate needs an entry, a link to an existing concept, a clearer sentence or no action. Selections last for this page session and retain contexts from the source where selected. Downloads do not publish definitions.</p><p>Offsets count Unicode code points. Paper contexts use normalized blocks and retain the original starting line. Counts include repeated representations of the same material. Frequency is not reader difficulty or scientific importance. The complete extraction is retained in the repository for review.</p><p><a href="term-extraction-summary.json">Provenance and counts</a> · <a href="https://physh.org/releases">PhySH vocabulary</a></p></details>
 </section>'''
     if dictionary_page is None:dictionary_page=reading_site.generated()['dictionary.html']
-    page=dictionary_page.decode().replace('<!-- GLOBAL_TERMINOLOGY_INDEX -->',body)
+    dictionary=json.loads(reading_site.DICTIONARY.read_text())
+    ordered=sorted(dictionary['terms'],key=lambda t:t['label'].casefold())
+    public='<section id="terminology-index" class="core-dictionary-index" data-no-dictionary><h2>Dictionary A–Z</h2><p>Search by name or abbreviation, then follow the links between related concepts.</p><label>Find an explained concept<input id="dictionary-search" type="search" placeholder="Name or abbreviation, e.g. ACA_0, energy, ghost"></label><p id="dictionary-index-status" role="status">'+str(len(ordered))+' explained concepts</p><ul id="dictionary-word-list">'
+    for term in ordered:
+        names=' '.join([term['label'],*term['aliases'],term.get('expansion','')])
+        public+='<li data-search="'+escape(names.casefold(),quote=True)+'"><a href="#'+escape(term['id'],quote=True)+'">'+escape(term['label'])+'</a></li>'
+    public+='</ul><details id="editorial-inventory"><summary>Editorial inventory — extracted phrases awaiting review</summary><p>This discovery queue is not the public dictionary. A detected phrase may be ordinary language, notation or a different sense of an explained term.</p>'+body+'</details></section>'
+    page=dictionary_page.decode().replace('<!-- GLOBAL_TERMINOLOGY_INDEX -->',public)
     page=page.replace('</head>','<link rel="stylesheet" href="term-review.css"><script src="term-review.js" defer></script></head>')
     # Retain incoming links without keeping a competing destination or interface.
     redirect=reading_site.shell('Terminology has moved','<h1>Terminology &amp; dictionary</h1><p><a href="dictionary.html#terminology-index">Open the site-wide dictionary</a></p>','dictionary')

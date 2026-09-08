@@ -1,8 +1,8 @@
 # Proposed core terminology: 150 concepts
 
-**Editorial proposal for review; no public entries or definitions are changed.**
+**Selection record. The first batch is now implemented in the [core dictionary](core-dictionary-v1.md); batches 2 and 3 remain proposed.**
 
-Start with the 67 batch-1 concepts, including seven existing dictionary entries to review and improve. The 76 batch-2 concepts support atlas reading; seven batch-3 concepts cover specialist construction details. These are writing priorities, not reader ability levels: each approved entry should serve all four perspectives.
+Start with the 67 batch-1 concepts, including the seven dictionary entries that existed when this list was proposed. The 76 batch-2 concepts support atlas reading; seven batch-3 concepts cover specialist construction details. These are writing priorities, not reader ability levels: each approved entry should serve all four perspectives.
 
 The proposal replaces frequency as the admission criterion with reader need, relevance to current explanations, and a distinct explanatory purpose. Corpus mentions help locate source material; they do not prove that every occurrence has the proposed meaning. The current introductions take precedence over superseded paper claims.
 
@@ -24,7 +24,7 @@ After selection, write the General explanation around a concrete example, Physic
 
 ## Proposed entries
 
-Batch 1 = introduction essentials; 2 = atlas bridges; 3 = specialist details. “Existing” identifies a current dictionary entry, not approval of the new proposed scope.
+Batch 1 = introduction essentials; 2 = atlas bridges; 3 = specialist details. “Existing” identifies one of the seven entries present at proposal time. Implementation status is tracked separately.
 
 ### Mathematics (50)
 
@@ -70,7 +70,7 @@ Batch 1 = introduction essentials; 2 = atlas bridges; 3 = specialist details. �
 | 1 | Differential complex | Explains a sequence of maps whose consecutive composition vanishes, rather than merely a complicated construction. | `foundations/editorial/reading-content.json` · `/topics/introduction/versions/physics/5/paragraphs/0` |
 | 1 | Nilpotency | Explains the consistency prerequisite currently blocking the advertised full export. | `foundations/editorial/reading-content.json` · `/topics/introduction/versions/physics/5/paragraphs/0` |
 | 1 | Cohomology | Explains which closed objects remain after exact redundancies are removed, without assigning them a particle interpretation. | `foundations/editorial/reading-content.json` · `/topics/introduction/versions/mathematics/3/paragraphs/0` |
-| 2 | Cocycle and coboundary | Unpacks the two tests hidden inside a cohomology claim. | `paper/05-interaction-obstructions.tex` · `line:1868` |
+| 2 | Cocycle and coboundary | Unpacks the two tests hidden inside a cohomology claim. | `foundations/editorial/dictionary.json` · `cohomology/explanations/specialist/0` |
 | 2 | Chain map | Explains preservation of differentials and why it does not automatically preserve pairings or causality. | `foundations/editorial/reading-content.json` · `/topics/introduction/versions/specialist/1/paragraphs/0` |
 | 2 | Homotopy contraction | Explains how a large complex can be related to a reduced one and which identities must hold. | `foundations/editorial/reading-content.json` · `/topics/introduction/versions/physics/5/paragraphs/0` |
 | 2 | Projection | Explains the reduction map and distinguishes a valid map from an assumed component selection. | `foundations/site/data.json` · `/evidence/FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1/does_not_establish/2` |
@@ -99,7 +99,7 @@ Batch 1 = introduction essentials; 2 = atlas bridges; 3 = specialist details. �
 | 2 | Finite propagation speed | Explains the stronger localization statement beyond solving a wave equation. | `foundations/site/data.json` · `/ladder/5/display/object/2` |
 | 1 | Locality and spatial localization | Distinguishes local dependence of laws from localization of particular data or states. | `foundations/editorial/reading-content.json` · `/topics/introduction/versions/physics/1/paragraphs/0` |
 | 1 | Initial-value problem | Explains what data must determine an evolution before discussing its mathematical acceptance conditions. | `foundations/editorial/reading-content.json` · `/topics/introduction/versions/physics/4/paragraphs/0` |
-| 2 | Boundary condition | Explains restrictions at boundaries and why they change admissible solutions. | `foundations/site/data.json` · `/cells/283/summary` |
+| 2 | Boundary condition | Explains restrictions at boundaries and why they change admissible solutions. | `foundations/editorial/dictionary.json` · `function-space/definitions/physics` |
 | 1 | Lorentzian and Euclidean signature | Explains the two geometrical settings and why a result in one does not establish causal physics in the other. | `foundations/editorial/reading-content.json` · `/topics/introduction/versions/physics/1/paragraphs/1` |
 | 2 | Green operator and propagator | Explains how source-response solutions are built and separates that role from a quantum state. | `foundations/editorial/reading-content.json` · `/topics/introduction/versions/specialist/5/paragraphs/1` |
 | 2 | Retarded and advanced solutions | Explains which temporal support direction is chosen by a causal response. | `foundations/site/data.json` · `/ladder/5/display/object/2` |
@@ -108,10 +108,10 @@ Batch 1 = introduction essentials; 2 = atlas bridges; 3 = specialist details. �
 | 1 | Gauge symmetry | Explains why distinct field descriptions can represent the same physical situation. | `foundations/editorial/reading-content.json` · `/topics/introduction/versions/physics/1/paragraphs/1` |
 | 2 | Gauge fixing and constraints | Explains restrictions used to handle redundant descriptions without silently removing physical solutions. | `foundations/editorial/reading-content.json` · `/topics/introduction/versions/physics/3/paragraphs/0` |
 | 1 | Action and Lagrangian | Explains the variational starting point of the gravity programme. | `foundations/site/data.json` · `/theory_passports/passports/4/stages/2/summary` |
-| 2 | Equation of motion | Distinguishes the dynamical condition from gauge identities and quantum consistency conditions. | `paper/03-fourth-order-vacuum.tex` · `line:272` |
+| 2 | Equation of motion | Distinguishes the dynamical condition from gauge identities and quantum consistency conditions. | `foundations/editorial/dictionary.json` · `action-and-lagrangian/definitions/general` |
 | 1 | Weyl gravity | Introduces the originating proposal and explains what the pure-Weyl specialization selects. | `foundations/editorial/reading-content.json` · `/topics/introduction/versions/general/0/paragraphs/1` |
 | 2 | Conformal symmetry | Explains the scale transformation at the center of Weyl gravity. | `foundations/editorial/reading-content.json` · `/topics/introduction/versions/general/3/paragraphs/1` |
-| 2 | Curvature and Weyl tensor | Explains the geometrical quantity from which the theory’s action is built. | `paper/00-ghosts-geometry-reality.tex` · `line:323` |
+| 2 | Curvature and Weyl tensor | Explains the geometrical quantity from which the theory’s action is built. | `foundations/editorial/dictionary.json` · `weyl-gravity/definitions/general` |
 | 2 | Higher-derivative theory | Explains why extra solution directions and stability questions arise. | `foundations/editorial/reading-content.json` · `/topics/introduction/versions/general/3/paragraphs/1` |
 | 1 | Perturbation and linearization | Explains the use and limits of studying small deviations from a background. | `foundations/site/data.json` · `/evidence/FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1/does_not_establish/4` |
 | 1 | Free and interacting theory | Explains why success for uncoupled modes does not settle an interacting construction. | `foundations/editorial/reading-content.json` · `/topics/introduction/versions/physics/3/paragraphs/0` |
@@ -197,4 +197,4 @@ Batch 1 = introduction essentials; 2 = atlas bridges; 3 = specialist details. �
 
 The [machine-readable proposal](../editorial/core-terminology-proposal.json) owns the selection. The [evidence inventory](../results/CORE_TERMINOLOGY_PROPOSAL_V1.json) pins the corpus and current reading sources and records scope counts and original source spans. Search can find generic or overloaded mentions; those are navigation aids, not definition validation. This is AI editorial work, not independent human approval.
 
-Run `python3 foundations/build_core_terminology_proposal.py --check` for deterministic reproduction and `python3 foundations/verify_core_terminology_proposal.py` for independent structural and source-span checks. The [receipt](../receipts/core-terminology-proposal-v1.json) records commands, timings and test-tier boundaries. No website build is needed because this proposal does not alter publication inputs.
+Run `python3 foundations/build_core_terminology_proposal.py --check` for deterministic reproduction and `python3 foundations/verify_core_terminology_proposal.py` for independent structural and source-span checks. The [receipt](../receipts/core-terminology-proposal-v1.json) records commands, timings and test-tier boundaries. The proposal generator does not publish definitions; the separate dictionary implementation has its own website checks.

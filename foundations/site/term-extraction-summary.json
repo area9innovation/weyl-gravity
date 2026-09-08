@@ -5,7 +5,7 @@
   "inputs_sha256": {
     "@generated:matrix-data": "813d29b98f493c3a1d944eb302c7c842cb3773622a5d4dee702c586b5a598087",
     "foundations/editorial/reading-content.json": "53828828ddbb523d474e0a9d953a04c7d9557b38f22f71ca00124825cb091652",
-    "foundations/editorial/dictionary.json": "822b21afc4980f43c79be7045ebdbb27d9e85655ade9d568ad1999827737f02b",
+    "foundations/editorial/dictionary.json": "c0d7536eb26cd2298c0dd0ea7f7618a32c565a88b1818a2a986d587030a76587",
     "paper/00-ghosts-geometry-reality.tex": "88cf6380ad50de77f0bfd8e8258330bab0e2a330c3056e2b3ebf65fea97a0707",
     "paper/01-symplectic-diagonalization.tex": "dd9a6fe7dac4296004f59ac28e21086c5ace02cc144a96f985edc88ff4a5477b",
     "paper/02-variational-fock.tex": "7ee8311dd0db9e32f4afcdd2b885b160a09f3b2e1a5ce725fd066f00f02372fb",
@@ -99,7 +99,7 @@
       "en_core_web_sm-3.8.0/vocab/vectors.cfg": "ff4359091952c8cd16f1f0482f5770fb82d1707368d5cca3c46aa501f552e3c5",
       "meta.json": "7456349002fa8cf31111051bd37fdbea67a1b7f7a0a60ce235466f98a6758125"
     },
-    "keyphrase_feature_count": 34880,
+    "keyphrase_feature_count": 36369,
     "empty_keyphrase_batches": 0,
     "pipeline": "spaCy tagging/parser + KeyphraseVectorizers + nested phrases + acronym/compound rules + PhraseMatcher"
   },
@@ -110,7 +110,7 @@
       "REFERENCE_OR_METADATA": 5767,
       "AUTHOR": 28,
       "STRUCTURAL_MARKUP": 976,
-      "MATH": 15962,
+      "MATH": 15960,
       "CITATION": 426,
       "BIBLIOGRAPHY": 24,
       "CODE": 61,
@@ -118,21 +118,21 @@
       "BIBLIOGRAPHIC_RECORD": 51,
       "CODE_OR_REFERENCE": 295
     },
-    "excluded_span_count": 23618,
-    "kept_symbolic_term_count": 0,
+    "excluded_span_count": 23616,
+    "kept_symbolic_term_count": 2,
     "unclosed_span_count": 0
   },
   "counts": {
-    "units": 24391,
-    "candidates": 110990,
+    "units": 24897,
+    "candidates": 114064,
     "coverage": {
-      "UNEXPLAINED_CANDIDATE": 110845,
-      "DICTIONARY_MATCH_REVIEW_SENSE": 18,
-      "VOCABULARY_MATCH_NO_EXPLANATION": 127
+      "UNEXPLAINED_CANDIDATE": 113794,
+      "DICTIONARY_MATCH_REVIEW_SENSE": 147,
+      "VOCABULARY_MATCH_NO_EXPLANATION": 123
     },
     "kinds": {
-      "term-candidate": 95322,
-      "explanation-unit": 15668
+      "term-candidate": 98067,
+      "explanation-unit": 15997
     }
   },
   "limits": [
@@ -147,9 +147,9 @@
     "min_occurrences": 5,
     "counting_unit": "occurrences across the whole corpus, including repeated representations",
     "dictionary_match_exception": true,
-    "raw_candidates": 110990,
-    "published_candidates": 3776,
-    "raw_to_published_reduction": 107214,
+    "raw_candidates": 114064,
+    "published_candidates": 3946,
+    "raw_to_published_reduction": 110118,
     "canonicalization": "explicit reviewed aliases; unique source spans counted after merging",
     "single_word_policy": "dictionary, vocabulary or explicit project list",
     "policy_sha256": "ccf8ddcad3a4928034c31e630e504d1e151c3abf39b198aefab284fbebffca76"

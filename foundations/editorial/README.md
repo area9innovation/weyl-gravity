@@ -78,7 +78,7 @@ correction on the Papers page. No hosted deployment is implied by building.
 ## Shared dictionary
 
 `dictionary.json` (schema version 2) owns both short definitions and expanded
-explanations. The seven current entries include separate RCA₀ and ACA₀ entries;
+explanations. The 67 current entries include separate RCA₀ and ACA₀ entries;
 `#rca` remains a valid link. Entries are sorted alphabetically, with a word list
 that also exposes useful alternative names such as Modulus. General remains
 readable without JavaScript.
@@ -337,3 +337,22 @@ and independently check structure and source spans with
 defer or remove proposed concepts before writing their four perspectives. The
 public dictionary and existing extraction publication policy are unchanged by
 this proposal.
+
+## Core dictionary, first batch implemented
+
+The user approved implementation of the proposal’s first batch: all 67 concepts
+now have four authored accounts, including 60 new entries and expanded explanations
+for the seven original entries. The remaining 83 proposals are a writing backlog,
+not empty public dictionary entries. See [the implementation report](../reports/core-dictionary-v1.md).
+
+The default dictionary is a searchable static A–Z list of explained concepts.
+The extraction queue is behind a closed Editorial inventory disclosure and loads
+only when requested. Public lookup works through canonical labels, explicit aliases
+and acronym expansions; no extracted phrase automatically becomes a definition.
+Bare ACA/RCA are no longer aliases of ACA₀/RCA₀. Ambiguous vocabulary such as field
+and support is searchable but does not automatically annotate surrounding prose.
+
+Run `python3 -m unittest foundations.tests.test_core_dictionary foundations.tests.test_reading_site`
+after rebuilding the site, plus the dictionary and term-review browser tests.
+Structural and source checks do not certify the semantics of these AI-authored
+explanations or replace independent scientific review.

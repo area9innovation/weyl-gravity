@@ -16,6 +16,16 @@ try:
     page=browser.new_page(viewport={'width':1440,'height':1000});errors=[]
     page.on('pageerror',lambda e:errors.append(str(e)))
     page.goto(base+'dictionary.html?audience=mathematics')
+    assert page.locator('#dictionary-word-list li').count()==67
+    assert not page.locator('#editorial-inventory').evaluate('node=>node.open')
+    assert page.locator('.term-candidate').count()==0
+    assert not page.evaluate("performance.getEntriesByType('resource').some(r=>r.name.includes('term-candidates-'))")
+    page.locator('#dictionary-search').fill('ACA_0')
+    assert page.locator('#dictionary-word-list li:visible').all_text_contents()==['ACA₀']
+    page.locator('#dictionary-search').fill('absemt')
+    assert page.locator('#dictionary-word-list li:visible').count()==0
+    page.locator('#dictionary-search').fill('')
+    page.locator('#editorial-inventory > summary').click()
     page.wait_for_selector('.term-candidate')
     assert page.locator('#term-scope').input_value()=='all'
     assert not page.locator('#download-brief').is_visible()
@@ -35,6 +45,7 @@ try:
     assert page.locator('.term-candidate').count()==0
     page.goto(base+'term-review.html?audience=mathematics&scope=ladder')
     page.wait_for_url('**/dictionary.html?audience=mathematics&scope=ladder#terminology-index')
+    page.locator('#editorial-inventory > summary').click()
     page.wait_for_selector('.term-candidate')
     page.locator('#term-search').fill('causal support')
     card=page.locator('.term-candidate').filter(has=page.get_by_text('causal support',exact=True)).first
@@ -51,7 +62,7 @@ try:
     page.locator('.term-candidate summary').first.click()
     page.get_by_role('link',name='Read dictionary entry:').first.click()
     assert 'audience=mathematics' in page.url and 'dictionary.html' in page.url
-    page.goto(base+'term-review.html?scope=ladder');page.wait_for_selector('.term-candidate')
+    page.goto(base+'term-review.html?scope=ladder');page.locator('#editorial-inventory > summary').click();page.wait_for_selector('.term-candidate')
     page.locator('#term-scope').select_option('matrix');page.wait_for_function("document.querySelector('#review-status').textContent.includes('indexed here')")
     assert 'scope=matrix' in page.url
     page.screenshot(path='/tmp/term-review-desktop.png')
@@ -63,6 +74,7 @@ try:
     assert page.locator('.term-candidate').count()>0
     page.route('**/term-candidates-papers.json.gz',lambda route:route.fulfill(status=503,body='Unavailable'))
     page.reload()
+    page.locator('#editorial-inventory > summary').click()
     page.wait_for_function("document.querySelector('#review-status').textContent.includes('Could not load')")
     assert not errors,errors
     browser.close()

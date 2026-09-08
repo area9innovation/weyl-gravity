@@ -1,5 +1,13 @@
 (() => {
   'use strict';
+  const dictionarySearch=document.getElementById('dictionary-search');
+  const wordList=document.getElementById('dictionary-word-list');
+  dictionarySearch.addEventListener('input',()=>{
+    const q=dictionarySearch.value.trim().toLocaleLowerCase();let count=0;
+    for(const item of wordList.children){item.hidden=!item.dataset.search.includes(q);if(!item.hidden)count++;}
+    document.getElementById('dictionary-index-status').textContent=`${count} explained concepts`;
+  });
+  const inventory=document.getElementById('editorial-inventory');
   const scopes=['all','ladder','matrix','atlas','reading','dictionary','papers'];
   const scope=document.getElementById('term-scope'), search=document.getElementById('term-search');
   const coverage=document.getElementById('term-coverage'),kind=document.getElementById('term-kind');
@@ -50,7 +58,7 @@
     catch(error){if(token===request)status.textContent='Could not load candidates. Reload to retry. '+error.message;}
   }
   const requested=new URLSearchParams(location.search).get('scope');scope.value=scopes.includes(requested)?requested:'all';
-  editing.addEventListener('change',()=>{document.getElementById('terminology-index').toggleAttribute('data-editing',editing.checked);if(!editing.checked)kind.value='term-candidate';page=0;render();});
+  editing.addEventListener('change',()=>{document.getElementById('editorial-terminology-index').toggleAttribute('data-editing',editing.checked);if(!editing.checked)kind.value='term-candidate';page=0;render();});
   scope.addEventListener('change',load);for(const input of [search,coverage,kind,order])input.addEventListener('input',()=>{page=0;render();});
   document.getElementById('previous-terms').addEventListener('click',()=>{page--;render();});document.getElementById('next-terms').addEventListener('click',()=>{page++;render();});
   document.getElementById('clear-selection').addEventListener('click',()=>{selected.clear();selectionStatus();render();});
@@ -58,5 +66,6 @@
     const brief={schema_version:1,task:'Review candidate meanings and draft explanations; do not publish without contextual review.',requirements:{general:'Expand abbreviations, explain ordinary prerequisites and give a concrete example.',physics:'Connect to modeling and explain unfamiliar logic.',mathematics:'Give the defining structures and conditions; explain physical interpretation.',specialist:'State exact role, hypotheses, contribution and limitations.'},decisions:['new dictionary entry','existing concept or alias','rewrite the surrounding claim','not a useful term'],candidates:[...selected.values()]};
     const blob=new Blob([JSON.stringify(brief,null,2)+'\n'],{type:'application/json'}),url=URL.createObjectURL(blob),a=node('a','');a.href=url;a.download='term-drafting-brief.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   });
-  load();
+  let inventoryStarted=false;
+  inventory.addEventListener('toggle',()=>{if(inventory.open&&!inventoryStarted){inventoryStarted=true;load();}});
 })();

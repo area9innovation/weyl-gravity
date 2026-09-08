@@ -44,7 +44,8 @@ def verify():
             assert (SITE/'sources'/source['path']).read_bytes()==content
         for perspective,blocks in term['explanations'].items():
             assert blocks and all(block['text'] for block in blocks)
-    assert 'Alphabetical word list' in (SITE/'dictionary.html').read_text()
+    word_list=(SITE/'dictionary.html').read_text().split('<ul id="dictionary-word-list">',1)[1].split('</ul>',1)[0]
+    assert Page(word_list).links==['#'+t['id'] for t in terms], 'public index must contain exactly the explained concepts'
     assert set(d['audiences'])=={'general','physics','mathematics','specialist'}
     for r in d['sources'].values():
         assert hashlib.sha256((ROOT/r['path']).read_bytes()).hexdigest()==r['sha256'],'source review stale'
