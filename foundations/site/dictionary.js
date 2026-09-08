@@ -1,6 +1,6 @@
 (async () => {
   'use strict';
-  if (location.pathname.endsWith('/dictionary.html')) return;
+  const dictionaryPage = location.pathname.endsWith('/dictionary.html');
   let dictionary;
   try {
     const response = await fetch('dictionary.json');
@@ -42,7 +42,7 @@
       details.addEventListener('toggle',position); popup.append(details);
     }
     const link = document.createElement('a'); link.href = 'dictionary.html?audience=general,physics,mathematics,specialist#'+term.id;
-    link.textContent = 'Compare all four definitions'; popup.append(link);
+    link.textContent = 'Compare all four definitions'; link.addEventListener('click',hide); popup.append(link);
     const close = document.createElement('button'); close.type = 'button'; close.textContent = 'Close';
     close.addEventListener('click',()=>{ const previous=active; hide(); previous?.focus(); hide(); }); popup.append(close);
     popup.hidden = false;
@@ -65,6 +65,26 @@
   document.addEventListener('click',event=>{ if (!popup.contains(event.target) && !event.target.closest('.dictionary-term')) hide(); });
   window.addEventListener('scroll',position,{passive:true});
   window.addEventListener('resize',position);
+  window.addEventListener('hashchange',hide);
+  function bindTerm(button,term,indexLink=false) {
+    button.setAttribute('aria-controls',popup.id); button.setAttribute('aria-expanded','false');
+    button.addEventListener('mouseenter',()=>show(button,term)); button.addEventListener('mouseleave',delayHide);
+    button.addEventListener('focus',()=>show(button,term));
+    button.addEventListener('blur',event=>{if(!popup.contains(event.relatedTarget)) delayHide();});
+    button.addEventListener('click',event=>{
+      if(indexLink&&(event.metaKey||event.ctrlKey||event.shiftKey||event.altKey))return;
+      if(indexLink)event.preventDefault();
+      show(button,term);
+    });
+  }
+  if(dictionaryPage) {
+    const byId=new Map(dictionary.terms.map(term=>[term.id,term]));
+    for(const link of document.querySelectorAll('#dictionary-word-list [data-dictionary-id]')) {
+      const term=byId.get(link.dataset.dictionaryId);if(term)bindTerm(link,term,true);
+    }
+    document.getElementById('dictionary-search')?.addEventListener('input',hide);
+    return; // Explicit index triggers only: full-entry prose already has authored crosslinks.
+  }
   const excluded = 'a,button,input,textarea,select,option,script,style,code,pre,math,mjx-container,.MathJax,svg,nav,header,footer,[contenteditable],.concepts,.dictionary-popup,[data-no-dictionary]';
   function annotate(root) {
     if (root.nodeType!==1 || root.closest(excluded)) return;
@@ -78,9 +98,7 @@
         const button=document.createElement('button'); button.type='button'; button.className='dictionary-term'; button.textContent=match[0];
         button.setAttribute('aria-label',match[0]+': definition'); button.setAttribute('aria-controls',popup.id); button.setAttribute('aria-expanded','false');
         const term=byAlias.get(match[0].toLowerCase());
-        button.addEventListener('mouseenter',()=>show(button,term)); button.addEventListener('mouseleave',delayHide);
-        button.addEventListener('focus',()=>show(button,term)); button.addEventListener('blur',event=>{if(!popup.contains(event.relatedTarget)) delayHide();});
-        button.addEventListener('click',()=>show(button,term)); fragment.append(button); start=match.index+match[0].length;
+        bindTerm(button,term); fragment.append(button); start=match.index+match[0].length;
       }
       fragment.append(document.createTextNode(node.textContent.slice(start))); node.replaceWith(fragment);
     }

@@ -8,12 +8,12 @@ ROOT=Path(__file__).resolve().parents[2]
 
 
 class CoreDictionaryTests(unittest.TestCase):
-    def test_approved_first_batch_has_four_distinct_accounts_and_links(self):
+    def test_implemented_batches_have_four_distinct_accounts_and_links(self):
         proposal=json.loads((ROOT/'foundations/editorial/core-terminology-proposal.json').read_text())
         dictionary=json.loads(reading_site.DICTIONARY.read_text())
-        expected={e['id'] for e in proposal['entries'] if e['batch']==1}
+        expected={e['id'] for e in proposal['entries'] if e['batch']<=2}
         self.assertEqual({t['core_proposal_id'] for t in dictionary['terms']},expected)
-        self.assertEqual(len(dictionary['terms']),67)
+        self.assertEqual(len(dictionary['terms']),143)
         ids={t['id'] for t in dictionary['terms']}
         for term in dictionary['terms']:
             with self.subTest(term=term['id']):

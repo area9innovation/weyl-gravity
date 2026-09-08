@@ -16,7 +16,32 @@ try:
     page=browser.new_page(viewport={'width':1440,'height':1000});errors=[]
     page.on('pageerror',lambda e:errors.append(str(e)))
     page.goto(base+'dictionary.html?audience=mathematics')
-    assert page.locator('#dictionary-word-list li').count()==67
+    assert page.locator('#dictionary-word-list li').count()==143
+    assert page.locator('.dictionary-entry:visible').count()==0
+    boxes=page.locator('#dictionary-word-list li').evaluate_all('(nodes)=>nodes.map(n=>{const r=n.getBoundingClientRect();return {x:r.x,y:r.y}})')
+    assert boxes[1]['x']==boxes[0]['x'] and boxes[1]['y']>boxes[0]['y']
+    assert any(b['x']>a['x'] and b['y']<a['y'] for a,b in zip(boxes,boxes[1:]))
+    term=page.locator('#dictionary-word-list a').first
+    term.focus()
+    popup=page.locator('#dictionary-popup');popup.wait_for(state='visible')
+    assert 'Mathematics:' in popup.inner_text()
+    page.keyboard.press('Escape');assert not popup.is_visible()
+    term.click();assert popup.is_visible() and '#' not in page.url
+    with page.expect_navigation(wait_until='load'):
+        popup.get_by_role('link').click()
+    assert page.locator('.dictionary-entry:visible').count()==1
+    page.locator('.dictionary-entry:visible .dictionary-back').click()
+    assert page.locator('.dictionary-entry:visible').count()==0
+    page.screenshot(path='/tmp/dictionary-compact-desktop.png')
+    page.set_viewport_size({'width':390,'height':844})
+    xs=page.locator('#dictionary-word-list li').evaluate_all('(ns)=>ns.map(n=>n.getBoundingClientRect().x)')
+    assert len(set(xs))==1
+    assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+    page.locator('#dictionary-word-list a').first.click()
+    assert page.locator('#dictionary-popup').is_visible()
+    page.screenshot(path='/tmp/dictionary-compact-mobile.png')
+    page.keyboard.press('Escape')
+    page.set_viewport_size({'width':1440,'height':1000})
     assert not page.locator('#editorial-inventory').evaluate('node=>node.open')
     assert page.locator('.term-candidate').count()==0
     assert not page.evaluate("performance.getEntriesByType('resource').some(r=>r.name.includes('term-candidates-'))")

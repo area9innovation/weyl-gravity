@@ -6,11 +6,13 @@ The [research atlas](site/atlas.html) retains the technical tools. See the
 [editorial framework](editorial/README.md) for how to update shared claims,
 audience editions and publication corrections without creating parallel entrances.
 
-The global [dictionary](site/dictionary.html) presents 67 explained core concepts,
+The global [dictionary](site/dictionary.html) presents 143 explained core concepts,
 with General, Physics, Mathematics and Specialist accounts and shared crosslinks.
-Its searchable A–Z list contains explained entries; the larger extraction queue
+Its searchable A–Z columns read down before across. Hover, focus or tap a term
+for an explanation; only a selected full entry appears below the list. The list
+contains explained entries; the larger extraction queue
 is available only inside the optional editorial inventory. See the
-[core dictionary report](reports/core-dictionary-v1.md) and the
+[core dictionary report](reports/core-dictionary-batch2-v1.md) and the
 [150-concept selection](reports/core-terminology-proposal-v1.md) for the remaining
 writing priorities. Source-search probes in that proposal are not annotation aliases.
 

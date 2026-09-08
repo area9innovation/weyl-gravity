@@ -134,7 +134,7 @@ def generated():
     body+='<!-- GLOBAL_TERMINOLOGY_INDEX -->'
     labels={t['id']:t['label'] for t in ordered}
     for term in ordered:
-        body+=f'<section class="reading-section dictionary-entry" id="{e(term["id"])}"><header class="dictionary-entry-heading"><h2>{e(term["label"])}</h2><p>{e(term["scope"])}</p>'+ (f'<p class="abbreviation-expansion"><strong>Stands for:</strong> {e(term["expansion"])}</p>' if term.get('expansion') else '')+'</header>'
+        body+=f'<section class="reading-section dictionary-entry" id="{e(term["id"])}"><header class="dictionary-entry-heading"><a class="dictionary-back" href="#terminology-index">Back to A–Z</a><h2>{e(term["label"])}</h2><p>{e(term["scope"])}</p>'+ (f'<p class="abbreviation-expansion"><strong>Stands for:</strong> {e(term["expansion"])}</p>' if term.get('expansion') else '')+'</header>'
         for audience,definition in term['definitions'].items():
             body+=f'<div data-edition="{audience}"'+(' hidden' if audience!='general' else '')+f'><span class="edition-label">{e(data["audiences"][audience]["label"])}</span><p class="definition-summary">{linked_text(definition,ordered,term['id'])}</p>'
             for block in term['explanations'][audience]:

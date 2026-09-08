@@ -25,7 +25,7 @@ try:
     popup.hover();page.wait_for_timeout(450);assert popup.is_visible()
     popup.get_by_role('link').click()
     assert page.locator('input[name=audience]:checked').count()==4
-    assert page.locator('.dictionary-term').count()==0
+    assert page.locator('.dictionary-entry .dictionary-term').count()==0
     page.goto(page.url.split('#')[0]+'#aca')
     assert page.url.endswith('#aca')
     assert page.locator('#aca [data-edition=general] h3').count()>=3
@@ -51,13 +51,16 @@ try:
     probe.locator('.dictionary-term').first.click()
     box=popup.bounding_box();assert box['x']>=0 and box['x']+box['width']<=390
     page.screenshot(path='/tmp/dictionary-mobile.png')
-    page.goto(base+'dictionary.html?audience=general,mathematics')
+    page.goto(base+'dictionary.html?audience=general,mathematics#observable')
     assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
     assert page.locator('#observable [data-edition]:visible').count()==2
     page.screenshot(path='/tmp/dictionary-expanded-mobile.png')
     plain=browser.new_context(java_script_enabled=False).new_page()
     plain.goto(base+'dictionary.html')
-    assert plain.locator('#dictionary-word-list li').count()==67
+    assert plain.locator('.dictionary-entry:visible').count()==0
+    plain.goto(base+'dictionary.html#wave-equation')
+    assert plain.locator('.dictionary-entry:visible').count()==1
+    assert plain.locator('#dictionary-word-list li').count()==143
     assert plain.locator('#wave-equation [data-edition=general]').is_visible()
     assert not plain.locator('#wave-equation [data-edition=physics]').is_visible()
     assert not errors,errors

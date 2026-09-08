@@ -78,7 +78,7 @@ correction on the Papers page. No hosted deployment is implied by building.
 ## Shared dictionary
 
 `dictionary.json` (schema version 2) owns both short definitions and expanded
-explanations. The 67 current entries include separate RCA₀ and ACA₀ entries;
+explanations. The 143 current entries include separate RCA₀ and ACA₀ entries;
 `#rca` remains a valid link. Entries are sorted alphabetically, with a word list
 that also exposes useful alternative names such as Modulus. General remains
 readable without JavaScript.
@@ -338,7 +338,7 @@ defer or remove proposed concepts before writing their four perspectives. The
 public dictionary and existing extraction publication policy are unchanged by
 this proposal.
 
-## Core dictionary, first batch implemented
+## Core dictionary, first batch implemented (historical)
 
 The user approved implementation of the proposal’s first batch: all 67 concepts
 now have four authored accounts, including 60 new entries and expanded explanations
@@ -356,3 +356,15 @@ Run `python3 -m unittest foundations.tests.test_core_dictionary foundations.test
 after rebuilding the site, plus the dictionary and term-review browser tests.
 Structural and source checks do not certify the semantics of these AI-authored
 explanations or replace independent scientific review.
+
+## Second batch and compact lookup
+
+The first two batches now provide 143 concepts in four perspectives; seven
+specialist concepts remain unpublished. The 76 additions explain mathematical,
+physical and project vocabulary, with acronym expansions and related-entry links.
+See [the batch-two report](../reports/core-dictionary-batch2-v1.md).
+
+The alphabetical index flows down columns before moving across. Its links reuse
+the site's hover, keyboard-focus and tap popup. Full accounts are hidden unless
+targeted by a deep link; Back to A–Z returns to the compact list. Static links
+still open an entry without JavaScript. The editorial queue stays closed by default.

@@ -1,6 +1,6 @@
 # Proposed core terminology: 150 concepts
 
-**Selection record. The first batch is now implemented in the [core dictionary](core-dictionary-v1.md); batches 2 and 3 remain proposed.**
+**Selection record. The first two batches are now implemented in the [core dictionary](core-dictionary-batch2-v1.md); the seven batch-3 concepts remain proposed.**
 
 Start with the 67 batch-1 concepts, including the seven dictionary entries that existed when this list was proposed. The 76 batch-2 concepts support atlas reading; seven batch-3 concepts cover specialist construction details. These are writing priorities, not reader ability levels: each approved entry should serve all four perspectives.
 

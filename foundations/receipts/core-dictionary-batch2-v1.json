@@ -1,0 +1,396 @@
+{
+  "schema_version": 1,
+  "kind": "core-dictionary-second-batch-and-compact-lookup",
+  "source_commit": "d8278643b5e0e357c4f07be0e8fdb845f4754261",
+  "dependency_tags": [],
+  "scientific_claims_promoted": false,
+  "independent_expert_review": false,
+  "counts": {
+    "public_concepts": 143,
+    "new_entries": 76,
+    "perspective_accounts": 572,
+    "remaining_proposals": 7
+  },
+  "implemented_proposal_ids": [
+    "pra",
+    "wkl0",
+    "zf-and-choice-principles",
+    "computability",
+    "uniformity",
+    "operator-and-domain",
+    "self-adjointness",
+    "spectrum",
+    "distribution",
+    "weak-solution",
+    "regularity",
+    "existence-uniqueness-and-well-posedness",
+    "algebra",
+    "quotient",
+    "kernel-and-image",
+    "cocycle-and-coboundary",
+    "chain-map",
+    "homotopy-contraction",
+    "projection",
+    "cyclicity",
+    "exact-arithmetic",
+    "finite-field",
+    "fourier-mode",
+    "galerkin-approximation",
+    "bound-and-estimate",
+    "chirality",
+    "finite-propagation-speed",
+    "boundary-condition",
+    "green-operator-and-propagator",
+    "retarded-and-advanced-solutions",
+    "hyperbolicity",
+    "gauge-fixing-and-constraints",
+    "equation-of-motion",
+    "conformal-symmetry",
+    "curvature-and-weyl-tensor",
+    "higher-derivative-theory",
+    "nonlinear-continuation",
+    "indefinite-inner-product",
+    "vacuum",
+    "two-point-function",
+    "hadamard-state",
+    "commutator-and-ccr",
+    "regularization-and-renormalization",
+    "counterterm",
+    "anomaly",
+    "loop-expansion",
+    "time-ordered-product",
+    "algebraic-quantum-field-theory",
+    "scattering",
+    "empirical-prediction-and-fit",
+    "residual-and-uncertainty-weighting",
+    "galaxy-rotation-curve",
+    "formal-proof-and-computational-check",
+    "fixed-wave-detector-benchmark",
+    "finite-chiral-fixture",
+    "completion-ladder",
+    "representation-invariance",
+    "brst-formalism",
+    "bv-formalism",
+    "field-ghost-and-antifield-complex",
+    "quantum-master-equation",
+    "residual-complex-and-cohomology",
+    "centered-deformation-and-vertex-class",
+    "residual-transfer",
+    "classical-import-gate",
+    "dependency-tag",
+    "local-algebraic",
+    "euclidean-spectral",
+    "reduced-mode",
+    "lorentzian-causal",
+    "lifecycle-state",
+    "tt-sector",
+    "reduced-positivity-obstruction",
+    "full-export-consistency-failure",
+    "empirical-acceptance-protocol",
+    "ai-editorial-review"
+  ],
+  "checks": [
+    {
+      "command": [
+        "/tmp/editorial-nlp-cpu/bin/python",
+        "foundations/extract_editorial_terms.py"
+      ],
+      "elapsed_seconds": 76.716,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/build_term_inventory.py"
+      ],
+      "elapsed_seconds": 4.833,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/build_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 8.449,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "build_core_terminology_proposal.py"
+      ],
+      "elapsed_seconds": 8.497,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/verify_reading_site.py"
+      ],
+      "elapsed_seconds": 0.278,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/verify_core_terminology_proposal.py"
+      ],
+      "elapsed_seconds": 1.385,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONPATH=/tmp/tt-browser-deps",
+        "python3",
+        "foundations/tests/browser_term_review.py"
+      ],
+      "elapsed_seconds": 2.441,
+      "status": "FAIL",
+      "exit_code": 1
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONPATH=/tmp/tt-browser-deps",
+        "python3",
+        "foundations/tests/browser_dictionary.py"
+      ],
+      "elapsed_seconds": 4.995,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/verify_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 11.877,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "foundations.tests.test_core_dictionary",
+        "foundations.tests.test_reading_site",
+        "foundations.tests.test_term_publication",
+        "foundations.tests.test_editorial_extraction",
+        "foundations.tests.test_term_source_filter",
+        "foundations.tests.test_term_inventory",
+        "foundations.tests.test_ladder_terms"
+      ],
+      "elapsed_seconds": 18.975,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONPATH=/tmp/tt-browser-deps",
+        "python3",
+        "foundations/tests/browser_term_review.py"
+      ],
+      "elapsed_seconds": 2.68,
+      "status": "FAIL",
+      "exit_code": 1
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/build_term_inventory.py",
+        "--check"
+      ],
+      "elapsed_seconds": 4.718,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONPATH=/tmp/tt-browser-deps",
+        "python3",
+        "foundations/tests/browser_reading_site.py"
+      ],
+      "elapsed_seconds": 7.668,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/build_core_terminology_proposal.py",
+        "--check"
+      ],
+      "elapsed_seconds": 8.255,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONPATH=/tmp/tt-browser-deps",
+        "python3",
+        "foundations/tests/browser_term_review.py"
+      ],
+      "elapsed_seconds": 1.625,
+      "status": "FAIL",
+      "exit_code": 1
+    },
+    {
+      "command": [
+        "/home/asger/.local/share/mise/installs/node/24.20.0/bin/node",
+        "--check",
+        "foundations/matrix_site_v2_assets/dictionary.js"
+      ],
+      "elapsed_seconds": 0.177,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/build_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 9.742,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONPATH=/tmp/tt-browser-deps",
+        "python3",
+        "foundations/tests/browser_term_review.py"
+      ],
+      "elapsed_seconds": 5.018,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONPATH=/tmp/tt-browser-deps",
+        "python3",
+        "foundations/tests/browser_dictionary.py"
+      ],
+      "elapsed_seconds": 5.564,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/verify_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 12.315,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "compileall",
+        "-q",
+        "foundations/reading_site.py",
+        "foundations/term_review.py",
+        "foundations/build_core_terminology_proposal.py",
+        "foundations/tests/test_core_dictionary.py",
+        "foundations/tests/browser_dictionary.py",
+        "foundations/tests/browser_term_review.py"
+      ],
+      "elapsed_seconds": 0.075,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "foundations"
+      ],
+      "elapsed_seconds": 0.081,
+      "status": "PASS",
+      "exit_code": 0
+    }
+  ],
+  "source_sha256": {
+    "foundations/README.md": "1c21717509cf042c50e61796c6478c16f95730ba39753b409bc1ec23dc6dc638",
+    "foundations/build_core_terminology_proposal.py": "0862d951419457f848f9a9592ddef0b5060589ecb4fb680eeb4d5c817c430957",
+    "foundations/editorial/README.md": "75f58777c772c886e8cc40929eba3da0f6168060c40354986e8b2de48de67043",
+    "foundations/editorial/dictionary.json": "50c34382cae5a6af16489579d0e989f7d1bf907952912cd0ba21169a09f5ef03",
+    "foundations/matrix_site_v2_assets/dictionary.css": "f933d11b0a670d565bbea588bf93346f5b2deda3dfabe46f7c18125b373e9923",
+    "foundations/matrix_site_v2_assets/dictionary.js": "98f7f27ae85cd5943d8da618613a80308388d80615ec8227534ce0d594c17463",
+    "foundations/matrix_site_v2_assets/term-review.css": "12ca5ba938337d8fc42e9de9cfdde34a91e39966430be29817abb04b7b4dcff4",
+    "foundations/reading_site.py": "db08521324ec32f2e3966b5fb2b76890e94d4cb0be4e26fedf2d74fd63adade7",
+    "foundations/reports/core-terminology-proposal-v1.md": "5aebaf4ef375fa1a850fc05128c5e08c370738ef015fdecb53100ee2daf2d07a",
+    "foundations/reports/term-inventory-v1.md": "7bc0a653098f38f03f42e23f946d9e0ccbce78fd23d464d1e1022087d8b3f733",
+    "foundations/results/CORE_TERMINOLOGY_PROPOSAL_V1.json": "a0a3b66d57438b1322dbbd3a03221737d4e431ca22d690efca709debabc70360",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "5caf2aab664d9e2c11ed907f141b3a95a11b6d0b246ed35613ed56eb71fc3bcb",
+    "foundations/results/TERM_EXTRACTION_V1.json.gz": "1d8910b6416cce9b2d23b13b6a6487f2ac69bb59454015c625f3f13e0ff7f48c",
+    "foundations/results/TERM_INVENTORY_V1.json": "f9f1b591fd0376fd46060fa0da7e66ccaf07be4b0d7f7a1a138550f78385af9f",
+    "foundations/site/dictionary.css": "f933d11b0a670d565bbea588bf93346f5b2deda3dfabe46f7c18125b373e9923",
+    "foundations/site/dictionary.html": "6595ccd6b4e410f86c0bfc3fad2753fca2e845ac79b8d9751276d666feb794e5",
+    "foundations/site/dictionary.js": "98f7f27ae85cd5943d8da618613a80308388d80615ec8227534ce0d594c17463",
+    "foundations/site/dictionary.json": "50c34382cae5a6af16489579d0e989f7d1bf907952912cd0ba21169a09f5ef03",
+    "foundations/site/index.html": "2b451f2ec0b4b7c1a091b1d523992278632a75dbcd6be9c5e603253982f38709",
+    "foundations/site/ladder-terms.json": "772f7c28ff9a57c9ee3a262f194e28329ea2070f0543ec970b069b6d78be8bcf",
+    "foundations/site/manifest.json": "ea71a9b90e9dd098c3c069030e567e95c1ff098a950b6785749b1f5c76ec6789",
+    "foundations/site/term-candidates-all.json.gz": "6fe337e3b938051bbce42d04064bdbb60289a153f1a02d8821102335e38615e1",
+    "foundations/site/term-candidates-atlas.json.gz": "84b32fe5c663782838fc3e6460a12b99190ed1e332ad4c71fb3b7c7d6cb747b4",
+    "foundations/site/term-candidates-dictionary.json.gz": "c9f654dae0b6a7379ab1e422c5d823b61a43b4f651f7eaf220ea465eac0dcc87",
+    "foundations/site/term-candidates-ladder.json.gz": "d4addad6ddbeefc772c428aaa797b7031c3d285ecef4d5be602d1473fe52ff96",
+    "foundations/site/term-candidates-matrix.json.gz": "81d2b5fcd3cbb9ec7b7c905617618d49024c37f090407b2fca2f098352e8a1c6",
+    "foundations/site/term-candidates-papers.json.gz": "8b1f947b6a664a7201cad781fa6567da05fe63149dc8dac784d8776a85bc90f1",
+    "foundations/site/term-candidates-reading.json.gz": "f3aeb2e60e069a98abadbf9bc4639ef9c7c55cb3134bb5e8d55dfa9846925171",
+    "foundations/site/term-extraction-summary.json": "4fe59bf06a702b5cf7e6110939ea4fd02732f2fdc7d1211f06c99361ba809e5d",
+    "foundations/site/term-review.css": "12ca5ba938337d8fc42e9de9cfdde34a91e39966430be29817abb04b7b4dcff4",
+    "foundations/site/wave.html": "56585e26d96b9699f8385c23099d1ab6d9eabaaacbd70760f5feaae9f8c6eee4",
+    "foundations/term_review.py": "4d794d196e003e624a4a37ac7b25c51b4f27f44563396f5308955a6b99dfa3d4",
+    "foundations/tests/browser_dictionary.py": "65359cc75c88132b757b1d01682297b0b25f005887a5ea126d2bf92327926984",
+    "foundations/tests/browser_term_review.py": "eae45a7e3b3287f7d160bd2c24db3ec38315f59b957b6133988aa1064de284a1",
+    "foundations/tests/test_core_dictionary.py": "0c9aad8535342b17b252e0cd98d316e42bb1f32971b0ef344951ac27632c6097",
+    "foundations/site/sources/foundations/editorial/ladder-terms.json": "6f00dd45217d8c8a144536eb63cf34af373576665d21d7282d86c04169b010ea",
+    "foundations/reports/core-dictionary-batch2-v1.md": "5fc76446b08448c5976f2dfbbdb9ff22033c877d8beaa438fdba68c92c367cb1"
+  },
+  "dictionary_source_sha256": {
+    "foundations/reports/coded-wave-modulus-reversal-v1.md": "ed9ac312af4e166c51a0dfa3a8c0107fbbb1a5c01563c460ce87b958cc65c5a0",
+    "foundations/editorial/reading-content.json": "53828828ddbb523d474e0a9d953a04c7d9557b38f22f71ca00124825cb091652",
+    "paper/21-reverse-foundations-of-physics.tex": "86e81f95a16b124253d5953c42711582f2d5a3edbbd9ecb3f3918d4966b71228",
+    "foundations/reports/tt-trace-repair-v1.md": "802aa790a648ebfd76496714ec174674bf87077788130f01a1b89ee19ef476f5",
+    "foundations/reports/tt-hadamard-cutoff-obstruction-v1.md": "b4786b5f87b6b2fb384d5ae1831ef54f922c958f2b41bda6ae66905308485ed4",
+    "foundations/editorial/ladder-terms.json": "6f00dd45217d8c8a144536eb63cf34af373576665d21d7282d86c04169b010ea",
+    "foundations/reports/tt-observable-extension-v1.md": "8c69f8cf9ddce69c419d766d9a52fb158c88554ad03b5fbb26379d46ce4bb533"
+  },
+  "external_reference_urls": [
+    "https://sgslogic.net/t20/sosoa/chapter1.pdf",
+    "https://arxiv.org/abs/1904.04051",
+    "https://arxiv.org/abs/2004.14272"
+  ],
+  "assumptions": [
+    "Editorial explanations are AI-authored; tests do not certify semantics.",
+    "Full account HTML remains embedded, with only the hash target visible."
+  ],
+  "unresolved": [
+    "Seven specialist concepts remain unwritten.",
+    "Independent expert review remains outstanding."
+  ],
+  "tiers": {
+    "0": "PASS: syntax, structured data, hashes and scoped diff",
+    "1": "PASS: 31 unit tests and browser regressions",
+    "2": "PASS: generated editorial/site consumers and independent verifiers",
+    "3": "NOT_RUN: no mathematical inputs, shared algebra, scientific lifecycle or release changed"
+  },
+  "failure_resolution": "Initial compact-browser attempts exposed the comparison-layout display override; final non-target hiding fixes it and both dictionary browser suites pass."
+}

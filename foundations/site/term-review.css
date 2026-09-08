@@ -22,7 +22,9 @@
 
 .core-dictionary-index{margin:1.5rem 0 2rem;padding:1rem;border:1px solid var(--border,#cbd5e1);border-radius:.6rem}
 #dictionary-search{display:block;box-sizing:border-box;width:100%;max-width:36rem;padding:.65rem;margin-top:.4rem;font:inherit}
-#dictionary-word-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:.45rem 1.5rem;padding-left:1.25rem}
+#dictionary-word-list{columns:16rem 3;column-gap:2rem;padding-left:1.25rem}
+#dictionary-word-list li{break-inside:avoid;margin:0 0 .5rem;padding-right:.3rem}
+#dictionary-word-list .dictionary-term{text-decoration:none}
 #dictionary-word-list li[hidden]{display:none}
 #editorial-inventory{margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border,#cbd5e1)}
 #editorial-inventory>summary{cursor:pointer;font-weight:600}

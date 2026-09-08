@@ -71,10 +71,10 @@ def generated(matrix_bytes,dictionary_page=None):
     if dictionary_page is None:dictionary_page=reading_site.generated()['dictionary.html']
     dictionary=json.loads(reading_site.DICTIONARY.read_text())
     ordered=sorted(dictionary['terms'],key=lambda t:t['label'].casefold())
-    public='<section id="terminology-index" class="core-dictionary-index" data-no-dictionary><h2>Dictionary A–Z</h2><p>Search by name or abbreviation, then follow the links between related concepts.</p><label>Find an explained concept<input id="dictionary-search" type="search" placeholder="Name or abbreviation, e.g. ACA_0, energy, ghost"></label><p id="dictionary-index-status" role="status">'+str(len(ordered))+' explained concepts</p><ul id="dictionary-word-list">'
+    public='<section id="terminology-index" class="core-dictionary-index" data-no-dictionary><h2>Dictionary A–Z</h2><p>Search by name or abbreviation. Hover, focus or tap a term for its explanation; open the full entry to compare perspectives.</p><label>Find an explained concept<input id="dictionary-search" type="search" placeholder="Name or abbreviation, e.g. ACA_0, energy, ghost"></label><p id="dictionary-index-status" role="status">'+str(len(ordered))+' explained concepts</p><ul id="dictionary-word-list">'
     for term in ordered:
         names=' '.join([term['label'],*term['aliases'],term.get('expansion','')])
-        public+='<li data-search="'+escape(names.casefold(),quote=True)+'"><a href="#'+escape(term['id'],quote=True)+'">'+escape(term['label'])+'</a></li>'
+        public+='<li data-search="'+escape(names.casefold(),quote=True)+'"><a class="dictionary-term" data-dictionary-id="'+escape(term['id'],quote=True)+'" href="#'+escape(term['id'],quote=True)+'">'+escape(term['label'])+'</a></li>'
     public+='</ul><details id="editorial-inventory"><summary>Editorial inventory — extracted phrases awaiting review</summary><p>This discovery queue is not the public dictionary. A detected phrase may be ordinary language, notation or a different sense of an explained term.</p>'+body+'</details></section>'
     page=dictionary_page.decode().replace('<!-- GLOBAL_TERMINOLOGY_INDEX -->',public)
     page=page.replace('</head>','<link rel="stylesheet" href="term-review.css"><script src="term-review.js" defer></script></head>')
