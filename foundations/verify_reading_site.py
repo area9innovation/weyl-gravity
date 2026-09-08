@@ -34,8 +34,10 @@ def verify():
     dp=Page((SITE/'dictionary.html').read_text())
     assert len(dp.ids)==len(set(dp.ids)), 'dictionary duplicate anchors'
     terms=sorted(dictionary['terms'],key=lambda t:t['label'].casefold())
-    assert [i for i in dp.ids if i in {t['id'] for t in terms}]==[t['id'] for t in terms]
+    assert not any(t['id'] in dp.ids for t in terms)
     for term in terms:
+        entry=Page((SITE/('term-'+term['id']+'.html')).read_text())
+        assert term['id'] in entry.ids and entry.editions==list(d['audiences'])
         if term.get('abbreviation'):assert term['expansion'] in term['definitions']['general']
         assert set(term['explanations'])==set(d['audiences'])
         for source in term['sources']:
@@ -45,7 +47,7 @@ def verify():
         for perspective,blocks in term['explanations'].items():
             assert blocks and all(block['text'] for block in blocks)
     word_list=(SITE/'dictionary.html').read_text().split('<ul id="dictionary-word-list">',1)[1].split('</ul>',1)[0]
-    assert Page(word_list).links==['#'+t['id'] for t in terms], 'public index must contain exactly the explained concepts'
+    assert Page(word_list).links==['term-'+t['id']+'.html' for t in terms], 'public index must contain exactly the explained concepts'
     assert set(d['audiences'])=={'general','physics','mathematics','specialist'}
     for r in d['sources'].values():
         assert hashlib.sha256((ROOT/r['path']).read_bytes()).hexdigest()==r['sha256'],'source review stale'
@@ -63,7 +65,7 @@ def verify():
         assert p.perspectives==list(d['audiences']),'checkbox coverage/order'
         for a in d['audiences']:
             assert [s['id'] for s in t['versions'][a]]==t['section_ids']
-    for name in ['index.html','wave.html','questions.html','papers.html','atlas.html','cutoff-positivity.html','dictionary.html','term-review.html']:
+    for name in ['index.html','wave.html','questions.html','papers.html','atlas.html','cutoff-positivity.html','dictionary.html','term-review.html',*['term-'+t['id']+'.html' for t in terms]]:
         page_text=(SITE/name).read_text()
         assert page_text.count('aria-label="Main navigation"')==1
         assert 'id="perspective-menu"' in page_text and 'href="site-shell.css"' in page_text

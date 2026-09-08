@@ -22,7 +22,6 @@
 .dictionary-popup summary { cursor:pointer; text-decoration:underline; }
 @media(max-width:600px) { .dictionary-index ul { columns:1; } }
 
-/* Deep links reveal one full account; the index never trails all definitions. */
-.dictionary-entry:not(:target){display:none!important}
-.dictionary-entry:target{display:grid;scroll-margin-top:1.5rem}
+/* Each term has its own static page. */
+.dictionary-entry{display:grid;scroll-margin-top:1.5rem}
 .dictionary-entry-heading .dictionary-back{display:inline-block;margin-bottom:.75rem}

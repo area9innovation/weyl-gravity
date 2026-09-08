@@ -30,6 +30,8 @@ try:
     with page.expect_navigation(wait_until='load'):
         popup.get_by_role('link').click()
     assert page.locator('.dictionary-entry:visible').count()==1
+    assert '/term-aca.html?' in page.url
+    assert page.locator('#dictionary-word-list').count()==0
     page.locator('.dictionary-entry:visible .dictionary-back').click()
     assert page.locator('.dictionary-entry:visible').count()==0
     page.screenshot(path='/tmp/dictionary-compact-desktop.png')
@@ -86,7 +88,7 @@ try:
     page.locator('#term-search').fill('');page.locator('#term-coverage').select_option('DICTIONARY_MATCH_REVIEW_SENSE')
     page.locator('.term-candidate summary').first.click()
     page.get_by_role('link',name='Read dictionary entry:').first.click()
-    assert 'audience=mathematics' in page.url and 'dictionary.html' in page.url
+    assert 'audience=mathematics' in page.url and 'term-' in page.url
     page.goto(base+'term-review.html?scope=ladder');page.locator('#editorial-inventory > summary').click();page.wait_for_selector('.term-candidate')
     page.locator('#term-scope').select_option('matrix');page.wait_for_function("document.querySelector('#review-status').textContent.includes('indexed here')")
     assert 'scope=matrix' in page.url

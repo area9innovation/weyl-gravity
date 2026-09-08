@@ -38,7 +38,7 @@
       label.append(box,document.createTextNode(' Include in drafting brief'));card.append(label);
       const method=node('p','Detected by: '+c.methods.join(', '));method.className='editorial-only';card.append(method);
       card.append(node('p',c.dictionary_ids.length?'Follow the related entry below to read explanations at all four perspectives. Check that it matches the meaning in this passage.':'An explanation for this indexed phrase has not been written yet.'));
-      for(const id of c.dictionary_ids){const a=node('a','Read dictionary entry: '+id);a.href='dictionary.html?audience='+encodeURIComponent(audience())+'#'+encodeURIComponent(id);card.append(a,node('br',''));}
+      for(const id of c.dictionary_ids){const a=node('a','Read dictionary entry: '+id);a.href='term-'+encodeURIComponent(id)+'.html?audience='+encodeURIComponent(audience());card.append(a,node('br',''));}
       for(const id of c.vocabulary_ids){const a=node('a','PhySH concept reference');a.href=id;card.append(a,node('br',''));}
       for(const o of c.occurrences.slice(0,5)){
         const u=data.units[o[0]],chars=Array.from(u.text),quote=node('blockquote','');quote.append(document.createTextNode(chars.slice(Math.max(0,o[1]-100),o[1]).join('')),node('mark',chars.slice(o[1],o[2]).join('')),document.createTextNode(chars.slice(o[2],o[2]+160).join('')));

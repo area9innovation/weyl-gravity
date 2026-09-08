@@ -1,5 +1,6 @@
 (async () => {
   'use strict';
+  if (/\/term-[a-z0-9-]+\.html$/.test(location.pathname)) return;
   const dictionaryPage = location.pathname.endsWith('/dictionary.html');
   let dictionary;
   try {
@@ -41,7 +42,7 @@
       }
       details.addEventListener('toggle',position); popup.append(details);
     }
-    const link = document.createElement('a'); link.href = 'dictionary.html?audience=general,physics,mathematics,specialist#'+term.id;
+    const link = document.createElement('a'); link.href = 'term-'+term.id+'.html?audience=general,physics,mathematics,specialist';
     link.textContent = 'Compare all four definitions'; link.addEventListener('click',hide); popup.append(link);
     const close = document.createElement('button'); close.type = 'button'; close.textContent = 'Close';
     close.addEventListener('click',()=>{ const previous=active; hide(); previous?.focus(); hide(); }); popup.append(close);
@@ -79,6 +80,11 @@
   }
   if(dictionaryPage) {
     const byId=new Map(dictionary.terms.map(term=>[term.id,term]));
+    function legacyTerm() {
+      const id=location.hash.slice(1);
+      if(byId.has(id))location.replace('term-'+id+'.html'+location.search);
+    }
+    legacyTerm();window.addEventListener('hashchange',legacyTerm);
     for(const link of document.querySelectorAll('#dictionary-word-list [data-dictionary-id]')) {
       const term=byId.get(link.dataset.dictionaryId);if(term)bindTerm(link,term,true);
     }

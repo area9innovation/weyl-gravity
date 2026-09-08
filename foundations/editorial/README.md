@@ -365,6 +365,8 @@ physical and project vocabulary, with acronym expansions and related-entry links
 See [the batch-two report](../reports/core-dictionary-batch2-v1.md).
 
 The alphabetical index flows down columns before moving across. Its links reuse
-the site's hover, keyboard-focus and tap popup. Full accounts are hidden unless
-targeted by a deep link; Back to A–Z returns to the compact list. Static links
-still open an entry without JavaScript. The editorial queue stays closed by default.
+the site's hover, keyboard-focus and tap popup. Each full account has its own static `term-<id>.html` page; Back to A–Z
+returns to the compact index. Static links work without JavaScript. Older
+`dictionary.html#<id>` bookmarks redirect when JavaScript is available.
+Introduction and wave pages use inline hover explanations and a dictionary link,
+without appending a duplicate term list. The editorial queue stays closed by default.

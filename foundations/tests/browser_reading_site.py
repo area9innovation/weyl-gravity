@@ -16,6 +16,15 @@ try:
     browser=p.chromium.launch(executable_path='/usr/bin/google-chrome',headless=True,args=['--no-sandbox'])
     context=browser.new_context(viewport={'width':1440,'height':1000})
     page=context.new_page();errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
+    for topic in ['index.html','wave.html']:
+        page.goto(base+topic)
+        assert page.locator('.concepts').count()==0
+        assert page.get_by_text('Terms used in this account',exact=True).count()==0
+        assert page.locator('.dictionary-help a').get_attribute('href').split('?')[0]=='dictionary.html'
+        term=page.locator('.reading-section .dictionary-term:visible').first
+        term.wait_for();term.focus()
+        assert page.locator('#dictionary-popup').is_visible()
+        page.keyboard.press('Escape')
     page.goto(base+'index.html')
     assert page.locator('h1').inner_text()=='How to build a universe'
     assert page.locator('input[name=audience]:checked').evaluate_all('(nodes)=>nodes.map(n=>n.value)')==['general']

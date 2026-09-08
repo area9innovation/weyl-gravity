@@ -77,7 +77,7 @@ def linked_text(text, terms, current):
     for match in pattern.finditer(text):
         id=aliases[match.group().casefold()]
         parts.append(e(text[start:match.start()]))
-        parts.append(e(match.group()) if id in seen else f'<a class="dictionary-crosslink" href="dictionary.html#{e(id)}">{e(match.group())}</a>')
+        parts.append(e(match.group()) if id in seen else f'<a class="dictionary-crosslink" href="term-{e(id)}.html">{e(match.group())}</a>')
         seen.add(id);start=match.end()
     return ''.join(parts)+e(text[start:])
 
@@ -105,13 +105,7 @@ def topic_page(data,key):
             path=data['sources'][source]['path']
             body+=f'<li><a href="sources/{e(path)}">{e(Path(path).name)}</a></li>'
         body+='</ul></details></article>'
-    body+='</aside><section class="concepts"><h2>Terms used in this account</h2>'
-    for cid,concept in data['concepts'].items():
-        body+=f'<details><summary>{e(concept["label"])}</summary>'
-        for audience in data['audiences']:
-            body+=f'<p data-edition="{audience}"'+(' hidden' if audience!='general' else '')+f'><span class="edition-label">{e(data["audiences"][audience]["label"])}</span> {e(concept[audience])}</p>'
-        body+=f'<p><a href="dictionary.html#{e(cid)}">Full explanation and examples →</a></p></details>'
-    body+='</section>'
+    body+='</aside><p class="dictionary-help">Hover, focus or tap an underlined term for an explanation, or <a href="dictionary.html">browse the dictionary A–Z</a>.</p>'
     if key=='introduction':
         body+='<a class="next-reading" href="wave.html">Explore the wave example <span>When does an approximation justify a prediction? →</span></a>'
     else:
@@ -132,22 +126,23 @@ def generated():
     ordered=sorted(dictionary['terms'],key=lambda t:t['label'].casefold())
     body='<header class="reading-hero"><p class="eyebrow">Concepts and connections</p><h1>Terminology &amp; dictionary</h1><p class="deck">Explanations for General, Physics, Mathematics and Specialist readers.</p></header>'
     body+='<!-- GLOBAL_TERMINOLOGY_INDEX -->'
+    outputs['dictionary.html']=shell('Dictionary',body,'dictionary',True).encode()
     labels={t['id']:t['label'] for t in ordered}
     for term in ordered:
-        body+=f'<section class="reading-section dictionary-entry" id="{e(term["id"])}"><header class="dictionary-entry-heading"><a class="dictionary-back" href="#terminology-index">Back to A–Z</a><h2>{e(term["label"])}</h2><p>{e(term["scope"])}</p>'+ (f'<p class="abbreviation-expansion"><strong>Stands for:</strong> {e(term["expansion"])}</p>' if term.get('expansion') else '')+'</header>'
+        body=f'<section class="reading-section dictionary-entry" id="{e(term["id"])}"><header class="dictionary-entry-heading"><a class="dictionary-back" href="dictionary.html">Back to A–Z</a><h1>{e(term["label"])}</h1><p>{e(term["scope"])}</p>'+ (f'<p class="abbreviation-expansion"><strong>Stands for:</strong> {e(term["expansion"])}</p>' if term.get('expansion') else '')+'</header>'
         for audience,definition in term['definitions'].items():
             body+=f'<div data-edition="{audience}"'+(' hidden' if audience!='general' else '')+f'><span class="edition-label">{e(data["audiences"][audience]["label"])}</span><p class="definition-summary">{linked_text(definition,ordered,term['id'])}</p>'
             for block in term['explanations'][audience]:
                 body+=f'<h3>{e(block["heading"])}</h3><p>{linked_text(block["text"],ordered,term['id'])}</p>'
             body+='</div>'
-        body+='<footer class="dictionary-entry-sources"><p>Related: '+ ' · '.join(f'<a href="#{e(id)}">{e(labels[id])}</a>' for id in term['related'])+'</p><details><summary>Sources and editorial scope</summary><p>AI editorial review against these sources; no independent expert approval. Historical source claims remain subject to the current project status.</p><ul>'
+        body+='<footer class="dictionary-entry-sources"><p>Related: '+ ' · '.join(f'<a href="term-{e(id)}.html">{e(labels[id])}</a>' for id in term['related'])+'</p><details><summary>Sources and editorial scope</summary><p>AI editorial review against these sources; no independent expert approval. Historical source claims remain subject to the current project status.</p><ul>'
         for source in term['sources']:
             body+=f'<li><a href="sources/{e(source["path"])}">{e(Path(source["path"]).name)}</a></li>'
             outputs['sources/'+source['path']]=(ROOT/source['path']).read_bytes()
         for ref in term.get('references',[]):
             body+=f'<li><a href="{e(ref["url"])}">{e(ref["title"])}</a></li>'
-        body+='</ul></details><a href="#main">Back to word list</a></footer></section>'
-    outputs['dictionary.html']=shell('Dictionary',body,'dictionary',True).encode()
+        body+='</ul></details><a href="dictionary.html">Back to word list</a></footer></section>'
+        outputs['term-'+term['id']+'.html']=shell(term['label'],body,'dictionary',True).encode()
     questions='''<header class="reading-hero"><p class="eyebrow">Explore a question</p><h1>Where do the assumptions enter?</h1><p class="deck">Begin with one problem. Follow its explanation to the precise result and its evidence.</p></header>
 <div class="question-grid"><a class="question-card" href="wave.html"><span class="eyebrow">Physics and reverse mathematics</span><h2>When does an approximation justify a prediction?</h2><p>The same wave and detector, with and without a supplied error schedule.</p><span>General · Physics · Mathematics · Specialist →</span></a>
 <a class="question-card" href="cutoff-positivity.html"><span class="eyebrow">Finite models and the continuum</span><h2>Can every finite test pass while the full model fails?</h2><p>A conditional reduced-model positivity result and its limits.</p><span>Existing interactive account · audience migration pending →</span></a></div>'''

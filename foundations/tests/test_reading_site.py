@@ -35,9 +35,9 @@ class ReadingTests(unittest.TestCase):
         terms=json.loads(reading_site.DICTIONARY.read_text())['terms']
         text=reading_site.linked_text('ACA₀ uses RCA₀; RCA₀ < x. XACA₀',terms,'aca')
         self.assertEqual(text.count('class="dictionary-crosslink"'),1)
-        self.assertIn('dictionary.html#rca',text)
+        self.assertIn('term-rca.html',text)
         self.assertIn('&lt;',text)
-        self.assertNotIn('dictionary.html#aca',text)
+        self.assertNotIn('term-aca.html',text)
 
 
 if __name__=='__main__':unittest.main()

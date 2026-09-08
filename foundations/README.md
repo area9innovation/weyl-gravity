@@ -9,7 +9,7 @@ audience editions and publication corrections without creating parallel entrance
 The global [dictionary](site/dictionary.html) presents 143 explained core concepts,
 with General, Physics, Mathematics and Specialist accounts and shared crosslinks.
 Its searchable A–Z columns read down before across. Hover, focus or tap a term
-for an explanation; only a selected full entry appears below the list. The list
+for an explanation; each full entry opens on its own page. The list
 contains explained entries; the larger extraction queue
 is available only inside the optional editorial inventory. See the
 [core dictionary report](reports/core-dictionary-batch2-v1.md) and the
