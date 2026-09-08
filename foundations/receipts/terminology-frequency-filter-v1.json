@@ -1,0 +1,166 @@
+{
+  "kind": "editorial-terminology-frequency-filter",
+  "dependency_tags": [],
+  "scientific_claims_promoted": false,
+  "source_commit": "15f632c35c73f14bd6bf1afc41246c0a1537a00d",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "foundations/build_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 3.996,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/tests/browser_term_review.py"
+      ],
+      "elapsed_seconds": 2.451,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/verify_matrix_site_v2.py"
+      ],
+      "elapsed_seconds": 7.234,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "foundations.tests.test_term_publication",
+        "foundations.tests.test_term_source_filter",
+        "foundations.tests.test_editorial_extraction"
+      ],
+      "elapsed_seconds": 12.256,
+      "status": "FAIL",
+      "exit_code": 1
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/verify_reading_site.py"
+      ],
+      "elapsed_seconds": 0.081,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "foundations/tests/browser_dictionary.py"
+      ],
+      "elapsed_seconds": 5.148,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "foundations.tests.test_term_publication",
+        "foundations.tests.test_term_source_filter",
+        "foundations.tests.test_editorial_extraction"
+      ],
+      "elapsed_seconds": 13.139,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "py_compile",
+        "foundations/term_review.py",
+        "foundations/tests/test_term_publication.py",
+        "foundations/tests/browser_term_review.py"
+      ],
+      "elapsed_seconds": 0.065,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/home/asger/.local/share/mise/installs/node/24.20.0/bin/node",
+        "--check",
+        "foundations/matrix_site_v2_assets/term-review.js"
+      ],
+      "elapsed_seconds": 0.054,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "foundations"
+      ],
+      "elapsed_seconds": 0.051,
+      "status": "PASS",
+      "exit_code": 0
+    }
+  ],
+  "publication_filter": {
+    "min_occurrences": 5,
+    "counting_unit": "occurrences across the whole corpus, including repeated representations",
+    "dictionary_match_exception": true,
+    "raw_candidates": 110990,
+    "published_candidates": 6205,
+    "excluded_candidates": 104785
+  },
+  "assumptions": [
+    "Corpus occurrences include repeated representations; they are not independent sources."
+  ],
+  "does_not_establish": [
+    "Term relevance, importance, semantic correctness or sufficient explanations."
+  ],
+  "unresolved_fields": [
+    "Editorial review of retained candidates"
+  ],
+  "claim_flags": {
+    "scientific_claims_promoted": false,
+    "automatic_definitions_published": false
+  },
+  "tiers": {
+    "0": "PASS",
+    "1": "PASS after correcting JSON key lookup in new test",
+    "2": "PASS affected website chain",
+    "3": "NOT_RUN: no scientific inputs, shared algebra, theorem promotion or release"
+  },
+  "sha256": {
+    "foundations/README.md": "83e4959cc967ae8c21b38a919d9281624ac1580f97e859b0b4b97d622262e68c",
+    "foundations/term_review.py": "146c95f3be8d2ecdab01f670cff8461cf4b2194cfc888620e8d2e622862069b2",
+    "foundations/matrix_site_v2_assets/term-review.js": "5ec4ab83a2723ed3c07cb7b752cc7b779e8e784a710f67e6cdff29edb6c1a743",
+    "foundations/tests/browser_term_review.py": "76bb3d759f82437c39324208d4e359b0bb023189ff52936f77a7429cde562999",
+    "foundations/tests/test_term_publication.py": "fffb681da6d042d23d19f7687125fe893ef6d0d99bd98006a10d3f686e11018e",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "64df59cf8a26007228bb09c7a0aab8385b1bfea2a2fc88371a7c7faba3fb9bff",
+    "foundations/site/manifest.json": "ac018e5ae7013ac89836759481aebe1ce51cc1193720785384f742ec7609470e",
+    "foundations/site/dictionary.html": "2ed3a8110af025fa558bc14a0c8f1b3262cf0d4ce6241939358a22fe091e1101",
+    "foundations/site/term-review.js": "5ec4ab83a2723ed3c07cb7b752cc7b779e8e784a710f67e6cdff29edb6c1a743",
+    "foundations/site/term-extraction-summary.json": "9eee073428fe47684713c4ea1feee37afc2b565b09af4754db79168bcaa20381",
+    "foundations/reports/terminology-frequency-filter-v1.md": "e6e4d6e0b635244e7278e2bda70579dc73704a5d847a4f0a50e89fca30e457ff",
+    "foundations/site/term-candidates-all.json.gz": "6c1da4c3cdd86cc1f8114c4b6f1eccd3774443d844b54b74402ddc952295ebcc",
+    "foundations/site/term-candidates-atlas.json.gz": "ceb9480778cb85968e2133760a4b1e06a39795822dde09af3b52e7ef03540ff1",
+    "foundations/site/term-candidates-dictionary.json.gz": "f3d2ab6a255293b592649a414b8635ddd02ebb6bd55ae148716091e9b75e20bf",
+    "foundations/site/term-candidates-ladder.json.gz": "e549b4d9bc02aa3fe7efa9159d529501e6ff12d65f8d2cf4b9bda8c131de00df",
+    "foundations/site/term-candidates-matrix.json.gz": "73703e0cfed57b9aa608bd88f111b11a4bd64342b0ed24fb6641033b04f5410d",
+    "foundations/site/term-candidates-papers.json.gz": "98f2d4bbfb15375455c76dad8bf093ba9298749ca3b7913fe193a09ddae65ff8",
+    "foundations/site/term-candidates-reading.json.gz": "dce22eddd1fbf5145ad5d9aff1f9c5536b68634d175d4d8233c298b1a8af2db0",
+    "foundations/results/TERM_EXTRACTION_V1.json.gz": "2de67df61346377ac1aa9021a5e7560e4435a2e95fbcf8bd0e7774769e878b10"
+  },
+  "browser_environment": {
+    "PYTHONPATH": "/tmp/tt-browser-deps",
+    "chromium_executable": "/usr/bin/google-chrome"
+  }
+}

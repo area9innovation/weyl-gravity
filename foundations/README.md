@@ -6,6 +6,12 @@ The [research atlas](site/atlas.html) retains the technical tools. See the
 [editorial framework](editorial/README.md) for how to update shared claims,
 audience editions and publication corrections without creating parallel entrances.
 
+The global [dictionary](site/dictionary.html) publishes automatically extracted
+phrases with at least five corpus occurrences, retaining dictionary matches at
+any frequency. Counts include repeated representations, not independent sources.
+The full extraction remains available for editorial review; see the
+[frequency-filter report](reports/terminology-frequency-filter-v1.md).
+
 The [TT Hadamard cutoff obstruction](reports/tt-hadamard-cutoff-obstruction-v1.md)
 shows why finite-mode positivity can be misleading: every finite reduced tensor
 cutoff can be repaired while retaining its commutator, but no smooth repair

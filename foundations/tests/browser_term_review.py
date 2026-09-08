@@ -25,7 +25,7 @@ try:
     page.locator('#term-search').fill('Abbott')
     assert page.locator('.term-candidate').count()==0
     page.locator('#term-search').fill('pointwise polynomial identity')
-    assert page.locator('.term-candidate').count()>0
+    assert page.locator('.term-candidate').count()==0
     page.goto(base+'term-review.html?audience=mathematics&scope=ladder')
     page.wait_for_url('**/dictionary.html?audience=mathematics&scope=ladder#terminology-index')
     page.wait_for_selector('.term-candidate')
@@ -45,14 +45,14 @@ try:
     page.get_by_role('link',name='Read dictionary entry:').first.click()
     assert 'audience=mathematics' in page.url and 'dictionary.html' in page.url
     page.goto(base+'term-review.html?scope=ladder');page.wait_for_selector('.term-candidate')
-    page.locator('#term-scope').select_option('matrix');page.wait_for_function("document.querySelector('#review-status').textContent.includes('extracted here')")
+    page.locator('#term-scope').select_option('matrix');page.wait_for_function("document.querySelector('#review-status').textContent.includes('indexed here')")
     assert 'scope=matrix' in page.url
     page.screenshot(path='/tmp/term-review-desktop.png')
     page.set_viewport_size({'width':390,'height':844})
     assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
     page.screenshot(path='/tmp/term-review-mobile.png')
     page.locator('#term-scope').select_option('papers')
-    page.wait_for_function("document.querySelector('#review-status').textContent.includes('extracted here')")
+    page.wait_for_function("document.querySelector('#review-status').textContent.includes('indexed here')")
     assert page.locator('.term-candidate').count()>0
     page.route('**/term-candidates-papers.json.gz',lambda route:route.fulfill(status=503,body='Unavailable'))
     page.reload()
