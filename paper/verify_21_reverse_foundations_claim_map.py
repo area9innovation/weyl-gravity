@@ -608,6 +608,9 @@ def main() -> int:
     require(audit["claims"]["full_consistent_repair_established"] is False, "partial repair promoted")
     require(audit["candidate_checks"]["identity_equation_square_defects"] == 16, "trace obstruction missing")
     require(data["claim_flags"]["current_serialized_graph_transfer_accepted"] is False, "failed transfer promoted")
+    repair = json.loads((ROOT / data["authorities"]["tt_trace_repair"]["path"]).read_text())
+    require(repair["candidate_square_defect_counts"] == {"metric": 0, "trace": 0}, "trace/ghost candidate missing")
+    require(repair["claims"]["candidate_is_full_repaired_complex"] is False, "partial candidate promoted")
 
     flags = data["claim_flags"]
     require(flags["strict_pure_weyl_local_q1_q2_certified"] is True, "strict pure-Weyl q1/q2 flag missing")

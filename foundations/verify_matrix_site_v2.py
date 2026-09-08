@@ -85,6 +85,8 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         errors.append("manifest pin")
     checks.append("content-addressed manifest")
     flags = value.get("claim_flags", {})
+    if flags.get("current_serialized_graph_transfer_accepted") is not False:
+        errors.append("failed current graph transfer promoted")
     for key in ("static_site_generated", "all_cartesian_coordinates_visible", "all_cartesian_coordinates_assessed", "zero_not_mapped", "reviewed_gaps_distinguished_from_results", "all_emitted_migrations_reviewed", "coverage_and_migration_separated", "all_used_evidence_resolved", "theory_profiles_generated", "theory_assembly_atlas_generated", "bounded_observable_reconstruction_exposed", "localized_coefficient_weak_wave_exposed", "named_h2_test_completion_exposed", "smooth_to_h2_translator_exposed", "support_indexed_test_comparison_exposed", "scalar_green_choice_audit_exposed", "strict_candidate_q2_green_first_response_exposed", "strict_candidate_q2_green_foundations_exposed", "strict_candidate_polarized_finite_trees_exposed", "strict_first_mixed_sign_domain_nondefinition_exposed", "at_least_one_cross_cell_interface_certified", "composition_and_observation_rails_separated", "new_lorentzian_claim"):
         if flags.get(key) is not True:
             errors.append("positive flag " + key)

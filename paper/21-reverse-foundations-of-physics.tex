@@ -841,6 +841,19 @@ serialized complex must be reconciled before its Green/Hadamard transfer
 can justify the commutator comparison. This is an obstruction in the export,
 not a refutation of the abstract classical complex.
 
+The subsequent experiment \cert{TT_TRACE_REPAIR_V1} factors the trace defect
+as $NA-BC=LC$, where $L$ has four first-order Weyl coefficients $1/16$.
+Replacing $B$ by $B+L$ and correcting the ghost attachment repairs both
+exhibited square blocks in a 12-coefficient candidate. A left-null witness
+shows that changing only constant coefficients of $A$, with $N,B,C$ fixed,
+cannot repair the trace relation. The candidate has not replaced the export:
+the corrected inclusion and projection satisfy $pi=1$,
+$QH+HQ=1-ip$, $Hi=0$ and $pH=0$, but full nilpotency, both chain-map
+identities and cyclicity remain unverified. The direct
+check \path{foundations/check_current_strict386_transfer.py} rejects the
+current published coefficients and never promotes a partial pass to full
+transfer acceptance.
+
 \subsection{A positive finite Euclidean state is not yet a Krein reconstruction}
 
 The Bateman--Turok positive Euclidean lattice provides a second, physically

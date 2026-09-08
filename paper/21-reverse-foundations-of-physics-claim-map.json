@@ -1436,7 +1436,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "6d8b0dff88bf39182578d3b44c8cc439c00fddfc1981921f8bd719f72ab0e731"
+      "sha256": "ef6c4131457d06b65d1e4250fbf54a0435c5a882e42d780e9f88e0dca2893d87"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -2714,9 +2714,18 @@
       "path": "foundations/results/TT_PROJECTION_CONSISTENCY_AUDIT_V1.json",
       "result_id": "TT_PROJECTION_CONSISTENCY_AUDIT_V1",
       "sha256": "3d51ccc6018a9cfb70d8e1cc2892c02a4e5ab32f34eff87ea3e26bde76c8c637"
+    },
+    "tt_trace_repair": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "lifecycle": null,
+      "path": "foundations/results/TT_TRACE_REPAIR_V1.json",
+      "result_id": "TT_TRACE_REPAIR_V1",
+      "sha256": "9ff98b971afe40eef8253f6b226a4d2932b98aab4e4ac5f19a2078aa0d0b74b2"
     }
   },
-  "canonical_digest": "9588231d8fe38243e45b05c109e856dab9c8fdcffe6a7254257805a5e05ad4fa",
+  "canonical_digest": "73e2128538a3125b9dd4d9a5ae8aacf5c5ac75f36917e2af884f9a99a0a0cb7c",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -4449,14 +4458,15 @@
       "authorities": [
         "tt_cutoff_obstruction",
         "tt_observable_extension",
-        "tt_projection_consistency"
+        "tt_projection_consistency",
+        "tt_trace_repair"
       ],
       "claim_id": "RF-97-TT-CUTOFF-POSITIVITY-SEPARATION",
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
         "REDUCED-MODE"
       ],
-      "statement": "Conditional reduced TT model: every finite cutoff admits positive covariance, but no smooth repair makes the complete standard-reality Hadamard covariance positive. The full commutator remains open: the exported differential has nonzero square blocks; a candidate attachment repairs 28 metric defects but leaves 16 trace defects. The current full transfer fails its complex prerequisite.",
+      "statement": "Conditional reduced TT model: every finite cutoff admits positive covariance, but no smooth repair makes the complete standard-reality Hadamard covariance positive. The current exported differential fails its complex prerequisite. A subsequent 12-coefficient trace/ghost candidate repairs both exposed square blocks, but full consistency and the physical commutator remain unverified.",
       "status": "CONDITIONAL_ANALYTIC_CASE_STUDY_FULL_COMMUTATOR_OPEN"
     }
   ],
@@ -4697,7 +4707,7 @@
       "source_sha256": "813d29b98f493c3a1d944eb302c7c842cb3773622a5d4dee702c586b5a598087"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "b23b1af52c6d12008e2802f79935d8ba81634930fc660dd184516fa203b05ac0"
+    "sha256": "86e81f95a16b124253d5953c42711582f2d5a3edbbd9ecb3f3918d4966b71228"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

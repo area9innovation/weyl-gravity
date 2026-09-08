@@ -19,6 +19,13 @@ A candidate attachment repairs the original 28 terms but leaves a separate
 prerequisite for the Green/Hadamard transfer; the reduced result remains scoped
 as above. Repairing the full differential must precede the commutator comparison.
 
+The [trace and ghost cleanup](reports/tt-trace-repair-v1.md) supplies a
+12-coefficient candidate repairing both exhibited square blocks. Full
+nilpotency and compatible maps/pairing remain unverified, so it has not replaced
+the export. Run `python3 foundations/check_current_strict386_transfer.py`
+for the current direct prerequisite check: the published export is rejected
+with exit 1. Even a partial candidate passing that check is not a full import.
+
 This directory couples the repository's reverse-physics programme to reverse
 mathematics and foundational analysis.  Its question is not merely which
 physical assumptions select a law, but which combinations of

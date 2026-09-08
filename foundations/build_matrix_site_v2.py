@@ -631,8 +631,11 @@ The new `cutoff-positivity.html` case study presents the conditional TT
 finite/continuum separation. Its source extension reconciles the reduced
 reference import and supplies a gauge-invariant compact-source lift, but finds
 28 first-order defects in the advertised serialized projection chain identity.
-The index exposes that audit. The full tensor-commutator comparison remains
-open; no existing atlas cell or quantum lifecycle is promoted by this page.
+The follow-up directly rejects two blocks of the differential squared (28 and
+16 terms). A trace/ghost candidate repairs those blocks, but full verification
+is still required. The index exposes the current rejection and partial repair.
+The full tensor-commutator comparison remains open; no existing atlas cell or
+quantum lifecycle is promoted by this page.
 
 `foundations/site/index.html` presents all **576** Cartesian coordinates.
 All **576** are now emitted by cube v15 and have separate coverage and migration
@@ -1102,7 +1105,7 @@ def generated() -> dict[Path, bytes]:
     ).encode()
     index = index.replace(b'<a href="manifest.json">Build manifest</a>',
         b'<a href="cutoff-positivity.html">Finite positivity case study</a>\n    <a href="manifest.json">Build manifest</a>')
-    index = index.replace(b'<main>', b'<main><aside class="hero-note"><strong>New projection audit:</strong> a direct coefficient check finds a mismatch in the serialized gauge-chain projection. The full tensor-commutator comparison remains open. <a href="cutoff-positivity.html">Read the scoped finding</a>.</aside>')
+    index = index.replace(b'<main>', b'<main><aside class="hero-note"><strong>Full export currently rejected:</strong> the direct consistency check fails. A trace/ghost candidate repairs the two exposed error blocks; full verification and the tensor-commutator comparison remain open. <a href="cutoff-positivity.html">Read the audit and partial repair</a>.</aside>')
     outputs: dict[Path, bytes] = {
         SITE / "cutoff-positivity.html": (V2_ASSETS / "cutoff-positivity.html").read_bytes(),
         SITE / "index.html": index,
@@ -1221,6 +1224,11 @@ def generated() -> dict[Path, bytes]:
     bundled_sources = sorted(set([*bundled_sources,
         FOUNDATIONS / "reports/tt-hadamard-cutoff-obstruction-v1.md",
         FOUNDATIONS / "reports/tt-observable-extension-v1.md",
+        FOUNDATIONS / "reports/tt-projection-consistency-audit-v1.md",
+        FOUNDATIONS / "reports/tt-trace-repair-v1.md",
+        FOUNDATIONS / "results/TT_PROJECTION_CONSISTENCY_AUDIT_V1.json",
+        FOUNDATIONS / "results/TT_TRACE_REPAIR_V1.json",
+        FOUNDATIONS / "check_current_strict386_transfer.py",
         FOUNDATIONS / "results/TT_HADAMARD_CUTOFF_OBSTRUCTION_V1.json",
         FOUNDATIONS / "results/TT_OBSERVABLE_EXTENSION_V1.json",
         FOUNDATIONS / "inputs/tt-reduced-reference-reconciled-v1.json",
@@ -1411,7 +1419,8 @@ def generated() -> dict[Path, bytes]:
     result["claim_flags"]["theory_passports_promote_matrix_grades"] = False
     result["provenance"]["theory_passport_digest"] = v1.load(THEORY_PASSPORT_RESULT)["canonical_digest"]
     result["does_not_establish"].append("that a theory passport selects a complete theory or promotes a completion-matrix evidence grade")
-    result["features"].append("conditional TT finite-cutoff positivity case study, reconciled reduced reference, explicit source lift, and unresolved 28-coefficient projection audit")
+    result["features"].append("conditional TT finite-cutoff positivity case study, current full-export rejection, and scoped trace/ghost repair of two square blocks with full verification open")
+    result["claim_flags"]["current_serialized_graph_transfer_accepted"] = False
     outputs[RESULT] = (json.dumps(result, indent=2) + "\n").encode()
     outputs[REPORT] = render_report(result).encode()
     outputs[VIABILITY_RESULT] = viability_json

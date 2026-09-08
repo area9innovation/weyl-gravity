@@ -1,0 +1,260 @@
+{
+  "schema_version": "tt-trace-repair-cleanup-validation-v1",
+  "date": "2026-09-08",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "base_commit": "5a597d00b15e5deed07930adb1a27f63e5dd878d",
+  "assignment": "Continue cleanup after the exact projection/nilpotency audit.",
+  "coordination": "Direct user-assigned foundations work; opening s-f status clean, fetch current and overview read. No resident core algebra or coordination records changed. Explicit-path commit.",
+  "disposition": "PARTIAL_TRACE_GHOST_REPAIR_AND_FULL_CARRIER_CONTRACTION_CHECKED; CURRENT_EXPORT_REJECTED; COMPLETE_CANDIDATE_COMPLEX_UNVERIFIED",
+  "commands": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile foundations/build_matrix_site_v2.py foundations/tests/browser_tt_cutoff.py foundations/verify_matrix_site_v2.py paper/generate_21_reverse_foundations_claim_map.py paper/verify_21_reverse_foundations_claim_map.py foundations/build_tt_trace_repair.py foundations/check_current_strict386_transfer.py foundations/site/sources/foundations/check_current_strict386_transfer.py foundations/tests/test_tt_trace_repair.py foundations/verify_tt_trace_repair.py",
+      "elapsed_seconds": 0.150452,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "tier": 1,
+      "command": "python3 foundations/build_tt_trace_repair.py --check",
+      "elapsed_seconds": 0.148621,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "stdout": "PASS: four Weyl-derivative coefficients and ghost correction repair selected 44 terms; full complex OPEN\n",
+      "stderr": ""
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=/tmp/tt-hadamard-check-deps python3 foundations/verify_tt_trace_repair.py",
+      "elapsed_seconds": 1.153548,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "stdout": "PASS: independent trace repair and exact obstruction to constant-A-only repair; full transfer OPEN\n",
+      "stderr": ""
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=/tmp/tt-hadamard-check-deps python3 -m unittest foundations.tests.test_tt_trace_repair",
+      "elapsed_seconds": 4.306083,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 3.949s\n\nOK\n"
+    },
+    {
+      "tier": 1,
+      "command": "python3 foundations/check_current_strict386_transfer.py",
+      "elapsed_seconds": 0.100316,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "status": "EXPECTED_REJECTION",
+      "stdout": "{\n  \"dependency_tags\": [\n    \"LOCAL-ALGEBRAIC\"\n  ],\n  \"status\": \"FAIL_CLOSED\",\n  \"selected_nilpotency_prerequisites_pass\": false,\n  \"full_transfer_accepted\": false,\n  \"defect_counts\": {\n    \"metric\": 28,\n    \"trace\": 16\n  },\n  \"witnesses\": {\n    \"metric\": [\n      [\n        [\n          0,\n          0,\n          0,\n          1\n        ],\n        5,\n        314,\n        \"-1/8\"\n      ]\n    ],\n    \"trace\": [\n      [\n        [\n          0,\n          0,\n          0,\n          1\n        ],\n        220,\n        15,\n        \"1/8\"\n      ]\n    ]\n  },\n  \"inputs\": [\n    {\n      \"path\": \"/home/asger/weyl-gravity/quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1.json\",\n      \"sha256\": \"b805bd81b35f13325d938e93be91495e1d46aa5900fd168e55bdcde1afbfa8e2\"\n    },\n    {\n      \"path\": \"/home/asger/weyl-gravity/quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json\",\n      \"sha256\": \"3b9d8a2fc5a70d20770452eb0a2a4891f59314c21c83188bfb59de0941cac4b2\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=/tmp/tt-hadamard-check-deps python3 foundations/verify_tt_projection_consistency_audit.py",
+      "elapsed_seconds": 0.967959,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "stdout": "PASS: independent polynomial rail; Q squared witnesses -d1/2 and d1/8; full transfer FAIL_CLOSED\n",
+      "stderr": ""
+    },
+    {
+      "tier": 2,
+      "command": "python3 paper/generate_21_reverse_foundations_claim_map.py --check",
+      "elapsed_seconds": 0.497774,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "stdout": "PASS paper/21-reverse-foundations-of-physics-claim-map.json is current\n",
+      "stderr": ""
+    },
+    {
+      "tier": 2,
+      "command": "python3 paper/verify_21_reverse_foundations_claim_map.py",
+      "elapsed_seconds": 0.715326,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "stdout": "PASS paper 21 claim map, authority hashes, atlas counts, and claim boundaries\n",
+      "stderr": ""
+    },
+    {
+      "tier": 2,
+      "command": "python3 foundations/verify_matrix_site_v2.py",
+      "elapsed_seconds": 3.444033,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "stdout": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2: PASS\n  - Draft 2020-12 result schema\n  - independent full-surface, migration, and evidence audit\n  - deterministic static build\n  - content-addressed manifest\n  - fail-closed claim flags\n  - human-readable migration and deployment report\n",
+      "stderr": ""
+    },
+    {
+      "tier": 2,
+      "command": "PYTHONPATH=/tmp/tt-browser-deps python3 foundations/tests/browser_tt_cutoff.py",
+      "elapsed_seconds": 1.767785,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "stdout": "{\"command\": \"PYTHONPATH=/tmp/tt-browser-deps python3 foundations/tests/browser_tt_cutoff.py\", \"elapsed_seconds\": 1.630811, \"status\": \"PASS\", \"checks\": [\"Chromium page load without JS errors\", \"slider K=4,8,128 exact expectations and rational lower bound\", \"all case-study links exist\", \"390px mobile viewport has no horizontal overflow\", \"current rejection and partial repair displayed on case study and index\"]}\n",
+      "stderr": ""
+    },
+    {
+      "tier": 0,
+      "command": "/tmp/tt-paper-tectonic/tectonic -X compile --outdir /tmp/tt-paper-tectonic paper/21-reverse-foundations-of-physics.tex",
+      "elapsed_seconds": 2.843438,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "stdout": "note: \"version 2\" Tectonic command-line interface activated\nnote: Running TeX ...\nnote: Rerunning TeX because \"21-reverse-foundations-of-physics.out\" changed ...\nnote: Running xdvipdfmx ...\nnote: Writing `/tmp/tt-paper-tectonic/21-reverse-foundations-of-physics.pdf` (545.0654296875 KiB)\nnote: Skipped writing 2 intermediate files (use --keep-intermediates to keep them)\n",
+      "stderr": "warning: 21-reverse-foundations-of-physics.tex:3009: Overfull \\hbox (1.26468pt too wide) in paragraph at lines 2999--3009\nwarning: 21-reverse-foundations-of-physics.tex:3825: Overfull \\hbox (2.38498pt too wide) in paragraph at lines 3812--3825\nwarning: 21-reverse-foundations-of-physics-appendices.tex:121: Overfull \\hbox (0.50644pt too wide) in paragraph at lines 121--121\nwarning: 21-reverse-foundations-of-physics-appendices.tex:123: Underfull \\hbox (badness 10000) in paragraph at lines 123--123\nwarning: 21-reverse-foundations-of-physics-appendices.tex:184: Underfull \\hbox (badness 10000) in paragraph at lines 184--184\nwarning: 21-reverse-foundations-of-physics-appendices.tex:184: Underfull \\hbox (badness 1490) in paragraph at lines 184--184\nwarning: 21-reverse-foundations-of-physics-appendices.tex:185: Underfull \\hbox (badness 1888) in paragraph at lines 185--185\nwarning: 21-reverse-foundations-of-physics-appendices.tex:186: Underfull \\hbox (badness 1888) in paragraph at lines 186--186\nwarning: 21-reverse-foundations-of-physics-appendices.tex:187: Underfull \\hbox (badness 1888) in paragraph at lines 187--187\nwarning: 21-reverse-foundations-of-physics-appendices.tex:188: Underfull \\hbox (badness 1552) in paragraph at lines 187--188\nwarning: 21-reverse-foundations-of-physics-appendices.tex:188: Underfull \\hbox (badness 2426) in paragraph at lines 187--188\nwarning: 21-reverse-foundations-of-physics-appendices.tex:188: Underfull \\hbox (badness 10000) in paragraph at lines 188--188\nwarning: 21-reverse-foundations-of-physics-appendices.tex:188: Underfull \\hbox (badness 1803) in paragraph at lines 188--188\nwarning: 21-reverse-foundations-of-physics-appendices.tex:189: Underfull \\hbox (badness 10000) in paragraph at lines 189--189\nwarning: 21-reverse-foundations-of-physics-appendices.tex:189: Underfull \\hbox (badness 10000) in paragraph at lines 189--189\nwarning: 21-reverse-foundations-of-physics-appendices.tex:190: Underfull \\hbox (badness 1552) in paragraph at lines 189--190\nwarning: 21-reverse-foundations-of-physics-appendices.tex:190: Underfull \\hbox (badness 2426) in paragraph at lines 189--190\nwarning: 21-reverse-foundations-of-physics-appendices.tex:190: Underfull \\hbox (badness 10000) in paragraph at lines 190--190\nwarning: 21-reverse-foundations-of-physics-appendices.tex:190: Underfull \\hbox (badness 10000) in paragraph at lines 190--190\nwarning: 21-reverse-foundations-of-physics-appendices.tex:191: Underfull \\hbox (badness 10000) in paragraph at lines 191--191\nwarning: 21-reverse-foundations-of-physics-appendices.tex:191: Underfull \\hbox (badness 10000) in paragraph at lines 191--191\nwarning: 21-reverse-foundations-of-physics-appendices.tex:192: Underfull \\hbox (badness 10000) in paragraph at lines 192--192\nwarning: 21-reverse-foundations-of-physics-appendices.tex:193: Underfull \\hbox (badness 2970) in paragraph at lines 193--193\nwarning: 21-reverse-foundations-of-physics-appendices.tex:215: Underfull \\hbox (badness 10000) in paragraph at lines 215--215\nwarning: 21-reverse-foundations-of-physics-appendices.tex:215: Underfull \\hbox (badness 10000) in paragraph at lines 215--215\nwarning: 21-reverse-foundations-of-physics-appendices.tex:215: Underfull \\hbox (badness 10000) in paragraph at lines 215--215\nwarning: 21-reverse-foundations-of-physics-appendices.tex:216: Underfull \\hbox (badness 1742) in paragraph at lines 216--216\nwarning: 21-reverse-foundations-of-physics-appendices.tex:216: Underfull \\hbox (badness 1603) in paragraph at lines 216--216\nwarning: 21-reverse-foundations-of-physics-appendices.tex:216: Underfull \\hbox (badness 3000) in paragraph at lines 216--216\nwarning: 21-reverse-foundations-of-physics-appendices.tex:216: Underfull \\hbox (badness 10000) in paragraph at lines 216--216\nwarning: 21-reverse-foundations-of-physics-appendices.tex:216: Underfull \\hbox (badness 7256) in paragraph at lines 216--216\nwarning: 21-reverse-foundations-of-physics-appendices.tex:217: Underfull \\hbox (badness 3343) in paragraph at lines 216--217\nwarning: 21-reverse-foundations-of-physics-appendices.tex:217: Underfull \\hbox (badness 6428) in paragraph at lines 217--217\nwarning: 21-reverse-foundations-of-physics-appendices.tex:217: Underfull \\hbox (badness 7851) in paragraph at lines 217--217\nwarning: 21-reverse-foundations-of-physics-appendices.tex:217: Underfull \\hbox (badness 10000) in paragraph at lines 217--217\nwarning: 21-reverse-foundations-of-physics-appendices.tex:217: Underfull \\hbox (badness 2165) in paragraph at lines 217--217\nwarning: 21-reverse-foundations-of-physics-appendices.tex:217: Underfull \\hbox (badness 10000) in paragraph at lines 217--217\nwarning: 21-reverse-foundations-of-physics-appendices.tex:217: Underfull \\hbox (badness 10000) in paragraph at lines 217--217\nwarning: 21-reverse-foundations-of-physics-appendices.tex:217: Underfull \\hbox (badness 10000) in paragraph at lines 217--217\nwarning: 21-reverse-foundations-of-physics-appendices.tex:218: Underfull \\hbox (badness 10000) in paragraph at lines 218--218\nwarning: 21-reverse-foundations-of-physics-appendices.tex:218: Underfull \\hbox (badness 10000) in paragraph at lines 218--218\nwarning: 21-reverse-foundations-of-physics-appendices.tex:218: Underfull \\hbox (badness 5388) in paragraph at lines 218--218\nwarning: 21-reverse-foundations-of-physics-appendices.tex:219: Underfull \\hbox (badness 10000) in paragraph at lines 218--219\nwarning: 21-reverse-foundations-of-physics-appendices.tex:219: Underfull \\hbox (badness 1215) in paragraph at lines 218--219\nwarning: 21-reverse-foundations-of-physics-appendices.tex:219: Underfull \\hbox (badness 1019) in paragraph at lines 218--219\nwarning: 21-reverse-foundations-of-physics-appendices.tex:219: Underfull \\hbox (badness 10000) in paragraph at lines 218--219\nwarning: 21-reverse-foundations-of-physics-appendices.tex:219: Underfull \\hbox (badness 10000) in paragraph at lines 219--219\nwarning: 21-reverse-foundations-of-physics-appendices.tex:219: Underfull \\hbox (badness 2662) in paragraph at lines 219--219\nwarning: 21-reverse-foundations-of-physics-appendices.tex:219: Underfull \\hbox (badness 10000) in paragraph at lines 219--219\nwarning: 21-reverse-foundations-of-physics-appendices.tex:219: Underfull \\hbox (badness 10000) in paragraph at lines 219--219\nwarning: 21-reverse-foundations-of-physics-appendices.tex:220: Underfull \\hbox (badness 4647) in paragraph at lines 220--220\nwarning: 21-reverse-foundations-of-physics-appendices.tex:228: Overfull \\hbox (0.11919pt too wide) in paragraph at lines 227--228\nwarning: 21-reverse-foundations-of-physics-appendices.tex:258: Overfull \\hbox (117.66327pt too wide) in paragraph at lines 257--258\nwarning: 21-reverse-foundations-of-physics-appendices.tex:260: Overfull \\hbox (51.92046pt too wide) in paragraph at lines 259--260\nwarning: 21-reverse-foundations-of-physics-appendices.tex:317: Underfull \\hbox (badness 1087) in paragraph at lines 317--317\nwarning: 21-reverse-foundations-of-physics-appendices.tex:318: Underfull \\hbox (badness 1360) in paragraph at lines 318--318\nwarning: 21-reverse-foundations-of-physics-appendices.tex:326: Underfull \\hbox (badness 1389) in paragraph at lines 326--326\nwarning: 21-reverse-foundations-of-physics-appendices.tex:328: Underfull \\hbox (badness 1484) in paragraph at lines 328--328\nwarning: 21-reverse-foundations-of-physics-appendices.tex:328: Underfull \\hbox (badness 1077) in paragraph at lines 328--328\nwarning: 21-reverse-foundations-of-physics-appendices.tex:335: Underfull \\hbox (badness 1152) in paragraph at lines 335--335\nwarning: 21-reverse-foundations-of-physics-appendices.tex:336: Underfull \\hbox (badness 1152) in paragraph at lines 336--336\nwarning: 21-reverse-foundations-of-physics-appendices.tex:338: Underfull \\hbox (badness 2269) in paragraph at lines 338--338\nwarning: 21-reverse-foundations-of-physics-appendices.tex:339: Underfull \\hbox (badness 5548) in paragraph at lines 339--339\nwarning: 21-reverse-foundations-of-physics-appendices.tex:340: Underfull \\hbox (badness 4660) in paragraph at lines 340--340\nwarning: 21-reverse-foundations-of-physics-appendices.tex:341: Underfull \\hbox (badness 1635) in paragraph at lines 341--341\nwarning: 21-reverse-foundations-of-physics-appendices.tex:353: Underfull \\hbox (badness 1231) in paragraph at lines 353--353\nwarning: 21-reverse-foundations-of-physics-appendices.tex:353: Underfull \\hbox (badness 1742) in paragraph at lines 353--353\nwarning: 21-reverse-foundations-of-physics-appendices.tex:375: Underfull \\hbox (badness 3108) in paragraph at lines 375--375\nwarning: 21-reverse-foundations-of-physics-appendices.tex:377: Underfull \\hbox (badness 3108) in paragraph at lines 377--377\nwarning: 21-reverse-foundations-of-physics-appendices.tex:378: Underfull \\hbox (badness 1184) in paragraph at lines 378--378\nwarning: 21-reverse-foundations-of-physics-appendices.tex:378: Underfull \\hbox (badness 1163) in paragraph at lines 378--378\nwarning: 21-reverse-foundations-of-physics-appendices.tex:379: Underfull \\hbox (badness 1184) in paragraph at lines 379--379\nwarning: 21-reverse-foundations-of-physics-appendices.tex:379: Underfull \\hbox (badness 1297) in paragraph at lines 379--379\nwarning: 21-reverse-foundations-of-physics-appendices.tex:379: Underfull \\hbox (badness 1231) in paragraph at lines 379--379\nwarning: 21-reverse-foundations-of-physics-appendices.tex:380: Underfull \\hbox (badness 3108) in paragraph at lines 380--380\nwarning: 21-reverse-foundations-of-physics-appendices.tex:383: Underfull \\hbox (badness 1163) in paragraph at lines 383--383\nwarning: 21-reverse-foundations-of-physics-appendices.tex:383: Underfull \\hbox (badness 3108) in paragraph at lines 383--383\nwarning: 21-reverse-foundations-of-physics-appendices.tex:384: Underfull \\hbox (badness 3108) in paragraph at lines 384--384\nwarning: 21-reverse-foundations-of-physics-appendices.tex:386: Underfull \\hbox (badness 1163) in paragraph at lines 386--386\nwarning: 21-reverse-foundations-of-physics-appendices.tex:386: Underfull \\hbox (badness 1281) in paragraph at lines 386--386\nwarning: 21-reverse-foundations-of-physics-appendices.tex:389: Underfull \\hbox (badness 1163) in paragraph at lines 389--389\nwarning: 21-reverse-foundations-of-physics-appendices.tex:389: Underfull \\hbox (badness 1231) in paragraph at lines 389--389\nwarning: 21-reverse-foundations-of-physics-appendices.tex:392: Underfull \\hbox (badness 3108) in paragraph at lines 392--392\nwarning: 21-reverse-foundations-of-physics-appendices.tex:394: Underfull \\hbox (badness 10000) in paragraph at lines 394--394\nwarning: 21-reverse-foundations-of-physics-appendices.tex:394: Underfull \\hbox (badness 10000) in paragraph at lines 394--394\nwarning: 21-reverse-foundations-of-physics-appendices.tex:396: Underfull \\hbox (badness 3108) in paragraph at lines 396--396\nwarning: 21-reverse-foundations-of-physics-appendices.tex:398: Underfull \\hbox (badness 1163) in paragraph at lines 398--398\nwarning: 21-reverse-foundations-of-physics-appendices.tex:398: Underfull \\hbox (badness 1275) in paragraph at lines 398--398\nwarning: 21-reverse-foundations-of-physics-appendices.tex:399: Underfull \\hbox (badness 3568) in paragraph at lines 399--399\nwarning: 21-reverse-foundations-of-physics-appendices.tex:400: Underfull \\hbox (badness 2809) in paragraph at lines 400--400\nwarning: 21-reverse-foundations-of-physics-appendices.tex:400: Underfull \\hbox (badness 2150) in paragraph at lines 400--400\nwarning: 21-reverse-foundations-of-physics-appendices.tex:400: Underfull \\hbox (badness 1281) in paragraph at lines 400--400\nwarning: 21-reverse-foundations-of-physics-appendices.tex:400: Underfull \\hbox (badness 2689) in paragraph at lines 400--400\nwarning: 21-reverse-foundations-of-physics-appendices.tex:400: Underfull \\hbox (badness 3108) in paragraph at lines 400--400\nwarning: 21-reverse-foundations-of-physics-appendices.tex:404: Underfull \\hbox (badness 1163) in paragraph at lines 404--404\nwarning: 21-reverse-foundations-of-physics-appendices.tex:404: Underfull \\hbox (badness 1342) in paragraph at lines 404--404\nwarning: 21-reverse-foundations-of-physics-appendices.tex:404: Underfull \\hbox (badness 1163) in paragraph at lines 404--404\nwarning: 21-reverse-foundations-of-physics-appendices.tex:404: Underfull \\hbox (badness 1231) in paragraph at lines 404--404\nwarning: 21-reverse-foundations-of-physics-appendices.tex:432: Underfull \\hbox (badness 10000) in paragraph at lines 431--432\nwarning: 21-reverse-foundations-of-physics-appendices.tex:432: Overfull \\hbox (3.4142pt too wide) in paragraph at lines 431--432\nwarning: 21-reverse-foundations-of-physics-appendices.tex:459: Underfull \\hbox (badness 10000) in paragraph at lines 458--459\nwarning: 21-reverse-foundations-of-physics-appendices.tex:459: Overfull \\hbox (9.7822pt too wide) in paragraph at lines 458--459\nwarning: 21-reverse-foundations-of-physics-appendices.tex:567: Underfull \\hbox (badness 1360) in paragraph at lines 567--567\nwarning: 21-reverse-foundations-of-physics-appendices.tex:594: Underfull \\hbox (badness 10000) in paragraph at lines 594--594\nwarning: 21-reverse-foundations-of-physics-appendices.tex:594: Underfull \\hbox (badness 10000) in paragraph at lines 594--594\nwarning: 21-reverse-foundations-of-physics-appendices.tex:594: Underfull \\hbox (badness 1859) in paragraph at lines 594--594\nwarning: 21-reverse-foundations-of-physics-appendices.tex:594: Underfull \\hbox (badness 10000) in paragraph at lines 594--594\nwarning: 21-reverse-foundations-of-physics-appendices.tex:594: Underfull \\hbox (badness 2134) in paragraph at lines 594--594\nwarning: 21-reverse-foundations-of-physics-appendices.tex:594: Underfull \\hbox (badness 2096) in paragraph at lines 594--594\nwarning: 21-reverse-foundations-of-physics-appendices.tex:594: Underfull \\hbox (badness 2875) in paragraph at lines 594--594\nwarning: 21-reverse-foundations-of-physics-appendices.tex:617: Underfull \\hbox (badness 10000) in paragraph at lines 617--617\nwarning: 21-reverse-foundations-of-physics-appendices.tex:666: Underfull \\hbox (badness 10000) in paragraph at lines 666--666\nwarning: 21-reverse-foundations-of-physics-appendices.tex:666: Underfull \\hbox (badness 4981) in paragraph at lines 666--666\nwarning: 21-reverse-foundations-of-physics-appendices.tex:666: Underfull \\hbox (badness 8056) in paragraph at lines 666--666\nwarning: 21-reverse-foundations-of-physics-appendices.tex:667: Underfull \\hbox (badness 6542) in paragraph at lines 667--667\nwarning: 21-reverse-foundations-of-physics-appendices.tex:667: Underfull \\hbox (badness 1122) in paragraph at lines 667--667\nwarning: 21-reverse-foundations-of-physics-appendices.tex:667: Underfull \\hbox (badness 1173) in paragraph at lines 667--667\nwarning: 21-reverse-foundations-of-physics.tex:3009: Overfull \\hbox (1.26468pt too wide) in paragraph at lines 2999--3009\nwarning: 21-reverse-foundations-of-physics.tex:3825: Overfull \\hbox (2.38498pt too wide) in paragraph at lines 3812--3825\nwarning: 21-reverse-foundations-of-physics-appendices.tex:121: Overfull \\hbox (0.50644pt too wide) in paragraph at lines 121--121\nwarning: 21-reverse-foundations-of-physics-appendices.tex:123: Underfull \\hbox (badness 10000) in paragraph at lines 123--123\nwarning: 21-reverse-foundations-of-physics-appendices.tex:184: Underfull \\hbox (badness 10000) in paragraph at lines 184--184\nwarning: 21-reverse-foundations-of-physics-appendices.tex:184: Underfull \\hbox (badness 1490) in paragraph at lines 184--184\nwarning: 21-reverse-foundations-of-physics-appendices.tex:185: Underfull \\hbox (badness 1888) in paragraph at lines 185--185\nwarning: 21-reverse-foundations-of-physics-appendices.tex:186: Underfull \\hbox (badness 1888) in paragraph at lines 186--186\nwarning: 21-reverse-foundations-of-physics-appendices.tex:187: Underfull \\hbox (badness 1888) in paragraph at lines 187--187\nwarning: 21-reverse-foundations-of-physics-appendices.tex:188: Underfull \\hbox (badness 1552) in paragraph at lines 187--188\nwarning: 21-reverse-foundations-of-physics-appendices.tex:188: Underfull \\hbox (badness 2426) in paragraph at lines 187--188\nwarning: 21-reverse-foundations-of-physics-appendices.tex:188: Underfull \\hbox (badness 10000) in paragraph at lines 188--188\nwarning: 21-reverse-foundations-of-physics-appendices.tex:188: Underfull \\hbox (badness 1803) in paragraph at lines 188--188\nwarning: 21-reverse-foundations-of-physics-appendices.tex:189: Underfull \\hbox (badness 10000) in paragraph at lines 189--189\nwarning: 21-reverse-foundations-of-physics-appendices.tex:189: Underfull \\hbox (badness 10000) in paragraph at lines 189--189\nwarning: 21-reverse-foundations-of-physics-appendices.tex:190: Underfull \\hbox (badness 1552) in paragraph at lines 189--190\nwarning: 21-reverse-foundations-of-physics-appendices.tex:190: Underfull \\hbox (badness 2426) in paragraph at lines 189--190\nwarning: 21-reverse-foundations-of-physics-appendices.tex:190: Underfull \\hbox (badness 10000) in paragraph at lines 190--190\nwarning: 21-reverse-foundations-of-physics-appendices.tex:190: Underfull \\hbox (badness 10000) in paragraph at lines 190--190\nwarning: 21-reverse-foundations-of-physics-appendices.tex:191: Underfull \\hbox (badness 10000) in paragraph at lines 191--191\nwarning: 21-reverse-foundations-of-physics-appendices.tex:191: Underfull \\hbox (badness 10000) in paragraph at lines 191--191\nwarning: 21-reverse-foundations-of-physics-appendices.tex:192: Underfull \\hbox (badness 10000) in paragraph at lines 192--192\nwarning: 21-reverse-foundations-of-physics-appendices.tex:193: Underfull \\hbox (badness 2970) in paragraph at lines 193--193\nwarning: 21-reverse-foundations-of-physics-appendices.tex:215: Underfull \\hbox (badness 10000) in paragraph at lines 215--215\nwarning: 21-reverse-foundations-of-physics-appendices.tex:215: Underfull \\hbox (badness 10000) in paragraph at lines 215--215\nwarning: 21-reverse-foundations-of-physics-appendices.tex:215: Underfull \\hbox (badness 10000) in paragraph at lines 215--215\nwarning: 21-reverse-foundations-of-physics-appendices.tex:216: Underfull \\hbox (badness 1742) in paragraph at lines 216--216\nwarning: 21-reverse-foundations-of-physics-appendices.tex:216: Underfull \\hbox (badness 1603) in paragraph at lines 216--216\nwarning: 21-reverse-foundations-of-physics-appendices.tex:216: Underfull \\hbox (badness 3000) in paragraph at lines 216--216\nwarning: 21-reverse-foundations-of-physics-appendices.tex:216: Underfull \\hbox (badness 10000) in paragraph at lines 216--216\nwarning: 21-reverse-foundations-of-physics-appendices.tex:216: Underfull \\hbox (badness 7256) in paragraph at lines 216--216\nwarning: 21-reverse-foundations-of-physics-appendices.tex:217: Underfull \\hbox (badness 3343) in paragraph at lines 216--217\nwarning: 21-reverse-foundations-of-physics-appendices.tex:217: Underfull \\hbox (badness 6428) in paragraph at lines 217--217\nwarning: 21-reverse-foundations-of-physics-appendices.tex:217: Underfull \\hbox (badness 7851) in paragraph at lines 217--217\nwarning: 21-reverse-foundations-of-physics-appendices.tex:217: Underfull \\hbox (badness 10000) in paragraph at lines 217--217\nwarning: 21-reverse-foundations-of-physics-appendices.tex:217: Underfull \\hbox (badness 2165) in paragraph at lines 217--217\nwarning: 21-reverse-foundations-of-physics-appendices.tex:217: Underfull \\hbox (badness 10000) in paragraph at lines 217--217\nwarning: 21-reverse-foundations-of-physics-appendices.tex:217: Underfull \\hbox (badness 10000) in paragraph at lines 217--217\nwarning: 21-reverse-foundations-of-physics-appendices.tex:217: Underfull \\hbox (badness 10000) in paragraph at lines 217--217\nwarning: 21-reverse-foundations-of-physics-appendices.tex:218: Underfull \\hbox (badness 10000) in paragraph at lines 218--218\nwarning: 21-reverse-foundations-of-physics-appendices.tex:218: Underfull \\hbox (badness 10000) in paragraph at lines 218--218\nwarning: 21-reverse-foundations-of-physics-appendices.tex:218: Underfull \\hbox (badness 5388) in paragraph at lines 218--218\nwarning: 21-reverse-foundations-of-physics-appendices.tex:219: Underfull \\hbox (badness 10000) in paragraph at lines 218--219\nwarning: 21-reverse-foundations-of-physics-appendices.tex:219: Underfull \\hbox (badness 1215) in paragraph at lines 218--219\nwarning: 21-reverse-foundations-of-physics-appendices.tex:219: Underfull \\hbox (badness 1019) in paragraph at lines 218--219\nwarning: 21-reverse-foundations-of-physics-appendices.tex:219: Underfull \\hbox (badness 10000) in paragraph at lines 218--219\nwarning: 21-reverse-foundations-of-physics-appendices.tex:219: Underfull \\hbox (badness 10000) in paragraph at lines 219--219\nwarning: 21-reverse-foundations-of-physics-appendices.tex:219: Underfull \\hbox (badness 2662) in paragraph at lines 219--219\nwarning: 21-reverse-foundations-of-physics-appendices.tex:219: Underfull \\hbox (badness 10000) in paragraph at lines 219--219\nwarning: 21-reverse-foundations-of-physics-appendices.tex:219: Underfull \\hbox (badness 10000) in paragraph at lines 219--219\nwarning: 21-reverse-foundations-of-physics-appendices.tex:220: Underfull \\hbox (badness 4647) in paragraph at lines 220--220\nwarning: 21-reverse-foundations-of-physics-appendices.tex:228: Overfull \\hbox (0.11919pt too wide) in paragraph at lines 227--228\nwarning: 21-reverse-foundations-of-physics-appendices.tex:258: Overfull \\hbox (117.66327pt too wide) in paragraph at lines 257--258\nwarning: 21-reverse-foundations-of-physics-appendices.tex:260: Overfull \\hbox (51.92046pt too wide) in paragraph at lines 259--260\nwarning: 21-reverse-foundations-of-physics-appendices.tex:317: Underfull \\hbox (badness 1087) in paragraph at lines 317--317\nwarning: 21-reverse-foundations-of-physics-appendices.tex:318: Underfull \\hbox (badness 1360) in paragraph at lines 318--318\nwarning: 21-reverse-foundations-of-physics-appendices.tex:326: Underfull \\hbox (badness 1389) in paragraph at lines 326--326\nwarning: 21-reverse-foundations-of-physics-appendices.tex:328: Underfull \\hbox (badness 1484) in paragraph at lines 328--328\nwarning: 21-reverse-foundations-of-physics-appendices.tex:328: Underfull \\hbox (badness 1077) in paragraph at lines 328--328\nwarning: 21-reverse-foundations-of-physics-appendices.tex:335: Underfull \\hbox (badness 1152) in paragraph at lines 335--335\nwarning: 21-reverse-foundations-of-physics-appendices.tex:336: Underfull \\hbox (badness 1152) in paragraph at lines 336--336\nwarning: 21-reverse-foundations-of-physics-appendices.tex:338: Underfull \\hbox (badness 2269) in paragraph at lines 338--338\nwarning: 21-reverse-foundations-of-physics-appendices.tex:339: Underfull \\hbox (badness 5548) in paragraph at lines 339--339\nwarning: 21-reverse-foundations-of-physics-appendices.tex:340: Underfull \\hbox (badness 4660) in paragraph at lines 340--340\nwarning: 21-reverse-foundations-of-physics-appendices.tex:341: Underfull \\hbox (badness 1635) in paragraph at lines 341--341\nwarning: 21-reverse-foundations-of-physics-appendices.tex:353: Underfull \\hbox (badness 1231) in paragraph at lines 353--353\nwarning: 21-reverse-foundations-of-physics-appendices.tex:353: Underfull \\hbox (badness 1742) in paragraph at lines 353--353\nwarning: 21-reverse-foundations-of-physics-appendices.tex:375: Underfull \\hbox (badness 3108) in paragraph at lines 375--375\nwarning: 21-reverse-foundations-of-physics-appendices.tex:377: Underfull \\hbox (badness 3108) in paragraph at lines 377--377\nwarning: 21-reverse-foundations-of-physics-appendices.tex:378: Underfull \\hbox (badness 1184) in paragraph at lines 378--378\nwarning: 21-reverse-foundations-of-physics-appendices.tex:378: Underfull \\hbox (badness 1163) in paragraph at lines 378--378\nwarning: 21-reverse-foundations-of-physics-appendices.tex:379: Underfull \\hbox (badness 1184) in paragraph at lines 379--379\nwarning: 21-reverse-foundations-of-physics-appendices.tex:379: Underfull \\hbox (badness 1297) in paragraph at lines 379--379\nwarning: 21-reverse-foundations-of-physics-appendices.tex:379: Underfull \\hbox (badness 1231) in paragraph at lines 379--379\nwarning: 21-reverse-foundations-of-physics-appendices.tex:380: Underfull \\hbox (badness 3108) in paragraph at lines 380--380\nwarning: 21-reverse-foundations-of-physics-appendices.tex:383: Underfull \\hbox (badness 1163) in paragraph at lines 383--383\nwarning: 21-reverse-foundations-of-physics-appendices.tex:383: Underfull \\hbox (badness 3108) in paragraph at lines 383--383\nwarning: 21-reverse-foundations-of-physics-appendices.tex:384: Underfull \\hbox (badness 3108) in paragraph at lines 384--384\nwarning: 21-reverse-foundations-of-physics-appendices.tex:386: Underfull \\hbox (badness 1163) in paragraph at lines 386--386\nwarning: 21-reverse-foundations-of-physics-appendices.tex:386: Underfull \\hbox (badness 1281) in paragraph at lines 386--386\nwarning: 21-reverse-foundations-of-physics-appendices.tex:389: Underfull \\hbox (badness 1163) in paragraph at lines 389--389\nwarning: 21-reverse-foundations-of-physics-appendices.tex:389: Underfull \\hbox (badness 1231) in paragraph at lines 389--389\nwarning: 21-reverse-foundations-of-physics-appendices.tex:392: Underfull \\hbox (badness 3108) in paragraph at lines 392--392\nwarning: 21-reverse-foundations-of-physics-appendices.tex:394: Underfull \\hbox (badness 10000) in paragraph at lines 394--394\nwarning: 21-reverse-foundations-of-physics-appendices.tex:394: Underfull \\hbox (badness 10000) in paragraph at lines 394--394\nwarning: 21-reverse-foundations-of-physics-appendices.tex:396: Underfull \\hbox (badness 3108) in paragraph at lines 396--396\nwarning: 21-reverse-foundations-of-physics-appendices.tex:398: Underfull \\hbox (badness 1163) in paragraph at lines 398--398\nwarning: 21-reverse-foundations-of-physics-appendices.tex:398: Underfull \\hbox (badness 1275) in paragraph at lines 398--398\nwarning: 21-reverse-foundations-of-physics-appendices.tex:399: Underfull \\hbox (badness 3568) in paragraph at lines 399--399\nwarning: 21-reverse-foundations-of-physics-appendices.tex:400: Underfull \\hbox (badness 2809) in paragraph at lines 400--400\nwarning: 21-reverse-foundations-of-physics-appendices.tex:400: Underfull \\hbox (badness 2150) in paragraph at lines 400--400\nwarning: 21-reverse-foundations-of-physics-appendices.tex:400: Underfull \\hbox (badness 1281) in paragraph at lines 400--400\nwarning: 21-reverse-foundations-of-physics-appendices.tex:400: Underfull \\hbox (badness 2689) in paragraph at lines 400--400\nwarning: 21-reverse-foundations-of-physics-appendices.tex:400: Underfull \\hbox (badness 3108) in paragraph at lines 400--400\nwarning: 21-reverse-foundations-of-physics-appendices.tex:404: Underfull \\hbox (badness 1163) in paragraph at lines 404--404\nwarning: 21-reverse-foundations-of-physics-appendices.tex:404: Underfull \\hbox (badness 1342) in paragraph at lines 404--404\nwarning: 21-reverse-foundations-of-physics-appendices.tex:404: Underfull \\hbox (badness 1163) in paragraph at lines 404--404\nwarning: 21-reverse-foundations-of-physics-appendices.tex:404: Underfull \\hbox (badness 1231) in paragraph at lines 404--404\nwarning: 21-reverse-foundations-of-physics-appendices.tex:432: Underfull \\hbox (badness 10000) in paragraph at lines 431--432\nwarning: 21-reverse-foundations-of-physics-appendices.tex:432: Overfull \\hbox (3.4142pt too wide) in paragraph at lines 431--432\nwarning: 21-reverse-foundations-of-physics-appendices.tex:459: Underfull \\hbox (badness 10000) in paragraph at lines 458--459\nwarning: 21-reverse-foundations-of-physics-appendices.tex:459: Overfull \\hbox (9.7822pt too wide) in paragraph at lines 458--459\nwarning: 21-reverse-foundations-of-physics-appendices.tex:567: Underfull \\hbox (badness 1360) in paragraph at lines 567--567\nwarning: 21-reverse-foundations-of-physics-appendices.tex:594: Underfull \\hbox (badness 10000) in paragraph at lines 594--594\nwarning: 21-reverse-foundations-of-physics-appendices.tex:594: Underfull \\hbox (badness 10000) in paragraph at lines 594--594\nwarning: 21-reverse-foundations-of-physics-appendices.tex:594: Underfull \\hbox (badness 1859) in paragraph at lines 594--594\nwarning: 21-reverse-foundations-of-physics-appendices.tex:594: Underfull \\hbox (badness 10000) in paragraph at lines 594--594\nwarning: 21-reverse-foundations-of-physics-appendices.tex:594: Underfull \\hbox (badness 2134) in paragraph at lines 594--594\nwarning: 21-reverse-foundations-of-physics-appendices.tex:594: Underfull \\hbox (badness 2096) in paragraph at lines 594--594\nwarning: 21-reverse-foundations-of-physics-appendices.tex:594: Underfull \\hbox (badness 2875) in paragraph at lines 594--594\nwarning: 21-reverse-foundations-of-physics-appendices.tex:617: Underfull \\hbox (badness 10000) in paragraph at lines 617--617\nwarning: 21-reverse-foundations-of-physics-appendices.tex:666: Underfull \\hbox (badness 10000) in paragraph at lines 666--666\nwarning: 21-reverse-foundations-of-physics-appendices.tex:666: Underfull \\hbox (badness 4981) in paragraph at lines 666--666\nwarning: 21-reverse-foundations-of-physics-appendices.tex:666: Underfull \\hbox (badness 8056) in paragraph at lines 666--666\nwarning: 21-reverse-foundations-of-physics-appendices.tex:667: Underfull \\hbox (badness 6542) in paragraph at lines 667--667\nwarning: 21-reverse-foundations-of-physics-appendices.tex:667: Underfull \\hbox (badness 1122) in paragraph at lines 667--667\nwarning: 21-reverse-foundations-of-physics-appendices.tex:667: Underfull \\hbox (badness 1173) in paragraph at lines 667--667\nwarning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.\n"
+    },
+    {
+      "tier": 0,
+      "command": "git diff --check -- foundations/README.md foundations/build_matrix_site_v2.py foundations/matrix_site_v2_assets/cutoff-positivity.html foundations/reports/matrix-explorer-site-v2.md foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json foundations/site/cutoff-positivity.html foundations/site/index.html foundations/site/manifest.json foundations/tests/browser_tt_cutoff.py foundations/verify_matrix_site_v2.py paper/21-reverse-foundations-of-physics-claim-map.json paper/21-reverse-foundations-of-physics.tex paper/21-reverse-foundations-of-physics.pdf paper/generate_21_reverse_foundations_claim_map.py paper/verify_21_reverse_foundations_claim_map.py foundations/build_tt_trace_repair.py foundations/check_current_strict386_transfer.py foundations/reports/tt-trace-repair-v1.md foundations/results/TT_TRACE_REPAIR_V1.json foundations/site/sources/foundations/check_current_strict386_transfer.py foundations/site/sources/foundations/reports/tt-projection-consistency-audit-v1.md foundations/site/sources/foundations/reports/tt-trace-repair-v1.md foundations/site/sources/foundations/results/TT_PROJECTION_CONSISTENCY_AUDIT_V1.json foundations/site/sources/foundations/results/TT_TRACE_REPAIR_V1.json foundations/tests/test_tt_trace_repair.py foundations/verify_tt_trace_repair.py",
+      "elapsed_seconds": 0.035469,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "earlier_resolved_failures": [
+    "Initial verifier syntax typo corrected before successful replay.",
+    "Initial browser assertion selected the first pre-existing hero note; changed to select the current-rejection note explicitly, then reran successfully.",
+    "Paper claim-map --check detected stale generation after the final prose edit; regenerated and reran affected validation successfully."
+  ],
+  "verification_interpretation": "The current graph prerequisite check must return exit 1 with 28 metric and 16 trace defects. This is a scientific rejection, not a pass of the export. Tests verify candidate repairs and guard against promotion.",
+  "tier_2": "Affected site and paper generation/verifier chains and browser checked. Prior independent audit replayed on unchanged input hashes.",
+  "tier_3": "NOT_RUN: no shared core operator mutation, freeze, release, theorem promotion or lifecycle promotion. Candidate experiment is not installed as a full complex.",
+  "pdf_review": "Final Paper 21 page 13 and website desktop screenshot visually inspected; readable without clipping. Browser also checked 390px viewport and current rejection banner. Existing PDF warnings outside added paragraphs.",
+  "environment": {
+    "python": "Python 3.12.3",
+    "sympy": "1.14.0 in /tmp/tt-hadamard-check-deps",
+    "playwright": "1.55.0 with installed Google Chrome",
+    "tectonic": "0.17.0"
+  },
+  "does_not_establish": [
+    "Full candidate nilpotency and both complete chain maps",
+    "Candidate cyclicity and transported pairing/suspension",
+    "Full Green/Hadamard or tensor-commutator acceptance",
+    "Deployment to a hosted website"
+  ],
+  "artifacts": [
+    {
+      "path": "foundations/README.md",
+      "sha256": "6978e11a93b38e700f139279d93863841c70590d336b7f0df9a32e346824184e"
+    },
+    {
+      "path": "foundations/build_matrix_site_v2.py",
+      "sha256": "0951f8760ae48e4cfca2e9b25da79b98400f95c11204e7dbc087e5d394574385"
+    },
+    {
+      "path": "foundations/matrix_site_v2_assets/cutoff-positivity.html",
+      "sha256": "7a6a828d12c24c2b89b5a2f0ba069033a5aa6d6aeff3cb4eb00726fee680eda9"
+    },
+    {
+      "path": "foundations/reports/matrix-explorer-site-v2.md",
+      "sha256": "4e4f03e6708035a031047967a04d181ac90af2fa3e060935d1b70046bd24cbbf"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
+      "sha256": "ef6c4131457d06b65d1e4250fbf54a0435c5a882e42d780e9f88e0dca2893d87"
+    },
+    {
+      "path": "foundations/site/cutoff-positivity.html",
+      "sha256": "7a6a828d12c24c2b89b5a2f0ba069033a5aa6d6aeff3cb4eb00726fee680eda9"
+    },
+    {
+      "path": "foundations/site/index.html",
+      "sha256": "41a84900e8f91c1d26c791a7bd143aeb4a6c3b8d713128da0fff49963c6d9598"
+    },
+    {
+      "path": "foundations/site/manifest.json",
+      "sha256": "75e1bd73b817cb7ee4e1bbb1814f8cdeac803064c471a891157c1290cb5bdce2"
+    },
+    {
+      "path": "foundations/tests/browser_tt_cutoff.py",
+      "sha256": "d5d18d78d4e3c45b23f92748d6a6063d62c566aa5c914d396b1a1cee81edafcc"
+    },
+    {
+      "path": "foundations/verify_matrix_site_v2.py",
+      "sha256": "6486c41f60a6261ee8d36d9ef98deaa6095f8c071f876ece4eada851a4712845"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-claim-map.json",
+      "sha256": "7e6918581be7c12f8cbde7f56b5f120222da4cd8aee06bf9407a07ae355ef21f"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.tex",
+      "sha256": "86e81f95a16b124253d5953c42711582f2d5a3edbbd9ecb3f3918d4966b71228"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.pdf",
+      "sha256": "97c86f260b4cb262e09a60156bcc290a2ff21552dc0cd96fecbd8b2fd21f8fa2"
+    },
+    {
+      "path": "paper/generate_21_reverse_foundations_claim_map.py",
+      "sha256": "434e77fb1889266276d762905033503296e4937279b4653bdd5a251f80db2482"
+    },
+    {
+      "path": "paper/verify_21_reverse_foundations_claim_map.py",
+      "sha256": "0cd73d99c584c00eaeda3c990862cbce3e6d3c87c8ccaaa37fdbf6c3c58b02b3"
+    },
+    {
+      "path": "foundations/build_tt_trace_repair.py",
+      "sha256": "f4ff57a5002f799003bd61d062a60be2756fdf5f5fafeca9a5d07884b97f0eba"
+    },
+    {
+      "path": "foundations/check_current_strict386_transfer.py",
+      "sha256": "20946e85fbadce4b83da43396bebeaea4b0c6afc8f958b136eff42555bdd2487"
+    },
+    {
+      "path": "foundations/reports/tt-trace-repair-v1.md",
+      "sha256": "802aa790a648ebfd76496714ec174674bf87077788130f01a1b89ee19ef476f5"
+    },
+    {
+      "path": "foundations/results/TT_TRACE_REPAIR_V1.json",
+      "sha256": "9ff98b971afe40eef8253f6b226a4d2932b98aab4e4ac5f19a2078aa0d0b74b2"
+    },
+    {
+      "path": "foundations/site/sources/foundations/check_current_strict386_transfer.py",
+      "sha256": "20946e85fbadce4b83da43396bebeaea4b0c6afc8f958b136eff42555bdd2487"
+    },
+    {
+      "path": "foundations/site/sources/foundations/reports/tt-projection-consistency-audit-v1.md",
+      "sha256": "013c7c2fc177d72468db8ceedf5416ad50d63de0bf4bdc2cdd0ca47b43bf1cf7"
+    },
+    {
+      "path": "foundations/site/sources/foundations/reports/tt-trace-repair-v1.md",
+      "sha256": "802aa790a648ebfd76496714ec174674bf87077788130f01a1b89ee19ef476f5"
+    },
+    {
+      "path": "foundations/site/sources/foundations/results/TT_PROJECTION_CONSISTENCY_AUDIT_V1.json",
+      "sha256": "3d51ccc6018a9cfb70d8e1cc2892c02a4e5ab32f34eff87ea3e26bde76c8c637"
+    },
+    {
+      "path": "foundations/site/sources/foundations/results/TT_TRACE_REPAIR_V1.json",
+      "sha256": "9ff98b971afe40eef8253f6b226a4d2932b98aab4e4ac5f19a2078aa0d0b74b2"
+    },
+    {
+      "path": "foundations/tests/test_tt_trace_repair.py",
+      "sha256": "4fdc64b83d0351f126254ffb842e8cc8afc7232c0656a8f37eda4331b813fcbd"
+    },
+    {
+      "path": "foundations/verify_tt_trace_repair.py",
+      "sha256": "6467f51e0999e70443656c1f52bd32029694a9b6ff608da5e04bf4f66c56b4bc"
+    }
+  ]
+}

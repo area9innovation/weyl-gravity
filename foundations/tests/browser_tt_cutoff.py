@@ -9,6 +9,8 @@ with sync_playwright() as p:
  page=browser.new_page(viewport={'width':1100,'height':850})
  errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
  page.goto((root/'cutoff-positivity.html').as_uri())
+ assert 'Full export currently rejected.' in page.locator('body').inner_text()
+ assert '12-coefficient candidate' in page.locator('body').inner_text()
  for k in (4,8,128):
   page.locator('#cutoff').fill(str(k));page.locator('#cutoff').dispatch_event('input')
   assert page.locator('#next').inner_text()==str(k+1)
@@ -22,7 +24,9 @@ with sync_playwright() as p:
  page.set_viewport_size({'width':390,'height':844})
  assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth')
  page.screenshot(path='/tmp/tt-cutoff-mobile.png',full_page=True)
+ page.goto((root/'index.html').as_uri())
+ assert page.locator('.hero-note').filter(has_text='Full export currently rejected:').count()==1
  assert not errors,errors
  browser.close()
-result={'command':'PYTHONPATH=/tmp/tt-browser-deps python3 foundations/tests/browser_tt_cutoff.py', 'elapsed_seconds':round(time.monotonic()-start,6),'status':'PASS','checks':['Chromium page load without JS errors','slider K=4,8,128 exact expectations and rational lower bound','all case-study links exist','390px mobile viewport has no horizontal overflow']}
+result={'command':'PYTHONPATH=/tmp/tt-browser-deps python3 foundations/tests/browser_tt_cutoff.py', 'elapsed_seconds':round(time.monotonic()-start,6),'status':'PASS','checks':['Chromium page load without JS errors','slider K=4,8,128 exact expectations and rational lower bound','all case-study links exist','390px mobile viewport has no horizontal overflow','current rejection and partial repair displayed on case study and index']}
 Path('/tmp/tt-browser-receipt.json').write_text(json.dumps(result,indent=2));print(json.dumps(result))

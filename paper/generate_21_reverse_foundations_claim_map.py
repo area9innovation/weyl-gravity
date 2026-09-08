@@ -239,6 +239,7 @@ AUTHORITY_PATHS = {
     "tt_cutoff_obstruction": "foundations/results/TT_HADAMARD_CUTOFF_OBSTRUCTION_V1.json",
     "tt_observable_extension": "foundations/results/TT_OBSERVABLE_EXTENSION_V1.json",
     "tt_projection_consistency": "foundations/results/TT_PROJECTION_CONSISTENCY_AUDIT_V1.json",
+    "tt_trace_repair": "foundations/results/TT_TRACE_REPAIR_V1.json",
     "finite_graph_causality": "foundations/results/FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1.json",
     "finite_bv": "foundations/results/FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1.json",
 }
@@ -2051,9 +2052,9 @@ def build() -> dict:
     payload["claim_flags"]["current_serialized_graph_transfer_accepted"] = False
     payload["claims"].append({
         "claim_id": "RF-97-TT-CUTOFF-POSITIVITY-SEPARATION",
-        "statement": "Conditional reduced TT model: every finite cutoff admits positive covariance, but no smooth repair makes the complete standard-reality Hadamard covariance positive. The full commutator remains open: the exported differential has nonzero square blocks; a candidate attachment repairs 28 metric defects but leaves 16 trace defects. The current full transfer fails its complex prerequisite.",
+        "statement": "Conditional reduced TT model: every finite cutoff admits positive covariance, but no smooth repair makes the complete standard-reality Hadamard covariance positive. The current exported differential fails its complex prerequisite. A subsequent 12-coefficient trace/ghost candidate repairs both exposed square blocks, but full consistency and the physical commutator remain unverified.",
         "status": "CONDITIONAL_ANALYTIC_CASE_STUDY_FULL_COMMUTATOR_OPEN",
-        "authorities": ["tt_cutoff_obstruction", "tt_observable_extension", "tt_projection_consistency"],
+        "authorities": ["tt_cutoff_obstruction", "tt_observable_extension", "tt_projection_consistency", "tt_trace_repair"],
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
     })
     payload["canonical_digest"] = canonical_digest(payload)
