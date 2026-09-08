@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When finite positivity misleads — Reverse Physics Atlas</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.case{max-width:900px;margin:2rem auto;padding:0 1rem}.case h1{font-size:clamp(2rem,5vw,3.4rem)}
+.case p{line-height:1.65}.case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.case-box{padding:1.3rem;border:1px solid #718096;border-radius:12px}.case output{font-size:1.4rem;font-weight:700}
+.case input{width:100%}.case .status{padding:.7rem 1rem;background:#fff0ce;color:#493800;border-radius:8px}
+.case a{overflow-wrap:anywhere}.case table{width:100%;border-collapse:collapse}.case td,.case th{text-align:left;padding:.7rem;border-bottom:1px solid #718096}
+</style>
+</head>
+<body><main class="case">
+<a href="index.html">← Back to the atlas</a>
+<p class="eyebrow">Finite models and the continuum</p>
+<h1>Every cutoff can pass.<br>The complete model can still fail.</h1>
+<p class="status"><strong>Conditional reduced-model result.</strong> The full gravity conclusion remains open.</p>
+<p>Quantum probabilities must be nonnegative. In this specified model of gravitational tensor waves,
+we can change the state to satisfy that requirement for any finite set of modes.
+But no smooth change works for all modes while preserving the commutator and the standard
+short-distance condition, called the Hadamard condition.</p>
+<p>The correction is allowed to depend on the cutoff. Passing each finite test with a different correction
+therefore does not supply one acceptable continuum state. These finite repairs test positivity; they do not establish positive energy or stable interacting dynamics.</p>
+<label for="cutoff"><strong>Largest retained frequency K: <output id="k" for="cutoff">4</output></strong></label>
+<input id="cutoff" type="range" min="4" max="128" step="1" value="4">
+<div class="case-grid" aria-live="polite">
+<section class="case-box"><h2>Inside the cutoff</h2><p>Every retained tensor harmonic can have positive covariance,
+with exactly the same commutator. The finite correction is smooth.</p><strong>Finite test: passes</strong></section>
+<section class="case-box"><h2>Beyond the cutoff</h2><p>The explicit correction leaves an untouched negative test at frequency
+<output id="next">5</output>, with expectation <output id="negative">−1/160</output>.</p>
+<strong>Full state: still fails positivity</strong></section>
+</div>
+<section class="case-box" style="margin-top:1rem"><h2>The repair cannot stay uniformly smooth</h2>
+<p>A fixed measure of the correction's size and spatial derivatives must obey
+<strong>B²M ≥ (K−1)³/(8K)</strong>. At this cutoff, its necessary lower bound is
+<output id="cost">27/32</output>.</p>
+<p>B depends only on a fixed smooth time filter. M measures derivatives of the correction.
+The lower bound grows without limit. This is a formula from the proof, not a simulation or a measured probability.</p></section>
+<h2>What the extension checked</h2>
+<table><thead><tr><th>Question</th><th>Finding</th></tr></thead><tbody>
+<tr><td>Can the reduced reference be checked against its current inputs?</td><td>Yes, on an explicitly reconciled copy; the original stale reference is preserved.</td></tr>
+<tr><td>Can compact tensor measurements be lifted as gauge-invariant sources?</td><td>Yes, through a 25-entry map and a verified gauge factorization.</td></tr>
+<tr><td>Does the published projection satisfy its advertised gauge-chain identity?</td><td>No. A direct coefficient check finds 28 first-order defects. A different ghost map repairs this metric-block factorization only.</td></tr>
+<tr><td>Is the full theory's physical positivity decided?</td><td>No. Its tensor commutator still needs a direct comparison, including normalization and signs.</td></tr>
+</tbody></table>
+<p>The underlying negative-mode problem is familiar. The case study's purpose is to expose the missing
+step between finite positivity and a physically acceptable continuum state. It keeps the ordinary real
+metric field and all tensor modes; changing either changes the question.</p>
+<h2>Read the evidence</h2>
+<ul>
+<li><a href="sources/foundations/reports/tt-hadamard-cutoff-obstruction-v1.md">Original analytic proof and its historical import failure</a></li>
+<li><a href="sources/foundations/reports/tt-observable-extension-v1.md">Reference reconciliation, source lift, projection mismatch and remaining comparison</a></li>
+<li><a href="sources/foundations/results/TT_OBSERVABLE_EXTENSION_V1.json">Exact source-lift evidence and claim boundaries</a></li>
+<li><a href="sources/foundations/results/TT_HADAMARD_CUTOFF_OBSTRUCTION_V1.json">Exact cutoff identities</a></li>
+</ul>
+<p>No atlas cell or full-theory lifecycle is promoted by this demonstration.</p>
+</main>
+<script>
+'use strict';
+const cutoff=document.getElementById('cutoff');
+function gcd(a,b){while(b){const r=a%b;a=b;b=r;}return a;}
+function update(){const k=Number(cutoff.value),n=k+1,num=(k-1)**3,den=8*k,g=gcd(num,den);
+document.getElementById('k').textContent=k;
+document.getElementById('next').textContent=n;
+document.getElementById('negative').textContent='−1/'+(8*n*(n-1));
+document.getElementById('cost').textContent=(num/g)+'/'+(den/g);}
+cutoff.addEventListener('input',update);update();
+</script>
+</body></html>

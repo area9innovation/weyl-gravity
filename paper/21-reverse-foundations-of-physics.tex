@@ -29,7 +29,7 @@
 \large Separating Physical Postulates, Mathematical Carriers, and Logical Strength}
 \author{OpenAI Codex\thanks{Literature synthesis, formal organization, and drafting.}
 \and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human contact; Honorary Professor, DTU Compute, Technical University of Denmark. \texttt{asger@area9.dk}.}}
-\date{Working draft, 17 August 2026}
+\date{Working draft, 8 September 2026}
 
 \begin{document}
 \maketitle
@@ -767,6 +767,67 @@ The example gives a useful rule for finite programmes:
 Only the first term is supplied by exact finite causality.  This does not make
 the finite theorem unimportant.  It tells us exactly which part of continuum
 causality is algebraic and which part is analytic.
+
+\subsection{Finite-cutoff positivity does not establish a positive continuum state}
+\label{sec:tt-cutoff-positivity}
+
+Here is a conditional analytic example, with exact finite algebra recorded in
+\cert{TT_HADAMARD_CUTOFF_OBSTRUCTION_V1}. Fix the standard real metric field
+and the reduced tensor spectrum on the unit cylinder. A normalized spatial
+TT harmonic with tensor-curl magnitude $n-1$, $n\ge4$, has two frequencies,
+$n-2$ and $n$. The action-normalized reference covariance is
+\[
+ W_{0,n}(\tau)=\frac{e^{-i(n-2)\tau}}{8(n-2)(n-1)}
+             -\frac{e^{-in\tau}}{8n(n-1)}.
+\]
+For any nonnegative smooth compact-time bump $\chi$ with integral one, set
+\[
+ f_n(t,x)=\frac{\partial_t^2+(n-2)^2}{-4(n-1)}
+                  [\chi(t)e^{-int}]u_n(x).
+\]
+Integration by parts removes the lower-frequency contribution:
+\[ W_0(f_n,f_n)=-\frac{1}{8n(n-1)}. \]
+The test has compact spacetime support since the spatial sphere is compact.
+
+If $S$ is a smooth correction on a fixed compact time slab, let
+$M=\sup_{t,t'}\|C_{2,x}^2 C_{2,y}^2 S(t,\cdot;t',\cdot)\|_{L^2}$ and
+$B=1+\frac23\|\chi'\|_1+\frac1{12}\|\chi''\|_1$.
+Spatial integration by parts in both slots gives
+\[
+ |S(f_n,f_n)|\le\frac{B^2M}{(n-1)^4}.
+\]
+Thus $W_0+S$ fails positivity for sufficiently large $n$. This argument does
+not assume that $S$ is stationary or diagonal in modes. Any covariance with
+the same commutator and the same oriented Hadamard wavefront bound differs
+smoothly from $W_0$: its difference is symmetric under ordinary transpose,
+so its wavefront set lies in both disjoint frequency cones.
+
+Nevertheless, adding
+$[e^{-in\tau}+e^{in\tau}]/[8n(n-1)]$ for each retained harmonic flips the
+negative coefficient to a positive negative-frequency coefficient without
+changing the commutator. Every finite spatial cutoff therefore admits a
+positive covariance. These frequency-flipped repairs need not satisfy a
+positive-energy condition. Any smooth repair through cutoff $K$ must satisfy
+\[
+                         B^2M_K\ge\frac{(K-1)^3}{8K}.
+\]
+The repairs cannot converge smoothly. Finite positivity therefore needs
+uniform regularity control before it can support a continuum inference.
+This is an analytic separation, not a new reverse-mathematical equivalence
+or a claim of a previously unknown ghost mechanism.
+
+\cert{TT_OBSERVABLE_EXTENSION_V1} reconciles the reduced reference's one
+stale input hash and extracts an order-zero, 25-entry metric source lift
+$F=p_0^T f$. Its exact gauge factorization is
+$p_0R_{386}=R_{\rm metric}\Gamma$, hence TT sources remain gauge invariant.
+The advertised factorization with the published ghost projection instead
+has 28 first-order defects, including a coefficient $-1/2$.
+The action-normalized all-energy comparison of
+$p_0\Delta_{386}p_0^T$ with the reduced TT commutator is still open.
+Accordingly this case study is tagged \rtype{REDUCED-MODE}; it does not
+establish a full-complex physical-positivity obstruction. The projection audit
+also requires reconciliation before using the earlier serialized global
+chain-map claim to justify that comparison.
 
 \subsection{A positive finite Euclidean state is not yet a Krein reconstruction}
 
@@ -4097,6 +4158,14 @@ adjoint, zero-mode, and coverage obligations pass with zero defects
 BRST-Hadamard \emph{pseudo-state} pair, not a positive state: its selected
 zero-mode symmetric part vanishes, and positivity on physical cohomology is
 not inferred.
+
+A subsequent component audit, \cert{TT_OBSERVABLE_EXTENSION_V1}, finds 28
+first-order defects in the serialized metric/ghost projection chain identity
+used by the graph-transfer argument. The abstract BRST construction is not
+refuted, but agreement of its advertised projection with these concrete
+component tables requires reconciliation. The previously recorded certificate
+passes above must not substitute for that missing check when extending the
+conditional tensor-positivity example of Section~\ref{sec:tt-cutoff-positivity}.
 
 Atlas V49 therefore moves the frontier to the physical-cohomology positivity
 decision, renormalized Lorentzian time-ordered products, and local anomaly

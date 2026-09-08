@@ -627,6 +627,13 @@ def render_report(result: dict[str, Any]) -> str:
 
 ## Outcome
 
+The new `cutoff-positivity.html` case study presents the conditional TT
+finite/continuum separation. Its source extension reconciles the reduced
+reference import and supplies a gauge-invariant compact-source lift, but finds
+28 first-order defects in the advertised serialized projection chain identity.
+The index exposes that audit. The full tensor-commutator comparison remains
+open; no existing atlas cell or quantum lifecycle is promoted by this page.
+
 `foundations/site/index.html` presents all **576** Cartesian coordinates.
 All **576** are now emitted by cube v15 and have separate coverage and migration
 review fields: **{counts['migration_reviewed']} reviewed**, **{counts['migration_pending']} pending**.
@@ -1093,7 +1100,11 @@ def generated() -> dict[Path, bytes]:
         '<script src="app.js"></script>',
         '<script src="app.js"></script>\n  <script src="migration-review.js"></script>',
     ).encode()
+    index = index.replace(b'<a href="manifest.json">Build manifest</a>',
+        b'<a href="cutoff-positivity.html">Finite positivity case study</a>\n    <a href="manifest.json">Build manifest</a>')
+    index = index.replace(b'<main>', b'<main><aside class="hero-note"><strong>New projection audit:</strong> a direct coefficient check finds a mismatch in the serialized gauge-chain projection. The full tensor-commutator comparison remains open. <a href="cutoff-positivity.html">Read the scoped finding</a>.</aside>')
     outputs: dict[Path, bytes] = {
+        SITE / "cutoff-positivity.html": (V2_ASSETS / "cutoff-positivity.html").read_bytes(),
         SITE / "index.html": index,
         SITE / "styles.css": (ASSETS / "styles.css").read_bytes() + b"\n" + (V2_ASSETS / "styles-v2.css").read_bytes(),
         SITE / "app.js": app,
@@ -1207,9 +1218,16 @@ def generated() -> dict[Path, bytes]:
         PHYSLIB_ARITY_THREE_REPLAY_RECEIPT,
         PHYSLIB_ARITY_THREE_RECEIPT,
     ]))
+    bundled_sources = sorted(set([*bundled_sources,
+        FOUNDATIONS / "reports/tt-hadamard-cutoff-obstruction-v1.md",
+        FOUNDATIONS / "reports/tt-observable-extension-v1.md",
+        FOUNDATIONS / "results/TT_HADAMARD_CUTOFF_OBSTRUCTION_V1.json",
+        FOUNDATIONS / "results/TT_OBSERVABLE_EXTENSION_V1.json",
+        FOUNDATIONS / "inputs/tt-reduced-reference-reconciled-v1.json",
+    ]))
     for source in bundled_sources:
         outputs[SITE / "sources" / source.relative_to(ROOT)] = source.read_bytes()
-    input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", FOUNDATIONS / "theory_assembly.py", FOUNDATIONS / "build_gr_cassini_assembly.py", FOUNDATIONS / "check_gr_cassini_assembly.py", FOUNDATIONS / "verify_gr_cassini_assembly.py", FOUNDATIONS / "build_mannheim_ngc3198_assembly.py", FOUNDATIONS / "check_mannheim_ngc3198_assembly.py", FOUNDATIONS / "verify_mannheim_ngc3198_assembly.py", FOUNDATIONS / "build_ngc3198_common_fit_comparison.py", FOUNDATIONS / "check_ngc3198_common_fit_comparison.py", FOUNDATIONS / "verify_ngc3198_common_fit_comparison.py", FOUNDATIONS / "standard-gr-observational-control-v1.json", FOUNDATIONS / "schema/standard-gr-observational-control-v1.schema.json", *bundled_sources, ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js", V2_ASSETS / "styles-v2.css"]))
+    input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", FOUNDATIONS / "theory_assembly.py", FOUNDATIONS / "build_gr_cassini_assembly.py", FOUNDATIONS / "check_gr_cassini_assembly.py", FOUNDATIONS / "verify_gr_cassini_assembly.py", FOUNDATIONS / "build_mannheim_ngc3198_assembly.py", FOUNDATIONS / "check_mannheim_ngc3198_assembly.py", FOUNDATIONS / "verify_mannheim_ngc3198_assembly.py", FOUNDATIONS / "build_ngc3198_common_fit_comparison.py", FOUNDATIONS / "check_ngc3198_common_fit_comparison.py", FOUNDATIONS / "verify_ngc3198_common_fit_comparison.py", FOUNDATIONS / "standard-gr-observational-control-v1.json", FOUNDATIONS / "schema/standard-gr-observational-control-v1.schema.json", *bundled_sources, V2_ASSETS / "cutoff-positivity.html", ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js", V2_ASSETS / "styles-v2.css"]))
     manifest = {
         "schema_version": "foundational-matrix-explorer-manifest-v2",
         "created": CREATED,
@@ -1393,6 +1411,7 @@ def generated() -> dict[Path, bytes]:
     result["claim_flags"]["theory_passports_promote_matrix_grades"] = False
     result["provenance"]["theory_passport_digest"] = v1.load(THEORY_PASSPORT_RESULT)["canonical_digest"]
     result["does_not_establish"].append("that a theory passport selects a complete theory or promotes a completion-matrix evidence grade")
+    result["features"].append("conditional TT finite-cutoff positivity case study, reconciled reduced reference, explicit source lift, and unresolved 28-coefficient projection audit")
     outputs[RESULT] = (json.dumps(result, indent=2) + "\n").encode()
     outputs[REPORT] = render_report(result).encode()
     outputs[VIABILITY_RESULT] = viability_json

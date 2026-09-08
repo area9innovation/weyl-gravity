@@ -1436,7 +1436,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "4475d89cc791e7f0a16cceb09e511f3ebee9ae3b22aad88d22652cc0309b9a16"
+      "sha256": "6d8b0dff88bf39182578d3b44c8cc439c00fddfc1981921f8bd719f72ab0e731"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -2686,9 +2686,28 @@
       "path": "foundations/results/FOUNDATIONAL_END_TO_END_THEORY_PASSPORT_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_END_TO_END_THEORY_PASSPORT_ATLAS_V1",
       "sha256": "c394928bb8ead70ba9eeb76ee16298c3fffec5712d8c9290f773712960d333fb"
+    },
+    "tt_cutoff_obstruction": {
+      "dependency_tags": [
+        "REDUCED-MODE"
+      ],
+      "lifecycle": null,
+      "path": "foundations/results/TT_HADAMARD_CUTOFF_OBSTRUCTION_V1.json",
+      "result_id": "TT_HADAMARD_CUTOFF_OBSTRUCTION_V1",
+      "sha256": "f874b951149291d46d4c692fb7f9cc37284bf88ce3a2c6e9188093a9c7a85321"
+    },
+    "tt_observable_extension": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "lifecycle": "CONDITIONAL_RESEARCH_NOTE",
+      "path": "foundations/results/TT_OBSERVABLE_EXTENSION_V1.json",
+      "result_id": "TT_OBSERVABLE_EXTENSION_V1",
+      "sha256": "1303d5eff39ca32727c304468940fd8acbec57cecf500da03e933ca1a5a4f7c7"
     }
   },
-  "canonical_digest": "ba02017485dd9174f498282fd962ff68f42aa099859120fa1770a48e9fdbd7aa",
+  "canonical_digest": "6c138cd5237ac72a944c619d5cd0c0a823e6bffba7da8a60e6fb1a9be5fd985d",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -4415,6 +4434,19 @@
       ],
       "statement": "The all-field deterministic BT torus scaled PL inequality is false. On L_n=n^24, a critical-bubble source is compensated by its exact mean, inverted with the mean-zero periodic graph Green operator, lifted by epsilon_n=n^-26, and multiplied by a bounded four-way sine coupling. The resulting positive nonseparable fields have residual norm bounded above and below, field contrast O(L_n^(5/12)), and Q_n/omega_Ln^2=O(n^-2)->0. The construction realizes the positive-action residual-escape, flat-curvature, and height-cut-cancellation necessities from RF-93--RF-95. It does not decide the full Witten quotient, Gibbs typicality, the interacting H^-1 moment, continuum reconstruction, Born/Krein interpretation, or any Lorentzian claim.",
       "status": "NONSEPARABLE_POLYNOMIAL_CONTRAST_FREE_SCALE_COLLAPSE_CONSTRUCTED"
+    },
+    {
+      "authorities": [
+        "tt_cutoff_obstruction",
+        "tt_observable_extension"
+      ],
+      "claim_id": "RF-97-TT-CUTOFF-POSITIVITY-SEPARATION",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "statement": "Conditional reduced TT model: every finite cutoff admits positive covariance, but no smooth repair makes the complete standard-reality Hadamard covariance positive. The explicit gauge-invariant source lift does not yet identify the full commutator; the advertised projection chain has 28 first-order defects.",
+      "status": "CONDITIONAL_ANALYTIC_CASE_STUDY_FULL_COMMUTATOR_OPEN"
     }
   ],
   "created": "2026-08-17",
@@ -4654,7 +4686,7 @@
       "source_sha256": "813d29b98f493c3a1d944eb302c7c842cb3773622a5d4dee702c586b5a598087"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "3fa9368d978da809c6309a4748f8b7201cb33e5ec50a1d6bc0a916a61d03e6b3"
+    "sha256": "4462b961fc9bf97cd6d8d8d8b98b1aeaff8642dfb4c0e67475a8fca1b9e6cd94"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

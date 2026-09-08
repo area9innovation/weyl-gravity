@@ -8,6 +8,13 @@
 
 ## Outcome
 
+The new `cutoff-positivity.html` case study presents the conditional TT
+finite/continuum separation. Its source extension reconciles the reduced
+reference import and supplies a gauge-invariant compact-source lift, but finds
+28 first-order defects in the advertised serialized projection chain identity.
+The index exposes that audit. The full tensor-commutator comparison remains
+open; no existing atlas cell or quantum lifecycle is promoted by this page.
+
 `foundations/site/index.html` presents all **576** Cartesian coordinates.
 All **576** are now emitted by cube v15 and have separate coverage and migration
 review fields: **576 reviewed**, **0 pending**.

@@ -1,0 +1,252 @@
+{
+  "advertised_projection_chain_witness": [
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    10,
+    233,
+    "-1/2"
+  ],
+  "claims": {
+    "advertised_projection_gauge_chain_identity": false,
+    "all_energy_TT_commutator_normalization_identified": false,
+    "coefficientwise_gauge_factorization": true,
+    "conditional_positivity_transport_argument": true,
+    "full_strict_physical_positivity_decided": false,
+    "order_zero_compact_source_lift": true,
+    "quantum_lifecycle_promoted": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "gauge_factorization": {
+    "Weyl_derivative_coefficients": [
+      [
+        0,
+        238,
+        "1/16"
+      ],
+      [
+        1,
+        232,
+        "1/16"
+      ],
+      [
+        2,
+        233,
+        "1/16"
+      ],
+      [
+        3,
+        234,
+        "1/16"
+      ]
+    ],
+    "advertised_pghost_identity_defects": 28,
+    "identity": "p0 R386 = Rmetric Gamma",
+    "zero_order_ghost_changes": [
+      [
+        0,
+        238,
+        "-1/4"
+      ],
+      [
+        1,
+        232,
+        "-1/4"
+      ],
+      [
+        2,
+        233,
+        "-1/4"
+      ],
+      [
+        3,
+        234,
+        "-1/4"
+      ]
+    ]
+  },
+  "inputs": [
+    {
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1.json",
+      "sha256": "b805bd81b35f13325d938e93be91495e1d46aa5900fd168e55bdcde1afbfa8e2"
+    },
+    {
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+      "sha256": "3b9d8a2fc5a70d20770452eb0a2a4891f59314c21c83188bfb59de0941cac4b2"
+    },
+    {
+      "path": "quantum-weyl/lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
+      "sha256": "f49edce04b39d1e600d0072bfabc784b8ef6edf0d5a1fc39c8ad89f7fe031d48"
+    },
+    {
+      "path": "foundations/inputs/tt-reduced-reference-reconciled-v1.json",
+      "sha256": "a911bc3e1d3451192b669c077a1817c271d25760602005c66b975f2d4668258f"
+    },
+    {
+      "path": "covariant_completion/certificates/curved_direct_causal_pairing_transport.json",
+      "sha256": "0ad3161cf1f881294cda1b0d5902855949e93d782023f90b00dc31cdc9670b1e"
+    },
+    {
+      "path": "covariant_completion/certificates/curved_prolonged_current_comparison.json",
+      "sha256": "0e4633e1ff45edf06f296981f48a77000db054dff7f265b67a27852de0035e86"
+    },
+    {
+      "path": "foundations/results/TT_HADAMARD_CUTOFF_OBSTRUCTION_V1.json",
+      "sha256": "f874b951149291d46d4c692fb7f9cc37284bf88ce3a2c6e9188093a9c7a85321"
+    }
+  ],
+  "lifecycle": "CONDITIONAL_RESEARCH_NOTE",
+  "metric_projection": {
+    "entries": [
+      [
+        5,
+        5,
+        "1"
+      ],
+      [
+        5,
+        278,
+        "-3/8"
+      ],
+      [
+        6,
+        6,
+        "1"
+      ],
+      [
+        6,
+        272,
+        "1/4"
+      ],
+      [
+        7,
+        7,
+        "1"
+      ],
+      [
+        7,
+        273,
+        "1/4"
+      ],
+      [
+        8,
+        8,
+        "1"
+      ],
+      [
+        8,
+        274,
+        "1/4"
+      ],
+      [
+        9,
+        9,
+        "1"
+      ],
+      [
+        9,
+        250,
+        "-1/4"
+      ],
+      [
+        9,
+        251,
+        "-1/12"
+      ],
+      [
+        9,
+        278,
+        "-1/8"
+      ],
+      [
+        10,
+        10,
+        "1"
+      ],
+      [
+        10,
+        252,
+        "-1/4"
+      ],
+      [
+        11,
+        11,
+        "1"
+      ],
+      [
+        11,
+        253,
+        "-1/4"
+      ],
+      [
+        12,
+        12,
+        "1"
+      ],
+      [
+        12,
+        250,
+        "1/4"
+      ],
+      [
+        12,
+        251,
+        "-1/12"
+      ],
+      [
+        12,
+        278,
+        "-1/8"
+      ],
+      [
+        13,
+        13,
+        "1"
+      ],
+      [
+        13,
+        254,
+        "-1/4"
+      ],
+      [
+        14,
+        14,
+        "1"
+      ],
+      [
+        14,
+        251,
+        "1/6"
+      ],
+      [
+        14,
+        278,
+        "-1/8"
+      ]
+    ],
+    "order": 0,
+    "row_convention": "global metric indices 5..14; source indices 0..385",
+    "shape": [
+      10,
+      386
+    ]
+  },
+  "observable_lift": "F=p_0^T f in ordinary field/source dual coordinates; no Green operator or inverse frequency occurs",
+  "reconciliation": {
+    "allowed_change": "dependencies.causal_pairing_transport.sha256 only",
+    "legacy_reference": "FAIL_STALE_HASH_PRESERVED",
+    "new_reference": "foundations/inputs/tt-reduced-reference-reconciled-v1.json",
+    "scope": "reduced reference import and oscillator replay; not a full classical freeze"
+  },
+  "remaining_obligation": "Identify p_0 Delta_386 p_0^T on every TT harmonic with the action-normalized E/L commutator, in ordinary field/source coordinates, including pairing/suspension signs.",
+  "report": "foundations/reports/tt-observable-extension-v1.md",
+  "result_id": "TT_OBSERVABLE_EXTENSION_V1",
+  "schema_version": 1,
+  "source_commit": "d79b0d04e460eaeec6e0b730da386699b16f1a7b"
+}

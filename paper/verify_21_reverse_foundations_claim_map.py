@@ -595,7 +595,14 @@ def main() -> int:
         (94, "BT-TORUS-CURVATURE-CUT-CONCENTRATION"),
         (95, "BT-TORUS-SMALL-ACTION-GRADIENT-FLOOR"),
         (96, "BT-TORUS-GREEN-TAIL-COUNTERFAMILY"),
+        (97, "TT-CUTOFF-POSITIVITY-SEPARATION"),
     ]}, "claim set drift")
+
+    tt = json.loads((ROOT / data["authorities"]["tt_observable_extension"]["path"]).read_text())
+    require(tt["claims"]["full_strict_physical_positivity_decided"] is False, "TT full-complex promotion")
+    require(tt["gauge_factorization"]["advertised_pghost_identity_defects"] == 28, "TT projection audit missing")
+    tt_claim = next(c for c in data["claims"] if c["claim_id"] == "RF-97-TT-CUTOFF-POSITIVITY-SEPARATION")
+    require(tt_claim["status"] == "CONDITIONAL_ANALYTIC_CASE_STUDY_FULL_COMMUTATOR_OPEN", "TT evidence boundary")
 
     flags = data["claim_flags"]
     require(flags["strict_pure_weyl_local_q1_q2_certified"] is True, "strict pure-Weyl q1/q2 flag missing")

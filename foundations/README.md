@@ -6,8 +6,11 @@ cutoff can be repaired while retaining its commutator, but no smooth repair
 makes the complete imported Hadamard carrier positive. It includes a human
 all-energy proof and independent exact algebra checks. The result is scoped
 to the reduced cylinder and does not decide strict-386 physical positivity.
-The current reduced-reference import has a stale dependency hash; the proof
-is for the stated spectral model and programme activation is withheld.
+The [observable extension](reports/tt-observable-extension-v1.md) reconciles
+that reduced-reference hash on a separate copy and verifies a compact-source
+lift. It also exposes 28 first-order defects in the advertised projection
+chain identity; the full tensor-commutator comparison remains open. Paper 21
+and the website present this as a conditional case study.
 
 This directory couples the repository's reverse-physics programme to reverse
 mathematics and foundational analysis.  Its question is not merely which
